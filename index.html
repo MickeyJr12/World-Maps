@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entraînement</title>
+</head>
+<body>
+  
+  <style>
+
+    body{
+      background-color: #000000;
+      color: #FFFFFF;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      }
+    .btn{
+      width: 100px;
+      height: 50px;
+    }
+  </style>
+
+  <div>
+    <h1>Entraînement</h1>
+    <button class="btn">World-Maps</button>
+</body>
+
+<script>
+  const btn = document.querySelector('.btn');
+ btn.addEventListener('pointerdown', () => {
+  btn.style.backgroundColor = 'red';
+});
+
+</script>
+</html>
