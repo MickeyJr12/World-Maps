@@ -61,7 +61,7 @@ html, body {
       }
 
       svg.monde {
-        width:100%;
+        height:100%;
         transform-box: fill-box;
         transform-origin: center;
       }
@@ -905,6 +905,59 @@ svg {
   will-change: transform; /* hint GPU */
 }
 
+
+@media (max-width: 768px) {
+
+  .tools {
+    right: 1em;
+    top: 50%;
+    transform:translateY(-25%);
+    gap: 1.5em;
+  }
+
+  .icons {
+    width: 55px;
+    height: 55px;
+  }
+
+  .cadreVue {
+    width: 90vw;
+    left: 50%;
+    top: 8em;
+    transform: translateX(-50%);
+  }
+
+  .cadre {
+    width:60%;
+    left: 0%;
+    transform: translateX(-50%);
+    top: 5%;
+    font-size: 1em;
+  }
+
+  .zBox {
+    right: 1em;
+    top: 15em;
+  }
+
+  .zPM {
+    width: 3.5em;
+    height: 3.5em;
+  }
+
+  .sBox {
+    right: 5em;
+    top: 1em;
+  }
+
+  .only {
+    width: 55px;
+    height: 55px;
+  }
+
+}
+
+
     </style>
 
     
@@ -1025,8 +1078,8 @@ svg {
     <div class="icons">
         <svg
           transition="transform 0.4s ease"
-          width="45"
-          height="45"
+          width="60%"
+          height="60%"
           viewBox="0 0 512 512"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -1068,7 +1121,7 @@ svg {
       <svg class="info" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" ><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"/><path d="M12,10H11a1,1,0,0,0,0,2h1v6a1,1,0,0,0,2,0V12A2,2,0,0,0,12,10Z"/><circle cx="12" cy="6.5" r="1.5"/></svg>
 
       </div>
-
+      
       <div class="cadreDrapeau">
         <div style="padding-bottom:0px">
         <img  src="" class="drapeau" alt="" />
