@@ -410,8 +410,8 @@ animation-range: entry 0% entry 100%;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
         font-size: 1em;
         border-radius: 50px;
-        width: 4em;
-        height: 4em;
+        width: 2em;
+        height: 2em;
         background: linear-gradient(
           162deg,
           rgba(29, 29, 38, 0.4) 0%,
@@ -2892,10 +2892,7 @@ svg {
 
     const rondSearch = document.querySelector(".rondSearch");
     const search = document.querySelector(".search");
-    const searchH = search.getBoundingClientRect().height;
-
-    rondSearch.style.height = searchH + "px";
-    rondSearch.style.width = searchH + "px";
+    const searchH = search.getBoundingClientRect().height;    
     const rWidth = rondSearch.getBoundingClientRect().width;
 
     let S = false;
@@ -2906,7 +2903,6 @@ svg {
 
     //Listes informations
     const P_info = {
-
   AD: {
     region: "Europe",
     subregion: "Southern Europe",
