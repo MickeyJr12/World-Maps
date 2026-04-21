@@ -679,9 +679,47 @@ animation-range: entry 0% entry 100%;
       }   
       .viewBox{
         display: flex;
+        margin-right:0%;
         border:1px solid black;
-        transition : transform 0.4s ease;        
+        transition : transform 0.3s ease;        
       }   
+      .listBox{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        left:100%;
+        width:100%;
+        fill:white;
+        transition : left 0.3s ease, transform 0.3s ease;
+        border:1px solid black;
+      }
+      .perRegion{
+        fill:white;
+        display:flex;
+        flex-direction: column;
+        margin-left:2em;
+        margin-top:2em;
+        margin-bottom:0em;
+      }
+      .perSub{
+        gap:5em;
+      }
+      #backListBox{
+        display:flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        left : 0.8em;top:0.8em;
+        width:1.5em; height: 1.5em;        border-radius: 5px;
+        transition : background 0.2s ease
+      }
+      #backListBox:hover{background : rgba(255,255,255,0.1)}
+
+      
 
       .cadreVueCross{
         align-self: flex-end;
@@ -999,6 +1037,11 @@ svg {
       <div class="cadreVue-inner">
         <div class="viewBox" >
         <div id="view-list"></div>
+        <div class="listBox">
+          <div id="backListBox">
+          <svg  xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="100%" height="100%"><path d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"/></svg>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -2918,10 +2961,30 @@ svg {
     let currentCountryHover = null;
 
     //
+    const orgaData = [
+    { label: "OTAN",  id: "orgaOTAN",  key: "otan" },
+    { label: "UE",    id: "orgaUE",    key: "ue"   },
+    { label: "OPEP",  id: "orgaOPEP",  key: "opep" },
+    { label: "OPEP+", id: "orgaOPEPP", key: "opepplus" }, // OPEP+ : même clé, logique étendue si besoin
+    { label: "G20",   id: "orgaG20",   key: "g20"  },
+    { label: "G7", id: "orgaG7", key: "g7" },
+    { label: "COP21", id: "orgaCOP",   key: "cop"  },
+    { label: "Ex-URSS", id: "orgaExUrss",   key: "exURSS"},
+    { label: "Ligue arabe", id: "orgaLigueArabe", key: "ligueArabe" },
+    { label: "UNESCO", id: "orgaUnesco", key: "unesco" },
+    { label: "Banque mondiale", id: "orgaBanqueMondiale", key: "banqueMondiale" },
+    { label: "Union africaine", id: "orgaUnionAfricaine", key: "unionAfricaine" },
+    { label: "FMI", id: "orgaFMI", key: "fmi" },
+
+
+  ];
     const cadreVue = document.querySelector('.cadreVue')
     const cadreVueCross = document.querySelector('.cadreVueCross')
     const viewBox = document.querySelector('.viewBox')
+    const listBox = document.querySelector('.listBox');
+    const backListBox = document.getElementById('backListBox');
 
+    backListBox.addEventListener("click",()=>{viewBox.style.transform = ""})
     //Tools
     const choiceBox = document.querySelector(".choiceBox");
     const only = document.querySelector('.only');
@@ -7554,7 +7617,6 @@ addInfo.addEventListener("click", () => {
 
 
 
-      //**//
 //Interpoler pour zoomer sur country
       function animateViewBox(svg, target, duration = 700) {
   // Lire le viewBox actuel
@@ -8335,7 +8397,50 @@ function createListBtn(id) {
   btn.appendChild(svg);
   return btn;
 }
-``
+
+function fillListBoxRegion(r,subject){
+  if (subject === "region") {
+    const regionI= document.createElement('div');
+    regionI.className = "perRegion";
+    const regionTitle = document.createElement('h1');
+    regionTitle.style.color = "white";
+    regionTitle.textContent = r.region;
+    regionI.appendChild(regionTitle);
+
+    r.subs.forEach(s=>{
+      const L=[]
+      const subI = document.createElement('div');
+      subI.className = "perSub";
+      const subTitle = document.createElement('h4');
+      subTitle.textContent = s.label;
+      subI.appendChild(subTitle);
+      subI.style.color = "white"
+      paths.forEach((path) => {
+        if (!P_info[path.id]){return}
+        if (P_info[path.id].subregion!=subTitle.textContent){return}
+        console.log("qmsdfjmqlsdjfmqldskj")
+        const countryI = document.createElement('div');
+        countryI.className = "perCountry";
+        countryI.textContent = path.getAttribute("title");
+        L.push(countryI.textContent)
+
+      });
+      L.sort();
+      L.forEach(name=>{
+        const countryI = document.createElement('div');
+        countryI.className = "perCountry";
+        countryI.textContent = name;
+        subI.appendChild(countryI);
+      });
+      
+      regionI.appendChild(subI);
+    })
+    listBox.appendChild(regionI);
+
+  };
+
+}
+
 
 
 
@@ -8468,12 +8573,17 @@ regionRow.appendChild(arrowRegion);
 regionRow.appendChild(regionLabel);
 regionRow.appendChild(regionListBtn); // 👈 NOUVELLE ICÔNE
 regionRow.appendChild(regionEyeBtn);
-
+//**//
 regionListBtn.addEventListener("click", (e) => {
   e.stopPropagation();
  viewBox.style.transform = "translateX(-100%)";
+ document.querySelector(".listBox").style.transform="translateX(0%)"
+fillListBoxRegion(r,"region");
+
 
 });
+
+
 regionListBtn.classList.toggle("active");
 
 
@@ -8655,23 +8765,6 @@ regionEyeBtn.addEventListener("click", (e) => {
 
       /* ── 3. Toggle "Organisations internationales" (avec oeil-filtre) ── */
 (function buildOrganisations() {
-  const orgaData = [
-    { label: "OTAN",  id: "orgaOTAN",  key: "otan" },
-    { label: "UE",    id: "orgaUE",    key: "ue"   },
-    { label: "OPEP",  id: "orgaOPEP",  key: "opep" },
-    { label: "OPEP+", id: "orgaOPEPP", key: "opepplus" }, // OPEP+ : même clé, logique étendue si besoin
-    { label: "G20",   id: "orgaG20",   key: "g20"  },
-    { label: "G7", id: "orgaG7", key: "g7" },
-    { label: "COP21", id: "orgaCOP",   key: "cop"  },
-    { label: "Ex-URSS", id: "orgaExUrss",   key: "exURSS"},
-    { label: "Ligue arabe", id: "orgaLigueArabe", key: "ligueArabe" },
-    { label: "UNESCO", id: "orgaUnesco", key: "unesco" },
-    { label: "Banque mondiale", id: "orgaBanqueMondiale", key: "banqueMondiale" },
-    { label: "Union africaine", id: "orgaUnionAfricaine", key: "unionAfricaine" },
-    { label: "FMI", id: "orgaFMI", key: "fmi" },
-
-
-  ];
 
   /* ── helper : crée un œil-filtre (s'allume, ne se barre pas) ── */
   function makeFilterEye(id) {
@@ -9078,6 +9171,52 @@ svg.addEventListener('touchend', (e) => {
   if (e.touches.length === 0) isDragging = false;
 });
 
+
+// ── DONNÉES : noms lisibles des pays ──────────────────────────
+// On utilise l'attribut title du path SVG comme nom affiché
+function getCountryName(code) {
+  const path = svg.querySelector(`path[id="${code}"]`);
+  return path ? path.getAttribute("title") : code;
+}
+
+// ── STYLES listBox ────────────────────────────────────────────
+const listBoxStyle = document.createElement("style");
+listBoxStyle.textContent = `
+  .lb-title {
+    font-size: 1em;
+    font-weight: 600;
+    color: white;
+    padding: 1em 1em 0.4em 1em;
+    letter-spacing: 0.03em;
+  }
+  .lb-subregion-title {
+    font-size: 0.75em;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.8em 1em 0.3em 1em;
+  }
+  .lb-country {
+    font-size: 0.82em;
+    color: rgba(255,255,255,0.85);
+    padding: 0.35em 1em 0.35em 1.4em;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-radius: 6px;
+  }
+  .lb-country:hover { background: rgba(255,255,255,0.08); }
+  .lb-scroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.2) transparent;
+    flex: 1;
+    padding: 0 0.4em 1em 0.4em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+`;
+document.head.appendChild(listBoxStyle);
 
   </script>
 </html>
