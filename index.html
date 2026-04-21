@@ -8884,6 +8884,96 @@ eyeBtn.addEventListener("click", (e) => {
     requestAnimationFrame(loops);
   }
 
+  //Drag plan 
+   // ── État touch ───────────────────────────────────────────────
+let lastTouchDist = null;
+let lastTouchMid = null;
+
+function getTouchDist(touches) {
+  const dx = touches[0].clientX - touches[1].clientX;
+  const dy = touches[0].clientY - touches[1].clientY;
+  return Math.hypot(dx, dy);
+}
+
+function getTouchMid(touches) {
+  return {
+    x: (touches[0].clientX + touches[1].clientX) / 2,
+    y: (touches[0].clientY + touches[1].clientY) / 2,
+  };
+}
+
+// ── Touch start ──────────────────────────────────────────────
+svg.addEventListener('touchstart', (e) => {
+  e.preventDefault();
+
+  if (e.touches.length === 1) {
+    // Pan : même logique que mousedown
+    isDragging = true;
+    const vb = getVB();
+    startVBx = vb.x;
+    startVBy = vb.y;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+
+  } else if (e.touches.length === 2) {
+    // Pinch : init distance et point milieu
+    isDragging = false;
+    lastTouchDist = getTouchDist(e.touches);
+    lastTouchMid  = getTouchMid(e.touches);
+  }
+
+}, { passive: false });
+
+// ── Touch move ───────────────────────────────────────────────
+svg.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+
+  if (e.touches.length === 1 && isDragging) {
+    // Pan (même logique que mousemove)
+    const vb = getVB();
+    const rect = svg.getBoundingClientRect();
+    const scaleX = vb.w / rect.width;
+    const scaleY = vb.h / rect.height;
+
+    const dx = (e.touches[0].clientX - startX) * scaleX;
+    const dy = (e.touches[0].clientY - startY) * scaleY;
+
+    setVB({ x: startVBx - dx, y: startVBy - dy, w: vb.w, h: vb.h });
+
+  } else if (e.touches.length === 2) {
+    // Pinch zoom
+    const newDist = getTouchDist(e.touches);
+    const newMid  = getTouchMid(e.touches);
+    const vb = getVB();
+    const rect = svg.getBoundingClientRect();
+
+    // Point milieu en unités viewBox
+    const midVBx = vb.x + (newMid.x - rect.left) * (vb.w / rect.width);
+    const midVBy = vb.y + (newMid.y - rect.top)  * (vb.h / rect.height);
+
+    const zoomFactor = lastTouchDist / newDist; // pinch in = doigts rapprochés = newDist < last = zoom in
+    const newW = Math.min(Math.max(vb.w * zoomFactor, MIN_SIZE), MAX_SIZE);
+    const newH = Math.min(Math.max(vb.h * zoomFactor, MIN_SIZE), MAX_SIZE);
+
+    // Garder le point milieu fixe (même formule que wheel)
+    const newX = midVBx - (midVBx - vb.x) * (newW / vb.w);
+    const newY = midVBy - (midVBy - vb.y) * (newH / vb.h);
+
+    setVB({ x: newX, y: newY, w: newW, h: newH });
+
+    // Update pour le prochain frame
+    lastTouchDist = newDist;
+    lastTouchMid  = newMid;
+  }
+
+}, { passive: false });
+
+// ── Touch end ────────────────────────────────────────────────
+svg.addEventListener('touchend', (e) => {
+  if (e.touches.length < 2) lastTouchDist = null;
+  if (e.touches.length === 0) isDragging = false;
+});
+
 
   </script>
 </html>
