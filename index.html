@@ -677,11 +677,12 @@ animation-range: entry 0% entry 100%;
         border-radius: 14px;
         transition : opacity 0.4s ease;
       }   
-      .listBox{
+      .viewBox{
         display: flex;
         border:1px solid black;
-        transition : transform 0.35s ease;        
+        transition : transform 0.4s ease;        
       }   
+
       .cadreVueCross{
         align-self: flex-end;
         cursor: pointer;
@@ -720,6 +721,14 @@ animation-range: entry 0% entry 100%;
       .main-block + .main-block .view-main-row {
         border-top: 1px solid rgba(255, 255, 255, 0.06);
       }
+   
+      .icon-btn.active svg {
+        transition : background 0.1s ease;
+  }
+.icon-btn.active svg:hover {
+  background:rgba(255,255,255,0.1)
+  }
+
 
       /* ── ligne principale ── */
       .view-main-row {
@@ -988,7 +997,7 @@ svg {
       </div>
       <h2 style="margin-top:0px; margin-left:3em; margin-bottom: 0px; color:white">Changer de vue</h2>
       <div class="cadreVue-inner">
-        <div class="listBox" >
+        <div class="viewBox" >
         <div id="view-list"></div>
         </div>
       </div>
@@ -2911,6 +2920,7 @@ svg {
     //
     const cadreVue = document.querySelector('.cadreVue')
     const cadreVueCross = document.querySelector('.cadreVueCross')
+    const viewBox = document.querySelector('.viewBox')
 
     //Tools
     const choiceBox = document.querySelector(".choiceBox");
@@ -8302,6 +8312,32 @@ svg.addEventListener('wheel', (e) => {
         svg.appendChild(poly);
         return svg;
       }
+function createListBtn(id) {
+  const btn = document.createElement("div");
+  btn.className = "icon-btn";
+  btn.id = id;
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 24 24");
+  svg.setAttribute("width", "18");
+  svg.setAttribute("height", "18");
+  svg.setAttribute("fill", "white");
+
+  svg.innerHTML = `
+    <path d="M7,6H23a1,1,0,0,0,0-2H7A1,1,0,0,0,7,6Z"/>
+    <path d="M23,11H7a1,1,0,0,0,0,2H23a1,1,0,0,0,0-2Z"/>
+    <path d="M23,18H7a1,1,0,0,0,0,2H23a1,1,0,0,0,0-2Z"/>
+    <circle cx="2" cy="5" r="2"/>
+    <circle cx="2" cy="12" r="2"/>
+    <circle cx="2" cy="19" r="2"/>
+  `;
+
+  btn.appendChild(svg);
+  return btn;
+}
+``
+
+
 
       function makeEyeSVG() {
         const ns = "http://www.w3.org/2000/svg";
@@ -8425,9 +8461,22 @@ paths.forEach((path) => {
 
           const { btn: regionEyeBtn, line: regionEyeLine } = createEyeBtn(r.id);
           
-          regionRow.appendChild(arrowRegion);
-          regionRow.appendChild(regionLabel);
-          regionRow.appendChild(regionEyeBtn);
+          
+const regionListBtn = createListBtn(r.id);
+
+regionRow.appendChild(arrowRegion);
+regionRow.appendChild(regionLabel);
+regionRow.appendChild(regionListBtn); // 👈 NOUVELLE ICÔNE
+regionRow.appendChild(regionEyeBtn);
+
+regionListBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+ viewBox.style.transform = "translateX(-100%)";
+
+});
+regionListBtn.classList.toggle("active");
+
+
 
 
           const subssubsWrapper = document.createElement("div");
@@ -8500,11 +8549,19 @@ paths.forEach((path) => {
 
               syncRegionEye()
             });
+            const subListBtn = createListBtn(s.id)
 
             subRow.appendChild(subLabel);
-            
+            subRow.appendChild(subListBtn); // 👈 NOUVELLE ICÔNE
             subRow.appendChild(subEyeBtn);
             subssubsWrapper.appendChild(subRow);
+
+            subListBtn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              viewBox.style.transform = "translateX(-100%)";
+
+              });
+              subListBtn.classList.toggle("active");
           });
 
           regionBlock.appendChild(regionRow);
@@ -8715,8 +8772,19 @@ regionEyeBtn.addEventListener("click", (e) => {
     }
   });
 
+const orgasListBtn = createListBtn("orga");
   mainRow.appendChild(arrowWrap);
   mainRow.appendChild(mainLabel);
+  mainRow.appendChild(orgasListBtn); // 👈 NOUVELLE ICÔNE
+
+  orgasListBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  viewBox.style.transform = "translateX(-100%)";
+
+    });
+    orgasListBtn.classList.toggle("active");
+
+
   mainRow.appendChild(mainFilterEye);
 
   /* ── sous-lignes ── */
@@ -8752,12 +8820,24 @@ regionEyeBtn.addEventListener("click", (e) => {
       applyOrgaFilter(item.key, eyeBtn);
     });
 
-    row.addEventListener("click", handleClick);
+const orgaListBtn = createListBtn(item.key);
 
+    row.addEventListener("click", handleClick);
     row.appendChild(arrowPlaceholder);
     row.appendChild(label);
+    row.appendChild(orgaListBtn); // 👈 NOUVELLE ICÔNE
     row.appendChild(eyeBtn);
     subsWrapper.appendChild(row);
+
+    orgaListBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+ viewBox.style.transform = "translateX(-100%)";
+
+});
+orgaListBtn.classList.toggle("active");
+
+
+
   });
 
   mainBlock.appendChild(mainRow);
@@ -8807,7 +8887,8 @@ regionEyeBtn.addEventListener("click", (e) => {
         const { btn: eyeBtn, line: eyeLine } = createEyeBtn(item.id);
 
         /* clic ligne → toggle oeil */
-       function viewONU(e, btn, line) {          
+       function viewONU(e, btn, line) { 
+
   paths.forEach((p) => {
     if (p.id in P_info) {
       if (P_info[p.id].unMember === true) {
@@ -8867,12 +8948,26 @@ eyeBtn.addEventListener("click", (e) => {
 });
 
         eyeBtn.id = item.idbtn;
+        const last2 = createListBtn(item.id);
 
         mainRow.appendChild(arrowPlaceholder);
         mainRow.appendChild(mainLabel);
+        mainRow.appendChild(last2); // 👈 NOUVELLE ICÔNE
+
         mainRow.appendChild(eyeBtn);
         mainBlock.appendChild(mainRow);
         container.appendChild(mainBlock);
+
+
+        last2.addEventListener("click", (e) => {
+  e.stopPropagation();
+ viewBox.style.transform = "translateX(-100%)";
+
+});
+last2.classList.toggle("active");
+
+
+
 });
 
 
