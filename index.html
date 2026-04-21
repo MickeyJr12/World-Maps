@@ -980,7 +980,9 @@ svg {
       </div>
       <h2 style="margin-top:0px; margin-left:3em; margin-bottom: 0px; color:white">Changer de vue</h2>
       <div class="cadreVue-inner">
+        <div class="listBox" style="border:1px solid black">
         <div id="view-list"></div>
+        </div>
       </div>
     </div>
 
@@ -8904,7 +8906,6 @@ function getTouchMid(touches) {
 
 // ── Touch start ──────────────────────────────────────────────
 svg.addEventListener('touchstart', (e) => {
-  e.preventDefault();
 
   if (e.touches.length === 1) {
     // Pan : même logique que mousedown
