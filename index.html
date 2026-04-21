@@ -676,7 +676,12 @@ animation-range: entry 0% entry 100%;
         backdrop-filter: blur(12px);
         border-radius: 14px;
         transition : opacity 0.4s ease;
-      }      
+      }   
+      .listBox{
+        display: flex;
+        border:1px solid black;
+        transition : transform 0.35s ease;        
+      }   
       .cadreVueCross{
         align-self: flex-end;
         cursor: pointer;
@@ -940,10 +945,10 @@ svg {
   }
 
   .cadre {
-    width:60%;
+    width:55%;
     left: 0%;
     transform: translateX(-50%);
-    bottom: 40%;
+    bottom: 1em;
     font-size: 1em;
   }
 
@@ -980,7 +985,7 @@ svg {
       </div>
       <h2 style="margin-top:0px; margin-left:3em; margin-bottom: 0px; color:white">Changer de vue</h2>
       <div class="cadreVue-inner">
-        <div class="listBox" style="border:1px solid black">
+        <div class="listBox" >
         <div id="view-list"></div>
         </div>
       </div>
