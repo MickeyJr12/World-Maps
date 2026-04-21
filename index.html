@@ -57,19 +57,25 @@ html, body {
       svg.monde path {
         
         transition:
-          transform 0.5s ease,
+          transform 0.1s ease,
           fill 0.5s ease,
-          background 0.4s ease;
-        stroke-width: 0.2px;
-        transition:
-          fill 0.4s ease,
+          background 0.4s ease, filter 0.4s ease;
+        stroke-width: 0.2px;       
       }
 
       svg.monde {
-        width:100%;
+        width:200%;
         transform-box: fill-box;
         transform-origin: center;
       }
+
+.dragging path {
+  filter: none !important;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  pointer-events:none;
+   will-change: transform; /* hint GPU */
+}
       .tools{
         display: flex;    
         position: fixed;              
@@ -926,7 +932,8 @@ svg {
   }
 
   .cadreVue {
-    width: 90vw;
+    width: 40vw;
+    flex-wrap: wrap;
     left: 50%;
     top: 8em;
     transform: translateX(-50%);
@@ -936,7 +943,7 @@ svg {
     width:60%;
     left: 0%;
     transform: translateX(-50%);
-    top: 5%;
+    bottom: 40%;
     font-size: 1em;
   }
 
@@ -7428,23 +7435,58 @@ if (status && Object.values(status).every(Boolean)) {
 
     // Grap plan 
     
+// ── État global ──────────────────────────────────────────────
+let startVBx, startVBy; // Position du viewBox au début du drag
+
+// ── Helpers viewBox ──────────────────────────────────────────
+function getVB() {
+  const v = svg.viewBox.baseVal;
+  return { x: v.x, y: v.y, w: v.width, h: v.height };
+}
+
+function setVB({ x, y, w, h }) {
+  svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
+}
+
+// ── Drag (pan) ───────────────────────────────────────────────
 svg.addEventListener('mousedown', (e) => {
   isDragging = true;
-  startX = e.clientX - tx;
-  startY = e.clientY - ty;
+  const vb = getVB();
+  startVBx = vb.x;
+  startVBy = vb.y;
+  startX = e.clientX;
+  startY = e.clientY;
   svg.style.cursor = 'grabbing';
+  e.preventDefault();
 });
 
 window.addEventListener('mousemove', (e) => {
   if (!isDragging) return;
-  tx = e.clientX - startX;
-  ty = e.clientY - startY;
-  applyTransform();
+    svg.classList.add("dragging");
+
+  const vb = getVB();
+
+  // Convertir les pixels écran en unités viewBox
+  const rect = svg.getBoundingClientRect();
+  const scaleX = vb.w / rect.width;
+  const scaleY = vb.h / rect.height;
+
+  const dx = (e.clientX - startX) * scaleX;
+  const dy = (e.clientY - startY) * scaleY;
+
+  setVB({
+    x: startVBx - dx,
+    y: startVBy - dy,
+    w: vb.w,
+    h: vb.h,
+  });
 });
 
 window.addEventListener('mouseup', () => {
   isDragging = false;
-  svg.style.cursor = '';
+    svg.classList.remove("dragging");
+
+  svg.style.cursor = 'grab';
 });
 
 //Partie cadre
@@ -7594,7 +7636,7 @@ addInfo.addEventListener("click", () => {
         lastHovered.style.filter = "";
       }
 
-      element.style.fill = "rgb(29, 204, 90)";
+      element.style.filter = "brightness(0.86)";
       element.style.transform = "translateY(-0.1%)";
 
       lastHovered = element;
@@ -8151,24 +8193,29 @@ function applyTransform() {
 }
 
 // ── ZOOM (molette) ──────────────────────────────────────────────
+const MIN_SIZE = 50;   // zoom max : pas plus petit que ça
+const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial
 svg.addEventListener('wheel', (e) => {
   e.preventDefault();
 
+  const vb = getVB();
   const rect = svg.getBoundingClientRect();
-  // Position du curseur dans le SVG
-  const mouseX = e.clientX - rect.left;
-  const mouseY = e.clientY - rect.top;
 
-  const zoomFactor = e.deltaY < 0 ? 1.10 : 1 / 1.10;
-  const newScale = Math.min(Math.max(scale2 * zoomFactor, 0.5), 20);
+  // Position du curseur en unités viewBox
+  const mouseVBx = vb.x + (e.clientX - rect.left) * (vb.w / rect.width);
+  const mouseVBy = vb.y + (e.clientY - rect.top)  * (vb.h / rect.height);
 
-  // Zoom ancré sur le curseur : ajuste tx/ty pour que le point
-  // sous la souris reste fixe après le changement de scale
-  tx = mouseX - (mouseX - tx) * (newScale / scale2);
-  ty = mouseY - (mouseY - ty) * (newScale / scale2);
-  scale2 = newScale;
+  const zoomFactor = e.deltaY < 0 ? 1 / 1.10 : 1.10; // molette haut = zoom in = viewBox plus petit
+  
+  const newW = Math.min(Math.max(vb.w * zoomFactor, MIN_SIZE), MAX_SIZE);
+  const newH = Math.min(Math.max(vb.h * zoomFactor, MIN_SIZE), MAX_SIZE);
 
-  applyTransform();
+  // Garder le point sous le curseur fixe
+  const newX = mouseVBx - (mouseVBx - vb.x) * (newW / vb.w);
+  const newY = mouseVBy - (mouseVBy - vb.y) * (newH / vb.h);
+
+  setVB({ x: newX, y: newY, w: newW, h: newH });
+
 }, { passive: false });
 
 // ── PAN (drag) ──────────────────────────────────────────────────
