@@ -664,6 +664,8 @@ animation-range: entry 0% entry 100%;
          pointer-events: none;
         border: 1px solid rgba(255, 255, 255, 0.15);
         overflow: hidden;
+        overflow-x: hidden;
+
         height: auto;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -675,7 +677,7 @@ animation-range: entry 0% entry 100%;
         background: rgba(0, 0, 0, 0.35);
         backdrop-filter: blur(12px);
         border-radius: 14px;
-        transition : opacity 0.4s ease;
+        transition : opacity 0.4s ease,  height 0.3s ease;
       }   
       .viewBox{
         display: flex;
@@ -687,12 +689,18 @@ animation-range: entry 0% entry 100%;
         display: flex;
         position: absolute;
         flex-direction: column;
+        text-align: center;
         overflow-y: auto;
-        overscroll-behavior: contain;
+        overflow-x: hidden;
+        flex-wrap: nowrap;
         scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        padding-bottom: 1em;
+        padding-right: 1em;
+        padding-left: 1em;
         left:100%;
-        width:100%;
+        width:95%;
+        color:white;
         fill:white;
         transition : left 0.3s ease, transform 0.3s ease;
         border:1px solid black;
@@ -702,11 +710,14 @@ animation-range: entry 0% entry 100%;
         display:flex;
         flex-direction: column;
         margin-left:2em;
-        margin-top:2em;
-        margin-bottom:0em;
+        margin-top:1.5em;
       }
       .perSub{
-        gap:5em;
+        margin-top:0em;
+      }
+      .perCountry {
+        align-self: flex-start;
+        margin:0.1em
       }
       #backListBox{
         display:flex;
@@ -984,7 +995,7 @@ svg {
   }
 
   .cadreVue {
-    width: 40vw;
+    width : clamp(30%, 80px,55%);
     flex-wrap: wrap;
     left: 50%;
     top: 8em;
@@ -1033,7 +1044,7 @@ svg {
       <div class="cadreVueCross">
         <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="100%" height="100%"><path d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"/><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"/></svg>
       </div>
-      <h2 style="margin-top:0px; margin-left:3em; margin-bottom: 0px; color:white">Changer de vue</h2>
+      <h2 style="margin-top:0px; margin-bottom: 0px; align-self: center; color:white">Changer de vue</h2>
       <div class="cadreVue-inner">
         <div class="viewBox" >
         <div id="view-list"></div>
@@ -2886,7 +2897,6 @@ svg {
 
 
     const cadre = document.querySelector(".cadre");
-    cadre.style.pointerEvents = "none";
 
     const drapeau = document.querySelector(".drapeau");
     const cadreBlason = document.querySelector(".cadreBlason");
@@ -2980,11 +2990,26 @@ svg {
   ];
     const cadreVue = document.querySelector('.cadreVue')
     const cadreVueCross = document.querySelector('.cadreVueCross')
+    const cadreCross = cadreVueCross.cloneNode(true);
+    cadreCross.style.position = "absolute";
+    cadreCross.style.left = "0.8em";
+    cadreCross.style.top = "0.8em";
+    cadre.appendChild(cadreCross);
+    cadreCross.addEventListener("click",()=>{
+      
+        currentCountry = null;
+        cadre.style.transform = "translateX(-20%)";
+        cadre.style.opacity = "0";
+        cadre.style.pointerEvents = "none";
+        return;
+      
+    })
+
     const viewBox = document.querySelector('.viewBox')
     const listBox = document.querySelector('.listBox');
     const backListBox = document.getElementById('backListBox');
 
-    backListBox.addEventListener("click",()=>{viewBox.style.transform = ""})
+    backListBox.addEventListener("click",()=>{cadreVue.style.height=""; viewBox.style.transform = ""})
     //Tools
     const choiceBox = document.querySelector(".choiceBox");
     const only = document.querySelector('.only');
@@ -8377,6 +8402,8 @@ svg.addEventListener('wheel', (e) => {
 function createListBtn(id) {
   const btn = document.createElement("div");
   btn.className = "icon-btn";
+  btn.style.transform = "scale(1.1)";
+
   btn.id = id;
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -8384,6 +8411,7 @@ function createListBtn(id) {
   svg.setAttribute("width", "18");
   svg.setAttribute("height", "18");
   svg.setAttribute("fill", "white");
+
 
   svg.innerHTML = `
     <path d="M7,6H23a1,1,0,0,0,0-2H7A1,1,0,0,0,7,6Z"/>
@@ -8399,37 +8427,39 @@ function createListBtn(id) {
 }
 
 function fillListBoxRegion(r,subject){
+  cadreVue.style.height = "30em";
+  listBox.innerHTML=``
+  listBox.appendChild(backListBox)
   if (subject === "region") {
     const regionI= document.createElement('div');
     regionI.className = "perRegion";
     const regionTitle = document.createElement('h1');
     regionTitle.style.color = "white";
     regionTitle.textContent = r.region;
+    regionTitle.style.textDecoration = "underline";
     regionI.appendChild(regionTitle);
 
     r.subs.forEach(s=>{
       const L=[]
       const subI = document.createElement('div');
       subI.className = "perSub";
-      const subTitle = document.createElement('h4');
+      const subTitle = document.createElement('h3');
       subTitle.textContent = s.label;
+    subTitle.style.textDecoration = "underline";
+
       subI.appendChild(subTitle);
       subI.style.color = "white"
       paths.forEach((path) => {
         if (!P_info[path.id]){return}
-        if (P_info[path.id].subregion!=subTitle.textContent){return}
-        console.log("qmsdfjmqlsdjfmqldskj")
-        const countryI = document.createElement('div');
-        countryI.className = "perCountry";
-        countryI.textContent = path.getAttribute("title");
-        L.push(countryI.textContent)
+        if (P_info[path.id].subregion!=subTitle.textContent){return}        
+        L.push(path.getAttribute("title"))
 
       });
       L.sort();
       L.forEach(name=>{
         const countryI = document.createElement('div');
         countryI.className = "perCountry";
-        countryI.textContent = name;
+        countryI.textContent = "• "+name;
         subI.appendChild(countryI);
       });
       
@@ -8437,8 +8467,90 @@ function fillListBoxRegion(r,subject){
     })
     listBox.appendChild(regionI);
 
-  };
+  }
 
+  else if (subject === "subregion"){
+    const subI= document.createElement('div');
+    subI.className = "perSub";
+    const subTitle = document.createElement('h1');
+    subTitle.style.color = "white";
+    subTitle.textContent = r.label;
+    subTitle.style.textDecoration = "underline";
+    subI.appendChild(subTitle);
+    
+      const L=[]
+     
+      paths.forEach((path) => {
+        if (!P_info[path.id]){return}
+        if (P_info[path.id].subregion!=subTitle.textContent){return}        
+        L.push(path.getAttribute("title"))
+
+      });
+      L.sort();
+      L.forEach(name=>{
+        const countryI = document.createElement('div');
+        countryI.className = "perCountry";
+        countryI.textContent = "• "+name;
+        subI.appendChild(countryI);
+      });    
+    listBox.appendChild(subI);
+  }
+  else if (subject === "organisations"){
+    
+    const orgaI= document.createElement('div');
+    orgaI.className = "perSub";
+    const orgaTitle = document.createElement('h1');
+    orgaTitle.style.color = "white";
+    orgaTitle.textContent = r.label;
+    orgaTitle.style.textDecoration = "underline";
+    orgaI.appendChild(orgaTitle);
+    
+      const L=[]
+      paths.forEach((path) => {
+        if (!P_info[path.id]){return}
+       if (!P_info[path.id][r.key]) {return}
+        L.push(path.getAttribute("title"))
+      });
+      L.sort();
+      L.forEach(name=>{
+        const countryI = document.createElement('div');
+        countryI.className = "perCountry";
+        countryI.textContent = "• "+name;
+        orgaI.appendChild(countryI);
+      });    
+    listBox.appendChild(orgaI);
+  }
+
+  else if (subject === "last2")
+  {
+    const onu= document.createElement('div');
+    onu.className = "perONU";
+    onu.style.marginTop = backListBox.getBoundingClientRect().height + "px";
+    const onuTitle = document.createElement('h1');
+    onuTitle.style.color = "white";
+
+    if (r.key === "unMember"){onuTitle.textContent = "Pays non membre de l'ONU"}
+    else {onuTitle.textContent = "Pays dépendants"}
+    onuTitle.style.textDecoration = "underline";
+    onu.appendChild(onuTitle);
+    
+      const L=[]
+     
+      paths.forEach((path) => {
+        if (!P_info[path.id]){return}
+        if (P_info[path.id][r.key]){return}        
+        L.push(path.getAttribute("title"))
+
+      });
+      L.sort();
+      L.forEach(name=>{
+        const countryI = document.createElement('div');
+        countryI.className = "perCountry";
+        countryI.textContent = "• "+name;
+        onu.appendChild(countryI);
+      });    
+    listBox.appendChild(onu);
+  }
 }
 
 
@@ -8667,8 +8779,14 @@ regionListBtn.classList.toggle("active");
             subssubsWrapper.appendChild(subRow);
 
             subListBtn.addEventListener("click", (e) => {
-              e.stopPropagation();
+                            
+                e.stopPropagation();
               viewBox.style.transform = "translateX(-100%)";
+              document.querySelector(".listBox").style.transform="translateX(0%)"
+              fillListBoxRegion(s,"subregion");
+
+
+
 
               });
               subListBtn.classList.toggle("active");
@@ -8865,17 +8983,8 @@ regionEyeBtn.addEventListener("click", (e) => {
     }
   });
 
-const orgasListBtn = createListBtn("orga");
   mainRow.appendChild(arrowWrap);
-  mainRow.appendChild(mainLabel);
-  mainRow.appendChild(orgasListBtn); // 👈 NOUVELLE ICÔNE
-
-  orgasListBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  viewBox.style.transform = "translateX(-100%)";
-
-    });
-    orgasListBtn.classList.toggle("active");
+  mainRow.appendChild(mainLabel);  
 
 
   mainRow.appendChild(mainFilterEye);
@@ -8923,8 +9032,14 @@ const orgaListBtn = createListBtn(item.key);
     subsWrapper.appendChild(row);
 
     orgaListBtn.addEventListener("click", (e) => {
+  
   e.stopPropagation();
  viewBox.style.transform = "translateX(-100%)";
+ document.querySelector(".listBox").style.transform="translateX(0%)"
+fillListBoxRegion(item,"organisations");
+
+
+
 
 });
 orgaListBtn.classList.toggle("active");
@@ -8958,8 +9073,8 @@ orgaListBtn.classList.toggle("active");
 
       /* ── 2. Lignes simples avec oeil ── */
       [
-        { label: "Membre de l'ONU", id: "viewMembreONU", idbtn:"eyeONU" },
-        { label: "Pays indépendants", id: "viewPaysIndependants", idbtn:"eyeIndependants" },
+        { label: "Membre de l'ONU", id: "viewMembreONU", idbtn:"eyeONU", key:"unMember" },
+        { label: "Pays indépendants", id: "viewPaysIndependants", idbtn:"eyeIndependants", key:"independent" },
       ].forEach((item) => {
         const mainBlock = document.createElement("div");
         mainBlock.className = "main-block";
@@ -9055,6 +9170,9 @@ eyeBtn.addEventListener("click", (e) => {
         last2.addEventListener("click", (e) => {
   e.stopPropagation();
  viewBox.style.transform = "translateX(-100%)";
+ document.querySelector(".listBox").style.transform="translateX(0%)"
+fillListBoxRegion(item,"last2");
+
 
 });
 last2.classList.toggle("active");
