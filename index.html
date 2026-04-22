@@ -1065,24 +1065,36 @@ svg {
       }
 .phone{
   display: flex;
-  justify-content: center;
+  position: relative;
   height:100vh;
   width : 540px;
-  display: flex;
   border:10px solid black;
-        position: absolute;
-        left : 50%;
-        transform:translateX(-50%);
+  left : 50%;
+  transform:translateX(-50%);
+}
+.btnHomeBox{
+  display: flex;
+  position: absolute;
+  top:50%;
+  left:50%;transform:translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  flex-direction: column;
+  height:auto;
+  width:auto;
+  gap:1.3em;
+  border:1px solid black;
+
+
 }
 .btnPlay{
   display: flex;
+  align-self: center;
   justify-content: center;
   align-items: center;
   text-align: center;
-  position: absolute;
   color:white;
-  user-select: none;
-  bottom:18em;
   border-radius: 5px;
   padding: 0px 0px;
   min-width:14em;
@@ -1090,12 +1102,21 @@ svg {
  background: linear-gradient(151deg, #16e924 0%, #29c28a 53%, #0fe7fa 100%);
  transition : filter  0.2s ease;
 }
-.btnPlay:hover{filter:brightness(0.9)}
-.btnPlay:active{filter:brightness(0.7)}
+.hoverable:hover,
+.hoverable.hover {
+  /* rien ici, chaque bouton a ses propres règles */
+}
+
+.btnPlay:hover, .btnPlay.hover { filter: brightness(0.9); }
     </style>
 <div class="phone">
 <svg class="waveHome" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 239L9 228.2C18 217.3 36 195.7 54 191.2C72 186.7 90 199.3 108 210.2C126 221 144 230 162 220.3C180 210.7 198 182.3 216 176.8C234 171.3 252 188.7 270 199C288 209.3 306 212.7 324 219.5C342 226.3 360 236.7 378 239.5C396 242.3 414 237.7 432 219.8C450 202 468 171 486 167.8C504 164.7 522 189.3 531 201.7L540 214L540 0L531 0C522 0 504 0 486 0C468 0 450 0 432 0C414 0 396 0 378 0C360 0 342 0 324 0C306 0 288 0 270 0C252 0 234 0 216 0C198 0 180 0 162 0C144 0 126 0 108 0C90 0 72 0 54 0C36 0 18 0 9 0L0 0Z" fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter"/></svg>
-<div class="btnPlay"><h1>Play</h1></div>
+<div class="btnHomeBox">
+<div class="btnPlay hoverable"><h2>Play</h2></div>
+<div class="btnPlay hoverable"><h2>Devises</h2></div>
+<div class="btnPlay hoverable"><h2>Play</h2></div>
+
+</div>
 </div>
 
 <!-----------Partie Maps-------------->
@@ -9407,6 +9428,15 @@ listBoxStyle.textContent = `
   }
 `;
 document.head.appendChild(listBoxStyle);
+
+
+
+//Partie Home 
+document.querySelectorAll('.hoverable').forEach(el => {
+  el.addEventListener('touchstart', () => el.classList.add('hover'), { passive: true });
+  el.addEventListener('touchend', () => el.classList.remove('hover'));
+  el.addEventListener('touchcancel', () => el.classList.remove('hover'));
+});
 
 
   </script>
