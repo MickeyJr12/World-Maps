@@ -1108,23 +1108,46 @@ overflow: visible;
  transition : transform 0.6s ease;
 }
 
+#theme{  
+  position:absolute;
+  text-align: center;
+  top:8%;
+}
+.cadreThemeBtn{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  flex-wrap: wrap;
+  height:auto;
+  gap:1em;
+  width:60%;
+  top:18%;
+}
+
+
 #themeLine{
   position : absolute;
-  top:40%;
+  top:34%;
 }
 #themeLine path{
  filter: drop-shadow( 0px 4px 4px rgba(0, 0, 0, 0.6));
 }
-#theme{  
-  position:absolute;
-  text-align: center;
-  top:10%;
-}
 #mode{
   position : absolute;
   text-align: center;
+  top:40%;
+}
+.cadreModeBtn{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  flex-wrap: wrap;
+  height:auto;
+  gap:1em;
+  width:60%;
   top:50%;
 }
+
 
 .btnHomeBox{
   display: flex;
@@ -1153,27 +1176,8 @@ overflow: visible;
  background: linear-gradient(151deg, #16e924 0%, #29c28a 53%, #0fe7fa 100%);
  transition : filter  0.2s ease;
 }
-.cadreThemeBtn{
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  flex-wrap: wrap;
-  height:auto;
-  gap:1em;
-  width:60%;
-  top:22%;
-}
 
-.cadreModeBtn{
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  flex-wrap: wrap;
-  height:auto;
-  gap:1em;
-  width:60%;
-  top:60%;
-}
+
 .themeBtn{
   display: flex;
   justify-content: center;
@@ -3082,6 +3086,9 @@ overflow: visible;
   const waveHome = document.getElementById('waveHome')
   const waveBottom = document.getElementById('waveBottom')
   const btnHomeBox = document.querySelector('.btnHomeBox')
+  const modeLine = themeLine.cloneNode(true)
+  modeLine.style.top = "66%";
+  phone.appendChild(modeLine)
 
 
   play.addEventListener('click',()=>{
