@@ -179,7 +179,7 @@ html, body {
 
         font-size: 1.3em;
         opacity: 0;
-        z-index: 999;
+        z-index: 95;
         left: 30px;
         bottom: 20px;
         backdrop-filter: blur(10px);
@@ -663,48 +663,50 @@ animation-range: entry 0% entry 100%;
         pointer-events: none;
         flex-direction: column;
         border: 1px solid rgba(255, 255, 255, 0.15);
-        overflow: hidden;
-        overflow-x: hidden;
 
         height: auto;
+        max-height: 70vh;     /* ← le cadre ne dépassera pas 70% de l'écran */
+        overflow: hidden;     /* garde le border-radius propre */
         padding-top: 5px;
         padding-bottom: 5px;
         opacity: 0;
         left:50%; top : 12em;
         transform : translateX(-50%);
-        z-index: 95;
+        z-index: 999;
         width: 300px;
         background: rgba(0, 0, 0, 0.35);
         backdrop-filter: blur(12px);
         border-radius: 14px;
         transition : opacity 0.4s ease,  height 0.3s ease;
       }   
-      .viewBox{
+      .vuesBox{
         display: flex;
-        margin-right:0%;
-        border:1px solid black;
-        transition : transform 0.3s ease;        
+        flex-direction: row;
+        width: 200%;         /* 2 × la largeur du cadreVue */
+        transition: transform 0.3s ease;
       }   
       .listBox{
+        width: 50%;          /* = 100% du cadreVue */
+        flex-shrink: 0;
+        position: relative;  /* PLUS absolute ! */
+        left: unset;
         display: flex;
-        position: absolute;
         flex-direction: column;
-        text-align: center;
         overflow-y: auto;
         overflow-x: hidden;
-        flex-wrap: nowrap;
         scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        scrollbar-color: rgba(255,255,255,0.2) transparent;
         padding-bottom: 1em;
         padding-right: 1em;
         padding-left: 1em;
-        left:100%;
-        width:95%;
-        color:white;
-        fill:white;
-        transition : left 0.3s ease, transform 0.3s ease;
-        border:1px solid black;
+        color: white;
+        fill: white;
+        box-sizing: border-box;
       }
+
+      .listBox::-webkit-scrollbar { width: 4px; }
+.listBox::-webkit-scrollbar-track { background: transparent; }
+.listBox::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); border-radius: 4px; }
       .perRegion{
         fill:white;
         display:flex;
@@ -742,12 +744,14 @@ animation-range: entry 0% entry 100%;
         fill:white;
       }
       .cadreVue-inner {
-        width: 100%;
-        height: 100%;
-        overflow-y: scroll;
+         width: 100%;
+        flex: 1;              /* ← prend l'espace restant dans le flex column */
+        min-height: 0;        /* ← CRUCIAL : sans ça, flex ignore overflow */
+        overflow-y: auto;
+        overflow-x: hidden;
         overscroll-behavior: contain;
         scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        scrollbar-color: rgba(255,255,255,0.2) transparent;
       }
       .cadreVue-inner::-webkit-scrollbar {
         width: 4px;
@@ -761,10 +765,17 @@ animation-range: entry 0% entry 100%;
       }
 
       #view-list {
-        width: 100%;
-        padding: 6px 0;
-        box-sizing: border-box;
+        width: 50%;          /* = 100% du cadreVue */
+  flex-shrink: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.2) transparent;
       }
+      #view-list::-webkit-scrollbar { width: 4px; }
+#view-list::-webkit-scrollbar-track { background: transparent; }
+#view-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); border-radius: 4px; }
+
+
 
       /* séparateur entre blocs principaux */
       .main-block + .main-block .view-main-row {
@@ -1048,7 +1059,7 @@ svg {
       </div>
       <h2 style="margin-top:0px; margin-bottom: 0px; align-self: center; color:white">Changer de vue</h2>
       <div class="cadreVue-inner">
-        <div class="viewBox" >
+        <div class="vuesBox" >
         <div id="view-list"></div>
         <div class="listBox">
           <div id="backListBox">
@@ -3012,11 +3023,15 @@ svg {
       
     })
 
-    const viewBox = document.querySelector('.viewBox')
+    const vuesBox = document.querySelector('.vuesBox')
     const listBox = document.querySelector('.listBox');
     const backListBox = document.getElementById('backListBox');
 
-    backListBox.addEventListener("click",()=>{cadreVue.style.height=""; viewBox.style.transform = ""})
+    backListBox.addEventListener("click",()=>{
+      listBox.innerHTML = ``; 
+      vuesBox.style.transform = "translateX(0%)";
+      cadreVue.style.height = "";
+    })
     //Tools
     const choiceBox = document.querySelector(".choiceBox");
     const only = document.querySelector('.only');
@@ -8695,8 +8710,7 @@ regionRow.appendChild(regionEyeBtn);
 //**//
 regionListBtn.addEventListener("click", (e) => {
   e.stopPropagation();
- viewBox.style.transform = "translateX(-100%)";
- document.querySelector(".listBox").style.transform="translateX(0%)"
+vuesBox.style.transform = "translateX(-50%)";   // ← -50% de 200% = exactement 1 panneau
 fillListBoxRegion(r,"region");
 
 
@@ -8788,8 +8802,7 @@ regionListBtn.classList.toggle("active");
             subListBtn.addEventListener("click", (e) => {
                             
                 e.stopPropagation();
-              viewBox.style.transform = "translateX(-100%)";
-              document.querySelector(".listBox").style.transform="translateX(0%)"
+              vuesBox.style.transform = "translateX(-50%)";   // ← -50% de 200% = exactement 1 panneau
               fillListBoxRegion(s,"subregion");
 
 
@@ -9041,8 +9054,7 @@ const orgaListBtn = createListBtn(item.key);
     orgaListBtn.addEventListener("click", (e) => {
   
   e.stopPropagation();
- viewBox.style.transform = "translateX(-100%)";
- document.querySelector(".listBox").style.transform="translateX(0%)"
+vuesBox.style.transform = "translateX(-50%)";   // ← -50% de 200% = exactement 1 panneau
 fillListBoxRegion(item,"organisations");
 
 
@@ -9176,8 +9188,7 @@ eyeBtn.addEventListener("click", (e) => {
 
         last2.addEventListener("click", (e) => {
   e.stopPropagation();
- viewBox.style.transform = "translateX(-100%)";
- document.querySelector(".listBox").style.transform="translateX(0%)"
+ vuesBox.style.transform = "translateX(-50%)";   // ← -50% de 200% = exactement 1 panneau
 fillListBoxRegion(item,"last2");
 
 
