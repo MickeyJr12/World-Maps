@@ -1089,58 +1089,38 @@ svg {
 
   .phone {
     font-family: 'Nunito', sans-serif;
-    width: 540px;
+    width: 100%;
     min-height: 100vh;
-    margin: 0 auto;
     background: #0f3d04;
-    overflow: hidden;
-    position: relative;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
   }
 
   .wave-top {
     background: #1a3fc4;
-    padding: 28px 0 0;
+    padding: 24px 0 0;
     text-align: center;
     flex-shrink: 0;
   }
   .wave-top h1 {
     color: #fff;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
     letter-spacing: 1px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
-  .wave-green1 {
-    background: #2a7d0f;
-    padding: 14px 0 0;
-    margin-top: -2px;
-    flex-shrink: 0;
-  }
-  .wave-green2 {
-    background: #1e6008;
-    padding: 14px 0 0;
-    margin-top: -2px;
-    flex-shrink: 0;
-  }
-  .wave-green3 {
-    background: #0f3d04;
-    padding: 14px 0;
-    margin-top: -2px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
+  .wave-green1 { background: #2a7d0f; padding: 12px 0 0; margin-top: -2px; flex-shrink: 0; }
+  .wave-green2 { background: #1e6008; padding: 12px 0 0; margin-top: -2px; flex-shrink: 0; }
+  .wave-green3 { background: #0f3d04; padding: 12px 0 0; margin-top: -2px; flex: 1; display: flex; flex-direction: column; }
 
   .section-title {
     color: #fff;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 800;
     text-align: center;
-    letter-spacing: 0.5px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     text-shadow: 0 1px 4px rgba(0,0,0,0.25);
   }
 
@@ -1148,8 +1128,8 @@ svg {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    padding: 0 24px 18px;
+    gap: 8px;
+    padding: 0 16px 16px;
   }
 
   .opt-btn {
@@ -1160,11 +1140,12 @@ svg {
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     font-weight: 700;
-    padding: 9px 20px;
+    padding: 8px 18px;
     cursor: pointer;
-    transition: background 0.18s, border-color 0.18s, opacity 0.18s, transform 0.1s;
+    transition: background 0.18s, transform 0.1s, opacity 0.18s;
     outline: none;
     user-select: none;
+    white-space: nowrap;
   }
   .opt-btn.selected {
     background: rgba(255,255,255,0.95);
@@ -1175,7 +1156,7 @@ svg {
   .opt-btn.disabled { opacity: 0.3; pointer-events: none; }
 
   .qr-section {
-    padding: 6px 24px 14px;
+    padding: 6px 16px 14px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1183,18 +1164,19 @@ svg {
   .qr-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    justify-content: center;
+    gap: 8px;
+    width: 100%;
   }
   .qr-box {
     flex: 1;
+    min-width: 0;
     background: rgba(255,255,255,0.15);
     border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 16px;
-    padding: 12px 10px;
+    border-radius: 14px;
+    padding: 10px 8px;
     text-align: center;
     cursor: pointer;
-    min-height: 64px;
+    min-height: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1204,32 +1186,29 @@ svg {
   .qr-box:hover { background: rgba(255,255,255,0.22); }
   .qr-box-label {
     color: rgba(255,255,255,0.7);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     text-transform: uppercase;
   }
   .qr-box-content {
-    color: #fff;
-    font-size: 13px;
-    font-weight: 800;
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 3px;
     justify-content: center;
   }
   .qr-tag {
     background: rgba(255,255,255,0.2);
-    border-radius: 8px;
-    padding: 3px 9px;
+    border-radius: 7px;
+    padding: 2px 8px;
     font-size: 12px;
     font-weight: 700;
     color: #fff;
   }
   .qr-empty {
     color: rgba(255,255,255,0.45);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     font-style: italic;
   }
@@ -1238,39 +1217,39 @@ svg {
     background: rgba(255,255,255,0.18);
     border: 2px solid rgba(255,255,255,0.6);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    flex-shrink: 0;
-    transition: background 0.15s, transform 0.3s;
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
+    transition: background 0.15s, transform 0.3s;
   }
   .arrow-btn:hover { background: rgba(255,255,255,0.3); }
   .arrow-btn.spin { transform: rotate(180deg); }
 
   .resp-picker {
     background: rgba(0,0,0,0.22);
-    border-radius: 14px;
-    padding: 12px 14px;
-    margin-top: 10px;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-top: 8px;
     display: none;
   }
   .resp-picker.open { display: block; }
   .resp-picker-title {
     color: rgba(255,255,255,0.7);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     text-align: center;
   }
   .resp-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
+    gap: 6px;
     justify-content: center;
   }
   .resp-tag {
@@ -1288,7 +1267,7 @@ svg {
   .resp-tag.selected-resp { background: rgba(255,255,255,0.92); color: #1a6ff7; border-color: #fff; }
 
   .play-zone {
-    padding: 20px 24px 28px;
+    padding: 16px 16px 32px;
     display: flex;
     justify-content: center;
     margin-top: auto;
@@ -1299,9 +1278,9 @@ svg {
     border-radius: 28px;
     color: #0a3a08;
     font-family: 'Nunito', sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 800;
-    padding: 15px 60px;
+    padding: 14px 56px;
     cursor: pointer;
     transition: transform 0.15s, opacity 0.3s;
     letter-spacing: 1px;
@@ -1316,8 +1295,8 @@ svg {
 <div class="phone">
   <div class="wave-top">
     <h1>Play</h1>
-    <svg class="wave" viewBox="0 0 540 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 18 C90 36 180 0 270 18 C360 36 450 0 540 18 L540 36 L0 36 Z" fill="#2a7d0f"></path>
+    <svg class="wave" viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 5 C20 10 40 0 60 5 C80 10 90 2 100 5 L100 10 L0 10 Z" fill="#2a7d0f"></path>
     </svg>
   </div>
 
@@ -1328,16 +1307,16 @@ svg {
       <button class="opt-btn" data-theme="capitales" onclick="selectTheme(this)">Capitales</button>
       <button class="opt-btn" data-theme="contours" onclick="selectTheme(this)">Contours</button>
     </div>
-    <svg class="wave" viewBox="0 0 540 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 10 C120 28 240 0 360 18 C440 28 500 8 540 14 L540 28 L0 28 Z" fill="#1e6008"></path>
+    <svg class="wave" viewBox="0 0 100 8" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 3 C25 8 50 0 75 5 C88 8 95 2 100 4 L100 8 L0 8 Z" fill="#1e6008"></path>
     </svg>
   </div>
 
   <div class="wave-green2">
     <div class="section-title">Mode</div>
     <div class="btn-grid" id="mode-btns"></div>
-    <svg class="wave" viewBox="0 0 540 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 14 C90 0 200 28 320 14 C410 4 490 22 540 12 L540 28 L0 28 Z" fill="#0f3d04"></path>
+    <svg class="wave" viewBox="0 0 100 8" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 4 C20 0 45 8 70 4 C85 1 95 6 100 3 L100 8 L0 8 Z" fill="#0f3d04"></path>
     </svg>
   </div>
 
@@ -1359,9 +1338,9 @@ svg {
         <div class="resp-picker-title">Choisir la réponse</div>
         <div class="resp-tags" id="resp-tags"></div>
       </div>
-    </div>
-    <div class="play-zone">
-      <button class="play-btn hidden" id="play-btn">▶ Jouer</button>
+      <div class="play-zone">
+        <button class="play-btn hidden" id="play-btn">▶ Jouer</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1381,8 +1360,8 @@ const ARBO = {
     modes: ['4 choix', 'Trouver', 'Écrire'],
     modeData: {
       '4 choix': { q: ['Nom', 'Drapeau'], r: ['Capitale'] },
-      'Trouver':  { q: ['Capitale'], r: ['Capitales', 'Maps'] },
-      'Écrire':   { q: ['Capitale'], r: ['Capitales'] },
+      'Trouver':  { q: ['Capitale'], r: ['Maps'] },
+      'Écrire':   { q: ['Capitale'], r: ['Écrire'] },
     }
   },
   contours: {
@@ -1399,9 +1378,7 @@ function selectTheme(btn) {
   state.theme = btn.dataset.theme;
   state.mode = null; state.resp = null; state.swapped = false;
   document.querySelectorAll('#theme-btns .opt-btn').forEach(b => b.classList.toggle('selected', b === btn));
-  renderModes();
-  renderQR();
-  checkPlay();
+  renderModes(); renderQR(); checkPlay();
 }
 
 function renderModes() {
@@ -1410,8 +1387,7 @@ function renderModes() {
   if (!state.theme) return;
   ARBO[state.theme].modes.forEach(m => {
     const b = document.createElement('button');
-    b.className = 'opt-btn';
-    b.textContent = m;
+    b.className = 'opt-btn'; b.textContent = m;
     b.onclick = () => selectMode(b, m);
     c.appendChild(b);
   });
@@ -1428,7 +1404,6 @@ function renderQR() {
   const qEl = document.getElementById('q-content');
   const rEl = document.getElementById('r-content');
   document.getElementById('resp-picker').classList.remove('open');
-
   if (!state.theme || !state.mode) {
     qEl.innerHTML = '<span class="qr-empty">–</span>';
     rEl.innerHTML = '<span class="qr-empty">Choisir…</span>';
@@ -1436,19 +1411,15 @@ function renderQR() {
   }
   const data = ARBO[state.theme].modeData[state.mode];
   const qItems = state.swapped ? data.r : data.q;
-  const rItems = state.swapped ? data.q : data.r;
-
   qEl.innerHTML = qItems.map(t => `<span class="qr-tag">${t}</span>`).join('');
-  rEl.innerHTML = state.resp
-    ? `<span class="qr-tag">${state.resp}</span>`
-    : '<span class="qr-empty">Choisir…</span>';
+  rEl.innerHTML = state.resp ? `<span class="qr-tag">${state.resp}</span>` : '<span class="qr-empty">Choisir…</span>';
 }
 
 function openPicker(side) {
   if (!state.mode) return;
-  const picker = document.getElementById('resp-picker');
   const isRSide = (side === 'r' && !state.swapped) || (side === 'q' && state.swapped);
   if (!isRSide) return;
+  const picker = document.getElementById('resp-picker');
   picker.classList.toggle('open');
   if (picker.classList.contains('open')) renderRespTags();
 }
@@ -1469,15 +1440,13 @@ function selectResp(val) {
 
 function swapQR() {
   if (!state.mode) return;
-  state.swapped = !state.swapped;
-  state.resp = null;
+  state.swapped = !state.swapped; state.resp = null;
   document.getElementById('swap-btn').classList.toggle('spin', state.swapped);
   renderQR(); checkPlay();
 }
 
 function checkPlay() {
-  const ready = state.theme && state.mode && state.resp;
-  document.getElementById('play-btn').classList.toggle('hidden', !ready);
+  document.getElementById('play-btn').classList.toggle('hidden', !(state.theme && state.mode && state.resp));
 }
 
 renderModes(); renderQR();
