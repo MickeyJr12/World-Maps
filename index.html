@@ -1085,54 +1085,62 @@ svg {
 }
 
 <!--Partie Configuration-->
-
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   .phone {
     font-family: 'Nunito', sans-serif;
-    width: 340px;
-    min-height: 700px;
-    margin: 1rem auto;
-    background: #f0f4ff;
-    border-radius: 32px;
-    border: 3px solid #222;
+    width: 540px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #0f3d04;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  }
-
-  .wave-section {
-    position: relative;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .wave-top {
     background: #1a3fc4;
-    padding: 22px 0 0;
+    padding: 28px 0 0;
     text-align: center;
+    flex-shrink: 0;
   }
   .wave-top h1 {
     color: #fff;
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 800;
     letter-spacing: 1px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
-  .wave-svg-1 { display: block; width: 100%; }
 
   .wave-green1 {
     background: #2a7d0f;
-    padding: 10px 0 0;
+    padding: 14px 0 0;
     margin-top: -2px;
+    flex-shrink: 0;
   }
+  .wave-green2 {
+    background: #1e6008;
+    padding: 14px 0 0;
+    margin-top: -2px;
+    flex-shrink: 0;
+  }
+  .wave-green3 {
+    background: #0f3d04;
+    padding: 14px 0;
+    margin-top: -2px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   .section-title {
     color: #fff;
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 800;
     text-align: center;
     letter-spacing: 0.5px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     text-shadow: 0 1px 4px rgba(0,0,0,0.25);
   }
 
@@ -1140,8 +1148,8 @@ svg {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
-    padding: 0 18px 14px;
+    gap: 10px;
+    padding: 0 24px 18px;
   }
 
   .opt-btn {
@@ -1150,9 +1158,9 @@ svg {
     border-radius: 20px;
     color: #fff;
     font-family: 'Nunito', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
-    padding: 7px 15px;
+    padding: 9px 20px;
     cursor: pointer;
     transition: background 0.18s, border-color 0.18s, opacity 0.18s, transform 0.1s;
     outline: none;
@@ -1164,67 +1172,47 @@ svg {
     color: #1a6ff7;
     transform: scale(1.06);
   }
-  .opt-btn.disabled {
-    opacity: 0.3;
-    pointer-events: none;
-  }
-
-  .wave-green2 {
-    background: #1e6008;
-    padding: 10px 0 0;
-    margin-top: -2px;
-  }
-
-  .wave-green3 {
-    background: #0f3d04;
-    padding: 10px 0 0;
-    margin-top: -2px;
-  }
+  .opt-btn.disabled { opacity: 0.3; pointer-events: none; }
 
   .qr-section {
-    padding: 6px 18px 14px;
-  }
-  .qr-label {
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    opacity: 0.85;
+    padding: 6px 24px 14px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
   .qr-row {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     justify-content: center;
   }
   .qr-box {
     flex: 1;
     background: rgba(255,255,255,0.15);
     border: 2px solid rgba(255,255,255,0.5);
-    border-radius: 14px;
-    padding: 10px 10px;
+    border-radius: 16px;
+    padding: 12px 10px;
     text-align: center;
     cursor: pointer;
-    min-height: 56px;
+    min-height: 64px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     transition: background 0.18s;
-    position: relative;
   }
   .qr-box:hover { background: rgba(255,255,255,0.22); }
   .qr-box-label {
     color: rgba(255,255,255,0.7);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     text-transform: uppercase;
   }
   .qr-box-content {
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 800;
     display: flex;
     flex-wrap: wrap;
@@ -1234,14 +1222,14 @@ svg {
   .qr-tag {
     background: rgba(255,255,255,0.2);
     border-radius: 8px;
-    padding: 2px 7px;
-    font-size: 11px;
+    padding: 3px 9px;
+    font-size: 12px;
     font-weight: 700;
     color: #fff;
   }
   .qr-empty {
     color: rgba(255,255,255,0.45);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     font-style: italic;
   }
@@ -1250,15 +1238,15 @@ svg {
     background: rgba(255,255,255,0.18);
     border: 2px solid rgba(255,255,255,0.6);
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     flex-shrink: 0;
-    transition: background 0.15s, transform 0.2s;
-    font-size: 18px;
+    transition: background 0.15s, transform 0.3s;
+    font-size: 20px;
     color: #fff;
   }
   .arrow-btn:hover { background: rgba(255,255,255,0.3); }
@@ -1267,97 +1255,89 @@ svg {
   .resp-picker {
     background: rgba(0,0,0,0.22);
     border-radius: 14px;
-    padding: 10px 12px;
-    margin-top: 8px;
+    padding: 12px 14px;
+    margin-top: 10px;
     display: none;
   }
   .resp-picker.open { display: block; }
   .resp-picker-title {
     color: rgba(255,255,255,0.7);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
     text-align: center;
   }
   .resp-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 7px;
     justify-content: center;
   }
   .resp-tag {
     background: rgba(255,255,255,0.15);
     border: 1.5px solid rgba(255,255,255,0.4);
     border-radius: 12px;
-    padding: 5px 12px;
+    padding: 6px 14px;
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     transition: background 0.15s;
   }
   .resp-tag:hover { background: rgba(255,255,255,0.3); }
-  .resp-tag.selected-resp {
-    background: rgba(255,255,255,0.92);
-    color: #1a6ff7;
-    border-color: #fff;
-  }
-  .resp-tag.disabled-resp {
-    opacity: 0.3;
-    pointer-events: none;
-  }
+  .resp-tag.selected-resp { background: rgba(255,255,255,0.92); color: #1a6ff7; border-color: #fff; }
 
   .play-zone {
-    padding: 16px 18px 20px;
+    padding: 20px 24px 28px;
     display: flex;
     justify-content: center;
-    background: #0f3d04;
+    margin-top: auto;
   }
   .play-btn {
     background: linear-gradient(135deg, #16e924 0%, #0fe7fa 100%);
     border: none;
-    border-radius: 24px;
+    border-radius: 28px;
     color: #0a3a08;
     font-family: 'Nunito', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 800;
-    padding: 13px 48px;
+    padding: 15px 60px;
     cursor: pointer;
-    box-shadow: 0 4px 16px rgba(15,231,250,0.3);
-    transition: transform 0.15s, box-shadow 0.15s, opacity 0.3s;
+    transition: transform 0.15s, opacity 0.3s;
     letter-spacing: 1px;
   }
-  .play-btn:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(15,231,250,0.4); }
+  .play-btn:hover { transform: scale(1.04); }
   .play-btn.hidden { opacity: 0; pointer-events: none; }
 
+  svg.wave { display: block; width: 100%; }
     </style>
 
-    <div class="phone">
-
+    <!--HTML configuration-->
+<div class="phone">
   <div class="wave-top">
     <h1>Play</h1>
-    <svg class="wave-svg-1" viewBox="0 0 340 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 16 C60 32 120 0 170 16 C220 32 280 0 340 16 L340 32 L0 32 Z" fill="#2a7d0f"></path>
+    <svg class="wave" viewBox="0 0 540 36" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 18 C90 36 180 0 270 18 C360 36 450 0 540 18 L540 36 L0 36 Z" fill="#2a7d0f"></path>
     </svg>
   </div>
 
   <div class="wave-green1">
     <div class="section-title">Thème</div>
     <div class="btn-grid" id="theme-btns">
-      <button class="opt-btn selected" data-theme="drapeaux" onclick="selectTheme(this)">Drapeaux</button>
+      <button class="opt-btn" data-theme="drapeaux" onclick="selectTheme(this)">Drapeaux</button>
       <button class="opt-btn" data-theme="capitales" onclick="selectTheme(this)">Capitales</button>
       <button class="opt-btn" data-theme="contours" onclick="selectTheme(this)">Contours</button>
     </div>
-    <svg viewBox="0 0 340 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
-      <path d="M0 8 C80 24 160 0 240 16 C280 24 320 8 340 12 L340 24 L0 24 Z" fill="#1e6008"></path>
+    <svg class="wave" viewBox="0 0 540 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 10 C120 28 240 0 360 18 C440 28 500 8 540 14 L540 28 L0 28 Z" fill="#1e6008"></path>
     </svg>
   </div>
 
   <div class="wave-green2">
     <div class="section-title">Mode</div>
-    <div class="btn-grid" id="mode-btns"><button class="opt-btn selected">4 choix</button><button class="opt-btn">Trouver</button><button class="opt-btn">Écrire</button></div>
-    <svg viewBox="0 0 340 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;">
-      <path d="M0 12 C60 0 140 24 210 12 C260 4 310 20 340 10 L340 24 L0 24 Z" fill="#0f3d04"></path>
+    <div class="btn-grid" id="mode-btns"></div>
+    <svg class="wave" viewBox="0 0 540 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 14 C90 0 200 28 320 14 C410 4 490 22 540 12 L540 28 L0 28 Z" fill="#0f3d04"></path>
     </svg>
   </div>
 
@@ -1365,50 +1345,50 @@ svg {
     <div class="section-title">Question / Réponse</div>
     <div class="qr-section">
       <div class="qr-row">
-        <div class="qr-box" id="q-box" onclick="toggleRespPicker()">
+        <div class="qr-box" id="q-box" onclick="openPicker('q')">
           <div class="qr-box-label">Question</div>
-          <div class="qr-box-content" id="q-content"><span class="qr-tag">Drapeaux</span><span class="qr-tag">Nom</span><span class="qr-tag">Contours</span></div>
+          <div class="qr-box-content" id="q-content"><span class="qr-empty">–</span></div>
         </div>
         <div class="arrow-btn" id="swap-btn" onclick="swapQR()">⇄</div>
-        <div class="qr-box" id="r-box" onclick="toggleRespPicker()">
+        <div class="qr-box" id="r-box" onclick="openPicker('r')">
           <div class="qr-box-label">Réponse</div>
-          <div class="qr-box-content" id="r-content"><span class="qr-tag">Capitale</span></div>
+          <div class="qr-box-content" id="r-content"><span class="qr-empty">Choisir…</span></div>
         </div>
       </div>
       <div class="resp-picker" id="resp-picker">
         <div class="resp-picker-title">Choisir la réponse</div>
-        <div class="resp-tags" id="resp-tags"><span class="resp-tag" onclick="selectResp('Capitale')">Capitale</span></div>
+        <div class="resp-tags" id="resp-tags"></div>
       </div>
     </div>
-  </div>
-
-  <div class="play-zone">
-    <button class="play-btn" id="play-btn" onclick="sendPrompt('Lancer le quiz avec la configuration choisie')">▶ Jouer</button>
+    <div class="play-zone">
+      <button class="play-btn hidden" id="play-btn">▶ Jouer</button>
+    </div>
   </div>
 </div>
 
+<!--Script Configuration-->
 <script>
 const ARBO = {
   drapeaux: {
     modes: ['4 choix', 'Trouver', 'Écrire'],
     modeData: {
-      '4 choix': { q: ['Drapeaux', 'Nom', 'Contours'], r: ['Capitale'], locked_r: 'Drapeaux' },
-      'Trouver': { q: ['Drapeaux'], r: ['Nom', 'Maps'] },
-      'Écrire':  { q: ['Drapeaux'], r: ['Nom', 'Écrire'] },
+      '4 choix': { q: ['Drapeaux', 'Nom', 'Contours'], r: ['Capitale'] },
+      'Trouver':  { q: ['Drapeaux'], r: ['Nom', 'Maps'] },
+      'Écrire':   { q: ['Drapeaux'], r: ['Nom'] },
     }
   },
   capitales: {
     modes: ['4 choix', 'Trouver', 'Écrire'],
     modeData: {
-      '4 choix': { q: ['Question'], r: ['Capitales', 'Maps'] },
-      'Trouver': { q: ['Capitales'], r: ['Capitales', 'Maps'] },
-      'Écrire':  { q: ['Capitales'], r: ['Capitales', 'Écrire'] },
+      '4 choix': { q: ['Nom', 'Drapeau'], r: ['Capitale'] },
+      'Trouver':  { q: ['Capitale'], r: ['Capitales', 'Maps'] },
+      'Écrire':   { q: ['Capitale'], r: ['Capitales'] },
     }
   },
   contours: {
     modes: ['4 choix'],
     modeData: {
-      '4 choix': { q: ['Nom', 'ContourS'], r: ['Capitale'] },
+      '4 choix': { q: ['Nom', 'Contour'], r: ['Capitale'] },
     }
   }
 };
@@ -1425,68 +1405,58 @@ function selectTheme(btn) {
 }
 
 function renderModes() {
-  const container = document.getElementById('mode-btns');
-  container.innerHTML = '';
+  const c = document.getElementById('mode-btns');
+  c.innerHTML = '';
   if (!state.theme) return;
-  const modes = ARBO[state.theme].modes;
-  modes.forEach(m => {
+  ARBO[state.theme].modes.forEach(m => {
     const b = document.createElement('button');
     b.className = 'opt-btn';
     b.textContent = m;
     b.onclick = () => selectMode(b, m);
-    container.appendChild(b);
+    c.appendChild(b);
   });
 }
 
-function selectMode(btn, modeName) {
-  state.mode = modeName;
-  state.resp = null; state.swapped = false;
+function selectMode(btn, m) {
+  state.mode = m; state.resp = null; state.swapped = false;
   document.querySelectorAll('#mode-btns .opt-btn').forEach(b => b.classList.toggle('selected', b === btn));
-  renderQR();
-  checkPlay();
+  document.getElementById('swap-btn').classList.remove('spin');
+  renderQR(); checkPlay();
 }
 
 function renderQR() {
   const qEl = document.getElementById('q-content');
   const rEl = document.getElementById('r-content');
-  const picker = document.getElementById('resp-picker');
-  picker.classList.remove('open');
+  document.getElementById('resp-picker').classList.remove('open');
 
   if (!state.theme || !state.mode) {
     qEl.innerHTML = '<span class="qr-empty">–</span>';
     rEl.innerHTML = '<span class="qr-empty">Choisir…</span>';
     return;
   }
-
   const data = ARBO[state.theme].modeData[state.mode];
-  if (!data) return;
-
-  let qItems = state.swapped ? (state.resp ? [state.resp] : data.r) : data.q;
-  let rItems = state.swapped ? data.q : data.r;
+  const qItems = state.swapped ? data.r : data.q;
+  const rItems = state.swapped ? data.q : data.r;
 
   qEl.innerHTML = qItems.map(t => `<span class="qr-tag">${t}</span>`).join('');
-  if (state.resp && !state.swapped) {
-    rEl.innerHTML = `<span class="qr-tag">${state.resp}</span>`;
-  } else if (state.resp && state.swapped) {
-    rEl.innerHTML = qItems.map(t => `<span class="qr-tag">${t}</span>`).join('');
-  } else {
-    rEl.innerHTML = '<span class="qr-empty">Choisir…</span>';
-  }
+  rEl.innerHTML = state.resp
+    ? `<span class="qr-tag">${state.resp}</span>`
+    : '<span class="qr-empty">Choisir…</span>';
 }
 
-function toggleRespPicker() {
+function openPicker(side) {
   if (!state.mode) return;
   const picker = document.getElementById('resp-picker');
+  const isRSide = (side === 'r' && !state.swapped) || (side === 'q' && state.swapped);
+  if (!isRSide) return;
   picker.classList.toggle('open');
   if (picker.classList.contains('open')) renderRespTags();
 }
 
 function renderRespTags() {
   const data = ARBO[state.theme].modeData[state.mode];
-  if (!data) return;
   const options = state.swapped ? data.q : data.r;
-  const tags = document.getElementById('resp-tags');
-  tags.innerHTML = options.map(o =>
+  document.getElementById('resp-tags').innerHTML = options.map(o =>
     `<span class="resp-tag${state.resp === o ? ' selected-resp' : ''}" onclick="selectResp('${o}')">${o}</span>`
   ).join('');
 }
@@ -1494,8 +1464,7 @@ function renderRespTags() {
 function selectResp(val) {
   state.resp = val;
   document.getElementById('resp-picker').classList.remove('open');
-  renderQR();
-  checkPlay();
+  renderQR(); checkPlay();
 }
 
 function swapQR() {
@@ -1503,18 +1472,15 @@ function swapQR() {
   state.swapped = !state.swapped;
   state.resp = null;
   document.getElementById('swap-btn').classList.toggle('spin', state.swapped);
-  renderQR();
-  checkPlay();
+  renderQR(); checkPlay();
 }
 
 function checkPlay() {
-  const btn = document.getElementById('play-btn');
   const ready = state.theme && state.mode && state.resp;
-  btn.classList.toggle('hidden', !ready);
+  document.getElementById('play-btn').classList.toggle('hidden', !ready);
 }
 
-renderModes();
-renderQR();
+renderModes(); renderQR();
 </script>
 
 
@@ -3370,20 +3336,9 @@ renderQR();
   play.addEventListener('click',()=>{
     waveHome.style.transform = " translateX(-50%) translateY(-10%)"
     btnHomeBox.style.display="none";
-
-
-
-
-
-  
   })
-
-
-
-
 </script>
 
-  </body>
   <script>
    const mediaQuery = window.matchMedia('(max-width: 768px)');
     let isMobile = mediaQuery.matches;
