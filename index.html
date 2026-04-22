@@ -1140,7 +1140,7 @@ svg {
 <!--Partie Configuration-->
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  #phoneConfig {
+  #phoneConfig { 
     display: none;
     font-family: 'Nunito', sans-serif;
     width: 100%;
@@ -1149,7 +1149,6 @@ svg {
     flex-direction: column;
     overflow-x: hidden;
     margin-top:0px;
-    transform : scale(0.9)
   }
 
   .wave-top {
@@ -1417,8 +1416,8 @@ svg {
   const play = document.getElementById('play')
   const btnHomeBox = document.querySelector('.btnHomeBox')
 
-
   const phoneConfig = document.getElementById('phoneConfig')
+  console.log(phoneConfig.parentNode.id)
 
   play.addEventListener('click',()=>{    
     phoneHome.style.display = "none"
