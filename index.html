@@ -1057,15 +1057,10 @@ svg {
   display: none;
 }
 
- .waveHome{
-  display: flex;
-        position: absolute;
-        left : 50%;
-        transform:translateX(-50%);
-      }
+ 
 .phone{
   display: flex;
-  position: relative;
+  position: fixed;
   height:100vh;
   width : 540px;
   border:10px solid black;
@@ -1073,6 +1068,17 @@ svg {
   transform:translateX(-50%);
   background-color: rgb(247, 247, 247);
 }
+
+.waveHome{
+  display: flex;
+  position: absolute;
+  left : 50%;
+  transform:translateX(-50%);
+}
+.waveHome path{
+ filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.8));
+}
+
 .btnHomeBox{
   display: flex;
   position: absolute;
@@ -1085,7 +1091,6 @@ svg {
   height:auto;
   width:auto;
   gap:1.3em;
-  border:1px solid black;
 
 
 }
@@ -1103,19 +1108,20 @@ svg {
  background: linear-gradient(151deg, #16e924 0%, #29c28a 53%, #0fe7fa 100%);
  transition : filter  0.2s ease;
 }
-.hoverable:hover,
-.hoverable.hover {
-  /* rien ici, chaque bouton a ses propres règles */
-}
+
+#play{background: linear-gradient(90deg, #f8163c 0%, #f1306d 59%, #f3299e 100%)}
+#devise{background: linear-gradient(90deg, #1ef61e 0%, #29f32f 59%, #29f373 100%)}
+#map{background: linear-gradient(90deg, #1a6ff7 0%, #3633f0 93%, #2a13f9 100%);}
 
 .btnPlay:hover, .btnPlay.hover { filter: brightness(0.9); }
     </style>
 <div class="phone">
-<svg class="waveHome" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 239L9 228.2C18 217.3 36 195.7 54 191.2C72 186.7 90 199.3 108 210.2C126 221 144 230 162 220.3C180 210.7 198 182.3 216 176.8C234 171.3 252 188.7 270 199C288 209.3 306 212.7 324 219.5C342 226.3 360 236.7 378 239.5C396 242.3 414 237.7 432 219.8C450 202 468 171 486 167.8C504 164.7 522 189.3 531 201.7L540 214L540 0L531 0C522 0 504 0 486 0C468 0 450 0 432 0C414 0 396 0 378 0C360 0 342 0 324 0C306 0 288 0 270 0C252 0 234 0 216 0C198 0 180 0 162 0C144 0 126 0 108 0C90 0 72 0 54 0C36 0 18 0 9 0L0 0Z" fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter"/></svg>
+<svg class="waveHome" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 214L10 215.2C20 216.3 40 218.7 60 212.3C80 206 100 191 120 181.7C140 172.3 160 168.7 180 165.8C200 163 220 161 240 166C260 171 280 183 300 190.8C320 198.7 340 202.3 360 202.7C380 203 400 200 420 194.5C440 189 460 181 480 182.8C500 184.7 520 196.3 530 202.2L540 208L540 0L530 0C520 0 500 0 480 0C460 0 440 0 420 0C400 0 380 0 360 0C340 0 320 0 300 0C280 0 260 0 240 0C220 0 200 0 180 0C160 0 140 0 120 0C100 0 80 0 60 0C40 0 20 0 10 0L0 0Z" fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter"/></svg>
+
 <div class="btnHomeBox">
-<div class="btnPlay hoverable"><h2>Play</h2></div>
-<div class="btnPlay hoverable"><h2>Devises</h2></div>
-<div class="btnPlay hoverable"><h2>Play</h2></div>
+<div class="btnPlay hoverable" id="play"><h2>Play</h2></div>
+<div class="btnPlay hoverable" id="devise"><h2>Devises</h2></div>
+<div class="btnPlay hoverable" id="map"><h2>Vue sur le monde</h2></div>
 
 </div>
 </div>
