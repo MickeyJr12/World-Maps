@@ -4,10 +4,16 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#1a1a3e">
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>World-Maps</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="apple-touch-icon" href="icon-192.png">
+    <!-- iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Android -->
+<meta name="mobile-web-app-capable" content="yes">
   </head>
   
     <style>
@@ -43,6 +49,20 @@
         height: 100%;        
         
       }
+
+      body.mobile {
+  margin: 0;
+  padding: 0;
+  /* Étend le contenu derrière la status bar */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+   margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, #0f23fa 0%, #0f85fa 50%, #0fe7fa 100%);
+
+}
 
       .monde {
         position: absolute;
@@ -1068,22 +1088,27 @@ svg {
   transform:translateX(-50%);
   background-color: rgb(247, 247, 247);
 }
-
-.waveHome{
+.waveHome {  
   display: flex;
   position: absolute;
   left : 50%;
   transform:translateX(-50%);
-}
-.waveHome path{
+  overflow: visible;
  filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.8));
+ transition : transform 0.6s ease;
+}
+.waveBottom{
+overflow: visible;
+ filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.8));
+ transition : transform 0.6s ease;
+
 }
 
 .btnHomeBox{
   display: flex;
   position: absolute;
   top:50%;
-  left:50%;transform:translateX(-50%);
+  left:50%;transform:translateX(-50%) translateY(-50%);
   justify-content: center;
   align-items: center;
   user-select: none;
@@ -1116,8 +1141,8 @@ svg {
 .btnPlay:hover, .btnPlay.hover { filter: brightness(0.9); }
     </style>
 <div class="phone">
-<svg class="waveHome" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 214L10 215.2C20 216.3 40 218.7 60 212.3C80 206 100 191 120 181.7C140 172.3 160 168.7 180 165.8C200 163 220 161 240 166C260 171 280 183 300 190.8C320 198.7 340 202.3 360 202.7C380 203 400 200 420 194.5C440 189 460 181 480 182.8C500 184.7 520 196.3 530 202.2L540 208L540 0L530 0C520 0 500 0 480 0C460 0 440 0 420 0C400 0 380 0 360 0C340 0 320 0 300 0C280 0 260 0 240 0C220 0 200 0 180 0C160 0 140 0 120 0C100 0 80 0 60 0C40 0 20 0 10 0L0 0Z" fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter"/></svg>
-
+<svg class="waveHome" id="waveTop" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 214L10 215.2C20 216.3 40 218.7 60 212.3C80 206 100 191 120 181.7C140 172.3 160 168.7 180 165.8C200 163 220 161 240 166C260 171 280 183 300 190.8C320 198.7 340 202.3 360 202.7C380 203 400 200 420 194.5C440 189 460 181 480 182.8C500 184.7 520 196.3 530 202.2L540 208L540 0L530 0C520 0 500 0 480 0C460 0 440 0 420 0C400 0 380 0 360 0C340 0 320 0 300 0C280 0 260 0 240 0C220 0 200 0 180 0C160 0 140 0 120 0C100 0 80 0 60 0C40 0 20 0 10 0L0 0Z" fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter"/></svg>
+<svg class="waveBottom" id="waveBottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 469L7.5 473.5C15 478 30 487 45 493.2C60 499.3 75 502.7 90 493.5C105 484.3 120 462.7 135 454.3C150 446 165 451 180 459.7C195 468.3 210 480.7 225 490.3C240 500 255 507 270 503.2C285 499.3 300 484.7 315 485.7C330 486.7 345 503.3 360 509.7C375 516 390 512 405 502.7C420 493.3 435 478.7 450 481.8C465 485 480 506 495 510.2C510 514.3 525 501.7 532.5 495.3L540 489L540 961L532.5 961C525 961 510 961 495 961C480 961 465 961 450 961C435 961 420 961 405 961C390 961 375 961 360 961C345 961 330 961 315 961C300 961 285 961 270 961C255 961 240 961 225 961C210 961 195 961 180 961C165 961 150 961 135 961C120 961 105 961 90 961C75 961 60 961 45 961C30 961 15 961 7.5 961L0 961Z" fill="#0ca33e" stroke-linecap="round" stroke-linejoin="miter"/></svg>
 <div class="btnHomeBox">
 <div class="btnPlay hoverable" id="play"><h2>Play</h2></div>
 <div class="btnPlay hoverable" id="devise"><h2>Devises</h2></div>
@@ -2968,6 +2993,23 @@ svg {
       .then(() => console.log('PWA prête ✅'))
       .catch(err => console.error('SW error:', err));
   }
+  const play = document.getElementById('play')
+  const waveHome = document.getElementById('waveTop')
+  const waveBottom = document.getElementById('waveBottom')
+
+  play.addEventListener('click',()=>{
+    waveHome.style.transform = " translateX(-50%) translateY(-10%)"
+    waveBottom.style.transform = "translateY(10%)"
+
+
+
+
+  
+  })
+
+
+
+
 </script>
 
   </body>
