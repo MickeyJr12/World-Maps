@@ -661,7 +661,6 @@ animation-range: entry 0% entry 100%;
         position: absolute;        
         display: flex;
         flex-direction: column;
-         pointer-events: none;
         border: 1px solid rgba(255, 255, 255, 0.15);
         overflow: hidden;
         overflow-x: hidden;
@@ -2887,7 +2886,12 @@ svg {
 
   </body>
   <script>
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    let isMobile = mediaQuery.matches;
 
+    mediaQuery.addEventListener('change', (e) => {
+      isMobile = e.matches;
+    });
 
 
     const svg = document.querySelector("svg.monde");
@@ -9245,7 +9249,6 @@ svg.addEventListener('touchstart', (e) => {
 
 // ── Touch move ───────────────────────────────────────────────
 svg.addEventListener('touchmove', (e) => {
-  e.preventDefault();
 
   if (e.touches.length === 1 && isDragging) {
     // Pan (même logique que mousemove)
