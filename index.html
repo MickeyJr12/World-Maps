@@ -1081,6 +1081,7 @@ svg {
 .phone{
   display: flex;
   position: fixed;
+  justify-content: center;
   height:100vh;
   width : 540px;
   border:10px solid black;
@@ -1095,15 +1096,27 @@ svg {
   transform:translateX(-50%);
   overflow: visible;
  filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.8));
- transition : transform 0.6s ease;
+ transition : transform 0.6s ease, opacity 0.3s ease;
 }
+
 .waveBottom{
 overflow: visible;
  filter: drop-shadow( 0px 0px 8px rgba(0, 0, 0, 0.8));
  transition : transform 0.6s ease;
-
 }
 
+#themeLine{
+  position : absolute;
+  top:28%;
+}
+#themeLine path{
+ filter: drop-shadow( 0px 8px 4px rgba(0, 0, 0, 0.6));
+}
+#theme{
+  position : absolute;
+  text-align: center;
+  top:23%;
+}
 .btnHomeBox{
   display: flex;
   position: absolute;
@@ -1116,8 +1129,6 @@ overflow: visible;
   height:auto;
   width:auto;
   gap:1.3em;
-
-
 }
 .btnPlay{
   display: flex;
@@ -1140,14 +1151,26 @@ overflow: visible;
 
 .btnPlay:hover, .btnPlay.hover { filter: brightness(0.9); }
     </style>
+    
 <div class="phone">
   
-<svg class="waveHome" id="waveTop" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 163L18 152.5C36 142 72 121 108 120.5C144 120 180 140 216 142.7C252 145.3 288 130.7 324 132.8C360 135 396 154 432 156.3C468 158.7 504 144.3 522 137.2L540 130L540 0L522 0C504 0 468 0 432 0C396 0 360 0 324 0C288 0 252 0 216 0C180 0 144 0 108 0C72 0 36 0 18 0L0 0Z" fill="#1d49c9" stroke-linecap="round" stroke-linejoin="miter"/></svg>
+<svg class="waveHome" id="waveHome" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 163L18 152.5C36 142 72 121 108 120.5C144 120 180 140 216 142.7C252 145.3 288 130.7 324 132.8C360 135 396 154 432 156.3C468 158.7 504 144.3 522 137.2L540 130L540 0L522 0C504 0 468 0 432 0C396 0 360 0 324 0C288 0 252 0 216 0C180 0 144 0 108 0C72 0 36 0 18 0L0 0Z" fill="#1d49c9" stroke-linecap="round" stroke-linejoin="miter"/></svg>
 <svg class="waveBottom" id="waveBottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 540 960" width="540" height="960" version="1.1"><path d="M0 795L18 805.5C36 816 72 837 108 837.5C144 838 180 818 216 815.3C252 812.7 288 827.3 324 825.2C360 823 396 804 432 801.7C468 799.3 504 813.7 522 820.8L540 828L540 961L522 961C504 961 468 961 432 961C396 961 360 961 324 961C288 961 252 961 216 961C180 961 144 961 108 961C72 961 36 961 18 961L0 961Z" fill="#1d49c9" stroke-linecap="round" stroke-linejoin="miter"/></svg>
-
+<div id="theme"><h2>Thème</h2></div>
+<svg id="themeLine" xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 430 540 85" 
+     width="540" height="85" version="1.1">
+  <path d="M0 452L18 456.8C36 461.7 72 471.3 108 470.2C144 469 180 457 216 457.8C252 458.7 288 472.3 324 481C360 489.7 396 493.3 432 488.5C468 483.7 504 470.3 522 463.7L540 457" 
+        fill="none" 
+        stroke="#325bd5" 
+        stroke-width="10"
+        stroke-linecap="round" 
+        stroke-linejoin="miter"/>
+</svg>
 
 
 <div class="btnHomeBox">
+
 <div class="btnPlay hoverable" id="play"><h2>Play</h2></div>
 <div class="btnPlay hoverable" id="devise"><h2>Devises</h2></div>
 <div class="btnPlay hoverable" id="map"><h2>Vue sur le monde</h2></div>
@@ -2998,8 +3021,9 @@ overflow: visible;
       .catch(err => console.error('SW error:', err));
   }
   const play = document.getElementById('play')
-  const waveHome = document.getElementById('waveTop')
+  const waveHome = document.getElementById('waveHome')
   const waveBottom = document.getElementById('waveBottom')
+
 
   play.addEventListener('click',()=>{
     waveHome.style.transform = " translateX(-50%) translateY(-10%)"
