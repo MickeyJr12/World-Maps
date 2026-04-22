@@ -13,10 +13,6 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap");
 
-      
-html, body {
-  touch-action: none;
-}
 
 
       html{
@@ -67,6 +63,7 @@ html, body {
         width:200%;
         transform-box: fill-box;
         transform-origin: center;
+         touch-action: none;
       }
 
 .dragging path {
@@ -462,8 +459,10 @@ animation-range: entry 0% entry 100%;
         position: fixed;
         flex-direction: column;
         align-items: center;
-        overflow-y: initial;
         overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;  /* évite que le scroll remonte à la page */
+        touch-action: pan-y;
         pointer-events: none;
         color:white;
         gap: 0.4em;
@@ -472,6 +471,7 @@ animation-range: entry 0% entry 100%;
         height: 30em;
         padding-top: 1em;
         transition: opacity 0.4s ease;
+
       }
       .choice {
         
@@ -715,6 +715,7 @@ animation-range: entry 0% entry 100%;
         margin-top:1.5em;
       }
       .perSub{
+        
         margin-top:0em;
       }
       .perCountry {
@@ -994,10 +995,10 @@ svg {
 @media (max-width: 768px) {
 
   .tools {
+    justify-content: space-around;
     right: 1em;
-    top: 50%;
+    height: 100%;
     transform:translateY(-25%);
-    gap: 1.5em;
   }
 
   .icons {
@@ -1008,7 +1009,7 @@ svg {
   .cadreVue {
     width: clamp(220px, 75vw, 320px);
     left: 50%;
-    top: 6em;
+    top: 7.5em;
     transform: translateX(-50%);
     max-height: 70vh;        /* évite que ça dépasse l'écran en hauteur */
     overflow-y: auto;        /* scroll si contenu long */
@@ -1019,7 +1020,7 @@ svg {
     width:55%;
     left: 0%;
     transform: translateX(-50%);
-    bottom: 1em;
+    bottom: 4em;
     font-size: 1em;
   }
   svg.monde {
@@ -7590,7 +7591,7 @@ svg.addEventListener('mousedown', (e) => {
   e.preventDefault();
 });
 
-window.addEventListener('mousemove', (e) => {
+document.addEventListener('mousemove', (e) => {
   if (!isDragging) return;
     svg.classList.add("dragging");
 
@@ -7612,7 +7613,7 @@ window.addEventListener('mousemove', (e) => {
   });
 });
 
-window.addEventListener('mouseup', () => {
+document.addEventListener('mouseup', () => {
   isDragging = false;
     svg.classList.remove("dragging");
 
@@ -7775,14 +7776,17 @@ addInfo.addEventListener("click", () => {
   globe.querySelectorAll("path").forEach((p) => {
     if (p === currentCountry && currentCountry != null && currentCountry != currentCountryHover) {
       currentCountry.style.fill = "rgb(50, 159, 31)";
+      currentCountry.style.filter = "brightness(1.4)";  // ← AJOUTE ça
     } else if (p != currentCountryHover) {
       const status = idVisible_m.get(p.id);
       const visible = status && Object.values(status).every(Boolean);
       p.style.fill = visible ? pColor_m.get(p).current : "";
+      if (p !== currentCountry) p.style.filter = "";  // ← reset les autres
     }
   });
   requestAnimationFrame(colorCurrentCountry);
 }
+
     colorCurrentCountry();
 let drapeauLoaded="false";
 let blasonLoaded="false";
@@ -7984,6 +7988,7 @@ cadreVue.addEventListener('dragstart',(e)=>{e.preventDefault()})
         });
 
         wrapper.style.width = vueP.getBoundingClientRect().width*3.4 + "px";
+        if(isMobile){wrapper.style.width = vueP.getBoundingClientRect().width*3 + "px"};
         vue = true;
       } else {
 
