@@ -20,6 +20,9 @@
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap");
 
 
+* {
+  -webkit-touch-callout: none;
+}
 
       html{
         margin: 0;
@@ -1107,15 +1110,20 @@ overflow: visible;
 
 #themeLine{
   position : absolute;
-  top:15%;
+  top:40%;
 }
 #themeLine path{
  filter: drop-shadow( 0px 4px 4px rgba(0, 0, 0, 0.6));
 }
-#theme{
-  position : absolute;
+#theme{  
+  position:absolute;
   text-align: center;
   top:10%;
+}
+#mode{
+  position : absolute;
+  text-align: center;
+  top:50%;
 }
 
 .btnHomeBox{
@@ -1152,8 +1160,19 @@ overflow: visible;
   flex-wrap: wrap;
   height:auto;
   gap:1em;
-  width:90%;
-  top:28%;
+  width:60%;
+  top:22%;
+}
+
+.cadreModeBtn{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  flex-wrap: wrap;
+  height:auto;
+  gap:1em;
+  width:60%;
+  top:60%;
 }
 .themeBtn{
   display: flex;
@@ -1193,9 +1212,17 @@ overflow: visible;
   <button class="themeBtn"><h3> Drapeaux</h3></button>
   <button class="themeBtn"><h3> Capitales</h3></button>
   <button class="themeBtn"><h3> Écrire</h3></button>
+</div>
 
+<div id="mode">
+  <h2>Mode</h2>
+</div>
 
-
+<div class="cadreModeBtn">
+  <button class="themeBtn"><h3>4 choix</h3></button>
+  <button class="themeBtn"><h3> Drapeaux</h3></button>
+  <button class="themeBtn"><h3> Capitales</h3></button>
+  <button class="themeBtn"><h3> Écrire</h3></button>
 </div>
 
 
@@ -3055,9 +3082,6 @@ overflow: visible;
   const waveHome = document.getElementById('waveHome')
   const waveBottom = document.getElementById('waveBottom')
   const btnHomeBox = document.querySelector('.btnHomeBox')
-  const themeLineEnd = themeLine.cloneNode(true)
-  themeLineEnd.style.top = themeLine.getBoundingClientRect().top +200 +"px"
-  phone.appendChild(themeLineEnd)
 
 
   play.addEventListener('click',()=>{
