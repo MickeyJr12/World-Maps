@@ -7791,8 +7791,7 @@ addInfo.addEventListener("click", () => {
     function colorCurrentCountry() {
   globe.querySelectorAll("path").forEach((p) => {
     if (p === currentCountry && currentCountry != null && currentCountry != currentCountryHover) {
-      currentCountry.style.fill = "rgb(50, 159, 31)";
-      currentCountry.style.filter = "brightness(1.4)";  // ← AJOUTE ça
+      currentCountry.style.filter = "brightness(0.7)";  // ← AJOUTE ça
     } else if (p != currentCountryHover) {
       const status = idVisible_m.get(p.id);
       const visible = status && Object.values(status).every(Boolean);
