@@ -2885,12 +2885,12 @@ svg {
 
   </body>
   <script>
-   /* const mediaQuery = window.matchMedia('(max-width: 768px)');
+   const mediaQuery = window.matchMedia('(max-width: 768px)');
     let isMobile = mediaQuery.matches;
 
     mediaQuery.addEventListener('change', (e) => {
       isMobile = e.matches;
-    });*/
+    });
 
 
     const svg = document.querySelector("svg.monde");
@@ -9194,6 +9194,10 @@ last2.classList.toggle("active");
       
     //------------------------------------------------------------------------------------------------------------------------------------------------------------------
     //PARTIE MOBILE
+    if (isMobile){infoName.style.display = "none"}
+    
+
+
 
     function getPos(e) {
   if (e.touches && e.touches.length > 0) {
@@ -9341,6 +9345,7 @@ listBoxStyle.textContent = `
   }
 `;
 document.head.appendChild(listBoxStyle);
+
 
   </script>
 </html>
