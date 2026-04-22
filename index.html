@@ -1084,17 +1084,72 @@ svg {
   display: none;
 }
 
-<!--Partie Configuration-->
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  .phone {
+<!--Home-->
+#phoneHome{
+    display: flex;
     font-family: 'Nunito', sans-serif;
     width: 100%;
     min-height: 100vh;
     background: #0f3d04;
-    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;   
+    transition : all 0.6s ease; 
+}
+#waveTopHome{
+  filter:drop-shadow(0px 4px 4px rgba(0,0,0,0.6));
+  transition : all 1s ease}
+
+.btnHomeBox{
+  display: flex;
+  position: absolute;
+  top:50%;
+  left:50%;transform:translateX(-50%) translateY(-50%);
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  flex-direction: column;
+  height:auto;
+  width:auto;
+  gap:1.3em;
+}
+.btnPlay{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color:white;
+  border-radius: 5px;
+  padding: 0px 0px;
+  min-width:14em;
+  max-height:3em;
+ background: linear-gradient(151deg, #16e924 0%, #29c28a 53%, #0fe7fa 100%);
+ transition : filter  0.2s ease;
+}
+
+
+
+
+#play{background: linear-gradient(90deg, #f8163c 0%, #f1306d 59%, #f3299e 100%)}
+#devise{background: linear-gradient(90deg, #1ef61e 0%, #29f32f 59%, #29f373 100%)}
+#map{background: linear-gradient(90deg, #1a6ff7 0%, #3633f0 93%, #2a13f9 100%);}
+
+.btnPlay:hover, .btnPlay.hover { filter: brightness(0.9); }
+
+
+<!--Partie Configuration-->
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  #phoneConfig {
+    display: none;
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background: #0f3d04;
     flex-direction: column;
     overflow-x: hidden;
+    margin-top:0px;
+    transform : scale(0.9)
   }
 
   .wave-top {
@@ -1290,16 +1345,26 @@ svg {
 
   svg.wave { display: block; width: 100%; }
     </style>
+  <!--HTML Home-->
+  <div id="phoneHome" >
+    <svg id="waveTopHome" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 0 960 540" width="100%"  version="1.1"><path d="M0 43L8.5 46.7C17 50.3 34 57.7 50.8 58.7C67.7 59.7 84.3 54.3 101.2 51.2C118 48 135 47 151.8 58.8C168.7 70.7 185.3 95.3 202.2 99.7C219 104 236 88 252.8 84C269.7 80 286.3 88 303.2 95.5C320 103 337 110 353.8 105C370.7 100 387.3 83 404.2 80C421 77 438 88 454.8 93.7C471.7 99.3 488.3 99.7 505.2 94.2C522 88.7 539 77.3 555.8 70.3C572.7 63.3 589.3 60.7 606.2 61.3C623 62 640 66 656.8 64.3C673.7 62.7 690.3 55.3 707.2 62.2C724 69 741 90 757.8 99.8C774.7 109.7 791.3 108.3 808.2 98.5C825 88.7 842 70.3 858.8 70.2C875.7 70 892.3 88 909.2 93C926 98 943 90 951.5 86L960 82L960 0L951.5 0C943 0 926 0 909.2 0C892.3 0 875.7 0 858.8 0C842 0 825 0 808.2 0C791.3 0 774.7 0 757.8 0C741 0 724 0 707.2 0C690.3 0 673.7 0 656.8 0C640 0 623 0 606.2 0C589.3 0 572.7 0 555.8 0C539 0 522 0 505.2 0C488.3 0 471.7 0 454.8 0C438 0 421 0 404.2 0C387.3 0 370.7 0 353.8 0C337 0 320 0 303.2 0C286.3 0 269.7 0 252.8 0C236 0 219 0 202.2 0C185.3 0 168.7 0 151.8 0C135 0 118 0 101.2 0C84.3 0 67.7 0 50.8 0C34 0 17 0 8.5 0L0 0Z" fill="#c4195f" stroke-linecap="round" stroke-linejoin="miter"/></svg>
+  <div class="btnHomeBox">
+<div class="btnPlay hoverable" id="play"><h2>Play</h2></div>
+<div class="btnPlay hoverable" id="devise"><h2>Devises</h2></div>
+<div class="btnPlay hoverable" id="map"><h2>Vue sur le monde</h2></div>
+</div>
+
+</div>
 
     <!--HTML configuration-->
-<div class="phone">
+<div id="phoneConfig">
   <div class="wave-top">
     <h1>Play</h1>
     <svg class="wave" viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <path d="M0 5 C20 10 40 0 60 5 C80 10 90 2 100 5 L100 10 L0 10 Z" fill="#2a7d0f"></path>
     </svg>
   </div>
-
+  
   <div class="wave-green1">
     <div class="section-title">Thème</div>
     <div class="btn-grid" id="theme-btns">
@@ -1339,11 +1404,29 @@ svg {
         <div class="resp-tags" id="resp-tags"></div>
       </div>
       <div class="play-zone">
-        <button class="play-btn hidden" id="play-btn">▶ Jouer</button>
+        <button class="play-btn hidden" id="play-btn">Suivant </button>
       </div>
     </div>
   </div>
 </div>
+
+<!--Script Home-->
+<script>
+  const phoneHome = document.getElementById('phoneHome')
+  const waveTopHome = document.getElementById('waveTopHome')
+  const play = document.getElementById('play')
+  const btnHomeBox = document.querySelector('.btnHomeBox')
+
+
+  const phoneConfig = document.getElementById('phoneConfig')
+
+  play.addEventListener('click',()=>{    
+    phoneHome.style.display = "none"
+    phoneConfig.style.display = "flex"
+  })
+
+</script>
+
 
 <!--Script Configuration-->
 <script>
@@ -3300,12 +3383,7 @@ renderModes(); renderQR();
       .catch(err => console.error('SW error:', err));
   }
 
-  const play = document.getElementById('play')
   
-  play.addEventListener('click',()=>{
-    waveHome.style.transform = " translateX(-50%) translateY(-10%)"
-    btnHomeBox.style.display="none";
-  })
 </script>
 
   <script>
