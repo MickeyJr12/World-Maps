@@ -1107,16 +1107,17 @@ overflow: visible;
 
 #themeLine{
   position : absolute;
-  top:28%;
+  top:15%;
 }
 #themeLine path{
- filter: drop-shadow( 0px 8px 4px rgba(0, 0, 0, 0.6));
+ filter: drop-shadow( 0px 4px 4px rgba(0, 0, 0, 0.6));
 }
 #theme{
   position : absolute;
   text-align: center;
-  top:23%;
+  top:10%;
 }
+
 .btnHomeBox{
   display: flex;
   position: absolute;
@@ -1144,6 +1145,25 @@ overflow: visible;
  background: linear-gradient(151deg, #16e924 0%, #29c28a 53%, #0fe7fa 100%);
  transition : filter  0.2s ease;
 }
+.cadreThemeBtn{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  flex-wrap: wrap;
+  height:auto;
+  gap:1em;
+  width:90%;
+  top:28%;
+}
+.themeBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:8px;
+  min-width:10em;
+  padding : 0em 0em;
+  border:2px solid #1a6ff7;
+}
 
 #play{background: linear-gradient(90deg, #f8163c 0%, #f1306d 59%, #f3299e 100%)}
 #devise{background: linear-gradient(90deg, #1ef61e 0%, #29f32f 59%, #29f373 100%)}
@@ -1167,6 +1187,16 @@ overflow: visible;
         stroke-linecap="round" 
         stroke-linejoin="miter"/>
 </svg>
+
+<div class="cadreThemeBtn">
+  <button class="themeBtn"><h3>4 choix</h3></button>
+  <button class="themeBtn"><h3> Drapeaux</h3></button>
+  <button class="themeBtn"><h3> Capitales</h3></button>
+  <button class="themeBtn"><h3> Écrire</h3></button>
+
+
+
+</div>
 
 
 <div class="btnHomeBox">
@@ -3020,14 +3050,21 @@ overflow: visible;
       .then(() => console.log('PWA prête ✅'))
       .catch(err => console.error('SW error:', err));
   }
+  const phone = document.querySelector('.phone')
   const play = document.getElementById('play')
   const waveHome = document.getElementById('waveHome')
   const waveBottom = document.getElementById('waveBottom')
+  const btnHomeBox = document.querySelector('.btnHomeBox')
+  const themeLineEnd = themeLine.cloneNode(true)
+  themeLineEnd.style.top = themeLine.getBoundingClientRect().top +200 +"px"
+  phone.appendChild(themeLineEnd)
 
 
   play.addEventListener('click',()=>{
     waveHome.style.transform = " translateX(-50%) translateY(-10%)"
     waveBottom.style.transform = "translateY(10%)"
+    btnHomeBox.style.display="none";
+
 
 
 
