@@ -21,6 +21,7 @@
   <link rel="manifest" href="manifest.json">
   <title>World-Maps</title>
 </head>
+<body>
   
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap");
@@ -1113,19 +1114,34 @@ svg {
     transition : all 0.6s ease; 
 }
 #homeTitle{
+  display: flex;
+  align-items: center;
+  flex-direction:column ;
+  position : absolute; 
+
    font-family: 'Outfit', sans-serif;
   font-weight: 800;
   letter-spacing: 0.05em; /* légèrement espacé, ça aide pour un titre */
-
-  position : absolute; 
   top : 5vh;
   left : 50%;transform : translateX(-50%);
   color : white; 
   padding : 0em 0em;
 }
+   #ameriqueBHome{
+  position : absolute; 
+  z-index: 2;
+  top:40%;
+  width : 20%;
+  height : auto;
+  left: 0%;
+  transform : translateX(-40%)
+}
+#ameriqueBHome path { fill:black;}
+
+
 #waveBottomHome {
   position: absolute;
-  bottom: 0;
+  bottom: 0%;
   width: 100%;
   height: 80vh;
   z-index: 0;
@@ -1153,7 +1169,7 @@ svg {
   align-items: center;
   text-align: center;
   color:white;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 0px 0px;
   min-width:14em;
   max-height:3em;
@@ -1384,9 +1400,25 @@ svg {
 
   svg.wave { display: block; width: 100%; }
     </style>
+
   <!--HTML Home-->
   <div id="phoneHome" >
-    <div id="homeTitle"><h1>Géo-Quiz</h1></div>
+
+    <div id="homeTitle">
+      <div style="display:flex;justify-content: center; padding:0em 0em; border : 2px solid blue">
+      <h1 >
+      <img src="IconeOf-GQ.png" id="iconHomeGQ" style="height :2em; border:2px solid red" alt="">
+        Géo-Quiz</h1> 
+        </div>         
+
+      <h4 style="align-self: center; letter-spacing: 1px;">Teste tes connaissances en géographie</h4>  
+    
+    </div>
+    <div id="ameriqueBHome">
+  <svg width="100%" viewBox="0 0 2910 4905" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1179.89 481L809.889 0L624.889 83C578.556 138.5 476.689 257 439.889 287C393.889 324.5 291.889 481 217.889 620C143.889 759 106.889 832.5 32.8889 962C-41.1111 1091.5 32.8889 1267.5 32.8889 1387.5C32.8889 1507.5 88.3889 1535.5 106.889 1674.5C125.389 1813.5 217.889 1748.5 291.889 1776C351.089 1798 365.889 1871.83 365.889 1906L485.889 2091V2322C461.222 2383.67 402.689 2514.4 365.889 2544C319.889 2581 291.889 2868 291.889 3053V3376.5C291.889 3420.9 341.222 3543.33 365.889 3599V3691.5C390.556 3765.5 439.889 3937.5 439.889 4033.5V4228V4320.5L485.889 4638.5L604.5 4904.5L834 4638.5L883.889 4320.5L1105.89 4033.5V3839.5L1420.39 3913.5L1586.89 3599C1664.06 3543.5 1818.39 3421.3 1818.39 3376.5C1818.39 3320.5 1993.89 3099 1993.89 3053V2868L2067.89 2544H2188.39L2354.89 2350L2586.39 1906L2715.89 1822.5L2826.89 1674.5L2909.89 1471L2826.89 1212C2796.06 1128.67 2767.89 925 2715.89 925C2663.89 925 2595.56 888 2567.89 869.5L2447.89 925L2087.39 831.5V702L1996.89 582H1818.39L1727.89 620H1634.39L1586.89 481H1536.5H1409.5H1179.89Z" />
+</svg>
+</div>
      <svg  preserveAspectRatio="none" id="waveBottomHome"width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 219 960 322" version="1.1"><path d="M0 293L64 293L64 272L128 272L128 261L192 261L192 275L256 275L256 250L320 250L320 288L384 288L384 285L448 285L448 269L512 269L512 275L576 275L576 259L640 259L640 292L704 292L704 291L768 291L768 292L832 292L832 287L896 287L896 276L960 276L960 249L960 541L960 541L896 541L896 541L832 541L832 541L768 541L768 541L704 541L704 541L640 541L640 541L576 541L576 541L512 541L512 541L448 541L448 541L384 541L384 541L320 541L320 541L256 541L256 541L192 541L192 541L128 541L128 541L64 541L64 541L0 541Z" fill="#e6e9ee" stroke-linecap="square" stroke-linejoin="miter"/></svg>
   <div class="btnHomeBox">
 <div class="btnPlay hoverable" id="play">
@@ -1460,147 +1492,9 @@ svg {
   </div>
 </div>
 
-<!--Script Home-->
-<script>
-  const phoneHome = document.getElementById('phoneHome')
-  
-  const play = document.getElementById('play')
-  const map = document.getElementById('map')
-  const btnHomeBox = document.querySelector('.btnHomeBox')
+<!--HTML Maps-->
 
-  const phoneConfig = document.getElementById('phoneConfig')
-  console.log(phoneConfig.parentNode.id)
-
-  play.addEventListener('click',()=>{    
-    phoneHome.style.display = "none"
-    phoneConfig.style.display = "flex"
-  })
-
-  map.addEventListener('click',()=>{
-    phoneHome.style.display = "none"
-    document.querySelector('.Maps').style.display = "flex"
-
-  })
-
-  
-
-</script>
-
-
-<!--Script Configuration-->
-<script>
-const ARBO = {
-  drapeaux: {
-    modes: ['4 choix', 'Trouver', 'Écrire'],
-    modeData: {
-      '4 choix': { q: ['Drapeaux' ], r: ['Capitale', 'Nom', 'Contours' ] },
-      'Trouver':  { q: ['Drapeaux'], r: ['Nom', 'Maps'] },
-      'Écrire':   { q: ['Drapeaux'], r: ['Nom'] },
-    }
-  },
-  capitales: {
-    modes: ['4 choix', 'Trouver', 'Écrire'],
-    modeData: {
-      '4 choix': { q: ['Capitale'], r: ['Nom', 'Drapeau'] },
-      'Trouver':  { q: ['Capitale'], r: ['Maps'] },
-      'Écrire':   { q: ['Capitale'], r: ['Écrire'] },
-    }
-  },
-  contours: {
-    modes: ['4 choix'],
-    modeData: {
-      '4 choix': { q: ['Capitale'], r: [ 'Nom', 'Contour'] },
-    }
-  }
-};
-
-let state = { theme: null, mode: null, swapped: false, resp: null };
-
-function selectTheme(btn) {
-  state.theme = btn.dataset.theme;
-  state.mode = null; state.resp = null; state.swapped = false;
-  document.querySelectorAll('#theme-btns .opt-btn').forEach(b => b.classList.toggle('selected', b === btn));
-  renderModes(); renderQR(); checkPlay();
-}
-
-function renderModes() {
-  const c = document.getElementById('mode-btns');
-  c.innerHTML = '';
-  if (!state.theme) return;
-  ARBO[state.theme].modes.forEach(m => {
-    const b = document.createElement('button');
-    b.className = 'opt-btn'; b.textContent = m;
-    b.onclick = () => selectMode(b, m);
-    c.appendChild(b);
-  });
-}
-
-function selectMode(btn, m) {
-  state.mode = m; state.resp = null; state.swapped = false;
-  document.querySelectorAll('#mode-btns .opt-btn').forEach(b => b.classList.toggle('selected', b === btn));
-  document.getElementById('swap-btn').classList.remove('spin');
-  renderQR(); checkPlay();
-}
-
-function renderQR() {
-  const qEl = document.getElementById('q-content');
-  const rEl = document.getElementById('r-content');
-  document.getElementById('resp-picker').classList.remove('open');
-  if (!state.theme || !state.mode) {
-    qEl.innerHTML = '<span class="qr-empty">–</span>';
-    rEl.innerHTML = '<span class="qr-empty">Choisir…</span>';
-    return;
-  }
-  const data = ARBO[state.theme].modeData[state.mode];
-  const qItems = state.swapped ? data.r : data.q;
-  qEl.innerHTML = qItems.map(t => `<span class="qr-tag">${t}</span>`).join('');
-  rEl.innerHTML = state.resp ? `<span class="qr-tag">${state.resp}</span>` : '<span class="qr-empty">Choisir…</span>';
-}
-
-function openPicker(side) {
-  if (!state.mode) return;
-  const isRSide = (side === 'r' && !state.swapped) || (side === 'q' && state.swapped);
-  if (!isRSide) return;
-  const picker = document.getElementById('resp-picker');
-  picker.classList.toggle('open');
-  if (picker.classList.contains('open')) renderRespTags();
-}
-
-function renderRespTags() {
-  const data = ARBO[state.theme].modeData[state.mode];
-  const options = state.swapped ? data.q : data.r;
-  document.getElementById('resp-tags').innerHTML = options.map(o =>
-    `<span class="resp-tag${state.resp === o ? ' selected-resp' : ''}" onclick="selectResp('${o}')">${o}</span>`
-  ).join('');
-}
-
-function selectResp(val) {
-  state.resp = val;
-  document.getElementById('resp-picker').classList.remove('open');
-  renderQR(); checkPlay();
-}
-
-function swapQR() {
-  if (!state.mode) return;
-  state.swapped = !state.swapped; state.resp = null;
-  document.getElementById('swap-btn').classList.toggle('spin', state.swapped);
-  renderQR(); checkPlay();
-}
-
-function checkPlay() {
-  document.getElementById('play-btn').classList.toggle('hidden', !(state.theme && state.mode && state.resp));
-}
-
-renderModes(); renderQR();
-</script>
-
-
-<!--Fin Partie configuration -->
-    
-
-
-<!-----------Partie Maps-------------->
-    <div class="Maps">
+  <div class="Maps">
     <div class="cadreVue">
       <div class="cadreVueCross">
         <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="100%" height="100%"><path d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"/><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"/></svg>
@@ -3434,8 +3328,134 @@ renderModes(); renderQR();
       </svg>
     </div>
     </div>
+
+<!--Script Home-->
+<script>
+  const phoneHome = document.getElementById('phoneHome')
+
+  const play = document.getElementById('play')
+  const btnHomeBox = document.querySelector('.btnHomeBox')
+
+  const phoneConfig = document.getElementById('phoneConfig')
+  console.log(phoneConfig.parentNode.id)
+
+  play.addEventListener('click',()=>{    
+    phoneHome.style.display = "none"
+    phoneConfig.style.display = "flex"
+  })
+</script>
+
+<!--Script Configuration-->
+<script>
+const ARBO = {
+  drapeaux: {
+    modes: ['4 choix', 'Trouver', 'Écrire'],
+    modeData: {
+      '4 choix': { q: ['Drapeaux' ], r: ['Capitale', 'Nom', 'Contours' ] },
+      'Trouver':  { q: ['Drapeaux'], r: ['Nom', 'Maps'] },
+      'Écrire':   { q: ['Drapeaux'], r: ['Nom'] },
+    }
+  },
+  capitales: {
+    modes: ['4 choix', 'Trouver', 'Écrire'],
+    modeData: {
+      '4 choix': { q: ['Capitale'], r: ['Nom', 'Drapeau'] },
+      'Trouver':  { q: ['Capitale'], r: ['Maps'] },
+      'Écrire':   { q: ['Capitale'], r: ['Écrire'] },
+    }
+  },
+  contours: {
+    modes: ['4 choix'],
+    modeData: {
+      '4 choix': { q: ['Capitale'], r: [ 'Nom', 'Contour'] },
+    }
+  }
+};
+
+let state = { theme: null, mode: null, swapped: false, resp: null };
+
+function selectTheme(btn) {
+  state.theme = btn.dataset.theme;
+  state.mode = null; state.resp = null; state.swapped = false;
+  document.querySelectorAll('#theme-btns .opt-btn').forEach(b => b.classList.toggle('selected', b === btn));
+  renderModes(); renderQR(); checkPlay();
+}
+
+function renderModes() {
+  const c = document.getElementById('mode-btns');
+  c.innerHTML = '';
+  if (!state.theme) return;
+  ARBO[state.theme].modes.forEach(m => {
+    const b = document.createElement('button');
+    b.className = 'opt-btn'; b.textContent = m;
+    b.onclick = () => selectMode(b, m);
+    c.appendChild(b);
+  });
+}
+
+function selectMode(btn, m) {
+  state.mode = m; state.resp = null; state.swapped = false;
+  document.querySelectorAll('#mode-btns .opt-btn').forEach(b => b.classList.toggle('selected', b === btn));
+  document.getElementById('swap-btn').classList.remove('spin');
+  renderQR(); checkPlay();
+}
+
+function renderQR() {
+  const qEl = document.getElementById('q-content');
+  const rEl = document.getElementById('r-content');
+  document.getElementById('resp-picker').classList.remove('open');
+  if (!state.theme || !state.mode) {
+    qEl.innerHTML = '<span class="qr-empty">–</span>';
+    rEl.innerHTML = '<span class="qr-empty">Choisir…</span>';
+    return;
+  }
+  const data = ARBO[state.theme].modeData[state.mode];
+  const qItems = state.swapped ? data.r : data.q;
+  qEl.innerHTML = qItems.map(t => `<span class="qr-tag">${t}</span>`).join('');
+  rEl.innerHTML = state.resp ? `<span class="qr-tag">${state.resp}</span>` : '<span class="qr-empty">Choisir…</span>';
+}
+
+function openPicker(side) {
+  if (!state.mode) return;
+  const isRSide = (side === 'r' && !state.swapped) || (side === 'q' && state.swapped);
+  if (!isRSide) return;
+  const picker = document.getElementById('resp-picker');
+  picker.classList.toggle('open');
+  if (picker.classList.contains('open')) renderRespTags();
+}
+
+function renderRespTags() {
+  const data = ARBO[state.theme].modeData[state.mode];
+  const options = state.swapped ? data.q : data.r;
+  document.getElementById('resp-tags').innerHTML = options.map(o =>
+    `<span class="resp-tag${state.resp === o ? ' selected-resp' : ''}" onclick="selectResp('${o}')">${o}</span>`
+  ).join('');
+}
+
+function selectResp(val) {
+  state.resp = val;
+  document.getElementById('resp-picker').classList.remove('open');
+  renderQR(); checkPlay();
+}
+
+function swapQR() {
+  if (!state.mode) return;
+  state.swapped = !state.swapped; state.resp = null;
+  document.getElementById('swap-btn').classList.toggle('spin', state.swapped);
+  renderQR(); checkPlay();
+}
+
+function checkPlay() {
+  document.getElementById('play-btn').classList.toggle('hidden', !(state.theme && state.mode && state.resp));
+}
+
+renderModes(); renderQR();
+
+</script>
+<!--Fin Script configuration -->  
   
     <script>
+
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
       .then(() => console.log('PWA prête ✅'))
@@ -3444,14 +3464,27 @@ renderModes(); renderQR();
 
   
 </script>
+    <!--Script Maps-->
 
   <script>
+    const map = document.getElementById('map')
+    const Maps = document.querySelector('.Maps')
+    const phoneHome2 = document.getElementById('phoneHome')
    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+   map.addEventListener('click',()=>{
+    phoneHome2.style.display = "none"
+    Maps.style.display = "flex";
+   })
+
+
     let isMobile = mediaQuery.matches;
 
     mediaQuery.addEventListener('change', (e) => {
       isMobile = e.matches;
     });
+
+
 
 
     const svg = document.querySelector("svg.monde");
@@ -9919,6 +9952,6 @@ document.querySelectorAll('.hoverable').forEach(el => {
   el.addEventListener('touchcancel', () => el.classList.remove('hover'));
 });
 
-
   </script>
+  </body>
 </html>
