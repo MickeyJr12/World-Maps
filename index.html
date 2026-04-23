@@ -1090,11 +1090,10 @@ svg {
   display: none;
 }
 
-<!--Home-->
+<!--Style Home-->
 #phoneHome{
   display: flex;
   position:relative;
-  overflow: hidden;
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
@@ -1133,7 +1132,7 @@ svg {
   z-index: 2;
   transition : transform 1s ease
 }
-.countryHome path { fill:rgb(234, 234, 2);}
+.countryHome path { fill:yellow;}
 
    #ameriqueBHome{
  
@@ -1145,15 +1144,15 @@ svg {
 
 }
 #afriqueHome{
-  top : 64%;
-  width: auto;
-  height : 22%;
+  top : 70%;
+  width: 30%;
+  height : auto;
   right : -2%;
   transform : translateX(50%)
 
 }
 #europeHome{
-  top : 28%;
+  top : 35%;
   width: auto;
   height :20%;
   right : -5%;
@@ -3385,28 +3384,32 @@ svg {
   const phoneHome = document.getElementById('phoneHome')
   const play = document.getElementById('play')
   const btnHomeBox = document.querySelector('.btnHomeBox')
-  const countriesHome  = document.querySelectorAll('ountryHome')
+  const countriesHome  = document.querySelectorAll('.countryHome')
   const waveBottomHome = document.getElementById('waveBottomHome')
 
   const phoneConfig = document.getElementById('phoneConfig')
   console.log(phoneConfig.parentNode.id)
 
-  play.addEventListener('click',()=>{ 
-    phoneHome.style.transition  = "transform 0.6s ease, opacity 0.6s ease"
-    phoneHome.style.opacity = "0";
-    phoneConfig.style.transform = "scale(0.95)"
-    phoneConfig.style.display = "flex";
-    setTimeout(() => {
-      phoneConfig.style.transform = ""
-    }, 10);
+ play.addEventListener('click', () => {
+  phoneHome.style.transition = "none"  // coupe la transition d'abord
+  phoneHome.style.opacity = "1"        // état de départ explicite
   
+  phoneHome.offsetHeight               // force le reflow ← c'est ça le trick
+  
+  phoneHome.style.transition = "transform 0.6s ease, opacity 1s ease"
+  phoneHome.style.opacity = "0"
+  phoneHome.style.transform = "scale(0.95)"
 
+  setTimeout(() => {
+    phoneHome.style.display = "none"
+  }, 600)
 
-    setTimeout(() => {
-    phoneConfig.style.display = "flex"
-      
-    }, 500);
-  })
+  phoneConfig.style.transform = "scale(0.9)"
+  phoneConfig.style.display = "flex"
+  setTimeout(() => {
+    phoneConfig.style.transform = ""
+  }, 10)
+})
 </script>
 
 <!--Script Configuration-->
