@@ -1094,20 +1094,20 @@ svg {
 #phoneHome{
   display: flex;
   position:relative;
+  overflow: hidden;
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
   background: #0f3d04;
-  overflow-x: hidden;   
-  transition : all 0.6s ease; 
+  transition: transform 0.8s ease, opacity 0.45s ease;
   
   min-height: 100vh;
   min-height: 100dvh; /* dynamic viewport height, plus fiable sur mobile */    
   width: 100%;
   min-height: 100vh;
-  
 }
+
 #homeTitle{
   display: flex;
   position : absolute;
@@ -1137,21 +1137,21 @@ svg {
    #ameriqueBHome{
  
   top:40%;
-  width : 20%;
-  height : auto;
-  left: 5%;
+  width :auto;
+  height : 50%;
+  left: -2%;
 }
 #afriqueHome{
   top : 60%;
-  width: 10%;
-  height : auto;
-  right : 5%
+  width: auto;
+  height : 40%;
+  right : -2%
 }
 #europeHome{
   top : 28%;
-  width: 20%;
-  height :auto;
-  right : 0%
+  width: auto;
+  height :20%;
+  right : -5%
 }
 
 
@@ -1165,7 +1165,6 @@ svg {
   height: 80dvh;
   z-index: 0;
   filter : drop-shadow(0px -4px 4px rgba(0,0,0,0.75));
-  border:2px solid red
 }
 
 .btnHomeBox{
@@ -3374,9 +3373,16 @@ svg {
   const phoneConfig = document.getElementById('phoneConfig')
   console.log(phoneConfig.parentNode.id)
 
-  play.addEventListener('click',()=>{    
-    phoneHome.style.display = "none"
+  play.addEventListener('click',()=>{ 
+    phoneHome.style.display = "none";
+    phoneConfig.style.display = "flex";
+  
+
+
+    setTimeout(() => {
     phoneConfig.style.display = "flex"
+      
+    }, 500);
   })
 </script>
 
@@ -3504,11 +3510,10 @@ renderModes(); renderQR();
   <script>
     const map = document.getElementById('map')
     const Maps = document.querySelector('.Maps')
-    const phoneHome2 = document.getElementById('phoneHome')
    const mediaQuery = window.matchMedia('(max-width: 768px)');
 
    map.addEventListener('click',()=>{
-    phoneHome2.style.display = "none"
+    phoneHome.style.display = "none"
     Maps.style.display = "flex";
    })
 
