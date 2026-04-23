@@ -1035,7 +1035,7 @@ svg {
     justify-content: space-around;
     top:1em;
     right: 1em;
-    height: 80vh;
+    min-height: 65vh;    
     transform:translateY(0%);
   }
 
@@ -1156,7 +1156,7 @@ svg {
   width: auto;
   height :20%;
   right : -5%;
-  transform : translateX(50%)
+  transform : translateX(40%)
 }
 
 
@@ -1169,7 +1169,7 @@ svg {
   width: 100%;
   height: 80dvh;
   z-index: 0;
-  filter : drop-shadow(0px -4px 4px rgba(0,0,0,0.75));
+  filter : drop-shadow(0px -4px 4px rgba(0,0,0,0.4));
 }
 
 .btnHomeBox{
@@ -1198,16 +1198,15 @@ svg {
   padding: 0px 0px;
   min-width:14em;
   max-height:3em;
- background: linear-gradient(151deg, #16e924 0%, #29c28a 53%, #0fe7fa 100%);
  transition : filter  0.2s ease;
 }
 
 
 
 
-#play{background: linear-gradient(90deg, #86041a 1%, #8b051c 62%, #9b0621 100%);}
-#devise{background: linear-gradient(90deg, #058a4c 1%, #058a41 62%, #06794b 100%);}
-#map{background: linear-gradient(90deg, #05257e 1%, #09057d 62%, #19097e 100%);}
+#play{background-color: red;}
+#devise{background-color: green;}
+#map{background-color: blue;}
 .iconPlay{
   position : absolute; 
   fill:white;
@@ -1459,7 +1458,7 @@ svg {
 
 </div>
 
-     <svg  preserveAspectRatio="none" id="waveBottomHome"width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="visual" viewBox="0 250 960 291" version="1.1"><path d="M0 293L64 293L64 272L128 272L128 261L192 261L192 275L256 275L256 250L320 250L320 288L384 288L384 285L448 285L448 269L512 269L512 275L576 275L576 259L640 259L640 292L704 292L704 291L768 291L768 292L832 292L832 287L896 287L896 276L960 276L960 249L960 541L960 541L896 541L896 541L832 541L832 541L768 541L768 541L704 541L704 541L640 541L640 541L576 541L576 541L512 541L512 541L448 541L448 541L384 541L384 541L320 541L320 541L256 541L256 541L192 541L192 541L128 541L128 541L64 541L64 541L0 541Z" fill="#e6e9ee" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+    <svg preserveAspectRatio="none" id="waveBottomHome"width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 240 960 300" version="1.1"><path d="M0 256L107 257L213 265L320 284L427 244L533 255L640 266L747 255L853 290L960 269L960 541L853 541L747 541L640 541L533 541L427 541L320 541L213 541L107 541L0 541Z" fill="#ffffff" stroke-linecap="square" stroke-linejoin="bevel"/></svg>
   <div class="btnHomeBox">
 <div class="btnPlay hoverable" id="play">
   <svg  class="iconPlay" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
@@ -3371,17 +3370,7 @@ svg {
 
 <!--Script Home-->
 <script>
-  const phoneHome = document.getElementById('phoneHome')
-  const monde2 = document.querySelector('.monde').cloneNode(true)
-  monde2.style.position = "absolute";
-  monde2.style.width = "80%";
-  monde2.style.left = "50%";
-  monde2.style.top = "0%"
-  monde2.style.transform = "translateX(-50%)"
-  monde2.style.filter = "blur(6px)"
-  monde2.style.fill = "black";
-  monde2.style.zIndex = "-1"
-  phoneHome.appendChild(monde2)
+ 
   
   const play = document.getElementById('play')
   const btnHomeBox = document.querySelector('.btnHomeBox')
