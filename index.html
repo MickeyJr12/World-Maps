@@ -1127,14 +1127,7 @@ svg {
   align-items: center;   /* alignement vertical parfait */
   gap: 0.4em;
 }
-#mapHome{
-  border : 1px solid red;
-  z-index: 99999;
-  position : absolute; 
-  width : 150%;
-  height : auto;
-  top : -1000px
-}
+
 .countryHome{
  position : absolute; 
   z-index: 2;
@@ -1143,7 +1136,7 @@ svg {
 }
 .countryHome path { fill:blue}
 
-   #ameriqueHome{
+   #mapHome{
   top:40%;
   width :200%;
   height : auto;
@@ -1151,22 +1144,6 @@ svg {
   transform : translateX(-40%)
 
 }
-#afriqueHome{
-  top : 38%;
-  width: 80%;
-  height : auto;
-  right : -10%;
-  transform : translateX(10%)
-
-}
-#europeHome{
-  top : 35%;
-  width: auto;
-  height :20%;
-  right : -5%;
-  transform : translateX(40%)
-}
-
 
 #waveBottomHome {
   position  : absolute ;
@@ -1455,19 +1432,9 @@ svg {
 
       <h4 style="align-self: center; letter-spacing: 1px;">Teste tes connaissances en géographie</h4>  
     
-    </div>
-    <div class="mapHome">
-      <svg width="100%" viewBox="0 0 944 501" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M0 0H944V501H0V0Z" fill="url(#pattern0_109_41)"/>
-<defs>
-<pattern id="pattern0_109_41" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_109_41" transform="matrix(0.00104277 0 0 0.00196482 -0.0275424 -1.06687)"/>
-</pattern>
-</defs>
-</svg>
-    </div>
-    <div id="ameriqueHome" class="countryHome">
-<svg width="100%" viewBox="0 0 1153 617" fill="none" xmlns="http://www.w3.org/2000/svg">
+    </div>   
+    <div id="mapHome" class="countryHome">
+<svg id="svgMapHome" width="100%" viewBox="0 0 1153 617" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M332.71 378.733C316.71 353.933 282.376 363.066 267.21 370.733C266.876 371.066 265.51 371.533 262.71 370.733C259.21 369.732 258.71 367.233 258.71 365.233C258.71 363.232 253.21 351.733 252.21 347.233C251.21 343.733 248.043 337.566 245.71 334.733C244.21 328.733 225.71 334.233 220.21 334.233C214.71 334.233 213.71 331.233 208.71 321.233C203.71 311.233 213.71 300.233 232.21 298.733C250.71 297.233 251.71 307.233 257.21 311.733C263.71 311.733 267.21 324.733 267.71 281.733C277.71 251.333 303.21 237.4 314.71 234.233C318.21 231.733 314.21 227.233 312.21 219.733C310.21 212.233 318.21 221.233 325.21 223.233C332.21 225.233 342.71 217.733 340.71 211.733C338.71 205.733 320.71 178.233 317.21 175.733C313.71 173.233 312.21 167.233 310.71 163.233C309.21 159.233 307.71 159.733 307.21 161.233C306.71 162.733 302.21 162.733 300.71 163.233C299.21 163.733 277.71 147.733 270.71 152.733C263.71 157.733 267.71 180.233 267.71 187.733C267.71 195.233 263.71 197.233 262.71 198.233C261.71 199.233 235.21 175.233 232.21 172.733C229.21 170.233 225.21 152.733 232.21 148.733C237.81 145.533 247.543 136.066 251.71 131.733C253.71 126.233 258.71 113.833 262.71 108.233C263.043 108.4 265.41 110.333 272.21 116.733C279.01 123.133 276.043 127.733 273.71 129.233C270.043 132.566 264.11 139.433 269.71 140.233C281.21 142.233 299.71 156.733 304.71 154.733C310.543 147.233 321.01 130.333 316.21 122.733C306.21 107.933 278.043 90.5664 265.21 83.733C249.71 79.733 236.388 84.733 235.21 90.233C233.71 97.233 232.287 106.733 230.21 104.733C225.71 100.4 216.51 92.833 215.71 97.233C211.21 117.733 211.21 118.733 208.71 117.733C193.71 110.733 199.71 88.733 195.21 82.233C191.61 77.033 172.71 74.7331 163.71 74.2332C136.71 72.733 138.71 89.733 143.71 94.233C150.543 98.5663 163.41 107.333 160.21 107.733C157.01 108.133 149.543 108.566 146.21 108.733L127.71 109.733L105.71 110.733L94.2097 109.233C59.4097 95.233 42.043 92.3996 37.7097 92.7329C10.7097 90.2329 5.20972 99.733 2.2097 103.733C-0.166196 106.901 0.376364 111.9 1.2097 114.233C5.2097 122.633 1.2097 125.733 1.2097 127.733L1.7097 135.733L2.7097 137.233V142.733H0.709697C0.709697 144.733 1.2097 150.233 3.2097 156.233C7.7097 176.233 19.2097 177.233 23.2097 178.233C26.4097 179.033 34.2097 172.566 37.7097 169.233C57.2097 153.233 65.6781 159.913 68.7097 161.733C71.2097 163.233 88.2097 178.566 96.2097 187.233C113.71 205.233 124.21 228.233 125.71 246.733C127.21 265.233 170.742 323.698 185.21 337.233C200.71 351.733 231.71 355.233 239.21 365.233C246.71 375.233 252.71 376.233 259.71 382.733C265.31 387.933 264.71 394.566 263.71 397.233C259.21 407.233 253.208 425.985 270.71 448.233C300.21 485.733 288.21 500.579 288.21 504.733C288.21 510.733 280.21 546.733 276.71 565.233C273.91 580.033 275.876 587.733 276.71 589.733C285.901 614.548 292.71 613.233 297.71 615.233C301.71 616.833 303.376 613.566 303.71 611.733L302.71 596.233C301.51 575.033 309.21 566.733 311.71 562.733L390.71 460.733C411.11 432.333 391.21 415.733 383.71 412.233C375.053 408.193 348.71 403.533 332.71 378.733Z" fill="#2918E7"/>
 <path d="M337.21 24.233C328.81 25.833 316.043 34.8997 310.71 39.233C302.376 42.8997 286.91 52.1329 291.71 59.7329C296.51 67.3329 309.043 70.5662 314.71 71.2329C340.71 71.2329 343.71 131.733 345.71 138.733C347.409 144.68 373.71 177.233 380.21 156.733C386.71 136.233 402.21 122.233 408.71 122.733C415.21 123.233 430.71 120.733 438.71 114.733C446.21 109.233 453.21 71.7329 453.21 59.2329C453.21 49.2329 464.543 38.7329 470.21 34.7329C472.21 31.2329 475.31 24.7329 469.71 24.7329C464.21 24.7329 435.21 12.233 426.71 9.23303C418.21 6.23303 391.71 7.73303 379.21 9.23303C366.71 10.733 360.71 16.233 354.71 18.233C348.71 20.233 347.71 22.233 337.21 24.233Z" fill="#2918E7"/>
 <path d="M298.21 36.7329C289.01 38.3329 275.21 52.7329 270.71 60.7329L267.71 66.2329C267.21 67.7329 262.71 75.7329 252.21 76.2329C241.71 76.7329 235.21 71.7329 231.21 68.2329C227.21 64.7329 225.71 60.7329 224.21 58.7329C222.61 56.7329 216.325 55.2329 214.71 52.2329C207.71 39.2329 224.71 32.2329 234.71 28.2329C240.003 26.1157 284.21 15.2329 301.71 19.7329C315.71 23.3329 305.21 32.5662 298.21 36.7329Z" fill="#2918E7"/>
@@ -3410,14 +3377,11 @@ svg {
   const phoneHome = document.getElementById('phoneHome')
   const play = document.getElementById('play')
   const btnHomeBox = document.querySelector('.btnHomeBox')
-  const countriesHome  = document.querySelectorAll('.countryHome')
   const waveBottomHome = document.getElementById('waveBottomHome')
   const homeTitle = document.getElementById('homeTitle')
-  const europeHome = document.getElementById('europeHome')
   
 
   const phoneConfig = document.getElementById('phoneConfig')
-  console.log(phoneConfig.parentNode.id)
 
 play.addEventListener('click', () => {
   [...phoneHome.children].forEach(el => {
@@ -3426,11 +3390,9 @@ play.addEventListener('click', () => {
 
 homeTitle.style.transform = "translateX(-50%) translateY(-3em)" 
 waveBottomHome.style.transform = "translateY(3em)" 
-btnHomeBox.style.transform = `translateX(-50%) translateY(calc(-50% + 3em))`
+btnHomeBox.style.transform = `translateX(-50%) translateY(calc(-50% + 3em))`;
 
-document.getElementById('ameriqueHome').style.transform = "translateX(-100%)"
-document.getElementById('afriqueHome').style.transform = "translateX(60%)"
-document.getElementById('europeHome').style.transform = "translateX(80%)";
+document.getElementById('mapHome').style.transform ="translateX(-40%) translateY(3em)";
 
 [...phoneHome.children].forEach(el => { el.style.opacity = "0" })
 
