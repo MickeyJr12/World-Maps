@@ -491,23 +491,27 @@ animation-range: entry 0% entry 100%;
       }
 
       .choiceBox {
-  display: flex;
-  position: absolute;
-  right: 8em;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  touch-action: pan-y;
-  pointer-events: auto; /* ✅ essentiel */
-  user-select: none;
-  color: white;
-  gap: 0.4em;
-  z-index: 99999;
-  height: 30em;
-  width : 100em;
-}
+        display: flex;
+        position: fixed;
+        right:8em;
+        flex-direction: column;
+        align-items: center;
+        overflow-X: auto;
+        overflow-y: scroll;
+        overscroll-behavior: contain;  /* évite que le scroll remonte à la page */
+        touch-action: pan-y;
+        user-select: none;
+        scrollbar-width: none;
+        color:white;
+        gap: 0.4em;
+        z-index: 99999;
+        height: 30em;
+        padding-top: 1em;
+        padding-left: 0px;
+        min-width:12em;
+        transition: opacity 0.4s ease;
 
+      }
       .choice {
     font-family:
     "Segoe UI Emoji",
@@ -8844,13 +8848,14 @@ end   = { R:255, G:0, B:0 };
     });
 
     let Ls = [];
+    if (!isMobile){
     choiceBox.style.top = search.getBoundingClientRect().bottom + 10 + "px";
     choiceBox.style.left =
       search.getBoundingClientRect().left -
       choiceBox.getBoundingClientRect().width / 2 -
       search.getBoundingClientRect().width / 2 +
       "px";
-
+    }
    function isoToEmoji (code) {
   return code
     .split('')
