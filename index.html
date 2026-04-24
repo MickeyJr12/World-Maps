@@ -1093,7 +1093,7 @@ svg {
 <!--Style Home-->
 #phoneHome{
   display: flex;
-  position:relative;
+  position:fixed;
   flex-direction: column;
   justify-content: flex-end;
   box-sizing: border-box;
@@ -1168,7 +1168,7 @@ svg {
   margin-top: 30px;
   z-index: -1;
   width: 100%;
-  height: 76dvh;
+  height: 76vh;
   z-index: 0;
   filter : drop-shadow(0px -4px 4px rgba(0,0,0,0.4));
 }
@@ -3381,19 +3381,49 @@ svg {
 
 <!--Script Home-->
 <script>
+  
  
   const phoneHome = document.getElementById('phoneHome')
   const play = document.getElementById('play')
   const btnHomeBox = document.querySelector('.btnHomeBox')
   const countriesHome  = document.querySelectorAll('.countryHome')
   const waveBottomHome = document.getElementById('waveBottomHome')
+  const homeTitle = document.getElementById('homeTitle')
+  const europeHome = document.getElementById('europeHome')
+  
 
   const phoneConfig = document.getElementById('phoneConfig')
   console.log(phoneConfig.parentNode.id)
 
- play.addEventListener('click', () => {
+play.addEventListener('click', () => {
+  [...phoneHome.children].forEach(el => {
+  el.style.transition = "transform 1s ease, opacity 0.4s ease"
+})
+
+homeTitle.style.transform = "translateX(-50%) translateY(-3em)" 
+waveBottomHome.style.transform = "translateY(3em)" 
+btnHomeBox.style.transform = `translateX(-50%) translateY(calc(-50% + 3em))`
+
+document.getElementById('ameriqueBHome').style.transform = "translateX(-100%)"
+document.getElementById('afriqueHome').style.transform = "translateX(60%)"
+document.getElementById('europeHome').style.transform = "translateX(80%)";
+
+[...phoneHome.children].forEach(el => { el.style.opacity = "0" })
+
+setTimeout(() => {
   phoneHome.style.display = "none"
-  phoneConfig.style.display = "flex"  
+
+  phoneConfig.style.transition = "none"
+  phoneConfig.style.opacity = "0"
+  phoneConfig.style.transform = "scale(0.97)"
+  phoneConfig.style.display = "flex"
+
+  phoneConfig.offsetHeight  // force reflow
+
+  phoneConfig.style.transition = "transform 0.6s ease, opacity 0.5s ease"
+  phoneConfig.style.opacity = "1"
+  phoneConfig.style.transform = ""
+}, 240)  // attend la fin de l'animation de phoneHome
 })
 </script>
 
