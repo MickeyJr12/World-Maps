@@ -3621,7 +3621,7 @@ svg {
 
 play.addEventListener('click', () => {
   [...phoneHome.children].forEach(el => {
-  el.style.transition = "transform 1s ease, opacity 0.4s ease"
+  el.style.transition = "transform 0.5s ease, opacity 0.2s ease"
 })
 
 homeTitle.style.transform = "translateX(-50%) translateY(-3em)" 
@@ -3653,9 +3653,9 @@ setTimeout(() => {
 const backConfig = document.getElementById('backConfig')
 backConfig.addEventListener('click',()=>{
   // Sortie de phoneConfig
-phoneConfig.style.transition = "transform 0.6s ease, opacity 0.5s ease"
+phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease"
 phoneConfig.style.opacity = "0"
-phoneConfig.style.transform = "scale(0.97)"
+phoneConfig.style.transform = "scale(0.90)"
 
 setTimeout(() => {
   phoneConfig.style.display = "none"
@@ -3686,7 +3686,7 @@ setTimeout(() => {
   btnHomeBox.style.transform = "translateX(-50%) translateY(-50%)"
   document.getElementById('mapHome').style.transform = "translateX(-40%)"
 
-}, 400)
+}, 150)
 })
 
 </script>
