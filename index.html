@@ -10192,5 +10192,14 @@ document.querySelectorAll('.hoverable').forEach(el => {
 
 })
   </script>
+
+<!--Script cache-->
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+  }
+</script>
+
   </body>
 </html>
