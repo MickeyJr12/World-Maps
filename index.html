@@ -1219,6 +1219,20 @@ svg {
       width: 100%;
       min-height: 100vh;
       }
+      .back{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position : absolute; 
+        background:transparent;
+        border:none;
+        border-radius: 5px;
+        top : 2em; 
+        left : 2em;
+        width : 3em;
+        height : 3em;
+      }
+      .back:active{background : rgba(255,255,255,0.2)}
       #configTitle{
         display: flex;
         justify-content: center;
@@ -1239,7 +1253,6 @@ svg {
         height: 85vh;
         z-index: 0;
         filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.4)00);
-        border : 2px solid black;
       }
       #waveBottomConfig path {
         fill:rgb(252,248,248)}
@@ -1253,9 +1266,8 @@ svg {
         display: flex;
         position: fixed;
         flex-direction: column;
-        border : 3px solid yellow;
         align-items: center;
-        padding-top: 0.6em;
+        padding-top: 1em;
         gap:1em;
         top : 15vh;
         width: 100%;
@@ -1475,6 +1487,9 @@ svg {
 
 <!--HTML configuration-->
 <div id="phoneConfig">
+  <button class="back" id="backConfig">
+<svg fill="white" xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="100%" ><path d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"/></svg>
+  </button>
   <div id="configTitle">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"  height="80%">
 
@@ -3619,7 +3634,6 @@ document.getElementById('mapHome').style.transform ="translateX(-40%) translateY
 
 setTimeout(() => {
   phoneHome.style.display = "none"
-
   phoneConfig.style.transition = "none"
   phoneConfig.style.opacity = "0"
   phoneConfig.style.transform = "scale(0.97)"
@@ -3632,11 +3646,48 @@ setTimeout(() => {
   phoneConfig.style.transform = ""
 }, 180)  // attend la fin de l'animation de phoneHome
 })
-</script>
 
+</script>
 <!--Script Configuration-->
 <script>
+const backConfig = document.getElementById('backConfig')
+backConfig.addEventListener('click',()=>{
+  // Sortie de phoneConfig
+phoneConfig.style.transition = "transform 0.6s ease, opacity 0.5s ease"
+phoneConfig.style.opacity = "0"
+phoneConfig.style.transform = "scale(0.97)"
 
+setTimeout(() => {
+  phoneConfig.style.display = "none"
+
+  // Prépare phoneHome avant de l'afficher
+  ;[...phoneHome.children].forEach(el => {
+    el.style.transition = "none"
+    el.style.opacity = "0"
+  })
+
+  homeTitle.style.transform = "translateX(-50%) translateY(-3em)"
+  waveBottomHome.style.transform = "translateY(3em)"
+  btnHomeBox.style.transform = "translateX(-50%) translateY(calc(-50% + 3em))"
+  document.getElementById('mapHome').style.transform = "translateX(-40%) translateY(3em)"
+
+  phoneHome.style.display = "flex"
+  phoneHome.offsetHeight  // force reflow
+
+  // Anime le retour de phoneHome
+  ;[...phoneHome.children].forEach(el => {
+    el.style.transition = "transform 1s ease, opacity 0.4s ease"
+    el.style.opacity = "1"
+    if (el.id === "mapHome"){el.style.opacity =0.08 ;}
+  })
+
+  homeTitle.style.transform = "translateX(-50%)"
+  waveBottomHome.style.transform = ""
+  btnHomeBox.style.transform = "translateX(-50%) translateY(-50%)"
+  document.getElementById('mapHome').style.transform = "translateX(-40%)"
+
+}, 400)
+})
 
 </script>
 <!--Fin Script configuration -->  
