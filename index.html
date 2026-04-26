@@ -1206,7 +1206,7 @@ svg {
 /*CSS Configuration */
  #phoneConfig {
       display: none;
-      position:fixed;
+      position:relative;
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
@@ -1238,14 +1238,16 @@ svg {
         width: 120%;
         height: 85dvh;
         z-index: 0;
-        filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.4));
+        filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.4)00);
+        border : 2px solid black;
       }
+      #waveBottomConfig path {fill:rgb(252,248,248)}
+
       .ligneInter{
         width :75vw;
         border : 2px solid rgba(192, 57, 43, 0.25);
       }
 
-      #waveBottomConfig path {fill:rgb(252,248,248)}
       #contentConfig {
         display: flex;
         position: fixed;
