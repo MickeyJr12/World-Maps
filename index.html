@@ -1324,12 +1324,12 @@
         flex-direction: column;
         align-items: center;
         overflow-y: scroll;
-         scrollbar-width:thin;
+        scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         padding: 1em 0em;
         gap: 1em;
         top: 15vh;
-        bottom:8dvh;
+        bottom: 8dvh;
         width: 100%;
       }
       #cadreMode {
@@ -1363,7 +1363,7 @@
         height: auto;
         width: 100%;
         padding: 0em 1em;
-        gap: 1em;       
+        gap: 1em;
       }
       .btnMode {
         display: flex;
@@ -1378,7 +1378,7 @@
         padding: 0em 0.2em;
         border-radius: 10px;
         border: 2px solid rgba(192, 57, 43, 0.25);
-        transition: background 0.2s ease;
+        transition: background 0.08s ease;
       }
 
       #gridQR {
@@ -1409,7 +1409,7 @@
       .titleQR {
         display: flex;
         justify-content: center;
-        font-weight: 900;
+        font-weight: 600;
       }
       .ligneQR {
         width: 90%;
@@ -1429,21 +1429,19 @@
         padding: 0.4em 0em;
         border-radius: 10px;
         margin: 0.1em 0em;
-        transition: background 0.2s ease;
+        transition: background 0.08s ease;
       }
 
       #cadreChoixRegion {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        overflow-x: auto;
         flex-shrink: 0;
         padding: 1em 1em;
-        gap: 1em;
         height: auto;
         width: clamp(75vw, 75%, 80vw);
         background-color: rgb(253, 251, 248);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-
         border-radius: 10px;
       }
 
@@ -1451,6 +1449,27 @@
         background: rgba(255, 255, 255, 0.4);
         backdrop-filter: blur(4px);
       }
+
+       #cadreRegionTitle{
+        display: flex;
+        font-weight: 600;
+        align-items: center;
+        gap: 1em;
+        letter-spacing: 1px;
+        height: 3em;
+      }
+      #cadreRegionIcon{height:1.6em}
+
+      #regionScroll{
+        display: flex;
+        overflow-x: auto;
+        height: auto;
+        width: 100%;
+        flex-shrink: 0;
+        gap: 1em;
+      }
+        
+     
 
       .cadreRegion {
         display: flex;
@@ -1464,8 +1483,10 @@
         border: 2px solid rgba(265, 34, 85, 0.4);
         transition:
           border 0.2s ease,
-          background 0.2s ease;
+          background 0.08s ease;
       }
+
+
       .svgRegion {
         margin-bottom: 0.5em;
         height: 100%;
@@ -1492,26 +1513,28 @@
         padding: 0em 1em;
         padding-bottom: 0.6em;
       }
-      #iconD{height:1.5em;}
-      #dTitle {
-      display: flex;
-      align-items: center;
-      position: relative;
-      gap: 1em;
-      letter-spacing: 1px;
-      height: 3em;
+      #iconD {
+        height: 1.5em;
       }
-      #cadreBtnD{
+      #dTitle {
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 1em;
+        letter-spacing: 1px;
+        height: 3em;
+      }
+      #cadreBtnD {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         height: auto;
         width: 100%;
         padding: 0em 1em;
-        gap: 1em;        
+        gap: 1em;
       }
-     
-      .btnD{
+
+      .btnD {
         display: flex;
         position: relative;
         text-align: center;
@@ -1524,9 +1547,8 @@
         padding: 0em 0.2em;
         border-radius: 10px;
         border: 2px solid rgba(192, 57, 43, 0.25);
-        transition: background 0.2s ease;        
+        transition: background 0.08s ease;
       }
-
     </style>
 
     <!--HTML Home-->
@@ -1773,20 +1795,35 @@
           </div>
           <div id="cadreBtnMode">
             <div class="btnMode" id="modeChoix">
-
-              <svg height="1.5em"  class="iconBtnMode" viewBox="0 0 213 213" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M106.5 0C165.318 0 213 47.6817 213 106.5C213 165.318 165.318 213 106.5 213C47.6819 213 0 165.318 0 106.5C0 47.6818 47.6819 0.000235603 106.5 0ZM63.5 111.875C51.626 111.875 42 121.501 42 133.375V149.5C42 161.374 51.626 171 63.5 171H79.625C91.4989 171 101.125 161.374 101.125 149.5V133.375C101.125 121.501 91.499 111.875 79.625 111.875H63.5ZM133.375 111.875C121.501 111.875 111.875 121.501 111.875 133.375V149.5C111.875 161.374 121.501 171 133.375 171H149.5C161.374 171 171 161.374 171 149.5V133.375C171 121.501 161.374 111.875 149.5 111.875H133.375ZM63.5 42C51.626 42 42 51.626 42 63.5V79.625C42 91.4993 51.626 101.125 63.5 101.125H79.625C91.499 101.125 101.125 91.499 101.125 79.625V63.5C101.125 51.626 91.499 42 79.625 42H63.5ZM133.375 42C121.501 42 111.875 51.626 111.875 63.5V79.625C111.875 91.499 121.501 101.125 133.375 101.125H149.5C161.374 101.125 171 91.499 171 79.625V63.5C171 51.626 161.374 42 149.5 42H133.375Z" fill="#DE4040"/>
-</svg>
+              <svg
+                height="1.5em"
+                class="iconBtnMode"
+                viewBox="0 0 213 213"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M106.5 0C165.318 0 213 47.6817 213 106.5C213 165.318 165.318 213 106.5 213C47.6819 213 0 165.318 0 106.5C0 47.6818 47.6819 0.000235603 106.5 0ZM63.5 111.875C51.626 111.875 42 121.501 42 133.375V149.5C42 161.374 51.626 171 63.5 171H79.625C91.4989 171 101.125 161.374 101.125 149.5V133.375C101.125 121.501 91.499 111.875 79.625 111.875H63.5ZM133.375 111.875C121.501 111.875 111.875 121.501 111.875 133.375V149.5C111.875 161.374 121.501 171 133.375 171H149.5C161.374 171 171 161.374 171 149.5V133.375C171 121.501 161.374 111.875 149.5 111.875H133.375ZM63.5 42C51.626 42 42 51.626 42 63.5V79.625C42 91.4993 51.626 101.125 63.5 101.125H79.625C91.499 101.125 101.125 91.499 101.125 79.625V63.5C101.125 51.626 91.499 42 79.625 42H63.5ZM133.375 42C121.501 42 111.875 51.626 111.875 63.5V79.625C111.875 91.499 121.501 101.125 133.375 101.125H149.5C161.374 101.125 171 91.499 171 79.625V63.5C171 51.626 161.374 42 149.5 42H133.375Z"
+                  fill="#DE4040"
+                />
+              </svg>
 
               <h4>4 choix</h4>
             </div>
 
             <div class="btnMode" id="modeTrouver">
-             
-          <svg class="iconBtnMode" height="1.5em" viewBox="0 0 213 213" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M106.5 0C165.318 0 213 47.6817 213 106.5C213 165.318 165.318 213 106.5 213C47.6817 213 0 165.318 0 106.5C0 47.6817 47.6817 0 106.5 0ZM134.197 50.8691C107.875 31.1736 70.5675 36.5439 50.8701 62.8643C31.1727 89.1846 36.5437 126.489 62.8662 146.185C84.0107 162.006 113.053 162.006 134.197 146.185L160.533 172.518C163.843 175.827 169.208 175.827 172.518 172.518C175.827 169.208 175.827 163.843 172.518 160.534L172.519 160.523L146.193 134.189C165.891 107.869 160.52 70.5649 134.197 50.8691ZM98.751 56.3906C122.145 56.3906 141.11 75.3539 141.11 98.7461C141.085 122.128 122.135 141.077 98.751 141.102C75.3569 141.101 56.3926 122.138 56.3926 98.7461C56.3927 75.354 75.357 56.3909 98.751 56.3906Z" fill="#DF2F2F"/>
-</svg>
-
+              <svg
+                class="iconBtnMode"
+                height="1.5em"
+                viewBox="0 0 213 213"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M106.5 0C165.318 0 213 47.6817 213 106.5C213 165.318 165.318 213 106.5 213C47.6817 213 0 165.318 0 106.5C0 47.6817 47.6817 0 106.5 0ZM134.197 50.8691C107.875 31.1736 70.5675 36.5439 50.8701 62.8643C31.1727 89.1846 36.5437 126.489 62.8662 146.185C84.0107 162.006 113.053 162.006 134.197 146.185L160.533 172.518C163.843 175.827 169.208 175.827 172.518 172.518C175.827 169.208 175.827 163.843 172.518 160.534L172.519 160.523L146.193 134.189C165.891 107.869 160.52 70.5649 134.197 50.8691ZM98.751 56.3906C122.145 56.3906 141.11 75.3539 141.11 98.7461C141.085 122.128 122.135 141.077 98.751 141.102C75.3569 141.101 56.3926 122.138 56.3926 98.7461C56.3927 75.354 75.357 56.3909 98.751 56.3906Z"
+                  fill="#DF2F2F"
+                />
+              </svg>
 
               <h4>Trouver</h4>
             </div>
@@ -1869,7 +1906,13 @@
         <div class="ligneInter"></div>
 
         <div id="cadreChoixRegion">
-          <div class="cadreRegion">
+             <div id="cadreRegionTitle">
+          <svg id="cadreRegionIcon" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" ><path d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm0,22c-5.514,0-10-4.486-10-10,0-3.474,1.781-6.539,4.477-8.332l1.247,1.091c.175.153.276.375.276.608v.826c0,.446.362.808.808.808h.726c.305,0,.605-.083.867-.24l1.546-.928c.325-.195.742-.144,1.01.124l.801.801c.155.155.242.365.242.585v.831c0,.457-.37.827-.827.827h-2.633c-.352,0-.697.104-.99.3l-1.756,1.17c-.497.331-.795.888-.795,1.485v1.045c0,1.105.895,2,2,2h1.427c.337,0,.63.229.712.556l.693,2.774c.099.394.453.671.859.671h.807c.311,0,.599-.163.759-.43l2.495-4.159c.161-.269.247-.577.247-.891v-1.303c0-.459-.182-.9-.507-1.224l-.993-.993h2.257c.796,0,1.559-.316,2.121-.879l1.235-1.235c.569,1.255.886,2.648.886,4.114,0,5.514-4.486,10-10,10Z"/></svg>
+              
+              <h3>Continent</h3></div>
+
+          <div id="regionScroll">
+          <div class="cadreRegion" id="allC">
             <svg
               class="svgRegion"
               viewBox="0 0 5873 2912"
@@ -1990,7 +2033,7 @@
             <span style="font-weight: 700">Monde entier</span>
           </div>
 
-          <div class="cadreRegion">
+          <div class="cadreRegion" id="Americas" >
             <svg
               class="svgRegion"
               id="AmeriqueChoice"
@@ -2027,7 +2070,7 @@
             <span style="font-weight: 700">Amérique</span>
           </div>
 
-          <div class="cadreRegion">
+          <div class="cadreRegion" id="Africa">
             <svg
               class="svgRegion"
               viewBox="0 0 815 832"
@@ -2100,7 +2143,7 @@
             <span style="font-weight: 700">Afrique</span>
           </div>
 
-          <div class="cadreRegion">
+          <div class="cadreRegion" id="Europe">
             <svg
               class="svgRegion"
               viewBox="0 0 1481 1161"
@@ -2264,7 +2307,7 @@
             <span style="font-weight: 700">Europe</span>
           </div>
 
-          <div class="cadreRegion">
+          <div class="cadreRegion" id="Oceania">
             <svg
               class="svgRegion"
               viewBox="0 0 851 668"
@@ -2456,38 +2499,43 @@
             <div class="ligneQR"></div>
             <span style="font-weight: 700">Océanie</span>
           </div>
+          </div>
         </div>
         <div class="ligneInter"></div>
 
-         <div id="cadreD">
-          <div id="modeTitle">
-            <svg xmlns="http://www.w3.org/2000/svg" id="iconD" data-name="Layer 1" viewBox="0 0 24 24">
-  <path d="M22.789,8.85c-.465-1.258-1.554-1.999-2.866-1.945-1.002,.032-2.005,.059-3.006,.079-.445,.038-.866-.284-1.004-.728-.297-.96-.595-1.919-.898-2.877-.408-1.301-1.591-2.142-3.013-2.142s-2.605,.841-3.013,2.141c-.304,.958-.602,1.917-.898,2.877-.138,.445-.54,.769-1.004,.729-1.002-.02-2.005-.046-2.996-.078-1.311-.052-2.414,.688-2.878,1.945-.507,1.372-.081,2.893,1.066,3.789,.812,.623,1.617,1.231,2.421,1.831,.382,.285,.529,.795,.367,1.27-.334,.979-.683,1.962-1.044,2.946-.492,1.301-.142,2.657,.892,3.453,1.09,.841,2.635,.828,3.847-.036l2.558-1.837c.414-.296,.95-.297,1.365,0l2.562,1.84c.613,.436,1.312,.655,1.994,.655,.664,0,1.312-.207,1.849-.621,1.033-.796,1.383-2.152,.895-3.445-.365-.992-.712-1.976-1.047-2.954-.163-.474-.015-.984,.366-1.269,.805-.601,1.611-1.209,2.429-1.837,1.14-.891,1.566-2.412,1.059-3.784Z"/>
-</svg>
+        <div id="cadreD">
+          <div id="dTitle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="iconD"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M22.789,8.85c-.465-1.258-1.554-1.999-2.866-1.945-1.002,.032-2.005,.059-3.006,.079-.445,.038-.866-.284-1.004-.728-.297-.96-.595-1.919-.898-2.877-.408-1.301-1.591-2.142-3.013-2.142s-2.605,.841-3.013,2.141c-.304,.958-.602,1.917-.898,2.877-.138,.445-.54,.769-1.004,.729-1.002-.02-2.005-.046-2.996-.078-1.311-.052-2.414,.688-2.878,1.945-.507,1.372-.081,2.893,1.066,3.789,.812,.623,1.617,1.231,2.421,1.831,.382,.285,.529,.795,.367,1.27-.334,.979-.683,1.962-1.044,2.946-.492,1.301-.142,2.657,.892,3.453,1.09,.841,2.635,.828,3.847-.036l2.558-1.837c.414-.296,.95-.297,1.365,0l2.562,1.84c.613,.436,1.312,.655,1.994,.655,.664,0,1.312-.207,1.849-.621,1.033-.796,1.383-2.152,.895-3.445-.365-.992-.712-1.976-1.047-2.954-.163-.474-.015-.984,.366-1.269,.805-.601,1.611-1.209,2.429-1.837,1.14-.891,1.566-2.412,1.059-3.784Z"
+              />
+            </svg>
             <h3>Difficulté</h3>
           </div>
+          
           <div id="cadreBtnD">
-            <div class="btnD" id="facile">             
+            <div class="btnD" id="facile">
               <h4>Facile</h4>
             </div>
 
-            <div class="btnD" id="normal">             
+            <div class="btnD" id="normal">
               <h4>Normal</h4>
             </div>
 
-            <div class="btnD" id="intermediaire">             
+            <div class="btnD" id="intermediaire">
               <h4>Intermédiaire</h4>
             </div>
 
-            <div class="btnD" id="difficile">             
+            <div class="btnD" id="difficile">
               <h4>Difficile</h4>
             </div>
-            
-            
-
           </div>
         </div>
-
       </div>
     </div>
 
@@ -4511,14 +4559,22 @@
       const backConfig = document.getElementById("backConfig");
 
       const btnsMode = document.querySelectorAll(".btnMode");
-      const btnsD = document.querySelectorAll('.btnD')
+      const btnsD = document.querySelectorAll(".btnD");
       const qrs = document.querySelectorAll(".qr");
       const q = document.querySelectorAll(".q");
       const r = document.querySelectorAll(".r");
+      const cs = document.querySelectorAll(".cadreRegion")
+      const ds = document.querySelectorAll(".btnD")
       qrs.forEach((q) => (q.style.display = "none"));
       const cadresRegions = document.querySelectorAll(".cadreRegion");
-      const L_btn = [btnsMode, q, r,,btnsD, cadresRegions];
-      const L_config = {m:null,q:null,r:null,c:null,d:null}
+      const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
+      const L_config = { m: null, q: null, r: null, c: null, d: null };
+
+      cs.forEach(el=>el.addEventListener('click',()=>L_config.c=el.id))
+      ds.forEach(el=>el.addEventListener('click',()=>{L_config.d=el.id}))
+
+
+
 
       const arboConfig = {
         modeChoix: {
@@ -4566,7 +4622,12 @@
 
       for (const [mode, QS] of Object.entries(arboConfig)) {
         document.getElementById(mode).addEventListener("click", () => {
-          
+          if (L_config.m === mode) {
+            return;
+          }
+          L_config.m = mode;
+          L_config.q = null;
+          L_config.r = null;
           qrs.forEach((q) => {
             q.style = "";
             q.style.display = "none";
@@ -4577,6 +4638,10 @@
             cadreQ.appendChild(Q2);
             Q2.style.display = "flex";
             Q2.addEventListener("click", () => {
+              if (L_config.q === Q2) {
+                return;
+              }
+              L_config.q = Q2.id;
               r.forEach((q) => {
                 q.style = "";
                 q.style.display = "none";
@@ -4585,6 +4650,9 @@
               RS.forEach((R) => {
                 document.getElementById(R).style.display = "flex";
                 cadreR.appendChild(document.getElementById(R));
+                document.getElementById(R).addEventListener("click", () => {
+                  L_config.r = R;
+                });
               });
             });
           }
@@ -4643,6 +4711,21 @@
           btnHomeBox.style.transform = "translateX(-50%) translateY(-50%)";
           document.getElementById("mapHome").style.transform =
             "translateX(-40%)";
+
+          //Réinitialiser les btn Config
+          Object.keys(L_config).forEach((key) => {
+            L_config[key] = null;
+          });
+          ``;
+
+          L_btn.forEach((group) => {
+            group.forEach((el) => {                        
+                  el.style.background = "";
+                  el.style.border = "";                            
+            });
+          });
+
+          qrs.forEach(qr=>qr.style.display="none  ")
         }, 150);
       });
     </script>
@@ -10472,7 +10555,7 @@
           C.classList = "choice";
           choiceBox.appendChild(C);
           //C.appendChild(svgFlag)
-          
+
           C.textContent = r.t;
           C.style.transform = "translateY(-1em)";
           setTimeout(() => {
