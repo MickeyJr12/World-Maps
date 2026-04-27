@@ -1216,7 +1216,7 @@ body {
         min-height: 100dvh;
         min-width: 100vw;
         width: 100%;
-        padding-top: calc(env(safe-area-inset-top)+2em);
+        padding-top: calc(env(safe-area-inset-top));
       }
       .back {
         display: flex;
@@ -1239,6 +1239,7 @@ body {
         justify-content: center;
         align-items: center;
         flex-wrap: nowrap;
+        border : 2px solid yellow;
         gap: 1em;
         height: 2em;
         color: white;
@@ -1273,7 +1274,7 @@ body {
         scrollbar-color: rgba(255, 255, 255, 0.2) ;
         padding: 1em 0em;
         gap: 1em;
-        top: 18vh;
+        top: calc(18vh+1em);
         bottom: env(safe-area-inset-bottom);   
         width: 100%;
         padding-bottom: 2em;
