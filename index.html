@@ -1107,7 +1107,6 @@
         min-height: 100vh; /* dynamic viewport height, plus fiable sur mobile */
         width: 100%;
         padding-top: env(safe-area-inset-top);
-        padding-bottom: env(safe-area-inset-bottom);
       }
 
       #homeTitle {
@@ -1152,15 +1151,13 @@
       #waveBottomHome {
         position: absolute;
         pointer-events: none;
-        bottom: 0;
+        z-index: 0;
         margin-top: 30px;
-        z-index: -1;
         width: 100%;
         height: 70dvh;
-        z-index: 0;
         filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.4));
       }
-
+    
       .btnHomeBox {
         display: flex;
         position: absolute;
@@ -1215,7 +1212,7 @@
       /*CSS Configuration */
       #phoneConfig {
         display: none;
-        position: relative;
+        position: fixed;
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
@@ -1234,7 +1231,6 @@
         min-width: 100vw;
         width: 100%;
         padding-top: env(safe-area-inset-top);
-        padding-bottom: env(safe-area-inset-bottom);
       }
       .back {
         display: flex;
@@ -1291,10 +1287,10 @@
         scrollbar-color: rgba(255, 255, 255, 0.2) ;
         padding: 1em 0em;
         gap: 1em;
-        bottom: 0px;        
-        width: 100%;
         top: calc(15vh + env(safe-area-inset-top));
-        padding-bottom: calc(2em + env(safe-area-inset-bottom));
+        bottom: env(safe-area-inset-bottom);   
+        width: 100%;
+        padding-bottom: 2em;
         padding-top: 2em;
       }
       #cadreMode {
