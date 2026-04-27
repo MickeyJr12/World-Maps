@@ -286,7 +286,6 @@
         left: 85%;
         top: 3%;
       }
-
       .info {
         width: 2em;
         height: 2em;
@@ -1324,6 +1323,7 @@
         position: fixed;
         flex-direction: column;
         align-items: center;
+        overflow-y: scroll;
         padding-top: 1em;
         gap: 1em;
         top: 15vh;
@@ -1339,7 +1339,7 @@
         border-radius: 10px;
         background-color: rgb(253, 251, 248);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        width: clamp(75vw, 75%, 80vw);
+        width: clamp(80vw, 80%, 85vw);
         padding: 0em 1em;
         padding-bottom: 0.6em;
       }
@@ -1387,7 +1387,7 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: nowrap;
-        width: clamp(75vw, 75%, 80vw);
+        width: clamp(80vw, 80%, 85vw);
         height: auto;
         gap: 0.2em;
       }
@@ -1401,7 +1401,7 @@
 
         background-color: rgb(253, 251, 248);
         box-shadow: 0px 4px 4px rgba(97, 68, 68, 0.1);
-        width: clamp(35%, 38%, 40%);
+        width: clamp(35%, 49%, 50%);
         padding: 0.5em 1em;
         gap: 0.1em;
         border-radius: 10px;
@@ -1430,17 +1430,6 @@
         margin: 0.1em 0em;
         background: transparent;
         transition: background 0.2s ease;
-      }
-
-      #switchQR {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 0 0 auto;
-        width: clamp(1em, 2em, 5%);
-        aspect-ratio: 1 /1;
-        border: 2px solid rgba(192, 57, 43, 0.25);
-        border-radius: 50%;
       }
 
       #cadreChoixRegion {
@@ -1814,24 +1803,7 @@
             <h4 class="qr q" id="superficieQ">Superficie</h4>
             <h4 class="qr q" id="populationQ">Population</h4>
             <h4 class="qr q" id="densiteQ">Densité de population</h4>
-            <h4 class="qr q" id="dateIndeQ">Date d'indépendance</h4>
-          </div>
-          <div id="switchQR">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              id="arrow-circle-down"
-              viewBox="0 0 26 24"
-              width="60%"
-            >
-              <g>
-                <path
-                  d="M22.5,15.5H4.267l1.612-1.64a1.5,1.5,0,1,0-2.14-2.1L.993,14.552a3.515,3.515,0,0,0,0,4.9l2.746,2.793a1.5,1.5,0,0,0,2.14-2.1L4.267,18.5H22.5a1.5,1.5,0,0,0,0-3Z"
-                />
-                <path
-                  d="M1.5,8.5H19.733l-1.612,1.64a1.5,1.5,0,1,0,2.14,2.1l2.746-2.793a3.515,3.515,0,0,0,0-4.9L20.261,1.758a1.5,1.5,0,0,0-2.14,2.1L19.733,5.5H1.5a1.5,1.5,0,0,0,0,3Z"
-                />
-              </g>
-            </svg>
+            <h4 class="qr q" id="dateIndeQ">Indépendance</h4>
           </div>
           <div class="cadreQR" id="cadreR">
             <div class="titleQR">Réponses</div>
@@ -1850,7 +1822,11 @@
             </h4>
             <h4 class="qr r" id="densiteR">Densité de population</h4>
             <h4 class="qr r" id="dateIndeR">Date d'indépendance</h4>
-            <h4 class="qr r" id="nbrClass">1</h4>
+            <h4 class="qr r" id="nbrClass1">1</h4>
+            <h4 class="qr r" id="nbrClass2">2</h4>
+            <h4 class="qr r" id="nbrClass3">3</h4>
+            <h4 class="qr r" id="nbrClass4">4</h4>
+            <h4 class="qr r" id="nbrClass5">5</h4>
           </div>
         </div>
         <div class="ligneInter"></div>
@@ -4468,11 +4444,11 @@
 
       const btnsMode = document.querySelectorAll(".btnMode");
       const qrs = document.querySelectorAll(".qr");
-      const q = document.querySelectorAll('.q')
-      const r = document.querySelectorAll('.r')
+      const q = document.querySelectorAll(".q");
+      const r = document.querySelectorAll(".r");
       qrs.forEach((q) => (q.style.display = "none"));
       const cadresRegions = document.querySelectorAll(".cadreRegion");
-      const L_btn = [btnsMode, q,r, cadresRegions];
+      const L_btn = [btnsMode, q, r, cadresRegions];
 
       const arboConfig = {
         modeChoix: {
@@ -4490,11 +4466,9 @@
           nomQ: ["mapsR"],
           capitaleQ: ["mapsR"],
         },
-        modeClasser: {
-          densiteQ: ["nbrClass"],
-          dateIndeQ: ["nbrClass"],
-          populationQ: ["nbrClass"],
-        },
+        modeClasser: {densiteQ: ["nbrClass1", "nbrClass2", "nbrClass3", "nbrClass4", "nbrClass5"],
+dateIndeQ: ["nbrClass1", "nbrClass2", "nbrClass3", "nbrClass4", "nbrClass5"],
+populationQ: ["nbrClass1", "nbrClass2", "nbrClass3", "nbrClass4", "nbrClass5"],},
       };
 
       const cadreQ = document.getElementById("cadreQ");
@@ -4503,7 +4477,7 @@
       for (const [mode, QS] of Object.entries(arboConfig)) {
         document.getElementById(mode).addEventListener("click", () => {
           qrs.forEach((q) => {
-            q.style =""
+            q.style = "";
             q.style.display = "none";
           });
 
@@ -4513,8 +4487,8 @@
             Q2.style.display = "flex";
             Q2.addEventListener("click", () => {
               r.forEach((q) => {
-                  q.style="";
-                  q.style.display = "none";
+                q.style = "";
+                q.style.display = "none";
               });
 
               RS.forEach((R) => {
