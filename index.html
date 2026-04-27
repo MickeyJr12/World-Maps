@@ -1326,13 +1326,11 @@
         overflow-y: scroll;
          scrollbar-width:thin;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-        padding-top: 1em;
+        padding: 1em 0em;
         gap: 1em;
         top: 15vh;
-        bottom:1dvh;
+        bottom:8dvh;
         width: 100%;
-        border:5px solid yellow;
-
       }
       #cadreMode {
         display: flex;
@@ -1430,7 +1428,6 @@
         width: clamp(75%, 95%, 98%);
         padding: 0.4em 0em;
         border-radius: 10px;
-        font-weight: 600;
         margin: 0.1em 0em;
         transition: background 0.2s ease;
       }
@@ -4521,6 +4518,7 @@
       qrs.forEach((q) => (q.style.display = "none"));
       const cadresRegions = document.querySelectorAll(".cadreRegion");
       const L_btn = [btnsMode, q, r,,btnsD, cadresRegions];
+      const L_config = {m:null,q:null,r:null,c:null,d:null}
 
       const arboConfig = {
         modeChoix: {
@@ -4568,6 +4566,7 @@
 
       for (const [mode, QS] of Object.entries(arboConfig)) {
         document.getElementById(mode).addEventListener("click", () => {
+          
           qrs.forEach((q) => {
             q.style = "";
             q.style.display = "none";
