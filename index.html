@@ -30,39 +30,26 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap");
 
-      div {
-        -webkit-tap-highlight-color: transparent;
-      }
-      * {
-        -webkit-touch-callout: none; /* iOS : désactive menu appui long */
-        -webkit-user-select: none; /* iOS Safari */
-        user-select: none; /* Standard */
-      }
       html {
-        margin: 0;
-        margin-top: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-      }           
-      body {
-        position: relative;
-        overflow: hidden;
-        background-repeat: no-repeat;
-        background-size: cover;
-        inset: 0;
-        margin: 0;
-        width: 100%;
-        height: 100%;
-         background: linear-gradient(
-          141deg,
-          #0f23fa 0%,
-          #103aad 41%,
-          #0c5679 100%
-        );
-          /* Safe area iOS */      
-        box-sizing: border-box;
-      }    
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: -webkit-fill-available;
+}
+
+body {
+  position: fixed;        /* ← clé du fix */
+  inset: 0;               /* top/right/bottom/left: 0 — fonctionne avec fixed */
+  overflow: hidden;
+  background: linear-gradient(141deg, #0f23fa 0%, #103aad 41%, #0c5679 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}  
 
       .monde {
         position: absolute;
