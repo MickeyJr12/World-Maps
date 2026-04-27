@@ -1324,11 +1324,15 @@
         flex-direction: column;
         align-items: center;
         overflow-y: scroll;
+         scrollbar-width:thin;
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         padding-top: 1em;
         gap: 1em;
         top: 15vh;
+        bottom:1dvh;
         width: 100%;
-        height: 80vh;
+        border:5px solid yellow;
+
       }
       #cadreMode {
         display: flex;
@@ -1361,10 +1365,7 @@
         height: auto;
         width: 100%;
         padding: 0em 1em;
-        gap: 1em;
-        transition:
-          border 0.2s ease,
-          background 0.2s ease;
+        gap: 1em;       
       }
       .btnMode {
         display: flex;
@@ -1424,9 +1425,9 @@
         text-align: center;
         user-select: none;
         background: transparent;
+        flex-wrap: wrap;
         border: 2px solid rgba(192, 57, 43, 0.4);
         width: clamp(75%, 95%, 98%);
-        font-weight: 500;
         padding: 0.4em 0em;
         border-radius: 10px;
         font-weight: 600;
@@ -1438,6 +1439,7 @@
         display: flex;
         align-items: center;
         overflow-x: auto;
+        flex-shrink: 0;
         padding: 1em 1em;
         gap: 1em;
         height: auto;
@@ -1480,6 +1482,54 @@
         margin: 0.3em 0em;
         margin-top: -0.1em;
       }
+      #cadreD {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 0.1em;
+        border-radius: 10px;
+        background-color: rgb(253, 251, 248);
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: clamp(80vw, 80%, 85vw);
+        padding: 0em 1em;
+        padding-bottom: 0.6em;
+      }
+      #iconD{height:1.5em;}
+      #dTitle {
+      display: flex;
+      align-items: center;
+      position: relative;
+      gap: 1em;
+      letter-spacing: 1px;
+      height: 3em;
+      }
+      #cadreBtnD{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: auto;
+        width: 100%;
+        padding: 0em 1em;
+        gap: 1em;        
+      }
+     
+      .btnD{
+        display: flex;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        gap: 0.5em;
+        min-width: 35%;
+        height: 2.2em;
+        padding: 0em 0.2em;
+        border-radius: 10px;
+        border: 2px solid rgba(192, 57, 43, 0.25);
+        transition: background 0.2s ease;        
+      }
+
     </style>
 
     <!--HTML Home-->
@@ -1726,34 +1776,20 @@
           </div>
           <div id="cadreBtnMode">
             <div class="btnMode" id="modeChoix">
-              <svg
-                height="1.5em"
-                class="iconBtnMode"
-                viewBox="0 0 213 213"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M106.5 0C165.318 0 213 47.6817 213 106.5C213 165.318 165.318 213 106.5 213C47.6819 213 0 165.318 0 106.5C0 47.6818 47.6819 0.000235603 106.5 0ZM50.9375 147.125C46.556 147.125 43 150.676 43 155.062C43 159.449 46.556 163 50.9375 163H162.062C166.444 163 170 159.449 170 155.062C170 150.676 166.444 147.125 162.062 147.125H50.9375ZM106.5 36C102.119 36 98.5625 39.5507 98.5625 43.9375V44.6045C80.4492 47.6525 65.7752 60.9659 60.748 78.333H56.2295C51.8481 78.333 48.2922 81.8839 48.292 86.2705C48.292 90.6573 51.848 94.208 56.2295 94.208H58.875V120.667H56.2295C51.848 120.667 48.292 124.218 48.292 128.604C48.2922 132.991 51.8481 136.542 56.2295 136.542H156.771C161.152 136.542 164.708 132.991 164.708 128.604C164.708 124.218 161.152 120.667 156.771 120.667H154.125V94.208H156.771C161.152 94.208 164.708 90.6573 164.708 86.2705C164.708 81.8839 161.152 78.333 156.771 78.333H152.252C147.225 60.9659 132.551 47.6578 114.438 44.6045V43.9375C114.438 39.5507 110.881 36 106.5 36ZM85.333 94.208V120.667H74.75V94.208H85.333ZM111.792 94.208V120.667H101.208V94.208H111.792ZM138.25 94.208V120.667H127.667V94.208H138.25ZM106.495 59.8125C119.285 59.8127 130.328 67.4113 135.355 78.333H77.6396C82.6668 67.4112 93.7053 59.8125 106.495 59.8125Z"
-                  fill="#DA2525"
-                />
-              </svg>
+
+              <svg height="1.5em"  class="iconBtnMode" viewBox="0 0 213 213" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M106.5 0C165.318 0 213 47.6817 213 106.5C213 165.318 165.318 213 106.5 213C47.6819 213 0 165.318 0 106.5C0 47.6818 47.6819 0.000235603 106.5 0ZM63.5 111.875C51.626 111.875 42 121.501 42 133.375V149.5C42 161.374 51.626 171 63.5 171H79.625C91.4989 171 101.125 161.374 101.125 149.5V133.375C101.125 121.501 91.499 111.875 79.625 111.875H63.5ZM133.375 111.875C121.501 111.875 111.875 121.501 111.875 133.375V149.5C111.875 161.374 121.501 171 133.375 171H149.5C161.374 171 171 161.374 171 149.5V133.375C171 121.501 161.374 111.875 149.5 111.875H133.375ZM63.5 42C51.626 42 42 51.626 42 63.5V79.625C42 91.4993 51.626 101.125 63.5 101.125H79.625C91.499 101.125 101.125 91.499 101.125 79.625V63.5C101.125 51.626 91.499 42 79.625 42H63.5ZM133.375 42C121.501 42 111.875 51.626 111.875 63.5V79.625C111.875 91.499 121.501 101.125 133.375 101.125H149.5C161.374 101.125 171 91.499 171 79.625V63.5C171 51.626 161.374 42 149.5 42H133.375Z" fill="#DE4040"/>
+</svg>
+
               <h4>4 choix</h4>
             </div>
 
             <div class="btnMode" id="modeTrouver">
-              <svg
-                class="iconBtnMode"
-                height="1.5em"
-                viewBox="0 0 213 213"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M106.5 0C165.318 0 213 47.6817 213 106.5C213 165.318 165.318 213 106.5 213C47.6817 213 0 165.318 0 106.5C0 47.6817 47.6817 0 106.5 0ZM134.197 50.8691C107.875 31.1736 70.5675 36.5439 50.8701 62.8643C31.1727 89.1846 36.5437 126.489 62.8662 146.185C84.0107 162.006 113.053 162.006 134.197 146.185L160.533 172.518C163.843 175.827 169.208 175.827 172.518 172.518C175.827 169.208 175.827 163.843 172.518 160.534L172.519 160.523L146.193 134.189C165.891 107.869 160.52 70.5649 134.197 50.8691ZM98.751 56.3906C122.145 56.3906 141.11 75.3539 141.11 98.7461C141.085 122.128 122.135 141.077 98.751 141.102C75.3569 141.101 56.3926 122.138 56.3926 98.7461C56.3927 75.354 75.357 56.3909 98.751 56.3906ZM98.8916 63.7275C79.5026 63.7275 63.7295 79.4994 63.7295 98.8867C63.7296 118.274 79.5027 134.046 98.8916 134.046C118.28 134.046 134.054 118.274 134.054 98.8867C134.054 79.4994 118.281 63.7276 98.8916 63.7275ZM100.699 69.6455C110.287 70.2315 118.647 75.4468 123.558 83.082L118.898 85.7695C117.463 86.5958 116.751 88.2744 117.155 89.8799L118.992 97.2256C119.256 98.2803 119.969 99.165 120.941 99.6484L127.895 103.1C125.846 117.266 113.622 128.186 98.8975 128.186H98.8916C82.7347 128.186 69.5899 115.042 69.5898 98.8867C69.5898 94.5095 70.5564 90.3547 72.2852 86.6191L77.167 91.749C77.9435 92.5635 79.0193 93.0264 80.1445 93.0264H85.8555C86.6991 93.0264 87.5078 93.3605 88.1055 93.958L89.1982 95.0508C89.7784 95.6309 90.1035 96.4169 90.1035 97.2344V100.056C90.1035 101.184 90.5526 102.262 91.3496 103.059L94.8359 106.545C95.5597 107.269 95.9668 108.251 95.9668 109.273V116.202C95.9668 117.966 97.3972 119.396 99.1611 119.396H99.7852C101.03 119.396 102.162 118.672 102.684 117.541L109.25 103.313C110.032 101.62 109.431 99.6133 107.852 98.623L100.345 93.9316C99.3984 93.34 98.3056 93.0264 97.1895 93.0264H92.9961C92.0848 93.0264 91.2081 92.6631 90.5635 92.0186L88.8291 90.2842C87.9151 89.3701 87.9151 87.8907 88.8291 86.9795L90.3789 85.4297C91.0909 84.7177 92.1786 84.542 93.0781 84.9932L95.6562 86.2822C96.714 86.8125 97.995 86.6045 98.833 85.7666L98.8418 85.7578C99.7355 84.8642 99.9054 83.4776 99.2549 82.3965L96.8027 78.3066C96.29 77.4511 96.3017 76.3907 96.8438 75.5527C97.7111 74.2138 99.1287 72.0304 100.699 69.6455Z"
-                  fill="#DF2F2F"
-                />
-              </svg>
+             
+          <svg class="iconBtnMode" height="1.5em" viewBox="0 0 213 213" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M106.5 0C165.318 0 213 47.6817 213 106.5C213 165.318 165.318 213 106.5 213C47.6817 213 0 165.318 0 106.5C0 47.6817 47.6817 0 106.5 0ZM134.197 50.8691C107.875 31.1736 70.5675 36.5439 50.8701 62.8643C31.1727 89.1846 36.5437 126.489 62.8662 146.185C84.0107 162.006 113.053 162.006 134.197 146.185L160.533 172.518C163.843 175.827 169.208 175.827 172.518 172.518C175.827 169.208 175.827 163.843 172.518 160.534L172.519 160.523L146.193 134.189C165.891 107.869 160.52 70.5649 134.197 50.8691ZM98.751 56.3906C122.145 56.3906 141.11 75.3539 141.11 98.7461C141.085 122.128 122.135 141.077 98.751 141.102C75.3569 141.101 56.3926 122.138 56.3926 98.7461C56.3927 75.354 75.357 56.3909 98.751 56.3906Z" fill="#DF2F2F"/>
+</svg>
+
 
               <h4>Trouver</h4>
             </div>
@@ -1805,7 +1841,7 @@
             <div class="qr q" id="superficieQ">Superficie</div>
             <div class="qr q" id="populationQ">Population</div>
             <div class="qr q" id="densiteQ">Densité de population</div>
-            <div class="qr q" id="dateIndeQ">Indépendance</div>
+            <div class="qr q" id="dateIndeQ">Date d'indépendance</div>
           </div>
           <div class="cadreQR" id="cadreR">
             <div class="titleQR">Réponses</div>
@@ -2424,6 +2460,37 @@
             <span style="font-weight: 700">Océanie</span>
           </div>
         </div>
+        <div class="ligneInter"></div>
+
+         <div id="cadreD">
+          <div id="modeTitle">
+            <svg xmlns="http://www.w3.org/2000/svg" id="iconD" data-name="Layer 1" viewBox="0 0 24 24">
+  <path d="M22.789,8.85c-.465-1.258-1.554-1.999-2.866-1.945-1.002,.032-2.005,.059-3.006,.079-.445,.038-.866-.284-1.004-.728-.297-.96-.595-1.919-.898-2.877-.408-1.301-1.591-2.142-3.013-2.142s-2.605,.841-3.013,2.141c-.304,.958-.602,1.917-.898,2.877-.138,.445-.54,.769-1.004,.729-1.002-.02-2.005-.046-2.996-.078-1.311-.052-2.414,.688-2.878,1.945-.507,1.372-.081,2.893,1.066,3.789,.812,.623,1.617,1.231,2.421,1.831,.382,.285,.529,.795,.367,1.27-.334,.979-.683,1.962-1.044,2.946-.492,1.301-.142,2.657,.892,3.453,1.09,.841,2.635,.828,3.847-.036l2.558-1.837c.414-.296,.95-.297,1.365,0l2.562,1.84c.613,.436,1.312,.655,1.994,.655,.664,0,1.312-.207,1.849-.621,1.033-.796,1.383-2.152,.895-3.445-.365-.992-.712-1.976-1.047-2.954-.163-.474-.015-.984,.366-1.269,.805-.601,1.611-1.209,2.429-1.837,1.14-.891,1.566-2.412,1.059-3.784Z"/>
+</svg>
+            <h3>Difficulté</h3>
+          </div>
+          <div id="cadreBtnD">
+            <div class="btnD" id="facile">             
+              <h4>Facile</h4>
+            </div>
+
+            <div class="btnD" id="normal">             
+              <h4>Normal</h4>
+            </div>
+
+            <div class="btnD" id="intermediaire">             
+              <h4>Intermédiaire</h4>
+            </div>
+
+            <div class="btnD" id="difficile">             
+              <h4>Difficile</h4>
+            </div>
+            
+            
+
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -4447,12 +4514,13 @@
       const backConfig = document.getElementById("backConfig");
 
       const btnsMode = document.querySelectorAll(".btnMode");
+      const btnsD = document.querySelectorAll('.btnD')
       const qrs = document.querySelectorAll(".qr");
       const q = document.querySelectorAll(".q");
       const r = document.querySelectorAll(".r");
       qrs.forEach((q) => (q.style.display = "none"));
       const cadresRegions = document.querySelectorAll(".cadreRegion");
-      const L_btn = [btnsMode, q, r, cadresRegions];
+      const L_btn = [btnsMode, q, r,,btnsD, cadresRegions];
 
       const arboConfig = {
         modeChoix: {
@@ -10400,8 +10468,12 @@
         Ls.sort();
         for (const r of Ls) {
           const C = document.createElement("div");
+          /*const svgFlag = document.createElement('img')
+          svgFlag.src = `https://flagcdn.com/{r.id}.svg`*/
           C.classList = "choice";
           choiceBox.appendChild(C);
+          //C.appendChild(svgFlag)
+          
           C.textContent = r.t;
           C.style.transform = "translateY(-1em)";
           setTimeout(() => {
