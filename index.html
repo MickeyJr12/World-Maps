@@ -1549,6 +1549,52 @@
         border: 2px solid rgba(192, 57, 43, 0.25);
         transition: background 0.08s ease;
       }
+
+   /* État inactif — paramètres non remplis */
+#playConfig {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  width: 60vw;
+  padding: 16px;
+  border-radius: 16px;
+  border: 2px solid #e8b4bb;
+
+  background-color: #f5e6e8;
+  color: #c47d89;
+
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.6;
+
+  transition: all 0.25s ease;
+}
+
+/* État actif — tout est rempli */
+#playConfig.active {
+  background-color: #c33654;
+  border-color: #c0284a;
+  color: #ffffff;
+  cursor: pointer;
+  pointer-events: all;
+  opacity: 1;
+}
+#playConfig.active:hover {
+  background-color: #a8213e;
+  border-color: #a8213e;
+}
+#playConfig.active:active {
+  transform: scale(0.97);
+}
+
+
+
     </style>
 
     <!--HTML Home-->
@@ -2536,6 +2582,10 @@
             </div>
           </div>
         </div>
+
+        <div id="playConfig">
+  ▶️ Jouer
+</div>
       </div>
     </div>
 
@@ -4565,13 +4615,21 @@
       const r = document.querySelectorAll(".r");
       const cs = document.querySelectorAll(".cadreRegion")
       const ds = document.querySelectorAll(".btnD")
+      const playConfig = document.getElementById('playConfig')
       qrs.forEach((q) => (q.style.display = "none"));
       const cadresRegions = document.querySelectorAll(".cadreRegion");
       const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null };
 
-      cs.forEach(el=>el.addEventListener('click',()=>L_config.c=el.id))
-      ds.forEach(el=>el.addEventListener('click',()=>{L_config.d=el.id}))
+      cs.forEach(el=>el.addEventListener('click',()=>{L_config.c=el.id;activePlay()}))
+      ds.forEach(el=>el.addEventListener('click',()=>{L_config.d=el.id;activePlay()}))
+
+      function activePlay(){
+          if (Object.values(L_config).every(Boolean)) {
+            playConfig.classList.add('active');return
+            }
+            playConfig.classList.remove('active');
+      }
 
 
 
@@ -4593,22 +4651,19 @@
           capitaleQ: ["mapsR"],
         },
         modeClasser: {
-          densiteQ: [
-            "nbrClass1",
+          densiteQ: [           
             "nbrClass2",
             "nbrClass3",
             "nbrClass4",
             "nbrClass5",
           ],
-          dateIndeQ: [
-            "nbrClass1",
+          dateIndeQ: [           
             "nbrClass2",
             "nbrClass3",
             "nbrClass4",
             "nbrClass5",
           ],
-          populationQ: [
-            "nbrClass1",
+          populationQ: [          
             "nbrClass2",
             "nbrClass3",
             "nbrClass4",
@@ -4628,6 +4683,8 @@
           L_config.m = mode;
           L_config.q = null;
           L_config.r = null;
+          activePlay()
+
           qrs.forEach((q) => {
             q.style = "";
             q.style.display = "none";
@@ -4638,10 +4695,10 @@
             cadreQ.appendChild(Q2);
             Q2.style.display = "flex";
             Q2.addEventListener("click", () => {
-              if (L_config.q === Q2) {
-                return;
-              }
+              if (L_config.q === Q2) {return}
               L_config.q = Q2.id;
+              L_config.r = null;
+              activePlay()
               r.forEach((q) => {
                 q.style = "";
                 q.style.display = "none";
@@ -4652,6 +4709,7 @@
                 cadreR.appendChild(document.getElementById(R));
                 document.getElementById(R).addEventListener("click", () => {
                   L_config.r = R;
+                  activePlay()
                 });
               });
             });
@@ -4724,6 +4782,7 @@
                   el.style.border = "";                            
             });
           });
+          activePlay()
 
           qrs.forEach(qr=>qr.style.display="none  ")
         }, 150);
