@@ -38,7 +38,20 @@
   min-height: 100dvh;
   background: yellow; /* ou n'importe quelle couleur de ton gradient */
 }
-
+#pourquoi{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  z-index: 9999999999999999999999999999999999999999999999999999999999;
+  position :absolute;
+  width : 100%; height : 100%;
+  font-weight: 800;
+  color:red;
+  left : 50%; transform : translateX(-50%);
+  top : 50%;
+  border : 2px solid red;
+}
 body {
   position: fixed;        /* ← clé du fix */
   inset: 0;               /* top/right/bottom/left: 0 — fonctionne avec fixed */
@@ -1550,8 +1563,10 @@ html, body {
 
     </style>
 
+
     <!--HTML Home-->
     <div id="phoneHome">
+      <div id="pourquoi"></div>
       <div id="homeTitle">
         <div
           style="
@@ -4517,6 +4532,10 @@ html, body {
 
     <!--Script Home-->
     <script>
+      const pourquoi = document.getElementById('pourquoi')
+      pourquoi.textContent = 
+       "windowHeight:  "+ window.innerHeight + "      screenHeight:  "+ window.screen.height + "     height html:  "+ document.querySelector('html').getBoundingClientRect().height + "       heightBody :" +document.body.getBoundingClientRect().height;
+
       const phoneHome = document.getElementById("phoneHome");
       const play = document.getElementById("play");
       const btnHomeBox = document.querySelector(".btnHomeBox");
