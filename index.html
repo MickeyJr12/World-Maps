@@ -34,7 +34,6 @@
   margin: 0px;
   padding: 0px;
   width: 100%;
-  height: 100vh;
   min-height: 100dvh;
   background: yellow; /* ou n'importe quelle couleur de ton gradient */
 }
@@ -63,12 +62,6 @@ body {
   margin: 0;
   width: 100%;
 }  
-html, body {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
 
       .monde {
         position: absolute;
@@ -4535,6 +4528,11 @@ html, body {
       const pourquoi = document.getElementById('pourquoi')
       pourquoi.textContent = 
        "windowHeight:  "+ window.innerHeight + "      screenHeight:  "+ window.screen.height + "     height html:  "+ document.querySelector('html').getBoundingClientRect().height + "       heightBody :" +document.body.getBoundingClientRect().height;
+
+
+       document.documentElement.style.height = window.screen.height + 'px';
+document.body.style.height = window.screen.height + 'px';
+
 
       const phoneHome = document.getElementById("phoneHome");
       const play = document.getElementById("play");
