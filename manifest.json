@@ -2,7 +2,7 @@
   "name": "Maps Quiz",
   "short_name": "Maps Quiz",
   "start_url": "./index.html",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0a0a1a",
   "theme_color": "#1a1a3e",

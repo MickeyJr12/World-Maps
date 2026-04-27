@@ -8,10 +8,7 @@
       rel="stylesheet"
     />
     <!-- Une seule balise viewport avec tout dedans -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 
     <!-- PWA iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -19,11 +16,7 @@
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
     />
-    <link rel="apple-touch-icon" href="icon-192.png" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content"
-    />
+    <link rel="apple-touch-icon" href="icon-192.png" />    
 
     <!-- PWA Android -->
     <meta name="mobile-web-app-capable" content="yes" />
@@ -81,25 +74,13 @@
         margin: 0;
         width: 100%;
         height: 100%;
-      }
-
-      body.mobile {
-        margin: 0;
-        padding: 0;
-        /* Étend le contenu derrière la status bar */
+          /* Safe area iOS */
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
         padding-left: env(safe-area-inset-left);
         padding-right: env(safe-area-inset-right);
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(
-          90deg,
-          #0f23fa 0%,
-          #0f85fa 50%,
-          #0fe7fa 100%
-        );
-      }
+        box-sizing: border-box;
+      }    
 
       .monde {
         position: absolute;
