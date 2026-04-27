@@ -1104,9 +1104,10 @@
           #181cdc 37%,
           #150570 73%
         );
-        min-height: 100vh; /* dynamic viewport height, plus fiable sur mobile */
+        min-height: 100dvh; /* dynamic viewport height, plus fiable sur mobile */
         width: 100%;
         padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
       }
 
       #homeTitle {
@@ -1227,10 +1228,11 @@
         transition:
           transform 0.8s ease,
           opacity 0.45s ease;
-        min-height: 100vh;
+        min-height: 100dvh;
         min-width: 100vw;
         width: 100%;
-        padding-top: env(safe-area-inset-top);
+        padding-top: calc(env(safe-area-inset-top)+2em);
+        padding-bottom: env(safe-area-inset-bottom);
       }
       .back {
         display: flex;
