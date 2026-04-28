@@ -1615,14 +1615,13 @@ body {
         box-shadow: 0px 0px 1em rgba(0,0,0,0.4);
       }
        #grid4Choix{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* force 2 colonnes */
+        grid-template-rows: 1fr 1fr;    /* force 2 lignes */
         width: clamp(88vw, 90%, 92vw);
         height: auto;
         margin-bottom: 2em;
-        gap: 0.2em;
+        gap: 1em;
         border : 2px solid black; 
         background: rgba(0, 0, 0, 0.15);
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1639,11 +1638,8 @@ body {
         justify-content: center;
         align-items: center;
         color:white;
-        margin : 0em 0.3em;
-        min-width: 45%;
-        min-height: 2em;
-        max-height: 3.8em;
-        height: 2.2em;
+        width :100%;
+        height : clamp(2em,2.2em,3.8em);
         padding: 1em 0.2em;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.2);
