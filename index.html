@@ -1561,6 +1561,7 @@ body {
         min-height: 100dvh;
         min-width: 100vw;
         width: 100%;
+        padding: 0 1em;
         padding-top: calc(env(safe-area-inset-top) + 2em);
         gap:4em;
       }
@@ -1618,14 +1619,15 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr; /* force 2 colonnes */
         grid-template-rows: 1fr 1fr;    /* force 2 lignes */
-        width: 100%;
+        width: calc(100% + 2em); 
         height: auto;
         gap: 1em;
         border : 2px solid black; 
         background: rgba(0, 0, 0, 0.15);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
-        padding: 0.8em;
+        padding : 0em 1em;
+        padding-top: 0.8em;
         padding-bottom:calc(2em + env(safe-area-inset-bottom));
         backdrop-filter: blur(4px);
       }
