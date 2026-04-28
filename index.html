@@ -1079,7 +1079,7 @@ body {
 
       /*Style Home*/
       #phoneHome {
-        display: flex;
+        display: none;
         position: fixed;
         flex-direction: column;
         justify-content: flex-end;
@@ -1542,6 +1542,161 @@ body {
 #playConfig.active:active {
   transform: scale(0.97);
 }
+/*CSS 4 choix*/
+
+ #phone4Choix {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        user-select: none;
+        justify-content: flex-end;
+        box-sizing: border-box;
+        font-family: "Nunito", sans-serif;
+        background: linear-gradient(315deg, #0b47e0 0%, #207dd9 50%, #0fe7fa 100%);
+        transition:
+          transform 0.8s ease,
+          opacity 0.45s ease;
+        min-height: 100dvh;
+        min-width: 100vw;
+        width: 100%;
+        padding-top: calc(env(safe-area-inset-top)+2em);
+        padding-bottom: env(safe-area-inset-bottom);
+        gap:4em;
+      }
+
+      .back {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        background: transparent;
+        border: none;
+        border-radius: 5px;
+        top: calc(2em + env(safe-area-inset-top));
+        left: 2em;
+        width: 3em;
+        height: 3em;
+        transition: background 0.08s ease;
+      }
+      .back:active {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      #pause4Choix {
+        display: flex;
+        align-items: center;        
+        justify-content: center;
+        position: fixed;
+        background: transparent;
+        border: none;
+        border-radius: 5px;
+        top: calc(2em + env(safe-area-inset-top));
+        right: 2em;
+        width: 3em;
+        height: 3em;
+        transition: background 0.08s ease;
+      }
+      #pause4Choix path {
+        fill: white;
+      }
+      #pause4Choix:active {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      #cadreQ4Choix{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 8px;
+        width : clamp(35vw,40%,45% ); 
+        height : auto;
+        box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+      }
+       #grid4Choix{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: clamp(80vw, 80%, 85vw);
+        height: auto;
+        margin-bottom: 2em;
+        gap: 0.2em;
+        border : 2px solid black; 
+      }
+
+
+      .btn4Choix{
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        gap: 0.5em;
+        min-width: 45%;
+        background:red;
+        height: 2.2em;
+        padding: 0em 0.2em;
+        border-radius: 10px;
+        border: 2px solid rgba(192, 57, 43, 0.25);
+        transition: background 0.08s ease;
+      }
+      .cadreChrono{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        width: clamp(80vw, 80%, 85vw);
+        height : 50px;
+        border : 3px solid rgba(215, 22, 144, 1);
+        gap:0.5em;        
+      }
+      .questionBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;    
+        color:white;
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+      .iconChrono{height : 100%}
+      .iconChrono path{fill : white;}
+      .barreChrono{
+        display: flex;
+        align-self: center;
+        border-radius: 100px;
+        height : 80%;
+        width : 70%;
+        border : 1px solid blue;        
+      }   
+      .barreChronoIn{
+        height:100%;
+        width :50%;
+        border-radius: 100px;
+        background-color: aquamarine;
+      } 
+      .timeChronoBox{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        flex-direction: column; 
+        border: 1px solid red;
+        gap: 0.5em;
+              
+      }
+      .timeChrono{
+        color:white;
+       font-weight: 700;
+       letter-spacing: 1px;
+      }
+       .ligneIn {
+        width: 90%;
+        border: 0.6px solid rgba(192, 57, 43, 0.25);
+      }
+
 
 
     </style>
@@ -2541,6 +2696,52 @@ body {
 </div>
       </div>
     </div>
+
+    <!--HTML 4 choix-->
+    <div id="phone4Choix">
+<div id="pause4Choix">
+  <svg width="90%" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24"><path d="M6.5,0A3.5,3.5,0,0,0,3,3.5v17a3.5,3.5,0,0,0,7,0V3.5A3.5,3.5,0,0,0,6.5,0Z"/><path d="M17.5,0A3.5,3.5,0,0,0,14,3.5v17a3.5,3.5,0,0,0,7,0V3.5A3.5,3.5,0,0,0,17.5,0Z"/></svg>
+</div>
+
+<div class="back" id="back4Choix">
+  <svg
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Bold"
+          viewBox="0 0 24 24"
+          width="90%"
+        >
+          <path
+            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+          />
+        </svg>
+</div>
+<div id="cadreQ4Choix">
+  <img style=" width:100%"  src="https://flagcdn.com/fr.svg" alt="">
+
+</div>
+<div class="questionBox">Question 1/2</div>
+<div class="cadreChrono">
+  <svg class="iconChrono" xmlns="http://www.w3.org/2000/svg" id="Layer_1"  viewBox="0 0 24 24" data-name="Layer 1"><path d="m13.5 8.5a1.5 1.5 0 0 0 -3 0v3.19a2 2 0 1 0 3 0z"/><path d="m22.5 5.5a1.5 1.5 0 0 0 0-3c-.841 0-1-.159-1-1a1.5 1.5 0 0 0 -3 0 4.861 4.861 0 0 0 .289 1.715l-.618.685a10.927 10.927 0 0 0 -4.671-1.785v-.615a1.5 1.5 0 0 0 -3 0v.615a10.927 10.927 0 0 0 -4.671 1.785l-.618-.685a4.861 4.861 0 0 0 .289-1.715 1.5 1.5 0 0 0 -3 0c0 .841-.159 1-1 1a1.5 1.5 0 0 0 0 3 4.953 4.953 0 0 0 1.523-.232l.579.643a11 11 0 1 0 16.8 0l.579-.643a4.953 4.953 0 0 0 1.519.232zm-10.5 15.5a8 8 0 1 1 8-8 8.009 8.009 0 0 1 -8 8z"/></svg>
+  <div class="barreChrono">
+    <div class="barreChronoIn"></div>
+  </div>
+  <div class="timeChronoBox">
+  <div class="timeChrono">00:15</div>
+  <div class="ligneIn"></div>
+
+  </div> 
+
+</div>
+<div id="grid4Choix">
+
+  <div class="btn4Choix">Choix 1</div>
+  <div class="btn4Choix">Choix 1</div>
+  <div class="btn4Choix">Choix 1</div>
+  <div class="btn4Choix">Choix 1</div>
+
+</div>
+</div>
 
     <!--HTML Maps-->
 
@@ -4564,8 +4765,9 @@ document.body.style.height = window.screen.height + 'px';
     </script>
     <!--Script Configuration-->
     <script>
-      const backConfig = document.getElementById("backConfig");
+      const phone4Choix = document.getElementById('phone4Choix')
 
+      const backConfig = document.getElementById("backConfig");      
       const btnsMode = document.querySelectorAll(".btnMode");
       const btnsD = document.querySelectorAll(".btnD");
       const qrs = document.querySelectorAll(".qr");
@@ -4588,6 +4790,11 @@ document.body.style.height = window.screen.height + 'px';
             }
             playConfig.classList.remove('active');
       }
+
+      playConfig.addEventListener('click',()=>{
+        phoneConfig.style.display="none";
+        phone4Choix.style.display="flex";
+      })
 
 
 
