@@ -1610,24 +1610,30 @@ body {
         align-items: center;
         overflow: hidden;
         border-radius: 8px;
-        width : clamp(35vw,40%,45% ); 
+        width : clamp(50vw,55%,60% ); 
         height : auto;
-        box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
+        box-shadow: 0px 0px 5em rgba(0,0,0,0.4);
       }
        #grid4Choix{
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        width: clamp(80vw, 80%, 85vw);
+        width: clamp(88vw, 90%, 92vw);
         height: auto;
         margin-bottom: 2em;
         gap: 0.2em;
         border : 2px solid black; 
+        background: rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 12px;
+        backdrop-filter: blur(4px);
       }
 
 
       .btn4Choix{
+        color:white;
         display: flex;
         position: relative;
         flex-wrap: wrap;
@@ -1637,46 +1643,57 @@ body {
         user-select: none;
         gap: 0.5em;
         min-width: 45%;
-        background:red;
+        background: rgba(255, 200, 60, 0.88);
+        box-shadow: 0 0 12px rgba(255, 190, 30, 0.5);
         height: 2.2em;
         padding: 0em 0.2em;
         border-radius: 10px;
-        border: 2px solid rgba(192, 57, 43, 0.25);
         transition: background 0.08s ease;
+        background: rgba(20, 20, 40, 0.6);
+border: 1px solid rgba(255, 255, 255, 0.18);
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.12);
+backdrop-filter: blur(8px);
       }
-      .cadreChrono{
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        width: clamp(80vw, 80%, 85vw);
-        height : 50px;
-        border : 3px solid rgba(215, 22, 144, 1);
-        gap:0.5em;        
-      }
-      .questionBox{
+       .questionBox{
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;    
         color:white;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
         letter-spacing: 1px;
         font-weight: 700;
       }
+      .cadreChrono{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        width: clamp(88vw, 90%, 92vw);
+        height : 3em;
+        border : 3px solid rgba(215, 22, 144, 1);
+        gap:0.5em;        
+      }
+     
       .iconChrono{height : 100%}
-      .iconChrono path{fill : white;}
+      .iconChrono path{fill :  rgba(255, 255, 255, 0.95);}
       .barreChrono{
         display: flex;
         align-self: center;
         border-radius: 100px;
         height : 80%;
         width : 70%;
-        border : 1px solid blue;        
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50px;
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
       }   
       .barreChronoIn{
         height:100%;
-        width :50%;
+        width :100%;
         border-radius: 100px;
-        background-color: aquamarine;
+       background: rgba(255, 255, 255, 0.75);
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
       } 
       .timeChronoBox{
         display: flex;
@@ -1688,7 +1705,8 @@ body {
               
       }
       .timeChrono{
-        color:white;
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 0 0 8px rgba(100, 230, 180, 0.6);
        font-weight: 700;
        letter-spacing: 1px;
       }
