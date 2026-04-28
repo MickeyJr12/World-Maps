@@ -1676,6 +1676,7 @@ body {
         height: auto;
         max-height: inherit; /* hérite aussi */
         object-fit: contain;
+        border-radius: 50%;
       }
       .contours4Choix{
          width: 100%;
@@ -2747,7 +2748,7 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
   <img style=" width:100%"  src="https://flagcdn.com/mq.svg" alt="">
 
 </div>
-<div class="questionBox">Question 1/2</div>
+<div class="questionBox">Question 1/15</div>
 <div class="cadreChrono">
   <svg class="iconChrono" xmlns="http://www.w3.org/2000/svg" id="Layer_1"  viewBox="0 0 26 26" data-name="Layer 1"><path d="m13.5 8.5a1.5 1.5 0 0 0 -3 0v3.19a2 2 0 1 0 3 0z"/><path d="m22.5 5.5a1.5 1.5 0 0 0 0-3c-.841 0-1-.159-1-1a1.5 1.5 0 0 0 -3 0 4.861 4.861 0 0 0 .289 1.715l-.618.685a10.927 10.927 0 0 0 -4.671-1.785v-.615a1.5 1.5 0 0 0 -3 0v.615a10.927 10.927 0 0 0 -4.671 1.785l-.618-.685a4.861 4.861 0 0 0 .289-1.715 1.5 1.5 0 0 0 -3 0c0 .841-.159 1-1 1a1.5 1.5 0 0 0 0 3 4.953 4.953 0 0 0 1.523-.232l.579.643a11 11 0 1 0 16.8 0l.579-.643a4.953 4.953 0 0 0 1.519.232zm-10.5 15.5a8 8 0 1 1 8-8 8.009 8.009 0 0 1 -8 8z"/></svg>
   <div class="barreChrono">
@@ -5001,15 +5002,8 @@ document.body.style.height = window.screen.height + 'px';
     <script>
       const c1 = document.getElementById('c1')
       const c3 = document.getElementById('c3')
-      setTimeout(() => {
         c1.classList.add('good')
         c3.classList.add('bad')
-      }, 3000);
-      setTimeout(() => {
-        c1.classList.remove('good')
-        c1.classList.add('bad')
-      }, 8000);
-
     </script>
 
     <script>
