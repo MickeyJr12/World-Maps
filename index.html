@@ -1561,7 +1561,6 @@ body {
         min-width: 100vw;
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2em);
-        padding-bottom: env(safe-area-inset-bottom);
         gap:4em;
       }
 
@@ -1618,15 +1617,15 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr; /* force 2 colonnes */
         grid-template-rows: 1fr 1fr;    /* force 2 lignes */
-        width: clamp(88vw, 90%, 92vw);
+        width: 100vw;
         height: auto;
-        margin-bottom: 2em;
         gap: 1em;
         border : 2px solid black; 
         background: rgba(0, 0, 0, 0.15);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
-        padding: 12px;
+        padding: 0.8em;
+        padding-bottom:calc(2em+env(safe-area-inset-bottom));
         backdrop-filter: blur(4px);
       }
 
