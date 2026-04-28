@@ -1273,7 +1273,7 @@ body {
   width: 100%;
   overflow: hidden; /* le scroll se fait dans l'enfant */
   padding: 0;
-  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: 1em;
 
 }
 #scrollContentConfig {
@@ -1884,6 +1884,8 @@ body {
             <div class="qr q" id="populationQ">Population</div>
             <div class="qr q" id="densiteQ">Densité de population</div>
             <div class="qr q" id="dateIndeQ">Date d'indépendance</div>
+            <div class="qr q" id="superficieQ">Superficie</div>
+
           </div>
           <div class="cadreQR" id="cadreR">
             <div class="titleQR">Réponses</div>
@@ -4637,6 +4639,13 @@ document.body.style.height = window.screen.height + 'px';
             "nbrClass4",
             "nbrClass5",
           ],
+           superficieQ: [          
+            "nbrClass2",
+            "nbrClass3",
+            "nbrClass4",
+            "nbrClass5",
+          ],
+
         },
       };
 
