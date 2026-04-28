@@ -1263,34 +1263,23 @@ body {
         border: 2px solid rgba(192, 57, 43, 0.25);
       }
 
-     #contentConfig {
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  align-items: center;
-  top: calc(18% + 1em);
-  bottom: 0;
-  width: 100%;
-  overflow: hidden; /* le scroll se fait dans l'enfant */
-  padding: 0;
-  padding-bottom: 1em;
+      #contentConfig {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.2) ;
+        padding: 1em 0em;
+        gap: 1em;
+        top: calc(18% + 1em);
+        bottom: env(safe-area-inset-bottom);   
+        width: 100%;
+        padding-bottom: 2em;
+        padding-top: 1em;
 
-}
-#scrollContentConfig {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  -webkit-overflow-scrolling: touch; /* active le scroll inertiel iOS */
-  overflow-y: scroll;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-  flex: 1; /* prend tout l'espace disponible au-dessus du bouton */
-  width: 100%;
-  gap: 1em;
-  padding: 1em 0;
-  padding-bottom: 0.5em;
-  box-sizing: border-box;
-}
+      }
       #cadreMode {
         display: flex;
         flex-direction: column;
@@ -1514,8 +1503,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* ne se rétrécit jamais */
-  margin: 0.8em 0;
   gap: 10px;
 
   width: 60vw;
@@ -1785,8 +1772,6 @@ body {
         />
       </svg>
       <div id="contentConfig">
-
-         <div id="scrollContentConfig">
         <div id="cadreMode">
           <div id="modeTitle">
             <svg
@@ -1885,8 +1870,6 @@ body {
             <div class="qr q" id="populationQ">Population</div>
             <div class="qr q" id="densiteQ">Densité de population</div>
             <div class="qr q" id="dateIndeQ">Date d'indépendance</div>
-            <div class="qr q" id="superficieQ">Superficie</div>
-
           </div>
           <div class="cadreQR" id="cadreR">
             <div class="titleQR">Réponses</div>
@@ -2547,7 +2530,7 @@ body {
             </div>
           </div>
         </div>
-        </div>
+
         <div id="playConfig">
   ▶️ Jouer
 </div>
@@ -4640,13 +4623,6 @@ document.body.style.height = window.screen.height + 'px';
             "nbrClass4",
             "nbrClass5",
           ],
-           superficieQ: [          
-            "nbrClass2",
-            "nbrClass3",
-            "nbrClass4",
-            "nbrClass5",
-          ],
-
         },
       };
 
