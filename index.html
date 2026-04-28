@@ -1617,7 +1617,7 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr; /* force 2 colonnes */
         grid-template-rows: 1fr 1fr;    /* force 2 lignes */
-        width: 100vw;
+        width: 100%;
         height: auto;
         gap: 1em;
         border : 2px solid black; 
@@ -1625,7 +1625,7 @@ body {
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
         padding: 0.8em;
-        padding-bottom:calc(2em+env(safe-area-inset-bottom));
+        padding-bottom:calc(2em + env(safe-area-inset-bottom));
         backdrop-filter: blur(4px);
       }
 
@@ -1665,8 +1665,8 @@ body {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        height:100%;
         max-height: inherit;
+        height:100%;
         width: 80%;
         border-radius: 5px;
       }
