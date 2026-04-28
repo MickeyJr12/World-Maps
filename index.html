@@ -1645,12 +1645,23 @@ body {
         height: 2.2em;
         padding: 1em 0.2em;
         border-radius: 10px;
-        transition: background 0.08s ease;
-        background: rgba(255, 255, 255, 0.12);
-border: 1px solid rgba(255, 255, 255, 0.2);
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(8px);
+        transition : background 0.08s ease, transform 0.2s ease;
+      }
+      .btn4Choix:active{filter : brightness(0.9)}
+      .btn4Choix.good{
+        background: rgba(50, 200, 120, 0.75);
+        border: 1px solid rgba(80, 230, 140, 0.4);
+        box-shadow: 0 4px 15px rgba(30, 180, 100, 0.4);
+      }
+      .btn4Choix.bad{
+        background: rgba(220, 70, 70, 0.75);
+        border: 1px solid rgba(255, 100, 100, 0.4);
+        box-shadow: 0 4px 15px rgba(200, 50, 50, 0.4);
       }
 
        .questionBox{
@@ -1658,15 +1669,12 @@ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15),
         justify-content: center;
         align-items: center;
         text-align: center;    
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-        
         font-size: 1.05em;
         margin: -1em 0em;
-
         font-weight: 400;
-color: rgba(255, 255, 255, 0.5);
-letter-spacing: 1.5px;
-text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
       }
       .cadreChrono{
         display: flex;
@@ -4765,7 +4773,6 @@ document.body.style.height = window.screen.height + 'px';
     <!--Script Configuration-->
     <script>
       const phone4Choix = document.getElementById('phone4Choix')
-
       const backConfig = document.getElementById("backConfig");      
       const btnsMode = document.querySelectorAll(".btnMode");
       const btnsD = document.querySelectorAll(".btnD");
@@ -4960,6 +4967,19 @@ document.body.style.height = window.screen.height + 'px';
       });
     </script>
     <!--Fin Script configuration -->
+    <!--Script 4 Choix-->
+
+    <script>
+      const c1 = document.querySelector('.btn4Choix')
+      setTimeout(() => {
+        c1.classList.add('good')
+      }, 3000);
+      setTimeout(() => {
+        c1.classList.remove('good')
+        c1.classList.add('bad')
+      }, 8000);
+
+    </script>
 
     <script>
       if ("serviceWorker" in navigator) {
