@@ -1148,7 +1148,7 @@ body {
         display: flex;
         position: absolute;
         z-index: 99;
-        top: 50vh;
+        top: 58vh;
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         justify-content: center;
@@ -4587,11 +4587,12 @@ document.body.style.height = window.screen.height + 'px';
 
 
 
-      const arboConfig = {
+      const arboConfig = {        
         modeChoix: {
           capitaleQ: ["nomR", "drapeauR"],
           nomQ: ["capitaleR", "drapeauR", "contourR"],
           drapeauQ: ["nomR", "capitaleR", "contourR"],
+          contourQ:["drapeauR","nomR","capitaleR"]
         },
         modeEcrire: {
           nomQ: ["capitaleR"],
