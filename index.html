@@ -1639,7 +1639,9 @@ body {
         align-items: center;
         color:white;
         width :100%;
-        height : clamp(2em,2.2em,3.8em);
+        height : 2.2em;
+        max-height: 3.2em;
+        min-height: 2.2em;
         padding: 1em 0.2em;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1659,6 +1661,22 @@ body {
         background: rgba(184, 47, 47, 0.9);
         border: 1px solid rgba(255, 100, 100, 0.4);
         box-shadow: 0 4px 15px rgba(200, 50, 50, 0.4);
+      }
+
+      .cBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:auto;
+        max-height: inherit;
+        width: 80%;
+        border-radius: 5px;
+      }
+      .drapeau4Choix{
+        width: 100%;
+        height: auto;
+        max-height: inherit; /* hérite aussi */
+        object-fit: contain;
       }
 
        .questionBox{
@@ -2739,10 +2757,12 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 </div>
 <div id="grid4Choix">
 
-  <div class="btn4Choix"><div id="c1"> Choix 1</div> </div>
-  <div class="btn4Choix"><div id="c2">Choix 2</div></div>
-  <div class="btn4Choix"><div id="c3">Choix 3</div></div>
-  <div class="btn4Choix"><div id="c4">Choix 4</div> </div>
+  <div class="btn4Choix"><div class="cBox" id="c1"> Choix 1</div> </div>
+  <div class="btn4Choix"><div class="cBox" id="c2">
+  <img class="drapeau4Choix"  src="https://flagcdn.com/mq.svg" alt="">
+  </div></div>
+  <div class="btn4Choix"><div class="cBox" id="c3">Choix 3</div></div>
+  <div class="btn4Choix"><div class="cBox" id="c4">Choix 4</div> </div>
 
 </div>
 </div>
