@@ -5217,14 +5217,16 @@ document.body.style.height = window.screen.height + 'px';
         }, 10);
       })
 
-      btnReprendre.addEventListener('click',()=>{
-        pm4Choix.style.transform = "scale(0.7)"        
-        pm4Choix.style.opacity="0"
-        cachePm.style.opacity="0"
-        
-        pm4Choix.style.pointerEvents = "none"
-        cachePm.style.pointerEvents="none";
-      })
+     btnReprendre.addEventListener('click', () => {
+  pm4Choix.style.transform = "scale(0.7)";
+  
+  pm4Choix.offsetHeight; // ← force un reflow, casse le batch
+  
+  pm4Choix.style.opacity = "0";
+  cachePm.style.opacity = "0";
+  pm4Choix.style.pointerEvents = "none";
+  cachePm.style.pointerEvents = "none";
+});
 
 
 
