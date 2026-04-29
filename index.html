@@ -30,6 +30,9 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap");
 
+      *{-webkit-user-select: none; /* Safari / Chrome mobile */
+        -webkit-touch-callout: none; /* empêche le menu contextuel sur iOS (hold) */
+        user-select: none;}
       html {
   margin: 0px;
   padding: 0px;
@@ -1262,6 +1265,7 @@ body {
 
       .ligneInter {
         width: 75vw;
+        border-radius: 5px;
         border: 2px solid rgba(192, 57, 43, 0.25);
       }
 
@@ -1565,6 +1569,33 @@ body {
         padding-top: calc(env(safe-area-inset-top)+2em);
         gap:4em;
       }
+      #pm4Choix{
+        display: flex;
+        position : absolute;
+        align-items: center;
+        flex-direction: column;
+        color:white;
+        background:  rgba(0,0,0,0.8);
+        backdrop-filter: blur(10px);
+        left : 50%; transform: translateX(-50%) ;
+        gap:1.5em;
+        top : calc(env(safe-area-inset-top) + 4em);
+        bottom : calc(env(safe-area-inset-bottom) + 5em);
+        width : 80%;
+        border-radius: 1em;
+        border : 2px solid black;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.2) ;
+      }
+      #pmTitle{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-top:1em;
+        font-weight: 700;
+        font-size: 2em;
+        letter-spacing: 1.1px;
+      }
 
       .back {
         display: flex;
@@ -1613,7 +1644,7 @@ body {
         border-radius: 8px;
         width : clamp(50vw,55%,60% ); 
         height : auto;
-        box-shadow: 0px 0px 1em rgba(0,0,0,0.4);
+        box-shadow: 0px 0px 0.6em rgba(0,0,0,0.4);
       }
        #grid4Choix{
         display: grid;
@@ -1717,7 +1748,7 @@ body {
         align-self: center;
         border-radius: 100px;
         height : 50%;
-        width : 70%;
+        width : 60%;
         background: rgba(255, 255, 255, 0.15);
         border: 1px solid rgba(255, 255, 255, 0.25);
         border-radius: 50px;
@@ -2743,6 +2774,14 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 
     <!--HTML 4 choix-->
     <div id="phone4Choix">
+      <div id="pm4Choix">
+        <div id="pmTitle">Menu pause</div>
+  <div class="ligneIn" style="width:80%; border:1px solid rgb(234, 233, 233)"></div>
+
+
+
+
+      </div>
 <div id="pause4Choix">
   <svg width="90%" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24"><path d="M6.5,0A3.5,3.5,0,0,0,3,3.5v17a3.5,3.5,0,0,0,7,0V3.5A3.5,3.5,0,0,0,6.5,0Z"/><path d="M17.5,0A3.5,3.5,0,0,0,14,3.5v17a3.5,3.5,0,0,0,7,0V3.5A3.5,3.5,0,0,0,17.5,0Z"/></svg>
 </div>
@@ -5012,7 +5051,14 @@ document.body.style.height = window.screen.height + 'px';
       btns4Choix.forEach(btn=>{
         btn.addEventListener('touchstart',()=>{btn.style.filter = "brightness(0.9)"})
         btn.addEventListener('touchend',()=>{btn.style.filter = ""})
-      })
+      });
+
+      [...phone4Choix.children].forEach((el) => {
+        if (el.id === "pm4Choix"){return}
+        el.style.display = "none"
+        });
+
+
     </script>
 
     <script>
