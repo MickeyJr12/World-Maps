@@ -1570,7 +1570,6 @@ body {
         gap:4em;
       }
       #pm4Choix{
-        visibility: hidden;
         display: flex;
         position : absolute;
         align-items: center;
@@ -1597,8 +1596,8 @@ body {
         transition : transform 0.1s ease, opacity 0.08s ease;
       }
       #cachePm{
-        visibility: hidden;
         position: absolute;
+        pointer-events: none;
         opacity : 0;
         top:0px;        
         background : rgba(0,0,0,0.2);
@@ -5207,8 +5206,8 @@ document.body.style.height = window.screen.height + 'px';
       const cachePm = document.getElementById('cachePm')
       const btnReprendre = document.querySelector('.btnReprendre')
       pause4Choix.addEventListener('click',()=>{       
-        pm4Choix.style.visibility = "visible"
-        cachePm.style.visibility = "visible";
+        pm4Choix.style.pointerEvents = ""
+        cachePm.style.pointerEvents="";
         setTimeout(() => {
           pm4Choix.style.transform = ""
           pm4Choix.style.opacity="1"
@@ -5223,10 +5222,8 @@ document.body.style.height = window.screen.height + 'px';
         pm4Choix.style.opacity="0"
         cachePm.style.opacity="0"
         
-        setTimeout(() => {
-        pm4Choix.style.visibility = "hidden"
-        cachePm.style.visibility="hidden";
-        }, 200);
+        pm4Choix.style.pointerEvents = "none"
+        cachePm.style.pointerEvents="none";
       })
 
 
