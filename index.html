@@ -1276,7 +1276,7 @@ body {
         align-items: center;
         overflow-y: scroll;
         scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.2) ;
+        scrollbar-color: rgba(0, 0,0, 0.2) ;
         padding: 1em 0em;
         gap: 1em;
         top: calc(18% + 1em);
@@ -1570,13 +1570,18 @@ body {
         gap:4em;
       }
       #pm4Choix{
-        display: flex;
+        display: none;
         position : absolute;
         align-items: center;
         flex-direction: column;
+        overflow: hidden;
         color:white;
+        opacity : 0;
+        z-index: 20;
         gap:0.2em;
-        left : 50%; transform: translateX(-50%) ;
+        margin-inline: auto;
+        left: 0;
+        right: 0;
         width : 90%;
         width : clamp(0px,90%,500px);
         background: rgba(10, 0, 80, 0.80);
@@ -1586,6 +1591,20 @@ body {
         border-radius: 1em;
         border : 2px solid black;
         box-shadow: 0px 0px 4px rgba(0,0,0,0.2) ;
+        transform-origin: top right;
+        transition : transform 0.1s ease, opacity 0.08s ease;
+      }
+      #cachePm{
+        display:none;
+        position: absolute;
+        opacity : 0;
+        top:0px;        
+        background : rgba(0,0,0,0.2);
+        backdrop-filter: blur(10px);
+        z-index: 10;
+        width :100vw;
+        height : 100vh;
+        transition : opacity 0.08s ease; 
       }
       #pmTitle{
         display: flex;
@@ -1593,6 +1612,7 @@ body {
         align-items: center;
         justify-content: center;
         margin-top:1em;
+        margin-bottom: 0.5em;
         font-weight: 700;
         font-size: 1.6em;
         letter-spacing: 1.1px;
@@ -1610,9 +1630,15 @@ body {
       #contentPm{
         display: flex;
         flex-direction: column;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255,255,255,0.2) transparent;
         gap:0.3em;
-        width : 90%;
+        flex: 1;           /* prend tout l'espace restant après le titre et l'en-tête */
+        overflow-y: auto;  /* scroll si le contenu dépasse */
+        min-height: 0;
         height : auto;
+        width : 90%;
         padding : 0em 0.6em;
       }
       .prPm{
@@ -1644,6 +1670,34 @@ body {
         height : 1.1em
       }
       .iconIncorrectPrPm{fill : red;}
+      #cadreBtnPm{
+         display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height : 4em;
+        width: 100%;
+        border-top: 1px solid rgba(233, 233, 234, 0.25);
+        margin-top : 0.2em;
+       padding : 0.5em 0em;
+      }
+      .btnMenu{
+        background: rgba(12, 78, 185, 0.7);
+      }
+       .btnReprendre{
+      
+        background: rgba(6, 103, 239, 0.8);
+      }
+      .btnPm{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        width : 42%;
+        height : 80%;
+        border-radius: 8px;
+        transition : filter 0.05s ease, transform 0.1s ease;
+      }
+      .btnPm:active {transform : scale(1.01); filter : brightness(0.92)}
+
 
       .back {
         display: flex;
@@ -1692,7 +1746,7 @@ body {
         border-radius: 8px;
         width : clamp(50vw,55%,60% ); 
         height : auto;
-        box-shadow: 0px 0px 0.6em rgba(0,0,0,0.4);
+        filter: drop-shadow(0px 0px 0.6em rgba(0,0,0,0.4));
       }
        #grid4Choix{
         display: grid;
@@ -2822,16 +2876,25 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 
     <!--HTML 4 choix-->
     <div id="phone4Choix">
+      <div id="cachePm"></div>
       <div id="pm4Choix">
         <div id="pmTitle">Menu pause</div>
   <div class="ligneIn" style="width:100%; border:1px solid rgb(234, 233, 233)"></div>
 <div id="cadrePrPm">
-  <div style="display:flex; justify-content: flex-start">Proposition</div>
+  <div style="display:flex; justify-content: flex-start">Propositions</div>
   <div style="display:flex; justify-content: flex-end;">Correction</div>
   <div class="ligneIn" style="grid-column: span 2 / span 2; height:0px;  border:1px solid rgb(234, 233, 233)"></div>
 </div>
 <div id="contentPm">
 <div class="prPm">
+<div class="propositionPm">République démocratique du Congo</div>
+
+  <svg class="iconCorrectPrPm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 507.506 507.506;" xml:space="preserve" height="1.1em">
+	<path d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"/>
+</svg>
+
+<div class="reponsePm">Russie</div>
+</div><div class="prPm">
 <div class="propositionPm">République démocratique du Congo</div>
 
   <svg class="iconCorrectPrPm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 507.506 507.506;" xml:space="preserve" height="1.1em">
@@ -2857,19 +2920,22 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 <div>Russie</div>
 </div>
 </div>
+<div id="cadreBtnPm">
+<div class=" btnPm btnMenu">Menu</div>
+<div class=" btnPm btnReprendre">Reprendre</div>
 
 
+</div>
 
-
-      </div>
+</div>
 <div id="pause4Choix">
   <svg width="90%" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24"><path d="M6.5,0A3.5,3.5,0,0,0,3,3.5v17a3.5,3.5,0,0,0,7,0V3.5A3.5,3.5,0,0,0,6.5,0Z"/><path d="M17.5,0A3.5,3.5,0,0,0,14,3.5v17a3.5,3.5,0,0,0,7,0V3.5A3.5,3.5,0,0,0,17.5,0Z"/></svg>
 </div>
 
-<div id="cadreQ4Choix">
-  <img style=" width:100%"  src="https://flagcdn.com/mq.svg" alt="">
 
-</div>
+  <img id="cadreQ4Choix"  src="https://flagcdn.com/mq.svg" alt="">
+
+
 <div class="questionBox">Question 1/15</div>
 <div class="cadreChrono">
   <svg class="iconChrono" xmlns="http://www.w3.org/2000/svg" id="Layer_1"  viewBox="0 0 26 26" data-name="Layer 1"><path d="m13.5 8.5a1.5 1.5 0 0 0 -3 0v3.19a2 2 0 1 0 3 0z"/><path d="m22.5 5.5a1.5 1.5 0 0 0 0-3c-.841 0-1-.159-1-1a1.5 1.5 0 0 0 -3 0 4.861 4.861 0 0 0 .289 1.715l-.618.685a10.927 10.927 0 0 0 -4.671-1.785v-.615a1.5 1.5 0 0 0 -3 0v.615a10.927 10.927 0 0 0 -4.671 1.785l-.618-.685a4.861 4.861 0 0 0 .289-1.715 1.5 1.5 0 0 0 -3 0c0 .841-.159 1-1 1a1.5 1.5 0 0 0 0 3 4.953 4.953 0 0 0 1.523-.232l.579.643a11 11 0 1 0 16.8 0l.579-.643a4.953 4.953 0 0 0 1.519.232zm-10.5 15.5a8 8 0 1 1 8-8 8.009 8.009 0 0 1 -8 8z"/></svg>
@@ -5133,11 +5199,39 @@ document.body.style.height = window.screen.height + 'px';
         btn.addEventListener('touchend',()=>{btn.style.filter = ""})
       });
 
-      [...phone4Choix.children].forEach((el) => {
-        if (el.id === "pm4Choix"){return}
-        el.style.display = "none"
-        });
 
+      const pause4Choix = document.getElementById('pause4Choix')
+      const pm4Choix = document.getElementById('pm4Choix')
+      const cachePm = document.getElementById('cachePm')
+      const btnReprendre = document.querySelector('.btnReprendre')
+      pause4Choix.addEventListener('click',()=>{
+        pm4Choix.style.display = "flex"
+        cachePm.style.display="flex";
+        pm4Choix.style.transform="scale(0.7)"
+        setTimeout(() => {
+          pm4Choix.style.transform = ""
+          pm4Choix.style.opacity="1"
+          cachePm.style.opacity="1"
+        }, 10);
+      })
+
+      btnReprendre.addEventListener('click',()=>{
+        pm4Choix.style.transform = "scale(0.7)"
+        pm4Choix.style.opacity="0"
+        cachePm.style.opacity="0"
+        
+        setTimeout(() => {
+          pm4Choix.style.display = "none"
+        cachePm.style.display="none";
+        }, 150);
+      })
+
+
+
+
+
+
+      
 
     </script>
 
