@@ -1572,6 +1572,7 @@ body {
       #pm4Choix{
         display: flex;
         position : absolute;
+        pointer-events: none;
         align-items: center;
         flex-direction: column;
         overflow: hidden;
@@ -1647,6 +1648,11 @@ body {
         justify-content: space-between;
         align-items: center;
         width :100%;
+      }
+      .ligneInPm{
+        width:100%;
+          border-radius: 5px;
+          border : 0.01em solid rgba(255,255,255,0.1)
       }
       .propositionPm{
       display: flex;
@@ -2895,7 +2901,11 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 </svg>
 
 <div class="reponsePm">Russie</div>
-</div><div class="prPm">
+</div>
+<div class="ligneInPm"></div>
+
+
+<div class="prPm">
 <div class="propositionPm">République démocratique du Congo</div>
 
   <svg class="iconCorrectPrPm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 507.506 507.506" style="enable-background:new 0 0 507.506 507.506;" xml:space="preserve" height="1.1em">
@@ -2904,6 +2914,8 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 
 <div class="reponsePm">Russie</div>
 </div>
+<div class="ligneInPm"></div>
+
 <div class="prPm">
 <div>France</div>
 
@@ -2913,6 +2925,8 @@ box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
 
 <div>Russie</div>
 </div>
+<div class="ligneInPm" ></div>
+
 <div class="prPm">
 <div>France</div>
   <svg class="iconIncorrectPrPm" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.021 512.021" style="enable-background:new 0 0 512.021 512.021;" xml:space="preserve"  height="1.1em">
@@ -5206,8 +5220,8 @@ document.body.style.height = window.screen.height + 'px';
       const cachePm = document.getElementById('cachePm')
       const btnReprendre = document.querySelector('.btnReprendre')
       pause4Choix.addEventListener('click',()=>{       
-        pm4Choix.style.pointerEvents = ""
-        cachePm.style.pointerEvents="";
+        pm4Choix.style.pointerEvents = "all"
+        cachePm.style.pointerEvents="all";
         pm4Choix.style.transform = "scale(1)";
         pm4Choix.style.opacity="1"
         cachePm.style.opacity="1"
