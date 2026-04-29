@@ -1593,7 +1593,7 @@ body {
         box-shadow: 0px 0px 4px rgba(0,0,0,0.2) ;
         transform-origin: top right;
         transform : scale(0.7);
-        transition : transform 0.1s ease, opacity 0.08s ease;
+        transition: transform 0.35s ease, opacity 0.3s ease;
       }
       #cachePm{
         position: absolute;
@@ -5219,9 +5219,6 @@ document.body.style.height = window.screen.height + 'px';
 
      btnReprendre.addEventListener('click', () => {
   pm4Choix.style.transform = "scale(0.7)";
-  
-  pm4Choix.offsetHeight; // ← force un reflow, casse le batch
-  
   pm4Choix.style.opacity = "0";
   cachePm.style.opacity = "0";
   pm4Choix.style.pointerEvents = "none";
