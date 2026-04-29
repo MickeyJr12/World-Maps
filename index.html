@@ -1648,7 +1648,7 @@ body {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(8px);
-        transition : background 0.08s ease, transform 0.2s ease;
+        transition : background 0.08s ease, transform 0.2s ease, filter 0.05s ease;
       }
       .btn4Choix:active{filter : brightness(0.9)}
       .btn4Choix.good{
@@ -5005,11 +5005,14 @@ document.body.style.height = window.screen.height + 'px';
     <script>
       const c1 = document.getElementById('c1')
       const c3 = document.getElementById('c3')
+      const btns4Choix = document.querySelectorAll('.btn4Choix')
         c1.classList.add('good')
         c3.classList.add('bad')
 
-
-    c1.addEventListener('click',()=>{phone4Choix.style.display="none"})
+      btns4Choix.forEach(btn=>{
+        btn.addEventListener('touchstart',()=>{btn.style.filter = "brightness(0.9)"})
+        btn.addEventListener('touchend',()=>{btn.style.filter = ""})
+      })
     </script>
 
     <script>
