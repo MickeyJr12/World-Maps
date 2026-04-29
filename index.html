@@ -1542,7 +1542,6 @@ body {
 #playConfig.active:active {
   transform: scale(0.97);
 }
-
 /*CSS 4 choix*/
 
  #phone4Choix {
@@ -1561,8 +1560,7 @@ body {
         min-height: 100dvh;
         min-width: 100vw;
         width: 100%;
-        padding: 0 1em;
-        padding-top: calc(env(safe-area-inset-top) + 2em);
+        padding-top: calc(env(safe-area-inset-top)+2em);
         gap:4em;
       }
 
@@ -1619,16 +1617,14 @@ body {
         display: grid;
         grid-template-columns: 1fr 1fr; /* force 2 colonnes */
         grid-template-rows: 1fr 1fr;    /* force 2 lignes */
-        width: calc(100% + 200em); 
+        width: 100vw;
         height: auto;
         gap: 1em;
         border : 2px solid black; 
         background: rgba(0, 0, 0, 0.15);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
-        padding : 0em 1em;
-        padding-top: 0.8em;
-        padding-bottom:calc(2em + env(safe-area-inset-bottom));
+        padding: 12px;
         backdrop-filter: blur(4px);
       }
 
@@ -1668,8 +1664,8 @@ body {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        max-height: inherit;
         height:100%;
+        max-height: inherit;
         width: 80%;
         border-radius: 5px;
       }
@@ -1726,8 +1722,8 @@ body {
         height:100%;
         width :50%;
         border-radius: 100px;
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+       background: rgba(255, 255, 255, 0.9);
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
       } 
       .timeChronoBox{
         display: flex;
