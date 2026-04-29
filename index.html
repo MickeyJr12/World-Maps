@@ -1570,7 +1570,8 @@ body {
         gap:4em;
       }
       #pm4Choix{
-        display: none;
+        visibility: hidden;
+        display: flex;
         position : absolute;
         align-items: center;
         flex-direction: column;
@@ -1592,10 +1593,11 @@ body {
         border : 2px solid black;
         box-shadow: 0px 0px 4px rgba(0,0,0,0.2) ;
         transform-origin: top right;
+        transform : scale(0.7);
         transition : transform 0.1s ease, opacity 0.08s ease;
       }
       #cachePm{
-        display:none;
+        visibility: hidden;
         position: absolute;
         opacity : 0;
         top:0px;        
@@ -5204,26 +5206,26 @@ document.body.style.height = window.screen.height + 'px';
       const pm4Choix = document.getElementById('pm4Choix')
       const cachePm = document.getElementById('cachePm')
       const btnReprendre = document.querySelector('.btnReprendre')
-      pause4Choix.addEventListener('click',()=>{
-        pm4Choix.style.display = "flex"
-        cachePm.style.display="flex";
-        pm4Choix.style.transform="scale(0.7)"
+      pause4Choix.addEventListener('click',()=>{       
+        pm4Choix.style.visibility = "visible"
+        cachePm.style.visibility = "visible";
         setTimeout(() => {
           pm4Choix.style.transform = ""
           pm4Choix.style.opacity="1"
           cachePm.style.opacity="1"
+          pm4Choix.style.transform="scale(1)"
+
         }, 10);
       })
 
       btnReprendre.addEventListener('click',()=>{
-        pm4Choix.style.transform = "scale(0.7)"
+        pm4Choix.style.transform = "scale(0.7)"        
         pm4Choix.style.opacity="0"
         cachePm.style.opacity="0"
         
         setTimeout(() => {
-        pm4Choix.style.display = "none"
-        cachePm.style.display="none";
-        pm4Choix.style.transform = ""
+        pm4Choix.style.visibility = "hidden"
+        cachePm.style.visibility="hidden";
         }, 200);
       })
 
