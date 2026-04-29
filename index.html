@@ -1592,7 +1592,8 @@ body {
         border : 2px solid black;
         box-shadow: 0px 0px 4px rgba(0,0,0,0.2) ;
         transform-origin: top right;
-        transition: opacity 0.2s ease;
+        transform : scale(0.7);
+        transition: transform 0.2s ease, opacity 0.2s ease;
       }
       #cachePm{
         position: absolute;
@@ -5207,18 +5208,17 @@ document.body.style.height = window.screen.height + 'px';
       pause4Choix.addEventListener('click',()=>{       
         pm4Choix.style.pointerEvents = ""
         cachePm.style.pointerEvents="";
-        setTimeout(() => {
-          pm4Choix.style.opacity="1"
-          cachePm.style.opacity="1"
-
-        }, 10);
+        pm4Choix.style.transform = "scale(1)";
+        pm4Choix.style.opacity="1"
+        cachePm.style.opacity="1"
       })
 
      btnReprendre.addEventListener('click', () => {
-  pm4Choix.style.opacity = "0";
-  cachePm.style.opacity = "0";
-  pm4Choix.style.pointerEvents = "none";
-  cachePm.style.pointerEvents = "none";
+      pm4Choix.style.opacity = "0";
+      pm4Choix.style.transform = "";
+      cachePm.style.opacity = "0";
+      pm4Choix.style.pointerEvents = "none";
+      cachePm.style.pointerEvents = "none";
 });
 
 
