@@ -1850,6 +1850,12 @@
         border: 1px solid rgba(255, 100, 100, 0.4);
         box-shadow: 0 4px 15px rgba(200, 50, 50, 0.4);
       }
+       .btn4Choix.none {
+        filter: brightness(70%) saturate(50%);
+        pointer-events: none;
+        opacity : 0.7;
+       }
+
       #c1,
       #c3 {
         margin-left: 1em;
@@ -5131,6 +5137,7 @@
         }, 180); // attend la fin de l'animation de phoneHome
       });
     </script>
+    
     <!--Script Configuration-->
     <script>
       const backConfig = document.getElementById("backConfig");
@@ -5187,12 +5194,18 @@
 
       const phone4Choix = document.getElementById("phone4Choix");
       const cBoxs = document.querySelectorAll(".cBox");
+      const c1 = document.getElementById("c1");
+      const c2 = document.getElementById("c2");
+      const c3 = document.getElementById("c3");
+      const c4 = document.getElementById("c4");
+
       const cc1 = document.getElementById("cc1");
       const cc2 = document.getElementById("cc2");
       const cc3 = document.getElementById("cc3");
       const cc4 = document.getElementById("cc4");
 
       let L_cBoxHasard = [cc1,cc2,cc3,cc4];
+      let L_btn4ChoixHasard = [c1,c2,c2,c4]
       
 
       function activePlay() {
@@ -5214,7 +5227,9 @@
             P_info[id].region !== null,
         );
         if (L_config.m === "modeChoix") {
-          cBoxHasard = L_cBoxHasard[Math.floor(Math.random()*3)]// Mettre la bonne réponse sur une case au hasard
+          let random = Math.floor(Math.random()*4)
+          cBoxHasard = L_cBoxHasard[random]// Mettre la bonne réponse sur une case au hasard
+          cHasard = L_btn4ChoixHasard[random]
           idBonneReponse  = paysDispos[Math.floor(Math.random()*paysDispos.length)]; // Choix de la bonne réponse au hasard
           // remplir les réponses
 
@@ -5438,17 +5453,28 @@
     <!--Script 4 Choix-->
 
     <script>
-      const c1 = document.getElementById("c1");
-      const c3 = document.getElementById("c3");
+      
       const btns4Choix = document.querySelectorAll(".btn4Choix");
 
       btns4Choix.forEach((btn) => {
         btn.addEventListener("touchstart", () => {
-          btn.style.filter = "brightness(0.9)";
+          btn.style.filter = "brightness(0.7)";
         });
         btn.addEventListener("touchend", () => {
           btn.style.filter = "";
         });
+
+        btn.addEventListener('click',()=>{          
+          btns4Choix.forEach(b=>{
+            btn.classList.add(btn===cHasard?"good":"bad")//à retirer
+            if (b===cHasard && b!=btn){
+              b.classList.add('good')
+            }
+            else if (b!=btn){b.classList.add('none')}
+          })
+        })
+
+
       });
 
       const pause4Choix = document.getElementById("pause4Choix");
