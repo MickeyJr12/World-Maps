@@ -5147,6 +5147,19 @@
       cs.forEach((el) =>
         el.addEventListener("click", () => {
           L_config.c = el.id;
+          if (el.id !="allC"){
+            if (L_config.d === null){L_config.d = true}
+        btnsD.forEach((btn)=>{btn.style.filter = "brightness(0.1)"; btn.style.pointerEvents="none"; btn.style.baskground ="rgba(255,255,255,0.6)"; btn.style.fontWeight = "200"})
+          }
+          else {
+             // Si on  choisit un continent, on ne peut pas sélectionner la difficulté
+            if (L_config.d === true){L_config.d = null}
+              btnsD.forEach(((btn)=>{
+                btn.style.filter = "";
+                btn.style.pointerEvents="";
+                btn.style.baskground="";
+              }))            
+          }
           activePlay();
         }),
       ); //Mettre à jour  le changement dans la config
@@ -5171,14 +5184,11 @@
       let L_reponse = [];
       let reponseFound = false;
       function fillPhonePlay() {
-        const paysDispos = Object.keys(L_d).filter(
-                  (id) =>
-                    (L_d[id].toLowerCase() === L_config.d ||
-                      L_config.d === "allD") &&
-                    (P_info[id].region === L_config.c ||
-                      L_config.c === "allC") &&
-                    P_info[id].region !== null,
-                );
+        const paysDispos = Object.keys(L_d).filter(id =>
+  (L_d[id].toLowerCase() === L_config.d || L_config.c !== "allC") &&
+  (P_info[id].region === L_config.c || L_config.c === "allC") &&
+  P_info[id].region !== null
+);
                 
         if (L_config.m === "modeChoix") {
           // remplir les réponses
@@ -5281,16 +5291,18 @@
       L_btn.forEach((group) => {
         group.forEach((el) => {
           el.addEventListener("click", () => {
+
             group.forEach((item) => {
               item.style.background = "";
               item.style.border = "";
             });
             el.style.background = "rgba(218,37,37,0.12)";
-            el.style.border = "2px solid #DA2525";
+            el.style.border = "2px solid #DA2525";           
           });
         });
       });
 
+     
       backConfig.addEventListener("click", () => {
         // Sortie de phoneConfig
         phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
