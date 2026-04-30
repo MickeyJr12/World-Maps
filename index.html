@@ -1798,6 +1798,7 @@
         object-fit: contain;
         border-radius: 5px;
       }
+      
       #grid4Choix {
         display: grid;
         grid-template-columns: 1fr 1fr; /* force 2 colonnes */
@@ -5232,6 +5233,7 @@
           let random = Math.floor(Math.random()*4)
           cBoxHasard = L_cBoxHasard[random]// Mettre la bonne réponse sur une case au hasard
           cHasard = L_btn4ChoixHasard[random]
+          console.log(cHasard)
           idBonneReponse  = paysDispos[Math.floor(Math.random()*paysDispos.length)]; // Choix de la bonne réponse au hasard
           // remplir les réponses
 
