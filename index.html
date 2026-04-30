@@ -5236,9 +5236,9 @@
                   reponseFound = true;
                 }
                 else if (L_config.r === "nomR"){
-                  c.textContent = svg.querySelector(`path[id="${p_id}"]`).getAttribute('title');
+                  c.textContent = L_q[p_id].n;
                   if(c===cBoxHasard){
-                  c.textContent = svg.querySelector(`path[id="${idBonneReponse}"]`).getAttribute('title');
+                  c.textContent = L_q[idBonneReponse].n;
                   }
                   L_reponse.push(p_id);
                   reponseFound = true;
@@ -5269,7 +5269,7 @@
                   qBox.innerHTML =  ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" alt="">`;;                   
                 }
                 else if (L_config.q === "nomQ"){
-                  qBox.textContent = svg.querySelector(`path[id="${idBonneReponse}"]`).getAttribute('title');
+                  qBox.textContent = L_q[idBonneReponse].n
                   document.getElementById('cadreQ4Choix').style.marginBottom = "4em";
                 }
                 else if (L_config.q === "capitaleQ"){
