@@ -1097,6 +1097,7 @@
       /*Style Home*/
       #phoneHome {
         display: flex;
+        pointer-events: none;
         position: fixed;
         flex-direction: column;
         justify-content: flex-end;
@@ -1162,7 +1163,7 @@
         filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.4));
       }
 
-      .btnHomeBox {
+      .btnHomeBox {        
         display: flex;
         position: absolute;
         z-index: 99;
@@ -1179,6 +1180,7 @@
         transition: transform 1s ease;
       }
       .btnPlay {
+        pointer-events: all;
         display: flex;
         position: relative;
         align-self: center;
@@ -1833,7 +1835,7 @@
           inset 0 1px 0 rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(8px);
         transition:
-          background 0.08s ease,
+          background 0.1s ease,
           transform 0.2s ease,
           filter 0.05s ease;
       }
