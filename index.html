@@ -1097,7 +1097,6 @@
       /*Style Home*/
       #phoneHome {
         display: flex;
-        pointer-events: none;
         position: fixed;
         flex-direction: column;
         justify-content: flex-end;
@@ -1180,7 +1179,6 @@
         transition: transform 1s ease;
       }
       .btnPlay {
-        pointer-events: all;
         display: flex;
         position: relative;
         align-self: center;
@@ -1843,11 +1841,13 @@
         filter: brightness(0.9);
       }
       .btn4Choix.good {
+        pointer-events: none;
         background: rgba(37, 168, 98, 0.9);
         border: 1px solid rgba(80, 230, 140, 0.4);
         box-shadow: 0 4px 15px rgba(30, 180, 100, 0.4);
       }
       .btn4Choix.bad {
+        pointer-events: none;
         background: rgba(184, 47, 47, 0.9);
         border: 1px solid rgba(255, 100, 100, 0.4);
         box-shadow: 0 4px 15px rgba(200, 50, 50, 0.4);
@@ -2943,7 +2943,7 @@
           </div>
         </div>
 
-        <div id="playConfig">▶️ Jouer</div>
+        <div id="playConfig">▶Commencer</div>
       </div>
     </div>
 
@@ -5289,11 +5289,11 @@
                 }
                 else if (L_config.q === "nomQ"){
                   qBox.textContent = L_q[idBonneReponse].n
-                  document.getElementById('cadreQ4Choix').style.marginBottom = "4em";
+                  document.getElementById('cadreQ4Choix').style.marginBottom = "3em";
                 }
                 else if (L_config.q === "capitaleQ"){
                   qBox.textContent =   L_q[idBonneReponse].c
-                  document.getElementById('cadreQ4Choix').style.marginBottom = "4em";
+                  document.getElementById('cadreQ4Choix').style.marginBottom = "3em";
                 }
 
               }
