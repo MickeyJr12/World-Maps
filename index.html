@@ -1651,7 +1651,8 @@
       #contentPm {
         display: flex;
         flex-direction: column;
-        overflow-y: auto;
+        overflow-y: auto;        
+        overflow-x: hidden;        
         scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         gap: 0.3em;
@@ -1785,6 +1786,7 @@
         letter-spacing: 1px;
         border-radius: 8px;
         width: clamp(50vw, 55%, 60%);
+        max-width: 200px;
         height: auto;
         filter: drop-shadow(0px 0px 0.6em rgba(0, 0, 0, 0.4));
         text-decoration: underline;
@@ -5215,7 +5217,6 @@
           cBoxHasard = L_cBoxHasard[Math.floor(Math.random()*3)]// Mettre la bonne réponse sur une case au hasard
           idBonneReponse  = paysDispos[Math.floor(Math.random()*paysDispos.length)]; // Choix de la bonne réponse au hasard
           // remplir les réponses
-          console.log(L_cBoxHasard)
 
           cBoxs.forEach((c) => {
             reponseFound = false;
@@ -5224,6 +5225,7 @@
                 Object.keys(L_q)[
                   Math.floor(Math.random() * Object.keys(L_q).length)
                 ]; // identifiant de pays au hasard
+                
 
               if (!L_reponse.includes(p_id) && paysDispos.includes(p_id) && p_id!=idBonneReponse) {  
                 //Remplir les cbox, les réponses              
