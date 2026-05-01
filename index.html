@@ -5553,6 +5553,7 @@ btn.addEventListener("click", () => {
       const pm4Choix = document.getElementById("pm4Choix");
       const cachePm = document.getElementById("cachePm");
       const btnReprendre = document.querySelector(".btnReprendre");
+      const btnMenu = document.querySelector('.btnMenu')
       pause4Choix.addEventListener("click", () => {
       
         pm4Choix.style.pointerEvents = "all";
@@ -5562,6 +5563,27 @@ btn.addEventListener("click", () => {
         cachePm.style.opacity = "1";
         
       });
+      btnMenu.addEventListener('click',()=>{        
+        phoneHome.style.display="flex"
+        phone4Choix.style.display="none";
+        setTimeout(() => {
+           [...phoneHome.children].forEach((el) => {
+            el.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+            el.style.opacity = "1";
+            if (el.id === "mapHome") {
+              el.style.opacity = 0.08;
+            }
+          });
+        }, 10);
+
+
+        pm4Choix.style.opacity = "0";
+        pm4Choix.style.transform = "";
+        cachePm.style.opacity = "0";
+        pm4Choix.style.pointerEvents = "none";
+        cachePm.style.pointerEvents = "none";
+
+      })
 
       btnReprendre.addEventListener("click", () => {
         pm4Choix.style.opacity = "0";
