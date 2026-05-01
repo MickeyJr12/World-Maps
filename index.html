@@ -1784,8 +1784,8 @@
   height: 2.5em;
   width : 2.5em;
   flex-shrink: 0;
-  color: white;
 }
+.icone-carte path{fill:white}
 
 .btn-carte .texte-carte {
   max-width: 0;
@@ -1809,8 +1809,8 @@
   cursor: pointer;
 }
 
-.btn-carte.cliquable .icone-carte {
-  color: #1a5fb4;
+.btn-carte.cliquable .icone-carte  path{
+  fill: #1a5fb4;
 }
 
 .btn-carte.cliquable .texte-carte {
@@ -3051,7 +3051,7 @@
           </div>
         </div>
 
-        <div id="playConfig">▶Commencer</div>
+        <div id="playConfig">Commencer</div>
       </div>
     </div>
 
@@ -3181,10 +3181,7 @@
       </div>
 
       <button class="btn-carte" id="btnCarte">
-  <svg class="icone-carte" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M9 4v13M15 7v13" stroke="currentColor" stroke-width="2"/>
-  </svg>
+ <svg class="icone-carte" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.68,1.167l-.021-.007-2.715-.9a5.017,5.017,0,0,0-2.9-.079L9.468,1.8A3.025,3.025,0,0,1,7.42,1.62l-.5-.232A5,5,0,0,0,0,6V18.075a5.013,5.013,0,0,0,3.6,4.8l2.869.9A4.991,4.991,0,0,0,7.964,24,4.592,4.592,0,0,0,9.3,23.819l5.8-1.6a3,3,0,0,1,1.617.013l2.343.676A4,4,0,0,0,24,19.021V5.876A5.01,5.01,0,0,0,20.68,1.167ZM4.176,20.959A3.013,3.013,0,0,1,2,18.075V6a2.953,2.953,0,0,1,1.336-2.5A3,3,0,0,1,5,3a2.9,2.9,0,0,1,1.112.222s.745.319.887.37V21.842ZM9,21.827V3.879a5.105,5.105,0,0,0,1.006-.155L15,2.273V20.2Zm13-2.806a2,2,0,0,1-2.433,1.954L17,20.252V2.075l3.018.979A3.006,3.006,0,0,1,22,5.876Z"/></svg>
   <span class="texte-carte">Voir sur la carte</span>
 </button>
 
