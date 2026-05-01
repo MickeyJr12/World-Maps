@@ -3165,7 +3165,7 @@
         <div class="btn4Choix" id="c4"><div class="cBox" id="cc4"></div></div>
         <div class="cadreNext">
   <span></span>
-  <button class="btn-suivant">Suivant →</button>
+  <button class="btn-suivant" onclick="fillPhonePlay()">Suivant →</button>
 </div>
       </div>
     </div>
@@ -5273,6 +5273,9 @@
       
       
       function fillPhonePlay() {
+      btns4Choix.forEach(b=>{b.classList.remove('good','bad','none')})
+      cadreNext.classList.remove('good','bad')
+      reponseFound = false;
       L_reponse = []      
         const paysDispos = Object.keys(L_q).filter(
           (id) =>
@@ -5512,6 +5515,7 @@
       const btns4Choix = document.querySelectorAll(".btn4Choix");
       const cadreNext = document.querySelector('.cadreNext')
       const spanNext = cadreNext.querySelector('span')
+      const btnSuivant = document.getElementById('.btn-suivant')
 
         
      btns4Choix.forEach((btn) => {
