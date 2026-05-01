@@ -1096,7 +1096,7 @@
 
       /*Style Home*/
       #phoneHome {
-        display: none;
+        display: flex;
         position: fixed;
         flex-direction: column;
         justify-content: flex-end;
@@ -1561,7 +1561,7 @@
       /*CSS 4 choix*/
 
       #phone4Choix {
-        display: flex;
+        display: none;
         position: fixed;
         flex-direction: column;
         align-items: center;
@@ -1814,12 +1814,12 @@
         padding: 0.8em 100em;
         padding-bottom: calc(2em + env(safe-area-inset-bottom));
       }
-      .toast-suivant {
+      .cadreNext {
   display: flex;
   grid-column: span 2 / span 2;
   align-items: center;
   justify-content: space-between;
-  background: rgba(17, 191, 92, 0.8);
+  background: rgba(17, 82, 203, 0.5);
   border-radius: 14px;
   padding: 1em 1em;
   color: white;
@@ -1833,9 +1833,16 @@
   pointer-events: none;
 
 }
-.toast-suivant.visible {
+.cadreNext.good {
+  opacity: 1;
+  background: rgba(17, 191, 92, 0.8);
+  transform: translateY(0);
+  pointer-events: all;
+}
+.cadreNext.bad {
   opacity: 1;
   transform: translateY(0);
+  background: rgba(180, 30, 30, 0.8);
   pointer-events: all;
 }
 
@@ -1844,7 +1851,7 @@
   color: #1a1a2e;
   border: none;
   border-radius: 10px;
-  padding: 0.6em 0.6em;
+  padding: 0.6em 0.8em;
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
@@ -3156,8 +3163,8 @@
         <div class="btn4Choix" id="c2"><div class="cBox" id="cc2"></div></div>
         <div class="btn4Choix" id="c3"><div class="cBox" id="cc3"></div></div>
         <div class="btn4Choix" id="c4"><div class="cBox" id="cc4"></div></div>
-        <div class="toast-suivant ">
-  <span>✓ Bonne réponse !</span>
+        <div class="cadreNext">
+  <span></span>
   <button class="btn-suivant">Suivant →</button>
 </div>
       </div>
@@ -5503,27 +5510,38 @@
     <script>
       
       const btns4Choix = document.querySelectorAll(".btn4Choix");
-      const toast = document.querySelector('.toast-suivant')
+      const cadreNext = document.querySelector('.cadreNext')
+      const spanNext = cadreNext.querySelector('span')
 
         
-      document.getElementById('c1').addEventListener('click',()=>{toast.classList.add('visible')})
      btns4Choix.forEach((btn) => {
   btn.addEventListener("touchstart", () => { btn.style.filter = "brightness(0.7)"; });
   btn.addEventListener("touchend", () => { btn.style.filter = ""; });
 
-  btn.addEventListener("click", () => {
-    const correct = btn === cHasard;
+btn.addEventListener("click", () => {
+  const correct = btn === cHasard;
 
-    btns4Choix.forEach((b) => {
-      if (b === cHasard) {
-        b.classList.add("good");         // toujours verte
-      } else if (b === btn && !correct) {
-        b.classList.add("bad");          // le btn cliqué si mauvais
-      } else {
-        b.classList.add("none");         // les autres
-      }
-    });
+  btns4Choix.forEach((b) => {
+    if (b === cHasard) {
+      b.classList.add("good");
+    } else if (b === btn && !correct) {
+      b.classList.add("bad");
+    } else {
+      b.classList.add("none");
+    }
   });
+
+  // ✅ En dehors du forEach
+  cadreNext.classList.remove('good', 'bad');
+  if (correct) {
+    cadreNext.classList.add('good');
+    spanNext.textContent = "✓ Bonne réponse !";
+  } else {
+    cadreNext.classList.add('bad');
+    spanNext.textContent = "✗ Mauvaise réponse";
+  }
+  cadreNext.classList.add('visible');
+});
 });
 
       const pause4Choix = document.getElementById("pause4Choix");
