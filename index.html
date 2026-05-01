@@ -1584,7 +1584,7 @@
         min-width: 100vw;
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2em);
-        gap: 4em;
+        gap: 1em;
       }
       #pm4Choix {
         display: flex;
@@ -1786,7 +1786,6 @@
         letter-spacing: 1px;
         border-radius: 8px;
         width: clamp(50vw, 55%, 60%);
-        margin-bottom: -1.5em;
         max-width: 200px;
         height: auto;
         filter: drop-shadow(0px 0px 0.6em rgba(0, 0, 0, 0.4));
@@ -1943,7 +1942,6 @@
         align-items: center;
         text-align: center;
         font-size: 1.05em;
-        margin: -1em 0em;
         font-weight: 400;
         color: rgba(255, 255, 255, 0.9);
         letter-spacing: 1.5px;
@@ -1956,7 +1954,6 @@
         width: clamp(88vw, 90%, 92vw);
         height: 1.8em;
         padding: 0em 0.5em;
-        margin-bottom: -2em;
       }
 
       .iconChrono {
@@ -5563,18 +5560,65 @@ btn.addEventListener("click", () => {
         cachePm.style.opacity = "1";
         
       });
-      btnMenu.addEventListener('click',()=>{        
-        phoneHome.style.display="flex"
+      btnMenu.addEventListener('click',()=>{                
         phone4Choix.style.display="none";
+        
+        // Sortie de phoneConfig
+        phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
+        phoneConfig.style.opacity = "0";
+        phoneConfig.style.transform = "scale(0.90)";
+
         setTimeout(() => {
-           [...phoneHome.children].forEach((el) => {
+          phoneConfig.style.display = "none";
+
+          // Prépare phoneHome avant de l'afficher
+          [...phoneHome.children].forEach((el) => {
+            el.style.transition = "none";
+            el.style.opacity = "0";
+          });
+
+          homeTitle.style.transform = "translateX(-50%) translateY(-3em)";
+          waveBottomHome.style.transform = "translateY(3em)";
+          btnHomeBox.style.transform =
+            "translateX(-50%) translateY(calc(-50% + 3em))";
+          document.getElementById("mapHome").style.transform =
+            "translateX(-40%) translateY(3em)";
+
+          phoneHome.style.display = "flex";
+          phoneHome.offsetHeight; // force reflow
+
+          // Anime le retour de phoneHome
+          [...phoneHome.children].forEach((el) => {
             el.style.transition = "transform 0.5s ease, opacity 0.4s ease";
             el.style.opacity = "1";
             if (el.id === "mapHome") {
               el.style.opacity = 0.08;
             }
           });
-        }, 10);
+
+          homeTitle.style.transform = "translateX(-50%)";
+          waveBottomHome.style.transform = "";
+          btnHomeBox.style.transform = "translateX(-50%) translateY(-50%)";
+          document.getElementById("mapHome").style.transform =
+            "translateX(-40%)";
+
+          //Réinitialiser les btn Config
+          Object.keys(L_config).forEach((key) => {
+            L_config[key] = null;
+          });
+          ``;
+
+          L_btn.forEach((group) => {
+            group.forEach((el) => {
+              el.style.background = "";
+              el.style.border = "";
+            });
+          });
+          activePlay();
+
+          qrs.forEach((qr) => (qr.style.display = "none  "));
+        }, 150);
+      
 
 
         pm4Choix.style.opacity = "0";
