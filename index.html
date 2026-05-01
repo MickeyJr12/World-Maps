@@ -1753,6 +1753,72 @@
         background: rgba(255, 255, 255, 0.2);
       }
 
+      .btn-carte {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: calc(2.2em + env(safe-area-inset-top));
+  left: 2.2em;
+
+  gap: 0;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.25);
+  filter: grayscale(1) brightness(0.8);
+  border: none;
+  cursor: default;
+  overflow: hidden;
+  white-space: nowrap;
+
+  transition: 
+    width 0.4s cubic-bezier(0.58, 0.00, 0.54, 1.28),
+    padding 0.4s ease,
+    gap 0.4s ease,
+    background 0.3s ease,
+    filter 0.3s ease;
+}
+
+.btn-carte .icone-carte {
+  flex-shrink: 0;
+  color: white;
+}
+
+.btn-carte .texte-carte {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  transition:
+    max-width 0.4s ease,
+    opacity 0.3s ease,
+    margin 0.3s ease;
+}
+
+/* État cliquable */
+.btn-carte.cliquable {
+  width: 10em;
+  padding: 0 1em 0 0.7em;
+  gap: 0.5em;
+  background: white;
+  filter: none;
+  cursor: pointer;
+}
+
+.btn-carte.cliquable .icone-carte {
+  color: #1a5fb4;
+}
+
+.btn-carte.cliquable .texte-carte {
+  max-width: 8em;
+  opacity: 1;
+}
+
       #pause4Choix {
         display: flex;
         align-items: center;
@@ -3114,6 +3180,16 @@
           <div class="btnPm btnReprendre">Reprendre</div>
         </div>
       </div>
+
+      <button class="btn-carte" id="btnCarte">
+  <svg class="icone-carte" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1.8em">
+    <path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M9 4v13M15 7v13" stroke="currentColor" stroke-width="2"/>
+  </svg>
+  <span class="texte-carte">Voir sur la carte</span>
+</button>
+
+
       <div id="pause4Choix">
         <svg
           width="90%"
@@ -5563,6 +5639,41 @@ btn.addEventListener("click", () => {
         cachePm.style.opacity = "1";
         
       });
+
+// Bouton Vue sur la carte
+      const btnCarte = document.getElementById('btnCarte');
+      const texteCarte = btnCarte.querySelector('.texte-carte');      
+
+function activerCarte() {
+  // Mesure la vraie largeur du texte
+  texteCarte.style.maxWidth = 'none';
+  const largeur = texteCarte.scrollWidth;
+  texteCarte.style.maxWidth = '0';
+
+  // Force reflow pour que la transition parte de 0
+  texteCarte.offsetWidth;
+
+  // Applique la bonne largeur + la classe
+  texteCarte.style.maxWidth = largeur + 'px';
+  btnCarte.style.width = `calc(2em + 0.5em + ${largeur}px + 1.7em)`; // icone + gap + texte + padding
+  btnCarte.classList.add('cliquable');
+}
+
+function desactiverCarte() {
+  texteCarte.style.maxWidth = '0';
+  btnCarte.style.width = '2em';
+  btnCarte.classList.remove('cliquable');
+}
+
+setTimeout(() => {
+  activerCarte()
+}, 12000);
+
+setTimeout(() => {
+  desactiverCarte()
+}, 18000);
+
+// Bouton Menu principal
       btnMenu.addEventListener('click',()=>{                
         phone4Choix.style.display="none";
         
