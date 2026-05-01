@@ -1096,7 +1096,7 @@
 
       /*Style Home*/
       #phoneHome {
-        display: flex;
+        display: none;
         position: fixed;
         flex-direction: column;
         justify-content: flex-end;
@@ -1561,7 +1561,7 @@
       /*CSS 4 choix*/
 
       #phone4Choix {
-        display: none;
+        display: flex;
         position: fixed;
         flex-direction: column;
         align-items: center;
@@ -1654,7 +1654,7 @@
         overflow-y: auto;        
         overflow-x: hidden;        
         scrollbar-width: thin;
-        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        scrollbar-color: rgba(255,255, 255, 0.2) transparent;
         gap: 0.3em;
         flex: 1; /* prend tout l'espace restant après le titre et l'en-tête */
         overflow-y: auto; /* scroll si le contenu dépasse */
@@ -1814,6 +1814,33 @@
         padding: 0.8em 100em;
         padding-bottom: calc(5em + env(safe-area-inset-bottom));
       }
+      .toast-suivant {
+  display: flex;
+  grid-column: span 2 / span 2;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(17, 191, 92, 0.4);
+  border-radius: 14px;
+  padding: 1em 1em;
+  margin : 0em 1em;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  gap: 12px;
+}
+
+.btn-suivant {
+  background: white;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6em 0.6em;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: wrap;
+}
+
 
       .btn4Choix {
         display: flex;
@@ -3119,6 +3146,10 @@
         <div class="btn4Choix" id="c2"><div class="cBox" id="cc2"></div></div>
         <div class="btn4Choix" id="c3"><div class="cBox" id="cc3"></div></div>
         <div class="btn4Choix" id="c4"><div class="cBox" id="cc4"></div></div>
+        <div class="toast-suivant">
+  <span>✓ Bonne réponse !</span>
+  <button class="btn-suivant">Suivant →</button>
+</div>
       </div>
     </div>
 
