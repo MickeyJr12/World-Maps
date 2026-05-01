@@ -1753,28 +1753,26 @@
         background: rgba(255, 255, 255, 0.2);
       }
 
-      .btn-carte {
+     .btn-carte {
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   top: calc(2.2em + env(safe-area-inset-top));
   left: 2.2em;
-
   gap: 0;
-  padding: 0;
-  width: 2em;
-  height: 2em;
+  padding: 0.4em 0.4em;
+  width: auto; /* icone + padding x2 */
+  height: auto;
   border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.4);
   filter: grayscale(1) brightness(0.8);
   border: none;
   cursor: default;
   overflow: hidden;
   white-space: nowrap;
-
   transition: 
+  padding 0.3s ease,
     width 0.4s cubic-bezier(0.58, 0.00, 0.54, 1.28),
     padding 0.4s ease,
     gap 0.4s ease,
@@ -1783,6 +1781,8 @@
 }
 
 .btn-carte .icone-carte {
+  height: 2.2em;
+  width : 2.2em;
   flex-shrink: 0;
   color: white;
 }
@@ -1802,9 +1802,8 @@
 
 /* État cliquable */
 .btn-carte.cliquable {
-  width: 10em;
-  padding: 0 1em 0 0.7em;
   gap: 0.5em;
+  padding: 0.4em 0.8em;
   background: white;
   filter: none;
   cursor: pointer;
@@ -3182,7 +3181,7 @@
       </div>
 
       <button class="btn-carte" id="btnCarte">
-  <svg class="icone-carte" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="1.8em">
+  <svg class="icone-carte" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M3 7l6-3 6 3 6-3v13l-6 3-6-3-6 3V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
     <path d="M9 4v13M15 7v13" stroke="currentColor" stroke-width="2"/>
   </svg>
@@ -5353,6 +5352,7 @@
       cadreNext.classList.remove('good','bad')
       reponseFound = false;
       L_reponse = []      
+      desactiverCarte()
       //Fonction
         const paysDispos = Object.keys(L_q).filter(
           (id) =>
@@ -5600,6 +5600,7 @@
   btn.addEventListener("touchend", () => { btn.style.filter = ""; });
 
 btn.addEventListener("click", () => {
+  activerCarte()
   const correct = btn === cHasard;
 
   btns4Choix.forEach((b) => {
@@ -5641,37 +5642,26 @@ btn.addEventListener("click", () => {
       });
 
 // Bouton Vue sur la carte
-      const btnCarte = document.getElementById('btnCarte');
-      const texteCarte = btnCarte.querySelector('.texte-carte');      
+const btnCarte = document.getElementById('btnCarte');
+const texteCarte = btnCarte.querySelector('.texte-carte');
 
 function activerCarte() {
-  // Mesure la vraie largeur du texte
   texteCarte.style.maxWidth = 'none';
   const largeur = texteCarte.scrollWidth;
   texteCarte.style.maxWidth = '0';
-
-  // Force reflow pour que la transition parte de 0
-  texteCarte.offsetWidth;
-
-  // Applique la bonne largeur + la classe
+  texteCarte.offsetWidth; // reflow
   texteCarte.style.maxWidth = largeur + 'px';
-  btnCarte.style.width = `calc(2em + 0.5em + ${largeur}px + 1.7em)`; // icone + gap + texte + padding
   btnCarte.classList.add('cliquable');
 }
 
 function desactiverCarte() {
   texteCarte.style.maxWidth = '0';
-  btnCarte.style.width = '2em';
   btnCarte.classList.remove('cliquable');
 }
 
-setTimeout(() => {
-  activerCarte()
-}, 12000);
 
-setTimeout(() => {
-  desactiverCarte()
-}, 18000);
+
+
 
 // Bouton Menu principal
       btnMenu.addEventListener('click',()=>{                
