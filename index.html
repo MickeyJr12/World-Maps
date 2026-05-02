@@ -1958,7 +1958,7 @@
         align-items: center;
         overflow: hidden;
         color: white;
-        margin-bottom: 3em;
+        margin-bottom: 1.8em;
         font-size: 2em;
         font-weight: 620;
         letter-spacing: 1px;
@@ -5539,10 +5539,12 @@
                   qBox.innerHTML = `<img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" alt="">`;
                 } else if (L_config.q === "drapeauQ") {
                   qBox.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" alt="">`;
+                  document.getElementById('cadreQ4Choix').style.marginBottom ="3em";
                 } else if (L_config.q === "nomQ") {
                   qBox.textContent = L_q[idBonneReponse].n;
                 } else if (L_config.q === "capitaleQ") {
                   qBox.textContent = L_q[idBonneReponse].c;
+                  document.getElementById('cadreQ4Choix').style.marginBottom ="3em";
                 }
               }
             }
@@ -5645,7 +5647,6 @@
       let currentChrono; //Mise à jour toutes les 100ms, valeur qu'on affiche 
       let intervChrono; // Interval qui met à jour la valeur de currentChrono
       let newStart; // Quand on remet sur start le chrono
-      document.getElementById('cadreQ4Choix').style.marginBottom ="0em";
       document.querySelector('.cadreChrono').style.display = "none";
 
 
@@ -5681,7 +5682,6 @@
           opt.classList.add("selected");
 
           if (val === "inf") {          
-            document.getElementById('cadreQ4Choix').style.marginBottom ="0em";
             document.querySelector('.cadreChrono').style.display = "none";
             label.innerHTML = infinitySVG;
           } else {
