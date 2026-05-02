@@ -1162,7 +1162,7 @@
         filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.4));
       }
 
-      .btnHomeBox {        
+      .btnHomeBox {
         display: flex;
         position: absolute;
         z-index: 99;
@@ -1650,11 +1650,11 @@
       }
       #contentPm {
         display: flex;
-        flex-direction: column;
-        overflow-y: auto;        
-        overflow-x: hidden;        
+        flex-direction: column;      
+        overflow-y: auto;
+        overflow-x: hidden;
         scrollbar-width: thin;
-        scrollbar-color: rgba(255,255, 255, 0.2) transparent;
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         gap: 0.3em;
         flex: 1; /* prend tout l'espace restant après le titre et l'en-tête */
         overflow-y: auto; /* scroll si le contenu dépasse */
@@ -1665,6 +1665,7 @@
       }
       .prPm {
         display: flex;
+        position: relative;
         justify-content: space-between;
         align-items: center;
         width: 100%;
@@ -1679,25 +1680,25 @@
         flex-wrap: wrap;
         max-width: 40%;
       }
+      .iconCiPm{
+        position: absolute;
+        left: 50%; top:50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
       .reponsePm {
         display: flex;
         flex-wrap: wrap;
         max-width: 40%;
       }
       .iconCorrectPrPm {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        
         height: 1.1em;
       }
       .iconCorrectPrPm path {
         fill: green;
       }
 
-      .iconIncorrectPrPm {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+      .iconIncorrectPrPm {       
         height: 1.1em;
       }
       .iconIncorrectPrPm {
@@ -1753,68 +1754,70 @@
         background: rgba(255, 255, 255, 0.2);
       }
 
-     .btn-carte {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: calc(2.2em + env(safe-area-inset-top));
-  left: 2.2em;
-  gap: 0;
-  padding: 0.4em 0.4em;
-  width: auto; /* icone + padding x2 */
-  height: auto;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0);
-  border: none;
-  cursor: default;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: 
-  padding 0.3s ease,
-    width 0.4s cubic-bezier(0.58, 0.00, 0.56, 1.60),
-    padding 0.4s ease,
-    gap 0.4s ease,
-    background 0.3s ease,
-    filter 0.3s ease;
-}
+      .btn-carte {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: calc(2.2em + env(safe-area-inset-top));
+        left: 2.2em;
+        gap: 0;
+        padding: 0.4em 0.4em;
+        width: auto; /* icone + padding x2 */
+        height: auto;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0);
+        border: none;
+        cursor: default;
+        overflow: hidden;
+        white-space: nowrap;
+        transition:
+          padding 0.3s ease,
+          width 0.4s cubic-bezier(0.58, 0, 0.56, 1.6),
+          padding 0.4s ease,
+          gap 0.4s ease,
+          background 0.3s ease,
+          filter 0.3s ease;
+      }
 
-.btn-carte .icone-carte {
-  height: 2.5em;
-  width : 2.5em;
-  flex-shrink: 0;
-}
-.icone-carte path{fill:white}
+      .btn-carte .icone-carte {
+        height: 2.5em;
+        width: 2.5em;
+        flex-shrink: 0;
+      }
+      .icone-carte path {
+        fill: white;
+      }
 
-.btn-carte .texte-carte {
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #1a1a2e;
-  transition:
-    max-width 0.4s ease,
-    opacity 0.3s ease,
-    margin 0.3s ease;
-}
+      .btn-carte .texte-carte {
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #1a1a2e;
+        transition:
+          max-width 0.4s ease,
+          opacity 0.3s ease,
+          margin 0.3s ease;
+      }
 
-/* État cliquable */
-.btn-carte.cliquable {
-  gap: 0.5em;
-  padding: 0.4em 0.8em;
-  background: white;
-  cursor: pointer;
-}
+      /* État cliquable */
+      .btn-carte.cliquable {
+        gap: 0.5em;
+        padding: 0.4em 0.8em;
+        background: white;
+        cursor: pointer;
+      }
 
-.btn-carte.cliquable .icone-carte  path{
-  fill: #1a5fb4;
-}
+      .btn-carte.cliquable .icone-carte path {
+        fill: #1a5fb4;
+      }
 
-.btn-carte.cliquable .texte-carte {
-  max-width: 8em;
-  opacity: 1;
-}
+      .btn-carte.cliquable .texte-carte {
+        max-width: 8em;
+        opacity: 1;
+      }
 
       #pause4Choix {
         display: flex;
@@ -1855,14 +1858,14 @@
         filter: drop-shadow(0px 0px 0.6em rgba(0, 0, 0, 0.4));
         text-decoration: underline;
       }
-      .qBox{
+      .qBox {
         width: 100%;
         height: auto;
         max-height: inherit; /* hérite aussi */
         object-fit: contain;
         border-radius: 5px;
       }
-      
+
       #grid4Choix {
         display: grid;
         grid-template-columns: 1fr 1fr; /* force 2 colonnes */
@@ -1879,49 +1882,49 @@
         padding-bottom: calc(env(safe-area-inset-bottom));
       }
       .cadreNext {
-  display: flex;
-  grid-column: span 2 / span 2;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(17, 82, 203, 0.5);
-  border-radius: 14px;
-  padding: 1em 1em;
-  color: white;
-  font-size: 0.95rem;
-  font-weight: 500;
-  gap: 2em;
-  margin : 0em 1em;
-  opacity: 0;
-  transform: translateY(0.5em);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
+        display: flex;
+        grid-column: span 2 / span 2;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(17, 82, 203, 0.5);
+        border-radius: 14px;
+        padding: 1em 1em;
+        color: white;
+        font-size: 0.95rem;
+        font-weight: 500;
+        gap: 2em;
+        margin: 0em 1em;
+        opacity: 0;
+        transform: translateY(0.5em);
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
+        pointer-events: none;
+      }
+      .cadreNext.good {
+        opacity: 1;
+        background: rgba(17, 191, 92, 0.8);
+        transform: translateY(0);
+        pointer-events: all;
+      }
+      .cadreNext.bad {
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(180, 30, 30, 0.8);
+        pointer-events: all;
+      }
 
-}
-.cadreNext.good {
-  opacity: 1;
-  background: rgba(17, 191, 92, 0.8);
-  transform: translateY(0);
-  pointer-events: all;
-}
-.cadreNext.bad {
-  opacity: 1;
-  transform: translateY(0);
-  background: rgba(180, 30, 30, 0.8);
-  pointer-events: all;
-}
-
-.btn-suivant {
-  background: white;
-  color: #1a1a2e;
-  border: none;
-  border-radius: 10px;
-  padding: 0.6em 0.8em;
-  font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  white-space: wrap;
-}
-
+      .btn-suivant {
+        background: white;
+        color: #1a1a2e;
+        border: none;
+        border-radius: 10px;
+        padding: 0.6em 0.8em;
+        font-weight: 700;
+        font-size: 0.9rem;
+        cursor: pointer;
+        white-space: wrap;
+      }
 
       .btn4Choix {
         display: flex;
@@ -1961,11 +1964,11 @@
         border: 1px solid rgba(255, 100, 100, 0.4);
         box-shadow: 0 4px 15px rgba(200, 50, 50, 0.4);
       }
-       .btn4Choix.none {
+      .btn4Choix.none {
         filter: brightness(70%) saturate(50%);
         pointer-events: none;
-        opacity : 0.7;
-       }
+        opacity: 0.7;
+      }
 
       #c1,
       #c3 {
@@ -3077,102 +3080,9 @@
             "
           ></div>
         </div>
-        <div id="contentPm">
-          <div class="prPm">
-            <div class="propositionPm">République démocratique du Congo</div>
+        <div id="contentPm"></div>
 
-            <svg
-              class="iconCorrectPrPm"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              id="Capa_1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 507.506 507.506"
-              style="enable-background: new 0 0 507.506 507.506"
-              xml:space="preserve"
-            >
-              <path
-                d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"
-              />
-            </svg>
 
-            <div class="reponsePm">Russie</div>
-          </div>
-          <div class="ligneInPm"></div>
-
-          <div class="prPm">
-            <div class="propositionPm">République démocratique du Congo</div>
-
-            <svg
-              class="iconCorrectPrPm"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              id="Capa_1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 507.506 507.506"
-              style="enable-background: new 0 0 507.506 507.506"
-              xml:space="preserve"
-              height="1.1em"
-            >
-              <path
-                d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"
-              />
-            </svg>
-
-            <div class="reponsePm">Russie</div>
-          </div>
-          <div class="ligneInPm"></div>
-
-          <div class="prPm">
-            <div>France</div>
-
-            <svg
-              class="iconCorrectPrPm"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              id="Capa_1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 507.506 507.506"
-              style="enable-background: new 0 0 507.506 507.506"
-              xml:space="preserve"
-              height="1.1em"
-            >
-              <path
-                d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"
-              />
-            </svg>
-
-            <div>Russie</div>
-          </div>
-          <div class="ligneInPm"></div>
-
-          <div class="prPm">
-            <div>France</div>
-            <svg
-              class="iconIncorrectPrPm"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              version="1.1"
-              id="Capa_1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 512.021 512.021"
-              style="enable-background: new 0 0 512.021 512.021"
-              xml:space="preserve"
-            >
-              <path
-                d="M301.258,256.01L502.645,54.645c12.501-12.501,12.501-32.769,0-45.269c-12.501-12.501-32.769-12.501-45.269,0l0,0   L256.01,210.762L54.645,9.376c-12.501-12.501-32.769-12.501-45.269,0s-12.501,32.769,0,45.269L210.762,256.01L9.376,457.376   c-12.501,12.501-12.501,32.769,0,45.269s32.769,12.501,45.269,0L256.01,301.258l201.365,201.387   c12.501,12.501,32.769,12.501,45.269,0c12.501-12.501,12.501-32.769,0-45.269L301.258,256.01z"
-              />
-            </svg>
-            <div>Russie</div>
-          </div>
-        </div>
         <div id="cadreBtnPm">
           <div class="btnPm btnMenu">Menu</div>
           <div class="btnPm btnReprendre">Reprendre</div>
@@ -3180,10 +3090,19 @@
       </div>
 
       <button class="btn-carte" id="btnCarte">
- <svg  class="icone-carte" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" ><path d="M7,23.894a4.57,4.57,0,0,1-.527-.122l-2.869-.9a5.013,5.013,0,0,1-3.6-4.8V6A5,5,0,0,1,6.92,1.388L7,1.425ZM20.68,1.167l-.021-.007-2.715-.9A4.951,4.951,0,0,0,17,.053V22.315l2.054.592A4,4,0,0,0,24,19.021V5.876A5.01,5.01,0,0,0,20.68,1.167ZM15,.19S9.157,1.863,9,1.88v22c.1-.021,6-1.636,6-1.636Z"/></svg>
-  <span class="texte-carte">Voir sur la carte</span>
-</button>
-
+        <svg
+          class="icone-carte"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7,23.894a4.57,4.57,0,0,1-.527-.122l-2.869-.9a5.013,5.013,0,0,1-3.6-4.8V6A5,5,0,0,1,6.92,1.388L7,1.425ZM20.68,1.167l-.021-.007-2.715-.9A4.951,4.951,0,0,0,17,.053V22.315l2.054.592A4,4,0,0,0,24,19.021V5.876A5.01,5.01,0,0,0,20.68,1.167ZM15,.19S9.157,1.863,9,1.88v22c.1-.021,6-1.636,6-1.636Z"
+          />
+        </svg>
+        <span class="texte-carte">Voir sur la carte</span>
+      </button>
 
       <div id="pause4Choix">
         <svg
@@ -3233,9 +3152,11 @@
         <div class="btn4Choix" id="c3"><div class="cBox" id="cc3"></div></div>
         <div class="btn4Choix" id="c4"><div class="cBox" id="cc4"></div></div>
         <div class="cadreNext">
-  <span></span>
-  <button class="btn-suivant" onclick="fillPhonePlay()">Suivant →</button>
-</div>
+          <span></span>
+          <button class="btn-suivant" onclick="fillPhonePlay()">
+            Suivant →
+          </button>
+        </div>
       </div>
     </div>
 
@@ -5257,7 +5178,7 @@
         }, 180); // attend la fin de l'animation de phoneHome
       });
     </script>
-    
+
     <!--Script Configuration-->
     <script>
       const backConfig = document.getElementById("backConfig");
@@ -5274,9 +5195,7 @@
       const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null };
 
-
-
-      const qBox = document.querySelector('.qBox')
+      const qBox = document.querySelector(".qBox");
 
       cs.forEach((el) =>
         el.addEventListener("click", () => {
@@ -5313,6 +5232,7 @@
       ); //Mettre à jour  le changement dans la config
 
       const phone4Choix = document.getElementById("phone4Choix");
+
       const cBoxs = document.querySelectorAll(".cBox");
       const c1 = document.getElementById("c1");
       const c2 = document.getElementById("c2");
@@ -5332,23 +5252,26 @@
         playConfig.classList.remove("active");
       }
 
-      let L_reponse = []
-      let L_cBoxHasard = ["cc1","cc2","cc3","cc4"];
-      let L_btn4ChoixHasard = [c1,c2,c3,c4]
+      let L_reponse = [];
+      let L_cBoxHasard = [cc1, cc2, cc3, cc4];
+      let L_btn4ChoixHasard = [c1, c2, c3, c4];
       let reponseFound = false;
       let cBoxHasard;
+      let cHasard;
       let idBonneReponse;
-      
-      
-      
+      let idProps_m = new Map();
+      L_btn4ChoixHasard.forEach((btn) => idProps_m.set(btn, null)); // Clef : DROM, valeur : identifiant
+
       function fillPhonePlay() {
         //Reset les paramètres
-      btns4Choix.forEach(b=>{b.classList.remove('good','bad','none')})
-      cadreNext.classList.remove('good','bad')
-      reponseFound = false;
-      L_reponse = []      
-      desactiverCarte()
-      //Fonction
+        btns4Choix.forEach((b) => {
+          b.classList.remove("good", "bad", "none");
+        });
+        cadreNext.classList.remove("good", "bad");
+        reponseFound = false;
+        L_reponse = [];
+        desactiverCarte();
+        //Fonction
         const paysDispos = Object.keys(L_q).filter(
           (id) =>
             (L_q[id].d.toLowerCase() === L_config.d || L_config.c !== "allC") &&
@@ -5356,10 +5279,12 @@
             P_info[id].region !== null,
         );
         if (L_config.m === "modeChoix") {
-          let random = Math.floor(Math.random()*4)
-          cBoxHasard = L_cBoxHasard[random]// Mettre la bonne réponse sur une case au hasard
-          cHasard = L_btn4ChoixHasard[random]
-          idBonneReponse  = paysDispos[Math.floor(Math.random()*paysDispos.length)]; // Choix de la bonne réponse au hasard
+          let random = Math.floor(Math.random() * 4);
+          cBoxHasard = L_cBoxHasard[random]; // Mettre la bonne réponse sur une case au hasard
+          cHasard = L_btn4ChoixHasard[random]; // Bouton contenant la bonne réponse
+          idBonneReponse =
+            paysDispos[Math.floor(Math.random() * paysDispos.length)]; // Choix de la bonne réponse au hasard
+          idProps_m.set(cBoxHasard.parentNode,idBonneReponse)
           // remplir les réponses
 
           cBoxs.forEach((c) => {
@@ -5369,58 +5294,56 @@
                 Object.keys(L_q)[
                   Math.floor(Math.random() * Object.keys(L_q).length)
                 ]; // identifiant de pays au hasard
-                
 
-              if (!L_reponse.includes(p_id) && paysDispos.includes(p_id) && p_id!=idBonneReponse) {  
-                //Remplir les cbox, les réponses              
+              //Attribuer à chaque case, l'id de la réponse qu'elle contient
+              if(c !==cBoxHasard){ idProps_m.set(c.parentNode, p_id)}
+
+              if (
+                !L_reponse.includes(p_id) &&
+                paysDispos.includes(p_id) &&
+                p_id != idBonneReponse
+              ) {
+                //Remplir les cbox, les réponses
                 if (L_config.r === "drapeauR") {
                   c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${p_id.toLowerCase()}.svg" alt="">`;
-                  if(c.id===cBoxHasard){
-                  c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" alt="">`;
+                  if (c === cBoxHasard) {
+                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" alt="">`;
                   }
                   L_reponse.push(p_id);
                   reponseFound = true;
-                }
-                else if (L_config.r === "nomR"){
+                } else if (L_config.r === "nomR") {
                   c.textContent = L_q[p_id].n;
-                  if(c.id===cBoxHasard){
-                  c.textContent = L_q[idBonneReponse].n;
+                  if (c === cBoxHasard) {
+                    c.textContent = L_q[idBonneReponse].n;
                   }
                   L_reponse.push(p_id);
                   reponseFound = true;
-                }
-                else if (L_config.r === "capitaleR" && L_q[p_id].c != null){
-                  c.textContent = L_q[p_id].c
-                  if(c.id===cBoxHasard){
-                  c.textContent = L_q[idBonneReponse].c
+                } else if (L_config.r === "capitaleR" && L_q[p_id].c != null) {
+                  c.textContent = L_q[p_id].c;
+                  if (c === cBoxHasard) {
+                    c.textContent = L_q[idBonneReponse].c;
                   }
                   L_reponse.push(p_id);
                   reponseFound = true;
-                }
-                else if(L_config.r === "contourR"){
+                } else if (L_config.r === "contourR") {
                   c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${p_id.toLowerCase()}/vector.svg" alt="">`;
-                  if(c.id===cBoxHasard){
-                  c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" alt="">`;
+                  if (c === cBoxHasard) {
+                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" alt="">`;
                   }
                   L_reponse.push(p_id);
                   reponseFound = true;
                 }
 
                 // Remplir les Questions
-                if (L_config.q === "contourQ"){
-                  qBox.innerHTML = `<img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" alt="">`;                   
-
+                if (L_config.q === "contourQ") {
+                  qBox.innerHTML = `<img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" alt="">`;
+                } else if (L_config.q === "drapeauQ") {
+                  qBox.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" alt="">`;
+                } else if (L_config.q === "nomQ") {
+                  qBox.textContent = L_q[idBonneReponse].n;
+                } else if (L_config.q === "capitaleQ") {
+                  qBox.textContent = L_q[idBonneReponse].c;
                 }
-                else if (L_config.q === "drapeauQ"){
-                  qBox.innerHTML =  ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" alt="">`;;                   
-                }
-                else if (L_config.q === "nomQ"){
-                  qBox.textContent = L_q[idBonneReponse].n
-                }
-                else if (L_config.q === "capitaleQ"){
-                  qBox.textContent =   L_q[idBonneReponse].c
-                }
-
               }
             }
           });
@@ -5571,6 +5494,7 @@
       });
 
       playConfig.addEventListener("click", () => {
+        contentPm.innerHTML = ``;
         phoneConfig.style.display = "none";
         phone4Choix.style.display = "flex";
         fillPhonePlay();
@@ -5580,85 +5504,169 @@
     <!--Script 4 Choix-->
 
     <script>
-      
       const btns4Choix = document.querySelectorAll(".btn4Choix");
-      const cadreNext = document.querySelector('.cadreNext')
-      const spanNext = cadreNext.querySelector('span')
-      const btnSuivant = document.getElementById('.btn-suivant')
+      const cadreNext = document.querySelector(".cadreNext");
+      const spanNext = cadreNext.querySelector("span");
+      const btnSuivant = document.getElementById(".btn-suivant");
 
-        
-     btns4Choix.forEach((btn) => {
-  btn.addEventListener("touchstart", () => { btn.style.filter = "brightness(0.7)"; });
-  btn.addEventListener("touchend", () => { btn.style.filter = ""; });
+      btns4Choix.forEach((btn) => {
+        btn.addEventListener("touchstart", () => {
+          btn.style.filter = "brightness(0.7)";
+        });
+        btn.addEventListener("touchend", () => {
+          btn.style.filter = "";
+        });
 
-btn.addEventListener("click", () => {
-  activerCarte()
-  const correct = btn === cHasard;
+        btn.addEventListener("click", () => {
+          fillContentPm(idProps_m.get(btn), idBonneReponse);
+          activerCarte();
+          const correct = btn === cHasard;
 
-  btns4Choix.forEach((b) => {
-    if (b === cHasard) {
-      b.classList.add("good");
-    } else if (b === btn && !correct) {
-      b.classList.add("bad");
-    } else {
-      b.classList.add("none");
-    }
-  });
+          btns4Choix.forEach((b) => {
+            if (b === cHasard) {
+              b.classList.add("good");
+            } else if (b === btn && !correct) {
+              b.classList.add("bad");
+            } else {
+              b.classList.add("none");
+            }
+          });
 
-  // ✅ En dehors du forEach
-  cadreNext.classList.remove('good', 'bad');
-  if (correct) {
-    cadreNext.classList.add('good');
-    spanNext.textContent = "✓ Bonne réponse !";
-  } else {
-    cadreNext.classList.add('bad');
-    spanNext.textContent = "✗ Mauvaise réponse";
-  }
-  cadreNext.classList.add('visible');
-});
-});
+          // ✅ En dehors du forEach
+          cadreNext.classList.remove("good", "bad");
+          if (correct) {
+            cadreNext.classList.add("good");
+            spanNext.textContent = "✓ Bonne réponse !";
+          } else {
+            cadreNext.classList.add("bad");
+            spanNext.textContent = "✗ Mauvaise réponse";
+          }
+          cadreNext.classList.add("visible");
+        });
+      });
 
       const pause4Choix = document.getElementById("pause4Choix");
       const pm4Choix = document.getElementById("pm4Choix");
+      const contentPm = document.getElementById("contentPm");
       const cachePm = document.getElementById("cachePm");
       const btnReprendre = document.querySelector(".btnReprendre");
-      const btnMenu = document.querySelector('.btnMenu')
+      const btnMenu = document.querySelector(".btnMenu");
       pause4Choix.addEventListener("click", () => {
-      
         pm4Choix.style.pointerEvents = "all";
         cachePm.style.pointerEvents = "all";
         pm4Choix.style.transform = "scale(1)";
         pm4Choix.style.opacity = "1";
         cachePm.style.opacity = "1";
-        
       });
 
-// Bouton Vue sur la carte
-const btnCarte = document.getElementById('btnCarte');
-const texteCarte = btnCarte.querySelector('.texte-carte');
+      //Remplir contentPm
 
-function activerCarte() {
-  texteCarte.style.maxWidth = 'none';
-  const largeur = texteCarte.scrollWidth;
-  texteCarte.style.maxWidth = '0';
-  texteCarte.offsetWidth; // reflow
-  texteCarte.style.maxWidth = largeur + 'px';
-  btnCarte.classList.add('cliquable');
-}
+      function fillContentPm(idProp, idGood) {
+        console.log(idProp, idGood);
+        const prPm = document.createElement("div");
+        const proposition = document.createElement("div");
+        const reponse = document.createElement("div");
+        const icon = document.createElement("div");
+        const ligneIn = document.createElement("div");
 
-function desactiverCarte() {
-  texteCarte.style.maxWidth = '0';
-  btnCarte.classList.remove('cliquable');
-}
+        prPm.classList = "prPm";
+        proposition.classList = "propositionPm";
+        reponse.classList = "reponsePm";
+        ligneIn.classList = "ligneInPm";
+        icon.classList="iconCiPm"
 
+        proposition.textContent = L_q[idProp].n
+        reponse.textContent = L_q[idGood].n
 
+        if (idProp === idGood) {
+          icon.innerHTML = `<svg
+              class="iconCorrectPrPm"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              id="Capa_1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 507.506 507.506"
+              style="enable-background: new 0 0 507.506 507.506"
+              xml:space="preserve"
+            >
+              <path
+                d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"
+              />
+            </svg>`;
+        } else {
+          icon.innerHTML = ` <svg
+              class="iconIncorrectPrPm"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              id="Capa_1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 512.021 512.021"
+              style="enable-background: new 0 0 512.021 512.021"
+              xml:space="preserve"
+            >
+              <path
+                d="M301.258,256.01L502.645,54.645c12.501-12.501,12.501-32.769,0-45.269c-12.501-12.501-32.769-12.501-45.269,0l0,0   L256.01,210.762L54.645,9.376c-12.501-12.501-32.769-12.501-45.269,0s-12.501,32.769,0,45.269L210.762,256.01L9.376,457.376   c-12.501,12.501-12.501,32.769,0,45.269s32.769,12.501,45.269,0L256.01,301.258l201.365,201.387   c12.501,12.501,32.769,12.501,45.269,0c12.501-12.501,12.501-32.769,0-45.269L301.258,256.01z"
+              />
+            </svg>`;
+        }
+        prPm.appendChild(proposition);
+        prPm.appendChild(icon);
+        prPm.appendChild(reponse);
+        contentPm.appendChild(prPm);
+        contentPm.appendChild(ligneIn);
+      }
 
+      /*<div class="prPm">
+            <div class="propositionPm">République démocratique du Congo</div>
 
+            <svg
+              class="iconCorrectPrPm"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.1"
+              id="Capa_1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 507.506 507.506"
+              style="enable-background: new 0 0 507.506 507.506"
+              xml:space="preserve"
+            >
+              <path
+                d="M163.865,436.934c-14.406,0.006-28.222-5.72-38.4-15.915L9.369,304.966c-12.492-12.496-12.492-32.752,0-45.248l0,0   c12.496-12.492,32.752-12.492,45.248,0l109.248,109.248L452.889,79.942c12.496-12.492,32.752-12.492,45.248,0l0,0   c12.492,12.496,12.492,32.752,0,45.248L202.265,421.019C192.087,431.214,178.271,436.94,163.865,436.934z"
+              />
+            </svg>
 
-// Bouton Menu principal
-      btnMenu.addEventListener('click',()=>{                
-        phone4Choix.style.display="none";
-        
+            <div class="reponsePm">Russie</div>
+          </div>
+          <div class="ligneInPm"></div>
+*/
+
+      // Bouton Vue sur la carte
+      const btnCarte = document.getElementById("btnCarte");
+      const texteCarte = btnCarte.querySelector(".texte-carte");
+
+      function activerCarte() {
+        texteCarte.style.maxWidth = "none";
+        const largeur = texteCarte.scrollWidth;
+        texteCarte.style.maxWidth = "0";
+        texteCarte.offsetWidth; // reflow
+        texteCarte.style.maxWidth = largeur + "px";
+        btnCarte.classList.add("cliquable");
+      }
+
+      function desactiverCarte() {
+        texteCarte.style.maxWidth = "0";
+        btnCarte.classList.remove("cliquable");
+      }
+
+      // Bouton Menu principal
+      btnMenu.addEventListener("click", () => {
+        phone4Choix.style.display = "none";
+
         // Sortie de phoneConfig
         phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         phoneConfig.style.opacity = "0";
@@ -5714,16 +5722,13 @@ function desactiverCarte() {
 
           qrs.forEach((qr) => (qr.style.display = "none  "));
         }, 150);
-      
-
 
         pm4Choix.style.opacity = "0";
         pm4Choix.style.transform = "";
         cachePm.style.opacity = "0";
         pm4Choix.style.pointerEvents = "none";
         cachePm.style.pointerEvents = "none";
-
-      })
+      });
 
       btnReprendre.addEventListener("click", () => {
         pm4Choix.style.opacity = "0";
@@ -10470,257 +10475,1199 @@ function desactiverCarte() {
         },
       };
       const L_q = {
-  AD: { d: "Difficile", c: "Andorre-la-Vieille", p: 77265, s: 468, n: "Andorre" },
-  AE: { d: "Normal", c: "Abou Dabi", p: 9890402, s: 83600, n: "Émirats arabes unis" },
-  AF: { d: "Normal", c: "Kaboul", p: 40754388, s: 652230, n: "Afghanistan" },
-  AG: { d: "Difficile", c: "Saint John's", p: 93763, s: 442, n: "Antigua-et-Barbuda" },
-  AI: { d: "Difficile", c: "The Valley", p: 15753, s: 91, n: "Anguilla" },
-  AL: { d: "Normal", c: "Tirana", p: 2837743, s: 28748, n: "Albanie" },
-  AM: { d: "Normal", c: "Erevan", p: 2963234, s: 29743, n: "Arménie" },
-  AO: { d: "Difficile", c: "Luanda", p: 34503774, s: 1246700, n: "Angola" },
-  AQ: { d: "Difficile", c: null, p: 1000, s: 14200000, n: "Antarctique" },
-  AR: { d: "Facile", c: "Buenos Aires", p: 45376763, s: 2780400, n: "Argentine" },
-  AS: { d: "Difficile", c: "Pago Pago", p: 55191, s: 199, n: "Samoa américaines" },
-  AT: { d: "Facile", c: "Vienne", p: 9006398, s: 83871, n: "Autriche" },
-  AU: { d: "Facile", c: "Canberra", p: 25978935, s: 7741220, n: "Australie" },
-  AW: { d: "Difficile", c: "Oranjestad", p: 106766, s: 180, n: "Aruba" },
-  AX: { d: "Difficile", c: "Mariehamn", p: 29458, s: 1580, n: "Îles Åland" },
-  AZ: { d: "Normal", c: "Bakou", p: 10139177, s: 86600, n: "Azerbaïdjan" },
-  BA: { d: "Normal", c: "Sarajevo", p: 3280815, s: 51197, n: "Bosnie-Herzégovine" },
-  BB: { d: "Difficile", c: "Bridgetown", p: 287375, s: 430, n: "Barbade" },
-  BD: { d: "Normal", c: "Dacca", p: 167885689, s: 147570, n: "Bangladesh" },
-  BE: { d: "Facile", c: "Bruxelles", p: 11589623, s: 30528, n: "Belgique" },
-  BF: { d: "Difficile", c: "Ouagadougou", p: 21935688, s: 274200, n: "Burkina Faso" },
-  BG: { d: "Normal", c: "Sofia", p: 6520314, s: 110879, n: "Bulgarie" },
-  BH: { d: "Difficile", c: "Manama", p: 1748296, s: 778, n: "Bahreïn" },
-  BI: { d: "Difficile", c: "Gitega", p: 11890781, s: 27830, n: "Burundi" },
-  BJ: { d: "Difficile", c: "Porto-Novo", p: 12123200, s: 112622, n: "Bénin" },
-  BL: { d: "Difficile", c: "Gustavia", p: 9877, s: 21, n: "Saint-Barthélemy" },
-  BM: { d: "Difficile", c: "Hamilton", p: 63903, s: 54, n: "Bermudes" },
-  BN: { d: "Difficile", c: "Bandar Seri Begawan", p: 437479, s: 5765, n: "Brunei" },
-  BO: { d: "Normal", c: "Sucre", p: 11673021, s: 1098581, n: "Bolivie" },
-  BQ: { d: "Difficile", c: "Kralendijk", p: 25711, s: 328, n: "Pays-Bas caribéens" },
-  BR: { d: "Facile", c: "Brasilia", p: 214326223, s: 8515767, n: "Brésil" },
-  BS: { d: "Difficile", c: "Nassau", p: 393244, s: 13943, n: "Bahamas" },
-  BT: { d: "Difficile", c: "Thimphou", p: 771608, s: 38394, n: "Bhoutan" },
-  BV: { d: "Difficile", c: null, p: 0, s: 49, n: "Île Bouvet" },
-  BW: { d: "Difficile", c: "Gaborone", p: 2630296, s: 581730, n: "Botswana" },
-  BY: { d: "Normal", c: "Minsk", p: 9398861, s: 207600, n: "Biélorussie" },
-  BZ: { d: "Difficile", c: "Belmopan", p: 397628, s: 22966, n: "Belize" },
-  CA: { d: "Facile", c: "Ottawa", p: 38005238, s: 9984670, n: "Canada" },
-  CC: { d: "Difficile", c: "West Island", p: 544, s: 14, n: "Îles Cocos" },
-  CD: { d: "Normal", c: "Kinshasa", p: 99010212, s: 2344858, n: "République démocratique du Congo" },
-  CF: { d: "Difficile", c: "Bangui", p: 4829767, s: 622984, n: "République centrafricaine" },
-  CG: { d: "Difficile", c: "Brazzaville", p: 5835806, s: 342000, n: "République du Congo" },
-  CH: { d: "Facile", c: "Berne", p: 8654622, s: 41285, n: "Suisse" },
-  CI: { d: "Normal", c: "Yamoussoukro", p: 26378274, s: 322463, n: "Côte d'Ivoire" },
-  CK: { d: "Difficile", c: "Avarua", p: 17564, s: 236, n: "Îles Cook" },
-  CL: { d: "Normal", c: "Santiago", p: 19116201, s: 756102, n: "Chili" },
-  CM: { d: "Normal", c: "Yaoundé", p: 27224265, s: 475442, n: "Cameroun" },
-  CN: { d: "Facile", c: "Pékin", p: 1412600000, s: 9596960, n: "Chine" },
-  CO: { d: "Normal", c: "Bogota", p: 51874024, s: 1141748, n: "Colombie" },
-  CR: { d: "Normal", c: "San José", p: 5094118, s: 51100, n: "Costa Rica" },
-  CU: { d: "Normal", c: "La Havane", p: 11326616, s: 109884, n: "Cuba" },
-  CV: { d: "Difficile", c: "Praia", p: 555987, s: 4033, n: "Cap-Vert" },
-  CW: { d: "Difficile", c: "Willemstad", p: 155014, s: 444, n: "Curaçao" },
-  CX: { d: "Difficile", c: "Flying Fish Cove", p: 2072, s: 135, n: "Île Christmas" },
-  CY: { d: "Difficile", c: "Nicosie", p: 1207359, s: 9251, n: "Chypre" },
-  CZ: { d: "Normal", c: "Prague", p: 10900555, s: 78866, n: "Tchéquie" },
-  DE: { d: "Facile", c: "Berlin", p: 83783942, s: 357114, n: "Allemagne" },
-  DJ: { d: "Difficile", c: "Djibouti", p: 988000, s: 23200, n: "Djibouti" },
-  DK: { d: "Facile", c: "Copenhague", p: 5831404, s: 42924, n: "Danemark" },
-  DM: { d: "Difficile", c: "Roseau", p: 71986, s: 751, n: "Dominique" },
-  DO: { d: "Normal", c: "Saint-Domingue", p: 10847910, s: 48671, n: "République dominicaine" },
-  DZ: { d: "Normal", c: "Alger", p: 43576691, s: 2381741, n: "Algérie" },
-  EC: { d: "Normal", c: "Quito", p: 17643054, s: 283561, n: "Équateur" },
-  EE: { d: "Difficile", c: "Tallinn", p: 1326535, s: 45228, n: "Estonie" },
-  EG: { d: "Facile", c: "Le Caire", p: 102334404, s: 1002450, n: "Égypte" },
-  EH: { d: "Difficile", c: "Laâyoune", p: 567402, s: 266000, n: "Sahara occidental" },
-  ER: { d: "Difficile", c: "Asmara", p: 3546421, s: 117600, n: "Érythrée" },
-  ES: { d: "Facile", c: "Madrid", p: 46754778, s: 505990, n: "Espagne" },
-  ET: { d: "Normal", c: "Addis-Abeba", p: 117876227, s: 1104300, n: "Éthiopie" },
-  FI: { d: "Normal", c: "Helsinki", p: 5540720, s: 338424, n: "Finlande" },
-  FJ: { d: "Difficile", c: "Suva", p: 896444, s: 18274, n: "Fidji" },
-  FK: { d: "Difficile", c: "Stanley", p: 3480, s: 12173, n: "Îles Malouines" },
-  FM: { d: "Difficile", c: "Palikir", p: 115023, s: 702, n: "Micronésie" },
-  FO: { d: "Difficile", c: "Tórshavn", p: 48678, s: 1393, n: "Îles Féroé" },
-  FR: { d: "Facile", c: "Paris", p: 67391582, s: 551695, n: "France" },
-  GA: { d: "Difficile", c: "Libreville", p: 2225734, s: 267668, n: "Gabon" },
-  GB: { d: "Facile", c: "Londres", p: 67886011, s: 242900, n: "Royaume-Uni" },
-  GD: { d: "Difficile", c: "Saint George's", p: 112519, s: 344, n: "Grenade" },
-  GE: { d: "Normal", c: "Tbilissi", p: 3989167, s: 69700, n: "Géorgie" },
-  GF: { d: "Difficile", c: "Cayenne", p: 298682, s: 83846, n: "Guyane française" },
-  GG: { d: "Difficile", c: "Saint Peter Port", p: 63026, s: 78, n: "Guernesey" },
-  GH: { d: "Normal", c: "Accra", p: 31072940, s: 238533, n: "Ghana" },
-  GI: { d: "Difficile", c: "Gibraltar", p: 33691, s: 7, n: "Gibraltar" },
-  GL: { d: "Difficile", c: "Nuuk", p: 56367, s: 2166086, n: "Groenland" },
-  GM: { d: "Difficile", c: "Banjul", p: 2416668, s: 11295, n: "Gambie" },
-  GN: { d: "Difficile", c: "Conakry", p: 13132795, s: 245857, n: "Guinée" },
-  GP: { d: "Difficile", c: "Basse-Terre", p: 395752, s: 1628, n: "Guadeloupe" },
-  GQ: { d: "Difficile", c: "Malabo", p: 1402985, s: 28051, n: "Guinée équatoriale" },
-  GR: { d: "Facile", c: "Athènes", p: 10715549, s: 131957, n: "Grèce" },
-  GS: { d: "Difficile", c: "King Edward Point", p: 30, s: 3903, n: "Géorgie du Sud-et-les Îles Sandwich du Sud" },
-  GT: { d: "Normal", c: "Guatemala City", p: 17109746, s: 108889, n: "Guatemala" },
-  GU: { d: "Difficile", c: "Hagåtña", p: 168775, s: 549, n: "Guam" },
-  GW: { d: "Difficile", c: "Bissau", p: 1967998, s: 36125, n: "Guinée-Bissau" },
-  GY: { d: "Difficile", c: "Georgetown", p: 786552, s: 214969, n: "Guyana" },
-  HK: { d: "Normal", c: "Hong Kong", p: 7496981, s: 1106, n: "Hong Kong" },
-  HM: { d: "Difficile", c: null, p: 0, s: 412, n: "Îles Heard-et-MacDonald" },
-  HN: { d: "Normal", c: "Tegucigalpa", p: 9904607, s: 112492, n: "Honduras" },
-  HR: { d: "Normal", c: "Zagreb", p: 3871833, s: 56594, n: "Croatie" },
-  HT: { d: "Normal", c: "Port-au-Prince", p: 11402528, s: 27750, n: "Haïti" },
-  HU: { d: "Normal", c: "Budapest", p: 9660351, s: 93028, n: "Hongrie" },
-  ID: { d: "Normal", c: "Jakarta", p: 273523615, s: 1904569, n: "Indonésie" },
-  IE: { d: "Facile", c: "Dublin", p: 4937786, s: 70273, n: "Irlande" },
-  IL: { d: "Facile", c: "Jérusalem", p: 8655535, s: 20770, n: "Israël" },
-  IM: { d: "Difficile", c: "Douglas", p: 85033, s: 572, n: "Île de Man" },
-  IN: { d: "Facile", c: "New Delhi", p: 1380004385, s: 3287590, n: "Inde" },
-  IO: { d: "Difficile", c: "Diego Garcia", p: 3000, s: 60, n: "Territoire britannique de l'océan Indien" },
-  IQ: { d: "Normal", c: "Bagdad", p: 40222493, s: 438317, n: "Irak" },
-  IR: { d: "Normal", c: "Téhéran", p: 83992949, s: 1648195, n: "Iran" },
-  IS: { d: "Normal", c: "Reykjavik", p: 341243, s: 103000, n: "Islande" },
-  IT: { d: "Facile", c: "Rome", p: 60461826, s: 301340, n: "Italie" },
-  JE: { d: "Difficile", c: "Saint Helier", p: 100800, s: 116, n: "Jersey" },
-  JM: { d: "Normal", c: "Kingston", p: 2961167, s: 10991, n: "Jamaïque" },
-  JO: { d: "Normal", c: "Amman", p: 10203134, s: 89342, n: "Jordanie" },
-  JP: { d: "Facile", c: "Tokyo", p: 125836021, s: 377930, n: "Japon" },
-  KE: { d: "Normal", c: "Nairobi", p: 53771296, s: 580367, n: "Kenya" },
-  KG: { d: "Difficile", c: "Bichkek", p: 6524195, s: 199951, n: "Kirghizistan" },
-  KH: { d: "Difficile", c: "Phnom Penh", p: 16718965, s: 181035, n: "Cambodge" },
-  KI: { d: "Difficile", c: "Tarawa du Sud", p: 119449, s: 811, n: "Kiribati" },
-  KM: { d: "Difficile", c: "Moroni", p: 869601, s: 2235, n: "Comores" },
-  KN: { d: "Difficile", c: "Basseterre", p: 53192, s: 261, n: "Saint-Christophe-et-Niévès" },
-  KP: { d: "Normal", c: "Pyongyang", p: 25778816, s: 120538, n: "Corée du Nord" },
-  KR: { d: "Facile", c: "Séoul", p: 51780579, s: 100210, n: "Corée du Sud" },
-  KW: { d: "Normal", c: "Koweït City", p: 4270571, s: 17818, n: "Koweït" },
-  KY: { d: "Difficile", c: "George Town", p: 65722, s: 264, n: "Îles Caïmans" },
-  KZ: { d: "Normal", c: "Astana", p: 18776707, s: 2724900, n: "Kazakhstan" },
-  LA: { d: "Difficile", c: "Vientiane", p: 7275560, s: 236800, n: "Laos" },
-  LB: { d: "Normal", c: "Beyrouth", p: 6825445, s: 10452, n: "Liban" },
-  LC: { d: "Difficile", c: "Castries", p: 183627, s: 616, n: "Sainte-Lucie" },
-  LI: { d: "Difficile", c: "Vaduz", p: 38128, s: 160, n: "Liechtenstein" },
-  LK: { d: "Normal", c: "Sri Jayawardenepura Kotte", p: 21919000, s: 65610, n: "Sri Lanka" },
-  LR: { d: "Difficile", c: "Monrovia", p: 5057681, s: 111369, n: "Liberia" },
-  LS: { d: "Difficile", c: "Maseru", p: 2142249, s: 30355, n: "Lesotho" },
-  LT: { d: "Difficile", c: "Vilnius", p: 2794090, s: 65300, n: "Lituanie" },
-  LU: { d: "Normal", c: "Luxembourg", p: 625978, s: 2586, n: "Luxembourg" },
-  LV: { d: "Difficile", c: "Riga", p: 1886198, s: 64589, n: "Lettonie" },
-  LY: { d: "Normal", c: "Tripoli", p: 6871292, s: 1759540, n: "Libye" },
-  MA: { d: "Normal", c: "Rabat", p: 36910560, s: 446550, n: "Maroc" },
-  MC: { d: "Normal", c: "Monaco", p: 39242, s: 2, n: "Monaco" },
-  MD: { d: "Difficile", c: "Chișinău", p: 2657637, s: 33846, n: "Moldavie" },
-  ME: { d: "Difficile", c: "Podgorica", p: 621718, s: 13812, n: "Monténégro" },
-  MF: { d: "Difficile", c: "Marigot", p: 38002, s: 53, n: "Saint-Martin (partie française)" },
-  MG: { d: "Difficile", c: "Antananarivo", p: 27691018, s: 587041, n: "Madagascar" },
-  MH: { d: "Difficile", c: "Majuro", p: 42050, s: 181, n: "Îles Marshall" },
-  MK: { d: "Difficile", c: "Skopje", p: 2083374, s: 25713, n: "Macédoine du Nord" },
-  ML: { d: "Difficile", c: "Bamako", p: 20250833, s: 1240192, n: "Mali" },
-  MM: { d: "Difficile", c: "Naypyidaw", p: 54409800, s: 676578, n: "Myanmar" },
-  MN: { d: "Difficile", c: "Oulan-Bator", p: 3278290, s: 1564110, n: "Mongolie" },
-  MO: { d: "Difficile", c: "Macao", p: 649342, s: 30, n: "Macao" },
-  MP: { d: "Difficile", c: "Saipan", p: 57557, s: 477, n: "Îles Mariannes du Nord" },
-  MQ: { d: "Difficile", c: "Fort-de-France", p: 375265, s: 1128, n: "Martinique" },
-  MR: { d: "Difficile", c: "Nouakchott", p: 4649658, s: 1030700, n: "Mauritanie" },
-  MS: { d: "Difficile", c: "Plymouth", p: 4922, s: 102, n: "Montserrat" },
-  MT: { d: "Difficile", c: "La Valette", p: 441543, s: 316, n: "Malte" },
-  MU: { d: "Difficile", c: "Port-Louis", p: 1271768, s: 2040, n: "Maurice" },
-  MV: { d: "Difficile", c: "Malé", p: 540544, s: 298, n: "Maldives" },
-  MW: { d: "Difficile", c: "Lilongwe", p: 19129952, s: 118484, n: "Malawi" },
-  MX: { d: "Facile", c: "Mexico", p: 128932753, s: 1964375, n: "Mexique" },
-  MY: { d: "Normal", c: "Kuala Lumpur", p: 32365999, s: 329847, n: "Malaisie" },
-  MZ: { d: "Difficile", c: "Maputo", p: 31255435, s: 801590, n: "Mozambique" },
-  NA: { d: "Difficile", c: "Windhoek", p: 2540905, s: 824292, n: "Namibie" },
-  NC: { d: "Difficile", c: "Nouméa", p: 271960, s: 18575, n: "Nouvelle-Calédonie" },
-  NE: { d: "Difficile", c: "Niamey", p: 24206644, s: 1267000, n: "Niger" },
-  NF: { d: "Difficile", c: "Kingston", p: 2169, s: 36, n: "Île Norfolk" },
-  NG: { d: "Normal", c: "Abuja", p: 206139589, s: 923768, n: "Nigeria" },
-  NI: { d: "Normal", c: "Managua", p: 6624554, s: 130370, n: "Nicaragua" },
-  NL: { d: "Facile", c: "Amsterdam", p: 17134872, s: 41543, n: "Pays-Bas" },
-  NO: { d: "Facile", c: "Oslo", p: 5421241, s: 323802, n: "Norvège" },
-  NP: { d: "Normal", c: "Katmandou", p: 29136808, s: 147181, n: "Népal" },
-  NR: { d: "Difficile", c: "Yaren", p: 10824, s: 21, n: "Nauru" },
-  NU: { d: "Difficile", c: "Alofi", p: 1626, s: 260, n: "Niue" },
-  NZ: { d: "Facile", c: "Wellington", p: 5084300, s: 270467, n: "Nouvelle-Zélande" },
-  OM: { d: "Difficile", c: "Mascate", p: 4974986, s: 309500, n: "Oman" },
-  PA: { d: "Normal", c: "Panama City", p: 4314767, s: 75417, n: "Panama" },
-  PE: { d: "Normal", c: "Lima", p: 32971854, s: 1285216, n: "Pérou" },
-  PF: { d: "Difficile", c: "Papeete", p: 280908, s: 4167, n: "Polynésie française" },
-  PG: { d: "Difficile", c: "Port Moresby", p: 8947024, s: 462840, n: "Papouasie-Nouvelle-Guinée" },
-  PH: { d: "Normal", c: "Manille", p: 109581078, s: 343448, n: "Philippines" },
-  PK: { d: "Normal", c: "Islamabad", p: 220892340, s: 881913, n: "Pakistan" },
-  PL: { d: "Normal", c: "Varsovie", p: 37950802, s: 312679, n: "Pologne" },
-  PM: { d: "Difficile", c: "Saint-Pierre", p: 5794, s: 242, n: "Saint-Pierre-et-Miquelon" },
-  PN: { d: "Difficile", c: "Adamstown", p: 50, s: 47, n: "Îles Pitcairn" },
-  PR: { d: "Normal", c: "San Juan", p: 3194034, s: 9104, n: "Porto Rico" },
-  PS: { d: "Normal", c: "Ramallah", p: 5101414, s: 6220, n: "Palestine" },
-  PT: { d: "Facile", c: "Lisbonne", p: 10196709, s: 92212, n: "Portugal" },
-  PW: { d: "Difficile", c: "Ngerulmud", p: 18094, s: 459, n: "Palaos" },
-  PY: { d: "Difficile", c: "Asunción", p: 7132538, s: 406752, n: "Paraguay" },
-  QA: { d: "Normal", c: "Doha", p: 2881053, s: 11586, n: "Qatar" },
-  RE: { d: "Difficile", c: "Saint-Denis", p: 895308, s: 2511, n: "La Réunion" },
-  RO: { d: "Normal", c: "Bucarest", p: 19237691, s: 238397, n: "Roumanie" },
-  RS: { d: "Normal", c: "Belgrade", p: 6804596, s: 77474, n: "Serbie" },
-  RU: { d: "Facile", c: "Moscou", p: 145934462, s: 17098242, n: "Russie" },
-  RW: { d: "Difficile", c: "Kigali", p: 12952218, s: 26338, n: "Rwanda" },
-  SA: { d: "Normal", c: "Riyad", p: 34813871, s: 2149690, n: "Arabie saoudite" },
-  SB: { d: "Difficile", c: "Honiara", p: 686884, s: 28896, n: "Îles Salomon" },
-  SC: { d: "Difficile", c: "Victoria", p: 98347, s: 451, n: "Seychelles" },
-  SD: { d: "Normal", c: "Khartoum", p: 43849260, s: 1886068, n: "Soudan" },
-  SE: { d: "Facile", c: "Stockholm", p: 10099265, s: 450295, n: "Suède" },
-  SG: { d: "Normal", c: "Singapour", p: 5850342, s: 719, n: "Singapour" },
-  SH: { d: "Difficile", c: "Jamestown", p: 5661, s: 394, n: "Sainte-Hélène" },
-  SI: { d: "Difficile", c: "Ljubljana", p: 2100126, s: 20273, n: "Slovénie" },
-  SJ: { d: "Difficile", c: "Longyearbyen", p: 2667, s: 61022, n: "Svalbard et Jan Mayen" },
-  SK: { d: "Normal", c: "Bratislava", p: 5459642, s: 49035, n: "Slovaquie" },
-  SL: { d: "Difficile", c: "Freetown", p: 7976983, s: 71740, n: "Sierra Leone" },
-  SM: { d: "Difficile", c: "Saint-Marin", p: 33938, s: 61, n: "Saint-Marin" },
-  SN: { d: "Normal", c: "Dakar", p: 16743927, s: 196722, n: "Sénégal" },
-  SO: { d: "Normal", c: "Mogadiscio", p: 15893222, s: 637657, n: "Somalie" },
-  SR: { d: "Difficile", c: "Paramaribo", p: 586632, s: 163820, n: "Suriname" },
-  SS: { d: "Difficile", c: "Djouba", p: 11193725, s: 619745, n: "Soudan du Sud" },
-  ST: { d: "Difficile", c: "São Tomé", p: 219159, s: 964, n: "Sao Tomé-et-Principe" },
-  SV: { d: "Normal", c: "San Salvador", p: 6486205, s: 21041, n: "Salvador" },
-  SX: { d: "Difficile", c: "Philipsburg", p: 40654, s: 34, n: "Saint-Martin (partie néerlandaise)" },
-  SY: { d: "Normal", c: "Damas", p: 17500658, s: 185180, n: "Syrie" },
-  SZ: { d: "Difficile", c: "Mbabane", p: 1160164, s: 17364, n: "Eswatini" },
-  TC: { d: "Difficile", c: "Cockburn Town", p: 38717, s: 948, n: "Îles Turques-et-Caïques" },
-  TD: { d: "Difficile", c: "N'Djamena", p: 16425864, s: 1284000, n: "Tchad" },
-  TF: { d: "Difficile", c: "Port-aux-Français", p: 400, s: 439671, n: "Terres australes et antarctiques françaises" },
-  TG: { d: "Difficile", c: "Lomé", p: 8278724, s: 56785, n: "Togo" },
-  TH: { d: "Normal", c: "Bangkok", p: 69799978, s: 513120, n: "Thaïlande" },
-  TJ: { d: "Difficile", c: "Douchanbé", p: 9537645, s: 143100, n: "Tadjikistan" },
-  TK: { d: "Difficile", c: null, p: 1357, s: 12, n: "Tokelau" },
-  TL: { d: "Difficile", c: "Dili", p: 1318445, s: 14874, n: "Timor oriental" },
-  TM: { d: "Difficile", c: "Achgabat", p: 6031200, s: 488100, n: "Turkménistan" },
-  TN: { d: "Normal", c: "Tunis", p: 11818619, s: 163610, n: "Tunisie" },
-  TO: { d: "Difficile", c: "Nuku'alofa", p: 99532, s: 747, n: "Tonga" },
-  TR: { d: "Normal", c: "Ankara", p: 84339067, s: 783562, n: "Turquie" },
-  TT: { d: "Difficile", c: "Port-d'Espagne", p: 1399491, s: 5130, n: "Trinité-et-Tobago" },
-  TV: { d: "Difficile", c: "Funafuti", p: 11792, s: 26, n: "Tuvalu" },
-  TW: { d: "Normal", c: "Taipei", p: 23503349, s: 36193, n: "Taïwan" },
-  TZ: { d: "Normal", c: "Dodoma", p: 59734218, s: 945087, n: "Tanzanie" },
-  UA: { d: "Normal", c: "Kyiv", p: 43733762, s: 603550, n: "Ukraine" },
-  UG: { d: "Normal", c: "Kampala", p: 45741007, s: 241550, n: "Ouganda" },
-  UM: { d: "Difficile", c: null, p: 300, s: 34, n: "Îles mineures éloignées des États-Unis" },
-  US: { d: "Facile", c: "Washington D.C.", p: 331002651, s: 9833517, n: "États-Unis" },
-  UY: { d: "Normal", c: "Montevideo", p: 3473730, s: 176215, n: "Uruguay" },
-  UZ: { d: "Difficile", c: "Tachkent", p: 34915100, s: 448978, n: "Ouzbékistan" },
-  VA: { d: "Normal", c: "Vatican", p: 800, s: 0.44, n: "Vatican" },
-  VC: { d: "Difficile", c: "Kingstown", p: 110940, s: 389, n: "Saint-Vincent-et-les-Grenadines" },
-  VE: { d: "Normal", c: "Caracas", p: 28435943, s: 916445, n: "Venezuela" },
-  VG: { d: "Difficile", c: "Road Town", p: 30231, s: 151, n: "Îles Vierges britanniques" },
-  VI: { d: "Difficile", c: "Charlotte Amalie", p: 106290, s: 347, n: "Îles Vierges américaines" },
-  VN: { d: "Normal", c: "Hanoï", p: 97338579, s: 331212, n: "Viêt Nam" },
-  VU: { d: "Difficile", c: "Port-Vila", p: 307145, s: 12189, n: "Vanuatu" },
-  WF: { d: "Difficile", c: "Mata-Utu", p: 11558, s: 142, n: "Wallis-et-Futuna" },
-  WS: { d: "Difficile", c: "Apia", p: 198414, s: 2842, n: "Samoa" },
-  XK: { d: "Difficile", c: "Pristina", p: 1810366, s: 10887, n: "Kosovo" },
-  YE: { d: "Normal", c: "Sanaa", p: 29825968, s: 527968, n: "Yémen" },
-  YT: { d: "Difficile", c: "Mamoudzou", p: 272813, s: 374, n: "Mayotte" },
-  ZA: { d: "Normal", c: "Pretoria", p: 59308690, s: 1221037, n: "Afrique du Sud" },
-  ZM: { d: "Difficile", c: "Lusaka", p: 18383955, s: 752612, n: "Zambie" },
-  ZW: { d: "Normal", c: "Harare", p: 14862924, s: 390757, n: "Zimbabwe" },
-};
+        AD: {
+          d: "Difficile",
+          c: "Andorre-la-Vieille",
+          p: 77265,
+          s: 468,
+          n: "Andorre",
+        },
+        AE: {
+          d: "Normal",
+          c: "Abou Dabi",
+          p: 9890402,
+          s: 83600,
+          n: "Émirats arabes unis",
+        },
+        AF: {
+          d: "Normal",
+          c: "Kaboul",
+          p: 40754388,
+          s: 652230,
+          n: "Afghanistan",
+        },
+        AG: {
+          d: "Difficile",
+          c: "Saint John's",
+          p: 93763,
+          s: 442,
+          n: "Antigua-et-Barbuda",
+        },
+        AI: { d: "Difficile", c: "The Valley", p: 15753, s: 91, n: "Anguilla" },
+        AL: { d: "Normal", c: "Tirana", p: 2837743, s: 28748, n: "Albanie" },
+        AM: { d: "Normal", c: "Erevan", p: 2963234, s: 29743, n: "Arménie" },
+        AO: {
+          d: "Difficile",
+          c: "Luanda",
+          p: 34503774,
+          s: 1246700,
+          n: "Angola",
+        },
+        AQ: { d: "Difficile", c: null, p: 1000, s: 14200000, n: "Antarctique" },
+        AR: {
+          d: "Facile",
+          c: "Buenos Aires",
+          p: 45376763,
+          s: 2780400,
+          n: "Argentine",
+        },
+        AS: {
+          d: "Difficile",
+          c: "Pago Pago",
+          p: 55191,
+          s: 199,
+          n: "Samoa américaines",
+        },
+        AT: { d: "Facile", c: "Vienne", p: 9006398, s: 83871, n: "Autriche" },
+        AU: {
+          d: "Facile",
+          c: "Canberra",
+          p: 25978935,
+          s: 7741220,
+          n: "Australie",
+        },
+        AW: { d: "Difficile", c: "Oranjestad", p: 106766, s: 180, n: "Aruba" },
+        AX: {
+          d: "Difficile",
+          c: "Mariehamn",
+          p: 29458,
+          s: 1580,
+          n: "Îles Åland",
+        },
+        AZ: {
+          d: "Normal",
+          c: "Bakou",
+          p: 10139177,
+          s: 86600,
+          n: "Azerbaïdjan",
+        },
+        BA: {
+          d: "Normal",
+          c: "Sarajevo",
+          p: 3280815,
+          s: 51197,
+          n: "Bosnie-Herzégovine",
+        },
+        BB: {
+          d: "Difficile",
+          c: "Bridgetown",
+          p: 287375,
+          s: 430,
+          n: "Barbade",
+        },
+        BD: {
+          d: "Normal",
+          c: "Dacca",
+          p: 167885689,
+          s: 147570,
+          n: "Bangladesh",
+        },
+        BE: {
+          d: "Facile",
+          c: "Bruxelles",
+          p: 11589623,
+          s: 30528,
+          n: "Belgique",
+        },
+        BF: {
+          d: "Difficile",
+          c: "Ouagadougou",
+          p: 21935688,
+          s: 274200,
+          n: "Burkina Faso",
+        },
+        BG: { d: "Normal", c: "Sofia", p: 6520314, s: 110879, n: "Bulgarie" },
+        BH: { d: "Difficile", c: "Manama", p: 1748296, s: 778, n: "Bahreïn" },
+        BI: {
+          d: "Difficile",
+          c: "Gitega",
+          p: 11890781,
+          s: 27830,
+          n: "Burundi",
+        },
+        BJ: {
+          d: "Difficile",
+          c: "Porto-Novo",
+          p: 12123200,
+          s: 112622,
+          n: "Bénin",
+        },
+        BL: {
+          d: "Difficile",
+          c: "Gustavia",
+          p: 9877,
+          s: 21,
+          n: "Saint-Barthélemy",
+        },
+        BM: { d: "Difficile", c: "Hamilton", p: 63903, s: 54, n: "Bermudes" },
+        BN: {
+          d: "Difficile",
+          c: "Bandar Seri Begawan",
+          p: 437479,
+          s: 5765,
+          n: "Brunei",
+        },
+        BO: { d: "Normal", c: "Sucre", p: 11673021, s: 1098581, n: "Bolivie" },
+        BQ: {
+          d: "Difficile",
+          c: "Kralendijk",
+          p: 25711,
+          s: 328,
+          n: "Pays-Bas caribéens",
+        },
+        BR: {
+          d: "Facile",
+          c: "Brasilia",
+          p: 214326223,
+          s: 8515767,
+          n: "Brésil",
+        },
+        BS: { d: "Difficile", c: "Nassau", p: 393244, s: 13943, n: "Bahamas" },
+        BT: {
+          d: "Difficile",
+          c: "Thimphou",
+          p: 771608,
+          s: 38394,
+          n: "Bhoutan",
+        },
+        BV: { d: "Difficile", c: null, p: 0, s: 49, n: "Île Bouvet" },
+        BW: {
+          d: "Difficile",
+          c: "Gaborone",
+          p: 2630296,
+          s: 581730,
+          n: "Botswana",
+        },
+        BY: {
+          d: "Normal",
+          c: "Minsk",
+          p: 9398861,
+          s: 207600,
+          n: "Biélorussie",
+        },
+        BZ: { d: "Difficile", c: "Belmopan", p: 397628, s: 22966, n: "Belize" },
+        CA: { d: "Facile", c: "Ottawa", p: 38005238, s: 9984670, n: "Canada" },
+        CC: {
+          d: "Difficile",
+          c: "West Island",
+          p: 544,
+          s: 14,
+          n: "Îles Cocos",
+        },
+        CD: {
+          d: "Normal",
+          c: "Kinshasa",
+          p: 99010212,
+          s: 2344858,
+          n: "République démocratique du Congo",
+        },
+        CF: {
+          d: "Difficile",
+          c: "Bangui",
+          p: 4829767,
+          s: 622984,
+          n: "République centrafricaine",
+        },
+        CG: {
+          d: "Difficile",
+          c: "Brazzaville",
+          p: 5835806,
+          s: 342000,
+          n: "République du Congo",
+        },
+        CH: { d: "Facile", c: "Berne", p: 8654622, s: 41285, n: "Suisse" },
+        CI: {
+          d: "Normal",
+          c: "Yamoussoukro",
+          p: 26378274,
+          s: 322463,
+          n: "Côte d'Ivoire",
+        },
+        CK: { d: "Difficile", c: "Avarua", p: 17564, s: 236, n: "Îles Cook" },
+        CL: { d: "Normal", c: "Santiago", p: 19116201, s: 756102, n: "Chili" },
+        CM: {
+          d: "Normal",
+          c: "Yaoundé",
+          p: 27224265,
+          s: 475442,
+          n: "Cameroun",
+        },
+        CN: { d: "Facile", c: "Pékin", p: 1412600000, s: 9596960, n: "Chine" },
+        CO: {
+          d: "Normal",
+          c: "Bogota",
+          p: 51874024,
+          s: 1141748,
+          n: "Colombie",
+        },
+        CR: {
+          d: "Normal",
+          c: "San José",
+          p: 5094118,
+          s: 51100,
+          n: "Costa Rica",
+        },
+        CU: { d: "Normal", c: "La Havane", p: 11326616, s: 109884, n: "Cuba" },
+        CV: { d: "Difficile", c: "Praia", p: 555987, s: 4033, n: "Cap-Vert" },
+        CW: {
+          d: "Difficile",
+          c: "Willemstad",
+          p: 155014,
+          s: 444,
+          n: "Curaçao",
+        },
+        CX: {
+          d: "Difficile",
+          c: "Flying Fish Cove",
+          p: 2072,
+          s: 135,
+          n: "Île Christmas",
+        },
+        CY: { d: "Difficile", c: "Nicosie", p: 1207359, s: 9251, n: "Chypre" },
+        CZ: { d: "Normal", c: "Prague", p: 10900555, s: 78866, n: "Tchéquie" },
+        DE: {
+          d: "Facile",
+          c: "Berlin",
+          p: 83783942,
+          s: 357114,
+          n: "Allemagne",
+        },
+        DJ: {
+          d: "Difficile",
+          c: "Djibouti",
+          p: 988000,
+          s: 23200,
+          n: "Djibouti",
+        },
+        DK: {
+          d: "Facile",
+          c: "Copenhague",
+          p: 5831404,
+          s: 42924,
+          n: "Danemark",
+        },
+        DM: { d: "Difficile", c: "Roseau", p: 71986, s: 751, n: "Dominique" },
+        DO: {
+          d: "Normal",
+          c: "Saint-Domingue",
+          p: 10847910,
+          s: 48671,
+          n: "République dominicaine",
+        },
+        DZ: { d: "Normal", c: "Alger", p: 43576691, s: 2381741, n: "Algérie" },
+        EC: { d: "Normal", c: "Quito", p: 17643054, s: 283561, n: "Équateur" },
+        EE: {
+          d: "Difficile",
+          c: "Tallinn",
+          p: 1326535,
+          s: 45228,
+          n: "Estonie",
+        },
+        EG: {
+          d: "Facile",
+          c: "Le Caire",
+          p: 102334404,
+          s: 1002450,
+          n: "Égypte",
+        },
+        EH: {
+          d: "Difficile",
+          c: "Laâyoune",
+          p: 567402,
+          s: 266000,
+          n: "Sahara occidental",
+        },
+        ER: {
+          d: "Difficile",
+          c: "Asmara",
+          p: 3546421,
+          s: 117600,
+          n: "Érythrée",
+        },
+        ES: { d: "Facile", c: "Madrid", p: 46754778, s: 505990, n: "Espagne" },
+        ET: {
+          d: "Normal",
+          c: "Addis-Abeba",
+          p: 117876227,
+          s: 1104300,
+          n: "Éthiopie",
+        },
+        FI: {
+          d: "Normal",
+          c: "Helsinki",
+          p: 5540720,
+          s: 338424,
+          n: "Finlande",
+        },
+        FJ: { d: "Difficile", c: "Suva", p: 896444, s: 18274, n: "Fidji" },
+        FK: {
+          d: "Difficile",
+          c: "Stanley",
+          p: 3480,
+          s: 12173,
+          n: "Îles Malouines",
+        },
+        FM: {
+          d: "Difficile",
+          c: "Palikir",
+          p: 115023,
+          s: 702,
+          n: "Micronésie",
+        },
+        FO: {
+          d: "Difficile",
+          c: "Tórshavn",
+          p: 48678,
+          s: 1393,
+          n: "Îles Féroé",
+        },
+        FR: { d: "Facile", c: "Paris", p: 67391582, s: 551695, n: "France" },
+        GA: {
+          d: "Difficile",
+          c: "Libreville",
+          p: 2225734,
+          s: 267668,
+          n: "Gabon",
+        },
+        GB: {
+          d: "Facile",
+          c: "Londres",
+          p: 67886011,
+          s: 242900,
+          n: "Royaume-Uni",
+        },
+        GD: {
+          d: "Difficile",
+          c: "Saint George's",
+          p: 112519,
+          s: 344,
+          n: "Grenade",
+        },
+        GE: { d: "Normal", c: "Tbilissi", p: 3989167, s: 69700, n: "Géorgie" },
+        GF: {
+          d: "Difficile",
+          c: "Cayenne",
+          p: 298682,
+          s: 83846,
+          n: "Guyane française",
+        },
+        GG: {
+          d: "Difficile",
+          c: "Saint Peter Port",
+          p: 63026,
+          s: 78,
+          n: "Guernesey",
+        },
+        GH: { d: "Normal", c: "Accra", p: 31072940, s: 238533, n: "Ghana" },
+        GI: { d: "Difficile", c: "Gibraltar", p: 33691, s: 7, n: "Gibraltar" },
+        GL: { d: "Difficile", c: "Nuuk", p: 56367, s: 2166086, n: "Groenland" },
+        GM: { d: "Difficile", c: "Banjul", p: 2416668, s: 11295, n: "Gambie" },
+        GN: {
+          d: "Difficile",
+          c: "Conakry",
+          p: 13132795,
+          s: 245857,
+          n: "Guinée",
+        },
+        GP: {
+          d: "Difficile",
+          c: "Basse-Terre",
+          p: 395752,
+          s: 1628,
+          n: "Guadeloupe",
+        },
+        GQ: {
+          d: "Difficile",
+          c: "Malabo",
+          p: 1402985,
+          s: 28051,
+          n: "Guinée équatoriale",
+        },
+        GR: { d: "Facile", c: "Athènes", p: 10715549, s: 131957, n: "Grèce" },
+        GS: {
+          d: "Difficile",
+          c: "King Edward Point",
+          p: 30,
+          s: 3903,
+          n: "Géorgie du Sud-et-les Îles Sandwich du Sud",
+        },
+        GT: {
+          d: "Normal",
+          c: "Guatemala City",
+          p: 17109746,
+          s: 108889,
+          n: "Guatemala",
+        },
+        GU: { d: "Difficile", c: "Hagåtña", p: 168775, s: 549, n: "Guam" },
+        GW: {
+          d: "Difficile",
+          c: "Bissau",
+          p: 1967998,
+          s: 36125,
+          n: "Guinée-Bissau",
+        },
+        GY: {
+          d: "Difficile",
+          c: "Georgetown",
+          p: 786552,
+          s: 214969,
+          n: "Guyana",
+        },
+        HK: {
+          d: "Normal",
+          c: "Hong Kong",
+          p: 7496981,
+          s: 1106,
+          n: "Hong Kong",
+        },
+        HM: {
+          d: "Difficile",
+          c: null,
+          p: 0,
+          s: 412,
+          n: "Îles Heard-et-MacDonald",
+        },
+        HN: {
+          d: "Normal",
+          c: "Tegucigalpa",
+          p: 9904607,
+          s: 112492,
+          n: "Honduras",
+        },
+        HR: { d: "Normal", c: "Zagreb", p: 3871833, s: 56594, n: "Croatie" },
+        HT: {
+          d: "Normal",
+          c: "Port-au-Prince",
+          p: 11402528,
+          s: 27750,
+          n: "Haïti",
+        },
+        HU: { d: "Normal", c: "Budapest", p: 9660351, s: 93028, n: "Hongrie" },
+        ID: {
+          d: "Normal",
+          c: "Jakarta",
+          p: 273523615,
+          s: 1904569,
+          n: "Indonésie",
+        },
+        IE: { d: "Facile", c: "Dublin", p: 4937786, s: 70273, n: "Irlande" },
+        IL: { d: "Facile", c: "Jérusalem", p: 8655535, s: 20770, n: "Israël" },
+        IM: { d: "Difficile", c: "Douglas", p: 85033, s: 572, n: "Île de Man" },
+        IN: {
+          d: "Facile",
+          c: "New Delhi",
+          p: 1380004385,
+          s: 3287590,
+          n: "Inde",
+        },
+        IO: {
+          d: "Difficile",
+          c: "Diego Garcia",
+          p: 3000,
+          s: 60,
+          n: "Territoire britannique de l'océan Indien",
+        },
+        IQ: { d: "Normal", c: "Bagdad", p: 40222493, s: 438317, n: "Irak" },
+        IR: { d: "Normal", c: "Téhéran", p: 83992949, s: 1648195, n: "Iran" },
+        IS: { d: "Normal", c: "Reykjavik", p: 341243, s: 103000, n: "Islande" },
+        IT: { d: "Facile", c: "Rome", p: 60461826, s: 301340, n: "Italie" },
+        JE: {
+          d: "Difficile",
+          c: "Saint Helier",
+          p: 100800,
+          s: 116,
+          n: "Jersey",
+        },
+        JM: { d: "Normal", c: "Kingston", p: 2961167, s: 10991, n: "Jamaïque" },
+        JO: { d: "Normal", c: "Amman", p: 10203134, s: 89342, n: "Jordanie" },
+        JP: { d: "Facile", c: "Tokyo", p: 125836021, s: 377930, n: "Japon" },
+        KE: { d: "Normal", c: "Nairobi", p: 53771296, s: 580367, n: "Kenya" },
+        KG: {
+          d: "Difficile",
+          c: "Bichkek",
+          p: 6524195,
+          s: 199951,
+          n: "Kirghizistan",
+        },
+        KH: {
+          d: "Difficile",
+          c: "Phnom Penh",
+          p: 16718965,
+          s: 181035,
+          n: "Cambodge",
+        },
+        KI: {
+          d: "Difficile",
+          c: "Tarawa du Sud",
+          p: 119449,
+          s: 811,
+          n: "Kiribati",
+        },
+        KM: { d: "Difficile", c: "Moroni", p: 869601, s: 2235, n: "Comores" },
+        KN: {
+          d: "Difficile",
+          c: "Basseterre",
+          p: 53192,
+          s: 261,
+          n: "Saint-Christophe-et-Niévès",
+        },
+        KP: {
+          d: "Normal",
+          c: "Pyongyang",
+          p: 25778816,
+          s: 120538,
+          n: "Corée du Nord",
+        },
+        KR: {
+          d: "Facile",
+          c: "Séoul",
+          p: 51780579,
+          s: 100210,
+          n: "Corée du Sud",
+        },
+        KW: {
+          d: "Normal",
+          c: "Koweït City",
+          p: 4270571,
+          s: 17818,
+          n: "Koweït",
+        },
+        KY: {
+          d: "Difficile",
+          c: "George Town",
+          p: 65722,
+          s: 264,
+          n: "Îles Caïmans",
+        },
+        KZ: {
+          d: "Normal",
+          c: "Astana",
+          p: 18776707,
+          s: 2724900,
+          n: "Kazakhstan",
+        },
+        LA: {
+          d: "Difficile",
+          c: "Vientiane",
+          p: 7275560,
+          s: 236800,
+          n: "Laos",
+        },
+        LB: { d: "Normal", c: "Beyrouth", p: 6825445, s: 10452, n: "Liban" },
+        LC: {
+          d: "Difficile",
+          c: "Castries",
+          p: 183627,
+          s: 616,
+          n: "Sainte-Lucie",
+        },
+        LI: {
+          d: "Difficile",
+          c: "Vaduz",
+          p: 38128,
+          s: 160,
+          n: "Liechtenstein",
+        },
+        LK: {
+          d: "Normal",
+          c: "Sri Jayawardenepura Kotte",
+          p: 21919000,
+          s: 65610,
+          n: "Sri Lanka",
+        },
+        LR: {
+          d: "Difficile",
+          c: "Monrovia",
+          p: 5057681,
+          s: 111369,
+          n: "Liberia",
+        },
+        LS: { d: "Difficile", c: "Maseru", p: 2142249, s: 30355, n: "Lesotho" },
+        LT: {
+          d: "Difficile",
+          c: "Vilnius",
+          p: 2794090,
+          s: 65300,
+          n: "Lituanie",
+        },
+        LU: {
+          d: "Normal",
+          c: "Luxembourg",
+          p: 625978,
+          s: 2586,
+          n: "Luxembourg",
+        },
+        LV: { d: "Difficile", c: "Riga", p: 1886198, s: 64589, n: "Lettonie" },
+        LY: { d: "Normal", c: "Tripoli", p: 6871292, s: 1759540, n: "Libye" },
+        MA: { d: "Normal", c: "Rabat", p: 36910560, s: 446550, n: "Maroc" },
+        MC: { d: "Normal", c: "Monaco", p: 39242, s: 2, n: "Monaco" },
+        MD: {
+          d: "Difficile",
+          c: "Chișinău",
+          p: 2657637,
+          s: 33846,
+          n: "Moldavie",
+        },
+        ME: {
+          d: "Difficile",
+          c: "Podgorica",
+          p: 621718,
+          s: 13812,
+          n: "Monténégro",
+        },
+        MF: {
+          d: "Difficile",
+          c: "Marigot",
+          p: 38002,
+          s: 53,
+          n: "Saint-Martin (partie française)",
+        },
+        MG: {
+          d: "Difficile",
+          c: "Antananarivo",
+          p: 27691018,
+          s: 587041,
+          n: "Madagascar",
+        },
+        MH: {
+          d: "Difficile",
+          c: "Majuro",
+          p: 42050,
+          s: 181,
+          n: "Îles Marshall",
+        },
+        MK: {
+          d: "Difficile",
+          c: "Skopje",
+          p: 2083374,
+          s: 25713,
+          n: "Macédoine du Nord",
+        },
+        ML: { d: "Difficile", c: "Bamako", p: 20250833, s: 1240192, n: "Mali" },
+        MM: {
+          d: "Difficile",
+          c: "Naypyidaw",
+          p: 54409800,
+          s: 676578,
+          n: "Myanmar",
+        },
+        MN: {
+          d: "Difficile",
+          c: "Oulan-Bator",
+          p: 3278290,
+          s: 1564110,
+          n: "Mongolie",
+        },
+        MO: { d: "Difficile", c: "Macao", p: 649342, s: 30, n: "Macao" },
+        MP: {
+          d: "Difficile",
+          c: "Saipan",
+          p: 57557,
+          s: 477,
+          n: "Îles Mariannes du Nord",
+        },
+        MQ: {
+          d: "Difficile",
+          c: "Fort-de-France",
+          p: 375265,
+          s: 1128,
+          n: "Martinique",
+        },
+        MR: {
+          d: "Difficile",
+          c: "Nouakchott",
+          p: 4649658,
+          s: 1030700,
+          n: "Mauritanie",
+        },
+        MS: { d: "Difficile", c: "Plymouth", p: 4922, s: 102, n: "Montserrat" },
+        MT: { d: "Difficile", c: "La Valette", p: 441543, s: 316, n: "Malte" },
+        MU: {
+          d: "Difficile",
+          c: "Port-Louis",
+          p: 1271768,
+          s: 2040,
+          n: "Maurice",
+        },
+        MV: { d: "Difficile", c: "Malé", p: 540544, s: 298, n: "Maldives" },
+        MW: {
+          d: "Difficile",
+          c: "Lilongwe",
+          p: 19129952,
+          s: 118484,
+          n: "Malawi",
+        },
+        MX: {
+          d: "Facile",
+          c: "Mexico",
+          p: 128932753,
+          s: 1964375,
+          n: "Mexique",
+        },
+        MY: {
+          d: "Normal",
+          c: "Kuala Lumpur",
+          p: 32365999,
+          s: 329847,
+          n: "Malaisie",
+        },
+        MZ: {
+          d: "Difficile",
+          c: "Maputo",
+          p: 31255435,
+          s: 801590,
+          n: "Mozambique",
+        },
+        NA: {
+          d: "Difficile",
+          c: "Windhoek",
+          p: 2540905,
+          s: 824292,
+          n: "Namibie",
+        },
+        NC: {
+          d: "Difficile",
+          c: "Nouméa",
+          p: 271960,
+          s: 18575,
+          n: "Nouvelle-Calédonie",
+        },
+        NE: {
+          d: "Difficile",
+          c: "Niamey",
+          p: 24206644,
+          s: 1267000,
+          n: "Niger",
+        },
+        NF: { d: "Difficile", c: "Kingston", p: 2169, s: 36, n: "Île Norfolk" },
+        NG: { d: "Normal", c: "Abuja", p: 206139589, s: 923768, n: "Nigeria" },
+        NI: {
+          d: "Normal",
+          c: "Managua",
+          p: 6624554,
+          s: 130370,
+          n: "Nicaragua",
+        },
+        NL: {
+          d: "Facile",
+          c: "Amsterdam",
+          p: 17134872,
+          s: 41543,
+          n: "Pays-Bas",
+        },
+        NO: { d: "Facile", c: "Oslo", p: 5421241, s: 323802, n: "Norvège" },
+        NP: { d: "Normal", c: "Katmandou", p: 29136808, s: 147181, n: "Népal" },
+        NR: { d: "Difficile", c: "Yaren", p: 10824, s: 21, n: "Nauru" },
+        NU: { d: "Difficile", c: "Alofi", p: 1626, s: 260, n: "Niue" },
+        NZ: {
+          d: "Facile",
+          c: "Wellington",
+          p: 5084300,
+          s: 270467,
+          n: "Nouvelle-Zélande",
+        },
+        OM: { d: "Difficile", c: "Mascate", p: 4974986, s: 309500, n: "Oman" },
+        PA: {
+          d: "Normal",
+          c: "Panama City",
+          p: 4314767,
+          s: 75417,
+          n: "Panama",
+        },
+        PE: { d: "Normal", c: "Lima", p: 32971854, s: 1285216, n: "Pérou" },
+        PF: {
+          d: "Difficile",
+          c: "Papeete",
+          p: 280908,
+          s: 4167,
+          n: "Polynésie française",
+        },
+        PG: {
+          d: "Difficile",
+          c: "Port Moresby",
+          p: 8947024,
+          s: 462840,
+          n: "Papouasie-Nouvelle-Guinée",
+        },
+        PH: {
+          d: "Normal",
+          c: "Manille",
+          p: 109581078,
+          s: 343448,
+          n: "Philippines",
+        },
+        PK: {
+          d: "Normal",
+          c: "Islamabad",
+          p: 220892340,
+          s: 881913,
+          n: "Pakistan",
+        },
+        PL: {
+          d: "Normal",
+          c: "Varsovie",
+          p: 37950802,
+          s: 312679,
+          n: "Pologne",
+        },
+        PM: {
+          d: "Difficile",
+          c: "Saint-Pierre",
+          p: 5794,
+          s: 242,
+          n: "Saint-Pierre-et-Miquelon",
+        },
+        PN: {
+          d: "Difficile",
+          c: "Adamstown",
+          p: 50,
+          s: 47,
+          n: "Îles Pitcairn",
+        },
+        PR: {
+          d: "Normal",
+          c: "San Juan",
+          p: 3194034,
+          s: 9104,
+          n: "Porto Rico",
+        },
+        PS: { d: "Normal", c: "Ramallah", p: 5101414, s: 6220, n: "Palestine" },
+        PT: {
+          d: "Facile",
+          c: "Lisbonne",
+          p: 10196709,
+          s: 92212,
+          n: "Portugal",
+        },
+        PW: { d: "Difficile", c: "Ngerulmud", p: 18094, s: 459, n: "Palaos" },
+        PY: {
+          d: "Difficile",
+          c: "Asunción",
+          p: 7132538,
+          s: 406752,
+          n: "Paraguay",
+        },
+        QA: { d: "Normal", c: "Doha", p: 2881053, s: 11586, n: "Qatar" },
+        RE: {
+          d: "Difficile",
+          c: "Saint-Denis",
+          p: 895308,
+          s: 2511,
+          n: "La Réunion",
+        },
+        RO: {
+          d: "Normal",
+          c: "Bucarest",
+          p: 19237691,
+          s: 238397,
+          n: "Roumanie",
+        },
+        RS: { d: "Normal", c: "Belgrade", p: 6804596, s: 77474, n: "Serbie" },
+        RU: {
+          d: "Facile",
+          c: "Moscou",
+          p: 145934462,
+          s: 17098242,
+          n: "Russie",
+        },
+        RW: { d: "Difficile", c: "Kigali", p: 12952218, s: 26338, n: "Rwanda" },
+        SA: {
+          d: "Normal",
+          c: "Riyad",
+          p: 34813871,
+          s: 2149690,
+          n: "Arabie saoudite",
+        },
+        SB: {
+          d: "Difficile",
+          c: "Honiara",
+          p: 686884,
+          s: 28896,
+          n: "Îles Salomon",
+        },
+        SC: {
+          d: "Difficile",
+          c: "Victoria",
+          p: 98347,
+          s: 451,
+          n: "Seychelles",
+        },
+        SD: {
+          d: "Normal",
+          c: "Khartoum",
+          p: 43849260,
+          s: 1886068,
+          n: "Soudan",
+        },
+        SE: { d: "Facile", c: "Stockholm", p: 10099265, s: 450295, n: "Suède" },
+        SG: { d: "Normal", c: "Singapour", p: 5850342, s: 719, n: "Singapour" },
+        SH: {
+          d: "Difficile",
+          c: "Jamestown",
+          p: 5661,
+          s: 394,
+          n: "Sainte-Hélène",
+        },
+        SI: {
+          d: "Difficile",
+          c: "Ljubljana",
+          p: 2100126,
+          s: 20273,
+          n: "Slovénie",
+        },
+        SJ: {
+          d: "Difficile",
+          c: "Longyearbyen",
+          p: 2667,
+          s: 61022,
+          n: "Svalbard et Jan Mayen",
+        },
+        SK: {
+          d: "Normal",
+          c: "Bratislava",
+          p: 5459642,
+          s: 49035,
+          n: "Slovaquie",
+        },
+        SL: {
+          d: "Difficile",
+          c: "Freetown",
+          p: 7976983,
+          s: 71740,
+          n: "Sierra Leone",
+        },
+        SM: {
+          d: "Difficile",
+          c: "Saint-Marin",
+          p: 33938,
+          s: 61,
+          n: "Saint-Marin",
+        },
+        SN: { d: "Normal", c: "Dakar", p: 16743927, s: 196722, n: "Sénégal" },
+        SO: {
+          d: "Normal",
+          c: "Mogadiscio",
+          p: 15893222,
+          s: 637657,
+          n: "Somalie",
+        },
+        SR: {
+          d: "Difficile",
+          c: "Paramaribo",
+          p: 586632,
+          s: 163820,
+          n: "Suriname",
+        },
+        SS: {
+          d: "Difficile",
+          c: "Djouba",
+          p: 11193725,
+          s: 619745,
+          n: "Soudan du Sud",
+        },
+        ST: {
+          d: "Difficile",
+          c: "São Tomé",
+          p: 219159,
+          s: 964,
+          n: "Sao Tomé-et-Principe",
+        },
+        SV: {
+          d: "Normal",
+          c: "San Salvador",
+          p: 6486205,
+          s: 21041,
+          n: "Salvador",
+        },
+        SX: {
+          d: "Difficile",
+          c: "Philipsburg",
+          p: 40654,
+          s: 34,
+          n: "Saint-Martin (partie néerlandaise)",
+        },
+        SY: { d: "Normal", c: "Damas", p: 17500658, s: 185180, n: "Syrie" },
+        SZ: {
+          d: "Difficile",
+          c: "Mbabane",
+          p: 1160164,
+          s: 17364,
+          n: "Eswatini",
+        },
+        TC: {
+          d: "Difficile",
+          c: "Cockburn Town",
+          p: 38717,
+          s: 948,
+          n: "Îles Turques-et-Caïques",
+        },
+        TD: {
+          d: "Difficile",
+          c: "N'Djamena",
+          p: 16425864,
+          s: 1284000,
+          n: "Tchad",
+        },
+        TF: {
+          d: "Difficile",
+          c: "Port-aux-Français",
+          p: 400,
+          s: 439671,
+          n: "Terres australes et antarctiques françaises",
+        },
+        TG: { d: "Difficile", c: "Lomé", p: 8278724, s: 56785, n: "Togo" },
+        TH: {
+          d: "Normal",
+          c: "Bangkok",
+          p: 69799978,
+          s: 513120,
+          n: "Thaïlande",
+        },
+        TJ: {
+          d: "Difficile",
+          c: "Douchanbé",
+          p: 9537645,
+          s: 143100,
+          n: "Tadjikistan",
+        },
+        TK: { d: "Difficile", c: null, p: 1357, s: 12, n: "Tokelau" },
+        TL: {
+          d: "Difficile",
+          c: "Dili",
+          p: 1318445,
+          s: 14874,
+          n: "Timor oriental",
+        },
+        TM: {
+          d: "Difficile",
+          c: "Achgabat",
+          p: 6031200,
+          s: 488100,
+          n: "Turkménistan",
+        },
+        TN: { d: "Normal", c: "Tunis", p: 11818619, s: 163610, n: "Tunisie" },
+        TO: { d: "Difficile", c: "Nuku'alofa", p: 99532, s: 747, n: "Tonga" },
+        TR: { d: "Normal", c: "Ankara", p: 84339067, s: 783562, n: "Turquie" },
+        TT: {
+          d: "Difficile",
+          c: "Port-d'Espagne",
+          p: 1399491,
+          s: 5130,
+          n: "Trinité-et-Tobago",
+        },
+        TV: { d: "Difficile", c: "Funafuti", p: 11792, s: 26, n: "Tuvalu" },
+        TW: { d: "Normal", c: "Taipei", p: 23503349, s: 36193, n: "Taïwan" },
+        TZ: { d: "Normal", c: "Dodoma", p: 59734218, s: 945087, n: "Tanzanie" },
+        UA: { d: "Normal", c: "Kyiv", p: 43733762, s: 603550, n: "Ukraine" },
+        UG: { d: "Normal", c: "Kampala", p: 45741007, s: 241550, n: "Ouganda" },
+        UM: {
+          d: "Difficile",
+          c: null,
+          p: 300,
+          s: 34,
+          n: "Îles mineures éloignées des États-Unis",
+        },
+        US: {
+          d: "Facile",
+          c: "Washington D.C.",
+          p: 331002651,
+          s: 9833517,
+          n: "États-Unis",
+        },
+        UY: {
+          d: "Normal",
+          c: "Montevideo",
+          p: 3473730,
+          s: 176215,
+          n: "Uruguay",
+        },
+        UZ: {
+          d: "Difficile",
+          c: "Tachkent",
+          p: 34915100,
+          s: 448978,
+          n: "Ouzbékistan",
+        },
+        VA: { d: "Normal", c: "Vatican", p: 800, s: 0.44, n: "Vatican" },
+        VC: {
+          d: "Difficile",
+          c: "Kingstown",
+          p: 110940,
+          s: 389,
+          n: "Saint-Vincent-et-les-Grenadines",
+        },
+        VE: {
+          d: "Normal",
+          c: "Caracas",
+          p: 28435943,
+          s: 916445,
+          n: "Venezuela",
+        },
+        VG: {
+          d: "Difficile",
+          c: "Road Town",
+          p: 30231,
+          s: 151,
+          n: "Îles Vierges britanniques",
+        },
+        VI: {
+          d: "Difficile",
+          c: "Charlotte Amalie",
+          p: 106290,
+          s: 347,
+          n: "Îles Vierges américaines",
+        },
+        VN: { d: "Normal", c: "Hanoï", p: 97338579, s: 331212, n: "Viêt Nam" },
+        VU: {
+          d: "Difficile",
+          c: "Port-Vila",
+          p: 307145,
+          s: 12189,
+          n: "Vanuatu",
+        },
+        WF: {
+          d: "Difficile",
+          c: "Mata-Utu",
+          p: 11558,
+          s: 142,
+          n: "Wallis-et-Futuna",
+        },
+        WS: { d: "Difficile", c: "Apia", p: 198414, s: 2842, n: "Samoa" },
+        XK: {
+          d: "Difficile",
+          c: "Pristina",
+          p: 1810366,
+          s: 10887,
+          n: "Kosovo",
+        },
+        YE: { d: "Normal", c: "Sanaa", p: 29825968, s: 527968, n: "Yémen" },
+        YT: { d: "Difficile", c: "Mamoudzou", p: 272813, s: 374, n: "Mayotte" },
+        ZA: {
+          d: "Normal",
+          c: "Pretoria",
+          p: 59308690,
+          s: 1221037,
+          n: "Afrique du Sud",
+        },
+        ZM: {
+          d: "Difficile",
+          c: "Lusaka",
+          p: 18383955,
+          s: 752612,
+          n: "Zambie",
+        },
+        ZW: { d: "Normal", c: "Harare", p: 14862924, s: 390757, n: "Zimbabwe" },
+      };
 
       const g7Countries = new Set(["CA", "US", "FR", "DE", "IT", "JP", "GB"]);
 
@@ -12975,6 +13922,9 @@ function desactiverCarte() {
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/sw.js");
       }
+
+      /*phoneHome.style.display="none"
+      phone4Choix.style.display="flex"*/
     </script>
   </body>
 </html>
