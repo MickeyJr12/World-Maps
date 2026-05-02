@@ -2024,6 +2024,12 @@
         background: rgba(180, 30, 30, 0.8);
         pointer-events: all;
       }
+      .cadreNext.none{
+         opacity: 1;
+        transform: translateY(0);
+        background: rgba(23, 85, 228, 0.8);
+        pointer-events: all;
+      }
 
       .btn-suivant {
         background: white;
@@ -5460,12 +5466,19 @@
       let idProps_m = new Map();
       L_btn4ChoixHasard.forEach((btn) => idProps_m.set(btn, null)); // Clef : DROM, valeur : identifiant
 
+      
       function fillPhonePlay() {
         //Reset les paramètres
         btns4Choix.forEach((b) => {
           b.classList.remove("good", "bad", "none");
         });
-        cadreNext.classList.remove("good", "bad");
+        cadreNext.classList.remove("good", "bad","none");
+        pauseChrono()
+        barreChronoIn.style.transition = "none"; // ← coupe la transition
+        barreChronoIn.style.width = "0%";        // ← saute instantanément à 0
+        barreChronoIn.offsetHeight;              // force reflow
+        currentChrono = val;               
+        startChrono(val)
         reponseFound = false;
         L_reponse = [];
         desactiverCarte();
@@ -5702,22 +5715,43 @@
 
 const txtChrono = document.querySelector('.txtChrono')
 
+function pauseChrono(){
+  clearInterval(intervChrono);
+  barreChronoIn.style.width = barreChronoIn.getBoundingClientRect().width +"px";
+ }
  function startChrono(time){  
   if (val==="inf"){return}
   newStart = Date.now()
   intervChrono = setInterval(() => {
      currentChrono = Math.floor(time-(Date.now()-newStart)/1000);
     txtChrono.textContent = "00:" + `${currentChrono}`
+    if (currentChrono<10){txtChrono.textContent = "00:0" + `${currentChrono}`}
+    //Temps écoulé
+    if (currentChrono===0){
+      pauseChrono();
+       barreChronoIn.style.width ="100%" 
+       //Changer les btnsChoix, afficher cadreNext
+         btns4Choix.forEach((b) => {
+            if (b === cHasard) {
+              b.classList.add("good");
+            } else {
+              b.classList.add("none");
+            }
+          });
+        
+          cadreNext.classList.remove("good", "bad","none");  
+          cadreNext.classList.add('none');
+          spanNext.textContent = "⏱ Temps écoulé !";                  
+          cadreNext.classList.add("visible");
+
+      }
   }, 100);
   barreChronoIn.style.transition = `width ${currentChrono-1}s linear`;   
   setTimeout(() => {
   barreChronoIn.style.width = "100%";
-  }, 5);
+  }, 10);
  }      
- function pauseChrono(){
-  clearInterval(intervChrono);
-  barreChronoIn.style.width = barreChronoIn.getBoundingClientRect().width +"px";
- }
+ 
 
 /*Fin script chrono*/
       backConfig.addEventListener("click", () => {
@@ -5805,6 +5839,7 @@ const txtChrono = document.querySelector('.txtChrono')
         });
 
         btn.addEventListener("click", () => {
+          pauseChrono()
           fillContentPm(idProps_m.get(btn), idBonneReponse);
           activerCarte();
           const correct = btn === cHasard;
@@ -5820,7 +5855,7 @@ const txtChrono = document.querySelector('.txtChrono')
           });
 
           // ✅ En dehors du forEach
-          cadreNext.classList.remove("good", "bad");
+          cadreNext.classList.remove("good", "bad","none");
           if (correct) {
             cadreNext.classList.add("good");
             spanNext.textContent = "✓ Bonne réponse !";
