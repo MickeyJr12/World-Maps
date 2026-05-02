@@ -5636,10 +5636,13 @@
       const label = document.getElementById("chronoCurrentLabel");
       const options = dropdown.querySelectorAll(".chrono-option");
       const barreChronoIn = document.querySelector('.barreChronoIn')
-      let val; // Valeur du chrono qu'on choisit
+      let val="inf"// Valeur du chrono qu'on choisit
       let currentChrono; //Mise à jour toutes les 100ms, valeur qu'on affiche 
       let intervChrono; // Interval qui met à jour la valeur de currentChrono
       let newStart; // Quand on remet sur start le chrono
+      document.getElementById('cadreQ4Choix').style.marginBottom ="4.5em";
+      document.querySelector('.cadreChrono').style.display = "none";
+
 
       let isOpen = false;
 
@@ -5672,9 +5675,13 @@
           options.forEach((o) => o.classList.remove("selected"));
           opt.classList.add("selected");
 
-          if (val === "inf") {
+          if (val === "inf") {          
+            document.getElementById('cadreQ4Choix').style.marginBottom ="4.5em";
+            document.querySelector('.cadreChrono').style.display = "none";
             label.innerHTML = infinitySVG;
           } else {
+            document.getElementById('cadreQ4Choix').style.marginBottom ="";
+            document.querySelector('.cadreChrono').style.display = "flex";
             label.textContent = lbl;
           }
 
@@ -5691,6 +5698,7 @@
 const txtChrono = document.querySelector('.txtChrono')
 
  function startChrono(time){  
+  if (val==="inf"){return}
   newStart = Date.now()
   intervChrono = setInterval(() => {
      currentChrono = Math.floor(time-(Date.now()-newStart)/1000);
