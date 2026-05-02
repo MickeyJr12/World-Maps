@@ -11932,6 +11932,7 @@
       //Listener SVG
 
       svg.addEventListener("mouseover", (event) => {
+        if(isMobile){return}
         const country = event.target.closest("path");
         const countryId = event.target.getAttribute("id");
         currentCountryHover = country;
@@ -12246,12 +12247,12 @@
             currentCountry != null &&
             currentCountry != currentCountryHover
           ) {
-            currentCountry.style.filter = "brightness(0.7)"; // ← AJOUTE ça
+            currentCountry.style.filter = "brightness(0.7)"; 
           } else if (p != currentCountryHover) {
             const status = idVisible_m.get(p.id);
             const visible = status && Object.values(status).every(Boolean);
             p.style.fill = visible ? pColor_m.get(p).current : "";
-            if (p !== currentCountry) p.style.filter = ""; // ← reset les autres
+            if (p !== currentCountry) p.style.filter = ""; 
           }
         });
         requestAnimationFrame(colorCurrentCountry);
