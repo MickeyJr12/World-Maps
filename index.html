@@ -1893,6 +1893,7 @@
         align-items: center;
         justify-content: center;
         position: fixed;
+        opacity:0;
         top: calc(2.2em + env(safe-area-inset-top));
         left: 2.2em;
         gap: 0;
@@ -1907,6 +1908,7 @@
         white-space: nowrap;
         transition:
           padding 0.3s ease,
+          opacity 0.3s ease,
           width 0.4s cubic-bezier(0.58, 0, 0.56, 1.6),
           padding 0.4s ease,
           gap 0.4s ease,
@@ -1920,7 +1922,7 @@
         flex-shrink: 0;
       }
       .icone-carte path {
-        fill: white;
+        fill: #1a5fb4;
       }
 
       .btn-carte .texte-carte {
@@ -1939,15 +1941,11 @@
       /* État cliquable */
       .btn-carte.cliquable {
         gap: 0.5em;
+        opacity:1;
         padding: 0.4em 0.8em;
         background: white;
         cursor: pointer;
-      }
-
-      .btn-carte.cliquable .icone-carte path {
-        fill: #1a5fb4;
-      }
-
+      }      
       .btn-carte.cliquable .texte-carte {
         max-width: 8em;
         opacity: 1;
