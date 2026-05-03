@@ -37,6 +37,8 @@
         -webkit-user-select: none; /* Safari / Chrome mobile */
         -webkit-touch-callout: none; /* empêche le menu contextuel sur iOS (hold) */
         user-select: none;
+        -webkit-tap-highlight-color: transparent; /* retire le flash gris iOS */
+        touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
       }
       html {
         margin: 0px;
@@ -1242,8 +1244,6 @@
       .cadreRegion,
       .btnD,.chrono-option,.chrono-wrapper {
         cursor: pointer;
-        -webkit-tap-highlight-color: transparent; /* retire le flash gris iOS */
-        touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
       }
       .back {
         display: flex;
@@ -1986,7 +1986,6 @@
         width: clamp(50vw, 55%, 60%);
         max-width: 200px;
         height: auto;
-        filter: drop-shadow(0px 0px 0.6em rgba(0, 0, 0, 0.4));
         text-decoration: underline;
       }
       .qBox {
@@ -5858,6 +5857,9 @@
         contentPm.innerHTML = ``;
         phoneConfig.style.display = "none";
         phone4Choix.style.display = "flex";
+
+        if(L_config.q === "drapeauQ"){document.getElementById('cadreQ4Choix').style.filter = "drop-shadow(0px 0px 0.6em rgba(0, 0, 0, 0.4))"}
+
         fillPhonePlay();
       });
     </script>
