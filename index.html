@@ -1989,6 +1989,10 @@
         text-decoration: underline;
       }
       .qBox {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
         width: 100%;
         height: auto;
         max-height: inherit; /* hérite aussi */
@@ -5858,7 +5862,7 @@
         phoneConfig.style.display = "none";
         phone4Choix.style.display = "flex";
 
-        if(L_config.q === "drapeauQ"){document.getElementById('cadreQ4Choix').style.filter ="drop-shadow(0px 0px 5em rgba(0, 0, 0, 0.6))"}
+        if(L_config.q === "drapeauQ"){document.getElementById('cadreQ4Choix').style.boxShadow ="0em 0em 1.5em rgba(0, 0, 0, 0.3)"}
         else {qBox.style = ""; }
 
         fillPhonePlay();
