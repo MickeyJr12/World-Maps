@@ -1519,6 +1519,7 @@
       /*Chrono*/
       .chrono-wrapper {
         display: flex;
+        pointer-events: none;
         position: absolute;
         z-index: 10;
         top: 0.5em;
@@ -1530,8 +1531,10 @@
 
       /* Dropdown menu */
       .chrono-dropdown {
+        display: flex;
+        flex-direction: column;
         transform: scaleY(0.7);
-        transform-origin: center top;
+        transform-origin: center top;        
         background: rgba(255, 255, 255, 0.97);
         border-radius: 0.6em;
         padding: 6px;
@@ -1542,8 +1545,7 @@
           transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
           opacity 0.2s ease;
         min-width: 90px;
-        display: flex;
-        flex-direction: column;
+       
         gap: 2px;
       }
 
@@ -1581,6 +1583,7 @@
       /* Pill button */
       .chrono-pill {
         display: flex;
+        pointer-events: all;
         gap: 0.4em;
         background: rgba(255, 255, 255, 0.55);
         backdrop-filter: blur(8px);
