@@ -5901,15 +5901,15 @@ function pauseChrono(){
         ligneIn.classList = "ligneInPm";
         icon.classList = "iconCiPm";
 
-        if (idProp!=="outTime"){
         proposition.textContent = L_q[idProp].n;
         reponse.textContent = L_q[idGood].n;
-        }
+
 
         if (L_config.r === "capitaleR") {
           proposition.textContent = L_q[idProp].c
-        reponse.textContent = L_q[idGood].c;
+          reponse.textContent = L_q[idGood].c;
         }
+
 
 
         if (idProp === idGood) {
