@@ -5727,7 +5727,7 @@ function pauseChrono(){
     txtChrono.textContent = "00:" + `${currentChrono}`
     if (currentChrono<10){txtChrono.textContent = "00:0" + `${currentChrono}`}
     //Temps écoulé
-    if (currentChrono===0){
+    if (currentChrono<=0){
       pauseChrono();
        barreChronoIn.style.width ="100%" 
        //Changer les btnsChoix, afficher cadreNext
@@ -5906,8 +5906,10 @@ function pauseChrono(){
         reponse.textContent = L_q[idGood].n;
         }
 
-        if (L_config.r === "capitaleR") {proposition.textContent = L_q[idProp].c}
+        if (L_config.r === "capitaleR") {
+          proposition.textContent = L_q[idProp].c
         reponse.textContent = L_q[idGood].c;
+        }
 
 
         if (idProp === idGood) {
