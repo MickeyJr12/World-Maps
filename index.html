@@ -1283,14 +1283,12 @@
         border: 2px solid rgba(192, 57, 43, 0.25);
       }
 
-      #contentConfig {
+      #contentConfig{
         display: flex;
         position: fixed;
         flex-direction: column;
+        justify-content: flex-end;
         align-items: center;
-        overflow-y: scroll;
-        scrollbar-width: thin;
-        scrollbar-color: rgba(0, 0, 0, 0.2);
         padding: 1em 0em;
         gap: 1em;
         top: calc(18% + 1em);
@@ -1298,6 +1296,18 @@
         width: 100%;
         padding-bottom: 2em;
         padding-top: 1em;
+      }
+      #modeContainerConfig {
+        display: flex;
+        width:100%;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(0, 0, 0, 0.2);
+        flex:1;
+        gap: 1em;
       }
       #cadreMode {
         display: flex;
@@ -1640,11 +1650,9 @@
 
         background-color: #f5e6e8;
         color: #c47d89;
-
         font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.04em;
-
         cursor: not-allowed;
         pointer-events: none;
         opacity: 0.6;
@@ -2403,6 +2411,7 @@
         />
       </svg>
       <div id="contentConfig">
+      <div id="modeContainerConfig">
         <div id="cadreMode">
           <div id="modeTitle">
             <svg
@@ -3256,10 +3265,10 @@
               <h4>Difficile</h4>
             </div>
           </div>
-        </div>
-
-        <div id="playConfig">Commencer</div>
+        </div>      
       </div>
+       <div id="playConfig">Commencer</div>
+       </div>
     </div>
 
     <!--HTML 4 choix-->
