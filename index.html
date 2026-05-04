@@ -6239,7 +6239,7 @@
       globe.querySelectorAll("path").forEach((p) => {
         pColor_m.set(p, {
           hovered: "rgb(29, 204, 90)",
-          current: "aquamarine",
+          current: "#cdd9e4",
         });
       });
 
@@ -12319,12 +12319,11 @@
       //Listener SVG
 
       svg.addEventListener("mouseover", (event) => {
-        if (isMobile) {
-          return;
-        }
+        
         const country = event.target.closest("path");
         const countryId = event.target.getAttribute("id");
         currentCountryHover = country;
+       
         if (!country) {
           globe.style.cursor = "";
           globe
@@ -12966,7 +12965,7 @@
           globe.querySelectorAll("path").forEach((p) => {
             pColor_m.set(p, {
               hovered: "rgb(29, 204, 90)",
-              current: "aquamarine",
+              current: "#cdd9e4",
             });
           });
         }
@@ -13010,7 +13009,7 @@
           globe.querySelectorAll("path").forEach((p) => {
             pColor_m.set(p, {
               hovered: "rgb(29, 204, 90)",
-              current: "aquamarine",
+              current: "#cdd9e4",
             });
           });
         }
@@ -13086,7 +13085,7 @@
             p.style.fill = "";
             pColor_m.set(p, {
               hovered: "rgb(29, 204, 90)",
-              current: "aquamarine",
+              current: "#cdd9e4",
             });
           });
         }
