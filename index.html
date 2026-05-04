@@ -12640,13 +12640,11 @@
             p === currentCountry &&
             currentCountry != null             
           ) {
-           p.style.display = "none"
             currentCountry.style.filter = "brightness(0.7)";
           } else if (p !== currentCountryHover) {
             const status = idVisible_m.get(p.id);
             const visible = status && Object.values(status).every(Boolean);
             p.style.fill = visible ? pColor_m.get(p).current : "";
-            if (p !== currentCountry) p.style.filter = "";
           }
         });
         requestAnimationFrame(colorCurrentCountry);
