@@ -6156,6 +6156,7 @@
     <script>
       const map = document.getElementById("map");
       const Maps = document.querySelector(".Maps");
+      let colorPath = "rgb(255, 255, 255)"
 
       const mediaQuery = window.matchMedia("(max-width: 768px)");
       let isMobile = mediaQuery.matches;
@@ -6252,7 +6253,7 @@
       globe.querySelectorAll("path").forEach((p) => {
         pColor_m.set(p, {
           hovered: "rgb(29, 204, 90)",
-          current: "#cdd9e4",
+          current: `${colorPath}`,
         });
       });
 
@@ -12666,6 +12667,7 @@ function resetCountry(p) {
             const visible = status && Object.values(status).every(Boolean);
             p.style.fill = visible ? pColor_m.get(p).current : "";
             if (p !== currentCountry) p.removeAttribute("filter");
+
           }
         });
         requestAnimationFrame(colorCurrentCountry);
@@ -12990,7 +12992,7 @@ function resetCountry(p) {
           globe.querySelectorAll("path").forEach((p) => {
             pColor_m.set(p, {
               hovered: "rgb(29, 204, 90)",
-              current: "#cdd9e4",//Remplace aquamarine, 
+              current: `${colorPath}`,//Remplace aquamarine, 
             });
           });
         }
@@ -13034,7 +13036,7 @@ function resetCountry(p) {
           globe.querySelectorAll("path").forEach((p) => {
             pColor_m.set(p, {
               hovered: "rgb(29, 204, 90)",
-              current: "#cdd9e4",
+              current: `${colorPath}`,
             });
           });
         }
@@ -13110,7 +13112,7 @@ function resetCountry(p) {
             p.style.fill = "";
             pColor_m.set(p, {
               hovered: "rgb(29, 204, 90)",
-              current: "#cdd9e4",
+              current:`${colorPath}`,
             });
           });
         }
