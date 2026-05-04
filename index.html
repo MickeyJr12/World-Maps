@@ -12379,10 +12379,7 @@
         cadre.style.transform = "translateX(-20%)";
         cadre.style.opacity = "0";
 
-        if (isMobile){
-           country.style.filter = "brightness(0.86)";
-        country.style.transform = "translateY(-0.1%)";
-        }
+        
         setTimeout(() => {
           cadre.style.transition = "";
           cadre.style.transform = "translateX(0%)";
@@ -12397,6 +12394,7 @@
       });
 
       svg.addEventListener("mouseleave", () => {
+        if (isMobile) return; // ⭐ IMPORTANT
         currentCountryHover = null;
         paths.forEach((p) => {
           p.style.transform = "";
@@ -12619,8 +12617,10 @@
       let lastHovered = null;
 
       function pathHover(id, name, element) {
-        if (Object.values(idVisible_m.get(element.id)).some((v) => v === false))
+        
+        if (Object.values(idVisible_m.get(element.id)).some((v) => v === false)||isMobile)
           return;
+        if (isMobile) return; // ⭐ IMPORTANT
         // Reset uniquement le précédent
         if (lastHovered && lastHovered !== element) {
           lastHovered.style.transform = "";
@@ -12638,11 +12638,11 @@
         globe.querySelectorAll("path").forEach((p) => {
           if (
             p === currentCountry &&
-            currentCountry != null &&
-            currentCountry != currentCountryHover
+            currentCountry != null 
+            
           ) {
             currentCountry.style.filter = "brightness(0.7)";
-          } else if (p != currentCountryHover) {
+          } else if (p !== currentCountryHover) {
             const status = idVisible_m.get(p.id);
             const visible = status && Object.values(status).every(Boolean);
             p.style.fill = visible ? pColor_m.get(p).current : "";
