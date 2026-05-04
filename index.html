@@ -12324,7 +12324,7 @@
         }
         const country = event.target.closest("path");
         const countryId = event.target.getAttribute("id");
-        currentCountryHover = country;
+        if (!isMobile){currentCountryHover = country}
         if (!country) {
           globe.style.cursor = "";
           globe
@@ -12642,7 +12642,7 @@
             
           ) {
             currentCountry.style.filter = "brightness(0.7)";
-          } else if (p !== currentCountryHover) {
+          } else if (p !== currentCountryHover&&!isMobile) {
             const status = idVisible_m.get(p.id);
             const visible = status && Object.values(status).every(Boolean);
             p.style.fill = visible ? pColor_m.get(p).current : "";
