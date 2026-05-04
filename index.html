@@ -12640,6 +12640,7 @@
             p === currentCountry &&
             currentCountry != null             
           ) {
+            p.style.webkitFilter = "brightness(0.7)"; // Pour Safari iOS
             currentCountry.style.filter = "brightness(0.7)";
           } else if (p !== currentCountryHover) {
             const status = idVisible_m.get(p.id);
@@ -12652,8 +12653,8 @@
       }
 
       colorCurrentCountry();
-      let drapeauLoaded = "false";
-      let blasonLoaded = "false";
+      let drapeauLoaded = false;
+      let blasonLoaded = false;
 
       function countryClick(id, name, element) {
         // On construit l'URL de l'API avec le nom du pays
