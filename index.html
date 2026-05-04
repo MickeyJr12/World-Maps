@@ -12319,11 +12319,12 @@
       //Listener SVG
 
       svg.addEventListener("mouseover", (event) => {
-        
+        if (isMobile) {
+          return;
+        }
         const country = event.target.closest("path");
         const countryId = event.target.getAttribute("id");
         currentCountryHover = country;
-       
         if (!country) {
           globe.style.cursor = "";
           globe
@@ -12377,6 +12378,11 @@
 
         cadre.style.transform = "translateX(-20%)";
         cadre.style.opacity = "0";
+
+        if (isMobile){
+           country.style.filter = "brightness(0.86)";
+        country.style.transform = "translateY(-0.1%)";
+        }
         setTimeout(() => {
           cadre.style.transition = "";
           cadre.style.transform = "translateX(0%)";
