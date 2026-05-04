@@ -1242,7 +1242,9 @@
       .btnMode,
       .qr,
       .cadreRegion,
-      .btnD,.chrono-option,.chrono-wrapper {
+      .btnD,
+      .chrono-option,
+      .chrono-wrapper {
         cursor: pointer;
       }
       .back {
@@ -1288,7 +1290,7 @@
       .ligneInter {
         width: 75vw;
         border-radius: 5px;
-        border: 2px solid rgba(192, 57, 43, 0.25);
+        border: 1.5px solid rgba(37, 32, 31, 0.20);
       }
 
       #contentConfig {
@@ -1299,8 +1301,8 @@
         align-items: center;
         overflow: hidden; /* évite que contentConfig capte des events par erreur */
         touch-action: pan-y; /* indique explicitement que le scroll est vertical */
-        gap: 1em;
-        top: calc(18% + 1em);
+        gap: 0.2em;
+        top: calc(18%);
         bottom: env(safe-area-inset-bottom);
         width: 100%;
         padding-bottom: 0.2em;
@@ -1403,7 +1405,7 @@
       }
       .ligneQR {
         width: 90%;
-        border: 0.6px solid rgba(192, 57, 43, 0.25);
+        border: 0.6px solid rgba(0, 0, 0, 0.25);
         margin-bottom: 0.3em;
       }
       .qr {
@@ -1414,13 +1416,13 @@
         user-select: none;
         background: transparent;
         flex-wrap: wrap;
-        border: 2px solid rgba(192, 57, 43, 0.4);
         width: clamp(75%, 95%, 98%);
         padding: 0.4em 0em;
         border-radius: 10px;
         margin: 0.1em 0em;
         transition: background 0.08s ease;
       }
+      .qr:active{background : rgba(0,0,0,0.05)}
 
       #cadreChoixRegion {
         display: flex;
@@ -1534,7 +1536,7 @@
         display: flex;
         flex-direction: column;
         transform: scaleY(0.7);
-        transform-origin: center top;        
+        transform-origin: center top;
         background: rgba(255, 255, 255, 0.97);
         border-radius: 0.6em;
         padding: 6px;
@@ -1545,7 +1547,7 @@
           transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
           opacity 0.2s ease;
         min-width: 90px;
-       
+
         gap: 2px;
       }
 
@@ -1820,7 +1822,7 @@
       }
       .reponsePm {
         display: flex;
-        text-align:end;
+        text-align: end;
         justify-content: flex-end;
         flex-wrap: wrap;
         max-width: 40%;
@@ -1894,7 +1896,7 @@
         align-items: center;
         justify-content: center;
         position: fixed;
-        opacity:0;
+        opacity: 0;
         top: calc(2.2em + env(safe-area-inset-top));
         left: 2.2em;
         gap: 0;
@@ -1942,11 +1944,11 @@
       /* État cliquable */
       .btn-carte.cliquable {
         gap: 0.5em;
-        opacity:1;
+        opacity: 1;
         padding: 0.4em 0.8em;
         background: white;
         cursor: pointer;
-      }      
+      }
       .btn-carte.cliquable .texte-carte {
         max-width: 8em;
         opacity: 1;
@@ -5864,8 +5866,12 @@
         phoneConfig.style.display = "none";
         phone4Choix.style.display = "flex";
 
-        if(L_config.q === "drapeauQ"){document.getElementById('cadreQ4Choix').style.boxShadow ="0em 0em 1.5em rgba(0, 0, 0, 0.3)"}
-        else {document.getElementById('cadreQ4Choix').style.boxShadow=""}
+        if (L_config.q === "drapeauQ") {
+          document.getElementById("cadreQ4Choix").style.boxShadow =
+            "0em 0em 1.5em rgba(0, 0, 0, 0.3)";
+        } else {
+          document.getElementById("cadreQ4Choix").style.boxShadow = "";
+        }
 
         fillPhonePlay();
       });
