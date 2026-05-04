@@ -12642,7 +12642,7 @@
             
           ) {
             currentCountry.style.filter = "brightness(0.7)";
-          } else if (p !== currentCountryHover&&!isMobile) {
+          } else if (p !== currentCountryHover) {
             const status = idVisible_m.get(p.id);
             const visible = status && Object.values(status).every(Boolean);
             p.style.fill = visible ? pColor_m.get(p).current : "";
@@ -12971,7 +12971,7 @@
           globe.querySelectorAll("path").forEach((p) => {
             pColor_m.set(p, {
               hovered: "rgb(29, 204, 90)",
-              current: "#cdd9e4",
+              current: "#cdd9e4",//Remplace aquamarine, 
             });
           });
         }
