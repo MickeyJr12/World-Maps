@@ -235,6 +235,7 @@
         z-index: 9999999999999999999999999999999999999999999999999999;
         background: rgba(2, 34, 85, 0.879);
         backdrop-filter: blur(10px);
+        transform-origin:center top;
         transition:
           opacity 0.2s ease,
           transform 0.4s ease;
@@ -265,7 +266,7 @@
         justify-content: center;
         align-items: center;
         overflow:hidden;
-        width: 100%;
+        width: 70%;
         height: 100%;
       }
       #mDrapeauCadre {
@@ -3734,7 +3735,7 @@
 
       <!--------------------------Grand Cadre------------------------------->
       <div id="cadre">
-      <button class="back" id="backCadre" onclick="closeCadre()"  >
+      <button class="back" id="backCadre" onclick="scalemCadre(false); closeCadre()"  >
          <svg
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
@@ -6265,6 +6266,16 @@
         i.querySelector("svg").style.flexShrink = "0";
       });*/
 
+      function scalemCadre(scale){
+        if(scale){
+        mCadre.style.transform = "scale(1.3)"
+        mCadre.style.opacity = "0";
+        }
+        else{
+          mCadre.style.transform = ""
+          mCadre.style.opacity = "1";
+        }
+      }
       function toggleC(view) {
         if (view) {
           mCadre.style.transition = "none";
@@ -6282,10 +6293,11 @@
           mCadre.style.opacity = "0";
           mCadre.style.pointerEvents = "none";
         }
+
       }
 
       voirPlus.addEventListener("click", () => {
-        toggleC(false);
+        scalemCadre(true)
         cadre.style.transition = "none";
         cadre.style.transform = "scale(0.9)";
         setTimeout(() => {
@@ -6353,7 +6365,6 @@
         cadre.style.opacity = "0";
         cadre.style.transform = "scale(0.9)";
         cadre.style.pointerEvents = "none";        
-        toggleC(true);
       }
 
       const vuesBox = document.querySelector(".vuesBox");
