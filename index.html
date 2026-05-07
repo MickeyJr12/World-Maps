@@ -291,6 +291,11 @@
         z-index: 99999999999999999999999999999999999999999999999999999;
         background: rgba(17, 23, 79, 0.9);
         backdrop-filter: blur(10px);
+         transform-origin: center top;
+        transition:
+          transform 0.4s ease,
+          opacity 0.3s ease;
+          
       }
       #contentCadre {
 
@@ -311,11 +316,7 @@
         padding-top: calc(env(safe-area-inset-top) + 0.6em);
         padding-bottom: env(safe-area-inset-bottom);
         padding-left: calc(env(safe-area-inset-left) + 0.6em);
-        padding-right: calc(env(safe-area-inset-right) + 0.6em);
-        transform-origin: center top;
-        transition:
-          transform 0.4s ease,
-          opacity 0.3s ease;
+        padding-right: calc(env(safe-area-inset-right) + 0.6em);       
       }
       #cadreDrapeau {
         display: flex;
