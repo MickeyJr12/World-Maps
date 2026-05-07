@@ -309,7 +309,7 @@
         width: 100%;
 
         padding-top: calc(env(safe-area-inset-top) + 0.6em);
-        padding-bottom: calc(env(safe-area-inset-bottom) + 0.6em);
+        padding-bottom: env(safe-area-inset-bottom);
         padding-left: calc(env(safe-area-inset-left) + 0.6em);
         padding-right: calc(env(safe-area-inset-right) + 0.6em);
         transform-origin: center top;
@@ -5449,7 +5449,7 @@
       //Scroll
       // À mettre une seule fois au chargement
       document
-        .querySelectorAll(".btnMode, .qr, .cadreRegion, .btnD, #playConfig")
+        .querySelectorAll(".btnMode, .qr, .cadreRegion, .btnD, #playConfig,#gridCadre")
         .forEach((el) => {
           el.addEventListener("touchstart", () => {}, { passive: true });
         });
