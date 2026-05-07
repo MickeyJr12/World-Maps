@@ -229,9 +229,8 @@
         margin: auto;
         gap: 0.6em;
         height: auto;
-        width: 70%;
+        width: 50%;
         max-width: 500px;
-        min-height: 5em;
         z-index: 9999999999999999999999999999999999999999999999999999;
         background: rgba(2, 34, 85, 0.879);
         backdrop-filter: blur(10px);
@@ -239,31 +238,37 @@
           opacity 0.2s ease,
           transform 0.4s ease;
       }
+
       .mCadreDrapeau {
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
         flex-shrink: 0;
+        margin-bottom : 0.2em;
+        font-size: 2em;
+        font-weight: 620;
+        letter-spacing: 1px;
         border-radius: 8px;
-        width: clamp(20vw, 40%, 50%);
+        width: 100%;
         height: 3em; /* hauteur fixe */
-        max-height: 4em;
+        max-height: 5em;
       }
 
       .mDrapeauBox {
+
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow:hidden;
         width: 100%;
         height: 100%;
       }
-
-      .mDrapeauCadre {
-        width: 100%;
+      #mDrapeauCadre {
         height: 100%;
+        overflow:hidden;
         object-fit: contain;
-        border-radius: 5px;
+        border-radius: 0.2em;
       }
       .voirPlus {
         display: flex;
@@ -294,16 +299,16 @@
          transform-origin: center top;
         transition:
           transform 0.4s ease,
-          opacity 0.3s ease;
-          
+          opacity 0.3s ease;          
+      }
+      #backCadre{
+        top : calc(env(safe-area-inset-top) + 0.4em);
+        left : 1em; 
       }
       #contentCadre {
-
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
         touch-action: pan-y;              /* le scroll est vertical, les taps passent */
         overscroll-behavior: contain;     /* évite la propagation au parent */
-
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -329,7 +334,7 @@
         font-weight: 620;
         letter-spacing: 1px;
         border-radius: 8px;
-        width: clamp(55vw, 60%, 65%);
+        width: 60%;
         height: 4em; /* hauteur fixe */
         max-height: 5em;
       }
@@ -343,10 +348,9 @@
       }
 
       #drapeauCadre {
-        width: 100%;
-        height: 100%;
+        height : 100%;
         object-fit: contain;
-        border-radius: 5px;
+        border-radius: 0.2em;
       }
       .titleCadre {
         text-align: center;
@@ -813,7 +817,11 @@
         background: rgba(255, 255, 255, 0.1);
       }
 
-      .cadreVueCross {
+      .cross {
+        
+        all: unset;              /* enlève TOUT le style natif */
+        box-sizing: border-box;  /* indispensable après all: unset */
+        cursor: pointer;
         align-self: flex-end;
         cursor: pointer;
         margin-right: 1em;
@@ -821,6 +829,9 @@
         width: 1.5em;
         height: 1.5em;
         fill: white;
+      }
+      .cross:active{
+        background: rgba(255, 255, 255, 0.2);
       }
       .cadreVue-inner {
         width: 100%;
@@ -3459,7 +3470,7 @@
         </svg>
       </button>
       <div class="cadreVue">
-        <div class="cadreVueCross">
+        <button class="cross" id="cadreVueCross" onclick="afficheVue()">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Outline"
@@ -3474,7 +3485,7 @@
               d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
             />
           </svg>
-        </div>
+        </button>
         <h2
           style="
             margin-top: 0px;
@@ -3676,6 +3687,22 @@
 
       <!----------------------LittleCadre------------------------------->
       <div id="mCadre">
+        <button class="cross" id="mCadreCross" onclick="toggleC(false)">
+           <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Outline"
+            viewBox="0 0 24 24"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+            />
+            <path
+              d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+            />
+          </svg>
+        </button>
         <div class="mCadreDrapeau">
           <div class="mDrapeauBox">
             <img src="" alt="" id="mDrapeauCadre" class="flagLoadingCadre" />
@@ -3704,6 +3731,19 @@
 
       <!--------------------------Grand Cadre------------------------------->
       <div id="cadre">
+      <button class="back" id="backCadre" onclick="closeCadre()"  >
+         <svg
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Bold"
+          viewBox="0 0 24 24"
+          width="100%"
+        >
+          <path
+            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+          />
+        </svg>
+      </button>
       <div id="contentCadre">
         <div id="cadreDrapeau">
           <div id="drapeauBox">
@@ -6303,21 +6343,15 @@
         },
         { label: "FMI", id: "orgaFMI", key: "fmi" },
       ];
-      const cadreVue = document.querySelector(".cadreVue");
-      const cadreVueCross = document.querySelector(".cadreVueCross");
-      const cadreCross = cadreVueCross.cloneNode(true);
-      cadreCross.style.position = "absolute";
-      cadreCross.style.left = "0.8em";
-      cadreCross.style.top = "0.8em";
-      cadre.appendChild(cadreCross);
-      cadreCross.addEventListener("click", () => {
+      const cadreVue = document.querySelector(".cadreVue");       
+
+      function closeCadre(){
         currentCountry = null;
         cadre.style.opacity = "0";
         cadre.style.transform = "scale(0.9)";
         cadre.style.pointerEvents = "none";        
-
         toggleC(true);
-      });
+      }
 
       const vuesBox = document.querySelector(".vuesBox");
       const listBox = document.querySelector(".listBox");
@@ -12697,10 +12731,7 @@
         afficheVue();
       });
 
-      cadreVueCross.addEventListener("click", () => {
-        afficheVue();
-      });
-
+     
       //Déplacer cadreVue
       let moveCV;
       let difY;
