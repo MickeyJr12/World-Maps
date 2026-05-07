@@ -215,24 +215,23 @@
       /****************************************CSS nouveaux Cadres*******************************/
       #mCadre {
         display: flex;
-        position: absolute;
+        position: fixed;
         flex-direction: column;
         align-items: center;
         margin: auto;
-        z-index: 9999999999999999999999999999999999999999999999999999;
-        opacity: 0;
-        pointer-events: none;
         color: white;
+        opacity: 0;
+        border-radius: 0.6em;
+        padding: 0.8em;
+        pointer-events: none;
         top: calc(env(safe-area-inset-top) + 0.5em);
         left: 10em;
         right: 10em;
-        padding: 0.8em;
         gap: 0.6em;
         height: auto;
         min-height: 5em;
-        min-width: 20em;
         max-width: 500px;
-        border-radius: 0.6em;
+        z-index: 9999999999999999999999999999999999999999999999999999;
         background: rgba(2, 34, 85, 0.879);
         backdrop-filter: blur(10px);
         transition:
@@ -250,8 +249,8 @@
         letter-spacing: 1px;
         border-radius: 8px;
         width: 80%;
-        height: 4em; /* hauteur fixe */
-        max-height: 5em;
+        height: 3em; /* hauteur fixe */
+        max-height: 4em;
       }
 
       .mDrapeauBox {
@@ -303,6 +302,8 @@
         margin: auto;
         border-radius: 2em;
         padding: 0.8em 0.6em;
+        padding-top : calc(env(safe-area-inset-top)+ 0.8em);
+        padding-bottom : calc(env(safe-area-inset-bottom)+ 0.8em);
         transform-origin: center top;
         transition:
           transform 0.4s ease,
