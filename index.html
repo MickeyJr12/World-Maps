@@ -12653,64 +12653,57 @@
             mDrapeauCadre.src = `https://flagcdn.com/w320/${id.toLowerCase()}.png`;
             drapeauCadre.src = `https://flagcdn.com/w320/${id.toLowerCase()}.png`;
 
-            capitale.textContent = "Capitale : " + L_q[id].c;
+            capitale.textContent = L_q[id].c;
 
             devise.textContent =
-              "Devise : " +
+             
               Object.values(info.currencies)[0].name +
               " (" +
               Object.values(info.currencies)[0].symbol +
               ")";
-            nomH.textContent = "Habitants : " + info.demonyms.fra.m;
+            nomH.textContent = info.demonyms.fra.m;
             if (!info.demonyms.fra.m) {
-              nomH.textContent = "Habitants : Non disponible";
+              nomH.textContent = "Non disponible";
             }
-            carSide.textContent = "Côté de conduite : " + info.car.side;
+            carSide.textContent =  info.car.side;
             seaAccess.textContent =
-              "Accès à la mer : " + (info.landlocked ? "Non" : "Oui");
-            independance.textContent =
-              "Indépendance : " + P_info[id].independent;
-            calendar.textContent =
-              "Début de semaine : " +
-              (info.startOfWeek === "monday" ? "Lundi" : "Dimanche");
+             (info.landlocked ? "Non" : "Oui");
+            independance.textContent = P_info[id].independent;
+            calendar.textContent =  (info.startOfWeek === "monday" ? "Lundi" : "Dimanche");
             indT.textContent =
-              "Indicatif(s) : " +
+           
               (info.idd?.root && info.idd?.suffixes
                 ? info.idd.suffixes.map((s) => info.idd.root + s).join(", ")
                 : "Non disponible");
 
             if (P_info[id].co2e === undefined || P_info[id].co2e === null) {
-              co2e.textContent = "Taux de Co2 équivalent : Non disponible";
+              co2e.textContent = "Non disponible";
             } else {
               co2e.style.whiteSpace = "pre-wrap";
               co2e.textContent =
-                "Taux de Co2 équivalent :" +
-                "\n" +
-                " " +
-                Math.floor(P_info[id].co2e).toLocaleString("fr-FR") +
+             Math.floor(P_info[id].co2e).toLocaleString("fr-FR") +
                 " tCO₂e/an";
             }
 
             gouvernement.textContent =
-              "Gouvernement :" + " " + P_info[id].gouvernement;
-            religion.textContent = "Religion :" + " " + P_info[id].religion;
+             P_info[id].gouvernement;
+            religion.textContent = P_info[id].religion;
             fuseaux.textContent =
-              "Fuseaux horaires :" + " " + info.timezones.join(", ");
+             info.timezones.join(", ");
 
             if (P_info[id].pib === null || P_info[id].pib === undefined) {
-              pibPh.textContent = "PIB/hab : Non disponible";
+              pibPh.textContent = "Non disponible";
             } else {
               pibPh.textContent =
-                "PIB/hab :" +
-                " " +
+               
                 Math.floor(P_info[id].pib).toLocaleString("fr-FR") +
                 " (USD/an)";
             }
 
             population.textContent =
-              "Population : " + info.population.toLocaleString();
+              info.population.toLocaleString();
             superficie.textContent =
-              "Superficie : " + info.area.toLocaleString("fr-FR") + "km²";
+              info.area.toLocaleString("fr-FR") + "km²";
           })
           .catch(function () {
             resultat.innerHTML = "<p>Pays introuvable !</p>";
