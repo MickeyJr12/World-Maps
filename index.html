@@ -288,10 +288,10 @@
       }
       #mTitleCadre{
         text-align: left;
-        font-size: clamp(0.8em, 1.15em, 1.2em);
+        font-size: clamp(0.8em, 0.9em, 1em);
        text-overflow: ellipsis;}
       #mCapitale{
-  font-size: clamp(0.8em, 2.8vw, 0.9em);
+  font-size: clamp(0.7em, 2.8vw, 0.8em);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -361,9 +361,7 @@
         overflow: hidden;
         flex-shrink: 0;
         margin-bottom: 0.2em;
-        font-size: 2em;
         font-weight: 620;
-        letter-spacing: 1px;
         border-radius: 8px;
         width: 60%;
         height: 4em; /* hauteur fixe */
@@ -388,7 +386,7 @@
         flex-wrap: nowrap;
         font-weight: 720;
         font-size: 1.2em;
-        letter-spacing: 1.5px;
+        letter-spacing: 0.5px;
       }
       .txtCapitaleCadre {
         display: flex;
@@ -398,7 +396,7 @@
         flex-shrink: 0;
         gap: 0.5em;
         fill: rgba(255, 255, 255, 0.8);
-        letter-spacing: 0.8px;
+        letter-spacing: 0.2px;
         font-weight: 350;
         font-size: 0.95em;
         width: auto;
@@ -11154,7 +11152,7 @@
           c: "Kinshasa",
           p: 99010212,
           s: 2344858,
-          n: "République démocratique du Congo",
+          n: "Rep. dém. du Congo",
         },
         CF: {
           d: "Difficile",
@@ -12648,6 +12646,18 @@
       colorCurrentCountry();
 
       //abcd
+      function fitText(element, minSize = 8) {
+  element.style.fontSize = "";        // reset
+
+  const containerWidth = element.parentElement.offsetWidth;
+  let size = parseFloat(getComputedStyle(element).fontSize);
+
+  // Réduit par pas de 0.5px jusqu'à ce que le texte rentre
+  while (element.scrollWidth > containerWidth*2 && size > minSize) {
+    size -= 0.5;
+    element.style.fontSize = size + "px";
+  }
+}
       function countryClick(id, name, element) {
         toggleC(true);
         //Élément déjà là : region, subregion, independant, population,pib,co2e,gouvernement,religion,fuseaux,dateInde
@@ -12659,6 +12669,7 @@
         titlesCadre.forEach(
           (t) => (t.textContent = L_q[id].n + " (" + id + ")"),
         );
+        mTitleCadre.textContent = L_q[id].n
         capitales.forEach((cap) => cap.textContent = L_q[id].c);
 
         loadingCadre.forEach((L) => {
