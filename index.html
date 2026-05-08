@@ -312,7 +312,7 @@
         cursor: pointer;
         user-select: none;
         box-sizing: border-box;
-        padding: 0.2em;
+        padding: 0.5em;
         width: 100%;
         color: #bac5d8;
         background: #0c31e9b8;
@@ -2206,12 +2206,24 @@
         border: 1px solid rgba(80, 230, 140, 0.4);
         box-shadow: 0 4px 15px rgba(30, 180, 100, 0.4);
       }
+      .btn4Choix.goodMaps{
+         background: rgba(37, 168, 98, 0.35);
+        border: 1px solid rgba(80, 230, 140, 0.4);
+        box-shadow: 0 4px 15px rgba(30, 180, 100, 0.4);
+      }
       .btn4Choix.bad {
         pointer-events: none;
         background: rgba(184, 47, 47, 0.9);
         border: 1px solid rgba(255, 100, 100, 0.4);
         box-shadow: 0 4px 15px rgba(200, 50, 50, 0.4);
       }
+      .btn4Choix.badMaps {
+        background: rgba(184, 47, 47, 0.35);
+        border: 1px solid rgba(255, 100, 100, 0.4);
+        box-shadow: 0 4px 15px rgba(200, 50, 50, 0.4);
+      }
+     
+
       .btn4Choix.none {
         filter: brightness(70%) saturate(50%);
         pointer-events: none;
@@ -6191,6 +6203,9 @@
         //afficher les classes normales des btn4Choix
 
         btns4Choix.forEach((btn) => {
+          if(btn.classList.contains("good")){btn.classList.add('goodMaps')}
+          else if(btn.classList.contains("bad")){btn.classList.add('badMaps')}
+
           btn.classList.remove("good", "bad", "none");          
         });
 
@@ -6205,7 +6220,10 @@
         if (!viewMaps){return}
         toggleC(false)
         viewMaps = false;
-        btns4Choix.forEach(b=>{b.classList.add(D_classBtn4Choix[b.id])})
+        btns4Choix.forEach(b=>{
+          b.classList.remove("goodMaps","badMaps")
+          b.classList.add(D_classBtn4Choix[b.id])
+        })
         L_addMaps.forEach(p=>{Maps.appendChild(p)})
         L_replace.forEach(p=>{
           p.style.opacity = "1";  
