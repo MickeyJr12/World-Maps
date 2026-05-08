@@ -6158,7 +6158,9 @@
             const targetViewBox = [cx - w / 2, cy - h / 2, w, h];
 
             animateViewBox(svgMonde, targetViewBox, 700);
-            countryClick(p_id,getId(p_id).getAttribute('title'),getId(p_id))
+            setTimeout(() => {
+            countryClick(p_id,getId(p_id).getAttribute('title'),getId(p_id))              
+            }, 10);
       }
       function afficherMaps() {
         viewMaps = true;
@@ -12886,8 +12888,8 @@
           element.style.fontSize = size + "px";
         }
       }
-      function countryClick(id, name, element) {
-        toggleC(true);
+      function countryClick(id, name, element) {        
+        toggleC(element.id===currentCountry.id);
         //Élément déjà là : region, subregion, independant, population,pib,co2e,gouvernement,religion,fuseaux,dateInde
         // On construit l'URL de l'API avec le nom du pays
         const url = `https://restcountries.com/v3.1/alpha/${id}`;
