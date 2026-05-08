@@ -240,6 +240,11 @@
           opacity 0.2s ease,
           transform 0.4s ease;
       }
+      #mLoadingCadre{
+        min-width : none;
+        height : 100%;
+        width :2.5em;
+      }
       #containerTopCadre {
         display: flex;
         flex-direction: row;
@@ -248,9 +253,9 @@
       }
       #mInfoBox {
         display: flex;
-        align-items : flex-start;
+        align-items: flex-start;
         flex-direction: column;
-        height : auto;
+        height: auto;
         gap: 0.3em;
         flex: 1;
         min-width: 0; /* évite le débordement texte */
@@ -286,19 +291,19 @@
         object-fit: contain;
         border-radius: 0.2em;
       }
-      #mTitleCadre{
+      #mTitleCadre {
         text-align: left;
         font-size: clamp(0.8em, 0.9em, 1em);
-       text-overflow: ellipsis;}
-      #mCapitale{
-  font-size: clamp(0.7em, 2.8vw, 0.8em);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
-
+        text-overflow: ellipsis;
+      }
+      #mCapitale {
+        font-size: clamp(0.7em, 2.8vw, 0.8em);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
       }
       .voirPlus {
         display: flex;
@@ -308,7 +313,7 @@
         user-select: none;
         box-sizing: border-box;
         padding: 0.2em;
-        width : 100%;
+        width: 100%;
         color: #bac5d8;
         background: #0c31e9b8;
         border-radius: 0.5em;
@@ -331,6 +336,11 @@
         transition:
           transform 0.4s ease,
           opacity 0.3s ease;
+      }
+      #loadingCadre{
+        min-width : none;
+        height : 100%;
+        width : 100%;
       }
       #backCadre {
         top: calc(env(safe-area-inset-top) + 0.4em);
@@ -3713,44 +3723,53 @@
       <!------------------------------------------Nouveau Cadre---------------------------------------------------->
 
       <!----------------------LittleCadre------------------------------->
-<div id="mCadre">
-      <div id="containerTopCadre">
-  <div class="mCadreDrapeau">
-    <div class="mDrapeauBox">
-      <img src="" alt="" id="mDrapeauCadre" class="flagLoadingCadre" />
-      <div class="loadingCadre" style="height: 90%"></div>
-    </div>
-  </div>
+      <div id="mCadre">
+        <div id="containerTopCadre">
+          <div class="mCadreDrapeau">
+            <div class="mDrapeauBox">
+              <img src="" alt="" id="mDrapeauCadre"  />
+              <div class="loadingCadre flagLoadingCadre" id="mLoadingCadre" style="height: 90%"></div>
+            </div>
+          </div>
 
-  <div id="mInfoBox">
-    <div class="titleCadre" id="mTitleCadre"></div>
-    <div class="txtCapitaleCadre txtCapitaleCadres" id="mCapitale">
-        <svg xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="1.2em"><path d="M12,.042a9.992,9.992,0,0,0-9.981,9.98c0,2.57,1.99,6.592,5.915,11.954a5.034,5.034,0,0,0,8.132,0c3.925-5.362,5.915-9.384,5.915-11.954A9.992,9.992,0,0,0,12,.042ZM12,14a4,4,0,1,1,4-4A4,4,0,0,1,12,14Z"/></svg>
-          <span class="capitaleLabel"></span>
-    </div>
-  </div>
+          <div id="mInfoBox">
+            <div class="titleCadre" id="mTitleCadre"></div>
+            <div class="txtCapitaleCadre txtCapitaleCadres" id="mCapitale">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="Filled"
+                viewBox="0 0 24 24"
+                width="1.2em"
+              >
+                <path
+                  d="M12,.042a9.992,9.992,0,0,0-9.981,9.98c0,2.57,1.99,6.592,5.915,11.954a5.034,5.034,0,0,0,8.132,0c3.925-5.362,5.915-9.384,5.915-11.954A9.992,9.992,0,0,0,12,.042ZM12,14a4,4,0,1,1,4-4A4,4,0,0,1,12,14Z"
+                />
+              </svg>
+              <span class="capitaleLabel"></span>
+            </div>
+          </div>
 
-  <button class="cross" id="mCrossCadre" onclick="toggleC(false)">
-      <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="Outline"
-            viewBox="0 0 24 24"
-            width="100%"
-            height="100%"
-          >
-            <path
-              d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
-            />
-            <path
-              d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
-            />
-          </svg>
-  </button>
-</div>
-<div class="voirPlus">Voir plus ></div>
-</div>
+          <button class="cross" id="mCrossCadre" onclick="toggleC(false)">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+              width="100%"
+              height="100%"
+            >
+              <path
+                d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+              />
+              <path
+                d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="voirPlus">Voir plus ></div>
+      </div>
       <!--------------------------Grand Cadre------------------------------->
-    
+
       <div id="cadre">
         <button
           class="back"
@@ -3775,8 +3794,8 @@
         <div id="contentCadre">
           <div id="cadreDrapeau">
             <div id="drapeauBox">
-              <img src="" alt="" id="drapeauCadre" class="flagLoadingCadre" />
-              <div class="loadingCadre" style="height: 90%"></div>
+              <img src="" alt="" id="drapeauCadre" />
+              <div class="loadingCadre flagLoadingCadre" id="loadingCadre"  style="height: 90%"></div>
             </div>
           </div>
           <div class="titleCadre" id="titleCadre"><h2>Russie (RU)</h2></div>
@@ -6269,11 +6288,11 @@
 
       const titlesCadre = document.querySelectorAll(".titleCadre");
 
+      const txtsCelCadre = document.querySelectorAll('.txtCelCadre')
       const population = document.getElementById("population");
       const superficie = document.getElementById("superficie");
       const devise = document.getElementById("devise");
       const nomH = document.getElementById("nomH");
-
       const carSide = document.getElementById("carSide");
       const seaAccess = document.getElementById("seaAccess");
       const independance = document.getElementById("independance");
@@ -6328,7 +6347,7 @@
           cadre.style.transform = "";
           cadre.style.opacity = "1";
           cadre.style.pointerEvents = "all";
-        }, 100);
+        }, 200);
       });
 
       const loadingCadre = document.querySelectorAll(".loadingCadre");
@@ -12647,31 +12666,49 @@
 
       //abcd
       function fitText(element, minSize = 8) {
-  element.style.fontSize = "";        // reset
+        element.style.fontSize = ""; // reset
 
-  const containerWidth = element.parentElement.offsetWidth;
-  let size = parseFloat(getComputedStyle(element).fontSize);
+        const containerWidth = element.parentElement.offsetWidth;
+        let size = parseFloat(getComputedStyle(element).fontSize);
 
-  // Réduit par pas de 0.5px jusqu'à ce que le texte rentre
-  while (element.scrollWidth > containerWidth*2 && size > minSize) {
-    size -= 0.5;
-    element.style.fontSize = size + "px";
-  }
-}
+        // Réduit par pas de 0.5px jusqu'à ce que le texte rentre
+        while (element.scrollWidth > containerWidth * 2 && size > minSize) {
+          size -= 0.5;
+          element.style.fontSize = size + "px";
+        }
+      }
       function countryClick(id, name, element) {
         toggleC(true);
         //Élément déjà là : region, subregion, independant, population,pib,co2e,gouvernement,religion,fuseaux,dateInde
         // On construit l'URL de l'API avec le nom du pays
         const url = `https://restcountries.com/v3.1/alpha/${id}`;
+        mDrapeauCadre.src = ``;
+        drapeauCadre.src = ``;
 
-        drapeauCadre.src = "";
-        mDrapeauCadre.src = "";
+        mDrapeauCadre.src = `https://flagcdn.com/w320/${id.toLowerCase()}.png`;
+        drapeauCadre.src = `https://flagcdn.com/w320/${id.toLowerCase()}.png`;
+
+        Promise.all([
+          new Promise((res) => {
+            if (mDrapeauCadre.complete) res();
+            else mDrapeauCadre.onload = res;
+          }),
+          new Promise((res) => {
+            if (drapeauCadre.complete) res();
+            else drapeauCadre.onload = res;
+          }),
+        ]).then(() => {
+          console.log("Les deux drapeaux sont chargés");
+          document.querySelectorAll('.flagLoadingCadre').forEach(d=> d.style.display = "none")
+        });
+
         titlesCadre.forEach(
           (t) => (t.textContent = L_q[id].n + " (" + id + ")"),
         );
-        mTitleCadre.textContent = L_q[id].n
-        capitales.forEach((cap) => cap.textContent = L_q[id].c);
+        mTitleCadre.textContent = L_q[id].n;
+        capitales.forEach((cap) => (cap.textContent = L_q[id].c));
 
+        txtsCelCadre.forEach(t=>t.textContent = "")
         loadingCadre.forEach((L) => {
           L.style.display = "block";
         });
@@ -12681,14 +12718,14 @@
           })
           .then(function (data) {
             loadingCadre.forEach((L) => {
-              L.style.display = "";
+              if (!L.classList.contains("flagLoadingCadre")) {
+                L.style.display = "";
+              }
             });
 
             /*Faire descendre le nom (car pour le Niger, ça dépasse)*/
 
             const info = data[0]; // L'API renvoie un tableau, on prend le 1er résultat
-            mDrapeauCadre.src = `https://flagcdn.com/w320/${id.toLowerCase()}.png`;
-            drapeauCadre.src = `https://flagcdn.com/w320/${id.toLowerCase()}.png`;
 
             devise.textContent =
               Object.values(info.currencies)[0].name +
