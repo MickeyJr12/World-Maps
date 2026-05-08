@@ -39,7 +39,7 @@
         user-select: none;
         -webkit-tap-highlight-color: transparent; /* retire le flash gris iOS */
         touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
-        /*outline : 1px solid blue;*/
+        outline : 1px solid blue;
       }
       html {
         margin: 0px;
@@ -241,8 +241,8 @@
           transform 0.4s ease;
       }
       #mLoadingCadre{
-        min-width : none;
-        height : 100%;
+        min-width : 2.2em;
+        height : 2em;
         width :2.5em;
       }
       #containerTopCadre {
@@ -3728,7 +3728,7 @@
           <div class="mCadreDrapeau">
             <div class="mDrapeauBox">
               <img src="" alt="" id="mDrapeauCadre"  />
-              <div class="loadingCadre flagLoadingCadre" id="mLoadingCadre" style="height: 90%"></div>
+              <div class="loadingCadre flagLoadingCadre" id="mLoadingCadre" ></div>
             </div>
           </div>
 
