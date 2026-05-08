@@ -12698,6 +12698,7 @@
           return;
         }
         currentCountry = country;
+        document.querySelector('svg.monde').appendChild(country)
 
         toggleC(true);
         const id = country.id;
@@ -12860,8 +12861,9 @@
 
       function colorCurrentCountry() {
         globe.querySelectorAll("path").forEach((p) => {
-          if (p === currentCountry && currentCountry != null) {
+          if (p === currentCountry && currentCountry != null) {            
             if(viewMaps){p.style.stroke = "white"}
+            else{p.style.stroke="rgba(255,210,50,1)"}
             highlightCountry(p);
           } else if (p !== currentCountryHover) {
             const status = idVisible_m.get(p.id);
@@ -12878,18 +12880,6 @@
       colorCurrentCountry();
 
       //abcd
-      function fitText(element, minSize = 8) {
-        element.style.fontSize = ""; // reset
-
-        const containerWidth = element.parentElement.offsetWidth;
-        let size = parseFloat(getComputedStyle(element).fontSize);
-
-        // Réduit par pas de 0.5px jusqu'à ce que le texte rentre
-        while (element.scrollWidth > containerWidth * 2 && size > minSize) {
-          size -= 0.5;
-          element.style.fontSize = size + "px";
-        }
-      }
       function countryClick(id, name, element) {        
         toggleC(element.id===currentCountry.id);
         //Élément déjà là : region, subregion, independant, population,pib,co2e,gouvernement,religion,fuseaux,dateInde
@@ -13360,6 +13350,7 @@
 
             cadre.style.pointerEvents = "";
             const country = svg.querySelector(`path[title="${r.t}"]`);
+            document.querySelector('svg.monde').appendChild(country)
             currentCountry = country;
 
             // Zoom sur country
@@ -13417,7 +13408,7 @@
       }
 
       // ── ZOOM (molette) ──────────────────────────────────────────────
-      const MIN_SIZE = 50; // zoom max : pas plus petit que ça
+      const MIN_SIZE = 30; // zoom max : pas plus petit que ça
       const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial
       svg.addEventListener(
         "wheel",
