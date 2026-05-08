@@ -240,10 +240,10 @@
           opacity 0.2s ease,
           transform 0.4s ease;
       }
-      #mLoadingCadre{
-        min-width : 2.2em;
-        height : 2em;
-        width :2.5em;
+      #mLoadingCadre {
+        min-width: 2.2em;
+        height: 2em;
+        width: 2.5em;
       }
       #containerTopCadre {
         display: flex;
@@ -337,10 +337,10 @@
           transform 0.4s ease,
           opacity 0.3s ease;
       }
-      #loadingCadre{
-        min-width : none;
-        height : 100%;
-        width : 100%;
+      #loadingCadre {
+        min-width: none;
+        height: 100%;
+        width: 100%;
       }
       #backCadre {
         top: calc(env(safe-area-inset-top) + 0.4em);
@@ -543,7 +543,7 @@
         z-index: 5;
         width: 100vw;
         height: 100vh;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.4s ease;
       }
       .sBox {
         display: flex;
@@ -1815,10 +1815,10 @@
         pointer-events: none;
         align-items: center;
         flex-direction: column;
+        z-index: 80;
         overflow: hidden;
         color: white;
         opacity: 0;
-        z-index: 20;
         gap: 0.2em;
         margin-inline: auto;
         left: 0;
@@ -1840,11 +1840,12 @@
       #cachePm {
         position: absolute;
         pointer-events: none;
+        z-index: 70;
         opacity: 0;
         top: 0px;
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(10px);
-        z-index: 10;
+        z-index: 70;
         width: 100vw;
         height: 100vh;
         transition: opacity 0.2s ease;
@@ -1974,7 +1975,9 @@
         left: 2em;
         width: 3em;
         height: 3em;
-        transition: background 0.08s ease;
+        transition:
+          background 0.08s ease,
+          opacity 0.4s ease;
       }
       .back:active {
         background: rgba(255, 255, 255, 0.2);
@@ -1985,6 +1988,7 @@
         align-items: center;
         justify-content: center;
         position: fixed;
+        z-index: 60;
         opacity: 0;
         top: calc(2.2em + env(safe-area-inset-top));
         left: 2.2em;
@@ -1999,6 +2003,7 @@
         overflow: hidden;
         white-space: nowrap;
         transition:
+          transform 0.25s ease,
           padding 0.3s ease,
           opacity 0.3s ease,
           width 0.4s cubic-bezier(0.58, 0, 0.56, 1.6),
@@ -2006,6 +2011,9 @@
           gap 0.4s ease,
           background 0.3s ease,
           filter 0.3s ease;
+      }
+      .btn-carte:active {
+        transform: scale(0.9);
       }
 
       .btn-carte .icone-carte {
@@ -2050,12 +2058,15 @@
         position: fixed;
         background: transparent;
         border: none;
+        z-index: 60;
         border-radius: 5px;
         top: calc(2.2em + env(safe-area-inset-top));
         right: 2.2em;
         width: 2em;
         height: 2em;
-        transition: background 0.08s ease;
+        transition:
+          background 0.08s ease,
+          opacity 0.4s ease;
       }
       #pause4Choix path {
         fill: white;
@@ -2071,6 +2082,7 @@
         align-items: center;
         overflow: hidden;
         color: white;
+        z-index: 50;
         margin-bottom: 1.8em;
         font-size: 2em;
         font-weight: 620;
@@ -2097,6 +2109,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr; /* force 2 colonnes */
         grid-template-rows: 1fr 1fr; /* force 2 lignes */
+        z-index: 50;
         width: 100%;
         height: auto;
         gap: 1em;
@@ -2163,6 +2176,7 @@
         text-align: center;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
         color: white;
         height: auto;
         max-height: 4em;
@@ -2240,6 +2254,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        z-index: 50;
         font-size: 1.05em;
         font-weight: 400;
         color: rgba(255, 255, 255, 0.9);
@@ -2250,6 +2265,7 @@
         display: flex;
         justify-content: space-around;
         align-items: flex-end;
+        z-index: 50;
         width: clamp(88vw, 90%, 92vw);
         height: 1.8em;
         padding: 0em 0.5em;
@@ -3415,7 +3431,11 @@
         </div>
       </div>
 
-      <button class="btn-carte" id="btnCarte">
+      <button
+        class="btn-carte"
+        id="btnCarte"
+        onclick="(desactiverCarte(), afficherMaps())"
+      >
         <svg
           class="icone-carte"
           xmlns="http://www.w3.org/2000/svg"
@@ -3557,7 +3577,7 @@
 
       <div class="tools">
         <div class="sBox">
-          <div class="rondSearch">
+          <div class="tool rondSearch">
             <svg
               id="loupe"
               width="60%"
@@ -3576,7 +3596,7 @@
           <input type="text" class="search" />
         </div>
 
-        <div class="zBox">
+        <div class="tool zBox">
           <div class="zPM" id="zP">
             <svg
               stroke="white"
@@ -3624,7 +3644,7 @@
             </svg>
           </div>
         </div>
-        <div class="only">
+        <div class="tool only">
           <svg
             width="60%"
             height="60%"
@@ -3685,7 +3705,7 @@
               </svg>
             </div>
           </div>
-          <div class="icons">
+          <div class="tool icons">
             <svg
               transition="transform 0.4s ease"
               width="60%"
@@ -3727,8 +3747,11 @@
         <div id="containerTopCadre">
           <div class="mCadreDrapeau">
             <div class="mDrapeauBox">
-              <img src="" alt="" id="mDrapeauCadre"  />
-              <div class="loadingCadre flagLoadingCadre" id="mLoadingCadre" ></div>
+              <img src="" alt="" id="mDrapeauCadre" />
+              <div
+                class="loadingCadre flagLoadingCadre"
+                id="mLoadingCadre"
+              ></div>
             </div>
           </div>
 
@@ -3795,7 +3818,11 @@
           <div id="cadreDrapeau">
             <div id="drapeauBox">
               <img src="" alt="" id="drapeauCadre" />
-              <div class="loadingCadre flagLoadingCadre" id="loadingCadre"  style="height: 90%"></div>
+              <div
+                class="loadingCadre flagLoadingCadre"
+                id="loadingCadre"
+                style="height: 90%"
+              ></div>
             </div>
           </div>
           <div class="titleCadre" id="titleCadre"><h2>Russie (RU)</h2></div>
@@ -3812,6 +3839,7 @@
                 d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0-6a2,2,0,1,1-2,2A2,2,0,0,1,12,6Zm8.66,3.157-.719-.239A8,8,0,0,0,12,0,7.993,7.993,0,0,0,4.086,9.092a5.045,5.045,0,0,0-2.548,1.3A4.946,4.946,0,0,0,0,14v4.075a5.013,5.013,0,0,0,3.6,4.8l2.87.9A4.981,4.981,0,0,0,7.959,24a5.076,5.076,0,0,0,1.355-.186l5.78-1.71a2.987,2.987,0,0,1,1.573,0l2.387.8A4,4,0,0,0,24,19.021V13.872A5.015,5.015,0,0,0,20.66,9.156ZM7.758,3.762a5.987,5.987,0,0,1,8.484,0,6.037,6.037,0,0,1,.011,8.5L12.7,15.717a.992.992,0,0,1-1.389,0L7.758,12.277A6.04,6.04,0,0,1,7.758,3.762ZM22,19.021a1.991,1.991,0,0,1-.764,1.572,1.969,1.969,0,0,1-1.626.395L17.265,20.2a5.023,5.023,0,0,0-2.717-.016L8.764,21.892a3,3,0,0,1-1.694-.029l-2.894-.9A3.013,3.013,0,0,1,2,18.075V14a2.964,2.964,0,0,1,.92-2.163,3.024,3.024,0,0,1,1.669-.806A8.021,8.021,0,0,0,6.354,13.7l3.567,3.453a2.983,2.983,0,0,0,4.174,0l3.563-3.463a7.962,7.962,0,0,0,1.813-2.821l.537.178A3.006,3.006,0,0,1,22,13.872Z"
               />
             </svg>
+            <span class="capitaleLabel"></span>
           </div>
 
           <div class="ligneInCadre"></div>
@@ -5471,6 +5499,18 @@
 
     <!--Script Home-->
     <script>
+      //Ajouter une transition
+      // Utilisation : addTransition(element, "opacity 0.3s ease");
+      function addTransition(el, transition) {
+        const current = el.style.transition;
+
+        if (!current || current === "") {
+          el.style.transition = transition;
+        } else if (!current.includes(transition)) {
+          el.style.transition = current + ", " + transition;
+        }
+      }
+
       document.documentElement.style.height = window.screen.height + "px";
       document.body.style.height = window.screen.height + "px";
 
@@ -5605,6 +5645,7 @@
       let cBoxHasard;
       let cHasard;
       let idBonneReponse;
+      let idMauvaiseReponse;
       let idProps_m = new Map();
       L_btn4ChoixHasard.forEach((btn) => idProps_m.set(btn, null)); // Clef : DROM, valeur : identifiant
 
@@ -5618,6 +5659,7 @@
         barreChronoIn.style.transition = "none"; // ← coupe la transition
         barreChronoIn.style.width = "0%"; // ← saute instantanément à 0
         barreChronoIn.offsetHeight; // force reflow
+        idMauvaiseReponse = "null";
         currentChrono = val;
         startChrono(val);
         reponseFound = false;
@@ -5659,40 +5701,40 @@
               ) {
                 //Remplir les cbox, les réponses
                 if (L_config.r === "drapeauR") {
-                  c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${p_id.toLowerCase()}.svg" alt="">`;
+                  c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${p_id.toLowerCase()}.svg" draggable="false" alt="">`;
                   if (c === cBoxHasard) {
-                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" alt="">`;
+                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
                   }
-                  L_reponse.push(p_id);
+                  L_reponse.push(c===cBoxHasard? idBonneReponse: p_id);
                   reponseFound = true;
                 } else if (L_config.r === "nomR") {
                   c.textContent = L_q[p_id].n;
                   if (c === cBoxHasard) {
                     c.textContent = L_q[idBonneReponse].n;
                   }
-                  L_reponse.push(p_id);
+                  L_reponse.push(c===cBoxHasard? idBonneReponse: p_id);
                   reponseFound = true;
                 } else if (L_config.r === "capitaleR" && L_q[p_id].c != null) {
                   c.textContent = L_q[p_id].c;
                   if (c === cBoxHasard) {
                     c.textContent = L_q[idBonneReponse].c;
                   }
-                  L_reponse.push(p_id);
+                  L_reponse.push(c===cBoxHasard? idBonneReponse: p_id);
                   reponseFound = true;
                 } else if (L_config.r === "contourR") {
-                  c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${p_id.toLowerCase()}/vector.svg" alt="">`;
+                  c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${p_id.toLowerCase()}/vector.svg" draggable="false" alt="">`;
                   if (c === cBoxHasard) {
-                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" alt="">`;
+                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" draggable="false" alt="">`;
                   }
-                  L_reponse.push(p_id);
+                  L_reponse.push(c===cBoxHasard? idBonneReponse: p_id);
                   reponseFound = true;
                 }
 
                 // Remplir les Questions
                 if (L_config.q === "contourQ") {
-                  qBox.innerHTML = `<img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" alt="">`;
+                  qBox.innerHTML = `<img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" draggable="false" alt="">`;
                 } else if (L_config.q === "drapeauQ") {
-                  qBox.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" alt="">`;
+                  qBox.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
                   document.getElementById("cadreQ4Choix").style.marginBottom =
                     "3em";
                 } else if (L_config.q === "nomQ") {
@@ -5875,14 +5917,17 @@
           }
           //Temps écoulé
           if (currentChrono <= 0) {
+            activerCarte();
             pauseChrono();
             barreChronoIn.style.width = "100%";
             //Changer les btnsChoix, afficher cadreNext
             btns4Choix.forEach((b) => {
               if (b === cHasard) {
                 b.classList.add("good");
+                D_classBtn4Choix[b.id] = "good";
               } else {
                 b.classList.add("none");
+                D_classBtn4Choix[b.id] = "none";
               }
             });
 
@@ -5891,7 +5936,7 @@
             spanNext.textContent = "⏱ Temps écoulé !";
             cadreNext.classList.add("visible");
 
-            //Remplir contentPm
+            //Remplir contentPm dans le menu pause
             fillContentPm("outTime", idBonneReponse);
           }
         }, 100);
@@ -5986,6 +6031,8 @@
       const spanNext = cadreNext.querySelector("span");
       const btnSuivant = document.getElementById(".btn-suivant");
 
+      const D_classBtn4Choix = { c1: null, c2: null, c3: null, c4: null };
+
       btns4Choix.forEach((btn) => {
         btn.addEventListener("touchstart", () => {
           btn.style.filter = "brightness(0.7)";
@@ -5994,7 +6041,10 @@
           btn.style.filter = "";
         });
 
+
         btn.addEventListener("click", () => {
+          zoomCountry(idProps_m.get(btn))
+          if(viewMaps){return}
           pauseChrono();
           fillContentPm(idProps_m.get(btn), idBonneReponse);
           activerCarte();
@@ -6003,10 +6053,14 @@
           btns4Choix.forEach((b) => {
             if (b === cHasard) {
               b.classList.add("good");
+              D_classBtn4Choix[b.id] = "good";
             } else if (b === btn && !correct) {
               b.classList.add("bad");
+              D_classBtn4Choix[b.id] = "bad";
+              idMauvaiseReponse = idProps_m.get(b);
             } else {
               b.classList.add("none");
+              D_classBtn4Choix[b.id] = "none";
             }
           });
 
@@ -6038,6 +6092,120 @@
         cachePm.style.opacity = "1";
       });
 
+      //Voir sur la carte
+      function getId(id) {
+        return document.getElementById(`${id}`);
+      }
+      function getC(classe) {
+        return document.querySelector(`${classe}`);
+      }
+      //Élements qui disparaissent
+      const L_replace = [
+        getId("cadreQ4Choix"),
+        getC(".questionBox"),
+        getC(".cadreChrono"),
+        getId("pause4Choix"),
+      ];
+      const cloneBackMaps = document.getElementById("backMaps").cloneNode(true);
+      const L_addMaps = [
+        getC(".globe"),
+        getId("mCadre"),
+        getId("cadre"),
+        cloneBackMaps,
+      ];
+
+      let classBtnNext; // Class du cadre de btnNext
+      let viewMaps; 
+
+      function zoomCountry(p_id){
+        if(!viewMaps){return}
+        const svgMonde = document.getElementById("svgMonde");
+
+            const b = getId(p_id).getBBox();
+            const pad = Math.max(b.width, b.height) * 1.3;
+
+            // Limites de zoom (en unités viewBox)
+            const MIN_SIZE = 50; // zoom max : pas plus petit que ça
+            const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial
+
+            const cx = b.x + b.width / 2;
+            const cy = b.y + b.height / 2;
+
+            let w = Math.min(Math.max(b.width + 2 * pad, MIN_SIZE), MAX_SIZE);
+            let h = Math.min(Math.max(b.height + 2 * pad, MIN_SIZE), MAX_SIZE);
+
+            const targetViewBox = [cx - w / 2, cy - h / 2, w, h];
+
+            animateViewBox(svgMonde, targetViewBox, 700);
+            countryClick(p_id,getId(p_id).getAttribute('title'),getId(p_id))
+      }
+      function afficherMaps() {
+        viewMaps = true;
+        //Cacher les éléments
+        L_replace.forEach((b) => {
+          addTransition(b, "opacity 0.4s ease");
+          b.style.opacity = "0";
+          b.style.pointerEvents = "none";
+        });
+        //Afficher maps
+        document.querySelector('.globe').style.opacity = "0"
+        setTimeout(() => {
+        document.querySelector('.globe').style.opacity = "1"
+        }, 10);
+        L_addMaps.forEach((m) => {          
+          document.getElementById("phone4Choix").appendChild(m);
+        });
+        paths.forEach((p) => {
+          if (L_reponse.includes(p.id)) {
+            if (p.id === idBonneReponse) {
+              pColor_m.set(p, {
+                current: "green",
+              });
+            } else if (p.id === idMauvaiseReponse) {
+              pColor_m.set(p, {
+                current: "red",
+              });
+            } else {
+              pColor_m.set(p, {
+                current: "blue",
+              });
+            }
+          } else {
+            idVisible_m.get(p.id).continent = false
+          }
+
+        });
+
+        classBtnNext = document.querySelector(".cadreNext").className;
+        cadreNext.classList.remove("good", "bad", "none", "visible");
+
+        //afficher les classes normales des btn4Choix
+
+        btns4Choix.forEach((btn) => {
+          btn.classList.remove("good", "bad", "none");          
+        });
+
+        //Dézoomer 
+        setTimeout(() => {
+        animateViewBox(document.getElementById("svgMonde"), initialViewBox, 700);          
+        }, 10);
+
+      }
+
+      function cacherMaps(){
+        viewMaps = false;
+        btns4Choix.forEach(b=>{b.classList.add(D_classBtn4Choix[b.id])})
+        L_addMaps.forEach(p=>{Maps.appendChild(p)})
+        L_replace.forEach(p=>{
+          p.style.opacity = "1";  
+          p.style.pointerEvents = "all";
+        })
+        paths.forEach(p=>{idVisible_m.get(p.id).continent = true})
+        activerCarte()
+        cadreNext.className = classBtnNext 
+        
+      }
+      cloneBackMaps.addEventListener('click',()=>{cacherMaps()})
       //Remplir contentPm
 
       function fillContentPm(idProp, idGood) {
@@ -6257,6 +6425,7 @@
       });
 
       map.addEventListener("click", () => {
+        Maps.appendChild(globe);
         phoneHome.style.display = "none";
         Maps.style.visibility = "visible";
         Maps.style.opacity = "1";
@@ -6288,7 +6457,7 @@
 
       const titlesCadre = document.querySelectorAll(".titleCadre");
 
-      const txtsCelCadre = document.querySelectorAll('.txtCelCadre')
+      const txtsCelCadre = document.querySelectorAll(".txtCelCadre");
       const population = document.getElementById("population");
       const superficie = document.getElementById("superficie");
       const devise = document.getElementById("devise");
@@ -12699,7 +12868,9 @@
           }),
         ]).then(() => {
           console.log("Les deux drapeaux sont chargés");
-          document.querySelectorAll('.flagLoadingCadre').forEach(d=> d.style.display = "none")
+          document
+            .querySelectorAll(".flagLoadingCadre")
+            .forEach((d) => (d.style.display = "none"));
         });
 
         titlesCadre.forEach(
@@ -12708,7 +12879,7 @@
         mTitleCadre.textContent = L_q[id].n;
         capitales.forEach((cap) => (cap.textContent = L_q[id].c));
 
-        txtsCelCadre.forEach(t=>t.textContent = "")
+        txtsCelCadre.forEach((t) => (t.textContent = ""));
         loadingCadre.forEach((L) => {
           L.style.display = "block";
         });
@@ -14276,6 +14447,11 @@
 
       /*phoneHome.style.display="none"
       phone4Choix.style.display="flex"*/
+      /* setTimeout(() => {
+        phone4Choix.appendChild(svg)
+        phone4Choix.appendChild(mCadre)
+        phone4Choix.appendChild(cadre)
+      }, 10000);*/
     </script>
   </body>
 </html>
