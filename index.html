@@ -243,7 +243,8 @@
           transform 0.4s ease;
       }
       #mLoadingCadre {
-        min-width: 2.2em;
+        position : absolute;
+        min-width: 3.1em;
         height: 2em;
         width: 2.5em;
       }
@@ -269,12 +270,14 @@
       }
       .mCadreDrapeau {
         display: flex;
+        position : relative;
         justify-content: center;
         align-items: center;
         overflow: hidden;
         flex-shrink: 0;
         font-weight: 620;
         letter-spacing: 1px;
+        min-width : 3.5em;
         width: fit-content;
         height: 2.6em; /* hauteur fixe */
       }
@@ -340,6 +343,7 @@
           opacity 0.3s ease;
       }
       #loadingCadre {
+        position : absolute;
         min-width: none;
         height: 100%;
         width: 100%;
@@ -366,6 +370,7 @@
       }
       #cadreDrapeau {
         display: flex;
+        position : relative;
         justify-content: center;
         align-items: center;
         overflow: hidden;
