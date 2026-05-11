@@ -2425,6 +2425,10 @@
         font-weight: 700;
         letter-spacing: 1px;
       }
+
+      @media (orientation: landscape) {
+  #phoneHome { display: none; }
+}
     </style>
 
     <!--HTML Home-->
@@ -6195,7 +6199,7 @@
         startChrono(val);
         contentPm.innerHTML = ``;
         phoneConfig.style.display = "none";
-        phone4Choix.style.display = "flex";
+        phone4Choix.style.display = "flex";        
 
         if (L_config.q === "drapeauQ") {
           document.getElementById("cadreQ4Choix").style.boxShadow =
