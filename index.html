@@ -5892,6 +5892,7 @@
           phoneConfig.style.opacity = "0";
           phoneConfig.style.transform = "scale(0.97)";
           phoneConfig.style.display = "flex";
+          currentPhone= phoneConfig
 
           phoneConfig.offsetHeight; // force reflow
 
@@ -6321,6 +6322,7 @@
             "translateX(-40%) translateY(3em)";
 
           phoneHome.style.display = "flex";
+          currentPhone = phoneHome
           phoneHome.offsetHeight; // force reflow
 
           // Anime le retour de phoneHome
@@ -6362,6 +6364,7 @@
         contentPm.innerHTML = ``;
         phoneConfig.style.display = "none";
         phone4Choix.style.display = "flex";        
+        currentPhone = phone4Choix;
 
         if (L_config.q === "drapeauQ") {
           document.getElementById("cadreQ4Choix").style.boxShadow =
@@ -6735,6 +6738,7 @@
             "translateX(-40%) translateY(3em)";
 
           phoneHome.style.display = "flex";
+          currentPhone = phoneHome
           phoneHome.offsetHeight; // force reflow
 
           // Anime le retour de phoneHome
@@ -6918,6 +6922,7 @@ function sleep(){
         phoneHome.style.display = "none";
         Maps.style.visibility = "visible";
         Maps.style.opacity = "1";
+        currentPhone = Maps;
       });
 
       const backMaps = document.getElementById("backMaps");
@@ -6927,6 +6932,8 @@ function sleep(){
         }
         currentCountry = null;
         phoneHome.style.display = "flex";
+        currentPhone = phoneHome;
+
         Maps.style.visibility = "";
         Maps.style.opacity = "";
       });
