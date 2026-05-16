@@ -535,13 +535,15 @@
       }
       #contentFlagS.grid3 {
         grid-template-columns: 1fr 1fr;
-        padding: 1em 4em; /* 4em des bords gauche/droit */
-        gap: 1em 4em; /* 4em entre les deux colonnes */
+        padding: 1em 1.5em; /* 4em des bords gauche/droit */
+        gap: 1em 1.5em; /* 4em entre les deux colonnes */
       }
 
+
+
       #contentFlagS.grid4 {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1em 2em;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em 1em;
         padding: 1em;
       }
 
@@ -696,6 +698,8 @@
       }
       .arrowC {
         display: flex;
+        position : absolute;
+        right : 1em;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
@@ -732,6 +736,7 @@
 
       .wrapperClasser {
         display: flex;
+        margin : auto;
         z-index: 20;
         position: relative;
         flex-direction: column;
@@ -940,6 +945,7 @@
         align-items: center;
         box-sizing: border-box;
         padding: 0.8em;
+        padding-bottom : calc(env(safe-area-inset-bottom) + 0.8em);
         width: 100%;
         height: auto;
         backdrop-filter: blur(15px);
@@ -984,7 +990,7 @@
         padding: 0.4em;
         border-radius: 5px;
         width: auto;
-        height: 2.5em;
+        height: 3.5em;
         background: rgba(15, 3, 40, 0.5);
         backdrop-filter: blur(10px);
         transform: scale(0.9);
@@ -1006,7 +1012,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 2em;
         height: 100%;
         border-radius: 5px;
         cursor: pointer;
@@ -4928,6 +4933,7 @@
             style="
               position: absolute;
               left: 1em;
+              font-size : 0.9em;
               color: rgba(255, 255, 255, 0.6);
             "
             >Classer par</span
