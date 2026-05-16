@@ -335,7 +335,8 @@
         padding: 0.5em 0.5em;
         gap: 0.5em;
         border-radius: 5px;
-        transform: scale(0.92);
+        left : 50%;
+        transform: scale(0.92) translateX(-50%);
         transform-origin: center top;
         background: rgba(33, 33, 147, 0.9);
         backdrop-filter: blur(10px);
@@ -346,7 +347,7 @@
       .cadreModeS.active {
         opacity: 1;
         pointer-events: all;
-        transform: scale(1);
+        transform: scale(1) translateX(-50%);
       }
       .optionModeS {
         display: flex;
