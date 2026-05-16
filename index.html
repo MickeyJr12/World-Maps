@@ -239,6 +239,7 @@
         margin: auto;
         padding-top : calc(env(safe-area-inset-top) + 0.4em) ;
         padding-bottom : calc(env(safe-area-inset-bottom) + 0.2em) ;
+
         margin-top : 0em;
         height: 100%;
         max-width: 600px;
@@ -300,10 +301,10 @@
         left: 50%;
         justify-content: center;
         align-items: center;
-        padding: 0.5em 1em;
+        padding: 0.5em 0.5em;
         border: 1px solid rgba(255, 255, 255, 0.5);
         gap: 0.5em;
-        font-size: 1.2em;
+        font-size: 1em;
         border-radius: 5px;
         font-weight: bold;
         color: #b4c8ff;
@@ -390,6 +391,7 @@
       }
       .worldFilter {
         display: flex;
+        font-size : 0.85em;
         align-items: center;
         justify-content: center;
         cursor: pointer;
@@ -871,6 +873,9 @@
         font-weight: 500;
       }
       .capItemC {
+        display : flex;
+        width : auto;
+        flex-wrap : nowrap;
         color: rgba(186, 204, 244, 0.6);
       }
 
@@ -934,8 +939,7 @@
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
-        padding: 1em;
-        padding-bottom: calc(env(safe-area-inset-bottom) + 0.8em);
+        padding: 0.8em;
         width: 100%;
         height: auto;
         backdrop-filter: blur(15px);
