@@ -401,7 +401,8 @@
       .ligneInV {
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        top : 50%;
+        transform: translateX(-50%) translateY(-50%);
         margin: auto;
         width: 0px;
         height: 1.5em;
@@ -5038,7 +5039,10 @@
             class="inputC"
             placeholder="Recherche"
             required=""
-            autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+            autocomplete="off"
+            autocorrect="off" 
+            autocapitalize="off" 
+            spellcheck="false"
             type="text"
           />
           <button class="reset" type="reset">
