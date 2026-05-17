@@ -851,6 +851,7 @@
       .itemClasser:active {
         background: rgba(7, 7, 55, 0.5);
       }
+
       .svgClasser {
         height: 1.2em;
         fill: white;
@@ -867,6 +868,7 @@
 
       .itemC {
         display: flex;
+        position : relative;
         justify-content: flex-start;
         align-items: center;
         box-sizing: border-box;
@@ -877,6 +879,14 @@
         height: 2em;
         max-height: 3em;
         transition: transform 0.3s ease;
+      }
+      .rank {
+        position : absolute;
+        width : auto;
+        height : auto;
+        right : 2em;
+        color: rgba(186, 204, 244, 0.6);
+        font-size : 1.2em;
       }
       .cadrePopulation {
         display: flex;
@@ -15696,6 +15706,11 @@
             }
 
           else if (currentClass==="population"){
+            const rank = document.createElement('div')
+            rank.className = "rank"
+            rank.textContent = `#${rankPop[r.id.toUpperCase()]}`
+            itemC.append(rank)
+
         contentC.style.scrollbarWidth = "thin"
             capItemC.innerHTML = `
           <svg
@@ -15714,6 +15729,11 @@
           }
 
           else if (currentClass === "superficie"){
+              const rank = document.createElement('div')
+            rank.className = "rank"
+            rank.textContent = `#${rankS[r.id.toUpperCase()]}`
+            itemC.append(rank)
+
         contentC.style.scrollbarWidth = "thin"
             capItemC.innerHTML = `
          <svg
@@ -15851,9 +15871,16 @@
 };
 
 
-      let Ls = [];
-      let LsInit = []
-     setTimeout(() => {
+     let Ls = [];
+let LsInit = [];
+let LsPop = [];
+let rankPop = {};
+
+let LsS = []
+let rankS = {};
+
+
+setTimeout(() => {
   paths.forEach((p) => {
     if (L_q[p.id]) {
       const nom = L_q[p.id.toUpperCase()].n;
@@ -15863,12 +15890,40 @@
   });
 
   Ls.sort((a, b) => 
-  a.t.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .localeCompare(b.t.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
-);
- LsInit = [...Ls]
+    a.t.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .localeCompare(b.t.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+  );
+
+  LsInit = [...Ls];
+  LsPop = [...Ls].sort((a, b) => L_q[b.id.toUpperCase()].p - L_q[a.id.toUpperCase()].p);
+  LsPop.forEach((item, index) => { item.rank = index + 1; });
+
+LsPop.forEach((item, index) => { 
+  item.rank = index + 1;
+  rankPop[item.id.toUpperCase()] = index + 1;
+});
+
+
+  LsS = [...Ls].sort((a, b) => L_q[b.id.toUpperCase()].s - L_q[a.id.toUpperCase()].s);
+  LsS.forEach((item, index) => { item.rank = index + 1; });
+
+  LsS.forEach((item, index) => { 
+  item.rank = index + 1;
+  rankS[item.id.toUpperCase()] = index + 1;
+});
+
+
+
+
   fillContentC(LsInit);
 }, 100);
+
+
+ 
+
+
+
+
 
       reset.addEventListener("click", () => {
         fillContentC(LsInit);
@@ -15899,9 +15954,9 @@
         
         
         if (Ls.length === 0 && inputC.value.length === 0) {
-  fillContentC(LsInit);
+          Ls = LsInit
         }
-   else{fillContentC(Ls)}
+        fillContentC(Ls)
       });
 
       //Fin script searching
@@ -17212,7 +17267,7 @@
         item.addEventListener("click", () => {
           currentClass = item.dataset.classer
           
-          fillContentC(Ls.length===0? LsInit : Ls )
+          fillContentC(inputC.value.length === 0 ? LsInit : Ls)
           // Retire le ✓ de tous
           itemsClasser.forEach(
             (i) => (i.querySelector("span").style.opacity = "0"),
