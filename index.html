@@ -15744,7 +15744,10 @@
     }
   });
 
-  LsInit.sort((a, b) => a.init.localeCompare(b.init));
+  LsInit.sort((a, b) => 
+  a.t.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .localeCompare(b.t.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+);
   fillContentC(LsInit);
 }, 100);
 
@@ -15776,20 +15779,14 @@
           }
         });
  
-        Ls.sort()
+        
+          Ls.sort((a, b) => 
+  a.t.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .localeCompare(b.t.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+);
         
         if (Ls.length === 0 && inputC.value.length === 0) {
-          let L_empty = []
-          paths.forEach((p) => {
-    if (L_q[p.id]) {
-      const nom = L_q[p.id.toUpperCase()].n;
-      const init = nom.normalize("NFD").replace(/[\u0300-\u036f]/g, "").slice(0, 1).toUpperCase();
-      L_empty.push({ id: p.id, t: nom, init });
-    }
-  });
-
-  L_empty.sort((a, b) => a.init.localeCompare(b.init));
-  fillContentC(L_empty);
+  fillContentC(LsInit);
         }
    else{fillContentC(Ls)}
       });
