@@ -880,14 +880,16 @@
       }
       .cadrePopulation {
         display: flex;
+        opacity : 0;
         box-sizing: border-box;
         flex-wrap: wrap;
         padding: 0.5em 1em;
         width: 100%;
         height: auto;
         gap: 0.2em;
+        transition : transform 0.3s ease;
       }
-      .cadrePopulation svg {
+      .svgPopulation svg{
         fill: rgb(255, 89, 89);
         opacity: 0.6;
         height: 1em;
@@ -5098,7 +5100,7 @@
               <div id="cadreClasser">
                 <div class="ligneInGrid"></div>
 
-                <div class="itemClasser" data-region="Africa">
+                <div class="itemClasser" data-classer="population">
                   <span style="opacity: 0">✓</span> Population
                   <svg
                     class="svgClasser"
@@ -5118,7 +5120,7 @@
 
                 <div class="ligneInGrid"></div>
 
-                <div class="itemClasser" data-region="Africa">
+                <div class="itemClasser" data-classer="superficie">
                   <span style="opacity: 0">✓</span> Superficie
 
                   <svg
@@ -5151,7 +5153,7 @@
 
                 <div class="ligneInGrid"></div>
 
-                <div class="itemClasser" data-region="Africa">
+                <div class="itemClasser" data-classer="name">
                   <span>✓</span> Noms
                   <svg
                     class="svgClasser"
@@ -5225,19 +5227,9 @@
             </div>
           </div>
           <div class="cadrePopulation">
-            <svg
-              fill="orange"
-              xmlns="http://www.w3.org/2000/svg"
-              data-name="Layer 1"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12.006,12.309c3.611-.021,5.555-1.971,5.622-5.671-.062-3.56-2.111-5.614-5.634-5.637-3.561,.022-5.622,2.122-5.622,5.672s2.062,5.615,5.634,5.636Z"
-              />
-              <path
-                d="M11.994,13.661c-5.328,.034-8.195,2.911-8.291,8.322-.004,.268,.099,.527,.287,.718s.445,.299,.713,.299h14.595c.268,0,.525-.108,.713-.299,.188-.191,.291-.45,.287-.718-.092-5.333-3.036-8.288-8.304-8.322Z"
-              />
-            </svg>
+            <div class="svgPopulation">
+            
+           </div> 
           </div>
 
           <div class="ligneInContent"></div>
@@ -15624,7 +15616,6 @@
       });
 
       //Script searching
-      let Ls = [];
       if (!isMobile) {
         choiceBox.style.top = search.getBoundingClientRect().bottom + 10 + "px";
         choiceBox.style.left =
@@ -15633,14 +15624,18 @@
           search.getBoundingClientRect().width / 2 +
           "px";
       }
+    
       // Scirpt searching
       function fillContentC(Ls) {
+        contentC.style.scrollbarWidth = "none"
         contentC.innerHTML = ``;
         let index = 0;
+        let indexPop = 0;
         const D_clone = structuredClone(D_alphabet);
         for (const r of Ls) {
           const firstChar = r.t.slice(0, 1).toUpperCase();
 
+    if (currentClass === "name"){
     for (const [baseLetter, accents] of Object.entries(D_clone)) {
       if (accents.includes(firstChar)) {
         const bandeLetter = document.createElement("div");
@@ -15652,7 +15647,7 @@
         break;
       }
     }
-
+  }
           const itemC = document.createElement("div");
           itemC.className = "itemC";
           const boxSvgItem = document.createElement("div");
@@ -15668,6 +15663,7 @@
 
           boxSvgItem.innerHTML = ` <img  src="https://flagcdn.com/${r.id.toLowerCase()}.svg" alt="" />`;
           titleItemC.textContent = L_q[r.id.toUpperCase()].n;
+          if(currentClass === "name"){
           capItemC.innerHTML = `
           <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -15681,13 +15677,116 @@
               </svg>
               ${L_q[r.id.toUpperCase()].c}
           `;
+            }
+
+          else if (currentClass==="population"){
+        contentC.style.scrollbarWidth = "thin"
+            capItemC.innerHTML = `
+          <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Layer_1"
+                    data-name="Layer 1"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="m20.5,6h-2c-1.93,0-3.5,1.57-3.5,3.5v4c0,1.391.822,2.585,2,3.149v6.351c0,.552.448,1,1,1s1-.448,1-1v-6h1v6c0,.552.448,1,1,1s1-.448,1-1v-6.351c1.178-.564,2-1.758,2-3.149v-4c0-1.93-1.57-3.5-3.5-3.5Zm1.5,7.5c0,.827-.673,1.5-1.5,1.5h-2c-.827,0-1.5-.673-1.5-1.5v-4c0-.827.673-1.5,1.5-1.5h2c.827,0,1.5.673,1.5,1.5v4Zm-8.02-6.649c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v4c0,.477.219.914.601,1.2.251.189.399.485.399.8v6.5c0,.552-.448,1-1,1s-1-.448-1-1v-6.051c-.633-.649-1-1.532-1-2.449v-4c0-1.658,1.178-3.1,2.801-3.43.541-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v3c0,.477.219.914.601,1.2.251.189.399.485.399.8v5.5c0,.552-.448,1-1,1s-1-.448-1-1v-5.051c-.633-.649-1-1.532-1-2.449v-3c0-1.658,1.178-3.1,2.801-3.43.542-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v2c0,.477.219.914.601,1.2.251.189.399.485.399.8v4.5c0,.552-.448,1-1,1s-1-.448-1-1v-4.051c-.633-.649-1-1.532-1-2.449v-2c0-1.658,1.178-3.1,2.801-3.43.544-.113,1.069.239,1.179.781Zm13.02-4.351c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.385,2.227c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5S3.119,0,4.5,0c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Z"
+                    />
+                  </svg>
+              Population : ${P_info[r.id.toUpperCase()].population.toLocaleString('fr-FR')}
+          `;
+
+          }
+
+          else if (currentClass === "superficie"){
+        contentC.style.scrollbarWidth = "thin"
+            capItemC.innerHTML = `
+         <svg
+                    transition="transform 0.4s ease"
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M320 475.291L192 507.291V41.008L320 6.66136V475.291ZM149.333 30.192L88.64 4.93336C78.9168 0.877272 68.3427 -0.715774 57.856 0.295606C47.3694 1.30699 37.2946 4.89151 28.5258 10.7311C19.757 16.5706 12.5654 24.4845 7.58918 33.7706C2.61299 43.0566 0.00614385 53.4274 0 63.9627L0 464.048L149.333 506.715V30.192ZM466.496 34.4587L373.653 3.26936C370.072 2.10387 366.396 1.2544 362.667 0.730693V475.12L512 511.493V95.6C511.995 81.8587 507.568 68.4837 499.373 57.4534C491.178 46.4231 479.651 38.3233 466.496 34.352V34.4587Z"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_68_47"
+                        x1="-15.5"
+                        y1="-29"
+                        x2="568.5"
+                        y2="575"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop offset="0.100962" stop-color="#1E1515" />
+                        <stop offset="0.5625" stop-color="#B25656" />
+                        <stop offset="1" stop-color="#814141" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+
+              Superficie : ${L_q[r.id.toUpperCase()].s.toLocaleString('fr-FR')}km²
+          `;
+
+          }
           boxItemC.appendChild(titleItemC);
           boxItemC.appendChild(capItemC);
 
           itemC.append(boxSvgItem, boxItemC);
-          contentC.append(itemC, ligneInContent);
+          contentC.append(itemC);
+          if (currentClass!="population"){
+          contentC.append(ligneInContent);            
+          }
+           
+          else{
+            const cadrePopulation = document.createElement('div')
+            cadrePopulation.className = "cadrePopulation"
+            const svgPopulation = document.createElement('div')
+            svgPopulation.className = "svgPopulation"
+
+
+            svgPopulation.innerHTML = `
+            <svg
+              fill="orange"
+              xmlns="http://www.w3.org/2000/svg"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12.006,12.309c3.611-.021,5.555-1.971,5.622-5.671-.062-3.56-2.111-5.614-5.634-5.637-3.561,.022-5.622,2.122-5.622,5.672s2.062,5.615,5.634,5.636Z"
+              />
+              <path
+                d="M11.994,13.661c-5.328,.034-8.195,2.911-8.291,8.322-.004,.268,.099,.527,.287,.718s.445,.299,.713,.299h14.595c.268,0,.525-.108,.713-.299,.188-.191,.291-.45,.287-.718-.092-5.333-3.036-8.288-8.304-8.322Z"
+              />
+            </svg>
+            `           
+
+            const pop  = P_info[r.id].population
+
+            const n = Math.floor(pop / 1000000);
+            if (n<1) {
+               cadrePopulation.append(svgPopulation)
+            }
+            for (let i = 0; i < n; i++) {
+              const svgClone = svgPopulation.cloneNode(true)
+              cadrePopulation.append(svgClone)
+            }
+              contentC.append(cadrePopulation)
+          contentC.append(ligneInContent);   
+
+           cadrePopulation.style.transform = "translateY(-1em)";
+
+          setTimeout(() => {
+            cadrePopulation.style.opacity = "1";
+            cadrePopulation.style.transform = "";
+          }, indexPop * 10);
+          indexPop += 1;         
+
+          }
+
+
+
           setTimeout(() => {            
-          if(inputC.value.length===0){contentC.appendChild(alphabet)}
+            if(inputC.value.length===0 && currentClass==="name" ){contentC.appendChild(alphabet)}
           }, 20);
 
           itemC.style.transform = "translateY(-1em)";
@@ -15734,25 +15833,30 @@
   Y: ["Y", "Ÿ"],
   Z: ["Z"],
 };
-      let LsInit = [];
+
+
+      let Ls = [];
+      let LsInit = []
      setTimeout(() => {
   paths.forEach((p) => {
     if (L_q[p.id]) {
       const nom = L_q[p.id.toUpperCase()].n;
       const init = nom.normalize("NFD").replace(/[\u0300-\u036f]/g, "").slice(0, 1).toUpperCase();
-      LsInit.push({ id: p.id, t: nom, init });
+      Ls.push({ id: p.id, t: nom, init });
     }
   });
 
-  LsInit.sort((a, b) => 
+  Ls.sort((a, b) => 
   a.t.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .localeCompare(b.t.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
 );
+ LsInit = [...Ls]
   fillContentC(LsInit);
 }, 100);
 
       reset.addEventListener("click", () => {
         fillContentC(LsInit);
+        console.log(LsInit)
       });
 
       inputC.addEventListener("input", (e) => {
@@ -16908,6 +17012,7 @@
       const cadreClasser = document.getElementById("cadreClasser");
       const classer = document.querySelector(".classer");
       const itemsClasser = document.querySelectorAll(".itemClasser");
+      let currentClass = "name"
 
       const arrowC = document.querySelector(".arrowC");
 
@@ -17096,6 +17201,8 @@
 
       itemsClasser.forEach((item) => {
         item.addEventListener("click", () => {
+          currentClass = item.dataset.classer
+          fillContentC(Ls)
           // Retire le ✓ de tous
           itemsClasser.forEach(
             (i) => (i.querySelector("span").style.opacity = "0"),
