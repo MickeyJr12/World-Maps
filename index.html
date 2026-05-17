@@ -893,19 +893,18 @@
         height: 1em;
       }
 
-      .boxSvgItem {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 3em;
-      }
-      .itemC img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        aspect-ratio: 1/1;
-        border-radius: 50%;
-      }
+.boxSvgItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 3em;
+}
+.itemC img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  object-fit: cover;
+}
       .itemC:active {
         filter: brightness(1.2);
       }
@@ -5218,7 +5217,7 @@
 
           <div class="itemC">
             <div class="boxSvgItem">
-              <img src="https://flagcdn.com/w40/fr.png" alt="" />
+              <img  src="https://flagcdn.com/w40/fr.png" alt="" />
             </div>
             <div class="boxItemC">
               <div class="titleItemC">France</div>
@@ -15666,7 +15665,7 @@
           const ligneInContent = document.createElement("div");
           ligneInContent.className = "ligneInContent";
 
-          boxSvgItem.innerHTML = ` <img src="https://flagcdn.com/w40/${r.id.toLowerCase()}.png" alt="" />`;
+          boxSvgItem.innerHTML = ` <img  src="https://flagcdn.com/w160/${r.id.toLowerCase()}.png" alt="" />`;
           titleItemC.textContent = L_q[r.id.toUpperCase()].n;
           capItemC.innerHTML = `
           <svg
