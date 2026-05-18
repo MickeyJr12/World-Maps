@@ -3957,7 +3957,7 @@
               <div class="titleQR">Réponses</div>
               <div class="ligneQR"></div>
 
-              <div class="qr r" id="drapeauR" style="display: none">
+              <div class="qr r" id="drapeauR"  style="display: none">
                 Drapeaux
               </div>
               <div class="qr r" id="capitaleR" style="display: none">
@@ -4841,7 +4841,7 @@
           </button>
 
           <div class="wrapperTitleS">
-            <div class="titleCadreS">
+            <div class="titleCadreS" >
               <svg
                 width="1.2em"
                 fill="white"
@@ -4874,7 +4874,7 @@
 
             <div class="cadreModeS">
               <div class="ligneInV"></div>
-              <div class="optionModeS active" id="countryS">
+              <div class="optionModeS active" data-searching="pays" id="countryS">
                 <svg
                   width="1.2em"
                   fill="white"
@@ -4893,7 +4893,7 @@
                 Pays
               </div>
 
-              <div class="optionModeS" id="flagS">
+              <div class="optionModeS" data-searching="drapeaux" id="flagS">
                 <svg
                   width="1.2em"
                   fill="white"
@@ -15941,12 +15941,7 @@
             zoomCountry(r.id);
           });
         }
-      }
-      setTimeout(() => {
-      fillContentFlag(LfInit)
-        
-      }, 500);
-
+      }     
 
 
       // Scirpt searching
@@ -17386,6 +17381,7 @@ LsPop.forEach((item, index) => {
 
       const contentC = document.getElementById("contentC");
       const contentFlagS = document.getElementById("contentFlagS");
+      let currentSearching = "pays"
       const alphabet = document.querySelector(".alphabet");
       const letters = document.querySelectorAll(".letter");
       let dragging = false;
@@ -17441,6 +17437,9 @@ LsPop.forEach((item, index) => {
 
       optionModeS.forEach((option) => {
         option.addEventListener("click", () => {
+          currentSearching = option.dataset.searching
+          currentSearching === "pays" ? fillContentC(Ls) : fillContentFlag(LfInit)
+
           optionModeS.forEach((opt) => opt.classList.remove("active"));
           option.classList.add("active");
           if (option.id === "flagS") {
@@ -17488,7 +17487,8 @@ LsPop.forEach((item, index) => {
       itemsFilter.forEach((item) => {
         item.addEventListener("click", () => {
           currentWorldFilter = item.dataset.region
-          fillContentC(Ls)
+          currentSearching === "pays" ? fillContentC(Ls) : fillContentFlag(LfInit)
+          
           itemsFilter.forEach(
             (i) => (i.querySelector("span").style.opacity = "0"),
           );
