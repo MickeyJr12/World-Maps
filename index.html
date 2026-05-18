@@ -15838,14 +15838,13 @@
             if(inputC.value.length===0 && currentClass==="name" ){contentC.appendChild(alphabet)}
           }, 20);
 
-          itemC.style.transform = "translateY(-1em)";
+          itemC.style.transform = "translateY(-0.8em)";
           itemC.style.opacity = "0";
 
           setTimeout(() => {
             itemC.style.opacity = "1";
             itemC.style.transform = "";
-          }, index * 3);
-          index += 1;
+          },10);
 
           itemC.addEventListener("click", () => {
             cadreS.classList.remove("active");
