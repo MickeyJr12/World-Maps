@@ -5431,13 +5431,13 @@
         </div>
         <div class="footerCadreS" id="footerCadreFlag" style="display: none">
           <div id="cadreColorChoice">
-            <div class="colorChoice" id="colorItemR"></div>
-            <div class="colorChoice" id="colorItemG"></div>
-            <div class="colorChoice" id="colorItemB"></div>
-            <div class="colorChoice" id="colorItemY"></div>
-            <div class="colorChoice" id="colorItemO"></div>
-            <div class="colorChoice" id="colorItemW"></div>
-            <div class="colorChoice" id="colorItemK"></div>
+            <div class="colorChoice" id="colorItemR" data-color="r"></div>
+            <div class="colorChoice" id="colorItemG" data-color="g"></div>
+            <div class="colorChoice" id="colorItemB" data-color="b"></div>
+            <div class="colorChoice" id="colorItemY" data-color="y"></div>
+            <div class="colorChoice" id="colorItemO" data-color="o"></div>
+            <div class="colorChoice" id="colorItemW" data-color="w"></div>
+            <div class="colorChoice" id="colorItemK" data-color="k"></div>
           </div>
 
           <div class="wrapperMenuGrid">
@@ -8886,6 +8886,259 @@
       //const info = document.querySelector(".info");
 
       //Listes informations
+      const D_color = {
+  AD: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, jaune, rouge
+  AE: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // vert, blanc, noir, rouge
+  AF: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // noir, rouge, vert + emblème blanc
+  AG: { r: true,  w: true,  b: true,  g: false, y: true,  k: true,  o: false }, // noir, bleu, blanc, jaune, rouge
+  AI: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
+  AL: { r: true,  w: false, b: false, g: false, y: false, k: true,  o: false }, // rouge, noir (aigle)
+  AM: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: true  }, // rouge, bleu, orange
+  AO: { r: true,  w: false, b: false, g: false, y: true,  k: true,  o: false }, // rouge, noir, jaune
+  AQ: { r: false, w: false, b: false, g: false, y: false, k: false, o: false }, // pas de drapeau
+  AR: { r: false, w: true,  b: true,  g: false, y: true,  k: false, o: false }, // bleu, blanc, jaune (soleil)
+  AS: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  AT: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  AU: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  AW: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, rouge, jaune
+  AX: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, rouge, jaune
+  AZ: { r: true,  w: true,  b: true,  g: true,  y: false, k: false, o: false }, // bleu, rouge, vert, blanc (croissant)
+  BA: { r: false, w: true,  b: true,  g: false, y: true,  k: false, o: false }, // bleu, jaune, blanc (étoiles)
+  BB: { r: false, w: false, b: true,  g: false, y: true,  k: true,  o: false }, // bleu, jaune, noir
+  BD: { r: true,  w: false, b: false, g: true,  y: false, k: false, o: false }, // vert, rouge
+  BE: { r: true,  w: false, b: false, g: false, y: true,  k: true,  o: false }, // noir, jaune, rouge
+  BF: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // rouge, vert, jaune (étoile)
+  BG: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // blanc, vert, rouge
+  BH: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  BI: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // rouge, blanc, vert
+  BJ: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, jaune, rouge
+  BL: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge (comme France)
+  BM: { r: true,  w: false, b: false, g: false, y: false, k: false, o: false }, // rouge + Union Jack
+  BN: { r: false, w: true,  b: false, g: false, y: true,  k: true,  o: false }, // jaune, blanc, noir
+  BO: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // rouge, jaune, vert
+  BQ: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge
+  BR: { r: false, w: true,  b: true,  g: true,  y: true,  k: false, o: false }, // vert, jaune, bleu, blanc
+  BS: { r: false, w: false, b: true,  g: false, y: true,  k: true,  o: false }, // bleu, noir, jaune
+  BT: { r: true,  w: true, b: false, g: false, y: true,  k: false, o: true  }, // orange, jaune, rouge (dragon)
+  BV: { r: false, w: false, b: false, g: false, y: false, k: false, o: false }, // pas de drapeau
+  BW: { r: false, w: true,  b: true,  g: false, y: false, k: true,  o: false }, // bleu, blanc, noir
+  BY: { r: true,  w: false, b: false, g: true,  y: false, k: false, o: false }, // rouge, vert, blanc (motif)
+  BZ: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  CA: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  CC: { r: false, w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, jaune
+  CD: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, rouge, jaune
+  CF: { r: true,  w: true,  b: true,  g: true,  y: true,  k: false, o: false }, // bleu, blanc, vert, jaune, rouge
+  CG: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, rouge, jaune
+  CH: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  CI: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: true  }, // orange, blanc, vert (mais orange = fond)
+  CK: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  CL: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  CM: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, rouge, jaune
+  CN: { r: true,  w: false, b: false, g: false, y: true,  k: false, o: false }, // rouge, jaune
+  CO: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // jaune, bleu, rouge
+  CR: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge
+  CU: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge
+  CV: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, rouge, jaune, blanc (étoiles)
+  CW: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, rouge, jaune, blanc
+  CX: { r: false, w: false, b: true,  g: true,  y: true,  k: false, o: false }, // bleu, vert, jaune
+  CY: { r: true,  w: true,  b: false, g: true,  y: true,  k: false, o: true  }, // blanc, orange/cuivre, vert, rouge (carte)
+  CZ: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // blanc, rouge, bleu
+  DE: { r: true,  w: false, b: false, g: false, y: true,  k: true,  o: false }, // noir, rouge, jaune
+  DJ: { r: true,  w: true,  b: true,  g: true,  y: false, k: false, o: false }, // bleu, vert, blanc, rouge
+  DK: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  DM: { r: true,  w: false, b: true,  g: true,  y: true,  k: true,  o: false }, // vert, croix (jaune, noir, blanc, rouge), bleu (perroquet)
+  DO: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  DZ: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc, rouge
+  EC: { r: true,  w: false, b: true,  g: true,  y: true,  k: false, o: false }, // jaune, bleu, rouge (+ emblème mais fond seul)
+  EE: { r: true,  w: true,  b: true,  g: false, y: false, k: true,  o: false }, // bleu, noir, blanc
+  EG: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc, noir (aigle) — fond : rouge blanc noir
+  EH: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // noir, vert, blanc, rouge
+  ER: { r: true,  w: false, b: true,  g: true,  y: true,  k: false, o: false }, // vert, bleu, rouge, jaune
+  ES: { r: true,  w: false, b: false, g: false, y: true,  k: false, o: false }, // rouge, jaune
+  ET: { r: true,  w: false, b: true,  g: true,  y: true,  k: false, o: false }, // vert, jaune, rouge, bleu (étoile)
+  FI: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // blanc, bleu
+  FJ: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge (Union Jack)
+  FK: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge
+  FM: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
+  FO: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // blanc, bleu, rouge
+  FR: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge
+  GA: { r: false, w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, jaune, bleu
+  GB: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  GD: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // rouge, vert, jaune
+  GE: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // blanc, rouge
+  GF: { r: true, w: false, b: false, g: true, y: true, k: false, o: false }, // pas de drapeau distinct
+  GG: { r: true,  w: true,  b: false, g: false, y: true,  k: false, o: false }, // blanc, rouge, jaune
+  GH: { r: true,  w: false, b: false, g: true,  y: true,  k: true,  o: false }, // rouge, or, vert, noir (étoile)
+  GI: { r: true,  w: true,  b: false, g: false, y: true,  k: false, o: false }, // blanc, rouge, jaune
+  GL: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // blanc, rouge
+  GM: { r: true,  w: false, b: true,  g: true,  y: false, k: false, o: false }, // bleu, rouge, vert, blanc
+  GN: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // rouge, jaune, vert
+  GP: { r: false, w: false, b: true, g: true, y: true, k: false, o: false }, // pas de drapeau distinct
+  GQ: { r: true,  w: true,  b: true,  g: true,  y: false, k: false, o: false }, // vert, bleu, blanc, rouge
+  GR: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
+  GS: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge
+  GT: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
+  GU: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge
+  GW: { r: true,  w: false, b: false, g: true,  y: true,  k: true,  o: false }, // rouge, jaune, vert, noir (étoile)
+  GY: { r: true,  w: false, b: false, g: true,  y: true,  k: true,  o: false }, // vert, rouge, jaune, noir, blanc
+  HK: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  HM: { r: false, w: false, b: false, g: false, y: false, k: false, o: false }, // pas de drapeau distinct
+  HN: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, bleu
+  HR: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  HT: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge
+  HU: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // rouge, blanc, vert
+  ID: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  IE: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: true  }, // vert, blanc, orange
+  IL: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // blanc, bleu, rouge
+  IM: { r: true,  w: true,  b: false, g: false, y: true,  k: false, o: false }, // rouge, or, blanc
+  IN: { r: true,  w: true,  b: true,  g: true,  y: false, k: false, o: true  }, // orange, blanc, vert, bleu (roue)
+  IO: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge (Union Jack)
+  IQ: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // rouge, blanc, noir, vert
+  IR: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc, rouge
+  IS: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge
+  IT: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc, rouge
+  JE: { r: true,  w: true,  b: false, g: false, y: true,  k: false, o: false }, // blanc, rouge, jaune
+  JM: { r: false, w: false, b: false, g: true,  y: true,  k: true,  o: false }, // noir, or, vert
+  JO: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // noir, blanc, vert, rouge
+  JP: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // blanc, rouge
+  KE: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // noir, rouge, vert, blanc
+  KG: { r: true,  w: false, b: false, g: false, y: true,  k: false, o: false }, // rouge, jaune
+  KH: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  KI: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // rouge, bleu, jaune
+  KM: { r: true,  w: true,  b: true,  g: true,  y: true,  k: false, o: false }, // vert, bleu, blanc, rouge, jaune
+  KN: { r: true,  w: false, b: false, g: true,  y: true,  k: true,  o: false }, // vert, rouge, noir, jaune, blanc
+  KP: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  KR: { r: true,  w: false, b: true,  g: false, y: false, k: true,  o: false }, // blanc, rouge, bleu, noir
+  KW: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // vert, blanc, rouge, noir
+  KY: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  KZ: { r: false, w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu clair, jaune
+  LA: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, bleu, blanc
+  LB: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // rouge, blanc, vert
+  LC: { r: false, w: true,  b: true,  g: true,  y: true,  k: true,  o: false }, // bleu, noir, blanc, or, vert
+  LI: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, rouge, or (couronne)
+  LK: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // rouge, or, vert, orange
+  LR: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  LS: { r: true,  w: true,  b: true,  g: true,  y: false, k: true,  o: false }, // bleu, blanc, vert, noir (chapeau)
+  LT: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // jaune, vert, rouge
+  LU: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu clair
+  LV: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge foncé, blanc
+  LY: { r: false, w: true,  b: false, g: true,  y: false, k: true,  o: false }, // noir, rouge, vert, blanc (emblème)
+  MA: { r: true,  w: false, b: false, g: true,  y: false, k: false, o: false }, // rouge, vert (étoile)
+  MC: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  MD: { r: true,  w: false, b: true,  g: true,  y: true,  k: false, o: false }, // bleu, jaune, rouge (+ emblème)
+  ME: { r: true,  w: false, b: false, g: false, y: true,  k: false, o: false }, // rouge, or
+  MF: { r: false, w: false, b: false, g: false, y: false, k: false, o: false }, // pas de drapeau distinct
+  MG: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // blanc, rouge, vert
+  MH: { r: true,  w: true,  b: true,  g: false, y: true,  k: false, o: false }, // bleu, orange, blanc, jaune
+  MK: { r: true,  w: false, b: false, g: false, y: true,  k: false, o: false }, // rouge, jaune (soleil)
+  ML: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, or, rouge
+  MM: { r: true,  w: true,  b: false, g: true,  y: true,  k: false, o: false }, // jaune, vert, rouge, blanc (étoile)
+  MN: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // rouge, bleu, jaune (emblème)
+  MO: { r: false, w: true,  b: false, g: true,  y: true,  k: false, o: false }, // vert, blanc, jaune
+  MP: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge (gris aussi)
+  MQ: { r: true, w: false, b: false, g: true, y: false, k: true, o: false }, // pas de drapeau distinct
+  MR: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, or, rouge
+  MS: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  MT: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // blanc, rouge
+  MU: { r: true,  w: false, b: true,  g: true,  y: true,  k: false, o: false }, // rouge, bleu, jaune, vert
+  MV: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // rouge, vert, blanc (croissant)
+  MW: { r: true,  w: false, b: false, g: true,  y: false, k: true,  o: false }, // noir, rouge, vert
+  MX: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc, rouge
+  MY: { r: true,  w: true,  b: true,  g: false, y: true,  k: false, o: false }, // rouge, blanc, bleu, jaune
+  MZ: { r: true,  w: true,  b: false, g: true,  y: true,  k: true,  o: false }, // vert, noir, jaune, rouge, blanc
+  NA: { r: false, w: false, b: true,  g: true,  y: false, k: false, o: false }, // bleu, rouge, vert, or, blanc
+  NC: { r: false, w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge (comme France)
+  NE: { r: true,  w: true,  b: false, g: false, y: true,  k: false, o: true  }, // orange, blanc, vert (mais orange = fond)
+  NF: { r: false, w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc
+  NG: { r: false, w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc
+  NI: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
+  NL: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  NO: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  NP: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, bleu, blanc
+  NR: { r: false, w: true,  b: true,  g: false, y: true,  k: false, o: false }, // bleu, jaune, blanc
+  NU: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // jaune, bleu, rouge (Union Jack)
+  NZ: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  OM: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // rouge, blanc, vert
+  PA: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  PE: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  PF: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  PG: { r: true,  w: false, b: false, g: false, y: true,  k: true,  o: false }, // rouge, noir, jaune (étoiles)
+  PH: { r: true,  w: true,  b: true,  g: false, y: true,  k: false, o: false }, // bleu, rouge, blanc, jaune
+  PK: { r: false, w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc
+  PL: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // blanc, rouge
+  PM: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge (comme France)
+  PN: { r: true,  w: false, b: true,  g: true,  y: true,  k: false, o: false }, // bleu, vert, rouge, jaune
+  PR: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  PS: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // noir, blanc, vert, rouge
+  PT: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, rouge, jaune
+  PW: { r: false, w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu clair, jaune
+  PY: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  QA: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // bordeaux/rouge, blanc
+  RE: { r: true, w: false, b: true, g: false, y: true, k: false, o: false }, // pas de drapeau distinct
+  RO: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, jaune, rouge
+  RS: { r: true,  w: true,  b: true,  g: false, y: true,  k: false, o: false }, // rouge, bleu, blanc, or
+  RU: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // blanc, bleu, rouge
+  RW: { r: false, w: false, b: true,  g: true,  y: true,  k: false, o: false }, // bleu, jaune, vert
+  SA: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc, rouge
+  SB: { r: false, w: false, b: true,  g: true,  y: true,  k: false, o: false }, // bleu, vert, jaune
+  SC: { r: true,  w: false, b: true,  g: true,  y: true,  k: false, o: false }, // bleu, jaune, rouge, vert, blanc
+  SD: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // rouge, blanc, noir, vert
+  SE: { r: false, w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, jaune
+  SG: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  SH: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge
+  SI: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // blanc, bleu, rouge
+  SJ: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu (Norvège)
+  SK: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // blanc, bleu, rouge
+  SL: { r: false, w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc, bleu
+  SM: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
+  SN: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, jaune, rouge
+  SO: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
+  SR: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, blanc, rouge, jaune
+  SS: { r: true,  w: false, b: true,  g: true,  y: true,  k: true,  o: false }, // noir, rouge, vert, bleu, jaune, blanc
+  ST: { r: false, w: false, b: false, g: true,  y: true,  k: true,  o: false }, // vert, jaune, noir
+  SV: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
+  SX: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: true  }, // rouge, bleu, blanc, orange
+  SY: { r: true,  w: true,  b: false, g: true,  y: false, k: true,  o: false }, // rouge, blanc, noir, vert
+  SZ: { r: true,  w: false, b: true,  g: false, y: true,  k: true,  o: false }, // bleu, jaune, rouge, noir
+  TC: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  TD: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, jaune, rouge
+  TF: { r: false, w: false, b: false, g: false, y: false, k: false, o: false }, // pas de drapeau distinct
+  TG: { r: true,  w: true,  b: false, g: true,  y: true,  k: false, o: false }, // vert, jaune, rouge, blanc
+  TH: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  TJ: { r: true,  w: true,  b: false, g: true,  y: false, k: false, o: false }, // rouge, blanc, vert
+  TK: { r: false, w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, jaune, blanc
+  TL: { r: true,  w: false, b: false, g: false, y: true,  k: true,  o: false }, // rouge, noir, jaune
+  TM: { r: false, w: true,  b: false, g: true,  y: false, k: false, o: false }, // vert, blanc, rouge (motif)
+  TN: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  TO: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  TR: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // rouge, blanc
+  TT: { r: true,  w: false, b: false, g: false, y: false, k: true,  o: false }, // rouge, noir, blanc
+  TV: { r: false, w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu clair, jaune
+  TW: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, bleu, blanc
+  TZ: { r: true,  w: false, b: true,  g: true,  y: true,  k: false, o: false }, // vert, or, bleu, noir, rouge
+  UA: { r: false, w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, jaune
+  UG: { r: true,  w: false, b: false, g: false, y: false, k: true,  o: false }, // noir, jaune, rouge (+ grue)
+  UM: { r: false, w: false, b: false, g: false, y: false, k: false, o: false }, // pas de drapeau distinct
+  US: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu
+  UY: { r: false, w: true,  b: true,  g: false, y: true,  k: false, o: false }, // bleu, blanc, jaune
+  UZ: { r: true,  w: true,  b: true,  g: true,  y: false, k: false, o: false }, // bleu, blanc, vert, rouge
+  VA: { r: true,  w: true,  b: false, g: false, y: true,  k: false, o: false }, // jaune, blanc, rouge
+  VC: { r: false, w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, jaune, bleu
+  VE: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // jaune, bleu, rouge
+  VG: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
+  VI: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // blanc, bleu, rouge
+  VN: { r: true,  w: false, b: false, g: false, y: true,  k: false, o: false }, // rouge, jaune
+  VU: { r: true,  w: false, b: false, g: true,  y: true,  k: true,  o: false }, // vert, rouge, noir, jaune
+  WF: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, blanc, bleu (France)
+  WS: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // rouge, bleu, blanc
+  XK: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // bleu, jaune, blanc
+  YE: { r: true,  w: true,  b: false, g: false, y: false, k: true,  o: false }, // rouge, blanc, noir
+  YT: { r: true, w: true, b: true, g: false, y: true, k: false, o: false }, // pas de drapeau distinct
+  ZA: { r: true,  w: true,  b: true,  g: true,  y: true,  k: true,  o: false }, // noir, or, vert, blanc, rouge, bleu
+  ZM: { r: true,  w: false, b: false, g: true,  y: false, k: true,  o: true  }, // vert, rouge, noir, orange
+  ZW: { r: true,  w: true,  b: false, g: true,  y: true,  k: true,  o: false }, // vert, jaune, rouge, noir, blanc
+};
+
       const P_info = {
         AD: {
           region: "Europe",
@@ -15626,7 +15879,6 @@
         }
       });
 
-      //Script searching
       if (!isMobile) {
         choiceBox.style.top = search.getBoundingClientRect().bottom + 10 + "px";
         choiceBox.style.left =
@@ -15636,6 +15888,56 @@
           "px";
       }
     
+      //Script searching flag
+      function fillContentFlag (Lf) {
+        contentFlagS.innerHTML = ``
+        contentFlagS.scrollTop = 0;
+        const paysDispo = Lf.filter(
+          (el) =>
+            P_info[el.id.toUpperCase()].region === currentWorldFilter ||
+            currentWorldFilter === "world",
+        );
+        Lf = paysDispo;
+
+        for (const r of Lf) {
+          const celDrapeau = document.createElement("div");
+          celDrapeau.className = "celDrapeau";
+
+          const caseCelDrapeau = document.createElement("div");
+          caseCelDrapeau.className = "caseCelDrapeau";
+
+          const footerCelDrapeau = document.createElement("div");
+          footerCelDrapeau.className = "footerCelDrapeau";
+
+          caseCelDrapeau.innerHTML = `
+              <img src="https://flagcdn.com/${r.id.toLowerCase()}.svg" draggable="false" alt="" />
+          `;
+          footerCelDrapeau.textContent = L_q[r.id.toUpperCase()].n;
+
+          celDrapeau.append(caseCelDrapeau, footerCelDrapeau);
+          contentFlagS.append(celDrapeau);
+
+          celDrapeau.style.transform = "translateY(-0.8em)";
+          celDrapeau.style.opacity = "0";
+
+          setTimeout(() => {
+            celDrapeau.style.opacity = "1";
+            celDrapeau.style.transform = "";
+          }, 10);
+
+          celDrapeau.addEventListener("click", () => {
+            cadreS.classList.remove("active");
+            zoomCountry(r.id);
+          });
+        }
+      }
+      setTimeout(() => {
+      fillContentFlag(LfInit)
+        
+      }, 500);
+
+
+
       // Scirpt searching
       function fillContentC(Ls) {
         if (inputC.value.length === 0 ){Ls = LsInit}
@@ -15891,6 +16193,9 @@ let rankPop = {};
 let LsS = []
 let rankS = {};
 
+let Lf = []
+let LfInit = []
+
 
 setTimeout(() => {
   paths.forEach((p) => {
@@ -15907,6 +16212,9 @@ setTimeout(() => {
   );
 
   LsInit = [...Ls];
+  Lf = [...Ls]
+  LfInit = [...Ls]
+
   LsPop = [...Ls].sort((a, b) => L_q[b.id.toUpperCase()].p - L_q[a.id.toUpperCase()].p);
   LsPop.forEach((item, index) => { item.rank = index + 1; });
 
