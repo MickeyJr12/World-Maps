@@ -8973,6 +8973,7 @@
   GL: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // blanc, rouge
   GM: { r: true,  w: false, b: true,  g: true,  y: false, k: false, o: false }, // bleu, rouge, vert, blanc
   GN: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // rouge, jaune, vert
+  GO: { r: false,  w: false, b: false, g: false,  y: false,  k: false, o: false },
   GP: { r: false, w: false, b: true, g: true, y: true, k: false, o: false }, // pas de drapeau distinct
   GQ: { r: true,  w: true,  b: true,  g: true,  y: false, k: false, o: false }, // vert, bleu, blanc, rouge
   GR: { r: false, w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc
@@ -9036,7 +9037,7 @@
   MN: { r: true,  w: false, b: true,  g: false, y: true,  k: false, o: false }, // rouge, bleu, jaune (emblème)
   MO: { r: false, w: true,  b: false, g: true,  y: true,  k: false, o: false }, // vert, blanc, jaune
   MP: { r: true,  w: true,  b: true,  g: false, y: false, k: false, o: false }, // bleu, blanc, rouge (gris aussi)
-  MQ: { r: true, w: false, b: false, g: true, y: false, k: true, o: false }, // pas de drapeau distinct
+  MQ: { r: true, w: false, b: false, g: true, y: false,   k: true, o: false }, // pas de drapeau distinct
   MR: { r: true,  w: false, b: false, g: true,  y: true,  k: false, o: false }, // vert, or, rouge
   MS: { r: true,  w: false, b: true,  g: false, y: false, k: false, o: false }, // bleu, rouge, blanc
   MT: { r: true,  w: true,  b: false, g: false, y: false, k: false, o: false }, // blanc, rouge
@@ -15898,8 +15899,18 @@
             currentWorldFilter === "world",
         );
         Lf = paysDispo;
+        
+
+        let sautPays = false;
 
         for (const r of Lf) {
+          sautPays = false;
+          for (const [color, value] of Object.entries(D_colorChoice)) {
+          if (r.id === "GO")continue             
+  if (value && !D_color[r.id.toUpperCase()][color]) {sautPays = true}
+}
+          if (sautPays){continue}
+
           const celDrapeau = document.createElement("div");
           celDrapeau.className = "celDrapeau";
 
@@ -17379,6 +17390,7 @@ LsPop.forEach((item, index) => {
       const letters = document.querySelectorAll(".letter");
       let dragging = false;
 
+
       
       const footerCadreName = document.getElementById("footerCadreName")
       setTimeout(() => {
@@ -17387,7 +17399,12 @@ LsPop.forEach((item, index) => {
 
       }, 20);
 
-      const colorsChoice = document.querySelectorAll(".colorChoice");
+
+      const colorsChoice = document.querySelectorAll('.colorChoice')
+
+      const D_colorChoice = {r:false,w:false,o:false,b:false,k:false, y:false,g:false}
+
+
 
       const wrapperMenuGrid = document.querySelector(".wrapperMenuGrid");
       const gridChoice = document.getElementById("gridChoice");
@@ -17491,7 +17508,7 @@ LsPop.forEach((item, index) => {
         });
       });
 
-      //Content Drapeaux
+      //Content Pays
 
       function scrollToLetter(el) {
         const letter = el?.closest(".letter");
@@ -17553,6 +17570,8 @@ LsPop.forEach((item, index) => {
       colorsChoice.forEach((color) => {
         color.addEventListener("click", () => {
           color.classList.toggle("active");
+          D_colorChoice[color.dataset.color]= !D_colorChoice[color.dataset.color]
+          fillContentFlag(LfInit)
         });
       });
 
