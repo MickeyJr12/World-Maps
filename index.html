@@ -17444,6 +17444,7 @@ LsPop.forEach((item, index) => {
 
           optionModeS.forEach((opt) => opt.classList.remove("active"));
           option.classList.add("active");
+          cadreModeS.classList.remove('active')
           if (option.id === "flagS") {
             // Logique pour afficher les drapeaux
             titleCadreS.querySelector("span").textContent = "Drapeaux";
@@ -17583,6 +17584,7 @@ LsPop.forEach((item, index) => {
 
       optionsGrid.forEach((option) => {
         option.addEventListener("click", () => {
+          gridChoice.classList.remove('active')
           optionsGrid.forEach((o) => {
             o.classList.remove("active");
           });
