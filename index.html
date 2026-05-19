@@ -8236,9 +8236,9 @@
       let viewMaps = false;
 
       function zoomCountry(p_id) {
-        /* if (!viewMaps) {
+        if (!viewMaps) {
           return;
-        }*/
+        }
         currentCountry = document.getElementById(p_id);
         document.querySelector("svg.monde").appendChild(currentCountry);
         const svgMonde = document.getElementById("svgMonde");
@@ -17424,7 +17424,6 @@ LsPop.forEach((item, index) => {
       backSearch.addEventListener("click", () => {
         setTimeout(() => {
         inputC.value = ""          
-        fillContentC(LsInit)
         }, 100);
         cadreS.classList.remove("active");
       });
