@@ -17650,15 +17650,17 @@ LsPop.forEach((item, index) => {
         });
       });
 
-      /*document.addEventListener('pointerdown',()=>{
+      document.addEventListener('pointerdown',(e)=>{
+      const L_propagation = [wrapperMenuGrid, document.querySelector('.wrapperClasser'), document.querySelector('.wrapperWorldFilter'),document.querySelector('.wrapperTitleS') ]
+       if (L_propagation.some(el => el && el.contains(e.target))) return;
+        
+        console.log(e.target)
         cadreFilterS.classList.remove('active')
         cadreClasser.classList.remove('active')
         cadreModeS.classList.remove('active')
         gridChoice.classList.remove('active')
-      })*/
+      })
 
-      //const L_propagation = [cadreFilterS, cadreClasser, cadreModeS]
-      //L_propagation.forEach(p=>p.addEventListener('click',(e)=>{e.stopPropagation()}))
 //abc
       
 
