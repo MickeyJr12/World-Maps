@@ -17656,6 +17656,9 @@ LsPop.forEach((item, index) => {
         cadreModeS.classList.remove('active')
         gridChoice.classList.remove('active')
       })
+
+      const L_propagation = [cadreFilterS, cadreClasser, cadreModeS]
+      L_propagation.forEach(p=>p.addEventListener('click',(e)=>{e.stopPropagation()}))
 //abc
       
 
