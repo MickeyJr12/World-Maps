@@ -235,22 +235,185 @@
         stroke-linejoin: miter;
         pointer-events: none;
         will-change: transform; /* hint GPU */
-      }
-      .tools {
+      }    
+
+      /* CSS Tools*/
+.wrapperTool {
         display: flex;
-        position: fixed;
+        pointer-events : none;
         flex-direction: column;
+        justify-content: center;
         align-items: flex-end;
-        pointer-events: none;
-        gap: 3em;
-        z-index: 30;
-        right: 8em;
-        top: 50px;
-        width: 100px;
-        min-height: 100%;
+        z-index: 10;
+        box-sizing: border-box;
+        position: fixed;
+        border-radius: 0.6em;
+        right: 3em;
+        bottom: 3em;
+        width: 2.6em;
+        height: fit-content;
+        gap: 0.6em;
+      }
+      .wrapperTool > div:not(.wrapperCalque) {
+        background: rgba(56, 140, 223, 0.674);
+        outline: 0.1em solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
+        backdrop-filter: blur(10px);
+        cursor: pointer;
+      }
+      .zBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        opacity: 0;
+        gap: 0.1em;
+        align-items: center;
+        border-radius: inherit;
+
+        width: 100%;
+        height: 5em;
+        transform: scale(0.75) translateY(1em);
+        transition:
+          transform 0.35s ease,
+          opacity 0.35s ease;
+      }
+      #zP,
+      #zM {
+        display: flex;
+        border-radius: inherit;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+        aspect-ratio: 1/1;
+        transition:
+          background 0.2s ease,
+          transform 0.35s ease,
+          opacity 0.35s ease,
+          outline 0.2s ease;
+      }
+      #zM:active,
+      #zP:active {
+        background: rgba(101, 165, 229, 0.674);
       }
 
+      .zBox svg {
+        height: 70%;
+        aspect-ratio: 1/1;
+        fill: white;
+      }
+      .ligneZbox {
+        width: 70%;
+        border-radius: 50px;
+        outline: 1px solid rgba(64, 67, 233, 0.2);
+      }
+
+      #calque,
+      #centerBtn,
+      #only {
+        opacity: 0;
+        border-radius: 0.6em;
+        transform: scale(0.75) translateY(1em);
+      }
+      #calque {
+        background: rgba(56, 140, 223, 0.674);
+        outline: 0.1em solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
+        backdrop-filter: blur(10px);
+        cursor: pointer;
+      }
+      #calque.active{
+        background: rgba(84, 149, 209, 0.8);
+        outline: 0.1em solid rgba(255, 255, 255, 0.5);
+      }
+
+      .wrapperCalque {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative; 
+      }
+
+      .boxCalques {
+        display: flex;
+        pointer-events: none;
+        align-items: center;
+        flex-direction: column;
+        gap: 0.5em;
+        position: absolute;
+        right: calc(100% + 0.6em); /* s'affiche à gauche du bouton */
+      }
+      .boxCalques >div{
+        background: rgba(56, 140, 223, 0.674);
+        outline: 0.1em solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
+        backdrop-filter: blur(10px);
+        cursor: pointer;
+      }
+      .calqueChoice {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.6em;
+        aspect-ratio: 1/1;
+        border-radius: 0.6em;
+
+        opacity: 0;
+        transform: scale(0.75) translateY(1em) translateX(0.5em);
+         transition:
+          background 0.2s ease,
+          transform 0.35s ease,
+          opacity 0.35s ease,
+          outline 0.2s ease;
+      }
+      .calqueChoice svg {
+        height: 70%;
+        fill: white;
+        transform-origin: center center; /* ← explicite */
+        transition: transform 0.35s ease;
       
+      }
+    
+     
+      .toolCarre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: inherit;
+        width: 100%;
+        aspect-ratio: 1/1;
+        transition:
+          background 0.2s ease,
+          transform 0.35s ease,
+          opacity 0.35s ease,
+          outline 0.2s ease,
+          margin-bottom 0.35s ease;
+      }
+      .toolCarre:active {
+        box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.874);
+        background: rgba(92, 146, 200, 0.674);
+        transform: scale(0.9);
+      }
+      #openTool{pointer-events: all;}
+      #openTool.active {
+        background: rgba(84, 149, 209, 0.8);
+        outline: 0.1em solid rgba(255, 255, 255, 0.5);
+      }
+
+      .toolCarre svg {
+        height: 70%;
+        fill: white;
+        transform-origin: center center; /* ← explicite */
+        transition: transform 0.35s ease;
+      }
+      #openTool svg {
+        transform: rotate(-45deg);
+      }
+
+      #openTool svg.rotate {
+        transform: rotate(0);
+      }
+      /*Fin CSS Tools*/
 
       /*CSS cadreSearch*/
 
@@ -1174,85 +1337,6 @@
       }
 
       /*Fin CSS cadreS*/
-
-      .icons {
-        display: flex;
-        pointer-events: all;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(
-          162deg,
-          rgba(29, 29, 38, 0.6) 0%,
-          rgba(72, 77, 83, 0.6) 59%,
-          rgba(69, 83, 84, 0.6) 100%
-        );
-        cursor: grab;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        z-index: 11;
-        transition: transform 0.5s ease;
-      }
-      .icons:hover {
-        transform: scale(1.05);
-      }
-
-      .iconTourne {
-        pointer-events: none;
-        display: flex;
-        opacity: 0;
-        background: linear-gradient(
-          162deg,
-          rgba(29, 29, 38, 0.6) 0%,
-          rgba(72, 77, 83, 0.6) 59%,
-          rgba(69, 83, 84, 0.6) 100%
-        );
-        align-items: center;
-        justify-content: center;
-        user-select: none;
-        cursor: pointer;
-        fill: white;
-        flex-shrink: 0;
-        margin-left: -8px; /* chevauchement de base */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        z-index: 9;
-        transition:
-          transform 0.5s ease,
-          opacity 0.4s ease,
-          box-shadow 0.4s ease;
-
-        transform-origin: 50% 50%;
-      }
-
-      .iconTourne:hover {
-        transform: scale(1.1);
-      }
-      .wrapper {
-        display: flex;
-        justify-content: space-between;
-        overflow: hidden;
-        position: absolute;
-        pointer-events: all;
-        align-items: center;
-        padding-right: 100px;
-        padding-left: 2em;
-        right: 0px;
-        width: 0px; /* modifié en JS */
-        height: 100px;
-        transition: width 0.5s ease;
-      }
-
-      .wrapperPlan {
-        display: flex;
-        position: relative;
-        align-items: center;
-        pointer-events: all;
-      }
-
       .infoBox {
         display: flex;
         flex-direction: column;
@@ -1706,185 +1790,10 @@
           transform 0.3s ease,
           opacity 0.4s ease;
       }
-      .sBox {
-        display: none;
-        pointer-events: all;
-        margin-right: 0px;
-        height: 100px;
-        right: 10em;
-        top: 5em;
-        width: clip;
-        z-index: 9999999999999999999;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 0em 0em;
-      }
+      
 
-      .search {
-        box-sizing: border-box;
-        top: 30%;
-        outline: none;
-        border: transparent;
-        margin-left: auto;
-        color: white;
-        padding-left: 0.8em;
 
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
-        font-size: 1em;
-        border-radius: 50px;
-        width: 3em;
-        height: 3em;
-        background: linear-gradient(
-          162deg,
-          rgba(29, 29, 38, 0.4) 0%,
-          rgba(72, 77, 83, 0.4) 59%,
-          rgba(69, 83, 84, 0.4) 100%
-        );
-        transition: width 0.3s cubic-bezier(0.29, 0.26, 0.66, 1.3);
-      }
 
-      .rondSearch {
-        position: absolute;
-        z-index: 9;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 3em;
-        height: 3em;
-        border-radius: 50%;
-        background: linear-gradient(
-          162deg,
-          rgba(29, 29, 38, 0.4) 0%,
-          rgba(72, 77, 83, 0.4) 59%,
-          rgba(69, 83, 84, 0.4) 100%
-        );
-        backdrop-filter: blur(10px);
-        transition: transform 0.3s ease;
-      }
-      .rondSearch:hover {
-        transform: scale(1.15);
-      }
-      .rondSearch:active {
-        transform: scale(1);
-      }
-
-      .only {
-        display: flex;
-        pointer-events: all;
-        justify-content: center;
-        align-items: center;
-        fill: white;
-        cursor: pointer;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: linear-gradient(
-          162deg,
-          rgba(29, 29, 38, 0.4) 0%,
-          rgba(72, 77, 83, 0.4) 59%,
-          rgba(69, 83, 84, 0.4) 100%
-        );
-        transition: transform 0.3s ease;
-      }
-
-      .only:hover {
-        transform: scale(1.05);
-      }
-
-      .only:active {
-        transform: scale(1);
-      }
-
-      .choiceBox {
-        display: flex;
-        position: fixed;
-        right: 8em;
-        flex-direction: column;
-        align-items: center;
-        pointer-events: none;
-        overflow-x: auto;
-        overflow-y: scroll;
-        overscroll-behavior: contain; /* évite que le scroll remonte à la page */
-        touch-action: pan-y;
-        user-select: none;
-        scrollbar-width: none;
-        color: white;
-        gap: 0.4em;
-        z-index: 99999;
-        height: 30em;
-        padding-top: 1em;
-        padding-left: 0px;
-        min-width: 12em;
-        transition: opacity 0.4s ease;
-      }
-      .choice {
-        font-family:
-          "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", system-ui,
-          sans-serif;
-
-        display: flex;
-        align-items: center;
-        user-select: none;
-        pointer-events: all;
-        cursor: pointer;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(10px);
-        opacity: 0;
-        border-radius: 5px;
-        background: linear-gradient(
-          162deg,
-          rgba(29, 29, 38, 0.4) 0%,
-          rgba(56, 61, 67, 0.4) 59%,
-          rgba(69, 83, 84, 0.4) 100%
-        );
-        padding: 1em 1em;
-        min-width: 8em;
-        min-height: 2em;
-        transition:
-          transform 0.25s ease,
-          opacity 0.3s ease;
-      }
-      .choice:hover {
-        transform: scale(1.05);
-      }
-      .choice:active {
-        transform: scale(1);
-      }
-      .zBox {
-        display: flex;
-        flex-direction: column;
-        pointer-events: all;
-        z-index: 999;
-        right: 8em;
-        top: 20em;
-        gap: 1em;
-        padding: 0em 0em;
-      }
-      .zPM {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        width: 5em;
-        height: 5em;
-        border-radius: 50%;
-        backdrop-filter: blur(10px);
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
-        background: linear-gradient(
-          162deg,
-          rgba(29, 29, 38, 0.4) 0%,
-          rgba(56, 61, 67, 0.4) 59%,
-          rgba(69, 83, 84, 0.4) 100%
-        );
-        transition: transform 0.2s ease;
-      }
-
-      .zPM:active {
-        transform: scale(0.95);
-      }
-      .zPM path {
-        transition: transform 0.2s ease;
-      }
 
       @keyframes appear {
         from {
@@ -2284,18 +2193,6 @@
       }
 
       @media (max-width: 768px) {
-        .tools {
-          justify-content: space-around;
-          top: 50%;
-          right: 1em;
-          min-height: 65vh;
-          transform: translateY(-50%);
-        }
-
-        .icons {
-          width: 55px;
-          height: 55px;
-        }
 
         .cadreVue {
           width: clamp(220px, 75vw, 320px);
@@ -2320,26 +2217,6 @@
 
         svg.monde {
           height: 100%;
-        }
-
-        .zBox {
-          right: 1em;
-          top: 15em;
-        }
-
-        .zPM {
-          width: 3.5em;
-          height: 3.5em;
-        }
-
-        .sBox {
-          right: 5em;
-          top: 1em;
-        }
-
-        .only {
-          width: 55px;
-          height: 55px;
         }
       }
       .Maps {
@@ -5605,180 +5482,106 @@
         </div>
       </div>
 
-      <div class="tools">
-        <div class="Opensearch">
+    <div class="wrapperTool">
+      <div class="tool zBox">
+        <div id="zP">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            id="Layer_1"
-            data-name="Layer 1"
+            id="Outline"
             viewBox="0 0 24 24"
           >
             <path
-              d="M24,3.5c0,.83-.67,1.5-1.5,1.5H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5ZM6.5,20H1.5c-.83,0-1.5,.67-1.5,1.5s.67,1.5,1.5,1.5H6.5c.83,0,1.5-.67,1.5-1.5s-.67-1.5-1.5-1.5ZM14.5,11H1.5c-.83,0-1.5,.67-1.5,1.5s.67,1.5,1.5,1.5H14.5c.83,0,1.5-.67,1.5-1.5s-.67-1.5-1.5-1.5Z"
+              d="M23,11H13V1a1,1,0,0,0-1-1h0a1,1,0,0,0-1,1V11H1a1,1,0,0,0-1,1H0a1,1,0,0,0,1,1H11V23a1,1,0,0,0,1,1h0a1,1,0,0,0,1-1V13H23a1,1,0,0,0,1-1h0A1,1,0,0,0,23,11Z"
             />
           </svg>
         </div>
-
-        <div class="sBox">
-          <div class="tool rondSearch">
-            <svg
-              id="loupe"
-              width="60%"
-              height="60%"
-              viewBox="0 0 513 513"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M208.771 17.5615C259.087 16.3035 307.961 34.4327 345.285 68.1992C382.609 101.966 405.527 148.787 409.298 198.977C413.069 249.166 397.405 298.886 365.546 337.851L355.524 350.107L366.719 361.303L493.897 488.481C494.562 489.198 494.929 490.142 494.921 491.121C494.912 492.126 494.509 493.087 493.798 493.798C493.087 494.509 492.126 494.912 491.121 494.921C490.142 494.929 489.198 494.562 488.481 493.897L361.303 366.719L350.107 355.524L337.851 365.546C298.886 397.405 249.166 413.069 198.977 409.298C148.787 405.527 101.966 382.609 68.1992 345.285C34.4327 307.961 16.3035 259.087 17.5615 208.771C18.8196 158.456 39.3683 110.548 74.958 74.958C110.548 39.3683 158.456 18.8196 208.771 17.5615ZM286.024 40.1729C251.641 25.931 213.807 22.2044 177.307 29.4648C140.806 36.7253 107.277 54.6463 80.9619 80.9619C54.6463 107.277 36.7253 140.806 29.4648 177.307C22.2044 213.807 25.931 251.641 40.1729 286.024C54.4147 320.407 78.5327 349.795 109.477 370.471C140.42 391.147 176.801 402.183 214.017 402.183H214.036C263.919 402.127 311.741 382.286 347.014 347.014C382.286 311.741 402.127 263.919 402.183 214.036V214.017C402.183 176.801 391.147 140.42 370.471 109.477C349.795 78.5327 320.407 54.4147 286.024 40.1729Z"
-                stroke="white"
-                stroke-width="35"
-              />
-            </svg>
-          </div>
-          <input type="text" class="search" />
-        </div>
-
-        <div class="tool zBox">
-          <div class="zPM" id="zP">
-            <svg
-              stroke="white"
-              width="60%"
-              height="60%"
-              viewBox="0 0 507 510"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M137 221.5C137 210.178 146.178 201 157.5 201H302.5C313.822 201 323 210.178 323 221.5C323 232.822 313.822 242 302.5 242H157.5C146.178 242 137 232.822 137 221.5Z"
-                fill="white"
-              />
-              <path
-                d="M230.5 128C241.822 128 251 137.178 251 148.5L251 293.5C251 304.822 241.822 314 230.5 314C219.178 314 210 304.822 210 293.5L210 148.5C210 137.178 219.178 128 230.5 128Z"
-                fill="white"
-              />
-              <path
-                stroke="white"
-                d="M361.287 369.829L486.716 489.783M433 219.5C433 329.681 340.547 419 226.5 419C112.453 419 20 329.681 20 219.5C20 109.319 112.453 20 226.5 20C340.547 20 433 109.319 433 219.5Z"
-                stroke="black"
-                stroke-width="40"
-                stroke-linecap="round"
-              />
-            </svg>
-          </div>
-          <div class="zPM" id="zM">
-            <svg
-              width="60%"
-              height="60%"
-              viewBox="0 0 507 510"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M133 221.5C133 210.178 142.178 201 153.5 201H298.5C309.822 201 319 210.178 319 221.5C319 232.822 309.822 242 298.5 242H153.5C142.178 242 133 232.822 133 221.5Z"
-                fill="white"
-              />
-              <path
-                d="M361.287 369.829L486.716 489.783M433 219.5C433 329.681 340.547 419 226.5 419C112.453 419 20 329.681 20 219.5C20 109.319 112.453 20 226.5 20C340.547 20 433 109.319 433 219.5Z"
-                stroke="white"
-                stroke-width="40"
-                stroke-linecap="round"
-              />
-            </svg>
-          </div>
-        </div>
-        <div class="tool only">
-          <svg
-            width="60%"
-            height="60%"
-            xmlns="http://www.w3.org/2000/svg"
-            id="Layer_1"
-            data-name="Layer 1"
-            viewBox="0 0 24 24"
-          >
+        <div class="ligneZbox"></div>
+        <div id="zM">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
-              d="M23.707,22.293l-5.969-5.969c1.412-1.725,2.262-3.927,2.262-6.324C20,4.486,15.514,0,10,0S0,4.486,0,10s4.486,10,10,10c2.397,0,4.599-.85,6.324-2.262l5.969,5.969c.195,.195,.451,.293,.707,.293s.512-.098,.707-.293c.391-.391,.391-1.023,0-1.414ZM2,10C2,5.589,5.589,2,10,2s8,3.589,8,8-3.589,8-8,8S2,14.411,2,10Zm13.933-1.261c-.825-1.21-2.691-3.239-5.933-3.239s-5.108,2.03-5.933,3.239c-.522,.766-.522,1.755,0,2.521,.825,1.21,2.692,3.24,5.933,3.24s5.108-2.03,5.933-3.239c.522-.766,.522-1.755,0-2.521Zm-1.652,1.395c-.735,1.08-2.075,2.366-4.28,2.366s-3.544-1.287-4.28-2.367c-.056-.081-.056-.185,0-.267,.735-1.08,2.075-2.366,4.28-2.366s3.545,1.287,4.28,2.366h0c.056,.082,.056,.186,0,.268Zm-2.78-.134c0,.829-.671,1.5-1.5,1.5s-1.5-.671-1.5-1.5,.671-1.5,1.5-1.5,1.5,.671,1.5,1.5Z"
+              d="M1,12H23c.55,0,1,.45,1,1s-.45,1-1,1H1c-.55,0-1-.45-1-1s.45-1,1-1Z"
             />
           </svg>
-        </div>
-
-        <div class="wrapperPlan">
-          <div class="wrapper">
-            <div class="iconTourne vueP" id="Population">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="Layer_1"
-                data-name="Layer 1"
-                viewBox="0 0 24 24"
-                width="32"
-                height="32"
-              >
-                <path
-                  fill="white"
-                  d="m20.5,6h-2c-1.93,0-3.5,1.57-3.5,3.5v4c0,1.391.822,2.585,2,3.149v6.351c0,.552.448,1,1,1s1-.448,1-1v-6h1v6c0,.552.448,1,1,1s1-.448,1-1v-6.351c1.178-.564,2-1.758,2-3.149v-4c0-1.93-1.57-3.5-3.5-3.5Zm1.5,7.5c0,.827-.673,1.5-1.5,1.5h-2c-.827,0-1.5-.673-1.5-1.5v-4c0-.827.673-1.5,1.5-1.5h2c.827,0,1.5.673,1.5,1.5v4Zm-8.02-6.649c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v4c0,.477.219.914.601,1.2.251.189.399.485.399.8v6.5c0,.552-.448,1-1,1s-1-.448-1-1v-6.051c-.633-.649-1-1.532-1-2.449v-4c0-1.658,1.178-3.1,2.801-3.43.541-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v3c0,.477.219.914.601,1.2.251.189.399.485.399.8v5.5c0,.552-.448,1-1,1s-1-.448-1-1v-5.051c-.633-.649-1-1.532-1-2.449v-3c0-1.658,1.178-3.1,2.801-3.43.542-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v2c0,.477.219.914.601,1.2.251.189.399.485.399.8v4.5c0,.552-.448,1-1,1s-1-.448-1-1v-4.051c-.633-.649-1-1.532-1-2.449v-2c0-1.658,1.178-3.1,2.801-3.43.544-.113,1.069.239,1.179.781Zm13.02-4.351c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.385,2.227c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5S3.119,0,4.5,0c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Z"
-                />
-              </svg>
-            </div>
-            <div class="vuePib iconTourne" id="PIB/hab">
-              <svg
-                width="60%"
-                height="60%"
-                xmlns="http://www.w3.org/2000/svg"
-                id="Layer_1"
-                data-name="Layer 1"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="m6.5,14h7.5v2h-7.5c-1.379,0-2.5,1.122-2.5,2.5v5.5h-2v-5.5c0-2.481,2.019-4.5,4.5-4.5Zm10.5-8c0,3.309-2.691,6-6,6s-6-2.691-6-6S7.691,0,11,0s6,2.691,6,6Zm-2,0c0-2.206-1.794-4-4-4s-4,1.794-4,4,1.794,4,4,4,4-1.794,4-4Zm6.685,10.267l-3.041-.507c-.373-.062-.644-.382-.644-.76,0-.551.448-1,1-1h2c.552,0,1,.449,1,1h2c0-1.654-1.346-3-3-3v-2h-2v2c-1.654,0-3,1.346-3,3,0,1.36.974,2.51,2.315,2.733l3.041.507c.373.062.644.382.644.76,0,.551-.448,1-1,1h-2c-.552,0-1-.449-1-1h-2c0,1.654,1.346,3,3,3v2h2v-2c1.654,0,3-1.346,3-3,0-1.36-.974-2.51-2.315-2.733Z"
-                />
-              </svg>
-            </div>
-            <div class="iconTourne vueCo2e" id="Taux de Co2 (tCO₂e/an)">
-              <svg
-                width="60%"
-                height="60%"
-                xmlns="http://www.w3.org/2000/svg"
-                id="Layer_1"
-                viewBox="0 0 24 24"
-                data-name="Layer 1"
-              >
-                <path
-                  d="m22.969 9.25c-.637-.353-1.414-.331-2.098.102l-4.871 3.649v-2.001c0-.728-.395-1.397-1.031-1.75s-1.414-.331-2.098.102l-4.871 3.649v-6.001c.552 0 1-.447 1-1s-.448-1-1-1h-7c-.552 0-1 .447-1 1s.448 1 1 1v12c0 2.757 2.243 5 5 5h13c2.757 0 5-2.243 5-5v-8c0-.728-.395-1.397-1.031-1.75zm-.969 9.75c0 1.654-1.346 3-3 3h-13c-1.654 0-3-1.346-3-3v-12h3v11c0 .553.448 1 1 1s1-.447 1-1v-2.5l6-4.5v4c0 .379.214.725.553.895.338.167.744.132 1.047-.094l6.4-4.801zm-4-1v-1c0-.553.448-1 1-1s1 .447 1 1v1c0 .553-.448 1-1 1s-1-.447-1-1zm-6-1v1c0 .553-.448 1-1 1s-1-.447-1-1v-1c0-.553.448-1 1-1s1 .447 1 1zm-5.243-14.003c.803.072 2.434.269 3.181.748.25.292.333.519.467.762.623 1.07 1.893 1.664 3.107 1.447.92.942 2.389 1.29 3.644.849.742.762 1.754 1.197 2.844 1.197 2.206 0 4-1.794 4-4s-1.794-4-4-4c-.745 0-1.46.203-2.081.583-1.017-.677-2.387-.764-3.473-.212-.438-.242-.933-.371-1.447-.371h-1.346c-1.151 0-3.968.484-5.295 1.452-.634.462-.384 1.475.398 1.544zm6.243-.997c.266 0 .517.104.707.293.366.365.948.39 1.345.061.194-.161.516-.354.949-.354s.834.188 1.128.527c.181.21.442.336.719.346.271.028.546-.095.743-.29.377-.376.878-.583 1.41-.583 1.103 0 2 .897 2 2s-.897 2-2 2c-.7 0-1.337-.365-1.706-.977-.144-.237-.379-.405-.651-.462-.272-.058-.556.002-.783.162-.689.486-1.696.272-2.136-.45-.269-.441-.83-.606-1.293-.379-.503.245-1.035.061-1.325-.449-.139-.28-.454-.899-1.096-1.445z"
-                />
-              </svg>
-            </div>
-          </div>
-          <div class="tool icons">
-            <svg
-              transition="transform 0.4s ease"
-              width="60%"
-              height="60%"
-              viewBox="0 0 512 512"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M320 475.291L192 507.291V41.008L320 6.66136V475.291ZM149.333 30.192L88.64 4.93336C78.9168 0.877272 68.3427 -0.715774 57.856 0.295606C47.3694 1.30699 37.2946 4.89151 28.5258 10.7311C19.757 16.5706 12.5654 24.4845 7.58918 33.7706C2.61299 43.0566 0.00614385 53.4274 0 63.9627L0 464.048L149.333 506.715V30.192ZM466.496 34.4587L373.653 3.26936C370.072 2.10387 366.396 1.2544 362.667 0.730693V475.12L512 511.493V95.6C511.995 81.8587 507.568 68.4837 499.373 57.4534C491.178 46.4231 479.651 38.3233 466.496 34.352V34.4587Z"
-                fill="white"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_68_47"
-                  x1="-15.5"
-                  y1="-29"
-                  x2="568.5"
-                  y2="575"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0.100962" stop-color="#1E1515" />
-                  <stop offset="0.5625" stop-color="#B25656" />
-                  <stop offset="1" stop-color="#814141" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
         </div>
       </div>
+      <div class="toolCarre tool" id="centerBtn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12,7c-2.757,0-5,2.243-5,5s2.243,5,5,5,5-2.243,5-5-2.243-5-5-5Zm0,8c-1.654,0-3-1.346-3-3s1.346-3,3-3,3,1.346,3,3-1.346,3-3,3Zm11-4h-1.05c-.471-4.717-4.233-8.48-8.95-8.95V1c0-.553-.448-1-1-1s-1,.447-1,1v1.05C6.283,2.52,2.52,6.283,2.05,11H1c-.552,0-1,.447-1,1s.448,1,1,1h1.05c.471,4.717,4.233,8.48,8.95,8.95v1.05c0,.553,.448,1,1,1s1-.447,1-1v-1.05c4.717-.471,8.48-4.233,8.95-8.95h1.05c.552,0,1-.447,1-1s-.448-1-1-1Zm-11,9c-4.411,0-8-3.589-8-8S7.589,4,12,4s8,3.589,8,8-3.589,8-8,8Z"
+          />
+        </svg>
+      </div>
+      <div class="toolCarre tool" id="only">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M0,7v-2C0,2.243,2.243,0,5,0h2c.552,0,1,.448,1,1s-.448,1-1,1h-2c-1.654,0-3,1.346-3,3v2c0,.552-.448,1-1,1s-1-.448-1-1Zm12,3c-1.105,0-2,.895-2,2s.895,2,2,2,2-.895,2-2-.895-2-2-2Zm-5,12h-2c-1.654,0-3-1.346-3-3v-2c0-.552-.448-1-1-1s-1,.448-1,1v2c0,2.757,2.243,5,5,5h2c.552,0,1-.448,1-1s-.448-1-1-1ZM19,0h-2c-.552,0-1,.448-1,1s.448,1,1,1h2c1.654,0,3,1.346,3,3v2c0,.552,.448,1,1,1s1-.448,1-1v-2c0-2.757-2.243-5-5-5Zm-7,18c-4.577,0-7.521-4.021-8.059-5.097-.287-.573-.287-1.23,0-1.805,.537-1.077,3.48-5.098,8.059-5.098s7.522,4.021,8.059,5.098t0,0c.285,.572,.285,1.229,0,1.802-.538,1.078-3.481,5.099-8.06,5.099Zm6.27-6.008c-.328-.657-2.736-3.992-6.27-3.992s-5.942,3.335-6.27,3.992c.328,.674,2.737,4.008,6.27,4.008s5.942-3.352,6.27-4.008Zm4.73,4.008c-.552,0-1,.448-1,1v2c0,1.654-1.346,3-3,3h-2c-.552,0-1,.448-1,1s.448,1,1,1h2c2.757,0,5-2.243,5-5v-2c0-.552-.448-1-1-1Z"
+          />
+        </svg>
+      </div>
+      <div class="wrapperCalque">
+        <div class="toolCarre tool" id="calque">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m12,18.838c-.572,0-1.143-.153-1.653-.459L.485,12.462c-.474-.284-.627-.898-.343-1.372.283-.475.897-.627,1.372-.343l9.861,5.917c.385.23.864.23,1.249,0l9.861-5.917c.474-.284,1.088-.131,1.372.343s.131,1.088-.343,1.372l-9.861,5.917c-.51.306-1.082.459-1.653.459Zm1.653,3.836l9.861-5.917c.474-.284.627-.898.343-1.372s-.898-.627-1.372-.343l-9.862,5.917c-.384.23-.863.23-1.248,0L1.515,15.042c-.475-.285-1.089-.131-1.372.343-.284.474-.131,1.088.343,1.372l9.861,5.917c.51.307,1.082.459,1.654.459s1.144-.152,1.653-.459Zm-1.653-16.84l5.308-3.185L13.653.456c-1.02-.612-2.287-.612-3.307,0l-3.655,2.193,5.308,3.185Zm11.515.539l-4.263-2.558-5.308,3.185,5.692,3.415,3.879-2.327c.301-.181.485-.506.485-.857s-.184-.677-.485-.857Zm-13.459.627l-5.308-3.185L.485,6.373c-.301.181-.485.506-.485.857s.184.677.485.857l3.879,2.327,5.692-3.415Zm1.944,1.166l-5.692,3.415,4.039,2.423c.51.306,1.081.459,1.653.459s1.143-.153,1.653-.459l4.039-2.423-5.692-3.415Z"
+            />
+          </svg>
+        </div>
+
+        <div class="boxCalques tool">
+          <div class="calqueChoice" id="calqueSuperficie">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.68,1.167l-.021-.007-2.715-.9a5.017,5.017,0,0,0-2.9-.079L9.468,1.8A3.025,3.025,0,0,1,7.42,1.62l-.5-.232A5,5,0,0,0,0,6V18.075a5.013,5.013,0,0,0,3.6,4.8l2.869.9A4.991,4.991,0,0,0,7.964,24,4.592,4.592,0,0,0,9.3,23.819l5.8-1.6a3,3,0,0,1,1.617.013l2.343.676A4,4,0,0,0,24,19.021V5.876A5.01,5.01,0,0,0,20.68,1.167ZM4.176,20.959A3.013,3.013,0,0,1,2,18.075V6a2.953,2.953,0,0,1,1.336-2.5A3,3,0,0,1,5,3a2.9,2.9,0,0,1,1.112.222s.745.319.887.37V21.842ZM9,21.827V3.879a5.105,5.105,0,0,0,1.006-.155L15,2.273V20.2Zm13-2.806a2,2,0,0,1-2.433,1.954L17,20.252V2.075l3.018.979A3.006,3.006,0,0,1,22,5.876Z"/></svg>
+          </div>
+          <div class="calqueChoice" id="calquePib">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+  <path d="m11,0c-3.309,0-6,2.691-6,6s2.691,6,6,6,6-2.691,6-6S14.309,0,11,0Zm0,10c-2.206,0-4-1.794-4-4s1.794-4,4-4,4,1.794,4,4-1.794,4-4,4Zm2.969,5.501c-.138.536-.687.857-1.218.719-.568-.146-1.158-.22-1.751-.22-3.859,0-7,3.14-7,7,0,.552-.447,1-1,1s-1-.448-1-1c0-4.962,4.037-9,9-9,.761,0,1.518.095,2.249.284.535.137.857.683.72,1.217Zm10.031,3.499c0,1.654-1.346,3-3,3v1c0,.552-.447,1-1,1s-1-.448-1-1v-1.002h-.27c-1.066,0-2.061-.574-2.596-1.496-.277-.478-.114-1.09.364-1.367.478-.276,1.09-.114,1.366.364.179.308.51.499.866.499l2.27.002c.551,0,.999-.449.999-1,0-.378-.271-.698-.644-.76l-3.041-.507c-1.342-.223-2.315-1.373-2.315-2.733,0-1.654,1.346-3,3-3v-1c0-.552.447-1,1-1s1,.448,1,1v1.003h.271c1.063,0,2.058.573,2.594,1.495.278.477.116,1.089-.361,1.367-.478.278-1.091.115-1.367-.362-.183-.312-.506-.5-.866-.5l-2.271-.003c-.551,0-.999.449-.999,1,0,.378.271.698.644.76l3.041.507c1.342.223,2.315,1.373,2.315,2.733Z"/>
+</svg>
+          </div>
+          <div class="calqueChoice" id="calquePop">
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Layer_1"
+                    data-name="Layer 1"
+                    viewBox="0 0 24 24"
+                    width="32"
+                    height="32"
+                  >
+                    <path
+                      fill="white"
+                      d="m20.5,6h-2c-1.93,0-3.5,1.57-3.5,3.5v4c0,1.391.822,2.585,2,3.149v6.351c0,.552.448,1,1,1s1-.448,1-1v-6h1v6c0,.552.448,1,1,1s1-.448,1-1v-6.351c1.178-.564,2-1.758,2-3.149v-4c0-1.93-1.57-3.5-3.5-3.5Zm1.5,7.5c0,.827-.673,1.5-1.5,1.5h-2c-.827,0-1.5-.673-1.5-1.5v-4c0-.827.673-1.5,1.5-1.5h2c.827,0,1.5.673,1.5,1.5v4Zm-8.02-6.649c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v4c0,.477.219.914.601,1.2.251.189.399.485.399.8v6.5c0,.552-.448,1-1,1s-1-.448-1-1v-6.051c-.633-.649-1-1.532-1-2.449v-4c0-1.658,1.178-3.1,2.801-3.43.541-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v3c0,.477.219.914.601,1.2.251.189.399.485.399.8v5.5c0,.552-.448,1-1,1s-1-.448-1-1v-5.051c-.633-.649-1-1.532-1-2.449v-3c0-1.658,1.178-3.1,2.801-3.43.542-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v2c0,.477.219.914.601,1.2.251.189.399.485.399.8v4.5c0,.552-.448,1-1,1s-1-.448-1-1v-4.051c-.633-.649-1-1.532-1-2.449v-2c0-1.658,1.178-3.1,2.801-3.43.544-.113,1.069.239,1.179.781Zm13.02-4.351c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.385,2.227c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5S3.119,0,4.5,0c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Z"
+                    />
+                  </svg>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="toolCarre" id="openTool">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M18,6h0a1,1,0,0,0-1.414,0L12,10.586,7.414,6A1,1,0,0,0,6,6H6A1,1,0,0,0,6,7.414L10.586,12,6,16.586A1,1,0,0,0,6,18H6a1,1,0,0,0,1.414,0L12,13.414,16.586,18A1,1,0,0,0,18,18h0a1,1,0,0,0,0-1.414L13.414,12,18,7.414A1,1,0,0,0,18,6Z"
+          />
+        </svg>
+      </div>
+    </div>
 
       <div class="infoName"></div>
       <div class="choiceBox"></div>
@@ -8860,24 +8663,31 @@
         cadreVue.style.height = "";
       });
       //Tools
-      const choiceBox = document.querySelector(".choiceBox");
-      const only = document.querySelector(".only");
-      const icons = document.querySelector(".icons");
-      const wrapper = document.querySelector(".wrapper");
-      const iconTourne = document.querySelectorAll(".iconTourne");
-      const vueP = document.querySelector(".vueP");
-      const vueS = document.querySelector(".vueS");
-      const vueCo2e = document.querySelector(".vueCo2e");
-      const vuePib = document.querySelector(".vuePib");
-      const vues = document.querySelectorAll(".iconTourne");
+      //const only = document.querySelector(".only");
+      //const vueP = document.querySelector(".vueP");
+      //const vueS = document.querySelector(".vueS");
+      //const vueCo2e = document.querySelector(".vueCo2e");
+      //const vuePib = document.querySelector(".vuePib");
+      
+      const wrapperTool = document.querySelector('.wrapperTool')
+      const openTool = document.getElementById("openTool");
+      const centerBtn = document.getElementById("centerBtn");
+      const calque = document.getElementById("calque");
+      const zBox = document.querySelector(".zBox");
+      const only = document.getElementById("only");
+      const boxCalques = document.querySelector('.boxCalques')
+      
+      const calqueSuperficie = document.getElementById('calqueSuperficie')
+      const calquePop = document.getElementById('calquePop')
+      const calquePib = document.getElementById('calquePib')
+
+
+
+
 
       let vue = false;
       let cadreVueTF = false;
 
-      const rondSearch = document.querySelector(".rondSearch");
-      const search = document.querySelector(".search");
-      const searchH = search.getBoundingClientRect().height;
-      const rWidth = rondSearch.getBoundingClientRect().width;
 
       const inputC = document.querySelector(".inputC");
       const reset = document.querySelector(".reset");
@@ -15394,8 +15204,8 @@
             }
           }
         });
-        let animeColorC = requestAnimationFrame(colorCurrentCountry);
       }
+        let animeColorC = requestAnimationFrame(colorCurrentCountry);
       colorCurrentCountry();
       setTimeout(() => {
         cancelAnimationFrame(animeColorC)
@@ -15577,19 +15387,73 @@
           });
       }
 
-      wrapper.addEventListener("mousemove", (e) => {
-        if (!vue || e.target.closest("div").classList.contains("wrapper")) {
-          infoName.style.opacity = "0";
-          return;
-        }
-        infoName.style.opacity = "1";
-        infoName.style.left =
-          e.clientX - infoName.getBoundingClientRect().width / 2 + "px";
-        infoName.style.top =
-          e.clientY - infoName.getBoundingClientRect().height * 1.5 + "px";
 
-        infoName.textContent = e.target.closest("div").getAttribute("id");
+
+      //Script tools
+
+       openTool.addEventListener("click", () => {
+        let delay = 0;
+        openTool.querySelector("svg").classList.toggle("rotate");
+        openTool.classList.toggle("active");
+        let L_tool = [zBox, centerBtn, only, calque];
+        let L_toolReverse = [...L_tool].reverse();
+        let L_calque = [calqueSuperficie, calquePib, calquePop];
+
+        openTool.querySelector("svg").classList.contains("rotate")
+          ? (L_tool.forEach((el) => {
+              setTimeout(() => {
+                el.style.opacity = "1";
+                el.style.transform = "scale(1)";
+              }, delay);
+              delay += 50;
+            }),wrapperTool.style.pointerEvents = "all")
+          : (L_toolReverse.forEach((el) => {
+              setTimeout(() => {
+                el.style.opacity = "0";
+                el.style.transform = "";
+              }, delay);
+              delay += 50;
+            }),
+            delay = 0,
+           L_calque.forEach((el) => {
+              setTimeout(() => {
+                el.style.opacity = "0";
+                el.style.transform = "";
+              }, delay);
+              delay += 50;
+            }),only.style.marginBottom  = ""
+          ,
+          wrapperTool.style.pointerEvents = ""
+        )
       });
+
+      calque.addEventListener('click',()=>{
+        
+        let delay = 0;
+        let L_calque = [calqueSuperficie, calquePib, calquePop];
+        let L_calqueReverse = [...L_calque].reverse();
+        calque.classList.toggle('active')
+        calque.classList.contains("active")
+          ? (L_calqueReverse.forEach((el) => {
+              setTimeout(() => {
+                el.style.opacity = "1";
+                el.style.transform = "scale(1)";
+              }, delay);
+              delay += 50;
+            }) , only.style.marginBottom  = boxCalques.getBoundingClientRect().height/3 + "px"
+          ,
+          boxCalques.style.pointerEvents = "all"
+          )
+          :( L_calque.forEach((el) => {
+              setTimeout(() => {
+                el.style.opacity = "0";
+                el.style.transform = "";
+              }, delay);
+              delay += 50;
+            }),only.style.marginBottom  = "",boxCalques.style.pointerEvents = "")
+      
+      })
+
 
       function afficheVue() {
         if (!cadreVueTF) {
@@ -15601,9 +15465,9 @@
         }
         cadreVueTF = !cadreVueTF;
       }
-      only.addEventListener("click", () => {
+      /*only.addEventListener("click", () => {
         afficheVue();
-      });
+      });*/
 
       //Déplacer cadreVue
       let moveCV;
@@ -15636,29 +15500,6 @@
         e.preventDefault();
       });
 
-      icons.addEventListener("click", () => {
-        if (!vue) {
-          vues.forEach((v) => {
-            v.style.opacity = "1";
-            v.style.pointerEvents = "all";
-          });
-
-          wrapper.style.width = vueP.getBoundingClientRect().width * 3.4 + "px";
-          if (isMobile) {
-            wrapper.style.width = vueP.getBoundingClientRect().width * 3 + "px";
-          }
-          vue = true;
-        } else {
-          vues.forEach((v) => {
-            v.style.opacity = "";
-            v.style.pointerEvents = "none";
-          });
-          icons.style.transform = "";
-          wrapper.style.width = "";
-
-          vue = false;
-        }
-      });
 
       /* info.addEventListener("click", () => {
         const str = currentCountry.getAttribute("title").replace(" ", "_");
@@ -15666,231 +15507,203 @@
       });*/
       /*---------------------------*/
 
-      let min = Infinity;
-      let max = -Infinity;
-      let minKey = null;
-      let maxKey = null;
-      for (const [clef, info] of Object.entries(P_info)) {
-        const population = info.population;
+    //   let min = Infinity;
+    //   let max = -Infinity;
+    //   let minKey = null;
+    //   let maxKey = null;
+    //   for (const [clef, info] of Object.entries(P_info)) {
+    //     const population = info.population;
 
-        if (typeof population === "number") {
-          if (population < min) {
-            min = population;
-            minKey = clef;
-          }
-          if (population > max) {
-            max = population;
-            maxKey = clef;
-          }
-        }
-      }
+    //     if (typeof population === "number") {
+    //       if (population < min) {
+    //         min = population;
+    //         minKey = clef;
+    //       }
+    //       if (population > max) {
+    //         max = population;
+    //         maxKey = clef;
+    //       }
+    //     }
+    //   }
 
-      let vP = false;
-      vueP.addEventListener("click", () => {
-        vues.forEach((v) => (v.style.boxShadow = ""));
-        vCo2e = false;
-        vPib = false;
-        if (!vP) {
-          vueP.style.boxShadow = "0px 0px 1em white";
-          vP = true;
-          globe.querySelectorAll("path").forEach((p) => {
-            if (!P_info[p.id] || typeof P_info[p.id].population !== "number") {
-              p.style.fill = "rgb(0, 0, 0)";
-              pColor_m.set(p, {
-                hovered: "rgb(29, 204, 90)",
-                current: "rgb(0, 0, 0)",
-              });
-              return;
-            }
-            /**/ //Si toutes les clefs sont vraies
-            let R =
-              ((182 - 118) * (P_info[p.id].population - min)) / (max - min) +
-              118;
+    //   let vP = false;
+    //  vueP.addEventListener("click", () => {
+    //     vues.forEach((v) => (v.style.boxShadow = ""));
+    //     vCo2e = false;
+    //     vPib = false;
+    //     if (!vP) {
+    //       vueP.style.boxShadow = "0px 0px 1em white";
+    //       vP = true;
+    //       globe.querySelectorAll("path").forEach((p) => {
+    //         if (!P_info[p.id] || typeof P_info[p.id].population !== "number") {
+    //           p.style.fill = "rgb(0, 0, 0)";
+    //           pColor_m.set(p, {
+    //             hovered: "rgb(29, 204, 90)",
+    //             current: "rgb(0, 0, 0)",
+    //           });
+    //           return;
+    //         }
+    //         /**/ //Si toutes les clefs sont vraies
+    //         let R =
+    //           ((182 - 118) * (P_info[p.id].population - min)) / (max - min) +
+    //           118;
 
-            let G =
-              ((17 - 168) * (P_info[p.id].population - min)) / (max - min) +
-              168;
-            let B =
-              ((17 - 31) * (P_info[p.id].population - min)) / (max - min) + 31;
-            p.style.fill = `rgb(${Math.round(R)}, ${Math.round(G)}, ${Math.round(B)})`;
-            pColor_m.set(p, {
-              hovered: "rgb(29, 204, 90)",
-              current: `rgb(${Math.round(R)}, ${Math.round(G)}, ${Math.round(B)})`,
-            });
-          });
+    //         let G =
+    //           ((17 - 168) * (P_info[p.id].population - min)) / (max - min) +
+    //           168;
+    //         let B =
+    //           ((17 - 31) * (P_info[p.id].population - min)) / (max - min) + 31;
+    //         p.style.fill = `rgb(${Math.round(R)}, ${Math.round(G)}, ${Math.round(B)})`;
+    //         pColor_m.set(p, {
+    //           hovered: "rgb(29, 204, 90)",
+    //           current: `rgb(${Math.round(R)}, ${Math.round(G)}, ${Math.round(B)})`,
+    //         });
+    //       });
 
-          document.getElementById("CN").style.fill = "rgb(129, 12, 12)";
-          pColor_m.set(document.getElementById("CN"), {
-            hovered: "rgb(29, 204, 90)",
-            current: "rgb(129, 12, 12)",
-          });
+    //       document.getElementById("CN").style.fill = "rgb(129, 12, 12)";
+    //       pColor_m.set(document.getElementById("CN"), {
+    //         hovered: "rgb(29, 204, 90)",
+    //         current: "rgb(129, 12, 12)",
+    //       });
 
-          document.getElementById("IN").style.fill = "rgb(72, 5, 5)";
-          pColor_m.set(document.getElementById("IN"), {
-            hovered: "rgb(29, 204, 90)",
-            current: "rgb(72, 5, 5)",
-          });
-        } else {
-          vueP.style.boxShadow = "";
-          vP = false;
-          globe.querySelectorAll("path").forEach((p) => {
-            pColor_m.set(p, {
-              hovered: "rgb(29, 204, 90)",
-              current: `${colorPath}`, //Remplace aquamarine,
-            });
-          });
-        }
-      });
+    //       document.getElementById("IN").style.fill = "rgb(72, 5, 5)";
+    //       pColor_m.set(document.getElementById("IN"), {
+    //         hovered: "rgb(29, 204, 90)",
+    //         current: "rgb(72, 5, 5)",
+    //       });
+    //     } else {
+    //       vueP.style.boxShadow = "";
+    //       vP = false;
+    //       globe.querySelectorAll("path").forEach((p) => {
+    //         pColor_m.set(p, {
+    //           hovered: "rgb(29, 204, 90)",
+    //           current: `${colorPath}`, //Remplace aquamarine,
+    //         });
+    //       });
+    //     }
+    //   });
 
-      let min2 = 219.424830882698;
-      let max2 = 288001.433369041;
-      let vPib = false;
+    //   let min2 = 219.424830882698;
+    //   let max2 = 288001.433369041;
+    //   let vPib = false;
 
-      vuePib.addEventListener("click", () => {
-        vues.forEach((v) => (v.style.boxShadow = ""));
-        vP = false;
-        vCo2e = false;
-        if (!vPib) {
-          vuePib.style.boxShadow = "0px 0px 1em white";
-          vPib = true;
-          globe.querySelectorAll("path").forEach((p) => {
-            if (!P_info[p.id] || typeof P_info[p.id].pib !== "number") {
-              p.style.fill = "rgb(0, 0, 0)";
-              pColor_m.set(p, {
-                hovered: "rgb(29, 204, 90)",
-                current: "rgb(0, 0, 0)",
-              });
-              return;
-            }
-            const t =
-              (Math.log(P_info[p.id].pib) - Math.log(min2)) /
-              (Math.log(max2) - Math.log(min2));
+    //   vuePib.addEventListener("click", () => {
+    //     vues.forEach((v) => (v.style.boxShadow = ""));
+    //     vP = false;
+    //     vCo2e = false;
+    //     if (!vPib) {
+    //       vuePib.style.boxShadow = "0px 0px 1em white";
+    //       vPib = true;
+    //       globe.querySelectorAll("path").forEach((p) => {
+    //         if (!P_info[p.id] || typeof P_info[p.id].pib !== "number") {
+    //           p.style.fill = "rgb(0, 0, 0)";
+    //           pColor_m.set(p, {
+    //             hovered: "rgb(29, 204, 90)",
+    //             current: "rgb(0, 0, 0)",
+    //           });
+    //           return;
+    //         }
+    //         const t =
+    //           (Math.log(P_info[p.id].pib) - Math.log(min2)) /
+    //           (Math.log(max2) - Math.log(min2));
 
-            const hue = 120 * Math.max(0, Math.min(1, t));
-            p.style.fill = `hsl(${hue}, 85%, 45%)`;
+    //         const hue = 120 * Math.max(0, Math.min(1, t));
+    //         p.style.fill = `hsl(${hue}, 85%, 45%)`;
 
-            pColor_m.set(p, {
-              hovered: "rgb(29, 204, 90)",
-              current: `hsl(${hue}, 85%, 45%)`,
-            });
-          });
-        } else {
-          vuePib.style.boxShadow = "";
-          vPib = false;
-          globe.querySelectorAll("path").forEach((p) => {
-            pColor_m.set(p, {
-              hovered: "rgb(29, 204, 90)",
-              current: `${colorPath}`,
-            });
-          });
-        }
-      });
+    //         pColor_m.set(p, {
+    //           hovered: "rgb(29, 204, 90)",
+    //           current: `hsl(${hue}, 85%, 45%)`,
+    //         });
+    //       });
+    //     } else {
+    //       vuePib.style.boxShadow = "";
+    //       vPib = false;
+    //       globe.querySelectorAll("path").forEach((p) => {
+    //         pColor_m.set(p, {
+    //           hovered: "rgb(29, 204, 90)",
+    //           current: `${colorPath}`,
+    //         });
+    //       });
+    //     }
+    //   });
 
-      let minCo2e = 200954.78;
-      let maxCo2e = 33958303074.31;
+    //   let minCo2e = 200954.78;
+    //   let maxCo2e = 33958303074.31;
 
-      let vCo2e = false;
-      vueCo2e.addEventListener("click", () => {
-        vues.forEach((v) => (v.style.boxShadow = ""));
+    //   let vCo2e = false;
+    //   vueCo2e.addEventListener("click", () => {
+    //     vues.forEach((v) => (v.style.boxShadow = ""));
 
-        vPib = false;
-        vP = false;
+    //     vPib = false;
+    //     vP = false;
 
-        if (!vCo2e) {
-          vueCo2e.style.boxShadow = "0px 0px 1em white";
+    //     if (!vCo2e) {
+    //       vueCo2e.style.boxShadow = "0px 0px 1em white";
 
-          vCo2e = true;
+    //       vCo2e = true;
 
-          globe.querySelectorAll("path").forEach((p) => {
-            if (
-              !P_info[p.id] ||
-              typeof P_info[p.id].co2e !== "number" ||
-              P_info[p.id].co2e <= 0
-            ) {
-              p.style.fill = "rgb(0, 0, 0)";
-              pColor_m.set(p, {
-                hovered: "rgb(29, 204, 90)",
-                current: "rgb(0, 0, 0)",
-              });
-              return;
-            }
-            const value = P_info[p.id].co2e;
-            const status = idVisible_m.get(p.id);
-            // ✅ Valeur absente → NOIR
-            if (typeof value !== "number" || value <= 0) {
-              p.style.fill = "rgb(0, 0, 0)";
-              pColor_m.set(p, {
-                hovered: "rgb(29, 204, 90)",
-                current: "rgb(0, 0, 0)",
-              });
-              return;
-            }
+    //       globe.querySelectorAll("path").forEach((p) => {
+    //         if (
+    //           !P_info[p.id] ||
+    //           typeof P_info[p.id].co2e !== "number" ||
+    //           P_info[p.id].co2e <= 0
+    //         ) {
+    //           p.style.fill = "rgb(0, 0, 0)";
+    //           pColor_m.set(p, {
+    //             hovered: "rgb(29, 204, 90)",
+    //             current: "rgb(0, 0, 0)",
+    //           });
+    //           return;
+    //         }
+    //         const value = P_info[p.id].co2e;
+    //         const status = idVisible_m.get(p.id);
+    //         // ✅ Valeur absente → NOIR
+    //         if (typeof value !== "number" || value <= 0) {
+    //           p.style.fill = "rgb(0, 0, 0)";
+    //           pColor_m.set(p, {
+    //             hovered: "rgb(29, 204, 90)",
+    //             current: "rgb(0, 0, 0)",
+    //           });
+    //           return;
+    //         }
 
-            // ✅ Normalisation logarithmique
-            const t =
-              (Math.log(value) - Math.log(minCo2e)) /
-              (Math.log(maxCo2e) - Math.log(minCo2e));
+    //         // ✅ Normalisation logarithmique
+    //         const t =
+    //           (Math.log(value) - Math.log(minCo2e)) /
+    //           (Math.log(maxCo2e) - Math.log(minCo2e));
 
-            const tt = Math.max(0, Math.min(1, t)); // clamp
+    //         const tt = Math.max(0, Math.min(1, t)); // clamp
 
-            // ✅ Palette pollution : jaune sale → brun noir
-            start = { R: 0, G: 255, B: 0 };
-            end = { R: 255, G: 0, B: 0 };
-            let R = (end.R - start.R) * tt + start.R;
-            let G = (end.G - start.G) * tt + start.G;
-            let B = (end.B - start.B) * tt + start.B;
+    //         // ✅ Palette pollution : jaune sale → brun noir
+    //         start = { R: 0, G: 255, B: 0 };
+    //         end = { R: 255, G: 0, B: 0 };
+    //         let R = (end.R - start.R) * tt + start.R;
+    //         let G = (end.G - start.G) * tt + start.G;
+    //         let B = (end.B - start.B) * tt + start.B;
 
-            const color = `rgb(${Math.round(R)}, ${Math.round(G)}, ${Math.round(B)})`;
-            p.style.fill = color;
+    //         const color = `rgb(${Math.round(R)}, ${Math.round(G)}, ${Math.round(B)})`;
+    //         p.style.fill = color;
 
-            pColor_m.set(p, {
-              hovered: "rgb(29, 204, 90)",
-              current: color,
-            });
-          });
-        } else {
-          vueCo2e.style.boxShadow = "";
-          vCo2e = false;
+    //         pColor_m.set(p, {
+    //           hovered: "rgb(29, 204, 90)",
+    //           current: color,
+    //         });
+    //       });
+    //     } else {
+    //       vueCo2e.style.boxShadow = "";
+    //       vCo2e = false;
 
-          globe.querySelectorAll("path").forEach((p) => {
-            p.style.fill = "";
-            pColor_m.set(p, {
-              hovered: "rgb(29, 204, 90)",
-              current: `${colorPath}`,
-            });
-          });
-        }
-      });
+    //       globe.querySelectorAll("path").forEach((p) => {
+    //         p.style.fill = "";
+    //         pColor_m.set(p, {
+    //           hovered: "rgb(29, 204, 90)",
+    //           current: `${colorPath}`,
+    //         });
+    //       });
+    //     }
+    //   });
 
-      rondSearch.addEventListener("click", () => {
-        if (S) {
-          choiceBox.style.opacity = "0";
-          choiceBox.style.pointerEvents = "none";
-          setTimeout(() => {
-            choiceBox.style.visibility = "hidden";
-          }, 400);
 
-          search.style.width = rWidth + "px";
-          S = false;
-        } else {
-          choiceBox.style.pointerEvents = "all";
-          choiceBox.style.opacity = "1";
-          choiceBox.style.visibility = "visible ";
-          choiceBox.innerHTML = ``;
-
-          search.style.width = "8em";
-          S = true;
-        }
-      });
-
-      if (!isMobile) {
-        choiceBox.style.top = search.getBoundingClientRect().bottom + 10 + "px";
-        choiceBox.style.left =
-          search.getBoundingClientRect().left -
-          choiceBox.getBoundingClientRect().width / 2 -
-          search.getBoundingClientRect().width / 2 +
-          "px";
-      }
     
       //Script searching flag
       function fillContentFlag (Lf) {
@@ -16381,8 +16194,8 @@ LsPop.forEach((item, index) => {
         }, 400);
       }
 
-      zP.addEventListener("click", () => applyZoomBtn(true));
-      zM.addEventListener("click", () => applyZoomBtn(false));
+      // zP.addEventListener("click", () => applyZoomBtn(true));
+      // zM.addEventListener("click", () => applyZoomBtn(false));
 
       //Partie cadre
 
@@ -17654,7 +17467,6 @@ LsPop.forEach((item, index) => {
       const L_propagation = [wrapperMenuGrid, document.querySelector('.wrapperClasser'), document.querySelector('.wrapperWorldFilter'),document.querySelector('.wrapperTitleS') ]
        if (L_propagation.some(el => el && el.contains(e.target))) return;
         
-        console.log(e.target)
         cadreFilterS.classList.remove('active')
         cadreClasser.classList.remove('active')
         cadreModeS.classList.remove('active')
