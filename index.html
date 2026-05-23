@@ -7602,6 +7602,8 @@
               id="ZW"
             />
           </g>
+
+
         </svg>
       </div>
     </div>
@@ -8573,6 +8575,42 @@
 
       const media = window.matchMedia("(orientation: landscape)");
 
+
+      // Au moment où tu charges le SVG
+
+// À mettre après que globe soit défini
+// const overlay = document.createElementNS("http://www.w3.org/2000/svg", "path");
+// overlay.setAttribute("id", "country-overlay");
+// overlay.setAttribute("pointer-events", "none");
+// overlay.style.fill = "black";
+// overlay.style.transition = "opacity 0.3s ease"
+// overlay.style.opacity = "0";
+// const svgEl = document.querySelector('.globe').querySelector('svg'); // ou document.querySelector('svg.monde')
+// svgEl.appendChild(overlay);
+
+// function darkenCountry(pathId) {
+//   const original = document.getElementById(pathId);
+//   if (!original) return;
+//   overlay.setAttribute("d", original.getAttribute("d"));
+//   overlay.setAttribute("transform", original.getAttribute("transform") || "");
+//   overlay.style.opacity = "0.5";
+// }
+
+// function resetOverlay() {
+//   overlay.style.opacity = "0";
+// }
+// const fr = document.getElementById('FR')
+// console.log("🚀 ~ FR:", FR)
+// darkenCountry('FR')
+// setTimeout(() => {
+// darkenCountry('RU')
+
+  
+// }, 1000);
+
+
+
+
       // Script Flemme
       let currentPhone = document.getElementById("phoneHome");
 
@@ -8795,6 +8833,10 @@
 
       const loadingCadre = document.querySelectorAll(".loadingCadre");
       const globe = document.querySelector(".globe");
+
+
+
+
 
       // Maps
       let pColor_m = new Map();
@@ -17138,7 +17180,6 @@
           return;
         }
         currentCountry = country;
-        document.querySelector("svg.monde").appendChild(country);
 
         toggleC(true);
         const id = country.id;
