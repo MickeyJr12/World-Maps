@@ -318,22 +318,15 @@
         opacity: 0;
         border-radius: 0.6em;
         transform: scale(0.75) translateY(1em);
-      }
-      #only.active {
-        background: rgba(91, 175, 253, 0.8);
-        outline: 0.1em solid rgba(255, 255, 255, 0.5);
-      }
+        
+      }   
       #calque {
         background: rgba(56, 140, 223, 0.674);
         outline: 0.1em solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         backdrop-filter: blur(10px);
-        cursor: pointer;
-      }
-      #calque.active {
-        background: rgba(91, 175, 253, 0.8);
-        outline: 0.1em solid rgba(255, 255, 255, 0.5);
-      }
+        cursor: pointer;      
+      }     
 
       .wrapperCalque {
         display: flex;
@@ -399,7 +392,8 @@
           transform 0.35s ease,
           opacity 0.35s ease,
           outline 0.2s ease,
-          margin-bottom 0.35s ease;
+          margin-bottom 0.35s ease,
+          box-shadow 0.2s ease;
       }
       .toolCarre:active {
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.874);
@@ -409,9 +403,10 @@
       #openTool {
         pointer-events: all;
       }
-      #openTool.active {
+      #openTool.active, #calque.active,#only.active {
         background: rgba(91, 175, 253, 0.8);
         outline: 0.1em solid rgba(255, 255, 255, 0.5);
+        box-shadow : 0px 0px 0.4em rgba(255,255,255,0.7)
       }
 
       .toolCarre svg {
