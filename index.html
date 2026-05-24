@@ -17362,6 +17362,8 @@
 
         const original = document.getElementById(pathId);
         if (!original) return;
+        
+        original.parentNode.append(original);
         overlay.parentNode.append(overlay);
         overlay.style.opacity = "0.5";
       }
