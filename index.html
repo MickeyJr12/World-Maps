@@ -8345,6 +8345,8 @@
             700,
           );
         }, 10);
+          colorCurrentCountry()
+
       }
 
       function cacherMaps() {
@@ -8683,6 +8685,8 @@
           700,
         );
         Maps.appendChild(globe);
+        currentCountry=null
+        colorCurrentCountry()
         globe.style.zIndex = "5";
         phoneHome.style.display = "none";
         Maps.style.visibility = "visible";
@@ -17359,7 +17363,7 @@
         const original = document.getElementById(pathId);
         if (!original) return;
         overlay.parentNode.append(overlay);
-        overlay.style.opacity = "1";
+        overlay.style.opacity = "0.5";
       }
 
       function resetOverlay(p_id, overlay) {
@@ -19231,7 +19235,7 @@
         let activeOrgaKey = null;
         let activeOrgaBtn = null;
 
-        function applyOrgaFilter(key, btn) {
+        function viewOrga(key, btn) {
           // Si on re-clique sur le filtre déjà actif → on l'éteint
           if (activeOrgaKey === key && activeOrgaBtn === btn) {
             activeOrgaKey = null;
@@ -19298,7 +19302,7 @@
           e.stopPropagation();
           // Clic sur l'œil principal → désactive le filtre actif
           if (activeOrgaKey !== null) {
-            applyOrgaFilter(activeOrgaKey, activeOrgaBtn); // toggle off
+            viewOrga(activeOrgaKey, activeOrgaBtn); // toggle off
           }
         });
 
@@ -19331,13 +19335,13 @@
 
           function handleClick(e) {
             if (eyeBtn.contains(e.target) && e.currentTarget === row) return;
-            applyOrgaFilter(item.key, eyeBtn);
+            viewOrga(item.key, eyeBtn);
             // si même key partagée (OPEP / OPEP+), on identifie par btn
           }
 
           eyeBtn.addEventListener("click", (e) => {
             e.stopPropagation();
-            applyOrgaFilter(item.key, eyeBtn);
+            viewOrga(item.key, eyeBtn);
           });
 
           const orgaListBtn = createListBtn(item.key);
