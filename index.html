@@ -8799,6 +8799,9 @@
             mCadre.style.opacity = "1";
           }, 20);
         } else {
+          paths.forEach((p) => {
+            resetOverlay(p.id, overlay_m.get(p.id));
+          });
           mCadre.style.transform = "translateY(-15%)";
           mCadre.style.opacity = "0";
           mCadre.style.pointerEvents = "none";
