@@ -18037,6 +18037,11 @@
               statusPib && Object.values(statusPib).every(Boolean);
 
             if (!P_info[p.id] || typeof P_info[p.id].pib !== "number") {
+              
+              if (visiblePib) {
+                p.style.fill = "rgb(0, 0, 0)";
+              }                               
+
               p.style.fill = "rgb(0, 0, 0)";
               pColor_m.set(p, {
                 hovered: "rgb(29, 204, 90)",
@@ -19060,23 +19065,16 @@
 
         let openRegionBlock = null;
 
-        function viewSub(Stxt, subVisible) {
-          paths.forEach((path) => {
-            if (!P_info[path.id]) return;
-            if (P_info[path.id].subregion !== Stxt) return;
-
-            const entry = idVisible_m.get(path.id);
-            if (!entry) return;
-
-            if (!subVisible) {
-              // CACHER : toujours
-              entry.continent = true;
-            } else {
-              entry.continent = false;
-            }
-          });
-          colorCountry();
-        }
+        function viewSub(subLabel, makeVisible) {
+  paths.forEach((path) => {
+    if (!P_info[path.id]) return;
+    if (P_info[path.id].subregion !== subLabel) return;
+    const entry = idVisible_m.get(path.id);
+    if (!entry) return;
+    entry.continent = makeVisible; // ← UNE SEULE clé, état explicite
+  });
+  colorCountry();
+}
 
         continentsData.forEach((r) => {
           const regionBlock = document.createElement("div");
@@ -19098,11 +19096,12 @@
           const { btn: regionEyeBtn, line: regionEyeLine } = createEyeBtn(r.id);
 
           const regionListBtn = createListBtn(r.id);
+          regionListBtn.style.marginLeft = "0.6em"
 
           regionRow.appendChild(arrowRegion);
           regionRow.appendChild(regionLabel);
-          regionRow.appendChild(regionListBtn); // 👈 NOUVELLE ICÔNE
           regionRow.appendChild(regionEyeBtn);
+          regionRow.appendChild(regionListBtn); // 👈 NOUVELLE ICÔNE
           //**//
           regionListBtn.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -19133,75 +19132,34 @@
             subEyes.push({ btn: subEyeBtn, line: subEyeLine });
             //*//
             /* clic ligne sous-région → toggle oeil */
+            
+
             subRow.addEventListener("click", (e) => {
-              viewSub(
-                subLabel.textContent,
-                subVisible_m.get(subLabel.textContent),
-              );
-              subVisible_m.set(
-                subLabel.textContent,
-                !subVisible_m.get(subLabel.textContent),
-              );
-              paths.forEach((p) => {
-                if (p.id in P_info) {
-                  if (
-                    P_info[p.id].subregion != null &&
-                    P_info[p.id].subregion === subLabel.textContent
-                  ) {
-                    idVisible_m.get(p.id).continent = !idVisible_m.get(p.id)
-                      .continent;
-                  }
-                }
-              });
+  if (subEyeBtn.contains(e.target)) return;
+  const wasVisible = subVisible_m.get(subLabel.textContent);
+  subVisible_m.set(subLabel.textContent, !wasVisible);
+  viewSub(subLabel.textContent, !wasVisible);       // état APRÈS toggle
+  setEye(subEyeBtn, subEyeLine, !wasVisible);
+  syncRegionEye();
+});
 
-              if (subEyeBtn.contains(e.target)) return;
+subEyeBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  const wasVisible = subVisible_m.get(subLabel.textContent);
+  subVisible_m.set(subLabel.textContent, !wasVisible);
+  viewSub(subLabel.textContent, !wasVisible);       // idem
+  setEye(subEyeBtn, subEyeLine, !wasVisible);
+  syncRegionEye();
+});
 
-              setEye(
-                subEyeBtn,
-                subEyeLine,
-                subEyeBtn.classList.contains("hidden"),
-              );
 
-              syncRegionEye();
-            });
-
-            subEyeBtn.addEventListener("click", (e) => {
-              e.stopPropagation();
-
-              viewSub(
-                subLabel.textContent,
-                subVisible_m.get(subLabel.textContent),
-              );
-              subVisible_m.set(
-                subLabel.textContent,
-                !subVisible_m.get(subLabel.textContent),
-              );
-
-              paths.forEach((p) => {
-                if (p.id in P_info) {
-                  if (
-                    P_info[p.id].subregion != null &&
-                    P_info[p.id].subregion === subLabel.textContent
-                  ) {
-                    idVisible_m.get(p.id).continent = !idVisible_m.get(p.id)
-                      .continent;
-                  }
-                }
-              });
-
-              setEye(
-                subEyeBtn,
-                subEyeLine,
-                subEyeBtn.classList.contains("hidden"),
-              );
-
-              syncRegionEye();
-            });
             const subListBtn = createListBtn(s.id);
 
             subRow.appendChild(subLabel);
-            subRow.appendChild(subListBtn); // 👈 NOUVELLE ICÔNE
             subRow.appendChild(subEyeBtn);
+            subRow.appendChild(subListBtn); // 👈 NOUVELLE ICÔNE
+            subListBtn.style.marginLeft = "0.6em"
+
             subssubsWrapper.appendChild(subRow);
 
             subListBtn.addEventListener("click", (e) => {
@@ -19258,18 +19216,19 @@
           }
 
           function viewReg() {
-            const willHide = !isRegionFullyHidden(); // tout visible/partiel → on cache tout
-            r.subs.forEach((s) => subVisible_m.set(s.label, !willHide));
-            paths.forEach((path) => {
-              if (!P_info[path.id]) return;
-              if (P_info[path.id].region !== regionLabel.textContent) return;
-              const entry = idVisible_m.get(path.id);
-              if (!entry) return;
-              entry.continent = !willHide;
-            });
-            subEyes.forEach(({ btn, line }) => setEye(btn, line, !willHide));
-            colorCountry();
-          }
+  const willShow = isRegionFullyHidden(); // si tout caché → on montre
+  r.subs.forEach((s) => subVisible_m.set(s.label, willShow));
+  paths.forEach((path) => {
+    if (!P_info[path.id]) return;
+    if (P_info[path.id].region !== regionLabel.textContent) return;
+    const entry = idVisible_m.get(path.id);
+    if (!entry) return;
+    entry.continent = willShow;
+  });
+  subEyes.forEach(({ btn, line }) => setEye(btn, line, willShow));
+  colorCountry();
+  syncRegionEye();
+}
 
           regionEyeBtn.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -19459,8 +19418,9 @@
           row.addEventListener("click", handleClick);
           row.appendChild(arrowPlaceholder);
           row.appendChild(label);
-          row.appendChild(orgaListBtn); // 👈 NOUVELLE ICÔNE
           row.appendChild(eyeBtn);
+          row.appendChild(orgaListBtn); // 👈 NOUVELLE ICÔNE
+          orgaListBtn.style.marginLeft = "0.6em"
           subsWrapper.appendChild(row);
 
           orgaListBtn.addEventListener("click", (e) => {
@@ -19599,9 +19559,10 @@
 
         mainRow.appendChild(arrowPlaceholder);
         mainRow.appendChild(mainLabel);
-        mainRow.appendChild(last2); // 👈 NOUVELLE ICÔNE
-
         mainRow.appendChild(eyeBtn);
+
+        mainRow.appendChild(last2); // 👈 NOUVELLE ICÔNE
+        last2.style.marginLeft = "0.6em"
         mainBlock.appendChild(mainRow);
         container.appendChild(mainBlock);
 
