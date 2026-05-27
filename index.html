@@ -17270,48 +17270,57 @@
       function setVB({ x, y, w, h }) {
         svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
       }
-
       // ── Drag (pan) ───────────────────────────────────────────────
-      svg.addEventListener("mousedown", (e) => {
-        isDragging = true;
-        const vb = getVB();
-        startVBx = vb.x;
-        startVBy = vb.y;
-        startX = e.clientX;
-        startY = e.clientY;
-        svg.style.cursor = "grabbing";
-        e.preventDefault();
-      });
 
-      document.addEventListener("mousemove", (e) => {
-        if (!isDragging) return;
-        svg.classList.add("dragging");
+     let isDraggingMouse = false;
+let dragMoved = false;
+let dragTimeout = null;
 
-        const vb = getVB();
+svg.addEventListener("mousedown", (e) => {
+  isDraggingMouse = true;
+  dragMoved = false;
+  const vb = getVB();
+  startVBx = vb.x;
+  startVBy = vb.y;
+  startX = e.clientX;
+  startY = e.clientY;
+  svg.style.cursor = "grabbing";
+  e.preventDefault();
 
-        // Convertir les pixels écran en unités viewBox
-        const rect = svg.getBoundingClientRect();
-        const scaleX = vb.w / rect.width;
-        const scaleY = vb.h / rect.height;
+  // Désactive les pointer events après 150ms (laisser le click passer)
+  dragTimeout = setTimeout(() => {
+    if (isDraggingMouse) {
+      paths.forEach(p => p.style.pointerEvents = "none");
+    }
+  }, 150);
+});
 
-        const dx = (e.clientX - startX) * scaleX;
-        const dy = (e.clientY - startY) * scaleY;
+document.addEventListener("mousemove", (e) => {
+  if (!isDraggingMouse) return;
+  dragMoved = true;
+  svg.classList.add("dragging");
 
-        setVB({
-          x: startVBx - dx,
-          y: startVBy - dy,
-          w: vb.w,
-          h: vb.h,
-        });
-      });
+  const vb = getVB();
+  const rect = svg.getBoundingClientRect();
+  const scaleX = vb.w / rect.width;
+  const scaleY = vb.h / rect.height;
 
-      document.addEventListener("mouseup", () => {
-        isDragging = false;
-        svg.classList.remove("dragging");
+  const dx = (e.clientX - startX) * scaleX;
+  const dy = (e.clientY - startY) * scaleY;
 
-        svg.style.cursor = "grab";
-      });
+  setVB({ x: startVBx - dx, y: startVBy - dy, w: vb.w, h: vb.h });
+});
 
+document.addEventListener("mouseup", () => {
+  isDraggingMouse = false;
+  svg.classList.remove("dragging");
+  svg.style.cursor = "grab";
+
+  clearTimeout(dragTimeout);
+
+  // Réactive toujours les pointer events au mouseup
+  paths.forEach(p => p.style.pointerEvents = "");
+});
       //Partie cadre
 
       //Interpoler pour zoomer sur country
@@ -19619,114 +19628,120 @@ subEyeBtn.addEventListener("click", (e) => {
       }
 
       // ── Touch start ──────────────────────────────────────────────
-      svg.addEventListener(
-        "touchstart",
-        (e) => {
-          cancelAnimationFrame(touchInertiaFrame); // stoppe l'inertie si on retouche
+     let touchDragTimeout = null;
+let touchMoved = false;
 
-          if (e.touches.length === 1) {
-            isDragging = true;
-            touchVelX = 0;
-            touchVelY = 0;
-            lastTouchX = e.touches[0].clientX;
-            lastTouchY = e.touches[0].clientY;
+svg.addEventListener(
+  "touchstart",
+  (e) => {
+    cancelAnimationFrame(touchInertiaFrame);
 
-            const vb = getVB();
-            startVBx = vb.x;
-            startVBy = vb.y;
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-          } else if (e.touches.length === 2) {
-            isDragging = false;
-            lastTouchDist = getTouchDist(e.touches);
-            lastTouchMid = getTouchMid(e.touches);
-          }
-        },
-        { passive: false },
-      );
+    if (e.touches.length === 1) {
+      isDragging = true;
+      touchMoved = false;
+      touchVelX = 0;
+      touchVelY = 0;
+      lastTouchX = e.touches[0].clientX;
+      lastTouchY = e.touches[0].clientY;
 
-      // ── Touch move ───────────────────────────────────────────────
-      svg.addEventListener(
-        "touchmove",
-        (e) => {
-          e.preventDefault();
+      const vb = getVB();
+      startVBx = vb.x;
+      startVBy = vb.y;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
 
-          if (e.touches.length === 1 && isDragging) {
-            const vb = getVB();
-            const rect = svg.getBoundingClientRect();
-            const scaleX = vb.w / rect.width;
-            const scaleY = vb.h / rect.height;
-
-            const dx = (e.touches[0].clientX - startX) * scaleX;
-            const dy = (e.touches[0].clientY - startY) * scaleY;
-
-            // Capture vélocité
-            touchVelX = (e.touches[0].clientX - lastTouchX) * scaleX;
-            touchVelY = (e.touches[0].clientY - lastTouchY) * scaleY;
-            lastTouchX = e.touches[0].clientX;
-            lastTouchY = e.touches[0].clientY;
-
-            setVB({ x: startVBx - dx, y: startVBy - dy, w: vb.w, h: vb.h });
-          } else if (e.touches.length === 2) {
-            const newDist = getTouchDist(e.touches);
-            const newMid = getTouchMid(e.touches);
-            const vb = getVB();
-            const rect = svg.getBoundingClientRect();
-
-            const midVBx = vb.x + (newMid.x - rect.left) * (vb.w / rect.width);
-            const midVBy = vb.y + (newMid.y - rect.top) * (vb.h / rect.height);
-
-            const zoomFactor = lastTouchDist / newDist;
-            const newW = Math.min(
-              Math.max(vb.w * zoomFactor, MIN_SIZE),
-              MAX_SIZE,
-            );
-            const newH = Math.min(
-              Math.max(vb.h * zoomFactor, MIN_SIZE),
-              MAX_SIZE,
-            );
-
-            const newX = midVBx - (midVBx - vb.x) * (newW / vb.w);
-            const newY = midVBy - (midVBy - vb.y) * (newH / vb.h);
-
-            setVB({ x: newX, y: newY, w: newW, h: newH });
-
-            lastTouchDist = newDist;
-            lastTouchMid = newMid;
-          }
-        },
-        { passive: false },
-      );
-
-      // ── Touch end ────────────────────────────────────────────────
-      svg.addEventListener("touchend", (e) => {
-        if (e.touches.length < 2) lastTouchDist = null;
-
-        if (e.touches.length === 0) {
-          isDragging = false;
-
-          // Inertie
-          let currentVelX = touchVelX;
-          let currentVelY = touchVelY;
-
-          function inertia() {
-            if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1)
-              return;
-            const vb = getVB();
-            setVB({
-              x: vb.x - currentVelX,
-              y: vb.y - currentVelY,
-              w: vb.w,
-              h: vb.h,
-            });
-            currentVelX *= 0.92;
-            currentVelY *= 0.92;
-            touchInertiaFrame = requestAnimationFrame(inertia);
-          }
-
-          touchInertiaFrame = requestAnimationFrame(inertia);
+      // Désactive après 150ms si on tient sans lâcher
+      touchDragTimeout = setTimeout(() => {
+        if (isDragging) {
+          paths.forEach(p => p.style.pointerEvents = "none");
         }
-      });
+      }, 150);
+
+    } else if (e.touches.length === 2) {
+      isDragging = false;
+      clearTimeout(touchDragTimeout);
+      // Pinch : désactive immédiatement
+      paths.forEach(p => p.style.pointerEvents = "none");
+      lastTouchDist = getTouchDist(e.touches);
+      lastTouchMid = getTouchMid(e.touches);
+    }
+  },
+  { passive: false },
+);
+
+svg.addEventListener(
+  "touchmove",
+  (e) => {
+    e.preventDefault();
+    touchMoved = true;
+
+    if (e.touches.length === 1 && isDragging) {
+      const vb = getVB();
+      const rect = svg.getBoundingClientRect();
+      const scaleX = vb.w / rect.width;
+      const scaleY = vb.h / rect.height;
+
+      const dx = (e.touches[0].clientX - startX) * scaleX;
+      const dy = (e.touches[0].clientY - startY) * scaleY;
+
+      touchVelX = (e.touches[0].clientX - lastTouchX) * scaleX;
+      touchVelY = (e.touches[0].clientY - lastTouchY) * scaleY;
+      lastTouchX = e.touches[0].clientX;
+      lastTouchY = e.touches[0].clientY;
+
+      setVB({ x: startVBx - dx, y: startVBy - dy, w: vb.w, h: vb.h });
+
+    } else if (e.touches.length === 2) {
+      const newDist = getTouchDist(e.touches);
+      const newMid = getTouchMid(e.touches);
+      const vb = getVB();
+      const rect = svg.getBoundingClientRect();
+
+      const midVBx = vb.x + (newMid.x - rect.left) * (vb.w / rect.width);
+      const midVBy = vb.y + (newMid.y - rect.top) * (vb.h / rect.height);
+
+      const zoomFactor = lastTouchDist / newDist;
+      const newW = Math.min(Math.max(vb.w * zoomFactor, MIN_SIZE), MAX_SIZE);
+      const newH = Math.min(Math.max(vb.h * zoomFactor, MIN_SIZE), MAX_SIZE);
+
+      const newX = midVBx - (midVBx - vb.x) * (newW / vb.w);
+      const newY = midVBy - (midVBy - vb.y) * (newH / vb.h);
+
+      setVB({ x: newX, y: newY, w: newW, h: newH });
+
+      lastTouchDist = newDist;
+      lastTouchMid = newMid;
+    }
+  },
+  { passive: false },
+);
+
+svg.addEventListener("touchend", (e) => {
+  if (e.touches.length < 2) lastTouchDist = null;
+
+  if (e.touches.length === 0) {
+    isDragging = false;
+    clearTimeout(touchDragTimeout);
+
+    // Réactive toujours au touchend
+    paths.forEach(p => p.style.pointerEvents = "");
+
+    // Inertie
+    let currentVelX = touchVelX;
+    let currentVelY = touchVelY;
+
+    function inertia() {
+      if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1) return;
+      const vb = getVB();
+      setVB({ x: vb.x - currentVelX, y: vb.y - currentVelY, w: vb.w, h: vb.h });
+      currentVelX *= 0.92;
+      currentVelY *= 0.92;
+      touchInertiaFrame = requestAnimationFrame(inertia);
+    }
+
+    touchInertiaFrame = requestAnimationFrame(inertia);
+  }
+});
 
       //Ancien drag plan
       // let lastTouchDist = null;
