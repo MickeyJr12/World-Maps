@@ -7916,7 +7916,7 @@ window.addEventListener("load", () => {
         //Fonction
         const paysDispos = Object.keys(L_q).filter(
           (id) =>
-            (L_q[id].d.toLowerCase() === L_config.d || L_config.c !== "allC") && !L_reponses.includes(L_q[id]) && 
+            (L_q[id].d.toLowerCase() === L_config.d || L_config.c !== "allC") && !L_reponses.includes(id) && 
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
         );
