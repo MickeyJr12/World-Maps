@@ -3209,6 +3209,7 @@
       }
       .btnReprendre {
         background: rgba(6, 103, 239, 0.8);
+        cursor : pointer;
       }
       .btnPm {
         display: flex;
@@ -3322,6 +3323,7 @@
         justify-content: center;
         position: fixed;
         background: transparent;
+        cursor:pointer;
         border: none;
         z-index: 60;
         border-radius: 5px;
@@ -3345,7 +3347,6 @@
         justify-content: center;
         text-align: center;
         align-items: center;
-        overflow: hidden;
         color: white;
         z-index: 50;
         margin-bottom: 1.8em;
@@ -3445,7 +3446,7 @@
         color: white;
         height: auto;
         max-height: 4em;
-        min-height: 2.2em;
+        min-height: 4em;
         padding: 0.5em 0.8em;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -4884,7 +4885,7 @@
         <div class="qBox"></div>
       </div>
 
-      <div class="questionBox">Question 1/15</div>
+      <div class="questionBox">Question <span style="margin-left: 0.5em;" id="qNumber">0</span>/15</div>
       <div class="cadreChrono">
         <svg
           class="iconChrono"
@@ -7796,7 +7797,17 @@
       let idProps_m = new Map();
       L_btn4ChoixHasard.forEach((btn) => idProps_m.set(btn, null)); // Clef : DROM, valeur : identifiant
 
-      function fillPhonePlay() {
+      function fillPhonePlay() {        
+       if (parseInt(qNumber.textContent)>=3){
+        affichePm(); 
+        pause4Choix.style.opacity = "0"
+        pause4Choix.style.pointerEvents="none";      
+        return
+        
+      
+      }
+        qNumber.textContent =  parseInt(qNumber.textContent)+1;
+
         //Reset les paramètres
         btns4Choix.forEach((b) => {
           b.classList.remove("good", "bad", "none");
@@ -8153,6 +8164,14 @@
       });
 
       playConfig.addEventListener("click", () => {
+        qNumber.textContent = "0"
+        document.querySelector('.btn-suivant').textContent = "Suivant →"
+        btnReprendre.textContent = "Reprendre"
+        document.getElementById('pmTitle').textContent = "Menu Pause"
+
+
+
+
         currentChrono = val;
         startChrono(val);
         contentPm.innerHTML = ``;
@@ -8177,7 +8196,8 @@
       const btns4Choix = document.querySelectorAll(".btn4Choix");
       const cadreNext = document.querySelector(".cadreNext");
       const spanNext = cadreNext.querySelector("span");
-      const btnSuivant = document.getElementById(".btn-suivant");
+      const qNumber = document.getElementById('qNumber')
+
 
       const D_classBtn4Choix = { c1: null, c2: null, c3: null, c4: null };
 
@@ -8189,16 +8209,27 @@
           btn.style.filter = "";
         });
 
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", () => {          
           if (viewMaps) {
             zoomCountry(idProps_m.get(btn));
             return;
+          }     
+           const correct = btn === cHasard;
+           
+           
+          cadreNext.classList.remove("good", "bad", "none", "visible");
+          if (correct) {
+            cadreNext.classList.add("good");
+            spanNext.textContent = "✓ Bonne réponse !";
+          } else {
+            cadreNext.classList.add("bad");
+            spanNext.textContent = "✗ Mauvaise réponse";
           }
-
+          cadreNext.classList.add("visible");
           pauseChrono();
           fillContentPm(idProps_m.get(btn), idBonneReponse);
           activerCarte();
-          const correct = btn === cHasard;
+         
 
           btns4Choix.forEach((b) => {
             if (b === cHasard) {
@@ -8214,16 +8245,16 @@
             }
           });
 
-          // ✅ En dehors du forEach
-          cadreNext.classList.remove("good", "bad", "none", "visible");
-          if (correct) {
-            cadreNext.classList.add("good");
-            spanNext.textContent = "✓ Bonne réponse !";
-          } else {
-            cadreNext.classList.add("bad");
-            spanNext.textContent = "✗ Mauvaise réponse";
-          }
-          cadreNext.classList.add("visible");
+          
+           if (parseInt(qNumber.textContent)>=3){          
+          document.querySelector('.btn-suivant').textContent = "Fin"
+          btnReprendre.textContent = "Rejouer"
+          document.getElementById('pmTitle').textContent = "Fin de partie !"          
+           pause4Choix.style.opacity = "0"
+        pause4Choix.style.pointerEvents="none";      
+        }
+          
+
         });
       });
 
@@ -8233,14 +8264,18 @@
       const cachePm = document.getElementById("cachePm");
       const btnReprendre = document.querySelector(".btnReprendre");
       const btnMenu = document.querySelector(".btnMenu");
-      pause4Choix.addEventListener("click", () => {
+
+      function affichePm (){
+
         pauseChrono();
         pm4Choix.style.pointerEvents = "all";
         cachePm.style.pointerEvents = "all";
         pm4Choix.style.transform = "scale(1)";
         pm4Choix.style.opacity = "1";
         cachePm.style.opacity = "1";
-      });
+      
+      }
+      pause4Choix.addEventListener("click", () => {affichePm()});
 
       //Voir sur la carte
       function getId(id) {
@@ -8582,6 +8617,31 @@
       });
 
       btnReprendre.addEventListener("click", () => {
+        if (parseInt(qNumber.textContent)>=3){
+
+          pause4Choix.style.opacity = "1"
+        pause4Choix.style.pointerEvents="all"; 
+
+
+        qNumber.textContent = "0"
+        document.querySelector('.btn-suivant').textContent = "Suivant →"
+        
+        
+         pm4Choix.style.opacity = "0";
+        pm4Choix.style.transform = "";
+        cachePm.style.opacity = "0";
+        pm4Choix.style.pointerEvents = "none";
+        cachePm.style.pointerEvents = "none";
+        setTimeout(() => {
+          
+        contentPm.innerHTML = ``;
+        document.getElementById('pmTitle').textContent = "Menu Pause"
+        btnReprendre.textContent = "Reprendre"
+        fillPhonePlay()
+        }, 220);
+
+        }
+
         if (!cadreNext.classList.contains("visible")) {
           startChrono(currentChrono);
         }
@@ -15889,7 +15949,7 @@
           c: "Bangui",
           p: 4829767,
           s: 622984,
-          n: "République centrafricaine",
+          n: "Rep. centrafricaine",
         },
         CG: {
           d: "Difficile",
