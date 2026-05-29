@@ -19119,9 +19119,11 @@ document.addEventListener("mouseup", () => {
             if (!P_info[path.id][r.key]) {
               return;
             }
+
             L.push(L_q[path.id].n);
           });
           L.sort();
+          console.log(L.includes (L_q["SA"].n))
           L.forEach((name) => {
             const countryI = document.createElement("div");
             countryI.className = "perCountry";
@@ -19129,7 +19131,6 @@ document.addEventListener("mouseup", () => {
             orgaI.appendChild(countryI);
           });
           listBox.appendChild(orgaI);
-          orgaI.children[1].remove();
 
         } else if (subject === "last2") {
           const onu = document.createElement("div");
