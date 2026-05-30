@@ -282,6 +282,22 @@
           opacity 0.35s ease,
           filter 0.3s ease;
       }
+      .zBox.find{
+        position : absolute; 
+        border-radius: 0.6em;
+        z-index: 100;
+        pointer-events: all;
+        width : 2.6em;
+        opacity: 1;
+        right : 0.8em;
+        top : 50%;
+        transform : translateY(-50%);
+        background: rgba(56, 140, 223, 0.674);
+        outline: 0.1em solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
+        backdrop-filter: blur(10px);
+        cursor: pointer;
+      }
       #zP,
       #zM {
         display: flex;
@@ -3402,7 +3418,7 @@
         border-radius: 5px;
       }
 
-      #grid3Choix {
+      #grid4Choix {
         display: grid;
         grid-template-columns: 1fr 1fr; /* force 2 colonnes */
         grid-template-rows: 1fr 1fr; /* force 2 lignes */
@@ -4852,7 +4868,7 @@
       <div id="pm4Choix">
         <div id="pmTitle">Menu pause</div>
         <div id="cadreScorePm">         
-Score :<span style="margin-left: 0.5em;" id="spnScore"></span>/15
+Score :<span id="spnScore"></span>/15
 <div class="cadreStars">
 <svg  id="star1" class="starScore" viewBox="0 0 314 300" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill="rgba(23, 84, 216, 0.5"  d="M146.454 7.60076C149.747 -2.53366 164.085 -2.53365 167.378 7.60077L196.879 98.3982C198.352 102.93 202.576 105.999 207.341 105.999H302.811C313.467 105.999 317.898 119.635 309.277 125.898L232.04 182.014C228.185 184.815 226.571 189.78 228.044 194.312L257.546 285.11C260.839 295.244 249.239 303.672 240.619 297.408L163.382 241.292C159.526 238.491 154.306 238.491 150.45 241.292L73.2135 297.408C64.5926 303.672 52.9933 295.244 56.2862 285.11L85.7881 194.312C87.2607 189.78 85.6475 184.815 81.7921 182.014L4.55522 125.898C-4.06563 119.635 0.364898 105.999 11.0209 105.999H106.491C111.256 105.999 115.48 102.93 116.953 98.3982L146.454 7.60076Z" />
@@ -4956,7 +4972,7 @@ Score :<span style="margin-left: 0.5em;" id="spnScore"></span>/15
           <div class="ligneIn"></div>
         </div>
       </div>
-      <div id="grid3Choix">
+      <div id="grid4Choix">
         <div class="btn4Choix" id="c1"><div class="cBox" id="cc1"></div></div>
         <div class="btn4Choix" id="c2"><div class="cBox" id="cc2"></div></div>
         <div class="btn4Choix" id="c3"><div class="cBox" id="cc3"></div></div>
@@ -8002,6 +8018,45 @@ window.addEventListener("load", () => {
             }
           });
         }
+
+        else if (L_config.m === "modeTrouver"){
+          //variable true/false pour pas append la map et autre chaque fois
+          //Liste des choses par phone, à ajouter, retirer 
+          //Enlever la class find à zbox dans map.addeventlistener, faire tool.append(zbox) et respecter l'ordre des tools 
+          //Retirer le backmap 
+
+        //Cacher les éléments
+        L_replace.forEach((b) => {
+          addTransition(b, "opacity 0.4s ease");
+          b.style.opacity = "0";
+          b.style.pointerEvents = "none";
+        });
+        //Afficher maps
+        document.querySelector(".globe").style.opacity = "0";
+        setTimeout(() => {
+          document.querySelector(".globe").style.opacity = "1";
+        }, 10);
+        L_addMaps.forEach((m) => {
+          document.getElementById("phone4Choix").appendChild(m);
+        });
+        document.getElementById("phone4Choix").append(zBox)
+        zBox.classList.add('find')
+
+        setTimeout(() => {
+           animateViewBox(
+          document.getElementById("svgMonde"),
+          initialViewBox,
+          700,
+        );
+        }, 20);
+        L_addMaps[0].style.zIndex = "10";
+        L_addMaps[1].style.zIndex = "20";
+        L_addMaps[2].style.zIndex = "30";
+        L_addMaps[3].style.zIndex = "50";
+
+
+
+        }
       }
 
       const arboConfig = {
@@ -8291,7 +8346,8 @@ window.addEventListener("load", () => {
       });
     </script>
     <!--Fin Script configuration -->
-    <!--Script 4 Choix-->
+
+    <!--Script play-->
 
     <script>
       const btns4Choix = document.querySelectorAll(".btn4Choix");
@@ -8762,7 +8818,12 @@ window.addEventListener("load", () => {
         pm4Choix.style.pointerEvents = "none";
         cachePm.style.pointerEvents = "none";
       });
+      
+
+
+
     </script>
+<!--Fin script play-->
 
     <script>
       if ("serviceWorker" in navigator) {
@@ -8772,6 +8833,7 @@ window.addEventListener("load", () => {
           .catch((err) => console.error("SW error:", err));
       }
     </script>
+
     <!--Script Maps-->
 
     <script>
