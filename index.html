@@ -17609,7 +17609,7 @@ document.addEventListener("mouseup", () => {
       function pathHover(id, name, element) {
         if (
           Object.values(idVisible_m.get(element.id)).some((v) => v === false) ||
-          isMobile || id==="MQ"
+          isMobile
         )
           return;
         if (isMobile) return;
@@ -17626,7 +17626,7 @@ document.addEventListener("mouseup", () => {
         }
 
         element.style.filter = "brightness(0.86)";
-        element.style.transform = "translateY(-0.1%)";
+        if (id!=="MQ"){element.style.transform = "translateY(-0.1%)"}
 
         lastHovered = element;
       }
