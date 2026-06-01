@@ -7953,7 +7953,7 @@
           return;
         }
 
-        if (parseInt(qNumber.textContent)<15 && (L_config.m === "modeChoix" || L_config.m === "modeTrouver" && cChooseTrouver)){
+        if (parseInt(qNumber.textContent)<15 && (L_config.m === "modeChoix" || L_config.m === "modeTrouver" && (cChooseTrouver|| cChooseTrouver===null) )){
           qNumber.textContent = parseInt(qNumber.textContent) + 1;
         }
 
@@ -8172,8 +8172,11 @@
 
           if (isMobile){
             addTransition(pause4Choix, "opacity 0.4s ease");
-            pause4Choix.style.opacity = "0";
-            pause4Choix.style.pointerEvents = "none";
+
+            if (isMobile){
+              pause4Choix.style.opacity = "0";
+              pause4Choix.style.pointerEvents = "none";
+            }
           }
 
            if (parseInt(qNumber.textContent) >= 15) {
@@ -8185,11 +8188,12 @@
         }
           return
         }
-            if (isMobile){pause4Choix.style = ""}
 
-            toggleC(false)
-
-            qTrouver.style.pointerEvents = ""
+        
+        toggleC(false)
+        
+        pause4Choix.style = ""
+        qTrouver.style.pointerEvents = ""
 
 
           cadreNext.classList.remove("good", "bad", "none");            
@@ -8407,7 +8411,7 @@
           barreChronoIn.getBoundingClientRect().width + "px";
       }
       function startChrono(time) {
-        if (val === "inf"|| time <= 0) {
+        if (val === "inf"|| currentChrono <= 0) {
           return;
         }
         newStart = Date.now();
@@ -9066,13 +9070,19 @@
       });
 
       btnReprendre.addEventListener("click", () => {
+
+        if (!cadreNext.classList.contains("visible") && !cChooseTrouver) {
+          startChrono(currentChrono);
+        }
+
+
         if (parseInt(qNumber.textContent) >= 15) {
           score = 0;
           spnScore.textContent = score;
 
           pause4Choix.style.opacity = "1";
           pause4Choix.style.pointerEvents = "all";
-
+          cChooseTrouver = null;
           qNumber.textContent = "0";
           document.querySelector(".btn-suivant").textContent = "Suivant →";
 
@@ -9088,10 +9098,6 @@
             document.getElementById("pmTitle").textContent = "Menu Pause";
             btnReprendre.textContent = "Reprendre";
           }, 220);
-        }
-
-        if (!cadreNext.classList.contains("visible") && !cChooseTrouver) {
-          startChrono(currentChrono);
         }
         pm4Choix.style.opacity = "0";
         pm4Choix.style.transform = "";
