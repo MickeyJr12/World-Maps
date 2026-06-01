@@ -8033,6 +8033,10 @@
               if (c !== cBoxHasard) {
                 idProps_m.set(c.parentNode, p_id);
               }
+              else {
+                idProps_m.set(c.parentNode, idBonneReponse);
+
+              }
 
               if (
                 !L_reponse.includes(p_id) &&
@@ -8617,6 +8621,7 @@
           cadreNext.classList.add("visible");
           pauseChrono();
           fillContentPm(idProps_m.get(btn), idBonneReponse);
+
           activerCarte();
 
           btns4Choix.forEach((b) => {
