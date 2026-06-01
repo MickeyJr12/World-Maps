@@ -7796,6 +7796,9 @@
       const phoneConfig = document.getElementById("phoneConfig");
 
       play.addEventListener("click", () => {
+
+        cChooseTrouver = null;
+        viewMaps = false
         clonepColor_m.clear();
         cloneVisible_m.clear();
 
@@ -8435,8 +8438,12 @@
             qTrouver.style.pointerEvents = "all"
             cadreNext.classList.add("visible");
             document.querySelector(".btn-suivant").textContent = "Suivant →";
+            if(L_config.m === "modeTrouver"){
+            zoomCountry(idBonneReponse)
             pause4Choix.style.opacity = "0";
             pause4Choix.style.pointerEvents = "none";
+          }
+
 
             if(L_config.m==="modeTrouver"){
               pColor_m.set(document.getElementById(idBonneReponse), {hover : "", current : "green"})
@@ -8593,7 +8600,7 @@
         btn.addEventListener("click", () => {
           if (viewMaps || cChooseTrouver) {
             if(viewMaps){zoomCountry(idProps_m.get(btn))}
-            else {zoomCountry(idBonneReponse)}
+            if (cChooseTrouver) {zoomCountry(idBonneReponse)}
             return;
           }
           const correct = btn === cHasard;
@@ -17759,7 +17766,7 @@
         }
 
         colorCountry();
-        if (L_config.m === "modeTrouver" && (cChooseTrouver||spanNext.textContent.includes('Temps')) || L_config.m !== "modeTrouver"){toggleC(true)}
+        if (L_config.m === "modeTrouver" && (cChooseTrouver||spanNext.textContent.includes('Temps')) || viewMaps){toggleC(true)}
  
         const id = country.id;
         const name = country.getAttribute("title");
