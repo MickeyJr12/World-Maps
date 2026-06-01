@@ -3633,7 +3633,7 @@
         text-transform: uppercase;
       }
       .questionBox.modeTrouver {
-        color: black;
+        color: rgba(65, 212, 237, 1);
       }
       .cadreChrono {
         display: flex;
@@ -3650,6 +3650,9 @@
       }
       .iconChrono path {
         fill: rgba(255, 255, 255, 0.95);
+      }
+      .iconChrono.modeTrouver path {
+        fill: rgba(65, 212, 237, 0.9);
       }
       .barreChrono {
         display: flex;
@@ -3669,6 +3672,10 @@
         background: rgba(255, 255, 255, 0.9);
         box-shadow: 0 0 5px rgba(255, 255, 255, 0.35);
       }
+      .barreChronoIn.modeTrouver{
+        background: rgba(65, 212, 237, 0.9);
+        box-shadow: 0 0 5px rgba(31, 88, 168, 0.35);
+      }
       .timeChronoBox {
         display: flex;
         align-self: center;
@@ -3678,6 +3685,9 @@
         color: rgba(255, 255, 255, 0.95);
         font-weight: 700;
         letter-spacing: 1px;
+      }
+      .txtChrono.modeTrouver {
+        color:rgba(65, 212, 237, 1);
       }
     </style>
     <!--HTML FLemme-->
@@ -8664,6 +8674,9 @@
         getId("qTrouver"),
         getId("pause4Choix"),
         document.querySelector(".questionBox"),
+        document.querySelector(".barreChronoIn"),
+        document.querySelector(".iconChrono"),
+        document.querySelector(".txtChrono"),
       ];
       const L_addMaps = [
         getC(".globe"),
