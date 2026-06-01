@@ -296,7 +296,7 @@
       .zBox.modeTrouver {
         position: absolute;
         border-radius: 0.6em;
-        z-index: 100;
+        z-index: 25;
         pointer-events: all;
         width: 2.6em;
         opacity: 1;
@@ -4855,7 +4855,7 @@
                 <div
                   class="chrono-option"
                   id="chrono15"
-                  data-value="15"
+                  data-value="5"
                   data-label="15s"
                 >
                   15s
@@ -7931,7 +7931,7 @@
           s.classList.add("scored"),
         );
 
-        if (parseInt(qNumber.textContent) >= 15) {
+        if (parseInt(qNumber.textContent) >= 15 && L_config.m !== "modeTrouver" || L_config.m === "modeTrouver" && parseInt(qNumber.textContent) >= 15 && cChooseTrouver  ) {
           affichePm();
           document.getElementById("cadreScorePm").style.display = "flex";
           pause4Choix.style.opacity = "0";
@@ -7939,7 +7939,8 @@
           L_reponses = [];
           return;
         }
-        qNumber.textContent = parseInt(qNumber.textContent) + 1;
+
+        if (parseInt(qNumber.textContent)<15){qNumber.textContent = parseInt(qNumber.textContent) + 1}
 
         //Reset les paramètres
         btns4Choix.forEach((b) => {
@@ -7947,12 +7948,15 @@
         });
         cadreNext.classList.remove("good", "bad", "none", "visible");
         pauseChrono();
-        barreChronoIn.style.transition = "none"; // ← coupe la transition
-        barreChronoIn.style.width = "0%"; // ← saute instantanément à 0
-        barreChronoIn.offsetHeight; // force reflow
         idMauvaiseReponse = "null";
         currentChrono = val;
-        startChrono(val);
+
+        if (L_config.m !=="modeTrouver" || L_config.m ==="modeTrouver" &&  (cChooseTrouver|| cChooseTrouver===null)  ){
+           barreChronoIn.style.transition = "none"; // ← coupe la transition
+        barreChronoIn.style.width = "0%"; // ← saute instantanément à 0
+        barreChronoIn.offsetHeight; // force reflow
+          startChrono(val)
+        }
         reponseFound = false;
         L_reponse = [];
         desactiverCarte();
@@ -8084,6 +8088,9 @@
 
             if (cChooseTrouver===null)
           {
+            idVisible_m = new Map(
+  Array.from(tIdVisible_m, ([key, val]) => [key, { ...val }])
+);
           L_modeTrouver.forEach((m) => {
             m.classList.add("modeTrouver");
           });
@@ -8095,6 +8102,7 @@
           });
           document.getElementById("phone4Choix").append(zBox);
           zBox.classList.add("modeTrouver");
+
 
 
           setTimeout(() => {
@@ -8119,6 +8127,7 @@
           cadreNext.classList.remove("good", "bad", "none");
           qTrouver.classList.remove("good", "bad", "none");            
 
+            pColor_m.set(document.getElementById(idBonneReponse), { hover: "", current: "green" });
 
           const correct =currentCountry.id===idBonneReponse;
           //correct? currentCountry.classList.add('good') : currentCountry.classList.add('bad');
@@ -8128,6 +8137,7 @@
             cadreNext.classList.add("good");
             spanNext.textContent = "✓ Bonne réponse !";
             qTrouver.classList.add('good')
+            fillContentPm(currentCountry.id,idBonneReponse)
              score += 1;
          }
          else {
@@ -8135,14 +8145,33 @@
             qTrouver.classList.add('bad')
 
             spanNext.textContent = "✗ Mauvaise réponse";
+            fillContentPm(currentCountry.id,idBonneReponse)
+            pColor_m.set(currentCountry, { hover: "", current: "red" });
+            
           }      
 
           document.querySelector(".btn-suivant").textContent = "Suivant →";
-          
+          colorCountry()
+
+          if (isMobile){
+            addTransition(pause4Choix, "opacity 0.4s ease");
+            pause4Choix.style.opacity = "0";
+            pause4Choix.style.pointerEvents = "none";
+          }
+
+           if (parseInt(qNumber.textContent) >= 15) {
+          document.querySelector(".btn-suivant").textContent = "Fin";
+          document.getElementById("cadreScorePm").style.display = "flex"; 
+          btnReprendre.textContent = "Rejouer";
+          document.getElementById("pmTitle").textContent = "Fin de partie !";
+          L_reponses = [];
+        }
           return
         }
+            if (isMobile){pause4Choix.style = ""}
 
             toggleC(false)
+
             qTrouver.style.pointerEvents = ""
 
 
@@ -8155,22 +8184,18 @@
           //variable true/false pour pas append la map et autre chaque fois
           //Liste des choses par phone, à ajouter, retirer
           //Enlever la class modeTrouver à zbox dans map.addeventlistener, faire tool.append(zbox) et respecter l'ordre des tools
-          //Retirer le backmap
+          //Retirer le backmap 
 
-      
 
-        idVisible_m = new Map(
-  Array.from(tIdVisible_m, ([key, val]) => [key, { ...val }])
-);
-      }
         //Remplir tout ça
         paths.forEach((p) => {
+           pColor_m.set(p, { hover: "", current: colorPath });
           if (!paysDisposTrouver.includes(p.id)) {
             idVisible_m.get(p.id).continent = false;
           }
         });
-          colorCountry()
 
+          colorCountry()
         
       let  p_id =
                 Object.keys(L_q)[
@@ -8201,6 +8226,11 @@
                   qqTrouver.textContent = L_q[idBonneReponse].c;
                   
                 }
+
+                
+      }
+      
+      
               
 
 
@@ -8381,15 +8411,28 @@
                 b.classList.add("good");
                 D_classBtn4Choix[b.id] = "good";
               } else {
+                if(L_config.m !=="modeTrouver"){
                 b.classList.add("none");
                 D_classBtn4Choix[b.id] = "none";
-              }
+              }}
             });
 
             cadreNext.classList.remove("good", "bad", "none", "visible");
             cadreNext.classList.add("none");
             spanNext.textContent = "⏱ Temps écoulé !";
+            cChooseTrouver = true;
             cadreNext.classList.add("visible");
+            document.querySelector(".btn-suivant").textContent = "Suivant →";
+
+            if(L_config.m==="modeTrouver"){
+              pColor_m.set(document.getElementById(idBonneReponse), {hover : "", current : "green"})
+              colorCountry()
+            }
+            if (parseInt(qNumber.textContent) >= 15){
+              document.querySelector(".btn-suivant").textContent = "Fin";
+              btnReprendre.textContent = "Rejouer";
+            }
+
 
             //Remplir contentPm dans le menu pause
             fillContentPm("outTime", idBonneReponse);
@@ -8535,7 +8578,7 @@
         btn.addEventListener("click", () => {
           if (viewMaps || cChooseTrouver) {
             if(viewMaps){zoomCountry(idProps_m.get(btn))}
-            else {zoomCountry(currentCountry.id)}
+            else {zoomCountry(idBonneReponse)}
             return;
           }
           const correct = btn === cHasard;
@@ -8809,7 +8852,7 @@
         }
         reponse.textContent = L_q[idGood].n;
 
-        if (L_config.r === "capitaleR") {
+        if (L_config.r === "capitaleR" || L_config.m === "modeTrouver" && L_config.q ==="capitaleQ") {
           if (idProp !== "outTime") {
             proposition.textContent = L_q[idProp].c;
           }
@@ -9012,7 +9055,7 @@
           }, 220);
         }
 
-        if (!cadreNext.classList.contains("visible")) {
+        if (!cadreNext.classList.contains("visible") && !cChooseTrouver) {
           startChrono(currentChrono);
         }
         pm4Choix.style.opacity = "0";
@@ -17675,7 +17718,7 @@
             resetOverlay(p.id, overlay_m.get(p.id));
           });
           toggleC(false);
-          if (L_config.m === "modeTrouver" && !cChooseTrouver){
+          if (L_config.m === "modeTrouver" && !cChooseTrouver && !cadreNext.classList.contains('none')){
             //lalo            
         cadreNext.classList.remove("good", "bad", "none", "visible");    
          spanNext.textContent = "Mystère"
@@ -17685,15 +17728,15 @@
           return;
         }
         currentCountry = country;
-        if (L_config.m==="modeTrouver"&& !cChooseTrouver){
+        if (L_config.m==="modeTrouver"&& !cChooseTrouver && !cChooseTrouver && !cadreNext.classList.contains('none') ){
            spanNext.textContent = "Mystère"
             document.querySelector(".btn-suivant").textContent = "Valider ✓"
         cadreNext.classList.add('none',"visible")
         }
 
         colorCountry();
-        if (L_config.m === "modeTrouver" &&cChooseTrouver || L_config.m !== "modeTrouver"){toggleC(true)}
-
+        if (L_config.m === "modeTrouver" && (cChooseTrouver||spanNext.textContent.includes('Temps')) || L_config.m !== "modeTrouver"){toggleC(true)}
+ 
         const id = country.id;
         const name = country.getAttribute("title");
 
