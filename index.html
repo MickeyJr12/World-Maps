@@ -8397,7 +8397,7 @@
           barreChronoIn.getBoundingClientRect().width + "px";
       }
       function startChrono(time) {
-        if (val === "inf") {
+        if (val === "inf"|| time <= 0) {
           return;
         }
         newStart = Date.now();
@@ -8411,6 +8411,7 @@
           if (currentChrono <= 0) {
             activerCarte();
             pauseChrono();
+            console.log(currentChrono);
             barreChronoIn.style.width = "100%";
             //Changer les btnsChoix, afficher cadreNext
             btns4Choix.forEach((b) => {
@@ -8444,6 +8445,7 @@
 
             //Remplir contentPm dans le menu pause
             fillContentPm("outTime", idBonneReponse);
+            return
           }
         }, 100);
         barreChronoIn.style.transition = `width ${currentChrono - 1}s linear`;
