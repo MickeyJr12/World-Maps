@@ -8434,12 +8434,12 @@
             cadreNext.classList.remove("good", "bad", "none", "visible");
             cadreNext.classList.add("none");
             spanNext.textContent = "⏱ Temps écoulé !";
-            cChooseTrouver = true;
-            qTrouver.style.pointerEvents = "all"
             cadreNext.classList.add("visible");
             document.querySelector(".btn-suivant").textContent = "Suivant →";
             if(L_config.m === "modeTrouver"){
             zoomCountry(idBonneReponse)
+            cChooseTrouver = true;
+            qTrouver.style.pointerEvents = "all"
             pause4Choix.style.opacity = "0";
             pause4Choix.style.pointerEvents = "none";
           }
