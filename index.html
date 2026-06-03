@@ -18602,7 +18602,7 @@
           });
 
         document.getElementById("cadreOrga").innerHTML = ``;
-        viewUs?"":fillCadreOrga(id);
+        viewState?"":fillCadreOrga(id);
         Promise.all([
           new Promise((res) => {
             if (mDrapeauCadre.complete) res();
@@ -18617,13 +18617,12 @@
             .querySelectorAll(".flagLoadingCadre")
             .forEach((d) => (d.style.display = "none"));
         });
-        console.log("US-"+id)
         titlesCadre.forEach(
-          (t) => (t.textContent = viewUs? D_us[id.slice(-2)].n + " (" + id + ")" : L_q[id].n + " (" + id + ")"),
+          (t) => (t.textContent = viewState? D_us[id.slice(-2)].n + " (" + id + ")" : L_q[id].n + " (" + id + ")"),
         );
-        mTitleCadre.textContent = viewUs? D_us[id.slice(-2)].n:  L_q[id].n;
+        mTitleCadre.textContent = viewState? D_us[id.slice(-2)].n:  L_q[id].n;
 
-        capitales.forEach((cap) => (cap.textContent = viewUs? D_us[id.slice(-2)].c :  L_q[id].c));
+        capitales.forEach((cap) => (cap.textContent = viewState? D_us[id.slice(-2)].c :  L_q[id].c));
 
         txtsCelCadre.forEach((t) => (t.textContent = ""));
         loadingCadre.forEach((L) => {
