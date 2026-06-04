@@ -9707,14 +9707,14 @@
 
       viewUs.addEventListener("click", () => {
         const L_viewState = [
-          backMaps,
-          wrapperTool,
+          backMaps,          
           opensearch,
           zBox,
           only,
           centerBtn,
           calque,
           cadreLegend,
+          openTool
         ];
         if (!viewState) {
           viewState = true;
@@ -9742,10 +9742,16 @@
           L_viewState.forEach((el) => {
             el.classList.add("elViewState");
           });
+          tools.forEach((el) => {
+            el === zBox ? "":
+            el.classList.add("elViewState");
+          })
           openTool.classList.contains("active") ? openTool.click() : "";
           calques.forEach((c) => {
             c.classList.contains("active") ? c.click() : "";
           });
+          openTool.style.pointerEvents = "none"
+
 
           let backUs = document.createElement("button");
           backUs.className = "back";
@@ -9788,6 +9794,13 @@
               el.classList.remove("elViewState");
               el.style.pointerEvents = "";
             });
+              tools.forEach((el) => {
+              el.classList.remove("elViewState");
+              el.style.pointerEvents = "";
+            });
+          openTool.style.pointerEvents = ""
+            
+
           });
         }
       });
