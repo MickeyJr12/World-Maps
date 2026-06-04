@@ -9714,6 +9714,7 @@
           svgUs.style.fill = colorPath
 
           colorCountry();
+          toggleC(false)
 
           document.getElementById("US").classList.add("viewState");          
           svgUs.classList.add("viewState");
@@ -18548,7 +18549,7 @@
       function countryClick(id, name, element) {
         if (
           (L_config.m === "modeTrouver" && cChooseTrouver) ||
-          L_config.m !== "modeTrouver"
+          L_config.m !== "modeTrouver" && !viewState
         ) {
           toggleC(element.id === currentCountry.id);
         }
