@@ -18819,7 +18819,6 @@
               "rgba(255,210,50,1)");
 
         const original = document.getElementById(pathId);
-        if (!original || (viewState && pathId === "US-AK")) return;
         const p = document.getElementById(pathId);
         const status = idVisible_m.get(p.id);
         const visible = status && Object.values(status).every(Boolean);
@@ -18828,10 +18827,8 @@
           p.style.fill="rgba(190,190,190,1)"
           return
         }
+        if (!visible ||!original || (viewState && pathId === "US-AK")) return;
 
-        if (!visible) {
-          return;
-        }
         if (!viewState) {
           original.parentNode.append(original);
           overlay.parentNode.append(overlay);
