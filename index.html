@@ -8072,14 +8072,12 @@
     <!--Script Home-->
     <script>
       window.addEventListener("load", () => {
-        setTimeout(() => {
           // Sortie de phoneConfig
           phoneConfig.style.transition =
             "transform 0.5s ease, opacity 0.2s ease";
           phoneConfig.style.opacity = "0";
 
           setTimeout(() => {
-            phoneConfig.style.display = "none";
 
             // Prépare phoneHome avant de l'afficher
             [...phoneHome.children].forEach((el) => {
@@ -8100,7 +8098,6 @@
               }
             });
           }, 150);
-        }, 100);
       });
 
       //Ajouter une transition
