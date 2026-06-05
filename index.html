@@ -9052,16 +9052,41 @@
         document.querySelector(".iconChrono"),
         document.querySelector(".txtChrono"),
       ];
-      const L_addMaps = [
-        getC(".globe"),
-        getId("mCadre"),
-        getId("backMaps"),
-        getId("cadre"),
-      ];
-      getId("backMaps").addEventListener("click", () => {
+
+      let backMapPlay = document.createElement("button");
+          backMapPlay.className = "back";
+          backMapPlay.id = "backUs";
+          backMapPlay.style.background = "rgba(56, 140, 223, 0.4)";
+          backMapPlay.style.left = "0.75em";
+          backMapPlay.style.transition = "opacity 0.3s ease";
+          backMapPlay.style.zIndex = "30";
+          backMapPlay.innerHTML = `
+           <svg
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Bold"
+          viewBox="0 0 24 24"
+          width="100%"
+        >
+          <path
+            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+          />
+        </svg>
+          `;
+          backMapPlay.addEventListener("click", () => {
         cacherMaps();
         activerCarte();
       });
+      const L_addMaps = [
+        getC(".globe"),
+        getId("mCadre"),
+        backMapPlay,
+        getId("cadre"),
+      ];
+
+
+      
+      getId("backMaps").addEventListener("click", () => {});
       //z-index des éléments de maps dans 4 choix
 
       let classBtnNext; // Class du cadre de btnNext
@@ -9340,6 +9365,7 @@
       }
 
       function desactiverCarte() {
+        viewMaps = false;
         texteCarte.style.maxWidth = "0";
         btnCarte.classList.remove("cliquable");
       }
@@ -9620,9 +9646,6 @@
 
       const backMaps = document.getElementById("backMaps");
       backMaps.addEventListener("click", () => {
-        if (viewMaps) {
-          return;
-        }
         toggleC(false);
 
         // paths.forEach(p=>{
@@ -21893,6 +21916,12 @@
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/sw.js");
       }
+
+      function loop(){
+        console.log(viewMaps)
+        requestAnimationFrame(loop)
+      }
+      loop()
 
       /*phoneHome.style.display="none"
       phone4Choix.style.display="flex"*/
