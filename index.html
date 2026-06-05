@@ -9713,9 +9713,8 @@
         const L_viewState = [
           backMaps,          
           opensearch,
-          zBox,
-          only,
           centerBtn,
+          only,
           calque,
           cadreLegend,
           openTool
@@ -9749,15 +9748,19 @@
           L_viewState.forEach((el) => {
             el.classList.add("elViewState");
           });
-          tools.forEach((el) => {
-            el === zBox ? "":
-            el.classList.add("elViewState");
-          })
+          zBox.style.left = zBox.getBoundingClientRect().left + "px";
+          zBox.style.top = zBox.getBoundingClientRect().top + "px";
+          zBox.style.position = "absolute";
+          zBox.style.opacity = "1"
+          Maps.append(zBox);
+          zBox.classList.add('modeTrouver')
+
           openTool.classList.contains("active") ? openTool.click() : "";
           calques.forEach((c) => {
             c.classList.contains("active") ? c.click() : "";
           });
           openTool.style.pointerEvents = "none"
+
 
           const LcelSup = [devise,carSide,seaAccess,independance,calendar,co2e,pibPh,gouvernement,religion,fuseaux]
           const celsCadre  = document.querySelectorAll('.celCadre')
@@ -9833,6 +9836,11 @@
           orgaMenu.style.display = ""
           blasonMenu.style.display = ""
           orgaMenu.click()
+         
+          zBox.style.position = "";
+          zBox.style.opacity = ""
+          zBox.classList.remove('modeTrouver')
+          wrapperTool.insertBefore(zBox, wrapperTool.firstChild);
 
           });
         }
@@ -19162,20 +19170,23 @@
 
         openTool.querySelector("svg").classList.contains("rotate")
           ? (L_tool.forEach((el) => {
+            if (!(el===zBox && viewState)){
               setTimeout(() => {
                 el.style.opacity = "1";
                 el.style.transform = "scale(1)";
               }, delay);
               delay += 50;
-            }),
+      }}),
             (wrapperTool.style.pointerEvents = "all"))
           : (L_toolReverse.forEach((el) => {
+            if (!(el===zBox && viewState)){
+
               setTimeout(() => {
                 el.style.opacity = "0";
                 el.style.transform = "";
               }, delay);
               delay += 50;
-            }),
+      }}),
             (delay = 0),
             L_calque.forEach((el) => {
               setTimeout(() => {
