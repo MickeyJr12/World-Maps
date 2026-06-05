@@ -8496,9 +8496,12 @@
               cadreNext.classList.add("good");
               spanNext.textContent = "✓ Bonne réponse !";
               fillContentPm(currentCountry.id, idBonneReponse);
+              playSound(goodSound)
               score += 1;
             } else {
               cadreNext.classList.add("bad");
+              playSound(badSound)
+              
 
               spanNext.textContent = "✗ Mauvaise réponse";
               fillContentPm(currentCountry.id, idBonneReponse);
@@ -8899,8 +8902,18 @@
     <!--Fin Script configuration -->
 
     <!--Script play-->
+    <!--Script 4 choix-->
 
     <script>
+      const goodSound = new Audio('goodSound.mp3');
+      const badSound = new Audio('badSound.mp3');
+      const funSound = new Audio('funSound.mp3');
+
+      function playSound(song) {
+        song.currentTime = 0;
+        song.play();
+      }     
+
       const btns4Choix = document.querySelectorAll(".btn4Choix");
       const cadreNext = document.querySelector(".cadreNext");
       const spanNext = cadreNext.querySelector("span");
@@ -8943,10 +8956,12 @@
 
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
+            playSound(goodSound)
             cadreNext.classList.add("good");
             spanNext.textContent = "✓ Bonne réponse !";
             score += 1;
           } else {
+            playSound(badSound)
             cadreNext.classList.add("bad");
             spanNext.textContent = "✗ Mauvaise réponse";
           }
