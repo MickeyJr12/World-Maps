@@ -8908,6 +8908,7 @@
       const goodSound = new Audio('goodSound.mp3');
       const badSound = new Audio('badSound.mp3');
       const funSound = new Audio('funSound.mp3');
+      const sounds = [goodSound,badSound,funSound]
 
       document.addEventListener('touchstart', () => {
       goodSound.load();
@@ -8917,8 +8918,11 @@
         }, { once: true });
 
       function playSound(song) {
-        song.currentTime = 0;
-        song.play();
+        sounds.forEach(s=>{
+          s.pause();
+          s.currentTime=0})
+        song.play()
+        
       }     
 
       const btns4Choix = document.querySelectorAll(".btn4Choix");
