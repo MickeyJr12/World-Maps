@@ -2651,6 +2651,7 @@
       .btnPlay.hover {
         filter: brightness(0.9);
       }
+
       /*CSS Configuration */
       #phoneConfig {
         display: none;
@@ -4056,6 +4057,8 @@
           <h2>Maps</h2>
         </div>
       </div>
+
+
     </div>
 
     <!--HTML configuration-->
@@ -8918,6 +8921,7 @@
         }, { once: true });
 
       function playSound(song) {
+        return
         sounds.forEach(s=>{
           s.pause();
           s.currentTime=0})
