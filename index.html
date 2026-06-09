@@ -8753,7 +8753,6 @@
           if (currentChrono <= 0) {
             activerCarte();
             pauseChrono();
-            console.log(currentChrono);
             barreChronoIn.style.width = "100%";
             //Changer les btnsChoix, afficher cadreNext
             btns4Choix.forEach((b) => {
@@ -9708,24 +9707,8 @@
       const paths = svg.querySelectorAll("path");
       const pathsUs = svgUs.querySelectorAll("path");
       const L_circles = ["MQ","GI","AD","LI","SC","GO","IO","NF","MC","VA","SM"]
-      
-      function getPathCenter(pathEl, svgEl) {
-  const bbox = pathEl.getBBox();
-
-  // Point central dans le système local du path
-  const localPoint = svgEl.createSVGPoint();
-  localPoint.x = bbox.x + bbox.width / 2;
-  localPoint.y = bbox.y + bbox.height / 2;
-
-  // Matrice de transformation du path vers le SVG racine
-  const ctm = pathEl.getCTM();
-
-  // Conversion en coordonnées SVG racine
-  const svgPoint = localPoint.matrixTransform(ctm);
-
-  return { cx: svgPoint.x, cy: svgPoint.y };
-}
-
+      const L_elCircles = []
+  
       function createCircle(pId) {
   const c = document.getElementById(pId);
   const bbox = c.getBBox();
@@ -9740,20 +9723,89 @@
 
   const svgPt = pt.matrixTransform(ctm).matrixTransform(toSVG);
 
-  const r = Math.max(bbox.width, bbox.height) / 2 * 1.4;
+  let r = Math.max(bbox.width, bbox.height) / 2 * 1.9;
+
+  r = Math.max(r,0.85)
 
   const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  circle.style.display = "none"
   circle.setAttribute('cx', svgPt.x);
   circle.setAttribute('cy', svgPt.y);
   circle.setAttribute('r', r);
-  circle.setAttribute('fill', 'none');
-  circle.setAttribute('stroke', 'white');
-  circle.setAttribute('stroke-width', '0.3');
+  circle.setAttribute('fill', 'transparent');
+  circle.setAttribute('stroke', 'rgb(6, 107, 14)');
+  circle.setAttribute('stroke-width', '0.08');
   svg.appendChild(circle);
+
+  //
+  circle.addEventListener('click',(e)=>{
+      e.stopPropagation()
+        const country = c
+        if (country != null) {
+          const status = idVisible_m.get(country.id);
+          if (!status || Object.values(status).some((v) => v === false)) {
+            return;
+          }
+        }
+        ``; /**/ //Return si au moins l'un des idVisible est false
+        if (country === null) {
+          cadreVue.style.opacity = "0";
+          cadreVueTF = false;
+          cadreVue.style.pointerEvents = "none";
+          only.classList.remove("active");
+        }
+        if (!country || country === currentCountry) {
+          currentCountry = null;
+          paths.forEach((p) => {
+            resetOverlay(p.id, overlay_m.get(p.id));
+          });
+          pathsUs.forEach((p) => (p.style.fill = colorPath));
+          toggleC(false);
+          viewUs.classList.remove("viewState");
+          if (L_config.m === "modeTrouver" && !cChooseTrouver) {
+            //lalo
+            cadreNext.classList.remove("good", "bad", "none", "visible");
+            spanNext.textContent = "Mystère";
+            document.querySelector(".btn-suivant").textContent = "Valider ✓";
+          }
+          return;
+        }
+        currentCountry = country;
+        currentCountry.id === "US" && L_config.m !== "modeTrouver"
+          ? viewUs.classList.add("viewState")
+          : viewUs.classList.remove("viewState");
+
+        if (
+          L_config.m === "modeTrouver" &&
+          !cChooseTrouver &&
+          !cChooseTrouver &&
+          !cadreNext.classList.contains("none")
+        ) {
+          spanNext.textContent = "Mystère";
+          document.querySelector(".btn-suivant").textContent = "Valider ✓";
+          cadreNext.classList.add("none", "visible");
+        }
+
+        colorCountry();
+        if (
+          (L_config.m === "modeTrouver" &&
+            (cChooseTrouver || spanNext.textContent.includes("Temps"))) ||
+          viewMaps
+        ) {
+          toggleC(true);
+        }
+
+        const id = country.id;
+        const name = country.getAttribute("title");
+        setTimeout(() => {
+          countryClick(id, name, country);
+        }, 20);
+  })
+      L_elCircles.push(circle)
+
 }
-      setTimeout(() => {        
-      createCircle("MQ")
-      }, 5000);
+        L_circles.forEach(c=>createCircle(c))
+        
       
       const infoName = document.querySelector(".infoName");
 
@@ -19142,11 +19194,15 @@
       }
 
       function countryClick(id, name, element) {
+        
         if (
           (L_config.m === "modeTrouver" && cChooseTrouver) ||
           (L_config.m !== "modeTrouver" && (!viewState || id !== "US"))
         ) {
+        
           toggleC(element.id === currentCountry.id);
+        
+
         }
         //Élément déjà là : region, subregion, independant, population,pib,co2e,gouvernement,religion,fuseaux,dateInde
         // On construit l'URL de l'API avec le nom du pays
@@ -20359,6 +20415,7 @@
         (e) => {
           e.preventDefault();
 
+
           const vb = getVB();
           const rect = svg.getBoundingClientRect();
 
@@ -20380,6 +20437,14 @@
           // Garder le point sous le curseur fixe
           const newX = mouseVBx - (mouseVBx - vb.x) * (newW / vb.w);
           const newY = mouseVBy - (mouseVBy - vb.y) * (newH / vb.h);
+
+          if(newW<=550){
+          L_elCircles.forEach(c=>c.style.display = 'flex')
+          }
+          else {
+          L_elCircles.forEach(c=>c.style.display = 'none')
+          }
+          console.log(newW)
 
           setVB({ x: newX, y: newY, w: newW, h: newH });
         },
@@ -20625,7 +20690,6 @@
             L.push(L_q[path.id].n);
           });
           L.sort();
-          console.log(L.includes(L_q["SA"].n));
           L.forEach((name) => {
             const countryI = document.createElement("div");
             countryI.className = "perCountry";
