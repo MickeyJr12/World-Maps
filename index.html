@@ -204,7 +204,6 @@
       .Maps {
         position: relative;
         z-index: 1;
-
       }
 
       .monde {
@@ -224,7 +223,7 @@
           fill 0.5s ease,
           background 0.4s ease,
           filter 0.2s ease;
-        stroke-width: 0.125px;
+        stroke-width: 0.1px;
       }
       .elViewState {
         transition: opacity 0.4s ease;
@@ -1543,7 +1542,7 @@
       }
       .colorChoice {
         cursor: pointer;
-        outline: 2px solid rgba(255,255,255,0);
+        outline: 2px solid rgba(255, 255, 255, 0);
         outline-offset: 0.15em;
         width: 2em;
         height: 2em;
@@ -1552,12 +1551,11 @@
         transition:
           border 0.2s ease,
           box-shadow 0.2s ease,
-          outline-color 0.2s ease
-          ;
+          outline-color 0.2s ease;
       }
       .colorChoice.active {
         border: 1px solid rgba(255, 255, 255, 0.6);
-        outline-color: rgba(255,255,255,0.6);
+        outline-color: rgba(255, 255, 255, 0.6);
       }
 
       #colorItemW {
@@ -1757,7 +1755,7 @@
 
       #viewUs {
         overflow: hidden;
-        color:white;
+        color: white;
         max-height: 0em;
         opacity: 0;
         margin-bottom: -0.6em;
@@ -4057,8 +4055,6 @@
           <h2>Maps</h2>
         </div>
       </div>
-
-
     </div>
 
     <!--HTML configuration-->
@@ -8078,33 +8074,31 @@
     <!--Script Home-->
     <script>
       window.addEventListener("load", () => {
-          // Sortie de phoneConfig
-          phoneConfig.style.transition = "opacity 0.01s ease"
-          phoneConfig.style.opacity = "0";
-          phoneConfig.style.transition =
-            "transform 0.5s ease, opacity 0.2s ease";
+        // Sortie de phoneConfig
+        phoneConfig.style.transition = "opacity 0.01s ease";
+        phoneConfig.style.opacity = "0";
+        phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
 
-          setTimeout(() => {
+        setTimeout(() => {
+          // Prépare phoneHome avant de l'afficher
+          [...phoneHome.children].forEach((el) => {
+            el.style.transition = "none";
+            el.style.opacity = "0";
+          });
 
-            // Prépare phoneHome avant de l'afficher
-            [...phoneHome.children].forEach((el) => {
-              el.style.transition = "none";
-              el.style.opacity = "0";
-            });
+          phoneHome.style.display = "flex";
+          currentPhone = phoneHome;
+          phoneHome.offsetHeight; // force reflow
 
-            phoneHome.style.display = "flex";
-            currentPhone = phoneHome;
-            phoneHome.offsetHeight; // force reflow
-
-            // Anime le retour de phoneHome
-            [...phoneHome.children].forEach((el) => {
-              el.style.transition = "transform 0.5s ease, opacity 0.4s ease";
-              el.style.opacity = "1";
-              if (el.id === "mapHome") {
-                el.style.opacity = 0.08;
-              }
-            });
-          }, 100);
+          // Anime le retour de phoneHome
+          [...phoneHome.children].forEach((el) => {
+            el.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+            el.style.opacity = "1";
+            if (el.id === "mapHome") {
+              el.style.opacity = 0.08;
+            }
+          });
+        }, 100);
       });
 
       //Ajouter une transition
@@ -8500,12 +8494,11 @@
               cadreNext.classList.add("good");
               spanNext.textContent = "✓ Bonne réponse !";
               fillContentPm(currentCountry.id, idBonneReponse);
-              playSound(goodSound)
+              playSound(goodSound);
               score += 1;
             } else {
               cadreNext.classList.add("bad");
-              playSound(badSound)
-              
+              playSound(badSound);
 
               spanNext.textContent = "✗ Mauvaise réponse";
               fillContentPm(currentCountry.id, idBonneReponse);
@@ -8909,26 +8902,29 @@
     <!--Script 4 choix-->
 
     <script>
-      const goodSound = new Audio('goodSound.mp3');
-      const badSound = new Audio('badSound.mp3');
-      const funSound = new Audio('funSound.mp3');
-      const sounds = [goodSound,badSound,funSound]
+      const goodSound = new Audio("goodSound.mp3");
+      const badSound = new Audio("badSound.mp3");
+      const funSound = new Audio("funSound.mp3");
+      const sounds = [goodSound, badSound, funSound];
 
-      document.addEventListener('click', () => {
-      goodSound.load();
-      badSound.load();
-      funSound.load();
-
-        }, { once: true });
+      document.addEventListener(
+        "click",
+        () => {
+          goodSound.load();
+          badSound.load();
+          funSound.load();
+        },
+        { once: true },
+      );
 
       function playSound(song) {
-        return
-        sounds.forEach(s=>{
+        return;
+        sounds.forEach((s) => {
           s.pause();
-          s.currentTime=0})
-        song.play()
-        
-      }     
+          s.currentTime = 0;
+        });
+        song.play();
+      }
 
       const btns4Choix = document.querySelectorAll(".btn4Choix");
       const cadreNext = document.querySelector(".cadreNext");
@@ -8972,12 +8968,12 @@
 
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
-            playSound(goodSound)
+            playSound(goodSound);
             cadreNext.classList.add("good");
             spanNext.textContent = "✓ Bonne réponse !";
             score += 1;
           } else {
-            playSound(badSound)
+            playSound(badSound);
             cadreNext.classList.add("bad");
             spanNext.textContent = "✗ Mauvaise réponse";
           }
@@ -9059,13 +9055,13 @@
       ];
 
       let backMapsPlay = document.createElement("button");
-          backMapsPlay.className = "back";
-          backMapsPlay.id = "backUs";
-          backMapsPlay.style.background = "rgba(56, 140, 223, 0.4)";
-          backMapsPlay.style.left = "0.75em";
-          backMapsPlay.style.transition = "opacity 0.3s ease";
-          backMapsPlay.style.zIndex = "30";
-          backMapsPlay.innerHTML = `
+      backMapsPlay.className = "back";
+      backMapsPlay.id = "backUs";
+      backMapsPlay.style.background = "rgba(56, 140, 223, 0.4)";
+      backMapsPlay.style.left = "0.75em";
+      backMapsPlay.style.transition = "opacity 0.3s ease";
+      backMapsPlay.style.zIndex = "30";
+      backMapsPlay.innerHTML = `
            <svg
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
@@ -9078,7 +9074,7 @@
           />
         </svg>
           `;
-          backMapsPlay.addEventListener("click", () => {
+      backMapsPlay.addEventListener("click", () => {
         cacherMaps();
         activerCarte();
       });
@@ -9157,7 +9153,9 @@
 
         animateViewBox(svgMonde, targetViewBox, 700);
         setTimeout(() => {
-          if (!viewState){countryClick(p_id, el.getAttribute("title"), el)}
+          if (!viewState) {
+            countryClick(p_id, el.getAttribute("title"), el);
+          }
         }, 10);
       }
 
@@ -9238,7 +9236,7 @@
         });
         L_addMaps.forEach((p) => {
           Maps.appendChild(p);
-          p.style.zIndex = ""
+          p.style.zIndex = "";
         });
         L_replace.forEach((p) => {
           p.style.opacity = "1";
@@ -9380,7 +9378,7 @@
           m.classList.remove("modeTrouver");
         });
         L_config.m = null;
-        toggleC(false)
+        toggleC(false);
         cChooseTrouver = null;
         zBox.remove();
         pColor_m.clear();
@@ -9524,7 +9522,7 @@
         if (window.innerWidth > window.innerHeight) {
           currentPhone.style.display = "none";
           document.getElementById("phoneFlemme").style.display = "flex";
-        } 
+        }
       }
       let intervSleep;
       let animeNight;
@@ -9601,7 +9599,7 @@
         zBox.classList.remove("modeTrouver");
         L_addMaps.forEach((p) => {
           Maps.appendChild(p);
-          p.style.zIndex = ""
+          p.style.zIndex = "";
         });
 
         //animeColorC = requestAnimationFrame(colorCountry);
@@ -9615,8 +9613,6 @@
         toggleC(false);
         colorCountry();
         globe.style.zIndex = "5";
-
-
 
         //***
         [...phoneHome.children].forEach((el) => {
@@ -9633,15 +9629,15 @@
         [...phoneHome.children].forEach((el) => {
           el.style.opacity = "0";
         });
-          
+
         Maps.style.visibility = "visible";
         setTimeout(() => {
-          phoneHome.style.display = "none";         
+          phoneHome.style.display = "none";
           Maps.style.display = "flex";
-          currentPhone = Maps;     
+          currentPhone = Maps;
           Maps.style.opacity = "1";
         }, 180); // attend la fin de l'animation de phoneHome
-      
+
         //**
       });
 
@@ -9666,10 +9662,9 @@
         Maps.style.opacity = "";
         //****
 
-          // Sortie de phoneConfig
+        // Sortie de phoneConfig
 
         setTimeout(() => {
-
           // Prépare phoneHome avant de l'afficher
           [...phoneHome.children].forEach((el) => {
             el.style.transition = "none";
@@ -9701,11 +9696,7 @@
           btnHomeBox.style.transform = "translateX(-50%) translateY(-50%)";
           document.getElementById("mapHome").style.transform =
             "translateX(-40%)";
-
         }, 150);
-      
-
-
       });
 
       const svg = document.querySelector("svg.monde");
@@ -9713,7 +9704,7 @@
       const svgInit = svg.cloneNode(true);
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
       const paths = svg.querySelectorAll("path");
-      const pathsUs = svgUs.querySelectorAll("path")
+      const pathsUs = svgUs.querySelectorAll("path");
       const infoName = document.querySelector(".infoName");
 
       const mCadre = document.getElementById("mCadre");
@@ -9827,16 +9818,14 @@
 
       viewUs.addEventListener("click", () => {
         const L_viewState = [
-          backMaps,          
+          backMaps,
           opensearch,
           centerBtn,
           only,
           calque,
           cadreLegend,
-          openTool
+          openTool,
         ];
-
-
 
         if (!viewState) {
           viewState = true;
@@ -9867,33 +9856,39 @@
           zBox.style.left = zBox.getBoundingClientRect().left + "px";
           zBox.style.top = zBox.getBoundingClientRect().top + "px";
           zBox.style.position = "absolute";
-          zBox.style.opacity = "1"
+          zBox.style.opacity = "1";
           Maps.append(zBox);
-          zBox.classList.add('modeTrouver')
+          zBox.classList.add("modeTrouver");
 
           openTool.classList.contains("active") ? openTool.click() : "";
           calques.forEach((c) => {
             c.classList.contains("active") ? c.click() : "";
           });
-          openTool.style.pointerEvents = "none"
+          openTool.style.pointerEvents = "none";
 
-
-          const LcelSup = [devise,carSide,seaAccess,independance,calendar,co2e,pibPh,gouvernement,religion,fuseaux]
-          const celsCadre  = document.querySelectorAll('.celCadre')
-          celsCadre.forEach(cel=>{
-
-            LcelSup.forEach(el=>{
-              if (cel.contains(el)){
-                cel.style.display = "none"
+          const LcelSup = [
+            devise,
+            carSide,
+            seaAccess,
+            independance,
+            calendar,
+            co2e,
+            pibPh,
+            gouvernement,
+            religion,
+            fuseaux,
+          ];
+          const celsCadre = document.querySelectorAll(".celCadre");
+          celsCadre.forEach((cel) => {
+            LcelSup.forEach((el) => {
+              if (cel.contains(el)) {
+                cel.style.display = "none";
               }
-            })
-            
-          })
-          orgaMenu.style.display = "none"
-          blasonMenu.style.display = "none"
-          contoursMenu.click()
-
-          
+            });
+          });
+          orgaMenu.style.display = "none";
+          blasonMenu.style.display = "none";
+          contoursMenu.click();
 
           let backUs = document.createElement("button");
           backUs.className = "back";
@@ -9925,7 +9920,7 @@
             cloneVisible_m.forEach((val, key) =>
               idVisible_m.set(key, { ...val }),
             );
-            pathsUs.forEach(p=> p.style.fill=colorPath );
+            pathsUs.forEach((p) => (p.style.fill = colorPath));
             toggleC(false);
 
             svgUs.classList.remove("viewState");
@@ -9935,29 +9930,27 @@
               el.classList.remove("elViewState");
               el.style.pointerEvents = "";
             });
-              tools.forEach((el) => {
+            tools.forEach((el) => {
               el.classList.remove("elViewState");
               el.style.pointerEvents = "";
             });
-          openTool.style.pointerEvents = ""
-          
-          celsCadre.forEach(cel=>{
-            LcelSup.forEach(el=>{
-              if (cel.contains(el)){
-                cel.style.display = ""
-              }
-            })
-            
-          })
-          orgaMenu.style.display = ""
-          blasonMenu.style.display = ""
-          orgaMenu.click()
-         
-          zBox.style.position = "";
-          zBox.style.opacity = ""
-          zBox.classList.remove('modeTrouver')
-          wrapperTool.insertBefore(zBox, wrapperTool.firstChild);
+            openTool.style.pointerEvents = "";
 
+            celsCadre.forEach((cel) => {
+              LcelSup.forEach((el) => {
+                if (cel.contains(el)) {
+                  cel.style.display = "";
+                }
+              });
+            });
+            orgaMenu.style.display = "";
+            blasonMenu.style.display = "";
+            orgaMenu.click();
+
+            zBox.style.position = "";
+            zBox.style.opacity = "";
+            zBox.classList.remove("modeTrouver");
+            wrapperTool.insertBefore(zBox, wrapperTool.firstChild);
           });
         }
       });
@@ -18752,7 +18745,7 @@
           paths.forEach((p) => {
             resetOverlay(p.id, overlay_m.get(p.id));
           });
-          pathsUs.forEach(p=>p.style.fill=colorPath)
+          pathsUs.forEach((p) => (p.style.fill = colorPath));
           toggleC(false);
           viewUs.classList.remove("viewState");
           if (L_config.m === "modeTrouver" && !cChooseTrouver) {
@@ -18912,9 +18905,13 @@
       globe.addEventListener("mousemove", (e) => {
         const country = e.target.closest("path");
         if (country != null) {
-          if (!D_us[country.id.slice(-2)] && viewState){return}
-          
-          infoName.textContent =  viewState? D_us[country.id.slice(-2)].n : L_q[country.id].n;
+          if (!D_us[country.id.slice(-2)] && viewState) {
+            return;
+          }
+
+          infoName.textContent = viewState
+            ? D_us[country.id.slice(-2)].n
+            : L_q[country.id].n;
           infoName.style.left =
             e.clientX - infoName.getBoundingClientRect().width / 2 + "px";
           infoName.style.top =
@@ -18989,22 +18986,26 @@
       }
       function darkenCountry(pathId, overlay) {
         viewMaps
-          ? (document.getElementById(pathId).style.stroke = "white" )
+          ? (document.getElementById(pathId).style.stroke = "white")
           : (document.getElementById(pathId).style.stroke =
               "rgba(255,210,50,1)");
-          
 
         const original = document.getElementById(pathId);
         const p = document.getElementById(pathId);
         const status = idVisible_m.get(p.id);
         const visible = status && Object.values(status).every(Boolean);
-        if(viewState){
-          pathsUs.forEach(p=> p.style.fill=colorPath );
-          p.style.fill="rgba(190,190,190,1)"
-          return
+        if (viewState) {
+          pathsUs.forEach((p) => (p.style.fill = colorPath));
+          p.style.fill = "rgba(190,190,190,1)";
+          return;
         }
 
-        if (!visible ||!original ||svgUs.contains(document.getElementById(pathId))  ) return;
+        if (
+          !visible ||
+          !original ||
+          svgUs.contains(document.getElementById(pathId))
+        )
+          return;
 
         if (!viewState) {
           original.parentNode.append(original);
@@ -19048,7 +19049,6 @@
               });
             }
           }
-          
         });
       }
       colorCountry();
@@ -19094,7 +19094,7 @@
       function countryClick(id, name, element) {
         if (
           (L_config.m === "modeTrouver" && cChooseTrouver) ||
-          L_config.m !== "modeTrouver" &&  (!viewState || id!=="US")
+          (L_config.m !== "modeTrouver" && (!viewState || id !== "US"))
         ) {
           toggleC(element.id === currentCountry.id);
         }
@@ -19114,8 +19114,9 @@
             "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
         }
         fetch(
-          !viewState ?
-          `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${id.toLowerCase()}/vector.svg`:`https://borderly.dev/${id.slice(-2).toLowerCase()}.svg`
+          !viewState
+            ? `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${id.toLowerCase()}/vector.svg`
+            : `https://borderly.dev/${id.slice(-2).toLowerCase()}.svg`,
         )
           .then((r) => {
             if (!r.ok) throw new Error();
@@ -19140,7 +19141,7 @@
                 `${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`,
               );
               svgEl.style.stroke = "black";
-              svgEl.style.strokeWidth = "0"
+              svgEl.style.strokeWidth = "0";
               if (wasHidden) cadreContours.style.display = "";
             }, 0);
           })
@@ -19165,18 +19166,16 @@
             .querySelectorAll(".flagLoadingCadre")
             .forEach((d) => (d.style.display = "none"));
         });
-        titlesCadre.forEach(
-          (t) =>
-            {if (!viewState){
-              t.textContent = L_q[id].n + " (" + id + ")"}
-            else {
-              if (!D_us[id.slice(-2)]){return}
-              t.textContent = D_us[id.slice(-2)].n + " (" + id + ")"
+        titlesCadre.forEach((t) => {
+          if (!viewState) {
+            t.textContent = L_q[id].n + " (" + id + ")";
+          } else {
+            if (!D_us[id.slice(-2)]) {
+              return;
             }
-              
-            }
-               
-        );
+            t.textContent = D_us[id.slice(-2)].n + " (" + id + ")";
+          }
+        });
         mTitleCadre.textContent = viewState ? D_us[id.slice(-2)].n : L_q[id].n;
 
         capitales.forEach(
@@ -19205,7 +19204,6 @@
             itemBlason.src = viewState
               ? ""
               : info.coatOfArms.svg || info.coatOfArms.png || "";
-              
 
             if (!viewState) {
               population.textContent = info.population.toLocaleString();
@@ -19255,18 +19253,18 @@
                   " tCO₂e/an";
               }
             }
-          }).catch(err => {
-      console.error("Pays introuvable");
-
           })
-          
-          if (viewState){
-             population.textContent = D_us[id.slice(-2)].p.toLocaleString();
-              nomH.textContent = D_us[id.slice(-2)].nomH;
-              superficie.textContent =
-                D_us[id.slice(-2)].s.toLocaleString("fr-FR") + "km²";
-                indT.textContent = D_us[id.slice(-2)].indT;
-          }
+          .catch((err) => {
+            console.error("Pays introuvable");
+          });
+
+        if (viewState) {
+          population.textContent = D_us[id.slice(-2)].p.toLocaleString();
+          nomH.textContent = D_us[id.slice(-2)].nomH;
+          superficie.textContent =
+            D_us[id.slice(-2)].s.toLocaleString("fr-FR") + "km²";
+          indT.textContent = D_us[id.slice(-2)].indT;
+        }
         colorCountry();
       }
 
@@ -19286,23 +19284,24 @@
 
         openTool.querySelector("svg").classList.contains("rotate")
           ? (L_tool.forEach((el) => {
-            if (!(el===zBox && viewState)){
-              setTimeout(() => {
-                el.style.opacity = "1";
-                el.style.transform = "scale(1)";
-              }, delay);
-              delay += 50;
-      }}),
+              if (!(el === zBox && viewState)) {
+                setTimeout(() => {
+                  el.style.opacity = "1";
+                  el.style.transform = "scale(1)";
+                }, delay);
+                delay += 50;
+              }
+            }),
             (wrapperTool.style.pointerEvents = "all"))
           : (L_toolReverse.forEach((el) => {
-            if (!(el===zBox && viewState)){
-
-              setTimeout(() => {
-                el.style.opacity = "0";
-                el.style.transform = "";
-              }, delay);
-              delay += 50;
-      }}),
+              if (!(el === zBox && viewState)) {
+                setTimeout(() => {
+                  el.style.opacity = "0";
+                  el.style.transform = "";
+                }, delay);
+                delay += 50;
+              }
+            }),
             (delay = 0),
             L_calque.forEach((el) => {
               setTimeout(() => {
@@ -21918,11 +21917,13 @@
         navigator.serviceWorker.register("/sw.js");
       }
 
-      function loop(){
-        console.log(viewMaps)
-        requestAnimationFrame(loop)
+      function loop() {
+        // console.log(document.getElementById("MQ").getBBox());
+        console.log(svg.getAttribute("viewBox").split(" ").map(Number));
+
+        requestAnimationFrame(loop);
       }
-      // loop()
+ loop()
 
       /*phoneHome.style.display="none"
       phone4Choix.style.display="flex"*/
