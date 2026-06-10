@@ -9722,6 +9722,9 @@ for (const clef in D_circles) {
       const paths = svg.querySelectorAll("path");
       const pathsUs = svgUs.querySelectorAll("path");
       const L_circles = [
+        "CW",
+        "AW",
+        "TC",
         "MQ",
         "GI",
         "AD",
@@ -9774,7 +9777,7 @@ for (const clef in D_circles) {
         circle.setAttribute("r", r);
         circle.setAttribute("fill", "transparent");
         circle.setAttribute("stroke", "rgb(250, 160, 15)");
-        circle.setAttribute("stroke-width", "0.15");
+        circle.setAttribute("stroke-width", "0.12");
         svg.appendChild(circle);
 
         //
@@ -9984,6 +9987,10 @@ for (const clef in D_circles) {
           currentCountry = null;
           colorCountry();
 
+               for (const clef in D_circles) {
+          D_circles[clef].style.visibility = "hidden"
+}
+
           document.getElementById("US").classList.add("viewState");
           svgUs.classList.add("viewState");
           zoomCountry("US");
@@ -10063,6 +10070,10 @@ for (const clef in D_circles) {
             );
             pathsUs.forEach((p) => (p.style.fill = colorPath));
             toggleC(false);
+
+                for (const clef in D_circles) {
+          D_circles[clef].style.visibility = ""
+}
 
             svgUs.classList.remove("viewState");
             document.getElementById("US").classList.remove("viewState");
