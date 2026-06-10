@@ -3164,8 +3164,9 @@
         pointer-events: none;
         align-items: center;
         flex-direction: column;
-        z-index: 80;
         overflow: hidden;
+        touch-action: pan-y;
+        z-index: 80;
         color: white;
         opacity: 0;
         gap: 0.2em;
@@ -3257,6 +3258,9 @@
         flex-direction: column;
         overflow-y: auto;
         overflow-x: hidden;
+        -webkit-overflow-scrolling: touch; /* scroll natif iOS */
+        touch-action: pan-y;              /* le scroll est vertical, les taps passent */
+        overscroll-behavior: contain;     /* évite la propagation 
         scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         gap: 0.3em;
@@ -9328,6 +9332,7 @@ for (const clef in D_circles) {
         prPm.appendChild(icon);
         prPm.appendChild(reponse);
         contentPm.appendChild(prPm);
+        prPm.addEventListener('touchstart',()=>{},{passive : true})
         contentPm.appendChild(ligneIn);
       }
 
