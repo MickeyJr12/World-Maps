@@ -10499,6 +10499,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "MT",
       ];
       const D_circles = {};
+      const L_antilles = ["MQ","GP","LC","BB","DM","GD","VC","AG","MS","KN"] // mettre leur cercle invisibles
       const D_factorC = {
         GP: 1.05,
         VC: 1.1,
@@ -10547,6 +10548,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           "circle",
         );
         circle.style.display = "none";
+        if (L_antilles.includes(pId)){circle.style.opacity = "0"}
         circle.setAttribute("cx", svgPt.x);
         circle.setAttribute("cy", svgPt.y);
         circle.setAttribute("r", r);
@@ -10623,6 +10625,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         D_circles[c.id] = circle;
       }
       L_circles.forEach((c) => createCircle(c));
+
+
+      
 
       const infoName = document.querySelector(".infoName");
 
