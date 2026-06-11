@@ -21699,6 +21699,8 @@ for (const clef in D_circles) {
             if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1)
               return;
             const vb = getVB();
+            currentVelX = (vb.x - currentVelX < 323 && vb.x - currentVelX > -398)? currentVelX : (vb.x - currentVelX < 323)? vb.x+398 : vb.x - 323;
+            currentVelY = (vb.y - currentVelY < 230 && vb.y - currentVelY > -268)? currentVelY : (vb.y - currentVelY < 230)? vb.y + 268 :vb.y - 230 ;
             setVB({
               x: vb.x - currentVelX,
               y: vb.y - currentVelY,
