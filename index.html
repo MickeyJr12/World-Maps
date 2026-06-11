@@ -19197,6 +19197,12 @@ for (const clef in D_circles) {
           const e = ease(p);
           const vb = start.map((s, i) => s + (target[i] - s) * e);
           svg.setAttribute("viewBox", vb.join(" "));
+          if (vb.slice(2)[0]< (isMobile ? 200 : 550)){
+              console.log(vb.slice(2)[0]< isMobile ? 200 : 550)
+              L_elCircles.forEach((c) => (c.style.display = "flex"));
+          }
+          else {L_elCircles.forEach((c) => (c.style.display = "none"));}
+
           if (p < 1) requestAnimationFrame(frame);
         }
 
