@@ -21691,8 +21691,8 @@ for (const clef in D_circles) {
           paths.forEach((p) => (p.style.pointerEvents = ""));
 
           // Inertie
-          const currentVelX = touchVelX;
-          const currentVelY = touchVelY;
+          let currentVelX = touchVelX;
+          let currentVelY = touchVelY;
 
           function inertia() {
             if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1)
