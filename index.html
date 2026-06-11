@@ -2058,8 +2058,8 @@
         flex-direction: column;
       }
       .titleCelCadre {
-        font-size: 1.2em;
-        font-weight: 550;
+        font-size: 1.05em;
+        font-weight: 520;
         word-wrap: break-word;
       }
       .txtCelCadre {
@@ -19198,7 +19198,6 @@ for (const clef in D_circles) {
           const vb = start.map((s, i) => s + (target[i] - s) * e);
           svg.setAttribute("viewBox", vb.join(" "));
           if (vb.slice(2)[0]< (isMobile ? 200 : 550)){
-              console.log(vb.slice(2)[0]< isMobile ? 200 : 550)
               L_elCircles.forEach((c) => (c.style.display = "flex"));
           }
           else {L_elCircles.forEach((c) => (c.style.display = "none"));}
