@@ -21638,9 +21638,7 @@ for (const clef in D_circles) {
             lastTouchX = e.touches[0].clientX;
             lastTouchY = e.touches[0].clientY;
 
-            dx = (startVBx - dx < 323 && startVBx - dx > -398)? dx : (startVBx - dx < 323)? startVBx+398 : startVBx - 323;
-            dy = (startVBy - dy < 230 && startVBy - dy > -268)? dy : (startVBy - dy < 230)? startVBy + 268 :startVBy - 230 ;
-
+           
             setVB({ x: startVBx - dx, y: startVBy - dy, w: vb.w, h: vb.h });
           } else if (e.touches.length === 2) {
             const newDist = getTouchDist(e.touches);
@@ -21693,8 +21691,8 @@ for (const clef in D_circles) {
           paths.forEach((p) => (p.style.pointerEvents = ""));
 
           // Inertie
-          let currentVelX = touchVelX;
-          let currentVelY = touchVelY;
+          const currentVelX = touchVelX;
+          const currentVelY = touchVelY;
 
           function inertia() {
             if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1)
