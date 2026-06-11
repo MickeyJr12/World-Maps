@@ -19115,10 +19115,10 @@ for (const clef in D_circles) {
         return { x: v.x, y: v.y, w: v.width, h: v.height };
       }
 
-      function setVB({ x, y, w, h }) {    
-        console.log(x,w)
+      function setVB({ x, y, w, h }) {           
         let xp = Math.min(Math.max(x,-398+(1100-w)/4),323+(1100-w)/4)
         let yp = Math.min(Math.max(y,-268+(700-h)/4),230+(700-h)/4)
+        isMobile? (xp=x,yp=y):"";
         svg.setAttribute("viewBox", `${xp} ${yp} ${w} ${h}`);
       }
       // ── Drag (pan) ───────────────────────────────────────────────
@@ -21698,6 +21698,8 @@ for (const clef in D_circles) {
             if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1)
               return;
             const vb = getVB();
+
+            
             setVB({
               x: vb.x - currentVelX,
               y: vb.y - currentVelY,
