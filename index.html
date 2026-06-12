@@ -11074,8 +11074,8 @@ svgIles.forEach((s) => {
           titleIle.textContent = p.getAttribute('name') + " (" + (p.id.slice(0, 5) in D_IleCp ? D_IleCp[p.id.slice(0, 5)] :  p.id.slice(0, 5))+ ")";
         }
         
-        infoPIles.querySelector('span').textContent = D_ileP[p.id.slice(0, 5)]
-        infoSIles.querySelector('span').textContent = D_ileP[p.id.slice(0, 5)]
+        infoPIles.querySelector('span').textContent = D_ileP[p.id.slice(0, 5)] +"km²"
+        infoSIles.querySelector('span').textContent = D_ileP[p.id.slice(0, 5)] +"km²"
 
 
       }
