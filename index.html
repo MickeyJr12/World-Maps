@@ -3755,6 +3755,7 @@
         padding-bottom: calc(env(safe-area-inset-bottom));
       }
       #grid4Choix.modifClasser {
+        grid-template-rows: 1fr; /* force 2 lignes */
         border: none;        
         background: none;
         backdrop-filter: none;
@@ -3799,8 +3800,7 @@
           filter 0.05s ease;
       }
       .btn4Choix.modifClasser {
-        outline : 1px solid red;
-        visibility: hidden;
+        display : none;
         max-height :0em;
         min-height : 0em;
       }
