@@ -3626,7 +3626,7 @@
       }
 
       #cadreQ4Choix {
-        display: flex;
+        display: none;
         justify-content: center;
         text-align: center;
         align-items: center;
@@ -3641,6 +3641,9 @@
         max-width: 200px;
         height: auto;
         text-decoration: underline;
+      }
+      #cadreQ4Choix.modeChoix{
+        display : flex;
       }
       #cadreQ4Choix.modeTrouver {
         display: none;
@@ -3694,6 +3697,13 @@
         transform: translateY(0);
         background: rgba(6, 51, 154, 0.8);
         pointer-events: all;
+      }
+      .cadreNext.almost{
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(230, 180, 14, 0.8);
+        pointer-events: all;
+      
       }
 
       .btn-suivant {
@@ -3915,13 +3925,34 @@
       }
       /*CSS ModeClasser*/
 
+      #titleModeClasser{
+        display : none;
+        overflow: hidden;
+        white-space: normal; /* annule un éventuel nowrap parent */
+        overflow-wrap: break-word; /* coupe même les mots trop longs */
+        text-decoration: underline;
+        text-align: center;
+        margin : 0 auto;
+        margin-bottom : 2em;
+        font-size : 1.1em;
+        color : white;
+        font-weight: 500;
+        max-width : 80%
+      }
+      #titleModeClasser.modeClasser{
+        display : flex;
+      }
+
       #bigWrapperClasser {
-        display: flex;
+        display: none;
         gap: 0.4em;
         width: fit-content;
         margin: 0 auto;
         max-width: 24em;
         width : 90vw;
+      }
+      #bigWrapperClasser.modeClasser{
+        display : flex;
       }
       #wrapperClasser {
         display: flex;
@@ -4064,7 +4095,15 @@
       .infoTxtClasser.active {
         max-height: 1.2em;
       }
-      .burgerClasser {
+      .burgerClasser{
+        display : flex;
+        justify-content : center;
+        align-items: center;
+        height : 100%;
+        width : fit-content;
+        padding :0em 0.4em;
+      }
+      .burgerClasser svg {
         justify-self: right;
         cursor: pointer;
         margin-right: 0.2em;
@@ -5412,6 +5451,8 @@
       <div id="cadreQ4Choix">
         <div class="qBox"></div>
       </div>
+
+      <div id="titleModeClasser" class="modeClasser">Classer les pays par superficie décroissante</div>
 
       <div class="questionBox">
         Question <span style="margin-left: 0.5em" id="qNumber">0</span>/15
@@ -9539,9 +9580,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           startChrono(val);
         }
 
+        //Reset mode4Choix
+        document.getElementById("cadreQ4Choix").classList.remove('modeChoix')
         // Reset Mode classer
         grid4Choix.classList.remove("modifClasser");
         btns4Choix.forEach((b) => b.classList.remove("modifClasser"));
+        titleModeClasser.classList.remove('modeClasser')
+        bigWrapperClasser.classList.remove('modeClasser')
+        
        
 
         reponseFound = false;
@@ -9584,6 +9630,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         if (L_config.m === "modeChoix") {
+          document.getElementById("cadreQ4Choix").classList.add('modeChoix')
           let random = Math.floor(Math.random() * 4);
           cBoxHasard = L_cBoxHasard[random]; // Mettre la bonne réponse sur une case au hasard
           cHasard = L_btn4ChoixHasard[random]; // Bouton contenant la bonne réponse
@@ -9818,7 +9865,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         //Partie classer
         else if (L_config.m === "modeClasser") {
           grid4Choix.classList.add("modifClasser");
+          titleModeClasser.classList.add('modeClasser')
+          bigWrapperClasser.classList.add('modeClasser')
           btns4Choix.forEach((b) => b.classList.add("modifClasser"));
+            cadreNext.className = "cadreNext none visible"
 
           if (cChooseTrouver || cChooseTrouver === null) {
             L_propClasser = [];
@@ -9887,24 +9937,26 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
               const infoTxtClasser = document.createElement("div");
               infoTxtClasser.className = "infoTxtClasser";
+              infoTxtClasser.style.maxHeight = "1.2em"; // à retirer
               infoTxtClasser.textContent =  L_config.q === "superficieQ" ? `Superficie : ${L_q[p_id].s.toLocaleString("fr-FR")}km²` : `Population : ${L_q[p_id].p.toLocaleString("fr-FR")}`;
 
               classerDrapeauBox.append(img);
               classerCadreDrapeau.append(classerDrapeauBox);
               cadreTxtClasser.append(nameClasser, infoTxtClasser);
 
-              contentElClasser.insertAdjacentHTML(
-                "beforeend",
-                `
-  <svg class="burgerClasser" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="512">
+
+              const burgerClasser = document.createElement('div')
+              burgerClasser.className = "burgerClasser"
+              burgerClasser.innerHTML = `
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="512">
     <rect y="11" width="24" height="2" rx="1" />
     <rect y="4" width="24" height="2" rx="1" />
     <rect y="18" width="24" height="2" rx="1" />
-  </svg>
-`,
-              );
+  </svg>`
+            
 
               contentElClasser.prepend(classerCadreDrapeau, cadreTxtClasser);
+              contentElClasser.append(burgerClasser)
               elClasser.append(contentElClasser);
               L_elPropClasser.push(elClasser);
               elClasser.dataset.classer =
@@ -10046,30 +10098,30 @@ init();
           let nbrGood = 0; //Met la classe de cadre nexte en fonction du nombre de bonnes réponses
           for (const clef in D_elClasser) {
             
-            console.log(D_elClasser[clef].dataset.Goodorder,D_elClasser[clef].dataset.order)
             if (  
               D_elClasser[clef].dataset.Goodorder ===
               D_elClasser[clef].dataset.order
             ) {
+                wrapperNbrClasser.children[D_elClasser[clef].dataset.order].style.color = "rgb(15, 250, 93)"
               D_elClasser[clef].classList.add("good");
               nbrGood += 1;
             } else {
+              wrapperNbrClasser.children[D_elClasser[clef].dataset.order].style.color = "rgb(220, 9, 9)"
               D_elClasser[clef].classList.add("bad");
             }
           }
-
-            console.log("espace")
 
 
           const nbr = parseInt(document.getElementById(L_config.r).dataset.nbr);
 
           if (nbrGood >= nbr / 2 && nbrGood != nbr) {
-            cadreNext.classList.add("none");
+            cadreNext.className = "cadreNext visible almost"            
           } else if (nbrGood < nbr / 2) {
-            cadreNext.classList.add("bad");
+            cadreNext.className = "cadreNext visible bad"
           } else {
-            cadreNext.classList.add("good");
+            cadreNext.className = "cadreNext visible good"
           }
+
           cChooseTrouver = true;
         }
       }
@@ -10413,9 +10465,11 @@ init();
         });
         song.play();
       }
-
+      const bigWrapperClasser = document.getElementById('bigWrapperClasser')
       const wrapperClasser = document.getElementById("wrapperClasser");
+      const titleModeClasser = document.getElementById('titleModeClasser')
       const wrapperNbrClasser = document.getElementById("wrapperNbrClasser");
+
 
       const btns4Choix = document.querySelectorAll(".btn4Choix");
       const cadreNext = document.querySelector(".cadreNext");
