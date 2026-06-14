@@ -10702,6 +10702,8 @@ repInf3.innerHTML = `<svg viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.o
         cachePm.style.opacity = "1";
       }
       pause4Choix.addEventListener("click", () => {
+        contentPm.scrollTop = 0; // force le focus scroll
+        contentPm.focus();
         affichePm();
       });
 
@@ -11002,7 +11004,7 @@ repInf3.innerHTML = `<svg viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.o
         prPm.appendChild(icon);
         prPm.appendChild(reponse);
         contentPm.appendChild(prPm);
-        prPm.addEventListener("touchstart", () => {}, { passive: true });
+        prPm.addEventListener("touchstart", () => {}, { passive: true });        
         //Si on est dans mode Classer, on utilise plusieurs fois la fonction avant d'ajouter une ligne 
         contentPm.appendChild(ligneIn)
       }
