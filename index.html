@@ -3705,6 +3705,16 @@
         pointer-events: all;
       
       }
+      .spanNext{
+        display : flex;
+        flex : 1;
+        gap : 0.4em;
+        outline : 1px solid red;
+      }
+      .spanNext svg{
+        height : 0.95rem;
+        fill : white;
+      }
 
       .btn-suivant {
         background: white;
@@ -5452,7 +5462,7 @@
         <div class="qBox"></div>
       </div>
 
-      <div id="titleModeClasser" class="modeClasser">Classer les pays par <span>superficie</span> décroissante</div>
+      <div id="titleModeClasser" class="modeClasser"></div>
 
       <div class="questionBox">
         Question <span style="margin-left: 0.5em" id="qNumber">0</span>/15
@@ -5493,7 +5503,7 @@
           <div class="cBox" id="qqTrouver"></div>
         </div>
         <div class="cadreNext">
-          <span></span>
+          <span class="spanNext"></span>
           <button class="btn-suivant" onclick="fillPhonePlay()">
             Suivant →
           </button>
@@ -9537,9 +9547,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         //Afficher le menu de fin si modeChoix, ou modeTrouver et cCooseTrouver
         if (
           (parseInt(qNumber.textContent) >= 15 && L_config.m === "modeChoix") ||
-          (L_config.m === "modeTrouver" &&
+          ((L_config.m === "modeTrouver" || L_config.m === "modeClasser") &&
             parseInt(qNumber.textContent) >= 15 &&
-            cChooseTrouver) //Rajoute modeClasser
+            cChooseTrouver) 
         ) {
           affichePm();
           document.getElementById("cadreScorePm").style.display = "flex";
@@ -9556,7 +9566,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               (cChooseTrouver || cChooseTrouver === null)))
         ) {
           qNumber.textContent = parseInt(qNumber.textContent) + 1;
-        } //Rajoute modeClasser
+        } 
 
         //Reset les paramètres
         btns4Choix.forEach((b) => {
@@ -9865,13 +9875,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         //Partie classer
         else if (L_config.m === "modeClasser") {
 
-          titleModeClasser.querySelector('span').textContent = "\u00A0" + (L_config.q === "superficieQ" ? "superficie" : "population") + "\u00A0";
+          titleModeClasser.textContent = L_config.q === "superficieQ" ? "Classer les pays par superficie décroissante" : "Classer les pays par population décroissante" ;
           grid4Choix.classList.add("modifClasser");
           titleModeClasser.classList.add('modeClasser')
           bigWrapperClasser.classList.add('modeClasser')
           btns4Choix.forEach((b) => b.classList.add("modifClasser"));
           cadreNext.className = "cadreNext none visible"
-          spanNext.textContent = "Glisse pour classer ↕"
+          spanNext.textContent = "Glisse pour classer"
+          spanNext.insertAdjacentHTML("beforeend", `<svg viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.36378 18H8.36378V18H7.36378ZM7.36378 9L6.36378 9V9H7.36378ZM8.07089 0.292894C7.68037 -0.0976309 7.0472 -0.0976313 6.65668 0.292893L0.29271 6.65685C-0.0978146 7.04737 -0.097815 7.68054 0.292709 8.07106C0.683233 8.46159 1.3164 8.46159 1.70692 8.07106L7.36378 2.41421L13.0206 8.07107C13.4112 8.4616 14.0443 8.4616 14.4348 8.07107C14.8254 7.68055 14.8254 7.04738 14.4348 6.65686L8.07089 0.292894ZM6.65666 26.7071C7.04719 27.0976 7.68035 27.0976 8.07088 26.7071L14.4348 20.3432C14.8254 19.9526 14.8254 19.3195 14.4348 18.9289C14.0443 18.5384 13.4112 18.5384 13.0206 18.9289L7.36377 24.5858L1.70692 18.9289C1.3164 18.5384 0.683232 18.5384 0.292707 18.9289C-0.0978174 19.3195 -0.0978179 19.9526 0.292706 20.3431L6.65666 26.7071ZM7.36378 18H8.36378V9H7.36378H6.36378V18H7.36378ZM7.36378 9L8.36378 9L8.36378 1L7.36378 1L6.36378 0.999999L6.36378 9L7.36378 9ZM7.36378 18H6.36378L6.36377 26H7.36377H8.36377L8.36378 18H7.36378Z" fill="white"/>
+</svg>
+`);
           document.querySelector(".btn-suivant").textContent = "Valider ✓";
 
 
@@ -10134,7 +10148,17 @@ init();
 
           document.querySelector(".btn-suivant").textContent = "Suivant →";
           cChooseTrouver = true;
+
+          if (parseInt(qNumber.textContent) >= 15) {
+              document.querySelector(".btn-suivant").textContent = "Fin";
+              document.getElementById("cadreScorePm").style.display = "flex";
+              btnReprendre.textContent = "Rejouer";
+              document.getElementById("pmTitle").textContent =
+                "Fin de partie !";
+            }
+
         }
+
       }
 
       const arboConfig = {
