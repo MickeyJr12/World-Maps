@@ -11115,13 +11115,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           prPm.appendChild(icon);
           prPm.appendChild(reponse);
           contentPm.appendChild(prPm);
-          prPm.addEventListener("touchstart", () => {}, { passive: true });
 
           [proposition, icon, reponse].forEach((el) => {
             el.style.pointerEvents = "none";
           });
-          prPm.style.touchAction = "pan-y";
-
+          contentPm.style.touchAction = "pan-y";
+contentPm.style.overflowY = "auto";
+contentPm.style.webkitOverflowScrolling = "touch";
           //Si on est dans mode Classer, on utilise plusieurs fois la fonction avant d'ajouter une ligne
           if (i === nbr - 1) {
             contentPm.appendChild(ligneIn);
