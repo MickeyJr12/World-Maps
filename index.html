@@ -58,12 +58,7 @@
         position: fixed; /* ← clé du fix */
         inset: 0; /* top/right/bottom/left: 0 — fonctionne avec fixed */
         overflow: hidden;
-        background: linear-gradient(
-          141deg,
-          #0f23fa 0%,
-          #103aad 41%,
-          #0c5679 100%
-        );
+        background: linear-gradient(140deg, #0f23fa 0%, #103aad 41%, #0c5679 90%);
         background-repeat: no-repeat;
         background-size: cover;
         box-sizing: border-box;
@@ -10050,7 +10045,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   itmsClasser.forEach((i) => {
                     if (i !== el) i.classList.add("waitClasser");
                   });
-                  el.style.transform = "scale(1.02)";
+                  el.style.transform = "scale(1.03)";
                   dragging = true;
                   el.style.zIndex = 10000;
                   el.style.transition = "background 0.2s ease";
