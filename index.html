@@ -7318,6 +7318,7 @@
           </div>
 
           <div id="cadreBlason">
+            <p style="display : none; color:white;opacity:0.6">Non disponible</p>
             <img src="" class="itemBlason" alt="" />
           </div>
 
@@ -15725,7 +15726,8 @@ contentPm.style.webkitOverflowScrolling = "touch";
 };
 
       const D_blason = {
-        
+        MQ : "https://upload.wikimedia.org/wikipedia/commons/d/da/BlasonMartinique.svg"
+
       }
 
       const P_info = {
@@ -22214,9 +22216,10 @@ contentPm.style.webkitOverflowScrolling = "touch";
         //  itemBlason.src = viewState
         //       ? ""
         //       : `https://flagcdn.com/${id.toLowerCase()}.svg`;
-          // itemBlason.src = viewState
-          //               ? ""
-          //               : `https://upload.wikimedia.org/wikipedia/fr/f/f7/Armoiries_de_l%27Afrique_du_Sud.svg`;
+        viewState ? "" : (D_blason[id] ? (itemBlason.src = D_blason[id],document.getElementById('cadreBlason').querySelector('p').style.display="none") : document.getElementById('cadreBlason').querySelector('p').style.display = "flex" )
+          itemBlason.src = viewState
+                        ? ""
+                        : (D_blason[id] ? D_blason[id] : "");
 
         
         fetch(
