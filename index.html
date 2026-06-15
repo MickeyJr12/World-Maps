@@ -24530,6 +24530,96 @@ async function convertCurrency(amount, from, to) {
   const result = await convertCurrency(1, "EUR", "BRL");
   console.log(result);
 })();
+let a;
+function fetchInit(id,name,element){
+  
+        const url = `https://restcountries.com/v3.1/alpha/${id}`;
+        fetch(
+          
+             id in D_ileLink
+              ? D_ileLink[id]
+              : `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${id.toLowerCase()}/vector.svg`
+            ,
+        )
+          .then((r) => {
+            if (!r.ok) throw new Error();
+            return r.text();
+          })
+          .then((svg) => {
+            const div = document.createElement("div");
+            div.className = "itemContours";
+            div.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
+
+            const svgEl = div.querySelector("svg");
+          })
+          .catch(() => {});
+
+        fetch(url)
+          .then(function (reponse) {
+            return reponse.json(); // On convertit la réponse en objet JS
+          })
+          .then(function (data) {
+            const info = data[0]; // L'API renvoie un tableau, on prend le 1er résultat
+            itemBlason.src = viewState
+              ? ""
+              : info.coatOfArms.svg || info.coatOfArms.png || "";
+
+            if (1==1) {
+              population.textContent = info.population.toLocaleString();
+              superficie.textContent =
+                info.area.toLocaleString("fr-FR") + "km²";
+
+              devise.textContent =
+                Object.values(info.currencies)[0].name +
+                " (" +
+                Object.values(info.currencies)[0].symbol +
+                ")";
+
+              carSide.textContent =
+              info.car.side === "right" ? "Droite" : "Gauche";
+              seaAccess.textContent = info.landlocked ? "Non" : "Oui";
+              independance.textContent = P_info[id].independent === true ? "Indépendant" : "Dépendant"  ;
+
+              calendar.textContent =
+                info.startOfWeek === "monday" ? "Lundi" : "Dimanche";
+              indT.textContent =
+                info.idd?.root && info.idd?.suffixes
+                  ? info.idd.suffixes.map((s) => info.idd.root + s).join(", ")
+                  : "Non disponible";
+
+              gouvernement.textContent = P_info[id].gouvernement;
+              religion.textContent = P_info[id].religion;
+              fuseaux.textContent = info.timezones.join(", ");
+
+              if (P_info[id].pib === null || P_info[id].pib === undefined) {
+                pibPh.textContent = "Non disponible";
+              } else {
+                pibPh.textContent =
+                  Math.floor(P_info[id].pib).toLocaleString("fr-FR") +
+                  " (USD/an)";
+              }
+
+              if (!info.demonyms.fra.m) {
+                nomH.textContent = "Non disponible";
+              } else {
+                nomH.textContent = info.demonyms.fra.m;
+              }
+
+              if (P_info[id].co2e === undefined || P_info[id].co2e === null) {
+                co2e.textContent = "Non disponible";
+              } else {
+                co2e.style.whiteSpace = "pre-wrap";
+                co2e.textContent =
+                  Math.floor(P_info[id].co2e).toLocaleString("fr-FR") +
+                  " tCO₂e/an";
+              }
+            }
+          })
+          .catch((err) => {
+            console.error("Pays introuvable");
+          });
+}
+paths.forEach(p=>{fetchInit(p.id,L_q[p.id].n,p)})
 
       /*phoneHome.style.display="none"
       phonePlay.style.display="flex"*/

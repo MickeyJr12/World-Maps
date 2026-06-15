@@ -22,6 +22,9 @@ self.addEventListener('fetch', (e) => {
   e.respondWith(
     fetch(e.request)
       .then(response => {
+        // On ignore les réponses partielles (fonts, etc.)
+        if (response.status === 206) return response;
+        
         const clone = response.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
         return response;
