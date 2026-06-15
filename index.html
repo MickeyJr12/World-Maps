@@ -9398,6 +9398,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const phoneConfig = document.getElementById("phoneConfig");
 
       play.addEventListener("click", () => {
+
         cChooseTrouver = null;
         viewMaps = false;
         clonepColor_m.clear();
@@ -9407,6 +9408,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         idVisible_m.forEach((val, key) => cloneVisible_m.set(key, { ...val }));
 
+         
+
+          
         [...phoneHome.children].forEach((el) => {
           el.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         });
@@ -9665,8 +9669,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             D_circles[clef].style.visibility = "hidden";
           }
         }
-
+        // Partie Choix
         if (L_config.m === "modeChoix") {
+
+           //Remplir tout ça
+          paths.forEach((p) => {
+            pColor_m.set(p, { hover: "", current: colorPath });
+            if (!paysDisposTrouver.includes(p.id)) {
+              idVisible_m.get(p.id).continent = false;
+            }
+          });
+
+          colorCountry();
+
+          
           document.getElementById("cadreQ4Choix").classList.add("modeChoix");
           let random = Math.floor(Math.random() * 4);
           cBoxHasard = L_cBoxHasard[random]; // Mettre la bonne réponse sur une case au hasard
@@ -9767,6 +9783,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           zBox.classList.add("modeTrouver");
 
           if (cChooseTrouver === null) {
+
+
+
             idVisible_m = new Map(
               Array.from(tIdVisible_m, ([key, val]) => [key, { ...val }]),
             );
