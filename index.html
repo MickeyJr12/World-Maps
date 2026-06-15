@@ -9621,6 +9621,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
         );
+
+        const paysDispoAll = Object.keys(L_q).filter(
+          (id) =>
+            (L_q[id].d.toLowerCase() === L_config.d || L_config.c !== "allC") &&            
+            !["GO", "UM", "MF", "SJ"].includes(id) &&
+            (P_info[id].region === L_config.c || L_config.c === "allC") &&
+            P_info[id].region !== null,
+        );
         const paysDisposTrouver = Object.keys(L_q).filter(
           (id) =>
             !["GO", "UM", "MF", "SJ"].includes(id) &&
@@ -9641,7 +9649,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         //Retirer les circles inutiles
 
         for (const clef in D_circles) {
-          if (paysDispos.includes(clef)) {
+          if (paysDispoAll.includes(clef)) {
             D_circles[clef].style.visibility = "";
           } else {
             D_circles[clef].style.visibility = "hidden";
