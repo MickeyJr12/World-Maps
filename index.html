@@ -4567,7 +4567,7 @@
                 <h4>Classer</h4>
               </div>
 
-              <div class="btnMode" id="modeEcrire">
+              <div class="btnMode" style="display : none" id="modeEcrire">
                 <svg
                   class="iconBtnMode"
                   height="1.5em"
@@ -9625,13 +9625,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             P_info[id].region !== null,
         );
 
-        const paysDispoAll = Object.keys(L_q).filter(
-          (id) =>
-            (L_q[id].d.toLowerCase() === L_config.d || L_config.c !== "allC") &&            
-            !["GO", "UM", "MF", "SJ"].includes(id) &&
-            (P_info[id].region === L_config.c || L_config.c === "allC") &&
-            P_info[id].region !== null,
-        );
+        
         const paysDisposTrouver = Object.keys(L_q).filter(
           (id) =>
             !["GO", "UM", "MF", "SJ"].includes(id) &&
@@ -9651,8 +9645,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         //Retirer les circles inutiles
 
+        const paysDispoAll = Object.keys(L_q).filter(
+          (id) =>
+            (L_q[id].d.toLowerCase() === L_config.d || L_config.c !== "allC") &&            
+            !["GO", "UM", "MF", "SJ"].includes(id) &&
+            (P_info[id].region === L_config.c || L_config.c === "allC"));
+
         for (const clef in D_circles) {
-          if (paysDispoAll.includes(clef)) {
+          if (paysDispoAll.includes(clef) || L_config.c === "allC") {
             D_circles[clef].style.visibility = "";
           } else {
             D_circles[clef].style.visibility = "hidden";
@@ -11117,11 +11117,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           }
           reponse.textContent = L_q[L_good[i]].n;
 
-          const svgClone = document.createElement('div')
-          svgClone.innerHTML = nbr > 3 ? L_svg[i].innerHTML : L_svgInf[i].innerHTML
+          // const svgClone = document.createElement('div')
+          // svgClone.innerHTML = nbr > 3 ? L_svg[i].innerHTML : L_svgInf[i].innerHTML
          
-          svgClone.style.pointerEvents = "none";
-          reponse.append(svgClone);
+          // svgClone.style.pointerEvents = "none";
+          // reponse.append(svgClone);
 
           if (D_elClasser[L_prop[i]]  &&
             D_elClasser[L_prop[i]].dataset.order ===
@@ -25042,14 +25042,14 @@ contentPm.style.webkitOverflowScrolling = "touch";
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/sw.js");
       }
+    
 
       function loop() {
-                console.log(D_circles["AW"].style.visibility)
 
         requestAnimationFrame(loop);
       }
 
-      //  loop()
+       loop()
 fetch("https://api.exchangerate.host/convert?from=EUR&to=USD&amount=100")
   .then(response => response.json())
   .then(data => {
