@@ -11000,7 +11000,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           btn.classList.remove("good", "bad", "none");
         });
 
-        //Dézoomer
+        svg.setAttribute("viewBox", "275 175 550 350");
         setTimeout(() => {
           animateViewBox(
             document.getElementById("svgMonde"),
@@ -11480,7 +11480,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           D_circles[clef].style.visibility = "";
         }
 
-        //animeColorC = requestAnimationFrame(colorCountry);
+        svg.setAttribute("viewBox", "275 175 550 350");
         animateViewBox(
           document.getElementById("svgMonde"),
           initialViewBox,
@@ -11579,7 +11579,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const svg = document.querySelector("svg.monde");
       const svgUs = document.getElementById("svgUs");
-      const svgInit = svg.cloneNode(true);
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
       const paths = svg.querySelectorAll("path");
       const pathsUs = svgUs.querySelectorAll("path");
@@ -27482,20 +27481,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       function loop() {
+        console.log(svg.getAttribute("viewBox").split(" ").map(Number))
         requestAnimationFrame(loop);
       }
 
-      loop();
-      fetch("https://api.exchangerate.host/convert?from=EUR&to=USD&amount=100")
-        .then((response) => response.json())
-        .then((data) => {
-          console.log("mlqskdmflqkjsdmlkj");
+      // loop();
 
-          console.log("Résultat :", data.result);
-        })
-        .catch((error) => {
-          console.error("Erreur :", error);
-        });
 
       /*phoneHome.style.display="none"
       phonePlay.style.display="flex"*/
