@@ -11788,6 +11788,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const capitales = document.querySelectorAll(".capitaleLabel");
       const itemBlason = document.querySelector(".itemBlason");
       const cadreContours = document.getElementById("cadreContours");
+      const cadreBlason = document.getElementById('cadreBlason')
       const expandIle = document.getElementById("expandIle");
       const crossIle = document.getElementById("crossIle");
       const boxSvgIle = document.getElementById("boxSvgIle");
@@ -18073,85 +18074,88 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         NI: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Coat_of_arms_of_Nicaragua.svg",
         NL: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Royal_coat_of_arms_of_the_Netherlands.svg",
         NO: "https://upload.wikimedia.org/wikipedia/commons/9/95/Coat_of_arms_of_Norway.svg",
-        NP: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Nepal.svg",
-        NR: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Nauru.svg",
-        NU: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Niue.svg",
-        NZ: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_New_Zealand.svg",
+
+
+        NP: "https://upload.wikimedia.org/wikipedia/commons/2/23/Emblem_of_Nepal.svg",
+        NR: "https://upload.wikimedia.org/wikipedia/commons/d/df/Coat_of_arms_of_Nauru.svg",
+        NU: "https://upload.wikimedia.org/wikipedia/commons/4/49/Public_Seal_of_Niue_%281974%E2%80%932021%29.svg",
+        NZ: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Coat_of_arms_of_New_Zealand.svg",
         OM: "https://upload.wikimedia.org/wikipedia/commons/7/7b/National_emblem_of_Oman.svg",
-        PA: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Panama.svg",
+        PA: "https://upload.wikimedia.org/wikipedia/commons/3/30/Coat_of_arms_of_Panama.svg",
         PE: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Escudo_nacional_del_Per%C3%BA.svg",
-        PF: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_French_Polynesia.svg",
-        PG: "https://commons.wikimedia.org/wiki/Special:FilePath/National_emblem_of_Papua_New_Guinea.svg",
-        PH: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Philippines.svg",
-        PK: "https://commons.wikimedia.org/wiki/Special:FilePath/State_emblem_of_Pakistan.svg",
-        PL: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Poland-official.svg",
+        PF: "https://upload.wikimedia.org/wikipedia/commons/6/65/Coat_of_arms_of_French_Polynesia.svg",
+        PG: "https://upload.wikimedia.org/wikipedia/commons/b/b4/National_emblem_of_Papua_New_Guinea.svg",
+        PH: "https://upload.wikimedia.org/wikipedia/commons/8/84/Coat_of_arms_of_the_Philippines.svg",
+        PK: "https://upload.wikimedia.org/wikipedia/commons/e/ef/State_emblem_of_Pakistan.svg",
+        PL: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Herb_Polski.svg",
         PM: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Armoiries_SaintPierreetMiquelon.svg",
-        PN: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Pitcairn_Islands.svg",
-        PR: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Puerto_Rico.svg",
-        PS: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Palestine.svg",
-        PT: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Portugal.svg",
-        PW: "https://commons.wikimedia.org/wiki/Special:FilePath/Seal_of_Palau.svg",
-        PY: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Paraguay.svg",
-        QA: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Qatar.svg",
+        PN: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coat_of_arms_of_the_Pitcairn_Islands.svg",
+        PR: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Coat_of_arms_of_the_Commonwealth_of_Puerto_Rico_%28variant%29.svg",
+        PS: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Coat_of_arms_of_Palestine.svg",
+        PT: "https://upload.wikimedia.org/wikipedia/commons/1/15/Coat_of_arms_of_Portugal.svg",
+        PW: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Seal_of_Palau.svg",
+        PY: "https://upload.wikimedia.org/wikipedia/commons/7/70/Coat_of_arms_of_Paraguay.svg",
+        QA: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Emblem_of_Qatar-2022.svg",
         RE: "https://upload.wikimedia.org/wikipedia/commons/3/39/Armoiries_R%C3%A9union.svg",
-        RO: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Romania.svg",
+        RO: "https://upload.wikimedia.org/wikipedia/commons/7/70/Coat_of_arms_of_Romania.svg",
         RS: "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_Serbia.svg",
-        RU: "https://upload.wikimedia.org/wikipedia/commons/4/48/Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg",
-        RW: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Rwanda.svg",
-        SA: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Saudi_Arabia.svg",
-        SB: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Solomon_Islands.svg",
-        SC: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Seychelles.svg",
-        SD: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Sudan.svg",
-        SE: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Sweden.svg",
-        SG: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Singapore.svg",
-        SH: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Saint_Helena.svg",
-        SI: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Slovenia.svg",
-        SK: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Slovakia.svg",
-        SL: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Sierra_Leone.svg",
-        SM: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_San_Marino.svg",
-        SN: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Senegal.svg",
-        SO: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Somalia.svg",
-        SR: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Suriname.svg",
-        SS: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_South_Sudan.svg",
+        RU: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Coat_of_Arms_of_the_Russian_Federation.svg",
+        RW: "https://upload.wikimedia.org/wikipedia/commons/1/17/Coat_of_arms_of_Rwanda.svg",
+        SA: "https://upload.wikimedia.org/wikipedia/commons/9/99/Emblem_of_Saudi_Arabia.svg",
+        SB: "https://upload.wikimedia.org/wikipedia/commons/8/83/Coat_of_arms_of_the_Solomon_Islands.svg",
+        SC: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Coat_of_arms_of_Seychelles.svg",
+        SD: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Emblem_of_Sudan.svg",
+        SE: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Great_coat_of_arms_of_Sweden.svg",
+        SG: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_Singapore.svg",
+        SH: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Coat_of_arms_of_Saint_Helena.svg",
+        SI: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Coat_of_arms_of_Slovenia.svg",
+        SK: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Coat_of_arms_of_Slovakia.svg",
+        SL: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Coat_of_arms_of_Sierra_Leone.svg",
+        SM: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Coat_of_arms_of_San_Marino.svg",
+        SN: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Coat_of_arms_of_Senegal.svg",
+        SO: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Coat_of_arms_of_Somalia.svg",
+        SR: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Coat_of_arms_of_Suriname.svg",
+        SS: "https://upload.wikimedia.org/wikipedia/fr/f/f7/Armoiries_de_l%27Afrique_du_Sud.svg",
         ST: "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe.svg",
-        SV: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_El_Salvador.svg",
-        SY: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Syria.svg",
-        SZ: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Eswatini.svg",
-        TC: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Turks_and_Caicos_Islands.svg",
-        TD: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Chad.svg",
-        TG: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Togo.svg",
-        TH: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Thailand.svg",
-        TJ: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Tajikistan.svg",
-        TK: "https://commons.wikimedia.org/wiki/Special:FilePath/Badge_of_Tokelau.svg",
-        TL: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_East_Timor.svg",
-        TM: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Turkmenistan.svg",
-        TN: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Tunisia.svg",
-        TO: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Tonga.svg",
-        TR: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Turkey.svg",
-        TT: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Trinidad_and_Tobago.svg",
-        TV: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Tuvalu.svg",
-        TW: "https://commons.wikimedia.org/wiki/Special:FilePath/National_Emblem_of_the_Republic_of_China.svg",
-        TZ: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Tanzania.svg",
+        SV: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
+        SX : "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
+        SY: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Emblem_of_Syria_%282025%E2%80%93present%29.svg",
+        SZ: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Coat_of_arms_of_Eswatini.svg",
+        TC: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Coat_of_arms_of_the_Turks_and_Caicos_Islands.svg",
+        TD: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Coat_of_arms_of_Chad.svg",
+        TG: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Armoiries_du_Togo.svg",
+        TH: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Emblem_of_Thailand.svg",
+        TJ: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Emblem_of_Tajikistan.svg",
+        TK: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Badge_of_Tokelau.svg",
+        TL: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Coat_of_arms_of_East_Timor.svg",
+        TM: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Emblem_of_Turkmenistan.svg",
+        TN: "https://upload.wikimedia.org/wikipedia/commons/8/80/Coat_of_arms_of_Tunisia.svg",
+        TO: "https://upload.wikimedia.org/wikipedia/commons/4/43/Coat_of_arms_of_Tonga.svg",
+        TR: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Emblem_of_Turkey.svg",
+        TT: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Coat_of_arms_of_Trinidad_and_Tobago_%282025%29.svg",
+        TV: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Coat_of_arms_of_Tuvalu.svg",
+        TW: "https://upload.wikimedia.org/wikipedia/commons/8/8b/National_Emblem_of_the_Republic_of_China.svg",
+        TZ: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coat_of_arms_of_Tanzania.svg",
         UA: "https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg",
-        UG: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Uganda.svg",
+        UG: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Coat_of_arms_of_Uganda.svg",
         US: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Great_Seal_of_the_United_States_%28obverse%29.svg",
-        UY: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Uruguay.svg",
-        UZ: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Uzbekistan.svg",
-        VA: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_Vatican_City.svg",
-        VC: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines.svg",
+        UY: "https://upload.wikimedia.org/wikipedia/commons/9/91/Coat_of_arms_of_Uruguay.svg",
+        UZ: "https://upload.wikimedia.org/wikipedia/commons/7/77/Emblem_of_Uzbekistan.svg",
+        VA: "https://upload.wikimedia.org/wikipedia/commons/8/81/Emblem_of_the_Papacy_SE.svg",
+        VC: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines.svg",
         VE: "https://upload.wikimedia.org/wikipedia/commons/4/46/Coat_of_arms_of_Venezuela.svg",
-        VG: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_the_British_Virgin_Islands.svg",
+        VG: "https://upload.wikimedia.org/wikipedia/commons/0/05/Coat_of_arms_of_the_British_Virgin_Islands.svg",
         VI: "https://upload.wikimedia.org/wikipedia/commons/8/80/Seal_of_the_United_States_Virgin_Islands.svg",
-        VN: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Vietnam.svg",
-        VU: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Vanuatu.svg",
-        WF: "https://commons.wikimedia.org/wiki/Special:FilePath/BlasonWallisetFutuna.svg",
-        WS: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Samoa.svg",
-        XK: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Kosovo.svg",
-        YE: "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem_of_Yemen.svg",
-        YT: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_Arms_of_Mayotte.svg",
-        ZA: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_South_Africa.svg",
-        ZM: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Zambia.svg",
-        ZW: "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Zimbabwe.svg",
+        VN: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Emblem_of_Vietnam.svg",
+        VU: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Vanuatu.svg",
+        WF: "https://upload.wikimedia.org/wikipedia/commons/7/72/BlasonWallisetFutuna.svg",
+        WS: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Coat_of_arms_of_Samoa.svg",
+        XK: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Emblem_of_the_Republic_of_Kosovo.svg",
+        YE: "https://upload.wikimedia.org/wikipedia/commons/8/82/Emblem_of_Yemen.svg",
+        YT: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Coat_of_Arms_of_Mayotte.svg",
+        ZA: "https://upload.wikimedia.org/wikipedia/fr/f/f7/Armoiries_de_l%27Afrique_du_Sud.svg",
+        ZM: "https://upload.wikimedia.org/wikipedia/commons/2/28/Coat_of_arms_of_Zambia.svg",
+        ZW: "https://upload.wikimedia.org/wikipedia/commons/0/01/Coat_of_arms_of_Zimbabwe.svg",
       };
 
       const P_info = {
@@ -24646,26 +24650,32 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         loadingCadreBlason.style.maxWidth = "none";
         loadingCadreBlason.style.width = "7.2em";
         loadingCadreBlason.style.display = "flex";
-        document.getElementById("cadreBlason").append(loadingCadreBlason);
+        cadreBlason.append(loadingCadreBlason);
 
-        // Assigner onload AVANT de vérifier le cache
-itemBlason.onload = () => loadingCadreBlason.remove();
-itemBlason.onerror = () => loadingCadreBlason.remove();
+        
 
-if (!viewState && D_blason[id]) {
-  // Si déjà en cache, onload ne se redéclenche pas → vérifier manuellement
-  if (itemBlason.complete && itemBlason.src === D_blason[id]) {
-    loadingCadreBlason.remove();
-  } else {
-    itemBlason.src = D_blason[id];
-  }
-  document.getElementById("cadreBlason").querySelector("p").style.display = "none";
-} else {
-  loadingCadreBlason.remove();
-  document.getElementById("cadreBlason").querySelector("p").style.display = 
-    viewState ? "none" : "flex";
-}
+         fetch(
+          !viewState
+            ? D_blason[id] ?? ""
+            : ""
+        )
+          .then((r) => {
+            if (!r.ok) throw new Error();
+            return r.text();
+          })
+          .then((svg) => {
+            D_blason[id] ? "" : cadreBlason.querySelector('p').style.display = "flex";
+            loadingCadreBlason.remove()
+            itemBlason.src = ``;
+            itemBlason.src = D_blason[id]         
+            })
+            .catch(() => {
+            loadingCadreBlason.remove()
 
+            cadreBlason.querySelector('p').style.display = "flex"
+          });
+
+            
         const loadingCadreContours = document.createElement("div");
         loadingCadreContours.className = "loadingCadre";
         loadingCadreContours.style.height = "8em";
