@@ -9620,7 +9620,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         L_reponse = [];
         desactiverCarte();
         //Fonction
-        const paysDispos = Object.keys(L_q).filter(
+        let paysDispos = Object.keys(L_q).filter(
           (id) =>
             (L_q[id].d.toLowerCase() === L_config.d || L_config.c !== "allC") &&
             !L_reponses.includes(id) &&
@@ -9628,6 +9628,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
         );
+
+        if (L_config.q === "contourQ" || L_config.r === "contourR" ) {
+          paysDispos = paysDispos.filter(id => !["PS"].includes(id));
+        }
 
         const paysDisposTrouver = Object.keys(L_q).filter(
           (id) =>
