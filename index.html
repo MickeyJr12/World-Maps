@@ -2143,6 +2143,7 @@
 
       #cadreBlason {
         display: none;
+        position : relative;
         justify-content: center;
         align-items: center;
         height: auto;
@@ -9398,7 +9399,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const phoneConfig = document.getElementById("phoneConfig");
 
       play.addEventListener("click", () => {
-
         cChooseTrouver = null;
         viewMaps = false;
         clonepColor_m.clear();
@@ -9408,9 +9408,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         idVisible_m.forEach((val, key) => cloneVisible_m.set(key, { ...val }));
 
-         
-
-          
         [...phoneHome.children].forEach((el) => {
           el.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         });
@@ -9671,8 +9668,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
         // Partie Choix
         if (L_config.m === "modeChoix") {
-
-           //Remplir tout ça
+          //Remplir tout ça
           paths.forEach((p) => {
             pColor_m.set(p, { hover: "", current: colorPath });
             if (!paysDisposTrouver.includes(p.id)) {
@@ -9682,7 +9678,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           colorCountry();
 
-          
           document.getElementById("cadreQ4Choix").classList.add("modeChoix");
           let random = Math.floor(Math.random() * 4);
           cBoxHasard = L_cBoxHasard[random]; // Mettre la bonne réponse sur une case au hasard
@@ -9783,9 +9778,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           zBox.classList.add("modeTrouver");
 
           if (cChooseTrouver === null) {
-
-
-
             idVisible_m = new Map(
               Array.from(tIdVisible_m, ([key, val]) => [key, { ...val }]),
             );
@@ -12249,7 +12241,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             ")";
         }
 
-        infoPIles.querySelector("span").textContent = D_ileP[p.id.slice(0, 5)].toLocaleString("fr-FR");
+        infoPIles.querySelector("span").textContent =
+          D_ileP[p.id.slice(0, 5)].toLocaleString("fr-FR");
         infoSIles.querySelector("span").textContent =
           D_ileS[p.id.slice(0, 5)].toLocaleString("fr-FR") + "km²";
       }
@@ -24646,22 +24639,41 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
           drapeauCadre.src =
             "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
-        }
+        }       
 
-        //  itemBlason.src = viewState
-        //       ? ""
-        //       : `https://flagcdn.com/${id.toLowerCase()}.svg`;
-        viewState
-          ? ""
-          : D_blason[id]
-            ? ((itemBlason.src = D_blason[id]),
-              (document
-                .getElementById("cadreBlason")
-                .querySelector("p").style.display = "none"))
-            : (document
-                .getElementById("cadreBlason")
-                .querySelector("p").style.display = "flex");
-        itemBlason.src = viewState ? "" : D_blason[id] ? D_blason[id] : "";
+        const loadingCadreBlason = document.createElement("div");
+        loadingCadreBlason.className = "loadingCadre";
+        loadingCadreBlason.style.position = "absolute";
+        loadingCadreBlason.style.margin = "auto";
+        loadingCadreBlason.style.inset = "0";
+        loadingCadreBlason.style.height = "8.2em";
+        loadingCadreBlason.style.maxWidth = "none";
+        loadingCadreBlason.style.width = "7.2em";
+        loadingCadreBlason.style.display = "flex";
+        document.getElementById("cadreBlason").append(loadingCadreBlason);
+
+
+       
+       itemBlason.onload = () => loadingCadreBlason.remove();
+itemBlason.onerror = () => loadingCadreBlason.remove();
+
+if (!viewState && D_blason[id]) {
+  itemBlason.src = D_blason[id];
+  document.getElementById("cadreBlason").querySelector("p").style.display = "none";
+} else {
+  loadingCadreBlason.remove(); // pas d'image à charger, on retire direct
+  document.getElementById("cadreBlason").querySelector("p").style.display = 
+    viewState ? "none" : "flex";
+}
+
+
+        const loadingCadreContours = document.createElement("div");
+        loadingCadreContours.className = "loadingCadre";
+        loadingCadreContours.style.height = "8em";
+        loadingCadreContours.style.maxWidth = "none";
+        loadingCadreContours.style.width = "11.5em";
+        loadingCadreContours.style.display = "flex";
+        cadreContours.append(loadingCadreContours);
 
         fetch(
           !viewState
