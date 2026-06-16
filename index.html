@@ -12249,9 +12249,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             ")";
         }
 
-        infoPIles.querySelector("span").textContent = D_ileP[p.id.slice(0, 5)];
+        infoPIles.querySelector("span").textContent = D_ileP[p.id.slice(0, 5)].toLocaleString("fr-FR");
         infoSIles.querySelector("span").textContent =
-          D_ileS[p.id.slice(0, 5)] + "km²";
+          D_ileS[p.id.slice(0, 5)].toLocaleString("fr-FR") + "km²";
       }
 
       polygons.forEach((p) => {
@@ -24678,6 +24678,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const div = document.createElement("div");
             div.className = "itemContours";
             div.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
+            cadreContours.innerHTML = ``;
             cadreContours.appendChild(div);
             if (id in D_ileLink) {
               expandIle.innerHTML = ` <svg xmlns="http://www.w3.org/2000/svg" id="mqExpand" viewBox="0 0 24 24" width="512" height="512">
