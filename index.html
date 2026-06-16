@@ -24648,20 +24648,23 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         loadingCadreBlason.style.display = "flex";
         document.getElementById("cadreBlason").append(loadingCadreBlason);
 
-        itemBlason.onload = () => loadingCadreBlason.remove();
-        itemBlason.onerror = () => loadingCadreBlason.remove();
+        // Assigner onload AVANT de vérifier le cache
+itemBlason.onload = () => loadingCadreBlason.remove();
+itemBlason.onerror = () => loadingCadreBlason.remove();
 
-        if (!viewState && D_blason[id]) {
-          itemBlason.src = D_blason[id];
-          document
-            .getElementById("cadreBlason")
-            .querySelector("p").style.display = "none";
-        } else {
-          loadingCadreBlason.remove(); // pas d'image à charger, on retire direct
-          document
-            .getElementById("cadreBlason")
-            .querySelector("p").style.display = viewState ? "none" : "flex";
-        }
+if (!viewState && D_blason[id]) {
+  // Si déjà en cache, onload ne se redéclenche pas → vérifier manuellement
+  if (itemBlason.complete && itemBlason.src === D_blason[id]) {
+    loadingCadreBlason.remove();
+  } else {
+    itemBlason.src = D_blason[id];
+  }
+  document.getElementById("cadreBlason").querySelector("p").style.display = "none";
+} else {
+  loadingCadreBlason.remove();
+  document.getElementById("cadreBlason").querySelector("p").style.display = 
+    viewState ? "none" : "flex";
+}
 
         const loadingCadreContours = document.createElement("div");
         loadingCadreContours.className = "loadingCadre";
