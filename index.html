@@ -10596,7 +10596,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           phonePlay.style.opacity = "1";
           phonePlay.style.transform = "";
           fillPhonePlay();
-        }, 150);
+        }, 100);
         
         // phonePlay.style.display = "flex";
         // phoneConfig.style.display = "none";
@@ -18106,6 +18106,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         MY: "https://upload.wikimedia.org/wikipedia/commons/2/26/Coat_of_arms_of_Malaysia.svg",
         MZ: "https://upload.wikimedia.org/wikipedia/commons/1/14/Emblem_of_Mozambique.svg",
         NA: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Coat_of_arms_of_Namibia.svg",
+        NG: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Coat_of_arms_of_Nigeria.svg",
         NE: "https://upload.wikimedia.org/wikipedia/commons/0/03/Coat_of_arms_of_Niger.svg",
         NI: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Coat_of_arms_of_Nicaragua.svg",
         NL: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Royal_coat_of_arms_of_the_Netherlands.svg",
@@ -27539,6 +27540,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phonePlay.appendChild(mCadre)
         phonePlay.appendChild(cadre)
       }, 10000);*/
+
+
+      const D_nDevises = {}
+
+      for (const clef in D_hl) {D_nDevises[D_hl[clef].devise.s] = D_hl[clef].devise.n}
+      console.log(D_nDevises)
+
+
     </script>
   </body>
 </html>
