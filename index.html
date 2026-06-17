@@ -9866,13 +9866,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           cadreNext.classList.remove("good", "bad", "none");
           qTrouver.classList.remove("good", "bad", "none");
 
-          //currentCountry.classList.remove('good','bad')
           currentCountry = null;
-          cChooseTrouver = false;
-          //variable true/false pour pas append la map et autre chaque fois
-          //Liste des choses par phone, à ajouter, retirer
-          //Enlever la class modeTrouver à zbox dans map.addeventlistener, faire tool.append(zbox) et respecter l'ordre des tools
-          //Retirer le backmap
+          cChooseTrouver = false;          
 
           //Remplir tout ça
           paths.forEach((p) => {
@@ -10571,9 +10566,38 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         currentChrono = val;
         startChrono(val);
         contentPm.innerHTML = ``;
-        phoneConfig.style.display = "none";
-        phonePlay.style.display = "flex";
-        currentPhone = phonePlay;
+
+        // 
+        phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
+        phoneConfig.style.opacity = "0"
+        phoneConfig.style.transform = "scale(1.02)"
+        
+
+        
+
+        setTimeout(() => {
+          phoneConfig.style.display = "none";
+
+          phonePlay.style.transition = "none";
+          phonePlay.style.opacity = "0";
+          phonePlay.style.transform = "scale(0.97)";
+          phonePlay.style.display = "flex";
+          currentPhone = phonePlay;
+          document.body.style.background = "linear-gradient(315deg,#0b47e0 0%,#207dd9 50%,#0fe7fa 100%)"
+          setTimeout(() => {
+            document.body.style.background = ""
+          }, 500);
+
+          
+          phonePlay.offsetHeight; // force reflow
+          phonePlay.style.transition =
+            "transform 0.6s ease, opacity 0.5s ease";
+          phonePlay.style.opacity = "1";
+          phonePlay.style.transform = "";
+        }, 150); // attend la fin de l'animation de phoneHome      
+
+
+        //
 
         if (L_config.q === "drapeauQ") {
           document.getElementById("cadreQ4Choix").style.boxShadow =
