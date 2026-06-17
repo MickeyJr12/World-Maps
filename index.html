@@ -10588,9 +10588,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           document.body.style.background = "linear-gradient(315deg,#0b47e0 0%,#207dd9 50%,#0fe7fa 100%)"
           setTimeout(() => {
             document.body.style.background = ""
-          }, 500);
-
-          
+          }, 500);        
           phonePlay.style.transition =
             "transform 0.6s ease, opacity 0.5s ease";
           phonePlay.style.opacity = "1";
@@ -25414,7 +25412,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       //Script searching flag
-      function fillContentFlag(Lf) {
+      function fillContentFlag(Lf) {       
         contentFlagS.innerHTML = ``;
         contentFlagS.scrollTop = 0;
         const paysDispo = Lf.filter(
@@ -25424,7 +25422,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         );
         Lf = paysDispo;
 
+
         let sautPays = false;
+        let cFound = false
 
         for (const r of Lf) {
           if (
@@ -25451,6 +25451,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           if (sautPays) {
             continue;
           }
+
+          cFound = true
 
           const celDrapeau = document.createElement("div");
           celDrapeau.className = "celDrapeau";
@@ -25486,10 +25488,29 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             zoomCountry(r.id);
           });
         }
+        if (!cFound){
+           
+            contentFlagS.innerHTML = `
+        <p style="position : absolute; top : 1em; text-align : center; left : 50%; transform : translateX(-50%); color: white; opacity: 0.6; font-size = 1.2em">
+              Aucun résultat
+            </p>`
+            
+        
+      
+
+        }
       }
 
+      
       // Scirpt searching
       function fillContentC(Ls) {
+       if (Ls.length === 0){
+        contentC.innerHTML = `
+        <p style="position : absolute; text-align : center; left : 50%; top : 4em; transform : translateX(-50%); color: white; opacity: 0.6; font-size = 1.2em">
+              Aucun résultat
+            </p>`
+            return
+      }
         if (inputC.value.length === 0) {
           Ls = LsInit;
         }
