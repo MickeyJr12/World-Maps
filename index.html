@@ -28854,6 +28854,33 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         return flagErrorD;
       }
 
+      //Fetch que si ce n'est pas en cache
+      async function fetchWithCache(url, ttl = 43200000) { // ttl en ms, défaut 12h
+  const cache = await caches.open('exchange-rates');
+  const cached = await cache.match(url);
+
+  if (cached) {
+    const age = Date.now() - new Date(cached.headers.get('sw-cached-at')).getTime();
+    if (age < ttl) {
+      return cached.json();
+    }
+  }
+
+  // Pas en cache ou expiré → on fetch
+  const response = await fetch(url);
+  const clone = response.clone();
+
+  // On ajoute un header custom pour stocker la date de mise en cache
+  const headers = new Headers(clone.headers);
+  headers.set('sw-cached-at', new Date().toISOString());
+  const cachedResponse = new Response(await clone.blob(), { headers });
+
+  cache.put(url, cachedResponse);
+  return response.json();
+}
+//
+
+
       function changeD(el) {
         // el : choiceD1/D2 ou elD, on prend juste son dataset.devise pour savoir quoi mettre
         crossCadreSD.click(); //CurrentChoiceD : celui qu'on va modifier
@@ -28912,8 +28939,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreSD.classList.remove("active");
         // tf=false // à retirer
         if (tf) {
-          fetch(`https://open.er-api.com/v6/latest/${currentDD}`)
-            .then((response) => response.json())
+          fetchWithCache(`https://open.er-api.com/v6/latest/${currentDD}`)
             .then((data) => {
               dataConvert = data.rates;
 
@@ -29164,24 +29190,24 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //   { passive: false },
       // );
 
-      const inputs = document.querySelectorAll("input, textarea, select"); // Enlever le zooù automatique quand on focus un input
+      // const inputs = document.querySelectorAll("input, textarea, select"); // Enlever le zooù automatique quand on focus un input
 
-      inputs.forEach((el) => {
-        el.addEventListener("focus", () => {
-          document
-            .querySelector('meta[name="viewport"]')
-            .setAttribute(
-              "content",
-              "width=device-width, initial-scale=1, maximum-scale=1",
-            );
-        });
+      // inputs.forEach((el) => {
+      //   el.addEventListener("focus", () => {
+      //     document
+      //       .querySelector('meta[name="viewport"]')
+      //       .setAttribute(
+      //         "content",
+      //         "width=device-width, initial-scale=1, maximum-scale=1",
+      //       );
+      //   });
 
-        el.addEventListener("blur", () => {
-          document
-            .querySelector('meta[name="viewport"]')
-            .setAttribute("content", "width=device-width, initial-scale=1");
-        });
-      });
+      //   el.addEventListener("blur", () => {
+      //     document
+      //       .querySelector('meta[name="viewport"]')
+      //       .setAttribute("content", "width=device-width, initial-scale=1");
+      //   });
+      // });
 
       // loop();
 
