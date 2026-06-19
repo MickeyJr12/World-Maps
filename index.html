@@ -4233,10 +4233,15 @@
         background: rgb(255, 250, 250);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         width: 100%;
-        transition: top 0.3s ease;
+        transition: top 0.3s ease, border-radius 0.3s ease, padding-top 0.3s ease;
       }
       #cadreSD.active {
         top: calc(18vh + 1em);
+      }
+      #cadreSD.fullScreen{
+        top : 0;
+        border-radius: 0;
+        padding-top: calc(env(safe-area-inset-top) + 1em); 
       }
       #titleCadreSD {
         display: flex;
@@ -4258,7 +4263,11 @@
         width: 100%;
         height: 1em;
         box-sizing: border-box;
+        transition : opacity 0.2s ease;
       }
+      #lineCadreSD.fullScreen {
+        opacity : 0;
+      } 
       #lineCadreSD svg {
         width: 3.6em;
         fill: rgba(0, 0, 0, 0.2);
@@ -28395,6 +28404,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const infoConvert = document.getElementById("infoConvert");
       const arrowChange = document.getElementById("arrowChange");
       const cadreSD = document.getElementById("cadreSD");
+      const lineCadreSD = document.getElementById('lineCadreSD')
 
       const inputD = document.getElementById("inputD");
       const resetD = document.getElementById("resetD");
@@ -28470,6 +28480,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       crossCadreSD.addEventListener("click", (e) => {
         cadreSD.style.top = "";
         cadreSD.classList.remove("active");
+        cadreSD.classList.remove('fullScreen')
+        full = false;
+        lineCadreSD.classList.remove('fullScreen')
       });
 
       [choiceD1, choiceD2].forEach((c) => {
@@ -28775,6 +28788,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let moveSD;
       let difYD;
       let startMoveD;
+      let full = false;
       cadreSD.addEventListener("pointerdown", (e) => {
         cadreSD.setPointerCapture(e.pointerId);
         startMoveD = cadreSD.getBoundingClientRect().top + "px";
@@ -28788,7 +28802,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           difYD >
           inputD.getBoundingClientRect().bottom +
             inputD.getBoundingClientRect().height -
-            parseInt(cadreSD.style.top)
+            parseInt(cadreSD.style.top) || full
         ) {
           moveSD = false;
         }
@@ -28805,8 +28819,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreSD.style.transition = "";
         moveSD = false;
         if (cadreSD.getBoundingClientRect().top < window.innerHeight * 0.25) {
+          
           cadreSD.style.top = "";
-          cadreSD.classList.add("active");
+          cadreSD.getBoundingClientRect().top < window.innerHeight * 0.2 ? (cadreSD.classList.add("fullScreen"),full=true, lineCadreSD.classList.add('fullScreen')) : cadreSD.classList.add("active");
         } else {
           crossCadreSD.click();
         }
