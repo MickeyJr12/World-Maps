@@ -28658,6 +28658,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         moveSD = true;
         const CY = e.clientY;
         difYD = CY - parseInt(cadreSD.style.top);
+        if (difYD> inputD.getBoundingClientRect().bottom + inputD.getBoundingClientRect().height -parseInt(cadreSD.style.top)  ){moveSD = false}
       });
       document.addEventListener("pointermove", (e) => {
         if (moveSD) {
