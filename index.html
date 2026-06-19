@@ -2788,7 +2788,7 @@
         background-color: rgb(187, 21, 21);
       }
       #devises {
-        display: none;
+        display: flex;
         background-color: rgb(14, 156, 52);
       }
       #map {
@@ -4130,6 +4130,391 @@
         height: 1.4em;
         fill: white;
       }
+
+      /*CSS Devises*/
+
+        .inputD:focus {
+        outline: none;
+      }
+      /* styling of close button */
+      /* == you can click the close button to remove text == */
+      /* close button shown when typing */
+      .inputD:not(:placeholder-shown) ~ .reset {
+        opacity: 1;
+        visibility: visible;
+      }
+      /* sizing svg icons */
+    
+      #phoneDevise {
+        display: none;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        -webkit-user-select: none; /* Safari / Chrome mobile */
+        -webkit-touch-callout: none; /* empêche le menu contextuel sur iOS (hold) */
+        user-select: none;
+        justify-content: flex-start;
+        box-sizing: border-box;
+        font-family: "Nunito", sans-serif;
+        background: rgb(252, 248, 248);
+        min-height: 100dvh;
+        width: 100vw;
+        margin: auto;
+        inset: 0;
+        padding-top: calc(env(safe-area-inset-top)+2em);
+        gap: 0.5em;
+        transition:
+          transform 0.8s ease,
+          opacity 0.45s ease;
+      }
+
+      #cadreSD {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        touch-action: none;
+        z-index: 10;
+        gap: 0.8em;
+        bottom: 0;
+        top: 105%;
+        border-top-left-radius: 2em;
+        border-top-right-radius: 2em;
+        padding-top: calc(env(safe-area-inset-top) + 0.8em);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 0.8em);
+        background: rgb(255, 250, 250);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        transition: top 0.3s ease;
+      }
+      #cadreSD.active {
+        top: calc(12vh + 1em);
+      }
+      #lineCadreSD {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -2em;
+        width: 100%;
+        height: 1em;
+        box-sizing: border-box;
+      }
+      #lineCadreSD svg {
+        width: 4em;
+        fill: rgba(0, 0, 0, 0.2);
+      }
+      #alphabetD {
+        top: 105%;
+        transform: none;
+        transition:
+          transform 0.3s ease,
+          top 0.3s ease;
+      }
+      #alphabetD.active {
+        top: calc(100% - 1em);
+        transform: translateY(-100%);
+      }
+
+      #crossCadreSD {
+        fill: rgba(0, 0, 0, 0.6);
+        align-self: flex-start;
+        margin-right: 0em;
+        margin-left: 1em;
+      }
+
+      #titleCadreSD {
+        align-self: flex-start;
+        margin-left: 1em;
+        font-size: 1.25em;
+        font-weight: 550;
+        letter-spacing: 1px;
+      }
+
+      #contentCadreSD {
+        -webkit-overflow-scrolling: touch; /* scroll natif iOS */
+        touch-action: pan-y; /* le scroll est vertical, les taps passent */
+        overscroll-behavior: contain; /* évite la propagation au parent */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        flex: 1;
+        box-sizing: border-box;
+        z-index: 1; /* sous les overlays */
+        overflow: auto;
+        overflow-x: hidden;
+        width: 100%;
+        margin-top: -0.6em;
+        scrollbar-width: thin;
+        scrollbar-width: none;
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+      }
+      .elD {
+        display: flex;
+        padding: 0 1em;
+        text-align: center;
+        box-sizing: border-box;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1em 0;
+        width: 100%;
+        gap: 1em;
+        transition: background 0.2s ease;
+      }
+      .elD.active {
+        background: rgba(0, 0, 0, 0.1);
+      }
+      .flagErrorD {
+        display: flex;
+        container-type: size; /* déclare le cercle comme conteneur de référence */
+        justify-content: center;
+        align-items: center;
+        height: 1.2em;
+        margin-left: 1em;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        outline: 1.2px solid black;
+      }
+      .flagErrorD span {
+        font-size: 35cqi;
+      }
+      .flagFallbackD{
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        width : 1.4em;
+        aspect-ratio: 1/1;
+      }
+      .flagFallbackD svg {
+        height : 100%;
+
+        fill : black;
+      }
+      .txtElD {
+        display: flex;
+        align-items: center;
+      }
+      .cadreDrapeauSD {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1em;
+        flex-shrink: 0;
+        height: 1.4em; /* hauteur fixe */
+        aspect-ratio: 1/1;
+        transition: background 0.2s ease;
+      }
+      .ligneInSD {
+        width: 80%;
+        border-radius: 50%;
+        outline: 0.02em solid rgba(0, 173, 63, 0.1);
+      }
+
+      .bandeLetterSD {
+        display: flex;
+        color: rgba(0, 65, 23, 0.8);
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.6em 1em;
+        font-weight: 500;
+      }
+
+      #headerDevise {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-around;
+        box-sizing: border-box;
+        color: white;
+        width: 100%;
+        padding: 0em 0.8em;
+        height: 12vh;
+        background: linear-gradient(
+          111deg,
+          #45e850 0%,
+          #04b916 50%,
+          #018444 100%
+        );
+        margin-bottom: 4em;
+      }
+
+      #backDevise {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      #titleDevise {
+        font-size: 1em;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      .cadreD {
+        display: flex;
+        position: relative;
+        align-items: center;
+        border-radius: 0.4em;
+        outline: 1.6px solid transparent;
+        box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.4);
+        width: 80%;
+        height: 3.4em;
+        transition: outline 0.2s ease;
+      }
+      .cadreD.active {
+        outline: 1.6px solid rgba(43, 192, 127, 0.4);
+      }
+      .deVers {
+        position: absolute;
+        background: rgb(255, 248, 248);
+        left: 0.8em;
+        top: 0;
+        transform: translateY(-50%);
+        color: rgba(0, 0, 0, 0.5);
+      }
+      #infoConvert {
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .choiceD {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-around;
+        cursor: pointer;
+        box-sizing: border-box;
+        border-top-right-radius: inherit;
+        background: rgba(234, 251, 235, 1);
+        border-bottom-right-radius: inherit;
+        font-weight: 540;
+
+        width: 60%;
+        height: 100%;
+      }
+      .contentTxtHeaderD {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 0.6em;
+      }
+
+      .CadreDrapeauD {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        height: 1.2em; /* hauteur fixe */
+        aspect-ratio: 1/1;
+      }
+
+      .DrapeauBoxD {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: 100%;
+      }
+      .DrapeauCadreD {
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .arrowD {
+        fill: rgba(0, 0, 0, 0.6);
+        transform: rotate(-90deg);
+        height: 1em;
+      }
+      .inputD {
+        font-size: 1.2em;
+        font-weight: 540;
+
+        /* Enlève l'outline au focus */
+        outline: none;
+
+        /* Remplace le border moche par quelque chose de plus propre */
+        border: 1px solid transparent;
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+        background: transparent;
+        padding: 12px 16px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .inputD::placeholder {
+        font-weight: 400;
+      }
+
+      /* Retire les flèches sur Chrome, Safari, Edge */
+      .inputD::-webkit-outer-spin-button,
+      .inputD::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Retire les flèches sur Firefox */
+      .inputD {
+        -moz-appearance: textfield;
+      }
+
+      .inputD::placeholder {
+        color: #999;
+      }
+      #arrowChange {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.25s ease;
+      }
+      #arrowChange svg {
+        color: rgb(29, 231, 187);
+        height: 2.2em;
+      }
+
+      .txtPop {
+        font-size: 0.85em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(0, 0, 0, 0.45);
+        margin: 1.5em 0 0.6em 1.2em;
+        align-self: flex-start; /* aligné à gauche comme le reste du contenu */
+      }
+      #txtPopSD {
+        margin: 0.8em 1em;
+      }
+      #gridConvPopD {
+        display: grid;
+        width: 80%;
+        gap: 0.8em;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        height: 2em;
+      }
+      .celPopD {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        padding: 0.4em;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.8);
+        border-radius: 0.5em;
+        outline: 1.6px solid rgba(43, 192, 127, 0.25);
+        transition:
+          background 0.2s ease,
+          outine 0.2s ease;
+      }
+      .celPopD.active {
+        outline: 1.6px solid rgba(43, 192, 127, 0.6);
+        background: rgba(43, 192, 127, 0.1);
+      }
+
+
     </style>
     <!--HTML FLemme-->
 
@@ -5769,7 +6154,7 @@
           </button>
           <input
             class="inputC"
-            placeholder="Recherche"
+            placeholder="Rechercher"
             required=""
             autocomplete="off"
             autocorrect="off"
@@ -9341,6 +9726,312 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
     </div>
 
+    
+
+
+
+
+
+
+
+
+
+
+
+      <div id="phoneDevise">
+      <div id="cadreSD">
+        <div id="lineCadreSD">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 11 24 3"
+          >
+            <path
+              d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
+            />
+          </svg>
+        </div>
+        <button class="cross" id="crossCadreSD" onclick="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Outline"
+            viewBox="0 0 24 24"
+            width="100%"
+            height="100%"
+          >
+            <path
+              d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+            />
+            <path
+              d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+            />
+          </svg>
+        </button>
+        <div id="titleCadreSD">Sélectionnez une devise</div>
+
+        <form class="form">
+          <button type="submit" class="svgSearch">
+            <svg
+              width="17"
+              height="16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-labelledby="search"
+            >
+              <path
+                d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
+                stroke="currentColor"
+                stroke-width="1.333"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+
+          <input
+            class="inputD"
+            id="inputD"
+            placeholder="Rechercher"
+            required=""
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            type="text"
+          />
+          <button class="reset" id="resetD" type="reset">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </form>
+
+        <div id="contentCadreSD">
+          <div class="alphabet" id="alphabetD">
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDA">A</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDB">B</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDC">C</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDD">D</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDE">E</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDF">F</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDG">G</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDH">H</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDI">I</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDJ">J</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDK">K</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDL">L</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDM">M</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDN">N</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDO">O</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDP">P</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDQ">Q</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDR">R</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDS">S</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDT">T</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDU">U</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDV">V</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDW">W</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDX">X</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDY">Y</div>
+            </div>
+            <div class="letterD">
+              <div class="caseLetterD" id="caseDZ">Z</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="headerDevise">
+        <button class="back" id="backDevise">
+          <svg
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Bold"
+            viewBox="0 0 24 24"
+            width="100%"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+        </button>
+
+        <div id="titleDevise">Convertisseur de devises</div>
+      </div>
+
+      <div class="cadreD" id="cadreD1">
+        <div class="deVers">De</div>
+        <input
+          type="text"
+          value="1.00€"
+          class="inputD"
+          id="inputD1"
+          inputmode="decimal"
+          autocomplete="off"
+          placeholder="Montant"
+        />
+
+        <div class="choiceD" id="choiceD1" data-devise="EUR">
+          <div class="contentTxtHeaderD">
+            <div class="CadreDrapeauD">
+              <div class="DrapeauBoxD">
+                <img
+                  src="https://wise.com/web-art/assets/flags/eur-detailed.svg"
+                  alt=""
+                  class="DrapeauCadreD"
+                />
+              </div>
+            </div>
+            <span>EUR</span>
+          </div>
+          <svg
+            class="arrowD"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Bold"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <div id="arrowChange">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 0 32 32"
+        >
+          <circle
+            cx="16"
+            cy="16"
+            r="14"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+          />
+          <g transform="translate(8.8,8.8) scale(0.6)">
+            <path
+              d="M11.293,17.707l-3.293,3.293V1c0-.553-.447-1-1-1s-1,.447-1,1V21l-3.293-3.293c-.391-.391-1.023-.391-1.414,0s-.391,1.023,0,1.414l4.293,4.293c.39,.39,.902,.585,1.414,.585s1.024-.195,1.414-.585l4.293-4.293c.391-.391,.391-1.023,0-1.414s-1.023-.391-1.414,0ZM22.707,6.293c.391-.391,.391-1.023,0-1.414L18.414,.586C18.024,.196,17.512,0,17,0s-1.024,.195-1.414,.585l-4.293,4.293c-.391-.391,-.391,1.023,0,1.414s1.023,.391,1.414,0l3.293-3.293V23c0,.553,.447,1,1,1s1-.447,1-1V3l3.293,3.293c.391,.391,1.023,.391,1.414,0Z"
+              fill="currentColor"
+            />
+          </g>
+        </svg>
+      </div>
+
+      <div class="cadreD" id="cadreD2">
+        <div class="deVers">Vers</div>
+        <input
+          type="text"
+          class="inputD"
+          id="inputD2"
+          inputmode="decimal"
+          autocomplete="off"
+          placeholder="Montant"
+        />
+
+        <div class="choiceD" id="choiceD2" data-devise="USD">
+          <div class="contentTxtHeaderD">
+            <div class="CadreDrapeauD">
+              <div class="DrapeauBoxD">
+                <img
+                  src="https://wise.com/web-art/assets/flags/usd-detailed.svg"
+                  alt=""
+                  class="DrapeauCadreD"
+                />
+              </div>
+            </div>
+            <span>USD</span>
+          </div>
+          <svg
+            class="arrowD"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Bold"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div id="infoConvert">1 EUR = 1.2564654 USD</div>
+
+      <div class="txtPop">Conversions populaires</div>
+
+      <div id="gridConvPopD">
+        <div class="celPopD" data-d="EUR" data-v="USD">EUR/USD</div>
+        <div class="celPopD" data-d="EUR" data-v="CAD">EUR/CAD</div>
+        <div class="celPopD" data-d="EUR" data-v="BRL">EUR/BRL</div>
+        <div class="celPopD" data-d="EUR" data-v="GBP">EUR/GBP</div>
+      </div>
+    </div>
+
     <!--Script Home-->
     <script>
       window.addEventListener("load", () => {
@@ -9452,8 +10143,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           el.click();
         });
       });
-    </script>
 
+
+    </script>
+  <!--Fin script home-->
     <!--Script Configuration-->
     <script>
       const backConfig = document.getElementById("backConfig");
@@ -27355,7 +28048,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           "S",
           "T",
           "U",
-          "V",
+          "V",  
           "W",
           "X",
           "Y",
@@ -27538,6 +28231,851 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       // Fin script Maps
     </script>
+    <!--script Devise-->
+
+    <script>
+      const devises = document.getElementById('devises')
+      const phoneDevise = document.getElementById('phoneDevise')
+      devises.addEventListener('click',()=>{
+        phoneHome.style.display  = "none"
+        phoneDevise.style.display = "flex"
+      })
+      const backDevise = document.getElementById('backDevise')
+
+      backDevise.addEventListener('click',()=>{
+          phoneDevise.style.display  = "none"
+        phoneHome.style.display = "flex"
+      })
+         const inputD1 = document.getElementById("inputD1");
+      const inputD2 = document.getElementById("inputD2");
+      L_inputD = [inputD1, inputD2];
+      const cadreD1 = document.getElementById("cadreD1");
+      const cadreD2 = document.getElementById("cadreD2");
+      const choiceD1 = document.getElementById("choiceD1");
+      const choiceD2 = document.getElementById("choiceD2");
+
+      const infoConvert = document.getElementById("infoConvert");
+      const arrowChange = document.getElementById("arrowChange");
+
+      const cadreSD = document.getElementById("cadreSD");
+      const inputD = document.getElementById("inputD");
+      const resetD = document.getElementById("resetD");
+      const contentCadreSD = document.getElementById("contentCadreSD");
+      const crossCadreSD = document.getElementById("crossCadreSD");
+      const alphabetD = document.getElementById("alphabetD");
+      const lettersD = document.querySelectorAll(".letterD");
+      const casesLetterD = document.querySelectorAll(".caseLetterD");
+
+      const celsPopD = document.querySelectorAll(".celPopD");
+
+      let L_popD = ["EUR", "USD", "BRL", "CAD", "GBP"];
+
+      let draggingD;
+      let currentChoiceD;
+
+      let currentDD = "EUR";
+      let currentDV = "USD";
+      let dataConvert = false;
+
+      let garderActive = false;
+
+      celsPopD.forEach((cel) => {
+        cel.addEventListener("click", () => {
+          celsPopD.forEach((c) => c.classList.remove("active"));
+          cel.classList.add("active");
+          garderActive = true;
+          currentChoiceD = choiceD1;
+          choiceD1.dataset.devise = cel.dataset.d;
+          changeD(choiceD1);
+
+          currentChoiceD = choiceD2;
+          choiceD2.dataset.devise = cel.dataset.v;
+          changeD(choiceD2);
+        });
+      });
+
+      crossCadreSD.addEventListener('pointerdown',(e)=>e.stopPropagation())
+      crossCadreSD.addEventListener("click", (e) => {
+         alphabetD.style.top = "";
+          alphabetD.style.transform = "";
+          alphabetD.classList.remove("active");
+        cadreSD.style.top = "";
+        cadreSD.classList.remove("active");
+      });
+
+      [choiceD1, choiceD2].forEach((c) => {
+        c.addEventListener("click", () => {
+          currentChoiceD = c;
+          cadreSD.style.top = "";
+          cadreSD.classList.add("active");
+          alphabetD.classList.add("active");
+        });
+      });
+      fetch("https://open.er-api.com/v6/latest/EUR")
+        .then((response) => response.json())
+        .then((data) => {
+          dataConvert = data.rates;
+
+          inputD1.value = 1.0 + "€";
+          inputD2.value =
+            Math.round(dataConvert["USD"] * 100) / 100 + D_symbolesD[currentDV];
+          infoConvert.textContent =
+            "1 " + currentDD + " = " + dataConvert["USD"] + " " + currentDV;
+        })
+        .catch((error) => console.error("Erreur fetch:", error));
+
+      inputD1.addEventListener("focus", () => {
+        cadreD1.classList.add("active");
+        if (
+          isNaN(
+            inputD1.value.slice(-parseInt(D_symbolesD[currentDD].length) - 1),
+          )
+        ) {
+          inputD1.value = inputD1.value.slice(
+            0,
+            -parseInt(D_symbolesD[currentDD].length),
+          );
+        }
+      });
+      inputD1.addEventListener("input", (e) => {
+        let value = e.target.value;
+
+        value = value.replace(",", ".");
+        value = value.replace(/[^0-9.]/g, ""); // enlève tout sauf chiffres et point
+
+        const parts = value.split(".");
+        if (parts.length > 2) {
+          value = parts[0] + "." + parts.slice(1).join(""); // empêche plusieurs points
+        }
+        if (parts[1] && parts[1].length > 2) {
+          value = parts[0] + "." + parts[1].slice(0, 2); // tronque à 2 décimales
+        }
+        e.target.value = value;
+
+        inputD2.value =
+          Math.round(dataConvert[currentDV] * inputD1.value * 100) / 100;
+        if (inputD1.value === "") {
+          inputD2.value = "";
+        }
+      });
+
+      inputD1.addEventListener("blur", () => {
+        cadreD1.classList.remove("active");
+        if (inputD1.value.length !== 0) {
+          inputD1.value = inputD1.value + D_symbolesD[currentDD];
+          if (!isNaN(inputD2.value)) {
+            inputD2.value = inputD2.value + D_symbolesD[currentDV];
+          }
+        } else {
+          inputD1.value = 1.0 + D_symbolesD[currentDD];
+          inputD2.value = dataConvert[currentDV] + D_symbolesD[currentDV];
+        }
+      });
+
+      //------------
+
+      inputD2.addEventListener("input", (e) => {
+        let value = e.target.value;
+
+        value = value.replace(",", ".");
+        value = value.replace(/[^0-9.]/g, ""); // enlève tout sauf chiffres et point
+
+        const parts = value.split(".");
+        if (parts.length > 2) {
+          value = parts[0] + "." + parts.slice(1).join(""); // empêche plusieurs points
+        }
+        if (parts[1] && parts[1].length > 2) {
+          value = parts[0] + "." + parts[1].slice(0, 2); // tronque à 2 décimales
+        }
+        e.target.value = value;
+
+        inputD1.value =
+          Math.round((inputD2.value / dataConvert[currentDV]) * 100) / 100;
+        if (inputD2.value === "") {
+          inputD1.value = "";
+        }
+      });
+
+      inputD2.addEventListener("focus", () => {
+        cadreD2.classList.add("active");
+        if (
+          isNaN(
+            inputD2.value.slice(-parseInt(D_symbolesD[currentDV].length) - 1),
+          )
+        ) {
+          inputD2.value = inputD2.value.slice(
+            0,
+            -parseInt(D_symbolesD[currentDV].length),
+          );
+        }
+      });
+
+      inputD2.addEventListener("blur", () => {
+        cadreD2.classList.remove("active");
+        if (inputD2.value.length !== 0) {
+          inputD2.value = inputD2.value + D_symbolesD[currentDV];
+          if (!isNaN(inputD1.value)) {
+            inputD1.value = inputD1.value + D_symbolesD[currentDD];
+          }
+        } else {
+          inputD1.value = 1.0 + D_symbolesD[currentDD];
+          inputD2.value = dataConvert[currentDV] + D_symbolesD[currentDV];
+        }
+      });
+
+      /**/
+      let rotateArrowChange = 0;
+      arrowChange.addEventListener("click", () => {
+        rotateArrowChange += 180;
+        arrowChange.style.transform = `rotate(${rotateArrowChange}deg)`;
+
+        setTimeout(() => {
+          let D1 = inputD1.value.slice(
+            0,
+            -parseInt(D_symbolesD[currentDD].length),
+          );
+          let D2 = inputD2.value.slice(
+            0,
+            -parseInt(D_symbolesD[currentDV].length),
+          );
+        }, 20);
+        let CD1 = choiceD1.dataset.devise;
+        let CD2 = choiceD2.dataset.devise;
+
+        choiceD1.dataset.devise = CD2;
+        choiceD2.dataset.devise = CD1;
+
+        // currentChoiceD : celui qu'on modifie
+        // dataset.devise : comment àa va se transformer
+        garderActive = false;
+        currentChoiceD = choiceD2;
+        changeD(choiceD2);
+        currentChoiceD = choiceD1;
+        changeD(choiceD1);
+      });
+
+      // Aphabet
+
+      let scrollLetterD = document.getElementById("caseDA");
+      scrollLetterD.style.transform = "scale(1.1) translateX(-0.5em)";
+      scrollLetterD.style.color = "green";
+      contentCadreSD.addEventListener("pointerdown", (e) =>
+        e.stopPropagation(),
+      );
+      contentCadreSD.addEventListener("scroll", () => {
+        const containerTop = contentCadreSD.getBoundingClientRect().top;
+        let closestLetterD = null;
+        let closestDistance = -Infinity;
+
+        [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V",
+          "W",
+          "X",
+          "Y",
+          "Z",
+        ].forEach((l) => {
+          const el = document.getElementById("letter" + l);
+          if (!el) return;
+
+          const elTop = el.getBoundingClientRect().top - containerTop;
+
+          // On veut ceux qui ont dépassé le haut (elTop < 0)
+          // et on prend le plus proche du top (le moins négatif)
+          if (elTop <= 0 && elTop > closestDistance) {
+            closestDistance = elTop;
+            closestLetterD = l;
+          }
+        });
+
+        if (closestLetterD) {
+          casesLetterD.forEach((c) => {
+            c.style.transform = "";
+            c.style.color = "";
+          });
+          scrollLetterD = document.getElementById("caseD" + closestLetterD);
+          scrollLetterD.style.transform = "scale(1.1) translateX(-0.5em)";
+          scrollLetterD.style.color = "green";
+        }
+      });
+
+      function scrollToLetter(el) {
+        const letter = el?.closest(".letterD");
+        if (!letter) return;
+        const target = document.getElementById(
+          "letter" + letter.textContent.trim().toUpperCase(),
+        );
+        if (target) target.scrollIntoView({ block: "start" });
+      }
+
+      alphabetD.addEventListener("pointerdown", (e) => {
+        alphabetD.style.width = "100%";
+        draggingD = true;
+        alphabetD.setPointerCapture(e.pointerId);
+        scrollToLetter(e.target);
+      });
+
+      alphabetD.addEventListener("pointermove", (e) => {
+        if (!draggingD) return;
+        const el = document.elementFromPoint(e.clientX, e.clientY);
+        const letter = el?.closest(".letterD");
+
+        if (letter) {
+          lettersD.forEach((L) => {
+            L.querySelector(".caseLetterD").style.transform = "";
+            L.querySelector(".caseLetterD").style.color = "green";
+          });
+
+          letter.querySelector(".caseLetterD").style.transform =
+            "scale(1.1) translateX(-0.5em)";
+        }
+
+        scrollToLetter(el);
+      });
+      alphabetD.addEventListener("pointerup", () => {
+        alphabetD.style.width = "";
+        lettersD.forEach((L) => {
+          const currentLetter = L.querySelector(".caseLetterD");
+          if (currentLetter !== scrollLetterD) {
+            currentLetter.style.transform = "";
+            currentLetter.style.color = "";
+          }
+        });
+        draggingD = false;
+      });
+
+      alphabetD.addEventListener("pointercancel", () => {
+        alphabetD.style.width = "";
+        lettersD.forEach((L) => {
+          const currentLetter = L.querySelector(".caseLetterD");
+          if (currentLetter !== scrollLetterD) {
+            currentLetter.style.transform = "";
+            currentLetter.style.color = "";
+          }
+        });
+        draggingD = false;
+      });
+
+      /*Move cadresd*/
+      let moveSD;
+      let difYD;
+      let difYAlphaD;
+      let startMoveD;
+      cadreSD.addEventListener("pointerdown", (e) => {
+        cadreSD.setPointerCapture(e.pointerId);
+        startMoveD = cadreSD.getBoundingClientRect().top + "px";
+        cadreSD.style.top = startMoveD;
+        cadreSD.classList.remove("active");
+
+        alphabetD.style.transition = "none";
+        alphabetD.style.top = alphabetD.getBoundingClientRect().top + "px";
+        alphabetD.classList.remove("active");
+        alphabetD.style.transform = "none";
+
+        moveSD = true;
+        const CY = e.clientY;
+        difYD = CY - parseInt(cadreSD.style.top);
+        difYAlphaD = CY - parseInt(alphabetD.style.top);
+      });
+      document.addEventListener("pointermove", (e) => {
+        if (moveSD) {
+          cadreSD.style.transition = "none";
+
+          alphabetD.style.top = e.clientY - difYAlphaD + "px";
+
+          cadreSD.style.top = e.clientY - difYD + "px";
+        }
+      });
+
+      document.addEventListener("pointerup", () => {
+        cadreSD.style.transition = "";
+        alphabetD.style.transition = "";
+        moveSD = false;
+        if (cadreSD.getBoundingClientRect().top < window.innerHeight * 0.25) {
+          cadreSD.style.top = "";
+          cadreSD.classList.add("active");
+
+          alphabetD.style.top = "";
+          alphabetD.style.transform = "";
+          alphabetD.classList.add("active");
+        } else {
+          alphabetD.style.top = "";
+          alphabetD.style.transform = "";
+          alphabetD.classList.remove("active");
+          crossCadreSD.click();
+        }
+      });
+
+      //
+      const D_nDevises = {
+        EUR: "Euro",
+        AED: "Dirham des Émirats arabes unis",
+        AFN: "Afghani",
+        XCD: "Dollar des Caraïbes orientales",
+        ALL: "Lek albanais",
+        AMD: "Dram arménien",
+        AOA: "Kwanza angolais",
+        ARS: "Peso argentin",
+        USD: "Dollar américain",
+        AUD: "Dollar australien",
+        AWG: "Florin arubais",
+        AZN: "Manat azerbaïdjanais",
+        BAM: "Mark convertible",
+        BBD: "Dollar de la Barbade",
+        BDT: "Taka bangladais",
+        XOF: "Franc CFA BCEAO",
+        BGN: "Lev bulgare",
+        BHD: "Dinar bahreïni",
+        BIF: "Franc burundais",
+        BMD: "Dollar des Bermudes",
+        BND: "Dollar de Brunei",
+        BOB: "Boliviano",
+        BRL: "Réal brésilien",
+        BSD: "Dollar bahaméen",
+        BTN: "Ngultrum bhoutanais",
+        NOK: "Couronne norvégienne",
+        BWP: "Pula botswanais",
+        BYR: "Rouble biélorusse",
+        BZD: "Dollar de Belize",
+        CAD: "Dollar canadien",
+        CDF: "Franc congolais",
+        XAF: "Franc CFA BEAC",
+        CHF: "Franc suisse",
+        NZD: "Dollar néo-zélandais",
+        CLP: "Peso chilien",
+        CNY: "Yuan renminbi",
+        COP: "Peso colombien",
+        CRC: "Colón costaricien",
+        CUP: "Peso cubain",
+        CVE: "Escudo cap-verdien",
+        ANG: "Florin antillais néerlandais",
+        CZK: "Couronne tchèque",
+        DJF: "Franc djiboutien",
+        DKK: "Couronne danoise",
+        DOP: "Peso dominicain",
+        DZD: "Dinar algérien",
+        EGP: "Livre égyptienne",
+        MAD: "Dirham marocain",
+        ERN: "Nakfa érythréen",
+        ETB: "Birr éthiopien",
+        FJD: "Dollar fidjien",
+        FKP: "Livre des Malouines",
+        FOK: "Couronne féroïenne",
+        GBP: "Livre sterling",
+        GEL: "Lari géorgien",
+        GGP: "Livre de Guernesey",
+        GHS: "Cedi ghanéen",
+        GIP: "Livre de Gibraltar",
+        GMD: "Dalasi gambien",
+        GNF: "Franc guinéen",
+        GTQ: "Quetzal guatémaltèque",
+        GYD: "Dollar guyanais",
+        HKD: "Dollar de Hong Kong",
+        HNL: "Lempira hondurien",
+        HTG: "Gourde haïtienne",
+        HUF: "Forint hongrois",
+        IDR: "Roupie indonésienne",
+        ILS: "Nouveau shekel israélien",
+        IMP: "Livre de l'île de Man",
+        INR: "Roupie indienne",
+        IQD: "Dinar irakien",
+        IRR: "Rial iranien",
+        ISK: "Couronne islandaise",
+        JEP: "Livre de Jersey",
+        JMD: "Dollar jamaïcain",
+        JOD: "Dinar jordanien",
+        JPY: "Yen japonais",
+        KES: "Shilling kényan",
+        KGS: "Som kirghiz",
+        KHR: "Riel cambodgien",
+        KMF: "Franc comorien",
+        KPW: "Won nord-coréen",
+        KRW: "Won sud-coréen",
+        KWD: "Dinar koweïtien",
+        KYD: "Dollar des îles Caïmans",
+        KZT: "Tenge kazakh",
+        LAK: "Kip laotien",
+        LBP: "Livre libanaise",
+        LKR: "Roupie srilankaise",
+        LRD: "Dollar libérien",
+        LSL: "Loti lesothan",
+        LYD: "Dinar libyen",
+        MDL: "Leu moldave",
+        MGA: "Ariary malgache",
+        MKD: "Denar macédonien",
+        MMK: "Kyat birman",
+        MNT: "Tögrög mongol",
+        MOP: "Pataca macanaise",
+        MRU: "Ouguiya mauritanien",
+        MUR: "Roupie mauricienne",
+        MVR: "Rufiyaa maldivien",
+        MWK: "Kwacha malawien",
+        MXN: "Peso mexicain",
+        MYR: "Ringgit malaisien",
+        MZN: "Metical mozambicain",
+        NAD: "Dollar namibien",
+        XPF: "Franc CFP",
+        NGN: "Naira nigérian",
+        NIO: "Córdoba nicaraguayen",
+        NPR: "Roupie népalaise",
+        OMR: "Rial omanais",
+        PAB: "Balboa panaméen",
+        PEN: "Sol péruvien",
+        PGK: "Kina papouasien",
+        PHP: "Peso philippin",
+        PKR: "Roupie pakistanaise",
+        PLN: "Zloty polonais",
+        PYG: "Guaraní paraguayen",
+        QAR: "Riyal qatarien",
+        RON: "Leu roumain",
+        RSD: "Dinar serbe",
+        RUB: "Rouble russe",
+        RWF: "Franc rwandais",
+        SAR: "Riyal saoudien",
+        SBD: "Dollar des Îles Salomon",
+        SCR: "Roupie seychelloise",
+        SDG: "Livre soudanaise",
+        SEK: "Couronne suédoise",
+        SGD: "Dollar de Singapour",
+        SHP: "Livre de Sainte-Hélène",
+        SLL: "Leone sierra-léonais",
+        SOS: "Shilling somalien",
+        SRD: "Dollar surinamais",
+        SSP: "Livre sud-soudanaise",
+        STN: "Dobra santoméen",
+        SYP: "Livre syrienne",
+        SZL: "Lilangeni swazilandais",
+        THB: "Baht thaïlandais",
+        TJS: "Somoni tadjik",
+        TMT: "Manat turkmène",
+        TND: "Dinar tunisien",
+        TOP: "Paʻanga tongien",
+        TRY: "Livre turque",
+        TTD: "Dollar de Trinité-et-Tobago",
+        TWD: "Nouveau dollar de Taïwan",
+        TZS: "Shilling tanzanien",
+        UAH: "Hryvnia ukrainienne",
+        UGX: "Shilling ougandais",
+        UYU: "Peso uruguayen",
+        UZS: "Soum ouzbek",
+        VES: "Bolívar vénézuélien",
+        VND: "Đồng vietnamien",
+        VUV: "Vatu vanuatuan",
+        WST: "Tala samoan",
+        YER: "Riyal yéménite",
+        ZAR: "Rand sud-africain",
+        ZMW: "Kwacha zambien",
+        ZWL: "Dollar zimbabwéen",
+      };
+
+
+      
+
+      function createFlagD(clefD) {
+        const flagErrorD = document.createElement("div");
+        flagErrorD.className = "flagErrorD";
+        flagErrorD.textContent = clefD;
+        return flagErrorD;
+      }
+
+      function changeD(el) {
+        crossCadreSD.click()
+        if (!garderActive) {
+          celsPopD.forEach((c) => c.classList.remove("active"));
+        }
+        let d = el.dataset.devise;
+        currentChoiceD.dataset.devise = d;
+        currentChoiceD.querySelector("span").textContent = d;
+
+        let img = currentChoiceD.querySelector("img");
+        currentChoiceD.querySelector(".CadreDrapeauD").style.display ="";   
+
+        const oldFallback = currentChoiceD.querySelector(".flagFallbackD");         
+        if (oldFallback) oldFallback.remove(); // supprime le fallback si présent
+
+
+        img.src = ``;
+        img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}-detailed.svg`;
+
+        img.onerror = () => {
+          img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}.svg`;
+
+          img.onerror = () => {
+            currentChoiceD.querySelector(".CadreDrapeauD").style.display ="none";
+
+            const fallback = document.createElement("div");
+            fallback.className = "flagFallbackD";
+            fallback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><g id="_01_align_center" data-name="01 align center"><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm8.647,7H17.426a19.676,19.676,0,0,0-2.821-4.644A10.031,10.031,0,0,1,20.647,7ZM16.5,12a10.211,10.211,0,0,1-.476,3H7.976A10.211,10.211,0,0,1,7.5,12a10.211,10.211,0,0,1,.476-3h8.048A10.211,10.211,0,0,1,16.5,12ZM8.778,17h6.444A19.614,19.614,0,0,1,12,21.588,19.57,19.57,0,0,1,8.778,17Zm0-10A19.614,19.614,0,0,1,12,2.412,19.57,19.57,0,0,1,15.222,7ZM9.4,2.356A19.676,19.676,0,0,0,6.574,7H3.353A10.031,10.031,0,0,1,9.4,2.356ZM2.461,9H5.9a12.016,12.016,0,0,0-.4,3,12.016,12.016,0,0,0,.4,3H2.461a9.992,9.992,0,0,1,0-6Zm.892,8H6.574A19.676,19.676,0,0,0,9.4,21.644,10.031,10.031,0,0,1,3.353,17Zm11.252,4.644A19.676,19.676,0,0,0,17.426,17h3.221A10.031,10.031,0,0,1,14.605,21.644ZM21.539,15H18.1a12.016,12.016,0,0,0,.4-3,12.016,12.016,0,0,0-.4-3h3.437a9.992,9.992,0,0,1,0,6Z"/></g></svg>`;
+            currentChoiceD.querySelector(".CadreDrapeauD").before(fallback); // insère juste après l'img
+          };
+        };
+        let tf = false;
+
+        let CD1 = inputD1.value.slice(
+          0,
+          -parseInt(D_symbolesD[currentDD].length),
+        );
+        currentChoiceD === choiceD1
+          ? ((currentDD = d), (tf = true))
+          : (currentDV = d);
+
+        infoConvert.textContent =
+          currentChoiceD === choiceD1
+            ? 1.0 + D_symbolesD[currentDD]
+            : "1 " +
+              currentDD +
+              " = " +
+              dataConvert[currentDV] +
+              " " +
+              currentDV;
+        cadreSD.style.top = "";
+        cadreSD.classList.remove("active");
+        if (tf) {
+          fetch(`https://open.er-api.com/v6/latest/${currentDD}`)
+            .then((response) => response.json())
+            .then((data) => {
+              dataConvert = data.rates;
+
+              inputD1.value = CD1 + D_symbolesD[currentDD];
+
+              inputD2.value =
+                Math.round(dataConvert[currentDV] * parseInt(CD1) * 100) / 100 +
+                D_symbolesD[currentDV];
+              infoConvert.textContent =
+                "1 " +
+                currentDD +
+                " = " +
+                dataConvert[currentDV] +
+                " " +
+                currentDV;
+            })
+            .catch((error) => console.error("Erreur fetch:", error));
+        } else {
+          inputD2.value =
+            Math.round(
+              dataConvert[currentDV] *
+                inputD1.value.slice(
+                  0,
+                  -parseInt(D_symbolesD[currentDD].length),
+                ) *
+                100,
+            ) / 100;
+        }
+        inputD1.focus();
+        inputD1.blur();
+
+        inputD2.focus();
+        inputD2.blur();
+      }
+
+      function fillContentD(Ld) {
+        if (Object.keys(Ld).length === 0 && inputD.value.length !== 0) {
+          contentCadreSD.innerHTML = `
+        <p style="text-align : center;  margin-top : 4em; color: rgba(0,0,0,0.6); font-size = 1.2em">
+              Aucun résultat
+            </p>`;
+          return;
+        }
+
+        if (inputD.value.length === 0) {
+          Ld = D_nDevises;
+        }
+
+        contentCadreSD.scrollTop = 0;
+
+        Ld = Object.fromEntries(
+          Object.entries(Ld).sort(([, a], [, b]) =>
+            a
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .localeCompare(
+                b.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
+              ),
+          ),
+        );
+
+        contentCadreSD.style.scrollbarWidth = "none";
+        contentCadreSD.innerHTML = ``;
+
+        const L_pop = {
+          EUR: "Euro",
+          USD: "Dollar américain",
+          GBP: "Livre sterling",
+          BRL: "Réal brésilien",
+        };
+        if (inputD.value.length === 0) {
+          const txtPopSD = document.createElement("div");
+          txtPopSD.id = txtPopSD;
+          txtPopSD.className = "txtPop";
+          txtPopSD.textContent = "POPULAIRE";
+          contentCadreSD.append(txtPopSD);
+        }
+        const L_LD = inputD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
+
+        const D_clone = structuredClone(D_alphabet);
+
+        L_LD.forEach((L) => {
+          for (const clefD of Object.keys(L)) {
+            const firstChar = L[clefD].slice(0, 1).toUpperCase();
+
+            for (const [baseLetter, accents] of Object.entries(D_clone)) {
+              if (
+                accents.includes(firstChar) &&
+                ((inputD.value.length === 0 && L !== L_pop) ||
+                  inputD.value.length !== 0)
+              ) {
+                const bandeLetter = document.createElement("div");
+                bandeLetter.className = "bandeLetterSD";
+                bandeLetter.id = "letter" + baseLetter;
+                bandeLetter.textContent = baseLetter;
+                contentCadreSD.append(bandeLetter);
+                delete D_clone[baseLetter];
+                break;
+              }
+            }
+
+            const elD = document.createElement("div");
+            elD.className = "elD";
+            elD.dataset.devise = clefD;
+
+            const contentTxtHeaderD = document.createElement("div");
+            contentTxtHeaderD.className = "contentTxtHeaderD";
+
+            const cadreDrapeauSD = document.createElement("div");
+            cadreDrapeauSD.className = "cadreDrapeauSD";
+
+            const DrapeauBoxD = document.createElement("div");
+            DrapeauBoxD.className = "DrapeauBoxD";
+            let imgD = document.createElement("img");
+            imgD.className = "DrapeauCadreD";
+            imgD.src = `https://wise.com/web-art/assets/flags/${clefD.toLowerCase()}.svg`;
+
+            imgD.onerror = () => {
+              const newImgD = document.createElement("div");
+              newImgD.className = "flagErrorD";
+              const spnD = document.createElement("span");
+              spnD.textContent = clefD;
+              newImgD.append(spnD);
+              cadreDrapeauSD.replaceWith(newImgD);
+            };
+            DrapeauBoxD.append(imgD);
+
+            const DrapeauCadreD = document.createElement("div");
+            DrapeauCadreD.className = "DrapeauCadreD";
+
+            const txtElD = document.createElement("div");
+            txtElD.className = "txtElD";
+            txtElD.textContent =
+              D_nDevises[clefD] +
+              " - " +
+              clefD +
+              " (" +
+              D_symbolesD[clefD] +
+              ")";
+
+            const ligneInSD = document.createElement("div");
+            ligneInSD.className = "ligneInSD";
+
+            cadreDrapeauSD.append(DrapeauBoxD);
+            contentTxtHeaderD.append(cadreDrapeauSD, txtElD);
+            elD.append(contentTxtHeaderD);
+            contentCadreSD.append(elD, ligneInSD);
+
+            elD.style.transform = "translateY(-0.8em)";
+            elD.style.opacity = "0";
+
+            setTimeout(() => {
+              elD.style.opacity = "1";
+              elD.style.transform = "";
+            }, 10);
+
+            elD.addEventListener("pointerdown", () => {
+              elD.classList.add("active");
+            });
+
+            document.addEventListener("pointerup", () => {
+              elD.classList.remove("active");
+            });
+
+            elD.addEventListener("click", () => {
+              garderActive = false;
+              changeD(elD);
+            });
+          }
+        });
+        contentCadreSD.append(alphabetD);
+      }
+
+      fillContentD(D_nDevises);
+      document
+        .querySelector(".form")
+        .addEventListener("pointerdown", (e) => e.stopPropagation());
+      resetD.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setTimeout(() => {
+          fillContentD({});
+        }, 10);
+      });
+
+      inputD.addEventListener("input", (e) => {
+        let Ld = {};
+        for (const clefD of Object.keys(D_nDevises)) {
+          const val = inputD.value
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toUpperCase();
+          const nom =
+            clefD +
+            D_nDevises[clefD]
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .toUpperCase();
+
+          const valL = inputD.value
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase();
+          const nomL =
+            clefD +
+            D_nDevises[clefD]
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "")
+              .toLowerCase();
+          if (
+            (nom.includes(val) || nomL.includes(valL)) &&
+            /*valL === nomL.slice(0, val.length)*/ inputD.value.length != 0
+          ) {
+            Ld[clefD] = D_nDevises[clefD];
+          }
+        }
+
+        fillContentD(Ld);
+      });
+
+
+
+
+    </script>
 
     <!--Script cache-->
 
@@ -27563,10 +29101,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }, 10000);*/
 
 
-      const D_nDevises = {}
-
-      for (const clef in D_hl) {D_nDevises[D_hl[clef].devise.s] = D_hl[clef].devise.n}
-      console.log(D_nDevises)
 
 
     </script>

@@ -16,7 +16,9 @@
           "scrollbar-color",
           "scrollbar-width: thin",
           "animation-timeline: view()",
-          "-webkit-overflow-scrolling"
+          "-webkit-overflow-scrolling",
+          "-moz-appearance",
+          "-moz-appearance"
         ]
       }
     ],
@@ -32,10 +34,17 @@
       "default",
       {
         "ignore": [
-          "meta[name=theme-color]"
+          "meta[name=theme-color]",
+          "input[autocapitalize]"
         ]
       }
     ],
-    "apple-touch-icons": "off"
+    "apple-touch-icons": "off",
+    "axe/name-role-value": [
+      "default",
+      {
+        "button-name": "off"
+      }
+    ]
   }
 }
