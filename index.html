@@ -29142,6 +29142,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         contentCadreSD.scrollTop = 0;
+         casesLetterD.forEach((c) => {
+            c.style.transform = "";
+            c.style.color = "";
+          });
+          scrollLetterD = document.getElementById("caseDA");
+          scrollLetterD.style.transform = "scale(1.1) translateX(-0.5em)";
+          scrollLetterD.style.color = "green";
 
         Ld = Object.fromEntries(
           Object.entries(Ld).sort(([, a], [, b]) =>
