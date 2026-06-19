@@ -4232,7 +4232,7 @@
         background: rgb(255, 250, 250);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         width: 100%;
-        max-height : 100vw;
+        max-height : 100vh;
         transition: top 0.3s ease;
       }
       #cadreSD.active {
@@ -16054,7 +16054,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         BTN: "Nu.",
         NOK: "kr",
         BWP: "P",
-        BYR: "Br",
+        BYN: "Br",
         BZD: "$",
 
         CAD: "$",
@@ -16175,7 +16175,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         SEK: "kr",
         SGD: "$",
         SHP: "£",
-        SLL: "Le",
+        SLE: "Le",
         SOS: "Sh",
         SRD: "$",
         SSP: "£",
@@ -16487,7 +16487,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           nomH: "Botswanais",
         },
         BY: {
-          devise: { n: "Rouble biélorusse", s: "BYR" },
+          devise: { n: "Rouble biélorusse", s: "BYN" },
           carSide: "Droite",
           seaAccess: "Non",
           calendar: "Lundi",
@@ -17864,7 +17864,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           nomH: "Slovaques",
         },
         SL: {
-          devise: { n: "Leone sierra-léonais", s: "SLL" },
+          devise: { n: "Leone sierra-léonais", s: "SLE" },
           carSide: "Droite",
           seaAccess: "Oui",
           calendar: "Dimanche",
@@ -28701,7 +28701,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         BTN: "Ngultrum bhoutanais",
         NOK: "Couronne norvégienne",
         BWP: "Pula botswanais",
-        BYR: "Rouble biélorusse",
+        BYN: "Rouble biélorusse",
         BZD: "Dollar de Belize",
         CAD: "Dollar canadien",
         CDF: "Franc congolais",
@@ -28804,7 +28804,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         SEK: "Couronne suédoise",
         SGD: "Dollar de Singapour",
         SHP: "Livre de Sainte-Hélène",
-        SLL: "Leone sierra-léonais",
+        SLE: "Leone sierra-léonais",
         SOS: "Shilling somalien",
         SRD: "Dollar surinamais",
         SSP: "Livre sud-soudanaise",
@@ -28973,9 +28973,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           txtPopSD.textContent = "POPULAIRES";
           contentCadreSD.append(txtPopSD);
         }
+
+                delete Ld.KPW;
+
         const L_LD = inputD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
 
         const D_clone = structuredClone(D_alphabet);
+
+
 
         L_LD.forEach((L) => {
           for (const clefD of Object.keys(L)) {
