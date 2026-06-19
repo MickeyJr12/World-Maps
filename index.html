@@ -4550,6 +4550,14 @@
       #txtPopSD {
         margin: 0.8em 1em;
       }
+      #txtLastUpdate{
+        position : absolute;
+        text-transform: none;
+        bottom : 1em;
+        left : 1.5em;
+        letter-spacing: 0.05em;
+        margin : none;
+      }
       #gridConvPopD {
         display: grid;
         width: 80%;
@@ -10092,6 +10100,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         <div class="celPopD" data-d="EUR" data-v="BRL">EUR/BRL</div>
         <div class="celPopD" data-d="EUR" data-v="GBP">EUR/GBP</div>
       </div>
+
+      <div class="txtPop" id="txtLastUpdate">Dernière actualisation : <span></span></div>
+
     </div>
 
     <!--Script Home-->
@@ -10178,7 +10189,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         [...phoneHome.children].forEach((el) => {
           el.style.opacity = "0";
         });
-        document.body.style.background = "linear-gradient(55deg,#d92020 0%,#b30059 50%,#610013 100%)"
 
         setTimeout(() => {
           phoneHome.style.display = "none";
@@ -28298,11 +28308,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         [...phoneHome.children].forEach((el) => {
           el.style.opacity = "0";
         });
-        document.body.style.background = "linear-gradient(111deg,#45e850 0%,#04b916 50%,#018444 100%)" 
-
 
         setTimeout(() => {
           phoneHome.style.display = "none";
+        }, 180); // attend la fin de l'animation de phoneHome
+        setTimeout(() => {
           phoneDevise.style.transition = "none";
           phoneDevise.style.opacity = "0";
           phoneDevise.style.transform = "scale(0.97)";
@@ -28314,7 +28324,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             "transform 0.6s ease, opacity 0.5s ease";
           phoneDevise.style.opacity = "1";
           phoneDevise.style.transform = "";
-        }, 180); // attend la fin de l'animation de phoneHome
+        }, 25);
 
       });
 
@@ -28325,10 +28335,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phoneDevise.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         phoneDevise.style.opacity = "0";
         phoneDevise.style.transform = "scale(0.90)";
-        setTimeout(() => {
+        document.body.style.transition = "none"
         document.body.style.background = ""
+        document.body.style.transition = ""
 
-          phoneDevise.style.display = "none";
+        setTimeout(() => {
+        phoneDevise.style.display = "none";
 
           // Prépare phoneHome avant de l'afficher
           [...phoneHome.children].forEach((el) => {
@@ -28401,6 +28413,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let currentDD = "EUR";
       let currentDV = "USD";
       let dataConvert = false;
+      let dataLatest = false;
+      let D_semaine = {
+  Mon: "Lun", Tue: "Mar", Wed: "Mer", Thu: "Jeu",
+  Fri: "Ven", Sat: "Sam", Sun: "Dim"
+}
+      let D_mois = {
+  Jan: "Jan", Feb: "Fév", Mar: "Mar", Apr: "Avr",
+  May: "Mai", Jun: "Juin", Jul: "Juil", Aug: "Août",
+  Sep: "Sep", Oct: "Oct", Nov: "Nov", Dec: "Déc"
+}
+
+
 
       let garderActive = false;
 
@@ -28446,11 +28470,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           c.classList.remove("active");
         });
       });
-      fetch("https://open.er-api.com/v6/latest/EUR")
-        .then((response) => response.json())
+      fetchWithCache("https://open.er-api.com/v6/latest/EUR",43200000)
         .then((data) => {
           dataConvert = data.rates;
-
+          dataLatest = data.time_last_update_utc          
           inputD1.value = 1.0 + "€";
           inputD2.value =
             Math.round(dataConvert["USD"] * 100) / 100 + D_symbolesD[currentDV];
@@ -28924,7 +28947,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       //Fetch que si ce n'est pas en cache
-      async function fetchWithCache(url, ttl = 43200000) { // ttl en ms, défaut 12h
+      async function fetchWithCache(url, ttl) { // ttl en ms, défaut 12h
   const cache = await caches.open('exchange-rates');
   const cached = await cache.match(url);
 
@@ -29008,7 +29031,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreSD.classList.remove("active");
         // tf=false // à retirer
         if (tf) {
-          fetchWithCache(`https://open.er-api.com/v6/latest/${currentDD}`)
+          fetchWithCache(`https://open.er-api.com/v6/latest/${currentDD}`,43200000)
             .then((data) => {
               dataConvert = data.rates;
 
@@ -29247,10 +29270,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       function loop() {
-        console.log(cadreSD.className);
+        str = "Fri, 19 Jun 2026 00:02:32 +0000"
+        let s = str.slice(0,3)
+        let jr = str.slice(5,7)
+        let m = str.slice(9, 12)
+        let a = str.slice(13, 17)
+        
+        let h = str.slice(18,26)
+        let utc = str.slice(27,)
         requestAnimationFrame(loop);
       }
-
+loop()
       // document.addEventListener(
       //   "touchmove",
       //   (e) => {
