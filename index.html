@@ -4560,6 +4560,7 @@
         align-items : center;
         justify-content: center;
         flex-wrap: wrap;
+        max-width : calc(100% - 2em);
         position : absolute;
         left : 1.5em;
         bottom : calc(env(safe-area-inset-bottom) + 1em);
@@ -29065,7 +29066,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         let h = dataLatest.slice(18,26)        
         let utc = dataLatest.slice(26)
           
-        document.getElementById('txtLastUpdate').querySelector('span').textContent = " " +D_semaine[s] + jr+ D_mois[m]+ " " + h + utc
+        document.getElementById('txtLastUpdate').querySelector('p').textContent = " " +D_semaine[s] + jr+ D_mois[m]+ " " + h + utc
 
               inputD1.value = CD1 + D_symbolesD[currentDD];
 
