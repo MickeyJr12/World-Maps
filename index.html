@@ -69,6 +69,7 @@
         box-sizing: border-box;
         margin: 0;
         width: 100%;
+        transition : background 0.1s ease;
       }
 
       /*CSS Flemme*/
@@ -10177,6 +10178,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         [...phoneHome.children].forEach((el) => {
           el.style.opacity = "0";
         });
+        document.body.style.background = "linear-gradient(55deg,#d92020 0%,#b30059 50%,#610013 100%)"
 
         setTimeout(() => {
           phoneHome.style.display = "none";
@@ -11328,7 +11330,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         phoneConfig.style.opacity = "0";
         phoneConfig.style.transform = "scale(1.02)";
-
+        document.body.style.background = ""
         setTimeout(() => {
           phoneConfig.style.display = "none";
 
@@ -11347,11 +11349,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           phonePlay.style.transform = "";
           fillPhonePlay();
         }, 100);
-
-        // phonePlay.style.display = "flex";
-        // phoneConfig.style.display = "none";
-        // currentPhone = phonePlay;
-
         //
 
         if (L_config.q === "drapeauQ") {
@@ -12285,7 +12282,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         [...phoneHome.children].forEach((el) => {
           el.style.opacity = "0";
         });
-
+        document.body.style.background = ""
         Maps.style.visibility = "visible";
         setTimeout(() => {
           phoneHome.style.display = "none";
@@ -28281,18 +28278,90 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <script>
       const devises = document.getElementById("devises");
       const phoneDevise = document.getElementById("phoneDevise");
-      devises.addEventListener("click", () => {
-        currentPhone = phoneDevise;
-        phoneHome.style.display = "none";
-        phoneDevise.style.display = "flex";
+
+
+
+
+      devises.addEventListener("click", () => {       
+
+        [...phoneHome.children].forEach((el) => {
+          el.style.transition = "transform 0.5s ease, opacity 0.2s ease";
+        });
+
+        homeTitle.style.transform = "translateX(-50%) translateY(-3em)";
+        waveBottomHome.style.transform = "translateY(3em)";
+        btnHomeBox.style.transform = `translateX(-50%) translateY(calc(-50% + 3em))`;
+
+        document.getElementById("mapHome").style.transform =
+          "translateX(-40%) translateY(3em)";
+
+        [...phoneHome.children].forEach((el) => {
+          el.style.opacity = "0";
+        });
+        document.body.style.background = "linear-gradient(111deg,#45e850 0%,#04b916 50%,#018444 100%)" 
+
+
+        setTimeout(() => {
+          phoneHome.style.display = "none";
+          phoneDevise.style.transition = "none";
+          phoneDevise.style.opacity = "0";
+          phoneDevise.style.transform = "scale(0.97)";
+          phoneDevise.style.display = "flex";
+          currentPhone = phoneDevise;
+
+          phoneDevise.offsetHeight; // force reflow
+          phoneDevise.style.transition =
+            "transform 0.6s ease, opacity 0.5s ease";
+          phoneDevise.style.opacity = "1";
+          phoneDevise.style.transform = "";
+        }, 180); // attend la fin de l'animation de phoneHome
+
       });
+
       const backDevise = document.getElementById("backDevise");
 
       backDevise.addEventListener("click", () => {
-        currentPhone = phoneHome;
+        // Sortie de phoneConfig
+        phoneDevise.style.transition = "transform 0.5s ease, opacity 0.2s ease";
+        phoneDevise.style.opacity = "0";
+        phoneDevise.style.transform = "scale(0.90)";
+        setTimeout(() => {
+        document.body.style.background = ""
 
-        phoneDevise.style.display = "none";
-        phoneHome.style.display = "flex";
+          phoneDevise.style.display = "none";
+
+          // Prépare phoneHome avant de l'afficher
+          [...phoneHome.children].forEach((el) => {
+            el.style.transition = "none";
+            el.style.opacity = "0";
+          });
+
+          homeTitle.style.transform = "translateX(-50%) translateY(-3em)";
+          waveBottomHome.style.transform = "translateY(3em)";
+          btnHomeBox.style.transform =
+            "translateX(-50%) translateY(calc(-50% + 3em))";
+          document.getElementById("mapHome").style.transform =
+            "translateX(-40%) translateY(3em)";
+
+          phoneHome.style.display = "flex";
+          currentPhone = phoneHome;
+          phoneHome.offsetHeight; // force reflow
+
+          // Anime le retour de phoneHome
+          [...phoneHome.children].forEach((el) => {
+            el.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+            el.style.opacity = "1";
+            if (el.id === "mapHome") {
+              el.style.opacity = 0.08;
+            }
+          });
+
+          homeTitle.style.transform = "translateX(-50%)";
+          waveBottomHome.style.transform = "";
+          btnHomeBox.style.transform = "translateX(-50%) translateY(-50%)";
+          document.getElementById("mapHome").style.transform =
+            "translateX(-40%)";
+        }, 150);
       });
       const inputD1 = document.getElementById("inputD1");
       const inputD2 = document.getElementById("inputD2");
