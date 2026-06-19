@@ -4484,7 +4484,11 @@
         padding-left :1em;
         padding-right : 0.8em;
         gap : 1em;
-        transition  : filter 0.2s ease;
+        transition  : background 0.2s ease;
+      }
+      .choiceD.active {
+        background: rgba(60, 180, 120, 0.18);
+
       }
 
 
@@ -28385,13 +28389,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
 
         c.addEventListener('pointerdown',()=>{
-          c.style.filter = "brightness(0.95)"
+          c.classList.add('active')
         })
          document.addEventListener('pointercancel',()=>{
-          c.style.filter = ""
+          c.classList.remove('active')
         })
          document.addEventListener('pointerup',()=>{
-          c.style.filter = ""
+          c.classList.remove('active')
         })
       });
       fetch("https://open.er-api.com/v6/latest/EUR")
