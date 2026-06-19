@@ -28523,7 +28523,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           inputD2.value =
             Math.round(dataConvert["USD"] * 100) / 100 + D_symbolesD[currentDV];
           infoConvert.textContent =
-            "1 " + currentDD + " = " + dataConvert["USD"] + " " + currentDV;
+            "1.00 " + currentDD + " = " + dataConvert["USD"] + " " + currentDV;
         })
         .catch((error) => console.error("Erreur fetch:", error));
 
@@ -29071,8 +29071,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         infoConvert.textContent =
           currentChoiceD === choiceD1
-            ? 1.0 + D_symbolesD[currentDD]
-            : "1 " +
+            ? "1.00 " +
+              currentDD +
+              " = ..." +
+              currentDV
+            : "1.00 " +
               currentDD +
               " = " +
               dataConvert[currentDV] +
@@ -29108,7 +29111,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 Math.round(dataConvert[currentDV] * parseFloat(CD1) * 100) / 100 +
                 D_symbolesD[currentDV];
               infoConvert.textContent =
-                "1 " +
+                "1.00 " +
                 currentDD +
                 " = " +
                 dataConvert[currentDV] +
