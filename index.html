@@ -28340,11 +28340,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cel.addEventListener("click", () => {
           celsPopD.forEach((c) => c.classList.remove("active"));
           cel.classList.add("active");
+
           garderActive = true;
           currentChoiceD = choiceD1;
           choiceD1.dataset.devise = cel.dataset.d;
           changeD(choiceD1);
-
+          
+          garderActive = true;
           currentChoiceD = choiceD2;
           choiceD2.dataset.devise = cel.dataset.v;
           changeD(choiceD2);
@@ -28359,6 +28361,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       [choiceD1, choiceD2].forEach((c) => {
         c.addEventListener("click", () => {
+          inputD.value = ""
+          fillContentD(D_nDevises)
           currentChoiceD = c;
           cadreSD.style.top = "";
           cadreSD.classList.add("active");
@@ -28509,8 +28513,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         choiceD2.dataset.devise = CD1;
 
         // currentChoiceD : celui qu'on modifie
-        // dataset.devise : comment àa va se transformer
-        garderActive = false;
+        // dataset.devise : comment ça va se transformer
         currentChoiceD = choiceD2;
         changeD(choiceD2);
         currentChoiceD = choiceD1;
@@ -28849,7 +28852,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (!garderActive) {
           celsPopD.forEach((c) => c.classList.remove("active"));
         }
+        garderActive = false;
         let d = el.dataset.devise;
+
         currentChoiceD ? (currentChoiceD.dataset.devise = d) : "";
         currentChoiceD.querySelector("span").textContent = d;
 
@@ -28883,25 +28888,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         );
 
 
-        let d1 = currentDD
-        let d2 = currentDV
+       
         
         currentChoiceD === choiceD1
           ? ((currentDD = d), (tf = true))
           : (currentDV = d);
-
-        
-
-        if (currentChoiceD === choiceD1 && d===currentDV){
-          choiceD2.dataset = d1
-          currentChoiceD = choiceD2
-          changeD(choiceD2)
-        }
-        else if (currentChoiceD === choiceD2 && d===currentDD){
-          choiceD1.dataset = d2
-          currentChoiceD = choiceD1
-          changeD(choiceD1)
-        }
 
         infoConvert.textContent =
           currentChoiceD === choiceD1
@@ -28914,6 +28905,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               currentDV;
         cadreSD.style.top = "";
         cadreSD.classList.remove("active");
+        // tf=false // à retirer
         if (tf) {
           fetch(`https://open.er-api.com/v6/latest/${currentDD}`)
             .then((response) => response.json())
@@ -28995,7 +28987,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           contentCadreSD.append(txtPopSD);
         }
 
-                delete Ld.KPW;
+      delete Ld.KPW;
+      delete Ld[choiceD2.dataset.devise];
+      delete L_pop[choiceD2.dataset.devise];
+      delete Ld[choiceD1.dataset.devise];
+      delete L_pop[choiceD1.dataset.devise]
+        
 
         const L_LD = inputD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
 
@@ -29091,7 +29088,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             });
 
             elD.addEventListener("click", () => {
-              garderActive = false;
               changeD(elD);
             });
           }
