@@ -4168,6 +4168,21 @@
           opacity 0.45s ease;
       }
 
+       #titleDevise {
+        display : flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap : nowrap;
+        gap : 0.8em;
+        font-size: 1em;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      #titleDevise svg {
+        fill : white;
+        height : 1.4em;
+      }
       #cadreSD {
         display: flex;
         position: absolute;
@@ -4180,8 +4195,8 @@
         top: 105%;
         border-top-left-radius: 2em;
         border-top-right-radius: 2em;
-        padding-top: calc(env(safe-area-inset-top) + 0.8em);
-        padding-bottom: calc(env(safe-area-inset-bottom) + 0.8em);
+        padding-top: 1em;
+        padding-bottom: calc(env(safe-area-inset-bottom) + 0.2em);
         background: rgb(255, 250, 250);
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         width: 100%;
@@ -4190,6 +4205,18 @@
       #cadreSD.active {
         top: calc(12vh + 1em);
       }
+       #titleCadreSD {
+        display : flex;
+        justify-content : center;
+        align-items: center;
+        height : 2em;
+        align-self: flex-start;
+        margin-left: 1em;
+        font-size: 1.25em;
+        font-weight: 550;
+        letter-spacing: 1px;
+      }
+
       #lineCadreSD {
         display: flex;
         justify-content: center;
@@ -4204,16 +4231,36 @@
         fill: rgba(0, 0, 0, 0.2);
       }
       #alphabetD {
-        top: 105%;
-        transform: none;
+        position : absolute;
+        display : flex;
+        z-index: 10;
+        cursor: pointer;
+        top : 1em;
+        transform : none;
+      }   
+      
+       .letterD {
+        display: flex;
+        cursor: pointer;
+        box-sizing: border-box;
+        justify-content: flex-end;
+        width: inherit;
+        transform: scale(1);
+        flex-shrink: 0;
+      }
+      .caseLetterD {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: rgba(0, 34, 30, 0.5);
+        width: 1.2em;
+        height: auto;
         transition:
-          transform 0.3s ease,
-          top 0.3s ease;
+          transform 0.2s ease,
+          color 0.2s ease;
       }
-      #alphabetD.active {
-        top: calc(100% - 1em);
-        transform: translateY(-100%);
-      }
+
 
       #crossCadreSD {
         fill: rgba(0, 0, 0, 0.6);
@@ -4222,29 +4269,31 @@
         margin-left: 1em;
       }
 
-      #titleCadreSD {
-        align-self: flex-start;
-        margin-left: 1em;
-        font-size: 1.25em;
-        font-weight: 550;
-        letter-spacing: 1px;
+      #wrapperContentSD{
+        display : flex;
+        position : relative;
+        box-sizing: border-box;
+        margin-top: -0.6em;
+        flex:1;
+        width : 100%;
+        min-height : 0;
       }
 
+     
       #contentCadreSD {
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
         touch-action: pan-y; /* le scroll est vertical, les taps passent */
         overscroll-behavior: contain; /* évite la propagation au parent */
         display: flex;
+        position: relative;
+        
+        overflow-y: auto;
         flex-direction: column;
         align-items: center;
-        position: relative;
-        flex: 1;
-        box-sizing: border-box;
         z-index: 1; /* sous les overlays */
-        overflow: auto;
-        overflow-x: hidden;
         width: 100%;
-        margin-top: -0.6em;
+        flex:1;
+        min-height:0;
         scrollbar-width: thin;
         scrollbar-width: none;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -4343,11 +4392,7 @@
         top: 50%;
         transform: translateY(-50%);
       }
-      #titleDevise {
-        font-size: 1em;
-        font-weight: 600;
-        letter-spacing: 1px;
-      }
+     
       .cadreD {
         display: flex;
         position: relative;
@@ -4490,8 +4535,8 @@
         display: grid;
         width: 80%;
         gap: 0.8em;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         height: 2em;
       }
       .celPopD {
@@ -6304,7 +6349,7 @@
           </div>
         </div>
         <div id="contentC">
-          <div class="alphabet">
+          <div class="alphabet" id="alphabetC">
             <div class="letter"><div class="caseLetter" id="caseA">A</div></div>
             <div class="letter"><div class="caseLetter" id="caseB">B</div></div>
             <div class="letter"><div class="caseLetter" id="caseC">C</div></div>
@@ -9818,8 +9863,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             </svg>
           </button>
         </form>
-
-        <div id="contentCadreSD">
+        <div id="wrapperContentSD">
+        <div id="contentCadreSD"></div>
           <div class="alphabet" id="alphabetD">
             <div class="letterD">
               <div class="caseLetterD" id="caseDA">A</div>
@@ -9917,7 +9962,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           </svg>
         </button>
 
-        <div id="titleDevise">Convertisseur de devises</div>
+        <div id="titleDevise">
+           <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.5,0c-4.206,0-7.5,1.977-7.5,4.5v2.587c-.483-.057-.985-.087-1.5-.087C3.294,7,0,8.977,0,11.5v8c0,2.523,3.294,4.5,7.5,4.5,3.407,0,6.216-1.297,7.16-3.131,.598,.087,1.214,.131,1.84,.131,4.206,0,7.5-1.977,7.5-4.5V4.5c0-2.523-3.294-4.5-7.5-4.5Zm5.5,12.5c0,1.18-2.352,2.5-5.5,2.5-.512,0-1.014-.035-1.5-.103v-1.984c.49,.057,.992,.087,1.5,.087,2.194,0,4.14-.538,5.5-1.411v.911ZM2,14.589c1.36,.873,3.306,1.411,5.5,1.411s4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5s-5.5-1.32-5.5-2.5v-.911Zm20-6.089c0,1.18-2.352,2.5-5.5,2.5-.535,0-1.06-.038-1.566-.112-.193-.887-.8-1.684-1.706-2.323,.984,.28,2.092,.435,3.272,.435,2.194,0,4.14-.538,5.5-1.411v.911Zm-5.5-6.5c3.148,0,5.5,1.32,5.5,2.5s-2.352,2.5-5.5,2.5-5.5-1.32-5.5-2.5,2.352-2.5,5.5-2.5ZM7.5,9c3.148,0,5.5,1.32,5.5,2.5s-2.352,2.5-5.5,2.5-5.5-1.32-5.5-2.5,2.352-2.5,5.5-2.5Zm0,13c-3.148,0-5.5-1.32-5.5-2.5v-.911c1.36,.873,3.306,1.411,5.5,1.411s4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5Zm9-3c-.512,0-1.014-.035-1.5-.103v-1.984c.49,.057,.992,.087,1.5,.087,2.194,0,4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5Z"
+            />
+          </svg>
+          Convertisseur de devises</div>
       </div>
 
       <div class="cadreD" id="cadreD1">
@@ -27867,7 +27923,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const contentC = document.getElementById("contentC");
       const contentFlagS = document.getElementById("contentFlagS");
       let currentSearching = "pays";
-      const alphabet = document.querySelector(".alphabet");
+      const alphabet = document.getElementById("alphabetC");
       const letters = document.querySelectorAll(".letter");
       const casesLetter = document.querySelectorAll(".caseLetter");
       let dragging = false;
@@ -28296,9 +28352,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       crossCadreSD.addEventListener('pointerdown',(e)=>e.stopPropagation())
       crossCadreSD.addEventListener("click", (e) => {
-         alphabetD.style.top = "";
-          alphabetD.style.transform = "";
-          alphabetD.classList.remove("active");
         cadreSD.style.top = "";
         cadreSD.classList.remove("active");
       });
@@ -28308,7 +28361,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           currentChoiceD = c;
           cadreSD.style.top = "";
           cadreSD.classList.add("active");
-          alphabetD.classList.add("active");
         });
       });
       fetch("https://open.er-api.com/v6/latest/EUR")
@@ -28495,7 +28547,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           "Y",
           "Z",
         ].forEach((l) => {
-          const el = document.getElementById("letter" + l);
+          const el = document.getElementById("letterD" + l);
           if (!el) return;
 
           const elTop = el.getBoundingClientRect().top - containerTop;
@@ -28519,21 +28571,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
       });
 
-      function scrollToLetter(el) {
+      function scrollToLetterD(el) {
         const letter = el?.closest(".letterD");
         if (!letter) return;
+
         const target = document.getElementById(
-          "letter" + letter.textContent.trim().toUpperCase(),
+          "letterD" + letter.textContent.trim().toUpperCase(),
         );
         if (target) target.scrollIntoView({ block: "start" });
       }
 
       alphabetD.addEventListener("pointerdown", (e) => {
+        e.stopPropagation()
         alphabetD.style.width = "100%";
         draggingD = true;
         alphabetD.setPointerCapture(e.pointerId);
-        scrollToLetter(e.target);
+        
+        scrollToLetterD(e.target);
       });
+
 
       alphabetD.addEventListener("pointermove", (e) => {
         if (!draggingD) return;
@@ -28550,7 +28606,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             "scale(1.1) translateX(-0.5em)";
         }
 
-        scrollToLetter(el);
+        scrollToLetterD(el);
       });
       alphabetD.addEventListener("pointerup", () => {
         alphabetD.style.width = "";
@@ -28579,7 +28635,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       /*Move cadresd*/
       let moveSD;
       let difYD;
-      let difYAlphaD;
       let startMoveD;
       cadreSD.addEventListener("pointerdown", (e) => {
         cadreSD.setPointerCapture(e.pointerId);
@@ -28587,41 +28642,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreSD.style.top = startMoveD;
         cadreSD.classList.remove("active");
 
-        alphabetD.style.transition = "none";
-        alphabetD.style.top = alphabetD.getBoundingClientRect().top + "px";
-        alphabetD.classList.remove("active");
-        alphabetD.style.transform = "none";
 
         moveSD = true;
         const CY = e.clientY;
         difYD = CY - parseInt(cadreSD.style.top);
-        difYAlphaD = CY - parseInt(alphabetD.style.top);
       });
       document.addEventListener("pointermove", (e) => {
         if (moveSD) {
           cadreSD.style.transition = "none";
-
-          alphabetD.style.top = e.clientY - difYAlphaD + "px";
-
           cadreSD.style.top = e.clientY - difYD + "px";
         }
       });
 
       document.addEventListener("pointerup", () => {
         cadreSD.style.transition = "";
-        alphabetD.style.transition = "";
         moveSD = false;
         if (cadreSD.getBoundingClientRect().top < window.innerHeight * 0.25) {
           cadreSD.style.top = "";
           cadreSD.classList.add("active");
-
-          alphabetD.style.top = "";
-          alphabetD.style.transform = "";
-          alphabetD.classList.add("active");
         } else {
-          alphabetD.style.top = "";
-          alphabetD.style.transform = "";
-          alphabetD.classList.remove("active");
           crossCadreSD.click();
         }
       });
@@ -28804,7 +28843,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           celsPopD.forEach((c) => c.classList.remove("active"));
         }
         let d = el.dataset.devise;
-        currentChoiceD.dataset.devise = d;
+        currentChoiceD ? (currentChoiceD.dataset.devise = d) : "";
         currentChoiceD.querySelector("span").textContent = d;
 
         let img = currentChoiceD.querySelector("img");
@@ -28946,7 +28985,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               ) {
                 const bandeLetter = document.createElement("div");
                 bandeLetter.className = "bandeLetterSD";
-                bandeLetter.id = "letter" + baseLetter;
+                bandeLetter.id = "letterD" + baseLetter;
                 bandeLetter.textContent = baseLetter;
                 contentCadreSD.append(bandeLetter);
                 delete D_clone[baseLetter];
@@ -29023,7 +29062,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             });
           }
         });
-        contentCadreSD.append(alphabetD);
+        document.getElementById('wrapperContentSD').append(alphabetD);
       }
 
       fillContentD(D_nDevises);
