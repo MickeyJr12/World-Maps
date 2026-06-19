@@ -58,7 +58,12 @@
         position: fixed; /* ← clé du fix */
         inset: 0; /* top/right/bottom/left: 0 — fonctionne avec fixed */
         overflow: hidden;
-        background: linear-gradient(180deg, #0f23fa 0%, #134fd8 65%, #1698d4 100%);
+        background: linear-gradient(
+          180deg,
+          #0f23fa 0%,
+          #134fd8 65%,
+          #1698d4 100%
+        );
         background-repeat: no-repeat;
         background-size: cover;
         box-sizing: border-box;
@@ -491,7 +496,7 @@
         width: 12em;
         max-width: 0em;
         height: fit-content;
-        box-shadow: 0px 0px 4.5px rgba(0,0,0,0.4);
+        box-shadow: 0px 0px 4.5px rgba(0, 0, 0, 0.4);
         background: rgba(28, 23, 156, 0.8);
         transition:
           max-width 0.4s ease,
@@ -4133,7 +4138,7 @@
 
       /*CSS Devises*/
 
-        .inputD:focus {
+      .inputD:focus {
         outline: none;
       }
       /* styling of close button */
@@ -4144,7 +4149,7 @@
         visibility: visible;
       }
       /* sizing svg icons */
-    
+
       #phoneDevise {
         display: none;
         position: fixed;
@@ -4167,7 +4172,6 @@
           opacity 0.45s ease;
       }
 
-      
       #headerDevise {
         display: flex;
         position: relative;
@@ -4178,7 +4182,7 @@
         width: 100%;
         height: 14vh;
         padding-top: calc(env(safe-area-inset-top) + 1em);
-        padding-bottom : 1em;
+        padding-bottom: 1em;
 
         background: linear-gradient(
           111deg,
@@ -4189,34 +4193,32 @@
         margin-bottom: 5em;
       }
 
-
-      #backDevise{
-        height : 1.25em;
+      #backDevise {
+        height: 1.25em;
         top: 50%;
-        transform : translateY(-50%)
-
+        transform: translateY(-50%);
       }
-       #titleDevise {
-        display : flex;
-        position : relative;
-        justify-content:center;
-        align-items:center;
-        flex-wrap : nowrap;
-        width : 100%;
-        padding : 0 1em;
-        gap : 0.8em;
+      #titleDevise {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding: 0 1em;
+        gap: 0.8em;
         font-size: 1em;
         font-weight: 600;
         letter-spacing: 1px;
       }
 
       #titleDevise svg {
-        fill : white;
-        height : 1.4em;
+        fill: white;
+        height: 1.4em;
       }
       #cadreSD {
         display: flex;
-        position: absolute;
+        position: fixed;
         flex-direction: column;
         align-items: center;
         touch-action: none;
@@ -4236,11 +4238,11 @@
       #cadreSD.active {
         top: calc(14vh + 1em);
       }
-       #titleCadreSD {
-        display : flex;
-        justify-content : center;
+      #titleCadreSD {
+        display: flex;
+        justify-content: center;
         align-items: center;
-        height : 2em;
+        height: 2em;
         align-self: flex-start;
         margin-left: 1em;
         font-size: 1.25em;
@@ -4262,15 +4264,15 @@
         fill: rgba(0, 0, 0, 0.2);
       }
       #alphabetD {
-        position : absolute;
-        display : flex;
+        position: absolute;
+        display: flex;
         z-index: 10;
         cursor: pointer;
-        top : 1em;
-        transform : none;
-      }   
-      
-       .letterD {
+        top: 1em;
+        transform: none;
+      }
+
+      .letterD {
         display: flex;
         cursor: pointer;
         box-sizing: border-box;
@@ -4292,7 +4294,6 @@
           color 0.2s ease;
       }
 
-
       #crossCadreSD {
         fill: rgba(0, 0, 0, 0.6);
         align-self: flex-start;
@@ -4300,31 +4301,30 @@
         margin-left: 1em;
       }
 
-      #wrapperContentSD{
-        display : flex;
-        position : relative;
+      #wrapperContentSD {
+        display: flex;
+        position: relative;
         box-sizing: border-box;
         margin-top: -0.6em;
-        flex:1;
-        width : 100%;
-        min-height : 0;
+        flex: 1;
+        width: 100%;
+        min-height: 0;
       }
 
-     
       #contentCadreSD {
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
         touch-action: pan-y; /* le scroll est vertical, les taps passent */
         overscroll-behavior: contain; /* évite la propagation au parent */
         display: flex;
         position: relative;
-        
+
         overflow-y: auto;
         flex-direction: column;
         align-items: center;
         z-index: 1; /* sous les overlays */
         width: 100%;
-        flex:1;
-        min-height:0;
+        flex: 1;
+        min-height: 0;
         scrollbar-width: thin;
         scrollbar-width: none;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
@@ -4358,17 +4358,17 @@
       .flagErrorD span {
         font-size: 35cqi;
       }
-      .flagFallbackD{
-        display : flex;
+      .flagFallbackD {
+        display: flex;
         justify-content: center;
         align-items: center;
-        width : 1.4em;
+        width: 1.4em;
         aspect-ratio: 1/1;
       }
       .flagFallbackD svg {
-        height : 100%;
+        height: 100%;
 
-        fill : black;
+        fill: black;
       }
       .txtElD {
         display: flex;
@@ -4399,7 +4399,7 @@
         padding: 0.6em 1em;
         font-weight: 500;
       }
-     
+
       .cadreD {
         display: flex;
         position: relative;
@@ -4408,7 +4408,7 @@
         outline: 1.6px solid transparent;
         box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.4);
         width: 80%;
-        height: 3.8em;
+        height: 3.4em;
         transition: outline 0.2s ease;
       }
       .cadreD.active {
@@ -4425,9 +4425,8 @@
       #infoConvert {
         color: rgba(0, 0, 0, 0.5);
       }
-    
 
-       .inputD {
+      .inputD {
         font-size: 1.2em;
         font-weight: 540;
 
@@ -4440,7 +4439,7 @@
         border-bottom-left-radius: inherit;
         background: transparent;
         padding: 12px 16px;
-        width : 60%;
+        width: 60%;
         height: 100%;
         box-sizing: border-box;
 
@@ -4468,7 +4467,7 @@
         color: #999;
       }
 
-        .choiceD {
+      .choiceD {
         display: flex;
         position: relative;
         align-items: center;
@@ -4480,17 +4479,15 @@
         border-bottom-right-radius: inherit;
         font-weight: 540;
         height: 100%;
-        width : 40%;
-        padding-left :1em;
-        padding-right : 0.8em;
-        gap : 1em;
-        transition  : background 0.2s ease;
+        width: 40%;
+        padding-left: 1em;
+        padding-right: 0.8em;
+        gap: 1em;
+        transition: background 0.2s ease;
       }
       .choiceD.active {
         background: rgba(60, 180, 120, 0.18);
-
       }
-
 
       .contentTxtHeaderD {
         display: flex;
@@ -4527,7 +4524,7 @@
         transform: rotate(-90deg);
         height: 1em;
       }
-     
+
       #arrowChange {
         display: flex;
         align-items: center;
@@ -4580,8 +4577,6 @@
         outline: 1.6px solid rgba(43, 192, 127, 0.6);
         background: rgba(43, 192, 127, 0.1);
       }
-
-
     </style>
     <!--HTML FLemme-->
 
@@ -9793,19 +9788,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
     </div>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-      <div id="phoneDevise">
+    <div id="phoneDevise">
       <div id="cadreSD">
         <div id="lineCadreSD">
           <svg
@@ -9837,7 +9820,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         </button>
         <div id="titleCadreSD">Sélectionnez une devise</div>
 
-        <form class="form" style="width: 80%; max-width: 280px;">
+        <form class="form" style="width: 80%; max-width: 280px">
           <button type="submit" class="svgSearch">
             <svg
               width="17"
@@ -9886,7 +9869,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           </button>
         </form>
         <div id="wrapperContentSD">
-        <div id="contentCadreSD"></div>
+          <div id="contentCadreSD"></div>
           <div class="alphabet" id="alphabetD">
             <div class="letterD">
               <div class="caseLetterD" id="caseDA">A</div>
@@ -9971,21 +9954,21 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
       <div id="headerDevise">
         <div id="titleDevise">
-               <button class="back" id="backDevise">
-          <svg
-            fill="white"
-            xmlns="http://www.w3.org/2000/svg"
-            id="Bold"
-            viewBox="0 0 24 24"
-            width="100%"
-          >
-            <path
-              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-            />
-          </svg>
-        </button>
+          <button class="back" id="backDevise">
+            <svg
+              fill="white"
+              xmlns="http://www.w3.org/2000/svg"
+              id="Bold"
+              viewBox="0 0 24 24"
+              width="100%"
+            >
+              <path
+                d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+              />
+            </svg>
+          </button>
 
-           <svg
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Layer_1"
             data-name="Layer 1"
@@ -9995,7 +9978,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               d="M16.5,0c-4.206,0-7.5,1.977-7.5,4.5v2.587c-.483-.057-.985-.087-1.5-.087C3.294,7,0,8.977,0,11.5v8c0,2.523,3.294,4.5,7.5,4.5,3.407,0,6.216-1.297,7.16-3.131,.598,.087,1.214,.131,1.84,.131,4.206,0,7.5-1.977,7.5-4.5V4.5c0-2.523-3.294-4.5-7.5-4.5Zm5.5,12.5c0,1.18-2.352,2.5-5.5,2.5-.512,0-1.014-.035-1.5-.103v-1.984c.49,.057,.992,.087,1.5,.087,2.194,0,4.14-.538,5.5-1.411v.911ZM2,14.589c1.36,.873,3.306,1.411,5.5,1.411s4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5s-5.5-1.32-5.5-2.5v-.911Zm20-6.089c0,1.18-2.352,2.5-5.5,2.5-.535,0-1.06-.038-1.566-.112-.193-.887-.8-1.684-1.706-2.323,.984,.28,2.092,.435,3.272,.435,2.194,0,4.14-.538,5.5-1.411v.911Zm-5.5-6.5c3.148,0,5.5,1.32,5.5,2.5s-2.352,2.5-5.5,2.5-5.5-1.32-5.5-2.5,2.352-2.5,5.5-2.5ZM7.5,9c3.148,0,5.5,1.32,5.5,2.5s-2.352,2.5-5.5,2.5-5.5-1.32-5.5-2.5,2.352-2.5,5.5-2.5Zm0,13c-3.148,0-5.5-1.32-5.5-2.5v-.911c1.36,.873,3.306,1.411,5.5,1.411s4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5Zm9-3c-.512,0-1.014-.035-1.5-.103v-1.984c.49,.057,.992,.087,1.5,.087,2.194,0,4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5Z"
             />
           </svg>
-          Conversion de devises</div>
+          Conversion de devises
+        </div>
       </div>
 
       <div class="cadreD" id="cadreD1">
@@ -10221,10 +10205,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           el.click();
         });
       });
-
-
     </script>
-  <!--Fin script home-->
+    <!--Fin script home-->
     <!--Script Configuration-->
     <script>
       const backConfig = document.getElementById("backConfig");
@@ -10407,8 +10389,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             P_info[id].region !== null,
         );
 
-        if (L_config.q === "contourQ" || L_config.r === "contourR" ) {
-          paysDispos = paysDispos.filter(id => !["PS"].includes(id));
+        if (L_config.q === "contourQ" || L_config.r === "contourR") {
+          paysDispos = paysDispos.filter((id) => !["PS"].includes(id));
         }
 
         const paysDisposTrouver = Object.keys(L_q).filter(
@@ -10645,7 +10627,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           qTrouver.classList.remove("good", "bad", "none");
 
           currentCountry = null;
-          cChooseTrouver = false;          
+          cChooseTrouver = false;
 
           //Remplir tout ça
           paths.forEach((p) => {
@@ -11340,37 +11322,36 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         document.querySelector(".btn-suivant").textContent = "Suivant →";
         btnReprendre.textContent = "Reprendre";
         document.getElementById("pmTitle").textContent = "Menu Pause";
-        
+
         contentPm.innerHTML = ``;
 
-        // 
+        //
         phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
-        phoneConfig.style.opacity = "0"
-        phoneConfig.style.transform = "scale(1.02)"
-        
+        phoneConfig.style.opacity = "0";
+        phoneConfig.style.transform = "scale(1.02)";
+
         setTimeout(() => {
           phoneConfig.style.display = "none";
-          
+
           phonePlay.style.transition = "none";
           phonePlay.style.opacity = "0";
           phonePlay.style.transform = "scale(0.97)";
           phonePlay.style.display = "flex";
           phonePlay.offsetHeight; // force reflow
-          document.body.style.background = "linear-gradient(315deg,#0b47e0 0%,#207dd9 50%,#0fe7fa 100%)"
+          document.body.style.background =
+            "linear-gradient(315deg,#0b47e0 0%,#207dd9 50%,#0fe7fa 100%)";
           setTimeout(() => {
-            document.body.style.background = ""
-          }, 500);        
-          phonePlay.style.transition =
-            "transform 0.6s ease, opacity 0.5s ease";
+            document.body.style.background = "";
+          }, 500);
+          phonePlay.style.transition = "transform 0.6s ease, opacity 0.5s ease";
           phonePlay.style.opacity = "1";
           phonePlay.style.transform = "";
           fillPhonePlay();
         }, 100);
-        
+
         // phonePlay.style.display = "flex";
         // phoneConfig.style.display = "none";
         // currentPhone = phonePlay;
-
 
         //
 
@@ -11386,8 +11367,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           spanNext.textContent = "Mystère";
           document.querySelector(".btn-suivant").textContent = "Valider ✓";
         }
-
-        
       });
     </script>
     <!--Fin Script configuration -->
@@ -12447,7 +12426,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "KN",
       ]; // mettre leur cercle invisibles
       const D_factorC = {
-        BH : 1.5,
+        BH: 1.5,
         BV: 6.5,
         BM: 5,
         GP: 1.05,
@@ -12593,7 +12572,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const capitales = document.querySelectorAll(".capitaleLabel");
       const itemBlason = document.querySelector(".itemBlason");
       const cadreContours = document.getElementById("cadreContours");
-      const cadreBlason = document.getElementById('cadreBlason')
+      const cadreBlason = document.getElementById("cadreBlason");
       const expandIle = document.getElementById("expandIle");
       const crossIle = document.getElementById("crossIle");
       const boxSvgIle = document.getElementById("boxSvgIle");
@@ -18881,7 +18860,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         NL: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Royal_coat_of_arms_of_the_Netherlands.svg",
         NO: "https://upload.wikimedia.org/wikipedia/commons/9/95/Coat_of_arms_of_Norway.svg",
 
-
         NP: "https://upload.wikimedia.org/wikipedia/commons/2/23/Emblem_of_Nepal.svg",
         NR: "https://upload.wikimedia.org/wikipedia/commons/d/df/Coat_of_arms_of_Nauru.svg",
         NU: "https://upload.wikimedia.org/wikipedia/commons/4/49/Public_Seal_of_Niue_%281974%E2%80%932021%29.svg",
@@ -18924,7 +18902,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         SS: "https://upload.wikimedia.org/wikipedia/fr/f/f7/Armoiries_de_l%27Afrique_du_Sud.svg",
         ST: "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe.svg",
         SV: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
-        SX : "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
+        SX: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
         SY: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Emblem_of_Syria_%282025%E2%80%93present%29.svg",
         SZ: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Coat_of_arms_of_Eswatini.svg",
         TC: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Coat_of_arms_of_the_Turks_and_Caicos_Islands.svg",
@@ -25454,32 +25432,29 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         loadingCadreBlason.style.width = "7.2em";
         loadingCadreBlason.style.display = "flex";
         cadreBlason.append(loadingCadreBlason);
-        itemBlason.style.display = "none"
-        
+        itemBlason.style.display = "none";
 
-         fetch(
-          !viewState
-            ? D_blason[id] ?? ""
-            : ""
-        )
+        fetch(!viewState ? (D_blason[id] ?? "") : "")
           .then((r) => {
             if (!r.ok) throw new Error();
             return r.text();
           })
           .then((svg) => {
-            D_blason[id] ? (cadreBlason.querySelector('p').style.display = "none",itemBlason.style.display = "") : (cadreBlason.querySelector('p').style.display = "flex",itemBlason.style.display = "none");
-            loadingCadreBlason.remove()
+            D_blason[id]
+              ? ((cadreBlason.querySelector("p").style.display = "none"),
+                (itemBlason.style.display = ""))
+              : ((cadreBlason.querySelector("p").style.display = "flex"),
+                (itemBlason.style.display = "none"));
+            loadingCadreBlason.remove();
             itemBlason.src = ``;
-            itemBlason.src = D_blason[id]         
-            
-            })
-            .catch(() => {
-            loadingCadreBlason.remove()
-            itemBlason.style.display = "none"
-            cadreBlason.querySelector('p').style.display = "flex"
+            itemBlason.src = D_blason[id];
+          })
+          .catch(() => {
+            loadingCadreBlason.remove();
+            itemBlason.style.display = "none";
+            cadreBlason.querySelector("p").style.display = "flex";
           });
 
-            
         const loadingCadreContours = document.createElement("div");
         loadingCadreContours.className = "loadingCadre";
         loadingCadreContours.style.height = "8em";
@@ -26183,7 +26158,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       //Script searching flag
-      function fillContentFlag(Lf) {       
+      function fillContentFlag(Lf) {
         contentFlagS.innerHTML = ``;
         contentFlagS.scrollTop = 0;
         const paysDispo = Lf.filter(
@@ -26193,9 +26168,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         );
         Lf = paysDispo;
 
-
         let sautPays = false;
-        let cFound = false
+        let cFound = false;
 
         for (const r of Lf) {
           if (
@@ -26223,7 +26197,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             continue;
           }
 
-          cFound = true
+          cFound = true;
 
           const celDrapeau = document.createElement("div");
           celDrapeau.className = "celDrapeau";
@@ -26259,29 +26233,23 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             zoomCountry(r.id);
           });
         }
-        if (!cFound){
-           
-            contentFlagS.innerHTML = `
+        if (!cFound) {
+          contentFlagS.innerHTML = `
         <p style="position : absolute; top : 1em; text-align : center; left : 50%; transform : translateX(-50%); color: white; opacity: 0.6; font-size = 1.2em">
               Aucun résultat
-            </p>`
-            
-        
-      
-
+            </p>`;
         }
       }
 
-      
       // Scirpt searching
       function fillContentC(Ls) {
-       if (Ls.length === 0){
-        contentC.innerHTML = `
+        if (Ls.length === 0) {
+          contentC.innerHTML = `
         <p style="position : absolute; text-align : center; left : 50%; top : 4em; transform : translateX(-50%); color: white; opacity: 0.6; font-size = 1.2em">
               Aucun résultat
-            </p>`
-            return
-      }
+            </p>`;
+          return;
+        }
         if (inputC.value.length === 0) {
           Ls = LsInit;
         }
@@ -28126,7 +28094,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           "S",
           "T",
           "U",
-          "V",  
+          "V",
           "W",
           "X",
           "Y",
@@ -28312,22 +28280,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <!--script Devise-->
 
     <script>
-      const devises = document.getElementById('devises')
-      const phoneDevise = document.getElementById('phoneDevise')
-      devises.addEventListener('click',()=>{
-        currentPhone =phoneDevise;
-        phoneHome.style.display  = "none"
-        phoneDevise.style.display = "flex"
-      })
-      const backDevise = document.getElementById('backDevise')
+      const devises = document.getElementById("devises");
+      const phoneDevise = document.getElementById("phoneDevise");
+      devises.addEventListener("click", () => {
+        currentPhone = phoneDevise;
+        phoneHome.style.display = "none";
+        phoneDevise.style.display = "flex";
+      });
+      const backDevise = document.getElementById("backDevise");
 
-      backDevise.addEventListener('click',()=>{
-          currentPhone = phoneHome;
+      backDevise.addEventListener("click", () => {
+        currentPhone = phoneHome;
 
-          phoneDevise.style.display  = "none"
-        phoneHome.style.display = "flex"
-      })
-         const inputD1 = document.getElementById("inputD1");
+        phoneDevise.style.display = "none";
+        phoneHome.style.display = "flex";
+      });
+      const inputD1 = document.getElementById("inputD1");
       const inputD2 = document.getElementById("inputD2");
       L_inputD = [inputD1, inputD2];
       const cadreD1 = document.getElementById("cadreD1");
@@ -28375,7 +28343,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       });
 
-      crossCadreSD.addEventListener('pointerdown',(e)=>e.stopPropagation())
+      crossCadreSD.addEventListener("pointerdown", (e) => e.stopPropagation());
       crossCadreSD.addEventListener("click", (e) => {
         cadreSD.style.top = "";
         cadreSD.classList.remove("active");
@@ -28388,15 +28356,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           cadreSD.classList.add("active");
         });
 
-        c.addEventListener('pointerdown',()=>{
-          c.classList.add('active')
-        })
-         document.addEventListener('pointercancel',()=>{
-          c.classList.remove('active')
-        })
-         document.addEventListener('pointerup',()=>{
-          c.classList.remove('active')
-        })
+        c.addEventListener("pointerdown", () => {
+          c.classList.add("active");
+        });
+        document.addEventListener("pointercancel", () => {
+          c.classList.remove("active");
+        });
+        document.addEventListener("pointerup", () => {
+          c.classList.remove("active");
+        });
       });
       fetch("https://open.er-api.com/v6/latest/EUR")
         .then((response) => response.json())
@@ -28617,14 +28585,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       alphabetD.addEventListener("pointerdown", (e) => {
-        e.stopPropagation()
+        e.stopPropagation();
         alphabetD.style.width = "100%";
         draggingD = true;
         alphabetD.setPointerCapture(e.pointerId);
-        
+
         scrollToLetterD(e.target);
       });
-
 
       alphabetD.addEventListener("pointermove", (e) => {
         if (!draggingD) return;
@@ -28677,7 +28644,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreSD.style.top = startMoveD;
         cadreSD.classList.remove("active");
 
-
         moveSD = true;
         const CY = e.clientY;
         difYD = CY - parseInt(cadreSD.style.top);
@@ -28690,7 +28656,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       document.addEventListener("pointerup", () => {
-        if (!moveSD)return
+        if (!moveSD) return;
         cadreSD.style.transition = "";
         moveSD = false;
         if (cadreSD.getBoundingClientRect().top < window.innerHeight * 0.25) {
@@ -28863,9 +28829,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         ZWL: "Dollar zimbabwéen",
       };
 
-
-      
-
       function createFlagD(clefD) {
         const flagErrorD = document.createElement("div");
         flagErrorD.className = "flagErrorD";
@@ -28874,7 +28837,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       function changeD(el) {
-        crossCadreSD.click()
+        crossCadreSD.click();
         if (!garderActive) {
           celsPopD.forEach((c) => c.classList.remove("active"));
         }
@@ -28883,11 +28846,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         currentChoiceD.querySelector("span").textContent = d;
 
         let img = currentChoiceD.querySelector("img");
-        currentChoiceD.querySelector(".CadreDrapeauD").style.display ="";   
+        currentChoiceD.querySelector(".CadreDrapeauD").style.display = "";
 
-        const oldFallback = currentChoiceD.querySelector(".flagFallbackD");         
+        const oldFallback = currentChoiceD.querySelector(".flagFallbackD");
         if (oldFallback) oldFallback.remove(); // supprime le fallback si présent
-
 
         img.src = ``;
         img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}-detailed.svg`;
@@ -28896,7 +28858,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}.svg`;
 
           img.onerror = () => {
-            currentChoiceD.querySelector(".CadreDrapeauD").style.display ="none";
+            currentChoiceD.querySelector(".CadreDrapeauD").style.display =
+              "none";
 
             const fallback = document.createElement("div");
             fallback.className = "flagFallbackD";
@@ -29092,11 +29055,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               elD.classList.remove("active");
             });
 
-             document.addEventListener("pointercancel", () => {
+            document.addEventListener("pointercancel", () => {
               elD.classList.remove("active");
             });
-
-
 
             elD.addEventListener("click", () => {
               garderActive = false;
@@ -29104,7 +29065,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             });
           }
         });
-        document.getElementById('wrapperContentSD').append(alphabetD);
+        document.getElementById("wrapperContentSD").append(alphabetD);
       }
 
       fillContentD(D_nDevises);
@@ -29152,10 +29113,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         fillContentD(Ld);
       });
-
-
-
-
     </script>
 
     <!--Script cache-->
@@ -29166,12 +29123,26 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       function loop() {
-        console.log(cadreSD.className)
+        console.log(cadreSD.className);
         requestAnimationFrame(loop);
       }
 
-      // loop();
+      // document.addEventListener(
+      //   "touchmove",
+      //   (e) => {
+      //     e.preventDefault();
+      //   },
+      //   { passive: false },
+      // );
 
+      [inputC, inputD].forEach((input) => {
+        input.addEventListener("focus", (e) => {
+          e.preventDefault();
+          input.scrollIntoView({ block: "center", behavior: "smooth" });
+        });
+      });
+
+      // loop();
 
       /*phoneHome.style.display="none"
       phonePlay.style.display="flex"*/
@@ -29180,10 +29151,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phonePlay.appendChild(mCadre)
         phonePlay.appendChild(cadre)
       }, 10000);*/
-
-
-
-
     </script>
   </body>
 </html>
