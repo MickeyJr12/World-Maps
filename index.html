@@ -69,7 +69,7 @@
         box-sizing: border-box;
         margin: 0;
         width: 100%;
-        transition : background 0.1s ease;
+        transition: background 0.1s ease;
       }
 
       /*CSS Flemme*/
@@ -4301,9 +4301,8 @@
         margin-left: 1.5em;
       }
       #crossCadreSD svg {
-        height : 2em;
-        width : 2em;
-
+        height: 2em;
+        width: 2em;
       }
 
       #wrapperContentSD {
@@ -4555,15 +4554,15 @@
       #txtPopSD {
         margin: 0.8em 1em;
       }
-      #txtLastUpdate{
+      #txtLastUpdate {
         display: flex;
-        align-items : center;
+        align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        max-width : calc(100% - 2em);
-        position : absolute;
-        left : 1.5em;
-        bottom : calc(env(safe-area-inset-bottom) + 1em);
+        max-width: calc(100% - 2em);
+        position: absolute;
+        left: 1.5em;
+        bottom: calc(env(safe-area-inset-bottom) + 1em);
         letter-spacing: 0.05em;
         font-size: 0.85em;
         font-weight: 400;
@@ -9837,7 +9836,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             <path
               d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
             />
-          
           </svg>
         </button>
         <div id="titleCadreSD">Sélectionnez une devise</div>
@@ -10115,8 +10113,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         <div class="celPopD" data-d="EUR" data-v="GBP">EUR/GBP</div>
       </div>
 
-      <div id="txtLastUpdate"><span style="flex-wrap:nowrap" >Dernière actualisation :</span> <p style="letter-spacing: none" ></p></div>
-
+      <div id="txtLastUpdate">
+        <span style="flex-wrap: nowrap">Dernière actualisation :</span>
+        <p style="letter-spacing: none"></p>
+      </div>
     </div>
 
     <!--Script Home-->
@@ -11354,7 +11354,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         phoneConfig.style.opacity = "0";
         phoneConfig.style.transform = "scale(1.02)";
-        document.body.style.background = ""
+        document.body.style.background = "";
         setTimeout(() => {
           phoneConfig.style.display = "none";
 
@@ -12306,7 +12306,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         [...phoneHome.children].forEach((el) => {
           el.style.opacity = "0";
         });
-        document.body.style.background = ""
+        document.body.style.background = "";
         Maps.style.visibility = "visible";
         setTimeout(() => {
           phoneHome.style.display = "none";
@@ -28303,11 +28303,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const devises = document.getElementById("devises");
       const phoneDevise = document.getElementById("phoneDevise");
 
-
-
-
-      devises.addEventListener("click", () => {       
-
+      devises.addEventListener("click", () => {
         [...phoneHome.children].forEach((el) => {
           el.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         });
@@ -28339,7 +28335,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           phoneDevise.style.opacity = "1";
           phoneDevise.style.transform = "";
         }, 25);
-
       });
 
       const backDevise = document.getElementById("backDevise");
@@ -28349,12 +28344,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phoneDevise.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         phoneDevise.style.opacity = "0";
         phoneDevise.style.transform = "scale(0.90)";
-        document.body.style.transition = "none"
-        document.body.style.background = ""
-        document.body.style.transition = ""
+        document.body.style.transition = "none";
+        document.body.style.background = "";
+        document.body.style.transition = "";
 
         setTimeout(() => {
-        phoneDevise.style.display = "none";
+          phoneDevise.style.display = "none";
 
           // Prépare phoneHome avant de l'afficher
           [...phoneHome.children].forEach((el) => {
@@ -28429,16 +28424,28 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let dataConvert = false;
       let dataLatest = false;
       let D_semaine = {
-  Mon: "Lun", Tue: "Mar", Wed: "Mer", Thu: "Jeu",
-  Fri: "Ven", Sat: "Sam", Sun: "Dim"
-}
+        Mon: "Lun",
+        Tue: "Mar",
+        Wed: "Mer",
+        Thu: "Jeu",
+        Fri: "Ven",
+        Sat: "Sam",
+        Sun: "Dim",
+      };
       let D_mois = {
-  Jan: "Jan", Feb: "Fév", Mar: "Mar", Apr: "Avr",
-  May: "Mai", Jun: "Juin", Jul: "Juil", Aug: "Août",
-  Sep: "Sep", Oct: "Oct", Nov: "Nov", Dec: "Déc"
-}
-
-
+        Jan: "Jan",
+        Feb: "Fév",
+        Mar: "Mar",
+        Apr: "Avr",
+        May: "Mai",
+        Jun: "Juin",
+        Jul: "Juil",
+        Aug: "Août",
+        Sep: "Sep",
+        Oct: "Oct",
+        Nov: "Nov",
+        Dec: "Déc",
+      };
 
       let garderActive = false;
 
@@ -28484,19 +28491,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           c.classList.remove("active");
         });
       });
-      fetchWithCache("https://open.er-api.com/v6/latest/EUR",43200000)
+      fetchWithCache("https://open.er-api.com/v6/latest/EUR", 43200000)
         .then((data) => {
           dataConvert = data.rates;
-          dataLatest = data.time_last_update_utc     
+          dataLatest = data.time_last_update_utc;
           // Exemple : "Fri, 19 Jun 2026 00:02:32 +0000"
-        let s = dataLatest.slice(0,3)
-        let jr = dataLatest.slice(3,8)
-        let m = dataLatest.slice(8, 11)
-        let a = dataLatest.slice(13, 17)        
-        let h = dataLatest.slice(18,26)        
-        let utc = dataLatest.slice(26)
-        document.getElementById('txtLastUpdate').querySelector('p').textContent = " " + D_semaine[s] + jr+ D_mois[m]+ " " + h + utc
-          
+          let s = dataLatest.slice(0, 3);
+          let jr = dataLatest.slice(3, 8);
+          let m = dataLatest.slice(8, 11);
+          let a = dataLatest.slice(13, 17);
+          let h = dataLatest.slice(18, 26);
+          let utc = dataLatest.slice(26);
+          document
+            .getElementById("txtLastUpdate")
+            .querySelector("p").textContent =
+            " " + D_semaine[s] + jr + D_mois[m] + " " + h + utc;
+
           inputD1.value = 1.0 + "€";
           inputD2.value =
             Math.round(dataConvert["USD"] * 100) / 100 + D_symbolesD[currentDV];
@@ -28610,28 +28620,30 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         rotateArrowChange += 180;
         arrowChange.style.transform = `rotate(${rotateArrowChange}deg)`;
 
-        setTimeout(() => {
-          let D1 = inputD1.value.slice(
-            0,
-            -parseInt(D_symbolesD[currentDD].length),
-          );
-          let D2 = inputD2.value.slice(
-            0,
-            -parseInt(D_symbolesD[currentDV].length),
-          );
-        }, 20);
-        let CD1 = choiceD1.dataset.devise;
-        let CD2 = choiceD2.dataset.devise;
+        // Laisse le navigateur peindre l'animation AVANT de fetch
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            let D1 = inputD1.value.slice(
+              0,
+              -parseInt(D_symbolesD[currentDD].length),
+            );
+            let D2 = inputD2.value.slice(
+              0,
+              -parseInt(D_symbolesD[currentDV].length),
+            );
+          }, 20);
 
-        choiceD1.dataset.devise = CD2;
-        choiceD2.dataset.devise = CD1;
+          let CD1 = choiceD1.dataset.devise;
+          let CD2 = choiceD2.dataset.devise;
 
-        // currentChoiceD : celui qu'on modifie
-        // dataset.devise : comment ça va se transformer
-        currentChoiceD = choiceD2;
-        changeD(choiceD2);
-        currentChoiceD = choiceD1;
-        changeD(choiceD1);
+          choiceD1.dataset.devise = CD2;
+          choiceD2.dataset.devise = CD1;
+
+          currentChoiceD = choiceD2;
+          changeD(choiceD2);
+          currentChoiceD = choiceD1;
+          changeD(choiceD1);
+        });
       });
 
       // Aphabet
@@ -28970,31 +28982,32 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       //Fetch que si ce n'est pas en cache
-      async function fetchWithCache(url, ttl) { // ttl en ms, défaut 12h
-  const cache = await caches.open('exchange-rates');
-  const cached = await cache.match(url);
+      async function fetchWithCache(url, ttl) {
+        // ttl en ms, défaut 12h
+        const cache = await caches.open("exchange-rates");
+        const cached = await cache.match(url);
 
-  if (cached) {
-    const age = Date.now() - new Date(cached.headers.get('sw-cached-at')).getTime();
-    if (age < ttl) {
-      return cached.json();
-    }
-  }
+        if (cached) {
+          const age =
+            Date.now() - new Date(cached.headers.get("sw-cached-at")).getTime();
+          if (age < ttl) {
+            return cached.json();
+          }
+        }
 
-  // Pas en cache ou expiré → on fetch
-  const response = await fetch(url);
-  const clone = response.clone();
+        // Pas en cache ou expiré → on fetch
+        const response = await fetch(url);
+        const clone = response.clone();
 
-  // On ajoute un header custom pour stocker la date de mise en cache
-  const headers = new Headers(clone.headers);
-  headers.set('sw-cached-at', new Date().toISOString());
-  const cachedResponse = new Response(await clone.blob(), { headers });
+        // On ajoute un header custom pour stocker la date de mise en cache
+        const headers = new Headers(clone.headers);
+        headers.set("sw-cached-at", new Date().toISOString());
+        const cachedResponse = new Response(await clone.blob(), { headers });
 
-  cache.put(url, cachedResponse);
-  return response.json();
-}
-//
-
+        cache.put(url, cachedResponse);
+        return response.json();
+      }
+      //
 
       function changeD(el) {
         // el : choiceD1/D2 ou elD, on prend juste son dataset.devise pour savoir quoi mettre
@@ -29054,19 +29067,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreSD.classList.remove("active");
         // tf=false // à retirer
         if (tf) {
-          fetchWithCache(`https://open.er-api.com/v6/latest/${currentDD}`,43200000)
+          fetchWithCache(
+            `https://open.er-api.com/v6/latest/${currentDD}`,
+            43200000,
+          )
             .then((data) => {
               dataConvert = data.rates;
-              dataLatest = data.time_last_update_utc     
-            
-              let s = dataLatest.slice(0,3)
-        let jr = dataLatest.slice(3,8)
-        let m = dataLatest.slice(8, 11)
-        let a = dataLatest.slice(13, 17)        
-        let h = dataLatest.slice(18,26)        
-        let utc = dataLatest.slice(26)
-          
-        document.getElementById('txtLastUpdate').querySelector('p').textContent = " " +D_semaine[s] + jr+ D_mois[m]+ " " + h + utc
+              dataLatest = data.time_last_update_utc;
+
+              let s = dataLatest.slice(0, 3);
+              let jr = dataLatest.slice(3, 8);
+              let m = dataLatest.slice(8, 11);
+              let a = dataLatest.slice(13, 17);
+              let h = dataLatest.slice(18, 26);
+              let utc = dataLatest.slice(26);
+
+              document
+                .getElementById("txtLastUpdate")
+                .querySelector("p").textContent =
+                " " + D_semaine[s] + jr + D_mois[m] + " " + h + utc;
 
               inputD1.value = CD1 + D_symbolesD[currentDD];
 
@@ -29303,10 +29322,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       function loop() {
-        
         requestAnimationFrame(loop);
       }
-// loop()
+      // loop()
       // document.addEventListener(
       //   "touchmove",
       //   (e) => {
