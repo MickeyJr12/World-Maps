@@ -28310,9 +28310,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const inputD = document.getElementById("inputD");
       const resetD = document.getElementById("resetD");
       const contentCadreSD = document.getElementById("contentCadreSD");
-      contentCadreSD.addEventListener('touchmove', (e) => {
+      contentCadreSD.addEventListener('pointerdown', (e) => {
         e.stopPropagation();
-        }, { passive: true });
+        });
+
+      contentCadreSD.addEventListener('pointermove', (e) => {
+        e.stopPropagation();
+        });
 
 
       const crossCadreSD = document.getElementById("crossCadreSD");
@@ -28841,8 +28845,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         return flagErrorD;
       }
 
-      function changeD(el) {
-        crossCadreSD.click();
+      function changeD(el) { // el : choiceD1/D2 ou elD, on prend juste son dataset.devise pour savoir quoi mettre
+        crossCadreSD.click(); //CurrentChoiceD : celui qu'on va modifier
         if (!garderActive) {
           celsPopD.forEach((c) => c.classList.remove("active"));
         }
@@ -28878,9 +28882,27 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           0,
           -parseInt(D_symbolesD[currentDD].length),
         );
+
+
+        let d1 = currentDD
+        let d2 = currentDV
+        
         currentChoiceD === choiceD1
           ? ((currentDD = d), (tf = true))
           : (currentDV = d);
+
+        
+
+        if (currentChoiceD === choiceD1 && d===currentDV){
+          choiceD2.dataset = d1
+          currentChoiceD = choiceD2
+          changeD(choiceD2)
+        }
+        else if (currentChoiceD === choiceD2 && d===currentDD){
+          choiceD1.dataset = d2
+          currentChoiceD = choiceD1
+          changeD(choiceD1)
+        }
 
         infoConvert.textContent =
           currentChoiceD === choiceD1
