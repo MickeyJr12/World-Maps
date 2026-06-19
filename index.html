@@ -4595,10 +4595,12 @@
         text-align: center;
         cursor: pointer;
         padding: 0.4em;
-        font-weight: 520;
+        font-weight: 500;
         color: rgba(0, 0, 0, 0.8);
         border-radius: 0.5em;
-        outline: 1.6px solid rgba(0, 184, 148, 0.2);
+        outline: 1.6px solid rgba(43, 192, 127, 0.25);
+        outline: 1.6px solid rgba(0, 184, 148, 0.25);
+        
         
         transition:
           background 0.2s ease,
@@ -29103,7 +29105,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               inputD1.value = CD1 + D_symbolesD[currentDD];
 
               inputD2.value =
-                Math.round(dataConvert[currentDV] * parseInt(CD1) * 100) / 100 +
+                Math.round(dataConvert[currentDV] * parseFloat(CD1) * 100) / 100 +
                 D_symbolesD[currentDV];
               infoConvert.textContent =
                 "1 " +
