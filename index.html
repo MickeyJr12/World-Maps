@@ -4192,16 +4192,18 @@
 
 
       #backDevise{
-        left : 1em;
         top: 50%;
         transform : translateY(-50%)
 
       }
        #titleDevise {
         display : flex;
+        position : relative;
         justify-content:center;
         align-items:center;
         flex-wrap : nowrap;
+        width : 100%;
+        padding : 0 1em;
         gap : 0.8em;
         font-size: 1em;
         font-weight: 600;
@@ -4340,7 +4342,7 @@
         transition: background 0.2s ease;
       }
       .elD.active {
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.02);
       }
       .flagErrorD {
         display: flex;
@@ -4396,11 +4398,6 @@
         width: 100%;
         padding: 0.6em 1em;
         font-weight: 500;
-      }
-
-      #backDevise {
-        top: 50%;
-        transform: translateY(-50%);
       }
      
       .cadreD {
@@ -4487,6 +4484,7 @@
         padding-left :1em;
         padding-right : 0.8em;
         gap : 1em;
+        transition  : filter 0.2s ease;
       }
 
 
@@ -9833,7 +9831,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         </button>
         <div id="titleCadreSD">Sélectionnez une devise</div>
 
-        <form class="form" style="width: 80%; max-width: 250px;">
+        <form class="form" style="width: 80%; max-width: 280px;">
           <button type="submit" class="svgSearch">
             <svg
               width="17"
@@ -9966,7 +9964,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         </div>
       </div>
       <div id="headerDevise">
-        <button class="back" id="backDevise">
+        <div id="titleDevise">
+               <button class="back" id="backDevise">
           <svg
             fill="white"
             xmlns="http://www.w3.org/2000/svg"
@@ -9980,7 +9979,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           </svg>
         </button>
 
-        <div id="titleDevise">
            <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Layer_1"
@@ -9991,7 +9989,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               d="M16.5,0c-4.206,0-7.5,1.977-7.5,4.5v2.587c-.483-.057-.985-.087-1.5-.087C3.294,7,0,8.977,0,11.5v8c0,2.523,3.294,4.5,7.5,4.5,3.407,0,6.216-1.297,7.16-3.131,.598,.087,1.214,.131,1.84,.131,4.206,0,7.5-1.977,7.5-4.5V4.5c0-2.523-3.294-4.5-7.5-4.5Zm5.5,12.5c0,1.18-2.352,2.5-5.5,2.5-.512,0-1.014-.035-1.5-.103v-1.984c.49,.057,.992,.087,1.5,.087,2.194,0,4.14-.538,5.5-1.411v.911ZM2,14.589c1.36,.873,3.306,1.411,5.5,1.411s4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5s-5.5-1.32-5.5-2.5v-.911Zm20-6.089c0,1.18-2.352,2.5-5.5,2.5-.535,0-1.06-.038-1.566-.112-.193-.887-.8-1.684-1.706-2.323,.984,.28,2.092,.435,3.272,.435,2.194,0,4.14-.538,5.5-1.411v.911Zm-5.5-6.5c3.148,0,5.5,1.32,5.5,2.5s-2.352,2.5-5.5,2.5-5.5-1.32-5.5-2.5,2.352-2.5,5.5-2.5ZM7.5,9c3.148,0,5.5,1.32,5.5,2.5s-2.352,2.5-5.5,2.5-5.5-1.32-5.5-2.5,2.352-2.5,5.5-2.5Zm0,13c-3.148,0-5.5-1.32-5.5-2.5v-.911c1.36,.873,3.306,1.411,5.5,1.411s4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5Zm9-3c-.512,0-1.014-.035-1.5-.103v-1.984c.49,.057,.992,.087,1.5,.087,2.194,0,4.14-.538,5.5-1.411v.911c0,1.18-2.352,2.5-5.5,2.5Z"
             />
           </svg>
-          Convertisseur de devises</div>
+          Conversion de devises</div>
       </div>
 
       <div class="cadreD" id="cadreD1">
@@ -28383,6 +28381,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           cadreSD.style.top = "";
           cadreSD.classList.add("active");
         });
+
+        c.addEventListener('pointerdown',()=>{
+          c.style.filter = "brightness(0.95)"
+        })
+         document.addEventListener('pointercancel',()=>{
+          c.style.filter = ""
+        })
+         document.addEventListener('pointerup',()=>{
+          c.style.filter = ""
+        })
       });
       fetch("https://open.er-api.com/v6/latest/EUR")
         .then((response) => response.json())
@@ -28988,7 +28996,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           const txtPopSD = document.createElement("div");
           txtPopSD.id = txtPopSD;
           txtPopSD.className = "txtPop";
-          txtPopSD.textContent = "POPULAIRE";
+          txtPopSD.textContent = "POPULAIRES";
           contentCadreSD.append(txtPopSD);
         }
         const L_LD = inputD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
