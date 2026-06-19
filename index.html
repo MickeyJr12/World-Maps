@@ -28567,8 +28567,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             inputD2.value = inputD2.value + D_symbolesD[currentDV];
           }
         } else {
-          inputD1.value = 1.0 + D_symbolesD[currentDD];
-          inputD2.value = dataConvert[currentDV] + D_symbolesD[currentDV];
+          inputD1.value = 1.00 + D_symbolesD[currentDD];
+          inputD2.value = Math.round(dataConvert[currentDV] * 100) / 100 + D_symbolesD[currentDV];
+
         }
       });
 
@@ -28618,8 +28619,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             inputD1.value = inputD1.value + D_symbolesD[currentDD];
           }
         } else {
-          inputD1.value = 1.0 + D_symbolesD[currentDD];
-          inputD2.value = dataConvert[currentDV] + D_symbolesD[currentDV];
+          inputD1.value = 1.00 + D_symbolesD[currentDD];
+          inputD2.value = Math.round(dataConvert[currentDV] * 100) / 100 + D_symbolesD[currentDV];
         }
       });
 
