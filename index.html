@@ -10101,7 +10101,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         <div class="celPopD" data-d="EUR" data-v="GBP">EUR/GBP</div>
       </div>
 
-      <div class="txtPop" id="txtLastUpdate">Dernière actualisation : <span></span></div>
+      <div class="txtPop" id="txtLastUpdate">Dernière actualisation : <span style="letter-spacing: none" ></span></div>
 
     </div>
 
@@ -20301,7 +20301,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           co2e: 913215323.2,
           gouvernement: "République semi-présidentielle",
           religion: "Christianisme (catholicisme)",
-          fuseaux: ["UTC+1"],
+          fuseaux: ["UTC+2"],
           otan: true,
           ue: true,
           cop: true,
@@ -28473,7 +28473,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       fetchWithCache("https://open.er-api.com/v6/latest/EUR",43200000)
         .then((data) => {
           dataConvert = data.rates;
-          dataLatest = data.time_last_update_utc          
+          dataLatest = data.time_last_update_utc     
+          // Exemple : "Fri, 19 Jun 2026 00:02:32 +0000"
+        let s = dataLatest.slice(0,3)
+        let jr = dataLatest.slice(3,8)
+        let m = dataLatest.slice(8, 11)
+        let a = dataLatest.slice(13, 17)        
+        let h = dataLatest.slice(18,26)        
+        let utc = dataLatest.slice(26)
+        console.log(document.getElementById('txtLastUpdate'))
+        document.getElementById('txtLastUpdate').querySelector('span').textContent = D_semaine[s] + jr+ D_mois[m]+ " " + h + utc
+          
           inputD1.value = 1.0 + "€";
           inputD2.value =
             Math.round(dataConvert["USD"] * 100) / 100 + D_symbolesD[currentDV];
@@ -29034,6 +29044,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           fetchWithCache(`https://open.er-api.com/v6/latest/${currentDD}`,43200000)
             .then((data) => {
               dataConvert = data.rates;
+              dataLatest = data.time_last_update_utc     
+            
+              let s = dataLatest.slice(0,3)
+        let jr = dataLatest.slice(3,8)
+        let m = dataLatest.slice(8, 11)
+        let a = dataLatest.slice(13, 17)        
+        let h = dataLatest.slice(18,26)        
+        let utc = dataLatest.slice(26)
+          
+        document.getElementById('txtLastUpdate').querySelector('span').textContent = D_semaine[s] + jr+ D_mois[m]+ " " + h + utc
 
               inputD1.value = CD1 + D_symbolesD[currentDD];
 
@@ -29270,17 +29290,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       function loop() {
-        str = "Fri, 19 Jun 2026 00:02:32 +0000"
-        let s = str.slice(0,3)
-        let jr = str.slice(5,7)
-        let m = str.slice(9, 12)
-        let a = str.slice(13, 17)
         
-        let h = str.slice(18,26)
-        let utc = str.slice(27,)
         requestAnimationFrame(loop);
       }
-loop()
+// loop()
       // document.addEventListener(
       //   "touchmove",
       //   (e) => {
