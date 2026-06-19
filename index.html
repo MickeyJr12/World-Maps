@@ -28305,18 +28305,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const infoConvert = document.getElementById("infoConvert");
       const arrowChange = document.getElementById("arrowChange");
       const cadreSD = document.getElementById("cadreSD");
-      
+
       const inputD = document.getElementById("inputD");
       const resetD = document.getElementById("resetD");
       const contentCadreSD = document.getElementById("contentCadreSD");
-      contentCadreSD.addEventListener('pointerdown', (e) => {
+      contentCadreSD.addEventListener("pointerdown", (e) => {
         e.stopPropagation();
-        });
+      });
 
-      contentCadreSD.addEventListener('pointermove', (e) => {
+      contentCadreSD.addEventListener("pointermove", (e) => {
         e.stopPropagation();
-        });
-
+      });
 
       const crossCadreSD = document.getElementById("crossCadreSD");
       const alphabetD = document.getElementById("alphabetD");
@@ -28345,7 +28344,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           currentChoiceD = choiceD1;
           choiceD1.dataset.devise = cel.dataset.d;
           changeD(choiceD1);
-          
+
           garderActive = true;
           currentChoiceD = choiceD2;
           choiceD2.dataset.devise = cel.dataset.v;
@@ -28361,8 +28360,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       [choiceD1, choiceD2].forEach((c) => {
         c.addEventListener("click", () => {
-          inputD.value = ""
-          fillContentD(D_nDevises)
+          inputD.value = "";
+          fillContentD(D_nDevises);
           currentChoiceD = c;
           cadreSD.style.top = "";
           cadreSD.classList.add("active");
@@ -28658,7 +28657,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         moveSD = true;
         const CY = e.clientY;
         difYD = CY - parseInt(cadreSD.style.top);
-        if (difYD> inputD.getBoundingClientRect().bottom + inputD.getBoundingClientRect().height -parseInt(cadreSD.style.top)  ){moveSD = false}
+        if (
+          difYD >
+          inputD.getBoundingClientRect().bottom +
+            inputD.getBoundingClientRect().height -
+            parseInt(cadreSD.style.top)
+        ) {
+          moveSD = false;
+        }
       });
       document.addEventListener("pointermove", (e) => {
         if (moveSD) {
@@ -28848,7 +28854,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         return flagErrorD;
       }
 
-      function changeD(el) { // el : choiceD1/D2 ou elD, on prend juste son dataset.devise pour savoir quoi mettre
+      function changeD(el) {
+        // el : choiceD1/D2 ou elD, on prend juste son dataset.devise pour savoir quoi mettre
         crossCadreSD.click(); //CurrentChoiceD : celui qu'on va modifier
         if (!garderActive) {
           celsPopD.forEach((c) => c.classList.remove("active"));
@@ -28888,9 +28895,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           -parseInt(D_symbolesD[currentDD].length),
         );
 
-
-       
-        
         currentChoiceD === choiceD1
           ? ((currentDD = d), (tf = true))
           : (currentDV = d);
@@ -28988,18 +28992,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           contentCadreSD.append(txtPopSD);
         }
 
-      delete Ld.KPW;
-      delete Ld[choiceD2.dataset.devise];
-      delete L_pop[choiceD2.dataset.devise];
-      delete Ld[choiceD1.dataset.devise];
-      delete L_pop[choiceD1.dataset.devise]
-        
+        delete Ld.KPW;
+        delete Ld[choiceD2.dataset.devise];
+        delete L_pop[choiceD2.dataset.devise];
+        delete Ld[choiceD1.dataset.devise];
+        delete L_pop[choiceD1.dataset.devise];
 
         const L_LD = inputD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
 
         const D_clone = structuredClone(D_alphabet);
-
-
 
         L_LD.forEach((L) => {
           for (const clefD of Object.keys(L)) {
@@ -29163,10 +29164,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //   { passive: false },
       // );
 
-      [inputC, inputD].forEach((input) => {
-        input.addEventListener("focus", (e) => {
-          e.preventDefault();
-          input.scrollIntoView({ block: "center", behavior: "smooth" });
+      const inputs = document.querySelectorAll("input, textarea, select"); // Enlever le zooù automatique quand on focus un input
+
+      inputs.forEach((el) => {
+        el.addEventListener("focus", () => {
+          document
+            .querySelector('meta[name="viewport"]')
+            .setAttribute(
+              "content",
+              "width=device-width, initial-scale=1, maximum-scale=1",
+            );
+        });
+
+        el.addEventListener("blur", () => {
+          document
+            .querySelector('meta[name="viewport"]')
+            .setAttribute("content", "width=device-width, initial-scale=1");
         });
       });
 
