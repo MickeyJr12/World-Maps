@@ -4177,7 +4177,7 @@
         color: white;
         width: 100%;
         padding: 0em 0.8em;
-        height: 12vh;
+        height: 14vh;
         padding-top: calc(env(safe-area-inset-top) + 1em);
         padding-bottom : 1em;
 
@@ -4191,7 +4191,12 @@
       }
 
 
+      #backDevise{
+        left : 1em;
+        top: 50%;
+        transform : translateY(-50%)
 
+      }
        #titleDevise {
         display : flex;
         justify-content:center;
@@ -4227,7 +4232,7 @@
         transition: top 0.3s ease;
       }
       #cadreSD.active {
-        top: calc(12vh + 1em);
+        top: calc(14vh + 1em);
       }
        #titleCadreSD {
         display : flex;
@@ -4423,7 +4428,50 @@
       #infoConvert {
         color: rgba(0, 0, 0, 0.5);
       }
-      .choiceD {
+    
+
+       .inputD {
+        font-size: 1.2em;
+        font-weight: 540;
+
+        /* Enlève l'outline au focus */
+        outline: none;
+
+        /* Remplace le border moche par quelque chose de plus propre */
+        border: 1px solid transparent;
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+        background: transparent;
+        padding: 12px 16px;
+        flex: 1;
+        height: 100%;
+        box-sizing: border-box;
+
+        transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .inputD::placeholder {
+        font-weight: 400;
+      }
+
+      /* Retire les flèches sur Chrome, Safari, Edge */
+      .inputD::-webkit-outer-spin-button,
+      .inputD::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Retire les flèches sur Firefox */
+      .inputD {
+        -moz-appearance: textfield;
+      }
+
+      .inputD::placeholder {
+        color: #999;
+      }
+
+        .choiceD {
         display: flex;
         position: relative;
         align-items: center;
@@ -4434,10 +4482,12 @@
         background: rgb(188, 242, 191);
         border-bottom-right-radius: inherit;
         font-weight: 540;
-
-        width: 60%;
+        padding : 0 5em;
         height: 100%;
+        gap : 1em;
       }
+
+
       .contentTxtHeaderD {
         display: flex;
         align-items: center;
@@ -4469,50 +4519,12 @@
       }
 
       .arrowD {
+        justify-self: flex-end;
         fill: rgba(0, 0, 0, 0.6);
         transform: rotate(-90deg);
         height: 1em;
       }
-      .inputD {
-        font-size: 1.2em;
-        font-weight: 540;
-
-        /* Enlève l'outline au focus */
-        outline: none;
-
-        /* Remplace le border moche par quelque chose de plus propre */
-        border: 1px solid transparent;
-        border-top-left-radius: inherit;
-        border-bottom-left-radius: inherit;
-        background: transparent;
-        padding: 12px 16px;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-
-        transition:
-          border-color 0.2s ease,
-          box-shadow 0.2s ease;
-      }
-      .inputD::placeholder {
-        font-weight: 400;
-      }
-
-      /* Retire les flèches sur Chrome, Safari, Edge */
-      .inputD::-webkit-outer-spin-button,
-      .inputD::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-
-      /* Retire les flèches sur Firefox */
-      .inputD {
-        -moz-appearance: textfield;
-      }
-
-      .inputD::placeholder {
-        color: #999;
-      }
+     
       #arrowChange {
         display: flex;
         align-items: center;
