@@ -4406,7 +4406,7 @@
         outline: 1.6px solid transparent;
         box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.4);
         width: 80%;
-        height: 3.4em;
+        height: 3.8em;
         transition: outline 0.2s ease;
       }
       .cadreD.active {
@@ -4431,7 +4431,7 @@
         cursor: pointer;
         box-sizing: border-box;
         border-top-right-radius: inherit;
-        background: rgba(234, 251, 235, 1);
+        background: rgb(188, 242, 191);
         border-bottom-right-radius: inherit;
         font-weight: 540;
 
@@ -28298,12 +28298,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const devises = document.getElementById('devises')
       const phoneDevise = document.getElementById('phoneDevise')
       devises.addEventListener('click',()=>{
+        currentPhone =phoneDevise;
         phoneHome.style.display  = "none"
         phoneDevise.style.display = "flex"
       })
       const backDevise = document.getElementById('backDevise')
 
       backDevise.addEventListener('click',()=>{
+          currentPhone = phoneHome;
+
           phoneDevise.style.display  = "none"
         phoneHome.style.display = "flex"
       })
@@ -28660,6 +28663,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       document.addEventListener("pointerup", () => {
+        if (!moveSD)return
         cadreSD.style.transition = "";
         moveSD = false;
         if (cadreSD.getBoundingClientRect().top < window.innerHeight * 0.25) {
@@ -29061,6 +29065,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               elD.classList.remove("active");
             });
 
+             document.addEventListener("pointercancel", () => {
+              elD.classList.remove("active");
+            });
+
+
+
             elD.addEventListener("click", () => {
               garderActive = false;
               changeD(elD);
@@ -29129,7 +29139,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       function loop() {
-        console.log(svg.getAttribute("viewBox").split(" ").map(Number))
+        console.log(cadreSD.className)
         requestAnimationFrame(loop);
       }
 
