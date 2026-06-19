@@ -28395,6 +28395,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const inputD1 = document.getElementById("inputD1");
       const inputD2 = document.getElementById("inputD2");
       L_inputD = [inputD1, inputD2];
+      L_inputD.forEach(input=>{
+        input.addEventListener('keydown',(e)=>{
+          if(input.value === "" && (e.key ==="," ||e.key ==="." )){e.preventDefault()}
+        })
+      })
       const cadreD1 = document.getElementById("cadreD1");
       const cadreD2 = document.getElementById("cadreD2");
       const choiceD1 = document.getElementById("choiceD1");
@@ -28564,6 +28569,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       inputD1.addEventListener("blur", () => {
         cadreD1.classList.remove("active");
+        if([",","."].includes(inputD1.value.slice(-1))){
+          inputD1.value = inputD1.value.slice(0,-1)
+        }
         if (inputD1.value.length !== 0) {
           inputD1.value = inputD1.value + D_symbolesD[currentDD];
           if (!isNaN(inputD2.value)) {
@@ -28616,6 +28624,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       inputD2.addEventListener("blur", () => {
         cadreD2.classList.remove("active");
+        if([",","."].includes(inputD2.value.slice(-1))){
+          inputD2.value = inputD2.value.slice(0,-1)
+        }
+
         if (inputD2.value.length !== 0) {
           inputD2.value = inputD2.value + D_symbolesD[currentDV];
           if (!isNaN(inputD1.value)) {
