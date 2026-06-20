@@ -3989,6 +3989,7 @@
 
       #bigWrapperClasser {
         display: none;
+        align-items: center;
         gap: 0.4em;
         width: fit-content;
         margin: 0 auto;
@@ -4010,10 +4011,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around;
         box-sizing: border-box;
         flex-shrink: 0;
         color: white;
-        gap: calc(0.15 * 5em);
+        gap: calc(0.12 * 5em);
         padding: 0 0.8em;
         top: 0;
         bottom: 0;
@@ -29421,7 +29423,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         document.getElementById("wrapperContentSD").append(alphabetD);
       }
 
-      fillContentD(D_nDevises);
       document
         .querySelector(".form")
         .addEventListener("pointerdown", (e) => e.stopPropagation());
