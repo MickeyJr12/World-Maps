@@ -26289,7 +26289,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           celDrapeau.addEventListener('pointerdown',()=>{
             celDrapeau.style.transform = "scale(0.98)";
             celDrapeau.style.border = "1px solid rgba(255, 255, 255, 0.8)"
-          })
+          },{passive:true})
 
           document.addEventListener('pointercancel',()=>{
             celDrapeau.style.transform = "";
