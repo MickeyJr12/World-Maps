@@ -4573,9 +4573,28 @@
       #arrowChange svg {
         border-color: rgba(80, 160, 100, 0.5);
         color: rgba(80, 160, 100, 0.7);
-
         height: 2.2em;
       }
+      
+      
+      /* HTML: <div class="loader"></div> */
+.loader {
+  display : none;
+  position : absolute;
+  bottom : 0;
+  transform : translateY( 50%);
+  height: 0.18em;
+  width: 100%;
+  --c:no-repeat linear-gradient(#003fee 0 0);
+  background: var(--c),var(--c),transparent;
+  background-size: 60% 100%;
+  animation: l16 3s infinite;
+}
+@keyframes l16 {
+  0%   {background-position:-150% 0,-150% 0}
+  66%  {background-position: 250% 0,-150% 0}
+  100% {background-position: 250% 0, 250% 0}
+}
 
       .txtPop {
         font-size: 0.85em;
@@ -10012,6 +10031,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         </div>
       </div>
       <div id="headerDevise">
+          <div class="loader" id="loaderD"></div>
+
           <button class="back" id="backDevise">
             <svg
               fill="white"
@@ -10079,6 +10100,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
 
       <div id="arrowChange">
+
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
@@ -28425,6 +28447,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           if(input.value === "" && (e.key ==="," ||e.key ==="." )){e.preventDefault()}
         })
       })
+
+      const loaderD = document.getElementById('loaderD')
       const cadreD1 = document.getElementById("cadreD1");
       const cadreD2 = document.getElementById("cadreD2");
       const choiceD1 = document.getElementById("choiceD1");
@@ -28549,7 +28573,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             .querySelector("p").textContent =
             "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " + h + utc;
 
-          inputD1.value = 1.0 + "€";
+          inputD1.value = "1.00" + "€";
           inputD2.value =
             Math.round(dataConvert["USD"] * 100) / 100 + D_symbolesD[currentDV];
           infoConvert.textContent =
@@ -28691,8 +28715,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           currentChoiceD = choiceD2;
           changeD(choiceD2);
-          currentChoiceD = choiceD1;
+          requestAnimationFrame(()=>{
+            currentChoiceD = choiceD1;
           changeD(choiceD1);
+          })
+          
         });
       });
 
@@ -29105,8 +29132,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         currentChoiceD === choiceD1
           ? ((currentDD = d), (tf = true))
           : (currentDV = d);
+        tf? (inputD2.value = "0",inputD2.readOnly = true,inputD1.readOnly = true, loaderD.style.display = "flex") : "";
 
-        infoConvert.textContent =
+        infoConvert.textContent = 
           currentChoiceD === choiceD1
             ? "1.00 " +
               currentDD +
@@ -29147,6 +29175,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               inputD2.value =
                 Math.round(dataConvert[currentDV] * parseFloat(CD1) * 100) / 100 +
                 D_symbolesD[currentDV];
+
+              inputD2.readOnly = false
+              inputD1.readOnly = false
+              loaderD.style.display = ""
+
               infoConvert.textContent =
                 "1.00 " +
                 currentDD +
