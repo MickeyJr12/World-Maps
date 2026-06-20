@@ -700,6 +700,7 @@
         margin-top: 0em;
         height: 100%;
         max-width: 600px;
+
         background: rgba(17, 23, 79, 0.95);
         backdrop-filter: blur(10px);
         border-radius: 10px;
@@ -1305,8 +1306,19 @@
         width: 100%;
         height: 2em;
         max-height: 3em;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, background 0.2s ease;
       }
+
+        .itemC img {
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .itemC:active {
+        background: rgba(14, 20, 69, 0.9);
+      }
+
       .rank {
         position: absolute;
         width: auto;
@@ -1338,15 +1350,7 @@
         align-items: center;
         min-width: 3em;
       }
-      .itemC img {
-        width: 2.5em;
-        height: 2.5em;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-      .itemC:active {
-        filter: brightness(1.2);
-      }
+    
       .ligneInContent {
         width: 100%;
         border: 1px solid rgba(255, 255, 255, 0.4);
