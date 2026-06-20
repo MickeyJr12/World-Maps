@@ -2205,9 +2205,9 @@
         word-wrap: break-word;
       }
       .txtCelCadre {
-        display : flex;
+        display: flex;
         max-width: 100%;
-        flex-wrap : wrap;
+        flex-wrap: wrap;
         font-size: 0.92em;
         color: rgba(255, 255, 255, 0.92);
         word-wrap: break-word;
@@ -2382,9 +2382,9 @@
         justify-self: flex-start;
         width: 1.5em;
         height: 1.5em;
-        margin : 0.8em;
+        margin: 0.8em;
         z-index: 10;
-        margin-bottom : -1em;
+        margin-bottom: -1em;
         border-radius: 5px;
         transition: background 0.2s ease;
       }
@@ -2393,7 +2393,7 @@
       }
 
       .cross {
-        display : flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         all: unset; /* enlève TOUT le style natif */
@@ -2407,13 +2407,12 @@
         width: 1.5em;
         height: 1.5em;
         fill: white;
-        transition : background 0.2s ease
+        transition: background 0.2s ease;
       }
       .cross:active {
         background: rgba(0, 0, 0, 0.05);
       }
 
-      
       .cadreVue-inner {
         width: 100%;
         height: fit-content;
@@ -4232,15 +4231,18 @@
         background: rgb(255, 250, 250);
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
         width: 100%;
-        transition: top 0.3s ease, border-radius 0.3s ease, padding-top 0.3s ease;
+        transition:
+          top 0.3s ease,
+          border-radius 0.3s ease,
+          padding-top 0.3s ease;
       }
       #cadreSD.active {
         top: calc(18vh + 1em);
       }
-      #cadreSD.fullScreen{
-        top : 0;
+      #cadreSD.fullScreen {
+        top: 0;
         border-radius: 0;
-        padding-top: calc(env(safe-area-inset-top) + 1em); 
+        padding-top: calc(env(safe-area-inset-top) + 1em);
       }
       #titleCadreSD {
         display: flex;
@@ -4262,11 +4264,11 @@
         width: 100%;
         height: 1em;
         box-sizing: border-box;
-        transition : opacity 0.2s ease;
+        transition: opacity 0.2s ease;
       }
       #lineCadreSD.fullScreen {
-        opacity : 0;
-      } 
+        opacity: 0;
+      }
       #lineCadreSD svg {
         width: 3.6em;
         fill: rgba(0, 0, 0, 0.2);
@@ -4303,8 +4305,7 @@
       }
 
       #crossCadreSD {
-        
-        display : flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         align-self: flex-start;
@@ -4313,19 +4314,17 @@
         width: 2.5em;
         border-radius: 50%;
         margin-left: 1.5em;
-        margin-bottom : 1em;
-        transition : background 0.2s ease
+        margin-bottom: 1em;
+        transition: background 0.2s ease;
       }
       #crossCadreSD svg {
         fill: rgba(0, 0, 0, 0.4);
         border-radius: 50%;
-        height :100%
-        
+        height: 100%;
       }
-      #crossCadreSD:active{
+      #crossCadreSD:active {
         background: rgba(0, 0, 0, 0.05);
       }
-        
 
       #wrapperContentSD {
         display: flex;
@@ -4362,7 +4361,7 @@
         box-sizing: border-box;
         justify-content: flex-start;
         align-items: center;
-        font-size:0.92em;
+        font-size: 0.92em;
         padding: 1em 0;
         width: 100%;
         gap: 1em;
@@ -4371,10 +4370,10 @@
       .elD.active {
         background: rgba(0, 0, 0, 0.05);
       }
-      .spnElD{
-        position : absolute;
-        font-size : 1.2em;
-        right : 1.1em;
+      .spnElD {
+        position: absolute;
+        font-size: 1.2em;
+        right: 1.1em;
       }
       .flagErrorD {
         display: flex;
@@ -4438,7 +4437,7 @@
         position: relative;
         align-items: center;
         border-radius: 0.4em;
-        outline: 1.6px solid rgba(240,240,240,0.2);
+        outline: 1.6px solid rgba(240, 240, 240, 0.2);
         box-shadow: 0 0 0.08em rgba(0, 0, 0, 0.4);
         width: 80%;
         height: 3.4em;
@@ -4511,9 +4510,8 @@
         border-bottom-right-radius: inherit;
         border-radius: inherit;
         background: rgba(60, 180, 120, 0.12);
-        background: rgba(0,0,0,0);
+        background: rgba(0, 0, 0, 0);
         background: rgb(255, 250, 250);
-
 
         font-weight: 540;
         height: 100%;
@@ -4575,26 +4573,37 @@
         color: rgba(80, 160, 100, 0.7);
         height: 2.2em;
       }
-      
-      
+
       /* HTML: <div class="loader"></div> */
-.loader {
-  display : none;
-  position : absolute;
-  bottom : 0;
-  transform : translateY( 50%);
-  height: 0.18em;
-  width: 100%;
-  --c:no-repeat linear-gradient(#003fee 0 0);
-  background: var(--c),var(--c),transparent;
-  background-size: 60% 100%;
-  animation: l16 3s infinite;
-}
-@keyframes l16 {
-  0%   {background-position:-150% 0,-150% 0}
-  66%  {background-position: 250% 0,-150% 0}
-  100% {background-position: 250% 0, 250% 0}
-}
+      .loader {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(50%);
+        height: 0.18em;
+        width: 100%;
+        --c: no-repeat linear-gradient(#003fee 0 0);
+        background: var(--c), var(--c), transparent;
+        background-size: 60% 100%;
+        animation: l16 3s infinite;
+      }
+      @keyframes l16 {
+        0% {
+          background-position:
+            -150% 0,
+            -150% 0;
+        }
+        66% {
+          background-position:
+            250% 0,
+            -150% 0;
+        }
+        100% {
+          background-position:
+            250% 0,
+            250% 0;
+        }
+      }
 
       .txtPop {
         font-size: 0.85em;
@@ -4647,8 +4656,7 @@
         border-radius: 0.5em;
         outline: 1.6px solid rgba(43, 192, 127, 0.25);
         outline: 1.6px solid rgba(0, 184, 148, 0.25);
-        
-        
+
         transition:
           background 0.2s ease,
           outine 0.2s ease;
@@ -4955,7 +4963,7 @@
           <h2>Carte</h2>
         </div>
 
-              <div class="btnPlay hoverable" id="devises">
+        <div class="btnPlay hoverable" id="devises">
           <svg
             class="iconPlay"
             xmlns="http://www.w3.org/2000/svg"
@@ -4969,8 +4977,6 @@
           </svg>
           <h2>Devises</h2>
         </div>
-
-        
       </div>
     </div>
 
@@ -9885,7 +9891,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             />
           </svg>
         </div>
-        <div  id="crossCadreSD">
+        <div id="crossCadreSD">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Outline"
@@ -10031,20 +10037,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         </div>
       </div>
       <div id="headerDevise">
-          <div class="loader" id="loaderD"></div>
+        <div class="loader" id="loaderD"></div>
 
-          <button class="back" id="backDevise">
-            <svg
-              fill="white"
-              xmlns="http://www.w3.org/2000/svg"
-              id="Bold"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-              />
-            </svg>
-          </button>
+        <button class="back" id="backDevise">
+          <svg
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Bold"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+        </button>
         <div id="titleDevise">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -10100,7 +10106,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
 
       <div id="arrowChange">
-
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
@@ -13500,7 +13505,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const backListBox = document.getElementById("backListBox");
 
       backListBox.addEventListener("click", (e) => {
-        e.preventDefault()
+        e.preventDefault();
         listBox.innerHTML = ``;
         vuesBox.style.transform = "translateX(0%)";
         cadreVue.style.height = "";
@@ -22483,11 +22488,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           co2e: 6168401414.77,
           gouvernement: "République fédérale semi-présidentielle",
           religion: "Christianisme (orthodoxie)",
-          fuseaux: [
-            "UTC+2",
-            "UTC+3",
-            "...UTC+12",
-          ],
+          fuseaux: ["UTC+2", "UTC+3", "...UTC+12"],
           otan: false,
           ue: false,
           cop: true,
@@ -25815,7 +25816,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let difY;
       let difX;
       cadreVue.addEventListener("mousedown", (e) => {
-        return
+        return;
         cadreVue.style.cursor = "grabbing";
         moveCV = true;
         const CX = e.clientX;
@@ -28032,7 +28033,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       backSearch.addEventListener("click", () => {
         setTimeout(() => {
           inputC.value = "";
-          fillContentC(LfInit)
+          fillContentC(LfInit);
         }, 100);
         cadreS.classList.remove("active");
       });
@@ -28442,13 +28443,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const inputD1 = document.getElementById("inputD1");
       const inputD2 = document.getElementById("inputD2");
       L_inputD = [inputD1, inputD2];
-      L_inputD.forEach(input=>{
-        input.addEventListener('keydown',(e)=>{
-          if(input.value === "" && (e.key ==="," ||e.key ==="." )){e.preventDefault()}
-        })
-      })
+      L_inputD.forEach((input) => {
+        input.addEventListener("keydown", (e) => {
+          if (input.value === "" && (e.key === "," || e.key === ".")) {
+            e.preventDefault();
+          }
+        });
+      });
 
-      const loaderD = document.getElementById('loaderD')
+      const loaderD = document.getElementById("loaderD");
       const cadreD1 = document.getElementById("cadreD1");
       const cadreD2 = document.getElementById("cadreD2");
       const choiceD1 = document.getElementById("choiceD1");
@@ -28457,7 +28460,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const infoConvert = document.getElementById("infoConvert");
       const arrowChange = document.getElementById("arrowChange");
       const cadreSD = document.getElementById("cadreSD");
-      const lineCadreSD = document.getElementById('lineCadreSD')
+      const lineCadreSD = document.getElementById("lineCadreSD");
 
       const inputD = document.getElementById("inputD");
       const resetD = document.getElementById("resetD");
@@ -28533,9 +28536,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       crossCadreSD.addEventListener("click", (e) => {
         cadreSD.style.top = "";
         cadreSD.classList.remove("active");
-        cadreSD.classList.remove('fullScreen')
+        cadreSD.classList.remove("fullScreen");
         full = false;
-        lineCadreSD.classList.remove('fullScreen')
+        lineCadreSD.classList.remove("fullScreen");
       });
 
       [choiceD1, choiceD2].forEach((c) => {
@@ -28618,8 +28621,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       inputD1.addEventListener("blur", () => {
         cadreD1.classList.remove("active");
-        if([",","."].includes(inputD1.value.slice(-1))){
-          inputD1.value = inputD1.value.slice(0,-1)
+        if ([",", "."].includes(inputD1.value.slice(-1))) {
+          inputD1.value = inputD1.value.slice(0, -1);
         }
         if (inputD1.value.length !== 0) {
           inputD1.value = inputD1.value + D_symbolesD[currentDD];
@@ -28627,9 +28630,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             inputD2.value = inputD2.value + D_symbolesD[currentDV];
           }
         } else {
-          inputD1.value = 1.00 + D_symbolesD[currentDD];
-          inputD2.value = Math.round(dataConvert[currentDV] * 100) / 100 + D_symbolesD[currentDV];
-
+          inputD1.value = 1.0 + D_symbolesD[currentDD];
+          inputD2.value =
+            Math.round(dataConvert[currentDV] * 100) / 100 +
+            D_symbolesD[currentDV];
         }
       });
 
@@ -28673,8 +28677,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       inputD2.addEventListener("blur", () => {
         cadreD2.classList.remove("active");
-        if([",","."].includes(inputD2.value.slice(-1))){
-          inputD2.value = inputD2.value.slice(0,-1)
+        if ([",", "."].includes(inputD2.value.slice(-1))) {
+          inputD2.value = inputD2.value.slice(0, -1);
         }
 
         if (inputD2.value.length !== 0) {
@@ -28683,8 +28687,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             inputD1.value = inputD1.value + D_symbolesD[currentDD];
           }
         } else {
-          inputD1.value = 1.00 + D_symbolesD[currentDD];
-          inputD2.value = Math.round(dataConvert[currentDV] * 100) / 100 + D_symbolesD[currentDV];
+          inputD1.value = 1.0 + D_symbolesD[currentDD];
+          inputD2.value =
+            Math.round(dataConvert[currentDV] * 100) / 100 +
+            D_symbolesD[currentDV];
         }
       });
 
@@ -28715,11 +28721,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           currentChoiceD = choiceD2;
           changeD(choiceD2);
-          requestAnimationFrame(()=>{
+          requestAnimationFrame(() => {
             currentChoiceD = choiceD1;
-          changeD(choiceD1);
-          })
-          
+            changeD(choiceD1);
+          });
         });
       });
 
@@ -28864,9 +28869,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         difYD = CY - parseInt(cadreSD.style.top);
         if (
           difYD >
-          inputD.getBoundingClientRect().bottom +
-            inputD.getBoundingClientRect().height -
-            parseInt(cadreSD.style.top) || full
+            inputD.getBoundingClientRect().bottom +
+              inputD.getBoundingClientRect().height -
+              parseInt(cadreSD.style.top) ||
+          full
         ) {
           moveSD = false;
         }
@@ -28883,9 +28889,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreSD.style.transition = "";
         moveSD = false;
         if (cadreSD.getBoundingClientRect().top < window.innerHeight * 0.25) {
-          
           cadreSD.style.top = "";
-          cadreSD.getBoundingClientRect().top < window.innerHeight * 0.15 ? (cadreSD.classList.add("fullScreen"),full=true, lineCadreSD.classList.add('fullScreen')) : cadreSD.classList.add("active");
+          cadreSD.getBoundingClientRect().top < window.innerHeight * 0.15
+            ? (cadreSD.classList.add("fullScreen"),
+              (full = true),
+              lineCadreSD.classList.add("fullScreen"))
+            : cadreSD.classList.add("active");
         } else {
           crossCadreSD.click();
         }
@@ -29053,6 +29062,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         ZWL: "Dollar zimbabwéen",
       };
 
+      let L_detailed = ["EUR","USD","BRL","PAB","NIO","AUD","BND","HKD","SGD","FJD","NZD","AMD","PYG","ZMW","ALL","HNL","MDL","GIP","IMP","EGP","LSL","AZN","TMT","BAM","MZN","TWD","ARS","DOP","MXN","PHP","UYU","GTQ","OMR","MYR","BYN","INR","NPR","LKR","KES","UGX","PEN","CNY"]
+
       function createFlagD(clefD) {
         const flagErrorD = document.createElement("div");
         flagErrorD.className = "flagErrorD";
@@ -29107,11 +29118,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (oldFallback) oldFallback.remove(); // supprime le fallback si présent
 
         img.src = ``;
-        img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}-detailed.svg`;
-
-        img.onerror = () => {
+        if (L_detailed.includes(d)){
+          img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}-detailed.svg`;
+        }
+        else {
           img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}.svg`;
-
           img.onerror = () => {
             currentChoiceD.querySelector(".CadreDrapeauD").style.display =
               "none";
@@ -29121,7 +29132,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             fallback.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><g id="_01_align_center" data-name="01 align center"><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm8.647,7H17.426a19.676,19.676,0,0,0-2.821-4.644A10.031,10.031,0,0,1,20.647,7ZM16.5,12a10.211,10.211,0,0,1-.476,3H7.976A10.211,10.211,0,0,1,7.5,12a10.211,10.211,0,0,1,.476-3h8.048A10.211,10.211,0,0,1,16.5,12ZM8.778,17h6.444A19.614,19.614,0,0,1,12,21.588,19.57,19.57,0,0,1,8.778,17Zm0-10A19.614,19.614,0,0,1,12,2.412,19.57,19.57,0,0,1,15.222,7ZM9.4,2.356A19.676,19.676,0,0,0,6.574,7H3.353A10.031,10.031,0,0,1,9.4,2.356ZM2.461,9H5.9a12.016,12.016,0,0,0-.4,3,12.016,12.016,0,0,0,.4,3H2.461a9.992,9.992,0,0,1,0-6Zm.892,8H6.574A19.676,19.676,0,0,0,9.4,21.644,10.031,10.031,0,0,1,3.353,17Zm11.252,4.644A19.676,19.676,0,0,0,17.426,17h3.221A10.031,10.031,0,0,1,14.605,21.644ZM21.539,15H18.1a12.016,12.016,0,0,0,.4-3,12.016,12.016,0,0,0-.4-3h3.437a9.992,9.992,0,0,1,0,6Z"/></g></svg>`;
             currentChoiceD.querySelector(".CadreDrapeauD").before(fallback); // insère juste avant l'img
           };
-        };
+        }
         let tf = false;
 
         let CD1 = inputD1.value.slice(
@@ -29132,14 +29143,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         currentChoiceD === choiceD1
           ? ((currentDD = d), (tf = true))
           : (currentDV = d);
-        tf? (inputD2.value = "0",inputD2.readOnly = true,inputD1.readOnly = true, loaderD.style.display = "flex") : "";
 
-        infoConvert.textContent = 
+        tf
+          ? ((inputD2.value = "00"),
+            (inputD2.readOnly = true),
+            (inputD1.readOnly = true),
+            (loaderD.style.display = "flex"))
+          : "";
+
+        infoConvert.textContent =
           currentChoiceD === choiceD1
-            ? "1.00 " +
-              currentDD +
-              " = ..." +
-              currentDV
+            ? "1.00 " + currentDD + " = ..." + currentDV
             : "1.00 " +
               currentDD +
               " = " +
@@ -29173,12 +29187,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               inputD1.value = CD1 + D_symbolesD[currentDD];
 
               inputD2.value =
-                Math.round(dataConvert[currentDV] * parseFloat(CD1) * 100) / 100 +
+                Math.round(dataConvert[currentDV] * parseFloat(CD1) * 100) /
+                  100 +
                 D_symbolesD[currentDV];
 
-              inputD2.readOnly = false
-              inputD1.readOnly = false
-              loaderD.style.display = ""
+              inputD2.readOnly = false;
+              inputD1.readOnly = false;
+              loaderD.style.display = "";
 
               infoConvert.textContent =
                 "1.00 " +
@@ -29221,13 +29236,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         contentCadreSD.scrollTop = 0;
-         casesLetterD.forEach((c) => {
-            c.style.transform = "";
-            c.style.color = "";
-          });
-          scrollLetterD = document.getElementById("caseDA");
-          scrollLetterD.style.transform = "scale(1.1) translateX(-0.5em)";
-          scrollLetterD.style.color = "green";
+        casesLetterD.forEach((c) => {
+          c.style.transform = "";
+          c.style.color = "";
+        });
+        scrollLetterD = document.getElementById("caseDA");
+        scrollLetterD.style.transform = "scale(1.1) translateX(-0.5em)";
+        scrollLetterD.style.color = "green";
 
         Ld = Object.fromEntries(
           Object.entries(Ld).sort(([, a], [, b]) =>
@@ -29301,9 +29316,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             DrapeauBoxD.className = "DrapeauBoxD";
             let imgD = document.createElement("img");
             imgD.className = "DrapeauCadreD";
+            if(clefD)
+            
             imgD.src = `https://wise.com/web-art/assets/flags/${clefD.toLowerCase()}.svg`;
-
             imgD.onerror = () => {
+
               const newImgD = document.createElement("div");
               newImgD.className = "flagErrorD";
               const spnD = document.createElement("span");
@@ -29332,11 +29349,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             cadreDrapeauSD.append(DrapeauBoxD);
             contentTxtHeaderD.append(cadreDrapeauSD, txtElD);
             elD.append(contentTxtHeaderD);
-            if(clefD===currentDD || clefD === currentDV){
-              const spnElD = document.createElement('span')
-              spnElD.textContent = "✓"
-              spnElD.className = "spnElD"
-              elD.append(spnElD)
+            if (clefD === currentDD || clefD === currentDV) {
+              const spnElD = document.createElement("span");
+              spnElD.textContent = "✓";
+              spnElD.className = "spnElD";
+              elD.append(spnElD);
             }
             contentCadreSD.append(elD, ligneInSD);
 
@@ -29361,12 +29378,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             });
 
             elD.addEventListener("click", () => {
-              if (currentChoiceD===choiceD1 && clefD === currentDV || currentChoiceD===choiceD2 && clefD === currentDD ){
-                crossCadreSD.click()
-                arrowChange.click()
-                return
+              if (
+                (currentChoiceD === choiceD1 && clefD === currentDV) ||
+                (currentChoiceD === choiceD2 && clefD === currentDD)
+              ) {
+                crossCadreSD.click();
+                arrowChange.click();
+                return;
               }
-              requestAnimationFrame(()=>changeD(elD))
+              requestAnimationFrame(() => changeD(elD));
             });
           }
         });
