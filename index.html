@@ -4348,7 +4348,6 @@
         overscroll-behavior: contain; /* évite la propagation au parent */
         display: flex;
         position: relative;
-
         overflow-y: auto;
         flex-direction: column;
         align-items: center;
@@ -4356,8 +4355,8 @@
         width: 100%;
         flex: 1;
         min-height: 0;
-        scrollbar-width: thin;
         scrollbar-width: none;
+        padding-bottom: env(safe-area-inset-bottom);
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
       }
       .elD {
