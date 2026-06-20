@@ -4006,7 +4006,7 @@
         margin: 0 auto;
         flex: 1;
       }
-      #wrapperNbrClasser {
+      #cadreNbrClasser {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -4018,7 +4018,7 @@
         top: 0;
         bottom: 0;
         border-radius: 0.8em;
-        background: rgb(23, 77, 239);
+        background: rgb(16, 59, 188);
       }
       .nbrClasser {
         display: flex;
@@ -6060,7 +6060,7 @@
       </div>
       <!--HTML ModeClasser-->
       <div id="bigWrapperClasser">
-        <div id="wrapperNbrClasser"></div>
+        <div id="cadreNbrClasser"></div>
         <div id="wrapperClasser"></div>
       </div>
 
@@ -10810,7 +10810,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             cadreNext.classList.remove("good", "bad", "none", "visible");
             cadreNext.classList.add("none", "visible");
             wrapperClasser.innerHTML = ``;
-            wrapperNbrClasser.innerHTML = ``;
+            cadreNbrClasser.innerHTML = ``;
             cChooseTrouver = false;
             for (
               let i = 0;
@@ -10842,7 +10842,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               const jsp = document.createElement("div");
               jsp.textContent = i + 1;
               nbrClasser.append(jsp);
-              wrapperNbrClasser.append(nbrClasser);
+              cadreNbrClasser.append(nbrClasser);
 
               const elClasser = document.createElement("div");
               elClasser.className = "elClasser";
@@ -11043,14 +11043,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               D_elClasser[clef].dataset.goodOrder ===
               D_elClasser[clef].dataset.order
             ) {
-              wrapperNbrClasser.children[
+              cadreNbrClasser.children[
                 D_elClasser[clef].dataset.order
               ].style.color = "rgb(15, 250, 93)";
 
               D_elClasser[clef].classList.add("good");
               nbrGood += 1;
             } else {
-              wrapperNbrClasser.children[
+              cadreNbrClasser.children[
                 D_elClasser[clef].dataset.order
               ].style.color = "rgb(233, 78, 78)";
               D_elClasser[clef].classList.add("bad");
@@ -11327,13 +11327,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   D_elClasser[clef].dataset.goodOrder ===
                   D_elClasser[clef].dataset.order
                 ) {
-                  wrapperNbrClasser.children[
+                  cadreNbrClasser.children[
                     D_elClasser[clef].dataset.order
                   ].style.color = "rgb(15, 250, 93)";
 
                   D_elClasser[clef].classList.add("good");
                 } else {
-                  wrapperNbrClasser.children[
+                  cadreNbrClasser.children[
                     D_elClasser[clef].dataset.order
                   ].style.color = "rgb(233, 78, 78)";
                   D_elClasser[clef].classList.add("bad");
@@ -11510,7 +11510,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const bigWrapperClasser = document.getElementById("bigWrapperClasser");
       const wrapperClasser = document.getElementById("wrapperClasser");
       const titleModeClasser = document.getElementById("titleModeClasser");
-      const wrapperNbrClasser = document.getElementById("wrapperNbrClasser");
+      const cadreNbrClasser = document.getElementById("cadreNbrClasser");
 
       const btns4Choix = document.querySelectorAll(".btn4Choix");
       const cadreNext = document.querySelector(".cadreNext");
