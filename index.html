@@ -39,7 +39,7 @@
         user-select: none;
         -webkit-tap-highlight-color: transparent; /* retire le flash gris iOS */
         touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
-        /*outline : 1px solid blue;*/
+        /* outline : 1px solid blue; */
       }
       html {
         margin: 0px;
@@ -1806,6 +1806,7 @@
         touch-action: pan-y; /* le scroll est vertical, les taps passent */
         overscroll-behavior: contain; /* évite la propagation au parent */
         display: flex;
+        overflow-x : hidden;
         flex-direction: column;
         align-items: center;
         user-select: none;
@@ -2162,6 +2163,7 @@
       #gridCadre {
         display: grid;
         overflow-y: auto;
+        overflow-x: hidden;
         scrollbar-width: thin;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         justify-items: space-between;
@@ -2204,6 +2206,9 @@
         word-wrap: break-word;
       }
       .txtCelCadre {
+        display : flex;
+        max-width: 100%;
+        flex-wrap : wrap;
         font-size: 0.92em;
         color: rgba(255, 255, 255, 0.92);
         word-wrap: break-word;
@@ -2376,13 +2381,14 @@
       }
       #backListBox {
         display: flex;
-        position: absolute;
         align-items: center;
         justify-content: center;
-        left: 0.8em;
-        top: 0.8em;
+        justify-self: flex-start;
         width: 1.5em;
         height: 1.5em;
+        margin : 0.8em;
+        z-index: 10;
+        margin-bottom : -2em;
         border-radius: 5px;
         transition: background 0.2s ease;
       }
@@ -13456,7 +13462,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const listBox = document.querySelector(".listBox");
       const backListBox = document.getElementById("backListBox");
 
-      backListBox.addEventListener("click", () => {
+      backListBox.addEventListener("click", (e) => {
+        e.preventDefault()
         listBox.innerHTML = ``;
         vuesBox.style.transform = "translateX(0%)";
         cadreVue.style.height = "";
@@ -19071,7 +19078,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         AL: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: true,
           independent: true,
           population: 2363314,
@@ -19279,7 +19286,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         BA: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: true,
           independent: true,
           population: 3422000,
@@ -19369,7 +19376,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         BG: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: true,
           independent: true,
           population: 6437360,
@@ -20757,7 +20764,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         HR: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: true,
           independent: true,
           population: 3866233,
@@ -21513,7 +21520,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         ME: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: true,
           independent: true,
           population: 623327,
@@ -21585,7 +21592,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         MK: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: true,
           independent: true,
           population: 1822612,
@@ -22395,7 +22402,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         RO: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: true,
           independent: true,
           population: 19036031,
@@ -22413,7 +22420,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         RS: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: true,
           independent: true,
           population: 6567783,
@@ -23423,7 +23430,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         XK: {
           region: "Europe",
-          subregion: "Southeast Europe",
+          subregion: "Europe du Sud-Est",
           unMember: false,
           independent: true,
           population: 1585566,
@@ -24972,6 +24979,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             { label: "Europe de l'Est", id: "viewEasternEurope" },
             { label: "Europe du Nord", id: "viewNorthernEurope" },
             { label: "Europe du Sud", id: "viewSouthernEurope" },
+            { label: "Europe du Sud-Est", id: "viewSoutheastEurope" },
             { label: "Europe de l'Ouest", id: "viewWesternEurope" },
           ],
         },
@@ -25778,6 +25786,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let difY;
       let difX;
       cadreVue.addEventListener("mousedown", (e) => {
+        return
         cadreVue.style.cursor = "grabbing";
         moveCV = true;
         const CX = e.clientX;
@@ -27994,6 +28003,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       backSearch.addEventListener("click", () => {
         setTimeout(() => {
           inputC.value = "";
+          fillContentC(LfInit)
         }, 100);
         cadreS.classList.remove("active");
       });
