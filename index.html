@@ -4308,7 +4308,7 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: rgba(0, 34, 30, 0.5);
+        color: rgba(7, 78, 69, 0.5);
         width: 1.2em;
         height: auto;
         transition:
@@ -28743,10 +28743,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       // Aphabet
-
+      let cLD = "rgb(0, 102, 43)" // color lettre active
       let scrollLetterD = document.getElementById("caseDA");
       scrollLetterD.style.transform = "scale(1.1) translateX(-0.5em)";
-      scrollLetterD.style.color = "green";
+      scrollLetterD.style.color = cLD;
       contentCadreSD.addEventListener("pointerdown", (e) =>
         e.stopPropagation(),
       );
@@ -28803,7 +28803,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           });
           scrollLetterD = document.getElementById("caseD" + closestLetterD);
           scrollLetterD.style.transform = "scale(1.1) translateX(-0.5em)";
-          scrollLetterD.style.color = "green";
+          scrollLetterD.style.color = cLD;
         }
       });
 
@@ -28834,7 +28834,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (letter) {
           lettersD.forEach((L) => {
             L.querySelector(".caseLetterD").style.transform = "";
-            L.querySelector(".caseLetterD").style.color = "green";
+            L.querySelector(".caseLetterD").style.color = cLD;
           });
 
           letter.querySelector(".caseLetterD").style.transform =
@@ -29256,7 +29256,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
         scrollLetterD = document.getElementById("caseDA");
         scrollLetterD.style.transform = "scale(1.1) translateX(-0.5em)";
-        scrollLetterD.style.color = "green";
+        scrollLetterD.style.color = cLD;
 
         Ld = Object.fromEntries(
           Object.entries(Ld).sort(([, a], [, b]) =>
