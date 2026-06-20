@@ -28063,9 +28063,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       optionModeS.forEach((option) => {
         option.addEventListener("click", () => {
           currentSearching = option.dataset.searching;
-          currentSearching === "pays"
-            ? fillContentC(Ls)
-            : fillContentFlag(LfInit);
 
           optionModeS.forEach((opt) => opt.classList.remove("active"));
           option.classList.add("active");
@@ -28077,6 +28074,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             // Logique pour afficher les pays
             titleCadreS.querySelector("span").textContent = "Pays";
           }
+
+          requestAnimationFrame(()=>{
+             currentSearching === "pays"
+            ? fillContentC(Ls)
+            : fillContentFlag(LfInit);
+          })
         });
       });
 
