@@ -4639,7 +4639,7 @@
       #txtLastUpdate {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
         max-width: calc(100% - 2em);
         position: absolute;
@@ -10199,10 +10199,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         <div class="celPopD" data-d="EUR" data-v="GBP">EUR/GBP</div>
       </div>
 
-      <div id="txtLastUpdate">
-        <span style="flex-wrap: nowrap">Dernière actualisation :</span>
-        <p style="letter-spacing: none"></p>
-      </div>
+    <div id="txtLastUpdate">
+  <span style="flex-wrap: nowrap">Dernière actualisation :</span>
+  <p id="pLast" style="letter-spacing: none"></p>
+  <p style="width: 100%">
+    Taux fournis par <a href="https://www.exchangerate-api.com">ExchangeRate-API</a>
+  </p>
+</div>
     </div>
 
     <!--Script Home-->
@@ -28596,9 +28599,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           let a = dataLatest.slice(13, 17);
           let h = dataLatest.slice(18, 26);
           let utc = dataLatest.slice(26);
-          document
-            .getElementById("txtLastUpdate")
-            .querySelector("p").textContent =
+         document.getElementById('pLast').textContent =
             "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " + h + utc;
 
           inputD1.value = "1.00" + "€";
@@ -29208,9 +29209,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               let h = dataLatest.slice(18, 26);
               let utc = dataLatest.slice(26);
 
-              document
-                .getElementById("txtLastUpdate")
-                .querySelector("p").textContent =
+              document.getElementById('pLast').textContent =
                 "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " + h + utc;
 
               inputD1.value = CD1 + D_symbolesD[currentDD];
