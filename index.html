@@ -4142,7 +4142,6 @@
       }
 
       /*CSS Devises*/
-
       .inputD:focus {
         outline: none;
       }
@@ -4153,6 +4152,14 @@
         opacity: 1;
         visibility: visible;
       }
+      #inputSD{
+        width : 100%;
+        background : white;
+      }
+      #resetSD{
+        cursor : pointer;
+      }
+
       /* sizing svg icons */
 
       #phoneDevise {
@@ -9926,7 +9933,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           <input
             class="inputD"
-            id="inputD"
+            id="inputSD"
             placeholder="Rechercher"
             required=""
             autocomplete="off"
@@ -9935,7 +9942,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             spellcheck="false"
             type="text"
           />
-          <button class="reset" id="resetD" type="reset">
+          <button class="reset" id="resetSD" type="reset">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-6 w-6"
@@ -28462,8 +28469,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const cadreSD = document.getElementById("cadreSD");
       const lineCadreSD = document.getElementById("lineCadreSD");
 
-      const inputD = document.getElementById("inputD");
-      const resetD = document.getElementById("resetD");
+      const inputSD = document.getElementById("inputSD");
+      const resetSD = document.getElementById("resetSD");
       const contentCadreSD = document.getElementById("contentCadreSD");
       contentCadreSD.addEventListener("pointerdown", (e) => {
         e.stopPropagation();
@@ -28543,7 +28550,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       [choiceD1, choiceD2].forEach((c) => {
         c.addEventListener("click", () => {
-          inputD.value = "";
+          inputSD.value = "";
           fillContentD(D_nDevises);
           currentChoiceD = c;
           cadreSD.style.top = "";
@@ -28869,8 +28876,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         difYD = CY - parseInt(cadreSD.style.top);
         if (
           difYD >
-            inputD.getBoundingClientRect().bottom +
-              inputD.getBoundingClientRect().height -
+            inputSD.getBoundingClientRect().bottom +
+              inputSD.getBoundingClientRect().height -
               parseInt(cadreSD.style.top) ||
           full
         ) {
@@ -29223,7 +29230,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       function fillContentD(Ld) {
-        if (Object.keys(Ld).length === 0 && inputD.value.length !== 0) {
+        if (Object.keys(Ld).length === 0 && inputSD.value.length !== 0) {
           contentCadreSD.innerHTML = `
         <p style="text-align : center;  margin-top : 4em; color: rgba(0,0,0,0.6); font-size = 1.2em">
               Aucun résultat
@@ -29231,7 +29238,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           return;
         }
 
-        if (inputD.value.length === 0) {
+        if (inputSD.value.length === 0) {
           Ld = D_nDevises;
         }
 
@@ -29264,7 +29271,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           GBP: "Livre sterling",
           BRL: "Réal brésilien",
         };
-        if (inputD.value.length === 0) {
+        if (inputSD.value.length === 0) {
           const txtPopSD = document.createElement("div");
           txtPopSD.id = txtPopSD;
           txtPopSD.className = "txtPop";
@@ -29278,7 +29285,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // delete Ld[choiceD1.dataset.devise];
         // delete L_pop[choiceD1.dataset.devise];
 
-        const L_LD = inputD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
+        const L_LD = inputSD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
 
         const D_clone = structuredClone(D_alphabet);
 
@@ -29289,8 +29296,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             for (const [baseLetter, accents] of Object.entries(D_clone)) {
               if (
                 accents.includes(firstChar) &&
-                ((inputD.value.length === 0 && L !== L_pop) ||
-                  inputD.value.length !== 0)
+                ((inputSD.value.length === 0 && L !== L_pop) ||
+                  inputSD.value.length !== 0)
               ) {
                 const bandeLetter = document.createElement("div");
                 bandeLetter.className = "bandeLetterSD";
@@ -29397,17 +29404,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document
         .querySelector(".form")
         .addEventListener("pointerdown", (e) => e.stopPropagation());
-      resetD.addEventListener("click", (e) => {
+      resetSD.addEventListener('pointerdown',(e)=>e.stopPropagation())
+      resetSD.addEventListener("click", (e) => {
         e.stopPropagation();
         setTimeout(() => {
           fillContentD({});
         }, 10);
       });
 
-      inputD.addEventListener("input", (e) => {
+      inputSD.addEventListener("input", (e) => {
         let Ld = {};
         for (const clefD of Object.keys(D_nDevises)) {
-          const val = inputD.value
+          const val = inputSD.value
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
             .toUpperCase();
@@ -29418,7 +29426,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               .replace(/[\u0300-\u036f]/g, "")
               .toUpperCase();
 
-          const valL = inputD.value
+          const valL = inputSD.value
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
             .toLowerCase();
@@ -29430,7 +29438,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               .toLowerCase();
           if (
             (nom.includes(val) || nomL.includes(valL)) &&
-            /*valL === nomL.slice(0, val.length)*/ inputD.value.length != 0
+            /*valL === nomL.slice(0, val.length)*/ inputSD.value.length != 0
           ) {
             Ld[clefD] = D_nDevises[clefD];
           }
