@@ -2393,6 +2393,9 @@
       }
 
       .cross {
+        display : flex;
+        justify-content: center;
+        align-items: center;
         all: unset; /* enlève TOUT le style natif */
         box-sizing: border-box; /* indispensable après all: unset */
         cursor: pointer;
@@ -2404,10 +2407,13 @@
         width: 1.5em;
         height: 1.5em;
         fill: white;
+        transition : background 0.2s ease
       }
       .cross:active {
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(0, 0, 0, 0.05);
       }
+
+      
       .cadreVue-inner {
         width: 100%;
         height: fit-content;
@@ -2859,9 +2865,6 @@
         left: 2em;
         width: 3em;
         height: 3em;
-      }
-      .back:active {
-        background: rgba(255, 255, 255, 0.2);
       }
       #backMaps {
         background: rgba(56, 140, 223, 0.4);
@@ -4300,16 +4303,29 @@
       }
 
       #crossCadreSD {
-        fill: rgba(0, 0, 0, 0.4);
+        
+        display : flex;
+        justify-content: center;
+        align-items: center;
         align-self: flex-start;
-        margin-right: 0em;
-        margin-left: 1.5em;
-        margin-bottom : 1em;
-      }
-      #crossCadreSD svg {
+        cursor: pointer;
         height: 2.5em;
         width: 2.5em;
+        border-radius: 50%;
+        margin-left: 1.5em;
+        margin-bottom : 1em;
+        transition : background 0.2s ease
       }
+      #crossCadreSD svg {
+        fill: rgba(0, 0, 0, 0.4);
+        border-radius: 50%;
+        height :100%
+        
+      }
+      #crossCadreSD:active{
+        background: rgba(0, 0, 0, 0.05);
+      }
+        
 
       #wrapperContentSD {
         display: flex;
@@ -4353,6 +4369,11 @@
       }
       .elD.active {
         background: rgba(0, 0, 0, 0.05);
+      }
+      .spnElD{
+        position : absolute;
+        font-size : 1.5em;
+        right : 2.5em;
       }
       .flagErrorD {
         display: flex;
@@ -9844,19 +9865,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             />
           </svg>
         </div>
-        <button class="cross" id="crossCadreSD" onclick="">
+        <div  id="crossCadreSD">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Outline"
             viewBox="0 0 24 24"
-            width="100%"
-            height="100%"
           >
             <path
               d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
             />
           </svg>
-        </button>
+        </div>
         <div id="titleCadreSD">Sélectionnez une devise</div>
 
         <form class="form" style="width: 60%; max-width: 280px">
@@ -29205,10 +29224,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         delete Ld.KPW;
-        delete Ld[choiceD2.dataset.devise];
-        delete L_pop[choiceD2.dataset.devise];
-        delete Ld[choiceD1.dataset.devise];
-        delete L_pop[choiceD1.dataset.devise];
+        // delete Ld[choiceD2.dataset.devise];
+        // delete L_pop[choiceD2.dataset.devise];
+        // delete Ld[choiceD1.dataset.devise];
+        // delete L_pop[choiceD1.dataset.devise];
 
         const L_LD = inputD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
 
@@ -29279,6 +29298,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             cadreDrapeauSD.append(DrapeauBoxD);
             contentTxtHeaderD.append(cadreDrapeauSD, txtElD);
             elD.append(contentTxtHeaderD);
+            if(clefD===currentDD || clefD === currentDV){
+              const spnElD = document.createElement('span')
+              spnElD.textContent = "✓"
+              spnElD.className = "spnElD"
+              elD.append(spnElD)
+            }
             contentCadreSD.append(elD, ligneInSD);
 
             elD.style.transform = "translateY(-0.8em)";
@@ -29302,6 +29327,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             });
 
             elD.addEventListener("click", () => {
+              if (currentChoiceD===choiceD1 && clefD === currentDV || currentChoiceD===choiceD2 && clefD === currentDD ){
+                crossCadreSD.click()
+                arrowChange.click()
+                return
+              }
               changeD(elD);
             });
           }
