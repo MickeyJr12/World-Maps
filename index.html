@@ -29405,7 +29405,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
             elD.addEventListener("pointerdown", () => {
               elD.classList.add("active");
-            });
+            },{passive : true});
 
             document.addEventListener("pointerup", () => {
               elD.classList.remove("active");
