@@ -4034,6 +4034,7 @@
         position: absolute;
         align-items: center;
         justify-content: center;
+        outline : 0.8px solid rgba(255,255,255,0);
         width: 100%;
         height: 4em;
         background: #1659f7;
@@ -4041,10 +4042,11 @@
         color: white;
         font-family: sans-serif;
         box-sizing: border-box;
+        transition : outline 0.2s ease;
         /* position en absolu géré en JS, transition gérée en JS */
       }
       .elClasser.active{
-        outline : 0.8px solid rgba(255,255,255,0.2)
+        outline :1px solid rgba(255,255,255,0.4)
       }
 
       .elClasser.good {
