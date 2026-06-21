@@ -4043,6 +4043,9 @@
         box-sizing: border-box;
         /* position en absolu géré en JS, transition gérée en JS */
       }
+      .elClasser.active{
+        outline : 0.8px solid rgba(255,255,255,0.2)
+      }
 
       .elClasser.good {
         pointer-events: none;
@@ -6914,7 +6917,7 @@
 
           <div id="mInfoBox">
             <div class="titleCadre" id="mTitleCadre"></div>
-            <div class="txtCapitaleCadre txtCapitaleCadres" id="mCapitale">
+            <div class="txtCapitaleCadre txtCapitaleCadres">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 id="Filled"
@@ -6925,7 +6928,7 @@
                   d="M12,.042a9.992,9.992,0,0,0-9.981,9.98c0,2.57,1.99,6.592,5.915,11.954a5.034,5.034,0,0,0,8.132,0c3.925-5.362,5.915-9.384,5.915-11.954A9.992,9.992,0,0,0,12,.042ZM12,14a4,4,0,1,1,4-4A4,4,0,0,1,12,14Z"
                 />
               </svg>
-              <span class="capitaleLabel"></span>
+              <span class="capitaleLabel" id="mCapitale"></span>
             </div>
           </div>
 
@@ -7792,7 +7795,7 @@
             </div>
           </div>
           <div class="titleCadre" id="titleCadre"><h2>Russie (RU)</h2></div>
-          <div class="txtCapitaleCadre txtCapitaleCadres" id="capitale">
+          <div class="txtCapitaleCadre txtCapitaleCadres">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               id="Layer_1"
@@ -7805,7 +7808,7 @@
                 d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0-6a2,2,0,1,1-2,2A2,2,0,0,1,12,6Zm8.66,3.157-.719-.239A8,8,0,0,0,12,0,7.993,7.993,0,0,0,4.086,9.092a5.045,5.045,0,0,0-2.548,1.3A4.946,4.946,0,0,0,0,14v4.075a5.013,5.013,0,0,0,3.6,4.8l2.87.9A4.981,4.981,0,0,0,7.959,24a5.076,5.076,0,0,0,1.355-.186l5.78-1.71a2.987,2.987,0,0,1,1.573,0l2.387.8A4,4,0,0,0,24,19.021V13.872A5.015,5.015,0,0,0,20.66,9.156ZM7.758,3.762a5.987,5.987,0,0,1,8.484,0,6.037,6.037,0,0,1,.011,8.5L12.7,15.717a.992.992,0,0,1-1.389,0L7.758,12.277A6.04,6.04,0,0,1,7.758,3.762ZM22,19.021a1.991,1.991,0,0,1-.764,1.572,1.969,1.969,0,0,1-1.626.395L17.265,20.2a5.023,5.023,0,0,0-2.717-.016L8.764,21.892a3,3,0,0,1-1.694-.029l-2.894-.9A3.013,3.013,0,0,1,2,18.075V14a2.964,2.964,0,0,1,.92-2.163,3.024,3.024,0,0,1,1.669-.806A8.021,8.021,0,0,0,6.354,13.7l3.567,3.453a2.983,2.983,0,0,0,4.174,0l3.563-3.463a7.962,7.962,0,0,0,1.813-2.821l.537.178A3.006,3.006,0,0,1,22,13.872Z"
               />
             </svg>
-            <span class="capitaleLabel"></span>
+            <span class="capitaleLabel" id="capitale"></span>
           </div>
 
           <!--Menu Cadre-->
@@ -10939,6 +10942,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                     if (i !== el) i.classList.add("waitClasser");
                   });
                   el.style.transform = "scale(1.03)";
+                  el.classList.add('active')
                   dragging = true;
                   el.style.zIndex = 10000;
                   el.style.transition = "background 0.2s ease";
@@ -10975,6 +10979,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
                 function onEnd() {
                   itmsClasser.forEach((i) => i.classList.remove("waitClasser"));
+                  el.classList.remove('active')
+
                   if (!dragging) return;
                   dragging = false;
                   el.style.transform = "";
@@ -12681,6 +12687,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const drapeauCadre = document.getElementById("drapeauCadre");
       const titleCadre = document.getElementById("titleCadre");
       const capitales = document.querySelectorAll(".capitaleLabel");
+      const capitale = document.getElementById('capitale')
       const itemBlason = document.querySelector(".itemBlason");
       const cadreContours = document.getElementById("cadreContours");
       const cadreBlason = document.getElementById("cadreBlason");
@@ -25639,10 +25646,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
         mTitleCadre.textContent = viewState ? D_us[id.slice(-2)].n : L_q[id].n;
 
-        capitales.forEach(
-          (cap) =>
-            (cap.textContent = viewState ? D_us[id.slice(-2)].c : L_q[id].c),
-        );
+        mCapitale.textContent = viewState ? D_us[id.slice(-2)].c : L_q[id].c
+        capitale.textContent = viewState ? ("Capitale : " + D_us[id.slice(-2)].c) : ("Capitale : " + L_q[id].c)
+        
 
         txtsCelCadre.forEach((t) => (t.textContent = ""));
         loadingCadre.forEach((L) => {
