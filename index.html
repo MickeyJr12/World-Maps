@@ -28078,6 +28078,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //Header
       titleCadreS.addEventListener("click", (e) => {
         e.stopPropagation();
+        cadreFilterS.classList.contains("active")
+          ? burgerInput.click()
+          : 1 === 1;
         cadreClasser.classList.remove("active");
         cadreFilterS.classList.remove("active");
         cadreModeS.classList.toggle("active");
@@ -28097,6 +28100,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           optionModeS.forEach((opt) => opt.classList.remove("active"));
           option.classList.add("active");
           cadreModeS.classList.remove("active");
+        document.getElementById("arrowTitle").classList.remove("active")
           if (option.id === "flagS") {
             // Logique pour afficher les drapeaux
             titleCadreS.querySelector("span").textContent = "Drapeaux";
@@ -28142,6 +28146,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
       worldFilter.addEventListener("click", (e) => {
         e.stopPropagation();
+        document.getElementById("arrowTitle").classList.remove("active")
         cadreClasser.classList.remove("active");
         cadreModeS.classList.remove("active");
         if (e.target.closest("label")) return; // le label gère déjà via change
@@ -28326,6 +28331,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       gridChoice.addEventListener("click", (e) => {
         e.stopImmediatePropagation();
+
+        cadreFilterS.classList.contains("active")
+          ? burgerInput.click()
+          : 1 === 1;
+        cadreFilterS.classList.remove("active");
+        cadreClasser.classList.remove("active");
+        cadreModeS.classList.remove("active");
+        document.getElementById("arrowTitle").classList.remove("active")
+        gridChoice.classList.remove("active");
         if (e.target.closest(".optionGrid")) return; // l'option gère déjà via click
         gridChoice.classList.remove("active");
       });
@@ -28341,9 +28355,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       classer.addEventListener("click", (e) => {
         e.stopPropagation();
+        cadreFilterS.classList.contains("active")
+          ? burgerInput.click()
+          : "";
+
+        document.getElementById("arrowTitle").classList.remove("active")
         cadreModeS.classList.remove("active");
         cadreFilterS.classList.remove("active");
-
         cadreClasser.classList.toggle("active");
       });
 
@@ -28383,6 +28401,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreFilterS.classList.remove("active");
         cadreClasser.classList.remove("active");
         cadreModeS.classList.remove("active");
+        document.getElementById("arrowTitle").classList.remove("active")
         gridChoice.classList.remove("active");
         document.getElementById("arrowTitle").classList.remove("active");
       });
