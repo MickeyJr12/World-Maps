@@ -11927,9 +11927,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           p.style.zIndex = "";
         });
         L_replace.forEach((p) => {
+          p.style.zIndex = "";
+          if(parseInt(qNumber.textContent) >= maxQ &&  p.id==="pause4Choix"){return}
+
           p.style.opacity = "1";
           p.style.pointerEvents = "all";
-          p.style.zIndex = "";
         });
         activerCarte();
         cadreNext.className = classBtnNext;
