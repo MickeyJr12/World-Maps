@@ -25806,6 +25806,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           afficheVue();
         }
       });
+
+      
+      let clLegend = "" //className de cadreLegend
       function afficheVue() {
         if (!cadreVueTF) {
           cadreVue.style.opacity = "1";
@@ -25819,6 +25822,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
             wrapperTool.style.filter = "blur(4px) brightness(0.65)";
             wrapperTool.style.pointerEvents = "none";
+
+            calque.classList.contains('active') ? calque.click() : ""
+
+            footerLegendClick()
+
+            clLegend = cadreLegend.className
+            cadreLegend.className = ""
+          
 
             if (isMobile) {
               opensearch.style.filter = "blur(4px) brightness(0.65)";
@@ -25836,7 +25847,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           wrapperTool.style.pointerEvents = "all";
 
           mCadre.style.filter = "";
-          mCadre.style.pointerEvents = "";
+          mCadre.style.pointerEvents = "";   
+
+
+          cadreLegend.className = clLegend
+
+          
+          
+
+
           if (isMobile) {
             opensearch.style.filter = "";
             opensearch.style.pointerEvents = "";
