@@ -28676,11 +28676,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           );
         }
       });
-      inputD1.addEventListener("input", (e) => {
-        let value = e.target.value;
 
+      inputD1.addEventListener("input", (e) => {
+        let value = e.target.value; 
         value = value.replace(",", ".");
         value = value.replace(/[^0-9.]/g, ""); // enlève tout sauf chiffres et point
+
+        if (e.data===null && valueD1==="1.00"){
+          inputD1.value= ""
+        }
 
         const parts = value.split(".");
         if (parts.length > 2) {
