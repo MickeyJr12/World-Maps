@@ -11353,6 +11353,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             if (parseInt(qNumber.textContent) >= maxQ) {
               document.querySelector(".btn-suivant").textContent = "Fin";
               btnReprendre.textContent = "Rejouer";
+              pause4Choix.style.opacity = "0";
+              pause4Choix.style.pointerEvents = "none";
+
             }
 
             const L_goodOrder = [...L_propClasser].sort((a, b) =>
@@ -12218,7 +12221,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       btnReprendre.addEventListener("click", () => {
-        if (!cadreNext.classList.contains("visible") && !cChooseTrouver) {
+        if ((!cadreNext.classList.contains("visible") || L_config.m === "modeClasser") && !cChooseTrouver) {
           startChrono(currentChrono);
         }
 
