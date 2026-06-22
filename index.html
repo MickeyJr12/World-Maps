@@ -13513,9 +13513,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           key: "banqueMondiale",
         },
         {
-          label: "Union Afriqueine",
-          id: "orgaUnionAfriqueine",
-          key: "unionAfriqueine",
+          label: "Union Africaine",
+          id: "orgaUnionAfricaine",
+          key: "unionAfricaine",
         },
         { label: "FMI", id: "orgaFMI", key: "fmi" },
       ];
@@ -23808,7 +23808,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           c: "Bangui",
           p: 4829767,
           s: 622984,
-          n: "Rep. centrAfriqueine",
+          n: "Rep. centrAfricaine",
         },
         CG: {
           d: "Difficile",
@@ -24931,7 +24931,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         P_info[code].banqueMondiale = !banqueMondialeNonMembers.has(code);
       }
       //***
-      const unionAfriqueineCountries = new Set([
+      const unionAfricaineCountries = new Set([
         "DZ",
         "AO",
         "BJ",
@@ -24988,7 +24988,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       ]);
 
       for (const code in P_info) {
-        P_info[code].unionAfriqueine = unionAfriqueineCountries.has(code);
+        P_info[code].unionAfricaine = unionAfricaineCountries.has(code);
       }
       //***
       const fmiNonMembers = new Set(["CU", "KP"]);
@@ -25000,7 +25000,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //---------
       //Cadre
 
-      //Clefs ajoutées : g7, opepplus, exURSS, ligueArabe, moyenOrient, unesco, banqueMondiale, unionAfriqueine, fmi
+      //Clefs ajoutées : g7, opepplus, exURSS, ligueArabe, moyenOrient, unesco, banqueMondiale, unionAfricaine, fmi
 
       const delay = 40; // ms entre chaque apparition
 
@@ -25487,7 +25487,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           "ligueArabe",
           "unesco",
           "banqueMondiale",
-          "unionAfriqueine",
+          "unionAfricaine",
           "fmi",
         ];
 
@@ -25500,7 +25500,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           ligueArabe: "Ligue arabe",
           unesco: "UNESCO",
           banqueMondiale: "Banque mondiale",
-          unionAfriqueine: "Union Afriqueine",
+          unionAfricaine: "Union Africaine",
           fmi: "FMI",
         };
 
