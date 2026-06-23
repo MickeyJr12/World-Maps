@@ -28710,7 +28710,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if ([",", "."].includes(inputD1.value.slice(-1))) {
           inputD1.value = inputD1.value.slice(0, -1);
         }
-        if (inputD1.value.length !== 0) {
+        if (!["","1","1.0"].includes(inputD1.value)) {
           inputD1.value = inputD1.value + D_symbolesD[currentDD];
           if (!isNaN(inputD2.value)) {
             inputD2.value = inputD2.value + D_symbolesD[currentDV];
@@ -28778,7 +28778,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           inputD2.value = inputD2.value.slice(0, -1);
         }
 
-        if (inputD2.value.length !== 0) {
+        if (!["","1","1.0"].includes(inputD2.value)) {
           inputD2.value = inputD2.value + D_symbolesD[currentDV];
           if (!isNaN(inputD1.value)) {
             inputD1.value = inputD1.value + D_symbolesD[currentDD];
