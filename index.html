@@ -11929,7 +11929,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         L_replace.forEach((p) => {
           p.style.zIndex = "";
           if(parseInt(qNumber.textContent) >= maxQ &&  p.id==="pause4Choix"){return}
-
+         
           p.style.opacity = "1";
           p.style.pointerEvents = "all";
         });
@@ -28663,6 +28663,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         })
         .catch((error) => console.error("Erreur fetch:", error));
 
+        //----------------------
+        let valD1 = "1.00"
       inputD1.addEventListener("focus", () => {
         cadreD1.classList.add("active");
         if (
@@ -28674,17 +28676,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             0,
             -parseInt(D_symbolesD[currentDD].length),
           );
+          valD1 = inputD1.value 
         }
       });
-
       inputD1.addEventListener("input", (e) => {
-        let value = e.target.value; 
+        let value = e.target.value;
+        if (e.inputType === 'deleteContentBackward'&&(valD1==="1.00" || inputD2.value === "1.00" + D_symbolesD[currentDV])){
+          value = ""
+          inputD1.value = ""
+        }
         value = value.replace(",", ".");
         value = value.replace(/[^0-9.]/g, ""); // enlève tout sauf chiffres et point
-
-        if (e.data===null && valueD1==="1.00"){
-          inputD1.value= ""
-        }
 
         const parts = value.split(".");
         if (parts.length > 2) {
@@ -28700,6 +28702,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (inputD1.value === "") {
           inputD2.value = "";
         }
+        valD1 = inputD1.value
       });
 
       inputD1.addEventListener("blur", () => {
@@ -28721,9 +28724,31 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       //------------
+      let valD2= "1.00"
+      inputD2.addEventListener("focus", () => {
+        cadreD2.classList.add("active");
+        if (
+          isNaN(
+            inputD2.value.slice(-parseInt(D_symbolesD[currentDV].length) - 1),
+          )
+        ) {
+          inputD2.value = inputD2.value.slice(
+            0,
+            -parseInt(D_symbolesD[currentDV].length),
+          );
+        }
+
+          valD2 = inputD2.value 
+
+      });
+
 
       inputD2.addEventListener("input", (e) => {
         let value = e.target.value;
+         if (e.inputType === 'deleteContentBackward'&&(valD2==="1.00" || inputD1.value === "1.00" + D_symbolesD[currentDD])){
+          value = ""
+          inputD2.value = ""
+        }
 
         value = value.replace(",", ".");
         value = value.replace(/[^0-9.]/g, ""); // enlève tout sauf chiffres et point
@@ -28742,20 +28767,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (inputD2.value === "") {
           inputD1.value = "";
         }
-      });
 
-      inputD2.addEventListener("focus", () => {
-        cadreD2.classList.add("active");
-        if (
-          isNaN(
-            inputD2.value.slice(-parseInt(D_symbolesD[currentDV].length) - 1),
-          )
-        ) {
-          inputD2.value = inputD2.value.slice(
-            0,
-            -parseInt(D_symbolesD[currentDV].length),
-          );
-        }
+        valD2 = inputD2.value
+
       });
 
       inputD2.addEventListener("blur", () => {
