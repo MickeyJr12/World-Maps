@@ -3024,6 +3024,9 @@
         border: 1.6px solid rgba(192, 57, 43, 0.25);
         transition: background 0.08s ease;
       }
+      .btnMode:active {
+        background : rgba(218,37,37,0.05)
+      }
 
       #gridQR {
         display: grid;
@@ -3071,7 +3074,7 @@
         transition: background 0.08s ease;
       }
       .qr:active {
-        background: rgba(0, 0, 0, 0.05);
+        background: rgba(218,37,37,0.05);
       }
 
       #cadreChoixRegion {
@@ -12525,6 +12528,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const paths = svg.querySelectorAll("path");
       const pathsUs = svgUs.querySelectorAll("path");
       const L_circles = [
+        "HK",
         "PM",
         "BH",
         "BV",
@@ -12590,6 +12594,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "KN",
       ]; // mettre leur cercle invisibles
       const D_factorC = {
+        HK : 2,
         BH: 1.5,
         BV: 6.5,
         BM: 5,
