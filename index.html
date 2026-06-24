@@ -2380,9 +2380,42 @@
         margin-top: 0.5em;
       }
       .perCountry {
+        display : flex;
+        justify-content: flex-start;
         align-self: flex-start;
-        margin: 0.1em;
+        gap : 0.8em;
+        margin: 0.4em 0.1em;
       }
+
+
+       .CadreDrapeauPerC {
+        display: flex;
+        position: relative;
+        overflow : hidden;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        max-height : 1.2em;
+        height: 1.2em; /* hauteur fixe */
+        aspect-ratio: 1/1;
+      }
+
+      .DrapeauBoxPerC {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: 100%;
+      }
+      .DrapeauCadrePerC {
+        height: 100%;
+        object-fit: contain;
+      }
+
+
+
       #backListBox {
         display: flex;
         align-items: center;
@@ -26994,6 +27027,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           r.subs.forEach((s) => {
             const L = [];
+            const D = {}
             const subI = document.createElement("div");
             subI.className = "perSub";
             const subTitle = document.createElement("h3");
@@ -27010,12 +27044,29 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 return;
               }
               L.push(L_q[path.id].n);
+              D[L_q[path.id].n] = path.id
             });
             L.sort();
             L.forEach((name) => {
               const countryI = document.createElement("div");
               countryI.className = "perCountry";
-              countryI.textContent = "• " + name;
+
+            const CadreDrapeauPerC = document.createElement("div");
+            CadreDrapeauPerC.className = "CadreDrapeauPerC";
+
+            const DrapeauBoxPerC = document.createElement("div");
+            DrapeauBoxPerC.className = "DrapeauBoxPerC";
+            let imgPerC = document.createElement("img");
+            imgPerC.className = "DrapeauCadrePerC";
+
+            imgPerC.src = `https://flagcdn.com/${D[name].toLowerCase()}.svg`
+
+            DrapeauBoxPerC.append(imgPerC)
+            CadreDrapeauPerC.append(DrapeauBoxPerC)
+            countryI.append("•")
+            countryI.append(CadreDrapeauPerC)
+
+              countryI.append(name);
               subI.appendChild(countryI);
             });
 
