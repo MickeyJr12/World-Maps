@@ -647,7 +647,6 @@
         pointer-events: none;
         width: 2em;
         opacity: 1;
-        outline: 1px solid reed;
         right: 0em;
         max-width: 2em;
         transform: rotate(90deg);
@@ -2384,7 +2383,7 @@
         justify-content: flex-start;
         align-self: flex-start;
         gap : 0.8em;
-        margin: 0.4em 0.1em;
+        margin: 0.4em;
       }
 
 
@@ -27083,6 +27082,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           subI.appendChild(subTitle);
 
           const L = [];
+          const D = {}
 
           paths.forEach((path) => {
             if (!P_info[path.id]) {
@@ -27092,13 +27092,34 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               return;
             }
             L.push(L_q[path.id].n);
+            D[L_q[path.id].n] = path.id
+
           });
           L.sort();
           L.forEach((name) => {
-            const countryI = document.createElement("div");
-            countryI.className = "perCountry";
-            countryI.textContent = "• " + name;
-            subI.appendChild(countryI);
+
+            
+              const countryI = document.createElement("div");
+              countryI.className = "perCountry";
+
+            const CadreDrapeauPerC = document.createElement("div");
+            CadreDrapeauPerC.className = "CadreDrapeauPerC";
+
+            const DrapeauBoxPerC = document.createElement("div");
+            DrapeauBoxPerC.className = "DrapeauBoxPerC";
+            let imgPerC = document.createElement("img");
+            imgPerC.className = "DrapeauCadrePerC";
+
+            imgPerC.src = `https://flagcdn.com/${D[name].toLowerCase()}.svg`
+
+            DrapeauBoxPerC.append(imgPerC)
+            CadreDrapeauPerC.append(DrapeauBoxPerC)
+            countryI.append("•")
+            countryI.append(CadreDrapeauPerC)
+
+              countryI.append(name);
+              subI.appendChild(countryI);
+
           });
           listBox.appendChild(subI);
         } else if (subject === "organisations") {
@@ -27112,6 +27133,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           orgaI.appendChild(orgaTitle);
 
           const L = [];
+          const D = {}
           paths.forEach((path) => {
             if (!P_info[path.id]) {
               return;
@@ -27121,12 +27143,31 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             }
 
             L.push(L_q[path.id].n);
+            D[L_q[path.id].n] = path.id
+
           });
           L.sort();
           L.forEach((name) => {
-            const countryI = document.createElement("div");
-            countryI.className = "perCountry";
-            countryI.textContent = "• " + name;
+            
+              const countryI = document.createElement("div");
+              countryI.className = "perCountry";
+
+            const CadreDrapeauPerC = document.createElement("div");
+            CadreDrapeauPerC.className = "CadreDrapeauPerC";
+
+            const DrapeauBoxPerC = document.createElement("div");
+            DrapeauBoxPerC.className = "DrapeauBoxPerC";
+            let imgPerC = document.createElement("img");
+            imgPerC.className = "DrapeauCadrePerC";
+
+            imgPerC.src = `https://flagcdn.com/${D[name].toLowerCase()}.svg`
+
+            DrapeauBoxPerC.append(imgPerC)
+            CadreDrapeauPerC.append(DrapeauBoxPerC)
+            countryI.append("•")
+            countryI.append(CadreDrapeauPerC)
+              countryI.append(name);
+
             orgaI.appendChild(countryI);
           });
           listBox.appendChild(orgaI);
