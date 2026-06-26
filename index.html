@@ -28781,17 +28781,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         let valD1 = "1.00"
       inputD1.addEventListener("focus", () => {
         cadreD1.classList.add("active");
-        if (
-          isNaN(
-            inputD1.value.slice(-parseInt(D_symbolesD[currentDD].length) - 1),
-          )
-        ) {
-          inputD1.value = inputD1.value.slice(
-            0,
-            -parseInt(D_symbolesD[currentDD].length),
-          );
-          valD1 = inputD1.value 
-        }
+        while (isNaN(inputD1.value.slice(-1)) || inputD1.value.length===0 ){
+          inputD1.value = inputD1.value.slice(0,inputD1.value.length-1)
+        }      
       });
       inputD1.addEventListener("input", (e) => {
         let value = e.target.value;
@@ -28841,19 +28833,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let valD2= "1.00"
       inputD2.addEventListener("focus", () => {
         cadreD2.classList.add("active");
-        if (
-          isNaN(
-            inputD2.value.slice(-parseInt(D_symbolesD[currentDV].length) - 1),
-          )
-        ) {
-          inputD2.value = inputD2.value.slice(
-            0,
-            -parseInt(D_symbolesD[currentDV].length),
-          );
-        }
-
-          valD2 = inputD2.value 
-
+        while (isNaN(inputD2.value.slice(-1)) || inputD2.value.length===0 ){
+          inputD2.value = inputD2.value.slice(0,inputD2.value.length-1)
+        }      
       });
 
 
