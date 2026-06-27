@@ -28783,7 +28783,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreD1.classList.add("active");
         while (isNaN(inputD1.value.slice(-1)) || inputD1.value.length===0 ){
           inputD1.value = inputD1.value.slice(0,inputD1.value.length-1)
-        }      
+        }  
+        valD1 = inputD1.value
+
       });
       inputD1.addEventListener("input", (e) => {
         let value = e.target.value;
@@ -28791,6 +28793,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           value = ""
           inputD1.value = ""
         }
+        console.log(valD1)
         value = value.replace(",", ".");
         value = value.replace(/[^0-9.]/g, ""); // enlève tout sauf chiffres et point
 
@@ -28827,6 +28830,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             Math.round(dataConvert[currentDV] * 100) / 100 +
             D_symbolesD[currentDV];
         }
+        
       });
 
       //------------
@@ -28836,6 +28840,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         while (isNaN(inputD2.value.slice(-1)) || inputD2.value.length===0 ){
           inputD2.value = inputD2.value.slice(0,inputD2.value.length-1)
         }      
+        valD2 = inputD2.value
+
       });
 
 
@@ -28880,10 +28886,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             inputD1.value = inputD1.value + D_symbolesD[currentDD];
           }
         } else {
-          inputD1.value = "1.00" + D_symbolesD[currentDD];
-          inputD2.value =
-            Math.round(dataConvert[currentDV] * 100) / 100 +
-            D_symbolesD[currentDV];
+          
+          inputD2.value = "1.00" + D_symbolesD[currentDV];
+          inputD1.value =
+          Math.round((1 / dataConvert[currentDV]) * 100) / 100;;
         }
       });
 
