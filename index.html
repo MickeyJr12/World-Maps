@@ -25551,6 +25551,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           fmi: "FMI",
         };
 
+          if (p){
+            const orga = document.createElement("div");
+            orga.className = "itemOrga";
+            orga.style.background = "rgb(44, 123, 226)"
+            orga.style.color = "rgb(159, 198, 223)"
+            orga.textContent = P_info[p_id].subregion;
+            document.getElementById("cadreOrga").appendChild(orga);
+          }
+            
         L_orga.forEach((o) => {
           if (P_info[p.id][o]) {
             const orga = document.createElement("div");
@@ -27170,6 +27179,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           });
           L.sort();
+          
           L.forEach((name) => {
             
               const countryI = document.createElement("div");
@@ -27203,7 +27213,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           onuTitle.style.color = "white";
 
           if (r.key === "unMember") {
-            onuTitle.textContent = "Pays non membre de l'ONU";
+            onuTitle.textContent = "Territoires non membre de l'ONU";
           } else {
             onuTitle.textContent = "Territoires non indépendants";
           }
