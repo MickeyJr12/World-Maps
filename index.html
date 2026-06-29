@@ -5952,6 +5952,11 @@
               <div class="btnD" id="difficile">
                 <h4>Difficile</h4>
               </div>
+
+              <div class="btnD" id="tout">
+                <h4>Tout</h4>
+              </div>
+
             </div>
           </div>
         </div>
@@ -10543,7 +10548,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         //Fonction
         let paysDispos = Object.keys(L_q).filter(
           (id) =>
-            (L_q[id].d.toLowerCase() === L_config.d || L_config.c !== "allC") &&
+            (L_q[id].d.toLowerCase() === L_config.d || L_config.d === "tout" || L_config.c !== "allC") &&
             !L_reponses.includes(id) &&
             !["GO", "UM", "MF", "SJ"].includes(id) &&
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
@@ -23698,7 +23703,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           s: 1246700,
           n: "Angola",
         },
-        AQ: { d: "Difficile", c: null, p: 1000, s: 14200000, n: "Antarctique" },
+        // AQ: { d: "Difficile", c: null, p: 1000, s: 14200000, n: "Antarctique" },
         AR: {
           d: "Facile",
           c: "Buenos Aires",
