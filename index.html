@@ -1178,17 +1178,21 @@
         align-items: center;
         box-sizing: border-box;
         height: 2.2em; /* ajuste selon besoin */
+        aspect-ratio: 1/1;
         border-radius: 5px;
         padding: 0.5em 0.2em;
+        
+      }
+      .arrowC:active {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .arrowC svg{
         transform: rotate(-45deg);
         transition:
           background 0.2s ease,
           transform 0.2s ease;
       }
-      .arrowC:active {
-        background: rgba(255, 255, 255, 0.2);
-      }
-      .arrowC.dec {
+      .arrowC svg.dec {
         transform: rotate(-135deg);
       }
 
@@ -28519,7 +28523,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       arrowC.addEventListener("click", () => {
         decroissant = !decroissant;
-        arrowC.classList.toggle("dec");
+        arrowC.querySelector('svg').classList.toggle("dec");
         fillContentC(Ls);
       });
 
