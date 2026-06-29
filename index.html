@@ -26492,17 +26492,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         let index = 0;
         let indexPop = 0;
         const D_clone = structuredClone(D_alphabet);
-
+        let L_lAdd = []
         for (const r of Ls) {
           const firstChar = r.t.slice(0, 1).toUpperCase();
 
           if (currentClass === "name") {
+
             for (const [baseLetter, accents] of Object.entries(D_clone)) {
               if (accents.includes(firstChar)) {
                 const bandeLetter = document.createElement("div");
                 bandeLetter.className = "bandeLetter";
                 bandeLetter.id = "letter" + baseLetter;
                 bandeLetter.textContent = baseLetter;
+                L_lAdd.push(baseLetter) //liste des letterD qui doivent rester
+                
                 contentC.append(bandeLetter);
                 delete D_clone[baseLetter];
                 break;
@@ -26648,11 +26651,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             indexPop += 1;
           }
 
-          setTimeout(() => {
-            if (inputC.value.length === 0 && currentClass === "name") {
+          requestAnimationFrame(()=>{
+            if (/*inputC.value.length === 0 &&*/ currentClass === "name") {
               contentC.appendChild(alphabet);
             }
-          }, 20);
+          })
 
           itemC.style.transform = "translateY(-0.8em)";
           itemC.style.opacity = "0";
@@ -26667,6 +26670,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             zoomCountry(r.id);
           });
         }
+
+         requestAnimationFrame(()=>{
+          document.querySelectorAll(".letter").forEach(let=>{
+          let.style.display = "flex"
+        })
+          const L_lAdd2 = []
+          L_lAdd.forEach(baseLetter=>{
+            L_lAdd2.push(document.getElementById("case" + baseLetter).parentNode)
+          })
+          document.querySelectorAll(".letter").forEach(let=>{
+            if (!L_lAdd2.includes(let)){
+              let.style.display = "none"
+            }
+          })
+          
+        })
       }
 
       const D_alphabet = {
@@ -29094,7 +29113,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             inputSD.getBoundingClientRect().bottom +
               inputSD.getBoundingClientRect().height -
               parseInt(cadreSD.style.top) ||
-          full || document.activeElement === inputSD
+          full || (document.activeElement === inputSD&&isMobile)
         ) {
           moveSD = false;
         }
