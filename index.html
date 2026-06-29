@@ -26443,6 +26443,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           Ls = LsInit;
         }
         contentC.scrollTop = 0;
+
         arrowC.style.display = "none";
         if (currentClass != "name") {
           arrowC.style.display = "flex";
@@ -28755,7 +28756,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           fillContentD(D_nDevises);
           currentChoiceD = c;
           cadreSD.style.top = "";
-          cadreSD.classList.add("active");
+          requestAnimationFrame(()=>requestAnimationFrame(()=>cadreSD.classList.add("active")));
         });
 
         c.addEventListener("pointerdown", () => {
@@ -29504,7 +29505,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         const L_LD = inputSD.value.length === 0 ? [L_pop, Ld] : [Ld]; // parcourir les populaire et la liste normale, pouvoir avoir deux fois la même clef ( populaire et après)
 
         const D_clone = structuredClone(D_alphabet);
-
+        const L_lAdd = []//BandeLetter qui sont rajouté, pour supprimer les letres inutiles 
+        
         L_LD.forEach((L) => {
           for (const clefD of Object.keys(L)) {
             const firstChar = L[clefD].slice(0, 1).toUpperCase();
@@ -29518,6 +29520,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 const bandeLetter = document.createElement("div");
                 bandeLetter.className = "bandeLetterSD";
                 bandeLetter.id = "letterD" + baseLetter;
+                L_lAdd.push(document.getElementById("caseD" + baseLetter).parentNode) //liste des letterD qui doivent rester
                 bandeLetter.textContent = baseLetter;
                 contentCadreSD.append(bandeLetter);
                 delete D_clone[baseLetter];
@@ -29613,6 +29616,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             });
           }
         });
+        document.querySelectorAll(".letterD").forEach(let=>{
+          let.style.display = "flex"
+        })
+        document.querySelectorAll(".letterD").forEach(let=>{
+          if (!L_lAdd.includes(let)){
+            let.style.display = "none"
+          }
+        })
         document.getElementById("wrapperContentSD").append(alphabetD);
       }
 
