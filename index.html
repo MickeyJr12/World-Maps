@@ -2747,12 +2747,12 @@
         justify-content: flex-end;
         box-sizing: border-box;
         font-family: "Nunito", sans-serif;
-        background: linear-gradient(
+        /* background: linear-gradient(
           134deg,
           #1425e6 0%,
           #181cdc 37%,
           #150570 73%
-        );
+        ); */
         background: linear-gradient(110deg, #1445e6 0%, #181cdc 50%, #150570 100%);
         min-height: 100dvh; /* dynamic viewport height, plus fiable sur mobile */
         width: 100%;
@@ -29093,7 +29093,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             inputSD.getBoundingClientRect().bottom +
               inputSD.getBoundingClientRect().height -
               parseInt(cadreSD.style.top) ||
-          full
+          full || document.activeElement === inputSD
         ) {
           moveSD = false;
         }
