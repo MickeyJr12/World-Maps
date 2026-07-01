@@ -12853,6 +12853,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const paths = svg.querySelectorAll("path");
       const pathsUs = svgUs.querySelectorAll("path");
       const L_circles = [
+        "SG",
         "MV",
         "HK",
         "PM",
@@ -12921,6 +12922,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "KN",
       ]; // mettre leur cercle invisibles
       const D_factorC = {
+        SG : 2,
         MV: 1.05,
         HK: 2,
         BH: 1.5,
@@ -27127,7 +27129,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           rankS[item.id.toUpperCase()] = index + 1;
         });
 
-        fillContentC(LsInit);
+        // fillContentC(LsInit);
       }, 100);
 
       reset.addEventListener("click", () => {
@@ -28546,14 +28548,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const arrowC = document.querySelector(".arrowC");
 
       opensearch.addEventListener("click", () => {
+        
+          inputC.value = "";
+          fillContentC(LfInit);
+        
         cadreS.classList.add("active");
       });
 
       backSearch.addEventListener("click", () => {
-        setTimeout(() => {
-          inputC.value = "";
-          fillContentC(LfInit);
-        }, 100);
+        // setTimeout(() => {
+        //   inputC.value = "";
+        //   fillContentC(LfInit);
+        // }, 100);
         cadreS.classList.remove("active");
       });
 
