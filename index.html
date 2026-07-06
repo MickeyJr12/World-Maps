@@ -12853,6 +12853,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const paths = svg.querySelectorAll("path");
       const pathsUs = svgUs.querySelectorAll("path");
       const L_circles = [
+        "MO",
         "SG",
         "MV",
         "HK",
@@ -12922,9 +12923,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "KN",
       ]; // mettre leur cercle invisibles
       const D_factorC = {
-        SG : 2,
+        MO: 3,
+        SG: 2,
         MV: 1.05,
-        HK: 2,
+        HK: 1.6,
         BH: 1.5,
         BV: 6.5,
         BM: 5,
@@ -28547,16 +28549,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const arrowC = document.querySelector(".arrowC");
 
-
-      let onceS = true
+      let onceS = true;
       opensearch.addEventListener("click", () => {
-          if (onceS){
-            requestAnimationFrame(()=>{
-              inputC.value = "";
-          fillContentC(LfInit);
-          onceS = false
-            })          
-          }
+        if (onceS) {
+          requestAnimationFrame(() => {
+            inputC.value = "";
+            fillContentC(LfInit);
+            onceS = false;
+          });
+        }
         cadreS.classList.add("active");
       });
 
