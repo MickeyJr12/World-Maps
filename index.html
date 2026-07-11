@@ -3197,6 +3197,7 @@
         background: rgba(255, 255, 255, 0.55);
         backdrop-filter: blur(8px);
         border-radius: 0.6em;
+        border: 1.6px solid rgba(192, 57, 43, 0.2);
         padding: 0.6em 0.8em;
         cursor: pointer;
         user-select: none;
@@ -3212,7 +3213,8 @@
       }
 
       .nbrQ-pill.open {
-        background: rgba(255, 255, 255, 0.75);
+        
+        background:rgba(218,37,37,0.08);
         box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
       }
 
@@ -10963,6 +10965,7 @@ let nbrQIsOpen = false;
 
 
 function toggleDropdownNbrQ() {
+  
   nbrQIsOpen = !nbrQIsOpen;
   nbrQDropdown.classList.toggle("open", nbrQIsOpen);
   pillNbrQ.classList.toggle("open", nbrQIsOpen);
