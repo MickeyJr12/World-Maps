@@ -11144,7 +11144,6 @@ document.addEventListener("click", (e) => {
         ) {
           idBonneReponse =
             paysDispos[Math.floor(Math.random() * paysDispos.length)]; // Choix de la bonne réponse au hasard
-          L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
         }
 
         //Retirer les circles inutiles
@@ -11162,6 +11161,10 @@ document.addEventListener("click", (e) => {
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
         }
+        // console.log(paysDispos,paysDispos.length )
+        // console.log(paysDispoAll,paysDispoAll.length)
+        // console.log(paysDisposTrouver,paysDisposTrouver.length)
+        // console.log("qlksdflqksdjmqlskdjqmlsjdmlqfjsmdlkj")
 
 
         for (const clef in D_circles) {
@@ -11197,10 +11200,11 @@ document.addEventListener("click", (e) => {
                 Object.keys(L_q)[
                   Math.floor(Math.random() * Object.keys(L_q).length)
                 ]; // identifiant de pays au hasard
+
               if (
                 p_id === "GO" ||
                 p_id === "UM" ||
-                p_id === "MF" ||
+                p_id === "MF" || 
                 p_id === "SJ"
               ) {
                 continue;
@@ -11212,6 +11216,10 @@ document.addEventListener("click", (e) => {
                 idProps_m.set(c.parentNode, idBonneReponse);
               }
 
+          //  console.log(p_id,"PaysDispo", paysDispos,paysDispos.length)
+          //  console.log(p_id,"Réponse",L_reponse,L_reponse.length)
+
+              
               if (
                 !L_reponse.includes(p_id) &&
                 paysDispos.includes(p_id) &&
@@ -11389,10 +11397,15 @@ document.addEventListener("click", (e) => {
               Math.floor(Math.random() * Object.keys(L_q).length)
             ]; // identifiant de pays au hasard
           while (L_reponses.includes(p_id) || !paysDispos.includes(p_id)) {
+            // console.log(L_reponses.includes(p_id))
             p_id =
               Object.keys(L_q)[
                 Math.floor(Math.random() * Object.keys(L_q).length)
               ];
+            // console.log(p_id,"PaysDispo", paysDispos,paysDispos.length)
+            // console.log(p_id,"Réponses",L_reponses,L_reponses.length)
+
+
           }
 
           //--------------------------------------
@@ -11410,6 +11423,8 @@ document.addEventListener("click", (e) => {
           } else if (L_config.q === "capitaleQ") {
             qqTrouver.textContent = L_q[idBonneReponse].c;
           }
+          L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
+
         }
 
         //Partie classer
