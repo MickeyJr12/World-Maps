@@ -3132,7 +3132,7 @@
         z-index: 11;
         right: 0;
         top : 50%;
-        transform : translateY(-0.35em);
+        transform : translateY(-0.9em);
         flex-direction: column;
         align-items: center;
         gap: 0.5em;
@@ -11178,6 +11178,8 @@ document.addEventListener("click", (e) => {
         }
         // Partie Choix
         if (L_config.m === "modeChoix") {
+          L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
+
           //Remplir tout ça
           paths.forEach((p) => {
             pColor_m.set(p, { hover: "", current: colorPath });
@@ -11218,13 +11220,16 @@ document.addEventListener("click", (e) => {
                 idProps_m.set(c.parentNode, idBonneReponse);
               }
 
-          //  console.log(p_id,"PaysDispo", paysDispos,paysDispos.length)
           //  console.log(p_id,"Réponse",L_reponse,L_reponse.length)
-
+              // console.log("identifiant !!!",c.id)
+              // console.log("Réponses",L_reponse)
+              // console.log("PaysDispo", paysDispos,paysDispos.length)
               
               if (
-                !L_reponse.includes(p_id) &&
-                paysDispos.includes(p_id) &&
+                // (c.id==="qqTrouver" || c.id!=="qqTrouver" && !L_reponse.includes(p_id))
+                !L_reponse.includes(p_id)
+                 &&
+                paysDispoAll.includes(p_id) &&
                 p_id != idBonneReponse
               ) {
                 //Remplir les cbox, les réponses
