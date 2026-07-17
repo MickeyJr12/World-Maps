@@ -12909,7 +12909,9 @@ document.addEventListener("click", (e) => {
           pm4Choix.style.transform = "";
           cachePm.style.opacity = "0";
           pm4Choix.style.pointerEvents = "none";
-          cachePm.style.pointerEvents = "none";
+          cachePm.style.pointerEvents = "none";  
+          
+          L_reponses = []
           fillPhonePlay();
           setTimeout(() => {
             document.getElementById("cadreScorePm").style.display = "none";
