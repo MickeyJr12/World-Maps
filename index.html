@@ -11222,12 +11222,12 @@ document.addEventListener("click", (e) => {
               // console.log("identifiant !!!",c.id)
               // console.log("Réponses",L_reponse)
               // console.log("PaysDispo", paysDispos,paysDispos.length)
-              
+              let paysDispoToggle = paysDispos.length < 6 ? paysDispoAll : paysDispos
               if (
                 // (c.id==="qqTrouver" || c.id!=="qqTrouver" && !L_reponse.includes(p_id))
                 !L_reponse.includes(p_id)
                  &&
-                paysDispoAll.includes(p_id) &&
+                paysDispoToggle.includes(p_id) &&
                 p_id != idBonneReponse
               ) {
 
@@ -16215,7 +16215,7 @@ document.addEventListener("click", (e) => {
         }, // rouge, blanc
         TT: {
           r: true,
-          w: false,
+          w: true,
           b: false,
           g: false,
           y: false,
