@@ -3086,7 +3086,7 @@
 
       #cadreChoixRegion {
         display: flex;
-        position : relative;
+        position: relative;
         flex-direction: column;
         align-items: center;
         flex-shrink: 0;
@@ -3105,8 +3105,8 @@
 
       #cadreRegionTitle {
         display: flex;
-        width : 100%;
-        position : relative;
+        width: 100%;
+        position: relative;
         align-self: flex-start;
         font-weight: 600;
         align-items: center;
@@ -3120,19 +3120,14 @@
 
       /*Cadre nbrQ*/
 
-
-
-
-
-
       .nbrQ-wrapper {
         display: flex;
         pointer-events: none;
         position: absolute;
         z-index: 11;
         right: 0;
-        top : 50%;
-        transform : translateY(-0.9em);
+        top: 50%;
+        transform: translateY(-0.9em);
         flex-direction: column;
         align-items: center;
         gap: 0.5em;
@@ -3213,7 +3208,7 @@
       }
 
       .nbrQ-pill.open {
-        background:rgba(218,37,37,0.08);
+        background: rgba(218, 37, 37, 0.08);
         box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
       }
 
@@ -3234,22 +3229,18 @@
         flex-shrink: 0;
       }
 
-      #nbrQAll{
-        overflow : hidden;
-        transition : max-height 0.2s ease, padding 0.2s ease;
+      #nbrQAll {
+        overflow: hidden;
+        transition:
+          max-height 0.2s ease,
+          padding 0.2s ease;
       }
-      #nbrQAll.hide{
+      #nbrQAll.hide {
         max-height: 0em;
-        padding : 0em;
+        padding: 0em;
       }
 
       /*fin cadre nbrQ*/
-
-
-
-
-
-
 
       #regionScroll {
         display: flex;
@@ -3401,9 +3392,10 @@
         transform: scale(0.95);
       }
 
-      .chrono-pill.open { 
-        background:rgba(218,37,37,0.08);
-        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);}
+      .chrono-pill.open {
+        background: rgba(218, 37, 37, 0.08);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
+      }
 
       .chrono-label {
         font-size: 1em;
@@ -5396,59 +5388,54 @@
 
               <h4>Continent</h4>
 
-              
-            <div class="nbrQ-wrapper">
-              <!-- Pill -->
-              <div class="nbrQ-pill" id="nbrQPill">
-                <!-- Icone chronomètre -->
-                Nbr de questions :
+              <div class="nbrQ-wrapper">
+                <!-- Pill -->
+                <div class="nbrQ-pill" id="nbrQPill">
+                  <!-- Icone chronomètre -->
+                  Nbr de questions :
 
-                <span class="nbrQ-label" id="nbrQCurrentLabel">
-                  15
-                </span>
-              </div>
-              <!-- Dropdown -->
-
-              <div class="nbrQ-dropdown" id="nbrQDropdown">                
-                <div
-                  class="nbrQ-option selected"
-                  id="nbrQ15"
-                  data-value="15"
-                  data-label="15"
-                >
-                  15
+                  <span class="nbrQ-label" id="nbrQCurrentLabel"> 15 </span>
                 </div>
-                <div
-                  class="nbrQ-option"
-                  id="nbrQ20"
-                  data-value="20"
-                  data-label="20"
-                >
-                  20
-                </div>
+                <!-- Dropdown -->
 
-                <div
-                  class="nbrQ-option"
-                  id="nbrQ25"
-                  data-value="25"
-                  data-label="25"
-                >
-                  25
-                </div>
+                <div class="nbrQ-dropdown" id="nbrQDropdown">
+                  <div
+                    class="nbrQ-option selected"
+                    id="nbrQ15"
+                    data-value="15"
+                    data-label="15"
+                  >
+                    15
+                  </div>
+                  <div
+                    class="nbrQ-option"
+                    id="nbrQ20"
+                    data-value="20"
+                    data-label="20"
+                  >
+                    20
+                  </div>
 
-                <div
-                  class="nbrQ-option"
-                  id="nbrQAll"
-                  data-value="Tout"
-                  data-label="Tout"
-                >
-                  Tout
+                  <div
+                    class="nbrQ-option"
+                    id="nbrQ25"
+                    data-value="25"
+                    data-label="25"
+                  >
+                    25
+                  </div>
+
+                  <div
+                    class="nbrQ-option"
+                    id="nbrQAll"
+                    data-value="Tout"
+                    data-label="Tout"
+                  >
+                    Tout
+                  </div>
                 </div>
               </div>
             </div>
-
-            </div>
-
 
             <div id="regionScroll">
               <div class="cadreRegion" id="allC">
@@ -10884,20 +10871,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null };
 
-      btnsMode.forEach(btn=>{
-        btn.addEventListener('click',()=>{
-          if (btn.id === "modeClasser"){
-          document.getElementById('nbrQAll').classList.add('hide')
-          if (nbrQVal ==="Tout"){document.getElementById('nbrQ15').click()}
+      btnsMode.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (btn.id === "modeClasser") {
+            document.getElementById("nbrQAll").classList.add("hide");
+            if (nbrQVal === "Tout") {
+              document.getElementById("nbrQ15").click();
+            }
+          } else {
+            document.getElementById("nbrQAll").classList.remove("hide");
           }
-          else {
-          document.getElementById('nbrQAll').classList.remove('hide')
-
-
-          }
-
-        })
-      })
+        });
+      });
 
       //Scroll
       // À mettre une seule fois au chargement
@@ -10948,62 +10933,57 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }),
       ); //Mettre à jour  le changement dans la config
 
-
-
       //Script nbrQ-option
 
       const pillNbrQ = document.getElementById("nbrQPill");
-const nbrQDropdown = document.getElementById("nbrQDropdown");
-const nbrQLabel = document.getElementById("nbrQCurrentLabel");
-const nbrQOptions = nbrQDropdown.querySelectorAll(".nbrQ-option");
+      const nbrQDropdown = document.getElementById("nbrQDropdown");
+      const nbrQLabel = document.getElementById("nbrQCurrentLabel");
+      const nbrQOptions = nbrQDropdown.querySelectorAll(".nbrQ-option");
 
-let nbrQVal = "15"; // Valeur du nombre de questions qu'on choisit
+      let nbrQVal = "15"; // Valeur du nombre de questions qu'on choisit
 
-let nbrQIsOpen = false;
+      let nbrQIsOpen = false;
 
+      function toggleDropdownNbrQ() {
+        nbrQIsOpen = !nbrQIsOpen;
+        nbrQDropdown.classList.toggle("open", nbrQIsOpen);
+        pillNbrQ.classList.toggle("open", nbrQIsOpen);
+      }
 
+      function closeDropdownNbrQ() {
+        nbrQIsOpen = false;
+        nbrQDropdown.classList.remove("open");
+        pillNbrQ.classList.remove("open");
+      }
 
-function toggleDropdownNbrQ() {
-  
-  nbrQIsOpen = !nbrQIsOpen;
-  nbrQDropdown.classList.toggle("open", nbrQIsOpen);
-  pillNbrQ.classList.toggle("open", nbrQIsOpen);
-}
+      pillNbrQ.addEventListener("click", toggleDropdownNbrQ);
 
-function closeDropdownNbrQ() {
-  nbrQIsOpen = false;
-  nbrQDropdown.classList.remove("open");
-  pillNbrQ.classList.remove("open");
-}
+      nbrQOptions.forEach((opt) => {
+        opt.addEventListener("click", (e) => {
+          e.stopPropagation();
+          nbrQVal = opt.dataset.value;
+          const lbl = opt.dataset.label;
 
-pillNbrQ.addEventListener("click", toggleDropdownNbrQ);
+          nbrQOptions.forEach((o) => o.classList.remove("selected"));
+          opt.classList.add("selected");
+          if (lbl !== "Tout") {
+            maxQ = parseInt(lbl);
+            document
+              .querySelectorAll(".maxQ")
+              .forEach((spn) => (spn.textContent = maxQ));
+          }
 
-nbrQOptions.forEach((opt) => {
-  opt.addEventListener("click", (e) => {
-    e.stopPropagation();
-    nbrQVal = opt.dataset.value;
-    const lbl = opt.dataset.label;
+          nbrQLabel.textContent = lbl;
 
-    nbrQOptions.forEach((o) => o.classList.remove("selected"));
-    opt.classList.add("selected");
-    if (lbl !== "Tout"){
-      maxQ = parseInt(lbl)
-      document
-      .querySelectorAll(".maxQ")
-      .forEach((spn) => (spn.textContent = maxQ));
-    }
-      
-      nbrQLabel.textContent = lbl;
+          closeDropdownNbrQ();
+        });
+      });
 
-    closeDropdownNbrQ();
-  });
-});
-
-document.addEventListener("click", (e) => {
-  if (!pillNbrQ.contains(e.target) && !nbrQDropdown.contains(e.target)) {
-    closeDropdownNbrQ();
-  }
-});
+      document.addEventListener("click", (e) => {
+        if (!pillNbrQ.contains(e.target) && !nbrQDropdown.contains(e.target)) {
+          closeDropdownNbrQ();
+        }
+      });
 
       //Fin script nbrQ
 
@@ -11126,8 +11106,6 @@ document.addEventListener("click", (e) => {
             P_info[id].region !== null,
         );
 
-       
-
         if (L_config.q === "contourQ" || L_config.r === "contourR") {
           paysDispos = paysDispos.filter((id) => !["PS"].includes(id));
         }
@@ -11152,18 +11130,20 @@ document.addEventListener("click", (e) => {
 
         const paysDispoAll = Object.keys(L_q).filter(
           (id) =>
-            (L_config.c !== "allC" || L_config.c === "allC" && (L_config.d==="tout" ||L_q[id].d.toLowerCase() === L_config.d )) &&
+            (L_config.c !== "allC" ||
+              (L_config.c === "allC" &&
+                (L_config.d === "tout" ||
+                  L_q[id].d.toLowerCase() === L_config.d))) &&
             !["GO", "UM", "MF", "SJ"].includes(id) &&
             (P_info[id].region === L_config.c || L_config.c === "allC"),
         );
 
-         if (nbrQVal === "Tout"){
-          maxQ = paysDispoAll.length
+        if (nbrQVal === "Tout") {
+          maxQ = paysDispoAll.length;
           document
-        .querySelectorAll(".maxQ")
-        .forEach((spn) => (spn.textContent = maxQ));
+            .querySelectorAll(".maxQ")
+            .forEach((spn) => (spn.textContent = maxQ));
         }
-
 
         for (const clef in D_circles) {
           if (paysDispoAll.includes(clef) || L_config.c === "allC") {
@@ -11175,7 +11155,6 @@ document.addEventListener("click", (e) => {
         // Partie Choix
 
         if (L_config.m === "modeChoix") {
-
           L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
 
           //Remplir tout ça
@@ -11206,7 +11185,7 @@ document.addEventListener("click", (e) => {
               if (
                 p_id === "GO" ||
                 p_id === "UM" ||
-                p_id === "MF" || 
+                p_id === "MF" ||
                 p_id === "SJ"
               ) {
                 continue;
@@ -11218,19 +11197,18 @@ document.addEventListener("click", (e) => {
                 idProps_m.set(c.parentNode, idBonneReponse);
               }
 
-          //  console.log(p_id,"Réponse",L_reponse,L_reponse.length)
+              //  console.log(p_id,"Réponse",L_reponse,L_reponse.length)
               // console.log("identifiant !!!",c.id)
               // console.log("Réponses",L_reponse)
               // console.log("PaysDispo", paysDispos,paysDispos.length)
-              let paysDispoToggle = paysDispos.length < 6 ? paysDispoAll : paysDispos
+              let paysDispoToggle =
+                paysDispos.length < 6 ? paysDispoAll : paysDispos;
               if (
                 // (c.id==="qqTrouver" || c.id!=="qqTrouver" && !L_reponse.includes(p_id))
-                !L_reponse.includes(p_id)
-                 &&
+                !L_reponse.includes(p_id) &&
                 paysDispoToggle.includes(p_id) &&
                 p_id != idBonneReponse
               ) {
-
                 //Remplir les cbox, les réponses
                 if (L_config.r === "drapeauR") {
                   c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${p_id.toLowerCase()}.svg" draggable="false" alt="">`;
@@ -11293,7 +11271,7 @@ document.addEventListener("click", (e) => {
           });
           //Partie trouver
         } else if (L_config.m === "modeTrouver") {
-          console.log(L_reponses.length)
+          console.log(L_reponses.length);
           document.getElementById("phonePlay").append(zBox);
           zBox.classList.add("modeTrouver");
 
@@ -11411,8 +11389,6 @@ document.addEventListener("click", (e) => {
               ];
             // console.log(p_id,"PaysDispo", paysDispos,paysDispos.length)
             // console.log(p_id,"Réponses",L_reponses,L_reponses.length)
-
-
           }
 
           //--------------------------------------
@@ -11431,7 +11407,6 @@ document.addEventListener("click", (e) => {
             qqTrouver.textContent = L_q[idBonneReponse].c;
           }
           L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
-
         }
 
         //Partie classer
@@ -12126,7 +12101,7 @@ document.addEventListener("click", (e) => {
           phonePlay.style.opacity = "1";
           phonePlay.style.transform = "";
 
-          L_reponses = []
+          L_reponses = [];
           fillPhonePlay();
         }, 100);
         //
@@ -12520,6 +12495,7 @@ document.addEventListener("click", (e) => {
         L_addMaps[3].style.zIndex = "50";
 
         globe.style.filter = "";
+        mCadre.style.filter = "";
 
         paths.forEach((p) => {
           if (L_reponse.includes(p.id)) {
@@ -12906,9 +12882,9 @@ document.addEventListener("click", (e) => {
           pm4Choix.style.transform = "";
           cachePm.style.opacity = "0";
           pm4Choix.style.pointerEvents = "none";
-          cachePm.style.pointerEvents = "none";  
-          
-          L_reponses = []
+          cachePm.style.pointerEvents = "none";
+
+          L_reponses = [];
           fillPhonePlay();
           setTimeout(() => {
             document.getElementById("cadreScorePm").style.display = "none";
@@ -30392,4 +30368,4 @@ document.addEventListener("click", (e) => {
       }, 10000);*/
     </script>
   </body>
-</html>
+</html>                         
