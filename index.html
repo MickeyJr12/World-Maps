@@ -10871,6 +10871,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null };
 
+      const L_exclus = ["GO", "UM", "MF", "SJ","GS"]
+
       btnsMode.forEach((btn) => {
         btn.addEventListener("click", () => {
           if (btn.id === "modeClasser") {
@@ -11101,7 +11103,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               L_config.d === "tout" ||
               L_config.c !== "allC") &&
             !L_reponses.includes(id) &&
-            !["GO", "UM", "MF", "SJ"].includes(id) &&
+            !L_exclus.includes(id) &&
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
         );
@@ -11112,7 +11114,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         const paysDisposTrouver = Object.keys(L_q).filter(
           (id) =>
-            !["GO", "UM", "MF", "SJ"].includes(id) &&
+            !L_exclus.includes(id) &&
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
         );
@@ -11134,7 +11136,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               (L_config.c === "allC" &&
                 (L_config.d === "tout" ||
                   L_q[id].d.toLowerCase() === L_config.d))) &&
-            !["GO", "UM", "MF", "SJ"].includes(id) &&
+            !L_exclus.includes(id) &&
             (P_info[id].region === L_config.c || L_config.c === "allC"),
         );
 
@@ -11182,12 +11184,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   Math.floor(Math.random() * Object.keys(L_q).length)
                 ]; // identifiant de pays au hasard
 
-              if (
-                p_id === "GO" ||
-                p_id === "UM" ||
-                p_id === "MF" ||
-                p_id === "SJ"
-              ) {
+              if (L_exclus.includes(p_id)) {
                 continue;
               }
               //Attribuer à chaque case, l'id de la réponse qu'elle contient
@@ -26157,7 +26154,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           fmi: "FMI",
         };
 
-        if (p) {
+        if (p && P_info[p.id].subregion) {
           const orga = document.createElement("div");
           orga.className = "itemOrga";
           orga.style.background = "rgba(44, 123, 226,0.8)";
@@ -26960,22 +26957,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         let cFound = false;
 
         for (const r of Lf) {
-          if (
-            r.id === "GO" ||
-            r.id === "UM" ||
-            r.id === "MF" ||
-            r.id === "SJ"
-          ) {
+          if (L_exclus.includes(r.id)) {
             continue;
           }
           sautPays = false;
           for (const [color, value] of Object.entries(D_colorChoice)) {
-            if (
-              r.id === "GO" ||
-              r.id === "UM" ||
-              r.id === "MF" ||
-              r.id === "SJ"
-            )
+            if (L_exclus.includes(r.id))
               continue;
             if (value && !D_color[r.id.toUpperCase()][color]) {
               sautPays = true;
@@ -30368,4 +30355,4 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }, 10000);*/
     </script>
   </body>
-</html>                         
+</html>
