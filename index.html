@@ -11044,14 +11044,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function fillPhonePlay() {
         spnScore.textContent = score;
-        L_stars.forEach((s) => s.classList.remove("scored"));
-        L_stars.slice(0, Math.floor(score / (Math.floor(maxQ) / 3))).forEach(
-          (s) =>
-          // s.classList.add("scored"),
-          1===1
-          //à retirer
+        // L_stars.forEach((s) => s.classList.remove("scored"));
+        // L_stars.slice(0, Math.floor(score / (Math.floor(maxQ) / 3))).forEach(
+        //   (s) =>
+        //   // s.classList.add("scored"),
+        //   1===1
+        //   //à retirer
 
-        );
+        // );
 
         //Afficher le menu de fin si modeChoix, ou modeTrouver et cCooseTrouver
 
@@ -11068,7 +11068,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           document.getElementById("cadreScorePm").style.display = "flex";
           let delayStar = 250
 
-          L_stars.forEach((el) => {
+          L_stars.slice(0, Math.floor(score / (Math.floor(maxQ) / 3))).forEach((el) => {
               
                 setTimeout(() => {
                   el.style.animation = "scoredX 0.5s linear"
