@@ -702,7 +702,6 @@
 
         background: rgba(17, 23, 79, 0.95);
         backdrop-filter: blur(10px);
-        border-radius: 10px;
         transform: scale(0.95);
         transform-origin: center bottom;
         transition:
@@ -3582,6 +3581,18 @@
         gap: 0.4em;
         left: 100%;
         top: 0;
+      }
+
+      @keyframes scoredX {
+        0%{transform : scale(1)}
+        50%{transform : scale(1.4)}
+
+        100%{transform : scale(1)}
+
+        
+      }
+      .starScore{
+        transition : fill 0.4s ease;
       }
       #star1.scored path {
         fill: rgb(239, 235, 36);
@@ -11035,10 +11046,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         spnScore.textContent = score;
         L_stars.forEach((s) => s.classList.remove("scored"));
         L_stars.slice(0, Math.floor(score / (Math.floor(maxQ) / 3))).forEach(
-          (s) => s.classList.add("scored"),
+          (s) =>
+          // s.classList.add("scored"),
+          1===1
+          //à retirer
+
         );
 
         //Afficher le menu de fin si modeChoix, ou modeTrouver et cCooseTrouver
+
+         L_stars.forEach((el) => {el.style.animation = ""})
+
         if (
           (parseInt(qNumber.textContent) >= maxQ &&
             L_config.m === "modeChoix") ||
@@ -11048,6 +11066,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         ) {
           affichePm();
           document.getElementById("cadreScorePm").style.display = "flex";
+          let delayStar = 250
+
+          L_stars.forEach((el) => {
+              
+                setTimeout(() => {
+                  el.style.animation = "scoredX 0.5s linear"
+                  el.classList.add("scored")
+                }, delayStar);
+                delayStar += 200;
+              
+            }),
+
           pause4Choix.style.opacity = "0";
           pause4Choix.style.pointerEvents = "none";
           L_reponses = [];
@@ -14296,15 +14326,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           k: true,
           o: false,
         }, // rouge, noir, jaune
-        AQ: {
-          r: false,
-          w: false,
-          b: false,
-          g: false,
-          y: false,
-          k: false,
-          o: false,
-        }, // pas de drapeau
         AR: {
           r: false,
           w: true,
@@ -19861,34 +19882,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           opep: true,
           dateInde: "1975-11-11",
         },
-        AQ: {
-          region: "Antarctic",
-          subregion: null,
-          unMember: false,
-          independent: false,
-          population: 1300,
-          pib: null,
-          co2e: null,
-          gouvernement: "Territoire international (Traité de l'Antarctique)",
-          religion: null,
-          fuseaux: [
-            "UTC-3",
-            "UTC+0",
-            "UTC+3",
-            "UTC+5",
-            "UTC+6",
-            "UTC+7",
-            "UTC+8",
-            "UTC+10",
-            "UTC+12",
-          ],
-          otan: false,
-          ue: false,
-          cop: false,
-          g20: false,
-          opep: false,
-          dateInde: null,
-        },
         AR: {
           region: "Amérique",
           subregion: "Amérique du Sud",
@@ -24295,7 +24288,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           s: 1246700,
           n: "Angola",
         },
-        // AQ: { d: "Difficile", c: null, p: 1000, s: 14200000, n: "Antarctique" },
         AR: {
           d: "Facile",
           c: "Buenos Aires",
