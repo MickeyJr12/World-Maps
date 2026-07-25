@@ -2868,13 +2868,19 @@
         filter: brightness(0.9);
       }
 
-      #setting{
+      #cadreHome {
         display: flex;
         position: absolute;
+        justify-content: center;
+        align-items: center;
         right: 1em;
-        z-index: 5;
         bottom: calc(env(safe-area-inset-bottom) + 0.2em);
-        cursor:pointer;
+        gap: 2em;
+      }
+      .btnHome {
+        display: flex;
+        z-index: 5;
+        cursor: pointer;
         justify-content: center;
         align-items: center;
         cursor: pointer;
@@ -2893,11 +2899,11 @@
           filter 0.3s ease;
       }
 
-       #setting:active {
+      .btnHome:active {
         background: #c36513;
         transform: scale(0.92);
       }
-      #setting svg {
+      .btnHome svg {
         fill: white;
       }
 
@@ -3617,15 +3623,19 @@
       }
 
       @keyframes scoredX {
-        0%{transform : scale(1)}
-        50%{transform : scale(1.4)}
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.4);
+        }
 
-        100%{transform : scale(1)}
-
-        
+        100% {
+          transform: scale(1);
+        }
       }
-      .starScore{
-        transition : fill 0.4s ease;
+      .starScore {
+        transition: fill 0.4s ease;
       }
       #star1.scored path {
         fill: rgb(239, 235, 36);
@@ -5235,15 +5245,34 @@
           <h2>Devises</h2>
         </div>
       </div>
-      <div id="setting">
-        <svg height="90%" fill="white" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
-  <path d="M22.994,11.954c.006-1.206-.452-2.662-2.571-3.05-.11-.21-.231-.421-.364-.633,1.068-1.479,.986-2.851-.248-4.085-1.235-1.236-2.607-1.317-4.087-.245-.209-.132-.418-.252-.627-.36-.382-2.112-1.824-2.58-3.027-2.58-1.687,0-2.771,.891-3.086,2.624-.208,.109-.418,.23-.629,.362-1.473-1.064-2.846-.973-4.093,.272-1.243,1.244-1.333,2.618-.272,4.091-.133,.212-.255,.423-.366,.633-1.729,.316-2.609,1.345-2.618,3.063-.006,1.206,.452,2.662,2.571,3.05,.11,.21,.231,.421,.365,.633-1.069,1.479-.987,2.851,.247,4.085,1.235,1.236,2.608,1.317,4.087,.245,.209,.132,.418,.252,.627,.36,.382,2.112,1.824,2.58,3.027,2.58,1.785,0,2.771-.891,3.086-2.624,.208-.109,.418-.23,.629-.362,2.351,1.769,4.092-.272,4.093-.272,1.214-1.149,1.334-2.618,.272-4.092,.133-.212,.255-.423,.366-.632,1.729-.316,2.609-1.345,2.618-3.063Zm-8.532,2.508c-.817,.818-1.593,1.274-2.67,1.21-1.016-.061-1.773-.728-2.254-1.21-1.634-1.633-1.634-3.291,0-4.925,.882-.884,1.754-1.286,2.67-1.209,1.015,.078,1.773,.728,2.254,1.21,1.633,1.633,1.634,3.291,0,4.925Z"/>
+      <div id="cadreHome">
+        <div id="btnSetting" class="btnHome">
+       
+         <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" height="90%" viewBox="0 0 24 24" width="512" data-name="Layer 1"><path d="m23.22 5.743-3.011-4.068a4.005 4.005 0 0 0 -3.254-1.675h-9.91a4 4 0 0 0 -3.245 1.656l-3.065 4.097a3.993 3.993 0 0 0 .123 4.784l8.792 12.328a2.985 2.985 0 0 0 2.35 1.135 3.006 3.006 0 0 0 2.378-1.175l8.722-12.191a4 4 0 0 0 .12-4.891zm-4.628-2.892 3.018 4.078c.016.022.02.048.036.071h-4.892l-1.428-5h1.629a2.012 2.012 0 0 1 1.637.851zm-6.592 16.267-2.7-10.118h5.4zm-2.674-12.118 1.428-5h2.492l1.428 5zm-3.909-4.163a2.007 2.007 0 0 1 1.628-.837h1.629l-1.428 5h-4.928c.014-.022.018-.049.034-.07zm-2.969 6.488a1.9 1.9 0 0 1 -.185-.325h4.969l2.994 11.23zm11.323 10.915 3-11.24h4.986a2.1 2.1 0 0 1 -.243.421z"/></svg>
+
+        </div>
+
+        <div id="btnAd" class="btnHome">
+       
+<svg height="90%" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
+  <path d="M9.106,8.001h0c-.757,0-1.281,.586-1.385,1.166l-1.2,5.976c-.089,.443,.25,.857,.702,.857,.345,0,.641-.246,.704-.585l.166-.889h2.006l.157,.883c.061,.342,.358,.591,.705,.591h.01c.453,0,.793-.416,.701-.86l-1.221-5.947c-.12-.668-.589-1.192-1.346-1.192Zm-.645,4.999l.624-3.295,.638,3.295h-1.262Zm9.139,0v-2c0-1.657-1.343-3-3-3h-.6c-.552,0-1,.448-1,1v6c0,.552,.448,1,1,1h.6c1.657,0,3-1.343,3-3Zm-1.6,0c0,.772-.628,1.4-1.4,1.4v-4.8c.772,0,1.4,.628,1.4,1.4v2ZM12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0ZM2,12c0-2.398,.85-4.6,2.262-6.324l1.531,1.531c.195,.195,.451,.293,.707,.293s.512-.098,.707-.293c.391-.391,.391-1.023,0-1.414l-1.531-1.531c1.725-1.412,3.927-2.262,6.324-2.262,5.514,0,10,4.486,10,10,0,2.398-.85,4.6-2.262,6.324l-1.793-1.793c-.391-.391-1.023-.391-1.414,0s-.391,1.023,0,1.414l1.793,1.793c-1.725,1.412-3.927,2.262-6.324,2.262-5.514,0-10-4.486-10-10Z"/>
 </svg>
-
-        
+        </div>
+        <div id="premium" class="btnHome">
+            <svg
+            height="90%"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M22.994,11.954c.006-1.206-.452-2.662-2.571-3.05-.11-.21-.231-.421-.364-.633,1.068-1.479,.986-2.851-.248-4.085-1.235-1.236-2.607-1.317-4.087-.245-.209-.132-.418-.252-.627-.36-.382-2.112-1.824-2.58-3.027-2.58-1.687,0-2.771,.891-3.086,2.624-.208,.109-.418,.23-.629,.362-1.473-1.064-2.846-.973-4.093,.272-1.243,1.244-1.333,2.618-.272,4.091-.133,.212-.255,.423-.366,.633-1.729,.316-2.609,1.345-2.618,3.063-.006,1.206,.452,2.662,2.571,3.05,.11,.21,.231,.421,.365,.633-1.069,1.479-.987,2.851,.247,4.085,1.235,1.236,2.608,1.317,4.087,.245,.209,.132,.418,.252,.627,.36,.382,2.112,1.824,2.58,3.027,2.58,1.785,0,2.771-.891,3.086-2.624,.208-.109,.418-.23,.629-.362,2.351,1.769,4.092-.272,4.093-.272,1.214-1.149,1.334-2.618,.272-4.092,.133-.212,.255-.423,.366-.632,1.729-.316,2.609-1.345,2.618-3.063Zm-8.532,2.508c-.817,.818-1.593,1.274-2.67,1.21-1.016-.061-1.773-.728-2.254-1.21-1.634-1.633-1.634-3.291,0-4.925,.882-.884,1.754-1.286,2.67-1.209,1.015,.078,1.773,.728,2.254,1.21,1.633,1.633,1.634,3.291,0,4.925Z"
+            />
+          </svg>
+        </div>
       </div>
-
-
     </div>
 
     <!--HTML configuration-->
@@ -10845,7 +10874,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const btnHomeBox = document.querySelector(".btnHomeBox");
       const waveBottomHome = document.getElementById("waveBottomHome");
       const homeTitle = document.getElementById("homeTitle");
-      const settign = document.getElementById('setting')
+      const btnSetting = document.getElementById("btnSetting");
 
       const phoneConfig = document.getElementById("phoneConfig");
 
@@ -10925,7 +10954,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null };
 
-      const L_exclus = ["GO", "UM", "MF", "SJ","GS"]
+      const L_exclus = ["GO", "UM", "MF", "SJ", "GS"];
 
       btnsMode.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -11098,7 +11127,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         //Afficher le menu de fin si modeChoix, ou modeTrouver et cCooseTrouver
 
-         L_stars.forEach((el) => {el.style.animation = ""})
+        L_stars.forEach((el) => {
+          el.style.animation = "";
+        });
 
         if (
           (parseInt(qNumber.textContent) >= maxQ &&
@@ -11109,19 +11140,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         ) {
           affichePm();
           document.getElementById("cadreScorePm").style.display = "flex";
-          let delayStar = 500
+          let delayStar = 500;
 
-          L_stars.slice(0, Math.floor(score / (Math.floor(maxQ) / 3))).forEach((el) => {
-              
-                setTimeout(() => {
-                  el.style.animation = "scoredX 0.5s linear"
-                  el.classList.add("scored")
-                }, delayStar);
-                delayStar += 200;
-              
-            }),
-
-          pause4Choix.style.opacity = "0";
+          (L_stars.slice(0, Math.floor(score / (Math.floor(maxQ) / 3))).forEach(
+            (el) => {
+              setTimeout(() => {
+                el.style.animation = "scoredX 0.5s linear";
+                el.classList.add("scored");
+              }, delayStar);
+              delayStar += 200;
+            },
+          ),
+            (pause4Choix.style.opacity = "0"));
           pause4Choix.style.pointerEvents = "none";
           L_reponses = [];
           return;
@@ -26997,8 +27027,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           }
           sautPays = false;
           for (const [color, value] of Object.entries(D_colorChoice)) {
-            if (L_exclus.includes(r.id))
-              continue;
+            if (L_exclus.includes(r.id)) continue;
             if (value && !D_color[r.id.toUpperCase()][color]) {
               sautPays = true;
             }
