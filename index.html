@@ -2871,32 +2871,33 @@
       #cadreHome {
         display: flex;
         position: absolute;
+        z-index: 5;
         justify-content: space-around;
-        width : 50%;
-        min-width : calc(1.8em * 3 + 2 * 0.9em);
         align-items: center;
+        width : 50%;
         left: 50%;
-        transform : translateX(-50%);
-        bottom: calc(env(safe-area-inset-bottom) + 0.2em);
         gap: 0.9em;
+        bottom: calc(env(safe-area-inset-bottom) + 0.1em);
+        transform : translateX(-50%);
+        background :#f09443;
+        border-radius: 50em;
       }
+      
       .btnHome {
         display: flex;
         flex-shrink: 0;
+        flex:1;
         z-index: 5;
         cursor: pointer;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        width: 2.2em;
         aspect-ratio: 1/1;
         padding: 0.4em;
-        max-width: 1.8em;
         max-height: 1.8em;
         backdrop-filter: blur(10px);
-        border-radius: 0.6em;
+        border-radius: inherit;
         background: #f09443;
-        outline: 0.1em solid rgba(255, 255, 255, 0.3);
         transition:
           background 0.2s ease,
           transform 0.2s ease,
@@ -2905,10 +2906,15 @@
 
       .btnHome:active {
         background: #c36513;
-        transform: scale(0.92);
       }
       .btnHome svg {
         fill: white;
+      }
+      .ligneVHome{
+        width : 0;
+        height : 1.8em;
+        border-radius: inherit;
+        border : 0.05em solid rgba(255,255,255,0.4)
       }
 
       /*CSS Configuration */
@@ -5250,11 +5256,13 @@
         </div>
       </div>
       <div id="cadreHome">
-        <div id="btnSetting" class="btnHome">
+        <div id="premium" class="btnHome">
        
          <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" height="90%" viewBox="0 0 24 24" width="512" data-name="Layer 1"><path d="m23.22 5.743-3.011-4.068a4.005 4.005 0 0 0 -3.254-1.675h-9.91a4 4 0 0 0 -3.245 1.656l-3.065 4.097a3.993 3.993 0 0 0 .123 4.784l8.792 12.328a2.985 2.985 0 0 0 2.35 1.135 3.006 3.006 0 0 0 2.378-1.175l8.722-12.191a4 4 0 0 0 .12-4.891zm-4.628-2.892 3.018 4.078c.016.022.02.048.036.071h-4.892l-1.428-5h1.629a2.012 2.012 0 0 1 1.637.851zm-6.592 16.267-2.7-10.118h5.4zm-2.674-12.118 1.428-5h2.492l1.428 5zm-3.909-4.163a2.007 2.007 0 0 1 1.628-.837h1.629l-1.428 5h-4.928c.014-.022.018-.049.034-.07zm-2.969 6.488a1.9 1.9 0 0 1 -.185-.325h4.969l2.994 11.23zm11.323 10.915 3-11.24h4.986a2.1 2.1 0 0 1 -.243.421z"/></svg>
 
         </div>
+        <div class="ligneVHome"></div>
+
 
         <div id="btnAd" class="btnHome">
        
@@ -5262,7 +5270,9 @@
   <path d="m22.305,2.87l-2.281,4.622c-1.639-1.751-3.84-2.96-6.319-3.347l.945-1.915c.679-1.376,2.053-2.23,3.587-2.23h2.283c.692,0,1.324.351,1.689.939.366.588.401,1.31.095,1.931Zm-12.01,1.275l-.945-1.915c-.679-1.376-2.053-2.23-3.587-2.23h-2.26c-.692,0-1.324.351-1.689.938-.366.589-.401,1.311-.095,1.932l2.272,4.607c1.637-1.743,3.833-2.945,6.304-3.331Zm10.706,10.855c0,4.963-4.038,9-9,9S3,19.963,3,15,7.038,6,12,6s9,4.037,9,9Zm-4.843-.59c0-.306-.266-.644-.696-.644h-2.14l-.567-2.175c-.09-.345-.399-.585-.755-.591-.355.007-.665.246-.755.591l-.567,2.175h-2.14c-.43,0-.696.337-.696.644,0,.361.251.665.539.825l1.49.828-.661,1.803c-.128.349-.012.741.285.965h0c.304.229.723.226,1.023-.007l1.482-1.146,1.482,1.146c.301.232.72.235,1.023.007h0c.297-.224.413-.615.285-.965l-.661-1.803,1.49-.828c.288-.16.539-.464.539-.825Z"/>
 </svg>
         </div>
-        <div id="premium" class="btnHome">
+        <div class="ligneVHome"></div>
+
+        <div id="btnSetting" class="btnHome">
             <svg
             height="90%"
             fill="white"
@@ -6522,7 +6532,7 @@
               </div>
 
               <div class="btnD" id="tout">
-                <h4>Tout</h4>
+                <h4>Toutes</h4>
               </div>
             </div>
           </div>
