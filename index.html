@@ -5514,7 +5514,7 @@
         </div>
         <div class="ligneInSD" style="margin: 0.4em 0"></div>
 
-        <div class="itemSetting">
+        <div class="itemSetting" id="mail">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Filled"
@@ -11209,6 +11209,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const haptic = document.getElementById("haptic");
       const toggleHaptic = document.getElementById("toggleHaptic");
+      const mail = document.getElementById('mai')
 
       const sonSetting = document.getElementById("sonSetting");
       const toggleSon = document.getElementById("toggleSon");
@@ -11244,6 +11245,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreSetting.classList.remove("active");
         overallSetting.classList.remove("active");
       });
+
+      mail.addEventListener('click',()=>{
+
+  const sujet = encodeURIComponent("Feedback Géo Quiz");
+  const corps = encodeURIComponent("Bonjour,\n\n");
+  window.location.href = `mailto:tonadresse@exemple.com?subject=${sujet}&body=${corps}`;
+      })
 
       play.addEventListener("click", () => {
         cChooseTrouver = null;
