@@ -2941,27 +2941,29 @@
         backdrop-filter: blur(4px);
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         transform-origin: right bottom;
-        transform : translateX(-50%) translateY(-50%) scale(0.92);
-        transition: transform 0.2s ease, opacity 0.2s ease;
+        transform: translateX(-50%) translateY(-50%) scale(0.92);
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
       }
-      #cadreSetting.active{
+      #cadreSetting.active {
         transform: translateX(-50%) translateY(-50%);
-        opacity : 1;
+        opacity: 1;
         pointer-events: all;
       }
 
-      #overallSetting{
-        opacity : 0;
+      #overallSetting {
+        opacity: 0;
         pointer-events: none;
-        inset:0;
-        min-width : 100vw;
-        min-height : 100vh;
+        inset: 0;
+        min-width: 100vw;
+        min-height: 100vh;
         z-index: 109;
-        background : rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(10px);
       }
-      #overallSetting.active{
-        opacity : 1;
+      #overallSetting.active {
+        opacity: 1;
         pointer-events: all;
       }
 
@@ -5383,7 +5385,7 @@
         <h2>Paramètres</h2>
         <h3 style="align-self: flex-start">Réglages</h3>
 
-        <div class="itemSetting">
+        <div class="itemSetting" id="haptic">
           <svg
             height="1.2em"
             viewBox="0 0 603 512"
@@ -5412,10 +5414,20 @@
             />
           </svg>
 
-          <span style="font-size: 0.96em; font-weight: 450; flex : 1; display : flex; justify-content: flex-start; padding-left: 1em;">Retour haptic</span>
+          <span
+            style="
+              font-size: 0.96em;
+              font-weight: 450;
+              flex: 1;
+              display: flex;
+              justify-content: flex-start;
+              padding-left: 1em;
+            "
+            >Retour haptic</span
+          >
 
           <!-- From Uiverse.io by ErzenXz -->
-          <label class="toggleSetting">
+          <label class="toggleSetting" id="toggleHaptic">
             <input type="checkbox" />
             <div class="toggleSetting-background"></div>
             <div class="toggleSetting-handle"></div>
@@ -5424,48 +5436,123 @@
 
         <div class="ligneInSD" style="margin: 0.1em 0"></div>
 
-        
-        <div class="itemSetting">
-       <svg xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24"  height="1.2em"><path d="M20.8,4.293A1,1,0,0,0,19.39,5.707a8.911,8.911,0,0,1,0,12.586A1,1,0,1,0,20.8,19.707,10.911,10.911,0,0,0,20.8,4.293Z"/><path d="M18.093,7.293a1,1,0,1,0-1.414,1.414,4.664,4.664,0,0,1,0,6.586,1,1,0,1,0,1.414,1.414A6.665,6.665,0,0,0,18.093,7.293Z"/><path d="M13.819.207A12.055,12.055,0,0,0,6.268,5H5a5.006,5.006,0,0,0-5,5v4a5.006,5.006,0,0,0,5,5H6.269a12.051,12.051,0,0,0,7.55,4.793A1,1,0,0,0,15,22.81V1.19A1,1,0,0,0,13.819.207Z"/></svg>
+        <div class="itemSetting" id="sonSetting">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Filled"
+            viewBox="0 0 24 24"
+            height="1.2em"
+          >
+            <path
+              d="M20.8,4.293A1,1,0,0,0,19.39,5.707a8.911,8.911,0,0,1,0,12.586A1,1,0,1,0,20.8,19.707,10.911,10.911,0,0,0,20.8,4.293Z"
+            />
+            <path
+              d="M18.093,7.293a1,1,0,1,0-1.414,1.414,4.664,4.664,0,0,1,0,6.586,1,1,0,1,0,1.414,1.414A6.665,6.665,0,0,0,18.093,7.293Z"
+            />
+            <path
+              d="M13.819.207A12.055,12.055,0,0,0,6.268,5H5a5.006,5.006,0,0,0-5,5v4a5.006,5.006,0,0,0,5,5H6.269a12.051,12.051,0,0,0,7.55,4.793A1,1,0,0,0,15,22.81V1.19A1,1,0,0,0,13.819.207Z"
+            />
+          </svg>
 
-          <span style="font-size: 0.96em; font-weight: 450; flex : 1; display : flex; justify-content: flex-start; padding-left: 1em;">Son</span>
-          <label class="toggleSetting">
+          <span
+            style="
+              font-size: 0.96em;
+              font-weight: 450;
+              flex: 1;
+              display: flex;
+              justify-content: flex-start;
+              padding-left: 1em;
+            "
+            >Son</span
+          >
+          <label class="toggleSetting" id="toggleSon">
             <input type="checkbox" />
             <div class="toggleSetting-background"></div>
             <div class="toggleSetting-handle"></div>
           </label>
         </div>
 
-        <h3 style="align-self: flex-start;">Informations</h3>
+        <h3 style="align-self: flex-start">Informations</h3>
 
         <div class="itemSetting">
-
-      <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"  height="1.2em"><path d="M12.836.028A12,12,0,0,0,.029,12.855C.47,19.208,6.082,24,13.083,24H19a5.006,5.006,0,0,0,5-5V12.34A12.209,12.209,0,0,0,12.836.028ZM12,5a1.5,1.5,0,0,1,0,3A1.5,1.5,0,0,1,12,5Zm2,13a1,1,0,0,1-2,0V12H11a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2Z"/></svg>
-          <span style="font-size: 0.96em; font-weight: 450; flex : 1; display : flex; justify-content: flex-start; padding-left: 1em;">À propos de Géo Quiz</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 0 24 24"
+            height="1.2em"
+          >
+            <path
+              d="M12.836.028A12,12,0,0,0,.029,12.855C.47,19.208,6.082,24,13.083,24H19a5.006,5.006,0,0,0,5-5V12.34A12.209,12.209,0,0,0,12.836.028ZM12,5a1.5,1.5,0,0,1,0,3A1.5,1.5,0,0,1,12,5Zm2,13a1,1,0,0,1-2,0V12H11a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2Z"
+            />
+          </svg>
+          <span
+            style="
+              font-size: 0.96em;
+              font-weight: 450;
+              flex: 1;
+              display: flex;
+              justify-content: flex-start;
+              padding-left: 1em;
+            "
+            >À propos de Géo Quiz</span
+          >
 
           <!-- From Uiverse.io by ErzenXz -->
-              <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" height="1.2em"><path d="M15.4,9.88,10.81,5.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14,11.29a1,1,0,0,1,0,1.42L9.4,17.29a1,1,0,0,0,1.41,1.42l4.59-4.59A3,3,0,0,0,15.4,9.88Z"/></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Outline"
+            viewBox="0 0 24 24"
+            height="1.2em"
+          >
+            <path
+              d="M15.4,9.88,10.81,5.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14,11.29a1,1,0,0,1,0,1.42L9.4,17.29a1,1,0,0,0,1.41,1.42l4.59-4.59A3,3,0,0,0,15.4,9.88Z"
+            />
+          </svg>
         </div>
         <div class="ligneInSD" style="margin: 0.1em 0"></div>
 
-          <div class="itemSetting">
+        <div class="itemSetting">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Filled"
+            viewBox="0 0 24 24"
+            height="1.2em"
+          >
+            <path
+              d="M23.954,5.542,15.536,13.96a5.007,5.007,0,0,1-7.072,0L.046,5.542C.032,5.7,0,5.843,0,6V18a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V6C24,5.843,23.968,5.7,23.954,5.542Z"
+            />
+            <path
+              d="M14.122,12.546l9.134-9.135A4.986,4.986,0,0,0,19,1H5A4.986,4.986,0,0,0,.744,3.411l9.134,9.135A3.007,3.007,0,0,0,14.122,12.546Z"
+            />
+          </svg>
 
-      <svg xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" height="1.2em"><path d="M23.954,5.542,15.536,13.96a5.007,5.007,0,0,1-7.072,0L.046,5.542C.032,5.7,0,5.843,0,6V18a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V6C24,5.843,23.968,5.7,23.954,5.542Z"/><path d="M14.122,12.546l9.134-9.135A4.986,4.986,0,0,0,19,1H5A4.986,4.986,0,0,0,.744,3.411l9.134,9.135A3.007,3.007,0,0,0,14.122,12.546Z"/></svg>
-
-      
-          <span style="font-size: 0.96em; font-weight: 450; flex : 1; display : flex; justify-content: flex-start; padding-left: 1em;">À propos de Géo Quiz</span>
+          <span
+            style="
+              font-size: 0.96em;
+              font-weight: 450;
+              flex: 1;
+              display: flex;
+              justify-content: flex-start;
+              padding-left: 1em;
+            "
+            >À propos de Géo Quiz</span
+          >
 
           <!-- From Uiverse.io by ErzenXz -->
 
-            <svg height = "1.2em" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z" fill="black"/>
-</svg>
-
-
+          <svg
+            height="1.2em"
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
+              fill="black"
+            />
+          </svg>
         </div>
-
-        
-
       </div>
       <div id="cadreHome">
         <div id="premium" class="btnHome">
@@ -11108,26 +11195,50 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.body.style.height = window.screen.height + "px";
 
       const phoneHome = document.getElementById("phoneHome");
+      const phoneConfig = document.getElementById("phoneConfig");
       const play = document.getElementById("play");
       const btnHomeBox = document.querySelector(".btnHomeBox");
       const cadreHome = document.getElementById("cadreHome");
       const waveBottomHome = document.getElementById("waveBottomHome");
       const homeTitle = document.getElementById("homeTitle");
       const btnSetting = document.getElementById("btnSetting");
-      const cadreSetting = document.getElementById("cadreSetting")
-      const overallSetting = document.getElementById('overallSetting')
-      const phoneConfig = document.getElementById("phoneConfig");
+      const cadreSetting = document.getElementById("cadreSetting");
+      const overallSetting = document.getElementById("overallSetting");
 
+      const haptic = document.getElementById("haptic");
+      const toggleHaptic = document.getElementById("toggleHaptic");
 
-      btnSetting.addEventListener('click',()=>{
-        cadreSetting.classList.add('active')
-        overallSetting.classList.add('active')
-      })
-      overallSetting.addEventListener('click',()=>{
-        cadreSetting.classList.remove('active')
-        overallSetting.classList.remove('active')
-        
-      })
+      const sonSetting = document.getElementById("sonSetting");
+      const toggleSon = document.getElementById("toggleSon");
+
+      haptic.addEventListener("click", () => {
+        toggleHaptic.click();
+      });
+
+      toggleHaptic.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      let sound = false;
+      const checkbox = toggleSon.querySelector("input");
+
+      sonSetting.addEventListener("click", () => {
+        toggleSon.click();
+      });
+
+      checkbox.addEventListener("change", (e) => {
+        sound = e.target.checked;
+        console.log(sound);
+      });
+
+      btnSetting.addEventListener("click", () => {
+        cadreSetting.classList.add("active");
+        overallSetting.classList.add("active");
+      });
+      overallSetting.addEventListener("click", () => {
+        cadreSetting.classList.remove("active");
+        overallSetting.classList.remove("active");
+      });
 
       play.addEventListener("click", () => {
         cChooseTrouver = null;
@@ -12392,7 +12503,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           [...phoneHome.children].forEach((el) => {
             el.style.transition = "transform 0.5s ease, opacity 0.4s ease";
             el.style.opacity = "";
-            
           });
 
           homeTitle.style.transform = "translateX(-50%)";
@@ -12497,7 +12607,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       );
 
       function playSound(song) {
-        return;
+        if (!sound) {
+          return;
+        }
         sounds.forEach((s) => {
           s.pause();
           s.currentTime = 0;
@@ -13469,7 +13581,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           [...phoneHome.children].forEach((el) => {
             el.style.transition = "transform 0.5s ease, opacity 0.4s ease";
             el.style.opacity = "";
-            
           });
 
           homeTitle.style.transform = "translateX(-50%)";
@@ -30674,8 +30785,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function loop() {
         requestAnimationFrame(loop);
+        // console.log(toggleSon.style.background)
       }
-      // loop()
+      loop();
       /*phoneHome.style.display="none"
       phonePlay.style.display="flex"*/
       /* setTimeout(() => {
