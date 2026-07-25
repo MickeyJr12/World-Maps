@@ -2952,7 +2952,7 @@
         pointer-events: all;
       }
 
-      #overallSetting {
+      #overallHome {
         opacity: 0;
         pointer-events: none;
         inset: 0;
@@ -2962,7 +2962,7 @@
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(10px);
       }
-      #overallSetting.active {
+      #overallHome.active {
         opacity: 1;
         pointer-events: all;
       }
@@ -2976,7 +2976,7 @@
         justify-content: space-between;
         align-items: center;
         width: calc(100% - 0.6em);
-        padding : 0.4em;
+        padding: 0.4em;
         transition: background 0.2s ease;
       }
       .itemSetting:active {
@@ -3044,6 +3044,113 @@
         box-shadow: inset 0 0 0 calc(var(--toggle-height) * 0.05) #04b360;
       }
 
+      /*CSS récompenses*/
+
+      #cadreRD {
+        /*reward*/
+        display: flex;
+        pointer-events : none;
+        opacity : 0;
+        box-sizing: border-box;
+        z-index: 110;
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        inset: 0;
+        top: calc(env(safe-area-inset-top) + 4em);
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: calc(env(safe-area-inset-bottom) + 0.2em);
+        width: 90%;
+        max-width: 50em;
+        border-radius: 1em;
+        gap: 0.4em;
+        color: black;
+        background: rgb(252, 252, 252);
+        padding: 0.8em;
+        transform-origin : center bottom;
+        transform : translateX(-50%) scale(0.92);
+        transition : opacity 0.2s ease,  transform 0.2s ease;
+      }
+      #cadreRD.active{
+        transform : translateX(-50%) scale(1);
+        opacity : 1; 
+        pointer-events : all;
+      }
+      #cadreLevelRD {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .progression {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 0.5em;
+        border-radius: 50em;
+        background: rgba(11, 101, 140, 0.2);
+      }
+      .progIn {
+        height: 100%;
+        width: 60%;
+        border-radius: inherit;
+        background: rgb(13, 84, 117);
+      }
+
+      .cadreRDQ {
+        /*reard quotidien*/
+        display: flex;
+        flex-direction: column;
+        gap : 0.6em;
+        width: 100%;
+        min-height: 4em;
+        box-sizing: border-box;
+        padding: 0.6em;
+        border-radius: inherit;
+        background: white;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+      }
+      .wrapperCadreRDQ {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .wrapperCadreRDQ svg {
+        height: 2em;
+        fill: rgb(37, 190, 255);
+      }
+      .txtCadreRDQ {
+        display: flex;
+        padding-left : 1em;
+        flex: 1;
+        font-size: 0.95em;
+        color: rgba(40, 40, 40, 0.8);
+      }
+      .xp {
+        display: flex;
+        color : white;
+        justify-content: center;
+        align-items: center;
+        padding : 0.5em;
+        font-weight: 700;
+        border-radius: 0.5em;
+        background: rgb(13, 84, 117);
+      }
+      .footerCadreRDQ{
+        display : flex;
+        justify-content: space-around;
+        align-items : center;
+        width : 100%;
+        gap : 0.8em;
+      }
+      .txtProgression{
+        font-size : 0.9em;
+        color : rgba(0,0,0,0.8);
+      }
+
+      /*Fin CSS Récompenses*/
       /*CSS Configuration */
       #phoneConfig {
         display: none;
@@ -5382,7 +5489,78 @@
           <h2>Devises</h2>
         </div>
       </div>
-      <div id="overallSetting"></div>
+
+      <!--HTML Récompenses-->
+      <div id="cadreRD">
+        <span style="width: 100%">
+          <h2 style="align-self: flex-start">Progression Joueur</h2>
+        </span>
+
+        <div id="cadreLevelRD">
+          <span style="font-size: 1.4em; font-weight: 600">Niveau 9</span>
+          <span>1400/2000 XP </span>
+        </div>
+
+        <div class="progression">
+          <div class="progIn"></div>
+        </div>
+
+        <span
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 0.4em;
+            width: 100%;
+            margin-top: 0.8em;
+          "
+        >
+          <svg
+            height="1.5em"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 0 26 26"
+          >
+            <path
+              d="m24,7v12c0,2.757-2.243,5-5,5-.552,0-1-.447-1-1s.448-1,1-1c1.654,0,3-1.346,3-3v-9h-1c-.552,0-1-.447-1-1s.448-1,1-1h1v-1c0-1.654-1.346-3-3-3H5c-1.654,0-3,1.346-3,3v1h11c.552,0,1,.447,1,1s-.448,1-1,1H2v9c0,1.654,1.346,3,3,3,.552,0,1,.447,1,1s-.448,1-1,1c-2.757,0-5-2.243-5-5V7C0,4.243,2.243,2,5,2h1v-1c0-.553.448-1,1-1s1,.447,1,1v1h8v-1c0-.553.448-1,1-1s1,.447,1,1v1h1c2.757,0,5,2.243,5,5Zm-7,10c-.552,0-1,.447-1,1,0,2.206-1.794,4-4,4s-4-1.794-4-4,1.794-4,4-4c.552,0,1-.447,1-1s-.448-1-1-1c-3.309,0-6,2.691-6,6s2.691,6,6,6,6-2.691,6-6c0-.553-.448-1-1-1Zm-.448-7.744l-.966.966c-.375.375-.586.884-.586,1.414v1.95l-2.482,2.482c-.165-.044-.339-.068-.518-.068-1.105,0-2,.895-2,2s.895,2,2,2,2-.895,2-2c0-.179-.024-.353-.068-.518l2.482-2.482h1.95c.53,0,1.039-.211,1.414-.586l.966-.966c.535-.535.156-1.448-.6-1.448h-2.144v-2.144c0-.756-.914-1.135-1.448-.6Z"
+            />
+          </svg>
+          <span style="font-size: 1.4em; font-weight: 600">Défis du jour</span>
+        </span>
+
+        <div class="cadreRDQ">
+          <div class="wrapperCadreRDQ">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Layer_1"
+              data-name="Layer 1"
+              viewBox="0 0 26 26"
+            >
+              <path
+                d="m22.305,2.87l-2.281,4.622c-1.639-1.751-3.84-2.96-6.319-3.347l.945-1.915c.679-1.376,2.053-2.23,3.587-2.23h2.283c.692,0,1.324.351,1.689.939.366.588.401,1.31.095,1.931Zm-12.01,1.275l-.945-1.915c-.679-1.376-2.053-2.23-3.587-2.23h-2.26c-.692,0-1.324.351-1.689.938-.366.589-.401,1.311-.095,1.932l2.272,4.607c1.637-1.743,3.833-2.945,6.304-3.331Zm10.706,10.855c0,4.963-4.038,9-9,9S3,19.963,3,15,7.038,6,12,6s9,4.037,9,9Zm-4.843-.59c0-.306-.266-.644-.696-.644h-2.14l-.567-2.175c-.09-.345-.399-.585-.755-.591-.355.007-.665.246-.755.591l-.567,2.175h-2.14c-.43,0-.696.337-.696.644,0,.361.251.665.539.825l1.49.828-.661,1.803c-.128.349-.012.741.285.965h0c.304.229.723.226,1.023-.007l1.482-1.146,1.482,1.146c.301.232.72.235,1.023.007h0c.297-.224.413-.615.285-.965l-.661-1.803,1.49-.828c.288-.16.539-.464.539-.825Z"
+              />
+            </svg>
+
+            <div class="txtCadreRDQ">Deviner 10 capitales</div>
+            <div class="xp">1500 XP</div>
+          </div>
+
+          <div class="footerCadreRDQ">
+<div class="progression">
+            <div class="progIn"></div>
+          </div>
+
+          <span class="txtProgression"></span>5/10</span>
+          </div>
+
+          
+        </div>
+
+      </div>
+
+      <div id="overallHome"></div>
       <div id="cadreSetting">
         <h2>Paramètres</h2>
         <h3 style="align-self: flex-start">Réglages</h3>
@@ -5557,7 +5735,7 @@
         </div>
       </div>
       <div id="cadreHome">
-        <div id="premium" class="btnHome">
+        <div id="btnPremium" class="btnHome">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Layer_1"
@@ -5573,7 +5751,7 @@
         </div>
         <div class="ligneVHome"></div>
 
-        <div id="btnAd" class="btnHome">
+        <div id="btnReward" class="btnHome">
           <svg
             height="90%"
             xmlns="http://www.w3.org/2000/svg"
@@ -11204,15 +11382,27 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const waveBottomHome = document.getElementById("waveBottomHome");
       const homeTitle = document.getElementById("homeTitle");
       const btnSetting = document.getElementById("btnSetting");
+      const btnPremium = document.getElementById('btnPremium');
+      const btnReward = document.getElementById('btnReward')
+      const cadreRD = document.getElementById("cadreRD");
+      
       const cadreSetting = document.getElementById("cadreSetting");
-      const overallSetting = document.getElementById("overallSetting");
+      const overallHome = document.getElementById("overallHome");
 
       const haptic = document.getElementById("haptic");
       const toggleHaptic = document.getElementById("toggleHaptic");
-      const mail = document.getElementById('mail')
+      const mail = document.getElementById("mail");
 
       const sonSetting = document.getElementById("sonSetting");
       const toggleSon = document.getElementById("toggleSon");
+
+
+      btnReward.addEventListener('click',()=>{
+      cadreRD.classList.add('active')
+        overallHome.classList.add("active");
+
+      })
+
 
       haptic.addEventListener("click", () => {
         toggleHaptic.click();
@@ -11230,7 +11420,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       toggleSon.addEventListener("click", (e) => {
-        e.stopPropagation()
+        e.stopPropagation();
       });
 
       checkbox.addEventListener("change", (e) => {
@@ -11239,19 +11429,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       btnSetting.addEventListener("click", () => {
         cadreSetting.classList.add("active");
-        overallSetting.classList.add("active");
+        overallHome.classList.add("active");
       });
-      overallSetting.addEventListener("click", () => {
+      overallHome.addEventListener("click", () => {
         cadreSetting.classList.remove("active");
-        overallSetting.classList.remove("active");
+        cadreRD.classList.remove("active");
+
+        overallHome.classList.remove("active");
       });
 
-      mail.addEventListener('click',()=>{
-
-  const sujet = encodeURIComponent("Feedback Géo Quiz");
-  const corps = encodeURIComponent("Bonjour,\n\n");
-  window.location.href = `mailto:tonadresse@exemple.com?subject=${sujet}&body=${corps}`;
-      })
+      mail.addEventListener("click", () => {
+        const sujet = encodeURIComponent("Feedback Géo Quiz");
+        const corps = encodeURIComponent("Bonjour,\n\n");
+        window.location.href = `mailto:tonadresse@exemple.com?subject=${sujet}&body=${corps}`;
+      });
 
       play.addEventListener("click", () => {
         cChooseTrouver = null;
@@ -11506,7 +11697,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         L_stars.forEach((el) => {
           el.style.animation = "";
-          el.classList.remove('scored')
+          el.classList.remove("scored");
         });
 
         if (
