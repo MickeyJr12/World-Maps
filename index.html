@@ -3092,22 +3092,34 @@
         font-weight : 550;
       }
       .itemMenuRD{
+        display : flex;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         position : absolute;
         z-index : 2;
         width : 50%;
+        gap : 0.5em;
+        font-size: 0.95em;
         color : rgba(0,0,0,0.8);
-        font-size : 0.95em;
+        font-size : 0.9em;
         transition : font-size 0.2s ease, color 0.2s ease;
       }
       #menuDefiQ{left : 0;}
       #menuRecompenses{right : 0;}
 
-      .itemMenuRD:active{font-size : 0.92em;}
-
+      .itemMenuRD:active{font-size : 0.86em;}
+       .itemMenuRD svg{
+        height : 1.25em;
+       }
       .itemMenuRD.active{
+        font-size: 0.95em;
         color : white;
       }
+      .itemMenuRD.active svg{
+        height : 1.2em
+      }
+
       #cadreMenuRDIn{
         z-index: 1;
         position : absolute;
@@ -3163,11 +3175,11 @@
 
        #cadreRDQ{
         display: grid;
-        align-items: center; /* centré verticalement */
+        align-items: center; 
         justify-items: center;
         grid-template-columns: repeat(2, 1fr);
         border-radius: inherit;
-        width: 100%;
+        width: calc(100%,100%,50em);
         height : auto ; 
         gap : 0.8em;
       }
@@ -3182,8 +3194,6 @@
         background: white;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
         aspect-ratio:1/1;
-        width : clamp(5em, 50%, 15em);
-        aspect-ratio: 1/1;  
         padding : 0.6em;
         gap : 0.2em;
       }
@@ -5670,27 +5680,42 @@
         <div id="cadreMenuRD">
           <div id="cadreMenuRDIn" class=""></div>
 
-          <div class="itemMenuRD active" id="menuDefiQ">Défis quotidiens</div>
-          <div class="itemMenuRD" id="menuRecompenses">Récompenses</div>
+          <div class="itemMenuRD active" id="menuDefiQ">
+
+           <svg height="1.25em" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1024 1024" class="icon" version="1.1"><path d="M182.067 383.79h664.916v473.911H182.067z" fill="#FCE3C3"/><path d="M846.983 857.701H170.007V401.632h676.976v456.069zM189.428 838.28h638.134V421.053H189.428V838.28z" fill="#300604"/><path d="M850.483 861.201H166.507V398.132h683.977v463.069z m-676.976-7h669.977V405.132H173.507v449.069z m657.555-12.421H185.929V417.553h645.134V841.78z m-638.133-7h631.134V424.553H192.929V834.78z" fill="#300604"/><path d="M179.718 273.282h657.556v138.061H179.718z" fill="#300604"/><path d="M840.774 414.844H176.219V269.782h664.556v145.062z m-657.555-7h650.556V276.782H183.219v131.062z" fill="#300604"/><path d="M846.983 421.053H170.007V263.572h676.976v157.481z m-657.555-19.421h638.134V282.994H189.428v118.638z" fill="#300604"/><path d="M850.483 424.553H166.507v-164.48h683.977v164.48z m-676.976-7h669.977v-150.48H173.507v150.48z m657.555-12.421H185.929V279.494h645.134v125.638z m-638.133-7h631.134V286.494H192.929v111.638z" fill="#300604"/><path d="M672.215 190.225h63.426v162.87h-63.426z" fill="#ED8F27"/><path d="M745.351 362.806h-82.847V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z" fill="#300604"/><path d="M281.351 190.225h63.426v162.87h-63.426z" fill="#ED8F27"/><path d="M354.487 362.806H271.64V180.514h82.847v182.292z m-63.426-19.421h44.005v-143.45h-44.005v143.45z" fill="#300604"/><path d="M688.071 468.427h66.597v66.597h-66.597z" fill="#B12800"/><path d="M688.071 596.369h66.597v66.597h-66.597zM688.071 724.31h66.597v66.598h-66.597zM546.156 468.427h66.597v66.597h-66.597z" fill="#228E9D"/><path d="M546.156 596.369h66.597v66.597h-66.597z" fill="#B12800"/><path d="M546.156 724.31h66.597v66.598h-66.597zM404.239 468.427h66.598v66.597h-66.598z" fill="#228E9D"/><path d="M404.239 596.369h66.598v66.597h-66.598z" fill="#B12800"/><path d="M404.239 724.31h66.598v66.598h-66.598zM262.323 596.369h66.598v66.597h-66.598z" fill="#228E9D"/><path d="M262.323 724.31h66.598v66.598h-66.598z" fill="#B12800"/></svg>
+
+            
+            Défis quotidiens</div>
+          <div class="itemMenuRD" id="menuRecompenses">
+            <svg height="1.25em" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 120" id="Layer_1" version="1.1" xml:space="preserve">
+
+<style type="text/css">
+	.st0{fill:#E24255;}
+	.st1{fill:#FFC54D;}
+	.st2{fill:#E8B04B;}
+	.st3{fill:#FFFFFF;}
+</style>
+
+<g>
+
+<polygon class="st0" points="79.7,45.6 60,55.5 40.3,45.6 15.9,94.3 31.1,92.8 38.9,105.9 60,63.9 81.1,105.9 88.9,92.8    104.1,94.3  "/>
+
+<circle class="st1" cx="60" cy="46.4" r="32.2"/>
+
+<circle class="st2" cx="60" cy="46.4" r="25.3"/>
+
+<path class="st3" d="M61.2,31.2l4.2,8.4c0.2,0.4,0.6,0.7,1,0.8l9.3,1.4c1.1,0.2,1.6,1.5,0.8,2.3l-6.7,6.6c-0.3,0.3-0.5,0.8-0.4,1.2   l1.6,9.3c0.2,1.1-1,2-2,1.4l-8.3-4.4c-0.4-0.2-0.9-0.2-1.3,0L51,62.6c-1,0.5-2.2-0.3-2-1.4l1.6-9.3c0.1-0.4-0.1-0.9-0.4-1.2   l-6.7-6.6c-0.8-0.8-0.4-2.2,0.8-2.3l9.3-1.4c0.4-0.1,0.8-0.3,1-0.8l4.2-8.4C59.3,30.2,60.7,30.2,61.2,31.2z"/>
+
+</g>
+
+</svg>
+
+            Récompenses</div>
         </div>
         <div id="contentCadreRD">
 
         <div id="contentDefisQ">
 
-        <span
-          style="
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 0.4em;
-            width: 100%;
-            margin-top: 0.8em;
-          "
-        >
-         <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 0 1024 1024" class="icon" version="1.1"><path d="M897.9 369.2H205c-33.8 0-61.4-27.6-61.4-61.4s27.6-61.4 61.4-61.4h692.9c33.8 0 61.4 27.6 61.4 61.4s-27.6 61.4-61.4 61.4z" fill="#FFB89A"/><path d="M807 171H703.3c-16.6 0-30 13.4-30 30s13.4 30 30 30H807c31.6 0 57.4 24 57.4 53.4v42.3H125.2v-42.3c0-29.5 25.7-53.4 57.4-53.4H293c16.6 0 30-13.4 30-30s-13.4-30-30-30H182.5c-64.7 0-117.4 50.9-117.4 113.4v527.7c0 62.5 52.7 113.4 117.4 113.4H807c64.7 0 117.4-50.9 117.4-113.4V284.5c0-62.6-52.7-113.5-117.4-113.5z m0 694.6H182.5c-31.6 0-57.4-24-57.4-53.4V386.8h739.2v425.4c0.1 29.5-25.7 53.4-57.3 53.4z" fill="#45484C"/><path d="M447.6 217.1c-12.4-6.1-27-2.8-35.7 7.1-2.2-6.7-4-16.2-4-28.1 0-13 2.2-23 4.6-29.8 9.5 8.1 23.5 9.6 34.9 2.8 14.2-8.5 18.8-27 10.3-41.2-15.5-25.9-35.9-29.7-46.6-29.7-36.6 0-63.1 41.2-63.1 97.8s26.4 98 63 98c20.6 0 39-13.4 50.4-36.7 7.3-14.9 1.1-32.9-13.8-40.2zM635.9 218.5c-12.4-6.1-27-2.8-35.7 7.1-2.2-6.7-4-16.2-4-28.1 0-13 2.2-23 4.6-29.8 9.5 8.1 23.5 9.6 34.9 2.8 14.2-8.5 18.8-27 10.3-41.2-15.5-25.9-35.9-29.7-46.6-29.7-36.6 0-63.1 41.2-63.1 97.8s26.5 97.8 63.1 97.8c20.6 0 39-13.4 50.4-36.7 7.1-14.7 0.9-32.7-13.9-40z" fill="#45484C"/><path d="M700.2 514.5H200.5c-16.6 0-30 13.4-30 30s13.4 30 30 30h499.7c16.6 0 30-13.4 30-30s-13.5-30-30-30zM668.4 689.8h-74c-16.6 0-30 13.4-30 30s13.4 30 30 30h74c16.6 0 30-13.4 30-30s-13.4-30-30-30zM479.3 689.8H200.5c-16.6 0-30 13.4-30 30s13.4 30 30 30h278.8c16.6 0 30-13.4 30-30s-13.4-30-30-30z" fill="#33CC99"/></svg>
-          <span style="font-size: 1.2em; font-weight: 550">Défis du jour</span>
-        </span>
 
         <div id="cadreRDQ">
 
@@ -5787,42 +5812,6 @@
 
 <div id="contentRecompenses">
         
-             <span
-          style="
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 0.4em;
-            width: 100%;
-            margin-top: 0.8em;
-          "
-        >
-                <svg height="2em" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 120 120" id="Layer_1" version="1.1" xml:space="preserve">
-
-<style type="text/css">
-	.st0{fill:#E24255;}
-	.st1{fill:#FFC54D;}
-	.st2{fill:#E8B04B;}
-	.st3{fill:#FFFFFF;}
-</style>
-
-<g>
-
-<polygon class="st0" points="79.7,45.6 60,55.5 40.3,45.6 15.9,94.3 31.1,92.8 38.9,105.9 60,63.9 81.1,105.9 88.9,92.8    104.1,94.3  "/>
-
-<circle class="st1" cx="60" cy="46.4" r="32.2"/>
-
-<circle class="st2" cx="60" cy="46.4" r="25.3"/>
-
-<path class="st3" d="M61.2,31.2l4.2,8.4c0.2,0.4,0.6,0.7,1,0.8l9.3,1.4c1.1,0.2,1.6,1.5,0.8,2.3l-6.7,6.6c-0.3,0.3-0.5,0.8-0.4,1.2   l1.6,9.3c0.2,1.1-1,2-2,1.4l-8.3-4.4c-0.4-0.2-0.9-0.2-1.3,0L51,62.6c-1,0.5-2.2-0.3-2-1.4l1.6-9.3c0.1-0.4-0.1-0.9-0.4-1.2   l-6.7-6.6c-0.8-0.8-0.4-2.2,0.8-2.3l9.3-1.4c0.4-0.1,0.8-0.3,1-0.8l4.2-8.4C59.3,30.2,60.7,30.2,61.2,31.2z"/>
-
-</g>
-
-</svg>
-
-          <span style="font-size: 1.2em; font-weight: 550">Récompenses</span>
-        </span>
         
         <div class="cadreRDL">
           
