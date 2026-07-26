@@ -3230,29 +3230,28 @@
         right : 0.8em;
         top : 0.8em
       }
-      .xpRDQ{
+      .xpQ{
         display : flex;
         align-items : center;
         justify-content: center;
         border-radius: 0.4em;
         padding : 0.4em;
-        color: #1E8A4C; /* vert foncé, cohérent avec ton vert "Devises" existant */
         font-weight: 650;
-        color: rgba(107, 134, 255, 0.65); /* ton bleu #1E3FCB, même famille que le fond */
-        background: rgba(219, 226, 245, 1); /* piste grise/bleutée */
+        background: rgba(228, 230, 235, 1); /* gris clair neutre */
+        color: rgba(150, 155, 165, 1);      /* gris moyen, texte discret */
         transition : background 0.2s ease, transform 0.2s ease;
       }
 
-      .xpRDQ.active{
+      .xpQ.active{
         color : white;
         cursor : pointer;
         background: rgba(20, 162, 117,1);
         animation : rewarded 1s linear infinite;
       }
-      .xpRDQ.active:active{
+      .xpQ.active:active{
         transform : scale(0.96)
       }
-      .xpRDQ.finish{
+      .xpQ.finish{
          color: rgba(90, 165, 130, 1);
          background: rgba(209, 240, 224, 1); /* piste devient vert pastel une fois fini */
       }
@@ -3314,6 +3313,13 @@
         width: 40%;
         border-radius: inherit;
         background: #1E3FCB; /* ton bleu "Carte" existant */
+        transition :background 0.2s ease;
+      }
+      .progIn.finish{
+         background: rgba(90, 165, 130, 1);
+         width : 100%;
+
+
       }
 
       .cadreRDL { /*reward long*/
@@ -5822,8 +5828,8 @@
 </svg>
 <span class="txtCadreRDQ">15 bonnes réponses en mode Trouver</span>
 
-<div class="progression"><div class="progIn"></div></div>
-<div class="xpRDQ">+150 XP</div>
+<div class="progression"><div class="progIn finish"></div></div>
+<div class="xpQ finish">Terminé</div>
 
 
           </div>
@@ -5845,7 +5851,7 @@
 <span class="txtCadreRDQ">15 bonnes réponses en mode Trouver</span>
 
 <div class="progression"><div class="progIn"></div></div>
-<div class="xpRDQ active">+150 XP</div>
+<div class="xpQ active">+150 XP</div>
 
 
           </div>
@@ -5867,7 +5873,7 @@
 <span class="txtCadreRDQ">15 bonnes réponses en mode Trouver</span>
 
 <div class="progression"><div class="progIn"></div></div>
-<div class="xpRDQ">+150 XP</div>
+<div class="xpQ">+150 XP</div>
 
 
           </div>
@@ -5890,7 +5896,7 @@
 <span class="txtCadreRDQ">5 bonnes réponses qui incluent une Capitale</span>
 
 <div class="progression"><div class="progIn"></div></div>
-<div class="xpRDQ">+150 XP</div>
+<div class="xpQ">+150 XP</div>
 
 
           </div>
