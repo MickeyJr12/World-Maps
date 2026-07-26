@@ -3246,6 +3246,43 @@
         justify-content: space-between;
         width: 100%;
       }
+      
+      #cadreLvl{
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        align-self : flex-start;
+        gap : 1em;
+        font-size: 1.4em;
+        font-weight: 550;
+      }
+      #badgeLvl{
+        display : flex; 
+        position : relative;
+        align-self : flex-start;
+        justify-content : center; 
+        align-items : center;
+        padding : 0.5em;
+        margin-left : 0.2em;
+        box-sizing: border-box;
+        font-size : 1.2em;
+        font-weight: 550;
+        color : white;
+      }
+
+        #badgeLvl svg {
+        position : absolute;
+        z-index: -1;
+        fill : blue; 
+        height : 100%;
+      }
+
+      #badgeLvl svg path{
+        fill : blue; 
+      }
+
+     
+      
       .progression {
         display: flex;
         align-items: center;
@@ -3256,7 +3293,7 @@
       }
       .progIn {
         height: 100%;
-        width: 0%;
+        width: 40%;
         border-radius: inherit;
         background: #1E3FCB; /* ton bleu "Carte" existant */
       }
@@ -5675,18 +5712,30 @@
 
       <!--HTML Récompenses-->
       <div id="cadreRD">
-        <span style="width: 100%">
-          <h3 style="align-self: flex-start">Progression Joueur</h3>
+        <span style="width: 100%; text-align: center; font-size: 1.6em; font-weight: 600;">
+          Progression
         </span>
 
-        <div id="cadreLevelRD">
-          <span style="font-size: 1.2em; font-weight: 650">Niveau 9</span>
-          <span>1400/2000 XP </span>
+
+        <div >
+
         </div>
+
+        <div id="cadreLvl">
+          <span>Niveau</span>
+        <div id="badgeLvl" >
+        <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+<path d="M16 8C16 6.8804 15.4743 5.88358 14.6563 5.24291C14.7817 4.21146 14.4486 3.13488 13.6569 2.3432C12.8652 1.55152 11.7886 1.21838 10.7572 1.3438C10.1165 0.525732 9.11964 0 8 0C6.8804 0 5.88358 0.525698 5.24291 1.34372C4.21145 1.2183 3.13485 1.55143 2.34316 2.34312C1.55147 3.13481 1.21834 4.21141 1.34376 5.24288C0.525715 5.88354 0 6.88038 0 8C0 9.1196 0.525698 10.1164 1.34372 10.7571C1.2183 11.7886 1.55143 12.8652 2.34312 13.6568C3.13481 14.4485 4.21141 14.7817 5.24288 14.6562C5.88354 15.4743 6.88038 16 8 16C9.1196 16 10.1164 15.4743 10.7571 14.6563C11.7885 14.7817 12.8651 14.4486 13.6568 13.6569C14.4485 12.8652 14.7816 11.7886 14.6562 10.7572C15.4743 10.1165 16 9.11964 16 8Z" fill="#000000"/>
+</svg>
+<span>9</span>
+</div>
+</div>
+
 
         <div class="progression">
           <div class="progIn"></div>
         </div>
+          <span style="align-self : flex-end" >1400/2000 XP </span>
 
         <div id="cadreMenuRD">
           <div id="cadreMenuRDIn" class=""></div>
