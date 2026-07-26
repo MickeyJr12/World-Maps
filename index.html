@@ -3090,9 +3090,11 @@
       }
       .itemRDQ{
         display : flex;
+        position : relative;
+        align-items: center;
+        justify-content: space-around;
         box-sizing : border-box;
         flex-direction: column;
-        align-items: center;
         border-radius: inherit;
         background: white;
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
@@ -3106,14 +3108,30 @@
         display : flex;
         font-size: 0.9em;
         width : 100%;
-        display : flex;
         text-align : center; 
         justify-content: center;
         align-items : center;
+        font-weight : 550;
         color : rgba(0,0,0,0.8);
       }
-
-
+      .txtProgRDQ{
+        position : absolute;
+        font-size : 0.75em;
+        font-weight: 550;
+        color : black;
+        right : 0.6em;
+        top : 0.6em
+      }
+      .xpRDQ{
+        display : flex;
+        align-items : center;
+        justify-content: center;
+        border-radius: 0.4em;
+        padding : 0.4em;
+        color: #1E8A4C; /* vert foncé, cohérent avec ton vert "Devises" existant */
+        font-weight: 650;
+       background: #D1F0E0; /* vert menthe pâle, comme +150 XP */
+      }
 
       #cadreLevelRD {
         display: flex;
@@ -5563,6 +5581,7 @@
         <div id="gridRDQ">
 
           <div class="itemRDQ">
+            <div class="txtProgRDQ">6/10</div>
             <svg height="2em" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.1" id="Layer_1" viewBox="0 0 512.002 512.002" xml:space="preserve">
 <path style="fill:#92C9FF;" d="M404.95,62.495c13.257,13.257,23.952,28.11,32.07,43.948c25.444,49.582,25.692,108.752,0.755,158.525  c-8.209,16.39-19.151,31.76-32.826,45.435c-68.456,68.456-179.45,68.456-247.907,0c-14.525-14.525-25.968-30.96-34.329-48.505  c-31.045-65.132-19.602-145.471,34.329-199.402c17.601-17.601,38.009-30.673,59.785-39.22  C279.763-1.436,354.097,11.641,404.95,62.495z"/>
 <g>
@@ -5578,8 +5597,14 @@
 <span class="txtCadreRDQ">15 bonnes réponses en mode Trouver</span>
 
 <div class="progression"><div class="progIn"></div></div>
+<div class="xpRDQ">+150 XP</div>
+
 
           </div>
+
+
+
+
           <div class="itemRDQ"></div>
         </div>
 
