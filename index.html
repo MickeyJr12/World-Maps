@@ -3162,14 +3162,14 @@
      
 
        #cadreRDQ{
-        display: flex;
-        flex-wrap : wrap;
-        justify-content: space-around;
+        display: grid;
         align-items: center; /* centré verticalement */
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
         border-radius: inherit;
         width: 100%;
         height : auto ; 
-        gap: 0.8em;
+        gap : 0.8em;
       }
       .itemRDQ{
         display : flex;
