@@ -3050,10 +3050,6 @@
         /*reward*/
         display: flex;
 
-         overflow: auto;
-        overflow-x: hidden;
-        scrollbar-width: none;
-
         
         pointer-events : none;
         opacity : 0;
@@ -3082,6 +3078,19 @@
         transform : translateX(-50%) scale(1);
         opacity : 1; 
         pointer-events : all;
+      }
+      #contentCadreRD{
+        display : flex;
+         overflow: auto;
+        overflow-x: hidden;
+        scrollbar-width: none;
+        flex-direction: column;
+        justify-content: inherit;
+        align-items: inherit;
+        gap : inherit;
+
+        width : 100%;
+        flex:1;
       }
 
        #gridRDQ{
@@ -5588,6 +5597,7 @@
           <div class="progIn"></div>
         </div>
 
+        <div id="contentCadreRD">
         <span
           style="
             display: flex;
@@ -5817,7 +5827,7 @@
         <div class="ligneInSD" style="margin: 0.1em 0"></div>
 
          
-
+</div>
         
         </div>
 
