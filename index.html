@@ -3256,32 +3256,33 @@
         font-size: 1.4em;
         font-weight: 550;
       }
-      #badgeLvl{
-        display : flex; 
-        position : relative;
-        align-self : flex-start;
-        justify-content : center; 
-        align-items : center;
-        padding : 0.2em;
-        margin-left : 0.2em;
-        box-sizing: border-box;
-        font-size : 1.1em;
-        font-weight: 550;
-        color : white;
-      }
+#badgeLvl {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  width: 2em;         
+  padding: 0.2em;
+  margin-left: 0.2em;
+  box-sizing: border-box;
+  font-size: 1.1em;
+  font-weight: 550;
+  color: white;
+}
 
-        #badgeLvl svg {
-        display: block; 
-        position : absolute;
-        z-index: -1;
-        fill : blue; 
-        height : 100%;
-      }
+#badgeLvl svg {
+  overflow: visible ;
+  position: absolute;
+  inset: 0;                 
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
 
-      #badgeLvl svg path{
-        fill : blue; 
-      }
-
+#badgeLvl svg path {
+  fill: blue;
+}
      
       
       .progression {
@@ -5733,7 +5734,7 @@
         <span style="width: 100%; text-align: center; font-size: 1.5em; font-weight: 600; z-index:-1;">
           Progression
         </span>
-        <div class="ligneInSD" style="margin: 0.1em 0; outline-color: rgba(34, 181, 255, 0.1)"></div>
+        <div class="ligneInSD" style="margin: 0.1em 0; outline: 0.025em solid rgba(34, 181, 255, 0.2); width : 100%"></div>
 
 
         <div >
