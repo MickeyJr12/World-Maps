@@ -3081,7 +3081,8 @@
       }
       #contentCadreRD{
         display : flex;
-        overflow-x : visible;
+        touch-action: pan-y; /* indique explicitement que le scroll est vertical */
+        overflow-x : hidden;
         overflow-y: auto;
         border-radius : inherit;
         scrollbar-width: none;
