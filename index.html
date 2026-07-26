@@ -3238,7 +3238,23 @@
         padding : 0.4em;
         color: #1E8A4C; /* vert foncé, cohérent avec ton vert "Devises" existant */
         font-weight: 650;
-       background: #D1F0E0; /* vert menthe pâle, comme +150 XP */
+        color: rgba(107, 134, 255, 0.65); /* ton bleu #1E3FCB, même famille que le fond */
+        background: rgba(219, 226, 245, 1); /* piste grise/bleutée */
+        transition : background 0.2s ease, transform 0.2s ease;
+      }
+
+      .xpRDQ.active{
+        color : white;
+        cursor : pointer;
+        background: rgba(20, 162, 117,1);
+        animation : rewarded 1s linear infinite;
+      }
+      .xpRDQ.active:active{
+        transform : scale(0.96)
+      }
+      .xpRDQ.finish{
+         color: rgba(90, 165, 130, 1);
+         background: rgba(209, 240, 224, 1); /* piste devient vert pastel une fois fini */
       }
 
       #cadreLevelRD {
@@ -3332,20 +3348,25 @@
       }
       .xp {
         display: flex;
-        color: rgba(107, 134, 255, 0.65); /* ton bleu #1E3FCB, même famille que le fond */
         justify-content: center;
         align-items: center;
         padding : 0.5em;
         font-weight: 700;
         border-radius: 0.5em;
-        background: rgba(20, 162, 117,1);
+        /* background: rgba(20, 162, 117,1); */
+        color: rgba(107, 134, 255, 0.65); /* ton bleu #1E3FCB, même famille que le fond */
         background: rgba(219, 226, 245, 1); /* piste grise/bleutée */
-        transition : background 0.2s ease;
+        transition : background 0.2s ease, transform 0.2s ease;
       }
       .xp.active{
         color : white;
+        cursor : pointer;
         background: rgba(20, 162, 117,1);
         animation : rewarded 1s linear infinite;
+      }
+      .xp.active:active{
+        transform : scale(0.96)
+        
       }
       .xp.finish{
         color: rgba(90, 165, 130, 1);
@@ -5824,7 +5845,7 @@
 <span class="txtCadreRDQ">15 bonnes réponses en mode Trouver</span>
 
 <div class="progression"><div class="progIn"></div></div>
-<div class="xpRDQ">+150 XP</div>
+<div class="xpRDQ active">+150 XP</div>
 
 
           </div>
