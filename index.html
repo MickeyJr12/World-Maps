@@ -12078,9 +12078,9 @@ function fillCadreRDQ() {
   defisQSelected = [];
 
   for (let i = 0; i < 4; i++) {
-    
+
     const randomIndex = Math.floor(Math.random() * pool.length)
-    // const randomIndex = i===0? 1: Math.floor(Math.random() * pool.length);
+    // const randomIndex = i===0? 7: Math.floor(Math.random() * pool.length);
     
 
     defisQSelected.push(pool[randomIndex]);
@@ -12161,7 +12161,7 @@ function fillQuetes(){
 
       if ("stars" in quest){
         
-          if (Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ ){return}
+          if (Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ || quest.continent !== "all"&& L_config.c==="allC"   ){return}
       }
       if (quest.track && track <= L_progressQ[item.dataset.id]){
         return
