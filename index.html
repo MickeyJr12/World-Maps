@@ -3066,7 +3066,9 @@
         border-radius: 1em;
         gap: 0.4em;
         color: black;
+        /* color : white; */
         background: rgb(252, 248, 248);
+        /* background: linear-gradient(180deg, #0d1b3d 0%, #152c5c 100%); */
         padding: 0.8em;
         transform-origin : center bottom;
         transform : translateX(-50%) scale(0.92);
@@ -11856,6 +11858,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       
      
 
+    
+
+
 
 let L_RDQ = [
   { id:"A", t:"15 bonnes réponses en mode Trouver", svg:"loupe", max:15, xp:150, mode:"modeTrouver", continent:"all" },
@@ -11871,7 +11876,7 @@ let L_RDQ = [
   { id:"K", t:"15 bonnes réponses sur des pays", svg:"globe", max:15, continent:"all", xp:100, mode:"all" },
   { id:"L", t:"Obtenir un score parfait dans n'importe quel mode", svg:"stars", max:2, xp:100, mode:"all", stars:3, continent:"all" },
 
-  { id:"M", t:"Terminer un quiz en moins de 60 secondes avec au moins une étoile", svg:"clock", max:1, xp:100, mode:"all", stars:1, continent:"all" },
+  { id:"M", t:"Terminer un quiz en moins de 40 secondes avec au moins une étoile", svg:"clock",clock:40, max:1, xp:100, mode:"all", stars:1, continent:"all" },
   { id:"N", t:"15 bonnes réponses sur des pays d'Europe", svg:"Europe", max:15, continent:"Europe", xp:100, mode:"all" },
   { id:"O", t:"Terminer 5 quiz", svg:"repeat", max:5, xp:50, mode:"all", stars:0 },
   { id:"P", t:"Obtenir un total de 20 bonnes réponses", svg:"check", max:10, xp:150, mode:"all", continent:"all" },
@@ -12062,33 +12067,31 @@ let defisQSelected = []
 let track = 0
 
 let nbrProgLvl = 0 // Niveau 9 : nbrProgLvl/2000 par exemple 
-let L_palierLvl = [1000,5000,7500,10000,15000,20000] 
+const PALIERS_LVL_ORIGINAL = [1000, 5000, 7500, 10000, 15000, 20000];
+let L_palierLvl = [...PALIERS_LVL_ORIGINAL]; // copie, pas la même référence
 txtProgLvl.textContent = 0
 txtPalierLvl.textContent = L_palierLvl[0] 
 
 let lvlPlayer = 1; 
 
 
-function fillCadreRDQ() {
+function fillCadreRDQ(forcedSelection = null) {
 
-  const container = document.getElementById("cadreRDQ"); // conteneur parent qui reçoit les 4 cartes
-  container.innerHTML = ``
-  // copie de la liste pour piocher dedans sans toucher l'original
-  let pool = [...L_RDQ];
-  defisQSelected = [];
+ const container = document.getElementById("cadreRDQ");
+  container.innerHTML = ``;
 
-  for (let i = 0; i < 4; i++) {
-
-    const randomIndex = Math.floor(Math.random() * pool.length)
-    // const randomIndex = i===0? 7: Math.floor(Math.random() * pool.length);
-    
-
-    defisQSelected.push(pool[randomIndex]);
-
-
-
-    pool.splice(randomIndex, 1); // retire l'item pioché pour ne pas le tirer 2 fois
+  if (forcedSelection) {
+    defisQSelected = forcedSelection;
+  } else {
+    let pool = [...L_RDQ];
+    defisQSelected = [];
+    for (let i = 0; i < 4; i++) {
+      const randomIndex = Math.floor(Math.random() * pool.length);
+      defisQSelected.push(pool[randomIndex]);
+      pool.splice(randomIndex, 1);
+    }
   }
+
 
   for (const quest of defisQSelected) {
     // conteneur principal de la carte
@@ -12118,7 +12121,10 @@ function fillCadreRDQ() {
     progression.className = "progression";
     const progIn = document.createElement("div");
     progIn.className = "progIn";
-    progIn.style.width = "0%"; // à mettre à jour selon la progression réelle
+
+    const pourcentage = L_progressQ[quest.id] / quest.max;
+    progIn.style.width = `${pourcentage * 100}%`;
+
     progression.appendChild(progIn);
 
     // badge XP
@@ -12139,10 +12145,11 @@ function fillCadreRDQ() {
   }
 }
 
-fillCadreRDQ()
+
 
 const durationBarreProg = 800
 function fillQuetes(){
+  console.log("appel")
 
   const itemsRDQ = document.querySelectorAll('.itemRDQ')
 
@@ -12155,13 +12162,16 @@ function fillQuetes(){
       let txtProg = item.querySelector('.txtProgRDQ')
       const quest = L_RDQ.find(q => q.id === item.dataset.id)
 
-      if (quest.mode !== L_config.m && quest.mode!=="all" || quest.continent !=="all" && (L_config.c !=="allC" && quest.continent !== L_config.c || L_config.c==="allC" && quest.continent!== P_info[idBonneReponse].region) || quest.t.includes('difficile') && L_config.d !=="difficile"){return}
+      if (quest.mode !== L_config.m && quest.mode!=="all" || quest.continent !=="all" && (L_config.c !=="allC" && quest.continent !== L_config.c || L_config.c==="allC" && quest.continent!== P_info[idBonneReponse].region) || quest.t.includes('difficile') && L_config.d !=="difficile" && L_config.c==="allC"){return}
       
      
 
       if ("stars" in quest){
         
-          if (Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ || quest.continent !== "all"&& L_config.c==="allC"   ){return}
+          if (Math.floor((score) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ || quest.continent !== "all"&& L_config.c==="allC"   ){return}
+          if("clock" in quest){
+            if (currentChronoQ > quest.clock){return}
+          }
       }
       if (quest.track && track <= L_progressQ[item.dataset.id]){
         return
@@ -12184,7 +12194,10 @@ function fillQuetes(){
 
       const itemMax = L_RDQ.find(q => q.id === item.dataset.id).max;
       L_progressQ[item.dataset.id] = L_progressQ[item.dataset.id] + 1
-      txtProg.textContent = L_progressQ[item.dataset.id] +  `/ ${itemMax}`; // à remplacer par la vraie progression du joueur
+      saveProgress()
+
+      if (parseInt(txtProg.textContent)< parseInt(itemMax))
+      {txtProg.textContent = L_progressQ[item.dataset.id] +  `/ ${itemMax}`; // à remplacer par la vraie progression du joueur}
       
       const progIn = item.querySelector('.progIn')
       let pourcentage = L_progressQ[item.dataset.id]/itemMax
@@ -12244,6 +12257,7 @@ function fillQuetes(){
 
         barreProgLvl.style.width = `${pourcentageLvl * 100}%`
         }
+        saveProgress()
         },{once : true})
 
       }
@@ -12253,9 +12267,100 @@ function fillQuetes(){
 }
 
 
+// Vider le cache
+// localStorage.removeItem("geoquiz_progress_v1");
+// location.reload();
+  // Script localstorage
+
+      const SAVE_KEY = "geoquiz_progress_v1";
+
+function saveProgress() {
+  const data = {
+    lvlPlayer,
+    nbrProgLvl,
+    track,
+    L_progressQ,
+    defisQSelected: defisQSelected.map(q => q.id),
+    lastQuestGenDate: lastQuestGenDate
+  };
+  localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+}
+
+let lastQuestGenDate = null;
+
+function loadProgress() {
+  const raw = localStorage.getItem(SAVE_KEY);
+  if (!raw) return null;
+
+  try {
+    const data = JSON.parse(raw);
+    lvlPlayer  = data.lvlPlayer ?? 1;
+    nbrProgLvl = data.nbrProgLvl ?? 0;
+    track      = data.track ?? 0;
+    if (data.L_progressQ) Object.assign(L_progressQ, data.L_progressQ);
+    L_palierLvl = PALIERS_LVL_ORIGINAL.slice(lvlPlayer - 1);
+    lastQuestGenDate = data.lastQuestGenDate ?? null;
+
+    return data; // on retourne data pour récupérer defisQSelected ensuite
+  } catch (e) {
+    console.error("Sauvegarde corrompue, reset :", e);
+    localStorage.removeItem(SAVE_KEY);
+    return null;
+  }
+}
 
 
+const savedData = loadProgress();
 
+txtLvlPlayer.textContent = lvlPlayer;
+txtProgLvl.textContent = nbrProgLvl;
+txtPalierLvl.textContent = L_palierLvl[0];
+barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
+
+const today = getTodayKey();
+
+if (lastQuestGenDate === today && savedData?.defisQSelected?.length === 4) {
+  // Même jour : on restaure les quêtes déjà tirées, pas de nouveau tirage
+  const restoredSelection = savedData.defisQSelected
+    .map(id => L_RDQ.find(q => q.id === id))
+    .filter(Boolean);
+
+  if (restoredSelection.length === 4) {
+    fillCadreRDQ(restoredSelection);
+  } else {
+    // sécurité si des ids ne matchent plus (ex: tu as retiré une quête du code)
+    fillCadreRDQ();
+    lastQuestGenDate = today;
+    saveProgress();
+  }
+} else {
+  // Nouveau jour ou première visite : nouveau tirage
+  fillCadreRDQ();
+  lastQuestGenDate = today;
+  saveProgress();
+}
+
+// Ré-afficher l'état chargé dans l'UI
+txtLvlPlayer.textContent = lvlPlayer;
+txtProgLvl.textContent = nbrProgLvl;
+txtPalierLvl.textContent = L_palierLvl[0];
+barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
+
+
+window.addEventListener("beforeunload", saveProgress);
+window.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") saveProgress();
+});
+
+//Quêtes une fois par jour 
+function getTodayKey() {
+  return new Date().toISOString().split("T")[0]; // ex: "2026-07-27"
+}
+
+
+// fin script localstorage
+
+    
 
       menuDefiQ.addEventListener('click',()=>{
         menuRecompenses.classList.remove('active')
@@ -12609,7 +12714,7 @@ function fillQuetes(){
           L_reponses = [];
 
           defisQSelected.forEach(defis=>{
-            if ("stars" in defis){fillQuetes()}
+            if ("stars" in defis || "clock" in defis){fillQuetes()}
           })
 
           return;
@@ -12634,6 +12739,7 @@ function fillQuetes(){
         pauseChrono();
         idMauvaiseReponse = "null";
         currentChrono = val;
+        currentChronoQ = 0
 
         if (
           L_config.m === "modeChoix" ||
@@ -12880,7 +12986,7 @@ function fillQuetes(){
               spanNext.textContent = "✓ Bonne réponse !";
               fillContentPm(currentCountry.id, idBonneReponse);
               playSound(goodSound);
-              fillQuetes()
+              requestAnimationFrame(fillQuetes)
               score += 1;
             } else {
               cadreNext.classList.add("bad");
@@ -13258,7 +13364,8 @@ function fillQuetes(){
             cadreNext.className = "cadreNext visible bad";
           } else {
             playSound(goodSound);
-            fillQuetes()
+            requestAnimationFrame(fillQuetes)
+            
             spanNext.textContent = "✓ Ordre Correct !";
             cadreNext.className = "cadreNext visible good";
             score += 1;
@@ -13400,6 +13507,12 @@ function fillQuetes(){
       let currentChrono; //Mise à jour toutes les 100ms, valeur qu'on affiche
       let intervChrono; // Interval qui met à jour la valeur de currentChrono
       let newStart; // Quand on remet sur start le chrono
+
+      //Chrono des défis
+      let currentChronoQ;
+      let intervChronoQ; // Interval qui met à jour la valeur de currentChrono
+
+      let newStartQ;
       document.querySelector(".cadreChrono").style.display = "none";
 
       let isOpen = false;
@@ -13453,11 +13566,25 @@ function fillQuetes(){
 
       const txtChrono = document.querySelector(".txtChrono");
 
-      function pauseChrono() {
+    
+
+      function startChronoQ (timeQ) {
+        newStartQ = Date.now();
+        intervChronoQ = setInterval(() => {
+          currentChronoQ = Math.floor(timeQ + (Date.now() - newStartQ) / 1000);
+        }, 100);
+      }
+
+        function pauseChronoQ() {
+        clearInterval(intervChronoQ);
+      }
+
+        function pauseChrono() {
         clearInterval(intervChrono);
         barreChronoIn.style.width =
           barreChronoIn.getBoundingClientRect().width + "px";
       }
+
       function startChrono(time) {
         if (val === "inf" || currentChrono <= 0) {
           return;
@@ -13630,6 +13757,8 @@ function fillQuetes(){
       playConfig.addEventListener("click", () => {
         score = 0;
         track = 0;
+        currentChronoQ = 0
+        startChronoQ(currentChronoQ)
         spnScore.textContent = score;
 
         pause4Choix.style = "";
@@ -13731,7 +13860,7 @@ function fillQuetes(){
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 15;
+      let maxQ = 3;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
@@ -13766,7 +13895,7 @@ function fillQuetes(){
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
             playSound(goodSound);
-            fillQuetes()
+            requestAnimationFrame(fillQuetes)
             cadreNext.classList.add("good");
             spanNext.textContent = "✓ Bonne réponse !";
             score += 1;
@@ -13777,6 +13906,7 @@ function fillQuetes(){
           }
           cadreNext.classList.add("visible");
           pauseChrono();
+
           fillContentPm(idProps_m.get(btn), idBonneReponse);
 
           activerCarte();
@@ -13895,6 +14025,8 @@ function fillQuetes(){
 
       function affichePm() {
         pauseChrono();
+        pauseChronoQ();
+
         pm4Choix.style.pointerEvents = "all";
         cachePm.style.pointerEvents = "all";
         pm4Choix.style.transform = "scale(1)";
@@ -14430,6 +14562,8 @@ function fillQuetes(){
           !cChooseTrouver
         ) {
           startChrono(currentChrono);
+          startChronoQ(currentChronoQ);
+          
         }
 
         if (
