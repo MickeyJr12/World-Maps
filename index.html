@@ -5956,7 +5956,7 @@
 
             Récompenses</div>
         </div>
-        
+
 
 
       </div>
@@ -11819,7 +11819,7 @@ let L_RDQ = [
   { id:"I", t:"5 bonnes réponses qui incluent une Capitale", svg:"capitale", max:5, xp:50, mode:"all", continent:"all" },
   { id:"J", t:"5 bonnes réponses qui incluent un drapeau", svg:"flag", max:5, xp:50, mode:"all", continent:"all" },
   { id:"K", t:"15 bonnes réponses sur des pays", svg:"globe", max:15, continent:"all", xp:100, mode:"all" },
-  { id:"L", t:"Obtenir 3 étoiles dans n'importe quel mode", svg:"stars", max:1, xp:100, mode:"all", stars:3, continent:"all" },
+  { id:"L", t:"Obtenir 3 étoiles dans n'importe quel mode", svg:"stars", max:2, xp:100, mode:"all", stars:3, continent:"all" },
 
   { id:"M", t:"Terminer un quiz en moins de 60 secondes avec au moins une étoile", svg:"clock", max:1, xp:100, mode:"all", stars:1, continent:"all" },
   { id:"N", t:"15 bonnes réponses sur des pays d'Europe", svg:"Europe", max:15, continent:"Europe", xp:100, mode:"all" },
@@ -12020,8 +12020,8 @@ function fillCadreRDQ() {
   let defisQSelected = [];
 
   for (let i = 0; i < 4; i++) {
-    const randomIndex = Math.floor(Math.random() * pool.length);
-    // const randomIndex = 8 // à retirer
+    // const randomIndex = Math.floor(Math.random() * pool.length);
+    const randomIndex = 20 // à retirer
 
     defisQSelected.push(pool[randomIndex]);
 
@@ -12090,10 +12090,13 @@ function fillQuetes(){
     if(!item.querySelector('.xpQ').classList.contains('active')){
       let txtProg = item.querySelector('.txtProgRDQ')
       const quest = L_RDQ.find(q => q.id === item.dataset.id)
-      
+      if (item.dataset.id==="L"){
+        console.log(Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ-1 )
+      }
       if (quest.mode !== L_config.m && quest.mode!=="all" || quest.continent !=="all" && (L_config.c !=="allC" && quest.continent !== L_config.c || L_config.c==="allC" && quest.continent!== P_info[idBonneReponse].region) || quest.t.includes('difficile') && L_config.d !=="difficile"){return}
       if (quest.t.includes('étoile')){
-        if (Math.floor(score / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ ){return}
+        
+          if (Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ-1 ){return}
       }
       if (quest.track && track <= L_progressQ[item.dataset.id]){
         return
