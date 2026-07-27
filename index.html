@@ -3273,6 +3273,9 @@
         font-size: 1.4em;
         font-weight: 550;
       }
+
+      
+
 #badgeLvl {
   display: flex;
   position: relative;
@@ -3287,6 +3290,12 @@
   font-weight: 550;
   color: white;
 }
+
+@keyframes nextLvl {
+        0%{transform : scale(1)}
+        50%{transform : scale(1.4)}
+        100%{transform : scale(1)}
+      }      
 
 #badgeLvl svg {
   overflow: visible ;
@@ -3312,10 +3321,10 @@
       }
       .progIn {
         height: 100%;
-        width: 40%;
+        width: 0%;
         border-radius: inherit;
         background: #1E3FCB; /* ton bleu "Carte" existant */
-        transition :background 0.2s ease, width 0.4s ease;
+        transition :background 0.2s ease, width 0.8s ease;
       }
       .progIn.finish{
          background: rgba(90, 165, 130, 1);
@@ -5244,6 +5253,7 @@
       /* Retire les flèches sur Firefox */
       .inputD {
         -moz-appearance: textfield;
+        appearance: textfield;
       }
 
       .inputD::placeholder {
@@ -5763,7 +5773,7 @@
         <span style="width: 100%; text-align: center; font-size: 1.5em; font-weight: 600; z-index:-1;">
           Progression
         </span>
-        <div class="ligneInSD" style="margin: 0.1em 0; outline: 0.025em solid rgba(34, 181, 255, 0.2); width : 100%"></div>
+        <div class="ligneInSD" style="margin: 0.1em 0; outline: 0.04em solid rgba(34, 181, 255, 0.2); width : 100%"></div>
 
 
         <div >
@@ -5776,15 +5786,15 @@
         <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
 <path d="M16 8C16 6.8804 15.4743 5.88358 14.6563 5.24291C14.7817 4.21146 14.4486 3.13488 13.6569 2.3432C12.8652 1.55152 11.7886 1.21838 10.7572 1.3438C10.1165 0.525732 9.11964 0 8 0C6.8804 0 5.88358 0.525698 5.24291 1.34372C4.21145 1.2183 3.13485 1.55143 2.34316 2.34312C1.55147 3.13481 1.21834 4.21141 1.34376 5.24288C0.525715 5.88354 0 6.88038 0 8C0 9.1196 0.525698 10.1164 1.34372 10.7571C1.2183 11.7886 1.55143 12.8652 2.34312 13.6568C3.13481 14.4485 4.21141 14.7817 5.24288 14.6562C5.88354 15.4743 6.88038 16 8 16C9.1196 16 10.1164 15.4743 10.7571 14.6563C11.7885 14.7817 12.8651 14.4486 13.6568 13.6569C14.4485 12.8652 14.7816 11.7886 14.6562 10.7572C15.4743 10.1165 16 9.11964 16 8Z" fill="#000000"/>
 </svg>
-<span>9</span>
+<span id="txtLvlPlayer">1</span>
 </div>
 </div>
 
 
         <div class="progression">
-          <div class="progIn"></div>
+          <div class="progIn" id="barreProgLvl"></div>
         </div>
-          <span style="align-self : flex-end" >1400/2000 XP </span>
+          <span style="align-self : flex-end" > <span id="txtProgLvl" ></span>/<span id="txtPalierLvl"></span> </span>
 
        
   <div id="cadreMenuRD">
@@ -11735,8 +11745,38 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
     </div>
 
+   <!--Script utile--> 
+    <script>
+      function animateCounter(element, start, end, duration) {
+  const startTime = performance.now();
+
+  // fonction d'easing "ease-out" — démarre vite, ralentit à la fin
+  function easeOutQuad(t) {
+    return 1 - (1 - t) * (1 - t);
+  }
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1); // entre 0 et 1
+    const easedProgress = easeOutQuad(progress);
+
+    const currentValue = Math.round(start + (end - start) * easedProgress);
+    element.textContent = currentValue;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  requestAnimationFrame(update);
+}
+
+    </script>
+
     <!--Script Home-->
     <script>
+
+
       window.addEventListener("load", () => {
         // Sortie de phoneConfig
         phoneConfig.style.transition = "opacity 0.01s ease";
@@ -11807,11 +11847,19 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const menuRecompenses = document.getElementById('menuRecompenses')
       const contentDefisQ = document.getElementById('contentDefisQ')
       const contentRecompenses = document.getElementById('contentRecompenses')
+      const badgeLvl = document.getElementById('badgeLvl')
+      const txtLvlPlayer = document.getElementById('txtLvlPlayer')
+      const txtProgLvl = document.getElementById('txtProgLvl')
+      const txtPalierLvl = document.getElementById('txtPalierLvl')
+      const barreProgLvl = document.getElementById('barreProgLvl')
+
+      
+     
 
 
 let L_RDQ = [
   { id:"A", t:"15 bonnes réponses en mode Trouver", svg:"loupe", max:15, xp:150, mode:"modeTrouver", continent:"all" },
-  { id:"B", t:"Terminer un quiz", svg:"check", max:1, xp:20, mode:"all", stars:0, continent:"all" },
+  { id:"B", t:"Terminer un quiz", svg:"check", max:1, xp:150, mode:"all", stars:0, continent:"all" },
   { id:"C", t:"Réaliser 5 bonnes réponses d'affilée", svg:"flamme", max:5, xp:50, track:5, mode:"all", continent:"all" },
   { id:"D", t:"Classer correctement 5 pays par superficie", svg:"classer", max:2, xp:50, mode:"modeClasser", continent:"all" },
   { id:"E", t:"Obtenir 2 étoiles en mode difficile", svg:"stars", max:3, xp:100, mode:"all", stars:2, continent:"all" },
@@ -12004,25 +12052,33 @@ let L_svgRDQ = [
 
 ];
 
-let L_progressQ = {} // Nombre du progrès de la quête (6/10...)
+
+
+ let L_progressQ = {} // Nombre du progrès de la quête (6/10...)
   for (const quest of L_RDQ){
       L_progressQ[quest.id] = 0
   }
-
-// 
-let defisQSelected
-
+let defisQSelected = []
 let track = 0
+
+let nbrProgLvl = 0 // Niveau 9 : nbrProgLvl/2000 par exemple 
+let L_palierLvl = [1000,5000,7500,10000,15000,20000] 
+txtProgLvl.textContent = 0
+txtPalierLvl.textContent = L_palierLvl[0] 
+
+let lvlPlayer = 1; 
+
+
 function fillCadreRDQ() {
 
   const container = document.getElementById("cadreRDQ"); // conteneur parent qui reçoit les 4 cartes
   container.innerHTML = ``
   // copie de la liste pour piocher dedans sans toucher l'original
   let pool = [...L_RDQ];
-  let defisQSelected = [];
+  defisQSelected = [];
 
   for (let i = 0; i < 4; i++) {
-    const randomIndex = i===0? 33: Math.floor(Math.random() * pool.length);
+    const randomIndex = i===0? 1: Math.floor(Math.random() * pool.length);
     // const randomIndex = 33 // à retirer
 
     defisQSelected.push(pool[randomIndex]);
@@ -12042,7 +12098,7 @@ function fillCadreRDQ() {
     // texte de progression (ex: "6/10")
     const txtProg = document.createElement("div");
     txtProg.className = "txtProgRDQ";
-    txtProg.textContent = L_progressQ[quest.id] +  `/ ${quest.max}`; // à remplacer par la vraie progression du joueur
+    txtProg.textContent = L_progressQ[quest.id] +  ` / ${quest.max}`; // à remplacer par la vraie progression du joueur
 
     // icône SVG (récupérée depuis L_svgRDQ via l'id svg de la quête)
     const svgWrapper = document.createElement("div");
@@ -12068,6 +12124,8 @@ function fillCadreRDQ() {
     xpBadge.className = "xpQ";
     xpBadge.textContent = `+${quest.xp} XP`;
 
+
+
     // assemblage de la carte
     item.appendChild(txtProg);
     item.appendChild(svgWrapper);
@@ -12081,7 +12139,7 @@ function fillCadreRDQ() {
 
 fillCadreRDQ()
 
-
+const durationBarreProg = 800
 function fillQuetes(){
 
   const itemsRDQ = document.querySelectorAll('.itemRDQ')
@@ -12092,10 +12150,8 @@ function fillQuetes(){
     if(!item.querySelector('.xpQ').classList.contains('active')){
       let txtProg = item.querySelector('.txtProgRDQ')
       const quest = L_RDQ.find(q => q.id === item.dataset.id)
-      if (item.dataset.id==="AH"){
 
-        console.log(quest.continent, L_config.c)
-      }
+
       if (quest.mode !== L_config.m && quest.mode!=="all" || quest.continent !=="all" && (L_config.c !=="allC" && quest.continent !== L_config.c || L_config.c==="allC" && quest.continent!== P_info[idBonneReponse].region) || quest.t.includes('difficile') && L_config.d !=="difficile"){return}
       if (quest.t.includes('parfait')){
         
@@ -12132,19 +12188,62 @@ function fillQuetes(){
         const xpQ = item.querySelector('.xpQ')
 
         progIn.classList.add('finish')
-        xpQ.classList.add('active')
-        xpQ.addEventListener('click',()=>{
-          xpQ.classList.remove("active")
-          xpQ.classList.add("finish")
+            xpBadge.classList.add('active')
+      xpBadge.addEventListener('click',()=>{
+        xpBadge.classList.remove("active")
+        xpBadge.classList.add("finish")
+        xpBadge.textContent = "Terminé"
 
-          xpQ.textContent = "Terminé"
+        nbrProgLvl += quest.xp
+
+        if (nbrProgLvl>= L_palierLvl[0]){
+          let duration1 = (1-(nbrProgLvl - L_palierLvl[0])/nbrProgLvl)*durationBarreProg
+
+          barreProgLvl.style.transition = `width ${duration1}ms ease`
+          barreProgLvl.style.width = "100%"
+          animateCounter(txtProgLvl,   nbrProgLvl-quest.xp , L_palierLvl[0], duration1)
+          let duration2 = durationBarreProg-duration1
+          setTimeout(() => {
+            
+            barreProgLvl.style.transition = "none"
+            barreProgLvl.style.width = "0%"
+            
+
+            nbrProgLvl -=  L_palierLvl[0]
+            L_palierLvl = L_palierLvl.slice(1)
+            
+
+            let pourcentageLvl = nbrProgLvl/L_palierLvl[0]
+
+
+            requestAnimationFrame(()=>{barreProgLvl.style.transition = ""; barreProgLvl.style.width = `${pourcentageLvl * 100}%`})
+            
+
+            animateCounter(txtProgLvl,   0 , nbrProgLvl, duration2)
+            txtPalierLvl.textContent = L_palierLvl[0]
+            lvlPlayer+=1
+            txtLvlPlayer.textContent = lvlPlayer
+            
+            badgeLvl.querySelector("svg").style.animation  = "nextLvl 0.6s ease"
+
+            setTimeout(() => {
+            badgeLvl.querySelector("svg").style.animation  = ""
+              
+            }, 600);
+          }, duration1);
+        }
+        else {
+  animateCounter(txtProgLvl,nbrProgLvl-quest.xp , nbrProgLvl,durationBarreProg)
+        let pourcentageLvl = nbrProgLvl/L_palierLvl[0]
+
+        barreProgLvl.style.width = `${pourcentageLvl * 100}%`
+        }
         },{once : true})
 
       }
     }
 
-  })
-  
+  }) 
 }
 
 
@@ -12502,6 +12601,11 @@ function fillQuetes(){
             (pause4Choix.style.opacity = "0"));
           pause4Choix.style.pointerEvents = "none";
           L_reponses = [];
+
+            if(defisQSelected.find(s => s.id === "B")){
+              fillQuetes()
+            }
+
           return;
         }
 
@@ -12719,7 +12823,6 @@ function fillQuetes(){
           });
           //Partie trouver
         } else if (L_config.m === "modeTrouver") {
-          console.log(L_reponses.length);
           document.getElementById("phonePlay").append(zBox);
           zBox.classList.add("modeTrouver");
 
