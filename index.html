@@ -12078,8 +12078,10 @@ function fillCadreRDQ() {
   defisQSelected = [];
 
   for (let i = 0; i < 4; i++) {
-    const randomIndex = i===0? 1: Math.floor(Math.random() * pool.length);
-    // const randomIndex = 33 // à retirer
+    
+    const randomIndex = Math.floor(Math.random() * pool.length)
+    // const randomIndex = i===0? 1: Math.floor(Math.random() * pool.length);
+    
 
     defisQSelected.push(pool[randomIndex]);
 
@@ -12146,16 +12148,20 @@ function fillQuetes(){
 
   itemsRDQ.forEach(item=>{ //item = carré de la quête
 
+    if (["active","finish"].includes(item.querySelector('.xpQ').classList)){return}
+
 
     if(!item.querySelector('.xpQ').classList.contains('active')){
       let txtProg = item.querySelector('.txtProgRDQ')
       const quest = L_RDQ.find(q => q.id === item.dataset.id)
 
-
       if (quest.mode !== L_config.m && quest.mode!=="all" || quest.continent !=="all" && (L_config.c !=="allC" && quest.continent !== L_config.c || L_config.c==="allC" && quest.continent!== P_info[idBonneReponse].region) || quest.t.includes('difficile') && L_config.d !=="difficile"){return}
-      if (quest.t.includes('parfait')){
+      
+     
+
+      if ("stars" in quest){
         
-          if (Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ-1 ){return}
+          if (Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ ){return}
       }
       if (quest.track && track <= L_progressQ[item.dataset.id]){
         return
@@ -12188,11 +12194,11 @@ function fillQuetes(){
         const xpQ = item.querySelector('.xpQ')
 
         progIn.classList.add('finish')
-            xpBadge.classList.add('active')
-      xpBadge.addEventListener('click',()=>{
-        xpBadge.classList.remove("active")
-        xpBadge.classList.add("finish")
-        xpBadge.textContent = "Terminé"
+            xpQ.classList.add('active')
+      xpQ.addEventListener('click',()=>{
+        xpQ.classList.remove("active")
+        xpQ.classList.add("finish")
+        xpQ.textContent = "Terminé"
 
         nbrProgLvl += quest.xp
 
@@ -12602,9 +12608,9 @@ function fillQuetes(){
           pause4Choix.style.pointerEvents = "none";
           L_reponses = [];
 
-            if(defisQSelected.find(s => s.id === "B")){
-              fillQuetes()
-            }
+          defisQSelected.forEach(defis=>{
+            if ("stars" in defis){fillQuetes()}
+          })
 
           return;
         }
@@ -13725,7 +13731,7 @@ function fillQuetes(){
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 3;
+      let maxQ = 15;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
