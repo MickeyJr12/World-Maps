@@ -7116,7 +7116,7 @@
                 <span style="font-weight: 700">Europe</span>
               </div>
 
-              <div class="cadreRegion" id="Oceanie">
+              <div class="cadreRegion" id="Océanie">
                 <svg
                   class="svgRegion"
                   viewBox="0 0 851 668"
@@ -7814,7 +7814,7 @@
               </div>
               <div class="ligneInGrid"></div>
 
-              <div class="itemFilter" data-region="Oceanie">
+              <div class="itemFilter" data-region="Océanie">
                 <span style="opacity: 0">✓</span>
                 Océanie
                 <svg
@@ -11821,7 +11821,7 @@ let L_RDQ = [
   { id:"I", t:"5 bonnes réponses qui incluent une Capitale", svg:"capitale", max:5, xp:50, mode:"all", continent:"all" },
   { id:"J", t:"5 bonnes réponses qui incluent un drapeau", svg:"flag", max:5, xp:50, mode:"all", continent:"all" },
   { id:"K", t:"15 bonnes réponses sur des pays", svg:"globe", max:15, continent:"all", xp:100, mode:"all" },
-  { id:"L", t:"Obtenir 3 étoiles dans n'importe quel mode", svg:"stars", max:2, xp:100, mode:"all", stars:3, continent:"all" },
+  { id:"L", t:"Obtenir un score parfait dans n'importe quel mode", svg:"stars", max:2, xp:100, mode:"all", stars:3, continent:"all" },
 
   { id:"M", t:"Terminer un quiz en moins de 60 secondes avec au moins une étoile", svg:"clock", max:1, xp:100, mode:"all", stars:1, continent:"all" },
   { id:"N", t:"15 bonnes réponses sur des pays d'Europe", svg:"Europe", max:15, continent:"Europe", xp:100, mode:"all" },
@@ -11831,7 +11831,7 @@ let L_RDQ = [
   { id:"R", t:"Obtenir un score parfait en mode Trouver", svg:"perfect", max:1, xp:150, mode:"modeTrouver", continent:"all" },
   { id:"S", t:"Classer correctement 5 pays par population", svg:"classer", max:2, xp:50, mode:"modeClasser", continent:"all" },
   { id:"T", t:"10 bonnes réponses sur des pays d'Amérique", svg:"Amérique", max:10, continent:"Amérique", xp:50, mode:"all" },
-  { id:"U", t:"Obtenir 3 étoiles à un quiz sur des pays d'Amérique", svg:"perfect", max:5, continent:"Amérique", xp:20, mode:"all", stars:3 },
+  { id:"U", t:"Obtenir un score parfait à un quiz sur des pays d'Amérique", svg:"perfect", max:2, continent:"Amérique", xp:150, mode:"all", stars:3 },
 
   { id:"V", t:"15 bonnes réponses sur des pays d'Amérique", svg:"Amérique", max:15, continent:"Amérique", xp:100, mode:"all" },
   { id:"W", t:"15 bonnes réponses sur des pays d'Asie", svg:"Asie", max:15, continent:"Asie", xp:100, mode:"all" },
@@ -11844,11 +11844,11 @@ let L_RDQ = [
   { id:"AC", t:"10 bonnes réponses sur des pays", svg:"globe", max:10, continent:"all", xp:50, mode:"all" },
   { id:"AD", t:"Obtenir un score parfait en mode 4 choix", svg:"perfect", max:1, xp:150, mode:"modeChoix", continent:"all" },
 
-  { id:"AE", t:"Obtenir 3 étoiles à un quiz sur des pays d'Afrique", svg:"perfect", max:5, continent:"Afrique", xp:20, mode:"all", stars:3 },
-  { id:"AF", t:"Obtenir 3 étoiles à un quiz sur des pays d'Europe", svg:"perfect", max:5, continent:"Europe", xp:20, mode:"all", stars:3 },
-  { id:"AG", t:"Obtenir 3 étoiles à un quiz sur des pays d'Asie", svg:"perfect", max:5, continent:"Asie", xp:20, mode:"all", stars:3 },
-  { id:"AH", t:"Obtenir 3 étoiles à un quiz sur des pays d'Océanie", svg:"perfect", max:5, continent:"Océanie", xp:20, mode:"all", stars:3 },
-  { id:"AI", t:"Obtenir 3 étoiles à un quiz", svg:"perfect", max:5, xp:20, mode:"all", continent:"all" },
+  { id:"AE", t:"Obtenir un score parfait à un quiz sur des pays d'Afrique", svg:"perfect", max:2, continent:"Afrique", xp:150, mode:"all", stars:3 },
+  { id:"AF", t:"Obtenir un score parfait à un quiz sur des pays d'Europe", svg:"perfect", max:2, continent:"Europe", xp:150, mode:"all", stars:3 },
+  { id:"AG", t:"Obtenir un score parfait à un quiz sur des pays d'Asie", svg:"perfect", max:2, continent:"Asie", xp:150, mode:"all", stars:3 },
+  { id:"AH", t:"Obtenir un score parfait à un quiz sur des pays d'Océanie", svg:"perfect", max:2, continent:"Océanie", xp:150, mode:"all", stars:3 },
+  { id:"AI", t:"Obtenir un score parfait à un quiz", svg:"perfect", max:2, xp:20, mode:"all", continent:"all" },
 ];
 
 
@@ -12022,8 +12022,8 @@ function fillCadreRDQ() {
   let defisQSelected = [];
 
   for (let i = 0; i < 4; i++) {
-    const randomIndex = Math.floor(Math.random() * pool.length);
-    // const randomIndex = 20 // à retirer
+    const randomIndex = i===0? 33: Math.floor(Math.random() * pool.length);
+    // const randomIndex = 33 // à retirer
 
     defisQSelected.push(pool[randomIndex]);
 
@@ -12092,11 +12092,12 @@ function fillQuetes(){
     if(!item.querySelector('.xpQ').classList.contains('active')){
       let txtProg = item.querySelector('.txtProgRDQ')
       const quest = L_RDQ.find(q => q.id === item.dataset.id)
-      if (item.dataset.id==="L"){
-        console.log(Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ-1 )
+      if (item.dataset.id==="AH"){
+
+        console.log(quest.continent, L_config.c)
       }
       if (quest.mode !== L_config.m && quest.mode!=="all" || quest.continent !=="all" && (L_config.c !=="allC" && quest.continent !== L_config.c || L_config.c==="allC" && quest.continent!== P_info[idBonneReponse].region) || quest.t.includes('difficile') && L_config.d !=="difficile"){return}
-      if (quest.t.includes('étoile')){
+      if (quest.t.includes('parfait')){
         
           if (Math.floor((score +1) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ-1 ){return}
       }
@@ -13621,7 +13622,7 @@ function fillQuetes(){
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 15;
+      let maxQ = 3;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
@@ -21338,7 +21339,7 @@ function fillQuetes(){
           dateInde: "1816-07-09",
         },
         AS: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: false,
           independent: false,
@@ -21374,7 +21375,7 @@ function fillQuetes(){
           dateInde: "1955-07-27", // Traité d'État rétablissant la souveraineté
         },
         AU: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Australie et Nouvelle-Zélande",
           unMember: true,
           independent: true,
@@ -21842,7 +21843,7 @@ function fillQuetes(){
           dateInde: "1867-07-01",
         },
         CC: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Australie et Nouvelle-Zélande",
           unMember: false,
           independent: false,
@@ -21950,7 +21951,7 @@ function fillQuetes(){
           dateInde: "1960-08-07",
         },
         CK: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: false,
           independent: false,
@@ -22112,7 +22113,7 @@ function fillQuetes(){
           dateInde: null,
         },
         CX: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Australie et Nouvelle-Zélande",
           unMember: false,
           independent: false,
@@ -22418,7 +22419,7 @@ function fillQuetes(){
           dateInde: "1917-12-06",
         },
         FJ: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Mélanésie",
           unMember: true,
           independent: true,
@@ -22454,7 +22455,7 @@ function fillQuetes(){
           dateInde: null,
         },
         FM: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Micronésie",
           unMember: true,
           independent: true,
@@ -22816,7 +22817,7 @@ function fillQuetes(){
           dateInde: "1821-09-15",
         },
         GU: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Micronésie",
           unMember: false,
           independent: false,
@@ -23284,7 +23285,7 @@ function fillQuetes(){
           dateInde: "1953-11-09",
         },
         KI: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Micronésie",
           unMember: true,
           independent: true,
@@ -23734,7 +23735,7 @@ function fillQuetes(){
           dateInde: "1960-06-26",
         },
         MH: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Micronésie",
           unMember: true,
           independent: true,
@@ -23842,7 +23843,7 @@ function fillQuetes(){
           dateInde: null,
         },
         MP: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Micronésie",
           unMember: false,
           independent: false,
@@ -24058,7 +24059,7 @@ function fillQuetes(){
           dateInde: "1990-03-21",
         },
         NC: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Mélanésie",
           unMember: false,
           independent: false,
@@ -24094,7 +24095,7 @@ function fillQuetes(){
           dateInde: "1960-08-03",
         },
         NF: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Australie et Nouvelle-Zélande",
           unMember: false,
           independent: false,
@@ -24202,7 +24203,7 @@ function fillQuetes(){
           dateInde: null, // Jamais colonisé, continuité historique
         },
         NR: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Micronésie",
           unMember: true,
           independent: true,
@@ -24220,7 +24221,7 @@ function fillQuetes(){
           dateInde: "1968-01-31",
         },
         NU: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: false,
           independent: false,
@@ -24238,7 +24239,7 @@ function fillQuetes(){
           dateInde: null,
         },
         NZ: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Australie et Nouvelle-Zélande",
           unMember: true,
           independent: true,
@@ -24310,7 +24311,7 @@ function fillQuetes(){
           dateInde: "1821-07-28",
         },
         PF: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: false,
           independent: false,
@@ -24328,7 +24329,7 @@ function fillQuetes(){
           dateInde: null,
         },
         PG: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Mélanésie",
           unMember: true,
           independent: true,
@@ -24418,7 +24419,7 @@ function fillQuetes(){
           dateInde: null,
         },
         PN: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: false,
           independent: false,
@@ -24490,7 +24491,7 @@ function fillQuetes(){
           dateInde: "1143-10-05", // Reconnaissance de la souveraineté par Léon VII
         },
         PW: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Micronésie",
           unMember: true,
           independent: true,
@@ -24652,7 +24653,7 @@ function fillQuetes(){
           dateInde: "1932-09-23",
         },
         SB: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Mélanésie",
           unMember: true,
           independent: true,
@@ -25120,7 +25121,7 @@ function fillQuetes(){
           dateInde: "1991-09-09",
         },
         TK: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: false,
           independent: false,
@@ -25192,7 +25193,7 @@ function fillQuetes(){
           dateInde: "1956-03-20",
         },
         TO: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: true,
           independent: true,
@@ -25246,7 +25247,7 @@ function fillQuetes(){
           dateInde: "1962-08-31",
         },
         TV: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: true,
           independent: true,
@@ -25524,7 +25525,7 @@ function fillQuetes(){
           dateInde: "1945-09-02",
         },
         VU: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Mélanésie",
           unMember: true,
           independent: true,
@@ -25542,7 +25543,7 @@ function fillQuetes(){
           dateInde: "1980-07-30",
         },
         WF: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: false,
           independent: false,
@@ -25560,7 +25561,7 @@ function fillQuetes(){
           dateInde: null,
         },
         WS: {
-          region: "Oceanie",
+          region: "Océanie",
           subregion: "Polynésie",
           unMember: true,
           independent: true,
@@ -27132,8 +27133,8 @@ function fillQuetes(){
           ],
         },
         {
-          region: "Oceanie",
-          id: "viewOceanie",
+          region: "Océanie",
+          id: "viewOcéanie",
           subs: [
             {
               label: "Australie et Nouvelle-Zélande",
