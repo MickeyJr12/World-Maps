@@ -11881,7 +11881,7 @@ let L_RDQ = [
   { id:"O", t:"Terminer 5 quiz", svg:"repeat", max:5, xp:50, mode:"all", stars:0 },
   { id:"P", t:"Obtenir un total de 20 bonnes réponses", svg:"check", max:10, xp:150, mode:"all", continent:"all" },
   { id:"Q", t:"Réaliser 10 bonnes réponses d'affilée", svg:"flamme", max:10, xp:150, track:10, mode:"all", continent:"all" },
-  { id:"R", t:"Obtenir un score parfait en mode Trouver", svg:"perfect", max:1, xp:150, mode:"modeTrouver", continent:"all" },
+  { id:"R", t:"Obtenir un score parfait en mode Trouver", svg:"perfect", max:1, xp:150, mode:"modeTrouver", continent:"all", stars:3 },
   { id:"S", t:"Classer correctement 5 pays par population", svg:"classer", max:2, xp:50, mode:"modeClasser", continent:"all" },
   { id:"T", t:"10 bonnes réponses sur des pays d'Amérique", svg:"Amérique", max:10, continent:"Amérique", xp:50, mode:"all" },
   { id:"U", t:"Obtenir un score parfait à un quiz sur des pays d'Amérique", svg:"perfect", max:2, continent:"Amérique", xp:150, mode:"all", stars:3 },
@@ -11895,13 +11895,13 @@ let L_RDQ = [
   { id:"AA", t:"10 bonnes réponses sur des pays d'Europe", svg:"Europe", max:10, continent:"Europe", xp:50, mode:"all" },
   { id:"AB", t:"10 bonnes réponses sur des pays d'Océanie", svg:"Océanie", max:10, continent:"Océanie", xp:50, mode:"all" },
   { id:"AC", t:"10 bonnes réponses sur des pays", svg:"globe", max:10, continent:"all", xp:50, mode:"all" },
-  { id:"AD", t:"Obtenir un score parfait en mode 4 choix", svg:"perfect", max:1, xp:150, mode:"modeChoix", continent:"all" },
+  { id:"AD", t:"Obtenir un score parfait en mode 4 choix", svg:"perfect", max:1, xp:150, mode:"modeChoix", continent:"all", stars:3 },
 
   { id:"AE", t:"Obtenir un score parfait à un quiz sur des pays d'Afrique", svg:"perfect", max:2, continent:"Afrique", xp:150, mode:"all", stars:3 },
   { id:"AF", t:"Obtenir un score parfait à un quiz sur des pays d'Europe", svg:"perfect", max:2, continent:"Europe", xp:150, mode:"all", stars:3 },
   { id:"AG", t:"Obtenir un score parfait à un quiz sur des pays d'Asie", svg:"perfect", max:2, continent:"Asie", xp:150, mode:"all", stars:3 },
   { id:"AH", t:"Obtenir un score parfait à un quiz sur des pays d'Océanie", svg:"perfect", max:2, continent:"Océanie", xp:150, mode:"all", stars:3 },
-  { id:"AI", t:"Obtenir un score parfait à un quiz", svg:"perfect", max:2, xp:20, mode:"all", continent:"all" },
+  { id:"AI", t:"Obtenir un score parfait à un quiz", svg:"perfect", max:2, xp:20, mode:"all", continent:"all", stars:3 },
 ];
 
 
@@ -12059,10 +12059,14 @@ let L_svgRDQ = [
 
 
 
- let L_progressQ = {} // Nombre du progrès de la quête (6/10...)
-  for (const quest of L_RDQ){
-      L_progressQ[quest.id] = 0
-  }
+let L_progressQ = {} // Nombre du progrès de la quête (6/10...)
+let L_claimedQ = {}  // true si l'XP a déjà été récupérée pour cette quête
+for (const quest of L_RDQ){
+    L_progressQ[quest.id] = 0
+    L_claimedQ[quest.id] = false
+}
+
+
 let defisQSelected = []
 let track = 0
 
@@ -12073,6 +12077,57 @@ txtProgLvl.textContent = 0
 txtPalierLvl.textContent = L_palierLvl[0] 
 
 let lvlPlayer = 1; 
+
+
+function attachXpClickHandler(xpQ, quest) {
+  xpQ.addEventListener('click', () => {
+    xpQ.classList.remove("active")
+    xpQ.classList.add("finish")
+    xpQ.textContent = "Terminé"
+
+
+    L_claimedQ[quest.id] = true   // ← on marque comme réclamée
+
+    nbrProgLvl += quest.xp
+
+    if (nbrProgLvl >= L_palierLvl[0]) {
+      let duration1 = (1 - (nbrProgLvl - L_palierLvl[0]) / nbrProgLvl) * durationBarreProg
+
+      barreProgLvl.style.transition = `width ${duration1}ms ease`
+      barreProgLvl.style.width = "100%"
+      animateCounter(txtProgLvl, nbrProgLvl - quest.xp, L_palierLvl[0], duration1)
+      let duration2 = durationBarreProg - duration1
+      setTimeout(() => {
+        barreProgLvl.style.transition = "none"
+        barreProgLvl.style.width = "0%"
+
+        nbrProgLvl -= L_palierLvl[0]
+        L_palierLvl = L_palierLvl.slice(1)
+
+        let pourcentageLvl = nbrProgLvl / L_palierLvl[0]
+
+        requestAnimationFrame(() => { barreProgLvl.style.transition = ""; barreProgLvl.style.width = `${pourcentageLvl * 100}%` })
+
+        animateCounter(txtProgLvl, 0, nbrProgLvl, duration2)
+        txtPalierLvl.textContent = L_palierLvl[0]
+        lvlPlayer += 1
+        txtLvlPlayer.textContent = lvlPlayer
+
+        badgeLvl.querySelector("svg").style.animation = "nextLvl 0.6s ease"
+
+        setTimeout(() => {
+          badgeLvl.querySelector("svg").style.animation = ""
+        }, 600);
+      }, duration1);
+    }
+    else {
+      animateCounter(txtProgLvl, nbrProgLvl - quest.xp, nbrProgLvl, durationBarreProg)
+      let pourcentageLvl = nbrProgLvl / L_palierLvl[0]
+      barreProgLvl.style.width = `${pourcentageLvl * 100}%`
+    }
+    saveProgress()
+  }, { once: true })
+}
 
 
 function fillCadreRDQ(forcedSelection = null) {
@@ -12127,10 +12182,26 @@ function fillCadreRDQ(forcedSelection = null) {
 
     progression.appendChild(progIn);
 
-    // badge XP
-    const xpBadge = document.createElement("div");
-    xpBadge.className = "xpQ";
-    xpBadge.textContent = `+${quest.xp} XP`;
+
+// badge XP
+const xpBadge = document.createElement("div");
+xpBadge.className = "xpQ";
+
+if (L_claimedQ[quest.id]) {
+  // Déjà réclamée : état final, pas de listener
+  progIn.classList.add('finish');
+  xpBadge.classList.add('finish');
+  xpBadge.textContent = "Terminé";
+} else if (L_progressQ[quest.id] >= quest.max) {
+  // Complète mais pas encore réclamée : cliquable
+  progIn.classList.add('finish');
+  xpBadge.classList.add('active');
+  xpBadge.textContent = `+${quest.xp} XP`;
+  attachXpClickHandler(xpBadge, quest);
+} else {
+  // En cours
+  xpBadge.textContent = `+${quest.xp} XP`;
+}
 
 
 
@@ -12149,7 +12220,7 @@ function fillCadreRDQ(forcedSelection = null) {
 
 const durationBarreProg = 800
 function fillQuetes(){
-  console.log("appel")
+  
 
   const itemsRDQ = document.querySelectorAll('.itemRDQ')
 
@@ -12203,64 +12274,13 @@ function fillQuetes(){
       let pourcentage = L_progressQ[item.dataset.id]/itemMax
       progIn.style.width = `${pourcentage * 100}%`
 
-      if (L_progressQ[item.dataset.id] === itemMax){
-        const xpQ = item.querySelector('.xpQ')
+      if (L_progressQ[item.dataset.id] === itemMax && !L_claimedQ[item.dataset.id]){
+  const xpQ = item.querySelector('.xpQ')
 
-        progIn.classList.add('finish')
-            xpQ.classList.add('active')
-      xpQ.addEventListener('click',()=>{
-        xpQ.classList.remove("active")
-        xpQ.classList.add("finish")
-        xpQ.textContent = "Terminé"
-
-        nbrProgLvl += quest.xp
-
-        if (nbrProgLvl>= L_palierLvl[0]){
-          let duration1 = (1-(nbrProgLvl - L_palierLvl[0])/nbrProgLvl)*durationBarreProg
-
-          barreProgLvl.style.transition = `width ${duration1}ms ease`
-          barreProgLvl.style.width = "100%"
-          animateCounter(txtProgLvl,   nbrProgLvl-quest.xp , L_palierLvl[0], duration1)
-          let duration2 = durationBarreProg-duration1
-          setTimeout(() => {
-            
-            barreProgLvl.style.transition = "none"
-            barreProgLvl.style.width = "0%"
-            
-
-            nbrProgLvl -=  L_palierLvl[0]
-            L_palierLvl = L_palierLvl.slice(1)
-            
-
-            let pourcentageLvl = nbrProgLvl/L_palierLvl[0]
-
-
-            requestAnimationFrame(()=>{barreProgLvl.style.transition = ""; barreProgLvl.style.width = `${pourcentageLvl * 100}%`})
-            
-
-            animateCounter(txtProgLvl,   0 , nbrProgLvl, duration2)
-            txtPalierLvl.textContent = L_palierLvl[0]
-            lvlPlayer+=1
-            txtLvlPlayer.textContent = lvlPlayer
-            
-            badgeLvl.querySelector("svg").style.animation  = "nextLvl 0.6s ease"
-
-            setTimeout(() => {
-            badgeLvl.querySelector("svg").style.animation  = ""
-              
-            }, 600);
-          }, duration1);
-        }
-        else {
-  animateCounter(txtProgLvl,nbrProgLvl-quest.xp , nbrProgLvl,durationBarreProg)
-        let pourcentageLvl = nbrProgLvl/L_palierLvl[0]
-
-        barreProgLvl.style.width = `${pourcentageLvl * 100}%`
-        }
-        saveProgress()
-        },{once : true})
-
-      }
+  progIn.classList.add('finish')
+  xpQ.classList.add('active')
+  attachXpClickHandler(xpQ, quest)
+}
     }
 
   }) 
@@ -12280,6 +12300,7 @@ function saveProgress() {
     nbrProgLvl,
     track,
     L_progressQ,
+    L_claimedQ,
     defisQSelected: defisQSelected.map(q => q.id),
     lastQuestGenDate: lastQuestGenDate
   };
@@ -12298,6 +12319,7 @@ function loadProgress() {
     nbrProgLvl = data.nbrProgLvl ?? 0;
     track      = data.track ?? 0;
     if (data.L_progressQ) Object.assign(L_progressQ, data.L_progressQ);
+    if (data.L_claimedQ) Object.assign(L_claimedQ, data.L_claimedQ);
     L_palierLvl = PALIERS_LVL_ORIGINAL.slice(lvlPlayer - 1);
     lastQuestGenDate = data.lastQuestGenDate ?? null;
 
