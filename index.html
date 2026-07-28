@@ -12226,7 +12226,7 @@ function fillQuetes(){
 
   itemsRDQ.forEach(item=>{ //item = carré de la quête
 
-    if (["active","finish"].includes(item.querySelector('.xpQ').classList)){return}
+    if (item.querySelector('.progIn').classList.contains("finish") || item.querySelector('.progIn').style.width ==="100%"){return}
 
 
     if(!item.querySelector('.xpQ').classList.contains('active')){
