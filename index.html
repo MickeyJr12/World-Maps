@@ -12197,7 +12197,7 @@ function fillQuetes(){
       saveProgress()
 
       if (parseInt(txtProg.textContent)< parseInt(itemMax))
-      {txtProg.textContent = L_progressQ[item.dataset.id] +  `/ ${itemMax}`; // à remplacer par la vraie progression du joueur}
+      {txtProg.textContent = L_progressQ[item.dataset.id] +  `/ ${itemMax}`}; // à remplacer par la vraie progression du joueur
       
       const progIn = item.querySelector('.progIn')
       let pourcentage = L_progressQ[item.dataset.id]/itemMax
