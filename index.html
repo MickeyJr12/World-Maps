@@ -13275,7 +13275,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             // Complète mais pas encore réclamée : cliquable
             xpBadge.classList.add("active");
             xpBadge.textContent = `${quest.xp} XP`;
-            attachXpClickHandlerLRD(xpBadge, quest);
+            attachXpClickHandler(xpBadge, quest);
           } else {
             // En cours
             xpBadge.textContent = `${quest.xp} XP`;
@@ -13326,6 +13326,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const durationBarreProg = 800;
       function fillQuetes(TF = true) {
+        TF ? track+=1 : track = 0;
         const itemsRDQ = document.querySelectorAll(".itemRDQ");
         const itemsRD = document.querySelectorAll(".itemRD");
 
@@ -15008,11 +15009,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       );
 
       function playSound(song) {
-        if (song === badSound) {
-          track = 0;
-        } else {
-          track += 1;
-        }
         if (!sound) {
           return;
         }
