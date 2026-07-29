@@ -2831,6 +2831,7 @@
         gap: 1.3em;
         transition: transform 1s ease;
       }
+      
       .btnPlay {
         display: flex;
         position: relative;
@@ -2884,6 +2885,14 @@
         background: #f09443;
         border-radius: 50em;
       }
+
+#btnReward.notifReward {  animation: notifReward 1s ease-in-out infinite;}
+
+@keyframes notifReward {
+  0%   { background: rgba(240, 148, 67, 1); transform: scale(1); }
+  50%  { background: rgb(241, 172, 103); transform: scale(1.05); }
+  100% { background: rgba(240, 148, 67, 1); transform: scale(1); }
+}
 
       .btnHome {
         display: flex;
@@ -5856,10 +5865,11 @@
 <div class="progression">
             <div class="progIn"></div>
           </div>
-          <span class="txtProgression"></span>600/1000</span>
+          <span class="txtProgression"></span> <span class="txtProgLRD">600</span>/<span class="txtMaxProg">1000</span></span>
 
           </div>
           </div>
+
         <div class="ligneInSD" style="margin: 0.1em 0"></div>
 
          <div class="itemRD">
@@ -12057,11 +12067,143 @@ let L_svgRDQ = [
 
 ];
 
+////// Défis Longs terme
+
+let L_LRD = [
+
+  // === Total de bonnes réponses (toutes catégories confondues) ===
+  { id:"AJ", t:"Obtenir un total de 100 bonnes réponses",   svg:"check", max:100,  xp:200,  mode:"all", continent:"all" },
+  { id:"AK", t:"Obtenir un total de 250 bonnes réponses",   svg:"check", max:250,  xp:400,  mode:"all", continent:"all" },
+  { id:"AL", t:"Obtenir un total de 500 bonnes réponses",   svg:"check", max:500,  xp:700,  mode:"all", continent:"all" },
+  { id:"AM", t:"Obtenir un total de 1000 bonnes réponses",  svg:"check", max:1000, xp:1200, mode:"all", continent:"all" },
+  { id:"AN", t:"Obtenir un total de 2500 bonnes réponses",  svg:"check", max:2500, xp:2500, mode:"all", continent:"all" },
+  { id:"AO", t:"Obtenir un total de 5000 bonnes réponses",  svg:"check", max:5000, xp:5000, mode:"all", continent:"all" },
+
+  // === Quiz terminés (cumulé) ===
+  { id:"AR", t:"Terminer 10 quiz",  svg:"repeat", max:10,  xp:100,  mode:"all", stars:0 , continent : "all"},
+  { id:"AQ", t:"Terminer 50 quiz",  svg:"repeat", max:50,  xp:500,  mode:"all", stars:0 , continent : "all"},
+  { id:"AP", t:"Terminer 100 quiz",  svg:"repeat", max:100,  xp:1000,  mode:"all", stars:0 , continent : "all"},
+  { id:"AS", t:"Terminer 1000 quiz", svg:"repeat", max:1000, xp:5000, mode:"all", stars:0 , continent : "all"},
+  { id:"AT", t:"Terminer 10000 quiz", svg:"repeat", max:10000, xp:7500, mode:"all", stars:0 , continent : "all"},
+
+  // === Séries de bonnes réponses d'affilée ===
+  { id:"AU", t:"Réaliser 15 bonnes réponses d'affilée", svg:"flamme", max:15, xp:250,  track:15, mode:"all", continent:"all" },
+  { id:"AV", t:"Réaliser 20 bonnes réponses d'affilée", svg:"flamme", max:20, xp:400,  track:20, mode:"all", continent:"all" },
+  { id:"AW", t:"Réaliser 25 bonnes réponses d'affilée", svg:"flamme", max:25, xp:600,  track:25, mode:"all", continent:"all" },
+  { id:"AX", t:"Réaliser 50 bonnes réponses d'affilée", svg:"flamme", max:50, xp:1500, track:50, mode:"all", continent:"all" },
+
+  // === Mode Trouver (cumulé) ===
+  { id:"AY", t:"50 bonnes réponses en mode Trouver",  svg:"loupe", max:50,  xp:150,  mode:"modeTrouver", continent:"all" },
+  { id:"AZ", t:"100 bonnes réponses en mode Trouver", svg:"loupe", max:100, xp:300,  mode:"modeTrouver", continent:"all" },
+  { id:"BA", t:"250 bonnes réponses en mode Trouver", svg:"loupe", max:250, xp:700,  mode:"modeTrouver", continent:"all" },
+  { id:"BB", t:"500 bonnes réponses en mode Trouver", svg:"loupe", max:500, xp:1500, mode:"modeTrouver", continent:"all" },
+
+  // === Mode Classer (cumulé) ===
+  { id:"BC", t:"50 bonnes réponses en mode Classer",  svg:"classer", max:50,  xp:150,  mode:"modeClasser", continent:"all" },
+  { id:"BD", t:"100 bonnes réponses en mode Classer", svg:"classer", max:100, xp:300,  mode:"modeClasser", continent:"all" },
+  { id:"BE", t:"250 bonnes réponses en mode Classer", svg:"classer", max:250, xp:700,  mode:"modeClasser", continent:"all" },
+  { id:"BF", t:"500 bonnes réponses en mode Classer", svg:"classer", max:500, xp:1500, mode:"modeClasser", continent:"all" },
+
+  // === Mode 4 choix (cumulé) ===
+  { id:"BG", t:"50 bonnes réponses en mode 4 choix",  svg:"check", max:50,  xp:150,  mode:"modeChoix", continent:"all" },
+  { id:"BH", t:"100 bonnes réponses en mode 4 choix", svg:"check", max:100, xp:300,  mode:"modeChoix", continent:"all" },
+  { id:"BI", t:"250 bonnes réponses en mode 4 choix", svg:"check", max:250, xp:700,  mode:"modeChoix", continent:"all" },
+  { id:"BJ", t:"500 bonnes réponses en mode 4 choix", svg:"check", max:500, xp:1500, mode:"modeChoix", continent:"all" },
+
+  // === Afrique (cumulé) ===
+  { id:"BK", t:"50 bonnes réponses sur des pays d'Afrique",  svg:"Afrique", max:50,  xp:150,  continent:"Afrique", mode:"all" },
+  { id:"BL", t:"100 bonnes réponses sur des pays d'Afrique", svg:"Afrique", max:100, xp:300,  continent:"Afrique", mode:"all" },
+  { id:"BM", t:"250 bonnes réponses sur des pays d'Afrique", svg:"Afrique", max:250, xp:700,  continent:"Afrique", mode:"all" },
+  { id:"BN", t:"500 bonnes réponses sur des pays d'Afrique", svg:"Afrique", max:500, xp:1500, continent:"Afrique", mode:"all" },
+
+  // === Amérique (cumulé) ===
+  { id:"BO", t:"50 bonnes réponses sur des pays d'Amérique",  svg:"Amérique", max:50,  xp:150,  continent:"Amérique", mode:"all" },
+  { id:"BP", t:"100 bonnes réponses sur des pays d'Amérique", svg:"Amérique", max:100, xp:300,  continent:"Amérique", mode:"all" },
+  { id:"BQ", t:"250 bonnes réponses sur des pays d'Amérique", svg:"Amérique", max:250, xp:700,  continent:"Amérique", mode:"all" },
+  { id:"BR", t:"500 bonnes réponses sur des pays d'Amérique", svg:"Amérique", max:500, xp:1500, continent:"Amérique", mode:"all" },
+
+  // === Asie (cumulé) ===
+  { id:"BS", t:"50 bonnes réponses sur des pays d'Asie",  svg:"Asie", max:50,  xp:150,  continent:"Asie", mode:"all" },
+  { id:"BT", t:"100 bonnes réponses sur des pays d'Asie", svg:"Asie", max:100, xp:300,  continent:"Asie", mode:"all" },
+  { id:"BU", t:"250 bonnes réponses sur des pays d'Asie", svg:"Asie", max:250, xp:700,  continent:"Asie", mode:"all" },
+  { id:"BV", t:"500 bonnes réponses sur des pays d'Asie", svg:"Asie", max:500, xp:1500, continent:"Asie", mode:"all" },
+
+  // === Europe (cumulé) ===
+  { id:"BW", t:"50 bonnes réponses sur des pays d'Europe",  svg:"Europe", max:50,  xp:150,  continent:"Europe", mode:"all" },
+  { id:"BX", t:"100 bonnes réponses sur des pays d'Europe", svg:"Europe", max:100, xp:300,  continent:"Europe", mode:"all" },
+  { id:"BY", t:"250 bonnes réponses sur des pays d'Europe", svg:"Europe", max:250, xp:700,  continent:"Europe", mode:"all" },
+  { id:"BZ", t:"500 bonnes réponses sur des pays d'Europe", svg:"Europe", max:500, xp:1500, continent:"Europe", mode:"all" },
+
+  // === Océanie (cumulé) ===
+  { id:"CA", t:"50 bonnes réponses sur des pays d'Océanie",  svg:"Océanie", max:50,  xp:150,  continent:"Océanie", mode:"all" },
+  { id:"CB", t:"100 bonnes réponses sur des pays d'Océanie", svg:"Océanie", max:100, xp:300,  continent:"Océanie", mode:"all" },
+  { id:"CC", t:"250 bonnes réponses sur des pays d'Océanie", svg:"Océanie", max:250, xp:700,  continent:"Océanie", mode:"all" },
+  { id:"CD", t:"500 bonnes réponses sur des pays d'Océanie", svg:"Océanie", max:500, xp:1500, continent:"Océanie", mode:"all" },
+
+  // === Capitales (cumulé) ===
+  { id:"CE", t:"25 bonnes réponses qui incluent une Capitale",  svg:"capitale", max:25,  xp:100,  mode:"all", continent:"all" },
+  { id:"CF", t:"50 bonnes réponses qui incluent une Capitale",  svg:"capitale", max:50,  xp:200,  mode:"all", continent:"all" },
+  { id:"CG", t:"100 bonnes réponses qui incluent une Capitale", svg:"capitale", max:100, xp:450,  mode:"all", continent:"all" },
+  { id:"CH", t:"250 bonnes réponses qui incluent une Capitale", svg:"capitale", max:250, xp:1000, mode:"all", continent:"all" },
+
+  // === Drapeaux (cumulé) ===
+  { id:"CI", t:"25 bonnes réponses qui incluent un drapeau",  svg:"flag", max:25,  xp:100,  mode:"all", continent:"all" },
+  { id:"CJ", t:"50 bonnes réponses qui incluent un drapeau",  svg:"flag", max:50,  xp:200,  mode:"all", continent:"all" },
+  { id:"CK", t:"100 bonnes réponses qui incluent un drapeau", svg:"flag", max:100, xp:450,  mode:"all", continent:"all" },
+  { id:"CL", t:"250 bonnes réponses qui incluent un drapeau", svg:"flag", max:250, xp:1000, mode:"all", continent:"all" },
+
+  // === Classements par superficie (cumulé) ===
+  { id:"CM", t:"Classer correctement 10 pays par superficie", svg:"classer", max:10, xp:150, mode:"modeClasser", continent:"all" },
+  { id:"CN", t:"Classer correctement 25 pays par superficie", svg:"classer", max:25, xp:350, mode:"modeClasser", continent:"all" },
+  { id:"CO", t:"Classer correctement 50 pays par superficie", svg:"classer", max:50, xp:700, mode:"modeClasser", continent:"all" },
+
+  // === Classements par population (cumulé) ===
+  { id:"CP", t:"Classer correctement 10 pays par population", svg:"classer", max:10, xp:150, mode:"modeClasser", continent:"all" },
+  { id:"CQ", t:"Classer correctement 25 pays par population", svg:"classer", max:25, xp:350, mode:"modeClasser", continent:"all" },
+  { id:"CR", t:"Classer correctement 50 pays par population", svg:"classer", max:50, xp:700, mode:"modeClasser", continent:"all" },
+
+  // === Quiz rapides (<40s avec au moins une étoile, cumulé) ===
+  { id:"CS", t:"Terminer 5 quiz en moins de 10 secondes avec au moins une étoile",  svg:"clock", clock:10, max:5,  xp:200, mode:"all", stars:1, continent:"all" },
+  { id:"CT", t:"Terminer 10 quiz en moins de 40 secondes avec au moins une étoile", svg:"clock", clock:40, max:10, xp:400, mode:"all", stars:1, continent:"all" },
+  { id:"CU", t:"Terminer 25 quiz en moins de 40 secondes avec au moins une étoile", svg:"clock", clock:40, max:25, xp:900, mode:"all", stars:1, continent:"all" },
+
+  // === Scores parfaits cumulés (n'importe quel mode) ===
+  { id:"CV", t:"Obtenir 10 scores parfaits",  svg:"perfect", max:10,  xp:250,  mode:"all", stars:3, continent:"all" },
+  { id:"CW", t:"Obtenir 50 scores parfaits", svg:"perfect", max:50, xp:500,  mode:"all", stars:3, continent:"all" },
+  { id:"CX", t:"Obtenir 100 scores parfaits", svg:"perfect", max:100, xp:1200, mode:"all", stars:3, continent:"all" },
+  { id:"CY", t:"Obtenir 1000 scores parfaits", svg:"perfect", max:1000, xp:2500, mode:"all", stars:3, continent:"all" },
+
+  // === 2 étoiles en mode difficile (cumulé) ===
+  { id:"CZ", t:"Obtenir 5 fois 2 étoiles en mode difficile",  svg:"stars", max:5,  xp:200, mode:"all", stars:2, continent:"all" },
+  { id:"DA", t:"Obtenir 10 fois 2 étoiles en mode difficile", svg:"stars", max:10, xp:400, mode:"all", stars:2, continent:"all" },
+  { id:"DB", t:"Obtenir 25 fois 2 étoiles en mode difficile", svg:"stars", max:25, xp:900, mode:"all", stars:2, continent:"all" },
+];
+
+let svg_LRDQ = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" viewBox="0 0 491.52 491.52" xml:space="preserve">
+<polygon style="fill:#E56353;" points="187.91,236.562 85.539,455.36 136.977,446.09 226.553,254.64 "/>
+<polygon style="fill:#CE412D;" points="226.553,254.64 136.977,446.09 162.823,491.52 265.195,272.721 "/>
+<polygon style="fill:#E56353;" points="303.61,236.562 405.981,455.36 354.544,446.09 264.968,254.64 "/>
+<polygon style="fill:#D15241;" points="264.968,254.64 354.544,446.09 328.697,491.52 226.325,272.721 "/>
+<polygon style="fill:#FCD462;" points="393.818,187.043 413.31,167.55 393.818,148.058 407.602,124.186 383.728,110.402   390.863,83.776 364.236,76.64 364.236,49.074 336.67,49.074 329.536,22.447 302.909,29.583 289.126,5.709 265.252,19.492 245.76,0   226.268,19.492 202.395,5.709 188.612,29.583 161.985,22.447 154.851,49.074 127.284,49.074 127.284,76.64 100.658,83.776   107.792,110.402 83.919,124.185 97.702,148.058 78.21,167.55 97.702,187.043 83.919,210.916 107.792,224.699 100.658,251.326   127.284,258.461 127.284,286.027 154.851,286.027 161.985,312.654 188.612,305.519 202.395,329.391 226.268,315.609 245.76,335.101   265.252,315.609 289.126,329.391 302.909,305.519 329.536,312.654 336.67,286.027 364.236,286.027 364.236,258.461 390.863,251.326   383.728,224.699 407.602,210.916 "/>
+<path style="fill:#E56353;" d="M245.763,287.743c-66.275,0-120.191-53.917-120.191-120.191c0-66.275,53.917-120.197,120.191-120.197  c66.275,0,120.192,53.921,120.192,120.197C365.955,233.827,312.038,287.743,245.763,287.743z M245.763,65.229  c-56.422,0-102.318,45.901-102.318,102.323c0,56.417,45.896,102.318,102.318,102.318s102.318-45.901,102.318-102.318  C348.081,111.13,302.185,65.229,245.763,65.229z"/>
+</svg>`
+
+
+
+
+
+
+
+
 
 
 let L_progressQ = {} // Nombre du progrès de la quête (6/10...)
 let L_claimedQ = {}  // true si l'XP a déjà été récupérée pour cette quête
 for (const quest of L_RDQ){
+    L_progressQ[quest.id] = 0
+    L_claimedQ[quest.id] = false
+}
+for (const quest of L_LRD){
     L_progressQ[quest.id] = 0
     L_claimedQ[quest.id] = false
 }
@@ -12214,33 +12356,122 @@ if (L_claimedQ[quest.id]) {
 
     container.appendChild(item);
   }
+
+  //Quêtes long terme
+  const cadreRDL = document.querySelector(".cadreRDL"); // à adapter selon l'id réel de ton conteneur
+  cadreRDL.innerHTML = ``;
+
+   for (const quest of L_LRD) {
+    // conteneur principal de la carte
+    const item = document.createElement("div");
+    item.className = "itemRD";
+    item.dataset.id = quest.id;
+
+    // wrapper du haut : icône, texte, badge XP
+    const wrapper = document.createElement("div");
+    wrapper.className = "wrapperCadreRDL";
+
+    // icône SVG (récupérée depuis svg_LRDQ via l'id svg de la quête)
+    const svgData = svg_LRDQ;
+    if (svgData) {
+      wrapper.insertAdjacentHTML("beforeend", svg_LRDQ);
+    }
+
+    // texte de la quête
+    const txt = document.createElement("div");
+    txt.className = "txtCadreRDL";
+    txt.textContent = quest.t;
+
+    // badge XP
+    const xpBadge = document.createElement("div");
+    xpBadge.className = "xp";
+
+    if (L_claimedQ[quest.id]) {
+      // Déjà réclamée : état final, pas de listener
+      xpBadge.classList.add('finish');
+      xpBadge.textContent = "Terminé";
+    } else if (L_progressQ[quest.id] >= quest.max) {
+      // Complète mais pas encore réclamée : cliquable
+      xpBadge.classList.add('active');
+      xpBadge.textContent = `${quest.xp} XP`;
+      attachXpClickHandlerLRD(xpBadge, quest);
+    } else {
+      // En cours
+      xpBadge.textContent = `${quest.xp} XP`;
+    }
+
+    wrapper.appendChild(txt);
+    wrapper.appendChild(xpBadge);
+
+    // footer : barre de progression + texte X/max
+    const footer = document.createElement("div");
+    footer.className = "footerCadreRDL";
+
+    const progression = document.createElement("div");
+    progression.className = "progression";
+    const progIn = document.createElement("div");
+    progIn.className = "progIn";
+
+    const pourcentage = L_progressQ[quest.id] / quest.max;
+    progIn.style.width = `${pourcentage * 100}%`;
+    if (L_progressQ[quest.id] >= quest.max) {
+      progIn.classList.add('finish');
+    }
+
+    progression.appendChild(progIn);
+
+    const txtProgression = document.createElement("span");
+    txtProgression.className = "txtProgression";  
+
+    txtProgression.textContent = L_progressQ[quest.id] +  ` / ${quest.max}`; // à remplacer par la vraie progression du joueur
+        
+
+    footer.appendChild(progression);
+    footer.appendChild(txtProgression);
+
+    // assemblage de la carte
+    item.appendChild(wrapper);
+    item.appendChild(footer);
+
+    cadreRDL.appendChild(item);
+
+    // ligne séparatrice entre chaque item
+    const ligne = document.createElement("div");
+    ligne.className = "ligneInSD";
+    ligne.style.margin = "0.1em 0";
+    cadreRDL.appendChild(ligne);
+  }
 }
 
 
 
 const durationBarreProg = 800
-function fillQuetes(){
-  
+function fillQuetes(TF = true){
 
-  const itemsRDQ = document.querySelectorAll('.itemRDQ')
+  const itemsRDQ = document.querySelectorAll('.itemRDQ');
+  const itemsRD = document.querySelectorAll('.itemRD');
 
-  itemsRDQ.forEach(item=>{ //item = carré de la quête
+  [itemsRDQ,itemsRD].forEach(items=>{items.forEach(item=>{
+     //item = carré de la quête
 
     if (item.querySelector('.progIn').classList.contains("finish") || item.querySelector('.progIn').style.width ==="100%"){return}
 
 
-    if(!item.querySelector('.xpQ').classList.contains('active')){
-      let txtProg = item.querySelector('.txtProgRDQ')
-      const quest = L_RDQ.find(q => q.id === item.dataset.id)
+    
+    if(!item.querySelector('.xpQ')?.classList?.contains('active') || !item.querySelector('.xp')?.classList?.contains('active') ){
+      let txtProg = item.querySelector('.txtProgRDQ') ?? item.querySelector('.txtProgression') 
+      
+      const quest = L_RDQ.find(q => q.id === item.dataset.id) ?? L_LRD.find(q => q.id === item.dataset.id) ;
 
       if (quest.mode !== L_config.m && quest.mode!=="all" || quest.continent !=="all" && (L_config.c !=="allC" && quest.continent !== L_config.c || L_config.c==="allC" && quest.continent!== P_info[idBonneReponse].region) || quest.t.includes('difficile') && L_config.d !=="difficile" && L_config.c==="allC"){return}
       
-     
+      if (!("stars" in quest || "clock" in quest) && !TF) {return}
 
       if ("stars" in quest){
-        
-          if (Math.floor((score) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ || quest.continent !== "all"&& L_config.c==="allC"   ){return}
+          let scoreFinal = TF ? score + 1 : score // fillQuete est appelé avant qu'on utilise la fonction fillPhonePlay pour actualiser le score 
+          if (Math.floor((scoreFinal) / (Math.floor(maxQ) / 3)) < quest.stars || parseInt(qNumber.textContent)<maxQ || quest.continent !== "all"&& L_config.c==="allC"   ){return}
           if("clock" in quest){
+            console.log(quest.clock)
             if (currentChronoQ > quest.clock){return}
           }
       }
@@ -12262,9 +12493,11 @@ function fillQuetes(){
 
       
       
-
-      const itemMax = L_RDQ.find(q => q.id === item.dataset.id).max;
+     
+      const itemMax = L_RDQ.find(q => q.id === item.dataset.id)?.max ?? L_LRD.find(q => q.id === item.dataset.id)?.max;
       L_progressQ[item.dataset.id] = L_progressQ[item.dataset.id] + 1
+
+      
       saveProgress()
 
       txtProg.textContent = L_progressQ[item.dataset.id] +  `/ ${itemMax}`
@@ -12274,15 +12507,20 @@ function fillQuetes(){
       progIn.style.width = `${pourcentage * 100}%`
 
       if (L_progressQ[item.dataset.id] === itemMax && !L_claimedQ[item.dataset.id]){
-  const xpQ = item.querySelector('.xpQ')
+  const xpQ = item.querySelector('.xpQ') ?? item.querySelector('.xp')
 
   progIn.classList.add('finish')
   xpQ.classList.add('active')
+  btnReward.classList.add('notifReward')
   attachXpClickHandler(xpQ, quest)
 }
     }
 
-  }) 
+  
+
+  }) })
+
+  
 }
 
 
@@ -12403,6 +12641,7 @@ function getTodayKey() {
 
 
       btnReward.addEventListener('click',()=>{
+      btnReward.classList.remove('notifReward')
       cadreRD.classList.add('active')
       overallHome.classList.add("active");
       })
@@ -12532,7 +12771,7 @@ function getTodayKey() {
       const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null };
 
-      const L_exclus = ["GO", "UM", "MF", "SJ", "GS", "TF"];
+      const L_exclus = ["GO", "UM", "MF", "SJ", "GS", "TF","BV"];
 
       btnsMode.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -12734,10 +12973,6 @@ function getTodayKey() {
           pause4Choix.style.pointerEvents = "none";
           L_reponses = [];
 
-          defisQSelected.forEach(defis=>{
-            if ("stars" in defis || "clock" in defis){fillQuetes()}
-          })
-
           return;
         }
 
@@ -12882,10 +13117,6 @@ function getTodayKey() {
                 idProps_m.set(c.parentNode, idBonneReponse);
               }
 
-              //  console.log(p_id,"Réponse",L_reponse,L_reponse.length)
-              // console.log("identifiant !!!",c.id)
-              // console.log("Réponses",L_reponse)
-              // console.log("PaysDispo", paysDispos,paysDispos.length)
               let paysDispoToggle =
                 paysDispos.length < 6 ? paysDispoAll : paysDispos;
               if (
@@ -12999,15 +13230,17 @@ function getTodayKey() {
             });
 
             const correct = currentCountry.id === idBonneReponse;
+
             //correct? currentCountry.classList.add('good') : currentCountry.classList.add('bad');
 
             cadreNext.classList.add("visible");
+
             if (correct) {
               cadreNext.classList.add("good");
               spanNext.textContent = "✓ Bonne réponse !";
               fillContentPm(currentCountry.id, idBonneReponse);
               playSound(goodSound);
-              requestAnimationFrame(fillQuetes)
+              fillQuetes()
               score += 1;
             } else {
               cadreNext.classList.add("bad");
@@ -13067,13 +13300,11 @@ function getTodayKey() {
               Math.floor(Math.random() * Object.keys(L_q).length)
             ]; // identifiant de pays au hasard
           while (L_reponses.includes(p_id) || !paysDispos.includes(p_id)) {
-            // console.log(L_reponses.includes(p_id))
             p_id =
               Object.keys(L_q)[
                 Math.floor(Math.random() * Object.keys(L_q).length)
               ];
-            // console.log(p_id,"PaysDispo", paysDispos,paysDispos.length)
-            // console.log(p_id,"Réponses",L_reponses,L_reponses.length)
+           
           }
 
           //--------------------------------------
@@ -13385,7 +13616,7 @@ function getTodayKey() {
             cadreNext.className = "cadreNext visible bad";
           } else {
             playSound(goodSound);
-            requestAnimationFrame(fillQuetes)
+            fillQuetes()
             
             spanNext.textContent = "✓ Ordre Correct !";
             cadreNext.className = "cadreNext visible good";
@@ -13881,7 +14112,7 @@ function getTodayKey() {
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 15;
+      let maxQ = 3;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
@@ -13912,11 +14143,11 @@ function getTodayKey() {
             return;
           }
           const correct = btn === cHasard;
-
+          fillQuetes(correct)
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
             playSound(goodSound);
-            requestAnimationFrame(fillQuetes)
+            
             cadreNext.classList.add("good");
             spanNext.textContent = "✓ Bonne réponse !";
             score += 1;
@@ -14586,12 +14817,13 @@ function getTodayKey() {
           startChronoQ(currentChronoQ);
           
         }
-
+        
+            
         if (
           (parseInt(qNumber.textContent) >= maxQ &&
             L_config.m !== "modeChoix" &&
             cChooseTrouver) ||
-          (L_config.m === "modeChoix" && parseInt(qNumber.textContent) >= maxQ)
+          (L_config.m === "modeChoix" && parseInt(qNumber.textContent) >= maxQ && cadreNext.classList.contains('visible'))
         ) {
           score = 0;
           track=0;
