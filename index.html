@@ -12094,7 +12094,7 @@ let L_LRD = [
   { id:"AO", t:"Obtenir un total de 5000 bonnes réponses",  svg:"check", max:5000, xp:5000, mode:"all", continent:"all" },
 
   // === Quiz terminés (cumulé) ===
-  { id:"AR", t:"Terminer 1 quiz",  svg:"repeat", max:1,  xp:100,  mode:"all", stars:0 , continent : "all"},
+  { id:"AR", t:"Terminer 10 quiz",  svg:"repeat", max:10,  xp:100,  mode:"all", stars:0 , continent : "all"},
   { id:"AQ", t:"Terminer 50 quiz",  svg:"repeat", max:50,  xp:500,  mode:"all", stars:0 , continent : "all"},
   { id:"AP", t:"Terminer 100 quiz",  svg:"repeat", max:100,  xp:1000,  mode:"all", stars:0 , continent : "all"},
   { id:"AS", t:"Terminer 1000 quiz", svg:"repeat", max:1000, xp:5000, mode:"all", stars:0 , continent : "all"},
@@ -14133,7 +14133,7 @@ function getTodayKey() {
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 3;
+      let maxQ = 15;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
