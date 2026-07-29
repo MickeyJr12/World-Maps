@@ -12421,7 +12421,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer 10 quiz",
           svg: "repeat",
           max: 10,
-          xp: 100,
+          xp: 10,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -12431,7 +12431,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer 50 quiz",
           svg: "repeat",
           max: 50,
-          xp: 500,
+          xp: 200,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -13101,6 +13101,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             nbrProgLvl += quest.xp;
 
             if (nbrProgLvl >= L_palierLvl[0]) {
+              function funcNextLvl(){
               let duration1 =
                 (1 - (nbrProgLvl - L_palierLvl[0]) / nbrProgLvl) *
                 durationBarreProg;
@@ -13114,14 +13115,30 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 duration1,
               );
               let duration2 = durationBarreProg - duration1;
+              nbrProgLvl -= L_palierLvl[0];
+              L_palierLvl = L_palierLvl.slice(1);
+              
               setTimeout(() => {
                 barreProgLvl.style.transition = "none";
-                barreProgLvl.style.width = "0%";
-
-                nbrProgLvl -= L_palierLvl[0];
-                L_palierLvl = L_palierLvl.slice(1);
+                barreProgLvl.style.width = "0%";                
 
                 let pourcentageLvl = nbrProgLvl / L_palierLvl[0];
+
+                if(pourcentageLvl>=1){
+
+                animateCounter(txtProgLvl, 0, L_palierLvl[0], duration2);
+                txtPalierLvl.textContent = L_palierLvl[0];
+                lvlPlayer += 1;
+                txtLvlPlayer.textContent = lvlPlayer;
+                requestAnimationFrame(()=>{
+                barreProgLvl.style.transition = "";
+                barreProgLvl.style.width = `${pourcentageLvl * 100}%`;
+          
+                  funcNextLvl()
+                })
+                
+                  return
+                }
 
                 requestAnimationFrame(() => {
                   barreProgLvl.style.transition = "";
@@ -13140,6 +13157,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   badgeLvl.querySelector("svg").style.animation = "";
                 }, 600);
               }, duration1);
+            }
+            funcNextLvl()
+
             } else {
               animateCounter(
                 txtProgLvl,
