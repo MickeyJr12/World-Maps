@@ -3224,6 +3224,13 @@
       .itemRDQ svg {
         height : 2em;
       }
+
+      .itemRD{
+        opacity : 0.5;
+      }
+      .itemRD.finish{
+        opacity : 1
+      }
       .txtCadreRDQ{
         display : flex;
         font-size: 0.8em;
@@ -3326,7 +3333,10 @@
         display: flex;
         align-items: center;
         width: 100%;
+        flex: 1 1 auto;   /* peut grandir ET rétrécir pour occuper l'espace restant */
+        min-width: 0;      /* essentiel : évite que le rectangle refuse de rétrécir */
         height: 0.5em;
+        max-height : 0.5em;
         border-radius: 50em;  
         background: #DCE4F0;
       }
@@ -3346,9 +3356,10 @@
 
       .cadreRDL { /*reward long*/
         /*reard quotidien*/
-        display: flex;        
+        display: flex;       
+        flex-wrap: nowrap; 
         flex-direction: column;
-        gap : 0.6em;
+        gap : 0.1em;
         width: 100%;
         height : fit-content;
         box-sizing: border-box;
@@ -3415,6 +3426,9 @@
         gap : 0.8em;
       }
       .txtProgression{
+        display : flex;
+        flex: 0 0 auto;    /* garde sa taille naturelle, ne rétrécit jamais */
+  white-space: nowrap; /* évite que son propre texte se coupe */
         letter-spacing : 2px;
         font-size : 0.9em;
         color : rgba(0,0,0,0.8);
@@ -12080,7 +12094,7 @@ let L_LRD = [
   { id:"AO", t:"Obtenir un total de 5000 bonnes réponses",  svg:"check", max:5000, xp:5000, mode:"all", continent:"all" },
 
   // === Quiz terminés (cumulé) ===
-  { id:"AR", t:"Terminer 10 quiz",  svg:"repeat", max:10,  xp:100,  mode:"all", stars:0 , continent : "all"},
+  { id:"AR", t:"Terminer 1 quiz",  svg:"repeat", max:1,  xp:100,  mode:"all", stars:0 , continent : "all"},
   { id:"AQ", t:"Terminer 50 quiz",  svg:"repeat", max:50,  xp:500,  mode:"all", stars:0 , continent : "all"},
   { id:"AP", t:"Terminer 100 quiz",  svg:"repeat", max:100,  xp:1000,  mode:"all", stars:0 , continent : "all"},
   { id:"AS", t:"Terminer 1000 quiz", svg:"repeat", max:1000, xp:5000, mode:"all", stars:0 , continent : "all"},
@@ -12321,6 +12335,7 @@ function fillCadreRDQ(forcedSelection = null) {
 
     const pourcentage = L_progressQ[quest.id] / quest.max;
     progIn.style.width = `${pourcentage * 100}%`;
+    if (pourcentage === 1){progIn.classList.add('finish')}
 
     progression.appendChild(progIn);
 
@@ -12416,6 +12431,7 @@ if (L_claimedQ[quest.id]) {
     progIn.style.width = `${pourcentage * 100}%`;
     if (L_progressQ[quest.id] >= quest.max) {
       progIn.classList.add('finish');
+      item.classList.add('finish')
     }
 
     progression.appendChild(progIn);
@@ -12504,7 +12520,12 @@ function fillQuetes(TF = true){
       
       const progIn = item.querySelector('.progIn')
       let pourcentage = L_progressQ[item.dataset.id]/itemMax
+
       progIn.style.width = `${pourcentage * 100}%`
+      if (L_progressQ[item.dataset.id] >= itemMax){
+        progIn.classList.add('finish');
+        item.classList.add('finish');
+      }
 
       if (L_progressQ[item.dataset.id] === itemMax && !L_claimedQ[item.dataset.id]){
   const xpQ = item.querySelector('.xpQ') ?? item.querySelector('.xp')
@@ -12521,7 +12542,7 @@ function fillQuetes(TF = true){
   }) })
 
   
-}
+} 
 
 
 // Vider le cache
