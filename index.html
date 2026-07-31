@@ -6034,6 +6034,55 @@
           </label>
         </div>
 
+         <div class="itemSetting" id="souv">
+          <svg
+            height="1.2em"
+            viewBox="0 0 603 512"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M346.162 10.6709C358.376 10.6736 366.098 10.6797 366.231 10.6758L366.381 10.6807L366.529 10.6826C419.054 11.1626 461.667 54.0492 461.667 106.683V405.328C461.667 458.253 418.592 501.328 365.667 501.328H237.667C184.742 501.328 141.667 458.253 141.667 405.328V106.661C141.667 54.0471 184.281 11.1435 236.8 10.6826L236.951 10.6807L237.102 10.6758C237.222 10.6797 244.946 10.6736 257.171 10.6709C269.332 10.6682 285.499 10.667 301.667 10.667C317.834 10.667 334.001 10.6682 346.162 10.6709ZM223.007 33.4609C188.843 40.3037 163 70.4894 163 106.683V405.328C163 446.504 196.491 479.995 237.667 479.995H365.667C406.843 479.995 440.333 446.504 440.333 405.328V106.683C440.333 70.4951 414.495 40.2802 380.319 33.46L372.331 31.8652L368.69 39.1523L353.892 68.7705C352.069 72.4039 348.373 74.6826 344.333 74.6826H259C254.944 74.6826 251.247 72.391 249.453 68.793L249.448 68.7842L234.644 39.1523L231 31.8604L223.007 33.4609ZM280.333 394.661H323C328.885 394.661 333.667 399.443 333.667 405.328C333.667 411.213 328.885 415.995 323 415.995H280.333C274.448 415.995 269.667 411.213 269.667 405.328C269.667 399.443 274.448 394.661 280.333 394.661Z"
+              fill="black"
+              stroke="black"
+              stroke-width="21.3333"
+            />
+            <path
+              d="M518 55L589 171.716L518 267.5L589 384.216L518 480"
+              stroke="black"
+              stroke-width="28"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M85 55L14 171.716L85 267.5L14 384.216L85 480"
+              stroke="black"
+              stroke-width="28"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+
+          <span
+            style="
+              font-size: 0.85em;
+              font-weight: 450;
+              flex: 1;
+              display: flex;
+              justify-content: flex-start;
+              padding-left: 1em;
+            "
+            >N'inclure dans les quiz que les pays souverains</span
+          >
+
+          <!-- From Uiverse.io by ErzenXz -->
+          <label class="toggleSetting" id="toggleSouv">
+            <input type="checkbox" />
+            <div class="toggleSetting-background"></div>
+            <div class="toggleSetting-handle"></div>
+          </label>
+        </div>
+
         <h3 style="align-self: flex-start">Informations</h3>
 
         <div class="itemSetting">
@@ -11809,6 +11858,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const haptic = document.getElementById("haptic");
       const toggleHaptic = document.getElementById("toggleHaptic");
+
+      const souv = document.getElementById('souv')
+      const toggleSouv = document.getElementById('toggleSouv')
+
       const mail = document.getElementById("mail");
 
       const sonSetting = document.getElementById("sonSetting");
@@ -13635,6 +13688,31 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         sound = e.target.checked;
       });
 
+      //////
+      let onlySouv = false
+
+      toggleSouv.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      souv.addEventListener("click", () => {
+        toggleSouv.click();
+      });
+
+      const checkBoxSouv = toggleSouv.querySelector('input')      
+      checkBoxSouv.addEventListener("change", (e) => {
+      onlySouv = !onlySouv;
+      [document.getElementById("nbrQ15"),document.getElementById("nbrQ20"),document.getElementById("nbrQ25")].forEach(nbrQ=>{nbrQ.style.display = "flex"})
+      
+      });
+
+      
+
+
+      
+
+
+
       btnSetting.addEventListener("click", () => {
         cadreSetting.classList.add("active");
         overallHome.classList.add("active");
@@ -13727,6 +13805,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const playConfig = document.getElementById("playConfig");
       qrs.forEach((q) => (q.style.display = "none"));
       const cadresRegions = document.querySelectorAll(".cadreRegion");
+      cadresRegions.forEach(cr=>{
+        
+           cr.addEventListener('click',()=>{
+            if (!onlySouv){return}
+              [document.getElementById("nbrQ15"),document.getElementById("nbrQ20"),document.getElementById("nbrQ25")].forEach(nbrQ=>{nbrQ.style.display = cr.id==="Océanie" ? "none" : "flex"})
+              cr.id==="Océanie" ? document.getElementById("nbrQAll").click() : ""
+            })
+        
+        
+      })
+
       const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null };
 
@@ -13739,6 +13828,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             if (nbrQVal === "Tout") {
               document.getElementById("nbrQ15").click();
             }
+          
           } else {
             document.getElementById("nbrQAll").classList.remove("hide");
           }
@@ -13985,6 +14075,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               L_config.d === "tout" ||
               L_config.c !== "allC") &&
             !L_reponses.includes(id) &&
+            (onlySouv && !(id in L_nSouv) || !onlySouv)&&
             !L_exclus.includes(id) &&
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
@@ -13994,9 +14085,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           paysDispos = paysDispos.filter((id) => !["PS"].includes(id));
         }
 
-        const paysDisposTrouver = Object.keys(L_q).filter(
+        const paysDisposTrouver = Object.keys(L_q).filter( //retirer visuellement les pays qui ne seront jamais pris dans le quiz 
           (id) =>
-            !L_exclus.includes(id) &&
+            !L_exclus.includes(id) && (onlySouv && !(id in L_nSouv) || !onlySouv)&&
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
         );
@@ -14012,13 +14103,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         //Retirer les circles inutiles
 
-        const paysDispoAll = Object.keys(L_q).filter(
+        const paysDispoAll = Object.keys(L_q).filter( //Tous les pays disponibles à la question 1 
           (id) =>
             (L_config.c !== "allC" ||
               (L_config.c === "allC" &&
                 (L_config.d === "tout" ||
                   L_q[id].d.toLowerCase() === L_config.d))) &&
-            !L_exclus.includes(id) &&
+            !L_exclus.includes(id) && (onlySouv && !(id in L_nSouv) || !onlySouv) &&
             (P_info[id].region === L_config.c || L_config.c === "allC"),
         );
 
