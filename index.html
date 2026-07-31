@@ -28186,7 +28186,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           c: "Port-aux-Français",
           p: 400,
           s: 439671,
-          n: "Terres australes et antarctiques françaises",
+          n: "Îles Kerguelen",
         },
         TG: { d: "Difficile", c: "Lomé", p: 8278724, s: 56785, n: "Togo" },
         TH: {
@@ -28520,6 +28520,117 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       for (const code in P_info) {
         P_info[code].fmi = !fmiNonMembers.has(code);
       }
+
+
+const L_nSouv = {
+  AI: "Territoire britannique",        // Anguilla
+  AS: "Territoire américain",          // Samoa américaines
+  AW: "Pays des Pays-Bas",     // Aruba
+  AX: "Région autonome (FI)",  // Åland
+  BL: "COM française",         // Saint-Barthélemy
+  BM: "Territoire britannique",        // Bermudes
+  BQ: "Commune spéciale (NL)", // Bonaire, Saba, St-Eustache
+  BV: "Territoire norvégien",          // Île Bouvet
+  CC: "Territoire australien",         // Îles Cocos
+  CK: "Libre association (NZ)",// Îles Cook
+  CW: "Pays des Pays-Bas",     // Curaçao
+  CX: "Territoire australien",         // Île Christmas
+  FK: "Territoire britannique",        // Malouines
+  FO: "Pays autonome (DK)",    // Îles Féroé
+  GF: "DROM français",         // Guyane
+  GG: "Dépendance Couronne",   // Guernesey
+  GI: "Territoire britannique",        // Gibraltar
+  GL: "Pays autonome (DK)",    // Groenland
+  GO: "Territoire français (TAAF)", // Îles Glorieuses
+  GP: "DROM français",         // Guadeloupe
+  GS: "Territoire britannique",        // Géorgie du Sud
+  GU: "Territoire américain",          // Guam
+  HK: "RAS chinoise",          // Hong Kong
+  HM: "Territoire australien",         // Heard et McDonald
+  IM: "Dépendance Couronne",   // Île de Man
+  IO: "Territoire britannique",        // Territoire britannique de l'océan Indien
+  JE: "Dépendance Couronne",   // Jersey
+  KY: "Territoire britannique",        // Îles Caïmans
+  MF: "COM française",         // Saint-Martin
+  MO: "RAS chinoise",          // Macao
+  MP: "Commonwealth (US)",     // Mariannes du Nord
+  MQ: "DROM français",         // Martinique
+  MS: "Territoire britannique",        // Montserrat
+  NC: "Collectivité sui generis (FR)", // Nouvelle-Calédonie
+  NF: "Territoire australien",         // Île Norfolk
+  NU: "Libre association (NZ)",// Niue
+  PF: "COM française",         // Polynésie française
+  PM: "COM française",         // Saint-Pierre-et-Miquelon
+  PN: "Territoire britannique",        // Pitcairn
+  PR: "Territoire non incorporé (US)", // Porto Rico
+  RE: "DROM français",         // La Réunion
+  SH: "Territoire britannique",        // Sainte-Hélène
+  SJ: "Territoire norvégien",          // Svalbard et Jan Mayen
+  SX: "Pays des Pays-Bas",     // Saint-Martin (partie néerlandaise)
+  TC: "Territoire britannique",        // Turks-et-Caïcos
+  TF: "Territoire français",           // TAAF
+  TK: "Territoire néo-zélandais",      // Tokelau
+  UM: "Territoire américain",          // Îles mineures éloignées des É-U
+  VG: "Territoire britannique",        // Îles Vierges britanniques
+  VI: "Territoire américain",          // Îles Vierges américaines
+  WF: "COM française",         // Wallis-et-Futuna
+  YT: "DROM français",         // Mayotte
+}
+
+L_nSouvDetail = {
+  AI: "Territoire britannique",
+  AS: "Territoire américain",
+  AW: "Pays du Royaume des Pays-Bas",
+  AX: "Région autonome de Finlande",
+  BL: "Collectivité d'outre-mer française",
+  BM: "Territoire britannique",
+  BQ: "Commune spéciale des Pays-Bas",
+  BV: "Territoire norvégien",
+  CC: "Territoire australien",
+  CK: "Libre association avec la Nouvelle-Zélande",
+  CW: "Pays du Royaume des Pays-Bas",
+  CX: "Territoire australien",
+  FK: "Territoire britannique",
+  FO: "Pays autonome du Royaume du Danemark",
+  GF: "Département et région d'outre-mer français",
+  GG: "Dépendance de la Couronne britannique",
+  GI: "Territoire britannique",
+  GL: "Pays autonome du Royaume du Danemark",
+  GO: "Terres australes et antarctiques françaises",
+  GP: "Département et région d'outre-mer français",
+  GS: "Territoire britannique",
+  GU: "Territoire américain",
+  HK: "Région administrative spéciale de Chine",
+  HM: "Territoire australien",
+  IM: "Dépendance de la Couronne britannique",
+  IO: "Territoire britannique",
+  JE: "Dépendance de la Couronne britannique",
+  KY: "Territoire britannique",
+  MF: "Collectivité d'outre-mer française",
+  MO: "Région administrative spéciale de Chine",
+  MP: "Commonwealth associé aux États-Unis",
+  MQ: "Département et région d'outre-mer français",
+  MS: "Territoire britannique",
+  NC: "Collectivité sui generis française",
+  NF: "Territoire australien",
+  NU: "Libre association avec la Nouvelle-Zélande",
+  PF: "Collectivité d'outre-mer française",
+  PM: "Collectivité d'outre-mer française",
+  PN: "Territoire britannique",
+  PR: "Territoire non incorporé des États-Unis",
+  RE: "Département et région d'outre-mer français",
+  SH: "Territoire britannique",
+  SJ: "Territoire norvégien",
+  SX: "Pays du Royaume des Pays-Bas",
+  TC: "Territoire britannique",
+  TF: "Terres australes et antarctiques françaises",
+  TK: "Territoire néo-zélandais",
+  UM: "Territoire américain",
+  VG: "Territoire britannique",
+  VI: "Territoire américain",
+  WF: "Collectivité d'outre-mer française",
+  YT: "Département et région d'outre-mer français",
+}
 
       //---------
       //Cadre
@@ -30062,9 +30173,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           }
           boxItemC.appendChild(titleItemC);
           boxItemC.appendChild(capItemC);
-          if (r.id === "MQ"){
+          if (r.id in L_nSouv){
             const cap2 = capItemC.cloneNode(true)
-            cap2.textContent = "• Territoire - France" 
+            cap2.textContent = "• " + L_nSouv[r.id] 
             boxItemC.appendChild(cap2);
           }
 
