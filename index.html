@@ -1308,7 +1308,7 @@
         padding: 2em 1em;
         width: 100%;
         height: 2em;
-        max-height: 3em;
+        max-height: 4em;
         transition:
           transform 0.3s ease,
           background 0.2s ease;
@@ -29972,6 +29972,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           }
           const itemC = document.createElement("div");
           itemC.className = "itemC";
+
           const boxSvgItem = document.createElement("div");
           boxSvgItem.className = "boxSvgItem";
           const boxItemC = document.createElement("div");
@@ -29980,6 +29981,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           titleItemC.className = "titleItemC";
           const capItemC = document.createElement("div");
           capItemC.className = "capItemC";
+
           const ligneInContent = document.createElement("div");
           ligneInContent.className = "ligneInContent";
 
@@ -30060,6 +30062,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           }
           boxItemC.appendChild(titleItemC);
           boxItemC.appendChild(capItemC);
+          if (r.id === "MQ"){
+            const cap2 = capItemC.cloneNode(true)
+            cap2.textContent = "• Territoire - France" 
+            boxItemC.appendChild(cap2);
+          }
+
 
           itemC.append(boxSvgItem, boxItemC);
           contentC.append(itemC);
