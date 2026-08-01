@@ -1349,7 +1349,7 @@
         transition: transform 0.3s ease;
       }
       .svgPopulation svg {
-        fill: rgb(255, 89, 89);
+        fill: #7EC8E3;
         opacity: 0.6;
         height: 0.5rem;
       }
@@ -30214,6 +30214,7 @@ L_nSouvDetail = {
             itemC.append(rank);
 
             contentC.style.scrollbarWidth = "thin";
+            
             capItemC.innerHTML = `
           <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -30283,7 +30284,7 @@ L_nSouvDetail = {
 
             svgPopulation.innerHTML = `
             <svg
-              fill="orange"
+              fill="#7EC8E3"
               xmlns="http://www.w3.org/2000/svg"
               data-name="Layer 1"
               viewBox="0 0 24 24"
@@ -32188,7 +32189,7 @@ L_nSouvDetail = {
       arrowC.addEventListener("click", () => {
         decroissant = !decroissant;
         arrowC.querySelector("svg").classList.toggle("dec");
-        fillContentC(Ls);
+        requestAnimationFrame(()=>requestAnimationFrame(()=>fillContentC(Ls)))
       });
 
       //Classer par...*********************************************************
