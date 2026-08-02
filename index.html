@@ -1554,41 +1554,47 @@
         width: 90%;
         height: auto;
       }
-      .colorChoice {
+   .colorChoice {
         display : flex;
-        opacity : 0.6;
         justify-content : center;
         align-items : center;
         cursor: pointer;
         outline: 2px solid rgba(255, 255, 255, 0);
         outline-offset: 0.15rem;
-        width: 2rem;
-        height: 2rem;
+        width: 2.4rem;
+        height: 2.4rem;
         border-radius: 15%;
-        stroke-width :4;
-        stroke : rgba(255,255,255,0);
-        /* border: 1px solid rgba(255, 255, 255, 0.2); */
+        border: 1px solid rgba(255, 255, 255, 0);
         transition:
           border 0.2s ease,
           box-shadow 0.2s ease,
           outline-color 0.2s ease,
           stroke 0.2s ease,
-          opacity 0.2s ease;
+          opacity 0.2s ease,
+          fill 0.2s ease;
       }
       .colorChoice.active {
-        /* border: 1px solid rgba(255, 255, 255, 0.6);
-        outline-color: rgba(255, 255, 255, 0.6); */
-        opacity : 1;
-        stroke : white;
+        border: 1px solid rgba(255, 255, 255, 0);
+        outline-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .colorChoice.active svg{
+        fill : white !important;
+
       }
 
       .colorChoice svg {
         height : 100%;
+        transition : fill 0.2s ease;
       }
 
       #colorItemW {
         fill: white;
       }
+       #colorItemW.active svg {
+        fill: black !important;
+      }
+
       #colorItemK {
         fill: black;
       }
@@ -1600,13 +1606,45 @@
         
       }
       #colorItemB {
-        fill: blue;
+        fill: rgb(40, 123, 255);
       }
       #colorItemY {
         fill: yellow;
       }
+       #colorItemY.active svg {
+        fill: black !important;
+      }
+
       #colorItemO {
         fill: orange;
+      }
+       #colorItemO.active svg {
+        fill: black !important;
+      }
+
+      /**/
+
+      #colorItemW.active {
+        background: white;
+      }
+      #colorItemK.active {
+        background: black;
+      }
+      #colorItemR.active  {
+        background : red;
+      }
+      #colorItemG.active  {
+        background : green;
+        
+      }
+      #colorItemB.active {
+        background: blue;
+      }
+      #colorItemY.active {
+        background: yellow;
+      }
+      #colorItemO.active {
+        background: orange;
       }
 
       .opensearch {
