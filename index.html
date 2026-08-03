@@ -42,13 +42,13 @@
         /* outline : 1px solid blue; */
       }
       html {
-        font-size : 16px;
-       -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+        font-size: 16px;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
 
-   overscroll-behavior: none;
-  touch-action: manipulation;
+        overscroll-behavior: none;
+        touch-action: manipulation;
 
         margin: 0px;
         padding: 0px;
@@ -63,8 +63,8 @@
       }
 
       body {
-         overscroll-behavior: none;
-  touch-action: manipulation;
+        overscroll-behavior: none;
+        touch-action: manipulation;
 
         position: fixed; /* ← clé du fix */
         inset: 0; /* top/right/bottom/left: 0 — fonctionne avec fixed */
@@ -927,60 +927,60 @@
         margin: 0 auto;
       }
       /*Burger internet*/
-      /* From Uiverse.io by Cevorob */ 
-.burger {
-  position: relative;
-  transform : scale(0.45);
-  width: 2.5rem;      /* 40px */
-  
-  height: 1.875rem;    /* 30px */
-  background: transparent;
-  cursor: pointer;
-  display: block;
-}
-.burger input {
-  display: none;
-}
-.burger span {
-  display: block;
-  position: absolute;
-  height: 0.25rem;     /* 4px */
-  width: 100%;
-  background: white;
-  border-radius: 0.5625rem; /* 9px */
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: .25s ease-in-out;
-}
-.burger span:nth-of-type(1) {
-  top: 0rem;
-  transform-origin: left center;
-}
-.burger span:nth-of-type(2) {
-  top: 50%;
-  transform: translateY(-50%);
-  transform-origin: left center;
-}
-.burger span:nth-of-type(3) {
-  top: 100%;
-  transform-origin: left center;
-  transform: translateY(-100%);
-}
-.burger input:checked ~ span:nth-of-type(1) {
-  transform: rotate(45deg);
-  top: 0rem;
-  left: 0.3125rem;     /* 5px */
-}
-.burger input:checked ~ span:nth-of-type(2) {
-  width: 0%;
-  opacity: 0;
-}
-.burger input:checked ~ span:nth-of-type(3) {
-  transform: rotate(-45deg);
-  top: 1.75rem;         /* 28px */
-  left: 0.3125rem;      /* 5px */
-}
+      /* From Uiverse.io by Cevorob */
+      .burger {
+        position: relative;
+        transform: scale(0.45);
+        width: 2.5rem; /* 40px */
+
+        height: 1.875rem; /* 30px */
+        background: transparent;
+        cursor: pointer;
+        display: block;
+      }
+      .burger input {
+        display: none;
+      }
+      .burger span {
+        display: block;
+        position: absolute;
+        height: 0.25rem; /* 4px */
+        width: 100%;
+        background: white;
+        border-radius: 0.5625rem; /* 9px */
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+      }
+      .burger span:nth-of-type(1) {
+        top: 0rem;
+        transform-origin: left center;
+      }
+      .burger span:nth-of-type(2) {
+        top: 50%;
+        transform: translateY(-50%);
+        transform-origin: left center;
+      }
+      .burger span:nth-of-type(3) {
+        top: 100%;
+        transform-origin: left center;
+        transform: translateY(-100%);
+      }
+      .burger input:checked ~ span:nth-of-type(1) {
+        transform: rotate(45deg);
+        top: 0rem;
+        left: 0.3125rem; /* 5px */
+      }
+      .burger input:checked ~ span:nth-of-type(2) {
+        width: 0%;
+        opacity: 0;
+      }
+      .burger input:checked ~ span:nth-of-type(3) {
+        transform: rotate(-45deg);
+        top: 1.75rem; /* 28px */
+        left: 0.3125rem; /* 5px */
+      }
       #contentFlagS {
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
         touch-action: pan-y; /* le scroll est vertical, les taps passent */
@@ -1349,7 +1349,7 @@
         transition: transform 0.3s ease;
       }
       .svgPopulation svg {
-        fill: #7EC8E3;
+        fill: #7ec8e3;
         opacity: 0.6;
         height: 0.5rem;
       }
@@ -1571,8 +1571,6 @@
         border: 1px solid rgba(255, 255, 255, 0.6);
         outline-color: rgba(255, 255, 255, 0.6);
       }
-
-      
 
       #colorItemW {
         background: white;
@@ -2821,34 +2819,88 @@
         height: 70dvh;
         filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.4));
       }
-      #cadreTrackDays{
-        display : flex;
+      #cadreTrackDays {
+        display: flex;
         align-items: center;
         justify-content: space-around;
         z-index: 1;
-        position : absolute;
-        opacity : 1;
-        right : 1.5rem;
-        top : calc(env(safe-area-inset-top) + 1rem);
-        color : white;
-        border-radius : 1rem;
-        box-shadow : 0 0 5px rgba(0,0,0,0.4);
-        outline : 1px dashed rgba(255,255,255,0.2);
-        padding : 0.5rem;
+        position: absolute;
+        opacity: 1;
+        right: 1.5rem;
+        top: calc(env(safe-area-inset-top) + 1rem);
+        color: white;
+        border-radius: 1rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        outline: 1px dashed rgba(255, 255, 255, 0.2);
+        padding: 0.5rem;
         font-weight: 500;
-        font-size : 1.15rem;
-        gap : 0.5rem;
-        background : rgba(21, 54, 244,0.5);
-        filter : grayscale(100%);
+        font-size: 1.15rem;
+        gap: 0.5rem;
+        background: rgba(21, 54, 244, 0.5);
+        filter: grayscale(100%);
+        transition: transform 0.25s ease;
       }
-      #cadreTrackDays.active{
-        filter : grayscale(0);
-        outline : 1px solid rgba(255,255,255,0.2);
-        background : rgba(21, 54, 244,1);
+      #cadreTrackDays:active {
+        transform: scale(0.96);
+      }
+      #cadreTrackDays.active {
+        filter: grayscale(0);
+        outline: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(21, 54, 244, 1);
       }
 
-      #cadreTrackDays svg{
-        height : 1.6rem;
+      #cadreTrackDays svg {
+        overflow : visible;
+        height: 1.6rem;
+      }
+      @keyframes fire3 {
+        0% {
+          transform-origin: 25% bottom;
+          transform: scale(1);
+        }
+        25% {
+          transform-origin: 25% bottom;
+          transform: scale(1.04);
+        }
+        50% {
+          transform-origin: 75% bottom;
+          transform: scale(1);
+        }
+
+        75% {
+          transform-origin: 75% bottom;
+          transform: scale(1.04);
+        }
+        100% {
+          transform-origin: 75% bottom;
+          transform: scale(1);
+        }
+      }
+
+         @keyframes fire2 {
+        0% {
+          transform-origin: 75% bottom;
+          transform: scale(1);
+        
+        }
+        25% {
+          transform-origin: 75% bottom;
+          transform: scale(1.04);
+        }
+        50% {transform-origin: 25% bottom;
+          transform: scale(1);}
+
+        75% {
+
+          transform-origin: 25% bottom;
+          transform: scale(1.04);
+
+          
+        }
+        100% {
+          transform-origin: 75% bottom;
+          transform: scale(1);
+        }
       }
 
       .btnHomeBox {
@@ -3576,7 +3628,7 @@
         transform: scale(0.96);
       }
       #backDevise {
-        left : 1rem;
+        left: 1rem;
       }
 
       #configTitle {
@@ -3841,8 +3893,8 @@
 
       .nbrQ-pill {
         display: flex;
-        align-items : center;
-        justify-content : center;
+        align-items: center;
+        justify-content: center;
         pointer-events: all;
         gap: 0.4rem;
         font-size: 0.65rem;
@@ -5685,19 +5737,110 @@
     <!--HTML Home-->
     <div id="phoneHome">
       <div id="cadreTrackDays">
-        <svg id="svgTrackR" viewBox="-33 0 255 255" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style> .cls-3 { fill: url(#linear-gradient-1); } .cls-4 { fill: #fc9502; } .cls-5 { fill: #fce202; } </style> <linearGradient id="linear-gradient-1" gradientUnits="userSpaceOnUse" x1="94.141" y1="255" x2="94.141" y2="0.188"> <stop offset="0" stop-color="#ff4c0d"></stop> <stop offset="1" stop-color="#fc9502"></stop> </linearGradient> </defs> <g id="fire"> <path d="M187.899,164.809 C185.803,214.868 144.574,254.812 94.000,254.812 C42.085,254.812 -0.000,211.312 -0.000,160.812 C-0.000,154.062 -0.121,140.572 10.000,117.812 C16.057,104.191 19.856,95.634 22.000,87.812 C23.178,83.513 25.469,76.683 32.000,87.812 C35.851,94.374 36.000,103.812 36.000,103.812 C36.000,103.812 50.328,92.817 60.000,71.812 C74.179,41.019 62.866,22.612 59.000,9.812 C57.662,5.384 56.822,-2.574 66.000,0.812 C75.352,4.263 100.076,21.570 113.000,39.812 C131.445,65.847 138.000,90.812 138.000,90.812 C138.000,90.812 143.906,83.482 146.000,75.812 C148.365,67.151 148.400,58.573 155.999,67.813 C163.226,76.600 173.959,93.113 180.000,108.812 C190.969,137.321 187.899,164.809 187.899,164.809 Z" id="path-1" class="cls-3" fill-rule="evenodd"></path> <path d="M94.000,254.812 C58.101,254.812 29.000,225.711 29.000,189.812 C29.000,168.151 37.729,155.000 55.896,137.166 C67.528,125.747 78.415,111.722 83.042,102.172 C83.953,100.292 86.026,90.495 94.019,101.966 C98.212,107.982 104.785,118.681 109.000,127.812 C116.266,143.555 118.000,158.812 118.000,158.812 C118.000,158.812 125.121,154.616 130.000,143.812 C131.573,140.330 134.753,127.148 143.643,140.328 C150.166,150.000 159.127,167.390 159.000,189.812 C159.000,225.711 129.898,254.812 94.000,254.812 Z" id="path-2" class="cls-4" fill-rule="evenodd"></path> <path d="M95.000,183.812 C104.250,183.812 104.250,200.941 116.000,223.812 C123.824,239.041 112.121,254.812 95.000,254.812 C77.879,254.812 69.000,240.933 69.000,223.812 C69.000,206.692 85.750,183.812 95.000,183.812 Z" id="path-3" class="cls-5" fill-rule="evenodd"></path> </g> </g></svg>
+        <svg
+          id="svgTrackR"
+          viewBox="-33 0 255 255"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          preserveAspectRatio="xMidYMid"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <defs>
+              <style>
+                .cls-3 {
+                  fill: url(#linear-gradient-1);
+                }
+                .cls-4 {
+                  fill: #fc9502;
+                }
+                .cls-5 {
+                  fill: #fce202;
+                }
+              </style>
+              <linearGradient
+                id="linear-gradient-1"
+                gradientUnits="userSpaceOnUse"
+                x1="94.141"
+                y1="255"
+                x2="94.141"
+                y2="0.188"
+              >
+                <stop offset="0" stop-color="#ff4c0d"></stop>
+                <stop offset="1" stop-color="#fc9502"></stop>
+              </linearGradient>
+            </defs>
+            <g id="fire">
+              <path
+                d="M187.899,164.809 C185.803,214.868 144.574,254.812 94.000,254.812 C42.085,254.812 -0.000,211.312 -0.000,160.812 C-0.000,154.062 -0.121,140.572 10.000,117.812 C16.057,104.191 19.856,95.634 22.000,87.812 C23.178,83.513 25.469,76.683 32.000,87.812 C35.851,94.374 36.000,103.812 36.000,103.812 C36.000,103.812 50.328,92.817 60.000,71.812 C74.179,41.019 62.866,22.612 59.000,9.812 C57.662,5.384 56.822,-2.574 66.000,0.812 C75.352,4.263 100.076,21.570 113.000,39.812 C131.445,65.847 138.000,90.812 138.000,90.812 C138.000,90.812 143.906,83.482 146.000,75.812 C148.365,67.151 148.400,58.573 155.999,67.813 C163.226,76.600 173.959,93.113 180.000,108.812 C190.969,137.321 187.899,164.809 187.899,164.809 Z"
+                id="f1RTrack"
+                class="cls-3"
+                fill-rule="evenodd"
+              ></path>
+              <path
+                d="M94.000,254.812 C58.101,254.812 29.000,225.711 29.000,189.812 C29.000,168.151 37.729,155.000 55.896,137.166 C67.528,125.747 78.415,111.722 83.042,102.172 C83.953,100.292 86.026,90.495 94.019,101.966 C98.212,107.982 104.785,118.681 109.000,127.812 C116.266,143.555 118.000,158.812 118.000,158.812 C118.000,158.812 125.121,154.616 130.000,143.812 C131.573,140.330 134.753,127.148 143.643,140.328 C150.166,150.000 159.127,167.390 159.000,189.812 C159.000,225.711 129.898,254.812 94.000,254.812 Z"
+                id="f2RTrack"
+                class="cls-4"
+                fill-rule="evenodd"
+              ></path>
+              <path
+                d="M95.000,183.812 C104.250,183.812 104.250,200.941 116.000,223.812 C123.824,239.041 112.121,254.812 95.000,254.812 C77.879,254.812 69.000,240.933 69.000,223.812 C69.000,206.692 85.750,183.812 95.000,183.812 Z"
+                id="f3RTrack"
+                class="cls-5"
+                fill-rule="evenodd"
+              ></path>
+            </g>
+          </g>
+        </svg>
 
-        <svg style="display : none" id="svgTrackB" viewBox="0 0 189 255" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M187.899 164.814C185.803 214.873 144.574 254.817 94.0001 254.817C42.0851 254.817 6.59854e-05 211.317 6.59854e-05 160.817C6.59854e-05 154.067 -0.120934 140.577 10.0001 117.817C16.0571 104.196 19.8561 95.6386 22.0001 87.8166C23.1781 83.5176 25.4691 76.6876 32.0001 87.8166C35.8511 94.3786 36.0001 103.817 36.0001 103.817C36.0001 103.817 50.3281 92.8216 60.0001 71.8166C74.1791 41.0236 62.8661 22.6166 59.0001 9.81656C57.6621 5.38856 56.8221 -2.56945 66.0001 0.816555C75.3521 4.26755 100.076 21.5746 113 39.8166C131.445 65.8516 138 90.8166 138 90.8166C138 90.8166 143.906 83.4866 146 75.8166C148.365 67.1556 148.4 58.5776 155.999 67.8176C163.226 76.6046 173.959 93.1176 180 108.817C190.969 137.326 187.899 164.814 187.899 164.814Z" fill="url(#paint0_linear_281_51)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M94 254.816C58.101 254.816 29 225.715 29 189.816C29 168.155 37.729 155.004 55.896 137.17C67.528 125.751 78.415 111.726 83.042 102.176C83.953 100.296 86.026 90.4994 94.019 101.97C98.212 107.986 104.785 118.685 109 127.816C116.266 143.559 118 158.816 118 158.816C118 158.816 125.121 154.62 130 143.816C131.573 140.334 134.753 127.152 143.643 140.332C150.166 150.004 159.127 167.394 159 189.816C159 225.715 129.898 254.816 94 254.816Z" fill="#02ADFC"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M95 183.816C104.25 183.816 104.25 200.945 116 223.816C123.824 239.045 112.121 254.816 95 254.816C77.879 254.816 69 240.937 69 223.816C69 206.696 85.75 183.816 95 183.816Z" fill="#3DC8FF"/>
-<defs>
-<linearGradient id="paint0_linear_281_51" x1="94.1411" y1="255.005" x2="94.1411" y2="0.192553" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0D9AFF"/>
-<stop offset="1" stop-color="#028CFC"/>
-</linearGradient>
-</defs>
-</svg>
+        <svg
+          style="display: none"
+          id="svgTrackB"
+          viewBox="0 0 189 255"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="f1BTrack"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M187.899 164.814C185.803 214.873 144.574 254.817 94.0001 254.817C42.0851 254.817 6.59854e-05 211.317 6.59854e-05 160.817C6.59854e-05 154.067 -0.120934 140.577 10.0001 117.817C16.0571 104.196 19.8561 95.6386 22.0001 87.8166C23.1781 83.5176 25.4691 76.6876 32.0001 87.8166C35.8511 94.3786 36.0001 103.817 36.0001 103.817C36.0001 103.817 50.3281 92.8216 60.0001 71.8166C74.1791 41.0236 62.8661 22.6166 59.0001 9.81656C57.6621 5.38856 56.8221 -2.56945 66.0001 0.816555C75.3521 4.26755 100.076 21.5746 113 39.8166C131.445 65.8516 138 90.8166 138 90.8166C138 90.8166 143.906 83.4866 146 75.8166C148.365 67.1556 148.4 58.5776 155.999 67.8176C163.226 76.6046 173.959 93.1176 180 108.817C190.969 137.326 187.899 164.814 187.899 164.814Z"
+            fill="url(#paint0_linear_281_51)"
+          />
+          <path
+            id="f2BTrack"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M94 254.816C58.101 254.816 29 225.715 29 189.816C29 168.155 37.729 155.004 55.896 137.17C67.528 125.751 78.415 111.726 83.042 102.176C83.953 100.296 86.026 90.4994 94.019 101.97C98.212 107.986 104.785 118.685 109 127.816C116.266 143.559 118 158.816 118 158.816C118 158.816 125.121 154.62 130 143.816C131.573 140.334 134.753 127.152 143.643 140.332C150.166 150.004 159.127 167.394 159 189.816C159 225.715 129.898 254.816 94 254.816Z"
+            fill="#02ADFC"
+          />
+          <path
+            id="f3BTrack"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M95 183.816C104.25 183.816 104.25 200.945 116 223.816C123.824 239.045 112.121 254.816 95 254.816C77.879 254.816 69 240.937 69 223.816C69 206.696 85.75 183.816 95 183.816Z"
+            fill="#3DC8FF"
+          />
+          <defs>
+            <linearGradient
+              id="paint0_linear_281_51"
+              x1="94.1411"
+              y1="255.005"
+              x2="94.1411"
+              y2="0.192553"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="#0D9AFF" />
+              <stop offset="1" stop-color="#028CFC" />
+            </linearGradient>
+          </defs>
+        </svg>
 
         <span id="txtTrackDays">0</span>
       </div>
@@ -6094,8 +6237,34 @@
         </div>
         <div class="ligneInSD" style="margin: 0.1rem 0"></div>
 
-         <div class="itemSetting" id="souv">
-         <svg height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5 19C5 18.4477 5.44772 18 6 18L18 18C18.5523 18 19 18.4477 19 19C19 19.5523 18.5523 20 18 20L6 20C5.44772 20 5 19.5523 5 19Z" fill="#000000"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M9.87867 4.70711C11.0502 3.53554 12.9497 3.53554 14.1213 4.70711L16.6878 7.27359C16.9922 7.57795 17.4571 7.6534 17.8421 7.46091L18.5528 7.10558C20.0877 6.33813 21.7842 7.80954 21.2416 9.43755L19.4045 14.9487C18.9962 16.1737 17.8498 17 16.5585 17H7.44151C6.15022 17 5.0038 16.1737 4.59546 14.9487L2.75842 9.43755C2.21575 7.80955 3.91231 6.33813 5.44721 7.10558L6.15787 7.46091C6.54286 7.6534 7.00783 7.57795 7.31219 7.27359L9.87867 4.70711Z" fill="#000000"></path> </g></svg>
+        <div class="itemSetting" id="souv">
+          <svg
+            height="1.2rem"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5 19C5 18.4477 5.44772 18 6 18L18 18C18.5523 18 19 18.4477 19 19C19 19.5523 18.5523 20 18 20L6 20C5.44772 20 5 19.5523 5 19Z"
+                fill="#000000"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M9.87867 4.70711C11.0502 3.53554 12.9497 3.53554 14.1213 4.70711L16.6878 7.27359C16.9922 7.57795 17.4571 7.6534 17.8421 7.46091L18.5528 7.10558C20.0877 6.33813 21.7842 7.80954 21.2416 9.43755L19.4045 14.9487C18.9962 16.1737 17.8498 17 16.5585 17H7.44151C6.15022 17 5.0038 16.1737 4.59546 14.9487L2.75842 9.43755C2.21575 7.80955 3.91231 6.33813 5.44721 7.10558L6.15787 7.46091C6.54286 7.6534 7.00783 7.57795 7.31219 7.27359L9.87867 4.70711Z"
+                fill="#000000"
+              ></path>
+            </g>
+          </svg>
 
           <span
             style="
@@ -7791,13 +7960,13 @@
                 />
               </svg>
 
-              <!-- From Uiverse.io by Cevorob --> 
-<label class="burger" for="burger">
-  <input type="checkbox" id="burger">
-  <span></span>
-  <span></span>
-  <span></span>
-</label>
+              <!-- From Uiverse.io by Cevorob -->
+              <label class="burger" for="burger">
+                <input type="checkbox" id="burger" />
+                <span></span>
+                <span></span>
+                <span></span>
+              </label>
             </div>
 
             <div id="cadreFilterS">
@@ -9395,10 +9564,28 @@
             <span class="capitaleLabel" id="capitale"></span>
           </div>
 
-          <div class="txtCapitaleCadre txtCapitaleCadres"  id="boxTxtTerritoire"> 
-            <svg style="overflow:visible" width="1.3rem" fill="rgba(255, 255, 255, 0.8)" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm0 101.053c-474.384 0-858.947 384.563-858.947 858.947S485.616 1818.947 960 1818.947 1818.947 1434.384 1818.947 960 1434.384 101.053 960 101.053Zm-42.074 626.795c-85.075 39.632-157.432 107.975-229.844 207.898-10.327 14.249-10.744 22.907-.135 30.565 7.458 5.384 11.792 3.662 22.656-7.928 1.453-1.562 1.453-1.562 2.94-3.174 9.391-10.17 16.956-18.8 33.115-37.565 53.392-62.005 79.472-87.526 120.003-110.867 35.075-20.198 65.9 9.485 60.03 47.471-1.647 10.664-4.483 18.534-11.791 35.432-2.907 6.722-4.133 9.646-5.496 13.23-13.173 34.63-24.269 63.518-47.519 123.85l-1.112 2.886c-7.03 18.242-7.03 18.242-14.053 36.48-30.45 79.138-48.927 127.666-67.991 178.988l-1.118 3.008a10180.575 10180.575 0 0 0-10.189 27.469c-21.844 59.238-34.337 97.729-43.838 138.668-1.484 6.37-1.484 6.37-2.988 12.845-5.353 23.158-8.218 38.081-9.82 53.42-2.77 26.522-.543 48.24 7.792 66.493 9.432 20.655 29.697 35.43 52.819 38.786 38.518 5.592 75.683 5.194 107.515-2.048 17.914-4.073 35.638-9.405 53.03-15.942 50.352-18.932 98.861-48.472 145.846-87.52 41.11-34.26 80.008-76 120.788-127.872 3.555-4.492 3.555-4.492 7.098-8.976 12.318-15.707 18.352-25.908 20.605-36.683 2.45-11.698-7.439-23.554-15.343-19.587-3.907 1.96-7.993 6.018-14.22 13.872-4.454 5.715-6.875 8.77-9.298 11.514-9.671 10.95-19.883 22.157-30.947 33.998-18.241 19.513-36.775 38.608-63.656 65.789-13.69 13.844-30.908 25.947-49.42 35.046-29.63 14.559-56.358-3.792-53.148-36.635 2.118-21.681 7.37-44.096 15.224-65.767 17.156-47.367 31.183-85.659 62.216-170.048 13.459-36.6 19.27-52.41 26.528-72.201 21.518-58.652 38.696-105.868 55.04-151.425 20.19-56.275 31.596-98.224 36.877-141.543 3.987-32.673-5.103-63.922-25.834-85.405-22.986-23.816-55.68-34.787-96.399-34.305-45.053.535-97.607 15.256-145.963 37.783Zm308.381-388.422c-80.963-31.5-178.114 22.616-194.382 108.33-11.795 62.124 11.412 115.76 58.78 138.225 93.898 44.531 206.587-26.823 206.592-130.826.005-57.855-24.705-97.718-70.99-115.729Z" fill-rule="evenodd"></path> </g></svg>
-          <span class="txtCapitaleCadre" id="territoire"></span>
-
+          <div class="txtCapitaleCadre txtCapitaleCadres" id="boxTxtTerritoire">
+            <svg
+              style="overflow: visible"
+              width="1.3rem"
+              fill="rgba(255, 255, 255, 0.8)"
+              viewBox="0 0 1920 1920"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm0 101.053c-474.384 0-858.947 384.563-858.947 858.947S485.616 1818.947 960 1818.947 1818.947 1434.384 1818.947 960 1434.384 101.053 960 101.053Zm-42.074 626.795c-85.075 39.632-157.432 107.975-229.844 207.898-10.327 14.249-10.744 22.907-.135 30.565 7.458 5.384 11.792 3.662 22.656-7.928 1.453-1.562 1.453-1.562 2.94-3.174 9.391-10.17 16.956-18.8 33.115-37.565 53.392-62.005 79.472-87.526 120.003-110.867 35.075-20.198 65.9 9.485 60.03 47.471-1.647 10.664-4.483 18.534-11.791 35.432-2.907 6.722-4.133 9.646-5.496 13.23-13.173 34.63-24.269 63.518-47.519 123.85l-1.112 2.886c-7.03 18.242-7.03 18.242-14.053 36.48-30.45 79.138-48.927 127.666-67.991 178.988l-1.118 3.008a10180.575 10180.575 0 0 0-10.189 27.469c-21.844 59.238-34.337 97.729-43.838 138.668-1.484 6.37-1.484 6.37-2.988 12.845-5.353 23.158-8.218 38.081-9.82 53.42-2.77 26.522-.543 48.24 7.792 66.493 9.432 20.655 29.697 35.43 52.819 38.786 38.518 5.592 75.683 5.194 107.515-2.048 17.914-4.073 35.638-9.405 53.03-15.942 50.352-18.932 98.861-48.472 145.846-87.52 41.11-34.26 80.008-76 120.788-127.872 3.555-4.492 3.555-4.492 7.098-8.976 12.318-15.707 18.352-25.908 20.605-36.683 2.45-11.698-7.439-23.554-15.343-19.587-3.907 1.96-7.993 6.018-14.22 13.872-4.454 5.715-6.875 8.77-9.298 11.514-9.671 10.95-19.883 22.157-30.947 33.998-18.241 19.513-36.775 38.608-63.656 65.789-13.69 13.844-30.908 25.947-49.42 35.046-29.63 14.559-56.358-3.792-53.148-36.635 2.118-21.681 7.37-44.096 15.224-65.767 17.156-47.367 31.183-85.659 62.216-170.048 13.459-36.6 19.27-52.41 26.528-72.201 21.518-58.652 38.696-105.868 55.04-151.425 20.19-56.275 31.596-98.224 36.877-141.543 3.987-32.673-5.103-63.922-25.834-85.405-22.986-23.816-55.68-34.787-96.399-34.305-45.053.535-97.607 15.256-145.963 37.783Zm308.381-388.422c-80.963-31.5-178.114 22.616-194.382 108.33-11.795 62.124 11.412 115.76 58.78 138.225 93.898 44.531 206.587-26.823 206.592-130.826.005-57.855-24.705-97.718-70.99-115.729Z"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+            </svg>
+            <span class="txtCapitaleCadre" id="territoire"></span>
           </div>
 
           <!--Menu Cadre-->
@@ -11876,10 +12063,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.body.style.height = window.screen.height + "px";
 
       const phoneHome = document.getElementById("phoneHome");
-      const txtTrackDays = document.getElementById('txtTrackDays')
-      const svgTrackB =document.getElementById('svgTrackB')
-      const svgTrackR =document.getElementById('svgTrackR')
-      const cadreTrackDays = document.getElementById('cadreTrackDays')
+      const txtTrackDays = document.getElementById("txtTrackDays");
+
+      const f1RTrack = document.getElementById("f1RTrack");
+      
+      const f2RTrack = document.getElementById("f2RTrack");
+      const f3RTrack = document.getElementById("f3RTrack");
+      
+      
+
+      const svgTrackB = document.getElementById("svgTrackB");
+      const svgTrackR = document.getElementById("svgTrackR");
+      const cadreTrackDays = document.getElementById("cadreTrackDays");
       const phoneConfig = document.getElementById("phoneConfig");
       const play = document.getElementById("play");
       const btnHomeBox = document.querySelector(".btnHomeBox");
@@ -11898,8 +12093,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const haptic = document.getElementById("haptic");
       const toggleHaptic = document.getElementById("toggleHaptic");
 
-      const souv = document.getElementById('souv')
-      const toggleSouv = document.getElementById('toggleSouv')
+      const souv = document.getElementById("souv");
+      const toggleSouv = document.getElementById("toggleSouv");
 
       const mail = document.getElementById("mail");
 
@@ -12063,7 +12258,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           stars: 0,
           continent: "all",
         },
-        
+
         {
           id: "P",
           t: "Obtenir un total de 20 bonnes réponses",
@@ -13205,65 +13400,63 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             nbrProgLvl += quest.xp;
 
             if (nbrProgLvl >= L_palierLvl[0]) {
-              function funcNextLvl(){
-              let duration1 =
-                (1 - (nbrProgLvl - L_palierLvl[0]) / nbrProgLvl) *
-                durationBarreProg;
+              function funcNextLvl() {
+                let duration1 =
+                  (1 - (nbrProgLvl - L_palierLvl[0]) / nbrProgLvl) *
+                  durationBarreProg;
 
-              barreProgLvl.style.transition = `width ${duration1}ms ease`;
-              barreProgLvl.style.width = "100%";
-              animateCounter(
-                txtProgLvl,
-                nbrProgLvl - quest.xp,
-                L_palierLvl[0],
-                duration1,
-              );
-              let duration2 = durationBarreProg - duration1;
-              nbrProgLvl -= L_palierLvl[0];
-              L_palierLvl = L_palierLvl.slice(1);
-              
-              setTimeout(() => {
-                barreProgLvl.style.transition = "none";
-                barreProgLvl.style.width = "0%";                
-
-                let pourcentageLvl = nbrProgLvl / L_palierLvl[0];
-
-                if(pourcentageLvl>=1){
-
-                animateCounter(txtProgLvl, 0, L_palierLvl[0], duration2);
-                txtPalierLvl.textContent = L_palierLvl[0];
-                lvlPlayer += 1;
-                txtLvlPlayer.textContent = lvlPlayer;
-                requestAnimationFrame(()=>{
-                barreProgLvl.style.transition = "";
-                barreProgLvl.style.width = `${pourcentageLvl * 100}%`;
-          
-                  funcNextLvl()
-                })
-                
-                  return
-                }
-
-                requestAnimationFrame(() => {
-                  barreProgLvl.style.transition = "";
-                  barreProgLvl.style.width = `${pourcentageLvl * 100}%`;
-                });
-
-                animateCounter(txtProgLvl, 0, nbrProgLvl, duration2);
-                txtPalierLvl.textContent = L_palierLvl[0];
-                lvlPlayer += 1;
-                txtLvlPlayer.textContent = lvlPlayer;
-
-                badgeLvl.querySelector("svg").style.animation =
-                  "nextLvl 0.6s ease";
+                barreProgLvl.style.transition = `width ${duration1}ms ease`;
+                barreProgLvl.style.width = "100%";
+                animateCounter(
+                  txtProgLvl,
+                  nbrProgLvl - quest.xp,
+                  L_palierLvl[0],
+                  duration1,
+                );
+                let duration2 = durationBarreProg - duration1;
+                nbrProgLvl -= L_palierLvl[0];
+                L_palierLvl = L_palierLvl.slice(1);
 
                 setTimeout(() => {
-                  badgeLvl.querySelector("svg").style.animation = "";
-                }, 600);
-              }, duration1);
-            }
-            funcNextLvl()
+                  barreProgLvl.style.transition = "none";
+                  barreProgLvl.style.width = "0%";
 
+                  let pourcentageLvl = nbrProgLvl / L_palierLvl[0];
+
+                  if (pourcentageLvl >= 1) {
+                    animateCounter(txtProgLvl, 0, L_palierLvl[0], duration2);
+                    txtPalierLvl.textContent = L_palierLvl[0];
+                    lvlPlayer += 1;
+                    txtLvlPlayer.textContent = lvlPlayer;
+                    requestAnimationFrame(() => {
+                      barreProgLvl.style.transition = "";
+                      barreProgLvl.style.width = `${pourcentageLvl * 100}%`;
+
+                      funcNextLvl();
+                    });
+
+                    return;
+                  }
+
+                  requestAnimationFrame(() => {
+                    barreProgLvl.style.transition = "";
+                    barreProgLvl.style.width = `${pourcentageLvl * 100}%`;
+                  });
+
+                  animateCounter(txtProgLvl, 0, nbrProgLvl, duration2);
+                  txtPalierLvl.textContent = L_palierLvl[0];
+                  lvlPlayer += 1;
+                  txtLvlPlayer.textContent = lvlPlayer;
+
+                  badgeLvl.querySelector("svg").style.animation =
+                    "nextLvl 0.6s ease";
+
+                  setTimeout(() => {
+                    badgeLvl.querySelector("svg").style.animation = "";
+                  }, 600);
+                }, duration1);
+              }
+              funcNextLvl();
             } else {
               animateCounter(
                 txtProgLvl,
@@ -13450,7 +13643,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const durationBarreProg = 800;
       function fillQuetes(TF = true) {
-        TF ? track+=1 : track = 0;
+        TF ? (track += 1) : (track = 0);
         const itemsRDQ = document.querySelectorAll(".itemRDQ");
         const itemsRD = document.querySelectorAll(".itemRD");
 
@@ -13582,172 +13775,187 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       // localStorage.removeItem("geoquiz_progress_v1");
       // location.reload();
       // Script localstorage
-  const SAVE_KEY = "geoquiz_progress_v1";
+      const SAVE_KEY = "geoquiz_progress_v1";
 
-  let streak = 0;
-  let lastStreakDate = null;
-  let dayCheck = false; // Si on a validé la journée ou pas
+      let streak = 0;
+      let lastStreakDate = null;
+      let dayCheck = false; // Si on a validé la journée ou pas
 
+      function saveProgress() {
+        const data = {
+          lvlPlayer,
+          nbrProgLvl,
+          track,
+          L_progressQ,
+          L_claimedQ,
+          defisQSelected: defisQSelected.map((q) => q.id),
+          lastQuestGenDate: lastQuestGenDate,
+          streak,
+          lastStreakDate,
+          dayCheck,
+        };
+        localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+      }
 
-  function saveProgress() {
-    const data = {
-      lvlPlayer,
-      nbrProgLvl,
-      track,
-      L_progressQ,
-      L_claimedQ,
-      defisQSelected: defisQSelected.map((q) => q.id),
-      lastQuestGenDate: lastQuestGenDate,
-      streak,
-      lastStreakDate,
-      dayCheck,
-    };
-    localStorage.setItem(SAVE_KEY, JSON.stringify(data));
-  }
+      let lastQuestGenDate = null;
 
-  let lastQuestGenDate = null;
+      function loadProgress() {
+        const raw = localStorage.getItem(SAVE_KEY);
+        if (!raw) return null;
 
-  function loadProgress() {
-    const raw = localStorage.getItem(SAVE_KEY);
-    if (!raw) return null;
+        try {
+          const data = JSON.parse(raw);
+          lvlPlayer = data.lvlPlayer ?? 1;
+          nbrProgLvl = data.nbrProgLvl ?? 0;
+          track = data.track ?? 0;
+          if (data.L_progressQ) Object.assign(L_progressQ, data.L_progressQ);
+          if (data.L_claimedQ) Object.assign(L_claimedQ, data.L_claimedQ);
+          L_palierLvl = PALIERS_LVL_ORIGINAL.slice(lvlPlayer - 1);
+          lastQuestGenDate = data.lastQuestGenDate ?? null;
+          streak = data.streak ?? 0;
+          lastStreakDate = data.lastStreakDate ?? null;
+          dayCheck = data.dayCheck ?? false;
 
-    try {
-      const data = JSON.parse(raw);
-      lvlPlayer = data.lvlPlayer ?? 1;
-      nbrProgLvl = data.nbrProgLvl ?? 0;
-      track = data.track ?? 0;
-      if (data.L_progressQ) Object.assign(L_progressQ, data.L_progressQ);
-      if (data.L_claimedQ) Object.assign(L_claimedQ, data.L_claimedQ);
-      L_palierLvl = PALIERS_LVL_ORIGINAL.slice(lvlPlayer - 1);
-      lastQuestGenDate = data.lastQuestGenDate ?? null;
-      streak = data.streak ?? 0;
-      lastStreakDate = data.lastStreakDate ?? null;
-      dayCheck = data.dayCheck ?? false;
+          return data; // on retourne data pour récupérer defisQSelected ensuite
+        } catch (e) {
+          console.error("Sauvegarde corrompue, reset :", e);
+          localStorage.removeItem(SAVE_KEY);
+          return null;
+        }
+      }
 
+      const savedData = loadProgress();
 
-      return data; // on retourne data pour récupérer defisQSelected ensuite
-    } catch (e) {
-      console.error("Sauvegarde corrompue, reset :", e);
-      localStorage.removeItem(SAVE_KEY);
-      return null;
-    }
-  }
+      txtLvlPlayer.textContent = lvlPlayer;
+      txtProgLvl.textContent = nbrProgLvl;
+      txtPalierLvl.textContent = L_palierLvl[0];
+      barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
 
-  const savedData = loadProgress();
+      const today = getTodayKey();
 
-  txtLvlPlayer.textContent = lvlPlayer;
-  txtProgLvl.textContent = nbrProgLvl;
-  txtPalierLvl.textContent = L_palierLvl[0];
-  barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
+      if (
+        lastQuestGenDate === today &&
+        savedData?.defisQSelected?.length === 4
+      ) {
+        // Même jour : on restaure les quêtes déjà tirées, pas de nouveau tirage
+        const restoredSelection = savedData.defisQSelected
+          .map((id) => L_RDQ.find((q) => q.id === id))
+          .filter(Boolean);
 
-  const today = getTodayKey();
+        if (restoredSelection.length === 4) {
+          fillCadreRDQ(restoredSelection);
+        } else {
+          // sécurité si des ids ne matchent plus (ex: tu as retiré une quête du code)
+          fillCadreRDQ();
+          lastQuestGenDate = today;
+          saveProgress();
+        }
+      } else {
+        // Nouveau jour ou première visite : nouveau tirage
+        fillCadreRDQ();
+        lastQuestGenDate = today;
+        saveProgress();
+      }
 
-  if (
-    lastQuestGenDate === today &&
-    savedData?.defisQSelected?.length === 4
-  ) {
-    // Même jour : on restaure les quêtes déjà tirées, pas de nouveau tirage
-    const restoredSelection = savedData.defisQSelected
-      .map((id) => L_RDQ.find((q) => q.id === id))
-      .filter(Boolean);
+      // Ré-afficher l'état chargé dans l'UI
+      txtLvlPlayer.textContent = lvlPlayer;
+      txtProgLvl.textContent = nbrProgLvl;
+      txtPalierLvl.textContent = L_palierLvl[0];
+      barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
 
-    if (restoredSelection.length === 4) {
-      fillCadreRDQ(restoredSelection);
-    } else {
-      // sécurité si des ids ne matchent plus (ex: tu as retiré une quête du code)
-      fillCadreRDQ();
-      lastQuestGenDate = today;
-      saveProgress();
-    }
-  } else {
-    // Nouveau jour ou première visite : nouveau tirage
-    fillCadreRDQ();
-    lastQuestGenDate = today;
-    saveProgress();
-  }
+      window.addEventListener("beforeunload", saveProgress);
+      window.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") saveProgress();
+      });
 
-  // Ré-afficher l'état chargé dans l'UI
-  txtLvlPlayer.textContent = lvlPlayer;
-  txtProgLvl.textContent = nbrProgLvl;
-  txtPalierLvl.textContent = L_palierLvl[0];
-  barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
+      //Quêtes une fois par jour
+      function getTodayKey() {
+        const d = new Date();
+        return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+      }
 
+      function nbJoursEntre(dateA, dateB) {
+        if (dateA === null) {
+          return -1;
+        }
+        const msParJour = 1000 * 60 * 60 * 24;
+        return Math.round((new Date(dateB) - new Date(dateA)) / msParJour);
+      }
 
+      // À appeler au chargement : si 2 jours ou plus se sont écoulés depuis la dernière
+      // connexion validée, la série est perdue (même sans avoir rouvert l'app entre-temps)
 
-  window.addEventListener("beforeunload", saveProgress);
-  window.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden") saveProgress();
-  });
+      // Fonction à appeler quand la condition du jour est remplie
+      function enregistrerJourTrackDays() {
+        const aujourdHui = getTodayKey();
+        const ecart = nbJoursEntre(lastStreakDate, aujourdHui);
 
-  //Quêtes une fois par jour
-  function getTodayKey() {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
-}
+        if (ecart === 0) {
+          return;
+        }
+        cadreTrackDays.classList.add("active");
+         f2RTrack.style.animation = "fire2 1s linear infinite";
+      f1RTrack.style.animation = "fire3 1s linear infinite";
+      f3RTrack.style.animation = "fire3 1s linear infinite";
+        streak += 1;
+        txtTrackDays.textContent = streak;
+        svgTrackB.style.display = "none";
+        svgTrackR.style.display = "flex";
 
-  function nbJoursEntre(dateA, dateB) {
-    if (dateA === null){return -1}
-    const msParJour = 1000 * 60 * 60 * 24;
-    return Math.round((new Date(dateB) - new Date(dateA)) / msParJour);
-  }
+        lastStreakDate = aujourdHui;
+        saveProgress();
+      }
 
-
-  // À appeler au chargement : si 2 jours ou plus se sont écoulés depuis la dernière
-  // connexion validée, la série est perdue (même sans avoir rouvert l'app entre-temps)
-
-
-  // Fonction à appeler quand la condition du jour est remplie
-  function enregistrerJourTrackDays() {
-      const aujourdHui = getTodayKey()
-      const ecart = nbJoursEntre(lastStreakDate, aujourdHui);
-      
-        if (ecart === 0) {return}             
-          cadreTrackDays.classList.add('active')
-          streak += 1;
-          txtTrackDays.textContent = streak;;
-          svgTrackB.style.display = "none"
-          svgTrackR.style.display = "flex"
-
-      lastStreakDate = aujourdHui;
-      saveProgress();
-  }
-
-  function trackLoading() {
-      const aujourdHui = getTodayKey()
-      const ecart =  nbJoursEntre(lastStreakDate, aujourdHui);
-       if (ecart >= 2) {
-      streak = 0;
-      txtTrackDays.textContent = streak;
-      lastStreakDate = null
-      cadreTrackDays.classList.remove('active')
-      saveProgress();
-      return
-    }
-    if (ecart === 0){
-      cadreTrackDays.classList.add('active')
-      svgTrackB.style.display = "none"
-      svgTrackR.style.display = "flex"
-    }
-    else {
-      streak===0 ?  cadreTrackDays.classList.remove('active') : cadreTrackDays.classList.add('active')
-      svgTrackB.style.display = "flex"
-      svgTrackR.style.display = "none"
-    }
-      txtTrackDays.textContent = streak;
-
-  }
-  trackLoading()
+      function trackLoading() {
+        const aujourdHui = getTodayKey();
+        const ecart = nbJoursEntre(lastStreakDate, aujourdHui);
+        if (ecart >= 2) {
+          streak = 0;
+          txtTrackDays.textContent = streak;
+          lastStreakDate = null;
+          cadreTrackDays.classList.remove("active");
+           f2RTrack.style.animation = "";
+      f1RTrack.style.animation = "";
+      f3RTrack.style.animation = "";
+          saveProgress();
+          return;
+        }
+        if (ecart === 0) {
+          cadreTrackDays.classList.add("active");
+           f2RTrack.style.animation = "fire2 1s linear infinite";
+      f1RTrack.style.animation = "fire3 1s linear infinite";
+      f3RTrack.style.animation = "fire3 1s linear infinite";
+          svgTrackB.style.display = "none";
+          svgTrackR.style.display = "flex";
+        } else {
+          streak === 0
+            ? (cadreTrackDays.classList.remove("active"),f2RTrack.style.animation = "",
+      f1RTrack.style.animation = "",
+      f3RTrack.style.animation = "")
+            : (cadreTrackDays.classList.add("active"),
+            f2RTrack.style.animation = "fire2 1s linear infinite",
+      f1RTrack.style.animation = "fire3 1s linear infinite",
+      f3RTrack.style.animation = "fire3 1s linear infinite"
+          )
+          
+          svgTrackB.style.display = "flex";
+          svgTrackR.style.display = "none";
+        }
+        txtTrackDays.textContent = streak;
+      }
+      trackLoading();
       // fin script localstorage
 
       menuDefiQ.addEventListener("click", () => {
         menuRecompenses.classList.remove("active");
         menuDefiQ.classList.add("active");
         cadreMenuRDIn.classList.remove("right");
-        contentRecompenses.scrollTop
+        contentRecompenses.scrollTop;
         contentRecompenses.style.display = "none";
-        document.getElementById('contentCadreRD').scrollTop
-        requestAnimationFrame(()=>requestAnimationFrame(()=>contentDefisQ.style.display = "flex"))
-        
+        document.getElementById("contentCadreRD").scrollTop;
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => (contentDefisQ.style.display = "flex")),
+        );
       });
 
       menuRecompenses.addEventListener("click", () => {
@@ -13756,7 +13964,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreMenuRDIn.classList.add("right");
 
         contentDefisQ.style.display = "none";
-        contentRecompenses.scrollTop
+        contentRecompenses.scrollTop;
         contentRecompenses.style.display = "flex";
       });
 
@@ -13794,7 +14002,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       //////
-      let onlySouv = false
+      let onlySouv = false;
 
       toggleSouv.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -13804,19 +14012,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         toggleSouv.click();
       });
 
-      const checkBoxSouv = toggleSouv.querySelector('input')      
+      const checkBoxSouv = toggleSouv.querySelector("input");
       checkBoxSouv.addEventListener("change", (e) => {
-      onlySouv = !onlySouv;
-      [document.getElementById("nbrQ15"),document.getElementById("nbrQ20"),document.getElementById("nbrQ25")].forEach(nbrQ=>{nbrQ.style.display = "flex"})
-      
+        onlySouv = !onlySouv;
+        [
+          document.getElementById("nbrQ15"),
+          document.getElementById("nbrQ20"),
+          document.getElementById("nbrQ25"),
+        ].forEach((nbrQ) => {
+          nbrQ.style.display = "flex";
+        });
       });
-
-      
-
-
-      
-
-
 
       btnSetting.addEventListener("click", () => {
         cadreSetting.classList.add("active");
@@ -13857,7 +14063,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
 
         homeTitle.style.transform = "translateX(-50%) translateY(-3rem)";
-        cadreTrackDays.style.transform = "translateY(-3rem)"
+        cadreTrackDays.style.transform = "translateY(-3rem)";
         waveBottomHome.style.transform = "translateY(3rem)";
         [btnHomeBox, cadreHome].forEach((box) => {
           box.style.transform = `translateX(-50%) translateY(calc(-50% + 3rem))`;
@@ -13911,16 +14117,21 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const playConfig = document.getElementById("playConfig");
       qrs.forEach((q) => (q.style.display = "none"));
       const cadresRegions = document.querySelectorAll(".cadreRegion");
-      cadresRegions.forEach(cr=>{
-        
-           cr.addEventListener('click',()=>{
-            if (!onlySouv){return}
-              [document.getElementById("nbrQ15"),document.getElementById("nbrQ20"),document.getElementById("nbrQ25")].forEach(nbrQ=>{nbrQ.style.display = cr.id==="Océanie" ? "none" : "flex"})
-              cr.id==="Océanie" ? document.getElementById("nbrQAll").click() : ""
-            })
-        
-        
-      })
+      cadresRegions.forEach((cr) => {
+        cr.addEventListener("click", () => {
+          if (!onlySouv) {
+            return;
+          }
+          [
+            document.getElementById("nbrQ15"),
+            document.getElementById("nbrQ20"),
+            document.getElementById("nbrQ25"),
+          ].forEach((nbrQ) => {
+            nbrQ.style.display = cr.id === "Océanie" ? "none" : "flex";
+          });
+          cr.id === "Océanie" ? document.getElementById("nbrQAll").click() : "";
+        });
+      });
 
       const L_btn = [btnsMode, q, r, , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null };
@@ -13934,7 +14145,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             if (nbrQVal === "Tout") {
               document.getElementById("nbrQ15").click();
             }
-          
           } else {
             document.getElementById("nbrQAll").classList.remove("hide");
           }
@@ -14112,7 +14322,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             cChooseTrouver)
         ) {
           affichePm();
-          enregistrerJourTrackDays()
+          enregistrerJourTrackDays();
           document.getElementById("cadreScorePm").style.display = "flex";
           let delayStar = 500;
 
@@ -14182,7 +14392,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               L_config.d === "tout" ||
               L_config.c !== "allC") &&
             !L_reponses.includes(id) &&
-            (onlySouv && !(id in L_nSouv) || !onlySouv)&&
+            ((onlySouv && !(id in L_nSouv)) || !onlySouv) &&
             !L_exclus.includes(id) &&
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
@@ -14192,9 +14402,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           paysDispos = paysDispos.filter((id) => !["PS"].includes(id));
         }
 
-        const paysDisposTrouver = Object.keys(L_q).filter( //retirer visuellement les pays qui ne seront jamais pris dans le quiz 
+        const paysDisposTrouver = Object.keys(L_q).filter(
+          //retirer visuellement les pays qui ne seront jamais pris dans le quiz
           (id) =>
-            !L_exclus.includes(id) && (onlySouv && !(id in L_nSouv) || !onlySouv)&&
+            !L_exclus.includes(id) &&
+            ((onlySouv && !(id in L_nSouv)) || !onlySouv) &&
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
         );
@@ -14210,13 +14422,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         //Retirer les circles inutiles
 
-        const paysDispoAll = Object.keys(L_q).filter( //Tous les pays disponibles à la question 1 
+        const paysDispoAll = Object.keys(L_q).filter(
+          //Tous les pays disponibles à la question 1
           (id) =>
             (L_config.c !== "allC" ||
               (L_config.c === "allC" &&
                 (L_config.d === "tout" ||
                   L_q[id].d.toLowerCase() === L_config.d))) &&
-            !L_exclus.includes(id) && (onlySouv && !(id in L_nSouv) || !onlySouv) &&
+            !L_exclus.includes(id) &&
+            ((onlySouv && !(id in L_nSouv)) || !onlySouv) &&
             (P_info[id].region === L_config.c || L_config.c === "allC"),
         );
 
@@ -15115,9 +15329,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             el.style.opacity = "0";
           });
 
-          homeTitle.style.transform = "translateX(-50%) translateY(-3rem)"
-;
-cadreTrackDays.style.transform = "translateY(-3rem)"
+          homeTitle.style.transform = "translateX(-50%) translateY(-3rem)";
+          cadreTrackDays.style.transform = "translateY(-3rem)";
           waveBottomHome.style.transform = "translateY(3rem)";
           [btnHomeBox, cadreHome].forEach((box) => {
             box.style.transform =
@@ -15910,9 +16123,8 @@ cadreTrackDays.style.transform = "translateY(-3rem)"
             el.style.opacity = "0";
           });
 
-          homeTitle.style.transform = "translateX(-50%) translateY(-3rem)"
-;
-cadreTrackDays.style.transform = "translateY(-3rem)"
+          homeTitle.style.transform = "translateX(-50%) translateY(-3rem)";
+          cadreTrackDays.style.transform = "translateY(-3rem)";
           waveBottomHome.style.transform = "translateY(3rem)";
           [btnHomeBox, cadreHome].forEach((box) => {
             box.style.transform =
@@ -16050,6 +16262,7 @@ cadreTrackDays.style.transform = "translateY(-3rem)"
 
       if (isMobile) {
         if (window.innerWidth > window.innerHeight) {
+          return;
           currentPhone.style.display = "none";
           document.getElementById("phoneFlemme").style.display = "flex";
         }
@@ -16057,6 +16270,7 @@ cadreTrackDays.style.transform = "translateY(-3rem)"
       let intervSleep;
       let animeNight;
       media.addEventListener("change", (e) => {
+        return;
         //if(!isMobile){return}
         if (window.innerWidth > window.innerHeight) {
           currentPhone.style.display = "none";
@@ -16154,7 +16368,7 @@ cadreTrackDays.style.transform = "translateY(-3rem)"
         });
 
         homeTitle.style.transform = "translateX(-50%) translateY(-3rem)";
-        cadreTrackDays.style.transform = "translateY(-3rem)"
+        cadreTrackDays.style.transform = "translateY(-3rem)";
         waveBottomHome.style.transform = "translateY(3rem)";
         [btnHomeBox, cadreHome].forEach((box) => {
           box.style.transform = `translateX(-50%) translateY(calc(-50% + 3rem))`;
@@ -16210,9 +16424,8 @@ cadreTrackDays.style.transform = "translateY(-3rem)"
             el.style.opacity = "0";
           });
 
-          homeTitle.style.transform = "translateX(-50%) translateY(-3rem)"
-;
-cadreTrackDays.style.transform = "translateY(-3rem)"
+          homeTitle.style.transform = "translateX(-50%) translateY(-3rem)";
+          cadreTrackDays.style.transform = "translateY(-3rem)";
           waveBottomHome.style.transform = "translateY(3rem)";
           [btnHomeBox, cadreHome].forEach((box) => {
             box.style.transform =
@@ -16468,8 +16681,8 @@ cadreTrackDays.style.transform = "translateY(-3rem)"
       const titleCadre = document.getElementById("titleCadre");
       const capitales = document.querySelectorAll(".capitaleLabel");
       const capitale = document.getElementById("capitale");
-      const territoire = document.getElementById("territoire")
-      const boxTxtTerritoire = document.getElementById('boxTxtTerritoire')
+      const territoire = document.getElementById("territoire");
+      const boxTxtTerritoire = document.getElementById("boxTxtTerritoire");
       const itemBlason = document.querySelector(".itemBlason");
       const cadreContours = document.getElementById("cadreContours");
       const cadreBlason = document.getElementById("cadreBlason");
@@ -28737,116 +28950,115 @@ cadreTrackDays.style.transform = "translateY(-3rem)"
         P_info[code].fmi = !fmiNonMembers.has(code);
       }
 
+      const L_nSouv = {
+        AI: "Territoire britannique", // Anguilla
+        AS: "Territoire américain", // Samoa américaines
+        AW: "Pays des Pays-Bas", // Aruba
+        AX: "Région autonome (FI)", // Åland
+        BL: "COM française", // Saint-Barthélemy
+        BM: "Territoire britannique", // Bermudes
+        BQ: "Commune spéciale (NL)", // Bonaire, Saba, St-Eustache
+        BV: "Territoire norvégien", // Île Bouvet
+        CC: "Territoire australien", // Îles Cocos
+        CK: "Libre association (NZ)", // Îles Cook
+        CW: "Pays des Pays-Bas", // Curaçao
+        CX: "Territoire australien", // Île Christmas
+        FK: "Territoire britannique", // Malouines
+        FO: "Pays autonome (DK)", // Îles Féroé
+        GF: "DROM français", // Guyane
+        GG: "Dépendance Couronne", // Guernesey
+        GI: "Territoire britannique", // Gibraltar
+        GL: "Pays autonome (DK)", // Groenland
+        GO: "Territoire français (TAAF)", // Îles Glorieuses
+        GP: "DROM français", // Guadeloupe
+        GS: "Territoire britannique", // Géorgie du Sud
+        GU: "Territoire américain", // Guam
+        HK: "RAS chinoise", // Hong Kong
+        HM: "Territoire australien", // Heard et McDonald
+        IM: "Dépendance Couronne", // Île de Man
+        IO: "Territoire britannique", // Territoire britannique de l'océan Indien
+        JE: "Dépendance Couronne", // Jersey
+        KY: "Territoire britannique", // Îles Caïmans
+        MF: "COM française", // Saint-Martin
+        MO: "RAS chinoise", // Macao
+        MP: "Commonwealth (US)", // Mariannes du Nord
+        MQ: "DROM français", // Martinique
+        MS: "Territoire britannique", // Montserrat
+        NC: "Collectivité sui generis (FR)", // Nouvelle-Calédonie
+        NF: "Territoire australien", // Île Norfolk
+        NU: "Libre association (NZ)", // Niue
+        PF: "COM française", // Polynésie française
+        PM: "COM française", // Saint-Pierre-et-Miquelon
+        PN: "Territoire britannique", // Pitcairn
+        PR: "Territoire non incorporé (US)", // Porto Rico
+        RE: "DROM français", // La Réunion
+        SH: "Territoire britannique", // Sainte-Hélène
+        SJ: "Territoire norvégien", // Svalbard et Jan Mayen
+        SX: "Pays des Pays-Bas", // Saint-Martin (partie néerlandaise)
+        TC: "Territoire britannique", // Turks-et-Caïcos
+        TF: "Territoire français", // TAAF
+        TK: "Territoire néo-zélandais", // Tokelau
+        UM: "Territoire américain", // Îles mineures éloignées des É-U
+        VG: "Territoire britannique", // Îles Vierges britanniques
+        VI: "Territoire américain", // Îles Vierges américaines
+        WF: "COM française", // Wallis-et-Futuna
+        YT: "DROM français", // Mayotte
+      };
 
-const L_nSouv = {
-  AI: "Territoire britannique",        // Anguilla
-  AS: "Territoire américain",          // Samoa américaines
-  AW: "Pays des Pays-Bas",     // Aruba
-  AX: "Région autonome (FI)",  // Åland
-  BL: "COM française",         // Saint-Barthélemy
-  BM: "Territoire britannique",        // Bermudes
-  BQ: "Commune spéciale (NL)", // Bonaire, Saba, St-Eustache
-  BV: "Territoire norvégien",          // Île Bouvet
-  CC: "Territoire australien",         // Îles Cocos
-  CK: "Libre association (NZ)",// Îles Cook
-  CW: "Pays des Pays-Bas",     // Curaçao
-  CX: "Territoire australien",         // Île Christmas
-  FK: "Territoire britannique",        // Malouines
-  FO: "Pays autonome (DK)",    // Îles Féroé
-  GF: "DROM français",         // Guyane
-  GG: "Dépendance Couronne",   // Guernesey
-  GI: "Territoire britannique",        // Gibraltar
-  GL: "Pays autonome (DK)",    // Groenland
-  GO: "Territoire français (TAAF)", // Îles Glorieuses
-  GP: "DROM français",         // Guadeloupe
-  GS: "Territoire britannique",        // Géorgie du Sud
-  GU: "Territoire américain",          // Guam
-  HK: "RAS chinoise",          // Hong Kong
-  HM: "Territoire australien",         // Heard et McDonald
-  IM: "Dépendance Couronne",   // Île de Man
-  IO: "Territoire britannique",        // Territoire britannique de l'océan Indien
-  JE: "Dépendance Couronne",   // Jersey
-  KY: "Territoire britannique",        // Îles Caïmans
-  MF: "COM française",         // Saint-Martin
-  MO: "RAS chinoise",          // Macao
-  MP: "Commonwealth (US)",     // Mariannes du Nord
-  MQ: "DROM français",         // Martinique
-  MS: "Territoire britannique",        // Montserrat
-  NC: "Collectivité sui generis (FR)", // Nouvelle-Calédonie
-  NF: "Territoire australien",         // Île Norfolk
-  NU: "Libre association (NZ)",// Niue
-  PF: "COM française",         // Polynésie française
-  PM: "COM française",         // Saint-Pierre-et-Miquelon
-  PN: "Territoire britannique",        // Pitcairn
-  PR: "Territoire non incorporé (US)", // Porto Rico
-  RE: "DROM français",         // La Réunion
-  SH: "Territoire britannique",        // Sainte-Hélène
-  SJ: "Territoire norvégien",          // Svalbard et Jan Mayen
-  SX: "Pays des Pays-Bas",     // Saint-Martin (partie néerlandaise)
-  TC: "Territoire britannique",        // Turks-et-Caïcos
-  TF: "Territoire français",           // TAAF
-  TK: "Territoire néo-zélandais",      // Tokelau
-  UM: "Territoire américain",          // Îles mineures éloignées des É-U
-  VG: "Territoire britannique",        // Îles Vierges britanniques
-  VI: "Territoire américain",          // Îles Vierges américaines
-  WF: "COM française",         // Wallis-et-Futuna
-  YT: "DROM français",         // Mayotte
-}
-
-L_nSouvDetail = {
-  AI: "Territoire britannique",
-  AS: "Territoire américain",
-  AW: "Pays du Royaume des Pays-Bas",
-  AX: "Région autonome de Finlande",
-  BL: "Collectivité d'outre-mer française",
-  BM: "Territoire britannique",
-  BQ: "Commune spéciale des Pays-Bas",
-  BV: "Territoire norvégien",
-  CC: "Territoire australien",
-  CK: "Libre association avec la Nouvelle-Zélande",
-  CW: "Pays du Royaume des Pays-Bas",
-  CX: "Territoire australien",
-  FK: "Territoire britannique",
-  FO: "Pays autonome du Royaume du Danemark",
-  GF: "Département et région d'outre-mer français",
-  GG: "Dépendance de la Couronne britannique",
-  GI: "Territoire britannique",
-  GL: "Pays autonome du Royaume du Danemark",
-  GO: "Terres australes et antarctiques françaises",
-  GP: "Département et région d'outre-mer français",
-  GS: "Territoire britannique",
-  GU: "Territoire américain",
-  HK: "Région administrative spéciale de Chine",
-  HM: "Territoire australien",
-  IM: "Dépendance de la Couronne britannique",
-  IO: "Territoire britannique",
-  JE: "Dépendance de la Couronne britannique",
-  KY: "Territoire britannique",
-  MF: "Collectivité d'outre-mer française",
-  MO: "Région administrative spéciale de Chine",
-  MP: "Commonwealth associé aux États-Unis",
-  MQ: "Département et région d'outre-mer français",
-  MS: "Territoire britannique",
-  NC: "Collectivité sui generis française",
-  NF: "Territoire australien",
-  NU: "Libre association avec la Nouvelle-Zélande",
-  PF: "Collectivité d'outre-mer française",
-  PM: "Collectivité d'outre-mer française",
-  PN: "Territoire britannique",
-  PR: "Territoire non incorporé des États-Unis",
-  RE: "Département et région d'outre-mer français",
-  SH: "Territoire britannique",
-  SJ: "Territoire norvégien",
-  SX: "Pays du Royaume des Pays-Bas",
-  TC: "Territoire britannique",
-  TF: "Terres australes et antarctiques françaises",
-  TK: "Territoire néo-zélandais",
-  UM: "Territoire américain",
-  VG: "Territoire britannique",
-  VI: "Territoire américain",
-  WF: "Collectivité d'outre-mer française",
-  YT: "Département et région d'outre-mer français",
-}
+      L_nSouvDetail = {
+        AI: "Territoire britannique",
+        AS: "Territoire américain",
+        AW: "Pays du Royaume des Pays-Bas",
+        AX: "Région autonome de Finlande",
+        BL: "Collectivité d'outre-mer française",
+        BM: "Territoire britannique",
+        BQ: "Commune spéciale des Pays-Bas",
+        BV: "Territoire norvégien",
+        CC: "Territoire australien",
+        CK: "Libre association avec la Nouvelle-Zélande",
+        CW: "Pays du Royaume des Pays-Bas",
+        CX: "Territoire australien",
+        FK: "Territoire britannique",
+        FO: "Pays autonome du Royaume du Danemark",
+        GF: "Département et région d'outre-mer français",
+        GG: "Dépendance de la Couronne britannique",
+        GI: "Territoire britannique",
+        GL: "Pays autonome du Royaume du Danemark",
+        GO: "Terres australes et antarctiques françaises",
+        GP: "Département et région d'outre-mer français",
+        GS: "Territoire britannique",
+        GU: "Territoire américain",
+        HK: "Région administrative spéciale de Chine",
+        HM: "Territoire australien",
+        IM: "Dépendance de la Couronne britannique",
+        IO: "Territoire britannique",
+        JE: "Dépendance de la Couronne britannique",
+        KY: "Territoire britannique",
+        MF: "Collectivité d'outre-mer française",
+        MO: "Région administrative spéciale de Chine",
+        MP: "Commonwealth associé aux États-Unis",
+        MQ: "Département et région d'outre-mer français",
+        MS: "Territoire britannique",
+        NC: "Collectivité sui generis française",
+        NF: "Territoire australien",
+        NU: "Libre association avec la Nouvelle-Zélande",
+        PF: "Collectivité d'outre-mer française",
+        PM: "Collectivité d'outre-mer française",
+        PN: "Territoire britannique",
+        PR: "Territoire non incorporé des États-Unis",
+        RE: "Département et région d'outre-mer français",
+        SH: "Territoire britannique",
+        SJ: "Territoire norvégien",
+        SX: "Pays du Royaume des Pays-Bas",
+        TC: "Territoire britannique",
+        TF: "Terres australes et antarctiques françaises",
+        TK: "Territoire néo-zélandais",
+        UM: "Territoire américain",
+        VG: "Territoire britannique",
+        VI: "Territoire américain",
+        WF: "Collectivité d'outre-mer française",
+        YT: "Département et région d'outre-mer français",
+      };
 
       //---------
       //Cadre
@@ -29515,10 +29727,10 @@ L_nSouvDetail = {
         capitale.textContent = viewState
           ? "Capitale : " + D_us[id.slice(-2)].c
           : "Capitale : " + L_q[id].c;
-        boxTxtTerritoire.style.display = "none"
-        if (id in L_nSouv){
-        boxTxtTerritoire.style.display = "flex"
-          territoire.textContent = L_nSouvDetail[id]
+        boxTxtTerritoire.style.display = "none";
+        if (id in L_nSouv) {
+          boxTxtTerritoire.style.display = "flex";
+          territoire.textContent = L_nSouvDetail[id];
         }
 
         txtsCelCadre.forEach((t) => (t.textContent = ""));
@@ -30344,7 +30556,7 @@ L_nSouvDetail = {
             itemC.append(rank);
 
             contentC.style.scrollbarWidth = "thin";
-            
+
             capItemC.innerHTML = `
           <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -30395,12 +30607,11 @@ L_nSouvDetail = {
           }
           boxItemC.appendChild(titleItemC);
           boxItemC.appendChild(capItemC);
-          if (r.id in L_nSouv){
-            const cap2 = capItemC.cloneNode(true)
-            cap2.textContent = "• " + L_nSouv[r.id] 
+          if (r.id in L_nSouv) {
+            const cap2 = capItemC.cloneNode(true);
+            cap2.textContent = "• " + L_nSouv[r.id];
             boxItemC.appendChild(cap2);
           }
-
 
           itemC.append(boxSvgItem, boxItemC);
           contentC.append(itemC);
@@ -32319,7 +32530,9 @@ L_nSouvDetail = {
       arrowC.addEventListener("click", () => {
         decroissant = !decroissant;
         arrowC.querySelector("svg").classList.toggle("dec");
-        requestAnimationFrame(()=>requestAnimationFrame(()=>fillContentC(Ls)))
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => fillContentC(Ls)),
+        );
       });
 
       //Classer par...*********************************************************
@@ -32391,7 +32604,7 @@ L_nSouvDetail = {
         });
 
         homeTitle.style.transform = "translateX(-50%) translateY(-3rem)";
-        cadreTrackDays.style.transform = "translateY(-3rem)"
+        cadreTrackDays.style.transform = "translateY(-3rem)";
         waveBottomHome.style.transform = "translateY(3rem)";
         [btnHomeBox, cadreHome].forEach((box) => {
           box.style.transform = `translateX(-50%) translateY(calc(-50% + 3rem))`;
@@ -32442,9 +32655,8 @@ L_nSouvDetail = {
             el.style.opacity = "0";
           });
 
-          homeTitle.style.transform = "translateX(-50%) translateY(-3rem)"
-;
-cadreTrackDays.style.transform = "translateY(-3rem)"
+          homeTitle.style.transform = "translateX(-50%) translateY(-3rem)";
+          cadreTrackDays.style.transform = "translateY(-3rem)";
           waveBottomHome.style.transform = "translateY(3rem)";
           [btnHomeBox, cadreHome].forEach((box) => {
             box.style.transform =
