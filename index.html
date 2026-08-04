@@ -13779,7 +13779,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let streak = 0;
       let lastStreakDate = null;
-      let dayCheck = false; // Si on a validé la journée ou pas
 
       function saveProgress() {
         const data = {
@@ -13792,7 +13791,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           lastQuestGenDate: lastQuestGenDate,
           streak,
           lastStreakDate,
-          dayCheck,
         };
         localStorage.setItem(SAVE_KEY, JSON.stringify(data));
       }
@@ -13814,7 +13812,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           lastQuestGenDate = data.lastQuestGenDate ?? null;
           streak = data.streak ?? 0;
           lastStreakDate = data.lastStreakDate ?? null;
-          dayCheck = data.dayCheck ?? false;
 
           return data; // on retourne data pour récupérer defisQSelected ensuite
         } catch (e) {
@@ -16265,7 +16262,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       if (isMobile) {
         if (window.innerWidth > window.innerHeight) {
-          return;
           currentPhone.style.display = "none";
           document.getElementById("phoneFlemme").style.display = "flex";
         }
@@ -16274,7 +16270,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let animeNight;
       media.addEventListener("change", (e) => {
         return;
-        //if(!isMobile){return}
+        if(!isMobile){return}
         if (window.innerWidth > window.innerHeight) {
           currentPhone.style.display = "none";
           document.getElementById("phoneFlemme").style.display = "flex";
