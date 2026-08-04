@@ -2855,6 +2855,7 @@
 
       #boxIconeTrack{
         display : flex;
+        flex-shrink: 0;
         justify-content: center;
         align-items : center;
         border-radius: 50%;
@@ -5279,7 +5280,7 @@
         letter-spacing: 1px;
       }
 
-      #lineCadreSD {
+      .lineMove {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -5292,7 +5293,7 @@
       #lineCadreSD.fullScreen {
         opacity: 0;
       }
-      #lineCadreSD svg {
+      .lineMove svg {
         width: 3.6rem;
         fill: rgba(0, 0, 0, 0.2);
       }
@@ -5830,6 +5831,18 @@
 
     <!--HTML Home-->
          <div id="cadreTrackDays">
+          <div class="lineMove" >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 11 24 3"
+          >
+            <path
+              d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
+            />
+          </svg>
+        </div>
           <button class="cross" id="crossTrack" style="margin-bottom: -1.5rem">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -11892,7 +11905,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
     <div id="phoneDevise">
       <div id="cadreSD">
-        <div id="lineCadreSD">
+        <div class="lineMove" id="lineCadreSD">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Layer_1"
@@ -14106,8 +14119,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         
       })
 
-      crossTrack.addEventListener('click',()=>{
-        
+      crossTrack.addEventListener("pointerdown", (e) => e.stopPropagation());
+
+      crossTrack.addEventListener('click',(e)=>{
+        cadreTrackDays.style.top = "";
         phoneHome.style.transition = "transform 0.25s ease"
         cadreTrackDays.style.transition = "top 0.25s ease"
 
@@ -14122,6 +14137,47 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         crossTrack.click()
         play.click()
       })
+
+
+      //move cadreTrack
+      
+         let moveST;
+      let difYT;
+      let startMoveT;
+
+      cadreTrackDays.addEventListener("pointerdown", (e) => {
+        cadreTrackDays.setPointerCapture(e.pointerId);
+        startMoveT = cadreTrackDays.getBoundingClientRect().top + "px";
+        cadreTrackDays.style.top = startMoveT;
+        cadreTrackDays.classList.remove("active");
+
+        moveST = true;
+        const CY = e.clientY;
+        difYT = CY - parseInt(cadreTrackDays.style.top);
+      });
+      document.addEventListener("pointermove", (e) => {
+        if (moveST) {
+          cadreTrackDays.style.transition = "none";
+          cadreTrackDays.style.top = e.clientY - difYT + "px";
+          phoneHome.style.transition = "none"
+          phoneHome.style.transform =  `scale(${Math.max(0.96, Math.min(0.96 + 0.04* cadreTrackDays.getBoundingClientRect().top/window.innerHeight*1.75,1))})`
+        }
+      });
+
+      document.addEventListener("pointerup", () => {
+        if (!moveST) return;
+        cadreTrackDays.style.transition = "";
+          phoneHome.style.transition = ""
+
+        moveST = false;
+        if (cadreTrackDays.getBoundingClientRect().top < window.innerHeight * 0.25) {
+          cadreTrackDays.style.top = ""
+          cadreTrackDays.classList.add("active");}
+         else {
+          crossTrack.click();
+        }
+      });
+      ////
       function enregistrerJourTrackDays() {
         const aujourdHui = getTodayKey();
         const ecart = nbJoursEntre(lastStreakDate, aujourdHui);
