@@ -2859,7 +2859,7 @@
         justify-content: center;
         align-items : center;
         border-radius: 50%;
-        background :rgba(23, 79, 248, 0.293);
+        background :rgba(23, 79, 248, 0.13);
         height : 5rem;
         padding : 0.6em;
       }
@@ -5921,7 +5921,7 @@
         </svg>
         </div>
 
-        <div style="font-size : 1.4rem; font-weight:550;"> <span>5 jours</span> de suite !</div>
+        <div style="font-size : 1.4rem; font-weight:550;"> <span id="txtCadreTrack"></span></div>
         <div style="font-size : 1rem; color : rgba(0,0,0,0.6);">Ne cassez pas la chaîne ! On se retrouve demain ?</div>
 
         <div class="mCadreTrackD" >
@@ -5929,7 +5929,7 @@
           
           <div class="contentmCadreTrackD">
             <span style="color : rgba(0,0,0,0.6)" >Série maximale</span>
-            <div>25 jours</div>
+            <div id="txtMaxTrack">0 jours</div>
           </div>
         </div>
 
@@ -5950,7 +5950,7 @@
           </div>
         </div>
 
-        <div style="flex : 1"></div>
+        <div style="flex : 1; flex-shrink: 0;"></div>
 
         <div id="btnPlayTrack">Continuer à jouer</div>
 
@@ -12299,6 +12299,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const btnTrackDays = document.getElementById("btnTrackDays");
       const crossTrack = document.getElementById('crossTrack')
       const btnPlayTrack = document.getElementById('btnPlayTrack')
+      const txtCadreTrack = document.getElementById('txtCadreTrack')
+      const txtMaxTrack = document.getElementById('txtMaxTrack')
+      
       const cadreTrackDays = document.getElementById('cadreTrackDays')
       const phoneConfig = document.getElementById("phoneConfig");
       const play = document.getElementById("play");
@@ -14004,6 +14007,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let streak = 0;
       let lastStreakDate = null;
+      let maxTrack = 0;
 
       function saveProgress() {
         const data = {
@@ -14016,6 +14020,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           lastQuestGenDate: lastQuestGenDate,
           streak,
           lastStreakDate,
+          maxTrack,
         };
         localStorage.setItem(SAVE_KEY, JSON.stringify(data));
       }
@@ -14037,6 +14042,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           lastQuestGenDate = data.lastQuestGenDate ?? null;
           streak = data.streak ?? 0;
           lastStreakDate = data.lastStreakDate ?? null;
+          maxTrack = data.maxTrack ?? 0;
+
 
           return data; // on retourne data pour récupérer defisQSelected ensuite
         } catch (e) {
@@ -14133,6 +14140,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       
       })
 
+      btnPlayTrack.addEventListener('pointerdown',(e)=>e.stopPropagation())
       btnPlayTrack.addEventListener('click',()=>{
         crossTrack.click()
         play.click()
@@ -14190,7 +14198,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       f1RTrack.style.animation = "fire3 1s linear infinite";
       f3RTrack.style.animation = "fire3 1s linear infinite";
         streak += 1;
+        if(streak>maxTrack){
+          maxTrack = streak;
+          txtMaxTrack.textContent = maxTrack + " jours"
+        }
+
         txtTrackDays.textContent = streak;
+         txtCadreTrack.textContent = streak + " jours de suite " + (streak ===0 ? "" : "!");
+
+
         svgTrackB.style.display = "none";
         svgTrackR.style.display = "flex";
         btnTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)"
@@ -14205,6 +14221,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (ecart >= 2) {
           streak = 0;
           txtTrackDays.textContent = streak;
+         txtCadreTrack.textContent = streak + " jours de suite " + (streak ===0 ? "" : "!");
+
           lastStreakDate = null;
           btnTrackDays.classList.remove("active");
            f2RTrack.style.animation = "";
@@ -14236,7 +14254,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           btnTrackDays.style.outline = "1px dashed rgba(255,255,255,0.2)"
           svgTrackR.style.display = "none";
         }
+
+        txtMaxTrack.textContent = maxTrack + " jours"
         txtTrackDays.textContent = streak;
+         txtCadreTrack.textContent = streak + " jours de suite " + (streak ===0 ? "" : "!");
+
       }
       trackLoading();
       // fin script localstorage
@@ -15775,7 +15797,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 15;
+      let maxQ = 3;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
