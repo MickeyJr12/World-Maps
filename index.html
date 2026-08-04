@@ -13901,6 +13901,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         txtTrackDays.textContent = streak;
         svgTrackB.style.display = "none";
         svgTrackR.style.display = "flex";
+        cadreTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)"
 
         lastStreakDate = aujourdHui;
         saveProgress();
@@ -13927,6 +13928,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       f3RTrack.style.animation = "fire3 1s linear infinite";
           svgTrackB.style.display = "none";
           svgTrackR.style.display = "flex";
+          cadreTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)"
         } else {
           streak === 0
             ? (cadreTrackDays.classList.remove("active"),f2RTrack.style.animation = "",
@@ -13939,6 +13941,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           )
           
           svgTrackB.style.display = "flex";
+          cadreTrackDays.style.outline = "1px dashed rgba(255,255,255,0.2)"
           svgTrackR.style.display = "none";
         }
         txtTrackDays.textContent = streak;
