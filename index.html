@@ -3269,6 +3269,7 @@
       }
 
       .itemSetting {
+        
         display: flex;
         box-sizing: border-box;
         height: auto;
@@ -3284,6 +3285,20 @@
         background: rgba(240, 240, 240, 1);
       }
 
+      .boxSvgItemSetting{
+        padding : 0.4rem;
+        border-radius : 0.4rem;
+        background : rgba(5, 137, 173, 0.496)
+      }
+      .boxSvgItemSetting svg {
+        height : 1.25rem;
+        stroke: white;
+      }
+      .boxSvgItemSetting svg path {
+        stroke : white;
+        fill : white;
+
+      }
       /*CSS Toggle paramètre*/
 
       /* From Uiverse.io by ErzenXz */
@@ -6474,34 +6489,10 @@
           <div id="contentSettingInit">
         <h3 style="align-self: flex-start">Réglages</h3>
 
-        <div class="itemSetting" id="haptic">
-          <svg
-            height="1.2rem"
-            viewBox="0 0 603 512"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M346.162 10.6709C358.376 10.6736 366.098 10.6797 366.231 10.6758L366.381 10.6807L366.529 10.6826C419.054 11.1626 461.667 54.0492 461.667 106.683V405.328C461.667 458.253 418.592 501.328 365.667 501.328H237.667C184.742 501.328 141.667 458.253 141.667 405.328V106.661C141.667 54.0471 184.281 11.1435 236.8 10.6826L236.951 10.6807L237.102 10.6758C237.222 10.6797 244.946 10.6736 257.171 10.6709C269.332 10.6682 285.499 10.667 301.667 10.667C317.834 10.667 334.001 10.6682 346.162 10.6709ZM223.007 33.4609C188.843 40.3037 163 70.4894 163 106.683V405.328C163 446.504 196.491 479.995 237.667 479.995H365.667C406.843 479.995 440.333 446.504 440.333 405.328V106.683C440.333 70.4951 414.495 40.2802 380.319 33.46L372.331 31.8652L368.69 39.1523L353.892 68.7705C352.069 72.4039 348.373 74.6826 344.333 74.6826H259C254.944 74.6826 251.247 72.391 249.453 68.793L249.448 68.7842L234.644 39.1523L231 31.8604L223.007 33.4609ZM280.333 394.661H323C328.885 394.661 333.667 399.443 333.667 405.328C333.667 411.213 328.885 415.995 323 415.995H280.333C274.448 415.995 269.667 411.213 269.667 405.328C269.667 399.443 274.448 394.661 280.333 394.661Z"
-              fill="black"
-              stroke="black"
-              stroke-width="21.3333"
-            />
-            <path
-              d="M518 55L589 171.716L518 267.5L589 384.216L518 480"
-              stroke="black"
-              stroke-width="28"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M85 55L14 171.716L85 267.5L14 384.216L85 480"
-              stroke="black"
-              stroke-width="28"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <div class="itemSetting" id="haptique">
+          <div class="boxSvgItemSetting">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 8l2 2-2 2 2 2-2 2"></path> <path d="M22 8l-2 2 2 2-2 2 2 2"></path> <rect x="8" y="5" width="8" height="14" rx="1"></rect> </g></svg>
+          </div>
 
           <span
             style="
@@ -6512,11 +6503,11 @@
               justify-content: flex-start;
               padding-left: 1rem;
             "
-            >Retour haptic</span
+            >Retour haptique</span
           >
 
           <!-- From Uiverse.io by ErzenXz -->
-          <label class="toggleSetting" id="toggleHaptic">
+          <label class="toggleSetting" id="togglehaptique">
             <input type="checkbox" />
             <div class="toggleSetting-background"></div>
             <div class="toggleSetting-handle"></div>
@@ -6526,6 +6517,7 @@
         <div class="ligneInSD" style="margin: 0.1rem 0"></div>
 
         <div class="itemSetting" id="sonSetting">
+          <div class="boxSvgItemSetting">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Filled"
@@ -6542,7 +6534,7 @@
               d="M13.819.207A12.055,12.055,0,0,0,6.268,5H5a5.006,5.006,0,0,0-5,5v4a5.006,5.006,0,0,0,5,5H6.269a12.051,12.051,0,0,0,7.55,4.793A1,1,0,0,0,15,22.81V1.19A1,1,0,0,0,13.819.207Z"
             />
           </svg>
-
+</div>
           <span
             style="
               font-size: 0.96rem;
@@ -6563,6 +6555,8 @@
         <div class="ligneInSD" style="margin: 0.1rem 0"></div>
 
         <div class="itemSetting" id="souv">
+
+          <div class="boxSvgItemSetting">
           <svg
             height="1.2rem"
             viewBox="0 0 24 24"
@@ -6590,7 +6584,7 @@
               ></path>
             </g>
           </svg>
-
+</div>
           <span
             style="
               font-size: 0.85rem;
@@ -6614,6 +6608,7 @@
         <h3 style="align-self: flex-start">Informations</h3>
 
         <div class="itemSetting" id="propos">
+          <div class="boxSvgItemSetting">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Layer_1"
@@ -6625,6 +6620,8 @@
               d="M12.836.028A12,12,0,0,0,.029,12.855C.47,19.208,6.082,24,13.083,24H19a5.006,5.006,0,0,0,5-5V12.34A12.209,12.209,0,0,0,12.836.028ZM12,5a1.5,1.5,0,0,1,0,3A1.5,1.5,0,0,1,12,5Zm2,13a1,1,0,0,1-2,0V12H11a1,1,0,0,1,0-2h1a2,2,0,0,1,2,2Z"
             />
           </svg>
+        
+        </div>
           <span
             style="
               font-size: 0.96rem;
@@ -6652,6 +6649,8 @@
         <div class="ligneInSD" style="margin: 0.4rem 0"></div>
 
         <div class="itemSetting" id="mail">
+
+          <div class="boxSvgItemSetting">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Filled"
@@ -6665,7 +6664,7 @@
               d="M14.122,12.546l9.134-9.135A4.986,4.986,0,0,0,19,1H5A4.986,4.986,0,0,0,.744,3.411l9.134,9.135A3.007,3.007,0,0,0,14.122,12.546Z"
             />
           </svg>
-
+</div>
           <span
             style="
               font-size: 0.96rem;
@@ -6714,7 +6713,7 @@
       <span style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 3rem;">Mentions légales</span>
 
                <div class="itemSetting" >
-          <svg height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.096"></g><g id="SVGRepo_iconCarrier"> <path d="M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H12M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19M19 9V14.5M9 17H11.5M9 13H15M9 9H10M15.5 18.5H20.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+       <svg height="1.2rem" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#00384E;" d="M310.624,0H64v512h384V137.376L310.624,0z M320,54.624L393.376,128H320V54.624z M96,480V32h192v128 h128v320H96z"></path> <polygon style="fill:#72C6EF;" points="384,448 128,448 128,64 288,64 288,160 384,160 "></polygon> <g> <rect x="176" y="368" style="fill:#00384D;" width="80" height="32"></rect> <rect x="176" y="304" style="fill:#00384D;" width="160" height="32"></rect> <rect x="176" y="240" style="fill:#00384D;" width="160" height="32"></rect> </g> </g></svg>
 
           <span
             style="
@@ -6747,7 +6746,7 @@
         
 
          <div class="itemSetting" >
-          <svg height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.096"></g><g id="SVGRepo_iconCarrier"> <path d="M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H12M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19M19 9V14.5M9 17H11.5M9 13H15M9 9H10M15.5 18.5H20.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+       <svg height="1.2rem" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#00384E;" d="M310.624,0H64v512h384V137.376L310.624,0z M320,54.624L393.376,128H320V54.624z M96,480V32h192v128 h128v320H96z"></path> <polygon style="fill:#72C6EF;" points="384,448 128,448 128,64 288,64 288,160 384,160 "></polygon> <g> <rect x="176" y="368" style="fill:#00384D;" width="80" height="32"></rect> <rect x="176" y="304" style="fill:#00384D;" width="160" height="32"></rect> <rect x="176" y="240" style="fill:#00384D;" width="160" height="32"></rect> </g> </g></svg>
 
           <span
             style="
@@ -12535,8 +12534,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const contentSettingInit = document.getElementById('contentSettingInit')
       
 
-      const haptic = document.getElementById("haptic");
-      const toggleHaptic = document.getElementById("toggleHaptic");
+      const haptique = document.getElementById("haptique");
+      const togglehaptique = document.getElementById("togglehaptique");
 
       const souv = document.getElementById("souv");
       const toggleSouv = document.getElementById("toggleSouv");
@@ -14535,11 +14534,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         overallHome.classList.remove("active");
       });
 
-      haptic.addEventListener("click", () => {
-        toggleHaptic.click();
+      haptique.addEventListener("click", () => {
+        togglehaptique.click();
       });
 
-      toggleHaptic.addEventListener("click", (e) => {
+      togglehaptique.addEventListener("click", (e) => {
         e.stopPropagation();
       });
 
