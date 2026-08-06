@@ -3205,7 +3205,53 @@
         opacity: 1;
         pointer-events: all;
       }
+      #wrapperSetting{
+        display : flex;
+        align-items : center;
+        justify-content: center;
+        overflow: hidden;
+        position : relative;
+        width : 100%;
+        height : auto;
+        padding : inherit;
+        background:inherit ;
+        gap : inherit;
+      }
+      #contentSettingInit{
+        display : flex;
+        background : inherit;
+        z-index: 5;
+        flex-direction: column;
+        overflow: hidden;
+        position : relative;
+        width : 100%;
+        height : auto;
+        padding : inherit;
+        gap : inherit;
+        transition : transform 0.4s ease;
+      }
+      #contentSettingInit.side  {
+        transform : translateX(-25%)
+      }
+      #contentSettingPropos{
+        display : flex;
+        background : inherit;
+        z-index: 10;
+        position: absolute;
+        left : 100%;
+        flex-direction: column;
+        overflow: hidden;
+        width : 100%;
+        height : 100%;
+        padding : inherit;
+        box-sizing: border-box;
+        gap : inherit;
+        transition : left 0.4s ease;
+      }
 
+      #contentSettingPropos.side  {
+        left : 0%;
+      }
       #overallHome {
         opacity: 0;
         pointer-events: none;
@@ -6423,6 +6469,8 @@
       <div id="overallHome"></div>
       <div id="cadreSetting">
         <h2>Paramètres</h2>
+        <div id="wrapperSetting">
+          <div id="contentSettingInit">
         <h3 style="align-self: flex-start">Réglages</h3>
 
         <div class="itemSetting" id="haptic">
@@ -6564,7 +6612,7 @@
 
         <h3 style="align-self: flex-start">Informations</h3>
 
-        <div class="itemSetting">
+        <div class="itemSetting" id="propos">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Layer_1"
@@ -6643,6 +6691,98 @@
             />
           </svg>
         </div>
+        </div>
+
+        <div id="contentSettingPropos">
+
+              <button class="back" id="backSetting" style="position : relative; left : 0">
+        <svg
+          fill="black"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Bold"
+          viewBox="0 0 24 24"
+          width="100%"
+        >
+          <path
+            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+          />
+        </svg>
+      </button>
+
+      <span style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 2rem;">Mentions légales</span>
+
+               <div class="itemSetting" >
+          <svg height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.096"></g><g id="SVGRepo_iconCarrier"> <path d="M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H12M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19M19 9V14.5M9 17H11.5M9 13H15M9 9H10M15.5 18.5H20.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+          <span
+            style="
+              font-size: 0.96rem;
+              font-weight: 450;
+              flex: 1;
+              display: flex;
+              justify-content: flex-start;
+              padding-left: 1rem;
+            "
+            >Conditions d'utilisation</span
+          >
+
+          <!-- From Uiverse.io by ErzenXz -->
+
+          <svg
+            height="1.2rem"
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
+              fill="black"
+            />
+          </svg>
+        </div>  
+
+        <div class="ligneInSD" style="margin: 0.4rem 0"></div>
+        
+
+         <div class="itemSetting" >
+          <svg height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.096"></g><g id="SVGRepo_iconCarrier"> <path d="M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H12M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19M19 9V14.5M9 17H11.5M9 13H15M9 9H10M15.5 18.5H20.5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+          <span
+            style="
+              font-size: 0.96rem;
+              font-weight: 450;
+              flex: 1;
+              display: flex;
+              justify-content: flex-start;
+              padding-left: 1rem;
+            "
+            >Règles de confidentialité</span
+          >
+
+          <!-- From Uiverse.io by ErzenXz -->
+
+          <svg
+            height="1.2rem"
+            viewBox="0 0 22 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
+              fill="black"
+            />
+          </svg>
+        </div>  
+
+
+        </div>
+
+
+
+
+
+
+       </div> 
       </div>
       <div id="cadreHome">
         <div id="btnPremium" class="btnHome">
@@ -12294,6 +12434,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         requestAnimationFrame(update);
       }
+
+      function getId(id) {
+        return document.getElementById(`${id}`);
+      }
+      function getC(classe) {
+        return document.querySelector(`${classe}`);
+      }
+
+
     </script>
 
     <!--Script Home-->
@@ -12380,6 +12529,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const cadreSetting = document.getElementById("cadreSetting");
       const overallHome = document.getElementById("overallHome");
+      const contentSettingPropos = document.getElementById('contentSettingPropos')
+      const contentSettingInit = document.getElementById('contentSettingInit')
+      
 
       const haptic = document.getElementById("haptic");
       const toggleHaptic = document.getElementById("toggleHaptic");
@@ -12388,6 +12540,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const toggleSouv = document.getElementById("toggleSouv");
 
       const mail = document.getElementById("mail");
+      const propos = getId("propos")
+
+      const backSetting = document.getElementById('backSetting')
 
       const sonSetting = document.getElementById("sonSetting");
       const toggleSon = document.getElementById("toggleSon");
@@ -14441,6 +14596,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         window.location.href = `mailto:tonadresse@exemple.com?subject=${sujet}&body=${corps}`;
       });
 
+      propos.addEventListener('click',()=>{
+        [contentSettingInit,contentSettingPropos].forEach(set=>{
+          set.classList.add('side')
+        })
+      })
+
+      backSetting.addEventListener('click',()=>{
+        [contentSettingInit,contentSettingPropos].forEach(set=>{
+          set.classList.remove('side')
+        })
+      })
+
       play.addEventListener("click", () => {
         cChooseTrouver = null;
         viewMaps = false;
@@ -16060,12 +16227,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       //Voir sur la carte
-      function getId(id) {
-        return document.getElementById(`${id}`);
-      }
-      function getC(classe) {
-        return document.querySelector(`${classe}`);
-      }
+      
       //Élements qui disparaissent
       const L_replace = [
         getId("cadreQ4Choix"),
