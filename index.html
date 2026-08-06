@@ -2918,7 +2918,6 @@
   ); */
   
   transform: translateX(-150%) skewX(-20deg);
-  animation: shine-sweep 6s ease infinite;
   pointer-events: none;
 }
 
@@ -6563,7 +6562,8 @@
         </div>
 
         
- <div class="ligneInSD" style="margin: 0.1rem 0"></div>
+        <h3 style="align-self: flex-start">Quiz</h3>
+
         <div class="itemSetting" id="souv">
 
           <div class="boxSvgItemSetting">
@@ -14348,7 +14348,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreTrackDays.classList.add('active')
         phoneHome.style.transformOrigin = "center bottom"
         phoneHome.style.transform = "scale(0.94)"
-        
+
+        setTimeout(() => {
+          
+          mCadresTrackDPremium.forEach(track=>{
+            track.style.animation = "shine-sweep 6s ease infinite"
+          })
+          
+        }, 500);
       })
 
       crossTrack.addEventListener("pointerdown", (e) => e.stopPropagation());
@@ -14363,6 +14370,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phoneHome.style.transform = "scale(1)"
         
       
+         mCadresTrackDPremium.forEach(track=>{
+          track.style.animation = ""
+        })
       })
 
       btnPlayTrack.addEventListener('pointerdown',(e)=>e.stopPropagation())
