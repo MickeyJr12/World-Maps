@@ -3163,6 +3163,7 @@
         width: 80%;
         max-width: 30rem;
         padding: 0.8rem 0.6rem;
+        gap : 0rem;
         height: auto;
         border-radius: 1rem;
         background: rgba(252, 252, 252, 1);
@@ -3200,7 +3201,6 @@
         position : relative;
         width : 100%;
         height : auto;
-        padding : inherit;
         gap : inherit;
         transition : transform 0.3s ease;
       }
@@ -3226,6 +3226,25 @@
       #contentSettingPropos.side  {
         left : 0%;
       }
+
+      #backSetting{
+          display: flex;
+        align-items: center;
+        align-self  : flex-tart;
+        justify-content: flex-start;
+        border-radius: 5px;
+        gap : 0.4rem;
+        height : 1.2rem;
+        width: fit-content;
+        font-size: 0.96rem;
+        cursor : pointer;
+        transition : background 0.2s ease;    
+      }
+
+      #backSetting svg {
+        fill : black;
+        height : 100%;
+      }
       #overallHome {
         opacity: 0;
         pointer-events: none;
@@ -3242,7 +3261,6 @@
       }
 
       .itemSetting {
-        
         display: flex;
         box-sizing: border-box;
         height: auto;
@@ -6457,10 +6475,10 @@
 
       <div id="overallHome"></div>
       <div id="cadreSetting">
-        <div style="font-size: 1.6rem; font-weight: 600; margin-top : 0.6rem; margin-bottom: -0.4rem;">Paramètres</div>
+        <div style="font-size: 1.6rem; font-weight: 600; margin-top : 0.6rem; margin-bottom: -0.4rem;z-index: 99999">Paramètres</div>
         <div id="wrapperSetting">
           <div id="contentSettingInit">
-        <h3 style="align-self: flex-start">Réglages</h3>
+        <div style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 1rem;">Réglages</div>
 
         <div class="itemSetting" id="haptique">
           <div class="boxSvgItemSetting">
@@ -6536,7 +6554,7 @@
         </div>
 
         
-        <h3 style="align-self: flex-start">Quiz</h3>
+        <div style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 1rem;">Quiz</div>
 
         <div class="itemSetting" id="souv">
 
@@ -6589,7 +6607,7 @@
           </label>
         </div>
 
-        <h3 style="align-self: flex-start">Informations</h3>
+        <div style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 1rem;">Informations</div>
 
         <div class="itemSetting" id="propos">
           <div class="boxSvgItemSetting">
@@ -6667,23 +6685,20 @@
         </div>
 
         <div id="contentSettingPropos">
-          <div>
-              <button class="back" id="backSetting" style="top : 0;left : 0">
+              <div  id="backSetting" >
         <svg
-          fill="black"
           xmlns="http://www.w3.org/2000/svg"
           id="Bold"
           viewBox="0 0 24 24"
-          width="100%"
         >
           <path
             d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
           />
         </svg>
-      </button>
-      </div>
+        <span>Retour</span>
+          </div>
 
-      <span style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 3rem;">Mentions légales</span>
+      <span style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 1rem;">Mentions légales</span>
 
                <div class="itemSetting" >
        <svg height="1.2rem" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#00384E;" d="M310.624,0H64v512h384V137.376L310.624,0z M320,54.624L393.376,128H320V54.624z M96,480V32h192v128 h128v320H96z"></path> <polygon style="fill:#72C6EF;" points="384,448 128,448 128,64 288,64 288,160 384,160 "></polygon> <g> <rect x="176" y="368" style="fill:#00384D;" width="80" height="32"></rect> <rect x="176" y="304" style="fill:#00384D;" width="160" height="32"></rect> <rect x="176" y="240" style="fill:#00384D;" width="160" height="32"></rect> </g> </g></svg>
