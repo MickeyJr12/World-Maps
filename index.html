@@ -14208,6 +14208,88 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       }
 
+
+
+       /// Script paramètres
+
+      let haptic = false;
+      const checkboxH = togglehaptique.querySelector("input");
+
+      haptique.addEventListener("click", () => {
+        togglehaptique.click();
+      });
+
+      togglehaptique.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      checkboxH.addEventListener("change", (e) => {
+        haptic = e.target.checked;
+        saveProgress()
+      });
+
+      let sound = false;
+      const checkbox = toggleSon.querySelector("input");
+
+      sonSetting.addEventListener("click", () => {
+        toggleSon.click();
+      });
+
+      toggleSon.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      checkbox.addEventListener("change", (e) => {
+        sound = e.target.checked;
+        saveProgress()
+      });
+
+
+
+
+      //////
+      let onlySouv = false;
+
+      toggleSouv.addEventListener("click", (e) => {
+        e.stopPropagation();
+        saveProgress()
+      });
+
+      souv.addEventListener("click", () => {
+        toggleSouv.click();
+      });
+
+      const checkBoxSouv = toggleSouv.querySelector("input");
+      checkBoxSouv.addEventListener("change", (e) => {
+        onlySouv = !onlySouv;
+        saveProgress();
+        [
+          document.getElementById("nbrQ15"),
+          document.getElementById("nbrQ20"),
+          document.getElementById("nbrQ25"),
+        ].forEach((nbrQ) => {
+          nbrQ.style.display = "flex";
+        });
+      });
+      /////
+ let notif = false;
+
+      toggleNotif.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+
+      notifSetting.addEventListener("click", () => {
+        toggleNotif.click();
+      });
+
+      const checkBoxNotif = toggleNotif.querySelector("input");
+      checkBoxNotif.addEventListener("change", (e) => {
+        notif = !notif;
+        saveProgress();
+      });
+      /// Fin Scrit paramètres
+
+
       // Vider le cache
       // localStorage.removeItem("geoquiz_progress_v1");
       // location.reload();
@@ -14233,6 +14315,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           lastStreakDate,
           maxTrack,
           totalDays,
+          sound,
+          onlySouv,
+          haptic,
+          notif,
         };
         localStorage.setItem(SAVE_KEY, JSON.stringify(data));
       }
@@ -14256,6 +14342,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           lastStreakDate = data.lastStreakDate ?? null;
           maxTrack = data.maxTrack ?? 0;
           totalDays = data.totalDays ?? 0;
+          sound = data.sound ?? false;
+          onlySouv = data.onlySouv ?? false;
+          haptic = data.haptic ?? false;
+          notif = data.notif ?? false;
           
 
 
@@ -14269,6 +14359,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const savedData = loadProgress();
 
+
+      checkbox.checked = sound;
+      checkboxH.checked = haptic;
+      checkBoxSouv.checked = onlySouv;
+      checkBoxNotif.checked = notif;
+
+      
       txtLvlPlayer.textContent = lvlPlayer;
       txtProgLvl.textContent = nbrProgLvl;
       txtPalierLvl.textContent = L_palierLvl[0];
@@ -14535,68 +14632,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreRD.classList.remove("active");
         overallHome.classList.remove("active");
       });
-
-      haptique.addEventListener("click", () => {
-        togglehaptique.click();
-      });
-
-      togglehaptique.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
-
-      let sound = false;
-      const checkbox = toggleSon.querySelector("input");
-
-      sonSetting.addEventListener("click", () => {
-        toggleSon.click();
-      });
-
-      toggleSon.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
-
-      checkbox.addEventListener("change", (e) => {
-        sound = e.target.checked;
-      });
-
-      //////
-      let onlySouv = false;
-
-      toggleSouv.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
-
-      souv.addEventListener("click", () => {
-        toggleSouv.click();
-      });
-
-      const checkBoxSouv = toggleSouv.querySelector("input");
-      checkBoxSouv.addEventListener("change", (e) => {
-        onlySouv = !onlySouv;
-        [
-          document.getElementById("nbrQ15"),
-          document.getElementById("nbrQ20"),
-          document.getElementById("nbrQ25"),
-        ].forEach((nbrQ) => {
-          nbrQ.style.display = "flex";
-        });
-      });
-      /////
- let notif = false;
-
-      toggleNotif.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
-
-      notifSetting.addEventListener("click", () => {
-        toggleNotif.click();
-      });
-
-      const checkBoxNotif = toggleNotif.querySelector("input");
-      checkBoxNotif.addEventListener("change", (e) => {
-        notif = !notif;
-      });
-      ///
 
 
 
@@ -34360,9 +34395,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function loop() {
         requestAnimationFrame(loop);
-        // console.log(toggleSon.style.background)
+        console.log("son", sound)
+        console.log("haptic", haptic)
+        console.log("onlySouv", onlySouv)
+        console.log("notif", notif)
+        console.log("/////")
+        
       }
-      loop();
+      // loop();
       /*phoneHome.style.display="none"
       phonePlay.style.display="flex"*/
       /* setTimeout(() => {
