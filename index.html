@@ -2769,7 +2769,7 @@
         min-height: 100dvh; /* dynamic viewport height, plus fiable sur mobile */
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2rem);
-        transition : transform 0.2s ease;
+        transition: transform 0.2s ease;
       }
 
       #homeTitle {
@@ -2821,11 +2821,10 @@
         filter: drop-shadow(0px -4px 4px rgba(0, 0, 0, 0.4));
       }
 
-      #cadreTrackDays{
-        
+      #cadreTrackDays {
         display: flex;
         position: fixed;
-        color : black;
+        color: black;
         flex-direction: column;
         align-items: center;
         touch-action: none;
@@ -2834,11 +2833,11 @@
         gap: 1.5rem;
         bottom: 0;
         top: 105%;
-        left : 50%;
-        transform : translateX(-50%);
+        left: 50%;
+        transform: translateX(-50%);
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
-        padding : 1.5rem;
+        padding: 1.5rem;
         padding-top: 1rem;
         padding-bottom: calc(env(safe-area-inset-bottom) + 0.8rem);
         background: rgb(255, 250, 250);
@@ -2853,61 +2852,63 @@
         top: calc(env(safe-area-inset-top) + 2rem);
       }
 
-      #boxIconeTrack{
-        display : flex;
+      #boxIconeTrack {
+        display: flex;
         flex-shrink: 0;
         justify-content: center;
-        align-items : center;
+        align-items: center;
         border-radius: 50%;
-        background :rgba(23, 79, 248, 0.13);
-        background : rgba(218,37,37,0.12);
-        height : 6rem;
-        padding : 0.6em;
+        background: rgba(23, 79, 248, 0.13);
+        background: rgba(218, 37, 37, 0.12);
+        height: 6rem;
+        padding: 0.6em;
       }
-      #boxIconeTrack svg {height : 100%}
+      #boxIconeTrack svg {
+        height: 100%;
+      }
 
-      .mCadreTrackD{
-        display : flex;
+      .mCadreTrackD {
+        display: flex;
         flex-shrink: 0;
         position: relative;
         overflow: hidden;
-        justify-content:flex-start;
-        align-items:center;
-        align-self : center;
+        justify-content: flex-start;
+        align-items: center;
+        align-self: center;
         box-sizing: border-box;
-        padding : 0.6rem;
-        width : 100%;
-        height : 4em;        
+        padding: 0.6rem;
+        width: 100%;
+        height: 4em;
         /* background : rgba(243, 99, 42, 0.118); */
-        background : rgba(218,37,37,0.12);
-        background : white;
+        background: rgba(218, 37, 37, 0.12);
+        background: white;
 
-        outline : 1px solid rgba(192, 57, 43, 0.2);
-        box-shadow: 0 0 4px rgba(0,0,0,0.2);
+        outline: 1px solid rgba(192, 57, 43, 0.2);
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 
-        border-radius : 1rem;
-        gap : 1rem;
+        border-radius: 1rem;
+        gap: 1rem;
       }
       .mCadreTrackD svg {
-        overflow : visible;
-        height : 100%;
+        overflow: visible;
+        height: 100%;
       }
 
       .mCadreTrackDPremium {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(
-    115deg,
-    rgba(255,255,255,0) 0%,
-    rgba(252, 252, 252, 0.8) 50%,
-    rgba(255,255,255,0) 100%
-  );
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(
+          115deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(252, 252, 252, 0.8) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
 
-  /* background: linear-gradient(
+        /* background: linear-gradient(
     115deg,
     rgba(255,255,255,0) 0%,
     rgba(255,255,255,0) 20%,
@@ -2916,34 +2917,33 @@
 
     rgba(255,255,255,0) 100%
   ); */
-  
-  transform: translateX(-150%) skewX(-20deg);
-  pointer-events: none;
-}
 
-@keyframes shine-sweep {
-  0% {
-    transform: translateX(-150%) skewX(-20deg);
-  }
-  50% {
-    transform: translateX(350%) skewX(-20deg);
-  }
-  100% {
-    transform: translateX(350%) skewX(-20deg);
-  }
-}
-
-
-      .contentMCadreTrackD{
-        display : flex;
-        flex-direction : column;
-        justify-content: center;
-        align-items: center;
-        height : 100%;
-        color : rgba(0,0,0,0.8);
+        transform: translateX(-150%) skewX(-20deg);
+        pointer-events: none;
       }
 
-        #btnPlayTrack {
+      @keyframes shine-sweep {
+        0% {
+          transform: translateX(-150%) skewX(-20deg);
+        }
+        50% {
+          transform: translateX(350%) skewX(-20deg);
+        }
+        100% {
+          transform: translateX(350%) skewX(-20deg);
+        }
+      }
+
+      .contentMCadreTrackD {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: rgba(0, 0, 0, 0.8);
+      }
+
+      #btnPlayTrack {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2963,8 +2963,7 @@
       #btnPlayTrack:active {
         transform: scale(0.97);
       }
-      
-      
+
       #btnTrackDays {
         display: flex;
         align-items: center;
@@ -2996,11 +2995,12 @@
       }
 
       #btnTrackDays svg {
-        overflow : visible;
+        overflow: visible;
         height: 1.6rem;
       }
       @keyframes fire3 {
-        0%,100% {
+        0%,
+        100% {
           transform-origin: center bottom;
           transform: scaleY(1);
         }
@@ -3008,15 +3008,13 @@
           transform-origin: center bottom;
           transform: scaleY(1.05);
         }
-      
-      
       }
 
-         @keyframes fire2 {
-        0%,100% {
+      @keyframes fire2 {
+        0%,
+        100% {
           transform-origin: center bottom;
           transform: scaleY(1.05);
-        
         }
         50% {
           transform-origin: center bottom;
@@ -3163,7 +3161,7 @@
         width: 80%;
         max-width: 30rem;
         padding: 0.8rem 0.6rem;
-        gap : 0rem;
+        gap: 0rem;
         height: auto;
         border-radius: 1rem;
         background: rgba(252, 252, 252, 1);
@@ -3180,70 +3178,70 @@
         opacity: 1;
         pointer-events: all;
       }
-      #wrapperSetting{
-        display : flex;
-        align-items : center;
+      #wrapperSetting {
+        display: flex;
+        align-items: center;
         justify-content: center;
         overflow: hidden;
-        position : relative;
-        width : 100%;
-        height : auto;
-        padding : inherit;
-        background:inherit ;
-        gap : inherit;
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: inherit;
+        background: inherit;
+        gap: inherit;
       }
-      #contentSettingInit{
-        display : flex;
-        background : inherit;
+      #contentSettingInit {
+        display: flex;
+        background: inherit;
         z-index: 5;
         flex-direction: column;
         overflow: hidden;
-        position : relative;
-        width : 100%;
-        height : auto;
-        gap : inherit;
-        transition : transform 0.3s ease;
+        position: relative;
+        width: 100%;
+        height: auto;
+        gap: inherit;
+        transition: transform 0.3s ease;
       }
-      #contentSettingInit.side  {
-        transform : translateX(-25%)
+      #contentSettingInit.side {
+        transform: translateX(-25%);
       }
-      #contentSettingPropos{
-        display : flex;
-        background : inherit;
+      #contentSettingPropos {
+        display: flex;
+        background: inherit;
         z-index: 10;
         position: absolute;
-        left : 100%;
+        left: 100%;
         flex-direction: column;
         overflow: hidden;
-        width : 100%;
-        height : 100%;
-        padding : inherit;
+        width: 100%;
+        height: 100%;
+        padding: inherit;
         box-sizing: border-box;
-        gap : inherit;
-        transition : left 0.3s ease;
+        gap: inherit;
+        transition: left 0.3s ease;
       }
 
-      #contentSettingPropos.side  {
-        left : 0%;
+      #contentSettingPropos.side {
+        left: 0%;
       }
 
-      #backSetting{
-          display: flex;
+      #backSetting {
+        display: flex;
         align-items: center;
-        align-self  : flex-tart;
+        align-self: flex-tart;
         justify-content: flex-start;
         border-radius: 5px;
-        gap : 0.4rem;
-        height : 1.2rem;
+        gap: 0.4rem;
+        height: 1.2rem;
         width: fit-content;
         font-size: 0.96rem;
-        cursor : pointer;
-        transition : background 0.2s ease;    
+        cursor: pointer;
+        transition: background 0.2s ease;
       }
 
       #backSetting svg {
-        fill : black;
-        height : 100%;
+        fill: black;
+        height: 100%;
       }
       #overallHome {
         opacity: 0;
@@ -3276,19 +3274,18 @@
         background: rgba(240, 240, 240, 1);
       }
 
-      .boxSvgItemSetting{
-        padding : 0.4rem;
-        border-radius : 100%;
-        background : rgba(5, 137, 173, 0.496)
+      .boxSvgItemSetting {
+        padding: 0.4rem;
+        border-radius: 100%;
+        background: rgba(5, 137, 173, 0.496);
       }
       .boxSvgItemSetting svg {
-        height : 1.25rem;
+        height: 1.25rem;
         stroke: white;
       }
       .boxSvgItemSetting svg path {
-        stroke : white;
-        fill : white;
-
+        stroke: white;
+        fill: white;
       }
       /*CSS Toggle paramètre*/
 
@@ -4469,24 +4466,61 @@
         font-size: 1.2rem;
         letter-spacing: 1.1px;
       }
+      #wrapperScorePm{
+        display : flex;
+        box-sizing: border-box;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding : 0 0.6rem;
+        font-size: 1.05rem;
+      }
       #cadreScorePm {
-        display: none;
-        position: relative;
+        display: flex;
         overflow: visible;
         justify-content: center;
-        align-items: flex-end;
-        padding: 0 0.6rem;
-        font-size: 1.05rem;
       }
       #cadreScorePm svg {
         height: 1rem;
       }
+      #xpPm{
+        display : flex;
+        justify-content : center;
+        align-self : flex-start;
+        color : white;
+        font-weight: 500;
+        border-radius: 0.4rem;
+        padding : 0.25rem;
+        background: rgba(255, 255, 255, 0.08);
+        outline: 1px solid rgba(255,255,255,0.5);
+        transition : background  0.5s ease, color 0.5s ease;
+        }
+        #xpPm.scored {/* Option 1 — Vert sauge */
+outline: none;
+color: #ffffff;
+background: rgba(18, 155, 229, 0.533);
+outline : 1px solid rgba(255,255,255,0.2)
+}
+
+          @keyframes scoredXp {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
 
       .cadreStars {
         display: flex;
-        position: absolute;
         justify-content: center;
         align-items: center;
+        align-self: flex-start;
+        margin-left : 0.5rem;
         gap: 0.4rem;
         left: 100%;
         top: 0;
@@ -5783,7 +5817,7 @@
         color: rgba(0, 0, 0, 0.8);
         border-radius: 0.5rem;
         outline: 1.6px solid rgba(0, 184, 148, 0.25);
-        box-shadow : 0 0 4px rgba(0,0,0,0.2);
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 
         transition:
           background 0.2s ease,
@@ -5934,39 +5968,39 @@
     </div>
 
     <!--HTML Home-->
-         <div id="cadreTrackDays">
-          <div class="lineMove" >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="Layer_1"
-            data-name="Layer 1"
-            viewBox="0 11 24 3"
-          >
-            <path
-              d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
-            />
-          </svg>
-        </div>
-          <button class="cross" id="crossTrack" style="margin-bottom: -1.5rem">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="Outline"
-            viewBox="0 0 24 24"
-            width="100%"
-            height="100%"
-            fill="black"
-          >
-            <path
-              d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
-            />
-            <path
-              d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
-            />
-          </svg>
-        </button>
-        <span style="font-size: 1.5rem;">Série</span>
-        <div id="boxIconeTrack">
-           <svg
+    <div id="cadreTrackDays">
+      <div class="lineMove">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 11 24 3"
+        >
+          <path
+            d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
+          />
+        </svg>
+      </div>
+      <button class="cross" id="crossTrack" style="margin-bottom: -1.5rem">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+          width="100%"
+          height="100%"
+          fill="black"
+        >
+          <path
+            d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+          />
+          <path
+            d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+          />
+        </svg>
+      </button>
+      <span style="font-size: 1.5rem">Série</span>
+      <div id="boxIconeTrack">
+        <svg
           viewBox="-33 0 255 255"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -6023,48 +6057,234 @@
             </g>
           </g>
         </svg>
-        </div>
-
-        <div style="font-size : 1.4rem; font-weight:550;"> <span id="txtCadreTrack"></span></div>
-        <div id="txtMotivation" style="font-size : 1rem; color : rgba(0,0,0,0.6);">Ne cassez pas la chaîne ! On se retrouve demain ?</div>
-
-        <div class="mCadreTrackD" >
-          <div class="mCadreTrackDPremium"></div>
-          <svg viewBox="0 0 120 120" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><style type="text/css"> .st0{fill:#E8B04B;} .st1{fill:#333333;} .st2{fill:#282828;} .st3{fill:#FFC54D;} </style><rect class="st0" height="17.9" width="8.6" x="55.7" y="56.8"></rect><path class="st1" d="M82.1,104.3H37.9c-1,0-1.8-0.8-1.8-1.8V72.9c0-1,0.8-1.8,1.8-1.8h44.2c1,0,1.8,0.8,1.8,1.8v29.6 C83.9,103.5,83.1,104.3,82.1,104.3z"></path><path class="st2" d="M31.4,109h57.2c1,0,1.8-0.8,1.8-1.8v-5.8c0-1-0.8-1.8-1.8-1.8H31.4c-1,0-1.8,0.8-1.8,1.8v5.8 C29.5,108.2,30.4,109,31.4,109z"></path><path class="st3" d="M61.6,12.5l7.8,15.8c0.3,0.5,0.8,0.9,1.3,1l17.4,2.5c1.5,0.2,2,2,1,3L76.5,47.1c-0.4,0.4-0.6,1-0.5,1.6L79,66 c0.2,1.5-1.3,2.6-2.6,1.9l-15.6-8.2c-0.5-0.3-1.1-0.3-1.7,0l-15.6,8.2c-1.3,0.7-2.8-0.4-2.6-1.9l3-17.3c0.1-0.6-0.1-1.2-0.5-1.6 L30.9,34.8c-1.1-1-0.5-2.8,1-3l17.4-2.5c0.6-0.1,1.1-0.4,1.3-1l7.8-15.8C59.1,11.2,60.9,11.2,61.6,12.5z"></path><path class="st3" d="M70.5,94.1h-21c-0.7,0-1.2-0.5-1.2-1.2V79.8c0-0.7,0.5-1.2,1.2-1.2h21c0.7,0,1.2,0.5,1.2,1.2v13.1 C71.7,93.6,71.1,94.1,70.5,94.1z"></path></g></svg>
-          
-          <div class="contentmCadreTrackD">
-            <span style="color : rgba(0,0,0,0.6)" >Série maximale</span>
-            <div id="txtMaxTrack">0 jours</div>
-          </div>
-        </div>
-
-        <div class="mCadreTrackD" style="display : none" >
-          <div class="mCadreTrackDPremium"></div>
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#99DDFF;" d="M512,256c0-9.217-7.479-16.696-16.696-16.696h-26.478l32.718-32.718 c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-56.327,56.327h-83.813c-2.168-10.642-6.39-20.536-12.197-29.295 l59.303-59.303h79.663c9.217,0,16.696-7.479,16.696-16.696s-7.479-16.696-16.696-16.696h-46.271l18.728-18.728 c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-18.727,18.728V47.435c0-9.217-7.479-16.696-16.696-16.696 c-9.217,0-16.696,7.479-16.696,16.696v79.663L301.991,186.4c-8.759-5.807-18.652-10.027-29.295-12.197V90.391l56.326-56.326 c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-32.717,32.717V16.696C272.696,7.479,265.217,0,256,0 s-16.696,7.479-16.696,16.696v26.478l-32.718-32.717c-6.521-6.521-17.087-6.521-23.609,0s-6.521,17.087,0,23.609l56.327,56.326 v83.813c-10.642,2.168-20.536,6.39-29.295,12.197l-59.303-59.303V47.435c0-9.217-7.479-16.696-16.696-16.696 s-16.696,7.479-16.696,16.696v46.271L98.587,74.978c-6.521-6.521-17.087-6.521-23.609,0s-6.521,17.087,0,23.609l18.728,18.728 H47.435c-9.217,0-16.696,7.479-16.696,16.696c0,9.217,7.479,16.696,16.696,16.696h79.663l59.303,59.303 c-5.807,8.759-10.027,18.652-12.197,29.295H90.391l-56.326-56.326c-6.521-6.521-17.087-6.521-23.609,0s-6.521,17.087,0,23.609 l32.717,32.717H16.696C7.479,239.304,0,246.783,0,256s7.479,16.696,16.696,16.696h26.478l-32.717,32.718 c-6.521,6.521-6.521,17.087,0,23.609c3.26,3.26,7.532,4.891,11.804,4.891s8.544-1.631,11.804-4.892l56.327-56.326h83.813 c2.168,10.642,6.39,20.536,12.197,29.295l-59.303,59.303H47.435c-9.217,0-16.696,7.479-16.696,16.696 c0,9.217,7.479,16.696,16.696,16.696h46.271l-18.728,18.728c-6.521,6.521-6.521,17.087,0,23.609 c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892l18.728-18.728v46.271c0,9.217,7.479,16.696,16.696,16.696 s16.696-7.479,16.696-16.696v-79.663l59.303-59.303c8.759,5.807,18.652,10.027,29.295,12.197v83.813l-56.326,56.326 c-6.521,6.521-6.521,17.087,0,23.609s17.087,6.521,23.609,0l32.718-32.718v26.478c0,9.217,7.479,16.696,16.696,16.696 s16.696-7.479,16.696-16.696v-26.478l32.718,32.718c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892 c6.521-6.521,6.521-17.087,0-23.609l-56.326-56.327v-83.813c10.642-2.168,20.536-6.39,29.295-12.197l59.303,59.303v79.663 c0,9.217,7.479,16.696,16.696,16.696c9.217,0,16.696-7.479,16.696-16.696v-46.271l18.728,18.728 c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892c6.521-6.521,6.521-17.087,0-23.609l-18.727-18.727h46.271 c9.217,0,16.696-7.479,16.696-16.696c0-9.217-7.479-16.696-16.696-16.696h-79.663L325.6,301.991 c5.807-8.759,10.027-18.652,12.197-29.295h83.813l56.326,56.326c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892 c6.521-6.521,6.521-17.087,0-23.609l-32.717-32.717h26.478C504.521,272.696,512,265.217,512,256z M256,306.087 c-27.619,0-50.087-22.468-50.087-50.087s22.468-50.087,50.087-50.087s50.087,22.468,50.087,50.087S283.619,306.087,256,306.087z"></path> <path style="fill:#73C0E6;" d="M306.087,256c0,27.619-22.468,50.087-50.087,50.087V512c9.217,0,16.696-7.479,16.696-16.696v-26.478 l32.718,32.718c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892c6.521-6.521,6.521-17.087,0-23.609l-56.326-56.327 v-83.813c10.642-2.168,20.536-6.39,29.295-12.197l59.303,59.303v79.663c0,9.217,7.479,16.696,16.696,16.696 c9.217,0,16.696-7.479,16.696-16.696v-46.271l18.728,18.728c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892 c6.521-6.521,6.521-17.087,0-23.609l-18.727-18.727h46.271c9.217,0,16.696-7.479,16.696-16.696c0-9.217-7.479-16.696-16.696-16.696 h-79.663L325.6,301.991c5.807-8.759,10.027-18.652,12.197-29.295h83.813l56.326,56.326c3.261,3.261,7.533,4.892,11.804,4.892 s8.544-1.631,11.804-4.892c6.521-6.521,6.521-17.087,0-23.609l-32.717-32.717h26.478c9.217,0,16.696-7.479,16.696-16.696 s-7.479-16.696-16.696-16.696h-26.478l32.718-32.718c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-56.327,56.327 h-83.813c-2.168-10.642-6.39-20.536-12.197-29.295l59.303-59.303h79.663c9.217,0,16.696-7.479,16.696-16.696 s-7.479-16.696-16.696-16.696h-46.271l18.728-18.728c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-18.727,18.728 V47.435c0-9.217-7.479-16.696-16.696-16.696c-9.217,0-16.696,7.479-16.696,16.696v79.663L301.991,186.4 c-8.759-5.807-18.652-10.027-29.295-12.197V90.391l56.326-56.326c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0 l-32.717,32.717V16.696C272.696,7.479,265.217,0,256,0v205.913C283.619,205.913,306.087,228.381,306.087,256z"></path> </g></svg>
-          
-          <div class="contentmCadreTrackD">
-            <span style="color : rgba(0,0,0,0.6)" >Gels disponnibles</span>
-            <div>1</div>
-          </div>
-        </div>
-
-        <div class="mCadreTrackD" >
-          <div class="mCadreTrackDPremium"></div>
-          <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path fill="#506C7F" d="M50,2c-0.553,0-1,0.447-1,1v1v2v4c0,0.553,0.447,1,1,1s1-0.447,1-1V6V4V3C51,2.447,50.553,2,50,2z"></path> <path fill="#506C7F" d="M14,2c-0.553,0-1,0.447-1,1v1v2v4c0,0.553,0.447,1,1,1s1-0.447,1-1V6V4V3C15,2.447,14.553,2,14,2z"></path> </g> <path fill="#F9EBB2" d="M62,60c0,1.104-0.896,2-2,2H4c-1.104,0-2-0.896-2-2V17h60V60z"></path> <path fill="#F76D57" d="M62,15H2V8c0-1.104,0.896-2,2-2h7v4c0,1.657,1.343,3,3,3s3-1.343,3-3V6h30v4c0,1.657,1.343,3,3,3 s3-1.343,3-3V6h7c1.104,0,2,0.896,2,2V15z"></path> <g> <path fill="#394240" d="M11,54h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C10,53.553,10.447,54,11,54z M12,49h4v3h-4V49z"></path> <path fill="#394240" d="M23,54h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C22,53.553,22.447,54,23,54z M24,49h4v3h-4V49z"></path> <path fill="#394240" d="M35,54h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C34,53.553,34.447,54,35,54z M36,49h4v3h-4V49z"></path> <path fill="#394240" d="M11,43h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C10,42.553,10.447,43,11,43z M12,38h4v3h-4V38z"></path> <path fill="#394240" d="M23,43h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C22,42.553,22.447,43,23,43z M24,38h4v3h-4V38z"></path> <path fill="#394240" d="M35,43h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C34,42.553,34.447,43,35,43z M36,38h4v3h-4V38z"></path> <path fill="#394240" d="M47,43h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C46,42.553,46.447,43,47,43z M48,38h4v3h-4V38z"></path> <path fill="#394240" d="M11,32h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C10,31.553,10.447,32,11,32z M12,27h4v3h-4V27z"></path> <path fill="#394240" d="M23,32h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C22,31.553,22.447,32,23,32z M24,27h4v3h-4V27z"></path> <path fill="#394240" d="M35,32h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C34,31.553,34.447,32,35,32z M36,27h4v3h-4V27z"></path> <path fill="#394240" d="M47,32h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C46,31.553,46.447,32,47,32z M48,27h4v3h-4V27z"></path> <path fill="#394240" d="M60,4h-7V3c0-1.657-1.343-3-3-3s-3,1.343-3,3v1H17V3c0-1.657-1.343-3-3-3s-3,1.343-3,3v1H4 C1.789,4,0,5.789,0,8v52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V8C64,5.789,62.211,4,60,4z M49,3c0-0.553,0.447-1,1-1 s1,0.447,1,1v7c0,0.553-0.447,1-1,1s-1-0.447-1-1V3z M13,3c0-0.553,0.447-1,1-1s1,0.447,1,1v7c0,0.553-0.447,1-1,1s-1-0.447-1-1 V3z M62,60c0,1.104-0.896,2-2,2H4c-1.104,0-2-0.896-2-2V17h60V60z M62,15H2V8c0-1.104,0.896-2,2-2h7v4c0,1.657,1.343,3,3,3 s3-1.343,3-3V6h30v4c0,1.657,1.343,3,3,3s3-1.343,3-3V6h7c1.104,0,2,0.896,2,2V15z"></path> </g> </g> <g> <rect x="12" y="27" fill="#B4CCB9" width="4" height="3"></rect> <rect x="24" y="27" fill="#B4CCB9" width="4" height="3"></rect> <rect x="36" y="27" fill="#B4CCB9" width="4" height="3"></rect> <rect x="48" y="27" fill="#B4CCB9" width="4" height="3"></rect> <rect x="12" y="38" fill="#B4CCB9" width="4" height="3"></rect> <rect x="24" y="38" fill="#B4CCB9" width="4" height="3"></rect> <rect x="36" y="38" fill="#B4CCB9" width="4" height="3"></rect> <rect x="48" y="38" fill="#B4CCB9" width="4" height="3"></rect> <rect x="12" y="49" fill="#B4CCB9" width="4" height="3"></rect> <rect x="24" y="49" fill="#B4CCB9" width="4" height="3"></rect> <rect x="36" y="49" fill="#B4CCB9" width="4" height="3"></rect> </g> </g> </g></svg>
-          <div class="contentmCadreTrackD">
-            <span style="color : rgba(0,0,0,0.6)" >Total de jours joués</span>
-            <div id="txtTotalDays"></div>
-          </div>
-        </div>
-
-        <div style="flex : 1; flex-shrink: 0;"></div>
-
-        <div id="btnPlayTrack">Continuer à jouer</div>
-
-
       </div>
-    <div id="phoneHome">
 
+      <div style="font-size: 1.4rem; font-weight: 550">
+        <span id="txtCadreTrack"></span>
+      </div>
+      <div
+        id="txtMotivation"
+        style="font-size: 1rem; color: rgba(0, 0, 0, 0.6)"
+      >
+        Ne cassez pas la chaîne ! On se retrouve demain ?
+      </div>
+
+      <div class="mCadreTrackD">
+        <div class="mCadreTrackDPremium"></div>
+        <svg
+          viewBox="0 0 120 120"
+          id="Layer_1"
+          version="1.1"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <style type="text/css">
+              .st0 {
+                fill: #e8b04b;
+              }
+              .st1 {
+                fill: #333333;
+              }
+              .st2 {
+                fill: #282828;
+              }
+              .st3 {
+                fill: #ffc54d;
+              }
+            </style>
+            <rect
+              class="st0"
+              height="17.9"
+              width="8.6"
+              x="55.7"
+              y="56.8"
+            ></rect>
+            <path
+              class="st1"
+              d="M82.1,104.3H37.9c-1,0-1.8-0.8-1.8-1.8V72.9c0-1,0.8-1.8,1.8-1.8h44.2c1,0,1.8,0.8,1.8,1.8v29.6 C83.9,103.5,83.1,104.3,82.1,104.3z"
+            ></path>
+            <path
+              class="st2"
+              d="M31.4,109h57.2c1,0,1.8-0.8,1.8-1.8v-5.8c0-1-0.8-1.8-1.8-1.8H31.4c-1,0-1.8,0.8-1.8,1.8v5.8 C29.5,108.2,30.4,109,31.4,109z"
+            ></path>
+            <path
+              class="st3"
+              d="M61.6,12.5l7.8,15.8c0.3,0.5,0.8,0.9,1.3,1l17.4,2.5c1.5,0.2,2,2,1,3L76.5,47.1c-0.4,0.4-0.6,1-0.5,1.6L79,66 c0.2,1.5-1.3,2.6-2.6,1.9l-15.6-8.2c-0.5-0.3-1.1-0.3-1.7,0l-15.6,8.2c-1.3,0.7-2.8-0.4-2.6-1.9l3-17.3c0.1-0.6-0.1-1.2-0.5-1.6 L30.9,34.8c-1.1-1-0.5-2.8,1-3l17.4-2.5c0.6-0.1,1.1-0.4,1.3-1l7.8-15.8C59.1,11.2,60.9,11.2,61.6,12.5z"
+            ></path>
+            <path
+              class="st3"
+              d="M70.5,94.1h-21c-0.7,0-1.2-0.5-1.2-1.2V79.8c0-0.7,0.5-1.2,1.2-1.2h21c0.7,0,1.2,0.5,1.2,1.2v13.1 C71.7,93.6,71.1,94.1,70.5,94.1z"
+            ></path>
+          </g>
+        </svg>
+
+        <div class="contentmCadreTrackD">
+          <span style="color: rgba(0, 0, 0, 0.6)">Série maximale</span>
+          <div id="txtMaxTrack">0 jours</div>
+        </div>
+      </div>
+
+      <div class="mCadreTrackD" style="display: none">
+        <div class="mCadreTrackDPremium"></div>
+        <svg
+          version="1.1"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 512 512"
+          xml:space="preserve"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              style="fill: #99ddff"
+              d="M512,256c0-9.217-7.479-16.696-16.696-16.696h-26.478l32.718-32.718 c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-56.327,56.327h-83.813c-2.168-10.642-6.39-20.536-12.197-29.295 l59.303-59.303h79.663c9.217,0,16.696-7.479,16.696-16.696s-7.479-16.696-16.696-16.696h-46.271l18.728-18.728 c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-18.727,18.728V47.435c0-9.217-7.479-16.696-16.696-16.696 c-9.217,0-16.696,7.479-16.696,16.696v79.663L301.991,186.4c-8.759-5.807-18.652-10.027-29.295-12.197V90.391l56.326-56.326 c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-32.717,32.717V16.696C272.696,7.479,265.217,0,256,0 s-16.696,7.479-16.696,16.696v26.478l-32.718-32.717c-6.521-6.521-17.087-6.521-23.609,0s-6.521,17.087,0,23.609l56.327,56.326 v83.813c-10.642,2.168-20.536,6.39-29.295,12.197l-59.303-59.303V47.435c0-9.217-7.479-16.696-16.696-16.696 s-16.696,7.479-16.696,16.696v46.271L98.587,74.978c-6.521-6.521-17.087-6.521-23.609,0s-6.521,17.087,0,23.609l18.728,18.728 H47.435c-9.217,0-16.696,7.479-16.696,16.696c0,9.217,7.479,16.696,16.696,16.696h79.663l59.303,59.303 c-5.807,8.759-10.027,18.652-12.197,29.295H90.391l-56.326-56.326c-6.521-6.521-17.087-6.521-23.609,0s-6.521,17.087,0,23.609 l32.717,32.717H16.696C7.479,239.304,0,246.783,0,256s7.479,16.696,16.696,16.696h26.478l-32.717,32.718 c-6.521,6.521-6.521,17.087,0,23.609c3.26,3.26,7.532,4.891,11.804,4.891s8.544-1.631,11.804-4.892l56.327-56.326h83.813 c2.168,10.642,6.39,20.536,12.197,29.295l-59.303,59.303H47.435c-9.217,0-16.696,7.479-16.696,16.696 c0,9.217,7.479,16.696,16.696,16.696h46.271l-18.728,18.728c-6.521,6.521-6.521,17.087,0,23.609 c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892l18.728-18.728v46.271c0,9.217,7.479,16.696,16.696,16.696 s16.696-7.479,16.696-16.696v-79.663l59.303-59.303c8.759,5.807,18.652,10.027,29.295,12.197v83.813l-56.326,56.326 c-6.521,6.521-6.521,17.087,0,23.609s17.087,6.521,23.609,0l32.718-32.718v26.478c0,9.217,7.479,16.696,16.696,16.696 s16.696-7.479,16.696-16.696v-26.478l32.718,32.718c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892 c6.521-6.521,6.521-17.087,0-23.609l-56.326-56.327v-83.813c10.642-2.168,20.536-6.39,29.295-12.197l59.303,59.303v79.663 c0,9.217,7.479,16.696,16.696,16.696c9.217,0,16.696-7.479,16.696-16.696v-46.271l18.728,18.728 c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892c6.521-6.521,6.521-17.087,0-23.609l-18.727-18.727h46.271 c9.217,0,16.696-7.479,16.696-16.696c0-9.217-7.479-16.696-16.696-16.696h-79.663L325.6,301.991 c5.807-8.759,10.027-18.652,12.197-29.295h83.813l56.326,56.326c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892 c6.521-6.521,6.521-17.087,0-23.609l-32.717-32.717h26.478C504.521,272.696,512,265.217,512,256z M256,306.087 c-27.619,0-50.087-22.468-50.087-50.087s22.468-50.087,50.087-50.087s50.087,22.468,50.087,50.087S283.619,306.087,256,306.087z"
+            ></path>
+            <path
+              style="fill: #73c0e6"
+              d="M306.087,256c0,27.619-22.468,50.087-50.087,50.087V512c9.217,0,16.696-7.479,16.696-16.696v-26.478 l32.718,32.718c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892c6.521-6.521,6.521-17.087,0-23.609l-56.326-56.327 v-83.813c10.642-2.168,20.536-6.39,29.295-12.197l59.303,59.303v79.663c0,9.217,7.479,16.696,16.696,16.696 c9.217,0,16.696-7.479,16.696-16.696v-46.271l18.728,18.728c3.261,3.261,7.533,4.892,11.804,4.892s8.544-1.631,11.804-4.892 c6.521-6.521,6.521-17.087,0-23.609l-18.727-18.727h46.271c9.217,0,16.696-7.479,16.696-16.696c0-9.217-7.479-16.696-16.696-16.696 h-79.663L325.6,301.991c5.807-8.759,10.027-18.652,12.197-29.295h83.813l56.326,56.326c3.261,3.261,7.533,4.892,11.804,4.892 s8.544-1.631,11.804-4.892c6.521-6.521,6.521-17.087,0-23.609l-32.717-32.717h26.478c9.217,0,16.696-7.479,16.696-16.696 s-7.479-16.696-16.696-16.696h-26.478l32.718-32.718c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-56.327,56.327 h-83.813c-2.168-10.642-6.39-20.536-12.197-29.295l59.303-59.303h79.663c9.217,0,16.696-7.479,16.696-16.696 s-7.479-16.696-16.696-16.696h-46.271l18.728-18.728c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0l-18.727,18.728 V47.435c0-9.217-7.479-16.696-16.696-16.696c-9.217,0-16.696,7.479-16.696,16.696v79.663L301.991,186.4 c-8.759-5.807-18.652-10.027-29.295-12.197V90.391l56.326-56.326c6.521-6.521,6.521-17.087,0-23.609s-17.087-6.521-23.609,0 l-32.717,32.717V16.696C272.696,7.479,265.217,0,256,0v205.913C283.619,205.913,306.087,228.381,306.087,256z"
+            ></path>
+          </g>
+        </svg>
+
+        <div class="contentmCadreTrackD">
+          <span style="color: rgba(0, 0, 0, 0.6)">Gels disponnibles</span>
+          <div>1</div>
+        </div>
+      </div>
+
+      <div class="mCadreTrackD">
+        <div class="mCadreTrackDPremium"></div>
+        <svg
+          version="1.0"
+          id="Layer_1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 64 64"
+          enable-background="new 0 0 64 64"
+          xml:space="preserve"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <g>
+              <g>
+                <g>
+                  <path
+                    fill="#506C7F"
+                    d="M50,2c-0.553,0-1,0.447-1,1v1v2v4c0,0.553,0.447,1,1,1s1-0.447,1-1V6V4V3C51,2.447,50.553,2,50,2z"
+                  ></path>
+                  <path
+                    fill="#506C7F"
+                    d="M14,2c-0.553,0-1,0.447-1,1v1v2v4c0,0.553,0.447,1,1,1s1-0.447,1-1V6V4V3C15,2.447,14.553,2,14,2z"
+                  ></path>
+                </g>
+                <path
+                  fill="#F9EBB2"
+                  d="M62,60c0,1.104-0.896,2-2,2H4c-1.104,0-2-0.896-2-2V17h60V60z"
+                ></path>
+                <path
+                  fill="#F76D57"
+                  d="M62,15H2V8c0-1.104,0.896-2,2-2h7v4c0,1.657,1.343,3,3,3s3-1.343,3-3V6h30v4c0,1.657,1.343,3,3,3 s3-1.343,3-3V6h7c1.104,0,2,0.896,2,2V15z"
+                ></path>
+                <g>
+                  <path
+                    fill="#394240"
+                    d="M11,54h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C10,53.553,10.447,54,11,54z M12,49h4v3h-4V49z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M23,54h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C22,53.553,22.447,54,23,54z M24,49h4v3h-4V49z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M35,54h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C34,53.553,34.447,54,35,54z M36,49h4v3h-4V49z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M11,43h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C10,42.553,10.447,43,11,43z M12,38h4v3h-4V38z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M23,43h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C22,42.553,22.447,43,23,43z M24,38h4v3h-4V38z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M35,43h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C34,42.553,34.447,43,35,43z M36,38h4v3h-4V38z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M47,43h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C46,42.553,46.447,43,47,43z M48,38h4v3h-4V38z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M11,32h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C10,31.553,10.447,32,11,32z M12,27h4v3h-4V27z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M23,32h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C22,31.553,22.447,32,23,32z M24,27h4v3h-4V27z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M35,32h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C34,31.553,34.447,32,35,32z M36,27h4v3h-4V27z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M47,32h6c0.553,0,1-0.447,1-1v-5c0-0.553-0.447-1-1-1h-6c-0.553,0-1,0.447-1,1v5 C46,31.553,46.447,32,47,32z M48,27h4v3h-4V27z"
+                  ></path>
+                  <path
+                    fill="#394240"
+                    d="M60,4h-7V3c0-1.657-1.343-3-3-3s-3,1.343-3,3v1H17V3c0-1.657-1.343-3-3-3s-3,1.343-3,3v1H4 C1.789,4,0,5.789,0,8v52c0,2.211,1.789,4,4,4h56c2.211,0,4-1.789,4-4V8C64,5.789,62.211,4,60,4z M49,3c0-0.553,0.447-1,1-1 s1,0.447,1,1v7c0,0.553-0.447,1-1,1s-1-0.447-1-1V3z M13,3c0-0.553,0.447-1,1-1s1,0.447,1,1v7c0,0.553-0.447,1-1,1s-1-0.447-1-1 V3z M62,60c0,1.104-0.896,2-2,2H4c-1.104,0-2-0.896-2-2V17h60V60z M62,15H2V8c0-1.104,0.896-2,2-2h7v4c0,1.657,1.343,3,3,3 s3-1.343,3-3V6h30v4c0,1.657,1.343,3,3,3s3-1.343,3-3V6h7c1.104,0,2,0.896,2,2V15z"
+                  ></path>
+                </g>
+              </g>
+              <g>
+                <rect x="12" y="27" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="24" y="27" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="36" y="27" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="48" y="27" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="12" y="38" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="24" y="38" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="36" y="38" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="48" y="38" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="12" y="49" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="24" y="49" fill="#B4CCB9" width="4" height="3"></rect>
+                <rect x="36" y="49" fill="#B4CCB9" width="4" height="3"></rect>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <div class="contentmCadreTrackD">
+          <span style="color: rgba(0, 0, 0, 0.6)">Total de jours joués</span>
+          <div id="txtTotalDays"></div>
+        </div>
+      </div>
+
+      <div style="flex: 1; flex-shrink: 0"></div>
+
+      <div id="btnPlayTrack">Continuer à jouer</div>
+    </div>
+    <div id="phoneHome">
       <div id="btnTrackDays">
         <svg
           id="svgTrackR"
@@ -6475,303 +6695,516 @@
 
       <div id="overallHome"></div>
       <div id="cadreSetting">
-        <div style="font-size: 1.6rem; font-weight: 600; margin-top : 0.6rem; margin-bottom: -0.4rem;z-index: 99999">Paramètres</div>
+        <div
+          style="
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 0.6rem;
+            margin-bottom: -0.4rem;
+            z-index: 99999;
+          "
+        >
+          Paramètres
+        </div>
         <div id="wrapperSetting">
           <div id="contentSettingInit">
-        <div style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 1rem;">Réglages</div>
+            <div
+              style="
+                color: rgba(0, 0, 0, 0.6);
+                font-size: 0.95rem;
+                margin-top: 1rem;
+              "
+            >
+              Réglages
+            </div>
 
-        <div class="itemSetting" id="haptique">
-          <div class="boxSvgItemSetting">
-       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 8l2 2-2 2 2 2-2 2"></path> <path d="M22 8l-2 2 2 2-2 2 2 2"></path> <rect x="8" y="5" width="8" height="14" rx="1"></rect> </g></svg>
+            <div class="itemSetting" id="haptique">
+              <div class="boxSvgItemSetting">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#000000"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M2 8l2 2-2 2 2 2-2 2"></path>
+                    <path d="M22 8l-2 2 2 2-2 2 2 2"></path>
+                    <rect x="8" y="5" width="8" height="14" rx="1"></rect>
+                  </g>
+                </svg>
+              </div>
+
+              <span
+                style="
+                  font-size: 0.96rem;
+                  font-weight: 450;
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  padding-left: 1rem;
+                "
+                >Retour haptique</span
+              >
+
+              <!-- From Uiverse.io by ErzenXz -->
+              <label class="toggleSetting" id="togglehaptique">
+                <input type="checkbox" />
+                <div class="toggleSetting-background"></div>
+                <div class="toggleSetting-handle"></div>
+              </label>
+            </div>
+
+            <div class="ligneInSD" style="margin: 0.1rem 0"></div>
+
+            <div class="itemSetting" id="sonSetting">
+              <div class="boxSvgItemSetting">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M2.00299 11.7155C2.04033 9.87326 2.059 8.95215 2.67093 8.16363C2.78262 8.0197 2.9465 7.8487 3.08385 7.73274C3.83639 7.09741 4.82995 7.09741 6.81706 7.09741C7.527 7.09741 7.88197 7.09741 8.22035 7.00452C8.29067 6.98522 8.36024 6.96296 8.4289 6.93781C8.75936 6.81674 9.05574 6.60837 9.64851 6.19161C11.9872 4.54738 13.1565 3.72527 14.138 4.08241C14.3261 4.15088 14.5083 4.24972 14.671 4.37162C15.5194 5.00744 15.5839 6.48675 15.7128 9.44537C15.7606 10.5409 15.7931 11.4785 15.7931 12C15.7931 12.5215 15.7606 13.4591 15.7128 14.5546C15.5839 17.5132 15.5194 18.9926 14.671 19.6284C14.5083 19.7503 14.3261 19.8491 14.138 19.9176C13.1565 20.2747 11.9872 19.4526 9.64851 17.8084C9.05574 17.3916 8.75936 17.1833 8.4289 17.0622C8.36024 17.037 8.29067 17.0148 8.22035 16.9955C7.88197 16.9026 7.527 16.9026 6.81706 16.9026C4.82995 16.9026 3.83639 16.9026 3.08385 16.2673C2.9465 16.1513 2.78262 15.9803 2.67093 15.8364C2.059 15.0478 2.04033 14.1267 2.00299 12.2845C2.00103 12.1878 2 12.0928 2 12C2 11.9072 2.00103 11.8122 2.00299 11.7155Z"
+                      fill="#1C274C"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M19.4895 5.55219C19.7821 5.29218 20.217 5.33434 20.4608 5.64635L19.931 6.11713C20.4608 5.64635 20.4606 5.64602 20.4608 5.64635L20.4619 5.6477L20.4631 5.64921L20.4658 5.65275L20.4727 5.66184C20.4779 5.6688 20.4844 5.67756 20.4921 5.68814C20.5075 5.70929 20.5275 5.73772 20.5515 5.77358C20.5995 5.84529 20.6635 5.94667 20.7379 6.07889C20.8868 6.34345 21.077 6.73092 21.2644 7.25038C21.6397 8.29107 22 9.85136 22 12.0002C22 14.1491 21.6397 15.7094 21.2644 16.7501C21.077 17.2695 20.8868 17.657 20.7379 17.9216C20.6635 18.0538 20.5995 18.1552 20.5515 18.2269C20.5275 18.2627 20.5075 18.2912 20.4921 18.3123C20.4844 18.3229 20.4779 18.3317 20.4727 18.3386L20.4658 18.3477L20.4631 18.3513L20.4619 18.3528C20.4616 18.3531 20.4608 18.3541 19.931 17.8833L20.4608 18.3541C20.217 18.6661 19.7821 18.7083 19.4895 18.4483C19.1983 18.1895 19.1578 17.729 19.3977 17.417C19.3983 17.4163 19.3994 17.4148 19.4009 17.4127C19.4058 17.406 19.4154 17.3925 19.4291 17.372C19.4565 17.3311 19.5003 17.2625 19.5552 17.1649C19.6649 16.9698 19.8195 16.6587 19.977 16.2221C20.2913 15.3508 20.6207 13.9695 20.6207 12.0002C20.6207 10.0309 20.2913 8.64968 19.977 7.77836C19.8195 7.34181 19.6649 7.03066 19.5552 6.8356C19.5003 6.73802 19.4565 6.66934 19.4291 6.62845C19.4154 6.608 19.4058 6.59449 19.4009 6.58778C19.3994 6.58561 19.3983 6.58416 19.3977 6.5834C19.3977 6.5834 19.3977 6.58341 19.3977 6.5834"
+                      fill="#1C274C"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M17.7571 8.41595C18.0901 8.21871 18.51 8.34663 18.6949 8.70166L18.0921 9.0588C18.6949 8.70166 18.6948 8.70134 18.6949 8.70166L18.6956 8.70295L18.6963 8.70432L18.6978 8.7073L18.7014 8.71428L18.7102 8.73227C18.7169 8.74607 18.7251 8.76348 18.7345 8.78457C18.7533 8.82676 18.7772 8.88363 18.8042 8.95574C18.8584 9.10004 18.9251 9.3049 18.99 9.57476C19.1199 10.115 19.2415 10.9119 19.2415 12.0003C19.2415 13.0888 19.1199 13.8857 18.99 14.4259C18.9251 14.6958 18.8584 14.9007 18.8042 15.045C18.7772 15.1171 18.7533 15.1739 18.7345 15.2161C18.7251 15.2372 18.7169 15.2546 18.7102 15.2684L18.7014 15.2864L18.6978 15.2934L18.6963 15.2964L18.6956 15.2978C18.6954 15.2981 18.6949 15.299 18.0921 14.9419L18.6949 15.299C18.51 15.6541 18.0901 15.782 17.7571 15.5847C17.427 15.3892 17.3063 14.9474 17.4846 14.5938L17.4892 14.5838C17.4955 14.5697 17.5075 14.5415 17.5236 14.4987C17.5557 14.4132 17.6039 14.2688 17.6539 14.0606C17.7539 13.6448 17.8622 12.9709 17.8622 12.0003C17.8622 11.0298 17.7539 10.3559 17.6539 9.94007C17.6039 9.73193 17.5557 9.58748 17.5236 9.50197C17.5075 9.45918 17.4955 9.43102 17.4892 9.41691L17.4846 9.40687C17.3063 9.05332 17.427 8.61152 17.7571 8.41595Z"
+                      fill="#1C274C"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <span
+                style="
+                  font-size: 0.96rem;
+                  font-weight: 450;
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  padding-left: 1rem;
+                "
+                >Son</span
+              >
+              <label class="toggleSetting" id="toggleSon">
+                <input type="checkbox" />
+                <div class="toggleSetting-background"></div>
+                <div class="toggleSetting-handle"></div>
+              </label>
+            </div>
+
+            <div class="ligneInSD" style="margin: 0.1rem 0"></div>
+
+            <div class="itemSetting" id="notifSetting">
+              <div class="boxSvgItemSetting">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M8.35179 20.2418C9.19288 21.311 10.5142 22 12 22C13.4858 22 14.8071 21.311 15.6482 20.2418C13.2264 20.57 10.7736 20.57 8.35179 20.2418Z"
+                      fill="#1C274C"
+                    ></path>
+                    <path
+                      d="M18.7491 9V9.7041C18.7491 10.5491 18.9903 11.3752 19.4422 12.0782L20.5496 13.8012C21.5612 15.3749 20.789 17.5139 19.0296 18.0116C14.4273 19.3134 9.57274 19.3134 4.97036 18.0116C3.21105 17.5139 2.43882 15.3749 3.45036 13.8012L4.5578 12.0782C5.00972 11.3752 5.25087 10.5491 5.25087 9.7041V9C5.25087 5.13401 8.27256 2 12 2C15.7274 2 18.7491 5.13401 18.7491 9Z"
+                      fill="#1C274C"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <span
+                style="
+                  font-size: 0.96rem;
+                  font-weight: 450;
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  padding-left: 1rem;
+                "
+                >Notifications</span
+              >
+              <label class="toggleSetting" id="toggleNotif">
+                <input type="checkbox" />
+                <div class="toggleSetting-background"></div>
+                <div class="toggleSetting-handle"></div>
+              </label>
+            </div>
+
+            <div
+              style="
+                color: rgba(0, 0, 0, 0.6);
+                font-size: 0.95rem;
+                margin-top: 1rem;
+              "
+            >
+              Quiz
+            </div>
+
+            <div class="itemSetting" id="souv">
+              <div class="boxSvgItemSetting">
+                <svg
+                  height="1.2rem"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5 19C5 18.4477 5.44772 18 6 18L18 18C18.5523 18 19 18.4477 19 19C19 19.5523 18.5523 20 18 20L6 20C5.44772 20 5 19.5523 5 19Z"
+                      fill="#000000"
+                    ></path>
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M9.87867 4.70711C11.0502 3.53554 12.9497 3.53554 14.1213 4.70711L16.6878 7.27359C16.9922 7.57795 17.4571 7.6534 17.8421 7.46091L18.5528 7.10558C20.0877 6.33813 21.7842 7.80954 21.2416 9.43755L19.4045 14.9487C18.9962 16.1737 17.8498 17 16.5585 17H7.44151C6.15022 17 5.0038 16.1737 4.59546 14.9487L2.75842 9.43755C2.21575 7.80955 3.91231 6.33813 5.44721 7.10558L6.15787 7.46091C6.54286 7.6534 7.00783 7.57795 7.31219 7.27359L9.87867 4.70711Z"
+                      fill="#000000"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <span
+                style="
+                  font-size: 0.85rem;
+                  font-weight: 450;
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  padding-left: 1rem;
+                "
+                >N'inclure dans les quiz que les pays souverains</span
+              >
+
+              <!-- From Uiverse.io by ErzenXz -->
+              <label class="toggleSetting" id="toggleSouv">
+                <input type="checkbox" />
+                <div class="toggleSetting-background"></div>
+                <div class="toggleSetting-handle"></div>
+              </label>
+            </div>
+
+            <div
+              style="
+                color: rgba(0, 0, 0, 0.6);
+                font-size: 0.95rem;
+                margin-top: 1rem;
+              "
+            >
+              Informations
+            </div>
+
+            <div class="itemSetting" id="propos">
+              <div class="boxSvgItemSetting">
+                <svg
+                  fill="#000000"
+                  viewBox="0 0 1920 1920"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm223.797 707.147c-28.531-29.561-67.826-39.944-109.227-39.455-55.225.657-114.197 20.664-156.38 40.315-100.942 47.024-178.395 130.295-242.903 219.312-11.616 16.025-17.678 34.946 2.76 49.697 17.428 12.58 29.978 1.324 40.49-9.897l.69-.74c.801-.862 1.591-1.72 2.37-2.565 11.795-12.772 23.194-25.999 34.593-39.237l2.85-3.31 2.851-3.308c34.231-39.687 69.056-78.805 115.144-105.345 27.4-15.778 47.142 8.591 42.912 35.963-2.535 16.413-11.165 31.874-17.2 47.744-21.44 56.363-43.197 112.607-64.862 168.888-23.74 61.7-47.405 123.425-70.426 185.398l-2 5.38-1.998 5.375c-20.31 54.64-40.319 108.872-53.554 165.896-10.575 45.592-24.811 100.906-4.357 145.697 11.781 25.8 36.77 43.532 64.567 47.566 37.912 5.504 78.906 6.133 116.003-2.308 19.216-4.368 38.12-10.07 56.57-17.005 56.646-21.298 108.226-54.146 154.681-92.755 47.26-39.384 88.919-85.972 126.906-134.292 12.21-15.53 27.004-32.703 31.163-52.596 3.908-18.657-12.746-45.302-34.326-34.473-11.395 5.718-19.929 19.867-28.231 29.27-10.42 11.798-21.044 23.423-31.786 34.92-21.488 22.987-43.513 45.463-65.634 67.831-13.54 13.692-30.37 25.263-47.662 33.763-21.59 10.609-38.785-1.157-36.448-25.064 2.144-21.954 7.515-44.145 15.046-64.926 30.306-83.675 61.19-167.135 91.834-250.686 19.157-52.214 38.217-104.461 56.999-156.816 17.554-48.928 32.514-97.463 38.834-149.3 4.357-35.71-4.9-72.647-30.269-98.937Zm63.72-401.498c-91.342-35.538-200.232 25.112-218.574 121.757-13.25 69.784 13.336 131.23 67.998 157.155 105.765 50.16 232.284-29.954 232.29-147.084.005-64.997-28.612-111.165-81.715-131.828Z"
+                      fill-rule="evenodd"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <span
+                style="
+                  font-size: 0.96rem;
+                  font-weight: 450;
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  padding-left: 1rem;
+                "
+                >À propos de Géo Quiz</span
+              >
+
+              <!-- From Uiverse.io by ErzenXz -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="Outline"
+                viewBox="0 0 24 24"
+                height="1.2rem"
+              >
+                <path
+                  d="M15.4,9.88,10.81,5.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14,11.29a1,1,0,0,1,0,1.42L9.4,17.29a1,1,0,0,0,1.41,1.42l4.59-4.59A3,3,0,0,0,15.4,9.88Z"
+                />
+              </svg>
+            </div>
+            <div class="ligneInSD" style="margin: 0.4rem 0"></div>
+
+            <div class="itemSetting" id="mail">
+              <div class="boxSvgItemSetting">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Filled"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M23.954,5.542,15.536,13.96a5.007,5.007,0,0,1-7.072,0L.046,5.542C.032,5.7,0,5.843,0,6V18a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V6C24,5.843,23.968,5.7,23.954,5.542Z"
+                  />
+                  <path
+                    d="M14.122,12.546l9.134-9.135A4.986,4.986,0,0,0,19,1H5A4.986,4.986,0,0,0,.744,3.411l9.134,9.135A3.007,3.007,0,0,0,14.122,12.546Z"
+                  />
+                </svg>
+              </div>
+              <span
+                style="
+                  font-size: 0.96rem;
+                  font-weight: 450;
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  padding-left: 1rem;
+                "
+                >Me contacter</span
+              >
+
+              <!-- From Uiverse.io by ErzenXz -->
+
+              <svg
+                height="1.2rem"
+                viewBox="0 0 22 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
           </div>
 
-          <span
-            style="
-              font-size: 0.96rem;
-              font-weight: 450;
-              flex: 1;
-              display: flex;
-              justify-content: flex-start;
-              padding-left: 1rem;
-            "
-            >Retour haptique</span
-          >
+          <div id="contentSettingPropos">
+            <div id="backSetting">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="Bold"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                />
+              </svg>
+              <span>Retour</span>
+            </div>
 
-          <!-- From Uiverse.io by ErzenXz -->
-          <label class="toggleSetting" id="togglehaptique">
-            <input type="checkbox" />
-            <div class="toggleSetting-background"></div>
-            <div class="toggleSetting-handle"></div>
-          </label>
-        </div>
+            <span
+              style="
+                color: rgba(0, 0, 0, 0.6);
+                font-size: 0.95rem;
+                margin-top: 1rem;
+              "
+              >Mentions légales</span
+            >
 
-        <div class="ligneInSD" style="margin: 0.1rem 0"></div>
-
-        <div class="itemSetting" id="sonSetting">
-          <div class="boxSvgItemSetting">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.00299 11.7155C2.04033 9.87326 2.059 8.95215 2.67093 8.16363C2.78262 8.0197 2.9465 7.8487 3.08385 7.73274C3.83639 7.09741 4.82995 7.09741 6.81706 7.09741C7.527 7.09741 7.88197 7.09741 8.22035 7.00452C8.29067 6.98522 8.36024 6.96296 8.4289 6.93781C8.75936 6.81674 9.05574 6.60837 9.64851 6.19161C11.9872 4.54738 13.1565 3.72527 14.138 4.08241C14.3261 4.15088 14.5083 4.24972 14.671 4.37162C15.5194 5.00744 15.5839 6.48675 15.7128 9.44537C15.7606 10.5409 15.7931 11.4785 15.7931 12C15.7931 12.5215 15.7606 13.4591 15.7128 14.5546C15.5839 17.5132 15.5194 18.9926 14.671 19.6284C14.5083 19.7503 14.3261 19.8491 14.138 19.9176C13.1565 20.2747 11.9872 19.4526 9.64851 17.8084C9.05574 17.3916 8.75936 17.1833 8.4289 17.0622C8.36024 17.037 8.29067 17.0148 8.22035 16.9955C7.88197 16.9026 7.527 16.9026 6.81706 16.9026C4.82995 16.9026 3.83639 16.9026 3.08385 16.2673C2.9465 16.1513 2.78262 15.9803 2.67093 15.8364C2.059 15.0478 2.04033 14.1267 2.00299 12.2845C2.00103 12.1878 2 12.0928 2 12C2 11.9072 2.00103 11.8122 2.00299 11.7155Z" fill="#1C274C"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M19.4895 5.55219C19.7821 5.29218 20.217 5.33434 20.4608 5.64635L19.931 6.11713C20.4608 5.64635 20.4606 5.64602 20.4608 5.64635L20.4619 5.6477L20.4631 5.64921L20.4658 5.65275L20.4727 5.66184C20.4779 5.6688 20.4844 5.67756 20.4921 5.68814C20.5075 5.70929 20.5275 5.73772 20.5515 5.77358C20.5995 5.84529 20.6635 5.94667 20.7379 6.07889C20.8868 6.34345 21.077 6.73092 21.2644 7.25038C21.6397 8.29107 22 9.85136 22 12.0002C22 14.1491 21.6397 15.7094 21.2644 16.7501C21.077 17.2695 20.8868 17.657 20.7379 17.9216C20.6635 18.0538 20.5995 18.1552 20.5515 18.2269C20.5275 18.2627 20.5075 18.2912 20.4921 18.3123C20.4844 18.3229 20.4779 18.3317 20.4727 18.3386L20.4658 18.3477L20.4631 18.3513L20.4619 18.3528C20.4616 18.3531 20.4608 18.3541 19.931 17.8833L20.4608 18.3541C20.217 18.6661 19.7821 18.7083 19.4895 18.4483C19.1983 18.1895 19.1578 17.729 19.3977 17.417C19.3983 17.4163 19.3994 17.4148 19.4009 17.4127C19.4058 17.406 19.4154 17.3925 19.4291 17.372C19.4565 17.3311 19.5003 17.2625 19.5552 17.1649C19.6649 16.9698 19.8195 16.6587 19.977 16.2221C20.2913 15.3508 20.6207 13.9695 20.6207 12.0002C20.6207 10.0309 20.2913 8.64968 19.977 7.77836C19.8195 7.34181 19.6649 7.03066 19.5552 6.8356C19.5003 6.73802 19.4565 6.66934 19.4291 6.62845C19.4154 6.608 19.4058 6.59449 19.4009 6.58778C19.3994 6.58561 19.3983 6.58416 19.3977 6.5834C19.3977 6.5834 19.3977 6.58341 19.3977 6.5834" fill="#1C274C"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M17.7571 8.41595C18.0901 8.21871 18.51 8.34663 18.6949 8.70166L18.0921 9.0588C18.6949 8.70166 18.6948 8.70134 18.6949 8.70166L18.6956 8.70295L18.6963 8.70432L18.6978 8.7073L18.7014 8.71428L18.7102 8.73227C18.7169 8.74607 18.7251 8.76348 18.7345 8.78457C18.7533 8.82676 18.7772 8.88363 18.8042 8.95574C18.8584 9.10004 18.9251 9.3049 18.99 9.57476C19.1199 10.115 19.2415 10.9119 19.2415 12.0003C19.2415 13.0888 19.1199 13.8857 18.99 14.4259C18.9251 14.6958 18.8584 14.9007 18.8042 15.045C18.7772 15.1171 18.7533 15.1739 18.7345 15.2161C18.7251 15.2372 18.7169 15.2546 18.7102 15.2684L18.7014 15.2864L18.6978 15.2934L18.6963 15.2964L18.6956 15.2978C18.6954 15.2981 18.6949 15.299 18.0921 14.9419L18.6949 15.299C18.51 15.6541 18.0901 15.782 17.7571 15.5847C17.427 15.3892 17.3063 14.9474 17.4846 14.5938L17.4892 14.5838C17.4955 14.5697 17.5075 14.5415 17.5236 14.4987C17.5557 14.4132 17.6039 14.2688 17.6539 14.0606C17.7539 13.6448 17.8622 12.9709 17.8622 12.0003C17.8622 11.0298 17.7539 10.3559 17.6539 9.94007C17.6039 9.73193 17.5557 9.58748 17.5236 9.50197C17.5075 9.45918 17.4955 9.43102 17.4892 9.41691L17.4846 9.40687C17.3063 9.05332 17.427 8.61152 17.7571 8.41595Z" fill="#1C274C"></path> </g></svg>
-</div>
-          <span
-            style="
-              font-size: 0.96rem;
-              font-weight: 450;
-              flex: 1;
-              display: flex;
-              justify-content: flex-start;
-              padding-left: 1rem;
-            "
-            >Son</span
-          >
-          <label class="toggleSetting" id="toggleSon">
-            <input type="checkbox" />
-            <div class="toggleSetting-background"></div>
-            <div class="toggleSetting-handle"></div>
-          </label>
-        </div>
-
-        <div class="ligneInSD" style="margin: 0.1rem 0"></div>
-
- <div class="itemSetting" id="notifSetting">
-          <div class="boxSvgItemSetting">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8.35179 20.2418C9.19288 21.311 10.5142 22 12 22C13.4858 22 14.8071 21.311 15.6482 20.2418C13.2264 20.57 10.7736 20.57 8.35179 20.2418Z" fill="#1C274C"></path> <path d="M18.7491 9V9.7041C18.7491 10.5491 18.9903 11.3752 19.4422 12.0782L20.5496 13.8012C21.5612 15.3749 20.789 17.5139 19.0296 18.0116C14.4273 19.3134 9.57274 19.3134 4.97036 18.0116C3.21105 17.5139 2.43882 15.3749 3.45036 13.8012L4.5578 12.0782C5.00972 11.3752 5.25087 10.5491 5.25087 9.7041V9C5.25087 5.13401 8.27256 2 12 2C15.7274 2 18.7491 5.13401 18.7491 9Z" fill="#1C274C"></path> </g></svg>
-</div>
-          <span
-            style="
-              font-size: 0.96rem;
-              font-weight: 450;
-              flex: 1;
-              display: flex;
-              justify-content: flex-start;
-              padding-left: 1rem;
-            "
-            >Notifications</span
-          >
-          <label class="toggleSetting" id="toggleNotif">
-            <input type="checkbox" />
-            <div class="toggleSetting-background"></div>
-            <div class="toggleSetting-handle"></div>
-          </label>
-        </div>
-
-        
-        <div style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 1rem;">Quiz</div>
-
-        <div class="itemSetting" id="souv">
-
-          <div class="boxSvgItemSetting">
-          <svg
-            height="1.2rem"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M5 19C5 18.4477 5.44772 18 6 18L18 18C18.5523 18 19 18.4477 19 19C19 19.5523 18.5523 20 18 20L6 20C5.44772 20 5 19.5523 5 19Z"
+            <div class="itemSetting">
+              <svg
+                height="1.2rem"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 512 512"
+                xml:space="preserve"
                 fill="#000000"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M9.87867 4.70711C11.0502 3.53554 12.9497 3.53554 14.1213 4.70711L16.6878 7.27359C16.9922 7.57795 17.4571 7.6534 17.8421 7.46091L18.5528 7.10558C20.0877 6.33813 21.7842 7.80954 21.2416 9.43755L19.4045 14.9487C18.9962 16.1737 17.8498 17 16.5585 17H7.44151C6.15022 17 5.0038 16.1737 4.59546 14.9487L2.75842 9.43755C2.21575 7.80955 3.91231 6.33813 5.44721 7.10558L6.15787 7.46091C6.54286 7.6534 7.00783 7.57795 7.31219 7.27359L9.87867 4.70711Z"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    style="fill: #00384e"
+                    d="M310.624,0H64v512h384V137.376L310.624,0z M320,54.624L393.376,128H320V54.624z M96,480V32h192v128 h128v320H96z"
+                  ></path>
+                  <polygon
+                    style="fill: #72c6ef"
+                    points="384,448 128,448 128,64 288,64 288,160 384,160 "
+                  ></polygon>
+                  <g>
+                    <rect
+                      x="176"
+                      y="368"
+                      style="fill: #00384d"
+                      width="80"
+                      height="32"
+                    ></rect>
+                    <rect
+                      x="176"
+                      y="304"
+                      style="fill: #00384d"
+                      width="160"
+                      height="32"
+                    ></rect>
+                    <rect
+                      x="176"
+                      y="240"
+                      style="fill: #00384d"
+                      width="160"
+                      height="32"
+                    ></rect>
+                  </g>
+                </g>
+              </svg>
+
+              <span
+                style="
+                  font-size: 0.96rem;
+                  font-weight: 450;
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  padding-left: 1rem;
+                "
+                >Conditions d'utilisation</span
+              >
+
+              <!-- From Uiverse.io by ErzenXz -->
+
+              <svg
+                height="1.2rem"
+                viewBox="0 0 22 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+
+            <div class="ligneInSD" style="margin: 0.4rem 0"></div>
+
+            <div class="itemSetting">
+              <svg
+                height="1.2rem"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 512 512"
+                xml:space="preserve"
                 fill="#000000"
-              ></path>
-            </g>
-          </svg>
-</div>
-          <span
-            style="
-              font-size: 0.85rem;
-              font-weight: 450;
-              flex: 1;
-              display: flex;
-              justify-content: flex-start;
-              padding-left: 1rem;
-            "
-            >N'inclure dans les quiz que les pays souverains</span
-          >
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    style="fill: #00384e"
+                    d="M310.624,0H64v512h384V137.376L310.624,0z M320,54.624L393.376,128H320V54.624z M96,480V32h192v128 h128v320H96z"
+                  ></path>
+                  <polygon
+                    style="fill: #72c6ef"
+                    points="384,448 128,448 128,64 288,64 288,160 384,160 "
+                  ></polygon>
+                  <g>
+                    <rect
+                      x="176"
+                      y="368"
+                      style="fill: #00384d"
+                      width="80"
+                      height="32"
+                    ></rect>
+                    <rect
+                      x="176"
+                      y="304"
+                      style="fill: #00384d"
+                      width="160"
+                      height="32"
+                    ></rect>
+                    <rect
+                      x="176"
+                      y="240"
+                      style="fill: #00384d"
+                      width="160"
+                      height="32"
+                    ></rect>
+                  </g>
+                </g>
+              </svg>
 
-          <!-- From Uiverse.io by ErzenXz -->
-          <label class="toggleSetting" id="toggleSouv">
-            <input type="checkbox" />
-            <div class="toggleSetting-background"></div>
-            <div class="toggleSetting-handle"></div>
-          </label>
-        </div>
+              <span
+                style="
+                  font-size: 0.96rem;
+                  font-weight: 450;
+                  flex: 1;
+                  display: flex;
+                  justify-content: flex-start;
+                  padding-left: 1rem;
+                "
+                >Règles de confidentialité</span
+              >
 
-        <div style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 1rem;">Informations</div>
+              <!-- From Uiverse.io by ErzenXz -->
 
-        <div class="itemSetting" id="propos">
-          <div class="boxSvgItemSetting">
-         <svg fill="#000000" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M960 0c530.193 0 960 429.807 960 960s-429.807 960-960 960S0 1490.193 0 960 429.807 0 960 0Zm223.797 707.147c-28.531-29.561-67.826-39.944-109.227-39.455-55.225.657-114.197 20.664-156.38 40.315-100.942 47.024-178.395 130.295-242.903 219.312-11.616 16.025-17.678 34.946 2.76 49.697 17.428 12.58 29.978 1.324 40.49-9.897l.69-.74c.801-.862 1.591-1.72 2.37-2.565 11.795-12.772 23.194-25.999 34.593-39.237l2.85-3.31 2.851-3.308c34.231-39.687 69.056-78.805 115.144-105.345 27.4-15.778 47.142 8.591 42.912 35.963-2.535 16.413-11.165 31.874-17.2 47.744-21.44 56.363-43.197 112.607-64.862 168.888-23.74 61.7-47.405 123.425-70.426 185.398l-2 5.38-1.998 5.375c-20.31 54.64-40.319 108.872-53.554 165.896-10.575 45.592-24.811 100.906-4.357 145.697 11.781 25.8 36.77 43.532 64.567 47.566 37.912 5.504 78.906 6.133 116.003-2.308 19.216-4.368 38.12-10.07 56.57-17.005 56.646-21.298 108.226-54.146 154.681-92.755 47.26-39.384 88.919-85.972 126.906-134.292 12.21-15.53 27.004-32.703 31.163-52.596 3.908-18.657-12.746-45.302-34.326-34.473-11.395 5.718-19.929 19.867-28.231 29.27-10.42 11.798-21.044 23.423-31.786 34.92-21.488 22.987-43.513 45.463-65.634 67.831-13.54 13.692-30.37 25.263-47.662 33.763-21.59 10.609-38.785-1.157-36.448-25.064 2.144-21.954 7.515-44.145 15.046-64.926 30.306-83.675 61.19-167.135 91.834-250.686 19.157-52.214 38.217-104.461 56.999-156.816 17.554-48.928 32.514-97.463 38.834-149.3 4.357-35.71-4.9-72.647-30.269-98.937Zm63.72-401.498c-91.342-35.538-200.232 25.112-218.574 121.757-13.25 69.784 13.336 131.23 67.998 157.155 105.765 50.16 232.284-29.954 232.29-147.084.005-64.997-28.612-111.165-81.715-131.828Z" fill-rule="evenodd"></path> </g></svg>
-        
-        </div>
-          <span
-            style="
-              font-size: 0.96rem;
-              font-weight: 450;
-              flex: 1;
-              display: flex;
-              justify-content: flex-start;
-              padding-left: 1rem;
-            "
-            >À propos de Géo Quiz</span
-          >
-
-          <!-- From Uiverse.io by ErzenXz -->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="Outline"
-            viewBox="0 0 24 24"
-            height="1.2rem"
-          >
-            <path
-              d="M15.4,9.88,10.81,5.29a1,1,0,0,0-1.41,0,1,1,0,0,0,0,1.42L14,11.29a1,1,0,0,1,0,1.42L9.4,17.29a1,1,0,0,0,1.41,1.42l4.59-4.59A3,3,0,0,0,15.4,9.88Z"
-            />
-          </svg>
-        </div>
-        <div class="ligneInSD" style="margin: 0.4rem 0"></div>
-
-        <div class="itemSetting" id="mail">
-
-          <div class="boxSvgItemSetting">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="Filled"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M23.954,5.542,15.536,13.96a5.007,5.007,0,0,1-7.072,0L.046,5.542C.032,5.7,0,5.843,0,6V18a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V6C24,5.843,23.968,5.7,23.954,5.542Z"
-            />
-            <path
-              d="M14.122,12.546l9.134-9.135A4.986,4.986,0,0,0,19,1H5A4.986,4.986,0,0,0,.744,3.411l9.134,9.135A3.007,3.007,0,0,0,14.122,12.546Z"
-            />
-          </svg>
-</div>
-          <span
-            style="
-              font-size: 0.96rem;
-              font-weight: 450;
-              flex: 1;
-              display: flex;
-              justify-content: flex-start;
-              padding-left: 1rem;
-            "
-            >Me contacter</span
-          >
-
-          <!-- From Uiverse.io by ErzenXz -->
-
-          <svg
-            height="1.2rem"
-            viewBox="0 0 22 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
-              fill="black"
-            />
-          </svg>
-        </div>
-        </div>
-
-        <div id="contentSettingPropos">
-              <div  id="backSetting" >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          id="Bold"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-          />
-        </svg>
-        <span>Retour</span>
+              <svg
+                height="1.2rem"
+                viewBox="0 0 22 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
           </div>
-
-      <span style="color : rgba(0,0,0,0.6); font-size : 0.95rem;margin-top : 1rem;">Mentions légales</span>
-
-               <div class="itemSetting" >
-       <svg height="1.2rem" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#00384E;" d="M310.624,0H64v512h384V137.376L310.624,0z M320,54.624L393.376,128H320V54.624z M96,480V32h192v128 h128v320H96z"></path> <polygon style="fill:#72C6EF;" points="384,448 128,448 128,64 288,64 288,160 384,160 "></polygon> <g> <rect x="176" y="368" style="fill:#00384D;" width="80" height="32"></rect> <rect x="176" y="304" style="fill:#00384D;" width="160" height="32"></rect> <rect x="176" y="240" style="fill:#00384D;" width="160" height="32"></rect> </g> </g></svg>
-
-          <span
-            style="
-              font-size: 0.96rem;
-              font-weight: 450;
-              flex: 1;
-              display: flex;
-              justify-content: flex-start;
-              padding-left: 1rem;
-            "
-            >Conditions d'utilisation</span
-          >
-
-          <!-- From Uiverse.io by ErzenXz -->
-
-          <svg
-            height="1.2rem"
-            viewBox="0 0 22 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
-              fill="black"
-            />
-          </svg>
-        </div>  
-
-        <div class="ligneInSD" style="margin: 0.4rem 0"></div>
-        
-
-         <div class="itemSetting" >
-       <svg height="1.2rem" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path style="fill:#00384E;" d="M310.624,0H64v512h384V137.376L310.624,0z M320,54.624L393.376,128H320V54.624z M96,480V32h192v128 h128v320H96z"></path> <polygon style="fill:#72C6EF;" points="384,448 128,448 128,64 288,64 288,160 384,160 "></polygon> <g> <rect x="176" y="368" style="fill:#00384D;" width="80" height="32"></rect> <rect x="176" y="304" style="fill:#00384D;" width="160" height="32"></rect> <rect x="176" y="240" style="fill:#00384D;" width="160" height="32"></rect> </g> </g></svg>
-
-          <span
-            style="
-              font-size: 0.96rem;
-              font-weight: 450;
-              flex: 1;
-              display: flex;
-              justify-content: flex-start;
-              padding-left: 1rem;
-            "
-            >Règles de confidentialité</span
-          >
-
-          <!-- From Uiverse.io by ErzenXz -->
-
-          <svg
-            height="1.2rem"
-            viewBox="0 0 22 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21.9 13.6093C21.652 16.9513 21.043 19.7523 21.017 19.8703C20.892 20.4413 20.445 20.8883 19.873 21.0143C19.69 21.0543 15.336 21.9993 11.001 21.9993C6.666 21.9993 2.313 21.0543 2.129 21.0143C1.558 20.8893 1.111 20.4423 0.985 19.8703C0.945 19.6873 0 15.3333 0 10.9983C0 6.66325 0.947 2.31025 0.987 2.12625C1.112 1.55525 1.559 1.10825 2.131 0.982251C2.249 0.957251 5.049 0.347251 8.392 0.0992514C9.223 0.0432514 9.938 0.658252 9.999 1.48425C10.06 2.31025 9.44 3.02925 8.614 3.09125C6.609 3.23925 4.789 3.53225 3.732 3.72525C3.464 5.19625 3.003 8.14325 3.003 10.9973C3.003 13.8513 3.464 16.7973 3.732 18.2683C5.203 18.5363 8.15 18.9973 11.003 18.9973C13.856 18.9973 16.803 18.5363 18.274 18.2683C18.467 17.2083 18.76 15.3853 18.908 13.3863C18.969 12.5603 19.695 11.9433 20.515 12.0013C21.341 12.0633 21.961 12.7823 21.9 13.6083V13.6093ZM13.809 3.32225C14.838 3.10725 15.858 3.01225 16.866 3.01325L8.441 11.4373C7.855 12.0223 7.855 12.9733 8.441 13.5583C8.734 13.8513 9.118 13.9973 9.502 13.9973C9.886 13.9973 10.27 13.8513 10.563 13.5583L18.987 5.13425C18.987 6.14225 18.893 7.16325 18.678 8.19125C18.509 9.00225 19.028 9.79625 19.839 9.96625C20.63 10.1383 21.448 9.62125 21.614 8.80525C22.13 6.33725 22.129 3.89025 21.611 1.53225C21.486 0.961251 21.039 0.514251 20.468 0.389251C18.11 -0.128749 15.663 -0.129749 13.195 0.386251C12.384 0.556251 11.864 1.35025 12.034 2.16125C12.204 2.97225 12.999 3.49425 13.809 3.32225Z"
-              fill="black"
-            />
-          </svg>
-        </div>  
-
-
         </div>
-
-
-
-
-
-
-       </div> 
       </div>
       <div id="cadreHome">
         <div id="btnPremium" class="btnHome">
@@ -8079,6 +8512,8 @@
       <div id="cachePm"></div>
       <div id="pm4Choix">
         <div id="pmTitle">Menu pause</div>
+
+        <div id="wrapperScorePm">
         <div id="cadreScorePm">
           Score :<span style="margin-left: 0.4rem" id="spnScore"></span>/<span
             class="maxQ"
@@ -8127,6 +8562,10 @@
             </svg>
           </div>
         </div>
+        <div id="xpPm">+50 XP</div>
+
+        </div>
+
         <div
           class="ligneIn"
           style="width: 100%; border: 1px solid rgb(234, 233, 233)"
@@ -12430,8 +12869,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function getC(classe) {
         return document.querySelector(`${classe}`);
       }
-
-
     </script>
 
     <!--Script Home-->
@@ -12480,29 +12917,27 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const txtTrackDays = document.getElementById("txtTrackDays");
 
       const f1RTrack = document.getElementById("f1RTrack");
-      
+
       const f2RTrack = document.getElementById("f2RTrack");
       const f3RTrack = document.getElementById("f3RTrack");
-      
-      
 
       const svgTrackB = document.getElementById("svgTrackB");
       const svgTrackR = document.getElementById("svgTrackR");
       const btnTrackDays = document.getElementById("btnTrackDays");
-      const crossTrack = document.getElementById('crossTrack')
-      const btnPlayTrack = document.getElementById('btnPlayTrack')
-      const txtCadreTrack = document.getElementById('txtCadreTrack')
-      const txtMaxTrack = document.getElementById('txtMaxTrack')
-      const txtTotalDays = document.getElementById('txtTotalDays')
-      const txtMotivation = document.getElementById('txtMotivation')
+      const crossTrack = document.getElementById("crossTrack");
+      const btnPlayTrack = document.getElementById("btnPlayTrack");
+      const txtCadreTrack = document.getElementById("txtCadreTrack");
+      const txtMaxTrack = document.getElementById("txtMaxTrack");
+      const txtTotalDays = document.getElementById("txtTotalDays");
+      const txtMotivation = document.getElementById("txtMotivation");
 
+      const cadreTrackDays = document.getElementById("cadreTrackDays");
+      const boxIconeTrack = document.getElementById("boxIconeTrack");
 
-      
-      const cadreTrackDays = document.getElementById('cadreTrackDays')
-      const boxIconeTrack = document.getElementById('boxIconeTrack')
-
-      const mCadresTrackDPremium = document.querySelectorAll('.mCadreTrackDPremium')
-      const mCadresTrackD = document.querySelectorAll('.mCadresTrackD')
+      const mCadresTrackDPremium = document.querySelectorAll(
+        ".mCadreTrackDPremium",
+      );
+      const mCadresTrackD = document.querySelectorAll(".mCadresTrackD");
 
       const phoneConfig = document.getElementById("phoneConfig");
       const play = document.getElementById("play");
@@ -12518,9 +12953,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const cadreSetting = document.getElementById("cadreSetting");
       const overallHome = document.getElementById("overallHome");
-      const contentSettingPropos = document.getElementById('contentSettingPropos')
-      const contentSettingInit = document.getElementById('contentSettingInit')
-      
+      const contentSettingPropos = document.getElementById(
+        "contentSettingPropos",
+      );
+      const contentSettingInit = document.getElementById("contentSettingInit");
 
       const haptique = document.getElementById("haptique");
       const togglehaptique = document.getElementById("togglehaptique");
@@ -12529,15 +12965,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const toggleSouv = document.getElementById("toggleSouv");
 
       const mail = document.getElementById("mail");
-      const propos = getId("propos")
+      const propos = getId("propos");
 
-      const backSetting = document.getElementById('backSetting')
+      const backSetting = document.getElementById("backSetting");
 
       const sonSetting = document.getElementById("sonSetting");
       const toggleSon = document.getElementById("toggleSon");
 
-      const notifSetting = getId('notifSetting')
-      const toggleNotif = getId('toggleNotif')
+      const notifSetting = getId("notifSetting");
+      const toggleNotif = getId("toggleNotif");
 
       const cadreMenuRD = document.getElementById("cadreMenuRD");
       const crossRD = document.getElementById("crossRD");
@@ -12701,7 +13137,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "P",
           t: "Obtenir un total de 20 bonnes réponses",
           svg: "check",
-          max: 10,
+          max: 20,
           xp: 150,
           mode: "all",
           continent: "all",
@@ -14208,9 +14644,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       }
 
-
-
-       /// Script paramètres
+      /// Script paramètres
 
       let haptic = false;
       const checkboxH = togglehaptique.querySelector("input");
@@ -14225,7 +14659,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       checkboxH.addEventListener("change", (e) => {
         haptic = e.target.checked;
-        saveProgress()
+        saveProgress();
       });
 
       let sound = false;
@@ -14241,18 +14675,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       checkbox.addEventListener("change", (e) => {
         sound = e.target.checked;
-        saveProgress()
+        saveProgress();
       });
-
-
-
 
       //////
       let onlySouv = false;
 
       toggleSouv.addEventListener("click", (e) => {
         e.stopPropagation();
-        saveProgress()
+        saveProgress();
       });
 
       souv.addEventListener("click", () => {
@@ -14272,7 +14703,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       });
       /////
- let notif = false;
+      let notif = false;
 
       toggleNotif.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -14289,7 +14720,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
       /// Fin Scrit paramètres
 
-
       // Vider le cache
       // localStorage.removeItem("geoquiz_progress_v1");
       // location.reload();
@@ -14300,7 +14730,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let lastStreakDate = null;
       let maxTrack = 0;
       let totalDays = 0;
-      
 
       function saveProgress() {
         const data = {
@@ -14346,8 +14775,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           onlySouv = data.onlySouv ?? false;
           haptic = data.haptic ?? false;
           notif = data.notif ?? false;
-          
-
 
           return data; // on retourne data pour récupérer defisQSelected ensuite
         } catch (e) {
@@ -14359,12 +14786,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const savedData = loadProgress();
 
-
       checkbox.checked = sound;
       checkboxH.checked = haptic;
       checkBoxSouv.checked = onlySouv;
       checkBoxNotif.checked = notif;
-
 
       txtLvlPlayer.textContent = lvlPlayer;
       txtProgLvl.textContent = nbrProgLvl;
@@ -14427,50 +14852,46 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       // Fonction à appeler quand la condition du jour est remplie
 
-      btnTrackDays.addEventListener('click',()=>{
-        phoneHome.style.transition = "transform 0.25s ease"
-        cadreTrackDays.style.transition = "top 0.25s ease"
+      btnTrackDays.addEventListener("click", () => {
+        phoneHome.style.transition = "transform 0.25s ease";
+        cadreTrackDays.style.transition = "top 0.25s ease";
 
-        cadreTrackDays.classList.add('active')
-        phoneHome.style.transformOrigin = "center bottom"
-        phoneHome.style.transform = "scale(0.94)"
+        cadreTrackDays.classList.add("active");
+        phoneHome.style.transformOrigin = "center bottom";
+        phoneHome.style.transform = "scale(0.94)";
 
         setTimeout(() => {
-          
-          mCadresTrackDPremium.forEach(track=>{
-            track.style.animation = "shine-sweep 6s ease"
-          })
-          
+          mCadresTrackDPremium.forEach((track) => {
+            track.style.animation = "shine-sweep 6s ease";
+          });
         }, 500);
-      })
+      });
 
       crossTrack.addEventListener("pointerdown", (e) => e.stopPropagation());
 
-      crossTrack.addEventListener('click',(e)=>{
+      crossTrack.addEventListener("click", (e) => {
         cadreTrackDays.style.top = "";
-        phoneHome.style.transition = "transform 0.25s ease"
-        cadreTrackDays.style.transition = "top 0.25s ease"
+        phoneHome.style.transition = "transform 0.25s ease";
+        cadreTrackDays.style.transition = "top 0.25s ease";
 
-        cadreTrackDays.classList.remove('active')
-        phoneHome.style.transformOrigin = "center bottom"
-        phoneHome.style.transform = "scale(1)"
-        
-      
-         mCadresTrackDPremium.forEach(track=>{
-          track.style.animation = ""
-        })
-      })
+        cadreTrackDays.classList.remove("active");
+        phoneHome.style.transformOrigin = "center bottom";
+        phoneHome.style.transform = "scale(1)";
 
-      btnPlayTrack.addEventListener('pointerdown',(e)=>e.stopPropagation())
-      btnPlayTrack.addEventListener('click',()=>{
-        crossTrack.click()
-        play.click()
-      })
+        mCadresTrackDPremium.forEach((track) => {
+          track.style.animation = "";
+        });
+      });
 
+      btnPlayTrack.addEventListener("pointerdown", (e) => e.stopPropagation());
+      btnPlayTrack.addEventListener("click", () => {
+        crossTrack.click();
+        play.click();
+      });
 
       //move cadreTrack
-      
-         let moveST;
+
+      let moveST;
       let difYT;
       let startMoveT;
 
@@ -14488,21 +14909,24 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (moveST) {
           cadreTrackDays.style.transition = "none";
           cadreTrackDays.style.top = e.clientY - difYT + "px";
-          phoneHome.style.transition = "none"
-          phoneHome.style.transform =  `scale(${Math.max(0.94, Math.min(0.94 + 0.04* cadreTrackDays.getBoundingClientRect().top/window.innerHeight*1.75,1))})`
+          phoneHome.style.transition = "none";
+          phoneHome.style.transform = `scale(${Math.max(0.94, Math.min(0.94 + ((0.04 * cadreTrackDays.getBoundingClientRect().top) / window.innerHeight) * 1.75, 1))})`;
         }
       });
 
       document.addEventListener("pointerup", () => {
         if (!moveST) return;
         cadreTrackDays.style.transition = "";
-          phoneHome.style.transition = ""
+        phoneHome.style.transition = "";
 
         moveST = false;
-        if (cadreTrackDays.getBoundingClientRect().top < window.innerHeight * 0.25) {
-          cadreTrackDays.style.top = ""
-          cadreTrackDays.classList.add("active");}
-         else {
+        if (
+          cadreTrackDays.getBoundingClientRect().top <
+          window.innerHeight * 0.25
+        ) {
+          cadreTrackDays.style.top = "";
+          cadreTrackDays.classList.add("active");
+        } else {
           crossTrack.click();
         }
       });
@@ -14515,88 +14939,103 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           return;
         }
         btnTrackDays.classList.add("active");
-         f2RTrack.style.animation = "fire2 0.5s linear infinite";
-         f2RTrack.style.animationDelay = "0.025s"
-      f1RTrack.style.animation = "fire3 0.5s linear infinite";
-      f3RTrack.style.animation = "fire3 0.5s linear infinite";
+        f2RTrack.style.animation = "fire2 0.5s linear infinite";
+        f2RTrack.style.animationDelay = "0.025s";
+        f1RTrack.style.animation = "fire3 0.5s linear infinite";
+        f3RTrack.style.animation = "fire3 0.5s linear infinite";
         streak += 1;
-        totalDays +=1;
-        boxIconeTrack.style.filter = ""
-        txtMotivation.textContent = L_motivation[Math.floor(Math.random()*L_motivation.length)];
-        txtTotalDays.textContent = totalDays + " jours"
-        if(streak>maxTrack){
+        totalDays += 1;
+        boxIconeTrack.style.filter = "";
+        txtMotivation.textContent =
+          L_motivation[Math.floor(Math.random() * L_motivation.length)];
+        txtTotalDays.textContent = totalDays + " jours";
+        if (streak > maxTrack) {
           maxTrack = streak;
-          txtMaxTrack.textContent = maxTrack + " jours"
+          txtMaxTrack.textContent = maxTrack + " jours";
         }
 
         txtTrackDays.textContent = streak;
-        txtCadreTrack.textContent = streak + " jours de suite " + (streak ===0 ? "" : "!");
+        txtCadreTrack.textContent =
+          streak + " jours de suite " + (streak === 0 ? "" : "!");
         boxIconeTrack.style.filter = "grayscale(0)";
-
-
 
         svgTrackB.style.display = "none";
         svgTrackR.style.display = "flex";
-        btnTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)"
+        btnTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)";
 
         lastStreakDate = aujourdHui;
         saveProgress();
       }
-      let L_motivation = ["Votre série grandit jour après jour, à demain !","La régularité paie ! Revenez demain pour continuer votre série.", "Restez dans la course, revenez demain !","Ne cassez pas la chaîne ! On se retrouve demain ?","Ne laissez pas votre série s'arrêter là, revenez demain !","À demain pour continuer sur cette lancée !","Votre régularité fait la différence, à demain !","Revenez demain pour prolonger votre série !","Gardez le rythme, on se retrouve demain","Continuez ainsi, à demain !"]
+      let L_motivation = [
+        "Votre série grandit jour après jour, à demain !",
+        "La régularité paie ! Revenez demain pour continuer votre série.",
+        "Restez dans la course, revenez demain !",
+        "Ne cassez pas la chaîne ! On se retrouve demain ?",
+        "Ne laissez pas votre série s'arrêter là, revenez demain !",
+        "À demain pour continuer sur cette lancée !",
+        "Votre régularité fait la différence, à demain !",
+        "Revenez demain pour prolonger votre série !",
+        "Gardez le rythme, on se retrouve demain",
+        "Continuez ainsi, à demain !",
+      ];
       function trackLoading() {
         const aujourdHui = getTodayKey();
         const ecart = nbJoursEntre(lastStreakDate, aujourdHui);
         if (ecart >= 2) {
           streak = 0;
           txtTrackDays.textContent = streak;
-         txtCadreTrack.textContent = streak + " jours de suite " + (streak ===0 ? "" : "!");
+          txtCadreTrack.textContent =
+            streak + " jours de suite " + (streak === 0 ? "" : "!");
+          boxIconeTrack.style.filter = "grayscale(100%)";
 
           lastStreakDate = null;
           btnTrackDays.classList.remove("active");
-           f2RTrack.style.animation = "";
-      f1RTrack.style.animation = "";
-      f3RTrack.style.animation = "";
+          f2RTrack.style.animation = "";
+          f1RTrack.style.animation = "";
+          f3RTrack.style.animation = "";
           saveProgress();
           return;
         }
         if (ecart === 0) {
           btnTrackDays.classList.add("active");
-           f2RTrack.style.animation = "fire2 0.5s linear infinite";
-      f1RTrack.style.animation = "fire3 0.5s linear infinite";
-      f3RTrack.style.animation = "fire3 0.5s linear infinite";
+          f2RTrack.style.animation = "fire2 0.5s linear infinite";
+          f1RTrack.style.animation = "fire3 0.5s linear infinite";
+          f3RTrack.style.animation = "fire3 0.5s linear infinite";
           svgTrackB.style.display = "none";
           svgTrackR.style.display = "flex";
-          btnTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)"
-          txtMotivation.textContent = L_motivation[Math.floor(Math.random()*L_motivation.length)];
-          boxIconeTrack.style.filter = ""
+          btnTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)";
+          txtMotivation.textContent =
+            L_motivation[Math.floor(Math.random() * L_motivation.length)];
+          boxIconeTrack.style.filter = "";
         } else {
           streak === 0
-            ? (btnTrackDays.classList.remove("active"),f2RTrack.style.animation = "",
-      f1RTrack.style.animation = "",
-      f3RTrack.style.animation = "")
+            ? (btnTrackDays.classList.remove("active"),
+              (f2RTrack.style.animation = ""),
+              (f1RTrack.style.animation = ""),
+              (f3RTrack.style.animation = ""))
             : (btnTrackDays.classList.add("active"),
-            f2RTrack.style.animation = "fire2 0.5s linear infinite",
-      f1RTrack.style.animation = "fire3 0.5s linear infinite",
-      f3RTrack.style.animation = "fire3 0.5s linear infinite"
-          )
-          
+              (f2RTrack.style.animation = "fire2 0.5s linear infinite"),
+              (f1RTrack.style.animation = "fire3 0.5s linear infinite"),
+              (f3RTrack.style.animation = "fire3 0.5s linear infinite"));
+
           svgTrackB.style.display = "flex";
-          btnTrackDays.style.outline = "1px dashed rgba(255,255,255,0.2)"
+          btnTrackDays.style.outline = "1px dashed rgba(255,255,255,0.2)";
           svgTrackR.style.display = "none";
-          txtMotivation.textContent = (streak===0? "Terminez un quiz pour commencer votre série" : "Terminez un quiz pour continuer votre série" )
-          boxIconeTrack.style.filter = "grayscale(100%)"
+          txtMotivation.textContent =
+            streak === 0
+              ? "Terminez un quiz pour commencer votre série"
+              : "Terminez un quiz pour continuer votre série";
+          boxIconeTrack.style.filter = "grayscale(100%)";
         }
 
-         if(streak>maxTrack){
+        if (streak > maxTrack) {
           maxTrack = streak;
         }
-        txtMaxTrack.textContent = maxTrack + " jours"
+        txtMaxTrack.textContent = maxTrack + " jours";
         txtTrackDays.textContent = streak;
-         txtCadreTrack.textContent = streak + " jours de suite " + (streak ===0 ? "" : "!");
-        txtTotalDays.textContent = totalDays + " jours"
-
-         
-
+        txtCadreTrack.textContent =
+          streak + " jours de suite " + (streak === 0 ? "" : "!");
+        txtTotalDays.textContent = totalDays + " jours";
       }
       trackLoading();
       // fin script localstorage
@@ -14627,13 +15066,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         btnReward.classList.remove("notifReward");
         cadreRD.classList.add("active");
         overallHome.classList.add("active");
+        setTimeout(() => {
+           L_actionReward.forEach((valeur, cle, map) => {
+           valeur()
+           requestAnimationFrame(()=>{
+             cle.remove()
+           })
+ });
+        }, 400);
+        
       });
       crossRD.addEventListener("click", () => {
         cadreRD.classList.remove("active");
         overallHome.classList.remove("active");
       });
-
-
 
       btnSetting.addEventListener("click", () => {
         cadreSetting.classList.add("active");
@@ -14651,17 +15097,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         window.location.href = `mailto:tonadresse@exemple.com?subject=${sujet}&body=${corps}`;
       });
 
-      propos.addEventListener('click',()=>{
-        [contentSettingInit,contentSettingPropos].forEach(set=>{
-          set.classList.add('side')
-        })
-      })
+      propos.addEventListener("click", () => {
+        [contentSettingInit, contentSettingPropos].forEach((set) => {
+          set.classList.add("side");
+        });
+      });
 
-      backSetting.addEventListener('click',()=>{
-        [contentSettingInit,contentSettingPropos].forEach(set=>{
-          set.classList.remove('side')
-        })
-      })
+      backSetting.addEventListener("click", () => {
+        [contentSettingInit, contentSettingPropos].forEach((set) => {
+          set.classList.remove("side");
+        });
+      });
 
       play.addEventListener("click", () => {
         cChooseTrouver = null;
@@ -14915,6 +15361,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let L_orderClasser = [];
       let L_elPropClasser = [];
       let D_elClasser = {};
+      let L_actionReward =  new Map(); // actions à réaliser la prochaine fois qu'on appuie sur btnreward
 
       L_btn4ChoixHasard.forEach((btn) => idProps_m.set(btn, null)); // Clef : DROM, valeur : identifiant
 
@@ -14935,6 +15382,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           el.style.animation = "";
           el.classList.remove("scored");
         });
+        getId("xpPm").style.animation = ""
+        getId("xpPm").classList.remove("scored");
+
 
         if (
           (parseInt(qNumber.textContent) >= maxQ &&
@@ -14945,10 +15395,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         ) {
           affichePm();
           enregistrerJourTrackDays();
-          document.getElementById("cadreScorePm").style.display = "flex";
+          document.getElementById("wrapperScorePm").style.display = "flex";
           let delayStar = 500;
-
-          (L_stars.slice(0, Math.floor(score / (Math.floor(maxQ) / 3))).forEach(
+          let nbrStars = Math.floor(score / (Math.floor(maxQ) / 3))
+          let xpFinPartie = Math.max(10, nbrStars*50);
+          getId('xpPm').textContent = xpFinPartie + " XP";
+          
+          (L_stars.slice(0, nbrStars).forEach(
             (el) => {
               setTimeout(() => {
                 el.style.animation = "scoredX 0.5s linear";
@@ -14958,6 +15411,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             },
           ),
             (pause4Choix.style.opacity = "0"));
+          setTimeout(() => {
+             getId("xpPm").style.animation = "scoredXp 0.5s linear";
+             getId("xpPm").classList.add("scored");
+          }, nbrStars*200+500);
+
+          L_claimedQ["XXX"] = false
+          const xpFin = document.createElement("div");
+          xpFin.className = "xpQ";
+          cadreRD.append(xpFin)
+          attachXpClickHandler(xpFin, {id : "XXX", xp :xpFinPartie })
+          L_actionReward.set(xpFin, ()=>xpFin.click())
+
           pause4Choix.style.pointerEvents = "none";
           L_reponses = [];
 
@@ -15258,7 +15723,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
             if (parseInt(qNumber.textContent) >= maxQ) {
               document.querySelector(".btn-suivant").textContent = "Fin";
-              document.getElementById("cadreScorePm").style.display = "flex";
+              document.getElementById("wrapperScorePm").style.display = "flex";
               btnReprendre.textContent = "Rejouer";
               document.getElementById("pmTitle").textContent =
                 "Fin de partie !";
@@ -15639,7 +16104,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             pause4Choix.style.opacity = "0";
             pause4Choix.style.pointerEvents = "none";
             document.querySelector(".btn-suivant").textContent = "Fin";
-            document.getElementById("cadreScorePm").style.display = "flex";
+            document.getElementById("wrapperScorePm").style.display = "flex";
             btnReprendre.textContent = "Rejouer";
             document.getElementById("pmTitle").textContent = "Fin de partie !";
           }
@@ -16006,7 +16471,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         spnScore.textContent = score;
 
         pause4Choix.style = "";
-        document.getElementById("cadreScorePm").style.display = "none";
+        document.getElementById("wrapperScorePm").style.display = "none";
         qNumber.textContent = "0";
         document.querySelector(".btn-suivant").textContent = "Suivant →";
         btnReprendre.textContent = "Reprendre";
@@ -16102,7 +16567,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 15;
+      let maxQ = 3;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
@@ -16282,7 +16747,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       //Voir sur la carte
-      
+
       //Élements qui disparaissent
       const L_replace = [
         getId("cadreQ4Choix"),
@@ -16831,7 +17296,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           L_reponses = [];
           fillPhonePlay();
           setTimeout(() => {
-            document.getElementById("cadreScorePm").style.display = "none";
+            document.getElementById("wrapperScorePm").style.display = "none";
             contentPm.innerHTML = ``;
             document.getElementById("pmTitle").textContent = "Menu Pause";
             btnReprendre.textContent = "Reprendre";
@@ -16887,7 +17352,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let animeNight;
       media.addEventListener("change", (e) => {
         return;
-        if(!isMobile){return}
+        if (!isMobile) {
+          return;
+        }
         if (window.innerWidth > window.innerHeight) {
           currentPhone.style.display = "none";
           document.getElementById("phoneFlemme").style.display = "flex";
@@ -34395,12 +34862,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log("son", sound)
-        console.log("haptic", haptic)
-        console.log("onlySouv", onlySouv)
-        console.log("notif", notif)
-        console.log("/////")
-        
+        console.log("son", sound);
+        console.log("haptic", haptic);
+        console.log("onlySouv", onlySouv);
+        console.log("notif", notif);
+        console.log("/////");
       }
       // loop();
       /*phoneHome.style.display="none"
