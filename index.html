@@ -4469,6 +4469,7 @@
       #wrapperScorePm{
         display : flex;
         box-sizing: border-box;
+        margin-bottom : 0.2rem;
         width: 100%;
         justify-content: space-between;
         align-items: center;
@@ -4492,14 +4493,17 @@
         border-radius: 0.4rem;
         padding : 0.25rem;
         background: rgba(255, 255, 255, 0.08);
-        outline: 1px solid rgba(255,255,255,0.5);
+        outline: 1px solid rgba(255,255,255,0);
         transition : background  0.5s ease, color 0.5s ease;
         }
         #xpPm.scored {/* Option 1 — Vert sauge */
 outline: none;
 color: #ffffff;
+font-weight: 500;
 background: rgba(18, 155, 229, 0.533);
-outline : 1px solid rgba(255,255,255,0.2)
+background: rgba(20, 162, 117, 0.6);
+box-shadow: 0 0 2px rgba(20, 162, 117, 1);  
+outline : 1px solid rgba(255,255,255,0.25)
 }
 
           @keyframes scoredXp {
@@ -16567,7 +16571,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 3;
+      let maxQ = 15  ;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
