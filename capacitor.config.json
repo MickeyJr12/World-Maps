@@ -1,5 +1,10 @@
 {
   "appId": "com.mickeyjr12.geoquiz",
   "appName": "Géo Quiz",
-  "webDir": "www"
+  "webDir": "www",
+  "plugins": {
+    "ScreenOrientation": {
+      "orientation": "portrait"
+    }
+  }
 }

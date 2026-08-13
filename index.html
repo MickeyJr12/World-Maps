@@ -5603,7 +5603,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         position: relative;
         align-items: center;
         border-radius: 0.4rem;
-        outline: 1.6px solid rgba(240, 240, 240, 0.2);
+        outline: 0.5px solid #cfe3d1;
         box-shadow: 0 0 0.08rem rgba(0, 0, 0, 0.4);
         width: 80%;
         height: 3.4rem;
@@ -5706,7 +5706,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         justify-content: center;
         align-items: center;
         flex-shrink: 0;
-        height: 1.2rem; /* hauteur fixe */
+        height: 1.6rem; /* hauteur fixe */
         aspect-ratio: 1/1;
       }
 
@@ -5772,15 +5772,16 @@ outline : 1px solid rgba(255,255,255,0.2)
         }
       }
 
-      .txtPop {
-        font-size: 0.85rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.08rem;
-        color: rgba(0, 0, 0, 0.45);
+      .txtPop { 
         margin: 1.5rem 0 0.6rem 1.2rem;
         align-self: flex-start; /* aligné à gauche comme le reste du contenu */
-      }
+        font-size: 13px;
+  font-weight: 600;
+  color: #8a8a8a;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
       #txtPopSD {
         margin: 0.8rem 1rem;
       }
@@ -5812,22 +5813,21 @@ outline : 1px solid rgba(255,255,255,0.2)
         height: 2rem;
       }
       .celPopD {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        cursor: pointer;
-        padding: 0.4rem;
-        font-weight: 500;
-        color: rgba(0, 0, 0, 0.8);
-        border-radius: 0.5rem;
-        outline: 1.6px solid rgba(0, 184, 148, 0.25);
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-
-        transition:
-          background 0.2s ease,
-          outine 0.2s ease;
+        text-align : center;
+         border: 0.5px solid #cfe3d1;
+  border-radius: 14px;
+  padding: 16px 12px;
+  background: #ffffff;
+  color: #2e7d4f;
+  font-size: 15px;
+  font-weight: 550;
+  transition: transform 0.08s ease, background 0.15s ease, background 0.2s ease;
       }
+
+    .celPop  {
+       transform: scale(0.97);
+  background: #f2f8f3;
+    }
       .celPopD.active {
         outline: 1.6px solid rgba(43, 192, 127, 0.6);
         background: rgba(43, 192, 127, 0.1);
@@ -12831,10 +12831,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
 
       <div id="txtLastUpdate">
-        <p style="width: 100%">
+        <!-- <p style="width: 100%">
           Taux fournis par
           <a href="https://www.exchangerate-api.com">ExchangeRate-API</a>
-        </p>
+        </p> -->
         <span style="flex-wrap: nowrap">Dernière actualisation :</span>
         <p id="pLast" style="letter-spacing: none"></p>
       </div>
@@ -12874,6 +12874,81 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function getC(classe) {
         return document.querySelector(`${classe}`);
       }
+    </script>
+
+<head>
+  <script type="importmap">
+  {
+    "imports": {
+      "@capacitor/core": "https://esm.sh/@capacitor/core@6",
+      "@capacitor/haptics": "https://esm.sh/@capacitor/haptics@6"
+    }
+  }
+  </script>
+  <script type="module" src="ton-fichier.js"></script>
+</head>
+
+    <script type="module">
+
+        // script retour haptic //
+
+      import { Haptics, ImpactStyle, NotificationType } from '@capacitor/haptics';
+import { Capacitor } from '@capacitor/core';
+
+// La fonction, sans "export" puisqu'elle reste locale au fichier
+async function hapticFeedback(type = 'light') {
+  try {
+    if (Capacitor.isNativePlatform()) {
+      switch (type) {
+        case 'success':
+          await Haptics.notification({ type: NotificationType.Success });
+          break;
+        case 'warning':
+          await Haptics.notification({ type: NotificationType.Warning });
+          break;
+        case 'error':
+          await Haptics.notification({ type: NotificationType.Error });
+          break;
+        case 'medium':
+          await Haptics.impact({ style: ImpactStyle.Medium });
+          break;
+        case 'heavy':
+          await Haptics.impact({ style: ImpactStyle.Heavy });
+          break;
+        default:
+          await Haptics.impact({ style: ImpactStyle.Light });
+      }
+    } else if ('vibrate' in navigator) {
+      const patterns = {
+        light: 10,
+        medium: 25,
+        heavy: 50,
+        success: [10, 30, 10],
+        warning: [20, 40, 20],
+        error: [30, 50, 30]
+      };
+      navigator.vibrate(patterns[type] || 10);
+    }
+  } catch (e) {
+    console.warn('Haptic feedback failed:', e);
+  }
+}
+// hapticFeedback('success') Appel
+
+// 'light' → interactions simples (clic, sélection, changement d'onglet)
+// 'medium' → action un peu plus significative (validation, changement d'étape)
+// 'heavy' → événement fort (fin de partie, déblocage d'un succès)
+// 'success' → bonne réponse, réussite
+// 'warning' → avertissement (ex. temps presque écoulé)
+// 'error' → mauvaise réponse, erreur
+
+// hapticFeedback('light');    // pulsation légère
+// hapticFeedback('medium');   // pulsation moyenne
+// hapticFeedback('heavy');    // pulsation forte
+// hapticFeedback('success');  // motif "réussite"
+// hapticFeedback('warning');  // motif "attention"
+// hapticFeedback('error');    // motif "erreur"
+
     </script>
 
     <!--Script Home-->
@@ -14664,6 +14739,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       checkboxH.addEventListener("change", (e) => {
         haptic = e.target.checked;
+        hapticFeedback('light')
         saveProgress();
       });
 
@@ -14680,6 +14756,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       checkbox.addEventListener("change", (e) => {
         sound = e.target.checked;
+        hapticFeedback('light')
         saveProgress();
       });
 
@@ -14698,6 +14775,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const checkBoxSouv = toggleSouv.querySelector("input");
       checkBoxSouv.addEventListener("change", (e) => {
         onlySouv = !onlySouv;
+        hapticFeedback('light')
         saveProgress();
         [
           document.getElementById("nbrQ15"),
@@ -14721,6 +14799,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const checkBoxNotif = toggleNotif.querySelector("input");
       checkBoxNotif.addEventListener("change", (e) => {
         notif = !notif;
+        hapticFeedback('light')
         saveProgress();
       });
       /// Fin Scrit paramètres
@@ -31771,8 +31850,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         requestAnimationFrame(() => {
-          document.querySelectorAll(".letter").forEach((let) => {
-            let.style.display = "flex";
+          document.querySelectorAll(".letter").forEach((lettre) => {
+            lettre.style.display = "flex";
           });
           const L_lAdd2 = [];
           L_lAdd.forEach((baseLetter) => {
@@ -31780,9 +31859,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               document.getElementById("case" + baseLetter).parentNode,
             );
           });
-          document.querySelectorAll(".letter").forEach((let) => {
-            if (!L_lAdd2.includes(let)) {
-              let.style.display = "none";
+          document.querySelectorAll(".letter").forEach((lettre) => {
+            if (!L_lAdd2.includes(lettre)) {
+              lettre.style.display = "none";
             }
           });
         });
@@ -33517,6 +33596,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function scrollToLetter(el) {
         const letter = el?.closest(".letter");
         if (!letter) return;
+        hapticFeedback('light')
         const target = document.getElementById(
           "letter" + letter.textContent.trim().toUpperCase(),
         );
@@ -34155,7 +34235,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function scrollToLetterD(el) {
         const letter = el?.closest(".letterD");
         if (!letter) return;
-
+        hapticFeedback('light')
         const target = document.getElementById(
           "letterD" + letter.textContent.trim().toUpperCase(),
         );
@@ -34798,12 +34878,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             });
           }
         });
-        document.querySelectorAll(".letterD").forEach((let) => {
-          let.style.display = "flex";
+        document.querySelectorAll(".letterD").forEach((lettre) => {
+          lettre.style.display = "flex";
         });
-        document.querySelectorAll(".letterD").forEach((let) => {
-          if (!L_lAdd.includes(let)) {
-            let.style.display = "none";
+        document.querySelectorAll(".letterD").forEach((lettre) => {
+          if (!L_lAdd.includes(lettre)) {
+            lettre.style.display = "none";
           }
         });
         document.getElementById("wrapperContentSD").append(alphabetD);
