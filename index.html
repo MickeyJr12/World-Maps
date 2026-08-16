@@ -15452,7 +15452,13 @@ const backTopP = document.querySelectorAll('.backTopP')
 const backTopCadreP = document.getElementById('backTopCadreP')
 const backTopCadreP2 = document.getElementById('backTopCadreP2')
 const backTopCadreP3 = document.getElementById('backTopCadreP3')
+const btnDon= document.getElementById('btnDon')
 
+
+btnDon.addEventListener('click',()=>{
+  window.open('https://ko-fi.com/geoquiz', '_blank');
+  
+})
 backTopCadreP.style.animation = "backgroundPX 100s linear infinite"
 backTopCadreP2.style.animation = "backgroundPX2 100s linear infinite"
 backTopCadreP3.style.animation = "backgroundPX3 100s linear infinite"
@@ -15464,7 +15470,6 @@ carouselPremium.addEventListener('scroll', () => {
   const maxScroll = carouselPremium.scrollWidth - carouselPremium.clientWidth;
   const progress = maxScroll > 0 ? carouselPremium.scrollLeft / maxScroll : 0;
 
-  // opacity va de 1 (slide 1) à 0 (slide 2)
   const opacity = 1 - progress;
 
   backTopP.forEach(el=>{
