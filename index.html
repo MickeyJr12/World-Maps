@@ -5042,8 +5042,15 @@ outline : 1px solid rgba(255,255,255,0.2)
         width: 2rem;
         flex-shrink: 0;
       }
+
+
       .icone-carte path {
         fill: #1a5fb4;
+      }
+      
+      
+      .btn-carte.lockP .icone-carte path {
+        fill: #2b1a05;
       }
 
       .btn-carte .texte-carte {
@@ -5068,13 +5075,18 @@ outline : 1px solid rgba(255,255,255,0.2)
         background: white;
         cursor: pointer;
       }
-      .btn-carte.cliquable.lockP{
-        
-        background: linear-gradient(135deg, rgba(217, 164, 65, 1), rgba(217, 164, 65, 1));
-  border: 2px solid rgba(217, 164, 65, 0.25);
-  color: #8a7355;
+      .btn-carte.cliquable.lockP{ 
+        background: linear-gradient(135deg, #d9a441, #a67623);
+  border: none;
+  color: #2b1a05;
+  box-shadow: 0 3px 8px rgba(166, 118, 35, 0.4);}
+      .btn-carte .mDiamant{
+    display : none
+  }
+  .btn-carte.cliquable.lockP .mDiamant{
+    display : flex
+  }
       
-      }
       .btn-carte.cliquable .texte-carte {
         max-width: 8rem;
         opacity: 1;
@@ -9293,6 +9305,15 @@ outline : 1px solid rgba(255,255,255,0.2)
           />
         </svg>
         <span class="texte-carte">Voir sur la carte</span>
+        <svg class="mDiamant" viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z" fill="#2b1a05"/>
+<path d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z" fill="#2b1a05"/>
+<path d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z" fill="#2b1a05"/>
+<path d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z" fill="#2b1a05"/>
+<path d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z" fill="#2b1a05"/>
+<path d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z" fill="#2b1a05"/>
+</svg>
+
       </button>
 
       <div id="pause4Choix">
@@ -13555,6 +13576,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function getC(classe) {
         return document.querySelector(`${classe}`);
       }
+
+
+
+
+      document.addEventListener('click', (e) => {
+  const lock = e.target.closest('.lockP');
+  if (lock) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
+    btnPremium.click();
+  }
+}, true);
+
+      let oneTimeMap = false //fais en sorte de ne voir qu'une fois la map par quiz
+
+
     </script>
 
 <head>
@@ -16309,6 +16346,8 @@ carouselPremium.addEventListener('scroll', () => {
         reponseFound = false;
         L_reponse = [];
         desactiverCarte();
+        oneTimeMap ? btnCarte.classList.add('lockP') : ""
+
         //Fonction
         let paysDispos = Object.keys(L_q).filter(
           (id) =>
@@ -17310,6 +17349,8 @@ carouselPremium.addEventListener('scroll', () => {
         score = 0;
         track = 0;
         currentChronoQ = 0;
+        oneTimeMap = false;
+        btnCarte.classList.remove("lockP")
         startChronoQ(currentChronoQ);
         spnScore.textContent = score;
 
@@ -17720,6 +17761,7 @@ carouselPremium.addEventListener('scroll', () => {
       }
 
       function afficherMaps() {
+        oneTimeMap = true
         viewMaps = true;
         //Cacher les éléments
         L_replace.forEach((b) => {
@@ -18124,7 +18166,9 @@ carouselPremium.addEventListener('scroll', () => {
         ) {
           score = 0;
           track = 0;
-          spnScore.textContent = score;
+          oneTimeMap = false;
+          btnCarte.classList.remove("lockP")
+            spnScore.textContent = score;
 
           pause4Choix.style.opacity = "1";
           pause4Choix.style.pointerEvents = "all";
@@ -35724,15 +35768,6 @@ carouselPremium.addEventListener('scroll', () => {
       //   e.preventDefault()
       // },true) // le true fait en sorte de faire ce listener avant le premier
 
-      const locksP = document.querySelectorAll('.lockP')
-
-      locksP.forEach(lock=>{
-        lock.addEventListener('click',(e)=>{
-          e.stopImmediatePropagation()
-          e.preventDefault()
-          btnPremium.click()
-        },true)
-      })
       // loop();
       /*phoneHome.style.display="none"
       phonePlay.style.display="flex"*/
