@@ -4556,6 +4556,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap : 0.5rem;
         padding: 8px 16px;
         border-radius: 12px;
         font-size: 0.95rem;
@@ -7958,7 +7959,7 @@ outline : 1px solid rgba(255,255,255,0.2)
               <div class="qr q" id="capitaleQ">Capitale</div>
               <div class="qr q" id="nomQ">Nom</div>
               <div class="qr q" id="mapsQ">Carte</div>
-              <div class="qr q" id="contourQ">Contours</div>
+              <div class="qr q" id="contourQ">Silhouette</div>
               <div class="qr q" id="superficieQ">Superficie</div>
               <div class="qr q" id="populationQ">Population</div>
             </div>
@@ -7975,7 +7976,7 @@ outline : 1px solid rgba(255,255,255,0.2)
               <div class="qr r" id="nomR" style="display: none">Nom</div>
               <div class="qr r" id="mapsR" style="display: none">Carte</div>
               <div class="qr r" id="contourR" style="display: none">
-                Contours
+                Silhouette
               </div>
               <div class="qr r" id="superficieR" style="display: none">
                 Superficie
@@ -8113,16 +8114,9 @@ outline : 1px solid rgba(255,255,255,0.2)
             </div>
 
             <div id="regionScroll">
-              <div class="cadreRegion lockP" id="allC">
+              <div class="cadreRegion" id="allC">
 
-                <svg class="mDiamant" style="position : absolute; right : 0.4rem; top : 0.4rem;" viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z" fill="#d9a441"/>
-<path d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z" fill="#d9a441"/>
-<path d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z" fill="#d9a441"/>
-<path d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z" fill="#d9a441"/>
-<path d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z" fill="#d9a441"/>
-<path d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z" fill="#d9a441"/>
-</svg>
+               
 
 
                 <svg
@@ -9054,20 +9048,38 @@ outline : 1px solid rgba(255,255,255,0.2)
                   15s
                 </div>
                 <div
-                  class="chrono-option"
+                  class="chrono-option lockP"
                   id="chrono30"
                   data-value="30"
                   data-label="30s"
                 >
                   30s
+
+                   <svg class="mDiamant" viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z" fill="#d9a441"/>
+<path d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z" fill="#d9a441"/>
+<path d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z" fill="#d9a441"/>
+<path d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z" fill="#d9a441"/>
+<path d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z" fill="#d9a441"/>
+<path d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z" fill="#d9a441"/>
+</svg>
                 </div>
                 <div
-                  class="chrono-option"
+                  class="chrono-option lockP"
                   id="chrono1"
                   data-value="60"
                   data-label="1min"
                 >
                   1min
+
+                   <svg class="mDiamant"  viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z" fill="#d9a441"/>
+<path d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z" fill="#d9a441"/>
+<path d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z" fill="#d9a441"/>
+<path d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z" fill="#d9a441"/>
+<path d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z" fill="#d9a441"/>
+<path d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z" fill="#d9a441"/>
+</svg>
                 </div>
 
                 <div
@@ -11123,7 +11135,7 @@ outline : 1px solid rgba(255,255,255,0.2)
                   </clipPath>
                 </defs>
               </svg>
-              <div class="txtMenuCadre">Contours</div>
+              <div class="txtMenuCadre">Silhouette</div>
             </div>
 
             <div
@@ -35685,7 +35697,15 @@ carouselPremium.addEventListener('scroll', () => {
       //   e.preventDefault()
       // },true) // le true fait en sorte de faire ce listener avant le premier
 
-      
+      const locksP = document.querySelectorAll('.lockP')
+
+      locksP.forEach(lock=>{
+        lock.addEventListener('click',(e)=>{
+          e.stopImmediatePropagation()
+          e.preventDefault()
+          btnPremium.click()
+        },true)
+      })
       // loop();
       /*phoneHome.style.display="none"
       phonePlay.style.display="flex"*/
