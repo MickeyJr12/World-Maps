@@ -5057,9 +5057,9 @@ outline : 1px solid rgba(255,255,255,0.2)
       }
       
       
-      .btn-carte.lockP .icone-carte path {
+      /* .btn-carte.lockP .icone-carte path {
         fill: #2b1a05;
-      }
+      } */
 
       .btn-carte .texte-carte {
         max-width: 0;
@@ -5084,10 +5084,8 @@ outline : 1px solid rgba(255,255,255,0.2)
         cursor: pointer;
       }
       .btn-carte.cliquable.lockP{ 
-        background: linear-gradient(135deg, #d9a441, #a67623);
-  border: none;
-  color: #2b1a05;
-  box-shadow: 0 3px 8px rgba(166, 118, 35, 0.4);}
+         background: rgba(255,255,255,0.5)
+}
       .btn-carte .mDiamant{
     display : none
   }
@@ -5099,6 +5097,11 @@ outline : 1px solid rgba(255,255,255,0.2)
         max-width: 8rem;
         opacity: 1;
       }
+
+      .btn-carte .mDiamant path {
+        fill : #1a5fb4;
+      }
+
 
       #pause4Choix {
         display: flex;
@@ -16329,8 +16332,7 @@ carouselPremium.addEventListener('scroll', () => {
         reponseFound = false;
         L_reponse = [];
         desactiverCarte();
-        // oneTimeMap ? btnCarte.classList.add('lockP') : "" à retirer
-
+        oneTimeMap ? btnCarte.classList.add('lockP') : "" ;
         //Fonction
         let paysDispos = Object.keys(L_q).filter(
           (id) =>
