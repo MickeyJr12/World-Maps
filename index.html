@@ -4101,6 +4101,7 @@
       .chrono-wrapper {
         cursor: pointer;
       }
+
       .back {
         display: flex;
         align-items: center;
@@ -4238,6 +4239,8 @@
       .btnMode:active {
         background: rgba(218, 37, 37, 0.05);
       }
+
+      
 
       #gridQR {
         display: grid;
@@ -4692,6 +4695,11 @@
       }
       #playConfig.active:active {
         transform: scale(0.97);
+      }
+
+      .btnSelected{
+        border-color : rgba(192, 57, 43, 0.4);
+        background : rgba(218,37,37,0.12);
       }
       /*CSS 4 choix*/
 
@@ -6165,10 +6173,10 @@ outline : 1px solid rgba(255,255,255,0.2)
         height : 0.8rem;
       }
 
-      .lockP{
-        background: linear-gradient(135deg, rgba(217, 164, 65, 0.15), rgba(217, 164, 65, 0.08));
+      .lockP:active{
+        background: linear-gradient(135deg, rgba(217, 164, 65, 0.2), rgba(217, 164, 65, 0.1));
   border: 2px solid rgba(217, 164, 65, 0.25);
-  color: #8a7355;
+  /* color: #8a7355; */
       }
 
 
@@ -8022,17 +8030,8 @@ outline : 1px solid rgba(255,255,255,0.2)
                 Populations
               </div>
               <div class="qr r" id="nbrClass2" data-nbr="2">2</div>
-              <div class="qr r lockP" id="nbrClass3" data-nbr="3" >3
+              <div class="qr r " id="nbrClass3" data-nbr="3" >3</div>
 
-                <svg class="mDiamant" viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z" fill="#d9a441"/>
-<path d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z" fill="#d9a441"/>
-<path d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z" fill="#d9a441"/>
-<path d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z" fill="#d9a441"/>
-<path d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z" fill="#d9a441"/>
-<path d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z" fill="#d9a441"/>
-</svg>
-              </div>
               <div class="qr r lockP" id="nbrClass4" data-nbr="4">4
 
                 <svg class="mDiamant" viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8094,25 +8093,18 @@ outline : 1px solid rgba(255,255,255,0.2)
                     15
                   </div>
                   <div
-                    class="nbrQ-option lockP"
+                    class="nbrQ-option"
                     id="nbrQ20"
                     data-value="20"
                     data-label="20"
                   >
                     20
 
-                    <svg class="mDiamant" viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z" fill="#d9a441"/>
-<path d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z" fill="#d9a441"/>
-<path d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z" fill="#d9a441"/>
-<path d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z" fill="#d9a441"/>
-<path d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z" fill="#d9a441"/>
-<path d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z" fill="#d9a441"/>
-</svg>
+                   
                   </div>
 
                   <div
-                    class="nbrQ-option lockP"
+                    class="nbrQ-option"
                     id="nbrQ25"
                     data-value="25"
                     data-label="25"
@@ -9085,21 +9077,12 @@ outline : 1px solid rgba(255,255,255,0.2)
                   15s
                 </div>
                 <div
-                  class="chrono-option lockP"
+                  class="chrono-option"
                   id="chrono30"
                   data-value="30"
                   data-label="30s"
                 >
                   30s
-
-                   <svg class="mDiamant" viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z" fill="#d9a441"/>
-<path d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z" fill="#d9a441"/>
-<path d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z" fill="#d9a441"/>
-<path d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z" fill="#d9a441"/>
-<path d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z" fill="#d9a441"/>
-<path d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z" fill="#d9a441"/>
-</svg>
                 </div>
                 <div
                   class="chrono-option lockP"
@@ -16037,7 +16020,7 @@ carouselPremium.addEventListener('scroll', () => {
           document.getElementById("modeChoix"),
           document.getElementById("drapeauQ"),
           document.getElementById("nomR"),
-          document.getElementById("Afrique"),
+          document.getElementById("allC"),
           document.getElementById("normal"),
           document.getElementById('chrono15'),
         ].forEach((el) => {
@@ -16346,7 +16329,7 @@ carouselPremium.addEventListener('scroll', () => {
         reponseFound = false;
         L_reponse = [];
         desactiverCarte();
-        oneTimeMap ? btnCarte.classList.add('lockP') : ""
+        // oneTimeMap ? btnCarte.classList.add('lockP') : "" à retirer
 
         //Fonction
         let paysDispos = Object.keys(L_q).filter(
@@ -16434,6 +16417,8 @@ carouselPremium.addEventListener('scroll', () => {
           // remplir les réponses
 
           cBoxs.forEach((c) => {
+            if (c === qqTrouver) {return}
+
             reponseFound = false;
             while (!reponseFound) {
               p_id =
@@ -17032,7 +17017,7 @@ carouselPremium.addEventListener('scroll', () => {
           activePlay();
 
           qrs.forEach((q) => {
-            q.style = "";
+            q.classList.remove('btnSelected');
             q.style.display = "none";
           });
 
@@ -17051,7 +17036,7 @@ carouselPremium.addEventListener('scroll', () => {
               L_config.r = null;
               activePlay();
               r.forEach((q) => {
-                q.style = "";
+                q.classList.remove('btnSelected');
                 q.style.display = "none";
               });
 
@@ -17079,11 +17064,9 @@ carouselPremium.addEventListener('scroll', () => {
         group.forEach((el) => {
           el.addEventListener("click", () => {
             group.forEach((item) => {
-              item.style.background = "";
-              item.style.border = "";
+              item.classList.remove('btnSelected')
             });
-            el.style.borderColor = "rgba(192, 57, 43, 0.4)";
-            el.style.background = "rgba(218,37,37,0.12)";
+            el.classList.add('btnSelected')
           });
         });
       });
@@ -17335,8 +17318,7 @@ carouselPremium.addEventListener('scroll', () => {
 
           L_btn.forEach((group) => {
             group.forEach((el) => {
-              el.style.background = "";
-              el.style.border = "";
+              el.classList.remove('btnSelected')
             });
           });
           activePlay();
@@ -17451,7 +17433,7 @@ carouselPremium.addEventListener('scroll', () => {
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 3  ;
+      let maxQ = 15  ;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
@@ -17785,6 +17767,7 @@ carouselPremium.addEventListener('scroll', () => {
         globe.style.filter = "";
         mCadre.style.filter = "";
 
+        console.log(L_reponse)
         paths.forEach((p) => {
           if (L_reponse.includes(p.id)) {
             if (p.id === idBonneReponse) {
@@ -18130,8 +18113,7 @@ carouselPremium.addEventListener('scroll', () => {
 
           L_btn.forEach((group) => {
             group.forEach((el) => {
-              el.style.background = "";
-              el.style.border = "";
+              el.classList.remove('btnSelected')
             });
           });
           activePlay();
@@ -35454,7 +35436,6 @@ carouselPremium.addEventListener('scroll', () => {
               currentDV;
         cadreSD.style.top = "";
         cadreSD.classList.remove("active");
-        // tf=false // à retirer
         if (tf) {
           fetchWithCache(
             `https://open.er-api.com/v6/latest/${currentDD}`,
@@ -35756,13 +35737,9 @@ carouselPremium.addEventListener('scroll', () => {
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log("son", sound);
-        console.log("haptic", haptic);
-        console.log("onlySouv", onlySouv);
-        console.log("notif", notif);
-        console.log("/////");
+        console.log(L_config.r)
       }
-
+// loop()
       // play.addEventListener('click',(e)=>{
       //   e.stopImmediatePropagation()
       //   e.preventDefault()
