@@ -36128,14 +36128,14 @@ const RarrowSlidePm = document.getElementById('RarrowSlidePm');
 
 LarrowSlidePm.addEventListener('click', () => {
   carouselGridPm.scrollBy({
-    left: -carouselGridPm.clientWidth,
+    left: -carouselGridPm.getBoundingClientRect().width,
     behavior: 'smooth'
   });
 });
 
 RarrowSlidePm.addEventListener('click', () => {
   carouselGridPm.scrollBy({
-    left: carouselGridPm.clientWidth,
+    left: carouselGridPm.getBoundingClientRect().width,
     behavior: 'smooth'
   });
 });
