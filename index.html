@@ -3247,10 +3247,11 @@
 
 .carousel {
   display: flex;
-
-  box-sizing: border-box;
-  width: 100%;
+  box-sizing : border-box;
+  padding : 2rem;
+  padding-top : 0;
   gap : 4rem;
+  width: 100%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -3263,17 +3264,17 @@
 }
 
 .slide {
-  display: flex;
+  display: flex; 
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
-  box-sizing: border-box;
-  width : 100%;
-  gap: 0.4rem;
+  align-items : center;
+  
+  gap : 0.4rem;
   flex: 0 0 100%;
   scroll-snap-align: center;
-  scroll-snap-stop: always; 
+  scroll-snap-stop: always;
 }
+
 .dots {
   display: flex;
   margin-bottom : 0.4rem;
@@ -7161,6 +7162,11 @@ color: #94a3b8;
         <span  style="display: flex; flex-wrap: nowrap;align-items: center;"><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.1rem; background-color:  rgba(251, 36, 36, 0.551);margin-right: 0.4rem;"></div>
         Faux
         </span>
+
+         <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.1rem; background-color:  rgba(36, 169, 251, 0.551);margin-right: 0.4rem;"></div>
+        En cours
+        </span>
+        
       </div>
 
       <div id="cadreDetailPm">
@@ -36114,11 +36120,11 @@ carouselPremium.addEventListener('scroll', () => {
         cadrePm.classList.add('active')
         btn
       })
-      btnE.click()
 
         const carouselGridPm = document.getElementById('carouselGridPm');
 const LarrowSlidePm = document.getElementById('LarrowSlidePm');
 const RarrowSlidePm = document.getElementById('RarrowSlidePm');
+
 
 LarrowSlidePm.addEventListener('click', () => {
   carouselGridPm.scrollBy({
@@ -36134,12 +36140,13 @@ RarrowSlidePm.addEventListener('click', () => {
   });
 });
 
+
+
 function updateArrows() {
   const maxScroll = carouselGridPm.scrollWidth - carouselGridPm.clientWidth;
-  const threshold = 2; // tolérance en px pour les arrondis
 
-  LarrowSlidePm.style.opacity = carouselGridPm.scrollLeft <= threshold ? '0.3' : '1';
-  RarrowSlidePm.style.opacity = carouselGridPm.scrollLeft >= maxScroll - threshold ? '0.3' : '1';
+  LarrowSlidePm.style.opacity = carouselGridPm.scrollLeft <= 0 ? '0.3' : '1';
+  RarrowSlidePm.style.opacity = carouselGridPm.scrollLeft >= maxScroll - 1 ? '0.3' : '1';
 }
 
 carouselGridPm.addEventListener('scroll', updateArrows);
