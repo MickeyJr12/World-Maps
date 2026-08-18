@@ -4974,7 +4974,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         background: rgba(6, 103, 239, 0.8);
         cursor: pointer;
       }
-      .btnPm {
+      /* .btnPm {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -4988,7 +4988,7 @@ outline : 1px solid rgba(255,255,255,0.2)
       .btnPm:active {
         transform: scale(1.01);
         filter: brightness(0.92);
-      }
+      } */
 
       .back {
         display: flex;
@@ -6183,6 +6183,201 @@ outline : 1px solid rgba(255,255,255,0.2)
       }
 
 
+      /* CSS pm */
+      .btnE{
+        position : absolute; 
+        left : 50%;
+        top : 50%;
+        padding : 2rem;
+        z-index: 999999999999999;
+        border-radius : 50%;
+        background : red;
+      }
+
+      #cadrePm {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 130;
+        opacity : 0;
+        pointer-events: none;
+        color: white;
+        user-select: none;
+        inset: 0;
+        margin: auto;
+        padding: 0.8rem;
+        padding-bottom: calc(env(safe-area-inset-bottom) + 0.2rem);
+        padding-top : calc(env(safe-area-inset-top) + 0.5rem);
+        border-radius: 0.8rem;
+        margin-top: 0rem;
+        height: 100%;
+        max-width: 600px;
+        gap: 0.8rem;
+
+        background: linear-gradient(180deg, #2f8fd4, #1a5fa0);
+        backdrop-filter: blur(10px);
+        transform: scale(0.95);
+        transform-origin: center bottom;
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease;
+      }
+
+      #cadrePm.active{
+        pointer-events: all;
+        opacity : 1;
+        transform : none;
+      }
+
+       .arrowSlidePm{
+        height : 1.5rem;
+        fill : rgba(255,255,255,1);
+        transition : opacity  0.25s ease;
+      }
+      .arrowSlidePm.active{
+        fill : white;
+      }
+
+      #wrapperGridPm {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        gap: 0.2rem;
+        padding : 0 0.4rem;
+      }
+
+      #gridPm{
+        display : grid;
+        width : 100%;
+        gap : 0.5rem;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: repeat(3,1fr);
+      }
+
+      .celGridPm{
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  background-color: rgba(36, 169, 251, 0.551);
+  transition: transform 0.2s ease;
+      }
+      .celGridPm:active{
+        transform : scale(0.96);
+        filter : brightness(0.9)
+      }
+      .celGridPm.good{
+        background-color: rgba(36, 251, 118, 0.551);
+      }
+
+      .celGridPm.bad{
+        background-color: rgba(251, 36, 36, 0.551);
+      }
+
+
+      #cadreDetailPm{
+        display : flex;
+        flex-direction: column;
+        gap : 0.8rem;
+        padding : 0.8rem;
+        box-sizing: border-box;
+        width : 100%;
+        border-radius: 0.6rem;
+        background-color: rgba(0,0,0,0.2);
+      }
+      .halfDetailPm{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width : 100%;
+        color : rgba(255,255,255,0.6);
+        font-size: 0.9rem;
+      }
+
+      .propRepPm{
+        font-size: 1rem;
+      }
+       .propRepPm.good{
+        color : rgba(36, 251, 118, 0.551)
+      }
+
+      .propRepPm.bad{
+        color : rgb(217, 49, 49)
+      } 
+     
+
+      #btnCartePm{
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        gap : 0.5rem;
+        padding: 0.5rem;
+        border-radius: 50rem;
+
+         background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  outline: 1px solid rgba(255, 255, 255, 0.4);
+transition: transform 0.2s ease;
+      }
+      #btnCartePm:active{
+        transform : scale(0.96);
+      }
+      #lineInPm{
+        margin : 0.6rem 0;
+        width: 90%;
+        border-radius: 50%;
+        border-radius: 50em;
+        outline: 0.01rem solid rgba(72, 231, 255, 0.218);
+      }
+
+      .btnPm{
+        display : flex;
+        justify-content: center;
+        gap : 0.6rem;
+        align-items: center;
+        width  : 100%;
+        border-radius: 0.8rem;
+        box-sizing: border-box;
+        padding : 0.85rem;
+        transition : transform 0.2s ease;
+      }
+      .btnPm:active{
+        transform : scale(0.96)
+      }
+      .btnPm svg {
+        height : 1rem;
+      }
+      .btnPm svg path {
+      fill : white;
+      }
+
+
+      #btnReprendre{
+        background: #3b82f6;
+        color: #ffffff;
+      }
+
+      #btnRecommencer{
+        background: rgba(255, 255, 255, 0.1);
+color: #e2e8f0;
+border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      #btnQuitter{
+        background: transparent;
+color: #94a3b8;
+      }
+     
+      /* Fin CSS pm */
+
+
     </style>
     <!--HTML FLemme-->
 
@@ -6873,6 +7068,152 @@ outline : 1px solid rgba(255,255,255,0.2)
     </div>
 
     <div id="phoneHome">
+      <div class="btnE">5</div>
+       <!-- HTML PM -->
+        <div id="cadrePm">
+      <span style="font-size: 1.4rem; font-weight: 500; align-self: flex-start"
+        >Pause</span
+      >
+      <div
+        style="
+          display: flex;
+          font-weight: 400;
+          color: rgba(255, 255, 255, 0.6);
+          width: 100%;
+          justify-content: space-between;
+        "
+      >
+        <span>Récapitulatif</span>
+        <span>1/3</span>
+      </div>
+
+      <div id="wrapperGridPm">
+         <svg
+          class="arrowSlidePm"
+        id="LarrowSlidePm"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Bold"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+          />
+        </svg>
+
+        <div class="carousel" id="carouselGridPm" style="padding: 1rem;">
+          <div class="slide">
+            <div id="gridPm">
+              <div class="celGridPm good">1</div>
+              <div class="celGridPm bad">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+              <div class="celGridPm">1</div>
+
+            </div>
+
+          </div>
+          <div class="slide">Slide 2</div>
+          <div class="slide">Slide 3</div>
+        </div>
+
+
+          <svg
+          class="arrowSlidePm"
+        id="RarrowSlidePm"
+        style="transform : rotate(180deg)"
+          fill="white"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Bold"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+          />
+        </svg>
+      </div>
+
+
+      <div style="display: flex; flex-wrap: nowrap; width : 100%; gap : 1.6rem;margin-top: -0.8rem;margin-bottom: 1rem;">
+        <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.1rem; background-color:  rgba(36, 251, 118, 0.551);margin-right: 0.4rem;"></div>
+        Correct
+        </span>
+
+        <span  style="display: flex; flex-wrap: nowrap;align-items: center;"><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.1rem; background-color:  rgba(251, 36, 36, 0.551);margin-right: 0.4rem;"></div>
+        Faux
+        </span>
+      </div>
+
+      <div id="cadreDetailPm">
+        <div class="halfDetailPm">
+          <span>
+            Question 12
+          </span>
+
+
+          <div id="btnCartePm">
+              <svg
+            style="height : 1.1rem;"
+            fill="#2563eb"
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7,23.894a4.57,4.57,0,0,1-.527-.122l-2.869-.9a5.013,5.013,0,0,1-3.6-4.8V6A5,5,0,0,1,6.92,1.388L7,1.425ZM20.68,1.167l-.021-.007-2.715-.9A4.951,4.951,0,0,0,17,.053V22.315l2.054.592A4,4,0,0,0,24,19.021V5.876A5.01,5.01,0,0,0,20.68,1.167ZM15,.19S9.157,1.863,9,1.88v22c.1-.021,6-1.636,6-1.636Z"/>
+        </svg>
+        <span>Voir sur la carte</span>
+          </div>
+        </div>
+
+        <div class="halfDetailPm">
+          <div style="display: flex; flex-direction: column; gap : 0.5rem">
+            <span>Ta réponse</span>
+            <span class="propRepPm good" id="propPm" >Laos</span>
+          </div>
+
+            <div style="display: flex; flex-direction: column;gap : 0.5rem">
+            <span>Ta réponse</span>
+            <span class="propRepPm bad" id="repPm"  >France</span>
+
+          </div>
+        </div>
+      </div>
+
+      <div id="lineInPm"></div>
+      <div style="flex:1"></div>
+      <div class="btnPm" id="btnReprendre">
+        <svg viewBox="0 0 24 24"ZZ fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z" fill="white"></path> </g></svg>
+        Reprendre
+        <svgstyle="opacity : 0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z" fill="#1C274C"></path> </g></svgstyle=>
+      </div>
+      <div class="btnPm" id="btnRecommencer">
+        <svg  viewBox="0 -2 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>replay</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-414.000000, -623.000000)" fill="#000000"> <path d="M445.67,635 L443.841,635 C442.868,628.218 437.051,623 430,623 C424.551,623 419.841,626.12 417.527,630.664 L421.282,632.108 C422.996,629.062 426.255,627 430,627 C434.838,627 438.873,630.436 439.799,635 L437.389,635 C437.079,635.301 436.783,635.486 437.227,636.007 L440.957,639.801 C441.267,640.101 441.768,640.101 442.076,639.801 L445.832,636.007 C446.141,635.706 445.979,635.301 445.67,635 L445.67,635 Z M430,647 C425.522,647 421.733,644.057 420.459,640 L422.647,640 C422.957,639.7 423.118,639.294 422.81,638.994 L419.054,635.199 C418.745,634.899 418.244,634.899 417.935,635.199 L414.204,638.994 C413.761,639.515 414.057,639.7 414.366,640 L416.199,640 C417.284,645.933 423.041,651 430,651 C435.093,651 439.537,648.271 441.987,644.205 L438.202,642.711 C436.396,645.302 433.397,647 430,647 L430,647 Z" id="replay" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+        Recommencer
+        <svg style="opacity : 0" viewBox="0 -3 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>replay</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-412.000000, -622.000000)" fill="#000000"> <path d="M443.67,633 L440.827,633 C439.862,626.772 434.488,622 427.984,622 C422.969,622 418.624,624.839 416.451,628.991 L418.315,629.736 C420.184,626.318 423.813,624 427.984,624 C433.381,624 437.862,627.881 438.805,633 L435.389,633 C435.079,633.301 434.783,633.486 435.227,634.007 L438.957,637.801 C439.267,638.101 439.768,638.101 440.076,637.801 L443.832,634.007 C444.141,633.706 443.979,633.301 443.67,633 L443.67,633 Z M427.984,646 C422.945,646 418.702,642.616 417.396,638 L420.647,638 C420.957,637.7 421.118,637.294 420.81,636.994 L417.054,633.199 C416.745,632.899 416.244,632.899 415.935,633.199 L412.204,636.994 C411.761,637.515 412.057,637.7 412.366,638 L415.347,638 C416.703,643.73 421.834,648 427.984,648 C432.664,648 436.754,645.524 439.047,641.82 L437.164,641.068 C435.193,644.039 431.819,646 427.984,646 L427.984,646 Z" id="replay" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+      </div>
+      <div class="btnPm" id="btnQuitter">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" ><path d="M19,24H5c-2.757,0-5-2.243-5-5V9.724c0-1.665,.824-3.215,2.204-4.145L9.203,.855c1.699-1.146,3.895-1.146,5.594,0l7,4.724c1.379,.93,2.203,2.479,2.203,4.145v9.276c0,2.757-2.243,5-5,5Z"/></svg>
+      Quitter
+      <svg style="opacity : 0" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M19,24H5c-2.757,0-5-2.243-5-5V9.724c0-1.665,.824-3.215,2.204-4.145L9.203,.855c1.699-1.146,3.895-1.146,5.594,0l7,4.724c1.379,.93,2.203,2.479,2.203,4.145v9.276c0,2.757-2.243,5-5,5Z"/></svg>
+
+      </div>
+    </div>
+        <!-- Fin HTML PM -->
+
+
+
       <div id="btnTrackDays">
         <svg
           id="svgTrackR"
@@ -7795,7 +8136,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         </div>
       </div>
       <div id="cadreHome">
-        <div id="btnPremium" class="btnHome">
+       <div id="btnPremium" class="btnHome">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Layer_1"
@@ -35755,6 +36096,47 @@ carouselPremium.addEventListener('scroll', () => {
         phonePlay.appendChild(mCadre)
         phonePlay.appendChild(cadre)
       }, 10000);*/
+
+
+      const btnE = document.querySelector('.btnE')
+      const cadrePm = getId("cadrePm")
+      btnE.addEventListener('click',()=>{
+        cadrePm.classList.add('active')
+        btn
+      })
+
+        const carouselGridPm = document.getElementById('carouselGridPm');
+const LarrowSlidePm = document.getElementById('LarrowSlidePm');
+const RarrowSlidePm = document.getElementById('RarrowSlidePm');
+
+
+LarrowSlidePm.addEventListener('click', () => {
+  carouselGridPm.scrollBy({
+    left: -carouselGridPm.clientWidth,
+    behavior: 'smooth'
+  });
+});
+
+RarrowSlidePm.addEventListener('click', () => {
+  carouselGridPm.scrollBy({
+    left: carouselGridPm.clientWidth,
+    behavior: 'smooth'
+  });
+});
+
+
+
+function updateArrows() {
+  const maxScroll = carouselGridPm.scrollWidth - carouselGridPm.clientWidth;
+
+  LarrowSlidePm.style.opacity = carouselGridPm.scrollLeft <= 0 ? '0.3' : '1';
+  RarrowSlidePm.style.opacity = carouselGridPm.scrollLeft >= maxScroll - 1 ? '0.3' : '1';
+}
+
+carouselGridPm.addEventListener('scroll', updateArrows);
+updateArrows(); // état initial
+
+
     </script>
   </body>
 </html>
