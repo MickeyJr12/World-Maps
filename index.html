@@ -7100,6 +7100,7 @@ color: #94a3b8;
       <div id="wrapperGridPm">
          <svg
           class="arrowSlidePm"
+          style="opacity : 0.3"
         id="LarrowSlidePm"
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
@@ -7141,7 +7142,7 @@ color: #94a3b8;
           <svg
           class="arrowSlidePm"
         id="RarrowSlidePm"
-        style="transform : rotate(180deg)"
+        style="transform : rotate(180deg); opacity : 1"
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
           id="Bold"
@@ -36118,39 +36119,53 @@ carouselPremium.addEventListener('scroll', () => {
       btnE.addEventListener('click',()=>{
         btnE.style.display = "none"
         cadrePm.classList.add('active')
-        btn
       })
+      btnE.click()
 
         const carouselGridPm = document.getElementById('carouselGridPm');
 const LarrowSlidePm = document.getElementById('LarrowSlidePm');
 const RarrowSlidePm = document.getElementById('RarrowSlidePm');
+const slides = carouselGridPm.querySelectorAll('.slide');
 
+function getCurrentIndex() {
+  let closest = 0;
+  let closestDist = Infinity;
+  slides.forEach((slide, i) => {
+    const dist = Math.abs(slide.offsetLeft - carouselGridPm.scrollLeft);
+    if (dist < closestDist) {
+      closestDist = dist;
+      closest = i;
+    }
+  });
+  return closest;
+}
+
+function goToSlide(index) {
+  const target = Math.min(Math.max(index, 0), slides.length - 1);
+  slides[target].scrollIntoView({
+    behavior: 'smooth',
+    inline: 'center',
+    block: 'nearest'
+  });
+}
+
+function updateArrows() {
+  const threshold = 2; // tolérance en px pour les arrondis
+  const maxScroll = carouselGridPm.scrollWidth - carouselGridPm.clientWidth;
+
+  LarrowSlidePm.style.opacity = carouselGridPm.scrollLeft <= threshold ? '0.3' : '1';
+  RarrowSlidePm.style.opacity = carouselGridPm.scrollLeft >= maxScroll - threshold ? '0.3' : '1';
+}
 
 LarrowSlidePm.addEventListener('click', () => {
-  carouselGridPm.scrollBy({
-    left: -carouselGridPm.getBoundingClientRect().width,
-    behavior: 'smooth'
-  });
+  goToSlide(getCurrentIndex() - 1);
 });
 
 RarrowSlidePm.addEventListener('click', () => {
-  carouselGridPm.scrollBy({
-    left: carouselGridPm.getBoundingClientRect().width,
-    behavior: 'smooth'
-  });
+  goToSlide(getCurrentIndex() + 1);
 });
 
-
-
-function updateArrows() {
-  const maxScroll = carouselGridPm.scrollWidth - carouselGridPm.clientWidth;
-
-  LarrowSlidePm.style.opacity = carouselGridPm.scrollLeft <= 0 ? '0.3' : '1';
-  RarrowSlidePm.style.opacity = carouselGridPm.scrollLeft >= maxScroll - 1 ? '0.3' : '1';
-}
-
 carouselGridPm.addEventListener('scroll', updateArrows);
-updateArrows(); // état initial
 
 
     </script>
