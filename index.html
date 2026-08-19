@@ -5167,6 +5167,11 @@ outline : 1px solid rgba(255,255,255,0.2)
         opacity: 0.7;
       }
 
+      .btn4Choix.noneMaps {
+        filter: brightness(70%) saturate(50%);
+        pointer-events: none;
+        opacity: 0.7;
+      }
       #c1,
       #c3 {
         margin-left: 1rem;
@@ -6224,14 +6229,19 @@ outline : 1px solid rgba(255,255,255,0.2)
         gap : 0.5rem;
         padding: 0.5rem;
         border-radius: 50rem;
-
-         background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  outline: 1px solid rgba(255, 255, 255, 0.4);
-transition: transform 0.2s ease;
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        outline: 1px solid rgba(255, 255, 255, 0.4);
+        transition: transform 0.2s ease;
       }
       #btnCartePm:active{
         transform : scale(0.96);
+      }
+
+      #btnCartePm.noClick{
+        pointer-events : none;
+        color : rgba(255,255,255,0.5);
+        opacity : 0.4;
       }
       #lineInPm{
         width: 90%;
@@ -13821,6 +13831,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let oneTimeMap = false //fais en sorte de ne voir qu'une fois la map par quiz
 
 
+      function getQNumber(){
+        return parseInt(qNumber.textContent)
+      }
+
     </script>
 
 <head>
@@ -15596,7 +15610,7 @@ window.hapticFeedback = hapticFeedback;
                 if (
                   Math.floor(scoreFinal / (Math.floor(maxQ) / 3)) <
                     quest.stars ||
-                  parseInt(qNumber.textContent) < maxQ ||
+                  getQNumber() < maxQ ||
                   (quest.continent !== "all" && L_config.c === "allC")
                 ) {
                   return;
@@ -16450,6 +16464,10 @@ carouselPremium.addEventListener('scroll', () => {
 
       let L_reponse = [];
       let L_reponses = [];
+      let infosCboxs_m = new Map() // pour revenir sur chaque réponse
+      let htmlCBoxs_m = new Map() //enlever et rétablir le HTML des boutons quand j'active map
+      let idsCboxs_m = new Map()
+      let classCboxs_m = new Map()
       let L_cBoxHasard = [cc1, cc2, cc3, cc4];
       let L_btn4ChoixHasard = [c1, c2, c3, c4];
       let reponseFound = false;
@@ -16491,10 +16509,10 @@ carouselPremium.addEventListener('scroll', () => {
         
 
         if (
-          (parseInt(qNumber.textContent) >= maxQ &&
+          (getQNumber() >= maxQ &&
             L_config.m === "modeChoix") ||
           ((L_config.m === "modeTrouver" || L_config.m === "modeClasser") &&
-            parseInt(qNumber.textContent) >= maxQ &&
+            getQNumber() >= maxQ &&
             cChooseTrouver)
         ) {
           affichePm();
@@ -16534,18 +16552,19 @@ carouselPremium.addEventListener('scroll', () => {
         }
 
         if (
-          parseInt(qNumber.textContent) < maxQ &&
+          getQNumber() < maxQ &&
           (L_config.m === "modeChoix" ||
             ((L_config.m === "modeTrouver" || L_config.m === "modeClasser") &&
               (cChooseTrouver || cChooseTrouver === null)))
         ) {
 
            document.querySelectorAll('.celGridPm').forEach(el=>{
-            if(parseInt(el.textContent) === parseInt(qNumber.textContent) + 1){
+            if(parseInt(el.textContent) === getQNumber() + 1){
                 el.className = "celGridPm actuelle"
                 el.addEventListener('click',()=>{
-                numQPm.textContent = parseInt(qNumber.textContent)+1
+                numQPm.textContent = getQNumber()
                 overlayDetailPm.classList.remove('active')
+                btnCartePm.classList.add('noClick')
                 propPm.textContent = "-";
                 repPm.textContent = "-";
                 propPm.classList.remove('good',"bad","outTime")
@@ -16558,7 +16577,7 @@ carouselPremium.addEventListener('scroll', () => {
             }            
           })
 
-          qNumber.textContent = parseInt(qNumber.textContent) + 1;
+          qNumber.textContent = getQNumber() + 1;
 
         }
 
@@ -16668,11 +16687,18 @@ carouselPremium.addEventListener('scroll', () => {
             D_circles[clef].style.visibility = "hidden";
           }
         }
+
+
+        btnCartePm.style.display = "none"
+
+         infosCboxs_m.set(getQNumber(), {idBonneReponse : idBonneReponse, idMauvaiseReponse : null, c1 : {class:null,html : c1.innerHTML}, c2 : {class:null,html : c2.innerHTML},c3 :{class:null,html : c3.innerHTML},c4 :{class:null,html : c4.innerHTML,} })
+         idsCboxs_m.set(getQNumber(),{c1:null,c2:null,c3:null,c4:null})
+
         // Partie Choix
 
         if (L_config.m === "modeChoix") {
-          L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
-
+        btnCartePm.style.display = "flex"
+        L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
           //Remplir tout ça
           paths.forEach((p) => {
             pColor_m.set(p, { hover: "", current: colorPath });
@@ -16690,7 +16716,8 @@ carouselPremium.addEventListener('scroll', () => {
 
           // remplir les réponses
 
-          cBoxs.forEach((c) => {
+          btns4Choix.forEach((Btn) => {
+            let c = Btn.querySelector('.cBox')
             if (c === qqTrouver) {return}
 
             reponseFound = false;
@@ -16706,8 +16733,11 @@ carouselPremium.addEventListener('scroll', () => {
               //Attribuer à chaque case, l'id de la réponse qu'elle contient
               if (c !== cBoxHasard) {
                 idProps_m.set(c.parentNode, p_id);
+                idsCboxs_m.get(getQNumber())[c.parentNode.id] = p_id
               } else {
                 idProps_m.set(c.parentNode, idBonneReponse);
+                idsCboxs_m.get(getQNumber())[c.parentNode.id] = idBonneReponse
+
               }
 
               let paysDispoToggle =
@@ -16778,6 +16808,8 @@ carouselPremium.addEventListener('scroll', () => {
               }
             }
           });
+
+          infosCboxs_m.set(getQNumber(), {idBonneReponse : idBonneReponse, idMauvaiseReponse : null, c1 : {class:null,html : c1.innerHTML}, c2 : {class:null,html : c2.innerHTML},c3 :{class:null,html : c3.innerHTML},c4 :{class:null,html : c4.innerHTML,} })
           //Partie trouver
         } else if (L_config.m === "modeTrouver") {
           document.getElementById("phonePlay").append(zBox);
@@ -16859,7 +16891,7 @@ carouselPremium.addEventListener('scroll', () => {
               }
             }
 
-            if (parseInt(qNumber.textContent) >= maxQ) {
+            if (getQNumber() >= maxQ) {
               document.querySelector(".btn-suivant").textContent = "Fin";
               document.getElementById("wrapperScorePm").style.display = "flex";
               document.getElementById("pmTitle").textContent =
@@ -17240,7 +17272,7 @@ carouselPremium.addEventListener('scroll', () => {
 
           fillPmClasser(L_order, L_goodOrder);
 
-          if (parseInt(qNumber.textContent) >= maxQ) {
+          if (getQNumber() >= maxQ) {
             pause4Choix.style.opacity = "0";
             pause4Choix.style.pointerEvents = "none";
             document.querySelector(".btn-suivant").textContent = "Fin";
@@ -17509,7 +17541,7 @@ carouselPremium.addEventListener('scroll', () => {
                 }
               }
             }
-            if (parseInt(qNumber.textContent) >= maxQ) {
+            if (getQNumber() >= maxQ) {
               document.querySelector(".btn-suivant").textContent = "Fin";
               pause4Choix.style.opacity = "0";
               pause4Choix.style.pointerEvents = "none";
@@ -17766,17 +17798,25 @@ carouselPremium.addEventListener('scroll', () => {
             if (b === cHasard) {
               b.classList.add("good");
               D_classBtn4Choix[b.id] = "good";
+              b.id === "qTrouver" ? "":
+              infosCboxs_m.get(getQNumber())[b.id].class = "good"
             } else if (b === btn && !correct) {
               b.classList.add("bad");
               D_classBtn4Choix[b.id] = "bad";
+              infosCboxs_m.get(getQNumber())[b.id].class = "bad"
               idMauvaiseReponse = idProps_m.get(b);
+               b.id === "qTrouver" ? "":
+              infosCboxs_m.get(getQNumber()).idMauvaiseReponse = idProps_m.get(b)
+
             } else {
               b.classList.add("none");
+               b.id === "qTrouver" ? "":
+              infosCboxs_m.get(getQNumber())[b.id].class = "none"
               D_classBtn4Choix[b.id] = "none";
             }
           });
 
-          if (parseInt(qNumber.textContent) >= maxQ) {
+          if (getQNumber() >= maxQ) {
             document.querySelector(".btn-suivant").textContent = "Fin";
             document.getElementById("pmTitle").textContent = "Fin de partie !";
             pause4Choix.style.opacity = "0";
@@ -17787,6 +17827,7 @@ carouselPremium.addEventListener('scroll', () => {
 
       const pause4Choix = document.getElementById("pause4Choix");
       const cadrePm = document.getElementById("cadrePm");
+      let viewMapsPm = false; // Décide si oui ou non on réouvre cadrePm après cacherMaps
       let celRest;
       const wrapperGridPm = getId('wrapperGridPm')
       const imgPmCadreCor = getId('imgPmCadreCor')
@@ -17795,6 +17836,8 @@ carouselPremium.addEventListener('scroll', () => {
       const progGridPm = getId('progGridPm')
       const propPm = getId('propPm')
       const repPm = getId('repPm')
+      const btnCartePm = getId('btnCartePm')
+
       
 
 
@@ -18079,9 +18122,26 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         }, 10);
       }
 
-      function afficherMaps() {
+      function afficherMaps(pm = false) { // pm est le numéro de la question 
         oneTimeMap = true
         viewMaps = true;
+        let newIdGood = pm ? infosCboxs_m.get(pm).idBonneReponse : idBonneReponse
+        let newIdBad = pm ? infosCboxs_m.get(pm).idMauvaiseReponse : idMauvaiseReponse
+        htmlCBoxs_m.set(getQNumber(), {c1 : c1.innerHTML,c2 : c2.innerHTML,c3 : c3.innerHTML,c4 : c4.innerHTML})
+        classCboxs_m.set(getQNumber(), {c1 : c1.className ,c2 : c2.className ,c3 : c3.className ,c4 : c4.className})  
+        if(pm){
+          viewMapsPm = true
+          btns4Choix.forEach(btn=>{
+            if (btn.id === "qTrouver"){return}
+            let infos = infosCboxs_m.get(pm)[btn.id]
+            
+            btn.innerHTML = infos.html
+            btn.className = infos.class + " btn4Choix"
+            idProps_m.set(btn,idsCboxs_m.get(pm)[btn.id])
+            })
+
+        }
+
         //Cacher les éléments
         L_replace.forEach((b) => {
           addTransition(b, "opacity 0.4s ease");
@@ -18103,14 +18163,16 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         globe.style.filter = "";
         mCadre.style.filter = "";
-
-        console.log(L_reponse)
+        let L_rep = []
+        btns4Choix.forEach(btn=>{
+          L_rep.push(idsCboxs_m.get(pm?pm : getQNumber())[btn.id])
+        })
         paths.forEach((p) => {
-          if (L_reponse.includes(p.id)) {
-            if (p.id === idBonneReponse) {
+          if (L_rep.includes(p.id)) {
+            if (p.id === newIdGood) {
               pColor_m.set(p, { hover: "", current: "green" });
               idVisible_m.get(p.id).continent = true;
-            } else if (p.id === idMauvaiseReponse) {
+            } else if (p.id === newIdBad) {
               pColor_m.set(p, { hover: "", current: "red" });
               idVisible_m.get(p.id).continent = true;
             } else {
@@ -18156,17 +18218,26 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         toggleC(false);
         viewMaps = false;
+        if (viewMapsPm){
+          pause4Choix.click()
+        }
+        viewMapsPm = false;
         btns4Choix.forEach((b) => {
+          if(b.id === "qTrouver"){return}
           b.classList.remove("goodMaps", "badMaps");
-          b.classList.add(D_classBtn4Choix[b.id]);
+          b.innerHTML = infosCboxs_m.get(getQNumber())[b.id].html
+          // b.classList.add(D_classBtn4Choix[b.id]);
+          b.className = classCboxs_m.get(getQNumber())[b.id];
+        idProps_m.set(b,idsCboxs_m.get(getQNumber())[b.id])
         });
+
         L_addMaps.forEach((p) => {
           Maps.appendChild(p);
           p.style.zIndex = "";
         });
         L_replace.forEach((p) => {
           p.style.zIndex = "";
-          if (parseInt(qNumber.textContent) >= maxQ && p.id === "pause4Choix") {
+          if (getQNumber() >= maxQ && p.id === "pause4Choix") {
             return;
           }
 
@@ -18176,6 +18247,13 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         activerCarte();
         cadreNext.className = classBtnNext;
       }
+
+      btnCartePm.addEventListener('click',()=>{
+        desactiverCarte();
+        afficherMaps(parseInt(numQPm.textContent));
+      })
+
+
       //Remplir contentPm
       function fillPmInit() {
         carouselGridPm.innerHTML = ``
@@ -18196,10 +18274,12 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
               cel.classList.add('actuelle')
               cel.addEventListener('click',()=>{
                 propPm.classList.remove('good',"bad","outTime")
+                btnCartePm.classList.remove('noClick')
                 numQPm.textContent = 1
                 overlayDetailPm.classList.remove('active')
                 propPm.textContent = "-";
                 repPm.textContent = "-";
+                btnCartePm.classList.add('noClick')
                 document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
                 document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "none")
 
@@ -18242,6 +18322,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
           numQPm.textContent = parseInt(currentEl.textContent)
           overlayDetailPm.classList.remove('active')
+          btnCartePm.classList.remove('noClick')
           if (idProp !== "outTime") {
           propPm.textContent = L_q[idProp].n;
           getId('imgPmCadreProp').src = `https://flagcdn.com/${idProp.toLowerCase()}.svg`
@@ -18395,6 +18476,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         viewMaps = false;
         texteCarte.style.maxWidth = "0";
         btnCarte.classList.remove("cliquable");
+        cadrePm.classList.remove('active')
       }
 
       // Bouton Menu principal
@@ -18496,11 +18578,11 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         }
 
         // if (
-        //   (parseInt(qNumber.textContent) >= maxQ &&
+        //   (getQNumber() >= maxQ &&
         //     L_config.m !== "modeChoix" &&
         //     cChooseTrouver) ||
         //   (L_config.m === "modeChoix" &&
-        //     parseInt(qNumber.textContent) >= maxQ &&
+        //     getQNumber() >= maxQ &&
         //     cadreNext.classList.contains("visible"))
         // ) {}
         cadrePm.classList.remove('active')
