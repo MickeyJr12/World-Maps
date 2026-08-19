@@ -16570,6 +16570,7 @@ carouselPremium.addEventListener('scroll', () => {
             if(parseInt(el.textContent) === getQNumber() + 1){
                 el.className = "celGridPm actuelle"
                 el.addEventListener('click',()=>{
+                
                 numQPm.textContent = getQNumber()
                 overlayDetailPm.classList.remove('active')
                 btnCartePm.classList.add('noClick')
@@ -16577,6 +16578,8 @@ carouselPremium.addEventListener('scroll', () => {
                 repPm.textContent = "-";
                 propPm.classList.remove('good',"bad","outTime")
                 document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "none")
+                document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
+                el.classList.add('selected')
                 })
 
 
