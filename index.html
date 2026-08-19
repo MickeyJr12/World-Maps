@@ -18622,7 +18622,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
       btnReprendre.addEventListener("click", () => {
         if (
-          (!cadreNext.classList.contains("visible") ||
+          (!cadreNext.classList.contains("visible") || cadreNext.classList.contains("visible") && spanNext.textContent === "Mystère" ||
             L_config.m === "modeClasser") &&
           !cChooseTrouver
         ) {
