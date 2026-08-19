@@ -16581,10 +16581,6 @@ carouselPremium.addEventListener('scroll', () => {
                 document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
                 el.classList.add('selected')
                 })
-
-
-
-
             }            
           })
 
@@ -18329,6 +18325,16 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
       slides = carouselGridPm.querySelectorAll('.slide');
       updateProgressSlidePm(); // état initial
       
+      document.querySelectorAll('.celGridPm').forEach(el=>{
+        el.addEventListener('click',()=>{
+          if (el.className === "celGridPm"){
+          document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
+          document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
+          overlayDetailPm.classList.add('active')
+            
+          }
+        })
+      })
 
       }
 
