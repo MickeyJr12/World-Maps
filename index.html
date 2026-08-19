@@ -16809,7 +16809,7 @@ carouselPremium.addEventListener('scroll', () => {
             }
           });
 
-          infosCboxs_m.set(getQNumber(), {idBonneReponse : idBonneReponse, idMauvaiseReponse : null, c1 : {class:null,html : c1.innerHTML}, c2 : {class:null,html : c2.innerHTML},c3 :{class:null,html : c3.innerHTML},c4 :{class:null,html : c4.innerHTML,} })
+          infosCboxs_m.set(getQNumber(), {idGood : idBonneReponse, idBad : null, c1 : {class:null,html : c1.innerHTML}, c2 : {class:null,html : c2.innerHTML},c3 :{class:null,html : c3.innerHTML},c4 :{class:null,html : c4.innerHTML,} })
           //Partie trouver
         } else if (L_config.m === "modeTrouver") {
           document.getElementById("phonePlay").append(zBox);
@@ -18125,8 +18125,8 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
       function afficherMaps(pm = false) { // pm est le numéro de la question 
         oneTimeMap = true
         viewMaps = true;
-        let newIdGood = pm ? infosCboxs_m.get(pm).idBonneReponse : idBonneReponse
-        let newIdBad = pm ? infosCboxs_m.get(pm).idMauvaiseReponse : idMauvaiseReponse
+        let newIdGood = pm ? infosCboxs_m.get(pm).idGood : idBonneReponse
+        let newIdBad = pm ? infosCboxs_m.get(pm).idBad : idMauvaiseReponse
         htmlCBoxs_m.set(getQNumber(), {c1 : c1.innerHTML,c2 : c2.innerHTML,c3 : c3.innerHTML,c4 : c4.innerHTML})
         classCboxs_m.set(getQNumber(), {c1 : c1.className ,c2 : c2.className ,c3 : c3.className ,c4 : c4.className})  
         if(pm){
@@ -18139,6 +18139,13 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
             btn.className = infos.class + " btn4Choix"
             idProps_m.set(btn,idsCboxs_m.get(pm)[btn.id])
             })
+
+            L_cBoxHasard = [
+    c1.querySelector('.cBox'),
+    c2.querySelector('.cBox'),
+    c3.querySelector('.cBox'),
+    c4.querySelector('.cBox'),
+  ];
 
         }
 
@@ -18230,6 +18237,13 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           b.className = classCboxs_m.get(getQNumber())[b.id];
         idProps_m.set(b,idsCboxs_m.get(getQNumber())[b.id])
         });
+        L_cBoxHasard = [
+    c1.querySelector('.cBox'),
+    c2.querySelector('.cBox'),
+    c3.querySelector('.cBox'),
+    c4.querySelector('.cBox'),
+  ];
+  
 
         L_addMaps.forEach((p) => {
           Maps.appendChild(p);
