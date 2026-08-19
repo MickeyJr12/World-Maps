@@ -6104,34 +6104,35 @@ outline : 1px solid rgba(255,255,255,0.2)
   aspect-ratio: 1/1;
   border-radius: 0.5rem;
   background-color: rgba(36, 169, 251, 0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, outline 0.2s ease;
       }
 
 .celGridPm:active{
         transform : scale(0.96);
         filter : brightness(0.9)
       }
+
+      .celGridPm.selected{
+        outline : 2px solid rgba(255,255,255,0.6);
+      }
+
       .celGridPm.actuelle{
-        outline : 1px solid rgba(255,255,255,0.4);
         opacity : 1;
         background-color: rgba(36, 169, 251, 0.551);
       }
-
+      
 
       .celGridPm.outTime{
         opacity : 1;
-        outline : 1px solid rgba(255,255,255,0.4);
         background-color: #f09443;
       }          
       .celGridPm.good{
         opacity : 1;
-        outline : 1px solid rgba(255,255,255,0.4);
         background-color: rgba(37, 168, 98, 0.8);
       }
 
       .celGridPm.bad{
         opacity : 1;
-        outline : 1px solid rgba(255,255,255,0.4);
         background: rgba(184, 47, 47, 0.8);
       }
 
@@ -15703,7 +15704,7 @@ window.hapticFeedback = hapticFeedback;
 
       checkboxH.addEventListener("change", (e) => {
         haptic = e.target.checked;
-        hapticFeedback('light')
+        // hapticFeedback('light')
         saveProgress();
       });
 
@@ -15720,7 +15721,7 @@ window.hapticFeedback = hapticFeedback;
 
       checkbox.addEventListener("change", (e) => {
         sound = e.target.checked;
-        hapticFeedback('light')
+        // hapticFeedback('light')
         saveProgress();
       });
 
@@ -15739,7 +15740,7 @@ window.hapticFeedback = hapticFeedback;
       const checkBoxSouv = toggleSouv.querySelector("input");
       checkBoxSouv.addEventListener("change", (e) => {
         onlySouv = !onlySouv;
-        hapticFeedback('light')
+        // hapticFeedback('light')
         saveProgress();
         [
           document.getElementById("nbrQ15"),
@@ -15763,7 +15764,7 @@ window.hapticFeedback = hapticFeedback;
       const checkBoxNotif = toggleNotif.querySelector("input");
       checkBoxNotif.addEventListener("change", (e) => {
         notif = !notif;
-        hapticFeedback('light')
+        // hapticFeedback('light')
         saveProgress();
       });
       /// Fin Scrit paramètres
@@ -16865,13 +16866,13 @@ carouselPremium.addEventListener('scroll', () => {
               spanNext.textContent = "✓ Bonne réponse !";
               fillPm(currentCountry.id, idBonneReponse);
               playSound(goodSound);
-              hapticFeedback('success')
+              // hapticFeedback('success')
               fillQuetes();
               score += 1;
             } else {
               cadreNext.classList.add("bad");
               playSound(badSound);
-              hapticFeedback('error')
+              // hapticFeedback('error')
               
 
               spanNext.textContent = "✗ Mauvaise réponse";
@@ -17236,15 +17237,15 @@ carouselPremium.addEventListener('scroll', () => {
             cadreNext.className = "cadreNext visible almost";
             spanNext.textContent = "~ Presque !";
             playSound(badSound);
-            hapticFeedback('error')
+            // hapticFeedback('error')
           } else if (nbrGood < nbr / 2) {
             playSound(badSound);
-            hapticFeedback('error')
+            // hapticFeedback('error')
             spanNext.textContent = "✗ Mauvais ordre";
             cadreNext.className = "cadreNext visible bad";
           } else {
             playSound(goodSound);
-            hapticFeedback('success')
+            // hapticFeedback('success')
             fillQuetes();
 
             spanNext.textContent = "✓ Ordre Correct !";
@@ -17676,6 +17677,13 @@ carouselPremium.addEventListener('scroll', () => {
           L_reponses = [];
           fillPhonePlay();
           fillPmInit()
+          document.querySelectorAll('.celGridPm').forEach(cel=>{
+        cel.addEventListener('click',()=>{
+          if (cel.className === "celGridPm")return
+          document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
+          cel.classList.add('selected')
+        })
+      })
         }, 100);
         //
 
@@ -17776,7 +17784,7 @@ carouselPremium.addEventListener('scroll', () => {
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
             playSound(goodSound);
-            hapticFeedback('success')
+            // hapticFeedback('success')
 
             cadreNext.classList.add("good");
             spanNext.textContent = "✓ Bonne réponse !";
@@ -18296,7 +18304,6 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
                 btnCartePm.classList.add('noClick')
                 document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
                 document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "none")
-
               })
             }
             currentGrid.append(cel)
@@ -18308,7 +18315,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           carouselGridPm.append(currentSlide)
         }
 
-
+      
       slides = carouselGridPm.querySelectorAll('.slide');
       updateProgressSlidePm(); // état initial
       
@@ -18321,6 +18328,12 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         const currentEl = oldCurrentEl.cloneNode(true)
         oldCurrentEl.replaceWith(currentEl)
 
+        currentEl.addEventListener('click',()=>{
+          document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
+          currentEl.classList.add('selected')
+        
+
+        })
 
 
 
@@ -18340,11 +18353,22 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           if (idProp !== "outTime") {
           propPm.textContent = L_q[idProp].n;
           getId('imgPmCadreProp').src = `https://flagcdn.com/${idProp.toLowerCase()}.svg`
-        }
+
+          if ( ["drapeauR","contourR","capitaleR"].contains(L_config.r)){
+          propPm.textContent = "(" +  L_q[idProp].n + ")"}
+}
+       
 
         repPm.textContent = L_q[idGood].n;
         getId('imgPmCadreCor').src = `https://flagcdn.com/${idGood.toLowerCase()}.svg`
+        if ( ["drapeauR","contourR","capitaleR"].contains(L_config.r)){repPm.textContent = "(" + L_q[idGood].n + ")";} 
 
+         if(L_config.r === "contourR"){
+          getId('imgPmCadreProp').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idProp.toLowerCase()}/vector.svg`
+          getId('imgPmCadreCor').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`
+                   
+        }
+        
         if (
           L_config.r === "capitaleR" ||
           (L_config.m === "modeTrouver" && L_config.q === "capitaleQ")
@@ -18366,7 +18390,8 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         } else if (idProp === "outTime") {
         propPm.classList.remove("good","bad","outTime")
-          getId('cadreImgPmGood').style.display = "none"
+          getId('imgPmCadreProp').style.display = "none"
+
         propPm.classList.add("outTime")
 
           propPm.textContent = "-";
@@ -31925,7 +31950,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           // }
 
           if (p === currentCountry && currentCountry != null) {
-          hapticFeedback('light')
+          // hapticFeedback('light')
             const overlay = overlay_m.get(p.id);
             darkenCountry(p.id, overlay);
           } else if (p !== currentCountryHover) {
@@ -34835,7 +34860,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
       function scrollToLetter(el) {
         const letter = el?.closest(".letter");
         if (!letter) return;
-        hapticFeedback('light')
+        // hapticFeedback('light')
         const target = document.getElementById(
           "letter" + letter.textContent.trim().toUpperCase(),
         );
@@ -35476,7 +35501,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
       function scrollToLetterD(el) {
         const letter = el?.closest(".letterD");
         if (!letter) return;
-        hapticFeedback('light')
+        // hapticFeedback('light')
         const target = document.getElementById(
           "letterD" + letter.textContent.trim().toUpperCase(),
         );
