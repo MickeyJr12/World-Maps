@@ -6202,6 +6202,20 @@ outline : 1px solid rgba(255,255,255,0.2)
         width: 100%;
         height: 100%;
       }
+
+      .svgPm svg{
+        height : 2rem;
+      }
+      #svgPmCor{
+        display : none;
+      }
+      #svgPmProp{
+        display : none;
+      }
+
+
+
+
       .imgPmCadre {
         height: 100%;
         overflow: hidden;
@@ -9482,6 +9496,7 @@ color: #94a3b8;
                 <div class="cadreImgPm">
             <div class="imgPmBox">
               <img src="" alt="" class="imgPmCadre" id="imgPmCadreProp" draggable="false"  />
+              <div class="svgPm" id="svgPmProp"></div>
             </div>
           </div>
           
@@ -9495,6 +9510,7 @@ color: #94a3b8;
                <div class="cadreImgPm" id="cadreImgPmGood">
             <div class="imgPmBox">
               <img src="" alt="" class="imgPmCadre" id="imgPmCadreCor" draggable="false"  />
+              <div class="svgPm" id="svgPmCor"></div>
             </div>
           </div>
               
@@ -18382,13 +18398,45 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         // document.querySelectorAll(".cadreImgPm") .forEach(img=>img.classlist.remove('sil'))
 
         document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.remove('sil'))
+
+        const svgPmProp = getId("svgPmProp")
+        const svgPmCor =  getId("svgPmCor")
+
+        document.querySelectorAll(".svgPm") .forEach(svg=>svg.style.display = "")
+
+
          if(L_config.r === "contourR"){
+          document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "")
+          document.querySelectorAll(".svgPm") .forEach(svg=>svg.style.display = "flex")
+
+
           getId('imgPmCadreProp').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idProp.toLowerCase()}/vector.svg`
           getId('imgPmCadreCor').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`
-                document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.add('sil'))
+          let L_sit = [`https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idProp.toLowerCase()}/vector.svg`,`https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`]
+          let indSite = 0;
 
+          L_sit.forEach(site=>{
+            fetch(
+              site,
+                  )
+          .then((r) => {
+            if (!r.ok) throw new Error();
+            return r.text();
+          })
+          
+          .then((svg) => {
+            const div = document.createElement("div");
+            div.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
+            document.querySelectorAll(".svgPm") .forEach(svg=>svg.innerHTML= ``)
 
-                   
+            indSite === 0 ? svgPmProp.append(div) : svgPmCor.append(div)
+            indSite+=1
+          })
+          .catch(() => {
+            ""
+          });
+          })
+                // document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.add('sil'))
         }
         
         if (
@@ -32116,6 +32164,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
             if (!r.ok) throw new Error();
             return r.text();
           })
+          
           .then((svg) => {
             const div = document.createElement("div");
             div.className = "itemContours";
