@@ -9443,7 +9443,7 @@ color: #94a3b8;
         </div>
 
         <div class="halfDetailPm">
-          <div style="display: flex; flex-direction: column; gap : 0.5rem">
+          <div style="display: flex; align-items : center; justify-content: center; flex-direction: column; gap : 0.5rem">
             <span>Ta réponse</span>
 
                 <div class="cadreImgPm">
@@ -9456,7 +9456,7 @@ color: #94a3b8;
             <span class="propRepPm" id="propPm" >(Laos)</span>
           </div>
 
-            <div style="display: flex; flex-direction: column;gap : 0.5rem">
+            <div style="display: flex; align-items : center; justify-content: center; flex-direction: column; gap : 0.5rem">
             <span>Bonne réponse</span>
 
                <div class="cadreImgPm" id="cadreImgPmGood">
@@ -16522,6 +16522,18 @@ carouselPremium.addEventListener('scroll', () => {
            document.querySelectorAll('.celGridPm').forEach(el=>{
             if(parseInt(el.textContent) === parseInt(qNumber.textContent) + 1){
                 el.className = "celGridPm actuelle"
+                el.addEventListener('click',()=>{
+                numQPm.textContent = parseInt(qNumber.textContent)+1
+                overlayDetailPm.classList.remove('active')
+                propPm.textContent = "-";
+                repPm.textContent = "-";
+                propPm.classList.remove('good',"bad","outTime")
+                document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "none")
+                })
+
+
+
+
             }            
           })
 
@@ -18135,6 +18147,16 @@ carouselGridPm.addEventListener('scroll', updateArrows);
             cel.textContent = nbrCel
             if (nbrCel === 1) {
               cel.classList.add('actuelle')
+              cel.addEventListener('click',()=>{
+                propPm.classList.remove('good',"bad","outTime")
+                numQPm.textContent = 1
+                overlayDetailPm.classList.remove('active')
+                propPm.textContent = "-";
+                repPm.textContent = "-";
+                document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
+                document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "none")
+
+              })
             }
             currentGrid.append(cel)
             celRestSlide -= 1;
@@ -18152,7 +18174,14 @@ carouselGridPm.addEventListener('scroll', updateArrows);
       }
 
       function fillPm(idProp, idGood) {
-        const currentEl = document.querySelector('.celGridPm.actuelle')
+
+        const oldCurrentEl = document.querySelector('.celGridPm.actuelle')
+        const currentEl = oldCurrentEl.cloneNode(true)
+        oldCurrentEl.replaceWith(currentEl)
+
+
+
+
         if (idProp !== "outTime"){
           currentEl.className = "celGridPm" + " " + (idProp === idGood ? "good" : "bad")
         }
@@ -18182,23 +18211,25 @@ carouselGridPm.addEventListener('scroll', updateArrows);
           }
           repPm.textContent = L_q[idGood].c;
         }
+        document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "")
 
         getId('cadreImgPmGood').style.display = ""
+        
 
         if (idProp === idGood) {
-        propPm.classList.remove("good","bad")
+        propPm.classList.remove("good","bad","outTime")
 
         propPm.classList.add("good")
 
         } else if (idProp === "outTime") {
-        propPm.classList.remove("good","bad")
+        propPm.classList.remove("good","bad","outTime")
           getId('cadreImgPmGood').style.display = "none"
         propPm.classList.add("outTime")
 
           propPm.textContent = "-";
 
         } else {
-        propPm.classList.remove("good","bad")
+        propPm.classList.remove("good","bad","outTime")
         propPm.classList.add("bad")
         }
         })
@@ -18403,7 +18434,7 @@ carouselGridPm.addEventListener('scroll', updateArrows);
 
         cadrePm.classList.remove('active')
         overlayDetailPm.classList.add('active')
-        document.querySelectorAll("imgPmCadre") .forEach(img=>img.src = ``)
+        document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
       });
 
       btnReprendre.addEventListener("click", () => {
@@ -18426,7 +18457,7 @@ carouselGridPm.addEventListener('scroll', updateArrows);
         // ) {}
         cadrePm.classList.remove('active')
         overlayDetailPm.classList.add('active')
-        document.querySelectorAll("imgPmCadre") .forEach(img=>img.src = ``)
+        document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
       });
 
       btnRecommencer.addEventListener('click',()=>{
@@ -18444,7 +18475,7 @@ carouselGridPm.addEventListener('scroll', updateArrows);
 
           cadrePm.classList.remove('active')
           overlayDetailPm.classList.add('active')
-          document.querySelectorAll("imgPmCadre") .forEach(img=>img.src = ``)
+          document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
 
           L_reponses = [];
           fillPhonePlay();
