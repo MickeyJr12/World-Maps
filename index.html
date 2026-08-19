@@ -6037,7 +6037,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         inset: 0;
         margin: auto;
         padding: 1rem;
-        padding-bottom: calc(env(safe-area-inset-bottom) + 0.25rem);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 0.4rem);
         padding-top : calc(env(safe-area-inset-top) + 0.5rem);
         border-radius: 0.8rem;
         margin-top: 0rem;
@@ -6092,33 +6092,38 @@ outline : 1px solid rgba(255,255,255,0.2)
 
       .celGridPm{
         display : flex;
+        opacity : 0.65;
         justify-content: center;
         align-items: center;
         width: 100%;
   aspect-ratio: 1/1;
   border-radius: 0.5rem;
-  background-color: rgba(36, 169, 251, 0.2);
+  background-color: rgba(36, 169, 251, 0.1);
   transition: transform 0.2s ease;
       }
 
-      .celGridPm.actuelle{
-        outline : 1px solid rgba(255,255,255,0.4);
-        background-color: rgba(36, 169, 251, 0.551);
-      }
-      .celGridPm.outTime{
-        background-color: #f09443;
-      }
-
-      .celGridPm:active{
+.celGridPm:active{
         transform : scale(0.96);
         filter : brightness(0.9)
       }
-      
+      .celGridPm.actuelle{
+        opacity : 1;
+        outline : 1px solid rgba(255,255,255,0.4);
+        background-color: rgba(36, 169, 251, 0.551);
+      }
+
+
+      .celGridPm.outTime{
+        opacity : 1;
+        background-color: #f09443;
+      }          
       .celGridPm.good{
+        opacity : 1;
         background-color: rgba(37, 168, 98, 0.8);
       }
 
       .celGridPm.bad{
+        opacity : 1;
         background: rgba(184, 47, 47, 0.8);
       }
 
@@ -6139,6 +6144,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         display : flex;
         justify-content : center;
         align-items : center;
+        text-align: center;
         pointer-events: none;
         opacity : 0;
         z-index: 50;
@@ -6166,8 +6172,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         flex-shrink: 0;
         font-weight: 620;
         letter-spacing: 1px;
-        min-width: 0rem;
-        max-width: 4rem;
+        width: 4rem;
         width: fit-content;
         height: 2.6rem; /* hauteur fixe */
       }
@@ -9376,58 +9381,7 @@ color: #94a3b8;
           />
         </svg>
 
-        <div class="carousel" id="carouselGridPm" style="padding: 1rem;">
-          <div class="slide">
-            <div class="gridPm">
-              <div class="celGridPm good">1</div>
-              <div class="celGridPm bad">1</div>
-              <div class="celGridPm actuelle">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">123</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-            </div>
-
-          </div>
-          <div class="slide">
-                 <div id="gridPm">
-              <div class="celGridPm good">1</div>
-              <div class="celGridPm bad">1</div>
-              <div class="celGridPm actuelle">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">123</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-              <div class="celGridPm">1</div>
-            </div>
-          </div>
-          <div class="slide">Slide 3</div>
-        </div>
+        <div class="carousel" id="carouselGridPm" style="padding: 1rem;"></div>
 
 
           <svg
@@ -9494,7 +9448,7 @@ color: #94a3b8;
 
                 <div class="cadreImgPm">
             <div class="imgPmBox">
-              <img src="https://flagcdn.com/mq.svg" alt="" class="imgPmCadre" id="imgPmCadreProp" draggable="false"  />
+              <img src="" alt="" class="imgPmCadre" id="imgPmCadreProp" draggable="false"  />
             </div>
           </div>
           
@@ -9507,7 +9461,7 @@ color: #94a3b8;
 
                <div class="cadreImgPm" id="cadreImgPmGood">
             <div class="imgPmBox">
-              <img src="https://flagcdn.com/mq.svg" alt="" class="imgPmCadre" id="imgPmCadreCor" draggable="false"  />
+              <img src="" alt="" class="imgPmCadre" id="imgPmCadreCor" draggable="false"  />
             </div>
           </div>
               
@@ -17811,6 +17765,7 @@ carouselPremium.addEventListener('scroll', () => {
 
 
       const btnReprendre = document.getElementById("btnReprendre");
+      const btnRecommencer = document.getElementById('btnRecommencer')
       const btnMenu = document.getElementById("btnMenu");
       let slides = document.querySelectorAll('.slide')
       let nbrCelPerSlide = 20
@@ -18448,6 +18403,7 @@ carouselGridPm.addEventListener('scroll', updateArrows);
 
         cadrePm.classList.remove('active')
         overlayDetailPm.classList.add('active')
+        document.querySelectorAll("imgPmCadre") .forEach(img=>img.src = ``)
       });
 
       btnReprendre.addEventListener("click", () => {
@@ -18460,14 +18416,20 @@ carouselGridPm.addEventListener('scroll', updateArrows);
           startChronoQ(currentChronoQ);
         }
 
-        if (
-          (parseInt(qNumber.textContent) >= maxQ &&
-            L_config.m !== "modeChoix" &&
-            cChooseTrouver) ||
-          (L_config.m === "modeChoix" &&
-            parseInt(qNumber.textContent) >= maxQ &&
-            cadreNext.classList.contains("visible"))
-        ) {
+        // if (
+        //   (parseInt(qNumber.textContent) >= maxQ &&
+        //     L_config.m !== "modeChoix" &&
+        //     cChooseTrouver) ||
+        //   (L_config.m === "modeChoix" &&
+        //     parseInt(qNumber.textContent) >= maxQ &&
+        //     cadreNext.classList.contains("visible"))
+        // ) {}
+        cadrePm.classList.remove('active')
+        overlayDetailPm.classList.add('active')
+        document.querySelectorAll("imgPmCadre") .forEach(img=>img.src = ``)
+      });
+
+      btnRecommencer.addEventListener('click',()=>{
           score = 0;
           track = 0;
           oneTimeMap = false;
@@ -18482,6 +18444,7 @@ carouselGridPm.addEventListener('scroll', updateArrows);
 
           cadrePm.classList.remove('active')
           overlayDetailPm.classList.add('active')
+          document.querySelectorAll("imgPmCadre") .forEach(img=>img.src = ``)
 
           L_reponses = [];
           fillPhonePlay();
@@ -18490,11 +18453,8 @@ carouselGridPm.addEventListener('scroll', updateArrows);
             document.getElementById("wrapperScorePm").style.display = "none";
             document.getElementById("pmTitle").textContent = "Menu Pause";
           }, 220);
-        }
-        cadrePm.classList.remove('active')
-        overlayDetailPm.classList.add('active')
         
-      });
+      })
     </script>
     <!--Fin script play-->
 
