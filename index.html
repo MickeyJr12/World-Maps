@@ -6038,7 +6038,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         margin: auto;
         padding: 1rem;
         padding-bottom: calc(env(safe-area-inset-bottom) + 0.4rem);
-        padding-top : calc(env(safe-area-inset-top) + 0.5rem);
+        padding-top : calc(env(safe-area-inset-top) + 0.6rem);
         border-radius: 0.8rem;
         margin-top: 0rem;
         height: 100%;
@@ -6107,23 +6107,26 @@ outline : 1px solid rgba(255,255,255,0.2)
         filter : brightness(0.9)
       }
       .celGridPm.actuelle{
-        opacity : 1;
         outline : 1px solid rgba(255,255,255,0.4);
+        opacity : 1;
         background-color: rgba(36, 169, 251, 0.551);
       }
 
 
       .celGridPm.outTime{
         opacity : 1;
+        outline : 1px solid rgba(255,255,255,0.4);
         background-color: #f09443;
       }          
       .celGridPm.good{
         opacity : 1;
+        outline : 1px solid rgba(255,255,255,0.4);
         background-color: rgba(37, 168, 98, 0.8);
       }
 
       .celGridPm.bad{
         opacity : 1;
+        outline : 1px solid rgba(255,255,255,0.4);
         background: rgba(184, 47, 47, 0.8);
       }
 
@@ -9305,7 +9308,7 @@ color: #94a3b8;
 
       <!-- html pm2 -->
              <div id="cadrePm">
-      <span id="pmTitle" style="font-size: 1.4rem; font-weight: 500; align-self: flex-start"
+      <span id="pmTitle" style="font-size: 1.4rem; font-weight: 600; align-self: flex-start"
         >Pause</span
       >
 
@@ -9372,7 +9375,7 @@ color: #94a3b8;
         "
       >
         <span>Récapitulatif</span>
-        <span>1/3</span>
+        <span id="progGridPm"></span>
       </div>
 
       
@@ -17789,6 +17792,7 @@ carouselPremium.addEventListener('scroll', () => {
       const imgPmCadreCor = getId('imgPmCadreCor')
       const imgPmCadreProp = getId('imgPmCadreProp')
       const overlayDetailPm = getId('overlayDetailPm')
+      const progGridPm = getId('progGridPm')
       const propPm = getId('propPm')
       const repPm = getId('repPm')
       
@@ -17827,6 +17831,7 @@ function goToSlide(index) {
 }
 
 function updateArrows() {
+
   const threshold = 2; // tolérance en px pour les arrondis
   const maxScroll = carouselGridPm.scrollWidth - carouselGridPm.clientWidth;
 
@@ -17843,6 +17848,30 @@ RarrowSlidePm.addEventListener('click', () => {
 });
 
 carouselGridPm.addEventListener('scroll', updateArrows);
+
+ 
+
+function getCurrentIndex() {
+  let closest = 0;
+  let closestDist = Infinity;
+  slides.forEach((slide, i) => {
+    const dist = Math.abs(slide.offsetLeft - carouselGridPm.scrollLeft);
+    if (dist < closestDist) {
+      closestDist = dist;
+      closest = i;
+    }
+  });
+  return closest;
+}
+
+function updateProgressSlidePm() {
+  let nbrSlide = cadrePm.querySelectorAll('.slide').length;
+
+  const currentSlide = getCurrentIndex() + 1; // +1 pour un affichage humain (1-indexé)
+  progGridPm.textContent =  nbrSlide === 1 ? "" :  `${currentSlide}/${nbrSlide}`;
+}
+
+carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
 
       //Const svg pm
@@ -18187,7 +18216,8 @@ carouselGridPm.addEventListener('scroll', updateArrows);
 
 
       slides = carouselGridPm.querySelectorAll('.slide');
-
+      updateProgressSlidePm(); // état initial
+      
 
       }
 
