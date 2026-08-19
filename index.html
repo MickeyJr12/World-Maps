@@ -6147,6 +6147,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         width : 100%;
         border-radius: 0.6rem;
         background-color: rgba(0,0,0,0.2);
+
       }
 
       #overlayDetailPm{
@@ -6186,6 +6187,12 @@ outline : 1px solid rgba(255,255,255,0.2)
         width: fit-content;
         height: 2.6rem; /* hauteur fixe */
       }
+    
+      .cadreImgPm.sil {
+        padding : 0.4rem;
+        background: rgba(24, 226, 249, 0.2)
+      }
+
 
       .imgPmBox {
         display: flex;
@@ -8139,7 +8146,7 @@ color: #94a3b8;
               </div>
               <div class="qr r" id="nomR" style="display: none">Noms</div>
               <div class="qr r" id="mapsR" style="display: none">Carte</div>
-              <div class="qr r lockP" id="contourR" style="display: none">
+              <div class="qr r " id="contourR" style="display: none">
                 Silhouettes
                 <svg class="mDiamant" viewBox="0 0 332 290" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z" fill="#d9a441"/>
@@ -17791,7 +17798,7 @@ carouselPremium.addEventListener('scroll', () => {
             score += 1;
           } else {
             playSound(badSound);
-            hapticFeedback('error')
+            // hapticFeedback('error')
             cadreNext.classList.add("bad");
             spanNext.textContent = "✗ Mauvaise réponse";
           }
@@ -18354,18 +18361,24 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           propPm.textContent = L_q[idProp].n;
           getId('imgPmCadreProp').src = `https://flagcdn.com/${idProp.toLowerCase()}.svg`
 
-          if ( ["drapeauR","contourR","capitaleR"].contains(L_config.r)){
+          if ( ["drapeauR","contourR","capitaleR"].includes(L_config.r)){
           propPm.textContent = "(" +  L_q[idProp].n + ")"}
 }
        
 
         repPm.textContent = L_q[idGood].n;
         getId('imgPmCadreCor').src = `https://flagcdn.com/${idGood.toLowerCase()}.svg`
-        if ( ["drapeauR","contourR","capitaleR"].contains(L_config.r)){repPm.textContent = "(" + L_q[idGood].n + ")";} 
+        if ( ["drapeauR","contourR","capitaleR"].includes(L_config.r)){repPm.textContent = "(" + L_q[idGood].n + ")";} 
 
+        // document.querySelectorAll(".cadreImgPm") .forEach(img=>img.classlist.remove('sil'))
+
+        document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.remove('sil'))
          if(L_config.r === "contourR"){
           getId('imgPmCadreProp').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idProp.toLowerCase()}/vector.svg`
           getId('imgPmCadreCor').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`
+                document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.add('sil'))
+
+
                    
         }
         
@@ -18603,6 +18616,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         cadrePm.classList.remove('active')
         overlayDetailPm.classList.add('active')
+          document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
         document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
       });
 
@@ -18626,6 +18640,8 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         // ) {}
         cadrePm.classList.remove('active')
         overlayDetailPm.classList.add('active')
+          document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
+
         document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
       });
 
@@ -18644,6 +18660,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
           cadrePm.classList.remove('active')
           overlayDetailPm.classList.add('active')
+          document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
           document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
 
           L_reponses = [];
