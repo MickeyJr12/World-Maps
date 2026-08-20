@@ -1467,12 +1467,6 @@
         background: rgba(33, 33, 147, 0.5);
       }
 
-      #footerCadreFlag{
-        backdrop-filter: blur(10px);
-        background: linear-gradient(180deg,rgba(33, 33, 147, 1) 0%, rgba(33, 33, 147, 0.5) 100% );
-
-      }
-
       .wrapperMenuGrid {
         display: flex;
         position: relative;
@@ -1504,7 +1498,7 @@
         pointer-events: none;
         right: 0rem;
         opacity: 0;
-        bottom: calc(-100% - 1rem);
+        bottom: calc(100% + 1rem);
         justify-content: space-around;
         align-items: center;
         box-sizing: border-box;
@@ -1568,21 +1562,29 @@
         height: auto;
       }
       .colorChoice {
+        display : flex;
+        justify-content: center;
+        align-items : center;
         cursor: pointer;
-        outline: 2px solid rgba(255, 255, 255, 0);
-        outline-offset: 0.15rem;
+        outline: 2px solid rgba(255, 255, 255, 0.2);
+        outline-offset: 0.25rem;
         width: 2rem;
         height: 2rem;
         border-radius: 15%;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0);
         transition:
           border 0.2s ease,
           box-shadow 0.2s ease,
           outline-color 0.2s ease;
       }
       .colorChoice.active {
-        border: 1px solid rgba(255, 255, 255, 0.6);
-        outline-color: rgba(255, 255, 255, 0.6);
+        /* border: 1px solid rgba(255, 255, 255, 0.6); */
+        outline-color: rgba(255, 255, 255, 0.8);
+      }
+      .colorChoiceIn{
+        width : 0%;
+        height : 0%;
+        border-radius: inherit;
       }
 
       #colorItemW {
@@ -10102,7 +10104,9 @@ color: #94a3b8;
         <div id="contentFlagS" class="grid2"></div>
         <div class="footerCadreS" id="footerCadreFlag" style="display: none">
           <div id="cadreColorChoice">
-            <div class="colorChoice" id="colorItemR" data-color="r"></div>
+            <div class="colorChoice" id="colorItemR" data-color="r">
+              <div class="colorChoiceIn" style="background: red;"></div>
+            </div>
             <div class="colorChoice" id="colorItemG" data-color="g"></div>
             <div class="colorChoice" id="colorItemB" data-color="b"></div>
             <div class="colorChoice" id="colorItemY" data-color="y"></div>
@@ -34847,8 +34851,6 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         });
       });
 
-     
-
       flagS.addEventListener("click", () => {
         contentC.style.display = "none";
         document.querySelector(".form").style.display = "none";
@@ -34859,12 +34861,6 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         const svgSrc = flagS.querySelector("svg").cloneNode(true);
         titleCadreS.querySelector("svg").replaceWith(svgSrc);
-
-        requestAnimationFrame(()=>{
-           const footerCadreFlag = getId('footerCadreFlag')
-      footerCadreFlag.style.top = getId('contentFlagS').getBoundingClientRect().top + "px"
-      footerCadreFlag.style.bottom = "auto"
-        })
       });
 
       countryS.addEventListener("click", () => {
