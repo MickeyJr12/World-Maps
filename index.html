@@ -18058,6 +18058,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         pauseChrono();
         pauseChronoQ();
         cadrePm.classList.add('active')
+        if (viewMapsPm)return
         document.querySelectorAll('.celGridPm').forEach(el=>{
           if(el.textContent === qNumber.textContent){
             el.click()
