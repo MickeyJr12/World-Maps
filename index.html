@@ -9261,7 +9261,7 @@ color: #94a3b8;
                 <div
                   class="chrono-option"
                   id="chrono15"
-                  data-value="15"
+                  data-value="16"
                   data-label="15s"
                 >
                   15s
@@ -9269,7 +9269,7 @@ color: #94a3b8;
                 <div
                   class="chrono-option"
                   id="chrono30"
-                  data-value="30"
+                  data-value="31"
                   data-label="30s"
                 >
                   30s
@@ -9277,7 +9277,7 @@ color: #94a3b8;
                 <div
                   class="chrono-option lockP"
                   id="chrono1"
-                  data-value="60"
+                  data-value="61"
                   data-label="1min"
                 >
                   1min
@@ -9536,7 +9536,7 @@ color: #94a3b8;
           <div style="display: flex; align-items : center; justify-content: center; flex-direction: column; gap : 0.5rem">
             <span>Ta réponse</span>
 
-                <div class="cadreImgPm">
+                <div class="cadreImgPm" id="cadreImgPmProp">
             <div class="imgPmBox">
               <img src="" alt="" class="imgPmCadre" id="imgPmCadreProp" draggable="false"  />
               <div class="svgPm" id="svgPmProp"></div>
@@ -9550,7 +9550,7 @@ color: #94a3b8;
             <div style="display: flex; align-items : center; justify-content: center; flex-direction: column; gap : 0.5rem">
             <span>Bonne réponse</span>
 
-               <div class="cadreImgPm" id="cadreImgPmGood">
+               <div class="cadreImgPm">
             <div class="imgPmBox">
               <img src="" alt="" class="imgPmCadre" id="imgPmCadreCor" draggable="false"  />
               <div class="svgPm" id="svgPmCor"></div>
@@ -18463,7 +18463,8 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         
         document.querySelectorAll(".cadreImgPm") .forEach(img=>
         {img.style.overflow = "";
-          img.style.margin = ""
+          img.style.margin = "";
+          img.style.display = "";
         })
         document.querySelectorAll(".imgPmBox") .forEach(img=>img.style.overflow = "")
 
@@ -18515,9 +18516,6 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           }
           repPm.textContent = L_q[idGood].c;
         }
-        document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "")
-
-        getId('cadreImgPmGood').style.display = ""
         
         propPm.classList.remove("good","bad","outTime")
         titleDetailPm.classList.remove("good","bad","outTime")  
@@ -18529,7 +18527,8 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         } else if (idProp === "outTime") {
 
-          getId('imgPmCadreProp').style.display = "none"
+          getId('cadreImgPmProp').style.display = "none"
+          
 
             propPm.classList.add("outTime")
             titleDetailPm.classList.add("outTime")
