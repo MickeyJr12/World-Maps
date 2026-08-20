@@ -9420,7 +9420,7 @@ color: #94a3b8;
           justify-content: space-between;
         "
       >
-        <span>Récapitulatif</span>
+        <span>Récapitulatif - <span id="recapMode"></span></span>
         <span id="progGridPm"></span>
       </div>
 
@@ -18314,6 +18314,10 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
       //Remplir contentPm
       function fillPmInit() {
+        const recapMode = getId("recapMode")
+        let L_mode = {modeChoix : getId("modeChoix"), modeTrouver : getId("modeTrouver"), modeClasser : getId("modeClasser")}
+        recapMode.textContent = "Mode " + L_mode[L_config.m].querySelector("h4").textContent;
+
         carouselGridPm.innerHTML = ``
         const nbrSlide = Math.ceil(maxQ/nbrCelPerSlide)
         let celRestSlide = Math.min(maxQ, nbrCelPerSlide)
