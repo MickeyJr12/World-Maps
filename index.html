@@ -18058,6 +18058,11 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         pauseChrono();
         pauseChronoQ();
         cadrePm.classList.add('active')
+        document.querySelectorAll('.celGridPm').forEach(el=>{
+          if(el.textContent === qNumber.textContent){
+            el.click()
+          }
+        })
       }
       pause4Choix.addEventListener("click", () => {
         affichePm();
