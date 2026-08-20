@@ -6257,6 +6257,25 @@ outline : 1px solid rgba(255,255,255,0.2)
         font-size: 0.9rem;
       }
 
+      #numQPm{
+        opacity : 0.6;
+        margin-right : 0.15rem;
+      }
+      #titleDetailPm{
+        margin-left : 0.15rem;
+        font-size : 1rem;
+        font-weight: 550;
+      }
+      #titleDetailPm.good{
+        color : rgba(36, 251, 118, 0.551)
+      }
+      #titleDetailPm.bad{
+        color : rgb(217, 49, 49)
+      }
+      #titleDetailPm.outTime{
+        color : orange;
+      }
+
       .propRepPm{
         font-size: 1rem;
       }
@@ -9469,7 +9488,7 @@ color: #94a3b8;
       </div>
 
 
-      <div style="display: flex; justify-content: space-around; flex-wrap: wrap; width : 100%; gap : 0.5rem;margin-top: -0.8rem">
+      <div style="display: none; justify-content: space-around; flex-wrap: wrap; width : 100%; gap : 0.5rem;margin-top: -0.8rem">
         <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.2rem; background-color:  rgba(36, 251, 118, 0.551);margin-right: 0.4rem;"></div>
         Correct
         </span>
@@ -9492,8 +9511,10 @@ color: #94a3b8;
       <div id="cadreDetailPm">
         <div class="overlayPm active" id="overlayPmInfo">Sélectionne une case pour afficher les détails</div>
         <div class="halfDetailPm">
-          <span >
-            Question <span id="numQPm"></span>
+          <span id="titleDetailPm" >
+            <span style="opacity : 0.6" >Question</span> <span id="numQPm"></span>
+            <span style="opacity : 0.6">—</span>
+            <span id="tfPm"></span>
           </span>
 
 
@@ -17891,6 +17912,8 @@ carouselPremium.addEventListener('scroll', () => {
       const overlayPmInfo = getId('overlayPmInfo')
       const progGridPm = getId('progGridPm')
       const propPm = getId('propPm')
+      const titleDetailPm = getId('titleDetailPm')
+      const tfPm = getId('tfPm')
       const repPm = getId('repPm')
       const btnCartePm = getId('btnCartePm')
 
@@ -18352,7 +18375,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
                 numQPm.textContent = 1
                 document.querySelectorAll(".overlayPm").forEach(o=>o.classList.remove('active'))
                 overlayPmInfo.classList.add('active')
-                overlayPmInfo.textContent = "Sélectionnez une case pour afficher les détails"
+                overlayPmInfo.textContent = "Question en cours..."
                 
 
                 btnCartePm.classList.add('noClick')
@@ -18500,23 +18523,29 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         getId('cadreImgPmGood').style.display = ""
         
-
-        if (idProp === idGood) {
         propPm.classList.remove("good","bad","outTime")
-
+        titleDetailPm.classList.remove("good","bad","outTime")  
+        if (idProp === idGood) {
+        
         propPm.classList.add("good")
+        titleDetailPm.classList.add("good")
+        tfPm.textContent = "✓ Correct"
 
         } else if (idProp === "outTime") {
-        propPm.classList.remove("good","bad","outTime")
+
           getId('imgPmCadreProp').style.display = "none"
 
-        propPm.classList.add("outTime")
+            propPm.classList.add("outTime")
+            titleDetailPm.classList.add("outTime")
 
-          propPm.textContent = "-";
+            propPm.textContent = "-";
+            tfPm.textContent = "⌛ Trop tard"
+
 
         } else {
-        propPm.classList.remove("good","bad","outTime")
         propPm.classList.add("bad")
+        titleDetailPm.classList.add('bad')
+        tfPm.textContent = "✗ Faux"
         }
         })
         //Si on est dans mode Classer, on utilise plusieurs fois la fonction avant d'ajouter une ligne
