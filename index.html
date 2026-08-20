@@ -5896,6 +5896,7 @@ outline : 1px solid rgba(255,255,255,0.2)
       }
 
       .arrowD {
+        flex-shrink:  0;
         fill: rgba(0, 0, 0, 0.6);
         transform: rotate(-90deg);
         height: 1rem;
@@ -6196,6 +6197,7 @@ outline : 1px solid rgba(255,255,255,0.2)
 
       .imgPmBox {
         display: flex;
+        position : relative;
         justify-content: center;
         align-items: center;
         overflow: hidden;
@@ -6203,17 +6205,21 @@ outline : 1px solid rgba(255,255,255,0.2)
         height: 100%;
       }
 
+      .svgPm{
+        z-index: 999999;
+         height: 4rem;        /* ou une hauteur fixe */
+        display: flex;        /* pour bien contrôler le contenu */
+        align-items: center;  /* évite un stretch vertical implicite */
+        overflow: visible;    /* important : évite que le SVG soit coupé */}
       .svgPm svg{
-        height : 2rem;
+        height: 100%;
+  width: auto;      /* clé : empêche l'étalement horizontal */
+  display: block;   /* évite l'espace fantôme sous l'élément inline */
+  max-width: none;  /* au cas où un CSS global mettrait max-width: 100% */
+        overflow: visible;    /* important : évite que le SVG soit coupé */
       }
-      #svgPmCor{
-        display : none;
-      }
-      #svgPmProp{
-        display : none;
-      }
-
-
+     
+     
 
 
       .imgPmCadre {
@@ -18402,40 +18408,59 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         const svgPmProp = getId("svgPmProp")
         const svgPmCor =  getId("svgPmCor")
 
-        document.querySelectorAll(".svgPm") .forEach(svg=>svg.style.display = "")
+        document.querySelectorAll(".svgPm") .forEach(svg=>svg.style.display = "none")
+        document.querySelectorAll(".imgPmCadre") .forEach(img=>img.style.display = "")
+
+        if(L_config.r === "contourR"){
+          document.querySelectorAll(".imgPmCadre") .forEach(img=>img.style.display = "none")
+          document.querySelectorAll(".svgPm") .forEach(svg=>svg.style.display = "")
+          document.querySelectorAll(".svgPm") .forEach(svg=>svg.innerHTML= ``)
 
 
-         if(L_config.r === "contourR"){
-          document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "")
-          document.querySelectorAll(".svgPm") .forEach(svg=>svg.style.display = "flex")
-
-
-          getId('imgPmCadreProp').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idProp.toLowerCase()}/vector.svg`
-          getId('imgPmCadreCor').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`
-          let L_sit = [`https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idProp.toLowerCase()}/vector.svg`,`https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`]
-          let indSite = 0;
-
-          L_sit.forEach(site=>{
+          // getId('imgPmCadreProp').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idProp.toLowerCase()}/vector.svg`
+          // getId('imgPmCadreCor').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`
+         
+          let L_id = [idProp,idGood]
+          L_id.forEach(id=>{
             fetch(
-              site,
+              `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${id.toLowerCase()}/vector.svg`,
                   )
           .then((r) => {
             if (!r.ok) throw new Error();
             return r.text();
           })
-          
-          .then((svg) => {
-            const div = document.createElement("div");
-            div.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
-            document.querySelectorAll(".svgPm") .forEach(svg=>svg.innerHTML= ``)
 
-            indSite === 0 ? svgPmProp.append(div) : svgPmCor.append(div)
-            indSite+=1
+          .then((svg) => {
+            id===idProp ? 
+            svgPmProp.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"') :
+            svgPmCor.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"')
           })
           .catch(() => {
             ""
           });
+
           })
+            
+          ///
+          //  fetch(
+          //     `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`,
+          //         )
+          // .then((r) => {
+          //   if (!r.ok) throw new Error();
+          //   return r.text();
+          // })
+          
+          // .then((svg) => {
+          //   const div = document.createElement("div");
+          //   div.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
+          //   document.querySelectorAll(".svgPm") .forEach(svg=>svg.innerHTML= ``)
+          //   svgPmProp.append(div)
+            
+          // })
+          // .catch(() => {
+          //   ""
+          // });
+          
                 // document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.add('sil'))
         }
         
