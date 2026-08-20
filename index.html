@@ -6259,11 +6259,9 @@ outline : 1px solid rgba(255,255,255,0.2)
 
       #numQPm{
         opacity : 0.6;
-        margin-right : 0.15rem;
       }
       #titleDetailPm{
-        margin-left : 0.15rem;
-        font-size : 1rem;
+        font-size : 0.8rem;
         font-weight: 550;
       }
       #titleDetailPm.good{
@@ -9512,8 +9510,8 @@ color: #94a3b8;
         <div class="overlayPm active" id="overlayPmInfo">Sélectionne une case pour afficher les détails</div>
         <div class="halfDetailPm">
           <span id="titleDetailPm" >
-            <span style="opacity : 0.6" >Question</span> <span id="numQPm"></span>
-            <span style="opacity : 0.6">—</span>
+            <span style="opacity : 0.6; font-size: 0.75rem;" >Question</span> <span id="numQPm"></span>
+            <span style="opacity : 0.6; margin : 0 0.1rem;">—</span>
             <span id="tfPm"></span>
           </span>
 
@@ -18537,7 +18535,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
             titleDetailPm.classList.add("outTime")
 
             propPm.textContent = "-";
-            tfPm.textContent = "⌛ Trop tard"
+            tfPm.textContent = "⌛ Expiré"
 
 
         } else {
