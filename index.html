@@ -1396,6 +1396,7 @@
 
       .celDrapeau {
         display: flex;
+        flex-shrink : 0;
         z-index: 10;
         flex-direction: column;
         align-items: center;
@@ -18402,14 +18403,14 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           propPm.textContent = L_q[idProp].n;
           getId('imgPmCadreProp').src = `https://flagcdn.com/${idProp.toLowerCase()}.svg`
 
-          if ( ["drapeauR","contourR","capitaleR"].includes(L_config.r)){
+          if (L_config.r !== "nomR"){
           propPm.textContent = "(" +  L_q[idProp].n + ")"}
 }
        
 
         repPm.textContent = L_q[idGood].n;
         getId('imgPmCadreCor').src = `https://flagcdn.com/${idGood.toLowerCase()}.svg`
-        if ( ["drapeauR","contourR","capitaleR"].includes(L_config.r)){repPm.textContent = "(" + L_q[idGood].n + ")";} 
+        if (L_config.r !== "nomR"){repPm.textContent = "(" + L_q[idGood].n + ")";} 
 
         // document.querySelectorAll(".cadreImgPm") .forEach(img=>img.classlist.remove('sil'))
 
