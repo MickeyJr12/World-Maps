@@ -18433,6 +18433,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           // getId('imgPmCadreCor').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`
          
           let L_id = [idProp,idGood]
+          let ind = 0;
           L_id.forEach(id=>{
             fetch(
               `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${id.toLowerCase()}/vector.svg`,
@@ -18443,36 +18444,17 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           })
 
           .then((svg) => {
-            id===idProp ? 
+            ind === 0 ? 
             svgPmProp.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"') :
             svgPmCor.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"')
+            ind+=1
           })
           .catch(() => {
-            ""
+            ind+=1
+            
           });
 
           })
-            
-          ///
-          //  fetch(
-          //     `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idGood.toLowerCase()}/vector.svg`,
-          //         )
-          // .then((r) => {
-          //   if (!r.ok) throw new Error();
-          //   return r.text();
-          // })
-          
-          // .then((svg) => {
-          //   const div = document.createElement("div");
-          //   div.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
-          //   document.querySelectorAll(".svgPm") .forEach(svg=>svg.innerHTML= ``)
-          //   svgPmProp.append(div)
-            
-          // })
-          // .catch(() => {
-          //   ""
-          // });
-          
                 // document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.add('sil'))
         }
         
