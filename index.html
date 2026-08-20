@@ -4742,11 +4742,17 @@
       }
       #cadreScorePm {
         display: flex;
+        align-items : center;
         overflow: visible;
         justify-content: center;
       }
       #cadreScorePm svg {
         height: 1rem;
+      }
+      .maxQ{
+        margin: 0 0.4rem; font-size: 20px;
+        font-size: 20px;
+        color: #ffffff;
       }
       #xpPm{
         display : flex;
@@ -9354,7 +9360,7 @@ color: #94a3b8;
 
            <div id="wrapperScorePm">
         <div id="cadreScorePm">
-          Score :<span style="margin-left: 0.4rem" id="spnScore"></span>/<span
+          <span style="font-size: 15px;font-weight: 400;color: rgba(255, 255, 255, 0.65);"> Score :</span> <span style="margin: 0 0.4rem; font-size: 20px;" id="spnScore"></span>/<span
             class="maxQ"
           ></span>
           <div class="cadreStars">
@@ -17779,7 +17785,7 @@ carouselPremium.addEventListener('scroll', () => {
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 15  ;
+      let maxQ = 3;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
