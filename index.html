@@ -6196,6 +6196,7 @@ outline : 1px solid rgba(255,255,255,0.2)
       }
 
 
+      
       .imgPmBox {
         display: flex;
         position : relative;
@@ -6206,13 +6207,23 @@ outline : 1px solid rgba(255,255,255,0.2)
         height: 100%;
       }
 
+       .imgPmCadre {
+        height: 100%;
+        overflow: hidden;
+        object-fit: contain;
+        border-radius: 0.2rem;
+      }
+
       .svgPm{
         z-index: 999999;
          height: 4rem;        /* ou une hauteur fixe */
         display: flex;        /* pour bien contrôler le contenu */
         align-items: center;  /* évite un stretch vertical implicite */
         overflow: visible;    /* important : évite que le SVG soit coupé */}
+
+
       .svgPm svg{
+
         height: 100%;
   width: auto;      /* clé : empêche l'étalement horizontal */
   display: block;   /* évite l'espace fantôme sous l'élément inline */
@@ -6220,15 +6231,6 @@ outline : 1px solid rgba(255,255,255,0.2)
         overflow: visible;    /* important : évite que le SVG soit coupé */
       }
      
-     
-
-
-      .imgPmCadre {
-        height: 100%;
-        overflow: hidden;
-        object-fit: contain;
-        border-radius: 0.2rem;
-      }
 
       /*  */
       .halfDetailPm{
@@ -18404,18 +18406,28 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         // document.querySelectorAll(".cadreImgPm") .forEach(img=>img.classlist.remove('sil'))
 
-        document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.remove('sil'))
+        // document.querySelectorAll('.cadreImgPm').forEach(img=>img.classList.remove('sil'))
 
         const svgPmProp = getId("svgPmProp")
         const svgPmCor =  getId("svgPmCor")
 
         document.querySelectorAll(".svgPm") .forEach(svg=>svg.style.display = "none")
         document.querySelectorAll(".imgPmCadre") .forEach(img=>img.style.display = "")
+        
+        document.querySelectorAll(".cadreImgPm") .forEach(img=>
+        {img.style.overflow = "";
+          img.style.margin = ""
+        })
+        document.querySelectorAll(".imgPmBox") .forEach(img=>img.style.overflow = "")
+
 
         if(L_config.r === "contourR"){
+
           document.querySelectorAll(".imgPmCadre") .forEach(img=>img.style.display = "none")
           document.querySelectorAll(".svgPm") .forEach(svg=>svg.style.display = "")
           document.querySelectorAll(".svgPm") .forEach(svg=>svg.innerHTML= ``)
+          document.querySelectorAll(".cadreImgPm") .forEach(img=>{img.style.overflow = "visible" ; img.style.margin = "0.6rem 0"})
+          document.querySelectorAll(".imgPmBox") .forEach(img=>img.style.overflow = "visible")
 
 
           // getId('imgPmCadreProp').src = `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idProp.toLowerCase()}/vector.svg`
