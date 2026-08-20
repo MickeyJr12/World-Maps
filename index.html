@@ -6167,7 +6167,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         color : rgba(255,255,255,0.4);
         position : absolute;
         inset : 0;
-        background : rgba(0,0,0,0.4);
+        background : rgba(0,0,0,0.75);
         backdrop-filter : blur(10px);
         padding : inherit;
         transition : opacity 0.2s ease;
@@ -18362,6 +18362,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
           document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
           overlayDetailPm.classList.add('active')
+          document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
             
           }
         })
@@ -18699,6 +18700,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         cadrePm.classList.remove('active')
         overlayDetailPm.classList.add('active')
+        document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
         document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
       });
@@ -18723,6 +18725,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         // ) {}
         cadrePm.classList.remove('active')
         overlayDetailPm.classList.add('active')
+        document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
 
         document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
@@ -18743,6 +18746,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
           cadrePm.classList.remove('active')
           overlayDetailPm.classList.add('active')
+          document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
           document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
 
