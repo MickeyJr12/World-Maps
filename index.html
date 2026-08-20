@@ -17748,7 +17748,6 @@ carouselPremium.addEventListener('scroll', () => {
           fillPmInit()
           document.querySelectorAll('.celGridPm').forEach(cel=>{
         cel.addEventListener('click',()=>{
-          if (cel.className === "celGridPm")return
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
           cel.classList.add('selected')
         })
@@ -18402,8 +18401,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           if (el.className === "celGridPm"){
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
           overlayPmInfo.classList.add('active')
-          overlayPmInfo.textContent = "Sélectionnez une case pour afficher les détails"
-          
+          overlayPmInfo.textContent = "Aucune réponse pour l'instant"
 
           document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
           document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
@@ -18750,7 +18748,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         cadrePm.classList.remove('active')
         overlayPmInfo.classList.add('active')
-        overlayPmInfo.textContent = "Sélectionnez une case pour afficher les détails"
+        overlayPmInfo.textContent = "Sélectionne une case pour afficher les détails"
         
         document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
@@ -18777,7 +18775,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         // ) {}
         cadrePm.classList.remove('active')
         overlayPmInfo.classList.add('active')
-        overlayPmInfo.textContent = "Sélectionnez une case pour afficher les détails"
+        overlayPmInfo.textContent = "Sélectionne une case pour afficher les détails"
         
 
         document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
@@ -18801,7 +18799,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
           cadrePm.classList.remove('active')
           overlayPmInfo.classList.add('active')
-          overlayPmInfo.textContent = "Sélectionnez une case pour afficher les détails"
+          overlayPmInfo.textContent = "Sélectionne une case pour afficher les détails"
           
           document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
