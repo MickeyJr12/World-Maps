@@ -17701,9 +17701,6 @@ carouselPremium.addEventListener('scroll', () => {
       });
 
       playConfig.addEventListener("click", () => {
-          
-        
-          
         score = 0;
         track = 0;
         currentChronoQ = 0;
@@ -17746,12 +17743,6 @@ carouselPremium.addEventListener('scroll', () => {
           L_reponses = [];
           fillPhonePlay();
           fillPmInit()
-          document.querySelectorAll('.celGridPm').forEach(cel=>{
-        cel.addEventListener('click',()=>{
-          document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
-          cel.classList.add('selected')
-        })
-      })
         }, 100);
         //
 
@@ -18398,8 +18389,10 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
       
       document.querySelectorAll('.celGridPm').forEach(el=>{
         el.addEventListener('click',()=>{
-          if (el.className === "celGridPm"){
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
+          el.classList.add('selected')
+          console.log(el.className)
+          if (el.className === "celGridPm selected"){          
           overlayPmInfo.classList.add('active')
           overlayPmInfo.textContent = "Aucune réponse à cette question pour l'instant"
 
@@ -18420,9 +18413,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
 
         currentEl.addEventListener('click',()=>{
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
-          currentEl.classList.add('selected')
-        
-
+          currentEl.classList.add('selected')        
         })
 
 
@@ -18807,6 +18798,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           L_reponses = [];
           fillPhonePlay();
           fillPmInit()
+          
           setTimeout(() => {
             document.getElementById("wrapperScorePm").style.display = "none";
             document.getElementById("pmTitle").textContent = "Menu Pause";
