@@ -6169,7 +6169,7 @@ outline : 1px solid rgba(255,255,255,0.2)
 
       }
 
-      #overlayDetailPm{
+      .overlayPm{
         display : flex;
         justify-content : center;
         align-items : center;
@@ -6186,8 +6186,7 @@ outline : 1px solid rgba(255,255,255,0.2)
         padding : inherit;
         transition : opacity 0.2s ease;
       }
-
-      #overlayDetailPm.active{
+      .overlayPm.active{
         opacity : 1;
       }
       /*  */
@@ -9471,19 +9470,19 @@ color: #94a3b8;
 
 
       <div style="display: flex; justify-content: space-around; flex-wrap: wrap; width : 100%; gap : 0.5rem;margin-top: -0.8rem">
-        <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.1rem; background-color:  rgba(36, 251, 118, 0.551);margin-right: 0.4rem;"></div>
+        <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.2rem; background-color:  rgba(36, 251, 118, 0.551);margin-right: 0.4rem;"></div>
         Correct
         </span>
 
-        <span  style="display: flex; flex-wrap: nowrap;align-items: center;"><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.1rem; background-color:  rgba(251, 36, 36, 0.551);margin-right: 0.4rem;"></div>
+        <span  style="display: flex; flex-wrap: nowrap;align-items: center;"><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.2rem; background-color:  rgba(251, 36, 36, 0.551);margin-right: 0.4rem;"></div>
         Faux
         </span>
 
-         <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.1rem; background-color:  rgba(36, 169, 251, 0.551);margin-right: 0.4rem;"></div>
+         <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.2rem; background-color:  rgba(36, 169, 251, 0.551);margin-right: 0.4rem;"></div>
         En cours
         </span>
 
-         <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.1rem; background-color: #f09443;margin-right: 0.4rem;"></div>
+         <span style="display: flex; flex-wrap: nowrap; align-items: center" ><div style="height :  0.8rem; aspect-ratio: 1/1; border-radius: 0.2rem; background-color: #f09443;margin-right: 0.4rem;"></div>
         Temps expiré
         </span>
       </div>
@@ -9491,7 +9490,8 @@ color: #94a3b8;
       <div style="flex:1"></div>
 
       <div id="cadreDetailPm">
-        <div id="overlayDetailPm" class="active">Sélectionne une case pour afficher les détails</div>
+        <div class="overlayPm active" id="overlayPmInfo">Sélectionne une case pour afficher les détails</div>
+        <div class="overlayPm" id="overlayPmCurrent">Question en cours...</div>
         <div class="halfDetailPm">
           <span >
             Question <span id="numQPm"></span>
@@ -16613,10 +16613,9 @@ carouselPremium.addEventListener('scroll', () => {
                 el.addEventListener('click',()=>{
                 
                 numQPm.textContent = getQNumber()
-                overlayDetailPm.classList.remove('active')
+                document.querySelectorAll(".overlayPm").forEach(o=>o.classList.remove('active'))
                 btnCartePm.classList.add('noClick')
-                propPm.textContent = "-";
-                repPm.textContent = "-";
+                overlayPmCurrent.classList.add('active')
                 propPm.classList.remove('good',"bad","outTime")
                 document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "none")
                 document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
@@ -17887,7 +17886,8 @@ carouselPremium.addEventListener('scroll', () => {
       const wrapperGridPm = getId('wrapperGridPm')
       const imgPmCadreCor = getId('imgPmCadreCor')
       const imgPmCadreProp = getId('imgPmCadreProp')
-      const overlayDetailPm = getId('overlayDetailPm')
+      const overlayPmInfo = getId('overlayPmInfo')
+      const overlayPmCurrent = getId('overlayPmCurrent')
       const progGridPm = getId('progGridPm')
       const propPm = getId('propPm')
       const repPm = getId('repPm')
@@ -18349,10 +18349,10 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
                 propPm.classList.remove('good',"bad","outTime")
                 btnCartePm.classList.remove('noClick')
                 numQPm.textContent = 1
-                overlayDetailPm.classList.remove('active')
-                propPm.textContent = "-";
-                repPm.textContent = "-";
+                document.querySelectorAll(".overlayPm").forEach(o=>o.classList.remove('active'))
+                overlayPmInfo.classList.add('active')
                 btnCartePm.classList.add('noClick')
+                cel.classList.add('selected')
                 document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
                 document.querySelectorAll(".cadreImgPm") .forEach(img=>img.style.display = "none")
               })
@@ -18375,7 +18375,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           if (el.className === "celGridPm"){
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
           document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
-          overlayDetailPm.classList.add('active')
+          overlayPmInfo.classList.add('active')
           document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
             
           }
@@ -18410,7 +18410,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         currentEl.addEventListener('click',()=>{
 
           numQPm.textContent = parseInt(currentEl.textContent)
-          overlayDetailPm.classList.remove('active')
+          document.querySelectorAll(".overlayPm").forEach(o=>o.classList.remove('active'))
           btnCartePm.classList.remove('noClick')
           if (idProp !== "outTime") {
           propPm.textContent = L_q[idProp].n;
@@ -18713,7 +18713,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         }, 150);
 
         cadrePm.classList.remove('active')
-        overlayDetailPm.classList.add('active')
+        overlayPmInfo.classList.add('active')
         document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
         document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
@@ -18738,7 +18738,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
         //     cadreNext.classList.contains("visible"))
         // ) {}
         cadrePm.classList.remove('active')
-        overlayDetailPm.classList.add('active')
+        overlayPmInfo.classList.add('active')
         document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
 
@@ -18759,7 +18759,7 @@ carouselGridPm.addEventListener('scroll', updateProgressSlidePm);
           document.querySelector(".btn-suivant").textContent = "Suivant →";
 
           cadrePm.classList.remove('active')
-          overlayDetailPm.classList.add('active')
+          overlayPmInfo.classList.add('active')
           document.querySelectorAll('.svgPm').forEach(svg=>svg.innerHTML = ``)
           document.querySelectorAll('.celGridPm').forEach(cel2=>cel2.classList.remove("selected"));
           document.querySelectorAll(".imgPmCadre") .forEach(img=>img.src = ``)
