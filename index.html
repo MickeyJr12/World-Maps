@@ -12045,7 +12045,7 @@
                 <div
                   class="chrono-option"
                   id="chrono15"
-                  data-value="3"
+                  data-value="16"
                   data-label="15s"
                 >
                   15s
@@ -19847,14 +19847,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         btnCartePm.style.display = "none";
 
-        infosCboxs_m.set(getQNumber(), {
-          idBonneReponse: idBonneReponse,
-          idMauvaiseReponse: null,
-          c1: { class: null, html: c1.innerHTML },
-          c2: { class: null, html: c2.innerHTML },
-          c3: { class: null, html: c3.innerHTML },
-          c4: { class: null, html: c4.innerHTML },
-        });
+      
         idsCboxs_m.set(getQNumber(), {
           c1: null,
           c2: null,
@@ -20984,7 +20977,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               idMauvaiseReponse = idProps_m.get(b);
               b.id === "qTrouver"
                 ? ""
-                : (infosCboxs_m.get(getQNumber()).idMauvaiseReponse =
+                : (infosCboxs_m.get(getQNumber()).idBad =
                     idProps_m.get(b));
             } else {
               b.classList.add("none");
@@ -21316,8 +21309,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // pm est le numéro de la question
         oneTimeMap = true;
         viewMaps = true;
-        let newIdGood = pm ? infosCboxs_m.get(pm).idGood : idBonneReponse;
-        let newIdBad = pm ? infosCboxs_m.get(pm).idBad : idMauvaiseReponse;
+       
         htmlCBoxs_m.set(getQNumber(), {
           c1: c1.innerHTML,
           c2: c2.innerHTML,
@@ -21376,6 +21368,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         btns4Choix.forEach((btn) => {
           L_rep.push(idsCboxs_m.get(pm ? pm : getQNumber())[btn.id]);
         });
+         let newIdGood = pm ? infosCboxs_m.get(pm).idGood : idBonneReponse;
+        let newIdBad = pm ? infosCboxs_m.get(pm).idBad : idMauvaiseReponse;
         paths.forEach((p) => {
           if (L_rep.includes(p.id)) {
             if (p.id === newIdGood) {
