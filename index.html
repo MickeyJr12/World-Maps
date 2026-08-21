@@ -39349,7 +39349,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             .then((data) => {
               dataConvert = data.rates;
               dataLatest = data.time_last_update_utc;
-
+              dataD = data
+              saveProgress()
               let s = dataLatest.slice(0, 3);
               let jr = dataLatest.slice(3, 8);
               let m = dataLatest.slice(8, 11);
