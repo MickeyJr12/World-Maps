@@ -19614,7 +19614,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let idsCboxs_m = new Map();
       let classCboxs_m = new Map();
       let infosClasser = new Map();
-      let amostClasser = new Map();
+      let almostClasser = new Map();
       let L_cBoxHasard = [cc1, cc2, cc3, cc4];
       let L_btn4ChoixHasard = [c1, c2, c3, c4];
       let reponseFound = false;
@@ -20398,6 +20398,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           if (nbrGood >= nbr / 2 && nbrGood != nbr) {
             cadreNext.className = "cadreNext visible almost";
             almostClasser.set(getQNumber(),true)
+
             spanNext.textContent = "~ Presque !";
             playSound(badSound);
             // hapticFeedback('error')
@@ -21158,6 +21159,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         document.querySelectorAll(".celGridPm").forEach((el) => {
           if (el.textContent === qNumber.textContent) {
             el.click();
+            el.parentNode.parentNode.scrollIntoView({
+  behavior: "instant",
+  inline: "center", // ou "start"/"end" selon ton layout
+  block: "nearest"
+});
           }
         });
       }
@@ -21758,8 +21764,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             tfPm.append(sandTime);
             tfPm.append("  Temps écoulé");
           } else {
-            titleDetailPm.classList.add("bad");
-            tfPm.textContent = "✗ Faux";
+
+            if(almostClasser.has(parseInt(currentEl.textContent))){
+            titleDetailPm.classList.add("outTime");
+            tfPm.textContent = "~ Presque";
+            }
+             else {
+              titleDetailPm.classList.add("bad");
+              tfPm.textContent = "✗ Faux";
+            }
+
           }
           
 
