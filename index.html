@@ -18931,120 +18931,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
       /// Fin Scrit paramètres
 
-      // Vider le cache
-      // localStorage.removeItem("geoquiz_progress_v1");
-      // location.reload();
-      // Script localstorage
-      const SAVE_KEY = "geoquiz_progress_v1";
-
-      let streak = 0;
-      let lastStreakDate = null;
-      let maxTrack = 0;
-      let totalDays = 0;
-
-      function saveProgress() {
-        const data = {
-          lvlPlayer,
-          nbrProgLvl,
-          track,
-          L_progressQ,
-          L_claimedQ,
-          defisQSelected: defisQSelected.map((q) => q.id),
-          lastQuestGenDate: lastQuestGenDate,
-          streak,
-          lastStreakDate,
-          maxTrack,
-          totalDays,
-          sound,
-          onlySouv,
-          haptic,
-          notif,
-          dataD,
-        };
-        localStorage.setItem(SAVE_KEY, JSON.stringify(data));
-      }
-
-      let lastQuestGenDate = null;
-
-      function loadProgress() {
-        const raw = localStorage.getItem(SAVE_KEY);
-        if (!raw) return null;
-
-        try {
-          const data = JSON.parse(raw);
-          lvlPlayer = data.lvlPlayer ?? 1;
-          nbrProgLvl = data.nbrProgLvl ?? 0;
-          track = data.track ?? 0;
-          if (data.L_progressQ) Object.assign(L_progressQ, data.L_progressQ);
-          if (data.L_claimedQ) Object.assign(L_claimedQ, data.L_claimedQ);
-          L_palierLvl = PALIERS_LVL_ORIGINAL.slice(lvlPlayer - 1);
-          lastQuestGenDate = data.lastQuestGenDate ?? null;
-          streak = data.streak ?? 0;
-          lastStreakDate = data.lastStreakDate ?? null;
-          maxTrack = data.maxTrack ?? 0;
-          totalDays = data.totalDays ?? 0;
-          sound = data.sound ?? false;
-          onlySouv = data.onlySouv ?? false;
-          haptic = data.haptic ?? false;
-          notif = data.notif ?? false;
-          data.dataD ? dataD = data.dataD : ""; 
-
-          return data; // on retourne data pour récupérer defisQSelected ensuite
-        } catch (e) {
-          console.error("Sauvegarde corrompue, reset :", e);
-          localStorage.removeItem(SAVE_KEY);
-          return null;
-        }
-      }
-
-      const savedData = loadProgress();
-
-      checkbox.checked = sound;
-      checkboxH.checked = haptic;
-      checkBoxSouv.checked = onlySouv;
-      checkBoxNotif.checked = notif;
-
-      txtLvlPlayer.textContent = lvlPlayer;
-      txtProgLvl.textContent = nbrProgLvl;
-      txtPalierLvl.textContent = L_palierLvl[0];
-      barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
-
-      const today = getTodayKey();
-
-      if (
-        lastQuestGenDate === today &&
-        savedData?.defisQSelected?.length === 4
-      ) {
-        // Même jour : on restaure les quêtes déjà tirées, pas de nouveau tirage
-        const restoredSelection = savedData.defisQSelected
-          .map((id) => L_RDQ.find((q) => q.id === id))
-          .filter(Boolean);
-
-        if (restoredSelection.length === 4) {
-          fillCadreRDQ(restoredSelection);
-        } else {
-          // sécurité si des ids ne matchent plus (ex: tu as retiré une quête du code)
-          fillCadreRDQ();
-          lastQuestGenDate = today;
-          saveProgress();
-        }
-      } else {
-        // Nouveau jour ou première visite : nouveau tirage
-        fillCadreRDQ();
-        lastQuestGenDate = today;
-        saveProgress();
-      }
-
-      // Ré-afficher l'état chargé dans l'UI
-      txtLvlPlayer.textContent = lvlPlayer;
-      txtProgLvl.textContent = nbrProgLvl;
-      txtPalierLvl.textContent = L_palierLvl[0];
-      barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
-
-      window.addEventListener("beforeunload", saveProgress);
-      window.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "hidden") saveProgress();
-      });
+      
 
       //Quêtes une fois par jour
       function getTodayKey() {
@@ -19253,66 +19140,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "Gardez le rythme, on se retrouve demain",
         "Continuez ainsi, à demain !",
       ];
-      function trackLoading() {
-        const aujourdHui = getTodayKey();
-        const ecart = nbJoursEntre(lastStreakDate, aujourdHui);
-        if (ecart >= 2) {
-          streak = 0;
-          txtTrackDays.textContent = streak;
-          txtCadreTrack.textContent =
-            streak + " jours de suite " + (streak === 0 ? "" : "!");
-          boxIconeTrack.style.filter = "grayscale(100%)";
-
-          lastStreakDate = null;
-          btnTrackDays.classList.remove("active");
-          f2RTrack.style.animation = "";
-          f1RTrack.style.animation = "";
-          f3RTrack.style.animation = "";
-          saveProgress();
-          return;
-        }
-        if (ecart === 0) {
-          btnTrackDays.classList.add("active");
-          f2RTrack.style.animation = "fire2 0.5s linear infinite";
-          f1RTrack.style.animation = "fire3 0.5s linear infinite";
-          f3RTrack.style.animation = "fire3 0.5s linear infinite";
-          svgTrackB.style.display = "none";
-          svgTrackR.style.display = "flex";
-          btnTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)";
-          txtMotivation.textContent =
-            L_motivation[Math.floor(Math.random() * L_motivation.length)];
-          boxIconeTrack.style.filter = "";
-        } else {
-          streak === 0
-            ? (btnTrackDays.classList.remove("active"),
-              (f2RTrack.style.animation = ""),
-              (f1RTrack.style.animation = ""),
-              (f3RTrack.style.animation = ""))
-            : (btnTrackDays.classList.add("active"),
-              (f2RTrack.style.animation = "fire2 0.5s linear infinite"),
-              (f1RTrack.style.animation = "fire3 0.5s linear infinite"),
-              (f3RTrack.style.animation = "fire3 0.5s linear infinite"));
-
-          svgTrackB.style.display = "flex";
-          btnTrackDays.style.outline = "1px dashed rgba(255,255,255,0.2)";
-          svgTrackR.style.display = "none";
-          txtMotivation.textContent =
-            streak === 0
-              ? "Terminez un quiz pour commencer votre série"
-              : "Terminez un quiz pour continuer votre série";
-          boxIconeTrack.style.filter = "grayscale(100%)";
-        }
-
-        if (streak > maxTrack) {
-          maxTrack = streak;
-        }
-        txtMaxTrack.textContent = maxTrack + " jours";
-        txtTrackDays.textContent = streak;
-        txtCadreTrack.textContent =
-          streak + " jours de suite " + (streak === 0 ? "" : "!");
-        txtTotalDays.textContent = totalDays + " jours";
-      }
-      trackLoading();
+    
       // fin script localstorage
 
       menuDefiQ.addEventListener("click", () => {
@@ -39679,6 +39507,187 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/sw.js");
       }
+
+      // Vider le cache
+      // localStorage.removeItem("geoquiz_progress_v1");
+      // location.reload();
+      // Script localstorage
+      const SAVE_KEY = "geoquiz_progress_v1";
+
+      let streak = 0;
+      let lastStreakDate = null;
+      let maxTrack = 0;
+      let totalDays = 0;
+
+      function saveProgress() {
+        const data = {
+          lvlPlayer,
+          nbrProgLvl,
+          track,
+          L_progressQ,
+          L_claimedQ,
+          defisQSelected: defisQSelected.map((q) => q.id),
+          lastQuestGenDate: lastQuestGenDate,
+          streak,
+          lastStreakDate,
+          maxTrack,
+          totalDays,
+          sound,
+          onlySouv,
+          haptic,
+          notif,
+          dataD,
+        };
+        localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+      }
+
+      let lastQuestGenDate = null;
+
+      function loadProgress() {
+        const raw = localStorage.getItem(SAVE_KEY);
+        if (!raw) return null;
+
+        try {
+          const data = JSON.parse(raw);
+          lvlPlayer = data.lvlPlayer ?? 1;
+          nbrProgLvl = data.nbrProgLvl ?? 0;
+          track = data.track ?? 0;
+          if (data.L_progressQ) Object.assign(L_progressQ, data.L_progressQ);
+          if (data.L_claimedQ) Object.assign(L_claimedQ, data.L_claimedQ);
+          L_palierLvl = PALIERS_LVL_ORIGINAL.slice(lvlPlayer - 1);
+          lastQuestGenDate = data.lastQuestGenDate ?? null;
+          streak = data.streak ?? 0;
+          lastStreakDate = data.lastStreakDate ?? null;
+          maxTrack = data.maxTrack ?? 0;
+          totalDays = data.totalDays ?? 0;
+          sound = data.sound ?? false;
+          onlySouv = data.onlySouv ?? false;
+          haptic = data.haptic ?? false;
+          notif = data.notif ?? false;
+          data.dataD ? dataD = data.dataD : ""; 
+
+          return data; // on retourne data pour récupérer defisQSelected ensuite
+        } catch (e) {
+          console.error("Sauvegarde corrompue, reset :", e);
+          localStorage.removeItem(SAVE_KEY);
+          return null;
+        }
+      }
+
+      const savedData = loadProgress();
+
+      checkbox.checked = sound;
+      checkboxH.checked = haptic;
+      checkBoxSouv.checked = onlySouv;
+      checkBoxNotif.checked = notif;
+
+      txtLvlPlayer.textContent = lvlPlayer;
+      txtProgLvl.textContent = nbrProgLvl;
+      txtPalierLvl.textContent = L_palierLvl[0];
+      barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
+
+      const today = getTodayKey();
+
+      if (
+        lastQuestGenDate === today &&
+        savedData?.defisQSelected?.length === 4
+      ) {
+        // Même jour : on restaure les quêtes déjà tirées, pas de nouveau tirage
+        const restoredSelection = savedData.defisQSelected
+          .map((id) => L_RDQ.find((q) => q.id === id))
+          .filter(Boolean);
+
+        if (restoredSelection.length === 4) {
+          fillCadreRDQ(restoredSelection);
+        } else {
+          // sécurité si des ids ne matchent plus (ex: tu as retiré une quête du code)
+          fillCadreRDQ();
+          lastQuestGenDate = today;
+          saveProgress();
+        }
+      } else {
+        // Nouveau jour ou première visite : nouveau tirage
+        fillCadreRDQ();
+        lastQuestGenDate = today;
+        saveProgress();
+      }
+
+      // Ré-afficher l'état chargé dans l'UI
+      txtLvlPlayer.textContent = lvlPlayer;
+      txtProgLvl.textContent = nbrProgLvl;
+      txtPalierLvl.textContent = L_palierLvl[0];
+      barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
+
+      window.addEventListener("beforeunload", saveProgress);
+      window.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") saveProgress();
+      });
+
+
+        function trackLoading() {
+        const aujourdHui = getTodayKey();
+        const ecart = nbJoursEntre(lastStreakDate, aujourdHui);
+        if (ecart >= 2) {
+          streak = 0;
+          txtTrackDays.textContent = streak;
+          txtCadreTrack.textContent =
+            streak + " jours de suite " + (streak === 0 ? "" : "!");
+          boxIconeTrack.style.filter = "grayscale(100%)";
+
+          lastStreakDate = null;
+          btnTrackDays.classList.remove("active");
+          f2RTrack.style.animation = "";
+          f1RTrack.style.animation = "";
+          f3RTrack.style.animation = "";
+          saveProgress();
+          return;
+        }
+        if (ecart === 0) {
+          btnTrackDays.classList.add("active");
+          f2RTrack.style.animation = "fire2 0.5s linear infinite";
+          f1RTrack.style.animation = "fire3 0.5s linear infinite";
+          f3RTrack.style.animation = "fire3 0.5s linear infinite";
+          svgTrackB.style.display = "none";
+          svgTrackR.style.display = "flex";
+          btnTrackDays.style.outline = "1px solid rgba(255,255,255,0.2)";
+          txtMotivation.textContent =
+            L_motivation[Math.floor(Math.random() * L_motivation.length)];
+          boxIconeTrack.style.filter = "";
+        } else {
+          streak === 0
+            ? (btnTrackDays.classList.remove("active"),
+              (f2RTrack.style.animation = ""),
+              (f1RTrack.style.animation = ""),
+              (f3RTrack.style.animation = ""))
+            : (btnTrackDays.classList.add("active"),
+              (f2RTrack.style.animation = "fire2 0.5s linear infinite"),
+              (f1RTrack.style.animation = "fire3 0.5s linear infinite"),
+              (f3RTrack.style.animation = "fire3 0.5s linear infinite"));
+
+          svgTrackB.style.display = "flex";
+          btnTrackDays.style.outline = "1px dashed rgba(255,255,255,0.2)";
+          svgTrackR.style.display = "none";
+          txtMotivation.textContent =
+            streak === 0
+              ? "Terminez un quiz pour commencer votre série"
+              : "Terminez un quiz pour continuer votre série";
+          boxIconeTrack.style.filter = "grayscale(100%)";
+        }
+
+        if (streak > maxTrack) {
+          maxTrack = streak;
+        }
+        txtMaxTrack.textContent = maxTrack + " jours";
+        txtTrackDays.textContent = streak;
+        txtCadreTrack.textContent =
+          streak + " jours de suite " + (streak === 0 ? "" : "!");
+        txtTotalDays.textContent = totalDays + " jours";
+      }
+      trackLoading();
+
+      
+
+
 
       function loop() {
         requestAnimationFrame(loop);
