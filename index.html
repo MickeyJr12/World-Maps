@@ -6075,7 +6075,7 @@
         margin-top: 0rem;
         height: 100%;
         max-width: 600px;
-        gap: 0.8rem;
+        gap : clamp(0px, 0.8rem, 0.8rem);
 
         background: linear-gradient(180deg, #2f8fd4, #1a5fa0);
         background: rgba(10, 0, 80, 0.9);
@@ -6270,38 +6270,34 @@
         width: 100%;
         height: 100%;
       }
-      .itemCPmIn {
-        position: absolute;
-        left: 0;
-        z-index: 1;
-        height: 100%;
-        width: 50%;
-        border-radius: inherit;
-      }
-      .itemCPmIn.good {
-        background: rgba(36, 251, 118, 0.551);
-        background: rgba(31, 255, 31, 0.6);
-      }
-      .itemCPmIn.bad {
-        background: rgb(217, 49, 49);
-      }
-      .itemCPmIn.outTime {
-        background: orange;
-      }
-
+  
       .itemCPmTxt {
         display: flex;
         flex-direction: column;
-        gap: 0.4rem;
+        gap: 0.15rem;
         z-index: 10;
         box-sizing: border-box;
         border-radius: inherit;
         color: rgba(255, 255, 255, 0.5);
-        background: rgba(35, 49, 252, 1);
+        background: rgba(255,255,255,0.04);
         width: calc(100% - 0.25rem);
         height: 100%;
         padding: 0.6rem;
+        border-left : 0.25rem solid rgba(217, 49, 49)
       }
+
+          .itemCPmTxt.good {
+        border-left: 0.25rem solid rgba(36, 251, 118, 0.551);
+        border-left: 0.25rem solid rgba(31, 255, 31, 0.6);
+      }
+      .itemCPmTxt.bad {
+        border-left: 0.25rem solid rgb(217, 49, 49);
+      }
+      .itemCPmTxt.outTime {
+        border-left: 0.25rem solid orange;
+      }
+
+      
       .itemCPmTxtTop {
         display: flex;
         justify-content: space-between;
@@ -21468,7 +21464,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         recapMode.textContent =
           "Mode " + L_mode[L_config.m].querySelector("h4").textContent;
         if (L_config.m === "modeClasser"){
-          recapMode.append(" " + (L_config.q === "superficieQ" ? "(par superficie)" : "(par population)"))
+          recapMode.append(" " + (L_config.q === "superficieQ" ? "(superficie)" : "(population)"))
         }
         nbrCelPerSlide = 15
         if (L_config.m === "modeClasser"){
@@ -21782,8 +21778,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const itemCPm = document.createElement("div");
             itemCPm.className = "itemCPm";
 
-            const itemCPmIn = document.createElement("div");
-            itemCPmIn.className = "itemCPmIn";
+           
 
             const itemCPmTxt = document.createElement("div");
             itemCPmTxt.className = "itemCPmTxt";
@@ -21807,7 +21802,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
             itemCPmTxtTop.append(spanWrapper, superficie);
             itemCPmTxt.append(itemCPmTxtTop);
-            itemCPm.append(itemCPmIn, itemCPmTxt);
+            itemCPm.append(itemCPmTxt);
             wrapperCPm.append(itemCPm)
 
             let L_of = L_prop === "outTime" ? L_good : L_prop;
@@ -21823,11 +21818,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               new_DelClasser[L_good[i]].dataset.order ===
                 new_DelClasser[L_good[i]].dataset.goodOrder
             ) {
-              itemCPmIn.classList.add("good");
+              itemCPmTxt.classList.add("good");
             } else if (L_prop === "outTime") {
-              itemCPmIn.classList.add("outTime");
+              itemCPmTxt.classList.add("outTime");
             } else {
-              itemCPmIn.classList.add("bad");
+              itemCPmTxt.classList.add("bad");
               const itemCPmAtt = document.createElement("div");
               itemCPmAtt.className = "itemCPmAtt";
               itemCPmAtt.textContent = "Attendu ici : " + L_q[L_good[i]].n;
