@@ -38471,8 +38471,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       });
       fetchWithCache("https://open.er-api.com/v6/latest/EUR", 43200000)
-        .then((data) => {
-          dataD = data
+        .then((data) => {    
+          dataD = data      
           saveProgress()
           dataConvert = dataD.rates;
           dataLatest = dataD.time_last_update_utc;
@@ -39211,25 +39211,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             })
             .catch((error) => 
             {
-              dataConvert = dataD.rates;
-              dataLatest = dataD.time_last_update_utc;
-
-              let s = dataLatest.slice(0, 3);
-              let jr = dataLatest.slice(3, 8);
-              let m = dataLatest.slice(8, 11);
-              let a = dataLatest.slice(12, 17);
-              let h = dataLatest.slice(18, 26);
-              let utc = dataLatest.slice(26);
-
-              console.log(jr)
-              document.getElementById("pLast").textContent =
-              "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " +a+" " + h + utc;
-
-
+             
+             console.log('foiré')
               inputD1.value = CD1 + D_symbolesD[currentDD];
-
+              const newDataConvert = dataD.rates
+              const convert = newDataConvert[currentDV]/newDataConvert[currentDD]
               inputD2.value =
-                Math.round(dataConvert[currentDV] * parseFloat(CD1) * 100) /
+                Math.round(convert * parseFloat(CD1) * 100) /
                   100 +
                 D_symbolesD[currentDV];
 
@@ -39241,7 +39229,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 "1.00 " +
                 currentDD +
                 " = " +
-                dataConvert[currentDV] +
+                convert +
                 " " +
                 currentDV;
             
@@ -39685,7 +39673,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
       trackLoading();
 
-      
+
 
 
 
