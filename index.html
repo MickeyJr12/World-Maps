@@ -18959,6 +18959,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           onlySouv,
           haptic,
           notif,
+          dataD,
         };
         localStorage.setItem(SAVE_KEY, JSON.stringify(data));
       }
@@ -18986,6 +18987,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           onlySouv = data.onlySouv ?? false;
           haptic = data.haptic ?? false;
           notif = data.notif ?? false;
+          data.dataD ? dataD = data.dataD : ""; 
 
           return data; // on retourne data pour récupérer defisQSelected ensuite
         } catch (e) {
@@ -38535,6 +38537,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const cadreD2 = document.getElementById("cadreD2");
       const choiceD1 = document.getElementById("choiceD1");
       const choiceD2 = document.getElementById("choiceD2");
+      let dataD = {"result":"success","provider":"https://www.exchangerate-api.com","documentation":"https://www.exchangerate-api.com/docs/free","terms_of_use":"https://www.exchangerate-api.com/terms","time_last_update_unix":1787270551,"time_last_update_utc":"Fri, 21 Aug 2026 00:02:31 +0000","time_next_update_unix":1787358541,"time_next_update_utc":"Sat, 22 Aug 2026 00:29:01 +0000","time_eol_unix":0,"base_code":"EUR","rates":{"EUR":1,"AED":4.290119,"AFN":76.27986,"ALL":92.583796,"AMD":426.914891,"ANG":2.091031,"AOA":1100.937407,"ARS":1749.094981,"AUD":1.641668,"AWG":2.091031,"AZN":1.988215,"BAM":1.95583,"BBD":2.336348,"BDT":142.772451,"BGN":1.95583,"BHD":0.439233,"BIF":3491.881044,"BMD":1.168174,"BND":1.486059,"BOB":13.455671,"BRL":6.064239,"BSD":1.168174,"BTN":111.825496,"BWP":16.204879,"BYN":3.551189,"BZD":2.336348,"CAD":1.610122,"CDF":2673.074627,"CHF":0.934181,"CLF":0.027272,"CLP":1077.981828,"CNH":7.854665,"CNY":7.869044,"COP":3561.610396,"CRC":527.209242,"CUP":28.036175,"CVE":110.265,"CZK":24.140133,"DJF":207.609047,"DKK":7.47566,"DOP":68.520867,"DZD":155.273192,"EGP":59.441035,"ERN":17.52261,"ETB":189.283803,"FJD":2.563332,"FKP":0.856935,"FOK":7.47566,"GBP":0.856976,"GEL":3.052366,"GGP":0.856935,"GHS":13.024511,"GIP":0.856935,"GMD":87.252705,"GNF":10251.267999,"GTQ":8.910241,"GYD":244.166326,"HKD":9.162494,"HNL":31.298058,"HRK":7.5345,"HTG":152.747122,"HUF":364.551301,"IDR":20719.81807,"ILS":3.502127,"IMP":0.856935,"INR":111.815314,"IQD":1530.735043,"IRR":1608630.847008,"ISK":142.047645,"JEP":0.856935,"JMD":185.062023,"JOD":0.828235,"JPY":185.562706,"KES":151.290837,"KGS":102.28159,"KHR":4713.052632,"KID":1.641698,"KMF":491.96775,"KRW":1630.024256,"KWD":0.359552,"KYD":0.973478,"KZT":534.346932,"LAK":25986.402827,"LBP":104551.570951,"LKR":385.44424,"LRD":211.929587,"LSL":18.844022,"LYD":7.433837,"MAD":10.801085,"MDL":20.063137,"MGA":5044.957746,"MKD":61.497,"MMK":2455.432073,"MNT":4178.942106,"MOP":9.436782,"MRU":46.663887,"MUR":54.440079,"MVR":18.075354,"MWK":2035.927535,"MXN":19.814561,"MYR":4.72495,"MZN":74.493636,"NAD":18.844022,"NGN":1582.128461,"NIO":42.953552,"NOK":10.915736,"NPR":178.920793,"NZD":1.964,"OMR":0.449159,"PAB":1.168174,"PEN":3.915963,"PGK":5.217633,"PHP":72.028606,"PKR":324.478113,"PLN":4.317393,"PYG":7002.154059,"QAR":4.252153,"RON":5.250691,"RSD":117.330286,"RUB":97.910838,"RWF":1719.922758,"SAR":4.380652,"SBD":9.241493,"SCR":16.634928,"SDG":522.145773,"SEK":11.078486,"SGD":1.48603,"SHP":0.856935,"SLE":28.727489,"SLL":28726.852498,"SOS":667.024209,"SRD":44.248548,"SSP":6600.89315,"STN":24.5,"SYP":142.304719,"SZL":18.844022,"THB":38.38941,"TJS":10.810824,"TMT":4.095396,"TND":3.388592,"TOP":2.764429,"TRY":56.134409,"TTD":8.512979,"TVD":1.641698,"TWD":37.243202,"TZS":3064.190592,"UAH":52.204452,"UGX":4293.183275,"USD":1.168175,"UYU":46.764566,"UZS":13830.836838,"VES":911.218155,"VND":30296.47337,"VUV":137.780833,"WST":3.137407,"XAF":655.957,"XCD":3.15407,"XCG":2.091031,"XDR":0.850107,"XOF":655.957,"XPF":119.332,"YER":277.185122,"ZAR":18.840526,"ZMW":22.034058,"ZWG":31.0779,"ZWL":31.0779}}
 
       const infoConvert = document.getElementById("infoConvert");
       const arrowChange = document.getElementById("arrowChange");
@@ -38641,25 +38644,53 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
       fetchWithCache("https://open.er-api.com/v6/latest/EUR", 43200000)
         .then((data) => {
-          dataConvert = data.rates;
-          dataLatest = data.time_last_update_utc;
+          dataD = data
+          saveProgress()
+          dataConvert = dataD.rates;
+          dataLatest = dataD.time_last_update_utc;
           // Exemple : "Fri, 19 Jun 2026 00:02:32 +0000"
           let s = dataLatest.slice(0, 3);
           let jr = dataLatest.slice(3, 8);
           let m = dataLatest.slice(8, 11);
-          let a = dataLatest.slice(13, 17);
+          let a = dataLatest.slice(12, 17);
           let h = dataLatest.slice(18, 26);
           let utc = dataLatest.slice(26);
           document.getElementById("pLast").textContent =
-            "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " + h + utc;
+            "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " +a+" " + h + utc;
 
           inputD1.value = "1.00" + "€";
           inputD2.value =
             Math.round(dataConvert["USD"] * 100) / 100 + D_symbolesD[currentDV];
           infoConvert.textContent =
             "1.00 " + currentDD + " = " + dataConvert["USD"] + " " + currentDV;
+          
+        
+          
         })
-        .catch((error) => console.error("Erreur fetch:", error));
+        .catch((error) => 
+        {
+          console.error("Erreur fetch:", error)
+          dataConvert = dataD.rates;
+          dataLatest = dataD.time_last_update_utc;
+          // Exemple : "Fri, 19 Jun 2026 00:02:32 +0000"
+          let s = dataLatest.slice(0, 3);
+          let jr = dataLatest.slice(3, 8);
+          let m = dataLatest.slice(8, 11);
+          let a = dataLatest.slice(12, 17);
+          let h = dataLatest.slice(18, 26);
+          let utc = dataLatest.slice(26);
+          document.getElementById("pLast").textContent =
+            "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " +a+" " + h + utc;
+
+
+          inputD1.value = "1.00" + "€";
+          inputD2.value =
+            Math.round(dataConvert["USD"] * 100) / 100 + D_symbolesD[currentDV];
+          infoConvert.textContent =
+            "1.00 " + currentDD + " = " + dataConvert["USD"] + " " + currentDV;
+          
+        }
+      );
 
       //----------------------
       let valD1 = "1.00";
@@ -39322,12 +39353,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               let s = dataLatest.slice(0, 3);
               let jr = dataLatest.slice(3, 8);
               let m = dataLatest.slice(8, 11);
-              let a = dataLatest.slice(13, 17);
+              let a = dataLatest.slice(12, 17);
               let h = dataLatest.slice(18, 26);
               let utc = dataLatest.slice(26);
 
               document.getElementById("pLast").textContent =
-                "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " + h + utc;
+              "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " +a+" " + h + utc;
+
 
               inputD1.value = CD1 + D_symbolesD[currentDD];
 
@@ -39348,7 +39380,46 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 " " +
                 currentDV;
             })
-            .catch((error) => console.error("Erreur fetch:", error));
+            .catch((error) => 
+            {
+              dataConvert = dataD.rates;
+              dataLatest = dataD.time_last_update_utc;
+
+              let s = dataLatest.slice(0, 3);
+              let jr = dataLatest.slice(3, 8);
+              let m = dataLatest.slice(8, 11);
+              let a = dataLatest.slice(12, 17);
+              let h = dataLatest.slice(18, 26);
+              let utc = dataLatest.slice(26);
+
+              console.log(jr)
+              document.getElementById("pLast").textContent =
+              "\u00A0" + D_semaine[s] + jr + D_mois[m] + " " +a+" " + h + utc;
+
+
+              inputD1.value = CD1 + D_symbolesD[currentDD];
+
+              inputD2.value =
+                Math.round(dataConvert[currentDV] * parseFloat(CD1) * 100) /
+                  100 +
+                D_symbolesD[currentDV];
+
+              inputD2.readOnly = false;
+              inputD1.readOnly = false;
+              loaderD.style.display = "";
+
+              infoConvert.textContent =
+                "1.00 " +
+                currentDD +
+                " = " +
+                dataConvert[currentDV] +
+                " " +
+                currentDV;
+            
+
+              loaderD.style.display = ""
+            }
+          );
         } else {
           inputD2.value =
             Math.round(
@@ -39610,7 +39681,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(maxQ);
+        console.log(dataD.time_last_update_utc);
       }
       // loop()
 
