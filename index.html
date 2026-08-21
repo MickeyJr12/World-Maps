@@ -6427,6 +6427,7 @@
         transform: scale(0.96);
       }
       .btnPm svg {
+        flex-shrink: 0;
         height: 1rem;
       }
       .btnPm svg path {
@@ -12396,7 +12397,9 @@
           </span>
         </div>
 
-        <div style="flex: 1"></div>
+
+        <div style="display : flex; width : 100%; justify-content: center; align-items: center; flex: 1">
+
 
         <div id="cadreDetailPm">
           <div class="overlayPm active" id="overlayPmInfo">
@@ -12490,7 +12493,8 @@
           <div id="wrapperCPm"></div>
         </div>
 
-        <div style="flex: 1"></div>
+      </div>
+
         <div id="lineInPm"></div>
 
         <div id="wrapperBtnPm">
@@ -21471,9 +21475,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           nbrCelPerSlide =  15 - (document.getElementById(L_config.r).dataset.nbr - 3)*5
         }
 
+         
+
         carouselGridPm.innerHTML = ``;
         const nbrSlide = Math.ceil(maxQ / nbrCelPerSlide);
         let celRestSlide = Math.min(maxQ, nbrCelPerSlide);
+        
         let nbrCel = 1;
         for (let i = 0; i < nbrSlide; i++) {
           let currentSlide = document.createElement("div");
@@ -21516,7 +21523,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           carouselGridPm.append(currentSlide);
         }
 
+        document.querySelectorAll('.arrowSlidePm').forEach(arrow=>{
+          arrow.style.display = nbrCelPerSlide < maxQ ? "flex" : "none"
+        })
+
         slides = carouselGridPm.querySelectorAll(".slide");
+
+       
         document.querySelectorAll('.gridPm').forEach(grid=>grid.style.gridTemplateRows = `repeat(${parseInt(nbrCelPerSlide/5)},1fr)`)
         updateProgressSlidePm(); // état initial
 
