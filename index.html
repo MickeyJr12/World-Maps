@@ -3476,15 +3476,15 @@
         position: absolute;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
         color: black;
         z-index: 110;
-        inset : 0;
-        /* width: 80%; */
+        left : 50%;
+        top : 50%;
+        width: calc(100% - 0.6rem);
         justify-self: center ;
         max-width: 30rem;
-        padding : 0 0.6rem;
-        padding-top : calc(env(safe-area-inset-top) + 0.5rem);
-        padding-bottom : calc(env(safe-area-inset-bottom) + 0.5rem);
+        padding : 0.6rem 0.6rem;
 
         gap: 0rem;
         height: auto;
@@ -3494,13 +3494,13 @@
         backdrop-filter: blur(4px);
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         transform-origin: right bottom;
-        transform:  scale(0.92);
+        transform:  scale(0.92) translateX(-50%) translateY(-50%);
         transition:
           transform 0.2s ease,
           opacity 0.2s ease;
       }
       #cadreSetting.active {
-        transform: none;
+        transform : translateX(-50%) translateY(-50%);
         opacity: 1;
         pointer-events: all;
       }
@@ -3660,8 +3660,8 @@
 
       }
 
-      .boxSvgItemSetting.grey{
-              background: rgba(106, 106, 106, 0.496);
+      .boxSvgItemSetting.purple{
+              background: #7e3c7e;
             }
       
        .boxSvgItemSetting.orange{
@@ -10247,6 +10247,23 @@
 
       <div id="overallHome"></div>
       <div id="cadreSetting">
+        <button class="cross" id="crossSetting" style="margin-bottom: -1.5rem">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+          width="100%"
+          height="100%"
+          fill="black"
+        >
+          <path
+            d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+          />
+          <path
+            d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+          />
+        </svg>
+      </button>
         <div
           style="
             font-size: 1.6rem;
@@ -10445,7 +10462,7 @@
 
             <div class="cadreItemSetting">
             <div class="itemSetting" id="propos">
-              <div class="boxSvgItemSetting grey">
+              <div class="boxSvgItemSetting purple">
                 <svg
                   fill="#000000"
                   viewBox="0 0 1920 1920"
@@ -10492,7 +10509,7 @@
             <div class="ligneInSD" style="margin: 0.4rem 0"></div>
 
             <div class="itemSetting" id="mail">
-              <div class="boxSvgItemSetting grey">
+              <div class="boxSvgItemSetting purple">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   id="Filled"
@@ -10782,6 +10799,8 @@
               </svg>
               <span>Retour</span>
             </div>
+
+            
           </div>
 
         </div>
@@ -17312,6 +17331,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const cadrePremium = document.getElementById("cadrePremium");
       const cadreSetting = document.getElementById("cadreSetting");
+      const crossSetting = getId('crossSetting')
       const overallHome = document.getElementById("overallHome");
       const contentSettingPropos = document.getElementById(
         "contentSettingPropos",
@@ -19361,6 +19381,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreRD.classList.remove("active");
         overallHome.classList.remove("active");
       });
+
+      crossSetting.addEventListener('click',()=>{
+        overallHome.click()
+      })
 
       mail.addEventListener("click", () => {
         const sujet = encodeURIComponent("Feedback Géo Quiz");
