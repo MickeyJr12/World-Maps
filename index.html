@@ -3619,6 +3619,9 @@
       .itemSetting:active {
         background: rgba(240, 240, 240, 1);
       }
+      #notifSetting{
+        display : none;
+      }
 
       .boxSvgItemSetting {
         display : flex;
@@ -3641,19 +3644,76 @@
 
       .boxSvgItemSetting.blue{
          background: rgba(18, 210, 210, 0.496);
-         background: rgba(34, 167, 184, 0.496);
+         background: rgba(4, 98, 198, 0.693)
 
       }
 
       .boxSvgItemSetting.green{
         background: rgba(5, 141, 68, 0.496);
-        background: rgba(20, 190, 99, 0.496);
+        background: rgba(5, 121, 26, 0.663);
 
       }
 
       .boxSvgItemSetting.grey{
               background: rgba(106, 106, 106, 0.496);
             }
+      
+       .boxSvgItemSetting.orange{
+              background: linear-gradient(135deg, #ffb15e, #ff8a3d);
+            }
+
+      #supportBtn {
+        display : flex;
+        justify-content : space-between;
+        align-items : center;
+        align-self : center;
+        padding : 0.8rem;
+        box-sizing : border-box;
+        width : calc(100% - 10px);
+        border-radius : 1rem;
+        margin : 0.8rem 0.4rem;
+        background: linear-gradient(135deg, #fce7d1, #ffe8d1);
+        border: 1px solid rgba(255, 138, 61, 0.3);
+        box-shadow: 0 4px 14px rgba(255, 138, 61, 0.18);
+        cursor: pointer;
+        touch-action: manipulation;
+        transition : filter 0.2s ease, transform 0.2s ease;
+      }
+        #supportBtn:active {
+          filter : brightness(0.98);
+    transform : scale(0.98);
+  }
+
+
+     #arrowSupport{
+      display : flex;
+      justify-content : center;
+      align-items :center;
+      border-radius : 50%;
+     background: rgba(255, 138, 61, 0.15);
+     padding : 0.6rem
+     }
+     #arrowSupport svg{
+      height : 1rem;
+     }
+     
+     #arrowSupport polyline, #arrowSupport line{
+      stroke :  #ff8a3d;
+      stroke :  #8d3a03;
+     }
+
+
+  #btnSupportTitle{
+    font-weight: 700;
+    color: #7a3a10;
+  }
+   #btnSupportSubTitle{
+    font-size: 12.5px;
+    color: #a5703a;
+    margin-top: 2px;
+   }
+
+
       /*CSS Toggle paramètre*/
 
       /* From Uiverse.io by ErzenXz */
@@ -9750,7 +9810,7 @@
       <div style="flex: 1"></div>
       <div class="dots" id="dots">
         <span class="dot active"></span>
-        <span class="dot"></span>
+        <span class="dot" id="dot2"></span>
       </div>
     </div>
 
@@ -10253,7 +10313,7 @@
               </label>
             </div>
 
-            <div class="ligneInSD" style="margin: 0.1rem 0"></div>
+            <!-- <div class="ligneInSD" style="margin: 0.1rem 0"></div> -->
 
             <div class="itemSetting" id="notifSetting">
               <div class="boxSvgItemSetting blue">
@@ -10453,6 +10513,23 @@
               </svg>
             </div>
            </div> 
+
+
+           <div id="supportBtn">
+            <div class="boxSvgItemSetting orange">
+              <svg fill="#000000" viewBox="-5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>coffee</title> <path d="M12.406 14.75c-0.094-2.094-0.219-3.219-1.469-4.594-1.594-1.781-2.188-3.5-0.875-6.156 0.344 1.781 0.469 3.375 1.719 4.344s2.281 3.594 0.625 6.406zM10.063 14.75c-0.063-1.125-0.125-1.688-0.813-2.469-0.844-0.938-1.188-1.844-0.469-3.281 0.188 0.969 0.219 1.813 0.906 2.313s1.281 1.938 0.375 3.438zM15.719 24.625h5.688c0.344 0 0.469 0.25 0.25 0.531 0 0-2.219 2.844-5.281 2.844h-10.969s-5.281-2.844-5.281-2.844c-0.219-0.281-0.125-0.531 0.219-0.531h5.625c-0.781-0.406-1.938-2.188-1.938-4.406v-4.688h13.688v0.375c0.438-0.375 0.969-0.563 1.531-0.563 0.781 0 2.25 0.813 2.25 2.219 0 2.031-1.344 2.781-2.125 3.313 0 0-1.469 1.156-2.5 2.5-0.344 0.594-0.75 1.063-1.156 1.25zM19.25 16.188c-0.5 0-1.125 0.219-1.531 1.219v2.594c0 0.344-0.031 0.75-0.094 1.094 0.688-0.688 1.5-1.156 1.5-1.156 0.5-0.344 1.5-1 1.5-2.281 0.031-0.906-0.813-1.469-1.375-1.469zM6.406 16.563h-0.875v1.281h0.875v-1.281zM6.406 18.594h-0.875v2.094s0.25 2.813 2.031 3.656c-1.094-1.281-1.156-2.75-1.156-3.656v-2.094z"></path> </g></svg>
+            </div>
+
+            <div style="flex: 1;text-align : flex-start; padding-left : 0.6rem;">
+            <span id="btnSupportTitle">Me soutenir</span>
+            <br>
+            <span id="btnSupportSubTitle">Un petit coup de pouce</span>
+</div>
+
+<div id="arrowSupport">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g id="arrow-up-right"> <g> <polyline data-name="Right" fill="none" id="Right-2" points="18.7 12.4 18.7 5.3 11.6 5.3"  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline> <line fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="5.3" x2="17.1" y1="18.7" y2="6.9"></line> </g> </g> </g> </g></svg>
+</div>
+           </div>
           </div>
 
           <div id="contentSettingPropos">
@@ -17187,6 +17264,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const notifSetting = getId("notifSetting");
       const toggleNotif = getId("toggleNotif");
+      const supportBtn  = getId('supportBtn')
 
       const cadreMenuRD = document.getElementById("cadreMenuRD");
       const crossRD = document.getElementById("crossRD");
@@ -17200,6 +17278,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const txtProgLvl = document.getElementById("txtProgLvl");
       const txtPalierLvl = document.getElementById("txtPalierLvl");
       const barreProgLvl = document.getElementById("barreProgLvl");
+
+      supportBtn.addEventListener('click',()=>{
+        // [btnPremium,getId('dot2')].forEach(el=>el.click())
+
+        btnPremium.click()
+        setTimeout(() => {
+          getId('dot2').click()
+        }, 100);
+      })
 
       let L_RDQ = [
         {
