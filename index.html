@@ -3593,6 +3593,8 @@
         box-shadow: 0 2px 12px rgba(20, 40, 100, 0.06);
         width : calc(100% - 10px);
         margin : 0 0.4rem;
+        padding : 0.4rem;
+        box-sizing : border-box;
       }
       .sectionSetting {
          font-size: 13px;
@@ -3639,7 +3641,7 @@
 
       .boxSvgItemSetting.blue{
          background: rgba(18, 210, 210, 0.496);
-         background: rgba(13, 188, 211, 0.496);
+         background: rgba(34, 167, 184, 0.496);
 
       }
 
@@ -10468,14 +10470,10 @@
             </div>
 
             <span
-              style="
-                color: rgba(0, 0, 0, 0.6);
-                font-size: 0.95rem;
-                margin-top: 1rem;
-              "
-              >Mentions légales</span
+              class="sectionSetting"
+              >MENTIONS LÉGALES</span
             >
-
+            <div class="cadreItemSetting">
             <div class="itemSetting">
               <svg
                 height="1.2rem"
@@ -10634,6 +10632,7 @@
                   fill="black"
                 />
               </svg>
+            </div>
             </div>
           </div>
         </div>
