@@ -13491,7 +13491,7 @@
                 ></span>
               </span>
 
-              <div id="btnCartePm">
+              <div id="btnCartePm" class="noClick">
                 <svg
                   style="height: 1.1rem"
                   fill="#2563eb"
@@ -20680,7 +20680,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               el.className = "celGridPm actuelle";
               el.addEventListener("click", () => {
                 numQPm.textContent = getQNumber();
-                btnCartePm.classList.add("noClick");
                 overlayPmInfo.classList.add("active");
                 wrapperCPm.innerHTML = ``;
                 overlayPmInfo.textContent = "Question en cours...";
@@ -20828,6 +20827,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           });
 
           colorCountry();
+          btnCartePm.classList.add('noClick')
 
           document.getElementById("cadreQ4Choix").classList.add("modeChoix");
           let random = Math.floor(Math.random() * 4);
@@ -22118,7 +22118,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         pauseChrono();
         pauseChronoQ();
         cadrePm.classList.add("active");
-        if (viewMapsPm) return;
+        if (viewMapsPm) {
+        viewMapsPm = false;
+          return};
         document.querySelectorAll(".celGridPm").forEach((el) => {
           if (el.textContent === qNumber.textContent) {
             el.click();
@@ -22179,7 +22181,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           `;
       backMapsPlay.addEventListener("click", () => {
         cacherMaps();
-        activerCarte();
+        if(!viewMapsPm){
+          activerCarte();
+        }
       });
       const L_addMaps = [
         getC(".globe"),
@@ -22190,7 +22194,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       //z-index des éléments de maps dans 4 choix
 
-      let classBtnNext; // Class du cadre de btnNext
+      let classBtnNext = "cadrenext"; // Class du cadre de btnNext
       let viewMaps = false;
 
       function zoomCountry(p_id) {
@@ -22378,10 +22382,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         toggleC(false);
         viewMaps = false;
-        if (viewMapsPm) {
-          pause4Choix.click();
-        }
-        viewMapsPm = false;
+       
         btns4Choix.forEach((b) => {
           if (b.id === "qTrouver") {
             return;
@@ -22412,7 +22413,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           p.style.opacity = "1";
           p.style.pointerEvents = "all";
         });
-        activerCarte();
+          activerCarte();
+
+         if (viewMapsPm) {
+          requestAnimationFrame(()=>{
+          pause4Choix.click();
+
+          })
+        }
         cadreNext.className = classBtnNext;
       }
 
@@ -22462,7 +22470,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               cel.classList.add("actuelle");
               cel.addEventListener("click", () => {
                 propPm.classList.remove("good", "bad", "outTime");
-                btnCartePm.classList.remove("noClick");
                 numQPm.textContent = 1;
                 document
                   .querySelectorAll(".overlayPm")
@@ -22471,7 +22478,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 wrapperCPm.innerHTML = ``;
                 overlayPmInfo.textContent = "Question en cours...";
 
-                btnCartePm.classList.add("noClick");
                 cel.classList.add("selected");
                 document
                   .querySelectorAll(".imgPmCadre")
@@ -22538,6 +22544,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         const oldCurrentEl = document.querySelector(".celGridPm.actuelle");
         const currentEl = oldCurrentEl.cloneNode(true);
         oldCurrentEl.replaceWith(currentEl);
+        btnCartePm.classList.remove('noClick')
 
         currentEl.addEventListener("click", () => {
           document
@@ -22558,7 +22565,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           document
             .querySelectorAll(".overlayPm")
             .forEach((o) => o.classList.remove("active"));
-          btnCartePm.classList.remove("noClick");
           if (idProp !== "outTime") {
             propPm.textContent = L_q[idProp].n;
             getId("imgPmCadreProp").src =
@@ -22814,6 +22820,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (L_config.m === "modeTrouver") {
           return;
         }
+        if(viewMapsPm && !classBtnNext.includes('visible')){return}
         texteCarte.style.maxWidth = "none";
         const largeur = texteCarte.scrollWidth;
         texteCarte.style.maxWidth = "0";
@@ -41132,7 +41139,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(currentTitleS);
+        console.log(btnCartePm.classList);
       }
       // loop();
 
