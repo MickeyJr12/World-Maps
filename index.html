@@ -5972,6 +5972,8 @@
       .cadreDrapeauSD {
         display: flex;
         position: relative;
+        border-radius : 50%;
+        overflow : hidden;
         justify-content: center;
         align-items: center;
         margin-left: 1rem;
@@ -6099,24 +6101,33 @@
 
       .CadreDrapeauD {
         display: flex;
+        overflow : hidden;
         position: relative;
         justify-content: center;
         align-items: center;
+        border-radius : 50%;
         flex-shrink: 0;
-        height: 1.6rem; /* hauteur fixe */
+        height: 1.8rem; /* hauteur fixe */
         aspect-ratio: 1/1;
       }
 
       .DrapeauBoxD {
         display: flex;
+        overflow : hidden;
+        border-radius : 50%;
         position: relative;
         justify-content: center;
         align-items: center;
         width: fit-content;
-        height: 100%;
+        border-radius : inherit;
+        height: 90%;
       }
       .DrapeauCadreD {
+        outline : 1px solid red;
         height: 100%;
+        overflow : hidden;
+        border-radius : 50%;
+        border-radius : inherit;
         object-fit: contain;
       }
 
@@ -40343,6 +40354,167 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "CNY",
       ];
 
+      const D_deviseToFlag = {
+  EUR: "eu",
+  AED: "ae",
+  AFN: "af",
+  XCD: "ag",  // Dollar des Caraïbes orientales — pas de pays unique, Antigua-et-Barbuda choisi par convention
+  ALL: "al",
+  AMD: "am",
+  AOA: "ao",
+  ARS: "ar",
+  USD: "us",
+  AUD: "au",
+  AWG: "aw",
+  AZN: "az",
+  BAM: "ba",
+  BBD: "bb",
+  BDT: "bd",
+  XOF: "sn",  // Franc CFA BCEAO — 8 pays, Sénégal choisi par convention
+  BGN: "bg",
+  BHD: "bh",
+  BIF: "bi",
+  BMD: "bm",
+  BND: "bn",
+  BOB: "bo",
+  BRL: "br",
+  BSD: "bs",
+  BTN: "bt",
+  NOK: "no",
+  BWP: "bw",
+  BYN: "by",
+  BZD: "bz",
+  CAD: "ca",
+  CDF: "cd",
+  XAF: "cm",  // Franc CFA BEAC — 6 pays, Cameroun choisi par convention
+  CHF: "ch",
+  NZD: "nz",
+  CLP: "cl",
+  CNY: "cn",
+  COP: "co",
+  CRC: "cr",
+  CUP: "cu",
+  CVE: "cv",
+  ANG: "cw",  // Florin antillais néerlandais — Curaçao
+  CZK: "cz",
+  DJF: "dj",
+  DKK: "dk",
+  DOP: "do",
+  DZD: "dz",
+  EGP: "eg",
+  MAD: "ma",
+  ERN: "er",
+  ETB: "et",
+  FJD: "fj",
+  FKP: "fk",
+  FOK: "fo",
+  GBP: "gb",
+  GEL: "ge",
+  GGP: "gg",
+  GHS: "gh",
+  GIP: "gi",
+  GMD: "gm",
+  GNF: "gn",
+  GTQ: "gt",
+  GYD: "gy",
+  HKD: "hk",
+  HNL: "hn",
+  HTG: "ht",
+  HUF: "hu",
+  IDR: "id",
+  ILS: "il",
+  IMP: "im",
+  INR: "in",
+  IQD: "iq",
+  IRR: "ir",
+  ISK: "is",
+  JEP: "je",
+  JMD: "jm",
+  JOD: "jo",
+  JPY: "jp",
+  KES: "ke",
+  KGS: "kg",
+  KHR: "kh",
+  KMF: "km",
+  KPW: "kp",
+  KRW: "kr",
+  KWD: "kw",
+  KYD: "ky",
+  KZT: "kz",
+  LAK: "la",
+  LBP: "lb",
+  LKR: "lk",
+  LRD: "lr",
+  LSL: "ls",
+  LYD: "ly",
+  MDL: "md",
+  MGA: "mg",
+  MKD: "mk",
+  MMK: "mm",
+  MNT: "mn",
+  MOP: "mo",
+  MRU: "mr",
+  MUR: "mu",
+  MVR: "mv",
+  MWK: "mw",
+  MXN: "mx",
+  MYR: "my",
+  MZN: "mz",
+  NAD: "na",
+  XPF: "pf",  // Franc CFP — Polynésie française choisie par convention
+  NGN: "ng",
+  NIO: "ni",
+  NPR: "np",
+  OMR: "om",
+  PAB: "pa",
+  PEN: "pe",
+  PGK: "pg",
+  PHP: "ph",
+  PKR: "pk",
+  PLN: "pl",
+  PYG: "py",
+  QAR: "qa",
+  RON: "ro",
+  RSD: "rs",
+  RUB: "ru",
+  RWF: "rw",
+  SAR: "sa",
+  SBD: "sb",
+  SCR: "sc",
+  SDG: "sd",
+  SEK: "se",
+  SGD: "sg",
+  SHP: "sh",
+  SLE: "sl",
+  SOS: "so",
+  SRD: "sr",
+  SSP: "ss",
+  STN: "st",
+  SYP: "sy",
+  SZL: "sz",
+  THB: "th",
+  TJS: "tj",
+  TMT: "tm",
+  TND: "tn",
+  TOP: "to",
+  TRY: "tr",
+  TTD: "tt",
+  TWD: "tw",
+  TZS: "tz",
+  UAH: "ua",
+  UGX: "ug",
+  UYU: "uy",
+  UZS: "uz",
+  VES: "ve",
+  VND: "vn",
+  VUV: "vu",
+  WST: "ws",
+  YER: "ye",
+  ZAR: "za",
+  ZMW: "zm",
+  ZWL: "zw",
+};
+
       function createFlagD(clefD) {
         const flagErrorD = document.createElement("div");
         flagErrorD.className = "flagErrorD";
@@ -40386,6 +40558,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
         garderActive = false;
         let d = el.dataset.devise;
+        let dFlag = D_deviseToFlag[d]
 
         currentChoiceD ? (currentChoiceD.dataset.devise = d) : "";
         currentChoiceD.querySelector("span").textContent = d;
@@ -40399,10 +40572,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         img.src = ``;
         if (L_detailed.includes(d)) {
           // img.src = `https://wise.com/web-art/assets/flags/-detailed.svg`;
-          img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${d.toLowerCase()}.svg`;
+          img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${dFlag.toLowerCase()}.svg`;
         } else {
           // img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}.svg`;
-          img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${d.toLowerCase()}.svg`;
+          img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${dFlag.toLowerCase()}.svg`;
           img.onerror = () => {
             currentChoiceD.querySelector(".CadreDrapeauD").style.display =
               "none";
@@ -40627,7 +40800,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             let imgD = document.createElement("img");
             imgD.className = "DrapeauCadreD";
             if (clefD)
-              imgD.src = `https://wise.com/web-art/assets/flags/${clefD.toLowerCase()}.svg`;
+              imgD.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${D_deviseToFlag[clefD].toLowerCase()}.svg`;
+           
             imgD.onerror = () => {
               const newImgD = document.createElement("div");
               newImgD.className = "flagErrorD";
