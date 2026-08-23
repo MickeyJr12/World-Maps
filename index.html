@@ -6003,8 +6003,10 @@
         align-items: center;
         border-radius: 0.4rem;
         outline: 0.5px solid #cfe3d1;
+        box-sizing: border-box;
         box-shadow: 0 0 0.08rem rgba(0, 0, 0, 0.4);
         width: 80%;
+        max-width : 80%;
         height: 3.4rem;
         transition: outline 0.2s ease;
       }
@@ -6026,7 +6028,7 @@
       .inputD {
         font-size: 1.2rem;
         font-weight: 540;
-
+        min-width: 0;  
         /* Enlève l'outline au focus */
         outline: none;
 
@@ -6036,7 +6038,7 @@
         border-bottom-left-radius: inherit;
         background: rgb(255, 250, 250);
         padding: 12px 16px;
-        width: 60%;
+        flex : 1;
         height: 100%;
         box-sizing: border-box;
 
@@ -6067,7 +6069,6 @@
 
       .choiceD {
         display: flex;
-        position: relative;
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
@@ -6081,7 +6082,7 @@
 
         font-weight: 540;
         height: 100%;
-        width: 40%;
+        width : auto;
         padding-left: 1rem;
         padding-right: 1rem;
         gap: 1rem;
