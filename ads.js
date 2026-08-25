@@ -70,9 +70,9 @@ async function showInterstitial() {
 
 // --- Interstitielle avec listener ---
 
-async function showInterstitialAndThen(ratio,premium,onDismissed) { // ratio : une chance sur tant d'afficher la pubs
+async function showInterstitialAndThen(ratio,isPremium,noAd,onDismissed) { // ratio : une chance sur tant d'afficher la pubs
     
-    if(premium ||!window.Capacitor?.isNativePlatform() || ratio<0.5){
+    if(noAd || isPremium ||!window.Capacitor?.isNativePlatform() || ratio<0.5){
         if (onDismissed) onDismissed()
             return
     }

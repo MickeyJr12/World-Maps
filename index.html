@@ -18108,84 +18108,59 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
     </script>
 
-    <head>
-      <script type="importmap">
-        {
-          "imports": {
-            "@capacitor/core": "https://esm.sh/@capacitor/core@6",
-            "@capacitor/haptics": "https://esm.sh/@capacitor/haptics@6"
-          }
+   <script>
+  // script retour haptic //
+
+  async function hapticFeedback(type = "light") {
+    try {
+      if (window.Capacitor?.isNativePlatform()) {
+        const { Haptics } = Capacitor.Plugins;
+
+        switch (type) {
+          case "success":
+            await Haptics.notification({ type: "SUCCESS" });
+            break;
+          case "warning":
+            await Haptics.notification({ type: "WARNING" });
+            break;
+          case "error":
+            await Haptics.notification({ type: "ERROR" });
+            break;
+          case "medium":
+            await Haptics.impact({ style: "MEDIUM" });
+            break;
+          case "heavy":
+            await Haptics.impact({ style: "HEAVY" });
+            break;
+          default:
+            await Haptics.impact({ style: "LIGHT" });
         }
-      </script>
-      <script type="module" src="ton-fichier.js"></script>
-    </head>
-
-    <script type="module">
-      // script retour haptic //
-
-      import {
-        Haptics,
-        ImpactStyle,
-        NotificationType,
-      } from "@capacitor/haptics";
-      import { Capacitor } from "@capacitor/core";
-
-      // La fonction, sans "export" puisqu'elle reste locale au fichier
-      async function hapticFeedback(type = "light") {
-        try {
-          if (Capacitor.isNativePlatform()) {
-            switch (type) {
-              case "success":
-                await Haptics.notification({ type: NotificationType.Success });
-                break;
-              case "warning":
-                await Haptics.notification({ type: NotificationType.Warning });
-                break;
-              case "error":
-                await Haptics.notification({ type: NotificationType.Error });
-                break;
-              case "medium":
-                await Haptics.impact({ style: ImpactStyle.Medium });
-                break;
-              case "heavy":
-                await Haptics.impact({ style: ImpactStyle.Heavy });
-                break;
-              default:
-                await Haptics.impact({ style: ImpactStyle.Light });
-            }
-          } else if ("vibrate" in navigator) {
-            const patterns = {
-              light: 10,
-              medium: 25,
-              heavy: 50,
-              success: [10, 30, 10],
-              warning: [20, 40, 20],
-              error: [30, 50, 30],
-            };
-            navigator.vibrate(patterns[type] || 10);
-          }
-        } catch (e) {
-          console.warn("Haptic feedback failed:", e);
-        }
+      } else if ("vibrate" in navigator) {
+        const patterns = {
+          light: 10,
+          medium: 25,
+          heavy: 50,
+          success: [10, 30, 10],
+          warning: [20, 40, 20],
+          error: [30, 50, 30],
+        };
+        navigator.vibrate(patterns[type] || 10);
       }
-      window.hapticFeedback = hapticFeedback;
-      // hapticFeedback('success') Appel
+    } catch (e) {
+      console.warn("Haptic feedback failed:", e);
+    }
+  }
 
-      // 'light' → interactions simples (clic, sélection, changement d'onglet)
+   // 'light' → interactions simples (clic, sélection, changement d'onglet)
       // 'medium' → action un peu plus significative (validation, changement d'étape)
       // 'heavy' → événement fort (fin de partie, déblocage d'un succès)
       // 'success' → bonne réponse, réussite
       // 'warning' → avertissement (ex. temps presque écoulé)
       // 'error' → mauvaise réponse, erreur
 
-      // hapticFeedback('light');    // pulsation légère
-      // hapticFeedback('medium');   // pulsation moyenne
-      // hapticFeedback('heavy');    // pulsation forte
-      // hapticFeedback('success');  // motif "réussite"
-      // hapticFeedback('warning');  // motif "attention"
-      // hapticFeedback('error');    // motif "erreur"
-    </script>
-
+  window.hapticFeedback = hapticFeedback;
+</script>
+ 
     <!--Script Home-->
     <script>
       window.addEventListener("load", () => {
@@ -21780,7 +21755,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       /*Fin script chrono*/
       backConfig.addEventListener("click", () => {
-        showInterstitialAndThen(Math.random(),isPremium,()=>{
+        showInterstitialAndThen(Math.random(),isPremium,noAd,()=>{
           
         // Sortie de phoneConfig
         phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
@@ -22262,7 +22237,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         </svg>
           `;
       backMapsPlay.addEventListener("click", () => {
-        showInterstitialAndThen(Math.random(),isPremium, ()=>{ // à modifier premium ( false : si on est premium ou pas )
+        showInterstitialAndThen(Math.random(),isPremium,noAd, ()=>{ // à modifier premium ( false : si on est premium ou pas )
            cacherMaps();
         if(!viewMapsPm){
           activerCarte();
@@ -22926,7 +22901,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       // Bouton Menu principal
       btnMenu.addEventListener("click", () => {
-        showInterstitialAndThen(Math.random(),isPremium,()=>{
+        showInterstitialAndThen(Math.random(),isPremium,noAd,()=>{
 
         Maps.appendChild(globe);
         L_modeTrouver.forEach((m) => {
@@ -23273,7 +23248,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const backMaps = document.getElementById("backMaps");
       backMaps.addEventListener("click", () => {
-        showInterstitialAndThen(Math.random(),isPremium, ()=>{
+        showInterstitialAndThen(Math.random(),isPremium,noAd, ()=>{
         toggleC(false);
 
         // paths.forEach(p=>{
@@ -39527,7 +39502,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const backDevise = document.getElementById("backDevise");
 
       backDevise.addEventListener("click", () => {
-        showInterstitialAndThen(Math.random(), isPremium, ()=>{
+        showInterstitialAndThen(Math.random(),isPremium,noAd, ()=>{
           
         // Sortie de phoneConfig
         phoneDevise.style.transition = "transform 0.5s ease, opacity 0.2s ease";
@@ -41060,9 +41035,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <script>
 
 
-      let isPremium = false
       if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/sw.js");
+        navigator.serviceWorker.register("service-worker.js");
       }
 
       // Vider le cache
@@ -41270,11 +41244,152 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }, 10000);*/
 
 
+      // ads.js (ou un fichier séparé purchases.js) — Gestion des achats via RevenueCat
+
+const REVENUECAT_API_KEY_IOS = 'test_KzoqzmnVIGKMxiHyWEwkmLTmNJT'; // ⚠️ clé de TEST — à remplacer par la clé de prod avant publication
+
+// Identifiants tels que définis dans RevenueCat (entitlements)
+const ENTITLEMENT_NO_ADS = 'no_ads';   // ← à remplacer si nommé différemment
+const ENTITLEMENT_PREMIUM = 'premium'; // ← à remplacer si nommé différemment
+
+// IDs des produits tels que créés dans App Store Connect
+const PRODUCT_ID_NO_ADS = 'com.mickeyjr12.geoquiz.noads';   // ← à remplacer
+const PRODUCT_ID_PREMIUM = 'com.mickeyjr12.geoquiz.premium'; // ← à remplacer
+
+let noAd = false;
+let isPremium = false;
+let purchasesInitialized = false;
+
+async function initPurchases() {
+  if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
+  if (purchasesInitialized) return;
+
+  const { Purchases } = Capacitor.Plugins;
+
+  await Purchases.setLogLevel({ level: 'DEBUG' }); // utile pour voir les logs pendant les tests
+  await Purchases.configure({ apiKey: REVENUECAT_API_KEY_IOS });
+
+  purchasesInitialized = true;
+}
+
+// Appelée au chargement de l'app, pour restaurer l'état déjà acheté
+async function chargerEtatAchats() {
+  if (!window.Capacitor?.isNativePlatform()) return; // reste false sur la PWA
+
+  await initPurchases();
+  const { Purchases } = Capacitor.Plugins;
+
+  try {
+    const { customerInfo } = await Purchases.getCustomerInfo();
+    noAd = !!customerInfo.entitlements.active[ENTITLEMENT_NO_ADS];
+    isPremium = !!customerInfo.entitlements.active[ENTITLEMENT_PREMIUM];
+  } catch (err) {
+    console.error('Erreur récupération état achats:', err);
+  }
+}
+
+// --- Achat : retirer les pubs ---
+
+async function acheterRetraitPubs() {
+  if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
+
+  await initPurchases();
+  const { Purchases } = Capacitor.Plugins;
+
+  try {
+    const offerings = await Purchases.getOfferings();
+    const product = offerings.current?.availablePackages.find(
+      (p) => p.product.identifier === PRODUCT_ID_NO_ADS
+    );
+    if (!product) {
+      console.error('Produit noAd introuvable dans les offerings');
+      return;
+    }
+
+    const { customerInfo } = await Purchases.purchasePackage({ aPackage: product });
+
+    if (customerInfo.entitlements.active[ENTITLEMENT_NO_ADS]) {
+      noAd = true;
+      achatEffectue();
+    }
+  } catch (err) {
+    if (!err?.userCancelled) console.error('Erreur achat noAd:', err);
+  }
+}
+
+// --- Achat : débloquer premium ---
+
+async function acheterPremium() {
+  if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
+
+  await initPurchases();
+  const { Purchases } = Capacitor.Plugins;
+
+  try {
+    const offerings = await Purchases.getOfferings();
+    const product = offerings.current?.availablePackages.find(
+      (p) => p.product.identifier === PRODUCT_ID_PREMIUM
+    );
+    if (!product) {
+      console.error('Produit premium introuvable dans les offerings');
+      return;
+    }
+
+    const { customerInfo } = await Purchases.purchasePackage({ aPackage: product });
+
+    if (customerInfo.entitlements.active[ENTITLEMENT_PREMIUM]) {
+      isPremium = true;
+      achatEffectue();
+    }
+  } catch (err) {
+    if (!err?.userCancelled) console.error('Erreur achat premium:', err);
+  }
+}
+
+// Petite animation/feedback après n'importe quel achat réussi
+function achatEffectue() {
+  // À toi de remplir : animation CSS, confetti, message de confirmation...
+}
+
+// --- Initialisation ---
+async function restaurerAchats() {
+  if (!window.Capacitor?.isNativePlatform()) return;
+
+  await initPurchases();
+  const { Purchases } = Capacitor.Plugins;
+
+  try {
+    const { customerInfo } = await Purchases.restorePurchases();
+    noAd = !!customerInfo.entitlements.active[ENTITLEMENT_NO_ADS];
+    isPremium = !!customerInfo.entitlements.active[ENTITLEMENT_PREMIUM];
+
+    if (noAd || isPremium) {
+      achatEffectue();
+      // + message "Achats restaurés avec succès"
+    } else {
+      // + message "Aucun achat à restaurer"
+    }
+  } catch (err) {
+    console.error('Erreur restauration achats:', err);
+    // + message d'erreur visible utilisateur
+  }
+}
+
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await chargerEtatAchats();
+
+  document.getElementById('buyBtnAd')?.addEventListener('click', acheterRetraitPubs);
+  document.getElementById('buyBtnP')?.addEventListener('click', acheterPremium);
+  document.getElementById('restaurer-achats').addEventListener('click', restaurerAchats);
+
+});
 
 
     </script>
 
-    <script src="ads.js"></script>
+    <script src="ads.js"></script>  
     <script>
   // document.addEventListener('DOMContentLoaded', () => {
   //   if (window.Capacitor) {
