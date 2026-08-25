@@ -3109,6 +3109,8 @@
         border-radius: 50rem;
       }
 
+
+
       #btnReward.notifReward {
         animation: notifReward 1s ease-in-out infinite;
       }
@@ -3128,8 +3130,10 @@
         }
       }
 
+      
       .btnHome {
         display: flex;
+        position : relative;
         flex-shrink: 0;
         flex: 1;
         z-index: 5;
@@ -3148,13 +3152,36 @@
           transform 0.2s ease,
           filter 0.3s ease;
       }
-
       .btnHome:active {
         background: #c36513;
       }
       .btnHome svg {
         fill: white;
       }
+      #boxSvgReward{
+        display : flex;
+        position : relative;
+        justify-content : center; 
+        height : 100%;
+      }
+      .circleNotif{
+        display : flex;
+        pointer-events: none;
+        justify-content : center;
+        text-align : center;
+        align-items: center;
+        position : absolute;
+        background : red;
+        width : 1.01rem;
+        aspect-ratio : 1/1;
+        border-radius : 50%;
+        top : 0;
+        right : 0;
+        transform : translateX(80%) translateY(-50%);
+        font-size : 0.6rem;
+        color : white;
+      }
+     
       .ligneVHome {
         width: 0;
         height: 1.8rem;
@@ -3909,7 +3936,6 @@
       #cadreRD.active {
         transform: translateX(-50%) scale(1);
         opacity: 1;
-        pointer-events: all;
       }
       #cadreMenuRD {
         display: flex;
@@ -10317,7 +10343,6 @@
                 fill="#1C274C"
               />
             </svg>
-
             Récompenses
           </div>
         </div>
@@ -11664,7 +11689,6 @@
             id="Layer_1"
             height="90%"
             viewBox="0 0 24 24"
-            width="512"
             data-name="Layer 1"
           >
             <path
@@ -11675,6 +11699,8 @@
         <div class="ligneVHome"></div>
 
         <div id="btnReward" class="btnHome">
+          <div id="boxSvgReward">
+            <div class="circleNotif" id="circleReward">0</div>
           <svg
             height="90%"
             xmlns="http://www.w3.org/2000/svg"
@@ -11686,6 +11712,7 @@
               d="m22.305,2.87l-2.281,4.622c-1.639-1.751-3.84-2.96-6.319-3.347l.945-1.915c.679-1.376,2.053-2.23,3.587-2.23h2.283c.692,0,1.324.351,1.689.939.366.588.401,1.31.095,1.931Zm-12.01,1.275l-.945-1.915c-.679-1.376-2.053-2.23-3.587-2.23h-2.26c-.692,0-1.324.351-1.689.938-.366.589-.401,1.311-.095,1.932l2.272,4.607c1.637-1.743,3.833-2.945,6.304-3.331Zm10.706,10.855c0,4.963-4.038,9-9,9S3,19.963,3,15,7.038,6,12,6s9,4.037,9,9Zm-4.843-.59c0-.306-.266-.644-.696-.644h-2.14l-.567-2.175c-.09-.345-.399-.585-.755-.591-.355.007-.665.246-.755.591l-.567,2.175h-2.14c-.43,0-.696.337-.696.644,0,.361.251.665.539.825l1.49.828-.661,1.803c-.128.349-.012.741.285.965h0c.304.229.723.226,1.023-.007l1.482-1.146,1.482,1.146c.301.232.72.235,1.023.007h0c.297-.224.413-.615.285-.965l-.661-1.803,1.49-.828c.288-.16.539-.464.539-.825Z"
             />
           </svg>
+          </div>
         </div>
         <div class="ligneVHome"></div>
 
@@ -18229,6 +18256,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const play = document.getElementById("play");
       const btnHomeBox = document.querySelector(".btnHomeBox");
       const cadreHome = document.getElementById("cadreHome");
+      const circleReward  = getId("circleReward")
+      let nbrReward = 0;
+      let trueReward = true; // ne pas confondre l'appel de attachXpClickHandlerr pour une vraie reward, ou pour les reward à la fin des quiz
       const waveBottomHome = document.getElementById("waveBottomHome");
       const homeTitle = document.getElementById("homeTitle");
 
@@ -18897,7 +18927,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "AR",
           t: "Terminer 10 quiz",
           svg: "repeat",
-          max: 10,
+          max: 1, // à retirer
           xp: 10,
           mode: "all",
           stars: 0,
@@ -18907,7 +18937,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "AQ",
           t: "Terminer 50 quiz",
           svg: "repeat",
-          max: 50,
+          max: 2,// à retirer
           xp: 200,
           mode: "all",
           stars: 0,
@@ -18917,7 +18947,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "AP",
           t: "Terminer 100 quiz",
           svg: "repeat",
-          max: 100,
+          max: 3,// à retirer
           xp: 1000,
           mode: "all",
           stars: 0,
@@ -19547,11 +19577,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let L_claimedQ = {}; // true si l'XP a déjà été récupérée pour cette quête
       for (const quest of L_RDQ) {
         L_progressQ[quest.id] = 0;
-        L_claimedQ[quest.id] = false;
+        L_claimedQ[quest.id] = null;
       }
       for (const quest of L_LRD) {
         L_progressQ[quest.id] = 0;
-        L_claimedQ[quest.id] = false;
+        L_claimedQ[quest.id] = null;
       }
 
       let defisQSelected = [];
@@ -19574,6 +19604,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             xpQ.textContent = "Terminé";
 
             L_claimedQ[quest.id] = true; // ← on marque comme réclamée
+            console.log(trueReward)
+            if (trueReward){
+            nbrReward -= 1
+            circleReward.textContent = nbrReward
+            circleReward.style.display =  nbrReward === 0 ? "" : "flex"
+            }
+           
 
             nbrProgLvl += quest.xp;
 
@@ -19940,7 +19977,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
                 progIn.classList.add("finish");
                 xpQ.classList.add("active");
-                btnReward.classList.add("notifReward");
+                // btnReward.classList.add("notifReward");
+                nbrReward+=1
+                L_claimedQ[item.dataset.id] = false
+                circleReward.textContent = nbrReward
+                circleReward.style.display = "flex"
                 attachXpClickHandler(xpQ, quest);
               }
             }
@@ -20261,23 +20302,39 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         contentDefisQ.style.display = "none";
         contentRecompenses.scrollTop;
         contentRecompenses.style.display = "flex";
+
+
+        const itemsRec = document.querySelectorAll('.itemRD')
+
+        for (const itm of itemsRec){
+          if (L_claimedQ[itm.dataset.id] === false){
+            itm.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+            break
+          }
+        }
       });
 
       btnReward.addEventListener("click", () => {
+        trueReward = false;
         btnReward.classList.remove("notifReward");
         cadreRD.classList.add("active");
         overallHome.classList.add("active");
         setTimeout(() => {
+          cadreRD.style.pointerEvents = "all"
           L_actionReward.forEach((valeur, cle, map) => {
             valeur();
-            requestAnimationFrame(() => {
-              cle.remove();
-            });
+            cle.remove();
           });
+        trueReward = true
         }, 200);
+
       });
       crossRD.addEventListener("click", () => {
         cadreRD.classList.remove("active");
+        cadreRD.style.pointerEvents = ""
         overallHome.classList.remove("active");
       });
 
@@ -20298,8 +20355,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
       overallHome.addEventListener("click", () => {
         cadreSetting.classList.remove("active");
-        cadreRD.classList.remove("active");
-        overallHome.classList.remove("active");
+       crossRD.click()
       });
 
       mail.addEventListener("click", () => {
@@ -21881,7 +21937,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 15;
+      let maxQ = 3; // à retirer
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
@@ -41008,6 +41064,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           haptic,
           notif,
           dataD,
+          nbrReward,
         };
         localStorage.setItem(SAVE_KEY, JSON.stringify(data));
       }
@@ -41036,6 +41093,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           haptic = data.haptic ?? false;
           notif = data.notif ?? false;
           data.dataD ? (dataD = data.dataD) : "";
+          nbrReward =0 ;
+          for( const cle in L_claimedQ){
+            if (L_claimedQ[cle] === false && cle !== "XXX"){nbrReward+=1}
+          };
+
+          circleReward.style.display = nbrReward === 0 ? "" : "flex";
+          circleReward.textContent = nbrReward;
+          console.log(nbrReward,data.nbrReward)
 
           return data; // on retourne data pour récupérer defisQSelected ensuite
         } catch (e) {
@@ -41157,9 +41222,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(btnCarte.getBoundingClientRect().left);
+        for (const cle in L_claimedQ){
+          if (L_claimedQ[cle] === false){
+            console.log(cle)
+          }
+        }
       }
-      loop();
+      // loop();
 
       // play.addEventListener('click',(e)=>{
       //   e.stopImmediatePropagation()
