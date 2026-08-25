@@ -5072,13 +5072,14 @@
       .btn-carte {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: center; 
         position: fixed;
         pointer-events: none;
         z-index: 60;
         opacity: 0;
         top: calc(2.2rem + env(safe-area-inset-top));
-        right: 2.2rem;
+        /* right : 2.2rem; */
+        left : 50%;
         gap: 0;
         padding: 0.2rem 0.2rem;
         width: auto; /* icone + padding x2 */
@@ -9919,8 +9920,8 @@
 
       <div style="flex: 1"></div>
       <div class="dots" id="dots">
-        <span class="dot active"></span>
-        <span class="dot" id="dot2"></span>
+        <span class="dot active" id="dotPremium"></span>
+        <span class="dot" id="dotThank"></span>
       </div>
     </div>
 
@@ -13704,7 +13705,7 @@
       <!-- html pm3 -->
 
       <button
-        class="btn-carte"
+        class="btn-carte cliquable"
         id="btnCarte"
         onclick="(desactiverCarte(), afficherMaps())"
       >
@@ -18284,11 +18285,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const barreProgLvl = document.getElementById("barreProgLvl");
 
       supportBtn.addEventListener("click", () => {
-        // [btnPremium,getId('dot2')].forEach(el=>el.click())
+        // [btnPremium,getId('dotThank')].forEach(el=>el.click())
 
         btnPremium.click();
         setTimeout(() => {
-          getId("dot2").click();
+          getId("dotThank").click();
         }, 100);
       });
 
@@ -20051,6 +20052,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       //script premium
       btnPremium.addEventListener("click", () => {
+        setTimeout(() => {
+          getId("dotPremium").click()
+        }, 100);
         cadrePremium.classList.add("fullScreen");
       });
 
@@ -21307,6 +21311,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 document.addEventListener(
                   "touchmove",
                   (e) => {
+                    if (!dragging) return;
                     onMove(e.touches[0].clientY);
                     e.preventDefault();
                   },
@@ -22816,6 +22821,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
       // Bouton Vue sur la carte
       const btnCarte = document.getElementById("btnCarte");
+
+       
+     
       const texteCarte = btnCarte.querySelector(".texte-carte");
 
       function activerCarte() {
@@ -35752,6 +35760,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         CK: "Libre association (NZ)", // Îles Cook
         CW: "Pays des Pays-Bas", // Curaçao
         CX: "Territoire australien", // Île Christmas
+        EH: "Territoire non autonome",
         FK: "Territoire britannique", // Malouines
         FO: "Pays autonome (DK)", // Îles Féroé
         GF: "DROM français", // Guyane
@@ -35807,6 +35816,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         CK: "Libre association avec la Nouvelle-Zélande",
         CW: "Pays du Royaume des Pays-Bas",
         CX: "Territoire australien",
+        EH: "Territoire disputé (Maroc / RASD)",
         FK: "Territoire britannique",
         FO: "Pays autonome du Royaume du Danemark",
         GF: "Département et région d'outre-mer français",
@@ -41141,9 +41151,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(btnCartePm.classList);
+        console.log(btnCarte.getBoundingClientRect().left);
       }
-      // loop();
+      loop();
 
       // play.addEventListener('click',(e)=>{
       //   e.stopImmediatePropagation()
