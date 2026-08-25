@@ -66,5 +66,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+
+		<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-8425278698620884~7670024840</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Ces données servent à vous proposer des publicités plus pertinentes.</string>
+
 </dict>
 </plist>

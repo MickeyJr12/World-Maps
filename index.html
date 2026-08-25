@@ -3166,7 +3166,7 @@
         height : 100%;
       }
       .circleNotif{
-        display : flex;
+        display : none;
         pointer-events: none;
         justify-content : center;
         text-align : center;
@@ -18928,7 +18928,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "AR",
           t: "Terminer 10 quiz",
           svg: "repeat",
-          max: 10,
+          max: 10, 
           xp: 10,
           mode: "all",
           stars: 0,
@@ -19689,7 +19689,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         );
       }
 
-      function fillCadreRDQ(forcedSelection = null) {
+      function fillCadreRDQ_LRD(forcedSelection = null) {
         const container = document.getElementById("cadreRDQ");
         container.innerHTML = ``;
 
@@ -19752,6 +19752,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             xpBadge.textContent = "Terminé";
           } else if (L_progressQ[quest.id] >= quest.max) {
             // Complète mais pas encore réclamée : cliquable
+            nbrReward +=1
             progIn.classList.add("finish");
             xpBadge.classList.add("active");
             xpBadge.textContent = `+${quest.xp} XP`;
@@ -19806,6 +19807,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             xpBadge.textContent = "Terminé";
           } else if (L_progressQ[quest.id] >= quest.max) {
             // Complète mais pas encore réclamée : cliquable
+
+            nbrReward +=1
             xpBadge.classList.add("active");
             xpBadge.textContent = `${quest.xp} XP`;
             attachXpClickHandler(xpBadge, quest);
@@ -19855,6 +19858,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           ligne.style.margin = "0.1rem 0";
           cadreRDL.appendChild(ligne);
         }
+
+        circleReward.textContent = nbrReward
+        circleReward.style.display = nbrReward === 0 ? "" : "flex"
+
       }
 
       const durationBarreProg = 800;
@@ -19979,7 +19986,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 progIn.classList.add("finish");
                 xpQ.classList.add("active");
                 // btnReward.classList.add("notifReward");
-                nbrReward+=1
+                nbrReward +=1
                 L_claimedQ[item.dataset.id] = false
                 circleReward.textContent = nbrReward
                 circleReward.style.display = "flex"
@@ -41094,14 +41101,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           haptic = data.haptic ?? false;
           notif = data.notif ?? false;
           data.dataD ? (dataD = data.dataD) : "";
-          nbrReward =0 ;
-          for( const cle in L_claimedQ){
-            if (L_claimedQ[cle] === false && cle !== "XXX"){nbrReward+=1}
-          };
+          // nbrReward =0 ;
+          // for( const cle in L_claimedQ){
+          //   if (L_claimedQ[cle] === false && cle !== "XXX"){nbrReward+=1}
+          // };
 
-          circleReward.style.display = nbrReward === 0 ? "" : "flex";
-          circleReward.textContent = nbrReward;
-          console.log(nbrReward,data.nbrReward)
+          // circleReward.style.display = nbrReward === 0 ? "" : "flex";
+          // circleReward.textContent = nbrReward;
 
           return data; // on retourne data pour récupérer defisQSelected ensuite
         } catch (e) {
@@ -41135,16 +41141,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           .filter(Boolean);
 
         if (restoredSelection.length === 4) {
-          fillCadreRDQ(restoredSelection);
+          fillCadreRDQ_LRD(restoredSelection);
         } else {
           // sécurité si des ids ne matchent plus (ex: tu as retiré une quête du code)
-          fillCadreRDQ();
+          fillCadreRDQ_LRD();
           lastQuestGenDate = today;
           saveProgress();
         }
       } else {
         // Nouveau jour ou première visite : nouveau tirage
-        fillCadreRDQ();
+        fillCadreRDQ_LRD();
         lastQuestGenDate = today;
         saveProgress();
       }
@@ -41222,12 +41228,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       trackLoading();
 
       function loop() {
-        const itm = document.querySelectorAll('.itemRD')
-        console.log(itm.length)
         requestAnimationFrame(loop);
+        console.log(Object.keys(L_claimedQ).length)
       }
-
-      loop();
+      // loop();
 
       // play.addEventListener('click',(e)=>{
       //   e.stopImmediatePropagation()
