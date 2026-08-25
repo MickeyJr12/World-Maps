@@ -1,0 +1,67 @@
+// ads.js — Gestion des publicités AdMob
+
+const AD_IDS = {
+  banner: 'ca-app-pub-3940256099942544/2934735716',       // ID TEST iOS bannière
+  interstitial: 'ca-app-pub-3940256099942544/4411468910', // ID TEST iOS interstitielle
+  // Remplacer par tes vrais ID une fois prêt :
+  // banner: 'ca-app-pub-8425278698620884/3978191846',
+  // interstitial: 'ca-app-pub-8425278698620884/8847375147',
+};
+
+let adsInitialized = false;
+
+async function initAds() {
+  if (adsInitialized) return;
+
+  const { AdMob } = Capacitor.Plugins;
+  await AdMob.initialize({
+    initializeForTesting: true, // ⚠️ passer à false uniquement en prod finale
+  });
+
+  adsInitialized = true;
+}
+
+// --- Bannière ---
+
+async function showBanner() {
+  await initAds();
+
+  const { AdMob } = Capacitor.Plugins;
+
+  try {
+    await AdMob.showBanner({
+      adId: AD_IDS.banner,
+      adSize: 'BANNER',
+      position: 'BOTTOM_CENTER',
+      margin: 0,
+    });
+  } catch (err) {
+    console.error('Erreur affichage bannière:', err);
+  }
+}
+
+async function hideBanner() {
+  const { AdMob } = Capacitor.Plugins;
+  try {
+    await AdMob.hideBanner();
+  } catch (err) {
+    console.error('Erreur masquage bannière:', err);
+  }
+}
+
+// --- Interstitielle ---
+
+async function showInterstitial() {
+  await initAds();
+
+  const { AdMob } = Capacitor.Plugins;
+
+  try {
+    await AdMob.prepareInterstitial({
+      adId: AD_IDS.interstitial,
+    });
+    await AdMob.showInterstitial();
+  } catch (err) {
+    console.error('Erreur affichage interstitielle:', err);
+  }
+}

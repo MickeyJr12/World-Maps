@@ -20315,7 +20315,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         const itemsRec = document.querySelectorAll('.itemRD')
 
         for (const itm of itemsRec){
-          if (L_claimedQ[itm.dataset.id] === false){
+          if (itm.querySelector('.xp').classList.contains('active')){
             itm.scrollIntoView({
               behavior: "smooth",
               block: "center",
@@ -41247,5 +41247,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phonePlay.appendChild(cadre)
       }, 10000);*/
     </script>
+
+    <script src="ads.js"></script>
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.Capacitor) {
+      showBanner();
+    }
+  });
+</script>
   </body>
 </html>
