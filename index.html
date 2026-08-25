@@ -21288,35 +21288,42 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 }
 
                 // Mouse
-                b.addEventListener("mousedown", (e) => {
+
+                function mouseDownEl(e){
                   onStart(e.clientY);
                   e.preventDefault();
-                });
-                document.addEventListener("mousemove", (e) =>
-                  onMove(e.clientY),
-                );
+                }
+                b.removeEventListener("mousedown",mouseDownEl)
+                b.addEventListener("mousedown", mouseDownEl);
+
+                function mouseMoveEl(e){
+                    onMove(e.clientY)
+                }
+                document.removeEventListener("mousemove",mouseMoveEl)
+                document.addEventListener("mousemove",mouseMoveEl );
+
+                document.removeEventListener("mouseup", onEnd);
                 document.addEventListener("mouseup", onEnd);
 
                 // Touch
-                b.addEventListener(
-                  "touchstart",
-                  (e) => {
+                function touchStartEl(e){
                     onStart(e.touches[0].clientY);
                     e.preventDefault();
-                  },
-                  { passive: false },
-                );
+                }
 
-                document.addEventListener(
-                  "touchmove",
-                  (e) => {
+                b.addEventListener("touchstart",touchStartEl);
+                b.addEventListener("touchstart",touchStartEl,{ passive: false });
+
+                function mouseMoveEl(e){
                     if (!dragging) return;
                     onMove(e.touches[0].clientY);
                     e.preventDefault();
-                  },
-                  { passive: false },
-                );
+                }
 
+                document.removeEventListener("touchmove",mouseMoveEl);
+                document.addEventListener("touchmove",mouseMoveEl,{ passive: false });
+
+                document.removeEventListener("touchend", onEnd);
                 document.addEventListener("touchend", onEnd);
               });
             }
