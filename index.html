@@ -3144,6 +3144,7 @@
         aspect-ratio: 1/1;
         padding: 0.4rem;
         max-height: 1.8rem;
+        height : 1.8rem;
         backdrop-filter: blur(10px);
         border-radius: inherit;
         background: #f09443;
@@ -18927,7 +18928,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "AR",
           t: "Terminer 10 quiz",
           svg: "repeat",
-          max: 1, // à retirer
+          max: 10,
           xp: 10,
           mode: "all",
           stars: 0,
@@ -18937,7 +18938,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "AQ",
           t: "Terminer 50 quiz",
           svg: "repeat",
-          max: 2,// à retirer
+          max: 50,
           xp: 200,
           mode: "all",
           stars: 0,
@@ -18947,7 +18948,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "AP",
           t: "Terminer 100 quiz",
           svg: "repeat",
-          max: 3,// à retirer
+          max: 100,
           xp: 1000,
           mode: "all",
           stars: 0,
@@ -41221,14 +41222,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       trackLoading();
 
       function loop() {
+        const itm = document.querySelectorAll('.itemRD')
+        console.log(itm.length)
         requestAnimationFrame(loop);
-        for (const cle in L_claimedQ){
-          if (L_claimedQ[cle] === false){
-            console.log(cle)
-          }
-        }
       }
-      // loop();
+
+      loop();
 
       // play.addEventListener('click',(e)=>{
       //   e.stopImmediatePropagation()
