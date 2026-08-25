@@ -65,3 +65,36 @@ async function showInterstitial() {
     console.error('Erreur affichage interstitielle:', err);
   }
 }
+
+
+
+// --- Interstitielle avec listener ---
+
+async function showInterstitialAndThen(ratio,premium,onDismissed) { // ratio : une chance sur tant d'afficher la pubs
+    
+    if(premium ||!window.Capacitor?.isNativePlatform() || ratio<0.5){
+        if (onDismissed) onDismissed()
+            return
+    }
+  await initAds();
+
+  const { AdMob, InterstitialAdPluginEvents } = Capacitor.Plugins;
+
+  // Écoute la fermeture de la pub AVANT de la lancer
+  const listener = await AdMob.addListener(InterstitialAdPluginEvents.Dismissed, () => {
+    listener.remove(); // nettoie le listener après usage, évite les doublons
+    if (onDismissed) onDismissed(); // exécute l'action demandée
+  });
+
+  try {
+    await AdMob.prepareInterstitial({
+      adId: AD_IDS.interstitial,
+    });
+    await AdMob.showInterstitial();
+  } catch (err) {
+    console.error('Erreur affichage interstitielle:', err);
+    listener.remove(); // nettoyer aussi en cas d'échec de chargement
+    if (onDismissed) onDismissed(); // fallback : continuer quand même si la pub échoue
+  }
+}
+

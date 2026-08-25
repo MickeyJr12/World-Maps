@@ -11930,7 +11930,7 @@
               </div>
               <div class="qr r" id="nomR" style="display: none">Noms</div>
               <div class="qr r" id="mapsR" style="display: none">Carte</div>
-              <div class="qr r" id="contourR" style="display: none">
+              <div class="qr r lockP" id="contourR" style="display: none">
                 Silhouettes
                 <svg
                   class="mDiamant"
@@ -12008,7 +12008,7 @@
                   />
                 </svg>
               </div>
-              <div class="qr r" id="nbrClass5" data-nbr="5">
+              <div class="qr r lockP" id="nbrClass5" data-nbr="5">
                 5
 
                 <svg
@@ -12091,7 +12091,7 @@
                   </div>
 
                   <div
-                    class="nbrQ-option"
+                    class="nbrQ-option lockP"
                     id="nbrQ25"
                     data-value="25"
                     data-label="25"
@@ -12132,7 +12132,7 @@
                   </div>
                   <!-- rajouter lockP -->
                   <div
-                    class="nbrQ-option"
+                    class="nbrQ-option lockP"
                     id="nbrQAll"
                     data-value="Tout"
                     data-label="Tout"
@@ -18091,7 +18091,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "click",
         (e) => {
           const lock = e.target.closest(".lockP");
-          if (lock) {
+          if (lock && !(isPremium ||!window.Capacitor?.isNativePlatform())) {
+            
             e.stopImmediatePropagation();
             e.preventDefault();
             btnPremium.click();
@@ -21779,6 +21780,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       /*Fin script chrono*/
       backConfig.addEventListener("click", () => {
+        showInterstitialAndThen(Math.random(),isPremium,()=>{
+          
         // Sortie de phoneConfig
         phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         phoneConfig.style.opacity = "0";
@@ -21837,6 +21840,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           qrs.forEach((qr) => (qr.style.display = "none  "));
         }, 150);
+      
+        })
       });
 
       playConfig.addEventListener("click", () => {
@@ -22257,10 +22262,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         </svg>
           `;
       backMapsPlay.addEventListener("click", () => {
-        cacherMaps();
+        showInterstitialAndThen(Math.random(),isPremium, ()=>{ // à modifier premium ( false : si on est premium ou pas )
+           cacherMaps();
         if(!viewMapsPm){
           activerCarte();
         }
+
+        })
       });
       const L_addMaps = [
         getC(".globe"),
@@ -22918,6 +22926,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       // Bouton Menu principal
       btnMenu.addEventListener("click", () => {
+        showInterstitialAndThen(Math.random(),isPremium,()=>{
+
         Maps.appendChild(globe);
         L_modeTrouver.forEach((m) => {
           m.classList.remove("modeTrouver");
@@ -23014,6 +23024,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         document
           .querySelectorAll(".imgPmCadre")
           .forEach((img) => (img.src = ``));
+
+      })
       });
 
       btnReprendre.addEventListener("click", () => {
@@ -23261,6 +23273,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const backMaps = document.getElementById("backMaps");
       backMaps.addEventListener("click", () => {
+        showInterstitialAndThen(Math.random(),isPremium, ()=>{
         toggleC(false);
 
         // paths.forEach(p=>{
@@ -23321,6 +23334,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           document.getElementById("mapHome").style.transform =
             "translateX(-40%)";
         }, 150);
+      });
       });
 
       const svg = document.querySelector("svg.monde");
@@ -39513,6 +39527,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const backDevise = document.getElementById("backDevise");
 
       backDevise.addEventListener("click", () => {
+        showInterstitialAndThen(Math.random(), isPremium, ()=>{
+          
         // Sortie de phoneConfig
         phoneDevise.style.transition = "transform 0.5s ease, opacity 0.2s ease";
         phoneDevise.style.opacity = "0";
@@ -39560,6 +39576,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           document.getElementById("mapHome").style.transform =
             "translateX(-40%)";
         }, 150);
+      
+        })
+
       });
       const inputD1 = document.getElementById("inputD1");
       const inputD2 = document.getElementById("inputD2");
@@ -41039,6 +41058,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <!--Script cache-->
 
     <script>
+
+
+      let isPremium = false
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("/sw.js");
       }
@@ -41246,15 +41268,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         phonePlay.appendChild(mCadre)
         phonePlay.appendChild(cadre)
       }, 10000);*/
+
+
+
+
     </script>
 
     <script src="ads.js"></script>
     <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (window.Capacitor) {
-      showBanner();
-    }
-  });
+  // document.addEventListener('DOMContentLoaded', () => {
+  //   if (window.Capacitor) {
+  //     showBanner();
+  //   }
+  // });
+
+
+
 </script>
   </body>
 </html>
