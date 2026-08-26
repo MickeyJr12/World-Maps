@@ -1,1 +1,1 @@
-# World-Maps
+# Globus Quiz

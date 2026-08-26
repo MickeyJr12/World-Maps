@@ -1,6 +1,6 @@
 {
-  "name": "Maps Quiz",
-  "short_name": "Maps Quiz",
+  "name": "Globus Quiz",
+  "short_name": "Globus Quiz",
   "start_url": "./index.html",
   "display": "fullscreen",
   "orientation": "portrait",
