@@ -5107,15 +5107,15 @@
         position: fixed;
         pointer-events: none;
         z-index: 60;
-        opacity: 0;
+        opacity: 0.5;
         top: calc(2.2rem + env(safe-area-inset-top));
         right : 2.2rem;
         gap: 0;
-        padding: 0.2rem 0.2rem;
+        padding: 0.5rem;
         width: auto; /* icone + padding x2 */
         height: auto;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0);
+        background: rgba(255, 255, 255, 0.5);
         border: none;
         cursor: default;
         overflow: hidden;
@@ -10907,7 +10907,7 @@
 
                          <span class="sectionSetting">Fais connaître l'app</span>
 
-            <div class="cadreItemSetting" id="btnShare" >
+            <div class="cadreItemSetting" id="btnShare">
               <div
                 class="itemSetting  "
                 data-next="titleCredits"
@@ -21407,13 +21407,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   e.preventDefault();
                 }
                 b.removeEventListener("mousedown",mouseDownEl)
-                b.addEventListener("mousedown", mouseDownEl);
+                b.addEventListener("mousedown", mouseDownEl,{ passive: false });
 
                 function mouseMoveEl(e){
                     onMove(e.clientY)
                 }
                 document.removeEventListener("mousemove",mouseMoveEl)
-                document.addEventListener("mousemove",mouseMoveEl );
+                document.addEventListener("mousemove",mouseMoveEl,{ passive: false } );
 
                 document.removeEventListener("mouseup", onEnd);
                 document.addEventListener("mouseup", onEnd);
@@ -21427,14 +21427,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 b.addEventListener("touchstart",touchStartEl);
                 b.addEventListener("touchstart",touchStartEl,{ passive: false });
 
-                function mouseMoveEl(e){
+                function touchMoveEl(e){
                     if (!dragging) return;
                     onMove(e.touches[0].clientY);
                     e.preventDefault();
                 }
 
                 document.removeEventListener("touchmove",mouseMoveEl);
-                document.addEventListener("touchmove",mouseMoveEl,{ passive: false });
+                document.addEventListener("touchmove",touchMoveEl,{ passive: false });
 
                 document.removeEventListener("touchend", onEnd);
                 document.addEventListener("touchend", onEnd);
@@ -21900,7 +21900,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         btnCarte.classList.remove("lockP");
         startChronoQ(currentChronoQ);
         spnScore.textContent = score;
-
+        btnCarte.style.opacity = "0"
+         if(L_config.m === "modeChoix"){
+            btnCarte.style.opacity = ""
+         }
         pause4Choix.style = "";
         document.getElementById("wrapperScorePm").style.display = "none";
         qNumber.textContent = "0";
@@ -22438,6 +22441,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         //Cacher les éléments
+        btnCarte.style.opacity = "0"
         L_replace.forEach((b) => {
           addTransition(b, "opacity 0.4s ease");
           b.style.opacity = "0";
@@ -22532,6 +22536,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           c3.querySelector(".cBox"),
           c4.querySelector(".cBox"),
         ];
+
+        // afficher les éléments
+        btnCarte.style.opacity = ""
 
         L_addMaps.forEach((p) => {
           Maps.appendChild(p);
