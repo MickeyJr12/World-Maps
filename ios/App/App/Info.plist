@@ -72,6 +72,10 @@
 	<key>NSUserTrackingUsageDescription</key>
 	<string>Ces données servent à vous proposer des publicités plus pertinentes.</string>
 
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+
+  
 	<key>SKAdNetworkItems</key>
 <array>
   <dict>
