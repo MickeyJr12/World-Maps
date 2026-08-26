@@ -33,14 +33,7 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap");
 
-      * {
-        /* outline : 1px solid blue; */
-        -webkit-user-select: none; /* Safari / Chrome mobile */
-        -webkit-touch-callout: none; /* empêche le menu contextuel sur iOS (hold) */
-        user-select: none;
-        -webkit-tap-highlight-color: transparent; /* retire le flash gris iOS */
-        touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
-      }
+    
       html {
         font-size: 16px;
         -webkit-text-size-adjust: 100%;
@@ -10760,7 +10753,7 @@
 
             <span class="sectionSetting">MENTIONS LÉGALES</span>
             <div class="cadreItemSetting">
-              <div class="itemSetting">
+              <div class="itemSetting" onclick="window.open('https://www.apple.com/legal/internet-services/itunes/dev/stdeula/', '_blank', 'noopener,noreferrer')">
                 <svg
                   height="1.2rem"
                   version="1.1"
@@ -10832,58 +10825,9 @@
 
               <div class="ligneInSD" style="margin: 0.4rem 0"></div>
 
-              <div class="itemSetting">
-                <svg
-                  height="1.2rem"
-                  version="1.1"
-                  id="Layer_1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 0 512 512"
-                  xml:space="preserve"
-                  fill="#000000"
-                >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      style="fill: #00384e"
-                      d="M310.624,0H64v512h384V137.376L310.624,0z M320,54.624L393.376,128H320V54.624z M96,480V32h192v128 h128v320H96z"
-                    ></path>
-                    <polygon
-                      style="fill: #72c6ef"
-                      points="384,448 128,448 128,64 288,64 288,160 384,160 "
-                    ></polygon>
-                    <g>
-                      <rect
-                        x="176"
-                        y="368"
-                        style="fill: #00384d"
-                        width="80"
-                        height="32"
-                      ></rect>
-                      <rect
-                        x="176"
-                        y="304"
-                        style="fill: #00384d"
-                        width="160"
-                        height="32"
-                      ></rect>
-                      <rect
-                        x="176"
-                        y="240"
-                        style="fill: #00384d"
-                        width="160"
-                        height="32"
-                      ></rect>
-                    </g>
-                  </g>
-                </svg>
-
+              <div class="itemSetting" onclick="window.open('https://mickeyjr12.github.io/geoquiz/privacy.html', '_blank', 'noopener,noreferrer')">
+                <!-- <svg  viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M810.666667 149.333333H213.333333c-23.466667 0-42.666667 19.2-42.666666 42.666667v128c0 23.466667 19.2 42.666667 42.666666 42.666667h597.333334c23.466667 0 42.666667-19.2 42.666666-42.666667V192c0-23.466667-19.2-42.666667-42.666666-42.666667zM810.666667 405.333333H213.333333c-23.466667 0-42.666667 19.2-42.666666 42.666667v128c0 23.466667 19.2 42.666667 42.666666 42.666667h535.466667c27.733333-27.733333 104.533333-19.2 104.533333-42.666667v-128c0-23.466667-19.2-42.666667-42.666666-42.666667zM733.866667 661.333333H213.333333c-23.466667 0-42.666667 19.2-42.666666 42.666667v128c0 23.466667 19.2 42.666667 42.666666 42.666667h597.333334c23.466667 0 42.666667-19.2 42.666666-42.666667v-51.2c0-66.133333-53.333333-119.466667-119.466666-119.466667z" fill="#a0dee4"></path><path d="M981.333333 533.333333H682.666667c-23.466667 0-42.666667 19.2-42.666667 42.666667v251.733333c0 27.733333 12.8 51.2 34.133333 68.266667l157.866667 117.333333 157.866667-117.333333c21.333333-17.066667 34.133333-40.533333 34.133333-68.266667V576c0-23.466667-19.2-42.666667-42.666667-42.666667z" fill="#3e95c1"></path></g></svg> -->
+                <svg height="1.2rem" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M810.666667 149.333333H213.333333c-23.466667 0-42.666667 19.2-42.666666 42.666667v128c0 23.466667 19.2 42.666667 42.666666 42.666667h597.333334c23.466667 0 42.666667-19.2 42.666666-42.666667V192c0-23.466667-19.2-42.666667-42.666666-42.666667zM810.666667 405.333333H213.333333c-23.466667 0-42.666667 19.2-42.666666 42.666667v128c0 23.466667 19.2 42.666667 42.666666 42.666667h535.466667c27.733333-27.733333 104.533333-19.2 104.533333-42.666667v-128c0-23.466667-19.2-42.666667-42.666666-42.666667zM733.866667 661.333333H213.333333c-23.466667 0-42.666667 19.2-42.666666 42.666667v128c0 23.466667 19.2 42.666667 42.666666 42.666667h597.333334c23.466667 0 42.666667-19.2 42.666666-42.666667v-51.2c0-66.133333-53.333333-119.466667-119.466666-119.466667z" fill="#2a79f8"></path><path d="M981.333333 533.333333H682.666667c-23.466667 0-42.666667 19.2-42.666667 42.666667v251.733333c0 27.733333 12.8 51.2 34.133333 68.266667l157.866667 117.333333 157.866667-117.333333c21.333333-17.066667 34.133333-40.533333 34.133333-68.266667V576c0-23.466667-19.2-42.666667-42.666667-42.666667z" fill="#2c495e"></path></g></svg>
                 <span
                   style="
                     font-size: 0.96rem;
@@ -10899,6 +10843,23 @@
                 <!-- From Uiverse.io by ErzenXz -->
 
                               <svg height="1.5rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Interface / External_Link"> <path id="Vector" d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+
+              </div>
+               <div class="ligneInSD" style="margin: 0.4rem 0"></div>
+
+                <div class="itemSetting">
+                <svg height="1.2rem" fill="#000000" viewBox="0 0 24 24" id="cookie-2" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg" class="icon flat-line"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path id="secondary" d="M5.88,9.78a3,3,0,0,0,3.9-3.9A3,3,0,0,0,12,3a9,9,0,1,1-9,9A3,3,0,0,0,5.88,9.78Z" style="fill: #2ca9bc; stroke-width: 2;"></path><path id="primary" d="M5.88,9.78a3,3,0,0,0,3.9-3.9A3,3,0,0,0,12,3a9,9,0,1,1-9,9A3,3,0,0,0,5.88,9.78Z" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></g></svg>
+                <span
+                  style="
+                    font-size: 0.96rem;
+                    font-weight: 450;
+                    flex: 1;
+                    display: flex;
+                    justify-content: flex-start;
+                    padding-left: 1rem;
+                  "
+                  >Paramètres des annonces</span
+                >
 
               </div>
             </div>

@@ -10,22 +10,36 @@ const AD_IDS = {
 
 let adsInitialized = false;
 
+
+
 async function initAds() {
   if (adsInitialized) return;
 
   const { AdMob } = Capacitor.Plugins;
+
+  // --- ATT (App Tracking Transparency) ---
+  if (window.Capacitor?.isNativePlatform()) {
+    try {
+      const trackingInfo = await AdMob.trackingAuthorizationStatus();
+      if (trackingInfo.status === 'notDetermined') {
+        await AdMob.requestTrackingAuthorization();
+      }
+    } catch (err) {
+      console.error('Erreur ATT:', err);
+    }
+  }
+
+  // --- Initialisation AdMob ---
   await AdMob.initialize({
     initializeForTesting: true, // ⚠️ passer à false uniquement en prod finale
   });
 
-    // Classification du contenu des annonces — doit correspondre à ton rating App Store / AdMob
+  // Classification du contenu des annonces
   await AdMob.setRequestConfiguration({
     maxAdContentRating: 'T',
     tagForChildDirectedTreatment: false,
     tagForUnderAgeOfConsent: false,
   });
-
-  
 
   adsInitialized = true;
 }
