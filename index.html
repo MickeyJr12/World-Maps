@@ -3739,6 +3739,10 @@
         stroke: white;
       }
 
+      #boxSvgShare svg path{
+        fill : none;
+      }
+
       .boxSvgItemSetting svg path {
         stroke: white;
         fill: white;
@@ -10900,6 +10904,35 @@
               </div>
             </div>
 
+
+                         <span class="sectionSetting">Fais connaître l'app</span>
+
+            <div class="cadreItemSetting" id="btnShare" >
+              <div
+                class="itemSetting  "
+                data-next="titleCredits"
+              >
+                <div class="boxSvgItemSetting orange"  id="boxSvgShare">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 13V17.5C20 20.5577 16 20.5 12 20.5C8 20.5 4 20.5577 4 17.5V13M12 3L12 15M12 3L16 7M12 3L8 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </div>
+                <span
+                  style="
+                    font-size: 0.96rem;
+                    font-weight: 450;
+                    flex: 1;
+                    display: flex;
+                    justify-content: flex-start;
+                    padding-left: 1rem;
+                  "
+                  >Partager</span
+                >
+
+               
+              </div>
+            </div>
+
+
+
             <span class="sectionSetting">CRÉDITS</span>
 
             <div class="cadreItemSetting">
@@ -10910,6 +10943,7 @@
               >
                 <div class="boxSvgItemSetting pink">
                   <svg
+                    
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -10957,6 +10991,8 @@
                 </svg>
               </div>
             </div>
+
+
           </div>
           <div class="contentSetting" id="contentSettingThank">
             <div class="backS" id="backThank" data-old="titlePropos">
@@ -18054,6 +18090,41 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
     <!--Script utile-->
     <script>
+
+      async function partagerApp() {
+  const APP_STORE_URL = 'https://apps.apple.com/app/idTON_ID_APP_STORE'; // à remplacer une fois ta fiche créée
+
+  if (window.Capacitor?.isNativePlatform()) {
+    // App native (iOS via Capacitor) → menu de partage natif iOS
+    const { Share } = Capacitor.Plugins;
+
+    try {
+      await Share.share({
+        title: 'Géo Quiz',
+        text: 'Viens tester tes connaissances en géographie sur Géo Quiz !',
+        url: APP_STORE_URL,
+        dialogTitle: 'Partager Géo Quiz',
+      });
+    } catch (err) {
+      console.log('Partage annulé ou erreur:', err);
+    }
+  } else if (navigator.share) {
+    // Fallback si testé dans un navigateur web classique (PWA)
+    try {
+      await navigator.share({
+        title: 'Géo Quiz',
+        text: 'Viens tester tes connaissances en géographie sur Géo Quiz !',
+        url: APP_STORE_URL,
+      });
+    } catch (err) {
+      console.log('Partage annulé ou erreur:', err);
+    }
+  } else {
+    console.log('Partage non supporté sur cet environnement');
+  }
+}
+
+
       function animateCounter(element, start, end, duration) {
         const startTime = performance.now();
 
@@ -18266,6 +18337,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const mail = document.getElementById("mail");
       const propos = getId("propos");
       const btnThank = getId("btnThank");
+      const btnShare = getId("btnShare");
+      btnShare.addEventListener('click',partagerApp)
 
       const backSetting = document.getElementById("backSetting");
       const backThank = getId("backThank");
@@ -22901,8 +22974,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       // Bouton Menu principal
       btnMenu.addEventListener("click", () => {
-        showInterstitialAndThen(Math.random(),isPremium,noAd,()=>{
 
+        showInterstitialAndThen(Math.random(),isPremium,noAd,()=>{
         Maps.appendChild(globe);
         L_modeTrouver.forEach((m) => {
           m.classList.remove("modeTrouver");
@@ -41223,29 +41296,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
       trackLoading();
 
-      function loop() {
-        requestAnimationFrame(loop);
-        console.log(Object.keys(L_claimedQ).length)
-      }
-      // loop();
+    
 
       // play.addEventListener('click',(e)=>{
       //   e.stopImmediatePropagation()
       //   e.preventDefault()
       // },true) // le true fait en sorte de faire ce listener avant le premier
 
-      // loop();
-      /*phoneHome.style.display="none"
-      phonePlay.style.display="flex"*/
-      /* setTimeout(() => {
-        phonePlay.appendChild(svg)
-        phonePlay.appendChild(mCadre)
-        phonePlay.appendChild(cadre)
-      }, 10000);*/
-
 
       // ads.js (ou un fichier séparé purchases.js) — Gestion des achats via RevenueCat
 
+      // Script gérer les achats
 const REVENUECAT_API_KEY_IOS = 'test_KzoqzmnVIGKMxiHyWEwkmLTmNJT'; // ⚠️ clé de TEST — à remplacer par la clé de prod avant publication
 
 // Identifiants tels que définis dans RevenueCat (entitlements)
@@ -41386,6 +41447,27 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 });
 
+
+// script avis
+const { InAppReview } = Capacitor.Plugins;
+
+async function demanderNotation() {
+  if (!window.Capacitor?.isNativePlatform()) return;
+  await InAppReview.requestReview();
+}
+
+// script partager
+
+
+
+// Écouteur sur ton bouton
+
+
+  function loop() {
+        requestAnimationFrame(loop);
+        console.log(Object.keys(L_claimedQ).length)
+      }
+      // loop();
 
     </script>
 

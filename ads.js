@@ -18,6 +18,15 @@ async function initAds() {
     initializeForTesting: true, // ⚠️ passer à false uniquement en prod finale
   });
 
+    // Classification du contenu des annonces — doit correspondre à ton rating App Store / AdMob
+  await AdMob.setRequestConfiguration({
+    maxAdContentRating: 'T',
+    tagForChildDirectedTreatment: false,
+    tagForUnderAgeOfConsent: false,
+  });
+
+  
+
   adsInitialized = true;
 }
 
