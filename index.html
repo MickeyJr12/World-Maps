@@ -3423,6 +3423,165 @@
         color: #043b3f;
       }
 
+      /* From Uiverse.io by mrhyddenn */ 
+.spinner {
+  font-size: 28px;
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.spinner.center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.spinner .spinner-blade {
+  position: absolute;
+  left: 0.4629em;
+  bottom: 0;
+  width: 0.074em;
+  height: 0.2777em;
+  border-radius: 0.0555em;
+  background-color: transparent;
+  -webkit-transform-origin: center -0.2222em;
+  -ms-transform-origin: center -0.2222em;
+  transform-origin: center -0.2222em;
+  animation: spinner-fade9234 1s infinite linear;
+}
+
+.spinner .spinner-blade:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.spinner .spinner-blade:nth-child(2) {
+  -webkit-animation-delay: 0.083s;
+  animation-delay: 0.083s;
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+.spinner .spinner-blade:nth-child(3) {
+  -webkit-animation-delay: 0.166s;
+  animation-delay: 0.166s;
+  -webkit-transform: rotate(60deg);
+  -ms-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+
+.spinner .spinner-blade:nth-child(4) {
+  -webkit-animation-delay: 0.249s;
+  animation-delay: 0.249s;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.spinner .spinner-blade:nth-child(5) {
+  -webkit-animation-delay: 0.332s;
+  animation-delay: 0.332s;
+  -webkit-transform: rotate(120deg);
+  -ms-transform: rotate(120deg);
+  transform: rotate(120deg);
+}
+
+.spinner .spinner-blade:nth-child(6) {
+  -webkit-animation-delay: 0.415s;
+  animation-delay: 0.415s;
+  -webkit-transform: rotate(150deg);
+  -ms-transform: rotate(150deg);
+  transform: rotate(150deg);
+}
+
+.spinner .spinner-blade:nth-child(7) {
+  -webkit-animation-delay: 0.498s;
+  animation-delay: 0.498s;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.spinner .spinner-blade:nth-child(8) {
+  -webkit-animation-delay: 0.581s;
+  animation-delay: 0.581s;
+  -webkit-transform: rotate(210deg);
+  -ms-transform: rotate(210deg);
+  transform: rotate(210deg);
+}
+
+.spinner .spinner-blade:nth-child(9) {
+  -webkit-animation-delay: 0.664s;
+  animation-delay: 0.664s;
+  -webkit-transform: rotate(240deg);
+  -ms-transform: rotate(240deg);
+  transform: rotate(240deg);
+}
+
+.spinner .spinner-blade:nth-child(10) {
+  -webkit-animation-delay: 0.747s;
+  animation-delay: 0.747s;
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.spinner .spinner-blade:nth-child(11) {
+  -webkit-animation-delay: 0.83s;
+  animation-delay: 0.83s;
+  -webkit-transform: rotate(300deg);
+  -ms-transform: rotate(300deg);
+  transform: rotate(300deg);
+}
+
+.spinner .spinner-blade:nth-child(12) {
+  -webkit-animation-delay: 0.913s;
+  animation-delay: 0.913s;
+  -webkit-transform: rotate(330deg);
+  -ms-transform: rotate(330deg);
+  transform: rotate(330deg);
+}
+
+@keyframes spinner-fade9234 {
+  0% {
+    background-color: #69717d;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+
+      .cadreSpinnerBuy{
+        display: flex;
+        pointer-events : none;
+        opacity : 0;
+        justify-content : center;
+        align-items : center;
+        position : absolute;
+        inset : 0;
+        border-radius : inherit;
+        background : inherit; 
+        z-index : 99;
+      }
+
+      .cadreSpinnerBuy.active{
+        opacity : 1;
+        pointer-events : all;
+      }
+
+
+
       #restaurer-achats {
         background: none;
         border: none;
@@ -9650,6 +9809,25 @@
             </span>
 
             <button id="buyBtnAd" class="buyBtn">
+
+              <div class="cadreSpinnerBuy" id="loaderBuyAd">
+                <!-- From Uiverse.io by mrhyddenn --> 
+<div class="spinner center">
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+</div>
+
+              </div>
               <span class="btn-label">Retirer les pubs — 3,99&nbsp;€</span>
               <span class="btn-shine"></span>
             </button>
@@ -9758,6 +9936,25 @@
             <span style="font-size: 0.85rem">✓ Contenu exclusif </span>
 
             <button id="buyBtnP" class="buyBtn">
+
+                 <div class="cadreSpinnerBuy" id="loaderBuyP">
+                <!-- From Uiverse.io by mrhyddenn --> 
+<div class="spinner center">
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+    <div class="spinner-blade"></div>
+</div>
+</div>
+
               <span class="btn-label">Passer premium — 4,99&nbsp;€</span>
               <span class="btn-shine"></span>
             </button>
@@ -41308,6 +41505,18 @@ async function initPurchases() {
 // Appelée au chargement de l'app, pour restaurer l'état déjà acheté
 async function chargerEtatAchats() {
   if (!window.Capacitor?.isNativePlatform()) return; // reste false sur la PWA
+  
+  const { Network, Dialog } = Capacitor.Plugins;
+  const status = await Network.getStatus();
+
+  if (!status.connected) {
+    await Dialog.alert({
+      title: 'Pas de connexion',
+      message: 'Vérifie ta connexion internet et réessaie.',
+      buttonTitle: 'OK',
+    });
+    return;
+  }
 
   await initPurchases();
   const { Purchases } = Capacitor.Plugins;
@@ -41317,17 +41526,41 @@ async function chargerEtatAchats() {
     noAd = !!customerInfo.entitlements.active[ENTITLEMENT_NO_ADS];
     isPremium = !!customerInfo.entitlements.active[ENTITLEMENT_PREMIUM];
   } catch (err) {
-    console.error('Erreur récupération état achats:', err);
-  }
+    if (err?.userCancelled) {
+    console.log('Achat annulé par l\'utilisateur');
+  } else {
+    console.error('Erreur achat premium:', err);
+
+    const { Dialog } = Capacitor.Plugins;
+    await Dialog.alert({
+      title: 'Erreur',
+      message: 'Une erreur est survenue lors de la récupération des achats.',
+      buttonTitle: 'OK',
+    });
+  }}
 }
 
 // --- Achat : retirer les pubs ---
 
 async function acheterRetraitPubs() {
   if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
+const { Network, Dialog } = Capacitor.Plugins;
+  const status = await Network.getStatus();
+
+  if (!status.connected) {
+    await Dialog.alert({
+      title: 'Pas de connexion',
+      message: 'Vérifie ta connexion internet et réessaie.',
+      buttonTitle: 'OK',
+    });
+    return;
+  }
 
   await initPurchases();
   const { Purchases } = Capacitor.Plugins;
+
+  const loaderBuyAd = document.getElementById('loaderBuyAd');
+  loaderBuyAd.classList.add('active');
 
   try {
     const offerings = await Purchases.getOfferings();
@@ -41346,17 +41579,44 @@ async function acheterRetraitPubs() {
       achatEffectue();
     }
   } catch (err) {
-    if (!err?.userCancelled) console.error('Erreur achat noAd:', err);
-  }
-}
+    if (err?.userCancelled) {
+    console.log('Achat annulé par l\'utilisateur');
+  } else {
+    console.error('Erreur achat premium:', err);
+
+    const { Dialog } = Capacitor.Plugins;
+    await Dialog.alert({
+      title: 'Erreur',
+      message: 'Votre achat n\'a pas pu être effectué. Veuillez réessayer plus tard.',
+      buttonTitle: 'OK',
+    });
+  }} finally {
+    loaderBuyAd.classList.remove('active');
+  }}
 
 // --- Achat : débloquer premium ---
 
 async function acheterPremium() {
   if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
 
+  const { Network, Dialog } = Capacitor.Plugins;
+  const status = await Network.getStatus();
+
+  if (!status.connected) {
+    await Dialog.alert({
+      title: 'Pas de connexion',
+      message: 'Vérifie ta connexion internet et réessaie.',
+      buttonTitle: 'OK',
+    });
+    return;
+  }
+
   await initPurchases();
   const { Purchases } = Capacitor.Plugins;
+
+  const loaderBuyP = document.getElementById('loaderBuyP'); // adapte le sélecteur si besoin
+
+  loaderBuyP.classList.add('active');
 
   try {
     const offerings = await Purchases.getOfferings();
@@ -41375,7 +41635,19 @@ async function acheterPremium() {
       achatEffectue();
     }
   } catch (err) {
-    if (!err?.userCancelled) console.error('Erreur achat premium:', err);
+    if (err?.userCancelled) {
+    console.log('Achat annulé par l\'utilisateur');
+  } else {
+    console.error('Erreur achat premium:', err);
+
+    const { Dialog } = Capacitor.Plugins;
+    await Dialog.alert({
+      title: 'Erreur',
+      message: 'Votre achat n\'a pas pu être effectué. Veuillez réessayer plus tard.',
+      buttonTitle: 'OK',
+    });
+  }} finally {
+    loaderBuyP.classList.remove('active');
   }
 }
 
@@ -41413,11 +41685,14 @@ async function restaurerAchats() {
 document.addEventListener('DOMContentLoaded', async () => {
   await chargerEtatAchats();
 
-  document.getElementById('buyBtnAd')?.addEventListener('click', acheterRetraitPubs);
+  // document.getElementById('buyBtnAd')?.addEventListener('click', acheterRetraitPubs);
+
   document.getElementById('buyBtnP')?.addEventListener('click', acheterPremium);
   document.getElementById('restaurer-achats').addEventListener('click', restaurerAchats);
-
+  document.querySelectorAll('.loaderBuy').addEventListener('click',(e)=>{e.stopPropagation(); e.preventDefault()})
 });
+
+
 
 
 // script avis
