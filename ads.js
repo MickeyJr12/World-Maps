@@ -121,3 +121,18 @@ async function showInterstitialAndThen(ratio,isPremium,noAd,onDismissed) { // ra
   }
 }
 
+// --- Gestion du consentement RGPD (lien de révocation) ---
+
+async function showPrivacyOptions() {
+  if (!window.Capacitor?.isNativePlatform()) {
+    console.warn('showPrivacyOptions : indisponible hors app native');
+    return;
+  }
+
+  const { AdMob } = Capacitor.Plugins;
+  try {
+    await AdMob.showPrivacyOptionsForm();
+  } catch (err) {
+    console.error('Erreur affichage options confidentialité:', err);
+  }
+}
