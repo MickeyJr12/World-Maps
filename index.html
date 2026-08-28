@@ -25029,8 +25029,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           );
 
           paths.forEach((p) => {
-            svgSub.contains(p) ? "" : (idVisible_m.get(p.id).continent = false);
-          });
+            svgSub.contains(p) ? "" : (p.classList.add('viewSub'));
+          }); // à retirer
           svgSub.style.fill = colorPath;
 
           toggleC(false);
@@ -25125,7 +25125,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               idVisible_m.set(key, { ...val }),
             );
             const pathsSub = getId(countryId).querySelectorAll("path")
-            pathsSub.forEach((p) => (p.style.fill = colorPath));
+            pathsSub.forEach((p) => {p.style.fill = colorPath; p.classList.remove('viewSub')});
             toggleC(false);
 
             for (const clef in D_circles) {
