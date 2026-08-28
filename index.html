@@ -4155,6 +4155,7 @@
         font-size: 0.86rem;
       }
       .itemMenuSw svg {
+        flex-shrink : 0;
         height: 1.2rem;
       }
 
@@ -5004,6 +5005,7 @@
       }
 
       #cadreSubChoice{
+        position : absolute;
         transform-origin : none;
       }
 
@@ -20782,7 +20784,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       menuSub.addEventListener("click", () => {
         menuSub.classList.add("active");
         menuContinent.classList.remove("active");
-        cadreSubChoice.classList.add('open')
+        // cadreSubChoice.classList.add('open')
         cadreMenuZIn.classList.add("right");
       });
       
