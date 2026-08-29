@@ -27327,6 +27327,19 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "svgAt",
         "svgPe",
       ]; // liste des pays à subdivision
+
+      // à retirer 
+
+      const L_ephe = {}
+
+      L_sub.forEach(svg=>{
+        const ps = getId(svg).querySelectorAll('path')
+        L_ephe[svg] = []
+        ps.forEach(p=>{
+          L_ephe[svg].push(p.id)
+        })
+      })
+      console.log(L_ephe)
       const L_cSub = {
         US: {
           svgSub: "svgUs",
