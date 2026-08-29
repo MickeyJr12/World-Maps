@@ -27468,12 +27468,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
 
       for (const clef in L_cSub) {
-        if (["US"].includes(clef)) continue;
         const svgSubId = L_cSub[clef].svgSub;
         const g = getId(svgSubId);
         // g.style.display = "none"
         // g.style.contentVisibility = 'hidden'; // Encore moins de coûts que display "none"
-        g.setAttribute("transform", getAlignTransform(clef, svgSubId));
+        if (["US"].includes(clef)){continue}
+        else {g.setAttribute("transform", getAlignTransform(clef, svgSubId));}
         L_gSub.set(L_cSub[clef].svgSub, g)
         g.remove()
       }
