@@ -597,7 +597,7 @@
           opacity 0.35s ease,
           filter 0.3s ease;
       }
-      .zBox.modeTrouver {
+      .zBox.modeTrouver , #centerBtn.modeTrouver {
         position: absolute;
         border-radius: 0.6rem;
         z-index: 25;
@@ -27270,6 +27270,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         return `translate(${translateX}, ${translateY}) scale(${sx}, ${sy})`;
       }
 
+
+      let currentCSub; // Pour programmer centerBtn, le pays subdivisé quon regarde
+
       const L_sub = [
         "svgUs",
         "svgCa",
@@ -28329,11 +28332,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         
         const svgSub = L_gSub.get(L_cSub[currentCountry.id].svgSub); // svgUs
         const countryId = currentCountry.id; //"US"
-
+        currentCSub = currentCountry
         const L_viewSub = [
           backMaps,
           opensearch,
-          centerBtn,
           only,
           calque,
           cadreLegend,
@@ -28372,30 +28374,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           });
           
 
-          zBox.style.left = zBox.getBoundingClientRect().left + "px";
-          console.log(zBox.getBoundingClientRect().left + "px")
-
-          zBox.style.top = zBox.getBoundingClientRect().top + "px";
-          zBox.style.position = "absolute";
-          zBox.style.opacity = "1";
-          Maps.append(zBox);
-          zBox.classList.add("modeTrouver");
-
-          // requestAnimationFrame(()=>{
-          //   const cloneCenterBtn = document.createElement('div')
-          // cloneCenterBtn.className = "toolCarre tool"
+          [zBox,centerBtn].forEach(btn=>{
+          btn.style.left = btn.getBoundingClientRect().left + "px";
+          btn.style.top = btn.getBoundingClientRect().top + "px";
+          btn.style.position = "absolute";
+          btn.style.opacity = "1";
+          Maps.append(btn);
+          btn.classList.add("modeTrouver");
+          })
           
-          // cloneCenterBtn.style.position = "absolute";
-          // cloneCenterBtn.style.left = zBox.getBoundingClientRect().left + "px";
-          // console.log(zBox.getBoundingClientRect().left + "px",cloneCenterBtn.style.left )
-          // cloneCenterBtn.style.top = zBox.getBoundingClientRect().top + zBox.getBoundingClientRect().height*1.5 +  "px";
-          // cloneCenterBtn.style.opacity = "1";
-          // Maps.append(cloneCenterBtn)
-          // console.log(cloneCenterBtn.style.top)
-          // cloneCenterBtn.addEventListener('click',()=>{
-          //   zoomCountry(countryId)
-          // })
-          // })
+
 
           openTool.classList.contains("active") ? openTool.click() : "";
           calques.forEach((c) => {
@@ -28500,11 +28488,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             cadreBlason.style.display = "";
             orgaMenu.click();
 
-            // cloneCenterBtn.remove()
-            zBox.style.position = "";
-            zBox.style.opacity = "";
-            zBox.classList.remove("modeTrouver");
-            wrapperTool.insertBefore(zBox, wrapperTool.firstChild);
+
+
+            [centerBtn,zBox].forEach(btn=>{
+              btn.style.position = "";
+            btn.style.opacity = "";
+            btn.classList.remove("modeTrouver");
+            wrapperTool.insertBefore(btn, wrapperTool.firstChild);
+            })
+
+
           });
         }
       });
@@ -40881,6 +40874,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       //Script tools
 
       centerBtn.addEventListener("click", () => {
+        viewSub ? 
+        zoomCountry(currentCSub.id) :
         animateViewBox(
           document.getElementById("svgMonde"),
           initialViewBox,
@@ -40894,7 +40889,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         openTool.querySelector("svg").classList.contains("rotate")
           ? (L_tool.forEach((el) => {
-              if (!(el === zBox && viewSub)) {
+              if (!((el === zBox || el === centerBtn) && viewSub)) {
                 setTimeout(() => {
                   el.style.opacity = "1";
                   el.style.transform = "scale(1)";
@@ -40904,7 +40899,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             }),
             (wrapperTool.style.pointerEvents = "all"))
           : (L_toolReverse.forEach((el) => {
-              if (!(el === zBox && viewSub)) {
+              if (!((el === zBox || el === centerBtn)&& viewSub)) {
                 setTimeout(() => {
                   el.style.opacity = "0";
                   el.style.transform = "";
