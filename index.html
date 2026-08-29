@@ -27231,6 +27231,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       const svg = document.querySelector("svg.monde");
+      svg.style.contentVisibility = 'auto';
+      
 
       function getAlignTransform(
         targetPathId,
@@ -27450,10 +27452,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       };
 
       const L_gSub = new Map()// liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
+      const L_pathsSub = [];
 
 
       requestAnimationFrame(()=>{
-        const L_pathsSub = [];
       L_sub.forEach((svgSub) => {
         const paths = getId(svgSub).querySelectorAll("path");
         L_pathsSub.push(paths);
@@ -27464,8 +27466,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           createOverlay(p.id);
         });
       });
-
-
 
       for (const clef in L_cSub) {
         if (["US"].includes(clef)) continue;
@@ -28371,24 +28371,32 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           L_viewSub.forEach((el) => {
             el.classList.add("elViewSub");
           });
-          // const cloneCenterBtn = centerBtn.cloneNode(true)
-          // cloneCenterBtn.style.position = "absolute"
-          // cloneCenterBtn.style.right = "0px"
-          // cloneCenterBtn.style.top = "50px"
-          // cloneCenterBtn.style.opacity = "0"
-          // cloneCenterBtn.style.transition = "opacity 0.2s ease";
-          // cloneCenterBtn.addEventListener('click',()=>{
-          //   zoomCountry(countryId)
-          // })
-          // Maps.append(cloneCenterBtn)
-          // requestAnimationFrame(()=>{cloneCenterBtn.style.opacity = "1"})
+          
 
           zBox.style.left = zBox.getBoundingClientRect().left + "px";
+          console.log(zBox.getBoundingClientRect().left + "px")
+
           zBox.style.top = zBox.getBoundingClientRect().top + "px";
           zBox.style.position = "absolute";
           zBox.style.opacity = "1";
           Maps.append(zBox);
           zBox.classList.add("modeTrouver");
+
+          // requestAnimationFrame(()=>{
+          //   const cloneCenterBtn = document.createElement('div')
+          // cloneCenterBtn.className = "toolCarre tool"
+          
+          // cloneCenterBtn.style.position = "absolute";
+          // cloneCenterBtn.style.left = zBox.getBoundingClientRect().left + "px";
+          // console.log(zBox.getBoundingClientRect().left + "px",cloneCenterBtn.style.left )
+          // cloneCenterBtn.style.top = zBox.getBoundingClientRect().top + zBox.getBoundingClientRect().height*1.5 +  "px";
+          // cloneCenterBtn.style.opacity = "1";
+          // Maps.append(cloneCenterBtn)
+          // console.log(cloneCenterBtn.style.top)
+          // cloneCenterBtn.addEventListener('click',()=>{
+          //   zoomCountry(countryId)
+          // })
+          // })
 
           openTool.classList.contains("active") ? openTool.click() : "";
           calques.forEach((c) => {
