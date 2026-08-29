@@ -24699,7 +24699,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             if(["US"].includes(clef))continue
             const svgSubId = L_cSub[clef].svgSub
             const g = getId(svgSubId)
-            g.style.display = "none"
+            // g.style.display = "none"
             g.style.contentVisibility = 'hidden'; // Encore moins de coûts que display "none"
 
             g.setAttribute("transform", getAlignTransform(clef,svgSubId))
@@ -24712,6 +24712,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       L_pathsSub.push(paths)
       })
 
+      let zoomFactorSvg = 60 // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
       const paths = svg.querySelectorAll("path");
 
@@ -25562,8 +25563,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         btnSub.addEventListener('click',()=>{
           const svgSub = getId(L_cSub[currentCountry.id].svgSub) // svgUs
           const countryId = currentCountry.id //"US"
-          svgSub.style.display = "flex"
-          svgSub.style.contentVisibility = 'visible'; // Encore moins de coûts que display "none"
+          // svgSub.style.display = "flex"
+          svgSub.style.contentVisibility = 'visible';
+          
+
         const L_viewSub = [
           backMaps,
           opensearch,
@@ -25604,6 +25607,20 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           L_viewSub.forEach((el) => {
             el.classList.add("elViewSub");
           });
+          // const cloneCenterBtn = centerBtn.cloneNode(true)
+          // cloneCenterBtn.style.position = "absolute"
+          // cloneCenterBtn.style.right = "0px"
+          // cloneCenterBtn.style.top = "50px"
+          // cloneCenterBtn.style.opacity = "0"
+          // cloneCenterBtn.style.transition = "opacity 0.2s ease"; 
+          // cloneCenterBtn.addEventListener('click',()=>{
+          //   zoomCountry(countryId)
+          // })
+          // Maps.append(cloneCenterBtn)
+          // requestAnimationFrame(()=>{cloneCenterBtn.style.opacity = "1"})
+
+
+
           
           zBox.style.left = zBox.getBoundingClientRect().left + "px";
           zBox.style.top = zBox.getBoundingClientRect().top + "px";
@@ -25716,6 +25733,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             cadreBlason.style.display = ""
             orgaMenu.click();
 
+            // cloneCenterBtn.remove()
             zBox.style.position = "";
             zBox.style.opacity = "";
             zBox.classList.remove("modeTrouver");
@@ -39289,8 +39307,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         const center = pt.matrixTransform(svg.getScreenCTM().inverse());
 
-        const MIN_WIDTH = initialViewBox2.width / 60;
-        const MIN_HEIGHT = initialViewBox2.height / 60;
+        const MIN_WIDTH = initialViewBox2.width / zoomFactorSvg;
+        const MIN_HEIGHT = initialViewBox2.height / zoomFactorSvg;
 
         const MAX_WIDTH = initialViewBox2.width;
         const MAX_HEIGHT = initialViewBox2.height;
@@ -40267,11 +40285,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             const zoomFactor = lastTouchDist / newDist;
             const newW = Math.min(
-              Math.max(vb.w * zoomFactor, initialViewBox2.width / 60), // même min que zoomCenterScreen
+              Math.max(vb.w * zoomFactor, initialViewBox2.width / zoomFactorSvg), // même min que zoomCenterScreen
               initialViewBox2.width, // même max
             );
             const newH = Math.min(
-              Math.max(vb.h * zoomFactor, initialViewBox2.height / 60), // même min
+              Math.max(vb.h * zoomFactor, initialViewBox2.height / zoomFactorSvg), // même min
               initialViewBox2.height, // même max
             );
 
