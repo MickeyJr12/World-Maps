@@ -27472,7 +27472,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         const g = getId(svgSubId);
         // g.style.display = "none"
         // g.style.contentVisibility = 'hidden'; // Encore moins de coûts que display "none"
-        if (clef !== "US"){g.setAttribute("transform", getAlignTransform(clef, svgSubId));}
+        clef==="US" ? "":  g.setAttribute("transform", getAlignTransform(clef, svgSubId));
         L_gSub.set(L_cSub[clef].svgSub, g)
         g.remove()
       }
@@ -40222,9 +40222,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             p.style.transform = "";
 
-            if (pColor_m.has(p) && visible && !svgUs.contains(p)) {
+            if (pColor_m.has(p) && visible && !L_sub.includes(p.parentNode.id)) {
               p.style.fill = pColor_m.get(p).current;
             }
+            
           });
           return;
         } // clic dans le vide
@@ -40561,7 +40562,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (
           !visible ||
           !original ||
-          svgUs.contains(document.getElementById(pathId))
+          // svgUs.contains(document.getElementById(pathId)) ||
+          L_sub.includes(getId(pathId).parentNode.id)
         )
           return;
 
