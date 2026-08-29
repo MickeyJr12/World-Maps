@@ -239,7 +239,6 @@
           filter 0.2s ease;
         stroke-width: 0.045px;
         stroke-width: 0;
-
       }
 
       svg.monde path.viewSub {
@@ -599,7 +598,8 @@
           opacity 0.35s ease,
           filter 0.3s ease;
       }
-      .zBox.modeTrouver , #centerBtn.modeTrouver {
+      .zBox.modeTrouver,
+      #centerBtn.modeTrouver {
         position: absolute;
         border-radius: 0.6rem;
         z-index: 25;
@@ -2682,6 +2682,35 @@
         align-self: flex-start;
         gap: 0.8rem;
         margin: 0.4rem;
+      }
+
+      .gridSub {
+        display: grid;
+        margin-bottom : 0.4rem;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 0.5rem;
+      }
+
+      .btnViewSub {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+        outline: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 0.4rem;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
+        transition: transform 0.2s ease;
+      }
+      .btnViewSub:active {
+        transform: scale (0.92);
+      }
+
+      .btnViewSub svg {
+        height : 1rem;
+        fill : white;
       }
 
       .CadreDrapeauPerC {
@@ -27233,8 +27262,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       const svg = document.querySelector("svg.monde");
-      svg.style.contentVisibility = 'auto';
-      
+      svg.style.contentVisibility = "auto";
 
       function getAlignTransform(
         targetPathId,
@@ -27271,7 +27299,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         return `translate(${translateX}, ${translateY}) scale(${sx}, ${sy})`;
       }
-
 
       let currentCSub; // Pour programmer centerBtn, le pays subdivisé quon regarde
 
@@ -27456,32 +27483,33 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         },
       };
 
-      const L_gSub = new Map()// liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
+      const L_gSub = new Map(); // liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
       const L_pathsSub = [];
 
-
-      requestAnimationFrame(()=>{
-      L_sub.forEach((svgSub) => {
-        const paths = getId(svgSub).querySelectorAll("path");
-        L_pathsSub.push(paths);
-      });
-
-      L_pathsSub.forEach((ps) => {
-        ps.forEach((p) => {
-          createOverlay(p.id);
+      requestAnimationFrame(() => {
+        L_sub.forEach((svgSub) => {
+          const paths = getId(svgSub).querySelectorAll("path");
+          L_pathsSub.push(paths);
         });
-      });
 
-      for (const clef in L_cSub) {
-        const svgSubId = L_cSub[clef].svgSub;
-        const g = getId(svgSubId);
-        // g.style.display = "none"
-        // g.style.contentVisibility = 'hidden'; // Encore moins de coûts que display "none"
-        clef==="US" ? "":  g.setAttribute("transform", getAlignTransform(clef, svgSubId));
-        L_gSub.set(L_cSub[clef].svgSub, g)
-        g.remove()
-      }
-      })
+        L_pathsSub.forEach((ps) => {
+          ps.forEach((p) => {
+            createOverlay(p.id);
+          });
+        });
+
+        for (const clef in L_cSub) {
+          const svgSubId = L_cSub[clef].svgSub;
+          const g = getId(svgSubId);
+          // g.style.display = "none"
+          // g.style.contentVisibility = 'hidden'; // Encore moins de coûts que display "none"
+          clef === "US"
+            ? ""
+            : g.setAttribute("transform", getAlignTransform(clef, svgSubId));
+          L_gSub.set(L_cSub[clef].svgSub, g);
+          g.remove();
+        }
+      });
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
@@ -28331,10 +28359,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
 
       btnSub.addEventListener("click", () => {
-        
         const svgSub = L_gSub.get(L_cSub[currentCountry.id].svgSub); // svgUs
         const countryId = currentCountry.id; //"US"
-        currentCSub = currentCountry
+        currentCSub = currentCountry;
         const L_viewSub = [
           backMaps,
           opensearch,
@@ -28374,18 +28401,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           L_viewSub.forEach((el) => {
             el.classList.add("elViewSub");
           });
-          
 
-          [zBox,centerBtn].forEach(btn=>{
-          btn.style.left = btn.getBoundingClientRect().left + "px";
-          btn.style.top = btn.getBoundingClientRect().top + "px";
-          btn.style.position = "absolute";
-          btn.style.opacity = "1";
-          Maps.append(btn);
-          btn.classList.add("modeTrouver");
-          })
-          
-
+          [zBox, centerBtn].forEach((btn) => {
+            btn.style.left = btn.getBoundingClientRect().left + "px";
+            btn.style.top = btn.getBoundingClientRect().top + "px";
+            btn.style.position = "absolute";
+            btn.style.opacity = "1";
+            Maps.append(btn);
+            btn.classList.add("modeTrouver");
+          });
 
           openTool.classList.contains("active") ? openTool.click() : "";
           calques.forEach((c) => {
@@ -28451,9 +28475,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               idVisible_m.set(key, { ...val }),
             );
 
-            svgSub.remove()
+            svgSub.remove();
 
-            
             paths.forEach((p) => {
               svgSub.contains(p) ? "" : p.classList.remove("viewSub");
             }); // à retirer
@@ -28490,16 +28513,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             cadreBlason.style.display = "";
             orgaMenu.click();
 
-
-
-            [centerBtn,zBox].forEach(btn=>{
+            [centerBtn, zBox].forEach((btn) => {
               btn.style.position = "";
-            btn.style.opacity = "";
-            btn.classList.remove("modeTrouver");
-            wrapperTool.insertBefore(btn, wrapperTool.firstChild);
-            })
-
-
+              btn.style.opacity = "";
+              btn.classList.remove("modeTrouver");
+              wrapperTool.insertBefore(btn, wrapperTool.firstChild);
+            });
           });
         }
       });
@@ -40217,10 +40236,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             p.style.transform = "";
 
-            if (pColor_m.has(p) && visible && !L_sub.includes(p.parentNode.id)) {
+            if (
+              pColor_m.has(p) &&
+              visible &&
+              !L_sub.includes(p.parentNode.id)
+            ) {
               p.style.fill = pColor_m.get(p).current;
             }
-            
           });
           return;
         } // clic dans le vide
@@ -40876,13 +40898,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       //Script tools
 
       centerBtn.addEventListener("click", () => {
-        viewSub ? 
-        zoomCountry(currentCSub.id) :
-        animateViewBox(
-          document.getElementById("svgMonde"),
-          initialViewBox,
-          700,
-        );
+        viewSub
+          ? zoomCountry(currentCSub.id)
+          : animateViewBox(
+              document.getElementById("svgMonde"),
+              initialViewBox,
+              700,
+            );
       });
       openTool.addEventListener("click", () => {
         let delay = 0;
@@ -40901,7 +40923,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             }),
             (wrapperTool.style.pointerEvents = "all"))
           : (L_toolReverse.forEach((el) => {
-              if (!((el === zBox || el === centerBtn)&& viewSub)) {
+              if (!((el === zBox || el === centerBtn) && viewSub)) {
                 setTimeout(() => {
                   el.style.opacity = "0";
                   el.style.transform = "";
@@ -42341,6 +42363,51 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             onu.appendChild(countryI);
           });
           listBox.appendChild(onu);
+        } else if (subject === "subdivision") {
+          const orgaI = document.createElement("div");
+          orgaI.className = "perSub";
+          const orgaTitle = document.createElement("h1");
+          orgaTitle.style.color = "white";
+          orgaTitle.style.marginTop = "1.4rem";
+          orgaTitle.textContent = "Subdivisions";
+          orgaTitle.style.textDecoration = "underline";
+          orgaI.appendChild(orgaTitle);
+
+          const L_regions = ["Amérique", "Asie", "Europe", "Océanie"];
+          L_regions.forEach((region) => {
+            const reg = document.createElement("div");
+            reg.style.fontSize = "0.92rem";
+            reg.style.marginTop = "4rem;"
+            reg.style.marginBottom = "0.2rem;"
+            reg.style.color = "rgba(255,255,255,0.6)";
+            reg.style.fontWeight = "600";
+            reg.textContent = region
+            orgaI.append(reg);
+            const gridSub = document.createElement("div");
+            gridSub.className = "gridSub";
+            orgaI.append(gridSub);
+            for (const id in L_cSub) {
+              if (P_info[id].region === region) {
+                const iconSvg = document.createElement("div");
+                iconSvg.innerHTML = L_cSub[id].icon;
+                const btnViewSub = document.createElement("div");
+                btnViewSub.append(iconSvg);
+                btnViewSub.className = "btnViewSub";
+                
+                btnViewSub.append(L_q[id].n);
+                gridSub.append(btnViewSub);
+                btnViewSub.addEventListener("click", () => {
+                  getId("cadreVueCross").click();
+                  currentcSub = getId(id)
+                  currentCountry = getId(id)
+                  btnSub.click();
+                  backListBox.click()
+                });
+              }
+            }
+          });
+
+          listBox.append(orgaI);
         }
       }
 
@@ -42936,13 +43003,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
 
       const itemViewSub = {
-          label: "Subdivisions",
-          id: "viewSubdivision",
-          idbtn: "subIcon",
-          key: "mystere",
-        }
-  function fillSub(item){
-    
+        label: "Subdivisions",
+        id: "viewSubdivision",
+        idbtn: "subIcon",
+        key: "mystere",
+      };
+      function fillSub(item) {
         const mainBlock = document.createElement("div");
         mainBlock.className = "main-block";
 
@@ -42959,7 +43025,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         mainLabel.textContent = item.label;
 
         // const last2 = createListBtn(item.id);
-        const btnTerritory = document.createElement('div') // à
+        const btnTerritory = document.createElement("div"); // à
 
         ///
         btnTerritory.className = "icon-btn";
@@ -42988,12 +43054,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         btnTerritory.addEventListener("click", (e) => {
           e.stopPropagation();
-          // vuesBox.style.transform = "translateX(-50%)"; // ← -50% de 200% = exactement 1 panneau
-          // fillListBoxRegion(item, "btnTerritory");
+          vuesBox.style.transform = "translateX(-50%)"; // ← -50% de 200% = exactement 1 panneau
+          fillListBoxRegion(item, "subdivision");
         });
-        btnTerritory.classList.toggle("active");      
-  }      
-fillSub(itemViewSub)
+        btnTerritory.classList.toggle("active");
+      }
+      fillSub(itemViewSub);
 
       //------------------------------------------------------------------------------------------------------------------------------------------------------------------
       //PARTIE MOBILE
