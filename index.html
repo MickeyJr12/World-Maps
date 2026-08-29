@@ -42933,6 +42933,66 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         last2.classList.toggle("active");
       });
 
+      const itemViewSub = {
+          label: "Subdivisions",
+          id: "viewSubdivision",
+          idbtn: "subIcon",
+          key: "mystere",
+        }
+  function fillSub(item){
+    
+        const mainBlock = document.createElement("div");
+        mainBlock.className = "main-block";
+
+        const mainRow = document.createElement("div");
+        mainRow.className = "view-main-row";
+
+        /* flèche invisible pour l'alignement */
+        const arrowPlaceholder = document.createElement("div");
+        arrowPlaceholder.className = "arrow hidden-arrow";
+        arrowPlaceholder.appendChild(makeArrowSVG());
+
+        const mainLabel = document.createElement("span");
+        mainLabel.className = "main-label";
+        mainLabel.textContent = item.label;
+
+        // const last2 = createListBtn(item.id);
+        const btnTerritory = document.createElement('div') // à
+
+        ///
+        btnTerritory.className = "icon-btn";
+        btnTerritory.style.transform = "scale(1.1)";
+
+        const svg = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "svg",
+        );
+        svg.setAttribute("viewBox", "0 0 24 24");
+        svg.setAttribute("width", "18");
+        svg.setAttribute("height", "18");
+        svg.setAttribute("fill", "white");
+
+        svg.innerHTML = `<svg fill="white" viewBox="0 0 52 52" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M17.05,2H8A6.08,6.08,0,0,0,2,8.09v5.68a6,6,0,0,0,6,6.09h9.05a6,6,0,0,0,6-6.09V8.09A6,6,0,0,0,17.05,2ZM13.79,15H11.3a4.06,4.06,0,0,1,0-8.12h2.49a4.06,4.06,0,1,1,0,8.12Z"></path><path d="M34.42,19.86h9a6,6,0,0,0,6-6.09V8.09a6,6,0,0,0-6-6.09h-9a6,6,0,0,0-6,6.09v5.68A6,6,0,0,0,34.42,19.86Zm3.25-13h2.49a4.06,4.06,0,1,1,0,8.12H37.67a4.06,4.06,0,0,1,0-8.12Z"></path><path d="M17.05,24.73H8a6.08,6.08,0,0,0-6,6.09v5.69a6.06,6.06,0,0,0,6,6.08h9.05a6.06,6.06,0,0,0,6-6.08V30.82A6,6,0,0,0,17.05,24.73Zm-3.26,13H11.3a4.06,4.06,0,0,1,0-8.12h2.49a4.06,4.06,0,1,1,0,8.12Z"></path><path d="M39.18,24.73c-6,0-10.81,4.47-10.81,10.05,0,6.94,7.74,13.3,10.13,15a1.17,1.17,0,0,0,1.42,0C42.31,48,50,41.72,50,34.78,50,29.2,45.16,24.73,39.18,24.73Zm0,14.2a4.4,4.4,0,0,1-4.55-4.21,4.57,4.57,0,0,1,9.11,0A4.4,4.4,0,0,1,39.18,38.93Z"></path></g></svg>`;
+
+        btnTerritory.appendChild(svg);
+
+        mainRow.appendChild(arrowPlaceholder);
+        mainRow.appendChild(mainLabel);
+
+        mainRow.appendChild(btnTerritory); // 👈 NOUVELLE ICÔNE
+        btnTerritory.style.marginLeft = "0.6rem";
+        mainBlock.appendChild(mainRow);
+        container.appendChild(mainBlock);
+
+        btnTerritory.addEventListener("click", (e) => {
+          e.stopPropagation();
+          // vuesBox.style.transform = "translateX(-50%)"; // ← -50% de 200% = exactement 1 panneau
+          // fillListBoxRegion(item, "btnTerritory");
+        });
+        btnTerritory.classList.toggle("active");      
+  }      
+fillSub(itemViewSub)
+
       //------------------------------------------------------------------------------------------------------------------------------------------------------------------
       //PARTIE MOBILE
       if (isMobile) {
