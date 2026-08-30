@@ -242,6 +242,7 @@
       }
 
       svg.monde path.viewSub {
+        pointer-events: none;
         opacity: 0;
       }
       .elViewSub {
@@ -26265,7 +26266,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         animateViewBox(svgMonde, targetViewBox, 700);
         setTimeout(() => {
-          if (!viewSub) {
+          if (!viewSub) {  
             countryClick(p_id, el.getAttribute("title"), el);
           }
         }, 10);
@@ -27733,6 +27734,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           const id = country.id;
           const name = country.getAttribute("title");
           setTimeout(() => {
+            
             countryClick(id, name, country);
           }, 20);
         });
@@ -42311,6 +42313,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         const name = country.getAttribute("title");
 
         setTimeout(() => {
+          console.log(id)
           countryClick(id, name, country);
         }, 20);
       });
@@ -47549,7 +47552,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(currentCountry);
+        console.log(viewSub);
       }
       // loop();
 
