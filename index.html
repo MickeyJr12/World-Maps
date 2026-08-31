@@ -22227,7 +22227,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         if (window.Capacitor?.isNativePlatform()) {
           // App native (iOS via Capacitor) → menu de partage natif iOS
-          const { Share } = Capacitor.Plugins;
+          const { Share } = Capacitor?.Plugins ?? {};
 
           try {
             await Share.share({
@@ -22314,7 +22314,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       async function hapticFeedback(type = "light") {
         try {
           if (window.Capacitor?.isNativePlatform()) {
-            const { Haptics } = Capacitor.Plugins;
+            const { Haptics } = Capacitor?.Plugins ?? {};
 
             switch (type) {
               case "success":
@@ -27790,16 +27790,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       // à retirer
 
-      const L_ephe = {};
+      // const L_ephe = {};
 
-      L_sub.forEach((svg) => {
-        const ps = getId(svg).querySelectorAll("path");
-        L_ephe[svg] = [];
-        ps.forEach((p) => {
-          L_ephe[svg].push(p.id);
-        });
-      });
-      console.log(L_ephe);
+      // L_sub.forEach((svg) => {
+      //   const ps = getId(svg).querySelectorAll("path");
+      //   L_ephe[svg] = [];
+      //   ps.forEach((p) => {
+      //     L_ephe[svg].push(p.id);
+      //   });
+      // });
+      // console.log(L_ephe);
 
      
       
@@ -28964,7 +28964,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const globe = document.querySelector(".globe");
 
       // Maps
-      let pColor_m = new Map();
+      let pColor_m  = new Map();
       let clonepColor_m = new Map(); // Quand on a finit de changer la couleur des paths avec 4choix, on remet comme avant
       let cloneVisible_m = new Map();
       let subVisible_m = new Map();
@@ -45390,7 +45390,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
       }
       oneTimeColorCountry = true
-      colorCountry();
+      // colorCountry();
       oneTimeColorCountry = false
 
        const L_gSub = new Map(); // liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
@@ -50384,7 +50384,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
         if (purchasesInitialized) return;
 
-        const { Purchases } = Capacitor.Plugins;
+        const { Purchases } = Capacitor?.Plugins ?? {};
 
         await Purchases.setLogLevel({ level: "DEBUG" }); // utile pour voir les logs pendant les tests
         await Purchases.configure({ apiKey: REVENUECAT_API_KEY_IOS });
@@ -50396,7 +50396,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       async function chargerEtatAchats() {
         if (!window.Capacitor?.isNativePlatform()) return; // reste false sur la PWA
 
-        const { Network, Dialog } = Capacitor.Plugins;
+        const { Network, Dialog } = Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
 
         if (!status.connected) {
@@ -50409,7 +50409,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
 
         await initPurchases();
-        const { Purchases } = Capacitor.Plugins;
+        const { Purchases } = Capacitor?.Plugins ?? {};
 
         try {
           const { customerInfo } = await Purchases.getCustomerInfo();
@@ -50421,7 +50421,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else {
             console.error("Erreur achat premium:", err);
 
-            const { Dialog } = Capacitor.Plugins;
+            const { Dialog } = Capacitor?.Plugins ?? {};
             await Dialog.alert({
               title: "Erreur",
               message:
@@ -50436,7 +50436,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       async function acheterRetraitPubs() {
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
-        const { Network, Dialog } = Capacitor.Plugins;
+        const { Network, Dialog } = Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
 
         if (!status.connected) {
@@ -50449,7 +50449,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
 
         await initPurchases();
-        const { Purchases } = Capacitor.Plugins;
+        const { Purchases } = Capacitor?.Plugins ?? {};
 
         const loaderBuyAd = document.getElementById("loaderBuyAd");
         loaderBuyAd.classList.add("active");
@@ -50478,7 +50478,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else {
             console.error("Erreur achat premium:", err);
 
-            const { Dialog } = Capacitor.Plugins;
+            const { Dialog } = Capacitor?.Plugins ?? {};
             await Dialog.alert({
               title: "Erreur",
               message:
@@ -50496,7 +50496,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       async function acheterPremium() {
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
 
-        const { Network, Dialog } = Capacitor.Plugins;
+        const { Network, Dialog } = Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
 
         if (!status.connected) {
@@ -50509,7 +50509,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
 
         await initPurchases();
-        const { Purchases } = Capacitor.Plugins;
+        const { Purchases } = Capacitor?.Plugins ?? {};
 
         const loaderBuyP = document.getElementById("loaderBuyP"); // adapte le sélecteur si besoin
 
@@ -50539,7 +50539,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else {
             console.error("Erreur achat premium:", err);
 
-            const { Dialog } = Capacitor.Plugins;
+            const { Dialog } = Capacitor?.Plugins ?? {};
             await Dialog.alert({
               title: "Erreur",
               message:
@@ -50562,7 +50562,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!window.Capacitor?.isNativePlatform()) return;
 
         await initPurchases();
-        const { Purchases } = Capacitor.Plugins;
+        const { Purchases } = Capacitor?.Plugins ?? {};
 
         try {
           const { customerInfo } = await Purchases.restorePurchases();
@@ -50601,7 +50601,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
 
       // script avis
-      const { InAppReview } = Capacitor.Plugins;
+      const { InAppReview } = Capacitor?.Plugins ?? {};
 
       async function demanderNotation() {
         if (!window.Capacitor?.isNativePlatform()) return;
