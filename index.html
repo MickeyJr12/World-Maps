@@ -274,7 +274,7 @@
           padding-top 0.3s ease;
       }
       #cadreListSub.active {
-        top: calc(18vh + 6rem);
+        top: calc(25vh + 6rem);
       }
       #cadreListSub.fullScreen {
         top: 0;
@@ -6442,7 +6442,7 @@
         box-sizing: border-box;
         transition: opacity 0.2s ease;
       }
-      #lineCadreSD.fullScreen {
+      .liveMove.fullScreen {
         opacity: 0;
       }
       .lineMove svg {
@@ -14919,7 +14919,7 @@
 
     <div class="Maps">
       <div id="cadreListSub">
-         <div class="lineMove">
+         <div class="lineMove" id="lineMoveSub">
           <svg
           fill = "white"
             xmlns="http://www.w3.org/2000/svg"
@@ -28115,11 +28115,71 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
 
           const contentInfoSub = getId('contentInfoSub')
+          contentInfoSub.addEventListener('pointerdown',(e)=>e.stopPropagation())
+          contentInfoSub.addEventListener("pointermove", (e) => {e.stopPropagation();});
+          const lineMoveSub = getId('lineMoveSub')
+          getId('cadreListSubCross').addEventListener("pointerdown", (e) => e.stopPropagation());
+          
+          getId('cadreListSubCross').addEventListener("click" , ()=>{
+            
+        cadreListSub.style.top = "";
+        cadreListSub.classList.remove("active");
+        cadreListSub.classList.remove("fullScreen");
+        fullSub = false;
+        lineCadreSD.classList.remove("fullScreen");
+          })
+
           const cadreListSub  =  getId('cadreListSub')
           const titleListSub = getId('titleListSub')
           titleListSub.textContent = "Subdivisions"
 
-          
+          //******************************
+      let moveSub;
+      let difYSub;
+      let startMoveSub;
+      let fullSub = false;
+      cadreListSub.addEventListener("pointerdown", (e) => {
+        cadreListSub.setPointerCapture(e.pointerId);
+        startMoveSub = cadreListSub.getBoundingClientRect().top + "px";
+        cadreListSub.style.top = startMoveSub;
+        cadreListSub.classList.remove("active");
+
+        moveSub = true;
+        const CY = e.clientY;
+        difYSub = CY - parseInt(cadreListSub.style.top);
+
+        if (
+          difYSub >
+            contentInfoSub.getBoundingClientRect().top ||
+          fullSub 
+        ) {
+          moveSub = false;
+        }
+
+      });
+      document.addEventListener("pointermove", (e) => {
+        if (moveSub) {
+          cadreListSub.style.transition = "none";
+          cadreListSub.style.top = e.clientY - difYSub + "px";
+        }
+      });
+
+      document.addEventListener("pointerup", () => {
+        if (!moveSub) return;
+        cadreListSub.style.transition = "";
+        moveSub = false;
+        if (cadreListSub.getBoundingClientRect().top < window.innerHeight * 0.22) {
+          cadreListSub.style.top = "";
+          cadreListSub.getBoundingClientRect().top < window.innerHeight * 0.20
+            ? (cadreListSub.classList.add("fullScreen"),
+              (fullSub = true),
+              lineMoveSub.classList.add("fullScreen"))
+            : cadreListSub.classList.add("active");
+        } else {
+          crossCadreSD.click();
+        }
+      });
+          //*****************************
 
 
 
