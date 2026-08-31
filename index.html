@@ -282,8 +282,22 @@
         border-radius: 0;
         padding-top: calc(env(safe-area-inset-top) + 1rem);
       }
-
+      .badgeInfoSub{
+        padding : 0.4rem;
+        background : rgba(0,0,0,0.4);
+        font-size : 0.96rem;
+        font-weight : 500;
+        border-radius : 50rem;
+        background: rgba(251, 191, 36, 0.15);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.3);
+        border-radius: 99rem;
+      }
       #titleListSub {
+        align-self : center;
+        text-align : center;
+        width : 100%;
+        margin : 2rem;
         color: rgba(255, 255, 255, 0.6);
         font-weight: 600;
         font-size: 0.96rem;
@@ -2082,6 +2096,7 @@
       }
 
       #mCrossCadre {
+        display : none  ;
         margin-top: 0.2rem;
         margin-right: 0.2rem;
         align-self: flex-start;
@@ -27786,33 +27801,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
       console.log(L_ephe);
 
-      const L_gSub = new Map(); // liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
-      const L_pathsSub = [];
-
-      requestAnimationFrame(() => {
-        L_sub.forEach((svgSub) => {
-          const paths = getId(svgSub).querySelectorAll("path");
-          L_pathsSub.push(paths);
-        });
-
-        L_pathsSub.forEach((ps) => {
-          ps.forEach((p) => {
-            createOverlay(p.id);
-          });
-        });
-
-        for (const clef in L_cSub) {
-          const svgSubId = L_cSub[clef].svgSub;
-          const g = getId(svgSubId);
-          // g.style.display = "none"
-          // g.style.contentVisibility = 'hidden'; // Encore moins de coûts que display "none"
-          clef === "US"
-            ? ""
-            : g.setAttribute("transform", getAlignTransform(clef, svgSubId));
-          L_gSub.set(L_cSub[clef].svgSub, g);
-          g.remove();
-        }
-      });
+     
+      
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
@@ -28832,10 +28822,14 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               </svg>
               ${D_us[id].c}
           `;
-
+                const badgeInfoSub = document.createElement('div')
+                badgeInfoSub.className = "badgeInfoSub"
+                badgeInfoSub.textContent = D_us[id].info
                 boxItemC.appendChild(titleItemC);
                 boxItemC.appendChild(capItemC);
+                boxItemC.style.flex = "1";
                 itemC.append(boxItemC);
+                itemC.append(badgeInfoSub)
                 contentInfoSub.append(itemC);
                 itemC.addEventListener("click", () => {
                   getId("crossSub").click();
@@ -31253,7 +31247,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-AK": {
           n: "Alaska",
           p: 740133,
-          info: "État des États-Unis",
+          info: "État",
           s: 1717856,
           nH: "Alaskiens",
           indT: "+1",
@@ -31262,7 +31256,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-AL": {
           n: "Alabama",
           p: 5157699,
-          info: "État des États-Unis",
+          info: "État",
           s: 131365,
           nH: "Alabamiens",
           indT: "+1",
@@ -31271,7 +31265,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-AR": {
           n: "Arkansas",
           p: 3088354,
-          info: "État des États-Unis",
+          info: "État",
           s: 137733,
           nH: "Arkansans",
           indT: "+1",
@@ -31280,7 +31274,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-AZ": {
           n: "Arizona",
           p: 7582384,
-          info: "État des États-Unis",
+          info: "État",
           s: 295234,
           nH: "Arizoniens",
           indT: "+1",
@@ -31289,7 +31283,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-CA": {
           n: "Californie",
           p: 39431263,
-          info: "État des États-Unis",
+          info: "État",
           s: 423970,
           nH: "Californiens",
           indT: "+1",
@@ -31298,7 +31292,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-CO": {
           n: "Colorado",
           p: 5957493,
-          info: "État des États-Unis",
+          info: "État",
           s: 269837,
           nH: "Coloradiens",
           indT: "+1",
@@ -31307,7 +31301,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-CT": {
           n: "Connecticut",
           p: 3675069,
-          info: "État des États-Unis",
+          info: "État",
           s: 14357,
           nH: "Non disponible",
           indT: "+1",
@@ -31325,7 +31319,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-DE": {
           n: "Delaware",
           p: 1051917,
-          info: "État des États-Unis",
+          info: "État",
           s: 6452,
           nH: "Non disponible",
           indT: "+1",
@@ -31334,7 +31328,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-FL": {
           n: "Floride",
           p: 17671452,
-          info: "État des États-Unis",
+          info: "État",
           s: 170304,
           nH: "Floridiens",
           indT: "+1",
@@ -31343,7 +31337,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-GA": {
           n: "Géorgie",
           p: 11180878,
-          info: "État des États-Unis",
+          info: "État",
           s: 153909,
           nH: "Géorgiens",
           indT: "+1",
@@ -31352,7 +31346,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-HI": {
           n: "Hawaï",
           p: 1446146,
-          info: "État des États-Unis",
+          info: "État",
           s: 28311,
           nH: "Hawaïens",
           indT: "+1",
@@ -31361,7 +31355,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-IA": {
           n: "Iowa",
           p: 3241488,
-          info: "État des États-Unis",
+          info: "État",
           s: 145746,
           nH: "Non disponible",
           indT: "+1",
@@ -31370,7 +31364,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-ID": {
           n: "Idaho",
           p: 2001619,
-          info: "État des États-Unis",
+          info: "État",
           s: 216699,
           nH: "Non disponible",
           indT: "+1",
@@ -31379,7 +31373,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-IL": {
           n: "Illinois",
           p: 12710158,
-          info: "État des États-Unis",
+          info: "État",
           s: 149998,
           nH: "Illinoisiens",
           indT: "+1",
@@ -31388,7 +31382,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-IN": {
           n: "Indiana",
           p: 6924275,
-          info: "État des États-Unis",
+          info: "État",
           s: 94321,
           nH: "Indianiens",
           indT: "+1",
@@ -31397,7 +31391,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-KS": {
           n: "Kansas",
           p: 2970606,
-          info: "État des États-Unis",
+          info: "État",
           s: 213100,
           nH: "Kansans",
           indT: "+1",
@@ -31406,7 +31400,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-KY": {
           n: "Kentucky",
           p: 4206074,
-          info: "État des États-Unis",
+          info: "État",
           s: 104659,
           nH: "Kentuckiens",
           indT: "+1",
@@ -31415,7 +31409,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-LA": {
           n: "Louisiane",
           p: 4515939,
-          info: "État des États-Unis",
+          info: "État",
           s: 135382,
           nH: "Louisianais",
           indT: "+1",
@@ -31424,7 +31418,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-MA": {
           n: "Massachusetts",
           p: 7136171,
-          info: "État des États-Unis",
+          info: "État",
           s: 27336,
           nH: "Massachusettiens",
           indT: "+1",
@@ -31433,7 +31427,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-MD": {
           n: "Maryland",
           p: 6263220,
-          info: "État des États-Unis",
+          info: "État",
           s: 32134,
           nH: "Marylandais",
           indT: "+1",
@@ -31442,7 +31436,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-ME": {
           n: "Maine",
           p: 1405012,
-          info: "État des États-Unis",
+          info: "État",
           s: 91646,
           nH: "Non disponible",
           indT: "+1",
@@ -31451,7 +31445,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-MI": {
           n: "Michigan",
           p: 9883360,
-          info: "État des États-Unis",
+          info: "État",
           s: 250493,
           nH: "Michiganais",
           indT: "+1",
@@ -31460,7 +31454,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-MN": {
           n: "Minnesota",
           p: 5141953,
-          info: "État des États-Unis",
+          info: "État",
           s: 225163,
           nH: "Minnesotains",
           indT: "+1",
@@ -31469,7 +31463,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-MO": {
           n: "Missouri",
           p: 6245466,
-          info: "État des États-Unis",
+          info: "État",
           s: 180533,
           nH: "Missouriens",
           indT: "+1",
@@ -31478,7 +31472,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-MS": {
           n: "Mississippi",
           p: 2943045,
-          info: "État des États-Unis",
+          info: "État",
           s: 125443,
           nH: "Mississippiens",
           indT: "+1",
@@ -31487,7 +31481,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-MT": {
           n: "Montana",
           p: 1137233,
-          info: "État des États-Unis",
+          info: "État",
           s: 381154,
           nH: "Montaniens",
           indT: "+1",
@@ -31496,7 +31490,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-NC": {
           n: "Caroline du Nord",
           p: 10700000,
-          info: "État des États-Unis",
+          info: "État",
           s: 139391,
           nH: "Nord-Caroliniens",
           indT: "+1",
@@ -31505,7 +31499,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-ND": {
           n: "Dakota du Nord",
           p: 780000,
-          info: "État des États-Unis",
+          info: "État",
           s: 183108,
           nH: "Nord-Dakotains",
           indT: "+1",
@@ -31514,7 +31508,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-NE": {
           n: "Nebraska",
           p: 2005465,
-          info: "État des États-Unis",
+          info: "État",
           s: 200520,
           nH: "Nebraskiens",
           indT: "+1",
@@ -31523,7 +31517,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-NH": {
           n: "New Hampshire",
           p: 1316216,
-          info: "État des États-Unis",
+          info: "État",
           s: 24214,
           nH: "Non disponible",
           indT: "+1",
@@ -31532,7 +31526,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-NJ": {
           n: "New Jersey",
           p: 8751436,
-          info: "État des États-Unis",
+          info: "État",
           s: 22591,
           nH: "Non disponible",
           indT: "+1",
@@ -31541,7 +31535,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-NM": {
           n: "Nouveau-Mexique",
           p: 2130256,
-          info: "État des États-Unis",
+          info: "État",
           s: 314917,
           nH: "Néo-Mexicains",
           indT: "+1",
@@ -31550,7 +31544,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-NV": {
           n: "Nevada",
           p: 3267467,
-          info: "État des États-Unis",
+          info: "État",
           s: 286380,
           nH: "Nevadiens",
           indT: "+1",
@@ -31559,7 +31553,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-NY": {
           n: "New York",
           p: 19600000,
-          info: "État des États-Unis",
+          info: "État",
           s: 141297,
           nH: "New-Yorkais",
           indT: "+1",
@@ -31568,7 +31562,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-OH": {
           n: "Ohio",
           p: 11800000,
-          info: "État des États-Unis",
+          info: "État",
           s: 116098,
           nH: "Ohioans",
           indT: "+1",
@@ -31577,7 +31571,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-OK": {
           n: "Oklahoma",
           p: 4000000,
-          info: "État des États-Unis",
+          info: "État",
           s: 181037,
           nH: "Oklahomans",
           indT: "+1",
@@ -31586,7 +31580,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-OR": {
           n: "Oregon",
           p: 4200000,
-          info: "État des États-Unis",
+          info: "État",
           s: 254799,
           nH: "Oregoniens",
           indT: "+1",
@@ -31595,7 +31589,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-PA": {
           n: "Pennsylvanie",
           p: 12900000,
-          info: "État des États-Unis",
+          info: "État",
           s: 119280,
           nH: "Pennsylvaniens",
           indT: "+1",
@@ -31604,7 +31598,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-RI": {
           n: "Rhode Island",
           p: 1100000,
-          info: "État des États-Unis",
+          info: "État",
           s: 4001,
           nH: "Non disponible",
           indT: "+1",
@@ -31613,7 +31607,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-SC": {
           n: "Caroline du Sud",
           p: 5300000,
-          info: "État des États-Unis",
+          info: "État",
           s: 82933,
           nH: "Sud-Caroliniens",
           indT: "+1",
@@ -31622,7 +31616,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-SD": {
           n: "Dakota du Sud",
           p: 900000,
-          info: "État des États-Unis",
+          info: "État",
           s: 199729,
           nH: "Sud-Dakotains",
           indT: "+1",
@@ -31631,7 +31625,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-TN": {
           n: "Tennessee",
           p: 7100000,
-          info: "État des États-Unis",
+          info: "État",
           s: 109153,
           nH: "Tennesseans",
           indT: "+1",
@@ -31640,7 +31634,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-TX": {
           n: "Texas",
           p: 30500000,
-          info: "État des États-Unis",
+          info: "État",
           s: 695662,
           nH: "Texans",
           indT: "+1",
@@ -31649,7 +31643,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-UT": {
           n: "Utah",
           p: 3400000,
-          info: "État des États-Unis",
+          info: "État",
           s: 219887,
           nH: "Utahiens",
           indT: "+1",
@@ -31658,7 +31652,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-VA": {
           n: "Virginie",
           p: 8900000,
-          info: "État des États-Unis",
+          info: "État",
           s: 110787,
           nH: "Virginiens",
           indT: "+1",
@@ -31667,7 +31661,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-VT": {
           n: "Vermont",
           p: 650000,
-          info: "État des États-Unis",
+          info: "État",
           s: 24906,
           nH: "Vermontois",
           indT: "+1",
@@ -31676,7 +31670,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-WA": {
           n: "Washington",
           p: 8000000,
-          info: "État des États-Unis",
+          info: "État",
           s: 184827,
           nH: "Washingtoniens",
           indT: "+1",
@@ -31685,7 +31679,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-WI": {
           n: "Wisconsin",
           p: 5950000,
-          info: "État des États-Unis",
+          info: "État",
           s: 169635,
           nH: "Wisconsiniens",
           indT: "+1",
@@ -31694,7 +31688,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-WV": {
           n: "Virginie-Occidentale",
           p: 1770000,
-          info: "État des États-Unis",
+          info: "État",
           s: 62756,
           nH: "Virginiens-Occidentaux",
           indT: "+1",
@@ -31703,7 +31697,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "US-WY": {
           n: "Wyoming",
           p: 577000,
-          info: "État des États-Unis",
+          info: "État",
           s: 253335,
           nH: "Wyomingiens",
           indT: "+1",
@@ -45387,7 +45381,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               }
             }
 
-            if (currentCountry === null) {
+            if (currentCountry === null && !oneTimeColorCountry) {
               paths.forEach((path) => {
                 resetOverlay(p.id, overlay_m.get(path.id));
               });
@@ -45395,7 +45389,37 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           }
         });
       }
+      oneTimeColorCountry = true
       colorCountry();
+      oneTimeColorCountry = false
+
+       const L_gSub = new Map(); // liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
+      const L_pathsSub = [];
+
+      
+        L_sub.forEach((svgSub) => {
+          const paths = getId(svgSub).querySelectorAll("path");
+          L_pathsSub.push(paths);
+        });
+
+        L_pathsSub.forEach((ps) => {
+          ps.forEach((p) => {
+            createOverlay(p.id);
+          });
+        });
+
+        for (const clef in L_cSub) {
+          const svgSubId = L_cSub[clef].svgSub;
+          const g = getId(svgSubId);
+          // g.style.display = "none"
+          // g.style.contentVisibility = 'hidden'; // Encore moins de coûts que display "none"
+          clef === "US"
+            ? ""
+            : g.setAttribute("transform", getAlignTransform(clef, svgSubId));
+          L_gSub.set(L_cSub[clef].svgSub, g);
+          g.remove();
+        }
+
 
       function fillCadreOrga(p_id) {
         const p = document.getElementById(p_id);
@@ -50344,7 +50368,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(getId("IN-SK"));
+        console.log(paths.contains(getId('US-AK')));
       }
       // loop();
 
