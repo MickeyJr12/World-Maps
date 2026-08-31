@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+
+
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap"
       rel="stylesheet"
@@ -50,9 +52,9 @@
        :root{
         --font-main : 'Outfit', sans-serif;
       }
-      /* h1,h2,h3 {
+      h1,h2,h3 {
         font-family : var(--font-title)
-      } */
+      }
 
       html {
         font-size: 16px;
@@ -700,6 +702,16 @@
         transform: scale(0.9);
       }
 
+      .subName{
+        z-index : 110;
+        position : fixed; 
+        bottom : 3rem;
+        left : 50%;
+        transform : translateX(-50%);
+        font-weight : 550;
+        font-size : 1rem;
+        color: rgba(65, 212, 237, 1);
+      }
       .zBox {
         display: flex;
         flex-direction: column;
@@ -717,9 +729,9 @@
           opacity 0.35s ease,
           filter 0.3s ease;
       }
-      .zBox.modeTrouver,
-      #centerBtn.modeTrouver {
-        position: absolute;
+      .zBox.modeTrouver
+      {
+        position: fixed;
         border-radius: 0.6rem;
         z-index: 25;
         pointer-events: all;
@@ -19525,187 +19537,7 @@ M0.625024 1.98564L0.617676 1.99482H0.626402C0.631225 1.99505 0.639033 1.99643 0.
                 name="Kalimantan Timur"
               ></path>
             </g>
-            <g id="points">
-              <circle
-                class="-10.080985198323209|97.31095197695628"
-                cx="90.9"
-                cy="334.2"
-                id="0"
-              ></circle>
-              <circle
-                class="-3.347896021580144|120.29341250609936"
-                cx="545.5"
-                cy="200.1"
-                id="1"
-              ></circle>
-              <circle
-                class="5.068465449348689|138.6793809294138"
-                cx="909.1"
-                cy="33.4"
-                id="2"
-              ></circle>
-            </g>
-            <g id="label_points">
-              <circle
-                class="North Kalimantan"
-                cx="467.7"
-                cy="70"
-                id="IDKU"
-              ></circle>
-              <circle
-                class="Nusa Tenggara Timur"
-                cx="560.4"
-                cy="306"
-                id="IDNT"
-              ></circle>
-              <circle
-                class="Kalimantan Barat"
-                cx="357"
-                cy="139.9"
-                id="IDKB"
-              ></circle>
-              <circle class="Papua" cx="919.8" cy="213.1" id="IDPA"></circle>
-              <circle
-                class="Jawa Timur"
-                cx="384.3"
-                cy="284.9"
-                id="IDJI"
-              ></circle>
-              <circle class="Maluku" cx="728.9" cy="194.2" id="IDMA"></circle>
-              <circle
-                class="Nusa Tenggara Barat"
-                cx="487.1"
-                cy="307.5"
-                id="IDNB"
-              ></circle>
-              <circle
-                class="Sulawesi Selatan"
-                cx="538.9"
-                cy="205.5"
-                id="IDSN"
-              ></circle>
-              <circle
-                class="Jawa Tengah"
-                cx="338.4"
-                cy="279.8"
-                id="IDJT"
-              ></circle>
-              <circle
-                class="Jawa Barat"
-                cx="294.6"
-                cy="270.4"
-                id="IDJB"
-              ></circle>
-              <circle
-                class="Jakarta Raya"
-                cx="279.6"
-                cy="257"
-                id="IDJK"
-              ></circle>
-              <circle class="Banten" cx="265" cy="262" id="IDBT"></circle>
-              <circle
-                class="Yogyakarta"
-                cx="350.1"
-                cy="290.6"
-                id="IDYO"
-              ></circle>
-              <circle
-                class="Sulawesi Tenggara"
-                cx="572.9"
-                cy="203.6"
-                id="IDSG"
-              ></circle>
-              <circle
-                class="Papua Barat"
-                cx="792.6"
-                cy="160.1"
-                id="IDPB"
-              ></circle>
-              <circle
-                class="Sulawesi Tengah"
-                cx="571.3"
-                cy="161"
-                id="IDST"
-              ></circle>
-              <circle
-                class="Maluku Utara"
-                cx="693.2"
-                cy="106"
-                id="IDMU"
-              ></circle>
-              <circle
-                class="Kepulauan Riau"
-                cx="306.5"
-                cy="55.3"
-                id="IDKR"
-              ></circle>
-              <circle class="Riau" cx="176.1" cy="125.2" id="IDRI"></circle>
-              <circle
-                class="Gorontalo"
-                cx="586.7"
-                cy="118.9"
-                id="IDGO"
-              ></circle>
-              <circle
-                class="Sulawesi Utara"
-                cx="624.1"
-                cy="120"
-                id="IDSA"
-              ></circle>
-              <circle
-                class="Sulawesi Barat"
-                cx="524.1"
-                cy="190.8"
-                id="IDSR"
-              ></circle>
-              <circle class="Jambi" cx="199.1" cy="167.3" id="IDJA"></circle>
-              <circle
-                class="Sumatera Selatan"
-                cx="223"
-                cy="204.1"
-                id="IDSS"
-              ></circle>
-              <circle class="Lampung" cx="243.9" cy="229.4" id="IDLA"></circle>
-              <circle class="Bengkulu" cx="193.8" cy="204.9" id="IDBE"></circle>
-              <circle
-                class="Sumatera Barat"
-                cx="160.4"
-                cy="151.3"
-                id="IDSB"
-              ></circle>
-              <circle
-                class="Sumatera Utara"
-                cx="126.7"
-                cy="83.9"
-                id="IDSU"
-              ></circle>
-              <circle class="Aceh" cx="82.9" cy="45.8" id="IDAC"></circle>
-              <circle
-                class="Kalimantan Tengah"
-                cx="410.5"
-                cy="168.6"
-                id="IDKT"
-              ></circle>
-              <circle
-                class="Kalimantan Selatan"
-                cx="448.7"
-                cy="193.7"
-                id="IDKS"
-              ></circle>
-              <circle class="Bali" cx="445.2" cy="299.8" id="IDBA"></circle>
-              <circle
-                class="Bangka-Belitung"
-                cx="262.9"
-                cy="178"
-                id="IDBB"
-              ></circle>
-              <circle
-                class="Kalimantan Timur"
-                cx="469.2"
-                cy="125.4"
-                id="IDKI"
-              ></circle>
-            </g>
+          
             <path
               d="m 454.63575,277.7544 -0.444,0.314 -0.069,0.119 -0.125,0.479 -0.015,0.136 -0.143,0.251 -0.135,0.279 -0.157,0.108 -0.234,0.086 -0.133,0.085 -0.168,-0.043 -0.212,0.007 -0.106,0.095 0.005,0.073 0.063,0.083 0.186,0.128 0.207,0.115 -0.023,0.101 -0.111,0.114 -0.703,0.284 -0.209,0.171 -0.073,0.113 0.075,0.189 0.561,0.565 0.095,0.062 0.083,0.329 0.495,0.137 0.203,0.205 0.174,0.049 0.379,-0.018 0.152,0.077 0.086,-0.059 0.05,-0.108 0.319,-0.278 0.105,-0.122 -0.063,-0.169 -0.068,-0.129 0.194,-0.257 0.235,-0.254 0.118,0.008 0.201,0.156 0.166,0.217 0.022,0.168 0.031,0.122 0.157,0.26 0.101,0.09 0.272,0.052 0.064,0.102 -0.049,0.376 0.041,0.125 0.285,0.006 0.303,-0.03 0.106,0.014 0.109,-0.079 0.168,-0.085 0.241,0.029 0.118,0.168 0.053,0.173 -0.207,0.065 -0.216,-0.035 -0.105,0.113 -0.007,0.218 0.073,0.281 0.145,0.199 0.115,0.448 0.096,0.496 0.148,0.299 0.031,0.37 -0.022,0.182 0.027,0.327 -0.063,0.115 0.047,0.306 0.175,0.631 0.077,0.351 0.049,0.764 -0.124,0.285 -0.166,0.271 -0.109,0.32 -0.083,0.345 -0.051,0.555 -0.36,0.648 -0.153,0.161 -0.178,0.099 0.388,0.452 -0.317,0.201 -0.345,0.063 -0.382,-0.113 -0.238,0.014 -0.218,0.146 -0.085,0.088 -0.069,-0.042 -0.143,-0.37 -0.105,0.382 -0.22,0.122 -0.377,-0.026 -0.63,0.102 -0.243,0.108 -0.101,0.17 -0.075,0.196 -0.099,0.115 -0.111,0.061 -0.487,0.144 -0.096,0.058 -0.226,0.315 -0.295,0.182 -0.245,0.055 -0.217,-0.183 -0.089,-0.11 -0.101,-0.056 -0.334,0.009 0.105,0.057 0.068,0.129 0.033,0.248 -0.038,0.243 -0.165,0.123 -0.196,0.023 -0.31,0.251 -0.41,0.068 -0.222,0.231 -1.356,0.39 -0.077,0.004 -0.187,-0.099 -0.203,-0.044 -0.202,0.031 -0.568,0.218 -0.275,-0.043 0.351,-0.542 0.471,-0.274 0.049,-0.075 -0.154,-0.037 -0.896,0.19 -0.311,0.162 -0.311,0.047 0.144,-0.248 0.401,-0.339 0.215,-0.16 0.131,-0.064 0.15,-0.2 0.423,-0.227 -1.362,0.468 -0.358,-0.057 -0.084,-0.13 -0.278,0.062 -0.106,-0.317 0.413,-0.479 0.241,-0.207 0.286,-0.112 0.275,-0.161 0.102,-0.196 -0.129,-0.063 -0.824,0.05 -0.395,-0.042 0.021,-0.156 0.073,-0.173 0.409,-0.296 0.222,-0.047 0.197,0.028 0.192,0.076 0.157,0.099 0.464,-0.057 -0.194,-0.189 -0.034,-0.385 -0.148,-0.129 0.189,-0.179 0.217,-0.108 0.362,-0.371 0.129,-0.057 0.716,-0.09 0.772,-0.195 0.765,-0.27 -0.393,-0.151 -0.188,-0.2 -0.302,0.403 -0.218,0.154 -0.614,0.083 -0.194,-0.045 -0.274,-0.125 -0.085,0.047 -0.079,0.096 -0.407,0.197 -0.427,0.047 0.497,-0.362 0.631,-0.615 0.14,-0.194 0.2,-0.339 -0.062,-0.151 -0.13,-0.086 0.457,-0.7 0.161,-0.127 0.292,-0.021 0.215,-0.111 0.095,0 0.085,-0.042 0.188,-0.21 -0.29,-0.134 -0.3,-0.069 -0.927,0.073 -0.122,-0.016 -0.115,-0.065 -0.075,-0.093 -0.056,-0.239 -0.068,-0.054 -0.209,0 -0.207,0.073 -0.144,-0.007 -0.141,-0.105 0.226,-0.245 -0.291,-0.058 -0.294,0.048 -0.245,-0.075 -0.007,-0.154 0.111,-0.154 -0.146,-0.146 -0.03,-0.185 0.155,-0.091 0.169,0.03 0.345,-0.137 0.443,-0.066 -0.38,-0.135 -0.151,-0.116 -0.007,-0.177 0.03,-0.152 0.439,-0.257 0.468,-0.113 -0.035,-0.169 0.033,-0.184 -0.473,-0.053 -0.467,0.129 0.05,-0.351 0.112,-0.318 0.022,-0.209 -0.022,-0.225 -0.219,0.096 -0.025,-0.317 -0.094,-0.217 -0.325,0.15 0.008,-0.288 0.094,-0.201 0.169,-0.087 0.168,0.038 0.313,-0.003 0.302,-0.152 0.435,-0.039 0.692,0.047 0.476,0.427 0.123,-0.076 0.19,-0.27 0.089,-0.03 0.718,0.118 0.445,0.155 0.119,-0.048 -0.064,-0.299 -0.153,-0.208 0.192,-0.272 0.234,-0.185 0.157,-0.092 0.361,-0.115 0.158,-0.108 0.105,-0.352 0.167,-0.293 -0.907,0.152 -0.863,-0.348 0.137,-0.246 0.182,-0.14 0.314,-0.107 0.03,-0.129 0.159,-0.107 0.263,-0.282 -0.097,-0.369 0.052,-0.27 0.189,-0.176 0.059,-0.253 0.084,-0.187 0.384,-0.067 0.369,-0.173 0.133,0.017 0.437,-0.04 0.147,0.07 -0.034,-0.307 0.268,-0.04 0.104,0.061 0.046,0.218 0.122,0.139 0.038,0.241 -0.082,0.186 -0.137,0.143 0.125,0.146 -0.193,0.265 0.208,-0.113 0.297,-0.259 -0.016,-0.211 -0.05,-0.267 -0.083,-0.241 0.038,-0.266 0.167,-0.166 0.439,-0.084 -0.18,-0.302 0.16,-0.027 0.174,0.063 0.256,0.235 0.267,0.185 0.276,0.146 -0.266,0.292 -0.327,0.203 -0.125,0.221 z m -7.66,5.685 -0.012,0.136 -0.208,-0.171 -0.101,-0.187 -0.57,-0.085 0.237,-0.187 0.116,0.055 0.403,0.008 0.113,0.078 0.022,0.353 z"
               title="Ireland"
@@ -20038,73 +19870,7 @@ M0.625024 1.98564L0.617676 1.99482H0.626402C0.631225 1.99505 0.639033 1.99643 0.
                 name="Marche"
               ></path>
             </g>
-            <g id="points">
-              <circle
-                class="36.06904243930791|7.1984631952682845"
-                cx="185.5"
-                cy="912.6"
-                id="0"
-              ></circle>
-              <circle
-                class="40.70743086626166|13.155812027880252"
-                cx="534.9"
-                cy="565.3"
-                id="1"
-              ></circle>
-              <circle
-                class="46.50541639995385|17.921691093969827"
-                cx="814.5"
-                cy="95.1"
-                id="2"
-              ></circle>
-            </g>
-            <g id="label_points">
-              <circle
-                class="Valle d'Aosta"
-                cx="191.7"
-                cy="162.5"
-                id="IT23"
-              ></circle>
-              <circle class="Piedmont" cx="222.1" cy="223.6" id="IT21"></circle>
-              <circle class="Liguria" cx="303.6" cy="265.7" id="IT42"></circle>
-              <circle class="Lombardy" cx="335.3" cy="162.3" id="IT25"></circle>
-              <circle
-                class="Trentino-Alto Adige"
-                cx="425.9"
-                cy="103.4"
-                id="IT32"
-              ></circle>
-              <circle class="Veneto" cx="452.6" cy="177.5" id="IT34"></circle>
-              <circle
-                class="Friuli Venezia Giulia"
-                cx="524.3"
-                cy="119.2"
-                id="IT36"
-              ></circle>
-              <circle class="Tuscany" cx="417.6" cy="348.5" id="IT52"></circle>
-              <circle class="Umbria" cx="495.2" cy="388.3" id="IT55"></circle>
-              <circle class="Lazio" cx="505.4" cy="468" id="IT62"></circle>
-              <circle class="Abruzzo" cx="574.7" cy="445.8" id="IT65"></circle>
-              <circle class="Puglia" cx="727.9" cy="543.2" id="IT75"></circle>
-              <circle class="Campania" cx="632.7" cy="539.8" id="IT72"></circle>
-              <circle class="Molise" cx="625.7" cy="490.6" id="IT67"></circle>
-              <circle
-                class="Basilicata"
-                cx="706.8"
-                cy="582.9"
-                id="IT77"
-              ></circle>
-              <circle class="Calabria" cx="729.8" cy="677.6" id="IT78"></circle>
-              <circle class="Sicilia" cx="593.5" cy="803" id="IT82"></circle>
-              <circle class="Sardegna" cx="294" cy="610.8" id="IT88"></circle>
-              <circle
-                class="Emilia-Romagna"
-                cx="409.5"
-                cy="260.7"
-                id="IT45"
-              ></circle>
-              <circle class="Marche" cx="541.6" cy="363.8" id="IT57"></circle>
-            </g>
+            
 
             <path
               d="m 469.22975,304.5504 0.025,0.216 -0.123,0.047 -0.105,-0.075 -0.209,0 -0.197,0.047 0.043,-0.386 0.388,0.047 z"
@@ -28792,6 +28558,11 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             btn.classList.add("modeTrouver");
           });
 
+
+          const subName = document.createElement('div')
+          subName.className = "subName"
+          subName.textContent = L_q[countryId].n
+          Maps.append(subName);
           const btnListSub = document.createElement("div");
           btnListSub.innerHTML = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>`;
 
@@ -28809,6 +28580,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             contentInfoSub.innerHTML = ``;
             subSort.forEach((id) => {
               if (getId(id)?.parentNode === svgSub) {
+                
                 const itemC = document.createElement("div");
                 itemC.className = "itemC";
 
@@ -28924,6 +28696,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
             svgSub.remove();
             btnListSub.remove();
+            subName.remove()
             getId("crossSub").click();
             getId("svgMonde")
               .querySelectorAll("circle")

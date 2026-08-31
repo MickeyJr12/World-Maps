@@ -19,14 +19,24 @@ self.addEventListener('activate', (e) => {
 });
 
 self.addEventListener('fetch', (e) => {
+  if (e.request.method !== 'GET') return;
+
   e.respondWith(
     fetch(e.request)
       .then(response => {
-        // On ignore les réponses partielles (fonts, etc.)
-        if (response.status === 206) return response;
-        
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
+        if (!response || !response.ok || response.status === 206) {
+          return response;
+        }
+
+        const isSameOrigin = e.request.url.startsWith(self.location.origin);
+
+        if (isSameOrigin) {
+          const clone = response.clone();
+          caches.open(CACHE_NAME)
+            .then(cache => cache.put(e.request, clone))
+            .catch(() => {});
+        }
+
         return response;
       })
       .catch(() => caches.match(e.request))
