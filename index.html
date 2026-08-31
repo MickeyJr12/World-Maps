@@ -272,12 +272,13 @@
         transition:
           top 0.3s ease,
           border-radius 0.3s ease,
-          padding-top 0.3s ease;
+          padding-top 0.3s ease, background 0.3s ease;
       }
       #cadreListSub.active {
         top: 25vh;
       }
       #cadreListSub.fullScreen {
+        background: rgba(17, 23, 79, 1);
         top: 0;
         border-radius: 0;
         padding-top: calc(env(safe-area-inset-top) + 1rem);
@@ -27807,6 +27808,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
       const paths = svg.querySelectorAll("path");
+      const pathsId_m = new Map(paths.map((p) => [p.id, p]));
+      
 
       const L_circles = [
         "MO",
@@ -45317,12 +45320,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       }
       function darkenCountry(pathId, overlay) {
         viewMaps
-          ? (document.getElementById(pathId).style.stroke = "white")
-          : (document.getElementById(pathId).style.stroke =
+          ? (pathById.get(pathId).style.stroke = "white")
+          : (pathById.get(pathId).style.stroke =
               "rgba(255,210,50,1)");
 
-        const original = document.getElementById(pathId);
-        const p = document.getElementById(pathId);
+        const original = pathById.get(pathId);
+        const p = pathById.get(pathId);
         const status = idVisible_m.get(p.id);
         const visible = status && Object.values(status).every(Boolean);
         if (viewSub) {
@@ -45337,7 +45340,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           !visible ||
           !original ||
           // svgUs.contains(document.getElementById(pathId)) ||
-          L_sub.includes(getId(pathId).parentNode.id)
+          L_sub.includes(pathById.get(pathId).parentNode.id)
         )
           return;
 
@@ -45356,7 +45359,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
         if (!getId(p_id)) return;
         overlay.style.opacity = "0";
-        document.getElementById(p_id).style.stroke = "";
+        pathById.get(p_id).style.stroke = "";
       }
       paths.forEach((p) => {
         createOverlay(p.id);
