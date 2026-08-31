@@ -27806,7 +27806,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
-      const paths = svg.querySelectorAll("path");
+      let paths = svg.querySelectorAll("path");
 
       const L_circles = [
         "MO",
@@ -45295,6 +45295,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const overlay_m = new Map();
 
       function createOverlay(p_id) {
+        if(overlay_m.has(p_id))return
         const overlay = document.createElementNS(
           "http://www.w3.org/2000/svg",
           "path",
@@ -45369,7 +45370,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           // if (!visible) {
           //   return;
           // }
-
+          if (oneTimeColorCountry)return
           if (p === currentCountry && currentCountry != null) {
             // hapticFeedback('light')
             const overlay = overlay_m.get(p.id);
@@ -45377,14 +45378,14 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else if (p !== currentCountryHover) {
             if (p !== currentCountry) {
               if (overlay_m.has(p.id)) {
+                console.log("appel")
                 resetOverlay(p.id, overlay_m.get(p.id));
               }
             }
 
-            if (currentCountry === null && !oneTimeColorCountry) {
-              paths.forEach((path) => {
-                resetOverlay(p.id, overlay_m.get(path.id));
-              });
+            if (currentCountry === null ) {
+                resetOverlay(p.id, overlay_m.get(p.id));
+
             }
           }
         });
@@ -45395,17 +45396,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
        const L_gSub = new Map(); // liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
       const L_pathsSub = [];
-
       
         L_sub.forEach((svgSub) => {
           const paths = getId(svgSub).querySelectorAll("path");
           L_pathsSub.push(paths);
-        });
-
-        L_pathsSub.forEach((ps) => {
-          ps.forEach((p) => {
-            createOverlay(p.id);
-          });
         });
 
         for (const clef in L_cSub) {
@@ -45419,6 +45413,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           L_gSub.set(L_cSub[clef].svgSub, g);
           g.remove();
         }
+        paths = svg.querySelectorAll("path");
+        
 
 
       function fillCadreOrga(p_id) {
