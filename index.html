@@ -229,7 +229,6 @@
       }
 
       svg.monde path {
-        transform : scale(0.99);
         transition:
           stroke 0.2s ease,
           opacity 0.3s ease,
@@ -46955,7 +46954,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (subject === "region") {
           const regionI = document.createElement("div");
           regionI.className = "perRegion";
-          const regionTitle = document.createElement("h1");
+          const regionTitle = document.createElement("h3");
           regionTitle.style.color = "white";
           regionTitle.textContent = r.region;
           regionTitle.style.textDecoration = "underline";
@@ -47021,7 +47020,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         } else if (subject === "subregion") {
           const subI = document.createElement("div");
           subI.className = "perSub";
-          const subTitle = document.createElement("h1");
+          const subTitle = document.createElement("h3");
           subTitle.style.color = "white";
           subTitle.textContent = r.label;
           subTitle.style.textDecoration = "underline";
@@ -47067,7 +47066,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         } else if (subject === "organisations") {
           const orgaI = document.createElement("div");
           orgaI.className = "perSub";
-          const orgaTitle = document.createElement("h1");
+          const orgaTitle = document.createElement("h3");
           orgaTitle.style.color = "white";
           orgaTitle.style.marginTop = "1.4rem";
           orgaTitle.textContent = r.label;
@@ -47117,7 +47116,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           onu.className = "perONU";
           onu.style.marginTop =
             backListBox.getBoundingClientRect().height + "px";
-          const onuTitle = document.createElement("h1");
+          const onuTitle = document.createElement("h3");
           onuTitle.style.color = "white";
 
           if (r.key === "unMember") {
@@ -47150,7 +47149,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         } else if (subject === "subdivision") {
           const orgaI = document.createElement("div");
           orgaI.className = "perSub";
-          const orgaTitle = document.createElement("h1");
+          const orgaTitle = document.createElement("h3");
           orgaTitle.style.color = "white";
           orgaTitle.style.marginTop = "1.4rem";
           orgaTitle.textContent = "Subdivisions";
