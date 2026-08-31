@@ -27806,7 +27806,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
-      let paths = svg.querySelectorAll("path");
+      const paths = svg.querySelectorAll("path");
 
       const L_circles = [
         "MO",
@@ -45413,8 +45413,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           L_gSub.set(L_cSub[clef].svgSub, g);
           g.remove();
         }
-        paths = svg.querySelectorAll("path");
-        
 
 
       function fillCadreOrga(p_id) {
