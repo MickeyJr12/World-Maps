@@ -229,6 +229,7 @@
       }
 
       svg.monde path {
+        transform : scale(0.99);
         transition:
           stroke 0.2s ease,
           opacity 0.3s ease,
@@ -297,7 +298,7 @@
         align-self : center;
         text-align : center;
         width : 100%;
-        margin : 2rem;
+        margin : 0 2rem;
         color: rgba(255, 255, 255, 0.6);
         font-weight: 600;
         font-size: 0.96rem;
@@ -45378,7 +45379,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else if (p !== currentCountryHover) {
             if (p !== currentCountry) {
               if (overlay_m.has(p.id)) {
-                console.log("appel")
                 resetOverlay(p.id, overlay_m.get(p.id));
               }
             }
