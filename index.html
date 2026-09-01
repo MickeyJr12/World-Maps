@@ -715,9 +715,9 @@
         background: rgba(56, 140, 223, 0.4);
 
         color: #FFFFFF;
-        background: rgba(230, 115, 0, 0.55);
+        background: rgba(230, 115, 0, 0.4);
 
-        padding : 0.4rem 0.6rem;
+        padding : 0.4rem 0.8rem;
         border-radius : 50rem;
         outline : 1px solid rgba(255,255,255,0.2);
 
@@ -28512,6 +28512,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
       });
 
       btnSub.addEventListener("click", () => {
+        btnSub.classList.remove("viewSub");
         const svgSub = L_gSub.get(L_cSub[currentCountry.id].svgSub); // svgUs
         const countryId = currentCountry.id; //"US"
         currentCSub = currentCountry;
@@ -45392,7 +45393,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         titlesCadre.forEach((t) => {
           if (!viewSub) {
             t.textContent =
-              L_q[id].n + (id === "MM" ? " (Birmanie)" : "") + " (" + id + ")";
+              L_q[id].n + (id === "MM" ? " (Birmanie)" : "") + (id.length>2 ? "" : " (" + id + ")");
           } else {
             if (!D_us[id]) {
               return;
