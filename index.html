@@ -712,7 +712,7 @@
         font-size : 1.25rem;
         color: rgba(65, 212, 237, 1);
         color: #fbbf24;
-        color: #fbbf24;
+        color: #ab8015;
 
 
       }
@@ -742,7 +742,7 @@
         width: 2.6rem;
         opacity: 1;
         right: 0.8rem;
-        top: 50%;
+        top: 45%;
         transform: translateY(-50%);
         background: rgba(56, 140, 223, 0.674);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
@@ -26283,14 +26283,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function zoomCountry(p_id) {
         currentCountry = document.getElementById(p_id);
-        if (!viewSub) {
-          document.querySelector("svg.monde").appendChild(currentCountry);
-        }
-        getId("svgMonde")
-          .querySelectorAll("circle")
-          .forEach((c) => getId("svgMonde").append(c));
+         const svgMonde = document.getElementById("svgMonde");
+        if (!viewSub) {svgMonde.appendChild(currentCountry)}
 
-        const svgMonde = document.getElementById("svgMonde");
+       
         const el = getId(p_id);
 
         let b;
@@ -45471,6 +45467,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           indT.textContent = D_us[id].indT;
         }
         colorCountry();
+        getId("svgMonde")
+          .querySelectorAll("circle")
+          .forEach((c) => svgMonde.append(c));
       }
 
       //Script tools
