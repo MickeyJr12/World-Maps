@@ -2861,7 +2861,7 @@
         transition: transform 0.2s ease;
       }
       .btnViewSub:active {
-        transform: scale(0.92);
+        transform: scale(0.96);
         color : rgba(255,255,255,0.8)
       }
       .btnViewSub svg {
@@ -27597,16 +27597,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       // à retirer
 
-       const L_ephe = {};
+      //  const L_ephe = {};
 
-       L_sub.forEach((svg) => {
-         const ps = getId(svg).querySelectorAll("path");
-         L_ephe[svg] = [];
-         ps.forEach((p) => {
-           L_ephe[svg].push(p.id);
-         });
-       });
-       console.log(L_ephe);
+      //  L_sub.forEach((svg) => {
+      //    const ps = getId(svg).querySelectorAll("path");
+      //    L_ephe[svg] = [];
+      //    ps.forEach((p) => {
+      //      L_ephe[svg].push(p.id);
+      //    });
+      //  });
+      //  console.log(L_ephe);
 
      
       
@@ -45389,8 +45389,32 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         itemBlason.src = ``;
         cadreContours.innerHTML = ``;
 
+
+        const mCadreDrapeau = document.querySelector('.mCadreDrapeau')
+        const cadreDrapeau = getId('cadreDrapeau')
+        const loadingCadre = getId('loadingCadre')
+        const mLoadingCadre = getId('mLoadingCadre')
+
+        mCadreDrapeau.style.display = "flex"
+        cadreDrapeau.style.display = "flex"
+
+        loadingCadre.style.display = ""
+        mLoadingCadre.style.display = ""
+
+        if (!viewSub || viewSub && getId('svgUs')){
         mDrapeauCadre.src = `https://flagcdn.com/${id.toLowerCase()}.svg`;
         drapeauCadre.src = `https://flagcdn.com/${id.toLowerCase()}.svg`;
+        }
+        else {
+        mCadreDrapeau.style.display = "none"
+        cadreDrapeau.style.display = "none"
+
+        loadingCadre.style.display = "none"
+        mLoadingCadre.style.display = "none"
+
+        }
+        
+        
         if (id === "GP") {
           mDrapeauCadre.src =
             "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
