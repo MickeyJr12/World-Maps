@@ -709,9 +709,11 @@
         left : 50%;
         transform : translateX(-50%);
         font-weight : 550;
-        font-size : 1rem;
+        font-size : 1.25rem;
         color: rgba(65, 212, 237, 1);
         color: #fbbf24;
+        color: #fbbf24;
+
 
       }
       .zBox {
@@ -731,7 +733,7 @@
           opacity 0.35s ease,
           filter 0.3s ease;
       }
-      .zBox.modeTrouver
+      .zBox.modeTrouver,#centerBtn.modeTrouver
       {
         position: fixed;
         border-radius: 0.6rem;
@@ -26877,7 +26879,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             wrapperCPm.append(itemCPm);
 
             let L_of = L_prop === "outTime" ? L_good : L_prop;
-            numItemCPm.textContent = "#" + (i + 1);
+            numItemCPm.textContent = "n°" + (i + 1);
             nomItemCPm.textContent = L_q[L_of[i]].n;
             superficie.textContent =
               L_config.q === "populationQ"
@@ -28580,6 +28582,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
               D_us[a].n.localeCompare(D_us[b].n, "fr", { sensitivity: "base" }),
             );
             contentInfoSub.innerHTML = ``;
+            contentInfoSub.scrollTop
+
             subSort.forEach((id) => {
               if (getId(id)?.parentNode === svgSub) {
                 
@@ -28627,7 +28631,6 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
                 contentInfoSub.append(ligneInContent);
               }
             });
-
             cadreListSub.classList.add("active");
           });
 
@@ -28741,6 +28744,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             orgaMenu.click();
 
             [centerBtn, zBox].forEach((btn) => {
+              btn.style.left = "";
+              btn.style.top = "";
               btn.style.position = "";
               btn.style.opacity = "";
               btn.classList.remove("modeTrouver");
