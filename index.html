@@ -268,6 +268,7 @@
 
       #cadreListSub {
         display: flex;
+        pointer-events: none;
         position: fixed;
         overflow-x: hidden;
         flex-direction: column;
@@ -289,9 +290,11 @@
           padding-top 0.3s ease, background 0.3s ease;
       }
       #cadreListSub.active {
+        pointer-events: all;
         top: 25vh;
       }
       #cadreListSub.fullScreen {
+        pointer-events: all;
         background: rgba(17, 23, 79, 1);
         top: 0;
         border-radius: 0;
@@ -300,7 +303,7 @@
       .badgeInfoSub{
         padding : 0.4rem;
         background : rgba(0,0,0,0.4);
-        font-size : 0.96rem;
+        font-size : 0.9rem;
         font-weight : 500;
         border-radius : 50rem;
         background: rgba(251, 191, 36, 0.15);
@@ -27576,16 +27579,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       // à retirer
 
-      // const L_ephe = {};
+       const L_ephe = {};
 
-      // L_sub.forEach((svg) => {
-      //   const ps = getId(svg).querySelectorAll("path");
-      //   L_ephe[svg] = [];
-      //   ps.forEach((p) => {
-      //     L_ephe[svg].push(p.id);
-      //   });
-      // });
-      // console.log(L_ephe);
+       L_sub.forEach((svg) => {
+         const ps = getId(svg).querySelectorAll("path");
+         L_ephe[svg] = [];
+         ps.forEach((p) => {
+           L_ephe[svg].push(p.id);
+         });
+       });
+       console.log(L_ephe);
 
      
       
@@ -35732,6 +35735,97 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           indT: "+33",
           c: "Paris",
         },
+        // Sub Autriche
+        
+  "AT-1": {
+    "n": "Burgenland",
+    "p": 301712,
+    "info": "État fédéré d'Autriche",
+    "s": "3 962 km²",
+    "nH": "Non disponible",
+    "indT": "Non disponible",
+    "c": "Eisenstadt"
+  },
+  "AT-2": {
+    "n": "Carinthie (Kärnten)",
+    "p": 569906,
+    "info": "État fédéré d'Autriche",
+    "s": "9 538 km²",
+    "nH": "Carinthien / Carinthienne",
+    "indT": "Non disponible",
+    "c": "Klagenfurt"
+  },
+  "AT-3": {
+    "n": "Basse-Autriche (Niederösterreich)",
+    "p": 1725711,
+    "info": "État fédéré d'Autriche",
+    "s": "19 186 km²",
+    "nH": "Non disponible",
+    "indT": "Non disponible",
+    "c": "Sankt Pölten"
+  },
+  "AT-4": {
+    "n": "Haute-Autriche (Oberösterreich)",
+    "p": 1533226,
+    "info": "État fédéré d'Autriche",
+    "s": "11 980 km²",
+    "nH": "Non disponible",
+    "indT": "Non disponible",
+    "c": "Linz"
+  },
+  "AT-5": {
+    "n": "Salzbourg (Salzburg)",
+    "p": 572049,
+    "info": "État fédéré d'Autriche",
+    "s": "7 156 km²",
+    "nH": "Non disponible",
+    "indT": "Non disponible",
+    "c": "Salzbourg"
+  },
+  "AT-6": {
+    "n": "Styrie (Steiermark)",
+    "p": 1270439,
+    "info": "État fédéré d'Autriche",
+    "s": "16 401 km²",
+    "nH": "Non disponible",
+    "indT": "Non disponible",
+    "c": "Graz"
+  },
+  "AT-7": {
+    "n": "Tyrol (Tirol)",
+    "p": 776620,
+    "info": "État fédéré d'Autriche",
+    "s": "12 640 km²",
+    "nH": "Tyrolien / Tyrolienne",
+    "indT": "Non disponible",
+    "c": "Innsbruck"
+  },
+  "AT-8": {
+    "n": "Vorarlberg",
+    "p": 410938,
+    "info": "État fédéré d'Autriche",
+    "s": "2 602 km²",
+    "nH": "Non disponible",
+    "indT": "Non disponible",
+    "c": "Bregenz"
+  },
+  "AT-9": {
+    "n": "Vienne (Wien)",
+    "p": 2017314,
+    "info": "État fédéré d'Autriche, capitale fédérale",
+    "s": "414 km²",
+    "nH": "Viennois / Viennoise",
+    "indT": "Non disponible",
+    "c": "Vienne"
+  },
+
+
+
+
+
+
+
+
       };
 
       const D_titleSub = {
