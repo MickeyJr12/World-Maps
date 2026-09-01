@@ -24957,14 +24957,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               ) {
                 //Remplir les cbox, les réponses
                 if (L_config.r === "drapeauR") {
-                  c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${p_id.toLowerCase()}.svg" draggable="false" alt="">`;
+                  c.innerHTML = ` <img class="drapeau4Choix"  src="flag_c/${p_id.toLowerCase()}.svg" draggable="false" alt="">`;
 
                   if (p_id === "GP") {
                     c.innerHTML = ` <img class="drapeau4Choix"  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="">`;
                   }
 
                   if (c === cBoxHasard) {
-                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
+                    c.innerHTML = ` <img class="drapeau4Choix"  src="flag_c/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
                     if (idBonneReponse === "GP") {
                       c.innerHTML = ` <img class="drapeau4Choix"  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="">`;
                     }
@@ -24998,7 +24998,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 if (L_config.q === "contourQ") {
                   qBox.innerHTML = `<img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" draggable="false" alt="">`;
                 } else if (L_config.q === "drapeauQ") {
-                  qBox.innerHTML = `<img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
+                  qBox.innerHTML = `<img class="drapeau4Choix"  src="flag_c/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
                   if (idBonneReponse === "GP") {
                     qBox.innerHTML = `<img class="drapeau4Choix"  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="">`;
                   }
@@ -25152,7 +25152,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           // Remplir les Questions
           if (L_config.q === "drapeauQ") {
-            qqTrouver.innerHTML = `<img class="drapeau4Choix"  src="https://flagcdn.com/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
+            qqTrouver.innerHTML = `<img class="drapeau4Choix"  src="flag_c/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
             if (idBonneReponse === "GP") {
               qqTrouver.innerHTML = `<img class="drapeau4Choix"  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="">`;
             }
@@ -25240,7 +25240,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               classerDrapeauBox.className = "classerDrapeauBox";
 
               const img = document.createElement("img");
-              img.src = `https://flagcdn.com/${p_id.toLowerCase()}.svg`;
+              img.src = `flag_c/${p_id.toLowerCase()}.svg`;
               img.className = "classerDrapeauCadre";
 
               const cadreTxtClasser = document.createElement("div");
@@ -26685,8 +26685,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             .forEach((o) => o.classList.remove("active"));
           if (idProp !== "outTime") {
             propPm.textContent = L_q[idProp].n;
-            getId("imgPmCadreProp").src =
-              `https://flagcdn.com/${idProp.toLowerCase()}.svg`;
+            
+            getId("imgPmCadreProp").src =`flag_c/${idProp.toLowerCase()}.svg`;
 
             if (L_config.r !== "nomR") {
               propPm.textContent = "(" + L_q[idProp].n + ")";
@@ -26695,7 +26695,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           repPm.textContent = L_q[idGood].n;
           getId("imgPmCadreCor").src =
-            `https://flagcdn.com/${idGood.toLowerCase()}.svg`;
+            `flag_c/${idGood.toLowerCase()}.svg`;
           if (L_config.r !== "nomR") {
             repPm.textContent = "(" + L_q[idGood].n + ")";
           }
@@ -38549,246 +38549,246 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
       };
 
       const D_blason = {
-        AD: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Coat_of_arms_of_Andorra.svg",
-        AE: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Emblem_of_the_United_Arab_Emirates.svg",
-        AF: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Arms_of_the_Islamic_Emirate_of_Afghanistan.svg",
-        AG: "https://upload.wikimedia.org/wikipedia/commons/3/30/Coat_of_arms_of_Antigua_and_Barbuda.svg",
-        AI: "https://upload.wikimedia.org/wikipedia/commons/6/67/Coat_of_arms_of_Anguilla.svg",
-        AL: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Coat_of_arms_of_Albania.svg",
-        AM: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Coat_of_arms_of_Armenia.svg",
-        AO: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Emblem_of_Angola.svg",
-        AR: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Coat_of_arms_of_Argentina.svg",
-        AS: "https://upload.wikimedia.org/wikipedia/commons/d/df/Seal_of_American_Samoa.svg",
-        AT: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Austria_Bundesadler.svg",
-        AU: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Coat_of_arms_of_Australia.svg",
-        AW: "https://upload.wikimedia.org/wikipedia/commons/d/de/Coat_of_arms_of_Aruba.svg",
-        AX: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Coat_of_arms_of_%C3%85land.svg",
-        AZ: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Emblem_of_Azerbaijan.svg",
-        BA: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Coat_of_arms_of_Bosnia_and_Herzegovina.svg",
-        BB: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Coat_of_arms_of_Barbados_%282%29.svg",
-        BD: "https://upload.wikimedia.org/wikipedia/commons/8/81/National_emblem_of_Bangladesh.svg",
-        BE: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Great_coat_of_arms_of_Belgium.svg",
-        BF: "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_Burkina_Faso.svg",
-        BG: "https://upload.wikimedia.org/wikipedia/commons/2/24/Coat_of_arms_of_Bulgaria.svg",
-        BH: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Emblem_of_Bahrain.svg",
-        BI: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Blason_du_Burundi.svg",
-        BJ: "https://upload.wikimedia.org/wikipedia/commons/1/13/Coat_of_arms_of_Benin.svg",
-        BL: "https://upload.wikimedia.org/wikipedia/commons/3/35/Blason_St_Barth%C3%A9l%C3%A9my_TOM_entire.svg",
-        BM: "https://upload.wikimedia.org/wikipedia/commons/5/58/Coat_of_arms_of_Bermuda.svg",
-        BN: "https://upload.wikimedia.org/wikipedia/commons/0/09/Emblem_of_Brunei.svg",
-        BO: "https://upload.wikimedia.org/wikipedia/commons/0/06/Coat_of_arms_of_Bolivia.svg",
-        BR: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Coat_of_arms_of_Brazil.svg",
-        BS: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Coat_of_arms_of_the_Bahamas.svg",
-        BT: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Emblem_of_Bhutan.svg",
-        BW: "https://upload.wikimedia.org/wikipedia/commons/d/de/Coat_of_arms_of_Botswana.svg",
-        BY: "https://upload.wikimedia.org/wikipedia/commons/4/48/Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg",
-        BZ: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Belize.svg",
-        CA: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Royal_Coat_of_arms_of_Canada.svg",
-        CC: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Clunies-Ross_family_arms.svg",
-        CD: "https://upload.wikimedia.org/wikipedia/commons/6/66/Coat_of_arms_of_the_Democratic_Republic_of_the_Congo_%28grey_spear%29.svg",
-        CF: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Coat_of_arms_of_the_Central_Afriquen_Republic.svg",
-        CG: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Coat_of_arms_of_the_Republic_of_the_Congo.svg",
-        CH: "https://upload.wikimedia.org/wikipedia/commons/9/95/Coat_of_arms_of_Switzerland.svg",
-        CI: "https://upload.wikimedia.org/wikipedia/commons/9/95/Coat_of_arms_of_Ivory_Coast.svg",
-        CK: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coat_of_arms_of_the_Cook_Islands.svg",
-        CL: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Coat_of_arms_of_Chile.svg",
-        CM: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Coat_of_arms_of_Cameroon.svg",
-        CN: "https://upload.wikimedia.org/wikipedia/commons/6/6b/%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B%E5%9C%8B%E5%BE%BD.svg",
-        CO: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Coat_of_arms_of_Colombia.svg",
-        CR: "https://upload.wikimedia.org/wikipedia/commons/8/84/Coat_of_arms_of_Costa_Rica.svg",
-        CU: "https://upload.wikimedia.org/wikipedia/commons/5/58/Coat_of_arms_of_Cuba.svg",
-        CV: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Coat_of_arms_of_Cape_Verde.svg",
-        CW: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Blason_an_Cura%C3%A7ao_2.svg",
-        CX: "https://upload.wikimedia.org/wikipedia/commons/9/96/Unofficial_Coat_of_Arms_of_Christmas_Island.svg",
-        CY: "https://upload.wikimedia.org/wikipedia/commons/d/da/Coat_of_arms_of_Cyprus_%282006%29.svg",
-        CZ: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Coat_of_arms_of_the_Czech_Republic.svg",
-        DE: "https://upload.wikimedia.org/wikipedia/commons/d/da/Coat_of_arms_of_Germany.svg",
-        Dj: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Emblem_of_Djibouti.svg",
-        DK: "https://upload.wikimedia.org/wikipedia/commons/1/1a/National_coat_of_arms_of_Denmark.svg",
-        DM: "https://upload.wikimedia.org/wikipedia/commons/4/40/Coat_of_arms_of_Dominica.svg",
-        DO: "https://upload.wikimedia.org/wikipedia/commons/2/26/Coat_of_arms_of_the_Dominican_Republic.svg",
-        DZ: "https://upload.wikimedia.org/wikipedia/commons/a/a6/National_Emblem_of_Algeria_%28bronze_effect%29.svg",
-        EC: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Coat_of_arms_of_Ecuador.svg",
-        EG: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Coat_of_arms_of_Egypt_%28Official%29.svg",
-        EH: "https://upload.wikimedia.org/wikipedia/commons/4/40/Coat_of_arms_of_the_Sahrawi_Arab_Democratic_Republic.svg",
-        ER: "https://upload.wikimedia.org/wikipedia/commons/3/36/Emblem_of_Eritrea_%28or_argent_azur%29.svg",
-        ES: "https://upload.wikimedia.org/wikipedia/commons/8/85/Escudo_de_Espa%C3%B1a_%28mazonado%29.svg",
-        ET: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Emblem_of_Ethiopia.svg",
-        FI: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Coat_of_arms_of_Finland.svg",
-        FJ: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Coat_of_arms_of_Fiji.svg",
-        FK: "https://upload.wikimedia.org/wikipedia/commons/8/86/Coat_of_arms_of_the_Falkland_Islands.svg",
-        FM: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Seal_of_the_Federated_States_of_Micronésie.svg",
-        FO: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Coat_of_arms_of_the_Faroe_Islands.svg",
-        FR: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Armoiries_r%C3%A9publique_fran%C3%A7aise.svg",
-        GA: "https://upload.wikimedia.org/wikipedia/commons/7/77/Coat_of_arms_of_Gabon.svg",
-        GB: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Coat_of_arms_of_the_United_Kingdom_%282022%2C_variant_2%29.svg",
-        GD: "https://upload.wikimedia.org/wikipedia/commons/0/03/Coat_of_arms_of_Grenada.svg",
-        GE: "https://upload.wikimedia.org/wikipedia/commons/9/94/Greater_coat_of_arms_of_Georgia.svg",
-        GF: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Blason_de_la_Guyane.svg",
-        GG: "https://upload.wikimedia.org/wikipedia/commons/0/01/Coat_of_arms_of_Guernsey.svg",
-        GH: "https://upload.wikimedia.org/wikipedia/commons/5/59/Coat_of_arms_of_Ghana.svg",
-        GI: "https://upload.wikimedia.org/wikipedia/commons/4/40/Coat_of_arms_of_Gibraltar1.svg",
-        GL: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Greenland.svg",
-        GM: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Coat_of_arms_of_The_Gambia.svg",
-        GN: "https://upload.wikimedia.org/wikipedia/commons/5/58/Coat_of_Arms_of_Guinea.svg",
-        GP: "https://upload.wikimedia.org/wikipedia/commons/8/88/BlasonGuadeloupe.svg",
-        GQ: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Coat_of_arms_of_Equatorial_Guinea.svg",
-        GR: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Coat_of_arms_of_Greece.svg",
-        GS: "https://upload.wikimedia.org/wikipedia/commons/7/78/Coat_of_arms_of_South_Georgia_and_the_South_Sandwich_Islands.svg",
-        GT: "https://upload.wikimedia.org/wikipedia/commons/1/15/Coat_of_arms_of_Guatemala.svg",
-        GU: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Seal_of_Guam.svg",
-        GY: "https://upload.wikimedia.org/wikipedia/commons/2/23/Coat_of_arms_of_Guyana.svg",
-        HK: "https://upload.wikimedia.org/wikipedia/commons/9/90/Regional_Emblem_of_Hong_Kong.svg",
-        HN: "https://upload.wikimedia.org/wikipedia/commons/8/81/Coat_of_arms_of_Honduras.svg",
-        HR: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Coat_of_arms_of_Croatia.svg",
-        HT: "https://upload.wikimedia.org/wikipedia/commons/7/75/Coat_of_arms_of_Haiti.svg",
-        HU: "https://upload.wikimedia.org/wikipedia/commons/3/34/Coat_of_arms_of_Hungary.svg",
-        ID: "https://upload.wikimedia.org/wikipedia/commons/9/90/National_emblem_of_Indonesia_Garuda_Pancasila.svg",
-        IE: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Coat_of_arms_of_Ireland.svg",
-        IL: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Emblem_of_Israel.svg",
-        IM: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Coat_of_arms_of_the_Isle_of_Man.svg",
-        IN: "https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg",
-        IO: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Coat_of_arms_of_the_British_Indian_Ocean_Territory.svg",
-        IQ: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Coat_of_arms_of_Iraq.svg",
-        IR: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Emblem_of_Iran.svg",
-        IS: "https://upload.wikimedia.org/wikipedia/commons/9/90/Coat_of_arms_of_Iceland.svg",
-        IT: "https://upload.wikimedia.org/wikipedia/commons/0/00/Emblem_of_Italy.svg",
-        JE: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Coat_of_Arms_of_Jersey.svg",
-        JM: "https://upload.wikimedia.org/wikipedia/commons/5/52/Coat_of_arms_of_Jamaica.svg",
-        JO: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Coat_of_arms_of_Jordan.svg",
-        JP: "https://upload.wikimedia.org/wikipedia/commons/3/37/Imperial_Seal_of_Japan.svg",
-        KE: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Coat_of_arms_of_Kenya_%28Official%29.svg",
-        KG: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Emblem_of_Kyrgyzstan.svg",
-        KH: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Royal_arms_of_Cambodia.svg",
-        KI: "https://upload.wikimedia.org/wikipedia/commons/6/66/Coat_of_arms_of_Kiribati.svg",
-        KM: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Seal_of_the_Comoros.svg",
-        KN: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Coat_of_arms_of_Saint_Kitts_and_Nevis.svg",
-        KP: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Emblem_of_North_Korea.svg",
-        KR: "https://upload.wikimedia.org/wikipedia/commons/9/96/Emblem_of_South_Korea.svg",
-        KW: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Emblem_of_Kuwait.svg",
-        KY: "https://upload.wikimedia.org/wikipedia/commons/6/60/Coat_of_arms_of_the_Cayman_Islands.svg",
-        KZ: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Emblem_of_Kazakhstan_latin.svg",
-        LA: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Emblem_of_Laos_%281991-2025%29.svg",
-        LB: "https://upload.wikimedia.org/wikipedia/commons/9/98/Coat_of_arms_of_Lebanon.svg",
-        LC: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Coat_of_arms_of_Saint_Lucia.svg",
-        LI: "https://upload.wikimedia.org/wikipedia/commons/1/18/Staatswappen-Liechtensteins.svg",
-        LK: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Emblem_of_Sri_Lanka.svg",
-        LR: "https://upload.wikimedia.org/wikipedia/commons/6/64/Coat_of_arms_of_Liberia.svg",
-        LS: "https://upload.wikimedia.org/wikipedia/commons/4/42/Coat_of_arms_of_Lesotho.svg",
-        LT: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Lithuania.svg",
-        LU: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Greater_coat_of_arms_of_the_grand-duchy_of_Luxembourg.svg",
-        LV: "https://upload.wikimedia.org/wikipedia/commons/4/45/Coat_of_arms_of_Latvia.svg",
-        LY: "https://upload.wikimedia.org/wikipedia/commons/f/f6/The_emblem_on_the_passport_of_Libya.svg",
-        MA: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Coat_of_arms_of_Morocco.svg",
-        MC: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Coat_of_arms_of_Morocco.svg",
-        MD: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Coat_of_arms_of_Moldova.svg",
-        ME: "https://upload.wikimedia.org/wikipedia/commons/2/23/Coat_of_arms_of_Montenegro.svg",
-        MF: "https://upload.wikimedia.org/wikipedia/commons/3/37/Armoiries_commune_fr_Saint-Martin_%2867%29.svg",
-        MG: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Seal_of_Madagascar.svg",
-        MH: "https://upload.wikimedia.org/wikipedia/commons/8/86/Seal_of_the_Marshall_Islands.svg",
-        MK: "https://upload.wikimedia.org/wikipedia/commons/6/6a/Coat_of_arms_of_North_Macedonia.svg",
-        ML: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Coat_of_arms_of_Mali.svg",
-        MM: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Variant_of_the_State_seal_of_Myanmar_%282011-2025%29.svg",
-        MN: "https://upload.wikimedia.org/wikipedia/commons/3/3e/State_emblem_of_Mongolia.svg",
-        MO: "https://upload.wikimedia.org/wikipedia/commons/8/87/Regional_Emblem_of_Macau.svg",
-        MP: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Seal_of_the_Northern_Mariana_Islands_%28alternate%29.svg",
-        MQ: "https://upload.wikimedia.org/wikipedia/commons/d/da/BlasonMartinique.svg",
-        MR: "https://upload.wikimedia.org/wikipedia/commons/9/96/National_Seal_of_Mauritania.svg",
-        MS: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Coat_of_arms_of_Montserrat.svg",
-        MT: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Coat_of_arms_of_Malta.svg",
-        MU: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Coat_of_arms_of_Mauritius.svg",
-        MV: "https://upload.wikimedia.org/wikipedia/commons/2/29/Emblem_of_Maldives.svg",
-        MW: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Coat_of_arms_of_Malawi.svg",
-        MX: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Coat_of_arms_of_Mexico.svg",
-        MY: "https://upload.wikimedia.org/wikipedia/commons/2/26/Coat_of_arms_of_Malaysia.svg",
-        MZ: "https://upload.wikimedia.org/wikipedia/commons/1/14/Emblem_of_Mozambique.svg",
-        NA: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Coat_of_arms_of_Namibia.svg",
-        NG: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Coat_of_arms_of_Nigeria.svg",
-        NE: "https://upload.wikimedia.org/wikipedia/commons/0/03/Coat_of_arms_of_Niger.svg",
-        NI: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Coat_of_arms_of_Nicaragua.svg",
-        NL: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Royal_coat_of_arms_of_the_Netherlands.svg",
-        NO: "https://upload.wikimedia.org/wikipedia/commons/9/95/Coat_of_arms_of_Norway.svg",
+        "AD": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Coat_of_arms_of_Andorra.svg",
+        "AE": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Emblem_of_the_United_Arab_Emirates.svg",
+        "AF": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Arms_of_the_Islamic_Emirate_of_Afghanistan.svg",
+        "AG": "https://upload.wikimedia.org/wikipedia/commons/3/30/Coat_of_arms_of_Antigua_and_Barbuda.svg",
+        "AI": "https://upload.wikimedia.org/wikipedia/commons/6/67/Coat_of_arms_of_Anguilla.svg",
+        "AL": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Coat_of_arms_of_Albania.svg",
+        "AM": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Coat_of_arms_of_Armenia.svg",
+        "AO": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Emblem_of_Angola.svg",
+        "AR": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Coat_of_arms_of_Argentina.svg",
+        "AS": "https://upload.wikimedia.org/wikipedia/commons/d/df/Seal_of_American_Samoa.svg",
+        "AT": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Austria_Bundesadler.svg",
+        "AU": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Coat_of_arms_of_Australia.svg",
+        "AW": "https://upload.wikimedia.org/wikipedia/commons/d/de/Coat_of_arms_of_Aruba.svg",
+        "AX": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Coat_of_arms_of_%C3%85land.svg",
+        "AZ": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Emblem_of_Azerbaijan.svg",
+        "BA": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Coat_of_arms_of_Bosnia_and_Herzegovina.svg",
+        "BB": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Coat_of_arms_of_Barbados_%282%29.svg",
+        "BD": "https://upload.wikimedia.org/wikipedia/commons/8/81/National_emblem_of_Bangladesh.svg",
+        "BE": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Great_coat_of_arms_of_Belgium.svg",
+        "BF": "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_Burkina_Faso.svg",
+        "BG": "https://upload.wikimedia.org/wikipedia/commons/2/24/Coat_of_arms_of_Bulgaria.svg",
+        "BH": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Emblem_of_Bahrain.svg",
+        "BI": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Blason_du_Burundi.svg",
+        "BJ": "https://upload.wikimedia.org/wikipedia/commons/1/13/Coat_of_arms_of_Benin.svg",
+        "BL": "https://upload.wikimedia.org/wikipedia/commons/3/35/Blason_St_Barth%C3%A9l%C3%A9my_TOM_entire.svg",
+        "BM": "https://upload.wikimedia.org/wikipedia/commons/5/58/Coat_of_arms_of_Bermuda.svg",
+        "BN": "https://upload.wikimedia.org/wikipedia/commons/0/09/Emblem_of_Brunei.svg",
+        "BO": "https://upload.wikimedia.org/wikipedia/commons/0/06/Coat_of_arms_of_Bolivia.svg",
+        "BR": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Coat_of_arms_of_Brazil.svg",
+        "BS": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Coat_of_arms_of_the_Bahamas.svg",
+        "BT": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Emblem_of_Bhutan.svg",
+        "BW": "https://upload.wikimedia.org/wikipedia/commons/d/de/Coat_of_arms_of_Botswana.svg",
+        "BY": "https://upload.wikimedia.org/wikipedia/commons/4/48/Coat_of_arms_of_Belarus_%282020%E2%80%93present%29.svg",
+        "BZ": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Belize.svg",
+        "CA": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Royal_Coat_of_arms_of_Canada.svg",
+        "CC": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Clunies-Ross_family_arms.svg",
+        "CD": "https://upload.wikimedia.org/wikipedia/commons/6/66/Coat_of_arms_of_the_Democratic_Republic_of_the_Congo_%28grey_spear%29.svg",
+        "CF": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Coat_of_arms_of_the_Central_Afriquen_Republic.svg",
+        "CG": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Coat_of_arms_of_the_Republic_of_the_Congo.svg",
+        "CH": "https://upload.wikimedia.org/wikipedia/commons/9/95/Coat_of_arms_of_Switzerland.svg",
+        "CI": "https://upload.wikimedia.org/wikipedia/commons/9/95/Coat_of_arms_of_Ivory_Coast.svg",
+        "CK": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coat_of_arms_of_the_Cook_Islands.svg",
+        "CL": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Coat_of_arms_of_Chile.svg",
+        "CM": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Coat_of_arms_of_Cameroon.svg",
+        "CN": "https://upload.wikimedia.org/wikipedia/commons/6/6b/%E4%B8%AD%E8%8F%AF%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9C%8B%E5%9C%8B%E5%BE%BD.svg",
+        "CO": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Coat_of_arms_of_Colombia.svg",
+        "CR": "https://upload.wikimedia.org/wikipedia/commons/8/84/Coat_of_arms_of_Costa_Rica.svg",
+        "CU": "https://upload.wikimedia.org/wikipedia/commons/5/58/Coat_of_arms_of_Cuba.svg",
+        "CV": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Coat_of_arms_of_Cape_Verde.svg",
+        "CW": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Blason_an_Cura%C3%A7ao_2.svg",
+        "CX": "https://upload.wikimedia.org/wikipedia/commons/9/96/Unofficial_Coat_of_Arms_of_Christmas_Island.svg",
+        "CY": "https://upload.wikimedia.org/wikipedia/commons/d/da/Coat_of_arms_of_Cyprus_%282006%29.svg",
+        "CZ": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Coat_of_arms_of_the_Czech_Republic.svg",
+        "DE": "https://upload.wikimedia.org/wikipedia/commons/d/da/Coat_of_arms_of_Germany.svg",
+        "Dj": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Emblem_of_Djibouti.svg",
+        "DK": "https://upload.wikimedia.org/wikipedia/commons/1/1a/National_coat_of_arms_of_Denmark.svg",
+        "DM": "https://upload.wikimedia.org/wikipedia/commons/4/40/Coat_of_arms_of_Dominica.svg",
+        "DO": "https://upload.wikimedia.org/wikipedia/commons/2/26/Coat_of_arms_of_the_Dominican_Republic.svg",
+        "DZ": "https://upload.wikimedia.org/wikipedia/commons/a/a6/National_Emblem_of_Algeria_%28bronze_effect%29.svg",
+        "EC": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Coat_of_arms_of_Ecuador.svg",
+        "EG": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Coat_of_arms_of_Egypt_%28Official%29.svg",
+        "EH": "https://upload.wikimedia.org/wikipedia/commons/4/40/Coat_of_arms_of_the_Sahrawi_Arab_Democratic_Republic.svg",
+        "ER": "https://upload.wikimedia.org/wikipedia/commons/3/36/Emblem_of_Eritrea_%28or_argent_azur%29.svg",
+        "ES": "https://upload.wikimedia.org/wikipedia/commons/8/85/Escudo_de_Espa%C3%B1a_%28mazonado%29.svg",
+        "ET": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Emblem_of_Ethiopia.svg",
+        "FI": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Coat_of_arms_of_Finland.svg",
+        "FJ": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Coat_of_arms_of_Fiji.svg",
+        "FK": "https://upload.wikimedia.org/wikipedia/commons/8/86/Coat_of_arms_of_the_Falkland_Islands.svg",
+        "FM": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Seal_of_the_Federated_States_of_Micronésie.svg",
+        "FO": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Coat_of_arms_of_the_Faroe_Islands.svg",
+        "FR": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Armoiries_r%C3%A9publique_fran%C3%A7aise.svg",
+        "GA": "https://upload.wikimedia.org/wikipedia/commons/7/77/Coat_of_arms_of_Gabon.svg",
+        "GB": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Coat_of_arms_of_the_United_Kingdom_%282022%2C_variant_2%29.svg",
+        "GD": "https://upload.wikimedia.org/wikipedia/commons/0/03/Coat_of_arms_of_Grenada.svg",
+        "GE": "https://upload.wikimedia.org/wikipedia/commons/9/94/Greater_coat_of_arms_of_Georgia.svg",
+        "GF": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Blason_de_la_Guyane.svg",
+        "GG": "https://upload.wikimedia.org/wikipedia/commons/0/01/Coat_of_arms_of_Guernsey.svg",
+        "GH": "https://upload.wikimedia.org/wikipedia/commons/5/59/Coat_of_arms_of_Ghana.svg",
+        "GI": "https://upload.wikimedia.org/wikipedia/commons/4/40/Coat_of_arms_of_Gibraltar1.svg",
+        "GL": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Greenland.svg",
+        "GM": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Coat_of_arms_of_The_Gambia.svg",
+        "GN": "https://upload.wikimedia.org/wikipedia/commons/5/58/Coat_of_Arms_of_Guinea.svg",
+        "GP": "https://upload.wikimedia.org/wikipedia/commons/8/88/BlasonGuadeloupe.svg",
+        "GQ": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Coat_of_arms_of_Equatorial_Guinea.svg",
+        "GR": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Coat_of_arms_of_Greece.svg",
+        "GS": "https://upload.wikimedia.org/wikipedia/commons/7/78/Coat_of_arms_of_South_Georgia_and_the_South_Sandwich_Islands.svg",
+        "GT": "https://upload.wikimedia.org/wikipedia/commons/1/15/Coat_of_arms_of_Guatemala.svg",
+        "GU": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Seal_of_Guam.svg",
+        "GY": "https://upload.wikimedia.org/wikipedia/commons/2/23/Coat_of_arms_of_Guyana.svg",
+        "HK": "https://upload.wikimedia.org/wikipedia/commons/9/90/Regional_Emblem_of_Hong_Kong.svg",
+        "HN": "https://upload.wikimedia.org/wikipedia/commons/8/81/Coat_of_arms_of_Honduras.svg",
+        "HR": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Coat_of_arms_of_Croatia.svg",
+        "HT": "https://upload.wikimedia.org/wikipedia/commons/7/75/Coat_of_arms_of_Haiti.svg",
+        "HU": "https://upload.wikimedia.org/wikipedia/commons/3/34/Coat_of_arms_of_Hungary.svg",
+        "ID": "https://upload.wikimedia.org/wikipedia/commons/9/90/National_emblem_of_Indonesia_Garuda_Pancasila.svg",
+        "IE": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Coat_of_arms_of_Ireland.svg",
+        "IL": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Emblem_of_Israel.svg",
+        "IM": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Coat_of_arms_of_the_Isle_of_Man.svg",
+        "IN": "https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg",
+        "IO": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Coat_of_arms_of_the_British_Indian_Ocean_Territory.svg",
+        "IQ": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Coat_of_arms_of_Iraq.svg",
+        "IR": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Emblem_of_Iran.svg",
+        "IS": "https://upload.wikimedia.org/wikipedia/commons/9/90/Coat_of_arms_of_Iceland.svg",
+        "IT": "https://upload.wikimedia.org/wikipedia/commons/0/00/Emblem_of_Italy.svg",
+        "JE": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Coat_of_Arms_of_Jersey.svg",
+        "JM": "https://upload.wikimedia.org/wikipedia/commons/5/52/Coat_of_arms_of_Jamaica.svg",
+        "JO": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Coat_of_arms_of_Jordan.svg",
+        "JP": "https://upload.wikimedia.org/wikipedia/commons/3/37/Imperial_Seal_of_Japan.svg",
+        "KE": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Coat_of_arms_of_Kenya_%28Official%29.svg",
+        "KG": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Emblem_of_Kyrgyzstan.svg",
+        "KH": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Royal_arms_of_Cambodia.svg",
+        "KI": "https://upload.wikimedia.org/wikipedia/commons/6/66/Coat_of_arms_of_Kiribati.svg",
+        "KM": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Seal_of_the_Comoros.svg",
+        "KN": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Coat_of_arms_of_Saint_Kitts_and_Nevis.svg",
+        "KP": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Emblem_of_North_Korea.svg",
+        "KR": "https://upload.wikimedia.org/wikipedia/commons/9/96/Emblem_of_South_Korea.svg",
+        "KW": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Emblem_of_Kuwait.svg",
+        "KY": "https://upload.wikimedia.org/wikipedia/commons/6/60/Coat_of_arms_of_the_Cayman_Islands.svg",
+        "KZ": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Emblem_of_Kazakhstan_latin.svg",
+        "LA": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Emblem_of_Laos_%281991-2025%29.svg",
+        "LB": "https://upload.wikimedia.org/wikipedia/commons/9/98/Coat_of_arms_of_Lebanon.svg",
+        "LC": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Coat_of_arms_of_Saint_Lucia.svg",
+        "LI": "https://upload.wikimedia.org/wikipedia/commons/1/18/Staatswappen-Liechtensteins.svg",
+        "LK": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Emblem_of_Sri_Lanka.svg",
+        "LR": "https://upload.wikimedia.org/wikipedia/commons/6/64/Coat_of_arms_of_Liberia.svg",
+        "LS": "https://upload.wikimedia.org/wikipedia/commons/4/42/Coat_of_arms_of_Lesotho.svg",
+        "LT": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Lithuania.svg",
+        "LU": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Greater_coat_of_arms_of_the_grand-duchy_of_Luxembourg.svg",
+        "LV": "https://upload.wikimedia.org/wikipedia/commons/4/45/Coat_of_arms_of_Latvia.svg",
+        "LY": "https://upload.wikimedia.org/wikipedia/commons/f/f6/The_emblem_on_the_passport_of_Libya.svg",
+        "MA": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Coat_of_arms_of_Morocco.svg",
+        "MC": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Coat_of_arms_of_Morocco.svg",
+        "MD": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Coat_of_arms_of_Moldova.svg",
+        "ME": "https://upload.wikimedia.org/wikipedia/commons/2/23/Coat_of_arms_of_Montenegro.svg",
+        "MF": "https://upload.wikimedia.org/wikipedia/commons/3/37/Armoiries_commune_fr_Saint-Martin_%2867%29.svg",
+        "MG": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Seal_of_Madagascar.svg",
+        "MH": "https://upload.wikimedia.org/wikipedia/commons/8/86/Seal_of_the_Marshall_Islands.svg",
+        "MK": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Coat_of_arms_of_North_Macedonia.svg",
+        "ML": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Coat_of_arms_of_Mali.svg",
+        "MM": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Variant_of_the_State_seal_of_Myanmar_%282011-2025%29.svg",
+        "MN": "https://upload.wikimedia.org/wikipedia/commons/3/3e/State_emblem_of_Mongolia.svg",
+        "MO": "https://upload.wikimedia.org/wikipedia/commons/8/87/Regional_Emblem_of_Macau.svg",
+        "MP": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Seal_of_the_Northern_Mariana_Islands_%28alternate%29.svg",
+        "MQ": "https://upload.wikimedia.org/wikipedia/commons/d/da/BlasonMartinique.svg",
+        "MR": "https://upload.wikimedia.org/wikipedia/commons/9/96/National_Seal_of_Mauritania.svg",
+        "MS": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Coat_of_arms_of_Montserrat.svg",
+        "MT": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Coat_of_arms_of_Malta.svg",
+        "MU": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Coat_of_arms_of_Mauritius.svg",
+        "MV": "https://upload.wikimedia.org/wikipedia/commons/2/29/Emblem_of_Maldives.svg",
+        "MW": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Coat_of_arms_of_Malawi.svg",
+        "MX": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Coat_of_arms_of_Mexico.svg",
+        "MY": "https://upload.wikimedia.org/wikipedia/commons/2/26/Coat_of_arms_of_Malaysia.svg",
+        "MZ": "https://upload.wikimedia.org/wikipedia/commons/1/14/Emblem_of_Mozambique.svg",
+        "NA": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Coat_of_arms_of_Namibia.svg",
+        "NG": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Coat_of_arms_of_Nigeria.svg",
+        "NE": "https://upload.wikimedia.org/wikipedia/commons/0/03/Coat_of_arms_of_Niger.svg",
+        "NI": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Coat_of_arms_of_Nicaragua.svg",
+        "NL": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Royal_coat_of_arms_of_the_Netherlands.svg",
+        "NO": "https://upload.wikimedia.org/wikipedia/commons/9/95/Coat_of_arms_of_Norway.svg",
 
-        NP: "https://upload.wikimedia.org/wikipedia/commons/2/23/Emblem_of_Nepal.svg",
-        NR: "https://upload.wikimedia.org/wikipedia/commons/d/df/Coat_of_arms_of_Nauru.svg",
-        NU: "https://upload.wikimedia.org/wikipedia/commons/4/49/Public_Seal_of_Niue_%281974%E2%80%932021%29.svg",
-        NZ: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Coat_of_arms_of_New_Zealand.svg",
-        OM: "https://upload.wikimedia.org/wikipedia/commons/7/7b/National_emblem_of_Oman.svg",
-        PA: "https://upload.wikimedia.org/wikipedia/commons/3/30/Coat_of_arms_of_Panama.svg",
-        PE: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Escudo_nacional_del_Per%C3%BA.svg",
-        PF: "https://upload.wikimedia.org/wikipedia/commons/6/65/Coat_of_arms_of_French_Polynésie.svg",
-        PG: "https://upload.wikimedia.org/wikipedia/commons/b/b4/National_emblem_of_Papua_New_Guinea.svg",
-        PH: "https://upload.wikimedia.org/wikipedia/commons/8/84/Coat_of_arms_of_the_Philippines.svg",
-        PK: "https://upload.wikimedia.org/wikipedia/commons/e/ef/State_emblem_of_Pakistan.svg",
-        PL: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Herb_Polski.svg",
-        PM: "https://upload.wikimedia.org/wikipedia/commons/e/e7/Armoiries_SaintPierreetMiquelon.svg",
-        PN: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coat_of_arms_of_the_Pitcairn_Islands.svg",
-        PR: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Coat_of_arms_of_the_Commonwealth_of_Puerto_Rico_%28variant%29.svg",
-        PS: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Coat_of_arms_of_Palestine.svg",
-        PT: "https://upload.wikimedia.org/wikipedia/commons/1/15/Coat_of_arms_of_Portugal.svg",
-        PW: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Seal_of_Palau.svg",
-        PY: "https://upload.wikimedia.org/wikipedia/commons/7/70/Coat_of_arms_of_Paraguay.svg",
-        QA: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Emblem_of_Qatar-2022.svg",
-        RE: "https://upload.wikimedia.org/wikipedia/commons/3/39/Armoiries_R%C3%A9union.svg",
-        RO: "https://upload.wikimedia.org/wikipedia/commons/7/70/Coat_of_arms_of_Romania.svg",
-        RS: "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_Serbia.svg",
-        RU: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Coat_of_Arms_of_the_Russian_Federation.svg",
-        RW: "https://upload.wikimedia.org/wikipedia/commons/1/17/Coat_of_arms_of_Rwanda.svg",
-        SA: "https://upload.wikimedia.org/wikipedia/commons/9/99/Emblem_of_Saudi_Arabia.svg",
-        SB: "https://upload.wikimedia.org/wikipedia/commons/8/83/Coat_of_arms_of_the_Solomon_Islands.svg",
-        SC: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Coat_of_arms_of_Seychelles.svg",
-        SD: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Emblem_of_Sudan.svg",
-        SE: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Great_coat_of_arms_of_Sweden.svg",
-        SG: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_Singapore.svg",
-        SH: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Coat_of_arms_of_Saint_Helena.svg",
-        SI: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Coat_of_arms_of_Slovenia.svg",
-        SK: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Coat_of_arms_of_Slovakia.svg",
-        SL: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Coat_of_arms_of_Sierra_Leone.svg",
-        SM: "https://upload.wikimedia.org/wikipedia/commons/4/4e/Coat_of_arms_of_San_Marino.svg",
-        SN: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Coat_of_arms_of_Senegal.svg",
-        SO: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Coat_of_arms_of_Somalia.svg",
-        SR: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Coat_of_arms_of_Suriname.svg",
-        SS: "https://upload.wikimedia.org/wikipedia/fr/f/f7/Armoiries_de_l%27Afrique_du_Sud.svg",
-        ST: "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe.svg",
-        SV: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
-        SX: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
-        SY: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Emblem_of_Syria_%282025%E2%80%93present%29.svg",
-        SZ: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Coat_of_arms_of_Eswatini.svg",
-        TC: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Coat_of_arms_of_the_Turks_and_Caicos_Islands.svg",
-        TD: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Coat_of_arms_of_Chad.svg",
-        TG: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Armoiries_du_Togo.svg",
-        TH: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Emblem_of_Thailand.svg",
-        TJ: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Emblem_of_Tajikistan.svg",
-        TK: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Badge_of_Tokelau.svg",
-        TL: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Coat_of_arms_of_East_Timor.svg",
-        TM: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Emblem_of_Turkmenistan.svg",
-        TN: "https://upload.wikimedia.org/wikipedia/commons/8/80/Coat_of_arms_of_Tunisia.svg",
-        TO: "https://upload.wikimedia.org/wikipedia/commons/4/43/Coat_of_arms_of_Tonga.svg",
-        TR: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Emblem_of_Turkey.svg",
-        TT: "https://upload.wikimedia.org/wikipedia/commons/d/d2/Coat_of_arms_of_Trinidad_and_Tobago_%282025%29.svg",
-        TV: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Coat_of_arms_of_Tuvalu.svg",
-        TW: "https://upload.wikimedia.org/wikipedia/commons/8/8b/National_Emblem_of_the_Republic_of_China.svg",
-        TZ: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coat_of_arms_of_Tanzania.svg",
-        UA: "https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg",
-        UG: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Coat_of_arms_of_Uganda.svg",
-        US: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Great_Seal_of_the_United_States_%28obverse%29.svg",
-        UY: "https://upload.wikimedia.org/wikipedia/commons/9/91/Coat_of_arms_of_Uruguay.svg",
-        UZ: "https://upload.wikimedia.org/wikipedia/commons/7/77/Emblem_of_Uzbekistan.svg",
-        VA: "https://upload.wikimedia.org/wikipedia/commons/8/81/Emblem_of_the_Papacy_SE.svg",
-        VC: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines.svg",
-        VE: "https://upload.wikimedia.org/wikipedia/commons/4/46/Coat_of_arms_of_Venezuela.svg",
-        VG: "https://upload.wikimedia.org/wikipedia/commons/0/05/Coat_of_arms_of_the_British_Virgin_Islands.svg",
-        VI: "https://upload.wikimedia.org/wikipedia/commons/8/80/Seal_of_the_United_States_Virgin_Islands.svg",
-        VN: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Emblem_of_Vietnam.svg",
-        VU: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Vanuatu.svg",
-        WF: "https://upload.wikimedia.org/wikipedia/commons/7/72/BlasonWallisetFutuna.svg",
-        WS: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Coat_of_arms_of_Samoa.svg",
-        XK: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Emblem_of_the_Republic_of_Kosovo.svg",
-        YE: "https://upload.wikimedia.org/wikipedia/commons/8/82/Emblem_of_Yemen.svg",
-        YT: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Coat_of_Arms_of_Mayotte.svg",
-        ZA: "https://upload.wikimedia.org/wikipedia/fr/f/f7/Armoiries_de_l%27Afrique_du_Sud.svg",
-        ZM: "https://upload.wikimedia.org/wikipedia/commons/2/28/Coat_of_arms_of_Zambia.svg",
-        ZW: "https://upload.wikimedia.org/wikipedia/commons/0/01/Coat_of_arms_of_Zimbabwe.svg",
+        "NP": "https://upload.wikimedia.org/wikipedia/commons/2/23/Emblem_of_Nepal.svg",
+        "NR": "https://upload.wikimedia.org/wikipedia/commons/d/df/Coat_of_arms_of_Nauru.svg",
+        "NU": "https://upload.wikimedia.org/wikipedia/commons/4/49/Public_Seal_of_Niue_%281974%E2%80%932021%29.svg",
+        "NZ": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Coat_of_arms_of_New_Zealand.svg",
+        "OM": "https://upload.wikimedia.org/wikipedia/commons/7/7b/National_emblem_of_Oman.svg",
+        "PA": "https://upload.wikimedia.org/wikipedia/commons/3/30/Coat_of_arms_of_Panama.svg",
+        "PE": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Escudo_nacional_del_Per%C3%BA.svg",
+        "PF": "https://upload.wikimedia.org/wikipedia/commons/6/65/Coat_of_arms_of_French_Polynésie.svg",
+        "PG": "https://upload.wikimedia.org/wikipedia/commons/b/b4/National_emblem_of_Papua_New_Guinea.svg",
+        "PH": "https://upload.wikimedia.org/wikipedia/commons/8/84/Coat_of_arms_of_the_Philippines.svg",
+        "PK": "https://upload.wikimedia.org/wikipedia/commons/e/ef/State_emblem_of_Pakistan.svg",
+        "PL": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Herb_Polski.svg",
+        "PM": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Armoiries_SaintPierreetMiquelon.svg",
+        "PN": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coat_of_arms_of_the_Pitcairn_Islands.svg",
+        "PR": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Coat_of_arms_of_the_Commonwealth_of_Puerto_Rico_%28variant%29.svg",
+        "PS": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Coat_of_arms_of_Palestine.svg",
+        "PT": "https://upload.wikimedia.org/wikipedia/commons/1/15/Coat_of_arms_of_Portugal.svg",
+        "PW": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Seal_of_Palau.svg",
+        "PY": "https://upload.wikimedia.org/wikipedia/commons/7/70/Coat_of_arms_of_Paraguay.svg",
+        "QA": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Emblem_of_Qatar-2022.svg",
+        "RE": "https://upload.wikimedia.org/wikipedia/commons/3/39/Armoiries_R%C3%A9union.svg",
+        "RO": "https://upload.wikimedia.org/wikipedia/commons/7/70/Coat_of_arms_of_Romania.svg",
+        "RS": "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_Serbia.svg",
+        "RU": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Coat_of_Arms_of_the_Russian_Federation.svg",
+        "RW": "https://upload.wikimedia.org/wikipedia/commons/1/17/Coat_of_arms_of_Rwanda.svg",
+        "SA": "https://upload.wikimedia.org/wikipedia/commons/9/99/Emblem_of_Saudi_Arabia.svg",
+        "SB": "https://upload.wikimedia.org/wikipedia/commons/8/83/Coat_of_arms_of_the_Solomon_Islands.svg",
+        "SC": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Coat_of_arms_of_Seychelles.svg",
+        "SD": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Emblem_of_Sudan.svg",
+        "SE": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Great_coat_of_arms_of_Sweden.svg",
+        "SG": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_Singapore.svg",
+        "SH": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Coat_of_arms_of_Saint_Helena.svg",
+        "SI": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Coat_of_arms_of_Slovenia.svg",
+        "SK": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Coat_of_arms_of_Slovakia.svg",
+        "SL": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Coat_of_arms_of_Sierra_Leone.svg",
+        "SM": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Coat_of_arms_of_San_Marino.svg",
+        "SN": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Coat_of_arms_of_Senegal.svg",
+        "SO": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Coat_of_arms_of_Somalia.svg",
+        "SR": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Coat_of_arms_of_Suriname.svg",
+        "SS": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Armoiries_de_l%27Afrique_du_Sud.svg",
+        "ST": "https://upload.wikimedia.org/wikipedia/commons/9/96/Coat_of_arms_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe.svg",
+        "SV": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
+        "SX": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Coat_of_arms_of_El_Salvador.svg",
+        "SY": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Emblem_of_Syria_%282025%E2%80%93present%29.svg",
+        "SZ": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Coat_of_arms_of_Eswatini.svg",
+        "TC": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Coat_of_arms_of_the_Turks_and_Caicos_Islands.svg",
+        "TD": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Coat_of_arms_of_Chad.svg",
+        "TG": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Armoiries_du_Togo.svg",
+        "TH": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Emblem_of_Thailand.svg",
+        "TJ": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Emblem_of_Tajikistan.svg",
+        "TK": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Badge_of_Tokelau.svg",
+        "TL": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Coat_of_arms_of_East_Timor.svg",
+        "TM": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Emblem_of_Turkmenistan.svg",
+        "TN": "https://upload.wikimedia.org/wikipedia/commons/8/80/Coat_of_arms_of_Tunisia.svg",
+        "TO": "https://upload.wikimedia.org/wikipedia/commons/4/43/Coat_of_arms_of_Tonga.svg",
+        "TR": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Emblem_of_Turkey.svg",
+        "TT": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Coat_of_arms_of_Trinidad_and_Tobago_%282025%29.svg",
+        "TV": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Coat_of_arms_of_Tuvalu.svg",
+        "TW": "https://upload.wikimedia.org/wikipedia/commons/8/8b/National_Emblem_of_the_Republic_of_China.svg",
+        "TZ": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Coat_of_arms_of_Tanzania.svg",
+        "UA": "https://upload.wikimedia.org/wikipedia/commons/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg",
+        "UG": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Coat_of_arms_of_Uganda.svg",
+        "US": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Great_Seal_of_the_United_States_%28obverse%29.svg",
+        "UY": "https://upload.wikimedia.org/wikipedia/commons/9/91/Coat_of_arms_of_Uruguay.svg",
+        "UZ": "https://upload.wikimedia.org/wikipedia/commons/7/77/Emblem_of_Uzbekistan.svg",
+        "VA": "https://upload.wikimedia.org/wikipedia/commons/8/81/Emblem_of_the_Papacy_SE.svg",
+        "VC": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Coat_of_arms_of_Saint_Vincent_and_the_Grenadines.svg",
+        "VE": "https://upload.wikimedia.org/wikipedia/commons/4/46/Coat_of_arms_of_Venezuela.svg",
+        "VG": "https://upload.wikimedia.org/wikipedia/commons/0/05/Coat_of_arms_of_the_British_Virgin_Islands.svg",
+        "VI": "https://upload.wikimedia.org/wikipedia/commons/8/80/Seal_of_the_United_States_Virgin_Islands.svg",
+        "VN": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Emblem_of_Vietnam.svg",
+        "VU": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Coat_of_arms_of_Vanuatu.svg",
+        "WF": "https://upload.wikimedia.org/wikipedia/commons/7/72/BlasonWallisetFutuna.svg",
+        "WS": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Coat_of_arms_of_Samoa.svg",
+        "XK": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Emblem_of_the_Republic_of_Kosovo.svg",
+        "YE": "https://upload.wikimedia.org/wikipedia/commons/8/82/Emblem_of_Yemen.svg",
+        "YT": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Coat_of_Arms_of_Mayotte.svg",
+        "ZA": "https://upload.wikimedia.org/wikipedia/fr/f/f7/Armoiries_de_l%27Afrique_du_Sud.svg",
+        "ZM": "https://upload.wikimedia.org/wikipedia/commons/2/28/Coat_of_arms_of_Zambia.svg",
+        "ZW": "https://upload.wikimedia.org/wikipedia/commons/0/01/Coat_of_arms_of_Zimbabwe.svg",
       };
 
       const P_info = {
@@ -45402,8 +45402,11 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         mLoadingCadre.style.display = ""
 
         if (!viewSub || viewSub && getId('svgUs')){
-        mDrapeauCadre.src = `https://flagcdn.com/${id.toLowerCase()}.svg`;
-        drapeauCadre.src = `https://flagcdn.com/${id.toLowerCase()}.svg`;
+        // mDrapeauCadre.src = `https://flagcdn.com/${id.toLowerCase()}.svg`;
+        // drapeauCadre.src = `https://flagcdn.com/${id.toLowerCase()}.svg`;
+        
+        mDrapeauCadre.src = `flag_c/${id.toLowerCase()}.svg`;
+        drapeauCadre.src = `flag_c/${id.toLowerCase()}.svg`;
         }
         else {
         mCadreDrapeau.style.display = "none"
@@ -45412,15 +45415,13 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         loadingCadre.style.display = "none"
         mLoadingCadre.style.display = "none"
 
-        }
-        
-        
-        if (id === "GP") {
-          mDrapeauCadre.src =
-            "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
-          drapeauCadre.src =
-            "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
-        }
+        }  
+        // if (id === "GP") {
+        //   mDrapeauCadre.src =
+        //     "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
+        //   drapeauCadre.src =
+        //     "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
+        // }
 
         if (!viewSub) {
           const loadingCadreBlason = document.createElement("div");
@@ -46221,7 +46222,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           footerCelDrapeau.className = "footerCelDrapeau";
 
           caseCelDrapeau.innerHTML = `
-              <img src="https://flagcdn.com/${r.id.toLowerCase()}.svg" draggable="false" alt="" />
+              <img src="flag_c/${r.id.toLowerCase()}.svg" draggable="false" alt="" />
           `;
           if (r.id.toUpperCase() === "GP") {
             caseCelDrapeau.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="" />`;
@@ -46349,7 +46350,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           const ligneInContent = document.createElement("div");
           ligneInContent.className = "ligneInContent";
 
-          boxSvgItem.innerHTML = ` <img  src="https://flagcdn.com/${r.id.toLowerCase()}.svg" alt="" />`;
+          boxSvgItem.innerHTML = ` <img  src="flag_c/${r.id.toLowerCase()}.svg" alt="" />`;
           if (r.id === "GP") {
             boxSvgItem.innerHTML = ` <img  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" alt="" />`;
           }
@@ -46932,7 +46933,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
               let imgPerC = document.createElement("img");
               imgPerC.className = "DrapeauCadrePerC";
 
-              imgPerC.src = `https://flagcdn.com/${D[name].toLowerCase()}.svg`;
+              // imgPerC.src = `https://flagcdn.com/${D[name].toLowerCase()}.svg`;
+              imgPerC.src = `flag_c/${D[name].toLowerCase()}.svg`;
+
               imgPerC.onerror = () => {
                 const fallback = document.createElement("div");
                 fallback.className = "flagFallbackD";
@@ -46990,7 +46993,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             let imgPerC = document.createElement("img");
             imgPerC.className = "DrapeauCadrePerC";
 
-            imgPerC.src = `https://flagcdn.com/${D[name].toLowerCase()}.svg`;
+            // imgPerC.src = `https://flagcdn.com/${D[name].toLowerCase()}.svg`;
+            imgPerC.src = `flag_c/${D[name].toLowerCase()}.svg`;
+
 
             DrapeauBoxPerC.append(imgPerC);
             CadreDrapeauPerC.append(DrapeauBoxPerC);
@@ -47038,7 +47043,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             let imgPerC = document.createElement("img");
             imgPerC.className = "DrapeauCadrePerC";
 
-            imgPerC.src = `https://flagcdn.com/${D[name].toLowerCase()}.svg`;
+            imgPerC.src = `flag_c/${D[name].toLowerCase()}.svg`;
 
             DrapeauBoxPerC.append(imgPerC);
             CadreDrapeauPerC.append(DrapeauBoxPerC);
@@ -49736,6 +49741,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         if (oldFallback) oldFallback.remove(); // supprime le fallback si présent
 
         img.src = ``;
+
         if (L_detailed.includes(d)) {
           // img.src = `https://wise.com/web-art/assets/flags/-detailed.svg`;
           img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${dFlag.toLowerCase()}.svg`;
@@ -49967,7 +49973,6 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             imgD.className = "DrapeauCadreD";
             if (clefD)
               imgD.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${D_deviseToFlag[clefD].toLowerCase()}.svg`;
-
             imgD.onerror = () => {
               const newImgD = document.createElement("div");
               newImgD.className = "flagErrorD";
@@ -50064,6 +50069,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         }, 10);
       });
 
+    
       inputSD.addEventListener("input", (e) => {
         let Ld = {};
         for (const clefD of Object.keys(D_nDevises)) {
