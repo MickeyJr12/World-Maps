@@ -21927,7 +21927,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             <div class="CadreDrapeauD">
               <div class="DrapeauBoxD">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/eu.svg"
+                  src="devise_c/eu.svg"
+                  
                   alt=""
                   class="DrapeauCadreD"
                 />
@@ -21989,7 +21990,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             <div class="CadreDrapeauD">
               <div class="DrapeauBoxD">
                 <img
-                  src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/us.svg"
+                  src="devise_c/us.svg"
                   alt=""
                   class="DrapeauCadreD"
                 />
@@ -24959,15 +24960,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 if (L_config.r === "drapeauR") {
                   c.innerHTML = ` <img class="drapeau4Choix"  src="flag_c/${p_id.toLowerCase()}.svg" draggable="false" alt="">`;
 
-                  if (p_id === "GP") {
-                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="">`;
-                  }
-
                   if (c === cBoxHasard) {
                     c.innerHTML = ` <img class="drapeau4Choix"  src="flag_c/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
-                    if (idBonneReponse === "GP") {
-                      c.innerHTML = ` <img class="drapeau4Choix"  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="">`;
-                    }
                   }
                   L_reponse.push(c === cBoxHasard ? idBonneReponse : p_id);
                   reponseFound = true;
@@ -24986,9 +24980,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   L_reponse.push(c === cBoxHasard ? idBonneReponse : p_id);
                   reponseFound = true;
                 } else if (L_config.r === "contourR") {
-                  c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${p_id.toLowerCase()}/vector.svg" draggable="false" alt="">`;
+                  c.innerHTML = ` <img class="drapeau4Choix"  src="contours_c/${p_id.toLowerCase()}" draggable="false" alt="">`;
                   if (c === cBoxHasard) {
-                    c.innerHTML = ` <img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" draggable="false" alt="">`;
+                    c.innerHTML = ` <img class="drapeau4Choix"  src="contours_c/${idBonneReponse.toLowerCase()}" draggable="false" alt="">`;
                   }
                   L_reponse.push(c === cBoxHasard ? idBonneReponse : p_id);
                   reponseFound = true;
@@ -24996,12 +24990,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
                 // Remplir les Questions
                 if (L_config.q === "contourQ") {
-                  qBox.innerHTML = `<img class="drapeau4Choix"  src="https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${idBonneReponse.toLowerCase()}/vector.svg" draggable="false" alt="">`;
+                  qBox.innerHTML = `<img class="drapeau4Choix"  src="contours_c/${idBonneReponse.toLowerCase()}" draggable="false" alt="">`;
                 } else if (L_config.q === "drapeauQ") {
                   qBox.innerHTML = `<img class="drapeau4Choix"  src="flag_c/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
-                  if (idBonneReponse === "GP") {
-                    qBox.innerHTML = `<img class="drapeau4Choix"  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="">`;
-                  }
 
                   document.getElementById("cadreQ4Choix").style.marginBottom =
                     "3rem";
@@ -25153,9 +25144,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           // Remplir les Questions
           if (L_config.q === "drapeauQ") {
             qqTrouver.innerHTML = `<img class="drapeau4Choix"  src="flag_c/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
-            if (idBonneReponse === "GP") {
-              qqTrouver.innerHTML = `<img class="drapeau4Choix"  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="">`;
-            }
           } else if (L_config.q === "nomQ") {
             qqTrouver.textContent = L_q[idBonneReponse].n;
           } else if (L_config.q === "capitaleQ") {
@@ -26748,7 +26736,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             let ind = 0;
             L_id.forEach((id) => {
               fetch(
-                `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${id.toLowerCase()}/vector.svg`,
+                `contours_c/${id.toLowerCase()}`,
               )
                 .then((r) => {
                   if (!r.ok) throw new Error();
@@ -45465,7 +45453,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             !viewSub
               ? id in D_ileLink
                 ? D_ileLink[id]
-                : `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${id.toLowerCase()}/vector.svg`
+                // : `https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/${id.toLowerCase()}/vector.svg`
+                : `contours_c/${id.toLowerCase()}.svg`
+
               : // : `https://borderly.dev/${id.slice(-2).toLowerCase()}.svg`,
                 "",
           )
@@ -46224,9 +46214,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           caseCelDrapeau.innerHTML = `
               <img src="flag_c/${r.id.toLowerCase()}.svg" draggable="false" alt="" />
           `;
-          if (r.id.toUpperCase() === "GP") {
-            caseCelDrapeau.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" draggable="false" alt="" />`;
-          }
+         
 
           footerCelDrapeau.textContent = L_q[r.id.toUpperCase()].n;
 
@@ -46351,9 +46339,6 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           ligneInContent.className = "ligneInContent";
 
           boxSvgItem.innerHTML = ` <img  src="flag_c/${r.id.toLowerCase()}.svg" alt="" />`;
-          if (r.id === "GP") {
-            boxSvgItem.innerHTML = ` <img  src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg" alt="" />`;
-          }
 
           titleItemC.textContent = L_q[r.id.toUpperCase()].n;
           if (currentClass === "name") {
@@ -49744,10 +49729,14 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
         if (L_detailed.includes(d)) {
           // img.src = `https://wise.com/web-art/assets/flags/-detailed.svg`;
-          img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${dFlag.toLowerCase()}.svg`;
+          // img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${dFlag.toLowerCase()}.svg`;
+          img.src = `devise_c/${dFlag.toLowerCase()}.svg`;
+
         } else {
           // img.src = `https://wise.com/web-art/assets/flags/${d.toLowerCase()}.svg`;
-          img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${dFlag.toLowerCase()}.svg`;
+          // img.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${dFlag.toLowerCase()}.svg`;
+          img.src = `devise_c/${dFlag.toLowerCase()}.svg`;
+
           img.onerror = () => {
             currentChoiceD.querySelector(".CadreDrapeauD").style.display =
               "none";
@@ -49972,7 +49961,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             let imgD = document.createElement("img");
             imgD.className = "DrapeauCadreD";
             if (clefD)
-              imgD.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${D_deviseToFlag[clefD].toLowerCase()}.svg`;
+              {// imgD.src = `https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/flags/1x1/${D_deviseToFlag[clefD].toLowerCase()}.svg`;
+              imgD.src = `devise_c/${D_deviseToFlag[clefD].toLowerCase()}.svg`}
+
             imgD.onerror = () => {
               const newImgD = document.createElement("div");
               newImgD.className = "flagErrorD";
@@ -50311,7 +50302,13 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         console.log(paths.contains(getId('US-AK')));
       }
       // loop();
-
+      const L_ephe2 = {}
+      paths.forEach(p=>{
+        if (p.id.length <= 2 ){
+          L_ephe2[p.id.toLowerCase()] = p.id
+        }
+      })
+      console.log(L_ephe2)
       // Script gérer les achats
       const REVENUECAT_API_KEY_IOS = "test_KzoqzmnVIGKMxiHyWEwkmLTmNJT"; // ⚠️ clé de TEST — à remplacer par la clé de prod avant publication
 
