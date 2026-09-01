@@ -26875,7 +26875,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             wrapperCPm.append(itemCPm);
 
             let L_of = L_prop === "outTime" ? L_good : L_prop;
-            numItemCPm.textContent = "n°" + (i + 1);
+            numItemCPm.textContent = "#" + (i + 1);
             nomItemCPm.textContent = L_q[L_of[i]].n;
             superficie.textContent =
               L_config.q === "populationQ"
@@ -46228,7 +46228,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           } else if (currentClass === "population") {
             const rank = document.createElement("div");
             rank.className = "rank";
-            rank.textContent = `#${rankPop[r.id.toUpperCase()]}`;
+            rank.textContent = `n°${rankPop[r.id.toUpperCase()]}`;
             itemC.append(rank);
 
             contentC.style.scrollbarWidth = "thin";
@@ -46249,7 +46249,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           } else if (currentClass === "superficie") {
             const rank = document.createElement("div");
             rank.className = "rank";
-            rank.textContent = `#${rankS[r.id.toUpperCase()]}`;
+            rank.textContent = `n°${rankS[r.id.toUpperCase()]}`;
             itemC.append(rank);
 
             contentC.style.scrollbarWidth = "thin";
