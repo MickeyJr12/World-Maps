@@ -5001,7 +5001,7 @@
       }
       .btnMode,
       .qr,
-      .cadreRegion,
+      .itemChoiceZ,
       .btnD,
       .chrono-option,
       .chrono-wrapper {
@@ -5085,6 +5085,10 @@
 
       .itemChoiceZ svg {
         height: 1.2rem;
+        fill : black;
+      }
+
+      .itemChoiceZ path {
         fill : black;
       }
 
@@ -5295,7 +5299,7 @@
         backdrop-filter: blur(4px);
       }
 
-      #cadreRegionTitle {
+      #itemChoiceZTitle {
         display: flex;
         width: 100%;
         position: relative;
@@ -5306,7 +5310,7 @@
         letter-spacing: 1px;
         height: 3rem;
       }
-      #cadreRegionIcon {
+      #itemChoiceZIcon {
         height: 1.2rem;
       }
 
@@ -13012,7 +13016,7 @@
               </div>
             </div>
           <div class="contentChoiceZ active" id="contentCZ">
-            <div class="itemChoiceZ cadreRegion" id="allC">
+            <div class="itemChoiceZ" id="allC">
               <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -13023,7 +13027,7 @@
                   />
                 </svg>
               Monde entier</div>
-            <div class="itemChoiceZ cadreRegion" id="Afrique">
+            <div class="itemChoiceZ" id="Afrique">
                 <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -13034,7 +13038,7 @@
                   />
                 </svg>
               Afrique</div>
-            <div class="itemChoiceZ cadreRegion" id="Amérique">
+            <div class="itemChoiceZ" id="Amérique">
               <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -13045,7 +13049,7 @@
                   />
                 </svg>
               Amérique</div>
-            <div class="itemChoiceZ cadreRegion" id="Asie">
+            <div class="itemChoiceZ" id="Asie">
                 <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -13056,7 +13060,7 @@
                   />
                 </svg>
               Asie</div>
-            <div class="itemChoiceZ cadreRegion" id="Europe">
+            <div class="itemChoiceZ" id="Europe">
               <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -13067,7 +13071,7 @@
                   />
                 </svg>
               Europe</div>
-            <div class="itemChoiceZ cadreRegion" id="Océanie">
+            <div class="itemChoiceZ" id="Océanie">
               <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -13091,9 +13095,9 @@
         <div id="modeContainerConfig">
 
            <div id="cadreChoixRegion">
-            <div id="cadreRegionTitle">
+            <div id="itemChoiceZTitle">
               <svg
-                id="cadreRegionIcon"
+                id="itemChoiceZIcon"
                 xmlns="http://www.w3.org/2000/svg"
                 data-name="Layer 1"
                 viewBox="0 0 26 26"
@@ -24048,6 +24052,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
        
         
       let oneTimeEdit = false;
+
       editSubZ.addEventListener('click',()=>{
         cadreChoiceZ.classList.add('active')
         overallChoiceSub.classList.add('active')
@@ -24086,12 +24091,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           });
         contentSubZ.querySelectorAll('.itemChoiceZ').forEach(itm=>{
           
-          console.log("qsmdlkfjqmsdkljl")
             itm.addEventListener('click',()=>{
-              document.querySelectorAll('.itemChoiceZ').forEach((item) => {
-              item.classList.remove("btnSelected");
-            });
-            itm.classList.add("btnSelected");
+
             //****
             if (L_config.d === null) {
               L_config.d = true;
@@ -24115,22 +24116,29 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               getId("drapeauQ").classList.add('btnHide')
               getId("drapeauR").classList.add('btnHide')
             }
-            // drapeaux
-
-
 
             })
-          
         })
 
-        cs.forEach(el=>{
+        let itms = document.querySelectorAll(".itemChoiceZ")
+        itms.forEach(el=>{
+          console.log(el.id)
         el.addEventListener("click", ()=>{
-          document.querySelectorAll(".itemChoiceZ").forEach(itm=>itm.classList.remove("active"))
-          el.classList.add('active')
+          itms.forEach(itm=>{
+
+            itm.classList.remove("btnSelected"); 
+
+           })
+
+
+          el.classList.add('btnSelected')
+          console.log("sépare")
         })
       })
         oneTimeEdit = true
       })
+
+
       crossChoiceZ.addEventListener('click',()=>{
         cadreChoiceZ.classList.remove('active')
         overallChoiceSub.classList.remove('active')
@@ -24162,7 +24170,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
 
       qrs.forEach((q) => (q.style.display = "none"));
-      const cadresRegions = document.querySelectorAll(".cadreRegion");
+      const cadresRegions = document.querySelectorAll(".itemChoiceZ");
       cadresRegions.forEach((cr) => {
         cr.addEventListener("click", () => {
           if (!onlySouv) {
@@ -24201,7 +24209,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       // À mettre une seule fois au chargement
       document
         .querySelectorAll(
-          ".btnMode, .qr, .cadreRegion, .btnD, #playConfig,#gridCadre",
+          ".btnMode, .qr, .itemChoiceZ, .btnD, #playConfig,#gridCadre",
         )
         .forEach((el) => {
           el.addEventListener("touchstart", () => {}, { passive: true });
@@ -24211,6 +24219,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       cs.forEach((el) =>
         el.addEventListener("click", () => {
+          if (oneTimeEdit){return}
           L_config.c = el.id;
           if (el.id != "allC") {
             if (L_config.d === null) {
