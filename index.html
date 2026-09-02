@@ -5359,7 +5359,7 @@
       .nbrQ-dropdown {
         display: flex;
         position : absolute;
-        top : 100%;
+        top : calc(100% + 0.6rem);
         flex-direction: column;
         transform: scaleY(0.7);
         transform-origin: center top;
@@ -5691,7 +5691,11 @@
         background: rgba(218, 37, 37, 0.12);
       }
       .btnHide{
-        display : none;
+        overflow : hidden;
+        max-height : 0;
+        pointer-events: none;
+        transform : scale(0);
+        margin : -0.6rem 0;
       }
 
       /*CSS 4 choix*/
@@ -22935,7 +22939,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             xpQ.textContent = "Terminé";
 
             L_claimedQ[quest.id] = true; // ← on marque comme réclamée
-            console.log(trueReward);
             if (trueReward) {
               nbrReward -= 1;
               circleReward.textContent = nbrReward;
@@ -24116,12 +24119,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
           });
         contentSubZ.querySelectorAll('.itemChoiceZ').forEach(itm=>{
+          if (oneTimeEdit){return}
           
             itm.addEventListener('click',()=>{
 
-          if (oneTimeEdit){return}
           L_config.c = itm.dataset.country;
-          if (el.id != "allC") {
+          
             if (L_config.d === null) {
               L_config.d = true;
             }
@@ -24133,32 +24136,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               btn.style.baskground = "rgba(255,255,255,0.6)";
               btn.style.fontWeight = "200";
             });
-          } 
-          else {
-            // Si on  choisit un continent, on ne peut pas sélectionner la difficulté
-            if (L_config.d === true) {
-              L_config.d = null;
-            }
-            btnsD.forEach((btn) => {
-              btn.style.filter = "";
-              btn.style.opacity = "";
-              btn.style.pointerEvents = "";
-              btn.style.baskground = "";
-            });
-          }
+          
           activePlay();
-        
-            //******
-
-            const L_subHide = ["contourQ","contourR","populationQ"]
-
-            L_subHide.forEach(q=>{
-              getId(q).classList.add('btnHide')
-            })
-            if(itm.dataset.country !== "US"){
-              getId("drapeauQ").classList.add('btnHide')
-              getId("drapeauR").classList.add('btnHide')
-            }
 
             })
         })
@@ -24168,10 +24147,31 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         el.addEventListener("click", ()=>{
           itms.forEach(itm=>{itm.classList.remove("btnSelected"); })
           el.classList.add('btnSelected')
-          
-          choiceZ.innerHTML = ``
-          if(el.dataset.country){
+          //*****
+            const L_subHide = ["contourQ","contourR","populationQ"]
+            if(el.dataset?.country){
+            L_subHide.forEach(q=>{getId(q).classList.add('btnHide')})
+            if(itm.dataset.country !== "US"){
+              getId("drapeauQ").classList.add('btnHide')
+              getId("drapeauR").classList.add('btnHide')
+            }
+          }
+          else {
+            L_subHide.forEach(q=>{getId(q).classList.remove('btnHide')})
 
+          }
+          //****
+          choiceZ.innerHTML = ``
+          if(el.dataset?.country){
+            const svgEphe = document.createElement('div')
+            svgEphe.innerHTML = L_cSub[el.dataset.country].icon
+            choiceZ.append(svgEphe)
+            choiceZ.append(L_q[el.dataset.country].n)
+          }
+          else {
+            const clone = el.querySelector('.svgFilter').cloneNode(true)
+            choiceZ.append(clone)
+            choiceZ.append(el.id === "allC" ? "Monde entier" : el.id)
           }
         })
       })
@@ -49300,7 +49300,6 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
                 currentDV;
             })
             .catch((error) => {
-              console.log("foiré");
               inputD1.value = CD1 + D_symbolesD[currentDD];
               const newDataConvert = dataD.rates;
               const convert =
@@ -49776,13 +49775,13 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         console.log(paths.contains(getId('US-AK')));
       }
       // loop();
-      const L_ephe2 = {}
-      paths.forEach(p=>{
-        if (p.id.length <= 2 ){
-          L_ephe2[p.id.toLowerCase()] = p.id
-        }
-      })
-      console.log(L_ephe2)
+      // const L_ephe2 = {}
+      // paths.forEach(p=>{
+      //   if (p.id.length <= 2 ){
+      //     L_ephe2[p.id.toLowerCase()] = p.id
+      //   }
+      // })
+      // console.log(L_ephe2)
       // Script gérer les achats
       const REVENUECAT_API_KEY_IOS = "test_KzoqzmnVIGKMxiHyWEwkmLTmNJT"; // ⚠️ clé de TEST — à remplacer par la clé de prod avant publication
 
