@@ -13353,9 +13353,8 @@
               <div class="titleQR" id="titleQ">Question</div>
               <div class="ligneQR"></div>
               <div class="qr q" id="drapeauQ">Drapeau</div>
-              <div class="qr q" id="capitaleQ">Capitale</div>
               <div class="qr q" id="nomQ">Nom</div>
-              <div class="qr q" id="mapsQ">Carte</div>
+              <div class="qr q" id="capitaleQ">Capitale</div>
               <div class="qr q lockP" id="contourQ">
                 Silhouette
                 <svg
@@ -24148,19 +24147,32 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           itms.forEach(itm=>{itm.classList.remove("btnSelected"); })
           el.classList.add('btnSelected')
           //*****
-            const L_subHide = ["contourQ","contourR","populationQ"]
-            if(el.dataset?.country){
-            L_subHide.forEach(q=>{getId(q).classList.add('btnHide')})
-            if(itm.dataset.country !== "US"){
-              getId("drapeauQ").classList.add('btnHide')
-              getId("drapeauR").classList.add('btnHide')
-            }
-          }
-          else {
+            const L_subHide = ["contourQ","contourR","populationQ","drapeauQ","drapeauR"]
             L_subHide.forEach(q=>{getId(q).classList.remove('btnHide')})
 
+            if(el.dataset?.country){
+            L_subHide.forEach(q=>{getId(q).classList.add('btnHide')})
+            if(el.dataset.country === "US"){
+              getId("drapeauQ").classList.remove('btnHide')
+              getId("drapeauR").classList.remove('btnHide')
+            }
+          }
+           for (const q of qrs) {
+                if (!q.classList.contains("btnHide")) {
+              q.click();
+              break;
+            }
           }
           //****
+        //    if(el.dataset?.country){
+
+        //   const nbrPaths = L_pathsSub.find(path=>path.parentNode.id === L_cSub[el.dataset.country].svgSub )
+        //   console.log(nbrPaths)
+        //   document.querySelectorAll('.nbrQ-option').forEach(opt=>{
+
+        //   })
+        // }
+          //***
           choiceZ.innerHTML = ``
           if(el.dataset?.country){
             const svgEphe = document.createElement('div')
@@ -44768,6 +44780,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
        const L_gSub = new Map(); // liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
       const L_pathsSub = [];
+      const L_nbrPathsSub = {}
       
         L_sub.forEach((svgSub) => {
           const paths = getId(svgSub).querySelectorAll("path");
