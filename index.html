@@ -5325,11 +5325,12 @@
 
       .nbrQ-wrapper {
         display: flex;
+        position : relative;
+        justify-content : center;
         pointer-events: none;
         width : 100%;
         z-index: 11;
         transform: translateY(-0.9rem);
-        flex-direction: column;
         align-items: center;
         gap: 0.5rem;
       }
@@ -5337,6 +5338,8 @@
       /* Dropdown menu */
       .nbrQ-dropdown {
         display: flex;
+        position : absolute;
+        top : 100%;
         flex-direction: column;
         transform: scaleY(0.7);
         transform-origin: center top;
