@@ -5063,6 +5063,7 @@
       gap : 0.6rem;
       align-items:center;
       padding: 0.6rem 0;
+      padding-top : 0;
       width:100%;
       flex:1;
       border-radius:inherit;
@@ -5070,14 +5071,31 @@
       .contentChoiceZ.active{
           display : flex;
       }
+      #infoSubZ{
+      display : flex;
+      opacity : 0;
+      color : #DA2525;
+      width : calc(100% - 1.2rem);
+      padding : 0.4rem 0.6rem;
+      box-sizing : border-box;
+      font-size : 0.8rem;
+      box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+      outline : 1px solid rgba(192, 57, 43, 0.4);
+      background: rgba(218, 37, 37, 0.12);
+      border-radius:50rem;
+      }
+      #infoSubZ.active{
+        opacity : 1;
+
+      }
+
       .itemChoiceZ{
       display : flex;
       border-radius:50rem;
       width : 100%;
       box-sizing : border-box;
-      background : flex; 
       padding : 0.6rem 1rem;
-    box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+      box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
 
       background : white;
       gap : 0.4rem;
@@ -12939,7 +12957,6 @@
       <div id="contentConfig">
         <div id="overallChoiceSub"></div>
         <div id="cadreChoiceZ" class="">
-
           <button class="cross" id="crossChoiceZ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -12957,6 +12974,8 @@
           />
         </svg>
       </button>
+
+      <span style="color : black; font-weight : 500; font-size : 1.2rem">Où jouer ?</span>
 
           <div id="cadreMenuZ" class="cadreMenuSw">
               <div id="cadreMenuZIn" class="cadreMenuSwIn"></div>
@@ -13032,6 +13051,8 @@
 
               </div>
             </div>
+
+
           <div class="contentChoiceZ active" id="contentCZ">
             <div class="itemChoiceZ" id="allC">
              <svg class="svgFilter" fill="#000000" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M48,95.99316a80,80,0,1,1,80,80A80.09041,80.09041,0,0,1,48,95.99316Zm159.19629,79.19629A8.00052,8.00052,0,0,0,195.88184,163.875,95.99942,95.99942,0,1,1,60.11816,28.11133,8.00052,8.00052,0,0,0,48.80371,16.79688,112.00314,112.00314,0,0,0,120,207.71v16.2832H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V207.71A111.16718,111.16718,0,0,0,207.19629,175.18945Z"></path> </g></svg>
@@ -13092,12 +13113,9 @@
                 </svg>
               Océanie</div>
           </div>
+            <div id="infoSubZ"></div>
 
-
-           <div class="contentChoiceZ" id="contentSubZ">
-             <div class="itemChoiceZ">France</div>
-            <div class="itemChoiceZ">Canada</div>
-          </div>
+           <div class="contentChoiceZ" id="contentSubZ"></div>
 
 
         </div>
@@ -13122,16 +13140,8 @@
             </div>
 
             <span id="choiceZ">
-               <svg
-                  class="svgFilter"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Outline"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm8.647,7H17.426a19.676,19.676,0,0,0-2.821-4.644A10.031,10.031,0,0,1,20.647,7ZM16.5,12a10.211,10.211,0,0,1-.476,3H7.976A10.211,10.211,0,0,1,7.5,12a10.211,10.211,0,0,1,.476-3h8.048A10.211,10.211,0,0,1,16.5,12ZM8.778,17h6.444A19.614,19.614,0,0,1,12,21.588,19.57,19.57,0,0,1,8.778,17Zm0-10A19.614,19.614,0,0,1,12,2.412,19.57,19.57,0,0,1,15.222,7ZM9.4,2.356A19.676,19.676,0,0,0,6.574,7H3.353A10.031,10.031,0,0,1,9.4,2.356ZM2.461,9H5.9a12.016,12.016,0,0,0-.4,3,12.016,12.016,0,0,0,.4,3H2.461a9.992,9.992,0,0,1,0-6Zm.892,8H6.574A19.676,19.676,0,0,0,9.4,21.644,10.031,10.031,0,0,1,3.353,17Zm11.252,4.644A19.676,19.676,0,0,0,17.426,17h3.221A10.031,10.031,0,0,1,14.605,21.644ZM21.539,15H18.1a12.016,12.016,0,0,0,.4-3,12.016,12.016,0,0,0-.4-3h3.437a9.992,9.992,0,0,1,0,6Z"
-                  />
-                </svg>
+                           <svg class="svgFilter" fill="#000000" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M48,95.99316a80,80,0,1,1,80,80A80.09041,80.09041,0,0,1,48,95.99316Zm159.19629,79.19629A8.00052,8.00052,0,0,0,195.88184,163.875,95.99942,95.99942,0,1,1,60.11816,28.11133,8.00052,8.00052,0,0,0,48.80371,16.79688,112.00314,112.00314,0,0,0,120,207.71v16.2832H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V207.71A111.16718,111.16718,0,0,0,207.19629,175.18945Z"></path> </g></svg>
+
               Monde entier</span>
           </div>
           <div class="ligneInter"></div>
@@ -24057,6 +24067,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const contentSubZ = getId('contentSubZ')
       const contentCZ = getId('contentCZ')
       const contentChoiceZ = document.querySelectorAll('.contentChoiceZ')
+      const infoSubZ  = getId("infoSubZ")
       const crossChoiceZ = getId('crossChoiceZ')
 
        
@@ -24132,8 +24143,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           //*****
             const L_subHide = ["contourQ","contourR","populationQ","drapeauQ","drapeauR"]
             L_subHide.forEach(q=>{getId(q).classList.remove('btnHide')})
+              infoSubZ.classList.remove('active')
+              infoSubZ.textContent = ""
 
             if(el.dataset?.country){
+              infoSubZ.classList.add('active')
+              infoSubZ.textContent = L_cSub[el.dataset.country].t
             L_subHide.forEach(q=>{getId(q).classList.add('btnHide')})
             if(el.dataset.country === "US"){
               getId("drapeauQ").classList.remove('btnHide')
@@ -24191,6 +24206,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         contentCZ.classList.add('active')
         contentSubZ.classList.remove('active')
 
+        infoSubZ.classList.remove('active')
+
         contentChoiceZ.scrollTop
         contentSubZ.scrollTop
       });
@@ -24201,6 +24218,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         cadreMenuZIn.classList.add("right");
         contentCZ.classList.remove('active')
         contentSubZ.classList.add('active')
+
+        if(infoSubZ.textContent.length >0){infoSubZ.classList.add('active')}
 
         contentChoiceZ.scrollTop
         contentSubZ.scrollTop
