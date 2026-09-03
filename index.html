@@ -26129,7 +26129,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         animateViewBox(svgMonde, targetViewBox, 700);
         setTimeout(() => {
-          if (!centerBtnTF) {
+          if (!centerBtnTF && !L_config.sub) {
             countryClick(p_id, el.getAttribute("title"), el);
           }
           centerBtnTF = false;
@@ -26217,8 +26217,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             }
           } else {
             if(L_config.sub){
-              p.style.opacity = "0.4" // ne pas oublier de remettre après
-              p.style.pointerEvents = "none"
+              // p.style.fill = "rgba(0,0,0,0.2)" // ne pas oublier de remettre après
+              // p.style.pointerEvents = "none"
               return
             }
             pColor_m.set(p.id, { hover: "", current: "black" });
@@ -26228,8 +26228,30 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         colorCountry();
         if(L_config.sub){
-          currentCountry = getId(L_config.sub)
-          btnSub.click()
+            const svgSub2 = L_gSub.get(L_cSub[L_config.sub].svgSub); // svgUs
+            paths.forEach((p) => {
+            svgSub2.contains(p) ? "" : p.classList.add("viewSub");
+          });
+
+          svgSub2.classList.add("viewSub");
+          svgSub2.querySelectorAll('path').forEach( p=>{
+            if(!pColor_m.has(p.id)){
+              p.style.fill = "rgba(255,255,255,0.4)"
+              p.style.pointerEvents = "none"
+              return
+            }
+            if(!['reg','green','blue'].includes(pColor_m.get(p.id))){
+              p.style.fill = "rgba(255,255,255,0.4)"
+              p.style.pointerEvents = "none"
+            }
+        })
+          zoomCountry(L_config.sub)
+          viewSub = true;
+          setTimeout(() => {
+          getId('svgMonde').append(svgSub2)
+          }, 30);
+
+          //abab
         }
 
         classBtnNext = document.querySelector(".cadreNext").className;
@@ -44822,15 +44844,24 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         const visible = status && Object.values(status).every(Boolean);
         if (viewSub) {
           if(!L_config.sub){
-            return
           L_pathsSub.forEach((paths) => {
             paths.forEach((p) => (p.style.fill = colorPath));
+            p.style.fill = "rgba(190,190,190,1)";
           });}
           else {
           L_pathsSub.forEach((paths) => {
             paths.forEach((p) => (p.style.fill = pColor_m.get(p).current));
-          });}
-          p.style.fill = "rgba(190,190,190,1)";
+          });
+          let colorEphe = pColor_m.get(p).current 
+         colorEphe === "blue" ?
+         p.style.fill = "rgb(6, 6, 152)"
+         : 
+         colorEphe === "red" ?
+         p.style.fill = "rgb(155, 8, 8)"
+         :
+         p.style.fill = "rgb(4, 103, 4)"
+
+        }
           return;
         }
 
