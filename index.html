@@ -24266,7 +24266,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const L_btn = [btnsMode, q, r, cs , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null, sub : false };
 
-      const L_exclus = ["GO", "UM", "MF", "SJ", "GS", "TF", "BV"];
+      const L_exclus = ["GO", "UM", "MF", "SJ", "GS", "TF", "BV","US-DC"];
 
       btnsMode.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -24578,16 +24578,19 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             P_info[id].region !== null,
         );
         // modifSub
-        // if (L_config.sub){
-        //   paysDispo = [...L_pathsSub.find(paths=>paths.id === "ps" + L_config.sub)].filter
-        //   console.log(paysDispo)
-        // }
+        if (L_config.sub){
+          paysDispos = [...L_pathsSub.find(paths=>paths.id === "ps" + L_config.sub)].map(path => path.id).filter((id)=>
+          !L_reponses.includes(id) && !L_exclus.includes(id)
+        )
+          console.log(paysDispos)
+          
+      }
 
         if (L_config.q === "contourQ" || L_config.r === "contourR") {
           paysDispos = paysDispos.filter((id) => !["PS"].includes(id));
         }
 
-        const paysDisposTrouver = Object.keys(L_q).filter(
+        let paysDisposTrouver = Object.keys(L_q).filter(
           //retirer visuellement les pays qui ne seront jamais pris dans le quiz
           (id) =>
             !L_exclus.includes(id) &&
@@ -24595,6 +24598,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             (P_info[id].region === L_config.c || L_config.c === "allC") &&
             P_info[id].region !== null,
         );
+
+        if(L_config.sub){
+          paysDisposTrouver = [...L_pathsSub.find(paths=>paths.id === "ps" + L_config.sub)].map(path => path.id).filter((id)=>
+           !L_exclus.includes(id)
+        )}
 
         if (
           (L_config.m === "modeTrouver" &&
@@ -24607,7 +24615,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         //Retirer les circles inutiles
 
-        const paysDispoAll = Object.keys(L_q).filter(
+        let paysDispoAll = Object.keys(L_q).filter(
           //Tous les pays disponibles à la question 1
           (id) =>
             (L_config.c !== "allC" ||
@@ -24618,6 +24626,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             ((onlySouv && !(id in L_nSouv)) || !onlySouv) &&
             (P_info[id].region === L_config.c || L_config.c === "allC"),
         );
+
+          if(L_config.sub){
+              paysDispoAll = [...L_pathsSub.find(paths=>paths.id === "ps" + L_config.sub)].map(path => path.id).filter((id)=>
+           !L_exclus.includes(id)
+        )}
 
         celRest = nbrQVal === "Tout" ? paysDispoAll.length : maxQ;
 
@@ -24648,6 +24661,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         // Partie Choix
 
         if (L_config.m === "modeChoix") {
+
           btnCartePm.style.display = "flex";
           L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
           //Remplir tout ça
@@ -24655,9 +24669,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             pColor_m.set(p, { hover: "", current: colorPath });
             if (!paysDisposTrouver.includes(p.id)) {
               idVisible_m.get(p.id).continent = false;
-            }
+            }            
           });
-
           colorCountry();
           btnCartePm.classList.add("noClick");
 
@@ -24677,10 +24690,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             reponseFound = false;
             while (!reponseFound) {
               p_id =
-                Object.keys(L_q)[
-                  Math.floor(Math.random() * Object.keys(L_q).length)
+                Object.keys(L_config.sub ? D_us : L_q)[
+                  Math.floor(Math.random() * Object.keys(L_config.sub ? D_us : L_q).length)
                 ]; // identifiant de pays au hasard
 
+              console.log(p_id)
               if (L_exclus.includes(p_id)) {
                 continue;
               }
@@ -24692,15 +24706,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                 idProps_m.set(c.parentNode, idBonneReponse);
                 idsCboxs_m.get(getQNumber())[c.parentNode.id] = idBonneReponse;
               }
-
               let paysDispoToggle =
                 paysDispos.length < 6 ? paysDispoAll : paysDispos;
               if (
                 // (c.id==="qqTrouver" || c.id!=="qqTrouver" && !L_reponse.includes(p_id))
                 !L_reponse.includes(p_id) &&
                 paysDispoToggle.includes(p_id) &&
-                p_id != idBonneReponse
+                p_id != idBonneReponse                
               ) {
+
                 //Remplir les cbox, les réponses
                 if (L_config.r === "drapeauR") {
                   c.innerHTML = ` <img class="drapeau4Choix"  src="flag_c/${p_id.toLowerCase()}.svg" draggable="false" alt="">`;
@@ -24711,16 +24725,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                   L_reponse.push(c === cBoxHasard ? idBonneReponse : p_id);
                   reponseFound = true;
                 } else if (L_config.r === "nomR") {
-                  c.textContent = L_q[p_id].n;
+                  c.textContent = (L_config.sub ? D_us : L_q)[p_id].n;
                   if (c === cBoxHasard) {
-                    c.textContent = L_q[idBonneReponse].n;
+                    c.textContent = (L_config.sub ? D_us : L_q)[idBonneReponse].n;
                   }
                   L_reponse.push(c === cBoxHasard ? idBonneReponse : p_id);
                   reponseFound = true;
-                } else if (L_config.r === "capitaleR" && L_q[p_id].c != null) {
-                  c.textContent = L_q[p_id].c;
+                } else if (L_config.r === "capitaleR" && (L_config.sub ? D_us : L_q)[p_id].c != null) {
+                  c.textContent = (L_config.sub ? D_us : L_q)[p_id].c;
                   if (c === cBoxHasard) {
-                    c.textContent = L_q[idBonneReponse].c;
+                    c.textContent = (L_config.sub ? D_us : L_q)[idBonneReponse].c;
                   }
                   L_reponse.push(c === cBoxHasard ? idBonneReponse : p_id);
                   reponseFound = true;
@@ -24742,9 +24756,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                   document.getElementById("cadreQ4Choix").style.marginBottom =
                     "3rem";
                 } else if (L_config.q === "nomQ") {
-                  qBox.textContent = L_q[idBonneReponse].n;
+                  qBox.textContent = (L_config.sub ? D_us : L_q)[idBonneReponse].n;
                 } else if (L_config.q === "capitaleQ") {
-                  qBox.textContent = L_q[idBonneReponse].c;
+                  qBox.textContent = (L_config.sub ? D_us : L_q)[idBonneReponse].c;
                   document.getElementById("cadreQ4Choix").style.marginBottom =
                     "3rem";
                 }
@@ -26425,20 +26439,20 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             .querySelectorAll(".overlayPm")
             .forEach((o) => o.classList.remove("active"));
           if (idProp !== "outTime") {
-            propPm.textContent = L_q[idProp].n;
+            propPm.textContent = (L_config.sub ? D_us : L_q)[idProp].n;
             
             getId("imgPmCadreProp").src =`flag_c/${idProp.toLowerCase()}.svg`;
 
             if (L_config.r !== "nomR") {
-              propPm.textContent = "(" + L_q[idProp].n + ")";
+              propPm.textContent = "(" + (L_config.sub ? D_us : L_q)[idProp].n + ")";
             }
           }
 
-          repPm.textContent = L_q[idGood].n;
+          repPm.textContent = (L_config.sub ? D_us : L_q)[idGood].n;
           getId("imgPmCadreCor").src =
             `flag_c/${idGood.toLowerCase()}.svg`;
           if (L_config.r !== "nomR") {
-            repPm.textContent = "(" + L_q[idGood].n + ")";
+            repPm.textContent = "(" + (L_config.sub ? D_us : L_q)[idGood].n + ")";
           }
 
           // document.querySelectorAll(".cadreImgPm") .forEach(img=>img.classlist.remove('sil'))
@@ -26520,9 +26534,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             (L_config.m === "modeTrouver" && L_config.q === "capitaleQ")
           ) {
             if (idProp !== "outTime") {
-              propPm.textContent = L_q[idProp].c;
+              propPm.textContent = (L_config.sub ? D_us : L_q)[idProp].c;
             }
-            repPm.textContent = L_q[idGood].c;
+            repPm.textContent = (L_config.sub ? D_us : L_q)[idGood].c;
           }
 
           propPm.classList.remove("good", "bad", "outTime");
@@ -26645,11 +26659,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             let L_of = L_prop === "outTime" ? L_good : L_prop;
             numItemCPm.textContent = "#" + (i + 1);
-            nomItemCPm.textContent = L_q[L_of[i]].n;
+            nomItemCPm.textContent = (L_config.sub ? D_us : L_q)[L_of[i]].n;
             superficie.textContent =
               L_config.q === "populationQ"
-                ? L_q[L_of[i]].p.toLocaleString("fr-FR")
-                : L_q[L_of[i]].s.toLocaleString("fr-FR") + " km²";
+                ? (L_config.sub ? D_us : L_q)[L_of[i]].p.toLocaleString("fr-FR")
+                : (L_config.sub ? D_us : L_q)[L_of[i]].s.toLocaleString("fr-FR") + " km²";
 
             const new_DelClasser = infosClasser.get(
               parseInt(currentEl.textContent),
@@ -26665,7 +26679,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               itemCPmTxt.classList.add("bad");
               const itemCPmAtt = document.createElement("div");
               itemCPmAtt.className = "itemCPmAtt";
-              itemCPmAtt.textContent = "Ici c'était : " + L_q[L_good[i]].n;
+              itemCPmAtt.textContent = "Ici c'était : " + (L_config.sub ? D_us : L_q)[L_good[i]].n;
               itemCPmTxt.append(itemCPmAtt);
             }
           }
@@ -44481,8 +44495,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           return;
         }
         currentCountry = country;
-        currentCountry.id in L_cSub && L_config.m !== "modeTrouver"
-          ? (btnSub.classList.add("viewSub"),
+        currentCountry.id in L_cSub && !L_config.m
+            ? (btnSub.classList.add("viewSub"),
             (btnSub.innerHTML = L_cSub[currentCountry.id].icon),
             btnSub.append(L_cSub[currentCountry.id].t))
           : btnSub.classList.remove("viewSub");
@@ -49817,7 +49831,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(paths.contains(getId('US-AK')));
+        console.log(L_config.m);
       }
       // loop();
       // const L_ephe2 = {}
