@@ -5071,35 +5071,20 @@
       .contentChoiceZ.active{
           display : flex;
       }
-      #infoSubZ{
-      display : flex;
-      opacity : 0;
-      color : #DA2525;
-      font-weight : 500;
-      width : calc(100% - 1.2rem);
-      padding : 0.4rem 0.6rem;
-      box-sizing : border-box;
-      font-size : 0.8rem;
-      box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
-      outline : 1px solid rgba(192, 57, 43, 0.4);
-      background: rgba(218, 37, 37, 0.12);
-      border-radius:50rem;
-      }
-      #infoSubZ.active{
-        opacity : 1;
-
-      }
 
       .itemChoiceZ{
       display : flex;
-      border-radius:50rem;
+      gap : 0.4rem;
+      border-radius:1rem;
       width : 100%;
       box-sizing : border-box;
       padding : 0.6rem 1rem;
       box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
-
       background : white;
-      gap : 0.4rem;
+      }
+      #contentSubZ .itemChoiceZ {
+        flex-direction : column;
+        gap : 0;
       }
 
       .itemChoiceZ svg {
@@ -5110,6 +5095,29 @@
       .itemChoiceZ path {
         fill : black;
       }
+
+      .txtChoiceZ{
+        display : flex;
+        width : 100%;
+        gap : 0.4rem;
+      }
+      .infoChoiceZ{
+        display : flex;
+        align-items : center;
+        padding : 0;
+        box-sizing : border-box;
+        color : rgba(0,0,0,0.6);
+        font-size : 0.8rem;
+        overflow : hidden;
+        max-height : 0;
+        transition : max-height 0.25s ease, padding 0.25s ease;
+      }
+      .infoChoiceZ.active{
+        padding : 0.4rem 0;
+        padding-bottom : 0;
+        max-height : 3.5rem;
+      }
+
 
       .back {
         display: flex;
@@ -5364,10 +5372,10 @@
       /*Cadre nbrQ*/
 
       .nbrQ-wrapper {
-        align-self : center;
         display: flex;
         position : relative;
         justify-content : center;
+        align-self : center;
         pointer-events: none;
         z-index: 11;
         align-items: center;
@@ -13114,7 +13122,6 @@
                 </svg>
               Océanie</div>
           </div>
-            <div id="infoSubZ"></div>
 
            <div class="contentChoiceZ" id="contentSubZ"></div>
 
@@ -13147,9 +13154,9 @@
           </div>
           <div class="ligneInter"></div>
 
-            <div class="cadreMode">
+            <div class="cadreMode" style="align-items:center;">
             <div class="modeTitle" style="gap : 0; width : 100%">
-             <svg height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 19H12.01M8.21704 7.69689C8.75753 6.12753 10.2471 5 12 5C14.2091 5 16 6.79086 16 9C16 10.6565 14.9931 12.0778 13.558 12.6852C12.8172 12.9988 12.4468 13.1556 12.3172 13.2767C12.1629 13.4209 12.1336 13.4651 12.061 13.6634C12 13.8299 12 14.0866 12 14.6L12 16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+             <svg height="1.2rem"  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.125 8.875C10.125 7.83947 10.9645 7 12 7C13.0355 7 13.875 7.83947 13.875 8.875C13.875 9.56245 13.505 10.1635 12.9534 10.4899C12.478 10.7711 12 11.1977 12 11.75V13" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="12" cy="16" r="1" fill="#1C274C"></circle> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
               <div style="font-size : 0.98rem; font-weight :500; color : black; display : flex; flex : 1; justify-content : flex-start">Nombre de questions</div>
 
 
@@ -13264,6 +13271,9 @@
           </div>
 
 
+          <div class="ligneInter"></div>
+
+          
           <div class="cadreMode">
             <div class="modeTitle">
               <svg
@@ -14485,16 +14495,7 @@
               <div class="itemFilter" data-region="world">
                 <span style="opacity: 1">✓</span>
                 Monde
-                <svg
-                  class="svgFilter"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Outline"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm8.647,7H17.426a19.676,19.676,0,0,0-2.821-4.644A10.031,10.031,0,0,1,20.647,7ZM16.5,12a10.211,10.211,0,0,1-.476,3H7.976A10.211,10.211,0,0,1,7.5,12a10.211,10.211,0,0,1,.476-3h8.048A10.211,10.211,0,0,1,16.5,12ZM8.778,17h6.444A19.614,19.614,0,0,1,12,21.588,19.57,19.57,0,0,1,8.778,17Zm0-10A19.614,19.614,0,0,1,12,2.412,19.57,19.57,0,0,1,15.222,7ZM9.4,2.356A19.676,19.676,0,0,0,6.574,7H3.353A10.031,10.031,0,0,1,9.4,2.356ZM2.461,9H5.9a12.016,12.016,0,0,0-.4,3,12.016,12.016,0,0,0,.4,3H2.461a9.992,9.992,0,0,1,0-6Zm.892,8H6.574A19.676,19.676,0,0,0,9.4,21.644,10.031,10.031,0,0,1,3.353,17Zm11.252,4.644A19.676,19.676,0,0,0,17.426,17h3.221A10.031,10.031,0,0,1,14.605,21.644ZM21.539,15H18.1a12.016,12.016,0,0,0,.4-3,12.016,12.016,0,0,0-.4-3h3.437a9.992,9.992,0,0,1,0,6Z"
-                  />
-                </svg>
+             <svg class="svgFilter" fill="#000000" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M48,95.99316a80,80,0,1,1,80,80A80.09041,80.09041,0,0,1,48,95.99316Zm159.19629,79.19629A8.00052,8.00052,0,0,0,195.88184,163.875,95.99942,95.99942,0,1,1,60.11816,28.11133,8.00052,8.00052,0,0,0,48.80371,16.79688,112.00314,112.00314,0,0,0,120,207.71v16.2832H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V207.71A111.16718,111.16718,0,0,0,207.19629,175.18945Z"></path> </g></svg>
               </div>
               <div class="ligneInGrid"></div>
 
@@ -23949,7 +23950,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         AR: {
           svgSub: "svgAr",
           icon: `<svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 127 260" enable-background="new 0 0 127 260" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M110.022,48.309l-19.244-2.448l1.931-3.204l6.219-10.67L82.086,19.879l-6.808-1.838L62.864,3.861L45.81,4.356L38.296,2 l-6.761,7.938l-0.353,6.973l-8.598,11.071l0.683,7.797l-8.033,17.266L9.817,77.473l5.794,13.851l-3.203,21.294l-3.675,2.921 l-2.897,35.122l1.083,7.561l-1.602,7.844l5.866,17.384l-4.688,27.372L2.02,216.97l7.161,8.009l2.708,10.153l16.961,1.484 l-4.24-10.082l7.537-15.359l8.033-7.537l-8.645-15.665l12.814-12.649l4.547-14.228l-3.463-3.863l-0.613-7.703l13.804,0.565 l8.268-15.287l24.168-4.947l6.667-9.493l-2.002-10.812l-6.879-6.996l5.559-29.893L110.8,53.752l13.003-6.478l1.177-11.059 l-6.552-0.092l-0.925,6.684L110.022,48.309z M29.061,237.532l-0.239,18.555L46.102,258l0.782-1.913l-5.684-1.753l-8.4-7.943 L29.061,237.532z"></path> </g></svg>`,
-          t: "Provinces d'Argnetine",
+          t: "Provinces d'Argentine",
         },
         CH: {
           svgSub: "svgCh",
@@ -24068,7 +24069,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const contentSubZ = getId('contentSubZ')
       const contentCZ = getId('contentCZ')
       const contentChoiceZ = document.querySelectorAll('.contentChoiceZ')
-      const infoSubZ  = getId("infoSubZ")
       const crossChoiceZ = getId('crossChoiceZ')
 
        
@@ -24078,12 +24078,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       editSubZ.addEventListener('click',()=>{
         cadreChoiceZ.classList.add('active')
         overallChoiceSub.classList.add('active')
-        contentChoiceZ.scrollTop
+        contentCZ.scrollTop
         contentSubZ.scrollTop
         if(oneTimeEdit)return
          contentSubZ.innerHTML = ``
 
            const L_regions = ["Amérique", "Asie", "Europe", "Océanie"];
+           const cSort = Object.keys(L_cSub).sort((a, b) =>
+              L_q[a].n.localeCompare(L_q[b].n, "fr", { sensitivity: "base" }),
+            );
           L_regions.forEach((region) => {
             const reg = document.createElement("div");
             reg.style.fontSize = "0.92rem";
@@ -24094,22 +24097,33 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             reg.style.fontWeight = "600";
             reg.textContent = region;
             contentSubZ.append(reg);
-            for (const id in L_cSub) {
+            cSort.forEach(id=>{
               if (P_info[id].region === region) {
                 const item = document.createElement('div')
                 item.className = "itemChoiceZ"
                 item.dataset.country = id;
 
-                const div = document.createElement('div')
-                div.innerHTML = L_cSub[id].icon
-                 const divTxt = document.createElement('div')
+                const svg = document.createElement('div')
+                svg.innerHTML = L_cSub[id].icon
+                const divTxt = document.createElement('div')
+
+                const txtChoiceZ = document.createElement('div')
+                txtChoiceZ.className = "txtChoiceZ"
+
+                const infoChoiceZ = document.createElement('div')
+                infoChoiceZ.className = "infoChoiceZ"
+                infoChoiceZ.textContent = L_cSub[id].t
+
+
           divTxt.textContent = L_q[id].n
-          item.append(div)
-          item.append(divTxt)
+          txtChoiceZ.append(svg)
+          txtChoiceZ.append(divTxt)
+          item.append(txtChoiceZ)
+          item.append(infoChoiceZ)
           contentSubZ.append(item)
 
               }
-            }
+            })
 
           });
         contentSubZ.querySelectorAll('.itemChoiceZ').forEach(itm=>{
@@ -24139,17 +24153,20 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         let itms = document.querySelectorAll(".itemChoiceZ")
         itms.forEach(el=>{
         el.addEventListener("click", ()=>{
-          itms.forEach(itm=>{itm.classList.remove("btnSelected"); })
+          itms.forEach(itm=>{
+            itm.classList.remove("btnSelected");
+            itm.parentNode === contentSubZ ? itm.querySelector('.infoChoiceZ').classList.remove('active'): "";
+           })
           el.classList.add('btnSelected')
           //*****
             const L_subHide = ["contourQ","contourR","populationQ","drapeauQ","drapeauR"]
             L_subHide.forEach(q=>{getId(q).classList.remove('btnHide')})
-              infoSubZ.classList.remove('active')
-              infoSubZ.textContent = ""
+              
 
             if(el.dataset?.country){
-              infoSubZ.classList.add('active')
-              infoSubZ.textContent = L_cSub[el.dataset.country].t
+              const info = el.querySelector('.infoChoiceZ')
+              info.classList.add('active')
+              info.textContent = L_cSub[el.dataset.country].t
             L_subHide.forEach(q=>{getId(q).classList.add('btnHide')})
             if(el.dataset.country === "US"){
               getId("drapeauQ").classList.remove('btnHide')
@@ -24207,9 +24224,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         contentCZ.classList.add('active')
         contentSubZ.classList.remove('active')
 
-        infoSubZ.classList.remove('active')
-
-        contentChoiceZ.scrollTop
+        contentCZ.scrollTop
         contentSubZ.scrollTop
       });
 
@@ -24219,8 +24234,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         cadreMenuZIn.classList.add("right");
         contentCZ.classList.remove('active')
         contentSubZ.classList.add('active')
-
-        if(infoSubZ.textContent.length >0){infoSubZ.classList.add('active')}
 
         contentChoiceZ.scrollTop
         contentSubZ.scrollTop
@@ -28085,7 +28098,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           //*****************************
 
           btnListSub.addEventListener("click", () => {
-            const subSort = Object.keys(D_us).sort((a, b) =>
+            const subSort = Object.keys(D_us).sort((a, b) => // ordre alphabétique
               D_us[a].n.localeCompare(D_us[b].n, "fr", { sensitivity: "base" }),
             );
             contentInfoSub.innerHTML = ``;
