@@ -26235,7 +26235,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
           svgSub2.classList.add("viewSub");
           svgSub2.querySelectorAll('path').forEach( p=>{
-            if(!['reg','green','blue'].includes(pColor_m.get(p)) || !pColor_m.has(p)){
+            if(!['red','green','blue'].includes(pColor_m.get(p)) || !pColor_m.has(p)){
               p.style.fill = "rgba(255,255,255,0.4)"
             }
         })
