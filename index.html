@@ -24191,7 +24191,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           document.querySelectorAll('.nbrQ-option').forEach(opt=>{
             if (opt.dataset.value !== "Tout" && opt.dataset.value > L_pathsSubL[el.dataset.country] ){
               opt.classList.add('btnHide')
-              getId('nbrQAll').click()
+              if(nbrQVal === opt.dataset.value){
+                getId('nbrQAll').click()
+              }
             }
           })
         }
@@ -26267,6 +26269,26 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           return;
         }
 
+        if(L_config.sub){ 
+            
+            cloneVisible_m.forEach((val, key) =>
+              idVisible_m.set(key, { ...val }),
+            );
+
+            const svgSub = getId(L_sub.find(svg=>svg === L_cSub[L_config.sub].svgSub))
+            svgSub.classList.remove("viewSub");
+            svgSub.remove();
+            paths.forEach((p) => {p.classList.remove("viewSub");});
+
+            toggleC(false);
+
+            for (const clef in D_circles) {
+              D_circles[clef].style.visibility = "";
+            }
+
+            document.getElementById(L_config.sub).classList.remove("viewSub");
+            colorCountry();
+          }
         toggleC(false);
         viewMaps = false;
 
@@ -27311,8 +27333,11 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             paths.forEach((p) => {
               resetOverlay(p.id, overlay_m.get(p.id));
             });
+            
             L_pathsSub.forEach((paths) => {
-              paths.forEach((p) => (p.style.fill = colorPath));
+              paths.forEach((p) => {
+                p.style.fill = L_config.sub ? pColor_m.get(p).current : colorPath
+              });
             });
             toggleC(false);
             btnSub.classList.remove("viewSub");
@@ -27325,7 +27350,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             return;
           }
           currentCountry = country;
-          currentCountry.id in L_cSub && L_config.m !== "modeTrouver"
+          currentCountry.id in L_cSub && !L_config.m 
             ? (btnSub.classList.add("viewSub"),
               (btnSub.innerHTML = L_cSub[currentCountry.id].icon),
               btnSub.append(L_cSub[currentCountry.id].t))
@@ -28069,6 +28094,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
       });
 
       btnSub.addEventListener("click", () => {
+
         btnSub.classList.remove("viewSub");
         const svgSub = L_gSub.get(L_cSub[currentCountry.id].svgSub); // svgUs
         const countryId = currentCountry.id; //"US"
@@ -28251,7 +28277,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           `;
           Maps.append(backUs);
 
-          backUs.addEventListener("click", () => {
+          backUs.addEventListener("click", () => { 
+
             setTimeout(() => {
               backUs = null;
             }, 500);
@@ -28267,10 +28294,10 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             getId("svgMonde")
               .querySelectorAll("circle")
               .forEach((c) => getId("svgMonde").append(c));
-
             paths.forEach((p) => {
               svgSub.contains(p) ? "" : p.classList.remove("viewSub");
-            }); // à retirer
+            });
+
 
             toggleC(false);
 
@@ -28347,6 +28374,25 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           current: `${colorPath}`,
         });
       });
+
+      // requestAnimationFrame(()=>{
+      //   L_pathsSub.forEach(paths=>{
+      //   paths.forEach((p) => {
+      //   pColor_m.set(p, {
+      //     hovered: "rgb(29, 204, 90)",
+      //     current: `${colorPath}`,
+      //   });
+      // });
+      // })
+
+      //  idVisible_m.set(p.id, {
+      //     continent: true,
+      //     ONU: true,
+      //     independant: true,
+      //     orga: true,
+      //   });
+      // })
+
       pColor_m.forEach((val, key) => clonepColor_m.set(key, { ...val }));
 
       idVisible_m.forEach((val, key) => cloneVisible_m.set(key, { ...val }));
@@ -44497,9 +44543,12 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           paths.forEach((p) => {
             resetOverlay(p.id, overlay_m.get(p.id));
           });
+
           L_pathsSub.forEach((paths) => {
-            paths.forEach((p) => (p.style.fill = colorPath));
-          });
+              paths.forEach((p) => {
+                p.style.fill = L_config.sub ? pColor_m.get(p).current : colorPath
+              });
+            });
           toggleC(false);
           btnSub.classList.remove("viewSub");
           if (L_config.m === "modeTrouver" && !cChooseTrouver) {
@@ -44529,6 +44578,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         }
 
         colorCountry();
+
         if (
           (L_config.m === "modeTrouver" &&
             (cChooseTrouver || spanNext.textContent.includes("Temps"))) ||
@@ -44771,9 +44821,15 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         const status = idVisible_m.get(p.id);
         const visible = status && Object.values(status).every(Boolean);
         if (viewSub) {
+          if(!L_config.sub){
+            return
           L_pathsSub.forEach((paths) => {
             paths.forEach((p) => (p.style.fill = colorPath));
-          });
+          });}
+          else {
+          L_pathsSub.forEach((paths) => {
+            paths.forEach((p) => (p.style.fill = pColor_m.get(p).current));
+          });}
           p.style.fill = "rgba(190,190,190,1)";
           return;
         }
@@ -45077,16 +45133,16 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             t.textContent = D_us[id].n + " (" + id + ")";
           }
         });
-        mTitleCadre.textContent = viewSub ? D_us[id].n : L_q[id].n;
+        mTitleCadre.textContent = D_us[id]?.n ?? L_q[id].n; // problème
 
-        mCapitale.textContent = viewSub ? D_us[id].c : L_q[id].c;
-        capitale.textContent = viewSub
+        mCapitale.textContent = D_us[id]?.c ?? L_q[id].c;
+        capitale.textContent = D_us[id]
           ? "Capitale : " + D_us[id].c
           : "Capitale : " + L_q[id].c;
         boxTxtTerritoire.style.display = "none";
         if (id in L_nSouv || viewSub) {
           boxTxtTerritoire.style.display = "flex";
-          territoire.textContent = viewSub ? D_us[id].info : L_nSouvDetail[id];
+          territoire.textContent =  D_us[id]?.info ??  L_nSouvDetail[id];
         }
 
         txtsCelCadre.forEach((t) => (t.textContent = ""));
@@ -45094,7 +45150,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         //   L.style.display = "block";
         // });
 
-        if (!viewSub) {
+        if (!viewSub && !L_config.sub) {
           population.textContent = L_q[id].p.toLocaleString("fr-FR");
           superficie.textContent = L_q[id].s.toLocaleString("fr-FR") + "km²";
           independance.textContent =
@@ -45144,7 +45200,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         //   })
         //   .catch((err) => {});
 
-        if (viewSub) {
+        if (viewSub || L_config.sub) {
+          if(!D_us[id]){return}
           population.textContent = D_us[id].p.toLocaleString();
           nomH.textContent = D_us[id].nH;
           superficie.textContent = D_us[id].s.toLocaleString("fr-FR") + "km²";
