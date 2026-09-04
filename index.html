@@ -24220,10 +24220,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           }
           //****
           const ephe15 = getId('nbrQ15')
-          ephe15.dataset.value = 15
-          ephe15.dataset.label = 15
-          ephe15.textContent = 15
-          if(nbrQVal < 15){ephe15.click()}
+          const ephe20 = getId('nbrQ20')
+          const ephe25 = getId('nbrQ25')
 
           document.querySelectorAll('.nbrQ-option').forEach(opt=>opt.classList.remove('btnHide'))
            if(el.dataset?.country){
@@ -24231,13 +24229,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             if (opt.dataset.value !== "Tout" && opt.dataset.value > L_nbrPSub[el.dataset.country] ){
               opt.classList.add('btnHide')
               if(nbrQVal === opt.dataset.value){
-                if(L_config.m === "modeClasser" && L_nbrPSub[el.dataset.country] < 15){
-                  ephe15.dataset.value = L_nbrPSub[el.dataset.country]
-                  ephe15.dataset.label = L_nbrPSub[el.dataset.country]
-                  ephe15.textContent = L_nbrPSub[el.dataset.country]
-                  ephe15.classList.remove("btnHide")
-                  
-                  ephe15.click()
+                if(L_config.m === "modeClasser" && opt.id !== "nbrQAll"){
+                  opt.classList.remove("btnHide")
                   return
                 }
                 getId('nbrQAll').click()
@@ -24326,29 +24319,29 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       btnsMode.forEach((btn) => {
         btn.addEventListener("click", () => {
           
+          const ephe15 = getId('nbrQ15')
+          const ephe20 = getId('nbrQ20')
+          const ephe25 = getId('nbrQ25')
+
+           document.querySelectorAll('.nbrQ-option').forEach(opt=>{
+            if (L_config.sub && opt.dataset.value !== "Tout" && opt.dataset.value > L_nbrPSub[L_config.sub] ){
+              opt.classList.add('btnHide')
+              if(nbrQVal === opt.dataset.value){
+                if(L_config.m === "modeClasser" && opt.id !== "nbrQAll"){
+                  opt.classList.remove("btnHide")
+                  return
+                }
+                getId('nbrQAll').click()
+              }
+            }
+          })
           
-            if(L_config.sub && nbrQVal < L_nbrPSub[L_config.sub] || !L_config.sub ){
-            const ephe15 = getId('nbrQ15')
-            ephe15.dataset.value = 15
-            ephe15.dataset.label = 15
-            ephe15.textContent = 15
-            ephe15.click()
-          }
           
           if (btn.id === "modeClasser") {
-
-            if(L_config.sub && (nbrQVal > L_nbrPSub[L_config.sub] || L_nbrPSub[L_config.sub] < 15)){
-              console.log("appel1")
-                 const ephe15 = getId('nbrQ15')
-                  ephe15.dataset.value = L_nbrPSub[L_config.sub]
-                  ephe15.dataset.label = L_nbrPSub[L_config.sub]
-                  ephe15.textContent = L_nbrPSub[L_config.sub]
-                  ephe15.classList.remove("btnHide")
-                  ephe15.click()
-                  document.getElementById("nbrQAll").classList.add("hide");
-
-                  return
-            }
+            ephe15.classList.remove("btnHide")
+            ephe20.classList.remove("btnHide")
+            ephe25.classList.remove("btnHide")
+          
             document.getElementById("nbrQAll").classList.add("hide");
             if (nbrQVal === "Tout") {
               document.getElementById("nbrQ15").click();
