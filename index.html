@@ -24843,6 +24843,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           zBox.classList.add("modeTrouver");
 
           if (cChooseTrouver === null) {
+
             idVisible_m = new Map(
               Array.from(tIdVisible_m, ([key, val]) => [key, { ...val }]),
             );
@@ -24858,7 +24859,59 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                 document.getElementById("phonePlay").appendChild(m);
             });
 
-            svg.setAttribute("viewBox", "275 175 550 350");
+            L_addMaps[0].style.zIndex = "10";
+            L_addMaps[1].style.zIndex = "20";
+            L_addMaps[2].style.zIndex = "30";
+            L_addMaps[3].style.zIndex = "50";
+
+            if(L_config.sub){
+              
+            const svgSub2 = L_gSub.get(L_cSub[L_config.sub].svgSub); // svgUs
+            paths.forEach((p) => {
+            svgSub2.contains(p) ? "" : p.classList.add("viewSub");
+          });
+          const pathsSub = svgSub2.querySelectorAll('path').forEach(p=>{
+            pColor_m.set(p,{hover:"",current : colorPath})
+            idVisible_m.get(p.id).continent = true
+          })
+          colorCountry()
+
+          svgSub2.classList.add("viewSub");
+          zoomCountry(L_config.sub)          
+          viewSub = true;
+          setTimeout(() => {
+          getId('svgMonde').append(svgSub2)
+          }, 30);
+
+          //**********
+          const LcelSup = [
+            devise,
+            carSide,
+            seaAccess,
+            independance,
+            calendar,
+            co2e,
+            pibPh,
+            gouvernement,
+            religion,
+            fuseaux,
+          ];
+          const celsCadre = document.querySelectorAll(".celCadre");
+          celsCadre.forEach((cel) => {
+            LcelSup.forEach((el) => {
+              if (cel.contains(el)) {
+                cel.style.display = "none";
+              }
+            });
+          });
+          document.querySelector(".menuCadre").style.display = "none";
+          cadreContours.style.display = "none";
+          cadreOrga.style.display = "none";
+          cadreBlason.style.display = "none";
+          //******
+          //abab
+            }
+            else { svg.setAttribute("viewBox", "275 175 550 350");
             setTimeout(() => {
               animateViewBox(
                 document.getElementById("svgMonde"),
@@ -24866,10 +24919,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                 700,
               );
             }, 20);
-            L_addMaps[0].style.zIndex = "10";
-            L_addMaps[1].style.zIndex = "20";
-            L_addMaps[2].style.zIndex = "30";
-            L_addMaps[3].style.zIndex = "50";
+          }
           }
 
           if (cChooseTrouver === false) {
@@ -24949,15 +24999,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           });
 
           colorCountry();
-
+          const L_info = (L_config.sub ? D_us : L_q)
           let p_id =
-            Object.keys(L_q)[
-              Math.floor(Math.random() * Object.keys(L_q).length)
+          
+            Object.keys(L_info)[
+              Math.floor(Math.random() * Object.keys(L_info).length)
             ]; // identifiant de pays au hasard
           while (L_reponses.includes(p_id) || !paysDispos.includes(p_id)) {
             p_id =
-              Object.keys(L_q)[
-                Math.floor(Math.random() * Object.keys(L_q).length)
+              Object.keys(L_info)[
+                Math.floor(Math.random() * Object.keys(L_info).length)
               ];
           }
 
@@ -24969,9 +25020,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           if (L_config.q === "drapeauQ") {
             qqTrouver.innerHTML = `<img class="drapeau4Choix"  src="flag_c/${idBonneReponse.toLowerCase()}.svg" draggable="false" alt="">`;
           } else if (L_config.q === "nomQ") {
-            qqTrouver.textContent = L_q[idBonneReponse].n;
+            qqTrouver.textContent = L_info[idBonneReponse].n;
           } else if (L_config.q === "capitaleQ") {
-            qqTrouver.textContent = L_q[idBonneReponse].c;
+            qqTrouver.textContent = L_info[idBonneReponse].c;
           }
           L_reponses.push(idBonneReponse); // Ne pas avoir plusieurs fois la même bonne réponse
         }
@@ -25023,7 +25074,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               ) {
                 p_id =
                   Object.keys((L_config.sub ? D_us : L_q))[
-                    Math.floor(Math.random() * Object.keys((L_config.sub ? D_us : L_q)).length)
+                    Math.floor(Math.random() * Object.keys(L_info(L_config.sub ? D_us : L_q)).length)
                   ];
               }
 
@@ -26893,6 +26944,48 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       // Bouton Menu principal
       btnMenu.addEventListener("click", () => {
+
+        if(L_config.sub && L_config.m === "modeTrouver"){
+          const svgSub2 = L_gSub.get(L_cSub[L_config.sub].svgSub); // svgUs
+           paths.forEach((p) => {p.classList.remove("viewSub")});
+          svgSub2.classList.remove("viewSub");
+          viewSub = false;
+          svgSub2.remove()
+
+          //**********
+          const LcelSup = [
+            devise,
+            carSide,
+            seaAccess,
+            independance,
+            calendar,
+            co2e,
+            pibPh,
+            gouvernement,
+            religion,
+            fuseaux,
+          ];
+          const celsCadre = document.querySelectorAll(".celCadre");
+          celsCadre.forEach((cel) => {
+            LcelSup.forEach((el) => {
+                cel.style.display = "";
+              });
+          });
+          document.querySelector(".menuCadre").style.display = "";
+          cadreContours.style.display = "";
+          cadreOrga.style.display = "";
+          cadreBlason.style.display = "";
+          orgaMenu.click();
+
+          [...L_pathsSub.find(paths=>paths.id === "ps" + L_config.sub)].forEach(p=>{
+            pColor_m.set(p, { hover: "", current: colorPath });
+            idVisible_m.get(p.id).continent = true;
+          })
+          colorCountry()
+          //******
+        }
+
+        
         showInterstitialAndThen(Math.random(), isPremium, noAd, () => {
           Maps.appendChild(globe);
           L_modeTrouver.forEach((m) => {
@@ -26994,6 +27087,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             .querySelectorAll(".imgPmCadre")
             .forEach((img) => (img.src = ``));
         });
+
+        
       });
 
       btnReprendre.addEventListener("click", () => {
@@ -28531,15 +28626,18 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           independant: true,
           orga: true,
         });
-      });
-      
-        tIdVisible_m.set(path.id, {
+
+          tIdVisible_m.set(p.id, {
           continent: true,
           ONU: true,
           independant: true,
           orga: true,
         });
 
+
+      });
+      
+      
       })
       })
 
@@ -44985,14 +45083,18 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             paths.forEach((p) => (p.style.fill = pColor_m.get(p).current));
           });
           let colorEphe = pColor_m.get(p).current 
+
          colorEphe === "blue" ?
          p.style.fill = "rgb(6, 6, 152)"
          : 
          colorEphe === "red" ?
          p.style.fill = "rgb(155, 8, 8)"
          :
-         p.style.fill = "rgb(4, 103, 4)"
-
+         colorEphe === "green" ?
+         p.style.fill = "rgb(4, 103, 4)" 
+         :
+         p.style.fill = "rgb(190,190,190,1)" 
+        
         }
           return;
         }
@@ -50068,9 +50170,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(L_config.m);
+        console.log(getId('US').classList.contains("viewSub"));
       }
-      // loop();
+      loop();
       // const L_ephe2 = {}
       // paths.forEach(p=>{
       //   if (p.id.length <= 2 ){
