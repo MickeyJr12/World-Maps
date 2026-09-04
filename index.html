@@ -21465,7 +21465,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             btnPremium.click();
           }
         },
-        true,
+        true, // Faire le listener en premier
       );
 
       let oneTimeMap = false; //fais en sorte de ne voir qu'une fois la map par quiz
@@ -24103,6 +24103,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         overallChoiceSub.classList.add('active')
         contentCZ.scrollTop
         contentSubZ.scrollTop
+        getId('allC').scrollIntoView({ block: "start" })
+        if(oneTimeEdit){getId('firstReg').scrollIntoView({ block: "start" })}
+
+
         if(oneTimeEdit)return
          contentSubZ.innerHTML = ``
 
@@ -24119,6 +24123,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             reg.style.alignSelf = "flex-start"
             reg.style.fontWeight = "600";
             reg.textContent = region;
+            if(region === "Amérique"){
+              reg.id = "firstReg"
+            }
             contentSubZ.append(reg);
             cSort.forEach(id=>{
               if (P_info[id].region === region) {
@@ -24212,12 +24219,27 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             }
           }
           //****
+          const ephe15 = getId('nbrQ15')
+          ephe15.dataset.value = 15
+          ephe15.dataset.label = 15
+          ephe15.textContent = 15
+          if(nbrQVal < 15){ephe15.click()}
+
           document.querySelectorAll('.nbrQ-option').forEach(opt=>opt.classList.remove('btnHide'))
            if(el.dataset?.country){
           document.querySelectorAll('.nbrQ-option').forEach(opt=>{
-            if (opt.dataset.value !== "Tout" && opt.dataset.value > L_pathsSubL[el.dataset.country] ){
+            if (opt.dataset.value !== "Tout" && opt.dataset.value > L_nbrPSub[el.dataset.country] ){
               opt.classList.add('btnHide')
               if(nbrQVal === opt.dataset.value){
+                if(L_config.m === "modeClasser" && L_nbrPSub[el.dataset.country] < 15){
+                  ephe15.dataset.value = L_nbrPSub[el.dataset.country]
+                  ephe15.dataset.label = L_nbrPSub[el.dataset.country]
+                  ephe15.textContent = L_nbrPSub[el.dataset.country]
+                  ephe15.classList.remove("btnHide")
+                  
+                  ephe15.click()
+                  return
+                }
                 getId('nbrQAll').click()
               }
             }
@@ -24260,6 +24282,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         contentCZ.scrollTop
         contentSubZ.scrollTop
+
+        getId('allC').scrollIntoView({ block: "start" })
+
       });
 
       menuSub.addEventListener("click", () => {
@@ -24271,6 +24296,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         contentChoiceZ.scrollTop
         contentSubZ.scrollTop
+
+        if(oneTimeEdit){getId('firstReg').scrollIntoView({ block: "start" })}
       });
 
       qrs.forEach((q) => (q.style.display = "none"));
@@ -24298,11 +24325,35 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       btnsMode.forEach((btn) => {
         btn.addEventListener("click", () => {
+          
+          
+            if(L_config.sub && nbrQVal < L_nbrPSub[L_config.sub] || !L_config.sub ){
+            const ephe15 = getId('nbrQ15')
+            ephe15.dataset.value = 15
+            ephe15.dataset.label = 15
+            ephe15.textContent = 15
+            ephe15.click()
+          }
+          
           if (btn.id === "modeClasser") {
+
+            if(L_config.sub && (nbrQVal > L_nbrPSub[L_config.sub] || L_nbrPSub[L_config.sub] < 15)){
+              console.log("appel1")
+                 const ephe15 = getId('nbrQ15')
+                  ephe15.dataset.value = L_nbrPSub[L_config.sub]
+                  ephe15.dataset.label = L_nbrPSub[L_config.sub]
+                  ephe15.textContent = L_nbrPSub[L_config.sub]
+                  ephe15.classList.remove("btnHide")
+                  ephe15.click()
+                  document.getElementById("nbrQAll").classList.add("hide");
+
+                  return
+            }
             document.getElementById("nbrQAll").classList.add("hide");
             if (nbrQVal === "Tout") {
               document.getElementById("nbrQ15").click();
             }
+            
           } else {
             document.getElementById("nbrQAll").classList.remove("hide");
           }
@@ -45010,13 +45061,13 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
        const L_gSub = new Map(); // liste des svgSub, pour pouvoir les retrouver plus tard, comme on fait .remove()
       const L_pathsSub = [];
-      const L_pathsSubL = {} // Répertorier le nombre de paths que contient les svgSub, pour retirer les nombres de question en fonction 
+      const L_nbrPSub = {} // Répertorier le nombre de paths que contient les svgSub, pour retirer les nombres de question en fonction 
       
         L_sub.forEach((svgSub) => {
           const paths = getId(svgSub).querySelectorAll("path");
           paths.id = "ps" + svgSub.slice(-2).toUpperCase() //psUS exemple
           L_pathsSub.push(paths);
-          L_pathsSubL[svgSub.slice(-2).toUpperCase()] = paths.length
+          L_nbrPSub[svgSub.slice(-2).toUpperCase()] = paths.length
         });
 
         for (const clef in L_cSub) {
@@ -50023,7 +50074,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(L_reponse);
+        console.log(L_config.m);
       }
       // loop();
       // const L_ephe2 = {}
