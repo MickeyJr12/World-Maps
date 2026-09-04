@@ -234,13 +234,25 @@
       }
 
       .monde {
-        contentVisibility : auto;
+        content-visibility : auto;
         position: absolute;
         position: absolute;
         stroke: black;
         fill: rgba(0, 0, 0, 0.4);
         stroke-width: 0.1px;
         width: 90%;
+
+      .svgSub {
+        fill: white;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+        .svgSub.viewSub{
+        fill: white;
+        opacity: 1;
+        pointer-events: all;
+      }
       }
 
       svg.monde path {
@@ -356,17 +368,6 @@
       }
 
       /* CSS svgSub */
-      #svgUs.viewSub {
-        fill: white;
-        opacity: 1;
-        pointer-events: all;
-      }
-      #svgUs {
-        fill: white;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-      }
 
       #svgNl.viewSub {
         fill: white;
@@ -26219,7 +26220,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               idVisible_m.get(p.id).continent = true;
             }
           } else {
-            pColor_m.set(p.id, { hover: "", current: "black" });
+            pColor_m.set(p, { hover: "", current: L_config.sub ? "rgba(0,0,0,0.4)" : "black" });
             idVisible_m.get(p.id).continent = false;
           }
         });
@@ -26256,7 +26257,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
 
        if(L_config.sub){
+        viewMaps = false
         zoomCountry(currentCountry.id)
+        viewMaps = true
         currentCountry = null
         return
        }
@@ -28007,7 +28010,6 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             mCadre.style.opacity = "1";
           }, 20);
         } else {
-          return
           currentCountry = null;
           paths.forEach((p) => {
             resetOverlay(p.id, overlay_m.get(p.id));
@@ -28391,8 +28393,6 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           hovered: "rgb(29, 204, 90)",
           current: `${colorPath}`,
         });
-      });
-      })
       
        idVisible_m.set(p.id, {
           continent: true,
@@ -28400,6 +28400,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           independant: true,
           orga: true,
         });
+      });
+
+      })
       })
 
       pColor_m.forEach((val, key) => clonepColor_m.set(key, { ...val }));
@@ -44554,9 +44557,11 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           });
           //baba
           L_pathsSub.forEach((paths) => {
+
               paths.forEach((p) => {
                 if (L_config.sub && L_config.m === "modeChoix"){
                   p.style.fill = pColor_m.get(p).current
+                  console.log(pColor_m.get(p).current)
                   return
                 }
                 p.style.fill = L_config.sub && L_config.m ==="modeChoix" ? pColor_m.get(p).current : colorPath
