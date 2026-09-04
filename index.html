@@ -24218,21 +24218,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               break;
             }
           }
-          //****
-          const ephe15 = getId('nbrQ15')
-          const ephe20 = getId('nbrQ20')
-          const ephe25 = getId('nbrQ25')
+          //****       
 
           document.querySelectorAll('.nbrQ-option').forEach(opt=>opt.classList.remove('btnHide'))
+
            if(el.dataset?.country){
           document.querySelectorAll('.nbrQ-option').forEach(opt=>{
-            if (opt.dataset.value !== "Tout" && opt.dataset.value > L_nbrPSub[el.dataset.country] ){
+            if (opt.dataset.value !== "Tout" && opt.dataset.value > L_nbrPSub[el.dataset.country] && L_config.m !== "modeClasser"){
               opt.classList.add('btnHide')
               if(nbrQVal === opt.dataset.value){
-                if(L_config.m === "modeClasser" && opt.id !== "nbrQAll"){
-                  opt.classList.remove("btnHide")
-                  return
-                }
                 getId('nbrQAll').click()
               }
             }
@@ -24323,14 +24317,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           const ephe20 = getId('nbrQ20')
           const ephe25 = getId('nbrQ25')
 
+          document.querySelectorAll('.nbrQ-option').forEach(opt=>{opt.classList.remove('btnHide')})
+
            document.querySelectorAll('.nbrQ-option').forEach(opt=>{
             if (L_config.sub && opt.dataset.value !== "Tout" && opt.dataset.value > L_nbrPSub[L_config.sub] ){
               opt.classList.add('btnHide')
               if(nbrQVal === opt.dataset.value){
-                if(L_config.m === "modeClasser" && opt.id !== "nbrQAll"){
-                  opt.classList.remove("btnHide")
-                  return
-                }
                 getId('nbrQAll').click()
               }
             }
