@@ -1156,6 +1156,7 @@
         inset: 0;
         margin: auto;
         padding-bottom: calc(env(safe-area-inset-bottom) + 0.2rem);
+        padding-bottom : 0;
 
         margin-top: 0rem;
         height: 100%;
@@ -1435,13 +1436,12 @@
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
         touch-action: pan-y; /* le scroll est vertical, les taps passent */
         overscroll-behavior: contain; /* évite la propagation au parent */
-
         display: none;
         position: relative;
         z-index: 1; /* sous les overlays */
         justify-content: center;
         align-items: center;
-        scrollbar-width: thin;
+        scrollbar-width: none;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
         overflow: auto;
         overflow-x: hidden;
@@ -1457,8 +1457,8 @@
 
       #contentFlagS.grid3 {
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem 1rem;
-        padding: 1rem;
+        gap: 0.5rem 0.5rem;
+        padding: 0.8rem;
       }
 
       /*Barre de recherche*/
@@ -1898,6 +1898,7 @@
         backdrop-filter: blur(8px);
         border-radius: inherit;
         width: 100%;
+        font-size : 0.8rem;
         padding: 0.5rem 0.5rem;
       }
 
@@ -2042,27 +2043,35 @@
         #menuFilterColor {
         display: flex;
         align-items: center;
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.75);
         font-size: 0.92rem;
         gap: 0.4rem;
+        margin : 0.2rem 0;
+        transition  : color 0.2s ease;
       }
 
       #menuFilterColor:active {
-        filter: brightness(0.9);
+        filter: brightness(0.5);
       }
 
       #menuFilterColor:active svg {
-        fill: rgba(255, 255, 255, 0.9);
+        fill: rgba(255, 255, 255, 0.5);
       }
 
       #menuFilterColor svg {
         height: 1rem;
+        fill : rgba(255, 255, 255, 0.75);
         transform: rotate(180deg);
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, fill 0.2s ease;
       }
 
       #menuFilterColor.active svg {
+        fill : white;
         transform: rotate(270deg);
+      }
+
+      #menuFilterColor.active {
+        color : white;
       }
 
       .circleMColor{
@@ -2420,6 +2429,7 @@
 
         padding-top: calc(env(safe-area-inset-top) + 0.6rem);
         padding-bottom: env(safe-area-inset-bottom);
+
       }
       #cadreDrapeau {
         display: flex;
@@ -14960,7 +14970,7 @@
         <div class="itemFilterColor" id="titleItmColor">
           <div style="display: flex; flex-direction: column; gap: 0.2rem; margin-right: 2rem;">
             <span style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8)"
-              >Couleurs exactes uniquement</span
+              >Couleurs exactes</span
             >
             <span id="infoFilterColor" style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
               >Contient ces couleurs</span
@@ -15068,7 +15078,7 @@
       </div>
     </div>
 
-        <div id="contentFlagS" class="grid2"></div>
+        <div id="contentFlagS" class="grid3"></div>
         <div class="footerCadreS" id="footerCadreFlag" style="display: none">
           <div id="cadreColorChoice">
             <div class="colorChoice" id="colorItemW" data-color="w"></div>
@@ -24588,7 +24598,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const L_btn = [btnsMode, q, r, cs , btnsD, cadresRegions];
       const L_config = { m: null, q: null, r: null, c: null, d: null, sub : false };
 
-      const L_exclus = ["GO", "UM", "MF", "SJ", "GS", "TF", "BV","KI","US-DC"];
+      const L_exclus = ["GO", "HM", "UM", "MF", "SJ", "GS", "TF", "BV","KI","US-DC"];
 
       btnsMode.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -43576,7 +43586,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           s: 38394,
           n: "Bhoutan",
         },
-        BV: { d: "Difficile", c: null, p: 0, s: 49, n: "Île Bouvet" },
+        BV: { d: "Difficile", c: "Aucune", p: 0, s: 49, n: "Île Bouvet" },
         BW: {
           d: "Normal",
           c: "Gaborone",
@@ -43875,7 +43885,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         },
         HM: {
           d: "Difficile",
-          c: null,
+          c: "Aucune",
           p: 0,
           s: 412,
           n: "Îles Heard-et-MacDonald",
@@ -44483,7 +44493,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           s: 143100,
           n: "Tadjikistan",
         },
-        TK: { d: "Difficile", c: null, p: 1357, s: 12, n: "Tokelau" },
+        TK: { d: "Difficile", c: "Aucune", p: 1357, s: 12, n: "Tokelau" },
         TL: {
           d: "Difficile",
           c: "Dili",
@@ -44515,7 +44525,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         UG: { d: "Normal", c: "Kampala", p: 45741007, s: 241550, n: "Ouganda" },
         UM: {
           d: "Difficile",
-          c: null,
+          c: "Aucune",
           p: 300,
           s: 34,
           n: "Îles mineures éloignées des États-Unis",
@@ -46338,13 +46348,29 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         let sautPays = false;
         let cFound = false;
 
+        const onlyColor  = getId('titleItmColor').querySelector('input').checked
+        const L_onlyColor = []
+        if(onlyColor){
+          for (const c in D_colorChoice){
+            if(D_colorChoice[c])L_onlyColor.push(c)
+          }
+        }
         for (const r of Lf) {
           if (L_exclus.includes(r.id)) {
             continue;
           }
           sautPays = false;
+         
           for (const [color, value] of Object.entries(D_colorChoice)) {
             if (L_exclus.includes(r.id)) continue;
+
+             
+            
+            if((D_color[r.id.toUpperCase()][color] && !L_onlyColor.includes(color) || !D_color[r.id.toUpperCase()][color] && L_onlyColor.includes(color)) && onlyColor){ 
+              sautPays = true}
+              //Si le pays contient la couleur, mais pas la liste, ou inversement
+            
+
             if (value && !D_color[r.id.toUpperCase()][color]) {
               sautPays = true;
             }
@@ -48647,13 +48673,16 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
       //Footers*********************************************************
 
       itemsFilterColor.forEach((itm) => {
-          if(itm.id === "titleItmColor")return
+          
         
         const color = itm.querySelector('.circleColor')
         itm.addEventListener("click", () => {
+          if(itm.id !== "titleItmColor"){
           D_colorChoice[color.dataset.color] =
             !D_colorChoice[color.dataset.color];
-          fillContentFlag(LfInit);
+          }
+            requestAnimationFrame(()=>fillContentFlag(LfInit))
+          ;
         });
       });
 
