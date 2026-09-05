@@ -44786,20 +44786,21 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           cadreVue.style.pointerEvents = "none";
           only.classList.remove("active");
         }
-        if (!country || country === currentCountry || L_config.m === "modeChoix" && L_config.sub && (!pColor_m.has(country) || !["red","green","blue"].includes(pColor_m.get(country).current)   )) 
+        if (!country || country === currentCountry || L_config.m === "modeChoix" && L_config.sub && (!pColor_m.has(country) || !["red","green","blue"].includes(pColor_m.get(country).current))) 
         {
           currentCountry = null;
           paths.forEach((p) => {
             resetOverlay(p.id, overlay_m.get(p.id));
           });
           //baba
+
           L_pathsSub.forEach((paths) => {
               paths.forEach((p) => {
-                if (L_config.sub && L_config.m === "modeChoix"){
+                if (L_config.sub && L_config.m){
                   p.style.fill = pColor_m.get(p).current
                   return
                 }
-                p.style.fill = L_config.sub && L_config.m ==="modeChoix" ? pColor_m.get(p).current : colorPath
+                p.style.fill =  colorPath
               });
             });
           toggleC(false);
@@ -50170,9 +50171,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(getId('US').classList.contains("viewSub"));
+        console.log(L_config.m,L_config.sub)
       }
-      loop();
+      // loop();
       // const L_ephe2 = {}
       // paths.forEach(p=>{
       //   if (p.id.length <= 2 ){
