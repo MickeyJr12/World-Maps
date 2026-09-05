@@ -2047,6 +2047,7 @@
         font-size: 0.92rem;
         gap: 0.4rem;
         margin : 0.2rem 0;
+        margin-bottom : 0.6rem;
         transition  : color 0.2s ease;
       }
 
@@ -2072,6 +2073,12 @@
 
       #menuFilterColor.active {
         color : white;
+      }
+
+      #wrapperCircleColor{
+        display : flex;
+        flex-wrap : nowrap;
+        gap : inherit;
       }
 
       .circleMColor{
@@ -14963,7 +14970,7 @@
           </g>
         </svg>
         <span id="fitleFilterColor" style="margin-right : 0.4rem">Filtrer par couleur</span>
-        
+        <div id="wrapperCircleColor"></div>
       </div>
 
       <div id="cadreFilterColor">
@@ -14972,8 +14979,8 @@
             <span style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8)"
               >Couleurs exactes</span
             >
-            <span id="infoFilterColor" style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
-              >Contient ces couleurs</span
+            <span  style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
+              ><span id="infoFilterColor">Contient</span> <span style="display : flex; white-space: nowrap">ces couleurs</span></span
             >
           </div>
 
@@ -29246,8 +29253,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         }, // bleu, blanc, rouge (comme France)
         BM: {
           r: true,
-          w: false,
-          b: false,
+          w: true,
+          b: true,
           g: false,
           y: false,
           k: false,
@@ -48328,6 +48335,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
        const cadreFilterColor = document.getElementById("cadreFilterColor");
       const menuFilterColor = document.getElementById("menuFilterColor");
+      const wrapperCircleColor = getId('wrapperCircleColor')
       const itemsFilterColor = document.querySelectorAll('.itemFilterColor')
       const fitleFilterColor = document.getElementById('fitleFilterColor')
       const titleItmColor = document.getElementById('titleItmColor')
@@ -48345,11 +48353,11 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
       function createCircleColor(color){
         const  circle = document.createElement('div')
         nbrColorFilter +=1
-        fitleFilterColor.textContent  = nbrColorFilter + " couleurs"
+        fitleFilterColor.textContent  = nbrColorFilter + " couleurs" + (getId('titleItmColor').querySelector('input').checked ? " (uniquement)" : "");
         circle.className = "circleMColor remove"
         circle.style.background = D_backgroundColor[color]
         L_circleColor.set(color, circle)
-        menuFilterColor.append(circle)
+        wrapperCircleColor.append(circle)
         setTimeout(() => {
           circle.classList.remove('remove')
         }, 0);
@@ -48370,11 +48378,15 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         document.getElementById('infoFilterColor').textContent = 
 
         toggle.querySelector('input').checked ?
-        "Contient ces couleurs":
-        "Uniquement ces couleurs"
+        "Contient":
+        "Uniquement"
 
+        requestAnimationFrame(()=>{
+        if(nbrColorFilter>0)fitleFilterColor.textContent  = nbrColorFilter + " couleurs" + (getId('titleItmColor').querySelector('input').checked ? " (uniquement)" : "");
 
+        })        
       })
+
 
       itemsFilterColor.forEach(itm=>{
         const toggle = itm.querySelector('.toggleSetting')
