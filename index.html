@@ -26697,12 +26697,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             .forEach((svg) => (svg.style.display = "none"));
           document
             .querySelectorAll(".imgPmCadre")
-            .forEach((img) => (img.style.display = (L_config.sub === "US" || !L_config.sub ? "none" : "")));
+            .forEach((img) => (img.style.display = ""));
 
           document.querySelectorAll(".cadreImgPm").forEach((img) => {
             img.style.overflow = "";
             img.style.margin = "";
-            img.style.display = "";
+            img.style.display = L_config.sub === "US" || !L_config.sub ? "" : "none";
           });
           document
             .querySelectorAll(".imgPmBox")
