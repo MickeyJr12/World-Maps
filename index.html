@@ -1156,6 +1156,7 @@
         inset: 0;
         margin: auto;
         padding-bottom: calc(env(safe-area-inset-bottom) + 0.2rem);
+
         padding-bottom : 0;
 
         margin-top: 0rem;
@@ -2043,12 +2044,19 @@
         #menuFilterColor {
         display: flex;
         align-items: center;
-        color: rgba(255, 255, 255, 0.75);
+        color: rgba(255, 255, 255, 0.6);
         font-size: 0.92rem;
         gap: 0.4rem;
         margin : 0.2rem 0;
         margin-bottom : 0.6rem;
         transition  : color 0.2s ease;
+      }
+       #menuFilterColor svg {
+        height: 1rem;
+        fill : rgba(255, 255, 255, 0.6);
+        stroke : rgba(255, 255, 255, 0.6);
+        transform: rotate(180deg);
+        transition: transform 0.2s ease, fill 0.2s ease;
       }
 
       #menuFilterColor:active {
@@ -2057,23 +2065,21 @@
 
       #menuFilterColor:active svg {
         fill: rgba(255, 255, 255, 0.5);
-      }
+        stroke: rgba(255, 255, 255, 0.5);
 
-      #menuFilterColor svg {
-        height: 1rem;
-        fill : rgba(255, 255, 255, 0.75);
-        transform: rotate(180deg);
-        transition: transform 0.2s ease, fill 0.2s ease;
-      }
-
-      #menuFilterColor.active svg {
-        fill : white;
-        transform: rotate(270deg);
       }
 
       #menuFilterColor.active {
         color : white;
       }
+     
+      #menuFilterColor.active svg {
+        fill : white;
+        stroke : white;
+        transform: rotate(270deg);
+      }
+
+      
 
       #wrapperCircleColor{
         display : flex;
@@ -14976,7 +14982,7 @@
       <div id="cadreFilterColor">
         <div class="itemFilterColor" id="titleItmColor">
           <div style="display: flex; flex-direction: column; gap: 0.2rem; margin-right: 2rem;">
-            <span style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.8)"
+            <span style="white-space : nowrap;  font-size: 0.85rem; color: rgba(255, 255, 255, 0.8)"
               >Couleurs exactes</span
             >
             <span  style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
@@ -46397,9 +46403,11 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           const footerCelDrapeau = document.createElement("div");
           footerCelDrapeau.className = "footerCelDrapeau";
 
-          caseCelDrapeau.innerHTML = `
-              <img src="flag_c/${r.id.toLowerCase()}.svg" draggable="false" alt="" />
-          `;
+          caseCelDrapeau.innerHTML =`
+  <img src="flag_c/${r.id.toLowerCase()}.svg" alt=""
+       onerror="this.onerror=null; this.src='flag_c/default.svg';" />
+`;
+          
          
 
           footerCelDrapeau.textContent = L_q[r.id.toUpperCase()].n;
@@ -46524,7 +46532,10 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           const ligneInContent = document.createElement("div");
           ligneInContent.className = "ligneInContent";
 
-          boxSvgItem.innerHTML = ` <img  src="flag_c/${r.id.toLowerCase()}.svg" alt="" />`;
+         boxSvgItem.innerHTML = `
+  <img src="flag_c/${r.id.toLowerCase()}.svg" alt=""
+       onerror="this.onerror=null; this.src='flag_c/default.svg';" />
+`;
 
           titleItemC.textContent = L_q[r.id.toUpperCase()].n;
           if (currentClass === "name") {
@@ -48410,11 +48421,15 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         e.stopPropagation()
         cadreFilterColor.classList.toggle("active");
         menuFilterColor.classList.toggle("active");
+
+        document.getElementById("arrowTitle").classList.remove("active");
+        cadreModeS.classList.remove("active");
+        cadreFilterS.classList.remove("active");
       });
         
-      cadreFilterColor.addEventListener('click',(e)=>e.stopPropagation())
+      getId('wrapperFilterColor').addEventListener('pointerdown',(e)=>e.stopPropagation())
 
-      document.addEventListener('click',()=>{
+      document.addEventListener('pointerdown',()=>{
         cadreFilterColor.classList.remove("active");
         menuFilterColor.classList.remove("active");
       })
@@ -48464,6 +48479,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           : 1 === 1;
         cadreClasser.classList.remove("active");
         cadreFilterS.classList.remove("active");
+        cadreFilterColor.classList.remove("active");
+        menuFilterColor.classList.remove("active");
+
         cadreModeS.classList.toggle("active");
         document.getElementById("arrowTitle").classList.toggle("active");
       });
@@ -48749,6 +48767,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         document.getElementById("arrowTitle").classList.remove("active");
         cadreModeS.classList.remove("active");
         cadreFilterS.classList.remove("active");
+        cadreFilterColor.classList.remove("active");
+        menuFilterColor.classList.remove("active");
+        
         cadreClasser.classList.toggle("active");
       });
 
