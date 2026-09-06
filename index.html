@@ -1340,10 +1340,9 @@
         flex-direction: column;
         width: 10rem;
         height: auto;
-        border-radius: 5px;
+        border-radius: 0.8rem;
         border: 1px solid rgba(255, 255, 255, 0.2);
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);        
-        background: rgba(17, 17, 135, 0.75);
         backdrop-filter: blur(10px);
         transform-origin: center top;
         transform: scale(0.92) translateY(-5%);
@@ -1361,7 +1360,7 @@
         grid-template-columns: auto 1fr auto;
         align-items: center;
         cursor: pointer;
-        background : inherit;
+        background: rgba(17, 17, 135, 0.9);
         backdrop-filter: blur(10px);
         gap: 1rem;
         padding: 0.6rem;
@@ -29291,7 +29290,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           w: true,
           b: true,
           g: false,
-          y: false,
+          y: true,
           k: false,
           o: false,
         }, // bleu, blanc, rouge
@@ -29582,8 +29581,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           w: true,
           b: false,
           g: false,
-          y: false,
-          k: false,
+          y: true,
+          k: true,
           o: false,
         }, // rouge, blanc, noir (aigle) — fond : rouge blanc noir
         EH: {
@@ -30585,8 +30584,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           r: true,
           w: true,
           b: true,
-          g: false,
-          y: false,
+          g: true,
+          y: true,
           k: false,
           o: false,
         }, // bleu, blanc, rouge (comme France)
@@ -30757,7 +30756,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           w: true,
           b: true,
           g: false,
-          y: false,
+          y: true,
           k: false,
           o: false,
         }, // bleu, blanc, rouge
@@ -31118,7 +31117,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           w: true,
           b: true,
           g: false,
-          y: false,
+          y: true,
           k: false,
           o: false,
         }, // blanc, bleu, rouge
