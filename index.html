@@ -2326,7 +2326,7 @@
         letter-spacing: 1px;
         min-width: 3.5rem;
         width: fit-content;
-        height: 2.6rem; /* hauteur fixe */
+        height: 2.8rem; /* hauteur fixe */
       }
 
       .mDrapeauBox {
@@ -2358,7 +2358,7 @@
         align-items: center;
         gap: 0.3rem;
       }
-      .voirPlus {
+      /* .voirPlus {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2372,15 +2372,14 @@
         background: #0c31e9b8;
         border-radius: 0.5rem;
         font-size: 1.05rem;
-      }
+      } */
       .voirPlus svg {
-        height: 1.2rem;
+        height: 1rem;
         fill: white;
       }
 
       #viewMore{
         display: flex;
-        align-self : center;
         align-items: center;
         justify-content: center;
         cursor: pointer;
@@ -2400,6 +2399,11 @@
       }
 
       #btnSub {
+        display: flex;
+        align-items: center;
+        align-self : flex-start;
+        justify-content: center;
+
         overflow: hidden;
         color: white;
         max-height: 0rem;
@@ -2413,7 +2417,17 @@
         background: #38c688b8;
         background: rgba(255, 140, 24, 0.85);
 
+        gap: 0.5rem;
+        padding: 0.4rem 0.6rem;
+        outline : 1px solid rgba(255,255,255,0.1);
+        border-radius: 50rem;
+        font-size: 0.9rem;
+        transition : transform 0.2s ease
       }
+       #btnSub:active{
+        transform : scale(0.96)
+      }
+
       #btnSub.viewSub {
         opacity: 1;
         margin-bottom: 0rem;
@@ -15535,7 +15549,9 @@
             </div>
           </div>
 
-          <div  id="viewMore">Voir plus ></div>
+          <div style="display : flex; flex-direction : column; gap : 0.25rem; align-items : flex-end">
+          <div  class="voirPlus" id="viewMore">Voir plus ></div>
+</div>
           </div>
 
          
@@ -15556,6 +15572,7 @@
               <span class="capitaleLabel" id="mCapitale"></span>
             </div>
           </div>
+        <div  class="voirPlus" id="btnSub"></div>
 
           <button class="cross" id="mCrossCadre" onclick="toggleC(false)">
             <svg
@@ -15573,7 +15590,6 @@
               />
             </svg>
           </button>
-        <div class="voirPlus" id="btnSub"></div>
       </div>
       <!--------------------------Grand Cadre------------------------------->
 
