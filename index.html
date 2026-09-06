@@ -2197,8 +2197,8 @@
       .opensearch {
         display: flex;
         position: absolute;
-        right: 1rem;
-        top: 14rem;
+        left  : 1rem;
+        top: 16rem;
         justify-content: center;
         align-items: center;
         z-index: 10;
@@ -2289,18 +2289,21 @@
       }
       #containerTopCadre {
         display: flex;
+        justify-content : space-between;
         flex-direction: row;
         gap: 0.6rem;
         width: 100%;
       }
       #mInfoBox {
         display: flex;
+        align-self : flex-start;
         align-items: flex-start;
         flex-direction: column;
         height: auto;
         gap: 0.3rem;
         flex: 1;
         min-width: 0; /* évite le débordement texte */
+        width : 100%
       }
 
       #mCrossCadre {
@@ -2312,6 +2315,7 @@
       }
       .mCadreDrapeau {
         display: flex;
+        align-self : flex-start;
         position: relative;
         justify-content: center;
         align-items: center;
@@ -2371,6 +2375,27 @@
       .voirPlus svg {
         height: 1.2rem;
         fill: white;
+      }
+
+      #viewMore{
+        display: flex;
+        align-self : center;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+        box-sizing: border-box;
+        gap: 0.5rem;
+        padding: 0.4rem 0.6rem;
+        color: #bac5d8;
+        background: rgba(12, 49, 233, 0.5);
+        outline : 1px solid rgba(255,255,255,0.1);
+        border-radius: 50rem;
+        font-size: 0.9rem;
+        transition : transform 0.2s ease
+      }
+      #viewMore:active{
+        transform : scale(0.96)
       }
 
       #btnSub {
@@ -15485,8 +15510,10 @@
 
       <!----------------------LittleCadre------------------------------->
       <div id="mCadre">
+
         <div id="containerTopCadre">
-          <div class="mCadreDrapeau">
+
+         <div class="mCadreDrapeau">
             <div class="mDrapeauBox">
               <img src="" alt="" id="mDrapeauCadre"  onerror="this.onerror=null; this.src='flag_c/default.svg';" />
               <div
@@ -15495,6 +15522,11 @@
               ></div>
             </div>
           </div>
+
+          <div  id="viewMore">Voir plus ></div>
+          </div>
+
+         
 
           <div id="mInfoBox">
             <div class="titleCadre" id="mTitleCadre"></div>
@@ -15529,8 +15561,6 @@
               />
             </svg>
           </button>
-        </div>
-        <div class="voirPlus" id="viewMore">Voir plus ></div>
         <div class="voirPlus" id="btnSub"></div>
       </div>
       <!--------------------------Grand Cadre------------------------------->
@@ -35973,6 +36003,57 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
   },
 
 
+  // Sub Grèce
+
+  
+  "GR-A": {"n":"Macédoine-Orientale-et-Thrace","p":562201,"info":"Périphérie (région administrative de 1er niveau)","s":14157.76,"nH":"Macédoniens, Thraces","indT":"+30","c":"Komotiní"},
+  "GR-B": {"n":"Macédoine-Centrale","p":1795669,"info":"Périphérie (région administrative de 1er niveau)","s":18810.52,"nH":"Macédoniens","indT":"+30","c":"Thessalonique"},
+  "GR-C": {"n":"Macédoine-Occidentale","p":254595,"info":"Périphérie (région administrative de 1er niveau)","s":9451,"nH":"Macédoniens","indT":"+30","c":"Kozáni"},
+  "GR-D": {"n":"Épire","p":319991,"info":"Périphérie (région administrative de 1er niveau)","s":9203.22,"nH":"Épirotes","indT":"+30","c":"Ioannina"},
+  "GR-E": {"n":"Thessalie","p":688255,"info":"Périphérie (région administrative de 1er niveau)","s":14036.64,"nH":"Thessaliens","indT":"+30","c":"Larissa"},
+  "GR-F": {"n":"Îles Ioniennes","p":204532,"info":"Périphérie (région administrative de 1er niveau)","s":2306.94,"nH":"Heptanésiens","indT":"+30","c":"Corfou"},
+  "GR-G": {"n":"Grèce-Occidentale","p":640243,"info":"Périphérie (région administrative de 1er niveau)","s":11350.18,"nH":"Non disponible","indT":"+30","c":"Patras"},
+  "GR-H": {"n":"Grèce-Centrale","p":508254,"info":"Périphérie (région administrative de 1er niveau)","s":15549.31,"nH":"Non disponible","indT":"+30","c":"Lamía"},
+  "GR-I": {"n":"Attique","p":3784565,"info":"Périphérie (région administrative de 1er niveau) ; comprend Athènes et son agglomération","s":3808.1,"nH":"Non disponible","indT":"+30","c":"Athènes"},
+  "GR-J": {"n":"Péloponnèse","p":539535,"info":"Périphérie (région administrative de 1er niveau)","s":15489.96,"nH":"Péloponnésiens","indT":"+30","c":"Tripoli"},
+  "GR-K": {"n":"Égée-Septentrionale","p":194943,"info":"Périphérie (région administrative de 1er niveau)","s":3835.91,"nH":"Non disponible","indT":"+30","c":"Mytilène"},
+  "GR-L": {"n":"Égée-Méridionale","p":327820,"info":"Périphérie (région administrative de 1er niveau)","s":5286,"nH":"Non disponible","indT":"+30","c":"Ermoúpoli"},
+  "GR-M": {"n":"Crète","p":624408,"info":"Périphérie (région administrative de 1er niveau)","s":8336,"nH":"Crétois","indT":"+30","c":"Héraklion"},
+  "GR-69": {"n":"Mont Athos (Sainte Montagne)","p":1746,"info":"Communauté monastique autonome (statut particulier, hors des 13 périphéries)","s":336,"nH":"Athonites (Agiorites)","indT":"+30","c":"Karyès"}
+,
+
+// Sub Autriche
+
+
+  "AT-1": {"n":"Burgenland","p":302000,"info":"Land (État fédéré)","s":3962,"nH":"Burgenlandais(es)","indT":"+43","c":"Eisenstadt"},
+  "AT-2": {"n":"Carinthie (Kärnten)","p":569800,"info":"Land (État fédéré)","s":9538,"nH":"Carinthiens","indT":"+43","c":"Klagenfurt"},
+  "AT-3": {"n":"Basse-Autriche (Niederösterreich)","p":1724000,"info":"Land (État fédéré)","s":19186,"nH":"Bas-Autrichiens","indT":"+43","c":"Sankt Pölten"},
+  "AT-4": {"n":"Haute-Autriche (Oberösterreich)","p":1530600,"info":"Land (État fédéré)","s":11980,"nH":"Haut-Autrichiens","indT":"+43","c":"Linz"},
+  "AT-5": {"n":"Salzbourg (Salzburg)","p":571500,"info":"Land (État fédéré)","s":7156,"nH":"Salzbourgeois","indT":"+43","c":"Salzbourg"},
+  "AT-6": {"n":"Styrie (Steiermark)","p":1269900,"info":"Land (État fédéré)","s":16401,"nH":"Styriens","indT":"+43","c":"Graz"},
+  "AT-7": {"n":"Tyrol (Tirol)","p":776100,"info":"Land (État fédéré)","s":12640,"nH":"Tyroliens","indT":"+43","c":"Innsbruck"},
+  "AT-8": {"n":"Vorarlberg","p":410000,"info":"Land (État fédéré) — le plus à l'ouest","s":2602,"nH":"Vorarlbergeois","indT":"+43","c":"Bregenz"},
+  "AT-9": {"n":"Vienne (Wien)","p":2006100,"info":"À la fois ville, commune, Land et capitale fédérale","s":414,"nH":"Viennois(es)","indT":"+43","c":"Vienne"}
+,
+// Sub Belgique
+
+
+  "BE-VAN": {"n":"Anvers (Antwerpen)","p":1874048,"info":"Province de Région flamande","s":2867,"nH":"Anversois","indT":"+32","c":"Anvers"},
+  "BE-WBR": {"n":"Brabant wallon","p":410121,"info":"Province de Région wallonne","s":1091,"nH":"Brabançons wallons","indT":"+32","c":"Wavre"},
+  "BE-BRU": {"n":"Bruxelles-Capitale","p":1222637,"info":"Région | Capitale de la Belgique et siège de nombreuses institutions européennes","s":162,"nH":"Bruxellois","indT":"+32","c":"Bruxelles"},
+  "BE-WHT": {"n":"Hainaut","p":1368020,"info":"Province de Région wallonne","s":3787,"nH":"Hennuyers","indT":"+32","c":"Mons"},
+  "BE-WLG": {"n":"Liège","p":1111512,"info":"Province de Région wallonne","s":3862,"nH":"Liégeois","indT":"+32","c":"Liège"},
+  "BE-VLI": {"n":"Limbourg","p":876437,"info":"Province de Région flamande","s":2427,"nH":"Limbourgeois","indT":"+32","c":"Hasselt"},
+  "BE-WLX": {"n":"Luxembourg","p":292711,"info":"Province de Région wallonne","s":4440,"nH":"Luxembourgeois (belges)","indT":"+32","c":"Arlon"},
+  "BE-WNA": {"n":"Namur","p":497649,"info":"Province de Région wallonne","s":3675,"nH":"Namurois","indT":"+32","c":"Namur"},
+  "BE-VOV": {"n":"Flandre orientale (Oost-Vlaanderen)","p":1525255,"info":"Province de Région flamande","s":2982,"nH":"Flandriens","indT":"+32","c":"Gand"},
+  "BE-VBR": {"n":"Brabant flamand (Vlaams-Brabant)","p":1153878,"info":"Province de Région flamande","s":2106,"nH":"Brabançons flamands","indT":"+32","c":"Louvain"},
+  "BE-VWV": {"n":"Flandre occidentale (West-Vlaanderen)","p":1194684,"info":"Province de Région flamande","s":3197,"nH":"Flandriens","indT":"+32","c":"Bruges"}
+,
+
+
+
+
 
 
 
@@ -43637,7 +43718,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           c: "Bangui",
           p: 4829767,
           s: 622984,
-          n: "Rep. centrAfricaine",
+          n: "Rép. centrafricaine",
         },
         CG: {
           d: "Difficile",
