@@ -7205,7 +7205,7 @@
           background 0.2s ease;
       }
 
-      .celPop {
+      .celPopD:active {
         transform: scale(0.97);
         background: #f2f8f3;
       }
@@ -46411,7 +46411,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
           footerCelDrapeau.textContent = L_q[r.id.toUpperCase()].n;
 
-          celDrapeau.append(footerCelDrapeau,caseCelDrapeau);
+          celDrapeau.append(caseCelDrapeau,footerCelDrapeau);
           contentFlagS.append(celDrapeau);
 
           celDrapeau.style.transform = "translateY(-0.8rem)";
