@@ -2275,6 +2275,7 @@
         max-width: 500px;
         z-index: 10;
         background: rgba(2, 34, 85, 0.879);
+        background: linear-gradient(180deg, rgba(9, 58, 136, 0.879) 0%, rgba(2, 34, 85, 0.879) 100%);
         backdrop-filter: blur(10px);
         transform-origin: center top;
         transition:
@@ -45592,6 +45593,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             : g.setAttribute("transform", getAlignTransform(clef, svgSubId));
           L_gSub.set(L_cSub[clef].svgSub, g);
           g.classList.add('svgSub')
+          const paths = g.querySelectorAll('path')
+          console.log(paths)
           g.remove();
         }
 
@@ -50713,7 +50716,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(L_config.m,L_config.sub)
+        console.log("")
       }
       // loop();
       // const L_ephe2 = {}
