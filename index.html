@@ -2565,9 +2565,7 @@
         overflow: hidden;
         color: white;
         max-height: 0rem;
-        opacity: 0;
         margin-bottom: -0.6rem;
-        padding: 0rem;
         transition:
           max-height 0.1s ease,
           padding 0.1s ease,
@@ -2576,7 +2574,7 @@
         background: rgba(255, 140, 24, 0.85);
 
         gap: 0.5rem;
-        padding: 0.4rem 0.6rem;
+        padding : 0;
         outline : 1px solid rgba(255,255,255,0.1);
         border-radius: 50rem;
         font-size: 0.9rem;
@@ -2588,7 +2586,7 @@
 
       #btnSub.viewSub {
         opacity: 1;
-        margin-bottom: 0rem;
+        margin: 0rem;
         padding: 0.5rem;
         max-height: 5rem;
       }
@@ -46421,6 +46419,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         mCadreDrapeau.style.display = "flex"
         cadreDrapeau.style.display = "flex"
 
+        mCadre.insertBefore(getId('containerTopCadre'), getId('mInfoBox'));
+
+
         loadingCadre.style.display = ""
         mLoadingCadre.style.display = ""
 
@@ -46434,6 +46435,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         else {
         mCadreDrapeau.style.display = "none"
         cadreDrapeau.style.display = "none"
+
+        mCadre.insertBefore(getId('mInfoBox'),getId('containerTopCadre'));
+
 
         loadingCadre.style.display = "none"
         mLoadingCadre.style.display = "none"
