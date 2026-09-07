@@ -25825,6 +25825,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               idVisible_m.get(p.id).continent = false;
             }            
           });
+
+          L_pathsSub.find(ps=>ps.id.slice(-2) === L_config.sub)?.forEach(p=>pColor_m.get(p).current = colorPath)
           colorCountry();
           btnCartePm.classList.add("noClick");
 
@@ -25965,6 +25967,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             pColor_m.set(p,{hover:"",current : colorPath})
             idVisible_m.get(p.id).continent = true
           })
+
+
           colorCountry()
 
           svgSub2.classList.add("viewSub");
@@ -26088,6 +26092,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               idVisible_m.get(p.id).continent = false;
             }
           });
+
+          L_pathsSub.find(ps=>ps.id.slice(-2) === L_config.sub)?.forEach(p=>pColor_m.get(p).current = colorPath)
+
 
           colorCountry();
           const L_info = (L_config.sub ? D_us : L_q)
@@ -28499,8 +28506,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
-     const paths = [...svg.querySelectorAll("path")];   // spread → vrai tableau
-const pathsId_m = new Map(paths.map((p) => [p.id, p]));
+     const paths = [...svg.querySelectorAll("path")].filter(p=>p.id.length === 2)   // spread → vrai tableau
+    const pathsId_m = new Map(paths.map((p) => [p.id, p]));
       
 
       const L_circles = [
@@ -29450,7 +29457,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
           toggleC(false);
           currentCountry = null;
-          colorCountry();
+          colorCountry(svgSub.id.slice(-2).toUpperCase());
 
           for (const clef in D_circles) {
             D_circles[clef].style.visibility = "hidden";
@@ -29705,7 +29712,12 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
       requestAnimationFrame(()=>{
         L_pathsSub.forEach(paths=>{
-        paths.forEach((p) => {
+          
+        paths.forEach((p) => {        
+
+          pathsId_m.set(p.id,p)
+
+
         pColor_m.set(p, {
           hovered: "rgb(29, 204, 90)",
           current: `${colorPath}`,
@@ -29727,7 +29739,6 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
 
       });
-      
       
       })
       })
@@ -45965,6 +45976,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
         if (
           L_config.m === "modeTrouver" &&
           !cChooseTrouver &&
+          
           !cChooseTrouver &&
           !cadreNext.classList.contains("none")
         ) {
@@ -45972,7 +45984,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           document.querySelector(".btn-suivant").textContent = "Valider ✓";
           cadreNext.classList.add("none", "visible");
         }
-        colorCountry();
+         L_config.sub || viewSub ? colorCountry(currentCountry.id.slice(0,2).toUpperCase()) : colorCountry()
+
 
         if (
           (L_config.m === "modeTrouver" &&
@@ -46272,10 +46285,10 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
       paths.forEach((p) => {
         createOverlay(p.id);
       });
+      
 
-      function colorCountry() {
-        console.log("mlklk");
-        (L_config.sub ? [...L_pathsSub.find(paths=>paths.id === "ps" + L_config.sub)] : paths).forEach((p) => {
+      function colorCountry(svgSubId = null) { // "US" par exemple
+      ;(L_config.sub || viewSub ? L_pathsSub.find(paths=>paths.id === "ps" + (L_config.sub ? L_config.sub : svgSubId)) : paths).forEach((p) => {
           const status = idVisible_m.get(p.id);
           const visible = status && Object.values(status).every(Boolean);
           p.style.fill = visible ? pColor_m.get(p).current : "";
@@ -46283,6 +46296,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           //   return;
           // }
           if (p === currentCountry && currentCountry != null) {
+
             // hapticFeedback('light')
             const overlay = overlay_m.get(p.id);
             darkenCountry(p.id, overlay);
@@ -46294,7 +46308,8 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
             }
 
             if (currentCountry === null ) {
-                resetOverlay(p.id, overlay_m.get(p.id));
+                resetOverlay(p.id,  overlay_m.get(p.id))
+                ;
 
             }
           }
@@ -46323,6 +46338,9 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
           L_gSub.set(L_cSub[clef].svgSub, g);
           g.classList.add('svgSub')
           const paths = g.querySelectorAll('path')
+          paths.forEach(p=>{
+            createOverlay(p.id)
+          })
           g.remove();
         }
 
@@ -51459,7 +51477,7 @@ const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log("")
+        console.log(currentCountry.id)
       }
       // loop();
       // const L_ephe2 = {}
