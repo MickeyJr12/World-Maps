@@ -31663,6 +31663,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             rankSortSub.className = "rankSortSub";
             rankSortSub.innerHTML = `${rankSub}<sup>e</sup>`;
             if (rankSub === 1) rankSortSub.innerHTML = `1<sup>er</sup>`;
+            if (rankSub === 2) rankSortSub.innerHTML = `2<sup>ème</sup>`;
+
 
             badgeInfoSub.replaceWith(rankSortSub);
           }
@@ -53321,7 +53323,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             // rank.textContent = `n°${rankPop[r.id.toUpperCase()]}`;
             rank.innerHTML = `${rankPop[r.id.toUpperCase()]}<sup>e</sup>`;
             if (rankPop[r.id.toUpperCase()] === 1)
-              rank.innerHTML = `1<sup>er</sup>`;
+              {rank.innerHTML = `1<sup>er</sup>`;}
+            if (rankPop[r.id.toUpperCase()] === 2)
+              {rank.innerHTML = `2<sup>ème</sup>`;}
+
+
+
 
             itemC.append(rank);
 
@@ -53346,7 +53353,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             // rank.textContent = `n°${rankS[r.id.toUpperCase()]}`;
             rank.innerHTML = `${rankS[r.id.toUpperCase()]}<sup>e</sup>`;
             if (rankS[r.id.toUpperCase()] === 1)
-              rank.innerHTML = `1<sup>er</sup>`;
+              {rank.innerHTML = `1<sup>er</sup>`;}
+
+            if (rankS[r.id.toUpperCase()] === 2)
+              {rank.innerHTML = `2<sup>ème</sup>`;}
+
+            
 
             itemC.append(rank);
 
