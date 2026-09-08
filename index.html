@@ -26269,7 +26269,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         // modifSub
         if (L_config.sub){
           paysDispos = [...L_pathsSub.find(paths=>paths.id === "ps" + L_config.sub)].map(path => path.id).filter((id)=>
-          !L_reponses.includes(id) && !L_exclus.includes(id)
+          !L_reponses.includes(id) && !L_exclus.includes(id) && !(id ==="SRSI"  && (L_config.q === "capitaleQ"  || L_config.r === "capitaleR"))
         )
           
       }
@@ -26317,7 +26317,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
           if(L_config.sub){
               paysDispoAll = [...L_pathsSub.find(paths=>paths.id === "ps" + L_config.sub)].map(path => path.id).filter((id)=>
-           !L_exclus.includes(id)
+           !L_exclus.includes(id) && !(id ==="SRSI"  && (L_config.q === "capitaleQ"  || L_config.r === "capitaleR"))
         )}
 
         celRest = nbrQVal === "Tout" ? paysDispoAll.length : maxQ;
@@ -32536,6 +32536,87 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       };
 
       const D_us = {
+        // Sub Paraguay
+        "PY19": {n:"Boquerón", p:71078, info:"Département", s:91669, nH:"Non disponible", indT:595, c:"Filadelfia"},
+"PY15": {n:"Presidente Hayes", p:123313, info:"Département", s:72907, nH:"Non disponible", indT:595, c:"Villa Hayes"},
+"PY11": {n:"Central", p:1883927, info:"Département", s:2465, nH:"Non disponible", indT:595, c:"Areguá"},
+"PYASU": {n:"Asunción", p:462241, info:"District Capital", s:117, nH:"Non disponible", indT:595, c:"Asunción"},
+"PY10": {n:"Alto Paraná", p:763702, info:"Département", s:14895, nH:"Non disponible", indT:595, c:"Ciudad del Este"},
+"PY7": {n:"Itapúa", p:449642, info:"Département", s:16525, nH:"Non disponible", indT:595, c:"Encarnación"},
+"PY12": {n:"Ñeembucú", p:76719, info:"Département", s:12147, nH:"Non disponible", indT:595, c:"Pilar"},
+"PY8": {n:"Misiones", p:111142, info:"Département", s:9556, nH:"Non disponible", indT:595, c:"San Juan Bautista"},
+"PY16": {n:"Alto Paraguay", p:17195, info:"Département", s:82349, nH:"Non disponible", indT:595, c:"Fuerte Olimpo"},
+"PY1": {n:"Concepción", p:206181, info:"Département", s:18051, nH:"Non disponible", indT:595, c:"Concepción"},
+"PY13": {n:"Amambay", p:179412, info:"Département", s:12933, nH:"Non disponible", indT:595, c:"Pedro Juan Caballero"},
+"PY14": {n:"Canindeyú", p:191114, info:"Département", s:14667, nH:"Non disponible", indT:595, c:"Saltos del Guairá"},
+"PY2": {n:"San Pedro", p:355175, info:"Département", s:20002, nH:"Non disponible", indT:595, c:"San Pedro"},
+"PY5": {n:"Caaguazú", p:431519, info:"Département", s:11474, nH:"Non disponible", indT:595, c:"Coronel Oviedo"},
+"PY3": {n:"Cordillera", p:268037, info:"Département", s:4948, nH:"Non disponible", indT:595, c:"Caacupé"},
+"PY6": {n:"Caazapá", p:139479, info:"Département", s:9496, nH:"Non disponible", indT:595, c:"Caazapá"},
+"PY9": {n:"Paraguarí", p:200472, info:"Département", s:8705, nH:"Non disponible", indT:595, c:"Paraguarí"},
+"PY4": {n:"Guairá", p:179555, info:"Département", s:3846, nH:"Non disponible", indT:595, c:"Villarrica"},
+
+        //Sub Uruguay
+        "UYPA": {n:"Paysandú", p:121843, info:"Département", s:13922, nH:"Sanducero", indT:598, c:"Paysandú"},
+"UYAR": {n:"Artigas", p:77487, info:"Département", s:11928, nH:"Artiguense", indT:598, c:"Artigas"},
+"UYSA": {n:"Salto", p:136197, info:"Département", s:14163, nH:"Salteño", indT:598, c:"Salto"},
+"UYRV": {n:"Rivera", p:109300, info:"Département", s:9370, nH:"Riverense", indT:598, c:"Rivera"},
+"UYRO": {n:"Rocha", p:80707, info:"Département", s:10551, nH:"Rochense", indT:598, c:"Rocha"},
+"UYTT": {n:"Treinta y Tres", p:47706, info:"Département", s:9529, nH:"Olimareño", indT:598, c:"Treinta y Tres"},
+"UYCL": {n:"Cerro Largo", p:91025, info:"Département", s:13648, nH:"Arachán / Cerrolarguense", indT:598, c:"Melo"},
+"UYMA": {n:"Maldonado", p:212951, info:"Département", s:4793, nH:"Fernandino", indT:598, c:"Maldonado"},
+"UYCA": {n:"Canelones", p:608956, info:"Département", s:4536, nH:"Canario", indT:598, c:"Canelones"},
+"UYMO": {n:"Montevideo", p:1302954, info:"Département", s:530, nH:"Montevideano", indT:598, c:"Montevideo"},
+"UYSJ": {n:"San José", p:119714, info:"Département", s:4992, nH:"Josefino / Maragato", indT:598, c:"San José de Mayo"},
+"UYCO": {n:"Colonia", p:135797, info:"Département", s:6106, nH:"Coloniense", indT:598, c:"Colonia del Sacramento"},
+"UYSO": {n:"Soriano", p:83685, info:"Département", s:9008, nH:"Sorianense", indT:598, c:"Mercedes"},
+"UYRN": {n:"Río Negro", p:57334, info:"Département", s:9282, nH:"Rionegrense", indT:598, c:"Fray Bentos"},
+"UYTA": {n:"Tacuarembó", p:96013, info:"Département", s:15438, nH:"Tacuaremboense", indT:598, c:"Tacuarembó"},
+"UYDU": {n:"Durazno", p:62011, info:"Département", s:11643, nH:"Duraznense", indT:598, c:"Durazno"},
+"UYFS": {n:"Flores", p:26271, info:"Département", s:5144, nH:"Poronguero", indT:598, c:"Trinidad"},
+"UYFD": {n:"Florida", p:70325, info:"Département", s:10417, nH:"Floridense", indT:598, c:"Florida"},
+"UYLA": {n:"Lavalleja", p:59175, info:"Département", s:10016, nH:"Serrano", indT:598, c:"Minas"},
+
+        // Sub Chili
+        "CLAP": {n:"Arica y Parinacota", p:244569, info:"Région", s:16873, nH:"Non disponible", indT:56, c:"Arica"},
+"CLTA": {n:"Tarapacá", p:369806, info:"Région", s:42226, nH:"Non disponible", indT:56, c:"Iquique"},
+"CLAN": {n:"Antofagasta", p:635416, info:"Région", s:126049, nH:"Non disponible", indT:56, c:"Antofagasta"},
+"CLAT": {n:"Atacama", p:299180, info:"Région", s:75176, nH:"Non disponible", indT:56, c:"Copiapó"},
+"CLCO": {n:"Coquimbo", p:832864, info:"Région", s:40580, nH:"Non disponible", indT:56, c:"La Serena"},
+"CLRM": {n:"Región Metropolitana de Santiago", p:7400741, info:"Région", s:15403, nH:"Non disponible", indT:56, c:"Santiago"},
+"CLVS": {n:"Valparaíso", p:1896053, info:"Région", s:16396, nH:"Non disponible", indT:56, c:"Valparaíso"},
+"CLML": {n:"Maule", p:1123008, info:"Région", s:30296, nH:"Non disponible", indT:56, c:"Talca"},
+"CLLI": {n:"Libertador General Bernardo O'Higgins", p:987228, info:"Région", s:16387, nH:"Non disponible", indT:56, c:"Rancagua"},
+"CLNB": {n:"Ñuble", p:512289, info:"Région", s:13179, nH:"Non disponible", indT:56, c:"Chillán"},
+"CLAR": {n:"La Araucanía", p:1010423, info:"Région", s:31842, nH:"Non disponible", indT:56, c:"Temuco"},
+"CLBI": {n:"Biobío", p:1613059, info:"Région", s:23890, nH:"Non disponible", indT:56, c:"Concepción"},
+"CLLR": {n:"Los Ríos", p:398230, info:"Région", s:18430, nH:"Non disponible", indT:56, c:"Valdivia"},
+"CLLL": {n:"Los Lagos", p:890284, info:"Région", s:48584, nH:"Non disponible", indT:56, c:"Puerto Montt"},
+"CLAI": {n:"Aysén", p:100745, info:"Région", s:108494, nH:"Non disponible", indT:56, c:"Coyhaique"},
+"CLMA": {n:"Magallanes y de la Antártica Chilena", p:166537, info:"Région", s:132291, nH:"Non disponible", indT:56, c:"Punta Arenas"},
+        //Sub Suriname
+        "SRSI": {n:"Sipaliwini", p:37065, info:"District", s:130567, nH:"Non disponible", indT:597, c:"Non disponible"},
+"SRNI": {n:"Nickerie", p:34233, info:"District", s:5353, nH:"Non disponible", indT:597, c:"Nieuw-Nickerie"},
+"SRMA": {n:"Marowijne", p:18294, info:"District", s:4627, nH:"Non disponible", indT:597, c:"Albina"},
+"SRCR": {n:"Coronie", p:3391, info:"District", s:3902, nH:"Non disponible", indT:597, c:"Totness"},
+"SRSA": {n:"Saramacca", p:17480, info:"District", s:3636, nH:"Non disponible", indT:597, c:"Groningen"},
+"SRWA": {n:"Wanica", p:118222, info:"District", s:443, nH:"Non disponible", indT:597, c:"Lelydorp"},
+"SRPM": {n:"Paramaribo", p:240924, info:"District", s:182, nH:"Non disponible", indT:597, c:"Paramaribo"},
+"SRCM": {n:"Commewijne", p:31420, info:"District", s:2353, nH:"Non disponible", indT:597, c:"Nieuw-Amsterdam"},
+"SRPR": {n:"Para", p:24700, info:"District", s:5393, nH:"Non disponible", indT:597, c:"Onverwacht"},
+"SRBR": {n:"Brokopondo", p:15909, info:"District", s:7364, nH:"Non disponible", indT:597, c:"Brokopondo"},
+
+      // Sub Guyana 
+      "GYBA": {n:"Barima-Waini", p:38956, info:"Région", s:20399, nH:"Non disponible", indT:592, c:"Mabaruma"},
+"GYPM": {n:"Pomeroon-Supenaam", p:56469, info:"Région", s:6195, nH:"Non disponible", indT:592, c:"Anna Regina"},
+"GYES": {n:"Essequibo Islands-West Demerara", p:143884, info:"Région", s:3755, nH:"Non disponible", indT:592, c:"Vreed-en-Hoop"},
+"GYDE": {n:"Demerara-Mahaica", p:347759, info:"Région", s:2232, nH:"Non disponible", indT:592, c:"Georgetown"},
+"GYMA": {n:"Mahaica-Berbice", p:57667, info:"Région", s:4190, nH:"Non disponible", indT:592, c:"Fort Wellington"},
+"GYEB": {n:"East Berbice-Corentyne", p:114574, info:"Région", s:36234, nH:"Non disponible", indT:592, c:"New Amsterdam"},
+"GYCU": {n:"Cuyuni-Mazaruni", p:30324, info:"Région", s:47213, nH:"Non disponible", indT:592, c:"Bartica"},
+"GYPT": {n:"Potaro-Siparuni", p:13598, info:"Région", s:20051, nH:"Non disponible", indT:592, c:"Mahdia"},
+"GYUT": {n:"Upper Takutu-Upper Essequibo", p:29944, info:"Région", s:57750, nH:"Non disponible", indT:592, c:"Lethem"},
+"GYUD": {n:"Upper Demerara-Berbice", p:45499, info:"Région", s:17040, nH:"Non disponible", indT:592, c:"Linden"},
         // Sub Vénézuela
         "VEZ": {"n":"Amazonas","p":180145,"info":"État du Venezuela","s":177617,"nH":"Non disponible","indT":58,"c":"Puerto Ayacucho"},
 "VEB": {"n":"Anzoátegui","p":1469747,"info":"État du Venezuela","s":43300,"nH":"Non disponible","indT":58,"c":"Barcelona"},
@@ -39003,7 +39084,29 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
   "svgBe": "10 provinces + la région de Bruxelles-Capitale",
   "svgGr": "13 régions (périphéries) + 1 territoire autonome (Mont Athos)",
   "svgAt": "9 Länder",
-  "svgPe": "24 départements + Lima (région et municipalité métropolitaine) + Callao"
+  "svgPe": "24 départements + Lima (région et municipalité métropolitaine) + Callao",
+  "svgBo": "9 départements",
+  "svgKr": "6 métropoles + 9 provinces + 2 villes spéciales (Séoul, Sejong)",
+  "svgFi": "19 régions",
+  "svgSe": "21 comtés (län)",
+  "svgNo": "11 comtés (fylker)",
+  "svgUa": "24 oblasts + 1 république autonome (Crimée) + 2 villes à statut spécial (Kiev, Sébastopol)",
+  "svgCd": "26 provinces",
+  "svgNe": "7 régions + 1 communauté urbaine (Niamey)",
+  "svgLy": "22 districts (chaabiyat)",
+  "svgEg": "27 gouvernorats",
+  "svgGt": "22 départements",
+  "svgBz": "6 districts",
+  "svgHn": "18 départements",
+  "svgNi": "15 départements + 2 régions autonomes",
+  "svgCr": "7 provinces",
+  "svgPa": "10 provinces + 4 comarques indigènes",
+  "svgVe": "23 états + 1 district capital (Caracas) + 1 territoire des dépendances fédérales",
+  "svgGy": "10 régions",
+  "svgSr": "10 districts",
+  "svgCl": "16 régions",
+  "svgUy": "19 départements",
+  "svgPy": "17 départements + 1 district capital (Asunción)",
 }
 ;
       const D_symbolesD = {
