@@ -900,6 +900,93 @@
         font-weight: 600;
         font-size: 0.96rem;
       }
+      #wrapperSortSub{
+        display : flex;
+        justify-content : flex-end;
+        position : relative;
+        margin-right : 1rem;
+        align-self : flex-end;
+      }
+      #btnSortSub{
+        display : flex;
+        gap : 0.4rem;
+        justify-content : center;
+        align-items : center;
+        cursor : pointer;
+        color : rgba(255,255,255,0.6);
+        border-radius : 50rem;
+        outline : 1px solid rgba(255,255,255,0.15);
+        background : rgba(0,0,0,0.2);
+        padding : 0.4rem 0.6rem;
+        font-size  : 0.92rem;
+        transition: outline-color 0.2s ease;
+      }
+      #btnSortSub.active{
+        outline-color :rgba(255,255,255,0.4);
+        outline-color : rgba(251, 191, 36, 0.5)
+      }
+
+      #btnSortSub svg {
+        height : 0.92rem;
+        fill : rgba(255,255,255,0.6);
+        transform : rotate(-90deg);
+        transition : transform 0.2s ease;
+      }
+
+        #btnSortSub.active svg {
+        transform : rotate(-270deg)
+      }
+
+       #btnSortSub path {
+        fill : rgba(255,255,255,0.6);
+      }
+
+      #cadreSortSub{
+        display : flex;
+        flex-direction : column;
+        z-index : 99999;
+        justify-content : center;
+        align-items : center;
+        position : absolute;
+        pointer-events : none;
+        opacity : 0;
+        top : calc(100% + 1rem);
+        height : auto;
+        width : 10rem;
+        border-radius : 0.6rem;
+        background : rgba(0,0,0,0.25);
+        color : white;
+        backdrop-filter: blur(10px);
+        transform : scale(0.96);
+        transform-origin : center top;
+        transition : opacity 0.2s ease, transform 0.2s ease;
+      }
+      #cadreSortSub.active{
+        pointer-events : all;
+        opacity : 1;
+        transform : none;
+      }
+      .itemSortSub{
+        display : flex;
+        align-items : center;
+        justify-content : space-between;
+        color : rgba(255,255,255,0.6);
+        font-size : 0.92rem;
+        width : 100%;
+        box-sizing: border-box;
+        padding : 0.6rem 0.4rem;
+      }
+      .itemSortSub.active{
+        color: #fbbf24;
+      }
+
+      .itemSortSub.active .checkSortSub{
+        opacity : 1;
+      }
+      .checkSortSub{
+        opacity : 0;
+      }
+
 
       #contentInfoSub {
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
@@ -14857,6 +14944,29 @@
         </button>
         <div id="titleListSub"></div>
 
+        <div id="wrapperSortSub">
+        <div id="btnSortSub"> <span>Alphabétique</span>
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:#ffffff;}</style> </defs> <g data-name="arrow left" id="arrow_left"> <path class="cls-1" d="M22,29.73a1,1,0,0,1-.71-.29L9.93,18.12a3,3,0,0,1,0-4.24L21.24,2.56A1,1,0,1,1,22.66,4L11.34,15.29a1,1,0,0,0,0,1.42L22.66,28a1,1,0,0,1,0,1.42A1,1,0,0,1,22,29.73Z"></path> </g> </g></svg>
+        </div>
+        <div id="cadreSortSub">
+          <div class="itemSortSub active" data-sort = "alpha">
+            <span>Alphabétique</span>
+            <span class="checkSortSub">✓</span>
+          </div>
+
+          <div class="itemSortSub" data-sort = "superficie">
+            <span>Superficie</span>
+            <span class="checkSortSub">✓</span>
+          </div>
+
+          <div class="itemSortSub" data-sort = "population">
+            <span>Population</span>
+            <span class="checkSortSub">✓</span>
+          </div>
+        </div>
+
+        </div>
+
         <div id="contentInfoSub"></div>
       </div>
       <div class="opensearch">
@@ -15825,14 +15935,16 @@
           <div id="mInfoBox">
             <div class="titleCadre" id="mTitleCadre"></div>
             <div class="txtCapitaleCadre txtCapitaleCadres">
-              <svg
+             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                id="Filled"
-                viewBox="0 0 24 24"
+                id="Layer_1"
+                data-name="Layer 1"
                 height="1rem"
+                style="flex-shrink: 0"
+                viewBox="0 0 24 24"
               >
                 <path
-                  d="M12,.042a9.992,9.992,0,0,0-9.981,9.98c0,2.57,1.99,6.592,5.915,11.954a5.034,5.034,0,0,0,8.132,0c3.925-5.362,5.915-9.384,5.915-11.954A9.992,9.992,0,0,0,12,.042ZM12,14a4,4,0,1,1,4-4A4,4,0,0,1,12,14Z"
+                  d="M18,6c0-3.309-2.691-6-6-6S6,2.691,6,6c0,2.967,2.167,5.431,5,5.91v12.09h2V11.91c2.833-.478,5-2.942,5-5.91Z"
                 />
               </svg>
               <span class="capitaleLabel" id="mCapitale"></span>
@@ -16686,21 +16798,21 @@
                 style="height: 90%"
               ></div>
             </div>
-          </div>
+          </div> 
           <div class="titleCadre" id="titleCadre"><h2>Russie (RU)</h2></div>
           <div class="txtCapitaleCadre txtCapitaleCadres">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              id="Layer_1"
-              data-name="Layer 1"
-              viewBox="0 0 26 24"
-              width="1.3rem"
-              style="flex-shrink: 0"
-            >
-              <path
-                d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0-6a2,2,0,1,1-2,2A2,2,0,0,1,12,6Zm8.66,3.157-.719-.239A8,8,0,0,0,12,0,7.993,7.993,0,0,0,4.086,9.092a5.045,5.045,0,0,0-2.548,1.3A4.946,4.946,0,0,0,0,14v4.075a5.013,5.013,0,0,0,3.6,4.8l2.87.9A4.981,4.981,0,0,0,7.959,24a5.076,5.076,0,0,0,1.355-.186l5.78-1.71a2.987,2.987,0,0,1,1.573,0l2.387.8A4,4,0,0,0,24,19.021V13.872A5.015,5.015,0,0,0,20.66,9.156ZM7.758,3.762a5.987,5.987,0,0,1,8.484,0,6.037,6.037,0,0,1,.011,8.5L12.7,15.717a.992.992,0,0,1-1.389,0L7.758,12.277A6.04,6.04,0,0,1,7.758,3.762ZM22,19.021a1.991,1.991,0,0,1-.764,1.572,1.969,1.969,0,0,1-1.626.395L17.265,20.2a5.023,5.023,0,0,0-2.717-.016L8.764,21.892a3,3,0,0,1-1.694-.029l-2.894-.9A3.013,3.013,0,0,1,2,18.075V14a2.964,2.964,0,0,1,.92-2.163,3.024,3.024,0,0,1,1.669-.806A8.021,8.021,0,0,0,6.354,13.7l3.567,3.453a2.983,2.983,0,0,0,4.174,0l3.563-3.463a7.962,7.962,0,0,0,1.813-2.821l.537.178A3.006,3.006,0,0,1,22,13.872Z"
-              />
-            </svg>
+             <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="Layer_1"
+                data-name="Layer 1"
+                width="1.3rem"
+                style="flex-shrink: 0"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18,6c0-3.309-2.691-6-6-6S6,2.691,6,6c0,2.967,2.167,5.431,5,5.91v12.09h2V11.91c2.833-.478,5-2.942,5-5.91Z"
+                />
+              </svg>
             <span class="capitaleLabel" id="capitale"></span>
           </div>
 
@@ -29918,6 +30030,36 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       const cadreListSub = getId("cadreListSub");
       const titleListSub = getId("titleListSub");
+      const cadreSortSub = getId('cadreSortSub')
+      const btnSortSub = getId('btnSortSub')
+      const itemsSortSub = document.querySelectorAll('.itemSortSub')
+
+      itemsSortSub.forEach(itm=>{
+        itm.addEventListener('click',()=>{
+        itemsSortSub.forEach(i=>i.classList.remove('active'))
+          cadreSortSub.classList.remove('active')
+          itm.classList.add('active')
+          btnSortSub.querySelector('span').textContent = itm.querySelector('span').textContent
+        })
+      })
+
+      getId('wrapperSortSub').addEventListener('pointerdown',(e)=>{e.stopPropagation()})
+      document.addEventListener('pointerdown',(e)=>{
+          cadreSortSub.classList.remove('active')
+          btnSortSub.classList.remove('active')
+      })
+
+      contentInfoSub.addEventListener('pointerdown',(e)=>{
+          cadreSortSub.classList.remove('active')
+          btnSortSub.classList.remove('active')
+      })
+
+  
+      btnSortSub.addEventListener('click',()=>{
+        cadreSortSub.classList.toggle('active')
+        btnSortSub.classList.toggle('active')
+      })
+
 
       let moveSub;
       let difYSub;
