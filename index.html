@@ -959,12 +959,16 @@
         border-radius : 0.6rem;
         background : rgba(0,0,0,0.25);
         background: rgba(17, 23, 79, 0.25);
-        outline : 1px solid rgba(255,255,255,0.25);
+        outline : 1px solid rgba(255,255,255,0.15);
         color : white;
         backdrop-filter: blur(10px);
         transform : scale(0.96);
         transform-origin : center top;
         transition : opacity 0.2s ease, transform 0.2s ease;
+      }
+      .lineInSortSub{
+        width : 100%;
+        outline : 0.08px solid rgba(255,255,255,0.15);
       }
       #cadreSortSub.active{
         pointer-events : all;
@@ -987,6 +991,9 @@
 
       .itemSortSub.active .checkSortSub{
         opacity : 1;
+      }
+      .itemSortSub:active{
+        filter : brightness(0.92);
       }
       .checkSortSub{
         opacity : 0;
@@ -15075,11 +15082,13 @@
             <span>Noms</span>
             <span class="checkSortSub">✓</span>
           </div>
-
+          <div class="lineInSortSub"></div>
           <div class="itemSortSub" data-sort = "superficie">
             <span>Superficie</span>
             <span class="checkSortSub">✓</span>
           </div>
+
+          <div class="lineInSortSub"></div>
 
           <div class="itemSortSub" data-sort = "population">
             <span>Population</span>
