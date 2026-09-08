@@ -5662,7 +5662,18 @@
       padding : 0.6rem 1rem;
       box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
       background : white;
+        .mDiamant path{
+          /* fill: #1a5fb4 !important; */
+          fill: #d9a441 !important;
+          
+        }
+        .mDiamant{
+          position : absolute;
+          right : 0.6rem;
+          height : 1rem;
+        }
       }
+
       #contentSubZ .itemChoiceZ {
         flex-direction : column;
         gap : 0;
@@ -5679,6 +5690,8 @@
 
       .txtChoiceZ{
         display : flex;
+        position : relative;
+        align-items : center;
         width : 100%;
         gap : 0.4rem;
       }
@@ -6457,6 +6470,34 @@
       }
       .back:active {
         background: rgba(255, 255, 255, 0.2);
+      }
+      .messageViewMap{
+        display : flex;
+        position : absolute;
+        justify-content : center;
+        pointer-events : none;
+        text-align : center;
+        align-items : center;
+        color : white;
+        border-radius : 0.6rem;
+        outline : 1px solid rgba(255,255,255,0.2);
+        opacity : 0;
+        top : calc(env(safe-area-inset-top) + 0.6rem);
+        left : 50%;
+        transform : translateX(-50%) translateY(-1.5em);
+        width : auto;
+        max-width : 75%;
+        padding : 0.6rem;
+        box-sizing: border-box;
+        font-size : 0.8rem;
+        background : rgba(0,0,0,0.2);
+        background: rgba(17, 23, 79, 0.75);
+        backdrop-filter : blur(10px);
+        transition : transform 0.4s ease, opacity 0.4s ease;
+      }
+      .messageViewMap.active {
+        opacity : 1;
+        transform : translateX(-50%);
       }
 
       .btn-carte {
@@ -7994,6 +8035,16 @@
         color: #ffffff;
         outline: 1px solid rgba(255, 255, 255, 0.4);
         transition: transform 0.2s ease;
+
+        .mDiamant{
+          display : none;
+          height : 1rem;
+        }
+
+         .mDiamant path{
+          fill : #1a5fb4;
+        }
+
       }
       #btnCartePm:active {
         transform: scale(0.96);
@@ -8004,6 +8055,16 @@
         color: rgba(255, 255, 255, 0.5);
         opacity: 0.4;
       }
+
+      #btnCartePm.lockP {
+        color: rgba(255, 255, 255, 0.5);
+        opacity: 0.4;
+      }
+
+      #btnCartePm.lockP .mDiamant {
+        display : flex;
+      }
+
       #lineInPm {
         width: 90%;
         border-radius: 50%;
@@ -14606,6 +14667,38 @@
                   />
                 </svg>
                 <span>Voir sur la carte</span>
+
+                 <svg
+                      class="mDiamant"
+                      viewBox="0 0 332 290"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
+                        fill="#d9a441"
+                      />
+                    </svg>
               </div>
             </div>
 
@@ -23038,6 +23131,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         (e) => {
           const lock = e.target.closest(".lockP");
           if (lock && !(isPremium || !window.Capacitor?.isNativePlatform())) {
+          // if(lock){
             e.stopImmediatePropagation();
             e.preventDefault();
             btnPremium.click();
@@ -25835,7 +25929,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const contentCZ = getId('contentCZ')
       const contentChoiceZ = document.querySelectorAll('.contentChoiceZ')
       const crossChoiceZ = getId('crossChoiceZ')
-
+      const L_subNP = ["US","CD","PL"] // Pays quine seront aps en p 
        
         
       let oneTimeEdit = false;
@@ -25899,6 +25993,45 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           item.append(txtChoiceZ)
           item.append(infoChoiceZ)
           contentSubZ.append(item)
+
+          if(!L_subNP.includes(id)){
+            item.classList.add('lockP')
+            const svgD = document.createElement('div')
+            svgD.className = "mDiamant"
+            svgD.innerHTML = `
+                    <svg
+                      class="mDiamant"
+                      viewBox="0 0 332 290"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
+                        fill="#d9a441"
+                      />
+                    </svg>`
+            txtChoiceZ.append(svgD)
+          }
 
               }
             })
@@ -26382,7 +26515,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         reponseFound = false;
         L_reponse = [];
         desactiverCarte();
-        oneTimeMap ? btnCarte.classList.add("lockP") : "";
+        oneTimeMap ? (btnCarte.classList.add("lockP"), btnCartePm.classList.add('lockP')) : "";
         //Fonction
         let paysDispos = Object.keys(L_q).filter(
           (id) =>
@@ -27505,6 +27638,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         currentChronoQ = 0;
         oneTimeMap = false;
         btnCarte.classList.remove("lockP");
+        btnCartePm.classList.remove("lockP");
+
         startChronoQ(currentChronoQ);
         spnScore.textContent = score;
         btnCarte.style.opacity = "0";
@@ -27629,6 +27764,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
 
         btn.addEventListener("click", () => {
+          document.querySelector('.messageViewMap')?.remove()
           if (viewMaps || cChooseTrouver) {
             if (viewMaps) {
               zoomCountry(idProps_m.get(btn));
@@ -28154,6 +28290,28 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
           btn.classList.remove("good", "bad", "none");
         });
+
+        //*** Message d'information
+        setTimeout(() => {
+          const message = document.createElement('div')
+        message.className = "messageViewMap"
+        message.textContent = "Cliquer sur une des propositions pour zoomer sur le pays correspondant"
+        phonePlay.append(message)
+        requestAnimationFrame(()=>{
+          message.classList.add('active')
+        })
+
+        setTimeout(() => {
+          message.className = "messageViewMap"
+        },5000 );
+
+        setTimeout(() => {
+          message.remove()
+        }, 5500);
+        }, 300);
+
+        //***
+
 
        if(L_config.sub){
         viewMaps = false
@@ -28895,6 +29053,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         track = 0;
         oneTimeMap = false;
         btnCarte.classList.remove("lockP");
+        btnCartePm.classList.remove("lockP");
+
         spnScore.textContent = score;
 
         pause4Choix.style.opacity = "1";
