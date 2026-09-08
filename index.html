@@ -813,7 +813,7 @@
       
       /* Fin CSS Sub */
 
-
+    
       svg.monde path {
         transition:
           stroke 0.2s ease,
@@ -3439,6 +3439,10 @@
         background: rgba(0, 0, 0, 0.2);
         border-radius: 0.5rem;
         transition: transform 0.2s ease;
+      }
+      .btnViewSub.lockP{
+        opacity : 0.5;
+        outline : 1px solid #d9a441
       }
       .btnViewSub:active {
         transform: scale(0.96);
@@ -15056,7 +15060,7 @@
         <div id="titleListSub"></div>
 
         <div id="wrapperSortSub">
-          <div style="color : rgba(255,255,255,0.6); font-size : 0.8rem">Classer par</div>
+          <div style="color : rgba(255,255,255,0.6); font-size : 0.9rem">Classer par</div>
         <div id="btnSortSub"> <span>Noms</span>
           <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:#ffffff;}</style> </defs> <g data-name="arrow left" id="arrow_left"> <path class="cls-1" d="M22,29.73a1,1,0,0,1-.71-.29L9.93,18.12a3,3,0,0,1,0-4.24L21.24,2.56A1,1,0,1,1,22.66,4L11.34,15.29a1,1,0,0,0,0,1.42L22.66,28a1,1,0,0,1,0,1.42A1,1,0,0,1,22,29.73Z"></path> </g> </g></svg>
         </div>
@@ -17392,6 +17396,8 @@
             </filter>
           </defs>
           <g id="viewport">
+
+
             <path
               d="m 479.68275,331.6274 -0.077,0.025 -0.258,0.155 -0.147,0.054 -0.134,0.027 -0.105,-0.011 -0.058,-0.091 0.006,-0.139 -0.024,-0.124 -0.02,-0.067 0.038,-0.181 0.086,-0.097 0.119,-0.08 0.188,0.029 0.398,0.116 0.083,0.109 10e-4,0.072 -0.073,0.119 z"
               title="Andorra"
@@ -48967,6 +48973,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           L_nbrPSub[svgSub.slice(-2).toUpperCase()] = paths.length
         });
 
+        let mPeh = ""
+        svg.querySelectorAll('path').forEach(p=>{
+          mPeh +=  " " + p.getAttribute('d')
+        })
+        console.log(mPeh)
+
         for (const clef in L_cSub) {
           const svgSubId = L_cSub[clef].svgSub;
           const g = getId(svgSubId);
@@ -50373,7 +50385,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       svg.addEventListener(
         "wheel",
         (e) => {
-        console.log("wheel")
           e.preventDefault();
 
           const vb = getVB();
@@ -50791,6 +50802,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                 const btnViewSub = document.createElement("div");
                 btnViewSub.append(iconSvg);
                 btnViewSub.className = "btnViewSub";
+                if(!L_subNP.includes(id)){
+                  btnViewSub.classList.add('lockP')
+                }
 
                 btnViewSub.append(L_q[id].n);
                 // gridSub.append(btnViewSub);
