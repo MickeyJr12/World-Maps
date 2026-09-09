@@ -31577,6 +31577,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function sortContentSub(sort) {
         let subSort;
+        subSort = subSort.filter((id) => id.slice(0, 2) === currentCSub.id);
         if (sort === "alpha") {
           subSort = Object.keys(D_us).sort(
             (
@@ -31594,12 +31595,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             (a, b) => D_us[b].p - D_us[a].p, // ordre de population décroissante
           );
         }
-        subSort = subSort.filter((id) => id.slice(0, 2) === currentCSub.id);
 
         contentInfoSub.innerHTML = ``;
         contentInfoSub.scrollTop;
         let rankSub = 1;
         subSort.forEach((id) => {
+          
           const itemC = document.createElement("div");
           itemC.className = "itemC";
 
@@ -34237,7 +34238,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       };
 
       const D_us = {
-        // Sub Paraguay
+        //Sub Paraguay
         PY19: {
           n: "Boquerón",
           p: 71078,
@@ -34574,7 +34575,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Minas",
         },
 
-        // Sub Chili
+        //Sub Chili
         CLAP: {
           n: "Arica y Parinacota",
           p: 244569,
@@ -34811,7 +34812,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Brokopondo",
         },
 
-        // Sub Guyana
+        //Sub Guyana
         GYBA: {
           n: "Barima-Waini",
           p: 38956,
@@ -34902,7 +34903,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: 592,
           c: "Linden",
         },
-        // Sub Vénézuela
+        //Sub Vénézuela
         VEZ: {
           n: "Amazonas",
           p: 180145,
@@ -35128,7 +35129,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: 58,
           c: "Gran Roque",
         },
-        // Sub Panama
+        //Sub Panama
         PA1: {
           n: "Bocas del Toro",
           p: 159228,
@@ -35255,7 +35256,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: 507,
           c: "Santiago de Veraguas",
         },
-        // Sub Costa Rica
+        //Sub Costa Rica
         CRA: {
           n: "Alajuela",
           p: 1055637,
@@ -35319,7 +35320,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: 506,
           c: "Cartago",
         },
-        // Sub Nicaragua
+        //Sub Nicaragua
         NISJ: {
           n: "Río San Juan",
           p: 140786,
@@ -35473,7 +35474,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: 505,
           c: "Masaya",
         },
-        // Sub Honduras
+        //Sub Honduras
         HNOC: {
           n: "Ocotepeque",
           p: 151516,
@@ -35637,7 +35638,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Tegucigalpa",
         },
 
-        // Sub Bélize
+        //Sub Bélize
         BZCY: {
           n: "Cayo",
           p: 103413,
@@ -35692,7 +35693,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: 501,
           c: "Belize City",
         },
-        // Sub Guatemala
+        //Sub Guatemala
         GT22: {
           n: "Jutiapa",
           p: 558105,
@@ -36135,7 +36136,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           nH: "Non disponible",
           indT: 20,
           c: "Louxor",
-        }, // Sub Libye
+        }, //Sub Libye
         LYNL: {
           n: "Nalout",
           p: 93224,
@@ -36334,12 +36335,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+218",
           c: "Oubari",
         },
-        // SUb Niger
+        //SUb Niger
         NE1: {
           n: "Agadez",
           p: 687540,
           info: "Région",
-          s: "667 799",
+          s: 667799,
           nH: "Agadézien / Agadézienne",
           indT: "+227",
           c: "Agadez",
@@ -36348,7 +36349,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Diffa",
           p: 837290,
           info: "Région",
-          s: "156 906",
+          s: 156906,
           nH: "Non disponible",
           indT: "+227",
           c: "Diffa",
@@ -36357,7 +36358,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Dosso",
           p: 2873180,
           info: "Région",
-          s: "33 850",
+          s: 33850,
           nH: "Non disponible",
           indT: "+227",
           c: "Dosso",
@@ -36366,7 +36367,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Maradi",
           p: 4796950,
           info: "Région",
-          s: "41 796",
+          s: 41796,
           nH: "Non disponible",
           indT: "+227",
           c: "Maradi",
@@ -36375,7 +36376,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tahoua",
           p: 4692990,
           info: "Région",
-          s: "113 371 km²",
+          s: 113371,
           nH: "Non disponible",
           indT: "+227",
           c: "Tahoua",
@@ -36384,7 +36385,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tillabéri",
           p: 3839210,
           info: "Région",
-          s: "97 251",
+          s: 97251,
           nH: "Non disponible",
           indT: "+227",
           c: "Tillabéri",
@@ -36393,7 +36394,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Zinder",
           p: 4991070,
           info: "Région",
-          s: "155 778",
+          s: 155778,
           nH: "Zindérois / Zindéroise",
           indT: "+227",
           c: "Zinder",
@@ -36402,17 +36403,17 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Niamey",
           p: 1447860,
           info: "District de la capitale",
-          s: "402",
+          s: 402,
           nH: "Niaméen / Niaméenne",
           indT: "+227",
           c: "Niamey",
         },
-        // Sub RDC
+        //Sub RDC
         CDBU: {
           n: "Bas-Uele",
           p: 1250000,
           info: "Province",
-          s: "148 331",
+          s: 148331,
           nH: "Non disponible",
           indT: "+243",
           c: "Buta",
@@ -36421,7 +36422,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Équateur",
           p: 1712000,
           info: "Province",
-          s: "103 902",
+          s: 103902,
           nH: "Non disponible",
           indT: "+243",
           c: "Mbandaka",
@@ -36430,7 +36431,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Haut-Katanga",
           p: 5378000,
           info: "Province",
-          s: "132 425",
+          s: 132425,
           nH: "Non disponible",
           indT: "+243",
           c: "Lubumbashi",
@@ -36439,7 +36440,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Haut-Lomami",
           p: 3444000,
           info: "Province",
-          s: "108 204",
+          s: 108204,
           nH: "Non disponible",
           indT: "+243",
           c: "Kamina",
@@ -36448,7 +36449,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Haut-Uele",
           p: 2046000,
           info: "Province",
-          s: "89 683",
+          s: 89683,
           nH: "Non disponible",
           indT: "+243",
           c: "Isiro",
@@ -36457,7 +36458,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Ituri",
           p: 4008000,
           info: "Province",
-          s: "65 658",
+          s: 65658,
           nH: "Non disponible",
           indT: "+243",
           c: "Bunia",
@@ -36466,7 +36467,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kasaï",
           p: 3165000,
           info: "Province",
-          s: "95 631",
+          s: 95631,
           nH: "Non disponible",
           indT: "+243",
           c: "Tshikapa",
@@ -36475,7 +36476,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kasaï-Central",
           p: 3743000,
           info: "Province",
-          s: "59 500",
+          s: 59500,
           nH: "Non disponible",
           indT: "+243",
           c: "Kananga",
@@ -36484,7 +36485,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kasaï-Oriental",
           p: 3601000,
           info: "Province",
-          s: "9 545",
+          s: 9545,
           nH: "Non disponible",
           indT: "+243",
           c: "Mbuji-Mayi",
@@ -36493,7 +36494,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kinshasa",
           p: 13916000,
           info: "Ville-province (capitale nationale)",
-          s: "9 965",
+          s: 9965,
           nH: "Kinois / Kinoise",
           indT: "+243",
           c: "Kinshasa",
@@ -36502,7 +36503,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kongo Central",
           p: 6365000,
           info: "Province",
-          s: "53 920",
+          s: 53920,
           nH: "Non disponible",
           indT: "+243",
           c: "Matadi",
@@ -36511,7 +36512,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kwango",
           p: 2416000,
           info: "Province",
-          s: "89 974",
+          s: 89974,
           nH: "Non disponible",
           indT: "+243",
           c: "Kenge",
@@ -36520,7 +36521,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kwilu",
           p: 6169000,
           info: "Province",
-          s: "78 533",
+          s: 78533,
           nH: "Non disponible",
           indT: "+243",
           c: "Bandundu",
@@ -36529,7 +36530,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Lomami",
           p: 2801000,
           info: "Province",
-          s: "56 426",
+          s: 56426,
           nH: "Non disponible",
           indT: "+243",
           c: "Kabinda",
@@ -36538,7 +36539,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Lualaba",
           p: 2993000,
           info: "Province",
-          s: "121 308",
+          s: 121308,
           nH: "Non disponible",
           indT: "+243",
           c: "Kolwezi",
@@ -36547,7 +36548,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Mai-Ndombe",
           p: 2082000,
           info: "Province",
-          s: "127 243",
+          s: 127243,
           nH: "Non disponible",
           indT: "+243",
           c: "Inongo",
@@ -36556,7 +36557,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Maniema",
           p: 2654000,
           info: "Province",
-          s: "132 250",
+          s: 132250,
           nH: "Non disponible",
           indT: "+243",
           c: "Kindu",
@@ -36565,7 +36566,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Mongala",
           p: 1950000,
           info: "Province",
-          s: "58 141",
+          s: 58141,
           nH: "Non disponible",
           indT: "+243",
           c: "Lisala",
@@ -36574,7 +36575,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Nord-Kivu",
           p: 7574000,
           info: "Province",
-          s: "59 483",
+          s: 59483,
           nH: "Non disponible",
           indT: "+243",
           c: "Goma",
@@ -36583,7 +36584,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Nord-Ubangi",
           p: 1425000,
           info: "Province",
-          s: "56 644",
+          s: 56644,
           nH: "Non disponible",
           indT: "+243",
           c: "Gbadolite",
@@ -36592,7 +36593,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Sankuru",
           p: 2417000,
           info: "Province",
-          s: "104 331",
+          s: 104331,
           nH: "Non disponible",
           indT: "+243",
           c: "Lusambo",
@@ -36601,7 +36602,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Sud-Kivu",
           p: 6565000,
           info: "Province",
-          s: "64 791",
+          s: 64791,
           nH: "Non disponible",
           indT: "+243",
           c: "Bukavu",
@@ -36610,7 +36611,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Sud-Ubangi",
           p: 2755000,
           info: "Province",
-          s: "51 648",
+          s: 51648,
           nH: "Non disponible",
           indT: "+243",
           c: "Gemena",
@@ -36619,7 +36620,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tanganyika",
           p: 3570000,
           info: "Province",
-          s: "134 940",
+          s: 134940,
           nH: "Non disponible",
           indT: "+243",
           c: "Kalemie",
@@ -36628,7 +36629,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tshopo",
           p: 2582000,
           info: "Province",
-          s: "199 567",
+          s: 199567,
           nH: "Non disponible",
           indT: "+243",
           c: "Kisangani",
@@ -36637,18 +36638,18 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tshuapa",
           p: 1789000,
           info: "Province",
-          s: "132 957 ",
+          s: 132957,
           nH: "Non disponible",
           indT: "+243",
           c: "Boende",
         },
 
-        // Sub Ukraine
+        //Sub Ukraine
         UA05: {
           n: "Vinnytsia",
           p: 1509515,
           info: "Oblast",
-          s: "26 500 ",
+          s: 26500,
           nH: "Non disponible",
           indT: "+380 432",
           c: "Vinnytsia",
@@ -36657,7 +36658,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Volyn",
           p: 1021356,
           info: "Oblast",
-          s: "20 144 ",
+          s: 20144 ,
           nH: "Non disponible",
           indT: "+380 332",
           c: "Loutsk",
@@ -36666,7 +36667,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Louhansk",
           p: 2102921,
           info: "Oblast",
-          s: "26 684 ",
+          s: 26684 ,
           nH: "Non disponible",
           indT: "+380 642",
           c: "Louhansk",
@@ -36675,7 +36676,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Dnipropetrovsk",
           p: 3096485,
           info: "Oblast",
-          s: "31 914 ",
+          s: 31914 ,
           nH: "Non disponible",
           indT: "+380 56",
           c: "Dnipro",
@@ -36684,7 +36685,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Donetsk",
           p: 4059372,
           info: "Oblast",
-          s: "26 517 ",
+          s: 26517 ,
           nH: "Non disponible",
           indT: "+380 62",
           c: "Donetsk",
@@ -36693,7 +36694,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Jytomyr",
           p: 1179032,
           info: "Oblast",
-          s: "29 832 ",
+          s: 29832 ,
           nH: "Non disponible",
           indT: "+380 412",
           c: "Jytomyr",
@@ -36702,7 +36703,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Transcarpatie",
           p: 1244476,
           info: "Oblast",
-          s: "12 777 ",
+          s: 12777 ,
           nH: "Non disponible",
           indT: "+380 312",
           c: "Oujhorod",
@@ -36711,7 +36712,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Zaporijjia",
           p: 1638462,
           info: "Oblast",
-          s: "27 180 ",
+          s: 27180 ,
           nH: "Non disponible",
           indT: "+380 61",
           c: "Zaporijjia",
@@ -36720,7 +36721,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Ivano-Frankivsk",
           p: 1351822,
           info: "Oblast",
-          s: "13 928 ",
+          s: 13928 ,
           nH: "Non disponible",
           indT: "+380 342",
           c: "Ivano-Frankivsk",
@@ -36729,7 +36730,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kyiv (ville)",
           p: 2952301,
           info: "Ville à statut spécial (capitale)",
-          s: "839 ",
+          s: 839,
           nH: "Kiévien / Kiévienne",
           indT: "+380 44",
           c: "Kyiv",
@@ -36738,7 +36739,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kyiv (oblast)",
           p: 1795079,
           info: "Oblast",
-          s: "28 131 ",
+          s: 28131 ,
           nH: "Non disponible",
           indT: "+380 45",
           c: "Kyiv",
@@ -36747,7 +36748,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kirovohrad",
           p: 903712,
           info: "Oblast",
-          s: "24 588 ",
+          s: 24588 ,
           nH: "Non disponible",
           indT: "+380 522",
           c: "Kropyvnytskyi",
@@ -36756,7 +36757,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Sébastopol",
           p: 509992,
           info: "Ville à statut spécial",
-          s: "864 ",
+          s: 864,
           nH: "Non disponible",
           indT: "+380 692",
           c: "Sébastopol",
@@ -36765,7 +36766,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Crimée",
           p: 1963770,
           info: "République autonome",
-          s: "26 081 ",
+          s: 26081 ,
           nH: "Non disponible",
           indT: "+380 652",
           c: "Simferopol",
@@ -36774,7 +36775,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Lviv",
           p: 2478133,
           info: "Oblast",
-          s: "21 833 ",
+          s: 21833 ,
           nH: "Non disponible",
           indT: "+380 32",
           c: "Lviv",
@@ -36783,7 +36784,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Mykolaïv",
           p: 1091821,
           info: "Oblast",
-          s: "24 598 ",
+          s: 24598 ,
           nH: "Non disponible",
           indT: "+380 512",
           c: "Mykolaïv",
@@ -36792,7 +36793,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Odessa",
           p: 2351392,
           info: "Oblast",
-          s: "33 310 ",
+          s: 33310 ,
           nH: "Odessite",
           indT: "+380 48",
           c: "Odessa",
@@ -36801,7 +36802,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Poltava",
           p: 1352283,
           info: "Oblast",
-          s: "28 748 ",
+          s: 28748 ,
           nH: "Non disponible",
           indT: "+380 532",
           c: "Poltava",
@@ -36810,7 +36811,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Rivne",
           p: 1141784,
           info: "Oblast",
-          s: "20 047",
+          s: 20047,
           nH: "Non disponible",
           indT: "+380 362",
           c: "Rivne",
@@ -36819,7 +36820,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Soumy",
           p: 1035772,
           info: "Oblast",
-          s: "23 834",
+          s: 23834,
           nH: "Non disponible",
           indT: "+380 542",
           c: "Soumy",
@@ -36828,7 +36829,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Ternopil",
           p: 1021713,
           info: "Oblast",
-          s: "13 823",
+          s: 13823,
           nH: "Non disponible",
           indT: "+380 352",
           c: "Ternopil",
@@ -36837,7 +36838,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kharkiv",
           p: 2598961,
           info: "Oblast",
-          s: "31 415",
+          s: 31415,
           nH: "Non disponible",
           indT: "+380 57",
           c: "Kharkiv",
@@ -36846,7 +36847,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kherson",
           p: 1001598,
           info: "Oblast",
-          s: "28 461",
+          s: 28461,
           nH: "Non disponible",
           indT: "+380 552",
           c: "Kherson",
@@ -36855,7 +36856,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Khmelnytskyi",
           p: 1228829,
           info: "Oblast",
-          s: "20 645",
+          s: 20645,
           nH: "Non disponible",
           indT: "+380 382",
           c: "Khmelnytskyi",
@@ -36864,7 +36865,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tcherkassy",
           p: 1160744,
           info: "Oblast",
-          s: "20 900",
+          s: 20900,
           nH: "Non disponible",
           indT: "+380 472",
           c: "Tcherkassy",
@@ -36873,7 +36874,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tchernihiv",
           p: 959315,
           info: "Oblast",
-          s: "31 865",
+          s: 31865,
           nH: "Non disponible",
           indT: "+380 462",
           c: "Tchernihiv",
@@ -36882,17 +36883,17 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tchernivtsi",
           p: 890457,
           info: "Oblast",
-          s: "8 097",
+          s: 8097,
           nH: "Non disponible",
           indT: "+380 372",
           c: "Tchernivtsi",
         },
-        // SUb Norvège
+        //SUb Norvège
         NO03: {
           n: "Oslo",
           p: 717710,
           info: "Ville-comté",
-          s: "454",
+          s: 454,
           nH: "Non disponible",
           indT: "+47",
           c: "Oslo",
@@ -36901,7 +36902,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Rogaland",
           p: 499417,
           info: "Comté",
-          s: "9 377",
+          s: 9377,
           nH: "Non disponible",
           indT: "+47",
           c: "Stavanger",
@@ -36910,7 +36911,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Møre og Romsdal",
           p: 265544,
           info: "Comté",
-          s: "14 356",
+          s: 14356,
           nH: "Non disponible",
           indT: "+47",
           c: "Molde",
@@ -36919,7 +36920,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Nordland",
           p: 240345,
           info: "Comté",
-          s: "38 155",
+          s: 38155,
           nH: "Non disponible",
           indT: "+47",
           c: "Bodø",
@@ -36928,7 +36929,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Viken",
           p: 1252384,
           info: "Comté",
-          s: "24 593 ",
+          s: 24593 ,
           nH: "Non disponible",
           indT: "+47",
           c: "Oslo",
@@ -36937,7 +36938,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Innlandet",
           p: 370603,
           info: "Comté",
-          s: "52 113 ",
+          s: 52113 ,
           nH: "Non disponible",
           indT: "+47",
           c: "Hamar",
@@ -36946,7 +36947,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Vestfold og Telemark",
           p: 421882,
           info: "Comté",
-          s: "17 466 ",
+          s: 17466 ,
           nH: "Non disponible",
           indT: "+47",
           c: "Skien",
@@ -36955,7 +36956,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Agder",
           p: 308843,
           info: "Comté",
-          s: "16 434 ",
+          s: 16434,
           nH: "Non disponible",
           indT: "+47",
           c: "Kristiansand",
@@ -36964,7 +36965,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Vestland",
           p: 638821,
           info: "Comté",
-          s: "33 871 ",
+          s: 33871 ,
           nH: "Non disponible",
           indT: "+47",
           c: "Bergen",
@@ -36973,7 +36974,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Trøndelag",
           p: 471124,
           info: "Comté",
-          s: "42 202 ",
+          s: 42202 ,
           nH: "Non disponible",
           indT: "+47",
           c: "Steinkjer",
@@ -36982,12 +36983,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Troms og Finnmark",
           p: 242168,
           info: "Comté",
-          s: "74 831 ",
+          s: 74831 ,
           nH: "Non disponible",
           indT: "+47",
           c: "Tromsø",
         },
-        // Sub Suède
+        //Sub Suède
         SEBD: {
           n: "Norrbotten",
           p: 196059,
@@ -37178,7 +37179,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Växjö",
         },
 
-        // Sub Finlande
+        //Sub Finlande
         FI01: {
           n: "Åland",
           p: 30344,
@@ -37350,7 +37351,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "03",
           c: "Lahti",
         },
-        // Sub Corée du Sud
+        //Sub Corée du Sud
         KR42: {
           n: "Gangwon",
           p: 1561313,
@@ -37505,7 +37506,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Séoul",
         },
 
-        // Sub Bolivie
+        //Sub Bolivie
 
         BOL: {
           n: "La Paz",
@@ -37520,7 +37521,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Oruro",
           p: 570194,
           info: "Département de l'Altiplano bolivien",
-          s: "53 588",
+          s: 53588,
           nH: "Orureño / Orureña",
           indT: "+591 2",
           c: "Oruro",
@@ -37529,7 +37530,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Potosí",
           p: 856419,
           info: "Département montagneux du sud-ouest",
-          s: "118 218",
+          s: 118218,
           nH: "Potosino / Potosina",
           indT: "+591 2",
           c: "Potosí",
@@ -37538,7 +37539,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tarija",
           p: 534348,
           info: "Département du sud-est",
-          s: "37 623",
+          s: 37623,
           nH: "Tarijeño / Tarijeña",
           indT: "+591 4",
           c: "Tarija",
@@ -37547,7 +37548,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Santa Cruz",
           p: 3122605,
           info: "Départements",
-          s: "370 621",
+          s: 370621,
           nH: "Cruceño / Cruceña",
           indT: "+591 3",
           c: "Santa Cruz de la Sierra",
@@ -37556,7 +37557,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Chuquisaca",
           p: 600132,
           info: "Département du centre-sud",
-          s: "51 524",
+          s: 51524,
           nH: "Chuquisaqueño / Chuquisaqueña",
           indT: "+591 4",
           c: "Sucre",
@@ -37565,7 +37566,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Pando",
           p: 130761,
           info: "Département",
-          s: "63 827",
+          s: 63827,
           nH: "Pandino / Pandina",
           indT: "+591 3",
           c: "Cobija",
@@ -37574,7 +37575,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Beni",
           p: 488260,
           info: "Département des basses terres du nord-est",
-          s: "213 564",
+          s: 213564,
           nH: "Beniano / Beniana",
           indT: "+591 3",
           c: "Trinidad",
@@ -37583,12 +37584,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Cochabamba",
           p: 2005373,
           info: "Département du centre",
-          s: "55 631",
+          s: 55631,
           nH: "Cochabambino / Cochabambina",
           indT: "+591 4",
           c: "Cochabamba",
         },
-        // Sub États-unis
+        //Sub États-unis
         "US-AL": {
           n: "Alabama",
           p: 5108468,
@@ -38048,7 +38049,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: 1,
           c: "Cheyenne",
         },
-        // Sub Chine
+        //Sub Chine
 
         "CN-11": {
           n: "Pékin",
@@ -38757,7 +38758,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+61 (08)",
           c: "Perth",
         },
-        // Sub Maroc
+        //Sub Maroc
 
         MA11: {
           n: "Laâyoune-Sakia El Hamra",
@@ -38868,7 +38869,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Béni Mellal",
         },
 
-        // Sub Indonésie
+        //Sub Indonésie
 
         IDKU: {
           n: "Kalimantan Utara",
@@ -39177,7 +39178,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Samarinda",
         },
 
-        // Sub Japon
+        //Sub Japon
 
         "JP-01": {
           n: "Hokkaidō",
@@ -39602,7 +39603,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+81",
           c: "Naha",
         },
-        // Sub Pérou
+        //Sub Pérou
 
         "PE-AMA": {
           n: "Amazonas",
@@ -39848,7 +39849,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         //   c: "Lima",
         // },
 
-        // Sub Colombie
+        //Sub Colombie
 
         "CO-AMA": {
           n: "Amazonas",
@@ -40030,7 +40031,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+57",
           c: "Santa Marta",
         },
-        // Sub Argentine
+        //Sub Argentine
 
         "AR-B": {
           n: "Buenos Aires",
@@ -40248,7 +40249,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+54",
           c: "San Miguel de Tucumán",
         },
-        // Sub Brésil
+        //Sub Brésil
 
         "BR-AC": {
           n: "Acre",
@@ -40493,7 +40494,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+55",
           c: "Palmas",
         },
-        // Sub Suisse
+        //Sub Suisse
 
         "CH-AG": {
           n: "Argovie",
@@ -40729,7 +40730,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+41",
           c: "Zurich",
         },
-        // Sub Pologne
+        //Sub Pologne
 
         "PL-DS": {
           n: "Basse-Silésie",
@@ -40875,7 +40876,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+48",
           c: "Szczecin",
         },
-        // Sub Royaume-Uni
+        //Sub Royaume-Uni
 
         "GB-BD": {
           n: "Bedfordshire",
@@ -41246,7 +41247,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+44",
           c: "York",
         },
-        // Sub Mexique
+        //Sub Mexique
 
         MXSON: {
           n: "Sonora",
@@ -41537,7 +41538,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Mexico",
         },
 
-        // Sub Espagne
+        //Sub Espagne
 
         ESNC: {
           n: "Navarre",
@@ -41711,7 +41712,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Melilla",
         },
 
-        // Sub Allemagne
+        //Sub Allemagne
 
         "DE-BW": {
           n: "Bade-Wurtemberg",
@@ -41857,7 +41858,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+49",
           c: "Erfurt",
         },
-        // Sub Italie
+        //Sub Italie
 
         IT23: {
           n: "Vallée d'Aoste",
@@ -42040,7 +42041,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Ancône",
         },
 
-        // Sub Canada
+        //Sub Canada
 
         "CA-AB": {
           n: "Alberta",
@@ -42159,7 +42160,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+1",
           c: "Whitehorse",
         },
-        // Sub France
+        //Sub France
 
         FRHDF: {
           n: "Hauts-de-France",
@@ -42278,13 +42279,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+33",
           c: "Paris",
         },
-        // Sub Autriche
+        //Sub Autriche
 
         "AT-1": {
           n: "Burgenland",
           p: 301712,
           info: "État fédéré",
-          s: "3 962 km²",
+          s: 3962,
           nH: "Non disponible",
           indT: "Non disponible",
           c: "Eisenstadt",
@@ -42293,7 +42294,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Carinthie (Kärnten)",
           p: 569906,
           info: "État fédéré",
-          s: "9 538 km²",
+          s: 9538,
           nH: "Carinthien / Carinthienne",
           indT: "Non disponible",
           c: "Klagenfurt",
@@ -42302,7 +42303,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Basse-Autriche (Niederösterreich)",
           p: 1725711,
           info: "État fédéré",
-          s: "19 186 km²",
+          s: 19186,
           nH: "Non disponible",
           indT: "Non disponible",
           c: "Sankt Pölten",
@@ -42311,7 +42312,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Haute-Autriche (Oberösterreich)",
           p: 1533226,
           info: "État fédéré",
-          s: "11 980 km²",
+          s: 11980,
           nH: "Non disponible",
           indT: "Non disponible",
           c: "Linz",
@@ -42320,7 +42321,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Salzbourg (Salzburg)",
           p: 572049,
           info: "État fédéré",
-          s: "7 156 km²",
+          s: 7156,
           nH: "Non disponible",
           indT: "Non disponible",
           c: "Salzbourg",
@@ -42329,7 +42330,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Styrie (Steiermark)",
           p: 1270439,
           info: "État fédéré",
-          s: "16 401 km²",
+          s: 16401,
           nH: "Non disponible",
           indT: "Non disponible",
           c: "Graz",
@@ -42338,7 +42339,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Tyrol (Tirol)",
           p: 776620,
           info: "État fédéré",
-          s: "12 640 km²",
+          s: 12640,
           nH: "Tyrolien / Tyrolienne",
           indT: "Non disponible",
           c: "Innsbruck",
@@ -42347,7 +42348,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Vorarlberg",
           p: 410938,
           info: "État fédéré",
-          s: "2 602 km²",
+          s: 2602,
           nH: "Non disponible",
           indT: "Non disponible",
           c: "Bregenz",
@@ -42356,13 +42357,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Vienne (Wien)",
           p: 2017314,
           info: "État fédéré, capitale fédérale",
-          s: "414 km²",
+          s: 414,
           nH: "Viennois / Viennoise",
           indT: "Non disponible",
           c: "Vienne",
         },
 
-        // Sub Grèce
+        //Sub Grèce
 
         "GR-A": {
           n: "Macédoine-Orientale-et-Thrace",
@@ -42490,7 +42491,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: "+30",
           c: "Karyès",
         },
-        // Sub Belgique
+        //Sub Belgique
 
         "BE-VAN": {
           n: "Anvers (Antwerpen)",
