@@ -5657,6 +5657,7 @@
       }
       .contentChoiceZ {
         display: none;
+
         scrollbar-width: none;
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
         touch-action: pan-y; /* le scroll est vertical, les taps passent */
@@ -5680,7 +5681,7 @@
         display: flex;
         gap: 0.4rem;
         border-radius: 1rem;
-        width: 100%;
+        width: calc(100% - 3px);
         box-sizing: border-box;
         padding: 0.6rem 1rem;
         box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
@@ -13667,7 +13668,7 @@
             </svg>
           </button>
 
-          <span style="color: black; font-weight: 500; font-size: 1.2rem"
+          <span style="color: black; font-weight: 500; font-size: 1.2rem; margin-top : -1.5rem;"
             >Où jouer ?</span
           >
 
