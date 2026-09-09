@@ -31577,7 +31577,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function sortContentSub(sort) {
         let subSort;
-        subSort = subSort.filter((id) => id.slice(0, 2) === currentCSub.id);
         if (sort === "alpha") {
           subSort = Object.keys(D_us).sort(
             (
@@ -31595,6 +31594,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             (a, b) => D_us[b].p - D_us[a].p, // ordre de population décroissante
           );
         }
+        subSort = subSort.filter((id) => id.slice(0, 2) === currentCSub.id);
 
         contentInfoSub.innerHTML = ``;
         contentInfoSub.scrollTop;
