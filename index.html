@@ -5675,7 +5675,7 @@
         align-items: center;
         padding: 0.6rem 0;
         padding-top: 0;
-        width: 100%;
+        width: 100%;  
         flex: 1;
         border-radius: inherit;
       }
@@ -7098,6 +7098,7 @@
         overflow: hidden;
         flex-shrink: 0;
         min-width: 3rem;
+        margin-right : -1rem;
         width: fit-content;
         height: 75%; /* hauteur fixe */
       }
@@ -7127,6 +7128,7 @@
         white-space: normal; /* annule un éventuel nowrap parent */
         overflow-wrap: break-word; /* coupe même les mots trop longs */
         max-width: 100%;
+        margin-left : 1rem;
         font-size: 0.95rem;
         color: white;
       }
@@ -7136,6 +7138,7 @@
         overflow-wrap: break-word; /* coupe même les mots trop longs */
         max-height: 0rem;
         max-width: 100%;
+        margin-left : 1rem;
         color: rgba(255, 255, 255, 0.6);
         font-size: 0.82rem;
         transition: max-height 0.2s ease;
@@ -28298,6 +28301,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                   Math.random() * Object.keys(L_config.sub ? D_us : L_q).length,
                 )
               ]; // identifiant de pays au hasard
+              const L_info = L_config.sub ? D_us : L_q;
               while (
                 L_propClasser.includes(p_id) ||
                 L_reponses.includes(p_id) ||
@@ -28306,7 +28310,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                 p_id = Object.keys(L_config.sub ? D_us : L_q)[
                   Math.floor(
                     Math.random() *
-                      Object.keys(L_info(L_config.sub ? D_us : L_q)).length,
+                      Object.keys(L_info).length,
                   )
                 ];
               }
@@ -28333,6 +28337,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
               const classerCadreDrapeau = document.createElement("div");
               classerCadreDrapeau.className = "classerCadreDrapeau";
+              classerCadreDrapeau.style.display = (L_config.sub === "US" || !L_config.sub) ? "flex" : "none"
 
               const classerDrapeauBox = document.createElement("div");
               classerDrapeauBox.className = "classerDrapeauBox";
