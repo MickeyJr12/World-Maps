@@ -6525,23 +6525,23 @@
         position: absolute;
         z-index : 99;
         justify-content: center;
-        text-align: center;
+        text-align: flex-start;
         align-items: center;
         color: white;
-        border-radius: 0.6rem;
+        font-size: 0.9rem;
         outline: 1px solid rgba(255, 255, 255, 0.2);
         opacity: 0;
+        border-radius: 0.6rem;
         top: calc(env(safe-area-inset-top) + 0.6rem);
         left: 50%;
-        transform: translateX(-50%) translateY(-1.5em);
         width: auto;
-        max-width: 75%;
-        padding: 0.6rem;
+        max-width: 85%;
+        padding: 0.4rem;
         box-sizing: border-box;
-        font-size: 0.8rem;
-        background: rgba(0, 0, 0, 0.2);
         background: rgba(17, 23, 79, 0.75);
+        background: rgba(17, 23, 79, 0.6);
         backdrop-filter: blur(10px);
+        transform: translateX(-50%) translateY(-1.5em);
         transition:
           transform 0.4s ease,
           opacity 0.4s ease;
@@ -29208,6 +29208,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
 
         btn.addEventListener("click", () => {
+
           document.querySelector(".messageViewMap")?.remove();
           if (viewMaps || cChooseTrouver) {
             if (viewMaps) {
@@ -29596,6 +29597,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }, 10);
       }
 
+      let oneTimeMessage = false;
       function afficherMaps(pm = false) {
         // pm est le numéro de la question
         oneTimeMap = true;
@@ -29745,6 +29747,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
 
         //*** Message d'information
+        if(!oneTimeMessage){
         setTimeout(() => {
           const message = document.createElement("div");
           message.className = "messageViewMap";
@@ -29763,6 +29766,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           `
 
           message.append(footerMessage)
+
+           message.querySelector('input').addEventListener('click',()=>{
+            oneTimeMessage = message.querySelector('input').checked
+            saveProgress()
+          })
+          message.querySelector('input').click()
+
           requestAnimationFrame(() => {
             message.classList.add("active");
           });
@@ -29774,7 +29784,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           // setTimeout(() => {
           //   message.remove();
           // }, 5500);
-        }, 300);
+        }, 300)}
 
         //***
 
@@ -29800,6 +29810,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!viewMaps) {
           return;
         }
+        document.querySelector(".messageViewMap")?.remove();
 
         if (L_config.sub) {
           const svgSub2 = L_gSub.get(L_cSub[L_config.sub].svgSub); // svgUs
@@ -57265,6 +57276,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           notif,
           dataD,
           nbrReward,
+          oneTimeMessage,
         };
         localStorage.setItem(SAVE_KEY, JSON.stringify(data));
       }
@@ -57293,6 +57305,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           haptic = data.haptic ?? false;
           notif = data.notif ?? false;
           data.dataD ? (dataD = data.dataD) : "";
+          oneTimeMessage = data.oneTimeMessage ?? false;
           // nbrReward =0 ;
           // for( const cle in L_claimedQ){
           //   if (L_claimedQ[cle] === false && cle !== "XXX"){nbrReward+=1}
@@ -57428,7 +57441,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(getVB().w, currentCountry?.getBBox().width);
+        console.log(oneTimeMessage);
       }
       // loop();
       // const L_ephe2 = {}
