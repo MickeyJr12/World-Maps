@@ -6524,6 +6524,7 @@
       }
       .messageViewMap {
         display: flex;
+        pointer-events : none;
         flex-direction : column;
         position: absolute;
         z-index : 10;
@@ -6555,6 +6556,7 @@
           opacity 0.4s ease;
       }
       .messageViewMap.active {
+        pointer-events : all;
         opacity: 1;
         transform: translateX(-50%);
       }
@@ -24623,7 +24625,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         setTimeout(() => {
           // Prépare phoneHome avant de l'afficher
-          
+
           [...phoneHome.children].forEach((el) => {
             el.style.transition = "none";
             el.style.opacity = "0";
@@ -38505,7 +38507,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           s: 1105.7,
           nH: "Hongkongais(e)",
           indT: "+852",
-          c: "Hong Kong (pas de capitale distincte)",
+          c: "Hong Kong",
         },
         "CN-92": {
           n: "Macao",
@@ -38514,7 +38516,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           s: 30.5,
           nH: "Macanais(e)",
           indT: "+853",
-          c: "Macao (pas de capitale distincte)",
+          c: "Macao",
         },
 
         //Sub Inde
@@ -38846,77 +38848,77 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         //Sub Australie
 
         "AU-ACT": {
-          n: "Territoire de la capitale australienne",
-          info: "Territoire",
-          p: 470000,
-          s: 2358,
-          nH: "Non disponible",
-          indT: "+61 (02)",
-          c: "Canberra",
-        },
-        "AU-NSW": {
-          n: "Nouvelle-Galles du Sud",
-          info: "État",
-          p: 8300000,
-          s: 800642,
-          nH: "Non disponible",
-          indT: "+61 (02)",
-          c: "Sydney",
-        },
-        "AU-NT": {
-          n: "Territoire du Nord",
-          info: "Territoire",
-          p: 250000,
-          s: 1349129,
-          nH: "Non disponible",
-          indT: "+61 (08)",
-          c: "Darwin",
-        },
-        "AU-QLD": {
-          n: "Queensland",
-          info: "État",
-          p: 5400000,
-          s: 1852642,
-          nH: "Queenslandais(e)",
-          indT: "+61 (07)",
-          c: "Brisbane",
-        },
-        "AU-SA": {
-          n: "Australie-Méridionale",
-          info: "État",
-          p: 1800000,
-          s: 983482,
-          nH: "Sud-Australien(ne)",
-          indT: "+61 (08)",
-          c: "Adelaide",
-        },
-        "AU-TAS": {
-          n: "Tasmanie",
-          info: "État",
-          p: 570000,
-          s: 68401,
-          nH: "Tasmanien(ne)",
-          indT: "+61 (03)",
-          c: "Hobart",
-        },
-        "AU-VIC": {
-          n: "Victoria",
-          info: "État",
-          p: 6700000,
-          s: 227444,
-          nH: "Victorien(ne)",
-          indT: "+61 (03)",
-          c: "Melbourne",
-        },
-        "AU-WA": {
-          n: "Australie-Occidentale",
-          info: "État",
-          p: 2900000,
-          s: 2526786,
-          nH: "Non disponible",
-          indT: "+61 (08)",
-          c: "Perth",
-        },
+    "n": "Territoire de la capitale australienne",
+    "info": "Territoire",
+    "p": 470000,
+    "s": 2358,
+    "nH": "Non disponible",
+    "indT": "+61 (02)",
+    "c": "Canberra"
+  },
+  "AU-NSW": {
+    "n": "Nouvelle-Galles du Sud",
+    "info": "État",
+    "p": 8300000,
+    "s": 800642,
+    "nH": "Néo-Gallois(e)",
+    "indT": "+61 (02)",
+    "c": "Sydney"
+  },
+  "AU-NT": {
+    "n": "Territoire du Nord",
+    "info": "Territoire",
+    "p": 250000,
+    "s": 1349129,
+    "nH": "Territorial(e)",
+    "indT": "+61 (08)",
+    "c": "Darwin"
+  },
+  "AU-QLD": {
+    "n": "Queensland",
+    "info": "État",
+    "p": 5400000,
+    "s": 1852642,
+    "nH": "Queenslandais(e)",
+    "indT": "+61 (07)",
+    "c": "Brisbane"
+  },
+  "AU-SA": {
+    "n": "Australie-Méridionale",
+    "info": "État",
+    "p": 1800000,
+    "s": 983482,
+    "nH": "Sud-Australien(ne)",
+    "indT": "+61 (08)",
+    "c": "Adelaide"
+  },
+  "AU-TAS": {
+    "n": "Tasmanie",
+    "info": "État",
+    "p": 570000,
+    "s": 68401,
+    "nH": "Tasmanien(ne)",
+    "indT": "+61 (03)",
+    "c": "Hobart"
+  },
+  "AU-VIC": {
+    "n": "Victoria",
+    "info": "État",
+    "p": 6700000,
+    "s": 227444,
+    "nH": "Victorien(ne)",
+    "indT": "+61 (03)",
+    "c": "Melbourne"
+  },
+  "AU-WA": {
+    "n": "Australie-Occidentale",
+    "info": "État",
+    "p": 2900000,
+    "s": 2526786,
+    "nH": "Ouest-Australien(ne)",
+    "indT": "+61 (08)",
+    "c": "Perth"
+  },
         //Sub Maroc
 
         MA11: {
