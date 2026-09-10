@@ -40,7 +40,25 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap");
 
-           #cadreNvll{
+      * {
+        /* outline : 1px solid red; */
+        -webkit-user-select: none; /* Safari / Chrome mobile */
+        -webkit-touch-callout: none; /* empêche le menu contextuel sur iOS (hold) */
+        user-select: none;
+        -webkit-tap-highlight-color: transparent; /* retire le flash gris iOS */
+        touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
+      }
+
+      :root {
+        --font-main: "Outfit", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-title);
+      }
+
+         #cadreNvll{
         display : flex;
         position: absolute;
         text-align: center;
@@ -115,24 +133,6 @@
 
         background : rgb(208, 111, 0)
 
-      }
-
-      * {
-        /* outline : 1px solid red; */
-        -webkit-user-select: none; /* Safari / Chrome mobile */
-        -webkit-touch-callout: none; /* empêche le menu contextuel sur iOS (hold) */
-        user-select: none;
-        -webkit-tap-highlight-color: transparent; /* retire le flash gris iOS */
-        touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
-      }
-
-      :root {
-        --font-main: "Outfit", sans-serif;
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: var(--font-title);
       }
 
       html {
