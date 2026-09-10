@@ -6523,7 +6523,7 @@
         display: flex;
         flex-direction : column;
         position: absolute;
-        z-index : 99;
+        z-index : 10;
         justify-content: center;
         text-align: flex-start;
         align-items: center;
@@ -6539,7 +6539,12 @@
         padding: 0.4rem;
         box-sizing: border-box;
         background: rgba(17, 23, 79, 0.75);
-        background: rgba(17, 23, 79, 0.6);
+        background: rgba(17, 23, 79, 1);
+           background: linear-gradient(
+          180deg,
+          rgba(9, 58, 136, 0.879) 0%,
+          rgba(2, 34, 85, 0.879) 100%
+        );
         backdrop-filter: blur(10px);
         transform: translateX(-50%) translateY(-1.5em);
         transition:
@@ -16368,6 +16373,17 @@
           </svg>
         </button>
       </div>
+
+      <div class="messageViewMap">Cliquer sur une des propositions pour zoomer sur le pays correspondant
+        <div class="footerMessage">
+          <label class="checkbox-container">
+        <input class="custom-checkbox" type="checkbox">
+        <span class="checkmark"></span>
+    </label>
+    <span style="align-self : center" >Ne plus afficher</span>
+        </div>          
+      </div>
+
       <!--------------------------Grand Cadre------------------------------->
 
       <div id="cadre">
@@ -29214,7 +29230,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         btn.addEventListener("click", () => {
 
-          document.querySelector(".messageViewMap")?.remove();
+          messageViewMap.classList.remove("active");
           if (viewMaps || cChooseTrouver) {
             if (viewMaps) {
               zoomCountry(idProps_m.get(btn));
@@ -29520,6 +29536,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         getId("mCadre"),
         backMapsPlay,
         getId("cadre"),
+        document.querySelector('.messageViewMap')
       ];
 
       //z-index des éléments de maps dans 4 choix
@@ -29603,6 +29620,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       }
 
       let oneTimeMessage = false;
+      const messageViewMap = document.querySelector('.messageViewMap')
+
+       messageViewMap.querySelector('input').addEventListener('click',()=>{
+            oneTimeMessage = messageViewMap.querySelector('input').checked
+            saveProgress()
+          })
+
       function afficherMaps(pm = false) {
         // pm est le numéro de la question
         oneTimeMap = true;
@@ -29754,32 +29778,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         //*** Message d'information
         if(!oneTimeMessage){
         setTimeout(() => {
-          const message = document.createElement("div");
-          message.className = "messageViewMap";
-          message.textContent =
-            "Cliquer sur une des propositions pour zoomer sur le pays correspondant";
-          phonePlay.append(message);
-          const footerMessage = document.createElement('div')
-          footerMessage.className = "footerMessage"
-          footerMessage.innerHTML = `
-<label class="checkbox-container">
-    <input class="custom-checkbox" checked="" type="checkbox">
-    <span class="checkmark"></span>
-</label>
+        
 
-          <span style="align-self : center" >Ne plus afficher</span>
-          `
-
-          message.append(footerMessage)
-
-           message.querySelector('input').addEventListener('click',()=>{
-            oneTimeMessage = message.querySelector('input').checked
-            saveProgress()
-          })
-          message.querySelector('input').click()
+          
 
           requestAnimationFrame(() => {
-            message.classList.add("active");
+            messageViewMap.classList.add("active");
           });
 
           // setTimeout(() => {
@@ -29815,7 +29819,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!viewMaps) {
           return;
         }
-        document.querySelector(".messageViewMap")?.remove();
+        messageViewMap.classList.remove("active");
 
         if (L_config.sub) {
           const svgSub2 = L_gSub.get(L_cSub[L_config.sub].svgSub); // svgUs
@@ -31631,6 +31635,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       }
       function toggleC(view) {
         if (view) {
+          messageViewMap.classList.remove("active");
           mCadre.style.transition = "none";
           mCadre.style.transform = "translateY(-15%)";
           mCadre.style.opacity = "0";
@@ -51864,6 +51869,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       //
       let oneTimeColor = false; // n'appeler qu'une seule fois colorcountry dans countryclick/svg.ad (click)
       svg.addEventListener("click", (event) => {
+
         const country = event.target.closest("path");
         if (country != null) {
           const status = idVisible_m.get(country.id);
