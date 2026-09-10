@@ -6507,11 +6507,24 @@
       .back:active {
         background: rgba(255, 255, 255, 0.2);
       }
+      /*CSS Message*/
+      .footerMessage{
+        display : flex;
+        justify-content : flex-start;
+        align-items :center;
+        width : 100%;
+        margin : 0.6rem;
+        gap : 0.4rem;
+        color : rgba(255,255,255,0.6);
+        height : 25px;
+
+      }
       .messageViewMap {
         display: flex;
+        flex-direction : column;
         position: absolute;
+        z-index : 99;
         justify-content: center;
-        pointer-events: none;
         text-align: center;
         align-items: center;
         color: white;
@@ -6537,6 +6550,81 @@
         opacity: 1;
         transform: translateX(-50%);
       }
+
+
+      /* From Uiverse.io by DaniloMGutavo */ 
+.checkbox-container {
+  display: flex;
+  pointer-events : all;
+  position: relative;
+  transform : scale(0.85);
+  padding-left: 35px;
+  cursor: pointer;
+  height : 1rem;
+  font-size: 16px;
+  user-select: none;
+}
+
+.custom-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.custom-checkbox:checked ~ .checkmark {
+  background-color: #2196F3;
+  box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
+}
+
+.custom-checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+
+@keyframes checkAnim {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+.custom-checkbox:checked ~ .checkmark:after {
+  animation: checkAnim 0.2s forwards;
+}
+
+
+      /* Fin CSS Message */
+
 
       .btn-carte {
         display: flex;
@@ -24651,9 +24739,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let L_RDQ = [
         {
           id: "A",
-          t: "15 bonnes réponses en mode Trouver",
+          t: "10 bonnes réponses en mode Trouver",
           svg: "loupe",
-          max: 15,
+          max: 10,
           xp: 150,
           mode: "modeTrouver",
           continent: "all",
@@ -24680,8 +24768,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         {
           id: "D",
-          t: "Classer correctement 5 pays par superficie",
+          t: "Classer correctement au moins 3 pays par superficie 2 fois",
           svg: "classer",
+          minClass: 3,
           max: 2,
           xp: 50,
           mode: "modeClasser",
@@ -24824,8 +24913,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         {
           id: "S",
-          t: "Classer correctement 5 pays par population",
+          t: "Classer correctement au moins 3 pays par population",
           svg: "classer",
+          minClass: 3,
           max: 2,
           xp: 50,
           mode: "modeClasser",
@@ -25725,8 +25815,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // === Classements par superficie (cumulé) ===
         {
           id: "CM",
-          t: "Classer correctement 10 pays par superficie",
+          t: "Classer correctement 5 pays par superficie 10 fois",
           svg: "classer",
+          minClass:5,
           max: 10,
           xp: 150,
           mode: "modeClasser",
@@ -25734,8 +25825,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         {
           id: "CN",
-          t: "Classer correctement 25 pays par superficie",
+          t: "Classer correctement 5 pays par superficie 25 fois",
           svg: "classer",
+          minClass:5,
           max: 25,
           xp: 350,
           mode: "modeClasser",
@@ -25743,8 +25835,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         {
           id: "CO",
-          t: "Classer correctement 50 pays par superficie",
+          t: "Classer correctement 5 pays par superficie 50 fois",
           svg: "classer",
+          minClass:5,
           max: 50,
           xp: 700,
           mode: "modeClasser",
@@ -25754,8 +25847,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // === Classements par population (cumulé) ===
         {
           id: "CP",
-          t: "Classer correctement 10 pays par population",
+          t: "Classer correctement 5 pays par population 10 fois",
           svg: "classer",
+          minClass:5,
           max: 10,
           xp: 150,
           mode: "modeClasser",
@@ -25763,8 +25857,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         {
           id: "CQ",
-          t: "Classer correctement 25 pays par population",
+          t: "Classer correctement 5 pays par population 25 fois",
           svg: "classer",
+          minClass:5,
           max: 25,
           xp: 350,
           mode: "modeClasser",
@@ -25772,8 +25867,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         {
           id: "CR",
-          t: "Classer correctement 50 pays par population",
+          t: "Classer correctement 5 pays par population 50 fois",
           svg: "classer",
+          minClass:5,
           max: 50,
           xp: 700,
           mode: "modeClasser",
@@ -26253,8 +26349,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               }
               if (
                 quest.t.includes("correctement") &&
-                (parseInt(document.getElementById(L_config.r).dataset.nbr) !==
-                  5 ||
+                (parseInt(document.getElementById(L_config.r).dataset.nbr) <
+                  quest.minClass ||
+                  
                   (quest.t.includes("population") &&
                     L_config.q !== "populationQ") ||
                   (quest.t.includes("superficie") &&
@@ -29654,17 +29751,29 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           message.textContent =
             "Cliquer sur une des propositions pour zoomer sur le pays correspondant";
           phonePlay.append(message);
+          const footerMessage = document.createElement('div')
+          footerMessage.className = "footerMessage"
+          footerMessage.innerHTML = `
+<label class="checkbox-container">
+    <input class="custom-checkbox" checked="" type="checkbox">
+    <span class="checkmark"></span>
+</label>
+
+          <span style="align-self : center" >Ne plus afficher</span>
+          `
+
+          message.append(footerMessage)
           requestAnimationFrame(() => {
             message.classList.add("active");
           });
 
-          setTimeout(() => {
-            message.className = "messageViewMap";
-          }, 5000);
+          // setTimeout(() => {
+          //   message.className = "messageViewMap";
+          // }, 5000);
 
-          setTimeout(() => {
-            message.remove();
-          }, 5500);
+          // setTimeout(() => {
+          //   message.remove();
+          // }, 5500);
         }, 300);
 
         //***
@@ -30683,7 +30792,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const svg = document.querySelector("svg.monde");
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
-      const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number);
+      const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 width, height]
+      
 
       const paths = [...svg.querySelectorAll("path")].filter(
         (p) => p.id.length === 2,
@@ -53678,10 +53788,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       const svgPoint = pt.matrixTransform(svg.getScreenCTM().inverse());
 
-      const initialViewBox2 = {
-        width: svg.viewBox.baseVal.width,
-        height: svg.viewBox.baseVal.height,
-      };
 
       function zoomCenterScreen(svg, zoomFactor = 2, duration = 700) {
         const vb = svg.viewBox.baseVal;
@@ -53692,11 +53798,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         pt.y = rect.top + rect.height / 2;
 
         const center = pt.matrixTransform(svg.getScreenCTM().inverse());
-        const MIN_WIDTH = initialViewBox2.width / zoomFactorSvg;
-        const MIN_HEIGHT = initialViewBox2.height / zoomFactorSvg;
+        const MIN_WIDTH = initialViewBox[2] / zoomFactorSvg;
+        const MIN_HEIGHT = initialViewBox[3] / zoomFactorSvg;
 
-        const MAX_WIDTH = initialViewBox2.width;
-        const MAX_HEIGHT = initialViewBox2.height;
+        const MAX_WIDTH = initialViewBox[2];
+        const MAX_HEIGHT = initialViewBox[3];
 
         const newW = Math.min(
           Math.max(vb.width / zoomFactor, MIN_WIDTH),
@@ -54802,16 +54908,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             const newW = Math.min(
               Math.max(
                 vb.w * zoomFactor,
-                initialViewBox2.width / zoomFactorSvg,
+                initialViewBox[2] / zoomFactorSvg,
               ), // même min que zoomCenterScreen
-              initialViewBox2.width, // même max
+              initialViewBox[2], // même max
             );
             const newH = Math.min(
               Math.max(
                 vb.h * zoomFactor,
-                initialViewBox2.height / zoomFactorSvg,
+                initialViewBox[3] / zoomFactorSvg,
               ), // même min
-              initialViewBox2.height, // même max
+              initialViewBox[3], // même max
             );
 
             if (newW <= 200) {
