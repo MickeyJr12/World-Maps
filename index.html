@@ -6514,7 +6514,7 @@
         align-items :center;
         width : 100%;
         margin : 0.6rem;
-        gap : 0.4rem;
+        gap : 0.25rem;
         color : rgba(255,255,255,0.6);
         height : 25px;
 
@@ -26329,7 +26329,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               }
 
               if ("stars" in quest) {
-                let scoreFinal = TF ? score + 1 : score; // fillQuete est appelé avant qu'on utilise la fonction fillPhonePlay pour actualiser le score
+                let scoreFinal = TF ? score + 1 : score; // fillQuete est appelé avant qu'on utilise la fonc fillPhonePlay pour actualiser le score
                 if (
                   Math.floor(scoreFinal / (Math.floor(maxQ) / 3)) <
                     quest.stars ||
@@ -27801,14 +27801,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         //Afficher le menu de fin si modeChoix, ou modeTrouver et cCooseTrouver
 
-        L_stars.forEach((el) => {
-          el.style.animation = "";
-          el.classList.remove("scored");
-        });
-        getId("xpPm").style.animation = "";
-        getId("xpPm").classList.remove("scored");
-
-        if (
+        if ( 
           (getQNumber() >= maxQ && L_config.m === "modeChoix") ||
           ((L_config.m === "modeTrouver" || L_config.m === "modeClasser") &&
             getQNumber() >= maxQ &&
@@ -27816,20 +27809,35 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         ) {
           affichePm();
           enregistrerJourTrackDays();
-          document.getElementById("wrapperScorePm").style.display = "flex";
+          pause4Choix.style.opacity = "0"
+          pause4Choix.style.pointerEvents = "none";
+          L_reponses = [];
+
+
+
+          if (document.getElementById("wrapperScorePm").style.display === "none"){
+            L_stars.forEach((el) => {
+          el.style.animation = "";
+          el.classList.remove("scored");
+        });
+        getId("xpPm").style.animation = "";
+        getId("xpPm").classList.remove("scored");
+
+            document.getElementById("wrapperScorePm").style.display = "flex";
+
           let delayStar = 500;
           let nbrStars = Math.floor(score / (Math.floor(maxQ) / 3));
           let xpFinPartie = Math.max(10, score * 10);
           getId("xpPm").textContent = xpFinPartie + " XP";
 
-          (L_stars.slice(0, nbrStars).forEach((el) => {
+          L_stars.slice(0, nbrStars).forEach((el) => {
             setTimeout(() => {
               el.style.animation = "scoredX 0.5s linear";
               el.classList.add("scored");
             }, delayStar);
             delayStar += 200;
           }),
-            (pause4Choix.style.opacity = "0"));
+            
           setTimeout(
             () => {
               getId("xpPm").style.animation = "scoredXp 0.5s linear";
@@ -27837,16 +27845,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             },
             nbrStars * 200 + 500,
           );
-
           L_claimedQ["XXX"] = false;
           const xpFin = document.createElement("div");
           xpFin.className = "xpQ";
           cadreRD.append(xpFin);
           attachXpClickHandler(xpFin, { id: "XXX", xp: xpFinPartie });
           L_actionReward.set(xpFin, () => xpFin.click());
-
-          pause4Choix.style.pointerEvents = "none";
-          L_reponses = [];
+          }
 
           return;
         }
@@ -29187,7 +29192,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const star3 = document.getElementById("star3");
       let L_stars = [star1, star2, star3];
       let score = 0;
-      let maxQ = 15; // à retirer
+      let maxQ = 15;
       document
         .querySelectorAll(".maxQ")
         .forEach((spn) => (spn.textContent = maxQ));
