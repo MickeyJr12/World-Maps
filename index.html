@@ -78,6 +78,8 @@
         border-radius: 1rem;
         background:  rgba(255,255,255,0.2);
         backdrop-filter: blur(10px);
+        contain: layout paint;
+        isolation: isolate; 
       }
       .iconAppEphe{
         height : 4rem;
@@ -57563,7 +57565,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
     let vecteursH_m = new Map();
     let checkH_m = new Map(); /* On modifie deux hearts dans chaque boucle du for, pour ne pas le check deux fois */
 
-    let heightB = 75 // taille des bulles
+    let heightB = 65 // taille des bulles
     let R = heightB; // Rayon de collision
     let nbrBulles = 15// nombre de bulles créées
 
