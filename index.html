@@ -40,6 +40,85 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap");
 
+           #cadreNvll{
+        display : flex;
+        position: absolute;
+        text-align: center;
+        left : 50%;
+        top : 50%;
+        transform: translateX(-50%) translateY(-50%);
+        flex-direction : column;
+        align-items: center;
+        color : white;
+        gap : 0.8rem;
+        padding : 0.6rem;
+        box-sizing: border-box;
+        outline : 1px solid rgba(255,255,255,0.25);
+        box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+        width : calc(100% - 0.5rem);
+        max-width: 600px;
+        border-radius: 1rem;
+        background:  rgba(37, 213, 249, 0.4);
+        background:  rgba(255,255,255,0.2);
+
+        backdrop-filter: blur(8px);
+      }
+      .iconAppEphe{
+        height : 4rem;
+        aspect-ratio: 1/1;
+        border-radius: inherit ;
+        box-shadow: 0 2px 5px rgba(20, 40, 100, 0.1);
+
+      }
+
+      #wrapperQRCode{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        background-color: rgba(255,255,255,0.75);
+        border-radius: inherit;
+        width: 6rem;
+        height : 6rem;
+
+      }
+      .qrCode{
+        display : flex;
+        width: 100;
+        height: 100%;
+      }
+      .btnEphe{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width : 100%;
+        gap : 0.6rem;
+        border-radius: 0.8rem;
+        padding: 0.6rem 1rem;
+        box-sizing: border-box;
+        background: rgb(9, 28, 238);
+        transition: transform 0.2s ease;
+      }
+
+      .btnEphe:active{
+        transform: scale(0.96);
+      }
+
+      .iconApple{
+        transform: translateY(-0.1rem);
+        height: 1.2rem;;
+        left : 0.5rem;
+        /* fill : rgb(234, 130, 10); */
+      }
+
+      #btnShareEphe{
+
+        background : rgb(208, 111, 0)
+
+      }
+
       * {
         /* outline : 1px solid red; */
         -webkit-user-select: none; /* Safari / Chrome mobile */
@@ -8268,6 +8347,29 @@
       /* Fin CSS pm */
     </style>
     <!--HTML FLemme-->
+
+    <div id="cadreNvll">
+  <img class="iconAppEphe" src="IconApp.png" alt="">
+
+  <span style="font-size: 1.2rem; opacity : 0.75">Globus Quiz est enfin disponible sur l'App Store !</span>
+
+  <div id="wrapperQRCode">
+  <img class="qrCode" src="qrcode-exemple.svg" alt="">
+</div>
+
+<div class="btnEphe">
+  <svg class="iconApple" fill="white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd114eed"> <path style="display: inline;" d="M248.644,123.476c-5.45-29.71,8.598-60.285,25.516-80.89 c18.645-22.735,50.642-40.17,77.986-42.086c4.619,31.149-8.093,61.498-24.826,82.965 C309.37,106.527,278.508,124.411,248.644,123.476z M409.034,231.131c8.461-23.606,25.223-44.845,51.227-59.175 c-26.278-32.792-63.173-51.83-97.99-51.83c-46.065,0-65.542,21.947-97.538,21.947c-32.96,0-57.965-21.947-97.866-21.947 c-39.127,0-80.776,23.848-107.19,64.577c-9.712,15.055-16.291,33.758-19.879,54.59c-9.956,58.439,4.916,134.557,49.279,202.144 c21.57,32.796,50.321,69.737,87.881,70.059c33.459,0.327,42.951-21.392,88.246-21.616c45.362-0.258,53.959,21.841,87.372,21.522 c37.571-0.317,67.906-41.199,89.476-73.991c15.359-23.532,21.167-35.418,33.11-62.023 C414.435,352.487,389.459,285.571,409.034,231.131z"> </path> </g> </g></svg>
+
+  Télécharger</div>
+
+  <div class="btnEphe" id="btnShareEphe" >
+  <svg class="iconApple" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 13V17.5C20 20.5577 16 20.5 12 20.5C8 20.5 4 20.5577 4 17.5V13M12 3L12 15M12 3L16 7M12 3L8 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+  Propager la bonne nouvelle</div>
+
+
+ </div>
+
 
     <div id="phoneFlemme">
       <div id="stars"></div>
@@ -24610,6 +24712,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <!--Script Home-->
     <script>
       window.addEventListener("load", () => {
+        return
         // Sortie de phoneConfig
         phoneConfig.style.transition = "opacity 0.01s ease";
         phoneConfig.style.opacity = "0";
@@ -29536,7 +29639,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         getId("mCadre"),
         backMapsPlay,
         getId("cadre"),
-        document.querySelector('.messageViewMap')
+        document.querySelector('.messageViewMap'),
       ];
 
       //z-index des éléments de maps dans 4 choix
@@ -57454,6 +57557,132 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         requestAnimationFrame(loop);
         console.log(oneTimeMessage);
       }
+
+    // à retirer
+        
+       
+    let cordH_m = new Map();
+    let vecteursH_m = new Map();
+    let checkH_m = new Map(); /* On modifie deux hearts dans chaque boucle du for, pour ne pas le check deux fois */
+
+    let heightB = 50 // taille des bulles
+    let R = heightB; // Rayon de collision
+    let nbrBulles = 15// nombre de bulles créées
+
+    function norme(x1, y1, x2, y2) {
+      return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5;
+    }
+
+    function moveH(h) {
+      if (!vecteursH_m.has(h)) return;
+
+      const rect = h.getBoundingClientRect(); // ← une seule fois
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+
+      // Mise à jour des coordonnées de h
+      cordH_m.set(h, { x: cx, y: cy });
+
+      let vx = vecteursH_m.get(h).vx;
+      let vy = vecteursH_m.get(h).vy;
+
+      for (const H2 of cordH_m.keys()) {
+        if (H2 === h) continue;
+
+        const cx2 = cordH_m.get(H2).x;
+        const cy2 = cordH_m.get(H2).y;
+        const dist = norme(cx, cy, cx2, cy2);
+
+        if (dist < R && dist > 0) {
+          // ✅ Séparation des cœurs pour éviter le chevauchement
+          const overlap = R - dist;
+          const nx = (cx2 - cx) / dist;
+          const ny = (cy2 - cy) / dist;
+
+          // On repousse h dans la direction opposée à H2
+          h.style.left = parseFloat(h.style.left) - (nx * overlap) / 2 + "px";
+          h.style.top = parseFloat(h.style.top) - (ny * overlap) / 2 + "px";
+
+          const Vx2 = vecteursH_m.get(H2).vx;
+          const Vy2 = vecteursH_m.get(H2).vy;
+
+          const Vref = { x: vx - Vx2, y: vy - Vy2 };
+          const p = Vref.x * nx + Vref.y * ny;
+
+          // ✅ On ne rebondit que si les cœurs se rapprochent (p > 0)
+          if (p > 0) {
+            vx = vx - p * nx;
+            vy = vy - p * ny;
+            vecteursH_m.set(H2, { vx: Vx2 + p * nx, vy: Vy2 + p * ny });
+          }
+        }
+      }
+
+      vecteursH_m.set(h, { vx, vy });
+
+      // Rebonds sur les murs
+      if (cx + rect.width / 2 > window.innerWidth || cx - rect.width / 2 < 0) {
+        vecteursH_m.set(h, {
+          vx: -vecteursH_m.get(h).vx,
+          vy: vecteursH_m.get(h).vy,
+        });
+      }
+      if (
+        cy + rect.height / 2 > window.innerHeight + 15 ||
+        cy - rect.height / 2 < 0
+      ) {
+        vecteursH_m.set(h, {
+          vx: vecteursH_m.get(h).vx,
+          vy: -vecteursH_m.get(h).vy,
+        });
+      }
+
+      h.style.left = parseFloat(h.style.left) + vecteursH_m.get(h).vx + "px";
+      h.style.top = parseFloat(h.style.top) + vecteursH_m.get(h).vy + "px";
+
+      requestAnimationFrame(() => moveH(h));
+    }
+
+    let VX = [];
+    let VY = [];
+
+    for (let i = 0; i < nbrBulles; i++) {
+      VX.push(-2 + Math.random() * 4);
+      VY.push(-2 + Math.random() * 4);
+    }
+
+    for (let i = 0; i <  nbrBulles; i++) {
+      const el = document.createElement("img");
+      el.src =
+        "icon-transparent-onglet.png";
+
+      const x0 = 120 + Math.random() * (window.innerWidth - 240);
+      const y0 = 120 + Math.random() * (window.innerHeight - 240);
+
+      el.style.cssText = `
+            position:absolute;
+            left : ${x0 - 50}px;
+            top : ${y0 - 50}px;   
+            border-radius:50%;
+            z-index:-1;
+            width:${heightB}px;
+            height:auto;
+            user-select:none;
+            pointer-event:none;
+        `;
+      document.body.appendChild(el);
+      cordH_m.set(el, {
+        x: x0 + 50,
+        y: y0 + 50,
+      }); /*diamètre des coeurs de 100*/
+      vecteursH_m.set(el, {
+        vx: VX[Math.floor(Math.random() * VX.length)],
+        vy: VY[Math.floor(Math.random() * VY.length)],
+      });
+      checkH_m.set(el, false);
+      moveH(el);
+    }
+       //***
       // loop();
       // const L_ephe2 = {}
       // paths.forEach(p=>{
