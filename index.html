@@ -80,6 +80,14 @@
           #181cdc 37%,
           #150570 73%
         );
+
+        background: linear-gradient(
+          180deg,
+          #0f23fa 0%,
+          #134fd8 65%,
+          #1698d4 100%
+        );
+        
       }
 
       body {
@@ -3855,6 +3863,16 @@
           #181cdc 50%,
           #150570 100%
         );
+        
+background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
+          background: linear-gradient(
+          110deg,
+          #1445e6 0%,
+          #181cdc 50%,
+          #150570 100%
+        );
+        
+        
         min-height: 100dvh; /* dynamic viewport height, plus fiable sur mobile */
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2rem);
@@ -6455,9 +6473,9 @@
 
       .cadreStars {
         display: flex;
+        align-self :center;
         justify-content: center;
         align-items: center;
-        align-self: flex-start;
         margin-left: 0.5rem;
         gap: 0.4rem;
         left: 100%;
@@ -26127,6 +26145,19 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               let pourcentageLvl = nbrProgLvl / L_palierLvl[0];
               barreProgLvl.style.width = `${pourcentageLvl * 100}%`;
             }
+            //***
+            const itemsRec = document.querySelectorAll(".itemRD");
+
+        for (const itm of itemsRec) {
+          if (itm.querySelector(".xp").classList.contains("active")) {
+            itm.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+            break;
+          }
+        }
+
             saveProgress();
           },
           { once: true },
@@ -57546,6 +57577,19 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       async function acheterRetraitPubs() {
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
+
+         if(noAd === true){
+            const { Dialog } = Capacitor?.Plugins ?? {};
+            await Dialog.alert({
+              title: "Erreur",
+              message:
+                "Cet achat a déjà été effectué",
+              buttonTitle: "OK",
+            });
+            return
+        }
+
+
         const { Network, Dialog } = Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
 
@@ -57605,6 +57649,17 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       async function acheterPremium() {
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
+
+        if(isPremium === true){
+            const { Dialog } = Capacitor?.Plugins ?? {};
+            await Dialog.alert({
+              title: "Erreur",
+              message:
+                "Cet achat a déjà été effectué",
+              buttonTitle: "OK",
+            });
+            return
+        }
 
         const { Network, Dialog } = Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
