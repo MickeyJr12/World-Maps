@@ -58,8 +58,6 @@
         font-family: var(--font-title);
       }
 
-        
-
       html {
         font-size: 16px;
         -webkit-text-size-adjust: 100%;
@@ -87,7 +85,6 @@
           #134fd8 65%,
           #1698d4 100%
         );
-        
       }
 
       body {
@@ -2819,10 +2816,9 @@
         padding: 0.5rem;
         max-height: 5rem;
       }
-       #btnSub.lockP{
-        opacity : 0.6 !important;
-
-       }
+      #btnSub.lockP {
+        opacity: 0.6 !important;
+      }
 
       #btnSub svg,
       #btnSub path {
@@ -3863,16 +3859,20 @@
           #181cdc 50%,
           #150570 100%
         );
-        
-background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
-          background: linear-gradient(
+
+        background: linear-gradient(
+          234deg,
+          #0e4bf1 0%,
+          #1118ee 49%,
+          #150570 100%
+        );
+        background: linear-gradient(
           110deg,
           #1445e6 0%,
           #181cdc 50%,
           #150570 100%
         );
-        
-        
+
         min-height: 100dvh; /* dynamic viewport height, plus fiable sur mobile */
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2rem);
@@ -5442,8 +5442,10 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         justify-content: center;
         align-items: center;
         aspect-ratio: 1 / 1;
-        width: 1.8rem;
-        padding: 0.2rem;
+        min-width: 1.8rem;
+        min-height: 1.8rem;
+
+        padding: 0.6rem;
         margin-left: 0.2rem;
         box-sizing: border-box;
         font-size: 1.1rem;
@@ -5696,7 +5698,7 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         align-items: center;
         padding: 0.6rem 0;
         padding-top: 0;
-        width: 100%;  
+        width: 100%;
         flex: 1;
         border-radius: inherit;
       }
@@ -5728,11 +5730,11 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         flex-direction: column;
         gap: 0;
       }
-      #contentSubZ{
-        padding-right : 0.2rem;
-        overflow : visible;
-        overflow-y : scroll; 
-        overflow-x : visible;
+      #contentSubZ {
+        padding-right: 0.2rem;
+        overflow: visible;
+        overflow-y: scroll;
+        overflow-x: visible;
         touch-action: pan-y; /* indique explicitement que le scroll est vertical */
       }
 
@@ -6473,7 +6475,7 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
 
       .cadreStars {
         display: flex;
-        align-self :center;
+        align-self: center;
         justify-content: center;
         align-items: center;
         margin-left: 0.5rem;
@@ -6529,23 +6531,22 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         background: rgba(255, 255, 255, 0.2);
       }
       /*CSS Message*/
-      .footerMessage{
-        display : flex;
-        justify-content : flex-start;
-        align-items :center;
-        width : 100%;
-        margin : 0.6rem;
-        gap : 0.25rem;
-        color : rgba(255,255,255,0.6);
-        height : 25px;
-
+      .footerMessage {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin: 0.6rem;
+        gap: 0.25rem;
+        color: rgba(255, 255, 255, 0.6);
+        height: 25px;
       }
       .messageViewMap {
         display: flex;
-        pointer-events : none;
-        flex-direction : column;
+        pointer-events: none;
+        flex-direction: column;
         position: absolute;
-        z-index : 10;
+        z-index: 10;
         justify-content: center;
         text-align: flex-start;
         align-items: center;
@@ -6562,7 +6563,7 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         box-sizing: border-box;
         background: rgba(17, 23, 79, 0.75);
         background: rgba(17, 23, 79, 1);
-           background: linear-gradient(
+        background: linear-gradient(
           180deg,
           rgba(9, 58, 136, 0.879) 0%,
           rgba(2, 34, 85, 0.879) 100%
@@ -6574,85 +6575,82 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
           opacity 0.4s ease;
       }
       .messageViewMap.active {
-        pointer-events : all;
+        pointer-events: all;
         opacity: 1;
         transform: translateX(-50%);
       }
 
+      /* From Uiverse.io by DaniloMGutavo */
+      .checkbox-container {
+        display: flex;
+        pointer-events: all;
+        position: relative;
+        transform: scale(0.85);
+        padding-left: 35px;
+        cursor: pointer;
+        height: 1rem;
+        font-size: 16px;
+        user-select: none;
+      }
 
-      /* From Uiverse.io by DaniloMGutavo */ 
-.checkbox-container {
-  display: flex;
-  pointer-events : all;
-  position: relative;
-  transform : scale(0.85);
-  padding-left: 35px;
-  cursor: pointer;
-  height : 1rem;
-  font-size: 16px;
-  user-select: none;
-}
+      .custom-checkbox {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
 
-.custom-checkbox {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
+      .checkmark {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
 
-.checkmark {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+      }
 
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-}
+      .custom-checkbox:checked ~ .checkmark {
+        background-color: #2196f3;
+        box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
+      }
 
-.custom-checkbox:checked ~ .checkmark {
-  background-color: #2196F3;
-  box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
-}
+      .custom-checkbox:checked ~ .checkmark:after {
+        display: block;
+      }
 
-.custom-checkbox:checked ~ .checkmark:after {
-  display: block;
-}
+      @keyframes checkAnim {
+        0% {
+          height: 0;
+        }
 
-@keyframes checkAnim {
-  0% {
-    height: 0;
-  }
+        100% {
+          height: 10px;
+        }
+      }
 
-  100% {
-    height: 10px;
-  }
-}
-
-.custom-checkbox:checked ~ .checkmark:after {
-  animation: checkAnim 0.2s forwards;
-}
-
+      .custom-checkbox:checked ~ .checkmark:after {
+        animation: checkAnim 0.2s forwards;
+      }
 
       /* Fin CSS Message */
-
 
       .btn-carte {
         display: flex;
@@ -7214,7 +7212,7 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         overflow: hidden;
         flex-shrink: 0;
         min-width: 3rem;
-        margin-right : -1rem;
+        margin-right: -1rem;
         width: fit-content;
         height: 75%; /* hauteur fixe */
       }
@@ -7244,7 +7242,7 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         white-space: normal; /* annule un éventuel nowrap parent */
         overflow-wrap: break-word; /* coupe même les mots trop longs */
         max-width: 100%;
-        margin-left : 1rem;
+        margin-left: 1rem;
         font-size: 0.95rem;
         color: white;
       }
@@ -7254,7 +7252,7 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         overflow-wrap: break-word; /* coupe même les mots trop longs */
         max-height: 0rem;
         max-width: 100%;
-        margin-left : 1rem;
+        margin-left: 1rem;
         color: rgba(255, 255, 255, 0.6);
         font-size: 0.82rem;
         transition: max-height 0.2s ease;
@@ -8291,9 +8289,6 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
       /* Fin CSS pm */
     </style>
     <!--HTML FLemme-->
-
-
-
 
     <div id="phoneFlemme">
       <div id="stars"></div>
@@ -13796,7 +13791,13 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
             </svg>
           </button>
 
-          <span style="color: black; font-weight: 500; font-size: 1.2rem; margin-top : -1.5rem;"
+          <span
+            style="
+              color: black;
+              font-weight: 500;
+              font-size: 1.2rem;
+              margin-top: -1.5rem;
+            "
             >Où jouer ?</span
           >
 
@@ -16400,14 +16401,15 @@ background: linear-gradient(234deg, #0e4bf1 0%, #1118ee 49%, #150570 100%);
         </button>
       </div>
 
-      <div class="messageViewMap">Cliquer sur une des propositions pour zoomer sur le pays correspondant
+      <div class="messageViewMap">
+        Cliquer sur une des propositions pour zoomer sur le pays correspondant
         <div class="footerMessage">
           <label class="checkbox-container">
-        <input class="custom-checkbox" type="checkbox">
-        <span class="checkmark"></span>
-    </label>
-    <span style="align-self : center" >Ne plus afficher</span>
-        </div>          
+            <input class="custom-checkbox" type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+          <span style="align-self: center">Ne plus afficher</span>
+        </div>
       </div>
 
       <!--------------------------Grand Cadre------------------------------->
@@ -24769,6 +24771,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const txtProgLvl = document.getElementById("txtProgLvl");
       const txtPalierLvl = document.getElementById("txtPalierLvl");
       const barreProgLvl = document.getElementById("barreProgLvl");
+      let maxLvl = 50;
 
       supportBtn.addEventListener("click", () => {
         // [btnPremium,getId('dotThank')].forEach(el=>el.click())
@@ -24785,7 +24788,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "10 bonnes réponses en mode Trouver",
           svg: "loupe",
           max: 10,
-          xp: 150,
+          xp: 120,
           mode: "modeTrouver",
           continent: "all",
         },
@@ -24794,7 +24797,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer un quiz",
           svg: "check",
           max: 1,
-          xp: 150,
+          xp: 25,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -24804,7 +24807,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Réaliser 5 bonnes réponses d'affilée",
           svg: "flamme",
           max: 5,
-          xp: 50,
+          xp: 120,
           track: 5,
           mode: "all",
           continent: "all",
@@ -24821,10 +24824,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         },
         {
           id: "E",
-          t: "Obtenir 2 étoiles en mode difficile",
+          t: "Obtenir 2 étoiles en mode difficile 2 fois",
           svg: "stars",
-          max: 3,
-          xp: 100,
+          max: 2,
+          xp: 200,
           mode: "all",
           stars: 2,
           continent: "all",
@@ -24834,7 +24837,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un total de 15 bonnes réponses en mode 4 choix",
           svg: "check",
           max: 15,
-          xp: 150,
+          xp: 180,
           mode: "modeChoix",
           continent: "all",
         },
@@ -24843,7 +24846,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "15 bonnes réponses en mode Classer",
           svg: "check",
           max: 15,
-          xp: 150,
+          xp: 180,
           mode: "modeClasser",
           continent: "all",
         },
@@ -24853,7 +24856,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Afrique",
           max: 15,
           continent: "Afrique",
-          xp: 100,
+          xp: 180,
           mode: "all",
         },
         {
@@ -24861,7 +24864,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "5 bonnes réponses qui incluent une Capitale",
           svg: "capitale",
           max: 5,
-          xp: 50,
+          xp: 60,
           mode: "all",
           continent: "all",
         },
@@ -24870,7 +24873,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "5 bonnes réponses qui incluent un drapeau",
           svg: "flag",
           max: 5,
-          xp: 50,
+          xp: 60,
           mode: "all",
           continent: "all",
         },
@@ -24880,15 +24883,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "globe",
           max: 15,
           continent: "all",
-          xp: 100,
+          xp: 180,
           mode: "all",
         },
         {
           id: "L",
           t: "Obtenir un score parfait dans n'importe quel mode",
           svg: "stars",
-          max: 2,
-          xp: 100,
+          max: 1,
+          xp: 200,
           mode: "all",
           stars: 3,
           continent: "all",
@@ -24911,7 +24914,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Europe",
           max: 15,
           continent: "Europe",
-          xp: 100,
+          xp: 180,
           mode: "all",
         },
         {
@@ -24919,7 +24922,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer 5 quiz",
           svg: "repeat",
           max: 5,
-          xp: 50,
+          xp: 125,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -24930,7 +24933,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un total de 20 bonnes réponses",
           svg: "check",
           max: 20,
-          xp: 150,
+          xp: 200,
           mode: "all",
           continent: "all",
         },
@@ -24939,7 +24942,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Réaliser 10 bonnes réponses d'affilée",
           svg: "flamme",
           max: 10,
-          xp: 150,
+          xp: 200,
           track: 10,
           mode: "all",
           continent: "all",
@@ -24949,14 +24952,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un score parfait en mode Trouver",
           svg: "perfect",
           max: 1,
-          xp: 150,
+          xp: 200,
           mode: "modeTrouver",
           continent: "all",
           stars: 3,
         },
         {
           id: "S",
-          t: "Classer correctement au moins 3 pays par population",
+          t: "Classer correctement au moins 3 pays par population 2 fois",
           svg: "classer",
           minClass: 3,
           max: 2,
@@ -24970,7 +24973,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Amérique",
           max: 10,
           continent: "Amérique",
-          xp: 50,
+          xp: 120,
           mode: "all",
         },
         {
@@ -24979,7 +24982,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "perfect",
           max: 2,
           continent: "Amérique",
-          xp: 150,
+          xp: 200,
           mode: "all",
           stars: 3,
         },
@@ -24990,7 +24993,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Amérique",
           max: 15,
           continent: "Amérique",
-          xp: 100,
+          xp: 180,
           mode: "all",
         },
         {
@@ -24999,7 +25002,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Asie",
           max: 15,
           continent: "Asie",
-          xp: 100,
+          xp: 180,
           mode: "all",
         },
         {
@@ -25008,7 +25011,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Océanie",
           max: 15,
           continent: "Océanie",
-          xp: 100,
+          xp: 180,
           mode: "all",
         },
 
@@ -25018,7 +25021,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Afrique",
           max: 10,
           continent: "Afrique",
-          xp: 50,
+          xp: 120,
           mode: "all",
         },
         {
@@ -25027,7 +25030,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Asie",
           max: 10,
           continent: "Asie",
-          xp: 50,
+          xp: 120,
           mode: "all",
         },
         {
@@ -25036,7 +25039,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Europe",
           max: 10,
           continent: "Europe",
-          xp: 50,
+          xp: 120,
           mode: "all",
         },
         {
@@ -25045,7 +25048,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "Océanie",
           max: 10,
           continent: "Océanie",
-          xp: 50,
+          xp: 120,
           mode: "all",
         },
         {
@@ -25054,7 +25057,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "globe",
           max: 10,
           continent: "all",
-          xp: 50,
+          xp: 120,
           mode: "all",
         },
         {
@@ -25062,7 +25065,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un score parfait en mode 4 choix",
           svg: "perfect",
           max: 1,
-          xp: 150,
+          xp: 200,
           mode: "modeChoix",
           continent: "all",
           stars: 3,
@@ -25074,7 +25077,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "perfect",
           max: 2,
           continent: "Afrique",
-          xp: 150,
+          xp: 200,
           mode: "all",
           stars: 3,
         },
@@ -25084,7 +25087,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "perfect",
           max: 2,
           continent: "Europe",
-          xp: 150,
+          xp: 200,
           mode: "all",
           stars: 3,
         },
@@ -25094,7 +25097,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "perfect",
           max: 2,
           continent: "Asie",
-          xp: 150,
+          xp: 200,
           mode: "all",
           stars: 3,
         },
@@ -25104,16 +25107,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           svg: "perfect",
           max: 2,
           continent: "Océanie",
-          xp: 150,
+          xp: 200,
           mode: "all",
           stars: 3,
         },
         {
           id: "AI",
-          t: "Obtenir un score parfait à un quiz",
+          t: "Obtenir un score parfait à 2 quiz",
           svg: "perfect",
           max: 2,
-          xp: 20,
+          xp: 400,
           mode: "all",
           continent: "all",
           stars: 3,
@@ -25331,7 +25334,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un total de 100 bonnes réponses",
           svg: "check",
           max: 100,
-          xp: 200,
+          xp: 500,
           mode: "all",
           continent: "all",
         },
@@ -25340,7 +25343,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un total de 250 bonnes réponses",
           svg: "check",
           max: 250,
-          xp: 400,
+          xp: 1500,
           mode: "all",
           continent: "all",
         },
@@ -25349,7 +25352,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un total de 500 bonnes réponses",
           svg: "check",
           max: 500,
-          xp: 700,
+          xp: 2500,
           mode: "all",
           continent: "all",
         },
@@ -25358,7 +25361,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un total de 1000 bonnes réponses",
           svg: "check",
           max: 1000,
-          xp: 1200,
+          xp: 5000,
           mode: "all",
           continent: "all",
         },
@@ -25367,7 +25370,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un total de 2500 bonnes réponses",
           svg: "check",
           max: 2500,
-          xp: 2500,
+          xp: 10000,
           mode: "all",
           continent: "all",
         },
@@ -25376,7 +25379,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir un total de 5000 bonnes réponses",
           svg: "check",
           max: 5000,
-          xp: 5000,
+          xp: 20000,
           mode: "all",
           continent: "all",
         },
@@ -25387,7 +25390,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer 10 quiz",
           svg: "repeat",
           max: 10,
-          xp: 10,
+          xp: 50,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -25397,7 +25400,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer 50 quiz",
           svg: "repeat",
           max: 50,
-          xp: 200,
+          xp: 250 ,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -25407,7 +25410,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer 100 quiz",
           svg: "repeat",
           max: 100,
-          xp: 1000,
+          xp: 500,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -25417,7 +25420,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer 1000 quiz",
           svg: "repeat",
           max: 1000,
-          xp: 5000,
+          xp: 3500,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -25427,7 +25430,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Terminer 10000 quiz",
           svg: "repeat",
           max: 10000,
-          xp: 7500,
+          xp: 12500,
           mode: "all",
           stars: 0,
           continent: "all",
@@ -25481,7 +25484,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses en mode Trouver",
           svg: "loupe",
           max: 50,
-          xp: 150,
+          xp: 250,
           mode: "modeTrouver",
           continent: "all",
         },
@@ -25490,7 +25493,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses en mode Trouver",
           svg: "loupe",
           max: 100,
-          xp: 300,
+          xp: 500,
           mode: "modeTrouver",
           continent: "all",
         },
@@ -25499,7 +25502,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses en mode Trouver",
           svg: "loupe",
           max: 250,
-          xp: 700,
+          xp: 1500,
           mode: "modeTrouver",
           continent: "all",
         },
@@ -25508,7 +25511,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "500 bonnes réponses en mode Trouver",
           svg: "loupe",
           max: 500,
-          xp: 1500,
+          xp: 2500,
           mode: "modeTrouver",
           continent: "all",
         },
@@ -25519,7 +25522,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses en mode Classer",
           svg: "classer",
           max: 50,
-          xp: 150,
+          xp: 250,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25528,7 +25531,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses en mode Classer",
           svg: "classer",
           max: 100,
-          xp: 300,
+          xp: 500,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25537,7 +25540,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses en mode Classer",
           svg: "classer",
           max: 250,
-          xp: 700,
+          xp: 1500,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25546,7 +25549,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "500 bonnes réponses en mode Classer",
           svg: "classer",
           max: 500,
-          xp: 1500,
+          xp: 2500,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25557,7 +25560,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses en mode 4 choix",
           svg: "check",
           max: 50,
-          xp: 150,
+          xp: 250,
           mode: "modeChoix",
           continent: "all",
         },
@@ -25566,7 +25569,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses en mode 4 choix",
           svg: "check",
           max: 100,
-          xp: 300,
+          xp: 500,
           mode: "modeChoix",
           continent: "all",
         },
@@ -25575,7 +25578,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses en mode 4 choix",
           svg: "check",
           max: 250,
-          xp: 700,
+          xp: 1500,
           mode: "modeChoix",
           continent: "all",
         },
@@ -25584,7 +25587,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "500 bonnes réponses en mode 4 choix",
           svg: "check",
           max: 500,
-          xp: 1500,
+          xp: 2500,
           mode: "modeChoix",
           continent: "all",
         },
@@ -25595,7 +25598,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses sur des pays d'Afrique",
           svg: "Afrique",
           max: 50,
-          xp: 150,
+          xp: 250,
           continent: "Afrique",
           mode: "all",
         },
@@ -25604,7 +25607,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses sur des pays d'Afrique",
           svg: "Afrique",
           max: 100,
-          xp: 300,
+          xp: 500,
           continent: "Afrique",
           mode: "all",
         },
@@ -25613,7 +25616,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses sur des pays d'Afrique",
           svg: "Afrique",
           max: 250,
-          xp: 700,
+          xp: 1500,
           continent: "Afrique",
           mode: "all",
         },
@@ -25622,7 +25625,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "500 bonnes réponses sur des pays d'Afrique",
           svg: "Afrique",
           max: 500,
-          xp: 1500,
+          xp: 2500,
           continent: "Afrique",
           mode: "all",
         },
@@ -25633,7 +25636,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses sur des pays d'Amérique",
           svg: "Amérique",
           max: 50,
-          xp: 150,
+          xp: 250,
           continent: "Amérique",
           mode: "all",
         },
@@ -25642,7 +25645,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses sur des pays d'Amérique",
           svg: "Amérique",
           max: 100,
-          xp: 300,
+          xp: 500,
           continent: "Amérique",
           mode: "all",
         },
@@ -25651,7 +25654,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses sur des pays d'Amérique",
           svg: "Amérique",
           max: 250,
-          xp: 700,
+          xp: 1500,
           continent: "Amérique",
           mode: "all",
         },
@@ -25660,7 +25663,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "500 bonnes réponses sur des pays d'Amérique",
           svg: "Amérique",
           max: 500,
-          xp: 1500,
+          xp: 2500,
           continent: "Amérique",
           mode: "all",
         },
@@ -25671,7 +25674,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses sur des pays d'Asie",
           svg: "Asie",
           max: 50,
-          xp: 150,
+          xp: 250,
           continent: "Asie",
           mode: "all",
         },
@@ -25680,7 +25683,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses sur des pays d'Asie",
           svg: "Asie",
           max: 100,
-          xp: 300,
+          xp: 500,
           continent: "Asie",
           mode: "all",
         },
@@ -25689,7 +25692,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses sur des pays d'Asie",
           svg: "Asie",
           max: 250,
-          xp: 700,
+          xp: 1500,
           continent: "Asie",
           mode: "all",
         },
@@ -25698,7 +25701,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "500 bonnes réponses sur des pays d'Asie",
           svg: "Asie",
           max: 500,
-          xp: 1500,
+          xp: 2500,
           continent: "Asie",
           mode: "all",
         },
@@ -25709,7 +25712,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses sur des pays d'Europe",
           svg: "Europe",
           max: 50,
-          xp: 150,
+          xp: 250,
           continent: "Europe",
           mode: "all",
         },
@@ -25718,7 +25721,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses sur des pays d'Europe",
           svg: "Europe",
           max: 100,
-          xp: 300,
+          xp: 500,
           continent: "Europe",
           mode: "all",
         },
@@ -25727,7 +25730,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses sur des pays d'Europe",
           svg: "Europe",
           max: 250,
-          xp: 700,
+          xp: 1500,
           continent: "Europe",
           mode: "all",
         },
@@ -25736,7 +25739,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "500 bonnes réponses sur des pays d'Europe",
           svg: "Europe",
           max: 500,
-          xp: 1500,
+          xp: 2500,
           continent: "Europe",
           mode: "all",
         },
@@ -25747,7 +25750,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses sur des pays d'Océanie",
           svg: "Océanie",
           max: 50,
-          xp: 150,
+          xp: 250,
           continent: "Océanie",
           mode: "all",
         },
@@ -25756,7 +25759,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses sur des pays d'Océanie",
           svg: "Océanie",
           max: 100,
-          xp: 300,
+          xp: 500,
           continent: "Océanie",
           mode: "all",
         },
@@ -25765,7 +25768,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses sur des pays d'Océanie",
           svg: "Océanie",
           max: 250,
-          xp: 700,
+          xp: 1500,
           continent: "Océanie",
           mode: "all",
         },
@@ -25774,7 +25777,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "500 bonnes réponses sur des pays d'Océanie",
           svg: "Océanie",
           max: 500,
-          xp: 1500,
+          xp: 2500,
           continent: "Océanie",
           mode: "all",
         },
@@ -25785,7 +25788,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "25 bonnes réponses qui incluent une Capitale",
           svg: "capitale",
           max: 25,
-          xp: 100,
+          xp: 150,
           mode: "all",
           continent: "all",
         },
@@ -25794,7 +25797,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses qui incluent une Capitale",
           svg: "capitale",
           max: 50,
-          xp: 200,
+          xp: 250,
           mode: "all",
           continent: "all",
         },
@@ -25803,7 +25806,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses qui incluent une Capitale",
           svg: "capitale",
           max: 100,
-          xp: 450,
+          xp: 500,
           mode: "all",
           continent: "all",
         },
@@ -25812,7 +25815,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses qui incluent une Capitale",
           svg: "capitale",
           max: 250,
-          xp: 1000,
+          xp: 1500,
           mode: "all",
           continent: "all",
         },
@@ -25832,7 +25835,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "50 bonnes réponses qui incluent un drapeau",
           svg: "flag",
           max: 50,
-          xp: 200,
+          xp: 250,
           mode: "all",
           continent: "all",
         },
@@ -25841,7 +25844,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "100 bonnes réponses qui incluent un drapeau",
           svg: "flag",
           max: 100,
-          xp: 450,
+          xp: 500,
           mode: "all",
           continent: "all",
         },
@@ -25850,7 +25853,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "250 bonnes réponses qui incluent un drapeau",
           svg: "flag",
           max: 250,
-          xp: 1000,
+          xp: 1500,
           mode: "all",
           continent: "all",
         },
@@ -25860,9 +25863,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "CM",
           t: "Classer correctement 5 pays par superficie 10 fois",
           svg: "classer",
-          minClass:5,
+          minClass: 5,
           max: 10,
-          xp: 150,
+          xp: 500,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25870,9 +25873,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "CN",
           t: "Classer correctement 5 pays par superficie 25 fois",
           svg: "classer",
-          minClass:5,
+          minClass: 5,
           max: 25,
-          xp: 350,
+          xp: 1250,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25880,9 +25883,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "CO",
           t: "Classer correctement 5 pays par superficie 50 fois",
           svg: "classer",
-          minClass:5,
+          minClass: 5,
           max: 50,
-          xp: 700,
+          xp: 2500,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25892,9 +25895,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "CP",
           t: "Classer correctement 5 pays par population 10 fois",
           svg: "classer",
-          minClass:5,
+          minClass: 5,
           max: 10,
-          xp: 150,
+          xp: 500,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25902,9 +25905,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "CQ",
           t: "Classer correctement 5 pays par population 25 fois",
           svg: "classer",
-          minClass:5,
+          minClass: 5,
           max: 25,
-          xp: 350,
+          xp: 1250,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25912,9 +25915,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           id: "CR",
           t: "Classer correctement 5 pays par population 50 fois",
           svg: "classer",
-          minClass:5,
+          minClass: 5,
           max: 50,
-          xp: 700,
+          xp: 2500,
           mode: "modeClasser",
           continent: "all",
         },
@@ -25922,35 +25925,47 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // === Quiz rapides (<40s avec au moins une étoile, cumulé) ===
         {
           id: "CS",
-          t: "Terminer 5 quiz en moins de 10 secondes avec au moins une étoile",
+          t: "Terminer 5 quiz en moins de 20 secondes avec au moins une étoile",
           svg: "clock",
-          clock: 10,
+          clock: 20,
           max: 5,
-          xp: 200,
+          xp: 2000,
           mode: "all",
           stars: 1,
           continent: "all",
         },
         {
           id: "CT",
-          t: "Terminer 10 quiz en moins de 40 secondes avec au moins une étoile",
+          t: "Terminer 10 quiz en moins de 30 secondes avec au moins 2 étoiles",
           svg: "clock",
-          clock: 40,
+          clock: 30,
           max: 10,
-          xp: 400,
+          xp: 2000,
           mode: "all",
-          stars: 1,
+          stars: 2,
           continent: "all",
         },
         {
           id: "CU",
-          t: "Terminer 25 quiz en moins de 40 secondes avec au moins une étoile",
+          t: "Terminer 25 quiz en moins de 30 secondes avec au moins 2 étoiles",
           svg: "clock",
-          clock: 40,
+          clock: 30,
           max: 25,
-          xp: 900,
+          xp: 5000,
           mode: "all",
-          stars: 1,
+          stars: 2,
+          continent: "all",
+        },
+
+        {
+          id: "XCU",
+          t: "Terminer 50 quiz en moins de 30 secondes avec au moins 2 étoiles",
+          svg: "clock",
+          clock: 30,
+          max: 50,
+          xp: 10000,
+          mode: "all",
+          stars: 2,
           continent: "all",
         },
 
@@ -25960,7 +25975,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir 10 scores parfaits",
           svg: "perfect",
           max: 10,
-          xp: 250,
+          xp: 800,
           mode: "all",
           stars: 3,
           continent: "all",
@@ -25970,7 +25985,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir 50 scores parfaits",
           svg: "perfect",
           max: 50,
-          xp: 500,
+          xp: 4000,
           mode: "all",
           stars: 3,
           continent: "all",
@@ -25980,17 +25995,28 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir 100 scores parfaits",
           svg: "perfect",
           max: 100,
-          xp: 1200,
+          xp: 5000,
           mode: "all",
           stars: 3,
           continent: "all",
         },
+
+         {
+          id: "XCX",
+          t: "Obtenir 500 scores parfaits",
+          svg: "perfect",
+          max: 500,
+          xp: 25000,
+          mode: "all",
+          stars: 3,
+          continent: "all",
+        }, 
         {
           id: "CY",
           t: "Obtenir 1000 scores parfaits",
           svg: "perfect",
           max: 1000,
-          xp: 2500,
+          xp: 50000,
           mode: "all",
           stars: 3,
           continent: "all",
@@ -26002,7 +26028,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir 5 fois 2 étoiles en mode difficile",
           svg: "stars",
           max: 5,
-          xp: 200,
+          xp: 500,
           mode: "all",
           stars: 2,
           continent: "all",
@@ -26012,7 +26038,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir 10 fois 2 étoiles en mode difficile",
           svg: "stars",
           max: 10,
-          xp: 400,
+          xp: 1000,
           mode: "all",
           stars: 2,
           continent: "all",
@@ -26022,7 +26048,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           t: "Obtenir 25 fois 2 étoiles en mode difficile",
           svg: "stars",
           max: 25,
-          xp: 900,
+          xp: 2500,
           mode: "all",
           stars: 2,
           continent: "all",
@@ -26053,10 +26079,64 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let track = 0;
 
       let nbrProgLvl = 0; // Niveau 9 : nbrProgLvl/2000 par exemple
-      const PALIERS_LVL_ORIGINAL = [1000, 5000, 7500, 10000, 15000, 20000];
-      let L_palierLvl = [...PALIERS_LVL_ORIGINAL]; // copie, pas la même référence
+      // const PALIERS_LVL_ORIGINAL = [1000, 5000, 7500, 10000, 15000, 20000];
+
+      const PALIERS_LVL_ORIGINAL =[
+    500,
+    1100,
+    2000,
+    3200,
+    4700,
+    6500,
+    8600,
+    11000,
+    13700,
+    16700,
+    20000,
+    23600,
+    27500,
+    31700,
+    36200,
+    41000,
+    46100,
+    51500,
+    57200,
+    63200,
+    69500,
+    76100,
+    83000,
+    90200,
+    97700,
+    105500,
+    113600,
+    122000,
+    130700,
+    139700,
+    149000,
+    158600,
+    168500,
+    178700,
+    189200,
+    200000,
+    211100,
+    222500,
+    234200,
+    246200,
+    258500,
+    271100,
+    284000,
+    297200,
+    310700,
+    324500,
+    338600,
+    353000,
+    367700,
+    382700
+]
+
+      let numPalierLvl = PALIERS_LVL_ORIGINAL[0]; // copie, pas la même référence
       txtProgLvl.textContent = 0;
-      txtPalierLvl.textContent = L_palierLvl[0];
+      txtPalierLvl.textContent = numPalierLvl;
 
       let lvlPlayer = 1;
 
@@ -26064,6 +26144,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         xpQ.addEventListener(
           "click",
           () => {
+            
             xpQ.classList.remove("active");
             xpQ.classList.add("finish");
             xpQ.textContent = "Terminé";
@@ -26077,10 +26158,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
             nbrProgLvl += quest.xp;
 
-            if (nbrProgLvl >= L_palierLvl[0]) {
+            if (nbrProgLvl >= numPalierLvl) {
               function funcNextLvl() {
                 let duration1 =
-                  (1 - (nbrProgLvl - L_palierLvl[0]) / nbrProgLvl) *
+                  (1 - (nbrProgLvl - numPalierLvl) / nbrProgLvl) *
                   durationBarreProg;
 
                 barreProgLvl.style.transition = `width ${duration1}ms ease`;
@@ -26088,24 +26169,28 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 animateCounter(
                   txtProgLvl,
                   nbrProgLvl - quest.xp,
-                  L_palierLvl[0],
+                  numPalierLvl,
                   duration1,
                 );
                 let duration2 = durationBarreProg - duration1;
-                nbrProgLvl -= L_palierLvl[0];
-                L_palierLvl = L_palierLvl.slice(1);
+                nbrProgLvl -= numPalierLvl;
+                numPalierLvl = 500 + 100 * lvlPlayer * (lvlPlayer - 1);
+
+                
 
                 setTimeout(() => {
                   barreProgLvl.style.transition = "none";
                   barreProgLvl.style.width = "0%";
 
-                  let pourcentageLvl = nbrProgLvl / L_palierLvl[0];
+                  let pourcentageLvl = nbrProgLvl / numPalierLvl;
 
                   if (pourcentageLvl >= 1) {
-                    animateCounter(txtProgLvl, 0, L_palierLvl[0], duration2);
-                    txtPalierLvl.textContent = L_palierLvl[0];
+                    animateCounter(txtProgLvl, 0, numPalierLvl, duration2);
+                    txtPalierLvl.textContent = numPalierLvl;                                          
                     lvlPlayer += 1;
                     txtLvlPlayer.textContent = lvlPlayer;
+
+
                     requestAnimationFrame(() => {
                       barreProgLvl.style.transition = "";
                       barreProgLvl.style.width = `${pourcentageLvl * 100}%`;
@@ -26122,7 +26207,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   });
 
                   animateCounter(txtProgLvl, 0, nbrProgLvl, duration2);
-                  txtPalierLvl.textContent = L_palierLvl[0];
+                  txtPalierLvl.textContent = numPalierLvl;
                   lvlPlayer += 1;
                   txtLvlPlayer.textContent = lvlPlayer;
 
@@ -26142,23 +26227,26 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 nbrProgLvl,
                 durationBarreProg,
               );
-              let pourcentageLvl = nbrProgLvl / L_palierLvl[0];
+              let pourcentageLvl = nbrProgLvl / numPalierLvl;
               barreProgLvl.style.width = `${pourcentageLvl * 100}%`;
             }
             //***
             const itemsRec = document.querySelectorAll(".itemRD");
 
-        for (const itm of itemsRec) {
-          if (itm.querySelector(".xp").classList.contains("active")) {
-            itm.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-            break;
-          }
-        }
+            for (const itm of itemsRec) {
+              if (itm.querySelector(".xp").classList.contains("active")) {
+                itm.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+                break;
+              }
+            }
 
             saveProgress();
+            if (quest.id === "XXX") {
+              xpQ.remove();
+            }
           },
           { once: true },
         );
@@ -26407,7 +26495,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 quest.t.includes("correctement") &&
                 (parseInt(document.getElementById(L_config.r).dataset.nbr) <
                   quest.minClass ||
-                  
                   (quest.t.includes("population") &&
                     L_config.q !== "populationQ") ||
                   (quest.t.includes("superficie") &&
@@ -27857,7 +27944,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         //Afficher le menu de fin si modeChoix, ou modeTrouver et cCooseTrouver
 
-        if ( 
+        if (
           (getQNumber() >= maxQ && L_config.m === "modeChoix") ||
           ((L_config.m === "modeTrouver" || L_config.m === "modeClasser") &&
             getQNumber() >= maxQ &&
@@ -27865,48 +27952,48 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         ) {
           affichePm();
           enregistrerJourTrackDays();
-          pause4Choix.style.opacity = "0"
+          pause4Choix.style.opacity = "0";
           pause4Choix.style.pointerEvents = "none";
           L_reponses = [];
 
-
-
-          if (document.getElementById("wrapperScorePm").style.display === "none"){
+          if (
+            document.getElementById("wrapperScorePm").style.display === "none"
+          ) {
             L_stars.forEach((el) => {
-          el.style.animation = "";
-          el.classList.remove("scored");
-        });
-        getId("xpPm").style.animation = "";
-        getId("xpPm").classList.remove("scored");
+              el.style.animation = "";
+              el.classList.remove("scored");
+            });
+            getId("xpPm").style.animation = "";
+            getId("xpPm").classList.remove("scored");
 
             document.getElementById("wrapperScorePm").style.display = "flex";
 
-          let delayStar = 500;
-          let nbrStars = Math.floor(score / (Math.floor(maxQ) / 3));
-          let xpFinPartie = Math.max(10, score * 10);
-          getId("xpPm").textContent = xpFinPartie + " XP";
+            let delayStar = 500;
+            let nbrStars = Math.floor(score / (Math.floor(maxQ) / 3));
+            let xpFinPartie = Math.max(10, score * 10);
+            getId("xpPm").textContent = xpFinPartie + " XP";
 
-          L_stars.slice(0, nbrStars).forEach((el) => {
-            setTimeout(() => {
-              el.style.animation = "scoredX 0.5s linear";
-              el.classList.add("scored");
-            }, delayStar);
-            delayStar += 200;
-          }),
-            
-          setTimeout(
-            () => {
-              getId("xpPm").style.animation = "scoredXp 0.5s linear";
-              getId("xpPm").classList.add("scored");
-            },
-            nbrStars * 200 + 500,
-          );
-          L_claimedQ["XXX"] = false;
-          const xpFin = document.createElement("div");
-          xpFin.className = "xpQ";
-          cadreRD.append(xpFin);
-          attachXpClickHandler(xpFin, { id: "XXX", xp: xpFinPartie });
-          L_actionReward.set(xpFin, () => xpFin.click());
+            (L_stars.slice(0, nbrStars).forEach((el) => {
+              setTimeout(() => {
+                el.style.animation = "scoredX 0.5s linear";
+                el.classList.add("scored");
+              }, delayStar);
+              delayStar += 200;
+            }),
+              setTimeout(
+                () => {
+                  getId("xpPm").style.animation = "scoredXp 0.5s linear";
+                  getId("xpPm").classList.add("scored");
+                },
+                nbrStars * 200 + 500,
+              ));
+            L_claimedQ["XXX"] = false;
+            const xpFin = document.createElement("div");
+            xpFin.className = "xpQ";
+            cadreRD.append(xpFin);
+
+            attachXpClickHandler(xpFin, { id: "XXX", xp: xpFinPartie });
+            L_actionReward.set(xpFin, () => xpFin.click());
           }
 
           return;
@@ -28466,10 +28553,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                 !paysDispos.includes(p_id)
               ) {
                 p_id = Object.keys(L_config.sub ? D_us : L_q)[
-                  Math.floor(
-                    Math.random() *
-                      Object.keys(L_info).length,
-                  )
+                  Math.floor(Math.random() * Object.keys(L_info).length)
                 ];
               }
 
@@ -28495,7 +28579,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
               const classerCadreDrapeau = document.createElement("div");
               classerCadreDrapeau.className = "classerCadreDrapeau";
-              classerCadreDrapeau.style.display = (L_config.sub === "US" || !L_config.sub) ? "flex" : "none"
+              classerCadreDrapeau.style.display =
+                L_config.sub === "US" || !L_config.sub ? "flex" : "none";
 
               const classerDrapeauBox = document.createElement("div");
               classerDrapeauBox.className = "classerDrapeauBox";
@@ -29269,7 +29354,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
 
         btn.addEventListener("click", () => {
-
           messageViewMap.classList.remove("active");
           if (viewMaps || cChooseTrouver) {
             if (viewMaps) {
@@ -29576,7 +29660,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         getId("mCadre"),
         backMapsPlay,
         getId("cadre"),
-        document.querySelector('.messageViewMap'),
+        document.querySelector(".messageViewMap"),
       ];
 
       //z-index des éléments de maps dans 4 choix
@@ -29650,9 +29734,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         animateViewBox(svgMonde, targetViewBox, 700);
         setTimeout(() => {
-          if (!centerBtnTF || viewMaps) {            
-            p_id in L_cSub ? btnSub.classList.add("viewSub") : btnSub.classList.remove("viewSub");
-            L_subNP.includes(p_id) ? btnSub.classList.remove('lockP') : btnSub.classList.add('lockP')
+          if (!centerBtnTF || viewMaps) {
+            p_id in L_cSub
+              ? btnSub.classList.add("viewSub")
+              : btnSub.classList.remove("viewSub");
+            L_subNP.includes(p_id)
+              ? btnSub.classList.remove("lockP")
+              : btnSub.classList.add("lockP");
             countryClick(p_id, el.getAttribute("title"), el);
           }
           centerBtnTF = false;
@@ -29660,12 +29748,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       }
 
       let oneTimeMessage = false;
-      const messageViewMap = document.querySelector('.messageViewMap')
+      const messageViewMap = document.querySelector(".messageViewMap");
 
-       messageViewMap.querySelector('input').addEventListener('click',()=>{
-            oneTimeMessage = messageViewMap.querySelector('input').checked
-            saveProgress()
-          })
+      messageViewMap.querySelector("input").addEventListener("click", () => {
+        oneTimeMessage = messageViewMap.querySelector("input").checked;
+        saveProgress();
+      });
 
       function afficherMaps(pm = false) {
         // pm est le numéro de la question
@@ -29816,24 +29904,21 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
 
         //*** Message d'information
-        if(!oneTimeMessage){
-        setTimeout(() => {
-        
+        if (!oneTimeMessage) {
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              messageViewMap.classList.add("active");
+            });
 
-          
+            // setTimeout(() => {
+            //   message.className = "messageViewMap";
+            // }, 5000);
 
-          requestAnimationFrame(() => {
-            messageViewMap.classList.add("active");
-          });
-
-          // setTimeout(() => {
-          //   message.className = "messageViewMap";
-          // }, 5000);
-
-          // setTimeout(() => {
-          //   message.remove();
-          // }, 5500);
-        }, 300)}
+            // setTimeout(() => {
+            //   message.remove();
+            // }, 5500);
+          }, 300);
+        }
 
         //***
 
@@ -30853,7 +30938,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 width, height]
-      
 
       const paths = [...svg.querySelectorAll("path")].filter(
         (p) => p.id.length === 2,
@@ -31040,7 +31124,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               (btnSub.innerHTML = L_cSub[currentCountry.id].icon),
               btnSub.append(L_cSub[currentCountry.id].t))
             : btnSub.classList.remove("viewSub");
-            L_subNP.includes(currentCountry.id) ? btnSub.classList.remove('lockP') : btnSub.classList.add('lockP')
+          L_subNP.includes(currentCountry.id)
+            ? btnSub.classList.remove("lockP")
+            : btnSub.classList.add("lockP");
 
           if (
             L_config.m === "modeTrouver" &&
@@ -31792,7 +31878,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         contentInfoSub.scrollTop;
         let rankSub = 1;
         subSort.forEach((id) => {
-          
           const itemC = document.createElement("div");
           itemC.className = "itemC";
 
@@ -31856,8 +31941,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             rankSortSub.className = "rankSortSub";
             rankSortSub.innerHTML = `${rankSub}<sup>e</sup>`;
             if (rankSub === 1) rankSortSub.innerHTML = `1<sup>er</sup>`;
-            
-
 
             badgeInfoSub.replaceWith(rankSortSub);
           }
@@ -32734,7 +32817,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           k: false,
           o: false,
         }, // bleu, vert, jaune
-        CY: { r: false, w: true, b: false, g: true, y: true, k: false, o: false }, // blanc, jaune/cuivre, vert
+        CY: {
+          r: false,
+          w: true,
+          b: false,
+          g: true,
+          y: true,
+          k: false,
+          o: false,
+        }, // blanc, jaune/cuivre, vert
         CZ: {
           r: true,
           w: true,
@@ -36850,7 +36941,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Volyn",
           p: 1021356,
           info: "Oblast",
-          s: 20144 ,
+          s: 20144,
           nH: "Non disponible",
           indT: "+380 332",
           c: "Loutsk",
@@ -36859,7 +36950,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Louhansk",
           p: 2102921,
           info: "Oblast",
-          s: 26684 ,
+          s: 26684,
           nH: "Non disponible",
           indT: "+380 642",
           c: "Louhansk",
@@ -36868,7 +36959,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Dnipropetrovsk",
           p: 3096485,
           info: "Oblast",
-          s: 31914 ,
+          s: 31914,
           nH: "Non disponible",
           indT: "+380 56",
           c: "Dnipro",
@@ -36877,7 +36968,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Donetsk",
           p: 4059372,
           info: "Oblast",
-          s: 26517 ,
+          s: 26517,
           nH: "Non disponible",
           indT: "+380 62",
           c: "Donetsk",
@@ -36886,7 +36977,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Jytomyr",
           p: 1179032,
           info: "Oblast",
-          s: 29832 ,
+          s: 29832,
           nH: "Non disponible",
           indT: "+380 412",
           c: "Jytomyr",
@@ -36895,7 +36986,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Transcarpatie",
           p: 1244476,
           info: "Oblast",
-          s: 12777 ,
+          s: 12777,
           nH: "Non disponible",
           indT: "+380 312",
           c: "Oujhorod",
@@ -36904,7 +36995,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Zaporijjia",
           p: 1638462,
           info: "Oblast",
-          s: 27180 ,
+          s: 27180,
           nH: "Non disponible",
           indT: "+380 61",
           c: "Zaporijjia",
@@ -36913,7 +37004,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Ivano-Frankivsk",
           p: 1351822,
           info: "Oblast",
-          s: 13928 ,
+          s: 13928,
           nH: "Non disponible",
           indT: "+380 342",
           c: "Ivano-Frankivsk",
@@ -36931,7 +37022,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kyiv (oblast)",
           p: 1795079,
           info: "Oblast",
-          s: 28131 ,
+          s: 28131,
           nH: "Non disponible",
           indT: "+380 45",
           c: "Kyiv",
@@ -36940,7 +37031,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Kirovohrad",
           p: 903712,
           info: "Oblast",
-          s: 24588 ,
+          s: 24588,
           nH: "Non disponible",
           indT: "+380 522",
           c: "Kropyvnytskyi",
@@ -36958,7 +37049,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Crimée",
           p: 1963770,
           info: "République autonome",
-          s: 26081 ,
+          s: 26081,
           nH: "Non disponible",
           indT: "+380 652",
           c: "Simferopol",
@@ -36967,7 +37058,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Lviv",
           p: 2478133,
           info: "Oblast",
-          s: 21833 ,
+          s: 21833,
           nH: "Non disponible",
           indT: "+380 32",
           c: "Lviv",
@@ -36976,7 +37067,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Mykolaïv",
           p: 1091821,
           info: "Oblast",
-          s: 24598 ,
+          s: 24598,
           nH: "Non disponible",
           indT: "+380 512",
           c: "Mykolaïv",
@@ -36985,7 +37076,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Odessa",
           p: 2351392,
           info: "Oblast",
-          s: 33310 ,
+          s: 33310,
           nH: "Odessite",
           indT: "+380 48",
           c: "Odessa",
@@ -36994,7 +37085,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Poltava",
           p: 1352283,
           info: "Oblast",
-          s: 28748 ,
+          s: 28748,
           nH: "Non disponible",
           indT: "+380 532",
           c: "Poltava",
@@ -37121,7 +37212,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Viken",
           p: 1252384,
           info: "Comté",
-          s: 24593 ,
+          s: 24593,
           nH: "Non disponible",
           indT: "+47",
           c: "Oslo",
@@ -37130,7 +37221,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Innlandet",
           p: 370603,
           info: "Comté",
-          s: 52113 ,
+          s: 52113,
           nH: "Non disponible",
           indT: "+47",
           c: "Hamar",
@@ -37139,7 +37230,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Vestfold og Telemark",
           p: 421882,
           info: "Comté",
-          s: 17466 ,
+          s: 17466,
           nH: "Non disponible",
           indT: "+47",
           c: "Skien",
@@ -37157,7 +37248,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Vestland",
           p: 638821,
           info: "Comté",
-          s: 33871 ,
+          s: 33871,
           nH: "Non disponible",
           indT: "+47",
           c: "Bergen",
@@ -37166,7 +37257,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Trøndelag",
           p: 471124,
           info: "Comté",
-          s: 42202 ,
+          s: 42202,
           nH: "Non disponible",
           indT: "+47",
           c: "Steinkjer",
@@ -37175,7 +37266,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           n: "Troms og Finnmark",
           p: 242168,
           info: "Comté",
-          s: 74831 ,
+          s: 74831,
           nH: "Non disponible",
           indT: "+47",
           c: "Tromsø",
@@ -38879,77 +38970,77 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         //Sub Australie
 
         "AU-ACT": {
-    "n": "Territoire de la capitale australienne",
-    "info": "Territoire",
-    "p": 470000,
-    "s": 2358,
-    "nH": "Non disponible",
-    "indT": "+61 (02)",
-    "c": "Canberra"
-  },
-  "AU-NSW": {
-    "n": "Nouvelle-Galles du Sud",
-    "info": "État",
-    "p": 8300000,
-    "s": 800642,
-    "nH": "Néo-Gallois(e)",
-    "indT": "+61 (02)",
-    "c": "Sydney"
-  },
-  "AU-NT": {
-    "n": "Territoire du Nord",
-    "info": "Territoire",
-    "p": 250000,
-    "s": 1349129,
-    "nH": "Territorial(e)",
-    "indT": "+61 (08)",
-    "c": "Darwin"
-  },
-  "AU-QLD": {
-    "n": "Queensland",
-    "info": "État",
-    "p": 5400000,
-    "s": 1852642,
-    "nH": "Queenslandais(e)",
-    "indT": "+61 (07)",
-    "c": "Brisbane"
-  },
-  "AU-SA": {
-    "n": "Australie-Méridionale",
-    "info": "État",
-    "p": 1800000,
-    "s": 983482,
-    "nH": "Sud-Australien(ne)",
-    "indT": "+61 (08)",
-    "c": "Adelaide"
-  },
-  "AU-TAS": {
-    "n": "Tasmanie",
-    "info": "État",
-    "p": 570000,
-    "s": 68401,
-    "nH": "Tasmanien(ne)",
-    "indT": "+61 (03)",
-    "c": "Hobart"
-  },
-  "AU-VIC": {
-    "n": "Victoria",
-    "info": "État",
-    "p": 6700000,
-    "s": 227444,
-    "nH": "Victorien(ne)",
-    "indT": "+61 (03)",
-    "c": "Melbourne"
-  },
-  "AU-WA": {
-    "n": "Australie-Occidentale",
-    "info": "État",
-    "p": 2900000,
-    "s": 2526786,
-    "nH": "Ouest-Australien(ne)",
-    "indT": "+61 (08)",
-    "c": "Perth"
-  },
+          n: "Territoire de la capitale australienne",
+          info: "Territoire",
+          p: 470000,
+          s: 2358,
+          nH: "Non disponible",
+          indT: "+61 (02)",
+          c: "Canberra",
+        },
+        "AU-NSW": {
+          n: "Nouvelle-Galles du Sud",
+          info: "État",
+          p: 8300000,
+          s: 800642,
+          nH: "Néo-Gallois(e)",
+          indT: "+61 (02)",
+          c: "Sydney",
+        },
+        "AU-NT": {
+          n: "Territoire du Nord",
+          info: "Territoire",
+          p: 250000,
+          s: 1349129,
+          nH: "Territorial(e)",
+          indT: "+61 (08)",
+          c: "Darwin",
+        },
+        "AU-QLD": {
+          n: "Queensland",
+          info: "État",
+          p: 5400000,
+          s: 1852642,
+          nH: "Queenslandais(e)",
+          indT: "+61 (07)",
+          c: "Brisbane",
+        },
+        "AU-SA": {
+          n: "Australie-Méridionale",
+          info: "État",
+          p: 1800000,
+          s: 983482,
+          nH: "Sud-Australien(ne)",
+          indT: "+61 (08)",
+          c: "Adelaide",
+        },
+        "AU-TAS": {
+          n: "Tasmanie",
+          info: "État",
+          p: 570000,
+          s: 68401,
+          nH: "Tasmanien(ne)",
+          indT: "+61 (03)",
+          c: "Hobart",
+        },
+        "AU-VIC": {
+          n: "Victoria",
+          info: "État",
+          p: 6700000,
+          s: 227444,
+          nH: "Victorien(ne)",
+          indT: "+61 (03)",
+          c: "Melbourne",
+        },
+        "AU-WA": {
+          n: "Australie-Occidentale",
+          info: "État",
+          p: 2900000,
+          s: 2526786,
+          nH: "Ouest-Australien(ne)",
+          indT: "+61 (08)",
+          c: "Perth",
+        },
         //Sub Maroc
 
         MA11: {
@@ -51909,7 +52000,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       //
       let oneTimeColor = false; // n'appeler qu'une seule fois colorcountry dans countryclick/svg.ad (click)
       svg.addEventListener("click", (event) => {
-
         const country = event.target.closest("path");
         if (country != null) {
           const status = idVisible_m.get(country.id);
@@ -51963,7 +52053,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             (btnSub.innerHTML = L_cSub[currentCountry.id].icon),
             btnSub.append(L_cSub[currentCountry.id].t))
           : btnSub.classList.remove("viewSub");
-            L_subNP.includes(currentCountry.id) ? btnSub.classList.remove('lockP') : btnSub.classList.add('lockP')
+        L_subNP.includes(currentCountry.id)
+          ? btnSub.classList.remove("lockP")
+          : btnSub.classList.add("lockP");
 
         if (
           L_config.m === "modeTrouver" &&
@@ -52293,7 +52385,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function colorCountry(svgSubId = null) {
         // "US" par exemple
-        ;(L_config.sub || viewSub
+        (L_config.sub || viewSub
           ? L_pathsSub.find(
               (paths) =>
                 paths.id === "ps" + (L_config.sub ? L_config.sub : svgSubId),
@@ -52652,8 +52744,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
         if (!oneTimeColor) {
           L_config.sub || viewSub
-          ? colorCountry(id.slice(0, 2).toUpperCase())
-          : colorCountry();
+            ? colorCountry(id.slice(0, 2).toUpperCase())
+            : colorCountry();
         }
         getId("svgMonde")
           .querySelectorAll("circle")
@@ -53436,11 +53528,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             rank.className = "rank";
             // rank.textContent = `n°${rankPop[r.id.toUpperCase()]}`;
             rank.innerHTML = `${rankPop[r.id.toUpperCase()]}<sup>e</sup>`;
-            if (rankPop[r.id.toUpperCase()] === 1)
-              {rank.innerHTML = `1<sup>er</sup>`;}
-
-
-
+            if (rankPop[r.id.toUpperCase()] === 1) {
+              rank.innerHTML = `1<sup>er</sup>`;
+            }
 
             itemC.append(rank);
 
@@ -53464,11 +53554,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             rank.className = "rank";
             // rank.textContent = `n°${rankS[r.id.toUpperCase()]}`;
             rank.innerHTML = `${rankS[r.id.toUpperCase()]}<sup>e</sup>`;
-            if (rankS[r.id.toUpperCase()] === 1)
-              {rank.innerHTML = `1<sup>er</sup>`;}
-
-
-            
+            if (rankS[r.id.toUpperCase()] === 1) {
+              rank.innerHTML = `1<sup>er</sup>`;
+            }
 
             itemC.append(rank);
 
@@ -53849,7 +53937,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       pt.y = centerScreen.y;
 
       const svgPoint = pt.matrixTransform(svg.getScreenCTM().inverse());
-
 
       function zoomCenterScreen(svg, zoomFactor = 2, duration = 700) {
         const vb = svg.viewBox.baseVal;
@@ -54968,17 +55055,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             const zoomFactor = lastTouchDist / newDist;
             const newW = Math.min(
-              Math.max(
-                vb.w * zoomFactor,
-                initialViewBox[2] / zoomFactorSvg,
-              ), // même min que zoomCenterScreen
+              Math.max(vb.w * zoomFactor, initialViewBox[2] / zoomFactorSvg), // même min que zoomCenterScreen
               initialViewBox[2], // même max
             );
             const newH = Math.min(
-              Math.max(
-                vb.h * zoomFactor,
-                initialViewBox[3] / zoomFactorSvg,
-              ), // même min
+              Math.max(vb.h * zoomFactor, initialViewBox[3] / zoomFactorSvg), // même min
               initialViewBox[3], // même max
             );
 
@@ -57345,7 +57426,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           track = data.track ?? 0;
           if (data.L_progressQ) Object.assign(L_progressQ, data.L_progressQ);
           if (data.L_claimedQ) Object.assign(L_claimedQ, data.L_claimedQ);
-          L_palierLvl = PALIERS_LVL_ORIGINAL.slice(lvlPlayer - 1);
+          numPalierLvl = 500 + 100 * lvlPlayer * (lvlPlayer - 1);
           lastQuestGenDate = data.lastQuestGenDate ?? null;
           streak = data.streak ?? 0;
           lastStreakDate = data.lastStreakDate ?? null;
@@ -57382,8 +57463,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       txtLvlPlayer.textContent = lvlPlayer;
       txtProgLvl.textContent = nbrProgLvl;
-      txtPalierLvl.textContent = L_palierLvl[0];
-      barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
+      txtPalierLvl.textContent = numPalierLvl;
+      barreProgLvl.style.width = `${(nbrProgLvl / numPalierLvl) * 100}%`;
 
       const today = getTodayKey();
 
@@ -57414,8 +57495,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       // Ré-afficher l'état chargé dans l'UI
       txtLvlPlayer.textContent = lvlPlayer;
       txtProgLvl.textContent = nbrProgLvl;
-      txtPalierLvl.textContent = L_palierLvl[0];
-      barreProgLvl.style.width = `${(nbrProgLvl / L_palierLvl[0]) * 100}%`;
+      txtPalierLvl.textContent = numPalierLvl;
+      barreProgLvl.style.width = `${(nbrProgLvl / numPalierLvl) * 100}%`;
 
       window.addEventListener("beforeunload", saveProgress);
       window.addEventListener("visibilitychange", () => {
@@ -57495,9 +57576,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         console.log(oneTimeMessage);
       }
 
-            
-    
-       //***
+// let numephe = 1
+// const PALIERS_LVL2 = [];
+// for (let n = 1; n <= 50; n++) {
+//   PALIERS_LVL2.push(500 + 100*numephe*(numephe-1))
+//   numephe+=1
+// }
+// console.log(PALIERS_LVL2);
+
+      //***
       // loop();
       // const L_ephe2 = {}
       // paths.forEach(p=>{
@@ -57578,17 +57665,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       async function acheterRetraitPubs() {
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
 
-         if(noAd === true){
-            const { Dialog } = Capacitor?.Plugins ?? {};
-            await Dialog.alert({
-              title: "Erreur",
-              message:
-                "Cet achat a déjà été effectué",
-              buttonTitle: "OK",
-            });
-            return
+        if (noAd === true) {
+          const { Dialog } = Capacitor?.Plugins ?? {};
+          await Dialog.alert({
+            title: "Erreur",
+            message: "Cet achat a déjà été effectué",
+            buttonTitle: "OK",
+          });
+          return;
         }
-
 
         const { Network, Dialog } = Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
@@ -57650,15 +57735,14 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       async function acheterPremium() {
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
 
-        if(isPremium === true){
-            const { Dialog } = Capacitor?.Plugins ?? {};
-            await Dialog.alert({
-              title: "Erreur",
-              message:
-                "Cet achat a déjà été effectué",
-              buttonTitle: "OK",
-            });
-            return
+        if (isPremium === true) {
+          const { Dialog } = Capacitor?.Plugins ?? {};
+          await Dialog.alert({
+            title: "Erreur",
+            message: "Cet achat a déjà été effectué",
+            buttonTitle: "OK",
+          });
+          return;
         }
 
         const { Network, Dialog } = Capacitor?.Plugins ?? {};
