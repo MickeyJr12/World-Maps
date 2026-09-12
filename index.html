@@ -28386,7 +28386,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               //******
               //abab
             } else {
-              svg.setAttribute("viewBox", "275 175 550 350");
+              svg.setAttribute("viewBox", (isMobile ? "412.5 262.5 275 175"  : "275 175 550 350"));
               setTimeout(() => {
                 animateViewBox(
                   document.getElementById("svgMonde"),
@@ -29930,7 +29930,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           return;
         }
 
-        svg.setAttribute("viewBox", "275 175 550 350");
+              svg.setAttribute("viewBox", (isMobile ? "412.5 262.5 275 175"  : "275 175 550 350"));
         setTimeout(() => {
           animateViewBox(
             document.getElementById("svgMonde"),
@@ -30826,7 +30826,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           D_circles[clef].style.visibility = "";
         }
 
-        svg.setAttribute("viewBox", "275 175 550 350");
+              svg.setAttribute("viewBox", (isMobile ? "412.5 262.5 275 175"  : "275 175 550 350"));
         animateViewBox(
           document.getElementById("svgMonde"),
           initialViewBox,
@@ -30937,7 +30937,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const svg = document.querySelector("svg.monde");
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
-      const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 width, height]
+      // const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 1100, 700]
+      const initialViewBox = isMobile ? [275,175,550,350] : svg.getAttribute("viewBox").split(" ").map(Number);
 
       const paths = [...svg.querySelectorAll("path")].filter(
         (p) => p.id.length === 2,
@@ -57573,9 +57574,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(oneTimeMessage);
+        console.log(svg.getAttribute("viewBox").split(" ").map(Number));
       }
-
+loop()
 // let numephe = 1
 // const PALIERS_LVL2 = [];
 // for (let n = 1; n <= 50; n++) {
