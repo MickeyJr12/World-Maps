@@ -26574,7 +26574,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       checkboxH.addEventListener("change", (e) => {
         haptic = e.target.checked;
-        // hapticFeedback('light')
+        hapticFeedback('light')
         saveProgress();
       });
 
@@ -26591,7 +26591,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       checkbox.addEventListener("change", (e) => {
         sound = e.target.checked;
-        // hapticFeedback('light')
+        hapticFeedback('light')
         saveProgress();
       });
 
@@ -26610,7 +26610,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const checkBoxSouv = toggleSouv.querySelector("input");
       checkBoxSouv.addEventListener("change", (e) => {
         onlySouv = !onlySouv;
-        // hapticFeedback('light')
+        hapticFeedback('light')
         saveProgress();
         [
           document.getElementById("nbrQ15"),
@@ -26634,7 +26634,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const checkBoxNotif = toggleNotif.querySelector("input");
       checkBoxNotif.addEventListener("change", (e) => {
         notif = !notif;
-        // hapticFeedback('light')
+        hapticFeedback('light')
         saveProgress();
       });
       /// Fin Scrit paramètres
@@ -28419,13 +28419,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               spanNext.textContent = "✓ Bonne réponse !";
               fillPm(currentCountry.id, idBonneReponse);
               playSound(goodSound);
-              // hapticFeedback('success')
+              hapticFeedback('success')
               fillQuetes();
               score += 1;
             } else {
               cadreNext.classList.add("bad");
               playSound(badSound);
-              // hapticFeedback('error')
+              hapticFeedback('error')
 
               spanNext.textContent = "✗ Mauvaise réponse";
               fillPm(currentCountry.id, idBonneReponse);
@@ -28816,15 +28816,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             spanNext.textContent = "~ Presque !";
             playSound(badSound);
-            // hapticFeedback('error')
+            hapticFeedback('error')
           } else if (nbrGood < nbr / 2) {
             playSound(badSound);
-            // hapticFeedback('error')
+            hapticFeedback('error')
             spanNext.textContent = "✗ Mauvais ordre";
             cadreNext.className = "cadreNext visible bad";
           } else {
             playSound(goodSound);
-            // hapticFeedback('success')
+            hapticFeedback('success')
             fillQuetes();
 
             spanNext.textContent = "✓ Ordre Correct !";
@@ -29369,14 +29369,14 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
             playSound(goodSound);
-            // hapticFeedback('success')
+            hapticFeedback('success')
 
             cadreNext.classList.add("good");
             spanNext.textContent = "✓ Bonne réponse !";
             score += 1;
           } else {
             playSound(badSound);
-            // hapticFeedback('error')
+            hapticFeedback('error')
             cadreNext.classList.add("bad");
             spanNext.textContent = "✗ Mauvaise réponse";
           }
@@ -52399,7 +52399,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           //   return;
           // }
           if (p === currentCountry && currentCountry != null) {
-            // hapticFeedback('light')
+            hapticFeedback('light')
             const overlay = overlay_m.get(p.id);
             darkenCountry(p.id, overlay);
           } else if (p !== currentCountryHover) {
@@ -55622,7 +55622,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       function scrollToLetter(el) {
         const letter = el?.closest(".letter");
         if (!letter) return;
-        // hapticFeedback('light')
+        hapticFeedback('light')
         const target = document.getElementById(
           "letter" + letter.textContent.trim().toUpperCase(),
         );
@@ -56472,7 +56472,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       function scrollToLetterD(el) {
         const letter = el?.closest(".letterD");
         if (!letter) return;
-        // hapticFeedback('light')
+        hapticFeedback('light')
         const target = document.getElementById(
           "letterD" + letter.textContent.trim().toUpperCase(),
         );
