@@ -29735,13 +29735,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         animateViewBox(svgMonde, targetViewBox, 700);
         setTimeout(() => {
           if (!centerBtnTF || viewMaps) {
-            p_id in L_cSub
+            p_id in L_cSub && !viewMaps
               ? btnSub.classList.add("viewSub")
               : btnSub.classList.remove("viewSub");
-            L_subNP.includes(p_id)
+            L_subNP.includes(p_id) 
               ? btnSub.classList.remove("lockP")
               : btnSub.classList.add("lockP");
             countryClick(p_id, el.getAttribute("title"), el);
+          }
+          else {
+            btnSub.className = ""
           }
           centerBtnTF = false;
         }, 10);
@@ -30882,6 +30885,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
           cadreVueTF = true;
           afficheVue();
+          wrapperTool.style.pointerEvents = ""
 
           currentCountry = null;
           currentPhone = phoneHome;
@@ -52024,6 +52028,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                 pColor_m.get(country).current,
               )))
         ) {
+
           currentCountry = null;
           paths.forEach((p) => {
             resetOverlay(p.id, overlay_m.get(p.id));
@@ -52046,6 +52051,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             spanNext.textContent = "Mystère";
             document.querySelector(".btn-suivant").textContent = "Valider ✓";
           }
+
           return;
         }
         currentCountry = country;
@@ -57574,9 +57580,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(svg.getAttribute("viewBox").split(" ").map(Number));
+        console.log(btnSub.classList);
       }
-loop()
+// loop()
 // let numephe = 1
 // const PALIERS_LVL2 = [];
 // for (let n = 1; n <= 50; n++) {
