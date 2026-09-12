@@ -52499,7 +52499,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       }
 
       function countryClick(id, name, element) {
-        //cette fonction qui met les trucs en noirs pour rien
+
+        id in L_cSub && !L_config.m
+          ? (btnSub.classList.add("viewSub"),
+            (btnSub.innerHTML = L_cSub[id].icon),
+            btnSub.append(L_cSub[id].t))
+          : btnSub.classList.remove("viewSub");
+        L_subNP.includes(id)
+          ? btnSub.classList.remove("lockP")
+          : btnSub.classList.add("lockP");
 
         if (
           (L_config.m === "modeTrouver" && cChooseTrouver) ||
