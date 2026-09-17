@@ -53022,7 +53022,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       // À mettre après que globe soit défini
 
       const overlay_m = new Map();
-
       function createOverlay(p_id) {
         if (overlay_m.has(p_id)) return;
         const overlay = document.createElementNS(
@@ -53041,7 +53040,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           "transform",
           pathOriginal.getAttribute("transform") || "",
         );
-        svgEl.appendChild(overlay);
+        // svgEl.appendChild(overlay);
         overlay_m.set(p_id, overlay);
       }
       function darkenCountry(pathId, overlay) {
@@ -58307,6 +58306,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         requestAnimationFrame(loop);
         console.log(btnSub.classList);
       }
+
 
    
      
