@@ -68,29 +68,35 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         overflow: hidden;
+        margin : 0;
       }
       body {
-        perspective: 1000px;
         display: flex;
         font-family: var(--font-main);
         align-items: center;
         justify-content: center;
         overflow: hidden;
         position: relative;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         background: linear-gradient(
           327deg,
           #0f23fa 0%,
           #0f85fa 63%,
           #0fe7fa 100%
         );
+        margin : 0;
         background-repeat: no-repeat;
       }
 
+      #phoneMarketing {
+        display : flex;
+        position : fixed;
+        inset : 0;
+      }
 
        #cadreNvll{
         display : flex;
@@ -179,7 +185,7 @@
 
  
     </style>
- 
+  <div id="phoneMarketing">
      <div id="cadreNvll">
   <!-- <img class="iconAppEphe" src="IconApp.png" alt=""> -->
     <svg id="iconApp" viewBox="0 0 7000 7000" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -719,7 +725,7 @@
 
  </div>
 
-
+ </div>
  
   <script>
 
@@ -858,7 +864,7 @@ requestAnimationFrame(nudgeBackdrop);
             border-radius:50%;
             z-index:-1;
             user-select:none;
-            pointer-event:none;
+            pointer-events:none;
         `;
       document.body.appendChild(el);
       cordH_m.set(el, {
