@@ -28830,10 +28830,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               //******
               //abab
             } else {
-              svg.setAttribute(
-                "viewBox",
-                "275 175 550 350",
-              );
+             svg.setAttribute(
+          "viewBox",
+          "275 175 550 350",
+        );
               setTimeout(() => {
                 animateViewBox(
                   document.getElementById("svgMonde"),
@@ -31396,10 +31396,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const svg = document.querySelector("svg.monde");
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
-      const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 1100, 700]
-      // const initialViewBox = isMobile
-      //   ? [275, 175, 550, 350]
-      //   : svg.getAttribute("viewBox").split(" ").map(Number);
+      // const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 1100, 700]
+      const initialViewBox = isMobile
+        ? [59.774061111112864, 38.03803888889, 980.4518777777743, 623.92392222222]
+        : svg.getAttribute("viewBox").split(" ").map(Number);
 
       const paths = [...svg.querySelectorAll("path")].filter(
         (p) => p.parentNode?.id === "viewport",
@@ -58308,13 +58308,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(btnSub.classList);
+        console.log(svg.getAttribute("viewBox").split(" ").map(Number));
       }
 
-
-   
-     
-      // loop()
+ loop()
       // let numephe = 1
       // const PALIERS_LVL2 = [];
       // for (let n = 1; n <= 50; n++) {
