@@ -53103,11 +53103,16 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function resetOverlay(p_id, overlay) {
         //resetoverlay, colorcountry
-        if (!viewSub && p_id.length > 2) {
+        if (!viewSub && getId(p_id)?.parentNode.id!== "viewport") {
           return;
         }
         if (!getId(p_id)) return;
         overlay.style.opacity = "0";
+        setTimeout(() => {
+          if(overlay.style.opacity === "0"){
+            overlay.remove()
+          }
+        }, 300);
         pathsId_m.get(p_id).style.stroke = "";
       }
       paths.forEach((p) => {
