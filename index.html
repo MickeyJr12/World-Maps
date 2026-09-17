@@ -27294,6 +27294,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       menuRecompenses.addEventListener("click", () => {
+
+        if(menuRecompenses.classList.contains('active')){
+        document.querySelector(".cadreRDL").firstChild.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+        }
         menuRecompenses.classList.add("active");
         menuDefiQ.classList.remove("active");
         cadreMenuRDIn.classList.add("right");
@@ -58313,7 +58320,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         console.log(svg.getAttribute("viewBox").split(" ").map(Number));
       }
 
- loop()
+//  loop()
       // let numephe = 1
       // const PALIERS_LVL2 = [];
       // for (let n = 1; n <= 50; n++) {
