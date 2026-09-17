@@ -31421,8 +31421,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         : svg.getAttribute("viewBox").split(" ").map(Number);
 
       const paths = [...svg.querySelectorAll("path")].filter(
-        (p) => p.id.length === 2,
+        (p) => p.parentNode?.id === "viewport",
       ); // spread → vrai tableau
+      
       const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
       const L_circles = [
@@ -52883,6 +52884,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           if (p === currentCountry && currentCountry != null) {
             hapticFeedback("light");
             const overlay = overlay_m.get(p.id);
+            svg.append(overlay)
             darkenCountry(p.id, overlay);
           } else if (p !== currentCountryHover) {
             if (p !== currentCountry) {
@@ -52922,6 +52924,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         const paths = g.querySelectorAll("path");
         paths.forEach((p) => {
           createOverlay(p.id);
+          overlay_m.get(p.id).remove();
         });
         g.remove();
       }
@@ -53038,35 +53041,35 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         // }
 
         if (!viewSub) {
-          const loadingCadreBlason = document.createElement("div");
-          loadingCadreBlason.className = "loadingCadre";
-          loadingCadreBlason.style.height = "8.2rem";
-          loadingCadreBlason.style.maxWidth = "none";
-          loadingCadreBlason.style.width = "7.2rem";
-          loadingCadreBlason.style.display = "flex";
-          // cadreBlason.append(loadingCadreBlason);
-          itemBlason.style.display = "none";
+          // const loadingCadreBlason = document.createElement("div");
+          // loadingCadreBlason.className = "loadingCadre";
+          // loadingCadreBlason.style.height = "8.2rem";
+          // loadingCadreBlason.style.maxWidth = "none";
+          // loadingCadreBlason.style.width = "7.2rem";
+          // loadingCadreBlason.style.display = "flex";
+          // // cadreBlason.append(loadingCadreBlason);
+          // itemBlason.style.display = "none";
 
-          fetch(!viewSub ? (D_blason[id] ?? "") : "")
-            .then((r) => {
-              if (!r.ok) throw new Error();
-              return r.text();
-            })
-            .then((svg) => {
-              D_blason[id]
-                ? ((cadreBlason.querySelector("p").style.display = "none"),
-                  (itemBlason.style.display = ""))
-                : ((cadreBlason.querySelector("p").style.display = "flex"),
-                  (itemBlason.style.display = "none"));
-              loadingCadreBlason.remove();
-              itemBlason.src = ``;
-              itemBlason.src = D_blason[id];
-            })
-            .catch(() => {
-              loadingCadreBlason.remove();
-              itemBlason.style.display = "none";
-              // cadreBlason.querySelector("p").style.display = "flex";
-            });
+          // fetch(!viewSub ? (D_blason[id] ?? "") : "")
+          //   .then((r) => {
+          //     if (!r.ok) throw new Error();
+          //     return r.text();
+          //   })
+          //   .then((svg) => {
+          //     D_blason[id]
+          //       ? ((cadreBlason.querySelector("p").style.display = "none"),
+          //         (itemBlason.style.display = ""))
+          //       : ((cadreBlason.querySelector("p").style.display = "flex"),
+          //         (itemBlason.style.display = "none"));
+          //     loadingCadreBlason.remove();
+          //     itemBlason.src = ``;
+          //     itemBlason.src = D_blason[id];
+          //   })
+          //   .catch(() => {
+          //     loadingCadreBlason.remove();
+          //     itemBlason.style.display = "none";
+          //     // cadreBlason.querySelector("p").style.display = "flex";
+          //   });
 
           const loadingCadreContours = document.createElement("div");
           loadingCadreContours.className = "loadingCadre";
@@ -58065,6 +58068,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         console.log(btnSub.classList);
       }
 
+      setTimeout(() => {
+        svg.querySelectorAll('path').forEach(p=>{
+          console.log(p.id)
+        })
+      }, 10000);
+
      
       // loop()
       // let numephe = 1
@@ -58438,6 +58447,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!window.Capacitor?.isNativePlatform()) return;
         await InAppReview.requestReview();
       }
+      
 
       // script partager
 
