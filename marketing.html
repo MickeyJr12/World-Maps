@@ -712,7 +712,7 @@
   <img class="qrCode" src="qrcode-exemple.svg" alt="">
 </div>
 
-<div class="btnEphe">
+<div class="btnEphe" id="btnStore">
   <svg class="iconApple" fill="white" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd114eed"> <path style="display: inline;" d="M248.644,123.476c-5.45-29.71,8.598-60.285,25.516-80.89 c18.645-22.735,50.642-40.17,77.986-42.086c4.619,31.149-8.093,61.498-24.826,82.965 C309.37,106.527,278.508,124.411,248.644,123.476z M409.034,231.131c8.461-23.606,25.223-44.845,51.227-59.175 c-26.278-32.792-63.173-51.83-97.99-51.83c-46.065,0-65.542,21.947-97.538,21.947c-32.96,0-57.965-21.947-97.866-21.947 c-39.127,0-80.776,23.848-107.19,64.577c-9.712,15.055-16.291,33.758-19.879,54.59c-9.956,58.439,4.916,134.557,49.279,202.144 c21.57,32.796,50.321,69.737,87.881,70.059c33.459,0.327,42.951-21.392,88.246-21.616c45.362-0.258,53.959,21.841,87.372,21.522 c37.571-0.317,67.906-41.199,89.476-73.991c15.359-23.532,21.167-35.418,33.11-62.023 C414.435,352.487,389.459,285.571,409.034,231.131z"> </path> </g> </g></svg>
 
   Télécharger</div>
@@ -733,6 +733,8 @@
       document.body.style.height = window.screen.height + "px";
 
 
+      const btnStore = document.getElementById('btnStore')
+     
    //  Script bulles
 window.addEventListener("load", () => {
       // Force un repaint du calque backdrop-filter à chaque frame
@@ -878,7 +880,62 @@ requestAnimationFrame(nudgeBackdrop);
       checkH_m.set(el, false);
       moveH(el);
     }
+
+     btnStore.addEventListener('click',()=>{
+        
+      VX.push(-2 + Math.random() * 4);
+      VY.push(-2 + Math.random() * 4);
+    
+      
+      const el = document.createElement("div");
+      el.innerHTML = `<svg  height="${heightB}" viewBox="0 0 7032 7026" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="16" y="26" width="7000" height="7000" rx="3500" fill="#122B49"/>
+<path d="M4473.55 1950.64C4305.93 1500.69 4108.79 1287.51 3856.49 1144.64C3613.42 1007 3356.64 1026.74 3113.65 1211.88C2863.9 1402.17 2642.99 1758.21 2496.88 2236.7C2351.41 2713.07 2292.02 3272.25 2329.64 3824.39C2367.29 4376.95 2499.5 4884.55 2701.22 5267.42C2904.21 5652.69 3156.74 5873.72 3406.52 5929.54C3649.35 5983.81 3907.97 5885.17 4143.02 5609.39C4379.3 5332.18 4577.03 4900.58 4679.19 4379.97L4708.8 4166.21" stroke="url(#paint0_linear_388_255)" stroke-width="200" stroke-linecap="round"/>
+<path d="M1926.18 1670.86C1854.8 1738.24 1842.06 1854.03 1872.84 1932.1C1907.18 2019.19 2000.36 2117.45 2168.85 2209.15C2335.07 2299.62 2557.19 2374.04 2817.27 2423.28C3076.75 2472.4 3362.45 2494.25 3648.59 2486.5C3934.8 2478.76 4210.65 2441.69 4451.45 2379.33C4693.19 2316.72 4887.07 2231.86 5019.77 2136.14C5153.75 2039.5 5209.02 1931.7 5214.18 1867.25C5219.33 1802.8 5214.18 1726.71 5103.69 1632.86C4695.81 1286.41 4186.04 1084.22 3652.7 1057.93C3119.37 1031.65 2592.25 1182.57 2152.73 1487.42C1713.21 1792.26 1385.73 2234.06 1220.84 2744.63C1055.95 3255.19 1062.82 3806.12 1240.39 4312.37C1417.96 4818.62 1756.35 5252.04 2203.33 5545.71C2650.32 5839.38 3181.03 5976.98 3713.54 5937.26C4246.05 5897.54 4750.75 5682.72 5149.73 5325.95C5548.71 4969.19 5819.78 4490.31 5921.09 3963.27C5962.49 3747.88 5890.96 3497.86 5681.55 3497.86H3971.83C3688.13 3497.86 3688.13 4027.13 3971.83 4027.13H4552.14C4608.85 4028.39 4703.41 4062.3 4708.8 4166.21M5071.09 5393.32C5186.43 5294.81 5220.87 5204.06 5214 5126.75C5206.87 5046.43 5150.2 4949.9 5012.78 4851.76C4876.67 4754.56 4678.67 4668.92 4432.82 4606.41C4187.91 4544.14 3908.16 4508.04 3619.05 4502.07C3330 4496.11 3042.68 4520.51 2783.39 4572.62C2523.45 4624.85 2303.72 4702.52 2141.91 4795.81C1977.9 4890.36 1891.7 4990.12 1863.5 5077.2C1838.03 5155.84 1866.56 5260.74 1951.48 5355.76" stroke="url(#paint1_linear_388_255)" stroke-width="175" stroke-linecap="round"/>
+<defs>
+<linearGradient id="paint0_linear_388_255" x1="6475.05" y1="420.744" x2="635.993" y2="6519.87" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EA9854"/>
+<stop offset="1" stop-color="#B14A20"/>
+</linearGradient>
+<linearGradient id="paint1_linear_388_255" x1="6458.9" y1="453.216" x2="636.322" y2="6487.47" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EA9854"/>
+<stop offset="1" stop-color="#B14A20"/>
+</linearGradient>
+</defs>
+</svg>
+`
+
+        ;
+      const x0 = 120 + Math.random() * (window.innerWidth - 240);
+      const y0 = 120 + Math.random() * (window.innerHeight - 240);
+
+      el.style.cssText = `
+            position:absolute;
+            left : ${x0 - 50}px;
+            top : ${y0 - 50}px;   
+            border-radius:50%;
+            z-index:-1;
+            user-select:none;
+            pointer-events:none;
+        `;
+      document.body.appendChild(el);
+      cordH_m.set(el, {
+        x: x0 + 50,
+        y: y0 + 50,
+      }); /*diamètre des coeurs de 100*/
+      vecteursH_m.set(el, {
+        vx: VX[Math.floor(Math.random() * VX.length)],
+        vy: VY[Math.floor(Math.random() * VY.length)],
+      });
+      checkH_m.set(el, false);
+      moveH(el);
+    
+      })
+      
   })
+
+
+  
   </script>
   </body>
 
