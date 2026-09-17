@@ -28832,7 +28832,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             } else {
               svg.setAttribute(
                 "viewBox",
-                isMobile ? "412.5 262.5 275 175" : "275 175 550 350",
+                "275 175 550 350",
               );
               setTimeout(() => {
                 animateViewBox(
@@ -30381,8 +30381,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         svg.setAttribute(
           "viewBox",
-          isMobile ? "412.5 262.5 275 175" : "275 175 550 350",
+          "275 175 550 350",
         );
+
+       
+
         setTimeout(() => {
           animateViewBox(
             document.getElementById("svgMonde"),
@@ -31280,7 +31283,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         svg.setAttribute(
           "viewBox",
-          isMobile ? "412.5 262.5 275 175" : "275 175 550 350",
+          "275 175 550 350",
         );
         animateViewBox(
           document.getElementById("svgMonde"),
@@ -31393,10 +31396,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const svg = document.querySelector("svg.monde");
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
-      // const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 1100, 700]
-      const initialViewBox = isMobile
-        ? [275, 175, 550, 350]
-        : svg.getAttribute("viewBox").split(" ").map(Number);
+      const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 1100, 700]
+      // const initialViewBox = isMobile
+      //   ? [275, 175, 550, 350]
+      //   : svg.getAttribute("viewBox").split(" ").map(Number);
 
       const paths = [...svg.querySelectorAll("path")].filter(
         (p) => p.parentNode?.id === "viewport",
