@@ -28,6 +28,7 @@
     "@capacitor/network": "^8.0.1",
     "@capacitor/screen-orientation": "^8.0.1",
     "@capacitor/share": "^8.0.1",
+    "@capacitor/splash-screen": "^8.0.2",
     "@revenuecat/purchases-capacitor": "^13.4.2"
   }
 }

@@ -11730,6 +11730,7 @@
           style="
             align-self: center;
             letter-spacing: 1px;
+            font-size : 0.9rem;
             color: rgba(255, 255, 255, 0.75);
           "
         >
@@ -26139,8 +26140,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         const APP_STORE_URL = "https://apps.apple.com/app/idTON_ID_APP_STORE"; // à remplacer une fois ta fiche créée
 
         if (window.Capacitor?.isNativePlatform()) {
-          // App native (iOS via Capacitor) → menu de partage natif iOS
-          const { Share } = Capacitor?.Plugins ?? {};
+          // App native (iOS via window.Capacitor) → menu de partage natif iOS
+          const { Share } = window.Capacitor?.Plugins ?? {};
 
           try {
             await Share.share({
@@ -26228,7 +26229,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       async function hapticFeedback(type = "light") {
         try {
           if (window.Capacitor?.isNativePlatform()) {
-            const { Haptics } = Capacitor?.Plugins ?? {};
+            const { Haptics } = window.Capacitor?.Plugins ?? {};
 
             switch (type) {
               case "success":
@@ -26277,8 +26278,23 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
     <!--Script Home-->
     <script>
-      window.addEventListener("load", () => {
+
+      async function hideNativeSplash() {
+  if (!window.Capacitor?.isNativePlatform()) return;
+  try {
+    await Capacitor.Plugins.SplashScreen.hide({ fadeOutDuration: 0 });
+  } catch (e) {
+    console.warn("SplashScreen.hide a échoué", e);
+  }
+}
+// Filet de sécurité : si le load ne s'est jamais exécuté
+setTimeout(hideNativeSplash, 5000);
+
+      window.addEventListener("load", async  () => {
         // Sortie de phoneConfig
+        await hideNativeSplash();
+
+        
         phoneConfig.style.transition = "opacity 0.01s ease";
         phoneConfig.style.opacity = "0";
         phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
@@ -33405,6 +33421,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
       }
       function toggleC(view) {
+        hapticFeedback("light");
         if (view) {
           messageViewMap.classList.remove("active");
           mCadre.style.transition = "none";
@@ -33922,7 +33939,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         { label: "Ex-URSS", id: "orgaExUrss", key: "exURSS" },
         { label: "G20", id: "orgaG20", key: "g20" },
         { label: "G7", id: "orgaG7", key: "g7" },
-        { label: "OPEP+", id: "orgaOPEPP", key: "opepplus" }, // OPEP+ : même clé, logique étendue si besoin
+        { label: "OPEP+", id: "orgaOPEPP", key: "opepplus" }, // Pas de logo
         { label: "COP21", id: "orgaCOP", key: "cop" },
         { label: "OPEP", id: "orgaOPEP", key: "opep" },
         { label: "UNESCO", id: "orgaUnesco", key: "unesco" },
@@ -54305,7 +54322,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           //   return;
           // }
           if (p === currentCountry && currentCountry != null) {
-            hapticFeedback("light");
             const overlay = overlay_m.get(p.id);
             svg.append(overlay);
             darkenCountry(p.id, overlay);
@@ -59529,7 +59545,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!window.Capacitor?.isNativePlatform()) return;
         if (purchasesInitialized) return;
 
-        const { Purchases } = Capacitor?.Plugins ?? {};
+        const { Purchases } = window.Capacitor?.Plugins ?? {};
 
         await Purchases.setLogLevel({ level: "DEBUG" });
         await Purchases.configure({ apiKey: REVENUECAT_API_KEY_IOS });
@@ -59548,7 +59564,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       async function chargerEtatAchats() {
         if (!window.Capacitor?.isNativePlatform()) return; // reste false sur la PWA
 
-        const { Network, Dialog } = Capacitor?.Plugins ?? {};
+        const { Network, Dialog } = window.Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
 
         if (!status.connected) {
@@ -59561,7 +59577,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
 
         await initPurchases();
-        const { Purchases } = Capacitor?.Plugins ?? {};
+        const { Purchases } = window.Capacitor?.Plugins ?? {};
 
         try {
           const { customerInfo } = await Purchases.getCustomerInfo();
@@ -59573,7 +59589,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else {
             console.error("Erreur charger achats", err);
 
-            const { Dialog } = Capacitor?.Plugins ?? {};
+            const { Dialog } = window.Capacitor?.Plugins ?? {};
             await Dialog.alert({
               title: "Erreur",
               message:
@@ -59590,7 +59606,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
 
         if (noAd === true) {
-          const { Dialog } = Capacitor?.Plugins ?? {};
+          const { Dialog } = window.Capacitor?.Plugins ?? {};
           await Dialog.alert({
             title: "Erreur",
             message: "Cet achat a déjà été effectué",
@@ -59599,7 +59615,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           return;
         }
 
-        const { Network, Dialog } = Capacitor?.Plugins ?? {};
+        const { Network, Dialog } = window.Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
 
         if (!status.connected) {
@@ -59612,7 +59628,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
 
         await initPurchases();
-        const { Purchases } = Capacitor?.Plugins ?? {};
+        const { Purchases } = window.Capacitor?.Plugins ?? {};
 
         const loaderBuyAd = document.getElementById("loaderBuyAd");
         loaderBuyAd.classList.add("active");
@@ -59641,7 +59657,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else {
             console.error("Erreur achat retrait pubs:", err);
 
-            const { Dialog } = Capacitor?.Plugins ?? {};
+            const { Dialog } = window.Capacitor?.Plugins ?? {};
             await Dialog.alert({
               title: "Erreur",
               message:
@@ -59660,7 +59676,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!window.Capacitor?.isNativePlatform()) return; // rien sur la PWA
 
         if (isPremium === true) {
-          const { Dialog } = Capacitor?.Plugins ?? {};
+          const { Dialog } = window.Capacitor?.Plugins ?? {};
           await Dialog.alert({
             title: "Erreur",
             message: "Cet achat a déjà été effectué",
@@ -59669,7 +59685,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           return;
         }
 
-        const { Network, Dialog } = Capacitor?.Plugins ?? {};
+        const { Network, Dialog } = window.Capacitor?.Plugins ?? {};
         const status = await Network.getStatus();
 
         if (!status.connected) {
@@ -59682,7 +59698,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
 
         await initPurchases();
-        const { Purchases } = Capacitor?.Plugins ?? {};
+        const { Purchases } = window.Capacitor?.Plugins ?? {};
 
         const loaderBuyP = document.getElementById("loaderBuyP"); // adapte le sélecteur si besoin
 
@@ -59712,7 +59728,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else {
             console.error("Erreur achat premium:", err);
 
-            const { Dialog } = Capacitor?.Plugins ?? {};
+            const { Dialog } = window.Capacitor?.Plugins ?? {};
             await Dialog.alert({
               title: "Erreur",
               message:
@@ -59791,7 +59807,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       async function restaurerAchats() {
         if (!window.Capacitor?.isNativePlatform()) return;
 
-        const { Network, Purchases, Dialog } = Capacitor?.Plugins ?? {};
+        const { Network, Purchases, Dialog } = window.Capacitor?.Plugins ?? {};
 
         const status = await Network.getStatus();
         if (!status.connected) {
@@ -59857,7 +59873,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
 
       // script avis
-      const { InAppReview } = Capacitor?.Plugins ?? {};
+      const { InAppReview } = window.Capacitor?.Plugins ?? {};
 
       async function demanderNotation() {
         if (!window.Capacitor?.isNativePlatform()) return;

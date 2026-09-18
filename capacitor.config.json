@@ -5,6 +5,10 @@
   "plugins": {
     "ScreenOrientation": {
       "orientation": "portrait"
+    },
+    "SplashScreen": {
+      "launchAutoHide": false,
+      "backgroundColor": "#0F23FA"
     }
   }
 }
