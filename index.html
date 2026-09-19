@@ -4428,7 +4428,6 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-
         gap: 0.4rem;
         flex: 0 0 100%;
         scroll-snap-align: center;
@@ -4437,7 +4436,7 @@
 
       .dots {
         display: flex;
-        margin-bottom: 0.4rem;
+        margin-bottom: calc(env(safe-area-inset-bottom) + 0.1rem);
         justify-content: center;
         gap: 8px;
       }
@@ -4505,11 +4504,13 @@
         border-radius: 100rem;
       }
       .buyBtn {
+        display : flex;
+        flex-direction : column;
         position: relative;
         overflow: hidden;
         margin-top: 1rem;
         width: 100%;
-        padding: 0.8rem;
+        padding: 0.6rem 0.8rem ;
         border: none;
         border-radius: inherit;
 
@@ -11231,7 +11232,6 @@
             </defs>
           </svg>
 
-          <div id="wrapperCadreP">
           <div class="mCadreP" style="margin-bottom: 1rem">
             <div class="topMCadreP">
               <svg
@@ -11404,12 +11404,13 @@
                 </div>
               </div>
 
-              <span class="btn-label">Passer premium — 4,99&nbsp;€</span>
+              <span class="btn-label">Passer premium — 5,99&nbsp;€/an</span>
               <span class="btn-shine"></span>
             </button>
+
+            <span style="margin-top : 0.25rem; color : white; font-size : 0.7rem;"> 0,5&nbsp;€/mois - Annulable à tout moment sans frais</span>
           </div>
 
-          </div>
           <div id="restaurer-achats">Restaurer les achats</div>
         </div>
 
