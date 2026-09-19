@@ -32621,7 +32621,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
-      const L_circles = [
+      const L_circles = [ // liste des éléments qui ont des cercles
         "MO",
         "SG",
         "MV",
@@ -32682,6 +32682,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "UM-JQ",
         "UM-MQ",
         "UM-WQ",
+        "JU",
       ];
       const D_circles = {};
       const L_antilles = [
@@ -32730,6 +32731,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "UM-JQ": 24,
         "UM-MQ": 24,
         "UM-WQ": 24,
+        JU: 24,
       };
       const L_elCircles = [];
 
@@ -47402,6 +47404,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           indT: ["+263"],
           nomH: "Zimbabwéens",
         },
+
+        JU: {
+  devise: { n: "Euro", s: "EUR" },
+  carSide: "Droite",
+  seaAccess: "Oui",
+  calendar: "Lundi",
+  indT: ["+262"],
+  nomH: "Aucun",
+},
       };
 
       const D_blason = {
@@ -52275,6 +52286,25 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           opep: false,
           dateInde: "1899-01-17", // Annexion formelle par les États-Unis
         },
+
+        JU: {
+  region: "Afrique",
+  subregion: "Afrique de l'Est",
+  unMember: false,
+  independent: false,
+  population: 0, // Pas d'habitants permanents (détachement militaire d'une quinzaine de personnes)
+  pib: 0,
+  co2e: 0,
+  gouvernement: "Territoire français (TAAF, district des Îles Éparses)",
+  religion: "Aucune",
+  fuseaux: ["UTC+3"],
+  otan: false,
+  ue: false,
+  cop: false,
+  g20: false,
+  opep: false,
+  dateInde: null, // Non indépendante (revendiquée par Madagascar)
+},
       };
       const L_q = {
         AD: {
@@ -53483,6 +53513,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "UM-JQ": { d: "Difficile", c: "—", p: 0, s: 2.67, n: "Atoll Johnston" },
         "UM-MQ": { d: "Difficile", c: "—", p: 0, s: 6.2, n: "Îles Midway" },
         "UM-WQ": { d: "Difficile", c: "—", p: 0, s: 6.5, n: "Île Wake" },
+
+        JU: {
+  d: "Difficile",
+  c: "Aucune",
+  p: 0,
+  s: 4.4,
+  n: "Île Juan de Nova",
+},
+
       };
 
       const g7Countries = new Set(["CA", "US", "FR", "DE", "IT", "JP", "GB"]);
@@ -53735,6 +53774,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         "UM-JQ": "Territoire américain", // Johnston Atoll
         "UM-MQ": "Territoire américain", // Midway
         "UM-WQ": "Territoire américain", // Wake Island
+        JU: "Territoire français", // Île Juan de Nova
       };
 
       L_nSouvDetail = {
@@ -53804,6 +53844,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           "Territoire insulaire non incorporé des États-Unis, réserve naturelle (USFWS), sans population permanente", // Midway
         "UM-WQ":
           "Territoire insulaire non incorporé des États-Unis, administré par l'US Air Force", // Wake Island
+          JU: "Terres australes et antarctiques françaises",
       };
 
       //---------
@@ -59533,6 +59574,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         requestAnimationFrame(loop);
         console.log(svg.getAttribute("viewBox").split(" ").map(Number));
       }
+
+
+
+
 
       //  loop()
       // let numephe = 1
