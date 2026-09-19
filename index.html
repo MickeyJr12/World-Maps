@@ -4278,6 +4278,18 @@
         border-radius: inherit;
         border: 0.05rem solid rgba(255, 255, 255, 0.4);
       }
+      #wrapperCadreP{
+        display : flex;
+        flex-direction : inherit;
+        overflow-x : hidden;
+        overflow-y : scroll;
+        align-items : center;
+        scrollbar-width: none;
+        gap : inherit;
+        flex: 1;
+        width : 100%;
+        padding : 0.8rem;
+      }
 
       #cadrePremium {
         display: flex;
@@ -4316,6 +4328,9 @@
         flex-shrink: 0;
         height: 4rem;
         margin-bottom: 0.8rem;
+      }
+      #iconDiamand{
+        height : 2.6rem;
       }
       #backgroundCadreP {
         position: absolute;
@@ -4685,6 +4700,9 @@
         text-decoration: underline;
         cursor: pointer;
         padding: 8px;
+      }
+      #restaurer-achats:active {
+        filter : brightness(0.92);
       }
 
       #btnDon {
@@ -11108,6 +11126,7 @@
 
           <svg
             class="iconDiamand"
+            id="iconDiamand"
             viewBox="0 0 332 290"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -11212,6 +11231,7 @@
             </defs>
           </svg>
 
+          <div id="wrapperCadreP">
           <div class="mCadreP" style="margin-bottom: 1rem">
             <div class="topMCadreP">
               <svg
@@ -11229,20 +11249,13 @@
 
               <div class="txtMCadreP">
                 <span style="font-size: 1.25rem; font-weight: 550"
-                  >Enlever les pubs</span
+                  >Enlever les publicités</span
                 >
                 <span style="color: rgba(255, 255, 255, 0.6)"
                   >Expérience fluide sans interruptions</span
                 >
               </div>
-            </div>
-
-            <span style="font-size: 0.85rem"
-              >✓ Aucune vidéo publicitaire ente les quiz
-            </span>
-            <span style="font-size: 0.85rem"
-              >✓ Navigation 100% propre et rapide
-            </span>
+            </div>         
             <span style="font-size: 0.85rem"
               >✓ Concentre toi uniquement sur ton apprentissage
             </span>
@@ -11365,12 +11378,12 @@
             </div>
 
             <span style="font-size: 0.85rem"
-              >✓ Accès à tous les quiz et catégories
+              >✓ Quiz sur mesure (silhouettes, chrono, nombre de questions)
             </span>
             <span style="font-size: 0.85rem"
-              >✓ Accès illimité à tout le contenu
+              >✓ Aucune publicité
             </span>
-            <span style="font-size: 0.85rem">✓ Contenu exclusif </span>
+            <span style="font-size: 0.85rem">✓ +40 pays à explorer en détail (états, provinces, länder…) </span>
 
             <button id="buyBtnP" class="buyBtn">
               <div class="cadreSpinnerBuy" id="loaderBuyP">
@@ -11396,6 +11409,7 @@
             </button>
           </div>
 
+          </div>
           <div id="restaurer-achats">Restaurer les achats</div>
         </div>
 
