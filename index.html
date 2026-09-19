@@ -3869,6 +3869,14 @@
           #150570 100%
         );
 
+          background: linear-gradient(
+          180deg,
+          #0f23fa 0%,
+          #134fd8 65%,
+          #1698d4 100%
+        );
+        
+
         min-height: 100dvh; /* dynamic viewport height, plus fiable sur mobile */
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2rem);
@@ -59837,6 +59845,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           return;
         }
 
+         document.getElementById("restaurer-achats").style.pointerEvents= "none"
         await initPurchases();
 
         try {
@@ -59851,7 +59860,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               message: "Tes achats précédents ont bien été restaurés !",
               buttonTitle: "OK",
             });
+         document.getElementById("restaurer-achats").style.pointerEvents= ""
+
           } else {
+         document.getElementById("restaurer-achats").style.pointerEvents= ""
             await Dialog.alert({
               title: "Aucun achat trouvé",
               message:
@@ -59860,6 +59872,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             });
           }
         } catch (err) {
+         document.getElementById("restaurer-achats").style.pointerEvents= ""
           console.error("Erreur restauration achats:", err);
           await Dialog.alert({
             title: "Erreur",
