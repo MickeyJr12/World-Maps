@@ -2964,7 +2964,7 @@
         box-sizing: border-box;
         margin: 0rem -10rem;
         flex-shrink: 0;
-        gap: 0.2rem;
+        /* gap: 0.2rem; */
         width: 100%;
         height: 2.5rem;
         background: rgba(18, 117, 174, 0.3);
@@ -2980,16 +2980,31 @@
         align-items: center;
         flex-wrap: nowrap;
         flex: 1;
+        color : rgba(255,255,255,0.5);
         cursor: pointer;
-        border-radius: 0.2rem;
+        border-radius: inherit;
         padding: 0rem 0.5rem;
         gap: 0.6rem;
         height: 100%;
-        transition: background 0.4s ease;
+        transition: background 0.4s ease, color 0.2s ease;      
+
+        .txtMenuCadre{
+          max-width : 0px;
+        }
+
       }
       .boxMenuCadre.active {
+        color : white;
         background: rgba(11, 15, 40, 0.4);
       }
+      #orgaMenu.active .txtMenuCadre{
+          max-width : 120px;
+      }
+      #contoursMenu.active .txtMenuCadre{
+          max-width : 75px;
+      }
+
+
 
       .boxMenuCadre.active .iconMenuCadre {
         opacity: 1;
@@ -3029,7 +3044,7 @@
       }
 
       #cadreOrga {
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
@@ -18329,7 +18344,7 @@
           <!--Menu Cadre-->
           <div class="menuCadre">
             <div
-              class="boxMenuCadre active"
+              class="boxMenuCadre"
               id="orgaMenu"
               onclick="selectMenuCadre('orgaMenu')"
             >
@@ -18346,6 +18361,7 @@
 
               <div class="txtMenuCadre" id="txtOrgaMenu">Appartenances</div>
             </div>
+            <div style="height : 100%; outline : 0.8px solid rgba(255,255,255,0.2); "></div>
 
             <div
               class="boxMenuCadre"
@@ -18370,7 +18386,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <div class="txtMenuCadre">Silhouette</div>
+              <div class="txtMenuCadre" id="txtContoursMenu">Silhouette</div>
             </div>
 
             <!-- <div
@@ -31034,7 +31050,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           cadreContours.style.display = "";
           cadreOrga.style.display = "";
           // cadreBlason.style.display = "";
-          orgaMenu.click();
+          menusCadre.forEach(menu=>{
+            if(menu.classList.contains('active'))menu.click()
+          });
 
           [
             ...L_pathsSub.find((paths) => paths.id === "ps" + L_config.sub),
@@ -31563,7 +31581,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           cadreContours.style.display = "";
           cadreOrga.style.display = "";
           // cadreBlason.style.display = "";
-          orgaMenu.click();
+          menusCadre.forEach(menu=>{
+            if(menu.classList.contains('active'))menu.click()
+          });
 
           [
             ...L_pathsSub.find((paths) => paths.id === "ps" + L_config.sub),
@@ -32649,8 +32669,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       // const blasonMenu = document.getElementById("blasonMenu");
       const menusCadre = document.querySelectorAll(".boxMenuCadre");
       const txtsMenuCadre = document.querySelectorAll(".txtMenuCadre");
-      document.getElementById("txtOrgaMenu").style.maxWidth =
-        document.getElementById("txtOrgaMenu").scrollWidth + "px";
+      // document.getElementById("txtOrgaMenu").style.maxWidth =
+      //   document.getElementById("txtOrgaMenu").scrollWidth + "px";
 
       const titlesCadre = document.querySelectorAll(".titleCadre");
       const txtsCelCadre = document.querySelectorAll(".txtCelCadre");
@@ -32820,6 +32840,22 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           contoursMenu: "cadreContours",
           // blasonMenu: "cadreBlason",
         };
+
+        if(getId(m_id).classList.contains('active')){
+          getId(D_cadreMenu[m_id]).style.display = "none"
+          getId(m_id).classList.remove('active')
+
+        //    txtsMenuCadre.forEach((t) => {
+        //   if (t.parentNode.id === m_id) {
+        //     t.style.maxWidth = t.scrollWidth + "px";
+        //   } else {
+        //     t.style.maxWidth = "0px";
+        //   }
+        // });
+
+
+          return
+        }
         document.getElementById(D_cadreMenu[m_id]).style.display = "flex";
 
         menusCadre.forEach((m) => {
@@ -32830,13 +32866,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             m.classList.remove("active");
           }
         });
-        txtsMenuCadre.forEach((t) => {
-          if (t.parentNode.id === m_id) {
-            t.style.maxWidth = t.scrollWidth + "px";
-          } else {
-            t.style.maxWidth = "0px";
-          }
-        });
+        // txtsMenuCadre.forEach((t) => {
+        //   if (t.parentNode.id === m_id) {
+        //     t.style.maxWidth = t.scrollWidth + "px";
+        //   } else {
+        //     t.style.maxWidth = "0px";
+        //   }
+        // });
       }
 
       function scalemCadre(scale) {
@@ -33276,7 +33312,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             cadreContours.style.display = "";
             cadreOrga.style.display = "";
             // cadreBlason.style.display = "";
-            orgaMenu.click();
+            menusCadre.forEach(menu=>{
+              if(menu.classList.contains('active'))menu.click()
+            });
+            
 
             [centerBtn, zBox].forEach((btn) => {
               btn.style.left = "";
