@@ -3033,18 +3033,102 @@
         gap: 0.6rem;
         padding-top: 0.6rem;
       }
+        #cacheOrgaD {
+        pointer-events: none;
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        transition: opacity 0.2s ease;
+      }
+      #cacheOrgaD.active{
+        pointer-events : all;
+        opacity : 1
+      }
 
       .itemOrga {
         display: flex;
         justify-content: center;
         align-items: center;
         color: rgb(154, 202, 234);
+        font-size : 0.75rem;
         padding: 0.5rem;
         min-width: 4rem;
         border-radius: 100px;
+        outline : 1px solid rgba(255,255,255,0.1);
         background: rgba(26, 74, 138, 1);
+        transition : transform 0.2s ease, filter 0.2s ease;
+      }
+      .itemOrga:active {
+        filter : brightness(0.92);
+        transform : scale(0.96);
       }
 
+      #cadreOrgaD{
+        display : flex;
+        opacity : 0;
+        pointer-events : none;
+        z-index : 100;
+        position : fixed; 
+        justify-content : center;
+        align-items : center;
+        flex-direction : column;
+        color : white;
+        width : calc(100% - 5rem);
+        height : auto;
+        top : 40%;
+        left : 50%;
+        transform : translateX(-50%) translateY(-50%) scale(0.96);
+        gap : 0.6rem;
+        padding : 0.8rem;
+        border-radius : 0.8rem;
+        outline : 1px solid rgba(255,255,255,0.1);
+        background: rgba(26, 74, 138, 1);
+        transition : opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      #cadreOrgaD.active{
+        transform :  translateX(-50%) translateY(-50%) ;
+        pointer-events : all;
+        opacity : 1;
+      }
+      #wrapperTopOrgaD{
+        display : flex;
+        justify-content : space-between;
+        align-items : center;
+        width : 100%;
+        gap : 0.4rem;
+      }
+      #titleOrgaD{
+        display : flex;
+        text-align : flex-start;
+        justify-content : flex-start;
+        flex : 1;
+        font-size : 1.15rem;
+        font-weight : 600;
+        white-space :wrap;
+
+      }
+      #badgeDateOrgaD{
+        display : flex;
+        align-self  : flex-start;
+        text-align : center;
+        align-items : center;
+        justify-content: center;
+        font-size : 0.92rem;
+        color : rgba(255,255,255,0.75);
+        padding : 0.4rem 0.6rem;
+        border-radius : 500px;
+        background : rgba(44, 123, 226,0.8);
+      }
+
+      #txtOrgaD{
+        display : flex;
+        width : 100%;
+      }
       #cadreContours {
         display: none;
         position: relative;
@@ -17336,6 +17420,39 @@
       <!--------------------------Grand Cadre------------------------------->
 
       <div id="cadre">
+        <div id="cacheOrgaD"></div>
+        <div id="cadreOrgaD">
+          <div id="wrapperTopOrgaD">
+            <div style="display : flex; align-items: center;justify-content : center; padding : 0.4rem; background : rgba(255,255,255,0.1); border-radius : 50%">
+              <svg height="1.2rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23 4C23 3.11596 21.855 2.80151 21.0975 2.59348C21.0279 2.57437 20.9616 2.55615 20.8997 2.53848C19.9537 2.26818 18.6102 2 17 2C15.2762 2 13.8549 2.574 12.8789 3.13176C12.7296 3.21707 12.5726 3.33492 12.4307 3.44143C12.2433 3.58215 12.0823 3.70308 12 3.70308C11.9177 3.70308 11.7567 3.58215 11.5693 3.44143C11.4274 3.33492 11.2704 3.21707 11.1211 3.13176C10.1451 2.574 8.72378 2 7 2C5.38978 2 4.0463 2.26818 3.10028 2.53848C3.04079 2.55547 2.97705 2.57302 2.91016 2.59144C2.156 2.79911 1 3.11742 1 4V17C1 17.3466 1.17945 17.6684 1.47427 17.8507C1.94329 18.1405 2.56224 17.8868 3.11074 17.662C3.30209 17.5835 3.48487 17.5086 3.64972 17.4615C4.4537 17.2318 5.61022 17 7 17C8.2613 17 9.20554 17.4161 9.9134 17.8517C10.0952 17.9636 10.279 18.1063 10.4676 18.2527C10.9338 18.6148 11.4298 19 12 19C12.5718 19 13.0653 18.6162 13.5307 18.2543C13.7195 18.1074 13.9037 17.9642 14.0866 17.8517C14.7945 17.4161 15.7387 17 17 17C18.3898 17 19.5463 17.2318 20.3503 17.4615C20.5227 17.5108 20.7099 17.5898 20.9042 17.6719C21.4443 17.9 22.0393 18.1513 22.5257 17.8507C22.8205 17.6684 23 17.3466 23 17V4ZM3.33252 4.55749C3.13163 4.62161 3 4.81078 3 5.02166V14.8991C3 15.233 3.32089 15.4733 3.64547 15.3951C4.53577 15.1807 5.67777 15 7 15C8.76309 15 10.0794 15.5994 11 16.1721V5.45567C10.7989 5.29593 10.5037 5.08245 10.1289 4.86824C9.35493 4.426 8.27622 4 7 4C5.41509 4 4.12989 4.30297 3.33252 4.55749ZM17 15C15.2369 15 13.9206 15.5994 13 16.1721V5.45567C13.2011 5.29593 13.4963 5.08245 13.8711 4.86824C14.6451 4.426 15.7238 4 17 4C18.5849 4 19.8701 4.30297 20.6675 4.55749C20.8684 4.62161 21 4.81078 21 5.02166V14.8991C21 15.233 20.6791 15.4733 20.3545 15.3951C19.4642 15.1807 18.3222 15 17 15Z" fill="#ffffff"></path> <path d="M2.08735 20.4087C1.86161 19.9047 2.08723 19.3131 2.59127 19.0873C3.05951 18.8792 3.54426 18.7043 4.0318 18.5478C4.84068 18.2883 5.95911 18 7 18C8.16689 18 9.16285 18.6289 9.88469 19.0847C9.92174 19.1081 9.95807 19.131 9.99366 19.1534C10.8347 19.6821 11.4004 20 12 20C12.5989 20 13.1612 19.6829 14.0012 19.1538C14.0357 19.1321 14.0708 19.1099 14.1066 19.0872C14.8291 18.6303 15.8257 18 17 18C18.0465 18 19.1647 18.2881 19.9732 18.548C20.6992 18.7814 21.2378 19.0122 21.3762 19.073C21.8822 19.2968 22.1443 19.8943 21.9118 20.4105C21.6867 20.9106 21.0859 21.1325 20.5874 20.9109C20.1883 20.7349 19.7761 20.5855 19.361 20.452C18.6142 20.2119 17.7324 20 17 20C16.4409 20 15.9037 20.3186 15.0069 20.8841C14.2635 21.3529 13.2373 22 12 22C10.7619 22 9.73236 21.3521 8.98685 20.8829C8.08824 20.3173 7.55225 20 7 20C6.27378 20 5.39222 20.2117 4.64287 20.4522C4.22538 20.5861 3.80974 20.7351 3.4085 20.9128C2.9045 21.1383 2.31305 20.9127 2.08735 20.4087Z" fill="#ffffff"></path> </g></svg>
+            </div>
+
+            <div id="titleOrgaD"></div>
+
+             <button class="cross" id="crossOrgaD" style="margin :0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+              width="100%"
+              height="100%"
+            >
+              <path
+                d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+              />
+              <path
+                d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Z"
+              />
+            </svg>
+          </button>
+
+          </div>
+          <div id="badgeDateOrgaD"></div>
+
+          <div id="txtOrgaD"></div>
+        </div>
+
+
         <div id="cacheIle"></div>
         <div id="cadreIle">
           <button class="cross" id="crossIle">
@@ -33269,6 +33386,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           key: "unionAfricaine",
         },
         { label: "FMI", id: "orgaFMI", key: "fmi" },
+
       ];
 
       //Script const Legend
@@ -53791,12 +53909,102 @@ BQBO: {
         g.remove();
       }
 
+
+      const cadreOrgaD = getId('cadreOrgaD');
+      const titleOrgaD = getId('titleOrgaD')
+      const crossOrgaD = getId('crossOrgaD')
+      const cacheOrgaD = getId('cacheOrgaD')
+      const badgeDateOrgaD = getId('badgeDateOrgaD')
+      const txtOrgaD = getId('txtOrgaD')
+      
+
+      crossOrgaD.addEventListener('click',()=>{
+        cadreOrgaD.classList.remove('active')
+        cacheOrgaD.classList.remove('active')
+      })
+
+      cacheOrgaD.addEventListener('click',()=>{
+        crossOrgaD.click()
+      })
+
+
+      const D_orgaD = {
+  onu: {
+    date: "Depuis 1945 · Organisation mondiale",
+    txt: "Fondée à la fin de la Seconde Guerre mondiale, l'ONU vise à maintenir la paix et la sécurité dans le monde et à favoriser la coopération entre États. Elle compte 193 pays membres et son siège est à New York. Son Conseil de sécurité comprend cinq membres permanents disposant d'un droit de veto : les États-Unis, la Russie, la Chine, la France et le Royaume-Uni.",
+  },
+  moyenOrient: {
+    date: "Région géographique",
+    txt: "Région située à la jonction de l'Asie, de l'Afrique et de l'Europe. Ses limites ne sont pas fixées officiellement et varient selon les usages : on y range souvent l'Égypte, l'Iran, l'Irak, Israël, l'Arabie saoudite et la Turquie. Berceau de grandes civilisations et de plusieurs religions, elle détient d'immenses réserves de pétrole et de gaz.",
+  },
+  opepplus: {
+    date: "Depuis 2016 · Alliance pétrolière",
+    txt: "Alliance entre les pays de l'OPEP et de grands producteurs de pétrole extérieurs à l'organisation, dont la Russie. Née d'une déclaration de coopération signée fin 2016, elle sert à s'accorder sur des niveaux de production pour influencer les prix mondiaux du pétrole.",
+  },
+  exURSS: {
+    date: "1922–1991 · Ancien État",
+    txt: "L'Union soviétique était un État communiste regroupant 15 républiques, dont la Russie, l'Ukraine et le Kazakhstan. Fondée en 1922, grande rivale des États-Unis pendant la guerre froide, elle s'est dissoute en décembre 1991. Elle a donné naissance à 15 pays indépendants, et la Russie en est le principal héritier.",
+  },
+  ligueArabe: {
+    date: "Depuis 1945 · Organisation régionale",
+    txt: "Créée au Caire en 1945 par sept États fondateurs, la Ligue arabe favorise la coopération politique, économique et culturelle entre les pays arabes. Elle compte aujourd'hui 22 membres, et son siège est au Caire (Égypte).",
+  },
+  unesco: {
+    date: "Depuis 1945 · Agence de l'ONU",
+    txt: "Agence de l'ONU pour l'éducation, la science et la culture, l'UNESCO cherche à bâtir la paix par la coopération entre les peuples. Elle est surtout connue pour sa liste du patrimoine mondial, qui protège des sites naturels et culturels d'exception. Siège : Paris.",
+  },
+  banqueMondiale: {
+    date: "Depuis 1944 · Institution financière",
+    txt: "Née de la conférence de Bretton Woods en 1944, elle a d'abord financé la reconstruction après la Seconde Guerre mondiale. Aujourd'hui, elle aide les pays en développement à réduire la pauvreté grâce à des prêts et à de l'assistance technique. Siège : Washington.",
+  },
+  unionAfricaine: {
+    date: "Depuis 2002 · Organisation régionale",
+    txt: "Organisation qui réunit les États du continent africain. Lancée en 2002, elle a succédé à l'Organisation de l'unité africaine, fondée en 1963. Elle œuvre pour l'unité, la paix et le développement de l'Afrique. Siège : Addis-Abeba (Éthiopie).",
+  },
+  fmi: {
+    date: "Depuis 1944 · Institution financière",
+    txt: "Conçu à Bretton Woods en 1944, le Fonds monétaire international veille à la stabilité du système monétaire mondial. Il surveille les économies, conseille les États et prête de l'argent aux pays en difficulté financière. Siège : Washington.",
+  },
+  otan: {
+    date: "Depuis 1949 · Alliance militaire",
+    txt: "Fondée par le traité de l'Atlantique Nord, signé à Washington, l'OTAN repose sur un principe : une attaque contre un membre est une attaque contre tous. Créée face à l'URSS pendant la guerre froide, elle compte aujourd'hui plus de 30 pays. Siège : Bruxelles.",
+  },
+  ue: {
+    date: "Depuis 1993 · Union régionale",
+    txt: "Union politique et économique de 27 pays européens. Issue de la Communauté économique européenne créée par le traité de Rome en 1957, elle prend son nom actuel en 1993 avec le traité de Maastricht. Ses membres partagent un marché unique, des lois communes et, pour une partie d'entre eux, l'euro.",
+  },
+  cop: {
+    date: "Depuis 1995 · Sommet sur le climat",
+    txt: "Conférence annuelle des pays signataires de la Convention de l'ONU sur les changements climatiques, adoptée en 1992. La première a eu lieu à Berlin en 1995. Les États y négocient des engagements contre le réchauffement, comme le protocole de Kyoto (1997) ou l'accord de Paris (2015).",
+  },
+  g20: {
+    date: "Depuis 1999 · Forum économique",
+    txt: "Forum réunissant 19 pays, l'Union européenne et l'Union africaine, créé en 1999 après la crise financière asiatique. Il rassemble d'abord les ministres des finances, puis les chefs d'État depuis 2008. Ses membres représentent l'essentiel de l'économie mondiale.",
+  },
+  opep: {
+    date: "Depuis 1960 · Organisation pétrolière",
+    txt: "Créée à Bagdad en 1960 par cinq pays producteurs (Iran, Irak, Koweït, Arabie saoudite et Venezuela), l'OPEP coordonne les politiques pétrolières de ses membres pour stabiliser les marchés et défendre leurs intérêts. Siège : Vienne (Autriche).",
+  },
+  g7: {
+    date: "Depuis 1975 · Forum informel",
+    txt: "Le G7 réunit sept grandes économies : Allemagne, Canada, États-Unis, France, Italie, Japon et Royaume-Uni. Né à Rambouillet en 1975, après le choc pétrolier de 1973, il rassemble chaque année les dirigeants sous une présidence tournante. L'Union européenne participe aux travaux.",
+  },
+};
+
+      function fillCadreOrgaD(title,date,txt){
+
+        cadreOrgaD.classList.add('active')
+        cacheOrgaD.classList.add('active')
+        titleOrgaD.textContent = title;
+        badgeDateOrgaD.textContent = date;
+        txtOrgaD.textContent = txt;
+
+      }
       function fillCadreOrga(p_id) {
         const p = document.getElementById(p_id);
         let L_orga = [
           "onu",
           "moyenOrient",
-          "g7",
           "opepplus",
           "exURSS",
           "ligueArabe",
@@ -53804,12 +54012,24 @@ BQBO: {
           "banqueMondiale",
           "unionAfricaine",
           "fmi",
+          "otan",
+          "ue",
+          "cop",
+          "g20",
+          "opep",
+          "g7",
+
         ];
 
         let D_orga = {
+          otan: "OTAN",
+          ue: "Union Européenne",
+          cop: "COP21",
+          g20: "G20",
+          opep: "OPEP",
+          g7: "G7",
           onu: "ONU",
           moyenOrient: "Moyent Orient",
-          g7: "G7",
           opepplus: "OPEP+",
           exURSS: "Ex-URSS",
           ligueArabe: "Ligue arabe",
@@ -53834,6 +54054,10 @@ BQBO: {
             orga.className = "itemOrga";
             orga.textContent = D_orga[o];
             document.getElementById("cadreOrga").appendChild(orga);
+
+            orga.addEventListener('click',()=>{
+              fillCadreOrgaD(D_orga[o],D_orgaD[o].date,D_orgaD[o].txt)
+            })
           }
         });
       }
