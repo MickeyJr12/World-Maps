@@ -4759,18 +4759,21 @@
         );
         transform: skewX(-20deg);
         z-index: 1;
-        animation: shineSweep 3s ease-in-out infinite;
+        animation: shineSweep 10s ease-in-out infinite;
       }
 
       @keyframes shineSweep {
         0% {
           left: -60%;
         }
-        35% {
+        10% {
           left: 130%;
         }
-        100% {
+        25% {
           left: 130%;
+        }
+        100%{
+          left : 150%
         }
       }
 
@@ -11428,11 +11431,11 @@
                 </div>
               </div>
 
-              <span class="btn-label" style="display : flex; width : 100%;">Passer premium <span style="flex : 1"></span> 5,99&nbsp;€/an</span>
+              <span class="btn-label" style="display : flex; width : 100%;">Passer premium <span style="flex : 1"></span> 0,89&nbsp;€/mois</span>
               <span class="btn-shine"></span>
             </button>
 
-            <span style="margin-top : 0.25rem; color : rgba(255,255,255,0.75); font-size : 0.7rem;"> 0,5&nbsp;€/mois - Résiliable à tout moment sans frais</span>
+            <span style="margin-top : 0.25rem; color : rgba(255,255,255,0.75); font-size : 0.7rem;">Résiliable à tout moment sans frais</span>
           </div>
 
           <div id="restaurer-achats">Restaurer les achats</div>
@@ -27558,6 +27561,11 @@ setTimeout(hideNativeSplash, 5000);
           getId("dotPremium").click();
         }, 100);
         cadrePremium.classList.add("fullScreen");
+
+        document.querySelectorAll('btn-shine').forEach(shine=>{shine.style.animation = "none"})
+        requestAnimationFrame(()=>{
+          document.querySelectorAll('btn-shine').forEach(shine=>{shine.style.animation = ""})
+        })
       });
 
       crossPremium.addEventListener("click", () => {
