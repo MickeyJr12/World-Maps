@@ -19637,7 +19637,7 @@
               />
             </filter>
           </defs>
-          <g id="viewport">
+          <!-- <g id="viewport"> -->
             <path
               d="m 479.68275,331.6274 -0.077,0.025 -0.258,0.155 -0.147,0.054 -0.134,0.027 -0.105,-0.011 -0.058,-0.091 0.006,-0.139 -0.024,-0.124 -0.02,-0.067 0.038,-0.181 0.086,-0.097 0.119,-0.08 0.188,0.029 0.398,0.116 0.083,0.109 10e-4,0.072 -0.073,0.119 z"
               title="Andorra"
@@ -26104,7 +26104,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               title="Zimbabwe"
               id="ZW"
             />
-          </g>
+          <!-- </g> -->
         </svg>
       </div>
     </div>
@@ -32881,7 +32881,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         : svg.getAttribute("viewBox").split(" ").map(Number);
 
       const paths = [...svg.querySelectorAll("path")].filter(
-        (p) => p.parentNode?.id === "viewport",
+        (p) => p.parentNode?.id === "svgMonde",
       ); // spread → vrai tableau
 
       const pathsId_m = new Map(paths.map((p) => [p.id, p]));
@@ -54718,7 +54718,7 @@ BQBO: {
 
       function resetOverlay(p_id, overlay) {
         //resetoverlay, colorcountry
-        if (!viewSub && getId(p_id)?.parentNode.id !== "viewport") {
+        if (!viewSub && getId(p_id)?.parentNode.id !== "svgMonde") {
           return;
         }
         if (!getId(p_id)) return;
