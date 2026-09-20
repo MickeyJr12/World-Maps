@@ -17712,7 +17712,7 @@
                 </g>
               </g>
             </svg>
-            <span id="fitleFilterColor" style="margin-right: 0.4rem"
+            <span id="titleFilterColor" style="margin-right: 0.4rem"
               >Filtrer par couleur</span
             >
             <div id="wrapperCircleColor"></div>
@@ -57674,7 +57674,7 @@ BQBO: {
       const menuFilterColor = document.getElementById("menuFilterColor");
       const wrapperCircleColor = getId("wrapperCircleColor");
       const itemsFilterColor = document.querySelectorAll(".itemFilterColor");
-      const fitleFilterColor = document.getElementById("fitleFilterColor");
+      const titleFilterColor = document.getElementById("titleFilterColor");
       const titleItmColor = document.getElementById("titleItmColor");
       const L_circleColor = new Map(); // pouvoir le retrouver pour le supprimer après
       let nbrColorFilter = 0; // Nombre de couleurs sélectionnées dans le filtre
@@ -57690,7 +57690,7 @@ BQBO: {
       function createCircleColor(color) {
         const circle = document.createElement("div");
         nbrColorFilter += 1;
-        fitleFilterColor.textContent =
+        titleFilterColor.textContent =
           nbrColorFilter +
           " couleurs" +
           (getId("titleItmColor").querySelector("input").checked
@@ -57706,10 +57706,13 @@ BQBO: {
       }
       function resetCircleColor(color) {
         nbrColorFilter -= 1;
-        fitleFilterColor.textContent =
+        titleFilterColor.textContent =
           nbrColorFilter === 0
             ? "Filtrer par couleurs"
-            : nbrColorFilter + " couleurs";
+            : nbrColorFilter + " couleurs"+  (getId("titleItmColor").querySelector("input").checked
+            ? " (uniquement)"
+            : "");
+
 
         L_circleColor.get(color).classList.add("remove");
         setTimeout(() => {
@@ -57724,7 +57727,7 @@ BQBO: {
 
         requestAnimationFrame(() => {
           if (nbrColorFilter > 0)
-            fitleFilterColor.textContent =
+            titleFilterColor.textContent =
               nbrColorFilter +
               " couleurs" +
               (getId("titleItmColor").querySelector("input").checked
