@@ -2946,13 +2946,13 @@
         border: 0;
         width: 100%;
         height: 1px;
+        margin-top : -0.8rem;
         background: linear-gradient(
           90deg,
           transparent,
           rgba(255, 255, 255, 0.4),
           transparent
         );
-        margin: 0.5rem 0;
       }
 
       .menuCadre {
@@ -3067,7 +3067,9 @@
         max-height: 0;
         width : 100%;
         height : 0;
+        padding-bottom: 0;
         transition : max-height 0.4s ease, height 0.4s ease;
+
       }
       #cadreOrga {
         display: none;
@@ -3077,7 +3079,7 @@
         height: auto;
         width: 100%;
         gap: 0.6rem;
-        padding-top: 0.6rem;
+        padding: 0.6rem 0;
       }
         #cacheOrgaD {
         pointer-events: none;
@@ -3194,7 +3196,8 @@
         position: relative;
         justify-content: center;
         align-items: center;
-        padding: 0rem 1rem;
+        padding: 0.6rem 1rem;
+
         min-height: 4rem;
         height: auto;
         width: 100%;
@@ -3385,6 +3388,7 @@
 
       #gridCadre {
         display: grid;
+        /* outline : 1px solid red; */
         overflow-y: auto;
         overflow-x: hidden;
         scrollbar-width: thin;
@@ -3393,7 +3397,6 @@
         fill: white;
         align-items: center;
         width: 100%;
-        margin-top: -0.9rem; /*0.4+0.5, ligneIn et gap de cadre*/
         flex: 1;
         padding: 0rem 1rem;
         padding-top: 1rem;
@@ -32909,6 +32912,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         wrapperMenuCadre.style.transition = "";
         wrapperMenuCadre.style.height = ""
+        wrapperMenuCadre.style.paddingBottom = ""
+
 
         if(getId(m_id).classList.contains('active')){ // on clique pour fermer les menus
           // getId(D_cadreMenu[m_id]).style.display = "none"
@@ -32929,6 +32934,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         requestAnimationFrame(()=> {
           wrapperMenuCadre.style.maxHeight = getId(D_cadreMenu[m_id]).scrollHeight + "px"
           wrapperMenuCadre.style.height = getId(D_cadreMenu[m_id]).scrollHeight + "px"
+          wrapperMenuCadre.style.paddingBottom = "0.8rem"
         })
         });
         return
@@ -32949,6 +32955,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
          requestAnimationFrame(()=> {
           wrapperMenuCadre.style.maxHeight = getId(D_cadreMenu[m_id]).scrollHeight + "px"
           wrapperMenuCadre.style.height = getId(D_cadreMenu[m_id]).scrollHeight + "px"
+          wrapperMenuCadre.style.paddingBottom = "0.8rem"
         })
 
         // txtsMenuCadre.forEach((t) => {
