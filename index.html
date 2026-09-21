@@ -33029,7 +33029,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           cadre.style.pointerEvents = "all";
         }, 90);
 
-        wrapperMenuCadre.style.transition = "none"
+        if(!viewSub && !L_config.sub){
          menusCadre.forEach(menu=>{
             if(menu.classList.contains('active')){
               menu.click()
@@ -33037,8 +33037,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             }
           });
-        wrapperMenuCadre.style.transition = ""
-
+        }
 
       });
 
