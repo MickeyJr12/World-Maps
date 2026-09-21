@@ -4397,8 +4397,8 @@
         top: 105%;
         left: 50%;
         transform: translateX(-50%);
-        border-top-left-radius: 2rem;
-        border-top-right-radius: 2rem;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
         box-sizing: border-box;
         padding: 1.04rem;
         padding-top: 0.8rem;
@@ -4406,12 +4406,15 @@
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
         width: 100%;
         transition:
-          top 0.3s ease,
-          border-radius 0.3s ease;
+          top 0.4s ease,
+          border-radius 0.6s ease, padding-top 0.4s ease;
       }
 
       #cadreMail.active {
-        top: calc(env(safe-area-inset-top) + 2.5rem);
+        /* top: calc(env(safe-area-inset-top) + 0.5rem); */
+       top: 0;
+        border-radius: 0rem;
+        padding-top: calc(env(safe-area-inset-top) + 0.4rem);
       }
 
       #headerCadreMail {
@@ -8796,7 +8799,7 @@
 
     <!--HTML Home-->
     <div id="cadreMail">
-      <div class="lineMove" id="lineMail" style="margin: 0">
+      <!-- <div class="lineMove" id="lineMail" style="margin: 0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
@@ -8807,7 +8810,7 @@
             d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
           />
         </svg>
-      </div>
+      </div> -->
 
       <span id="headerCadreMail">
         <span id="cancelMail">Annuler</span>
@@ -8842,6 +8845,48 @@
         </svg>
       </span>
       
+      
+      <div class="detailMessageMail">Votre message</div>
+
+      <div class="cadreMessage">
+        <div class="boxSvgMessage">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M7 9H17M7 13H12M21 20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20Z"
+                stroke="#7e3c7e"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </svg>
+        </div>
+
+        <textarea
+          id="textAreaMail"
+          class="txtMail"
+          required=""
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Une idée, un bug, une question ? &#10;Dites-moi tout."
+        ></textarea>
+      </div>
+
+      <span id="errorMessageMail" class="errorCadreMail"></span>
+
+
        <div class="detailMessageMail">Votre e-mail (facultatif)</div>
 
       <div class="cadreMessage">
@@ -8910,47 +8955,7 @@
       </span>
       <span id="errorMail" class="errorCadreMail"></span>
 
-
-      <div class="detailMessageMail">Votre message</div>
-
-      <div class="cadreMessage">
-        <div class="boxSvgMessage">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <path
-                d="M7 9H17M7 13H12M21 20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20Z"
-                stroke="#7e3c7e"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></path>
-            </g>
-          </svg>
-        </div>
-
-        <textarea
-          id="textAreaMail"
-          class="txtMail"
-          required=""
-          autocorrect="off"
-          autocapitalize="off"
-          spellcheck="false"
-          placeholder="Une idée, un bug, une question ? &#10;Dites-moi tout."
-        ></textarea>
-      </div>
-
-      <span id="errorMessageMail" class="errorCadreMail"></span>
-
+      
     </div>
 
 
@@ -30208,9 +30213,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       txtsMail.forEach((txt) => {
         txt.addEventListener("focus", (e) => {
           txt.parentNode.classList.add("active");
-          getId('lineMail').scrollIntoView({
-                  block: "start",
-                });
         });
 
         txt.addEventListener("blur", (e) => {
