@@ -4416,7 +4416,7 @@
         display : flex;
         position : relative;
         align-items : center;
-        justify-content : flex-start;
+        justify-content : center;
         width : 100%;
         margin-top : 0.4rem;
         font-size : 1.2rem;
@@ -4425,6 +4425,8 @@
       }
 
       #cancelMail{
+        position : absolute;
+        left : 0;
         font-size : 0.92rem;
         color : #7e3c7e;
         transition : filter 0.1s ease
@@ -4435,16 +4437,12 @@
       #titleCadreMail{
         display : flex;
         flex-wrap : nowrap;
-        position : absolute ;
-        gap : 0.4rem;
-        left : 50%;
-        transform : translateX(-50%);
-        
+        position : relative ;
       }
       #sendMail{
+        position : absolute;
+        left : calc(100% + 0.4rem);
         height : 1.6rem;
-        margin-right : 1.2rem;
-
       }
       .detailMessageMail{
         font-size : 0.8rem;
@@ -4487,9 +4485,26 @@
     font-size: 0.98rem;
     /* border: 1px solid #E6E8F0;  */
     border-radius: inherit;
-    border : none;
-    background : rgba(250,250,250,0.92);
+    border : 0;
+    background : rgba(248,248,248,0.98);
+    transition : box-shadow 0.2s ease;
   }
+
+  #inputMail:focus,#textAreaMail:focus{
+    outline : 0;
+    border-radius : 1.4rem;
+    box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+  }
+
+  #inputMail::placeholder,
+#textAreaMail::placeholder {
+  font-family: inherit;
+  font-size: inherit;
+  color: #A3A7BA;       
+  opacity: 1;
+}
+
+
   #textAreaMail{
     min-height : 8rem;
   }
@@ -8779,8 +8794,8 @@
           <svg  id="sendMail" fill="#7e3c7e" viewBox="0 0 32 32" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#7e3c7e"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.499,19.173l5.801,-5.849c0.389,-0.392 1.022,-0.394 1.414,-0.006c0.392,0.389 0.395,1.022 0.006,1.414l-5.798,5.847l5.306,8.002c0.207,0.313 0.572,0.483 0.945,0.441c0.373,-0.042 0.691,-0.289 0.824,-0.64l9.024,-23.904c0.138,-0.366 0.05,-0.78 -0.226,-1.058c-0.276,-0.278 -0.689,-0.369 -1.057,-0.233l-24.004,8.892c-0.353,0.13 -0.602,0.448 -0.646,0.821c-0.044,0.373 0.125,0.74 0.438,0.948l7.973,5.325Z"></path><g id="Icon"></g></g></svg>
         </span>
       </span>
-
-      <span style="color : rgba(0,0,0,0.4); font-size :0.88rem;">Une idée, un bug, une question ? Écrivez-moi.</span>
+<!-- 
+      <span style="color : rgba(0,0,0,0.4); font-size :0.88rem;"></span> -->
 
 
       <div class="detailMessageMail">Votre message</div>
@@ -8790,7 +8805,7 @@
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 9H17M7 13H12M21 20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20Z" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
           </div>
 
-        <textarea id="textAreaMail" placeholder="Écrivez votre message ici..."></textarea>
+        <textarea id="textAreaMail" placeholder="Une idée, un bug, une question ? Dites-moi tout"></textarea>
 
 
       </div>
@@ -8805,6 +8820,10 @@
             <input id="inputMail" type="email" placeholder="nom@exemple.com">
       </div>
 
+      <span style="display : flex;gap : 0.25rem; font-size : 0.68rem; color : rgba(0,0,0,0.4);">
+        <svg height= "0.75rem" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11V13C5.5 16.3137 8.18629 19 11.5 19H13.5C16.8137 19 19.5 16.3137 19.5 13V11C19.5 7.68629 16.8137 5 13.5 5H11.5C8.18629 5 5.5 7.68629 5.5 11Z" stroke="#7e3c7e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16H11.75ZM12.5 11H13.25C13.25 10.5858 12.9142 10.25 12.5 10.25V11ZM11.5 10.25C11.0858 10.25 10.75 10.5858 10.75 11C10.75 11.4142 11.0858 11.75 11.5 11.75V10.25ZM12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16C13.25 15.5858 12.9142 15.25 12.5 15.25V16.75ZM11.5 15.25C11.0858 15.25 10.75 15.5858 10.75 16C10.75 16.4142 11.0858 16.75 11.5 16.75V15.25ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75V15.25ZM13.5 16.75C13.9142 16.75 14.25 16.4142 14.25 16C14.25 15.5858 13.9142 15.25 13.5 15.25V16.75ZM13.25 8C13.25 7.58579 12.9142 7.25 12.5 7.25C12.0858 7.25 11.75 7.58579 11.75 8H13.25ZM11.75 9C11.75 9.41421 12.0858 9.75 12.5 9.75C12.9142 9.75 13.25 9.41421 13.25 9H11.75ZM13.25 16V11H11.75V16H13.25ZM12.5 10.25H11.5V11.75H12.5V10.25ZM12.5 15.25H11.5V16.75H12.5V15.25ZM12.5 16.75H13.5V15.25H12.5V16.75ZM11.75 8V9H13.25V8H11.75Z" fill="#7e3c7e"></path> </g></svg>
+        Renseignez ce champ seulement si vous souhaitez recevoir une réponse.
+      </span>
 
 
 
@@ -28275,13 +28294,13 @@ setTimeout(hideNativeSplash, 5000);
       });
 
       play.addEventListener("click", async () => {
-        const ok = await sendMessage("exemple nom", "matthias.desroses972@gmail.com", "premier message de teste");
+//         const ok = await sendMessage("exemple nom", "matthias.desroses972@gmail.com", "premier message de teste");
 
-if (ok) {
-  alert("Message envoyé !");
-} else {
-  alert("Échec de l'envoi, réessaie.");
-}
+// if (ok) {
+//   alert("Message envoyé !");
+// } else {
+//   alert("Échec de l'envoi, réessaie.");
+// }
 
         cChooseTrouver = null;
         viewMaps = false;
