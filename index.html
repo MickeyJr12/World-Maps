@@ -32907,12 +32907,14 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       //Fin script cadreile
 
-      function selectMenuCadre(m_id) {
-        let D_cadreMenu = {
+       let D_cadreMenu = {
           orgaMenu: "cadreOrga",
           contoursMenu: "cadreContours",
           // blasonMenu: "cadreBlason",
         };
+        
+      function selectMenuCadre(m_id) {
+       
 
         wrapperMenuCadre.style.transition = "";
         wrapperMenuCadre.style.height = ""
@@ -32935,11 +32937,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             document.getElementById(D_cadreMenu[m.id]).style.display = "none";
             m.classList.remove("active");
           }
-        requestAnimationFrame(()=> {
+        
           wrapperMenuCadre.style.maxHeight = getId(D_cadreMenu[m_id]).scrollHeight + "px"
           wrapperMenuCadre.style.height = getId(D_cadreMenu[m_id]).scrollHeight + "px"
           wrapperMenuCadre.style.paddingBottom = "0.8rem"
-        })
+        
         });
         return
         }
@@ -32956,11 +32958,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           }
         });
 
-         requestAnimationFrame(()=> {
+        
           wrapperMenuCadre.style.maxHeight = getId(D_cadreMenu[m_id]).scrollHeight + "px"
           wrapperMenuCadre.style.height = getId(D_cadreMenu[m_id]).scrollHeight + "px"
           wrapperMenuCadre.style.paddingBottom = "0.8rem"
-        })
+        
 
         // txtsMenuCadre.forEach((t) => {
         //   if (t.parentNode.id === m_id) {
@@ -33014,6 +33016,18 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           cadre.style.opacity = "1";
           cadre.style.pointerEvents = "all";
         }, 90);
+
+        wrapperMenuCadre.style.transition = "none"
+         menusCadre.forEach(menu=>{
+            if(menu.classList.contains('active')){
+              menu.click()
+              menu.click()
+
+            }
+          });
+        wrapperMenuCadre.style.transition = ""
+
+
       });
 
       const contentInfoSub = getId("contentInfoSub");
@@ -54217,6 +54231,8 @@ let D_wikiLink = {
             })
           }
         });
+
+
       }
 
       function countryClick(id, name, element) {
