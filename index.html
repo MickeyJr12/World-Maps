@@ -28841,7 +28841,18 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         d: null,
         sub: false,
       };
-
+      const L_silExclu = [
+    "IL",
+    "GO",
+    "JU",
+    "PS",
+    "UM-JQ",
+    "UM-WQ",
+    "UM-HQ",
+    "UM-MQ",
+    "UM-DQ",
+    "UM-FQ"
+]
       const L_exclus = [
         "GO",
         "HM",
@@ -29234,8 +29245,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             );
         }
 
+
         if (L_config.q === "contourQ" || L_config.r === "contourR") {
-          paysDispos = paysDispos.filter((id) => !["PS"].includes(id));
+          paysDispos = paysDispos.filter((id) => !L_silExclu.includes(id));
         }
 
         let paysDisposTrouver = Object.keys(L_q).filter(
@@ -59334,7 +59346,22 @@ let D_wikiLink = {
       }
 
 
+      let L_ephe = []
+paths.forEach(p=> {
+  
+  fetch(`flag_c/${p.id.toLowerCase()}.svg`)
+                .then((r) => {
+                  if (!r.ok) throw new Error();
+                  return r.text();
+                })
 
+                .then((svg) => {
+                  console.log("ok")
+                })
+                .catch(() => {
+                  L_ephe.push(p.id)
+                });
+})
 
 
       //  loop()
