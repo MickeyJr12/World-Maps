@@ -18731,7 +18731,7 @@
                 </svg>
               </div>
               <div class="contentCelCadre">
-                <div class="titleCelCadre">Taux de CO₂ équivalent</div>
+                <div class="titleCelCadre">Taux de CO₂ équivalent/an</div>
                 <div class="txtCelCadre" id="co2e">
                   <div class="loadingCadre"></div>
                 </div>
@@ -54457,7 +54457,8 @@ let D_wikiLink = {
           } else {
             co2e.style.whiteSpace = "pre-wrap";
             co2e.textContent =
-              Math.floor(P_info[id].co2e).toLocaleString("fr-FR") + " tCO₂e/an";
+              Math.floor(P_info[id].co2e).toLocaleString("fr-FR");
+              
           }
 
           if (P_info[id].pib === null || P_info[id].pib === undefined) {
