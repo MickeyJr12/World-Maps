@@ -4398,8 +4398,8 @@
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
         box-sizing : border-box;
-        padding : 1.5rem;
-        padding-top: 1rem;
+        padding : 0.8rem;
+        padding-top: 0.8rem;
         background: rgb(255, 250, 250);
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
         width: 100%;
@@ -4409,7 +4409,42 @@
       }
 
        #cadreMail.active {
-        top: calc(18vh + 1rem);
+        top: calc(env(safe-area-inset-top) + 2.5rem);
+      }
+
+      #headerCadreMail{
+        display : flex;
+        position : relative;
+        align-items : center;
+        justify-content : flex-start;
+        width : 100%;
+        margin-top : 0.4rem;
+        font-size : 1.2rem;
+        font-weight : 600;
+        gap : 0.4rem
+      }
+
+      #cancelMail{
+        font-size : 0.92rem;
+        color : #7e3c7e;
+        transition : filter 0.1s ease
+      }
+      #cancelMail:active{
+        filter : brightness(0.6);
+      }
+      #titleCadreMail{
+        display : flex;
+        flex-wrap : nowrap;
+        position : absolute ;
+        gap : 0.4rem;
+        left : 50%;
+        transform : translateX(-50%);
+        
+      }
+      #sendMail{
+        height : 1.6rem;
+        margin-right : 1.2rem;
+
       }
       .detailMessageMail{
         font-size : 0.8rem;
@@ -4427,6 +4462,7 @@
         justify-content : space-between;
         box-sizing : border-box;
         padding : 0.6rem;
+        gap : 0.6rem;
         height : auto;
         width : 100%;
         border-radius : 1rem;
@@ -4439,9 +4475,8 @@
         box-sizing : border-box;
         height : 100%;
         align-items :center;
-        padding : 0 1.4rem;
         svg{
-          height : 1.2rem;
+          height : 1.25rem;
 
         }
       }
@@ -4453,10 +4488,10 @@
     /* border: 1px solid #E6E8F0;  */
     border-radius: inherit;
     border : none;
-    background : rgba(250,250,250,0.6);
+    background : rgba(250,250,250,0.92);
   }
   #textAreaMail{
-    min-height : 7.5rem;
+    min-height : 8rem;
   }
 #inputMail {
   height : clamp(2.6rem, 2.6rem, 2.6rem);
@@ -7707,6 +7742,7 @@
         margin-bottom: -2rem;
         width: 100%;
         height: 1rem;
+        transform : scaleX(0.92);
         box-sizing: border-box;
         transition: opacity 0.2s ease;
       }
@@ -8737,9 +8773,11 @@
         </svg>
       </div>
 
-      <span style="display : flex; align-items : center; justify-content : center; font-size : 1.2rem; font-weight : 600; gap : 0.4rem">
-        Me contacter
-        <svg height ="1.25rem" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>send-email</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-568.000000, -254.000000)" fill="#7e3c7e"> <path d="M584,283 C584,283 580.872,276.976 580,275 L596.075,259.779 L584,283 L584,283 Z M572,270 L595,259 L579,274 C578.996,273.996 572,270 572,270 L572,270 Z M599,255 C597.844,255.563 568,270 568,270 C568,270 578.052,276.059 578,276 C577.983,275.981 584,287 584,287 C584,287 599.75,256.5 600,256 C600.219,255.375 599.75,254.688 599,255 L599,255 Z" id="send-email" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+      <span id="headerCadreMail">
+        <span id="cancelMail">Annuler</span>
+        <span id="titleCadreMail">Me contacter
+          <svg  id="sendMail" fill="#7e3c7e" viewBox="0 0 32 32" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:serif="http://www.serif.com/" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#7e3c7e"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M11.499,19.173l5.801,-5.849c0.389,-0.392 1.022,-0.394 1.414,-0.006c0.392,0.389 0.395,1.022 0.006,1.414l-5.798,5.847l5.306,8.002c0.207,0.313 0.572,0.483 0.945,0.441c0.373,-0.042 0.691,-0.289 0.824,-0.64l9.024,-23.904c0.138,-0.366 0.05,-0.78 -0.226,-1.058c-0.276,-0.278 -0.689,-0.369 -1.057,-0.233l-24.004,8.892c-0.353,0.13 -0.602,0.448 -0.646,0.821c-0.044,0.373 0.125,0.74 0.438,0.948l7.973,5.325Z"></path><g id="Icon"></g></g></svg>
+        </span>
       </span>
 
       <span style="color : rgba(0,0,0,0.4); font-size :0.88rem;">Une idée, un bug, une question ? Écrivez-moi.</span>
@@ -8762,9 +8800,9 @@
 
       <div class="cadreMessage">
         <div class="boxSvgMessage">
-        <svg fill="#7e3c7e" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" ><path d="M12,0A12.013,12.013,0,0,0,0,12c-.125,9.574,11.159,15.429,18.9,9.817a1.5,1.5,0,1,0-1.727-2.453C11.42,23.582,2.863,19.146,3,12,3.472.07,20.529.072,21,12v1.5a1.5,1.5,0,0,1-3,0V12C17.748,4.071,6.251,4.072,6,12a6.017,6.017,0,0,0,10.078,4.388A4.5,4.5,0,0,0,24,13.5V12A12.013,12.013,0,0,0,12,0Zm0,15a3,3,0,0,1,0-6A3,3,0,0,1,12,15Z"/></svg>
+        <svg fill="#7e3c7e" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" ><path d="M12,0A12.013,12.013,0,0,0,0,12c-.126,9.573,11.159,15.429,18.9,9.817a1,1,0,1,0-1.152-1.634C11.3,24.856,1.9,19.978,2,12,2.549-1.266,21.453-1.263,22,12v2a2,2,0,0,1-4,0V12C17.748,4.071,6.251,4.072,6,12a6.017,6.017,0,0,0,10.52,3.933A4,4,0,0,0,24,14V12A12.013,12.013,0,0,0,12,0Zm0,16a4,4,0,0,1,0-8A4,4,0,0,1,12,16Z"/></svg>
           </div>
-            <input id="inputMail" type="email" placeholder="Votre e-mail">
+            <input id="inputMail" type="email" placeholder="nom@exemple.com">
       </div>
 
 
@@ -26018,6 +26056,7 @@ setTimeout(hideNativeSplash, 5000);
       const toggleSouv = document.getElementById("toggleSouv");
 
       const mail = document.getElementById("mail");
+      const cancelMail = getId('cancelMail')
       const cadreMail = getId('cadreMail')
       const propos = getId("propos");
       const btnThank = getId("btnThank");
@@ -28188,6 +28227,12 @@ setTimeout(hideNativeSplash, 5000);
 
         cadreMail.classList.add('active')
       });
+
+     cancelMail.addEventListener("click", () => {
+
+        cadreMail.classList.remove('active')
+      });
+
 
       document.querySelectorAll(".btnSlideS").forEach((btn) => {
         btn.addEventListener("click", () => {
