@@ -4407,12 +4407,13 @@
         width: 100%;
         transition:
           top 0.4s ease,
-          border-radius 0.6s ease, padding-top 0.4s ease;
+          border-radius 0.6s ease,
+          padding-top 0.4s ease;
       }
 
       #cadreMail.active {
         /* top: calc(env(safe-area-inset-top) + 0.5rem); */
-       top: 0;
+        top: 0;
         border-radius: 0rem;
         padding-top: calc(env(safe-area-inset-top) + 0.4rem);
       }
@@ -8844,8 +8845,7 @@
           </g>
         </svg>
       </span>
-      
-      
+
       <div class="detailMessageMail">Votre message</div>
 
       <div class="cadreMessage">
@@ -8886,8 +8886,7 @@
 
       <span id="errorMessageMail" class="errorCadreMail"></span>
 
-
-       <div class="detailMessageMail">Votre e-mail (facultatif)</div>
+      <div class="detailMessageMail">Votre e-mail (facultatif)</div>
 
       <div class="cadreMessage">
         <div class="boxSvgMessage">
@@ -8954,12 +8953,7 @@
         Renseignez ce champ seulement si vous souhaitez recevoir une réponse.
       </span>
       <span id="errorMail" class="errorCadreMail"></span>
-
-      
     </div>
-
-
-
 
     <div id="cadreTrackDays">
       <div class="lineMove">
@@ -30196,17 +30190,80 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreMail.classList.remove("active");
       });
 
+      const CONTACT_EMAIL = "contact.globusquiz@gmail.com"; // remplace par ton adresse
+      const estCapacitor = window.Capacitor?.isNativePlatform?.() === true;
+
+      // Affiche un message : boîte native sur Capacitor, alert() sur la PWA
+      async function afficherMessage(titre, message) {
+        const Dialog = window.Capacitor?.Plugins?.Dialog;
+        if (estCapacitor && Dialog) {
+          await Dialog.alert({ title: titre, message });
+        } else {
+          alert(`${titre}\n\n${message}`);
+        }
+      }
+
+      // Propose de te contacter par mail quand l'envoi a échoué
+      async function proposerMail(texte) {
+        const question = `L'envoi a échoué. Tu peux aussi m'écrire directement à ${CONTACT_EMAIL}.`;
+        const Dialog = window.Capacitor?.Plugins?.Dialog;
+        let veutEcrire;
+
+        if (estCapacitor && Dialog) {
+          const { value } = await Dialog.confirm({
+            title: "Échec de l'envoi",
+            message: question,
+            okButtonTitle: "Écrire un mail",
+            cancelButtonTitle: "Fermer",
+          });
+          veutEcrire = value;
+        } else {
+          veutEcrire = confirm(
+            `Échec de l'envoi\n\n${question}\n\nOuvrir ton application mail ?`,
+          );
+        }
+
+        if (!veutEcrire) return;
+
+        const url =
+          `mailto:${CONTACT_EMAIL}` +
+          `?subject=${encodeURIComponent("Message depuis Globus Quiz")}` +
+          `&body=${encodeURIComponent(texte)}`; // ton message est recopié dans le mail
+
+        const AppLauncher = window.Capacitor?.Plugins?.AppLauncher;
+        if (estCapacitor && AppLauncher) {
+          await AppLauncher.openUrl({ url });
+        } else {
+          window.location.href = url;
+        }
+      }
+
       sendMail.addEventListener("click", async () => {
         if (inputMail.value.length > 0 && !inputMail.checkValidity()) {
           errorMail.classList.add("active");
-          errorMail.textContent = "Veuillez saisir une adresse valide, ou alors laisser le champ vide";
+          errorMail.textContent =
+            "Veuillez saisir une adresse valide, ou alors laisser le champ vide";
           return;
         }
-        const ok = await sendMessage(inputMail.value, textAreaMail.value);
+        errorMail.classList.remove("active");
+
+        sendMail.style.pointerEvents = "none"; // évite le double envoi
+        const ok = await sendMessage(
+          inputMail.value.trim(),
+          textAreaMail.value.trim(),
+        );
+        sendMail.style.pointerEvents = "";
+
         if (ok) {
-          alert("Message envoyé !");
+          await afficherMessage(
+            "Message envoyé",
+            "Merci ! Je vous réponds dès que possible.",
+          );
+          textAreaMail.value = "";
+          inputMail.value = "";
+          cancelMail.click()
         } else {
-          alert("Échec de l'envoi, réessaie.");
+          await proposerMail(textAreaMail.value); // le texte saisi est conservé
         }
       });
 
