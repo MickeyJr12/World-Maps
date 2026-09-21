@@ -4382,6 +4382,89 @@
           transform: scale(1);
         }
       }
+     
+      #cadreMail{  /* // mettre keyframe sur l'icone send message */
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        touch-action: none;
+        z-index: 20;
+        gap: 0.4rem;
+        bottom: 0;
+        top: 105%;
+        left : 50%;
+        transform : translateX(-50%);
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        box-sizing : border-box;
+        padding : 1.5rem;
+        padding-top: 1rem;
+        background: rgb(255, 250, 250);
+        box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
+        width: 100%;
+        transition:
+          top 0.3s ease,
+          border-radius 0.3s ease;
+      }
+
+       #cadreMail.active {
+        top: calc(18vh + 1rem);
+      }
+      .detailMessageMail{
+        font-size : 0.8rem;
+        align-self: flex-start;
+        margin-top : 1rem;
+        margin-bottom : -0.2rem;
+        color : rgba(0,0,0,0.5);
+        font-weight : 600;
+        text-transform: uppercase;
+      }
+
+      .cadreMessage{
+        display : flex;
+        align-items : center;
+        justify-content : space-between;
+        box-sizing : border-box;
+        padding : 0.6rem;
+        height : auto;
+        width : 100%;
+        border-radius : 1rem;
+        background : white;
+        box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+        
+      }
+      .boxSvgMessage{
+        display : flex;
+        box-sizing : border-box;
+        height : 100%;
+        align-items :center;
+        padding : 0 1.4rem;
+        svg{
+          height : 1.2rem;
+
+        }
+      }
+  #inputMail, #textAreaMail {
+    flex : 1;
+    box-sizing: border-box; 
+    padding: 0.6rem; 
+    font-size: 0.98rem;
+    /* border: 1px solid #E6E8F0;  */
+    border-radius: inherit;
+    border : none;
+    background : rgba(250,250,250,0.6);
+  }
+  #textAreaMail{
+    min-height : 7.5rem;
+  }
+#inputMail {
+  height : clamp(2.6rem, 2.6rem, 2.6rem);
+}
+
+
+
+
 
       .btnHome {
         display: flex;
@@ -7618,6 +7701,7 @@
 
       .lineMove {
         display: flex;
+        opacity : 0.75;
         justify-content: center;
         align-items: center;
         margin-bottom: -2rem;
@@ -8639,6 +8723,58 @@
     </div>
 
     <!--HTML Home-->
+    <div id="cadreMail">
+         <div class="lineMove" id="lineMail" style=" margin : 0;">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 11 24 3"
+        >
+          <path
+            d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
+          />
+        </svg>
+      </div>
+
+      <span style="display : flex; align-items : center; justify-content : center; font-size : 1.2rem; font-weight : 600; gap : 0.4rem">
+        Me contacter
+        <svg height ="1.25rem" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>send-email</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-568.000000, -254.000000)" fill="#7e3c7e"> <path d="M584,283 C584,283 580.872,276.976 580,275 L596.075,259.779 L584,283 L584,283 Z M572,270 L595,259 L579,274 C578.996,273.996 572,270 572,270 L572,270 Z M599,255 C597.844,255.563 568,270 568,270 C568,270 578.052,276.059 578,276 C577.983,275.981 584,287 584,287 C584,287 599.75,256.5 600,256 C600.219,255.375 599.75,254.688 599,255 L599,255 Z" id="send-email" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+      </span>
+
+      <span style="color : rgba(0,0,0,0.4); font-size :0.88rem;">Une idée, un bug, une question ? Écrivez-moi.</span>
+
+
+      <div class="detailMessageMail">Votre message</div>
+
+      <div class="cadreMessage">
+        <div class="boxSvgMessage">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 9H17M7 13H12M21 20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20Z" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          </div>
+
+        <textarea id="textAreaMail" placeholder="Écrivez votre message ici..."></textarea>
+
+
+      </div>
+
+
+      <div class="detailMessageMail">Votre e-mail (facultatif)</div>
+
+      <div class="cadreMessage">
+        <div class="boxSvgMessage">
+        <svg fill="#7e3c7e" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" ><path d="M12,0A12.013,12.013,0,0,0,0,12c-.125,9.574,11.159,15.429,18.9,9.817a1.5,1.5,0,1,0-1.727-2.453C11.42,23.582,2.863,19.146,3,12,3.472.07,20.529.072,21,12v1.5a1.5,1.5,0,0,1-3,0V12C17.748,4.071,6.251,4.072,6,12a6.017,6.017,0,0,0,10.078,4.388A4.5,4.5,0,0,0,24,13.5V12A12.013,12.013,0,0,0,12,0Zm0,15a3,3,0,0,1,0-6A3,3,0,0,1,12,15Z"/></svg>
+          </div>
+            <input id="inputMail" type="email" placeholder="Votre e-mail">
+      </div>
+
+
+
+
+    </div>
+
+
+
+
     <div id="cadreTrackDays">
       <div class="lineMove">
         <svg
@@ -25882,6 +26018,7 @@ setTimeout(hideNativeSplash, 5000);
       const toggleSouv = document.getElementById("toggleSouv");
 
       const mail = document.getElementById("mail");
+      const cadreMail = getId('cadreMail')
       const propos = getId("propos");
       const btnThank = getId("btnThank");
       const btnShare = getId("btnShare");
@@ -28043,9 +28180,13 @@ setTimeout(hideNativeSplash, 5000);
       });
 
       mail.addEventListener("click", () => {
-        const sujet = encodeURIComponent("Feedback Globus Quiz");
-        const corps = encodeURIComponent("Bonjour,\n\n");
-        window.location.href = `mailto:contact.globusquiz@gmail.com?subject=${sujet}&body=${corps}`;
+
+        // const sujet = encodeURIComponent("Feedback Globus Quiz");
+        // const corps = encodeURIComponent("Bonjour,\n\n");
+        // window.location.href = `mailto:contact.globusquiz@gmail.com?subject=${sujet}&body=${corps}`;
+
+
+        cadreMail.classList.add('active')
       });
 
       document.querySelectorAll(".btnSlideS").forEach((btn) => {
@@ -28088,7 +28229,15 @@ setTimeout(hideNativeSplash, 5000);
         });
       });
 
-      play.addEventListener("click", () => {
+      play.addEventListener("click", async () => {
+        const ok = await sendMessage("exemple nom", "matthias.desroses972@gmail.com", "premier message de teste");
+
+if (ok) {
+  alert("Message envoyé !");
+} else {
+  alert("Échec de l'envoi, réessaie.");
+}
+
         cChooseTrouver = null;
         viewMaps = false;
         clonepColor_m.clear();
@@ -59345,23 +59494,22 @@ let D_wikiLink = {
         console.log(svg.getAttribute("viewBox").split(" ").map(Number));
       }
 
-
-      let L_ephe = []
-paths.forEach(p=> {
+//       let L_ephe = []
+// paths.forEach(p=> {
   
-  fetch(`flag_c/${p.id.toLowerCase()}.svg`)
-                .then((r) => {
-                  if (!r.ok) throw new Error();
-                  return r.text();
-                })
+//   fetch(`flag_c/${p.id.toLowerCase()}.svg`)
+//                 .then((r) => {
+//                   if (!r.ok) throw new Error();
+//                   return r.text();
+//                 })
 
-                .then((svg) => {
-                  console.log("ok")
-                })
-                .catch(() => {
-                  L_ephe.push(p.id)
-                });
-})
+//                 .then((svg) => {
+//                   console.log("ok")
+//                 })
+//                 .catch(() => {
+//                   L_ephe.push(p.id)
+//                 });
+// })
 
 
       //  loop()
@@ -59384,6 +59532,30 @@ paths.forEach(p=> {
       // console.log(L_ephe2)
 
       // Script achats
+      
+// Test web3forms
+async function sendMessage(name, email, message) {
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        access_key: "596cb392-1d52-402c-aa38-52c72e64f7ba",
+        name,
+        email,
+        message,
+      }),
+    });
+
+    const data = await response.json();
+    return data.success;
+  } catch (error) {
+    return false;
+  }
+}
+//fin testweb3forms
+      
+      
       const REVENUECAT_API_KEY_IOS = "test_KzoqzmnVIGKMxiHyWEwkmLTmNJT"; // ⚠️ clé de TEST — à remplacer par la clé de prod avant publication
 
       // Identifiants tels que définis dans RevenueCat (entitlements)
