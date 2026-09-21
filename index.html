@@ -4398,7 +4398,7 @@
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
         box-sizing : border-box;
-        padding : 0.8rem;
+        padding : 1.04rem;
         padding-top: 0.8rem;
         background: rgb(255, 250, 250);
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
@@ -4482,7 +4482,7 @@
     flex : 1;
     box-sizing: border-box; 
     padding: 0.6rem; 
-    font-size: 0.98rem;
+    font-size: 0.92rem;
     /* border: 1px solid #E6E8F0;  */
     border-radius: inherit;
     border : 0;
@@ -8805,7 +8805,13 @@
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 9H17M7 13H12M21 20L17.6757 18.3378C17.4237 18.2118 17.2977 18.1488 17.1656 18.1044C17.0484 18.065 16.9277 18.0365 16.8052 18.0193C16.6672 18 16.5263 18 16.2446 18H6.2C5.07989 18 4.51984 18 4.09202 17.782C3.71569 17.5903 3.40973 17.2843 3.21799 16.908C3 16.4802 3 15.9201 3 14.8V7.2C3 6.07989 3 5.51984 3.21799 5.09202C3.40973 4.71569 3.71569 4.40973 4.09202 4.21799C4.51984 4 5.0799 4 6.2 4H17.8C18.9201 4 19.4802 4 19.908 4.21799C20.2843 4.40973 20.5903 4.71569 20.782 5.09202C21 5.51984 21 6.0799 21 7.2V20Z" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
           </div>
 
-        <textarea id="textAreaMail" placeholder="Une idée, un bug, une question ? Dites-moi tout"></textarea>
+        <textarea id="textAreaMail" 
+            required=""
+            tabindex="-1"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+        placeholder="Une idée, un bug, une question ? Dites-moi tout"></textarea>
 
 
       </div>
@@ -8817,11 +8823,17 @@
         <div class="boxSvgMessage">
         <svg fill="#7e3c7e" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" ><path d="M12,0A12.013,12.013,0,0,0,0,12c-.126,9.573,11.159,15.429,18.9,9.817a1,1,0,1,0-1.152-1.634C11.3,24.856,1.9,19.978,2,12,2.549-1.266,21.453-1.263,22,12v2a2,2,0,0,1-4,0V12C17.748,4.071,6.251,4.072,6,12a6.017,6.017,0,0,0,10.52,3.933A4,4,0,0,0,24,14V12A12.013,12.013,0,0,0,12,0Zm0,16a4,4,0,0,1,0-8A4,4,0,0,1,12,16Z"/></svg>
           </div>
-            <input id="inputMail" type="email" placeholder="nom@exemple.com">
+            <input id="inputMail"
+            required=""
+            tabindex="-1"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            type="email" placeholder="nom@exemple.com">
       </div>
 
       <span style="display : flex;gap : 0.25rem; font-size : 0.68rem; color : rgba(0,0,0,0.4);">
-        <svg height= "0.75rem" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11V13C5.5 16.3137 8.18629 19 11.5 19H13.5C16.8137 19 19.5 16.3137 19.5 13V11C19.5 7.68629 16.8137 5 13.5 5H11.5C8.18629 5 5.5 7.68629 5.5 11Z" stroke="#7e3c7e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16H11.75ZM12.5 11H13.25C13.25 10.5858 12.9142 10.25 12.5 10.25V11ZM11.5 10.25C11.0858 10.25 10.75 10.5858 10.75 11C10.75 11.4142 11.0858 11.75 11.5 11.75V10.25ZM12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16C13.25 15.5858 12.9142 15.25 12.5 15.25V16.75ZM11.5 15.25C11.0858 15.25 10.75 15.5858 10.75 16C10.75 16.4142 11.0858 16.75 11.5 16.75V15.25ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75V15.25ZM13.5 16.75C13.9142 16.75 14.25 16.4142 14.25 16C14.25 15.5858 13.9142 15.25 13.5 15.25V16.75ZM13.25 8C13.25 7.58579 12.9142 7.25 12.5 7.25C12.0858 7.25 11.75 7.58579 11.75 8H13.25ZM11.75 9C11.75 9.41421 12.0858 9.75 12.5 9.75C12.9142 9.75 13.25 9.41421 13.25 9H11.75ZM13.25 16V11H11.75V16H13.25ZM12.5 10.25H11.5V11.75H12.5V10.25ZM12.5 15.25H11.5V16.75H12.5V15.25ZM12.5 16.75H13.5V15.25H12.5V16.75ZM11.75 8V9H13.25V8H11.75Z" fill="#7e3c7e"></path> </g></svg>
+        <svg height= "0.92rem" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11V13C5.5 16.3137 8.18629 19 11.5 19H13.5C16.8137 19 19.5 16.3137 19.5 13V11C19.5 7.68629 16.8137 5 13.5 5H11.5C8.18629 5 5.5 7.68629 5.5 11Z" stroke="#7e3c7e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16H11.75ZM12.5 11H13.25C13.25 10.5858 12.9142 10.25 12.5 10.25V11ZM11.5 10.25C11.0858 10.25 10.75 10.5858 10.75 11C10.75 11.4142 11.0858 11.75 11.5 11.75V10.25ZM12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16C13.25 15.5858 12.9142 15.25 12.5 15.25V16.75ZM11.5 15.25C11.0858 15.25 10.75 15.5858 10.75 16C10.75 16.4142 11.0858 16.75 11.5 16.75V15.25ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75V15.25ZM13.5 16.75C13.9142 16.75 14.25 16.4142 14.25 16C14.25 15.5858 13.9142 15.25 13.5 15.25V16.75ZM13.25 8C13.25 7.58579 12.9142 7.25 12.5 7.25C12.0858 7.25 11.75 7.58579 11.75 8H13.25ZM11.75 9C11.75 9.41421 12.0858 9.75 12.5 9.75C12.9142 9.75 13.25 9.41421 13.25 9H11.75ZM13.25 16V11H11.75V16H13.25ZM12.5 10.25H11.5V11.75H12.5V10.25ZM12.5 15.25H11.5V16.75H12.5V15.25ZM12.5 16.75H13.5V15.25H12.5V16.75ZM11.75 8V9H13.25V8H11.75Z" fill="#7e3c7e"></path> </g></svg>
         Renseignez ce champ seulement si vous souhaitez recevoir une réponse.
       </span>
 
