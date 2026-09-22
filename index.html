@@ -61323,7 +61323,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               inputSD.getBoundingClientRect().height -
               parseInt(cadreSD.style.top) ||
           full ||
-          (document.activeElement === inputSD && isMobile)
+          (tfInputSD && isMobile)
         ) {
           moveSD = false;
         }
@@ -62107,6 +62107,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }, 10);
       });
 
+      let tfInputSD = false;
+      inputSD.addEventListener('focus',(e)=>{
+        e.preventDefault()
+        inputSD.focus({preventScroll : true})
+        tfInputSD = true
+      })
+      inputSD.addEventListener('blur',()=>tfInputSD = false)
       inputSD.addEventListener("input", (e) => {
         let Ld = {};
         for (const clefD of Object.keys(D_nDevises)) {
