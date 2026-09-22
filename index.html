@@ -114,6 +114,8 @@
         transition: background 0.1s ease;
       }
 
+
+
       /*CSS Flemme*/
 
       #phoneFlemme {
@@ -4393,9 +4395,9 @@
         touch-action: none;
         z-index: 20;
         gap: 0.4rem;
-        bottom: 0;
         top: 105%;
         left: 50%;
+        min-height : 100vh;
         transform: translateX(-50%);
         border-top-left-radius: 3rem;
         border-top-right-radius: 3rem;
@@ -4409,8 +4411,41 @@
           top 0.4s ease,
           border-radius 0.6s ease,
           padding-top 0.4s ease;
+        }
+        #mapMail{
+          position : absolute;
+          z-index : -1;
+          pointer-events : none;
+          opacity : 0.08;
+          bottom : 4rem;
+          width : 110%;
+        }
+        #loaderMail{
+          display : flex;
+          position : relative;
+           --c: no-repeat linear-gradient(rgba(126, 60, 126,0.75) 0 0);  
+          opacity : 0;
+          transition : opacity 0.1s ease;
+          animation : none;
+        }
+        #loaderMail.active{
+          opacity : 1;
+        animation: l16 3s infinite;
+        }
+
+        
+      #envoiMail{
+        position : absolute;
+        opacity : 0;
+        left : 50%;
+        transform : translateX(-50%);
+        color : #7E3C7E;
+        transition : opacity 0.1s ease;
       }
 
+      #envoiMail.active{
+        opacity : 1;
+      }
       #cadreMail.active {
         /* top: calc(env(safe-area-inset-top) + 0.5rem); */
         top: 0;
@@ -4444,6 +4479,10 @@
         display: flex;
         flex-wrap: nowrap;
         position: relative;
+        transition : opacity 0.1s ease;
+      }
+      #titleCadreMail.hide {
+        opacity :0;
       }
       #sendMail {
         position: absolute;
@@ -4451,11 +4490,14 @@
         pointer-events: none;
         right: 0;
         height: 2rem;
-        transition: fill 0.2s ease;
+        transition: fill 0.2s ease, opacity 0.1s ease;
       }
       #sendMail.active {
         pointer-events: all;
         fill: #7e3c7e;
+      }
+      #sendMail.hide{
+        opacity : 0;
       }
       .detailMessageMail {
         font-size: 0.8rem;
@@ -8248,6 +8290,7 @@
 
       /* HTML: <div class="loader"></div> */
       .loader {
+        pointer-events : none;
         display: none;
         position: absolute;
         bottom: 0;
@@ -8952,6 +8995,8 @@
       <span id="headerCadreMail">
         <span id="cancelMail">Fermer</span>
         <span id="titleCadreMail">Me contacter</span>
+        <span id="envoiMail">Envoi...</span>
+
         <svg
           id="sendMail"
           viewBox="0 0 32 32"
@@ -8981,6 +9026,8 @@
           </g>
         </svg>
       </span>
+
+      <div class="loader" id="loaderMail"></div>
 
       <div class="detailMessageMail">Votre message</div>
 
@@ -28202,7 +28249,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const souv = document.getElementById("souv");
       const toggleSouv = document.getElementById("toggleSouv");
 
+     
       const mail = document.getElementById("mail");
+      const loaderMail = getId('loaderMail')
       const eraseMail = getId('eraseMail')
       const txtEditMail = getId('txtEditMail')
       const infoEditMail = getId('infoEditMail')
@@ -28219,6 +28268,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const txtsMail = document.querySelectorAll(".txtMail");
       const cancelMail = getId("cancelMail");
       const cadreMail = getId("cadreMail");
+       const mapMail = document.createElement('div')
+      mapMail.id = "mapMail"
+      mapMail.innerHTML = getId('mapHome').innerHTML
+      cadreMail.append(mapMail)
+
+      
       const propos = getId("propos");
       const btnThank = getId("btnThank");
       const btnShare = getId("btnShare");
@@ -30392,8 +30447,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         textAreaMail.focus()
         textAreaMail.focus()
         }, 500);
-
       });
+
+      textAreaMail.focus({ preventScroll: true });
+      inputMail.focus({ preventScroll: true });
+
 
       cancelMail.addEventListener("click", () => {
         cadreMail.classList.remove("active");
@@ -30527,6 +30585,28 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
       }
 
+
+      function interfaceEnvoiMail(tf){
+        if(tf){
+          sendMail.classList.add('hide')
+          getId('envoiMail').classList.add('active')
+          getId('titleCadreMail').classList.add('hide')
+          loaderMail.classList.add('active')
+          return
+        }
+          sendMail.classList.remove('hide')
+          getId('envoiMail').classList.remove('active')
+          getId('titleCadreMail').classList.remove('hide')
+          loaderMail.classList.remove('active')
+      }
+
+      cadreMail.addEventListener('pointerdown',()=>{
+        interfaceEnvoiMail(true)
+      })
+      cadreMail.addEventListener('pointerup',()=>{
+        interfaceEnvoiMail(false)
+      })
+
       sendMail.addEventListener("click", async () => {
         if (inputMail.value.length > 0 && !inputMail.checkValidity()) {
           errorMail.classList.add("active");
@@ -30534,14 +30614,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             "Veuillez saisir une adresse valide, ou alors laisser le champ vide";
           return;
         }
-        errorMail.classList.remove("active");
 
+        interfaceEnvoiMail(true)
+        errorMail.classList.remove("active");
         sendMail.style.pointerEvents = "none"; // évite le double envoi
         const ok = await sendMessage(
           inputMail.value.trim(),
           textAreaMail.value.trim(),
         );
         sendMail.style.pointerEvents = "";
+        interfaceEnvoiMail(false)
+
 
         if (ok) {
           await afficherMessage(
