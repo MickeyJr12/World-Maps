@@ -114,8 +114,6 @@
         transition: background 0.1s ease;
       }
 
-
-
       /*CSS Flemme*/
 
       #phoneFlemme {
@@ -4397,7 +4395,7 @@
         gap: 0.4rem;
         top: 105%;
         left: 50%;
-        min-height : 100vh;
+        min-height: 100vh;
         transform: translateX(-50%);
         border-top-left-radius: 3rem;
         border-top-right-radius: 3rem;
@@ -4411,52 +4409,89 @@
           top 0.4s ease,
           border-radius 0.6s ease,
           padding-top 0.4s ease;
-        }
+      }
 
-           #cadreMail.active {
+      #screenThanks{
+        display : flex;
+        position : fixed;
+        z-index : 500;
+        flex-direction : column;
+        justify-content : center;
+        align-items : center;
+        pointer-events : none;
+        opacity : 0;
+        gap : 0.6rem;
+        color : black;
+        top : -4rem; bottom : -4rem; left : -4rem; right : -4rem;
+        background : inherit;
+        transition  : opacity 0.1s ease;
+      }
+      #screenThanks.active{
+        pointer-events : all;
+        opacity : 1;
+        #iconThank{
+          opacity : 1;
+          transform : none;
+        }
+      }
+
+      #iconThank{
+        display : flex;
+        justify-content : center;
+        align-items: center;
+        opacity : 0;
+        transform : scale(0.8);
+        background: rgba(17, 191, 92, 0.8);
+        box-shadow : 0 0 8px rgba(17, 191, 92, 0.0.2);
+        padding : 2rem;
+        border-radius : 50%;
+        svg {
+          height  : 2.8rem;
+        }
+        transition : transform 0.5s ease, opacity 0.5s ease;        
+      }
+
+
+      #cadreMail.active {
         /* top: calc(env(safe-area-inset-top) + 0.5rem); */
         top: 0;
         border-radius: 0rem;
         padding-top: calc(env(safe-area-inset-top) + 0.4rem);
       }
-      
 
-
-        #mapMail{
-          position : absolute;
-          z-index : -1;
-          pointer-events : none;
-          opacity : 0.05;
-          bottom : 2rem;
-          width : 180%;
-        }
-        #loaderMail{
-          display : flex;
-          position : relative;
-           --c: no-repeat linear-gradient(rgba(126, 60, 126,0.75) 0 0);  
-          opacity : 0;
-          transition : opacity 0.1s ease;
-          animation : none;
-        }
-        #loaderMail.active{
-          opacity : 1;
+      #mapMail {
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0.05;
+        bottom: 2rem;
+        width: 180%;
+      }
+      #loaderMail {
+        display: flex;
+        position: relative;
+        --c: no-repeat linear-gradient(rgba(126, 60, 126, 0.75) 0 0);
+        opacity: 0;
+        transition: opacity 0.1s ease;
+        animation: none;
+      }
+      #loaderMail.active {
+        opacity: 1;
         animation: l16 3s infinite;
-        }
-
-        
-      #envoiMail{
-        position : absolute;
-        opacity : 0;
-        left : 50%;
-        transform : translateX(-50%);
-        color : #7E3C7E;
-        transition : opacity 0.1s ease;
       }
 
-      #envoiMail.active{
-        opacity : 1;
+      #envoiMail {
+        position: absolute;
+        opacity: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #7e3c7e;
+        transition: opacity 0.1s ease;
       }
-   
+
+      #envoiMail.active {
+        opacity: 1;
+      }
 
       #headerCadreMail {
         display: flex;
@@ -4484,10 +4519,10 @@
         display: flex;
         flex-wrap: nowrap;
         position: relative;
-        transition : opacity 0.1s ease;
+        transition: opacity 0.1s ease;
       }
       #titleCadreMail.hide {
-        opacity :0;
+        opacity: 0;
       }
       #sendMail {
         position: absolute;
@@ -4495,44 +4530,46 @@
         pointer-events: none;
         right: 0;
         height: 2rem;
-        transition: fill 0.2s ease, opacity 0.1s ease;
+        transition:
+          fill 0.2s ease,
+          opacity 0.1s ease;
       }
       #sendMail.active {
         pointer-events: all;
         fill: #7e3c7e;
       }
-      #sendMail.hide{
-        opacity : 0;
+      #sendMail.hide {
+        opacity: 0;
       }
-      #wrapperTypesMail{
-        display : flex; 
-        width : 100%;
-        flex-wrap: wrap ;
-        align-self : flex-start;
-        align-items : center;
-        justify-content : flex-start;
-        gap : 0.4rem;
+      #wrapperTypesMail {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        align-self: flex-start;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.4rem;
       }
-      .typeMail{
-        display : flex;
-        align-items : center;
-        justify-content : flex-start; 
-        font-size : 0.8rem;
-        gap : 0.4rem;
-        border-radius : 100rem;
-        padding : 0.4rem;
-        background : white;
-        outline : 1px solid rgba(126, 60, 126,0.2);
-        transition : background 0.2s ease;
+      .typeMail {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 0.8rem;
+        gap: 0.4rem;
+        border-radius: 100rem;
+        padding: 0.4rem;
+        background: white;
+        outline: 1px solid rgba(126, 60, 126, 0.2);
+        transition: background 0.2s ease;
         svg {
-          height : 0.92rem;
-          fill : black;
-          transition : 0.2s ease;
+          height: 0.92rem;
+          fill: black;
+          transition: 0.2s ease;
         }
       }
-      .typeMail.active{
-        background : rgba(241, 138, 241, 0.4);
-        
+      .typeMail.active {
+        background: rgba(198, 98, 198, 0.14);
+
       }
 
       .detailMessageMail {
@@ -4568,15 +4605,15 @@
         box-shadow: 0 0 2px rgba(126, 60, 126, 0.4);
       }
       .errorCadreMail {
-        display : none;
+        display: none;
         align-self: flex-start;
         margin: -0.4rem 0;
-        color: rgba(255,0,0,0.6);
+        color: rgba(255, 0, 0, 0.6);
         font-size: 0.85rem;
         transition: opacity 0.2s ease;
       }
       .errorCadreMail.active {
-        display : flex;
+        display: flex;
       }
 
       .boxSvgMessage {
@@ -4589,67 +4626,65 @@
         }
       }
 
-
-      #btnEditMail{
-        display : flex;
-        justify-content :space-between;
-        align-items : center;
-        box-sizing : border-box;
-        padding : 0.6rem 0.8rem;
-        border-radius : 100rem;
+      #btnEditMail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0.6rem 0.8rem;
+        border-radius: 100rem;
         background: rgba(242, 242, 242, 1);
         box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
-        outline : 1px solid transparent;
-        width : 100%;
-        margin-top : 1.6rem;
-        font-size : 0.92rem;
-        transition : background 0.2s ease, outline-color 0.4s ease, transform 0.2s ease, filter 0.2s ease;
-        svg{
-          height : 1.2rem;
+        outline: 1px solid transparent;
+        width: 100%;
+        margin-top: 1.6rem;
+        font-size: 0.92rem;
+        transition:
+          background 0.2s ease,
+          outline-color 0.4s ease,
+          transform 0.2s ease,
+          filter 0.2s ease;
+        svg {
+          height: 1.2rem;
         }
 
-        #svgEditMail{
-          display : none;
+        #svgEditMail {
+          display: none;
+        }
+      }
+      #btnEditMail:active {
+        transform: scale(0.98);
+        filter: brightness(0.92);
+      }
+      #btnEditMail.active {
+        outline-color: rgba(185, 0, 185, 0.25);
+        background: rgba(198, 98, 198, 0.14);
+
+        #svgChoiceMail {
+          display: none;
         }
 
-
-      }
-      #btnEditMail:active{
-        transform : scale(0.98);
-        filter : brightness(0.92);
-      }
-      #btnEditMail.active{
-        outline-color : rgba(185, 0, 185, 0.25);
-        background : rgb(255, 224, 255);
-
-         #svgChoiceMail{
-          display : none;
+        #svgEditMail {
+          display: flex;
         }
-
-        #svgEditMail{
-          display : flex;
-        }
-
       }
 
-
-      #txtEditMail{
-        color : rgba(0,0,0,0.6);
-        text-align : flex-start;
-        
+      #txtEditMail {
+        color: rgba(0, 0, 0, 0.6);
+        text-align: flex-start;
       }
-      #infoEditMail{
-        color : rgba(0,0,0,0.4);
-        font-size : 0.75rem;
-        text-align : flex-start;
+      #infoEditMail {
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 0.75rem;
+        text-align: flex-start;
       }
 
-      #cacheEditMail{        
+      #cacheEditMail {
         pointer-events: none;
         position: fixed;
-        left : -4rem;
-        top : -4rem;
-        transform : translateX(-4rem);
+        left: -4rem;
+        top: -4rem;
+        transform: translateX(-4rem);
         opacity: 0;
         min-width: 200vw;
         min-height: 200vh;
@@ -4663,61 +4698,78 @@
         opacity: 1;
         transform: none;
       }
-      #cadreEditMail{
-        flex-direction : column;
-        z-index : 200;
-        position : absolute;
-        pointer-events : none;
-        opacity : 0;
-        width : calc(100% - 2.08rem);
-        top : calc(env(safe-area-inset-top) + 4rem);
-        left : 50%;
-        transform : translateX(-50%) translateY(-0.8rem) scale(0.92);
-        transition : transform 0.2s ease, opacity 0.2s ease;
+      #cadreEditMail {
+        flex-direction: column;
+        z-index: 200;
+        position: absolute;
+        pointer-events: none;
+        opacity: 0;
+        width: calc(100% - 2.08rem);
+        top: calc(env(safe-area-inset-top) + 4rem);
+        left: 50%;
+        transform: translateX(-50%) translateY(-0.8rem) scale(0.92);
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
       }
-      #cadreEditMail.active{
-        pointer-events : all;
-        transform :translateX(-50%);
-        opacity : 1;
+      #cadreEditMail.active {
+        pointer-events: all;
+        transform: translateX(-50%);
+        opacity: 1;
       }
-      .choiceEditMail{
-        display : flex;
-        align-items : center;
-        justify-content : center; 
-        padding : 0.8rem;
-        border-radius : 0.6rem;
-        transition : filter 0.2s ease transform 0.2s ease;
+      .choiceEditMail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8rem;
+        border-radius: 0.6rem;
+        transition: filter 0.2s ease transform 0.2s ease;
       }
-      .choiceEditMail:active{
-        transform : scale(0.98);
-        filter : brightness(0.8);
+      .choiceEditMail:active {
+        transform: scale(0.98);
+        filter: brightness(0.8);
       }
-          @keyframes shakeX {
-  0%, 100% { transform: translateX(0); }
-  15% { transform: translateX(-6px); }
-  30% { transform: translateX(6px); }
-  45% { transform: translateX(-5px); }
-  60% { transform: translateX(5px); }
-  75% { transform: translateX(-3px); }
-  90% { transform: translateX(3px); }
-}
+      @keyframes shakeX {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        15% {
+          transform: translateX(-6px);
+        }
+        30% {
+          transform: translateX(6px);
+        }
+        45% {
+          transform: translateX(-5px);
+        }
+        60% {
+          transform: translateX(5px);
+        }
+        75% {
+          transform: translateX(-3px);
+        }
+        90% {
+          transform: translateX(3px);
+        }
+      }
 
-.shake {
-  animation: shakeX 400ms ease;
-  will-change: transform; /* optimise l'anim */
-}
-
-      #cancelEditMail{
-        background : rgba(0,0,0,0.1);
+      .shake {
+        animation: shakeX 400ms ease;
+        will-change: transform; /* optimise l'anim */
       }
-      #checkEditMail{
-        background : rgba(126, 60, 126,1);
-        color : white;
+
+      #cancelEditMail {
+        background: rgba(0, 0, 0, 0.1);
+      }
+      #checkEditMail {
+        background: rgba(126, 60, 126, 1);
+        color: white;
       }
 
       .txtMail {
-        display : flex;
-        align-items : center;
+        display: flex;
+        align-items: center;
         flex: 1;
         box-sizing: border-box;
         padding: 0.6rem;
@@ -4749,10 +4801,10 @@
         padding-right: 1.75rem;
         height: clamp(2.6rem, 2.6rem, 2.6rem);
       }
-      #eraseMail{
-        position : absolute;
-        right : 0.6rem;
-        height : 1.2rem;
+      #eraseMail {
+        position: absolute;
+        right: 0.6rem;
+        height: 1.2rem;
       }
 
       .btnHome {
@@ -8326,7 +8378,7 @@
 
       /* HTML: <div class="loader"></div> */
       .loader {
-        pointer-events : none;
+        pointer-events: none;
         display: none;
         position: absolute;
         bottom: 0;
@@ -9028,6 +9080,16 @@
         </svg>
       </div> -->
 
+      <div id="screenThanks">
+
+        <div id="iconThank">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M20.6097 5.20743C21.0475 5.54416 21.1294 6.17201 20.7926 6.60976L10.7926 19.6098C10.6172 19.8378 10.352 19.9793 10.0648 19.9979C9.77765 20.0166 9.49637 19.9106 9.29289 19.7072L4.29289 14.7072C3.90237 14.3166 3.90237 13.6835 4.29289 13.2929C4.68342 12.9024 5.31658 12.9024 5.70711 13.2929L9.90178 17.4876L19.2074 5.39034C19.5441 4.95258 20.172 4.87069 20.6097 5.20743Z" fill="#ffffff"></path> </g></svg>
+        </div>
+
+        <span style="font-size : 1.15rem; margin-top : 0.6rem;">Message envoyé</span>
+        <span style="color : rgba(0,0,0,0.4); margin-top : -0.2rem">Je vous réponds dès que possible</span>
+      </div>
+
       <span id="headerCadreMail">
         <span id="cancelMail">Fermer</span>
         <span id="titleCadreMail">Me contacter</span>
@@ -9064,29 +9126,6 @@
       </span>
 
       <div class="loader" id="loaderMail"></div>
-
-      <div class="detailMessageMail">Type de message</div>
-      <div id="wrapperTypesMail">
-        <div class="typeMail active">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17.416 2.62412C17.7607 2.39435 17.8538 1.9287 17.624 1.58405C17.3943 1.23941 16.9286 1.14628 16.584 1.37604L13.6687 3.31955C13.1527 3.11343 12.5897 3.00006 12.0001 3.00006C11.4105 3.00006 10.8474 3.11345 10.3314 3.31962L7.41603 1.37604C7.07138 1.14628 6.60573 1.23941 6.37596 1.58405C6.1462 1.9287 6.23933 2.39435 6.58397 2.62412L8.9437 4.19727C8.24831 4.84109 7.75664 5.70181 7.57617 6.6719C8.01128 6.55973 8.46749 6.50006 8.93763 6.50006H15.0626C15.5328 6.50006 15.989 6.55973 16.4241 6.6719C16.2436 5.70176 15.7519 4.841 15.0564 4.19717L17.416 2.62412Z" fill="#1C274C"></path> <path d="M1.25 14.0001C1.25 13.5859 1.58579 13.2501 2 13.2501H5V11.9376C5 11.1019 5.26034 10.327 5.70435 9.68959L3.22141 8.69624C2.83684 8.54238 2.6498 8.10589 2.80366 7.72131C2.95752 7.33673 3.39401 7.1497 3.77859 7.30356L6.91514 8.55841C7.50624 8.20388 8.19807 8.00006 8.9375 8.00006H15.0625C15.8019 8.00006 16.4938 8.20388 17.0849 8.55841L20.2214 7.30356C20.606 7.1497 21.0425 7.33673 21.1963 7.72131C21.3502 8.10589 21.1632 8.54238 20.7786 8.69624L18.2957 9.68959C18.7397 10.327 19 11.1019 19 11.9376V13.2501H22C22.4142 13.2501 22.75 13.5859 22.75 14.0001C22.75 14.4143 22.4142 14.7501 22 14.7501H19V15.0001C19 16.1808 18.7077 17.2932 18.1915 18.2689L20.7786 19.3039C21.1632 19.4578 21.3502 19.8943 21.1963 20.2789C21.0425 20.6634 20.606 20.8505 20.2214 20.6966L17.3288 19.5394C16.1974 20.8664 14.5789 21.7655 12.75 21.9604V15.0001C12.75 14.5858 12.4142 14.2501 12 14.2501C11.5858 14.2501 11.25 14.5858 11.25 15.0001V21.9604C9.42109 21.7655 7.80265 20.8664 6.67115 19.5394L3.77859 20.6966C3.39401 20.8505 2.95752 20.6634 2.80366 20.2789C2.6498 19.8943 2.83684 19.4578 3.22141 19.3039L5.80852 18.2689C5.29231 17.2932 5 16.1808 5 15.0001V14.7501H2C1.58579 14.7501 1.25 14.4143 1.25 14.0001Z" fill="#1C274C"></path> </g></svg>
-          Bug
-        </div>
-
-        <div class="typeMail">
-          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M7.493 0.015 C 7.442 0.021,7.268 0.039,7.107 0.055 C 5.234 0.242,3.347 1.208,2.071 2.634 C 0.660 4.211,-0.057 6.168,0.009 8.253 C 0.124 11.854,2.599 14.903,6.110 15.771 C 8.169 16.280,10.433 15.917,12.227 14.791 C 14.017 13.666,15.270 11.933,15.771 9.887 C 15.943 9.186,15.983 8.829,15.983 8.000 C 15.983 7.171,15.943 6.814,15.771 6.113 C 14.979 2.878,12.315 0.498,9.000 0.064 C 8.716 0.027,7.683 -0.006,7.493 0.015 M8.853 1.563 C 9.967 1.707,11.010 2.136,11.944 2.834 C 12.273 3.080,12.920 3.727,13.166 4.056 C 13.727 4.807,14.142 5.690,14.330 6.535 C 14.544 7.500,14.544 8.500,14.330 9.465 C 13.916 11.326,12.605 12.978,10.867 13.828 C 10.239 14.135,9.591 14.336,8.880 14.444 C 8.456 14.509,7.544 14.509,7.120 14.444 C 5.172 14.148,3.528 13.085,2.493 11.451 C 2.279 11.114,1.999 10.526,1.859 10.119 C 1.618 9.422,1.514 8.781,1.514 8.000 C 1.514 6.961,1.715 6.075,2.160 5.160 C 2.500 4.462,2.846 3.980,3.413 3.413 C 3.980 2.846,4.462 2.500,5.160 2.160 C 6.313 1.599,7.567 1.397,8.853 1.563 M7.706 4.290 C 7.482 4.363,7.355 4.491,7.293 4.705 C 7.257 4.827,7.253 5.106,7.259 6.816 C 7.267 8.786,7.267 8.787,7.325 8.896 C 7.398 9.033,7.538 9.157,7.671 9.204 C 7.803 9.250,8.197 9.250,8.329 9.204 C 8.462 9.157,8.602 9.033,8.675 8.896 C 8.733 8.787,8.733 8.786,8.741 6.816 C 8.749 4.664,8.749 4.662,8.596 4.481 C 8.472 4.333,8.339 4.284,8.040 4.276 C 7.893 4.272,7.743 4.278,7.706 4.290 M7.786 10.530 C 7.597 10.592,7.410 10.753,7.319 10.932 C 7.249 11.072,7.237 11.325,7.294 11.495 C 7.388 11.780,7.697 12.000,8.000 12.000 C 8.303 12.000,8.612 11.780,8.706 11.495 C 8.763 11.325,8.751 11.072,8.681 10.932 C 8.616 10.804,8.460 10.646,8.333 10.580 C 8.217 10.520,7.904 10.491,7.786 10.530 " stroke="none" fill-rule="evenodd" fill="#000000"></path></g></svg>
-          <span>Erreur</span>
-        </div>
-        <div class="typeMail">
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><line x1="50.4" y1="24.38" x2="58.3" y2="23.14"></line><line x1="47.93" y1="17.11" x2="52.87" y2="14.2"></line><line x1="42.89" y1="11.73" x2="46.21" y2="4.51"></line><line x1="33.45" y1="10.69" x2="33.41" y2="4.96"></line><line x1="24.29" y1="12.09" x2="21.62" y2="4.51"></line><line x1="17.99" y1="17.03" x2="12.96" y2="14.29"></line><line x1="15.78" y1="23.97" x2="8.03" y2="22.66"></line><path d="M26.22,45.47c0-5.16-3.19-9.49-4.91-12.69A12.24,12.24,0,0,1,19.85,27c0-6.79,6.21-12.3,13-12.3"></path><path d="M39.48,45.47c0-5.16,3.19-9.49,4.91-12.69A12.24,12.24,0,0,0,45.85,27c0-6.79-6.21-12.3-13-12.3"></path><rect x="23.63" y="45.19" width="18.93" height="4.25" rx="2.12"></rect><rect x="24.79" y="49.43" width="16.61" height="4.25" rx="2.12"></rect><path d="M36.32,53.68v.84a3.23,3.23,0,1,1-6.44,0v-.84"></path><path d="M24.57,26.25a7.5,7.5,0,0,1,7.88-7.11"></path></g></svg>
-         <span> Amélioration</span>
-        </div>
-        <div class="typeMail">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11.245 4.174C11.4765 3.50808 11.5922 3.17513 11.7634 3.08285C11.9115 3.00298 12.0898 3.00298 12.238 3.08285C12.4091 3.17513 12.5248 3.50808 12.7563 4.174L14.2866 8.57639C14.3525 8.76592 14.3854 8.86068 14.4448 8.93125C14.4972 8.99359 14.5641 9.04218 14.6396 9.07278C14.725 9.10743 14.8253 9.10947 15.0259 9.11356L19.6857 9.20852C20.3906 9.22288 20.743 9.23007 20.8837 9.36432C21.0054 9.48051 21.0605 9.65014 21.0303 9.81569C20.9955 10.007 20.7146 10.2199 20.1528 10.6459L16.4387 13.4616C16.2788 13.5829 16.1989 13.6435 16.1501 13.7217C16.107 13.7909 16.0815 13.8695 16.0757 13.9507C16.0692 14.0427 16.0982 14.1387 16.1563 14.3308L17.506 18.7919C17.7101 19.4667 17.8122 19.8041 17.728 19.9793C17.6551 20.131 17.5108 20.2358 17.344 20.2583C17.1513 20.2842 16.862 20.0829 16.2833 19.6802L12.4576 17.0181C12.2929 16.9035 12.2106 16.8462 12.1211 16.8239C12.042 16.8043 11.9593 16.8043 11.8803 16.8239C11.7908 16.8462 11.7084 16.9035 11.5437 17.0181L7.71805 19.6802C7.13937 20.0829 6.85003 20.2842 6.65733 20.2583C6.49056 20.2358 6.34626 20.131 6.27337 19.9793C6.18915 19.8041 6.29123 19.4667 6.49538 18.7919L7.84503 14.3308C7.90313 14.1387 7.93218 14.0427 7.92564 13.9507C7.91986 13.8695 7.89432 13.7909 7.85123 13.7217C7.80246 13.6435 7.72251 13.5829 7.56262 13.4616L3.84858 10.6459C3.28678 10.2199 3.00588 10.007 2.97101 9.81569C2.94082 9.65014 2.99594 9.48051 3.11767 9.36432C3.25831 9.23007 3.61074 9.22289 4.31559 9.20852L8.9754 9.11356C9.176 9.10947 9.27631 9.10743 9.36177 9.07278C9.43726 9.04218 9.50414 8.99359 9.55657 8.93125C9.61593 8.86068 9.64887 8.76592 9.71475 8.57639L11.245 4.174Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-          <span>Avis</span>
-        </div>
-        <div class="typeMail"><span>...Autre</span></div>
-
-      </div>
 
       <div class="detailMessageMail">Votre message</div>
 
@@ -9128,89 +9167,63 @@
 
       <span id="errorMessageMail" class="errorCadreMail"></span>
 
-
       <div id="btnEditMail">
-<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 17H21M18.5 14.5V19.5M12 19H6.2C5.0799 19 4.51984 19 4.09202 18.782C3.71569 18.5903 3.40973 18.2843 3.21799 17.908C3 17.4802 3 16.9201 3 15.8V8.2C3 7.0799 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.0799 21 8.2V11M20.6067 8.26229L15.5499 11.6335C14.2669 12.4888 13.6254 12.9165 12.932 13.0827C12.3192 13.2295 11.6804 13.2295 11.0677 13.0827C10.3743 12.9165 9.73279 12.4888 8.44975 11.6335L3.14746 8.09863" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-<div style="display : flex; flex-direction : column; flex : 1; gap : 0.05rem; margin-left : 0.6rem;">
-  <span id="txtEditMail">Je veux recevoir une réponse</span>
-  <span id="infoEditMail">Aucun e-mail n'a été renseigné</span>
-
-</div>        
-
-        <svg id="svgChoiceMail" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-
-        <svg id="svgEditMail" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M20.8477 1.87868C19.6761 0.707109 17.7766 0.707105 16.605 1.87868L2.44744 16.0363C2.02864 16.4551 1.74317 16.9885 1.62702 17.5692L1.03995 20.5046C0.760062 21.904 1.9939 23.1379 3.39334 22.858L6.32868 22.2709C6.90945 22.1548 7.44285 21.8693 7.86165 21.4505L22.0192 7.29289C23.1908 6.12132 23.1908 4.22183 22.0192 3.05025L20.8477 1.87868ZM18.0192 3.29289C18.4098 2.90237 19.0429 2.90237 19.4335 3.29289L20.605 4.46447C20.9956 4.85499 20.9956 5.48815 20.605 5.87868L17.9334 8.55027L15.3477 5.96448L18.0192 3.29289ZM13.9334 7.3787L3.86165 17.4505C3.72205 17.5901 3.6269 17.7679 3.58818 17.9615L3.00111 20.8968L5.93645 20.3097C6.13004 20.271 6.30784 20.1759 6.44744 20.0363L16.5192 9.96448L13.9334 7.3787Z" fill="#7e3c7e"></path> </g></svg>
-      </div>
-
-
-      <div id="cacheEditMail"></div>
-      <div class="cadreMessage" id="cadreEditMail">
-        <div style="display : flex; width : 100%; justify-content : space-between; font-size : 0.96rem; align-items: center;; " >
-          Où vous contacter ? 
-          
-        <button class="cross"  id="crossEditMail" style="height : 1.8rem;">
-        <svg
-        
-          xmlns="http://www.w3.org/2000/svg"
-          id="Outline"
-          viewBox="0 0 24 24"
-          width="100%"
-          height="100%"
-          fill="black"
-        >
-          <path
-            d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
-          />
-         
-        </svg>
-      </button>
-        </div>
-
-        <div style="display : flex; border-radius: inherit; justify-content : inherit; align-items: inherit; gap : 0.4rem; width : 100%; ">
-        <div class="boxSvgMessage">
-          <svg
-            height="0.96rem"
-            fill="#7e3c7e"
-            xmlns="http://www.w3.org/2000/svg"
-            id="Layer_1"
-            data-name="Layer 1"
-            viewBox="0 0 24 24"
-          >
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
             <path
-              d="M12,0A12.013,12.013,0,0,0,0,12c-.126,9.573,11.159,15.429,18.9,9.817a1,1,0,1,0-1.152-1.634C11.3,24.856,1.9,19.978,2,12,2.549-1.266,21.453-1.263,22,12v2a2,2,0,0,1-4,0V12C17.748,4.071,6.251,4.072,6,12a6.017,6.017,0,0,0,10.52,3.933A4,4,0,0,0,24,14V12A12.013,12.013,0,0,0,12,0Zm0,16a4,4,0,0,1,0-8A4,4,0,0,1,12,16Z"
-            />
-          </svg>
+              d="M16 17H21M18.5 14.5V19.5M12 19H6.2C5.0799 19 4.51984 19 4.09202 18.782C3.71569 18.5903 3.40973 18.2843 3.21799 17.908C3 17.4802 3 16.9201 3 15.8V8.2C3 7.0799 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.0799 21 8.2V11M20.6067 8.26229L15.5499 11.6335C14.2669 12.4888 13.6254 12.9165 12.932 13.0827C12.3192 13.2295 11.6804 13.2295 11.0677 13.0827C10.3743 12.9165 9.73279 12.4888 8.44975 11.6335L3.14746 8.09863"
+              stroke="#7e3c7e"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 0.05rem;
+            margin-left: 0.6rem;
+          "
+        >
+          <span id="txtEditMail">Je veux recevoir une réponse</span>
+          <span id="infoEditMail">Aucun e-mail n'a été renseigné</span>
         </div>
 
-        <div style="display : flex; flex : 1; border-radius : inherit; position : relative; align-items : center;">
-        <input
-          id="inputMail"
-          class="txtMail"
-          required=""
-          autocorrect="off"
-          autocapitalize="off"
-          spellcheck="false"
-          type="email"
-          placeholder="nom@exemple.com"
-        />        
-        <svg id="eraseMail" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z" fill="#a3a7ba"></path> </g></svg>
-      </div>
-      </div>
-
-      
-      <span
-        style="
-          display: flex;
-          align-self : flex-start;
-          gap: 0.25rem;
-          margin-top : -0.2rem;
-          font-size: 0.68rem;
-          color: rgba(0, 0, 0, 0.4);
-        "
-      >
         <svg
-          height="0.92rem"
-          viewBox="0 -0.5 25 25"
+          id="svgChoiceMail"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M7 17L17 7M17 7H8M17 7V16"
+              stroke="#7e3c7e"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </g>
+        </svg>
+
+        <svg
+          id="svgEditMail"
+          viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -9224,28 +9237,280 @@
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"
-              d="M5.5 11V13C5.5 16.3137 8.18629 19 11.5 19H13.5C16.8137 19 19.5 16.3137 19.5 13V11C19.5 7.68629 16.8137 5 13.5 5H11.5C8.18629 5 5.5 7.68629 5.5 11Z"
-              stroke="#7e3c7e"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-            <path
-              d="M11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16H11.75ZM12.5 11H13.25C13.25 10.5858 12.9142 10.25 12.5 10.25V11ZM11.5 10.25C11.0858 10.25 10.75 10.5858 10.75 11C10.75 11.4142 11.0858 11.75 11.5 11.75V10.25ZM12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16C13.25 15.5858 12.9142 15.25 12.5 15.25V16.75ZM11.5 15.25C11.0858 15.25 10.75 15.5858 10.75 16C10.75 16.4142 11.0858 16.75 11.5 16.75V15.25ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75V15.25ZM13.5 16.75C13.9142 16.75 14.25 16.4142 14.25 16C14.25 15.5858 13.9142 15.25 13.5 15.25V16.75ZM13.25 8C13.25 7.58579 12.9142 7.25 12.5 7.25C12.0858 7.25 11.75 7.58579 11.75 8H13.25ZM11.75 9C11.75 9.41421 12.0858 9.75 12.5 9.75C12.9142 9.75 13.25 9.41421 13.25 9H11.75ZM13.25 16V11H11.75V16H13.25ZM12.5 10.25H11.5V11.75H12.5V10.25ZM12.5 15.25H11.5V16.75H12.5V15.25ZM12.5 16.75H13.5V15.25H12.5V16.75ZM11.75 8V9H13.25V8H11.75Z"
+              d="M20.8477 1.87868C19.6761 0.707109 17.7766 0.707105 16.605 1.87868L2.44744 16.0363C2.02864 16.4551 1.74317 16.9885 1.62702 17.5692L1.03995 20.5046C0.760062 21.904 1.9939 23.1379 3.39334 22.858L6.32868 22.2709C6.90945 22.1548 7.44285 21.8693 7.86165 21.4505L22.0192 7.29289C23.1908 6.12132 23.1908 4.22183 22.0192 3.05025L20.8477 1.87868ZM18.0192 3.29289C18.4098 2.90237 19.0429 2.90237 19.4335 3.29289L20.605 4.46447C20.9956 4.85499 20.9956 5.48815 20.605 5.87868L17.9334 8.55027L15.3477 5.96448L18.0192 3.29289ZM13.9334 7.3787L3.86165 17.4505C3.72205 17.5901 3.6269 17.7679 3.58818 17.9615L3.00111 20.8968L5.93645 20.3097C6.13004 20.271 6.30784 20.1759 6.44744 20.0363L16.5192 9.96448L13.9334 7.3787Z"
               fill="#7e3c7e"
             ></path>
           </g>
         </svg>
-        Utilisé uniquement pour pouvoir vous répondre
-      </span>
-      <span id="errorMail" class="errorCadreMail"></span>
-
-      <div style="display : flex; gap : 0.6rem; align-self : flex-end">
-        <div class="choiceEditMail" id="checkEditMail">Valider</div>
       </div>
 
+      <div class="detailMessageMail">Type de message</div>
+      <div id="wrapperTypesMail">
+        <div class="typeMail active"; id="bugTypeMail">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M17.416 2.62412C17.7607 2.39435 17.8538 1.9287 17.624 1.58405C17.3943 1.23941 16.9286 1.14628 16.584 1.37604L13.6687 3.31955C13.1527 3.11343 12.5897 3.00006 12.0001 3.00006C11.4105 3.00006 10.8474 3.11345 10.3314 3.31962L7.41603 1.37604C7.07138 1.14628 6.60573 1.23941 6.37596 1.58405C6.1462 1.9287 6.23933 2.39435 6.58397 2.62412L8.9437 4.19727C8.24831 4.84109 7.75664 5.70181 7.57617 6.6719C8.01128 6.55973 8.46749 6.50006 8.93763 6.50006H15.0626C15.5328 6.50006 15.989 6.55973 16.4241 6.6719C16.2436 5.70176 15.7519 4.841 15.0564 4.19717L17.416 2.62412Z"
+                fill="#1C274C"
+              ></path>
+              <path
+                d="M1.25 14.0001C1.25 13.5859 1.58579 13.2501 2 13.2501H5V11.9376C5 11.1019 5.26034 10.327 5.70435 9.68959L3.22141 8.69624C2.83684 8.54238 2.6498 8.10589 2.80366 7.72131C2.95752 7.33673 3.39401 7.1497 3.77859 7.30356L6.91514 8.55841C7.50624 8.20388 8.19807 8.00006 8.9375 8.00006H15.0625C15.8019 8.00006 16.4938 8.20388 17.0849 8.55841L20.2214 7.30356C20.606 7.1497 21.0425 7.33673 21.1963 7.72131C21.3502 8.10589 21.1632 8.54238 20.7786 8.69624L18.2957 9.68959C18.7397 10.327 19 11.1019 19 11.9376V13.2501H22C22.4142 13.2501 22.75 13.5859 22.75 14.0001C22.75 14.4143 22.4142 14.7501 22 14.7501H19V15.0001C19 16.1808 18.7077 17.2932 18.1915 18.2689L20.7786 19.3039C21.1632 19.4578 21.3502 19.8943 21.1963 20.2789C21.0425 20.6634 20.606 20.8505 20.2214 20.6966L17.3288 19.5394C16.1974 20.8664 14.5789 21.7655 12.75 21.9604V15.0001C12.75 14.5858 12.4142 14.2501 12 14.2501C11.5858 14.2501 11.25 14.5858 11.25 15.0001V21.9604C9.42109 21.7655 7.80265 20.8664 6.67115 19.5394L3.77859 20.6966C3.39401 20.8505 2.95752 20.6634 2.80366 20.2789C2.6498 19.8943 2.83684 19.4578 3.22141 19.3039L5.80852 18.2689C5.29231 17.2932 5 16.1808 5 15.0001V14.7501H2C1.58579 14.7501 1.25 14.4143 1.25 14.0001Z"
+                fill="#1C274C"
+              ></path>
+            </g>
+          </svg>
+         <span>Bug</span>
+        </div>
+
+        <div class="typeMail">
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M7.493 0.015 C 7.442 0.021,7.268 0.039,7.107 0.055 C 5.234 0.242,3.347 1.208,2.071 2.634 C 0.660 4.211,-0.057 6.168,0.009 8.253 C 0.124 11.854,2.599 14.903,6.110 15.771 C 8.169 16.280,10.433 15.917,12.227 14.791 C 14.017 13.666,15.270 11.933,15.771 9.887 C 15.943 9.186,15.983 8.829,15.983 8.000 C 15.983 7.171,15.943 6.814,15.771 6.113 C 14.979 2.878,12.315 0.498,9.000 0.064 C 8.716 0.027,7.683 -0.006,7.493 0.015 M8.853 1.563 C 9.967 1.707,11.010 2.136,11.944 2.834 C 12.273 3.080,12.920 3.727,13.166 4.056 C 13.727 4.807,14.142 5.690,14.330 6.535 C 14.544 7.500,14.544 8.500,14.330 9.465 C 13.916 11.326,12.605 12.978,10.867 13.828 C 10.239 14.135,9.591 14.336,8.880 14.444 C 8.456 14.509,7.544 14.509,7.120 14.444 C 5.172 14.148,3.528 13.085,2.493 11.451 C 2.279 11.114,1.999 10.526,1.859 10.119 C 1.618 9.422,1.514 8.781,1.514 8.000 C 1.514 6.961,1.715 6.075,2.160 5.160 C 2.500 4.462,2.846 3.980,3.413 3.413 C 3.980 2.846,4.462 2.500,5.160 2.160 C 6.313 1.599,7.567 1.397,8.853 1.563 M7.706 4.290 C 7.482 4.363,7.355 4.491,7.293 4.705 C 7.257 4.827,7.253 5.106,7.259 6.816 C 7.267 8.786,7.267 8.787,7.325 8.896 C 7.398 9.033,7.538 9.157,7.671 9.204 C 7.803 9.250,8.197 9.250,8.329 9.204 C 8.462 9.157,8.602 9.033,8.675 8.896 C 8.733 8.787,8.733 8.786,8.741 6.816 C 8.749 4.664,8.749 4.662,8.596 4.481 C 8.472 4.333,8.339 4.284,8.040 4.276 C 7.893 4.272,7.743 4.278,7.706 4.290 M7.786 10.530 C 7.597 10.592,7.410 10.753,7.319 10.932 C 7.249 11.072,7.237 11.325,7.294 11.495 C 7.388 11.780,7.697 12.000,8.000 12.000 C 8.303 12.000,8.612 11.780,8.706 11.495 C 8.763 11.325,8.751 11.072,8.681 10.932 C 8.616 10.804,8.460 10.646,8.333 10.580 C 8.217 10.520,7.904 10.491,7.786 10.530 "
+                stroke="none"
+                fill-rule="evenodd"
+                fill="#000000"
+              ></path>
+            </g>
+          </svg>
+          <span>Erreur</span>
+        </div>
+        <div class="typeMail">
+          <svg
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke-width="3"
+            stroke="#000000"
+            fill="none"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <line x1="50.4" y1="24.38" x2="58.3" y2="23.14"></line>
+              <line x1="47.93" y1="17.11" x2="52.87" y2="14.2"></line>
+              <line x1="42.89" y1="11.73" x2="46.21" y2="4.51"></line>
+              <line x1="33.45" y1="10.69" x2="33.41" y2="4.96"></line>
+              <line x1="24.29" y1="12.09" x2="21.62" y2="4.51"></line>
+              <line x1="17.99" y1="17.03" x2="12.96" y2="14.29"></line>
+              <line x1="15.78" y1="23.97" x2="8.03" y2="22.66"></line>
+              <path
+                d="M26.22,45.47c0-5.16-3.19-9.49-4.91-12.69A12.24,12.24,0,0,1,19.85,27c0-6.79,6.21-12.3,13-12.3"
+              ></path>
+              <path
+                d="M39.48,45.47c0-5.16,3.19-9.49,4.91-12.69A12.24,12.24,0,0,0,45.85,27c0-6.79-6.21-12.3-13-12.3"
+              ></path>
+              <rect
+                x="23.63"
+                y="45.19"
+                width="18.93"
+                height="4.25"
+                rx="2.12"
+              ></rect>
+              <rect
+                x="24.79"
+                y="49.43"
+                width="16.61"
+                height="4.25"
+                rx="2.12"
+              ></rect>
+              <path d="M36.32,53.68v.84a3.23,3.23,0,1,1-6.44,0v-.84"></path>
+              <path d="M24.57,26.25a7.5,7.5,0,0,1,7.88-7.11"></path>
+            </g>
+          </svg>
+          <span> Amélioration</span>
+        </div>
+        <div class="typeMail">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M11.245 4.174C11.4765 3.50808 11.5922 3.17513 11.7634 3.08285C11.9115 3.00298 12.0898 3.00298 12.238 3.08285C12.4091 3.17513 12.5248 3.50808 12.7563 4.174L14.2866 8.57639C14.3525 8.76592 14.3854 8.86068 14.4448 8.93125C14.4972 8.99359 14.5641 9.04218 14.6396 9.07278C14.725 9.10743 14.8253 9.10947 15.0259 9.11356L19.6857 9.20852C20.3906 9.22288 20.743 9.23007 20.8837 9.36432C21.0054 9.48051 21.0605 9.65014 21.0303 9.81569C20.9955 10.007 20.7146 10.2199 20.1528 10.6459L16.4387 13.4616C16.2788 13.5829 16.1989 13.6435 16.1501 13.7217C16.107 13.7909 16.0815 13.8695 16.0757 13.9507C16.0692 14.0427 16.0982 14.1387 16.1563 14.3308L17.506 18.7919C17.7101 19.4667 17.8122 19.8041 17.728 19.9793C17.6551 20.131 17.5108 20.2358 17.344 20.2583C17.1513 20.2842 16.862 20.0829 16.2833 19.6802L12.4576 17.0181C12.2929 16.9035 12.2106 16.8462 12.1211 16.8239C12.042 16.8043 11.9593 16.8043 11.8803 16.8239C11.7908 16.8462 11.7084 16.9035 11.5437 17.0181L7.71805 19.6802C7.13937 20.0829 6.85003 20.2842 6.65733 20.2583C6.49056 20.2358 6.34626 20.131 6.27337 19.9793C6.18915 19.8041 6.29123 19.4667 6.49538 18.7919L7.84503 14.3308C7.90313 14.1387 7.93218 14.0427 7.92564 13.9507C7.91986 13.8695 7.89432 13.7909 7.85123 13.7217C7.80246 13.6435 7.72251 13.5829 7.56262 13.4616L3.84858 10.6459C3.28678 10.2199 3.00588 10.007 2.97101 9.81569C2.94082 9.65014 2.99594 9.48051 3.11767 9.36432C3.25831 9.23007 3.61074 9.22289 4.31559 9.20852L8.9754 9.11356C9.176 9.10947 9.27631 9.10743 9.36177 9.07278C9.43726 9.04218 9.50414 8.99359 9.55657 8.93125C9.61593 8.86068 9.64887 8.76592 9.71475 8.57639L11.245 4.174Z"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </svg>
+          <span>Avis</span>
+        </div>
+        <div class="typeMail"><span>...Autre</span></div>
       </div>
 
+      <div id="cacheEditMail"></div>
+      <div class="cadreMessage" id="cadreEditMail">
+        <div
+          style="
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            font-size: 0.96rem;
+            align-items: center;
+          "
+        >
+          Où vous contacter ?
+
+          <button class="cross" id="crossEditMail" style="height: 1.8rem">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+              width="100%"
+              height="100%"
+              fill="black"
+            >
+              <path
+                d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            border-radius: inherit;
+            justify-content: inherit;
+            align-items: inherit;
+            gap: 0.4rem;
+            width: 100%;
+          "
+        >
+          <div class="boxSvgMessage">
+            <svg
+              height="0.96rem"
+              fill="#7e3c7e"
+              xmlns="http://www.w3.org/2000/svg"
+              id="Layer_1"
+              data-name="Layer 1"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12,0A12.013,12.013,0,0,0,0,12c-.126,9.573,11.159,15.429,18.9,9.817a1,1,0,1,0-1.152-1.634C11.3,24.856,1.9,19.978,2,12,2.549-1.266,21.453-1.263,22,12v2a2,2,0,0,1-4,0V12C17.748,4.071,6.251,4.072,6,12a6.017,6.017,0,0,0,10.52,3.933A4,4,0,0,0,24,14V12A12.013,12.013,0,0,0,12,0Zm0,16a4,4,0,0,1,0-8A4,4,0,0,1,12,16Z"
+              />
+            </svg>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              flex: 1;
+              border-radius: inherit;
+              position: relative;
+              align-items: center;
+            "
+          >
+            <input
+              id="inputMail"
+              class="txtMail"
+              required=""
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              type="email"
+              placeholder="nom@exemple.com"
+            />
+            <svg
+              id="eraseMail"
+              viewBox="0 -0.5 25 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z"
+                  fill="#a3a7ba"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <span
+          style="
+            display: flex;
+            align-self: flex-start;
+            gap: 0.25rem;
+            margin-top: -0.2rem;
+            font-size: 0.68rem;
+            color: rgba(0, 0, 0, 0.4);
+          "
+        >
+          <svg
+            height="0.92rem"
+            viewBox="0 -0.5 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.5 11V13C5.5 16.3137 8.18629 19 11.5 19H13.5C16.8137 19 19.5 16.3137 19.5 13V11C19.5 7.68629 16.8137 5 13.5 5H11.5C8.18629 5 5.5 7.68629 5.5 11Z"
+                stroke="#7e3c7e"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16H11.75ZM12.5 11H13.25C13.25 10.5858 12.9142 10.25 12.5 10.25V11ZM11.5 10.25C11.0858 10.25 10.75 10.5858 10.75 11C10.75 11.4142 11.0858 11.75 11.5 11.75V10.25ZM12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16C13.25 15.5858 12.9142 15.25 12.5 15.25V16.75ZM11.5 15.25C11.0858 15.25 10.75 15.5858 10.75 16C10.75 16.4142 11.0858 16.75 11.5 16.75V15.25ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75V15.25ZM13.5 16.75C13.9142 16.75 14.25 16.4142 14.25 16C14.25 15.5858 13.9142 15.25 13.5 15.25V16.75ZM13.25 8C13.25 7.58579 12.9142 7.25 12.5 7.25C12.0858 7.25 11.75 7.58579 11.75 8H13.25ZM11.75 9C11.75 9.41421 12.0858 9.75 12.5 9.75C12.9142 9.75 13.25 9.41421 13.25 9H11.75ZM13.25 16V11H11.75V16H13.25ZM12.5 10.25H11.5V11.75H12.5V10.25ZM12.5 15.25H11.5V16.75H12.5V15.25ZM12.5 16.75H13.5V15.25H12.5V16.75ZM11.75 8V9H13.25V8H11.75Z"
+                fill="#7e3c7e"
+              ></path>
+            </g>
+          </svg>
+          Utilisé uniquement pour pouvoir vous répondre
+        </span>
+        <span id="errorMail" class="errorCadreMail"></span>
+
+        <div style="display: flex; gap: 0.6rem; align-self: flex-end">
+          <div class="choiceEditMail" id="checkEditMail">Valider</div>
+        </div>
+      </div>
     </div>
 
     <div id="cadreTrackDays">
@@ -28100,20 +28365,19 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         requestAnimationFrame(update);
       }
 
-      
       function getId(id) {
         return document.getElementById(`${id}`);
       }
-      function addClick(el, action){
-        el.addEventListener('click',()=>action)
+      function addClick(el, action) {
+        el.addEventListener("click", () => action);
       }
       function getC(classe) {
         return document.querySelector(`${classe}`);
       }
 
       function mailCheck(chaine) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(chaine.trim());
-}
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(chaine.trim());
+      }
 
       document.addEventListener(
         "click",
@@ -28308,32 +28572,31 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const souv = document.getElementById("souv");
       const toggleSouv = document.getElementById("toggleSouv");
 
-     
       const mail = document.getElementById("mail");
-      const typesMail = document.querySelectorAll('.typeMail')
-      const loaderMail = getId('loaderMail')
-      const eraseMail = getId('eraseMail')
-      const txtEditMail = getId('txtEditMail')
-      const infoEditMail = getId('infoEditMail')
-      const errorMail = getId('errorMail')
-      const checkEditMail = getId('checkEditMail')
-      const cancelEditMail = getId('cancelEditMail')
-      const crossEditMail  = getId('crossEditMail')
-      const cadreEditMail  = getId('cadreEditMail')
-      const cacheEditMail = getId('cacheEditMail')
-      const btnEditMail = getId('btnEditMail')
+      const screenThanks = getId('screenThanks')
+      const typesMail = document.querySelectorAll(".typeMail");
+      const loaderMail = getId("loaderMail");
+      const eraseMail = getId("eraseMail");
+      const txtEditMail = getId("txtEditMail");
+      const infoEditMail = getId("infoEditMail");
+      const errorMail = getId("errorMail");
+      const checkEditMail = getId("checkEditMail");
+      const cancelEditMail = getId("cancelEditMail");
+      const crossEditMail = getId("crossEditMail");
+      const cadreEditMail = getId("cadreEditMail");
+      const cacheEditMail = getId("cacheEditMail");
+      const btnEditMail = getId("btnEditMail");
       const sendMail = getId("sendMail");
       const textAreaMail = getId("textAreaMail");
       const inputMail = getId("inputMail");
       const txtsMail = document.querySelectorAll(".txtMail");
       const cancelMail = getId("cancelMail");
       const cadreMail = getId("cadreMail");
-       const mapMail = document.createElement('div')
-      mapMail.id = "mapMail"
-      mapMail.innerHTML = getId('mapHome').innerHTML
-      cadreMail.append(mapMail)
+      // const mapMail = document.createElement("div");
+      // mapMail.id = "mapMail";
+      // mapMail.innerHTML = getId("mapHome").innerHTML;
+      // cadreMail.append(mapMail);
 
-      
       const propos = getId("propos");
       const btnThank = getId("btnThank");
       const btnShare = getId("btnShare");
@@ -30498,106 +30761,98 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         crossRD.click();
       });
 
+     
       mail.addEventListener("click", () => {
         // const sujet = encodeURIComponent("Feedback Globus Quiz");
         // const corps = encodeURIComponent("Bonjour,\n\n");
         // window.location.href = `mailto:contact.globusquiz@gmail.com?subject=${sujet}&body=${corps}`;
+        getId('bugTypeMail').click()
         cadreMail.classList.add("active");
-       
       });
-      typesMail.forEach(type=>{
-        type.addEventListener('click',()=>{
-          typesMail.forEach(t=>t.classList.remove('active'))
-          type.classList.add('active')
-        })
-      })
+      typesMail.forEach((type) => {
+        type.addEventListener("click", () => {
+          typesMail.forEach((t) => t.classList.remove("active"));
+          type.classList.add("active");
+        });
+      });
 
-      textAreaMail.focus({ preventScroll: true });
       inputMail.focus({ preventScroll: true });
 
-
       cancelMail.addEventListener("click", () => {
-        inputMail.blur()
-        textAreaMail.blur()
+        inputMail.blur();
+        textAreaMail.blur();
         cadreMail.classList.remove("active");
       });
 
-      cadreEditMail.addEventListener('click',()=>{
-        inputMail.focus()
-      })
-      btnEditMail.addEventListener('click',()=>{
-        cadreEditMail.classList.add('active')
-        cacheEditMail.classList.add('active')
-        textAreaMail.blur()
-        if(btnEditMail.classList.contains('active')){
-          inputMail.textContent = infoEditMail.textContent
+      cadreEditMail.addEventListener("click", () => {
+        inputMail.focus();
+      });
+      btnEditMail.addEventListener("click", () => {
+        cadreEditMail.classList.add("active");
+        cacheEditMail.classList.add("active");
+        textAreaMail.blur();
+        if (btnEditMail.classList.contains("active")) {
+          console.log(infoEditMail.textContent)
+          inputMail.value = infoEditMail.textContent;
         }
-        inputMail.focus()
-      })
-      
-      crossEditMail.addEventListener('click',(e)=>{
-        e.stopPropagation()
-        inputMail.blur()
-        errorMail.classList.remove('active')
-        cadreEditMail.classList.remove('active')
-        cacheEditMail.classList.remove('active')
-      })
+        inputMail.focus();
+      });
 
-      cacheEditMail.addEventListener('click',()=>{
-        inputMail.focus()
-      })
+      crossEditMail.addEventListener("click", (e) => {
+        e.stopPropagation();
+        inputMail.blur();
+        errorMail.classList.remove("active");
+        cadreEditMail.classList.remove("active");
+        cacheEditMail.classList.remove("active");
+      });
 
-      eraseMail.addEventListener('click',(e)=>{
-        errorMail.classList.remove('active')
-        inputMail.value = ""
-      })
+      cacheEditMail.addEventListener("click", () => {
+        inputMail.focus();
+      });
+
+      eraseMail.addEventListener("click", (e) => {
+        errorMail.classList.remove("active");
+        inputMail.value = "";
+      });
       let timeOut = setTimeout(() => {}, 0);
 
-      checkEditMail.addEventListener('click',(e)=>{
-        e.stopPropagation()
+      checkEditMail.addEventListener("click", (e) => {
+        e.stopPropagation();
 
-        checkEditMail.classList.remove('shake')
+        checkEditMail.classList.remove("shake");
         clearTimeout(timeOut);
 
-        if (inputMail.value.length > 0 && !mailCheck(inputMail.value)){
-         checkEditMail.classList.add('shake')  
+        if (inputMail.value.length > 0 && !mailCheck(inputMail.value)) {
+          checkEditMail.classList.add("shake");
           timeOut = setTimeout(() => {
-            checkEditMail.classList.remove('shake')
+            checkEditMail.classList.remove("shake");
           }, 450);
 
-          errorMail.textContent = "Saisissez une adresse e-mail valide"
-          errorMail.classList.add('active')
+          errorMail.textContent = "Saisissez une adresse e-mail valide";
+          errorMail.classList.add("active");
 
-          return
-        }
-        else if (inputMail.value.length === 0){
-          // checkEditMail.classList.add('shake')  
+          return;
+        } else if (inputMail.value.length === 0) {
+          // checkEditMail.classList.add('shake')
           // timeOut = setTimeout(() => {
           //   checkEditMail.classList.remove('shake')
           // }, 450);
 
           // errorMail.textContent = "Entrez une adresse e-mail pour valider"
           // errorMail.classList.add('active')
-          btnEditMail.classList.remove('active')
-        infoEditMail.textContent = "Aucun e-mail n'a été renseigné";
-        crossEditMail.click()
+          btnEditMail.classList.remove("active");
+          infoEditMail.textContent = "Aucun e-mail n'a été renseigné";
+          crossEditMail.click();
 
-          return
+          return;
         }
 
-        infoEditMail.textContent = inputMail.value
-        btnEditMail.classList.add('active')
-        crossEditMail.click()
-
-
-
-      })
-
+        infoEditMail.textContent = inputMail.value;
+        btnEditMail.classList.add("active");
+        crossEditMail.click();
+      });
 
       // addClick(cacheEditMail,crossEditMail.click())
-
-
-
 
       const CONTACT_EMAIL = "contact.globusquiz@gmail.com"; // remplace par ton adresse
       const estCapacitor = window.Capacitor?.isNativePlatform?.() === true;
@@ -30647,22 +30902,19 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
       }
 
-
-      function interfaceEnvoiMail(tf){
-        if(tf){
-          sendMail.classList.add('hide')
-          getId('envoiMail').classList.add('active')
-          getId('titleCadreMail').classList.add('hide')
-          loaderMail.classList.add('active')
-          return
+      function interfaceEnvoiMail(tf) {
+        if (tf) {
+          sendMail.classList.add("hide");
+          getId("envoiMail").classList.add("active");
+          getId("titleCadreMail").classList.add("hide");
+          loaderMail.classList.add("active");
+          return;
         }
-          sendMail.classList.remove('hide')
-          getId('envoiMail').classList.remove('active')
-          getId('titleCadreMail').classList.remove('hide')
-          loaderMail.classList.remove('active')
+        sendMail.classList.remove("hide");
+        getId("envoiMail").classList.remove("active");
+        getId("titleCadreMail").classList.remove("hide");
+        loaderMail.classList.remove("active");
       }
-
-     
 
       sendMail.addEventListener("click", async () => {
         if (inputMail.value.length > 0 && !inputMail.checkValidity()) {
@@ -30672,29 +30924,42 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           return;
         }
 
-        interfaceEnvoiMail(true)
+        interfaceEnvoiMail(true);
         errorMail.classList.remove("active");
-        sendMail.style.pointerEvents = "none"; // évite le double envoi
+        cadreMail.style.pointerEvents = "none"; // évite le double envoi
         let typeM;
-        typesMail.forEach(type=>{
-          if(type.classList.contains('active')){typeM = type.querySelector('span').textContent}
-        })
+        typesMail.forEach((type) => {
+          if (type.classList.contains("active")) {
+            typeM = type.querySelector("span").textContent;
+          }
+        });
+        
         const ok = await sendMessage(
-          inputMail.value.trim(),
+          typeM,
           textAreaMail.value.trim(),
+          inputMail.value.trim(),
         );
-        sendMail.style.pointerEvents = "";
-        interfaceEnvoiMail(false)
-
+        cadreMail.style.pointerEvents = "";
+        interfaceEnvoiMail(false);
 
         if (ok) {
-          await afficherMessage(
-            "Message envoyé",
-            "Merci ! Je vous réponds dès que possible.",
-          );
+          
+        screenThanks.classList.add('active')
+
+        setTimeout(() => {
+        screenThanks.classList.remove('active')
+        }, 2000);
+
+        setTimeout(() => {
           textAreaMail.value = "";
           inputMail.value = "";
-          cancelMail.click()
+          infoEditMail.textContent = "Aucun e-mail n'a été renseigné"
+          btnEditMail.classList.remove('active')
+          cancelMail.click();
+        }, 2400);
+
+      
+
         } else {
           await proposerMail(textAreaMail.value); // le texte saisi est conservé
         }
@@ -30702,6 +30967,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       txtsMail.forEach((txt) => {
         txt.addEventListener("focus", (e) => {
+          txt.focus({ preventScroll: true });
+
           txt.parentNode.classList.add("active");
         });
 
@@ -30764,8 +31031,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       play.addEventListener("click", async () => {
-        inputMail.value = ""
-        textAreaMail.value = ""
+        inputMail.value = "";
+        textAreaMail.value = "";
         cChooseTrouver = null;
         viewMaps = false;
         clonepColor_m.clear();
@@ -34647,8 +34914,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       //Fin script flemme
 
       map.addEventListener("click", () => {
-        inputMail.value = ""
-        textAreaMail.value = ""
+        inputMail.value = "";
+        textAreaMail.value = "";
         wrapperTool.insertBefore(zBox, wrapperTool.firstChild);
         zBox.classList.remove("modeTrouver");
         L_addMaps.forEach((p) => {
@@ -60286,8 +60553,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const phoneDevise = document.getElementById("phoneDevise");
 
       devises.addEventListener("click", () => {
-        inputMail.value = ""
-        textAreaMail.value = ""
+        inputMail.value = "";
+        textAreaMail.value = "";
 
         loaderD.style.display = "";
 
@@ -62102,15 +62369,18 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       // Script achats
 
       // Test web3forms
-      async function sendMessage(email,type, message) {
+
+     
+
+      async function sendMessage(type,message,email) {
         try {
           const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               access_key: "596cb392-1d52-402c-aa38-52c72e64f7ba",
-              type,
-              message,
+              category: type,
+              message: message,
               ...(email && { email }),
             }),
           });
