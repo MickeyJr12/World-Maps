@@ -60665,6 +60665,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const inputD2 = document.getElementById("inputD2");
       L_inputD = [inputD1, inputD2];
       L_inputD.forEach((input) => {
+        input.addEventListener('pointerdown',(e)=>{
+          e.preventDefault()
+          input.focus({preventScroll : true})
+        })
         input.addEventListener("keydown", (e) => {
           if (input.value === "" && (e.key === "," || e.key === ".")) {
             e.preventDefault();
