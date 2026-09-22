@@ -4412,13 +4412,23 @@
           border-radius 0.6s ease,
           padding-top 0.4s ease;
         }
+
+           #cadreMail.active {
+        /* top: calc(env(safe-area-inset-top) + 0.5rem); */
+        top: 0;
+        border-radius: 0rem;
+        padding-top: calc(env(safe-area-inset-top) + 0.4rem);
+      }
+      
+
+
         #mapMail{
           position : absolute;
           z-index : -1;
           pointer-events : none;
-          opacity : 0.08;
-          bottom : 4rem;
-          width : 110%;
+          opacity : 0.05;
+          bottom : 2rem;
+          width : 180%;
         }
         #loaderMail{
           display : flex;
@@ -4446,12 +4456,7 @@
       #envoiMail.active{
         opacity : 1;
       }
-      #cadreMail.active {
-        /* top: calc(env(safe-area-inset-top) + 0.5rem); */
-        top: 0;
-        border-radius: 0rem;
-        padding-top: calc(env(safe-area-inset-top) + 0.4rem);
-      }
+   
 
       #headerCadreMail {
         display: flex;
@@ -4584,7 +4589,7 @@
       }
       #btnEditMail.active{
         outline-color : rgba(185, 0, 185, 0.25);
-        background : rgba(126, 60, 126,0.15);
+        background : rgb(255, 224, 255);
 
          #svgChoiceMail{
           display : none;
@@ -30438,15 +30443,19 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         crossRD.click();
       });
 
+      let intervMail;
       mail.addEventListener("click", () => {
         // const sujet = encodeURIComponent("Feedback Globus Quiz");
         // const corps = encodeURIComponent("Bonjour,\n\n");
         // window.location.href = `mailto:contact.globusquiz@gmail.com?subject=${sujet}&body=${corps}`;
         cadreMail.classList.add("active");
-        setTimeout(() => {
-        textAreaMail.focus()
-        textAreaMail.focus()
-        }, 500);
+        intervMail = setInterval(() => {
+          if(cadreMail.getBoundingClientRect().top === 0){
+            textAreaMail.focus()
+            clearInterval(intervMail)
+          }
+        }, 100);
+       
       });
 
       textAreaMail.focus({ preventScroll: true });
@@ -30454,6 +30463,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
 
       cancelMail.addEventListener("click", () => {
+        inputMail.blur()
+        textAreaMail.blur()
         cadreMail.classList.remove("active");
       });
 
@@ -30467,10 +30478,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if(btnEditMail.classList.contains('active')){
           inputMail.textContent = infoEditMail.textContent
         }
-        setTimeout(() => {
         inputMail.focus()
-        inputMail.focus()
-        }, 500);
       })
       
       crossEditMail.addEventListener('click',(e)=>{
@@ -30600,12 +30608,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           loaderMail.classList.remove('active')
       }
 
-      cadreMail.addEventListener('pointerdown',()=>{
-        interfaceEnvoiMail(true)
-      })
-      cadreMail.addEventListener('pointerup',()=>{
-        interfaceEnvoiMail(false)
-      })
+     
 
       sendMail.addEventListener("click", async () => {
         if (inputMail.value.length > 0 && !inputMail.checkValidity()) {
