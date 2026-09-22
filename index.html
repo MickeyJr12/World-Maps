@@ -30364,7 +30364,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // const corps = encodeURIComponent("Bonjour,\n\n");
         // window.location.href = `mailto:contact.globusquiz@gmail.com?subject=${sujet}&body=${corps}`;
         cadreMail.classList.add("active");
+        setTimeout(() => {
         textAreaMail.focus()
+        }, 500);
 
       });
 
@@ -30375,7 +30377,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       btnEditMail.addEventListener('click',()=>{
         cadreEditMail.classList.add('active')
         cacheEditMail.classList.add('active')
+        setTimeout(() => {
         inputMail.focus()
+        }, 500);
       })
       
       crossEditMail.addEventListener('click',()=>{
