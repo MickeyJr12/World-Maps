@@ -4633,9 +4633,9 @@
         box-sizing: border-box;
         padding: 0.6rem 0.8rem;
         border-radius: 100rem;
-        background: rgba(242, 242, 242, 1);
+        background: rgba(0, 0, 0, 0.02);
+        outline: 1px dashed rgba(0, 0, 0, 0.18);
         box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
-        outline: 1px solid transparent;
         width: 100%;
         margin-top: 1.6rem;
         font-size: 0.92rem;
@@ -9165,8 +9165,6 @@
         ></textarea>
       </div>
 
-      <span id="errorMessageMail" class="errorCadreMail"></span>
-
       <div id="btnEditMail">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -9246,7 +9244,7 @@
 
       <div class="detailMessageMail">Type de message</div>
       <div id="wrapperTypesMail">
-        <div class="typeMail active"; id="bugTypeMail">
+        <div class="typeMail">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -9369,6 +9367,10 @@
         </div>
         <div class="typeMail"><span>...Autre</span></div>
       </div>
+
+      <span id="errorMessageMail" class="errorCadreMail" style="margin-top : 0.25rem"></span>
+
+
 
       <div id="cacheEditMail"></div>
       <div class="cadreMessage" id="cadreEditMail">
@@ -28580,6 +28582,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const txtEditMail = getId("txtEditMail");
       const infoEditMail = getId("infoEditMail");
       const errorMail = getId("errorMail");
+      const errorMessageMail = getId('errorMessageMail')
       const checkEditMail = getId("checkEditMail");
       const cancelEditMail = getId("cancelEditMail");
       const crossEditMail = getId("crossEditMail");
@@ -30766,12 +30769,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // const sujet = encodeURIComponent("Feedback Globus Quiz");
         // const corps = encodeURIComponent("Bonjour,\n\n");
         // window.location.href = `mailto:contact.globusquiz@gmail.com?subject=${sujet}&body=${corps}`;
-        getId('bugTypeMail').click()
+        typesMail.forEach(type=>{
+          type.classList.remove('active')
+        })
         cadreMail.classList.add("active");
       });
       typesMail.forEach((type) => {
         type.addEventListener("click", () => {
           typesMail.forEach((t) => t.classList.remove("active"));
+          errorMessageMail.classList.remove('active')
           type.classList.add("active");
         });
       });
@@ -30828,7 +30834,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             checkEditMail.classList.remove("shake");
           }, 450);
 
-          errorMail.textContent = "Saisissez une adresse e-mail valide";
+          errorMail.textContent = "Saisissez une adresse e-mail valide.";
           errorMail.classList.add("active");
 
           return;
@@ -30920,19 +30926,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (inputMail.value.length > 0 && !inputMail.checkValidity()) {
           errorMail.classList.add("active");
           errorMail.textContent =
-            "Veuillez saisir une adresse valide, ou alors laisser le champ vide";
+            "Veuillez saisir une adresse valide, ou alors laisser le champ vide.";
           return;
         }
 
-        interfaceEnvoiMail(true);
-        errorMail.classList.remove("active");
-        cadreMail.style.pointerEvents = "none"; // évite le double envoi
-        let typeM;
+         let typeM = false;
         typesMail.forEach((type) => {
           if (type.classList.contains("active")) {
             typeM = type.querySelector("span").textContent;
           }
         });
+        if (!typeM){
+          errorMessageMail.textContent = "Veuillez choisir une catégorie."
+          errorMessageMail.classList.add('active')
+          return
+        }
+
+        interfaceEnvoiMail(true);
+        errorMail.classList.remove("active");
+        cadreMail.style.pointerEvents = "none"; // évite le double envoi
         
         const ok = await sendMessage(
           typeM,
