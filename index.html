@@ -4509,6 +4509,101 @@
           height: 1.25rem;
         }
       }
+
+
+      #btnEditMail{
+        display : flex;
+        justify-content :space-between;
+        align-items : center;
+        box-sizing : border-box;
+        padding : 0.6rem 0.8rem;
+        border-radius : 100rem;
+        background: rgba(246, 246, 246, 1);
+        box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+        width : 100%;
+        font-size : 0.92rem;
+        transition : background 0.4s ease, outline-color 0.4s ease, transform 0.2s ease, filter 0.2s ease;
+        svg{
+          height : 1.2rem;
+        }
+      }
+      #btnEditMail:active{
+        transform : scale(0.96);
+        filter : brightness(0.92);
+      }
+      #btnEditMail.active{
+        outline-color : rgba(126, 60, 126,0.4);
+        background : rgba(126, 60, 126,0.15);
+      }
+
+
+      #txtEdtiMail{
+        color : rgba(0,0,0,0.6);
+        text-align : flex-start;
+        
+      }
+      #infoEditMail{
+        color : rgba(0,0,0,0.4);
+        font-size : 0.75rem;
+        text-align : flex-start;
+      }
+
+      #cacheEditMail{        
+        pointer-events: none;
+        position: fixed;
+        left : -4rem;
+        top : -4rem;
+        transform : translateX(-4rem);
+        opacity: 0;
+        min-width: 200vw;
+        min-height: 200vh;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        transition: opacity 0.2s ease;
+      }
+      #cacheEditMail.active {
+        pointer-events: all;
+        opacity: 1;
+        transform: none;
+      }
+      #cadreEditMail{
+        flex-direction : column;
+        z-index : 200;
+        position : absolute;
+        pointer-events : none;
+        opacity : 0;
+        width : calc(100% - 2.08rem);
+        top : calc(env(safe-area-inset-top) + 4rem);
+        left : 50%;
+        transform : translateX(-50%) translateY(-0.8rem) scale(0.92);
+        transition : transform 0.2s ease, opacity 0.2s ease;
+      }
+      #cadreEditMail.active{
+        pointer-events : all;
+        transform :translateX(-50%);
+        opacity : 1;
+      }
+      .choiceEditMail{
+        display : flex;
+        align-items : center;
+        justify-content : center; 
+        padding : 0.8rem;
+        border-radius : 0.6rem;
+        transition : filter 0.2s ease transform 0.2s ease;
+      }
+      .choiceEditMail:active{
+        transform : scale(0.96);
+        filter : brightness(0.8);
+      }
+      #cancelEditMail{
+        background : rgba(0,0,0,0.1);
+      }
+      #editMailCheck{
+        background : rgba(126, 60, 126,1);
+        color : white;
+      }
+
       .txtMail {
         flex: 1;
         box-sizing: border-box;
@@ -8814,7 +8909,7 @@
       </div> -->
 
       <span id="headerCadreMail">
-        <span id="cancelMail">Annuler</span>
+        <span id="cancelMail">Fermer</span>
         <span id="titleCadreMail">Me contacter</span>
         <svg
           id="sendMail"
@@ -8886,9 +8981,43 @@
 
       <span id="errorMessageMail" class="errorCadreMail"></span>
 
-      <div class="detailMessageMail">Votre e-mail (facultatif)</div>
 
-      <div class="cadreMessage">
+      <div id="btnEditMail">
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 17H21M18.5 14.5V19.5M12 19H6.2C5.0799 19 4.51984 19 4.09202 18.782C3.71569 18.5903 3.40973 18.2843 3.21799 17.908C3 17.4802 3 16.9201 3 15.8V8.2C3 7.0799 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.0799 21 8.2V11M20.6067 8.26229L15.5499 11.6335C14.2669 12.4888 13.6254 12.9165 12.932 13.0827C12.3192 13.2295 11.6804 13.2295 11.0677 13.0827C10.3743 12.9165 9.73279 12.4888 8.44975 11.6335L3.14746 8.09863" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+<div style="display : flex; flex-direction : column; flex : 1; gap : 0.05rem; margin-left : 0.6rem;">
+  <span id="txtEdtiMail">Je veux recevoir une réponse</span>
+  <span id="infoEditMail">Aucun e-mail n'a été renseigné</span>
+
+</div>        
+
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+      </div>
+
+
+      <div id="cacheEditMail"></div>
+      <div class="cadreMessage" id="cadreEditMail">
+        <div style="display : flex; width : 100%; justify-content : space-between; font-size : 0.96rem; align-items: center;; " >
+          Où vous contacter ? 
+          
+        <button class="cross"  id="crossEditMail">
+        <svg
+        
+          xmlns="http://www.w3.org/2000/svg"
+          id="Outline"
+          viewBox="0 0 24 24"
+          width="100%"
+          height="100%"
+          fill="black"
+        >
+          <path
+            d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+          />
+         
+        </svg>
+      </button>
+        </div>
+
+        <div style="display : flex; border-radius: inherit; justify-content : inherit; align-items: inherit; gap : inherit; width : 100%; ">
         <div class="boxSvgMessage">
           <svg
             fill="#7e3c7e"
@@ -8914,10 +9043,13 @@
         />
       </div>
 
+      
       <span
         style="
           display: flex;
+          align-self : flex-start;
           gap: 0.25rem;
+          margin-top : -0.2rem;
           font-size: 0.68rem;
           color: rgba(0, 0, 0, 0.4);
         "
@@ -8950,9 +9082,17 @@
             ></path>
           </g>
         </svg>
-        Renseignez ce champ seulement si vous souhaitez recevoir une réponse.
+        Utilisé uniquement pour pouvoir vous répondre
       </span>
       <span id="errorMail" class="errorCadreMail"></span>
+
+      <div style="display : flex; gap : 0.6rem; align-self : flex-end">
+        <div class="choiceEditMail" id="cancelEditMail">Retirer</div>
+        <div class="choiceEditMail" id="editMailCheck">Valider</div>
+      </div>
+
+      </div>
+
     </div>
 
     <div id="cadreTrackDays">
@@ -27810,6 +27950,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function getId(id) {
         return document.getElementById(`${id}`);
       }
+      function addClick(el, action){
+        el.addEventListener('click',()=>action)
+      }
       function getC(classe) {
         return document.querySelector(`${classe}`);
       }
@@ -28008,6 +28151,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const toggleSouv = document.getElementById("toggleSouv");
 
       const mail = document.getElementById("mail");
+      const crossEditMail  = getId('crossEditMail')
+      const cadreEditMail  = getId('cadreEditMail')
+      const cacheEditMail = getId('cacheEditMail')
+      const btnEditMail = getId('btnEditMail')
       const errorMail = getId("errorMail");
       const sendMail = getId("sendMail");
       const textAreaMail = getId("textAreaMail");
@@ -30189,6 +30336,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       cancelMail.addEventListener("click", () => {
         cadreMail.classList.remove("active");
       });
+
+      btnEditMail.addEventListener('click',()=>{
+        cadreEditMail.classList.add('active')
+        cacheEditMail.classList.add('active')
+      })
+      
+      crossEditMail.addEventListener('click',()=>{
+        cadreEditMail.classList.remove('active')
+        cacheEditMail.classList.remove('active')
+      })
+
+      cacheEditMail.addEventListener('click',()=>{
+        crossEditMail.click()
+      })
+
+      // addClick(cacheEditMail,crossEditMail.click())
+
+
+
 
       const CONTACT_EMAIL = "contact.globusquiz@gmail.com"; // remplace par ton adresse
       const estCapacitor = window.Capacitor?.isNativePlatform?.() === true;
