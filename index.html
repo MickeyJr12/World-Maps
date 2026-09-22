@@ -4490,16 +4490,17 @@
         box-shadow: 0 0 2px rgba(126, 60, 126, 0.4);
       }
       .errorCadreMail {
+        display : none;
         align-self: flex-start;
-        margin: -0.2rem 0;
-        opacity: 0;
-        color: red;
+        margin: -0.4rem 0;
+        color: rgba(255,0,0,0.6);
         font-size: 0.85rem;
         transition: opacity 0.2s ease;
       }
       .errorCadreMail.active {
-        opacity: 1;
+        display : flex;
       }
+
       .boxSvgMessage {
         display: flex;
         box-sizing: border-box;
@@ -4528,7 +4529,7 @@
         }
       }
       #btnEditMail:active{
-        transform : scale(0.96);
+        transform : scale(0.98);
         filter : brightness(0.92);
       }
       #btnEditMail.active{
@@ -4537,7 +4538,7 @@
       }
 
 
-      #txtEdtiMail{
+      #txtEditMail{
         color : rgba(0,0,0,0.6);
         text-align : flex-start;
         
@@ -4593,22 +4594,39 @@
         transition : filter 0.2s ease transform 0.2s ease;
       }
       .choiceEditMail:active{
-        transform : scale(0.96);
+        transform : scale(0.98);
         filter : brightness(0.8);
       }
+          @keyframes shakeX {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-6px); }
+  30% { transform: translateX(6px); }
+  45% { transform: translateX(-5px); }
+  60% { transform: translateX(5px); }
+  75% { transform: translateX(-3px); }
+  90% { transform: translateX(3px); }
+}
+
+.shake {
+  animation: shakeX 400ms ease;
+  will-change: transform; /* optimise l'anim */
+}
+
       #cancelEditMail{
         background : rgba(0,0,0,0.1);
       }
-      #editMailCheck{
+      #checkEditMail{
         background : rgba(126, 60, 126,1);
         color : white;
       }
 
       .txtMail {
+        display : flex;
+        align-items : center;
         flex: 1;
         box-sizing: border-box;
         padding: 0.6rem;
-        font-size: 0.92rem;
+        font-size: 0.9rem;
         /* border: 1px solid #E6E8F0;  */
         border-radius: inherit;
         border: 0;
@@ -4630,9 +4648,10 @@
       }
 
       #textAreaMail {
-        min-height: 8rem;
+        min-height: 9.6rem;
       }
       #inputMail {
+        padding-right: 1.75rem;
         height: clamp(2.6rem, 2.6rem, 2.6rem);
       }
 
@@ -8985,7 +9004,7 @@
       <div id="btnEditMail">
 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16 17H21M18.5 14.5V19.5M12 19H6.2C5.0799 19 4.51984 19 4.09202 18.782C3.71569 18.5903 3.40973 18.2843 3.21799 17.908C3 17.4802 3 16.9201 3 15.8V8.2C3 7.0799 3 6.51984 3.21799 6.09202C3.40973 5.71569 3.71569 5.40973 4.09202 5.21799C4.51984 5 5.0799 5 6.2 5H17.8C18.9201 5 19.4802 5 19.908 5.21799C20.2843 5.40973 20.5903 5.71569 20.782 6.09202C21 6.51984 21 7.0799 21 8.2V11M20.6067 8.26229L15.5499 11.6335C14.2669 12.4888 13.6254 12.9165 12.932 13.0827C12.3192 13.2295 11.6804 13.2295 11.0677 13.0827C10.3743 12.9165 9.73279 12.4888 8.44975 11.6335L3.14746 8.09863" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
 <div style="display : flex; flex-direction : column; flex : 1; gap : 0.05rem; margin-left : 0.6rem;">
-  <span id="txtEdtiMail">Je veux recevoir une réponse</span>
+  <span id="txtEditMail">Je veux recevoir une réponse</span>
   <span id="infoEditMail">Aucun e-mail n'a été renseigné</span>
 
 </div>        
@@ -9017,9 +9036,10 @@
       </button>
         </div>
 
-        <div style="display : flex; border-radius: inherit; justify-content : inherit; align-items: inherit; gap : inherit; width : 100%; ">
+        <div style="display : flex; border-radius: inherit; justify-content : inherit; align-items: inherit; gap : 0.4rem; width : 100%; ">
         <div class="boxSvgMessage">
           <svg
+            height="0.96rem"
             fill="#7e3c7e"
             xmlns="http://www.w3.org/2000/svg"
             id="Layer_1"
@@ -9031,6 +9051,8 @@
             />
           </svg>
         </div>
+
+        <div style="display : flex; flex : 1; border-radius : inherit; position : relative; align-items : center;">
         <input
           id="inputMail"
           class="txtMail"
@@ -9040,7 +9062,9 @@
           spellcheck="false"
           type="email"
           placeholder="nom@exemple.com"
-        />
+        />        
+        <svg style="position : absolute; right : 0.6rem; height : 1.2rem;" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z" fill="#a3a7ba"></path> </g></svg>
+      </div>
       </div>
 
       
@@ -9088,7 +9112,7 @@
 
       <div style="display : flex; gap : 0.6rem; align-self : flex-end">
         <div class="choiceEditMail" id="cancelEditMail">Retirer</div>
-        <div class="choiceEditMail" id="editMailCheck">Valider</div>
+        <div class="choiceEditMail" id="checkEditMail">Valider</div>
       </div>
 
       </div>
@@ -27947,6 +27971,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         requestAnimationFrame(update);
       }
 
+      
       function getId(id) {
         return document.getElementById(`${id}`);
       }
@@ -27956,6 +27981,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function getC(classe) {
         return document.querySelector(`${classe}`);
       }
+
+      function mailCheck(chaine) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(chaine.trim());
+}
 
       document.addEventListener(
         "click",
@@ -28151,11 +28180,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const toggleSouv = document.getElementById("toggleSouv");
 
       const mail = document.getElementById("mail");
+      const txtEditMail = getId('txtEditMail')
+      const infoEditMail = getId('infoEditMail')
+      const errorMail = getId('errorMail')
+      const checkEditMail = getId('checkEditMail')
+      const cancelEditMail = getId('cancelEditMail')
       const crossEditMail  = getId('crossEditMail')
       const cadreEditMail  = getId('cadreEditMail')
       const cacheEditMail = getId('cacheEditMail')
       const btnEditMail = getId('btnEditMail')
-      const errorMail = getId("errorMail");
       const sendMail = getId("sendMail");
       const textAreaMail = getId("textAreaMail");
       const inputMail = getId("inputMail");
@@ -30331,6 +30364,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // const corps = encodeURIComponent("Bonjour,\n\n");
         // window.location.href = `mailto:contact.globusquiz@gmail.com?subject=${sujet}&body=${corps}`;
         cadreMail.classList.add("active");
+        textAreaMail.focus()
+
       });
 
       cancelMail.addEventListener("click", () => {
@@ -30340,6 +30375,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       btnEditMail.addEventListener('click',()=>{
         cadreEditMail.classList.add('active')
         cacheEditMail.classList.add('active')
+        inputMail.focus()
       })
       
       crossEditMail.addEventListener('click',()=>{
@@ -30350,6 +30386,46 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       cacheEditMail.addEventListener('click',()=>{
         crossEditMail.click()
       })
+
+
+      let timeOut = setTimeout(() => {}, 0);
+
+      checkEditMail.addEventListener('click',()=>{
+
+        checkEditMail.classList.remove('shake')
+        clearTimeout(timeOut);
+
+        if (inputMail.value.length > 0 && !mailCheck(inputMail.value)){
+         checkEditMail.classList.add('shake')  
+          timeOut = setTimeout(() => {
+            checkEditMail.classList.remove('shake')
+          }, 450);
+
+          errorMail.textContent = "Saisissez une adresse e-mail valide"
+          errorMail.classList.add('active')
+
+          return
+        }
+        else if (inputMail.value.length === 0){
+          checkEditMail.classList.add('shake')  
+          timeOut = setTimeout(() => {
+            checkEditMail.classList.remove('shake')
+          }, 450);
+
+          errorMail.textContent = "Entrez une adresse e-mail pour valider"
+          errorMail.classList.add('active')
+          return
+        }
+
+        txtEditMail.textContent = inputMail.value
+        btnEditMail.classList.add('active')
+        infoEditMail.style.display = "none"
+        crossEditMail.click()
+
+
+
+      })
+
 
       // addClick(cacheEditMail,crossEditMail.click())
 
