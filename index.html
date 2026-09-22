@@ -8026,6 +8026,9 @@
       #cadreSD.active {
         top: calc(18vh + 1rem);
       }
+      #cadreSD.searching{
+        top: calc(env(safe-area-inset-top) + 0.8rem);
+      }
       #cadreSD.fullScreen {
         top: 0;
         border-radius: 0;
@@ -62112,8 +62115,20 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         e.preventDefault()
         inputSD.focus({preventScroll : true})
         tfInputSD = true
+        if(!cadreSD.classList.contains("fullScreen")){
+          cadreSD.classList.remove('active')
+          cadreSD.classList.add('searching')
+        }
       })
-      inputSD.addEventListener('blur',()=>tfInputSD = false)
+      inputSD.addEventListener('blur',()=>{
+         if(!cadreSD.classList.contains("fullScreen")){
+          cadreSD.classList.add('active')
+          cadreSD.classList.remove('searching')
+
+          cadreSD.style.top = "calc(18vh + 1rem)";
+          requestAnimationFrame(()=>cadreSD.style.top = "")
+        }
+        tfInputSD = false})
       inputSD.addEventListener("input", (e) => {
         let Ld = {};
         for (const clefD of Object.keys(D_nDevises)) {
