@@ -4519,22 +4519,39 @@
         box-sizing : border-box;
         padding : 0.6rem 0.8rem;
         border-radius : 100rem;
-        background: rgba(246, 246, 246, 1);
+        background: rgba(242, 242, 242, 1);
         box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+        outline : 1px solid transparent;
         width : 100%;
+        margin-top : 1.6rem;
         font-size : 0.92rem;
-        transition : background 0.4s ease, outline-color 0.4s ease, transform 0.2s ease, filter 0.2s ease;
+        transition : background 0.2s ease, outline-color 0.4s ease, transform 0.2s ease, filter 0.2s ease;
         svg{
           height : 1.2rem;
         }
+
+        #svgEditMail{
+          display : none;
+        }
+
+
       }
       #btnEditMail:active{
         transform : scale(0.98);
         filter : brightness(0.92);
       }
       #btnEditMail.active{
-        outline-color : rgba(126, 60, 126,0.4);
+        outline-color : rgba(185, 0, 185, 0.25);
         background : rgba(126, 60, 126,0.15);
+
+         #svgChoiceMail{
+          display : none;
+        }
+
+        #svgEditMail{
+          display : flex;
+        }
+
       }
 
 
@@ -4653,6 +4670,11 @@
       #inputMail {
         padding-right: 1.75rem;
         height: clamp(2.6rem, 2.6rem, 2.6rem);
+      }
+      #eraseMail{
+        position : absolute;
+        right : 0.6rem;
+        height : 1.2rem;
       }
 
       .btnHome {
@@ -9009,7 +9031,9 @@
 
 </div>        
 
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        <svg id="svgChoiceMail" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#7e3c7e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+        <svg id="svgEditMail" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M20.8477 1.87868C19.6761 0.707109 17.7766 0.707105 16.605 1.87868L2.44744 16.0363C2.02864 16.4551 1.74317 16.9885 1.62702 17.5692L1.03995 20.5046C0.760062 21.904 1.9939 23.1379 3.39334 22.858L6.32868 22.2709C6.90945 22.1548 7.44285 21.8693 7.86165 21.4505L22.0192 7.29289C23.1908 6.12132 23.1908 4.22183 22.0192 3.05025L20.8477 1.87868ZM18.0192 3.29289C18.4098 2.90237 19.0429 2.90237 19.4335 3.29289L20.605 4.46447C20.9956 4.85499 20.9956 5.48815 20.605 5.87868L17.9334 8.55027L15.3477 5.96448L18.0192 3.29289ZM13.9334 7.3787L3.86165 17.4505C3.72205 17.5901 3.6269 17.7679 3.58818 17.9615L3.00111 20.8968L5.93645 20.3097C6.13004 20.271 6.30784 20.1759 6.44744 20.0363L16.5192 9.96448L13.9334 7.3787Z" fill="#7e3c7e"></path> </g></svg>
       </div>
 
 
@@ -9018,7 +9042,7 @@
         <div style="display : flex; width : 100%; justify-content : space-between; font-size : 0.96rem; align-items: center;; " >
           Où vous contacter ? 
           
-        <button class="cross"  id="crossEditMail">
+        <button class="cross"  id="crossEditMail" style="height : 1.8rem;">
         <svg
         
           xmlns="http://www.w3.org/2000/svg"
@@ -9063,7 +9087,7 @@
           type="email"
           placeholder="nom@exemple.com"
         />        
-        <svg style="position : absolute; right : 0.6rem; height : 1.2rem;" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z" fill="#a3a7ba"></path> </g></svg>
+        <svg id="eraseMail" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z" fill="#a3a7ba"></path> </g></svg>
       </div>
       </div>
 
@@ -9111,7 +9135,6 @@
       <span id="errorMail" class="errorCadreMail"></span>
 
       <div style="display : flex; gap : 0.6rem; align-self : flex-end">
-        <div class="choiceEditMail" id="cancelEditMail">Retirer</div>
         <div class="choiceEditMail" id="checkEditMail">Valider</div>
       </div>
 
@@ -28180,6 +28203,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const toggleSouv = document.getElementById("toggleSouv");
 
       const mail = document.getElementById("mail");
+      const eraseMail = getId('eraseMail')
       const txtEditMail = getId('txtEditMail')
       const infoEditMail = getId('infoEditMail')
       const errorMail = getId('errorMail')
@@ -30366,6 +30390,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreMail.classList.add("active");
         setTimeout(() => {
         textAreaMail.focus()
+        textAreaMail.focus()
         }, 500);
 
       });
@@ -30374,27 +30399,42 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreMail.classList.remove("active");
       });
 
+      cadreEditMail.addEventListener('click',()=>{
+        inputMail.focus()
+      })
       btnEditMail.addEventListener('click',()=>{
         cadreEditMail.classList.add('active')
         cacheEditMail.classList.add('active')
+        textAreaMail.blur()
+        if(btnEditMail.classList.contains('active')){
+          inputMail.textContent = infoEditMail.textContent
+        }
         setTimeout(() => {
+        inputMail.focus()
         inputMail.focus()
         }, 500);
       })
       
-      crossEditMail.addEventListener('click',()=>{
+      crossEditMail.addEventListener('click',(e)=>{
+        e.stopPropagation()
+        inputMail.blur()
+        errorMail.classList.remove('active')
         cadreEditMail.classList.remove('active')
         cacheEditMail.classList.remove('active')
       })
 
       cacheEditMail.addEventListener('click',()=>{
-        crossEditMail.click()
+        inputMail.focus()
       })
 
-
+      eraseMail.addEventListener('click',(e)=>{
+        errorMail.classList.remove('active')
+        inputMail.value = ""
+      })
       let timeOut = setTimeout(() => {}, 0);
 
-      checkEditMail.addEventListener('click',()=>{
+      checkEditMail.addEventListener('click',(e)=>{
+        e.stopPropagation()
 
         checkEditMail.classList.remove('shake')
         clearTimeout(timeOut);
@@ -30411,19 +30451,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           return
         }
         else if (inputMail.value.length === 0){
-          checkEditMail.classList.add('shake')  
-          timeOut = setTimeout(() => {
-            checkEditMail.classList.remove('shake')
-          }, 450);
+          // checkEditMail.classList.add('shake')  
+          // timeOut = setTimeout(() => {
+          //   checkEditMail.classList.remove('shake')
+          // }, 450);
 
-          errorMail.textContent = "Entrez une adresse e-mail pour valider"
-          errorMail.classList.add('active')
+          // errorMail.textContent = "Entrez une adresse e-mail pour valider"
+          // errorMail.classList.add('active')
+          btnEditMail.classList.remove('active')
+        infoEditMail.textContent = "Aucun e-mail n'a été renseigné";
+        crossEditMail.click()
+
           return
         }
 
-        txtEditMail.textContent = inputMail.value
+        infoEditMail.textContent = inputMail.value
         btnEditMail.classList.add('active')
-        infoEditMail.style.display = "none"
         crossEditMail.click()
 
 
