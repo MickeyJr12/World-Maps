@@ -4513,8 +4513,12 @@
         position: absolute;
         left: 0;
         font-size: 0.92rem;
-        color: #7e3c7e;
+        fill: #7e3c7e;
         transition: filter 0.1s ease;
+        svg {
+          fill: #7e3c7e;
+          height: 2rem;
+        }
       }
       #cancelMail:active {
         filter: brightness(0.6);
@@ -4530,17 +4534,25 @@
       }
       #sendMail {
         position: absolute;
-        fill: rgba(0, 0, 0, 0.25);
         pointer-events: none;
         right: 0;
         height: 2rem;
-        transition:
+         path{
+          fill: rgba(0, 0, 0, 0.25);
+           transition:
+          fill 0.2s ease,
+          opacity 0.1s ease;
+        }
+       transition:
           fill 0.2s ease,
           opacity 0.1s ease;
       }
       #sendMail.active {
         pointer-events: all;
-        fill: #7e3c7e;
+        path{
+          fill: #7e3c7e;
+        }
+        
       }
       #sendMail.hide {
         opacity: 0;
@@ -9123,37 +9135,33 @@
       </div>
 
       <span id="headerCadreMail">
-        <span id="cancelMail">Fermer</span>
+        <!-- <span id="cancelMail">Fermer</span> -->
+        <div id="cancelMail">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Outline"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+            />
+          </svg>
+        </div>
+
         <span id="titleCadreMail">Me contacter</span>
         <span id="envoiMail">Envoi...</span>
 
         <svg
           id="sendMail"
-          viewBox="0 0 32 32"
-          style="
-            fill-rule: evenodd;
-            clip-rule: evenodd;
-            stroke-linejoin: round;
-            stroke-miterlimit: 2;
-          "
+          viewBox="0 0 24 24"
           version="1.1"
-          xml:space="preserve"
           xmlns="http://www.w3.org/2000/svg"
-          xmlns:serif="http://www.serif.com/"
           xmlns:xlink="http://www.w3.org/1999/xlink"
+          fill="#000000"
         >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M11.499,19.173l5.801,-5.849c0.389,-0.392 1.022,-0.394 1.414,-0.006c0.392,0.389 0.395,1.022 0.006,1.414l-5.798,5.847l5.306,8.002c0.207,0.313 0.572,0.483 0.945,0.441c0.373,-0.042 0.691,-0.289 0.824,-0.64l9.024,-23.904c0.138,-0.366 0.05,-0.78 -0.226,-1.058c-0.276,-0.278 -0.689,-0.369 -1.057,-0.233l-24.004,8.892c-0.353,0.13 -0.602,0.448 -0.646,0.821c-0.044,0.373 0.125,0.74 0.438,0.948l7.973,5.325Z"
-            ></path>
-            <g id="Icon"></g>
-          </g>
+                  <path
+                    d="M21.4325,4.86103 L15.4325,20.361 C15.175,21.0261 14.324,21.2156 13.8087,20.7227 L10.4266,17.4876 L8.35348,19.5607 C8.0385,19.8757 7.49993,19.6526 7.49993,19.2072 L7.49993,14.6882 L2.30868,9.72268 C1.74196,9.1806 1.99133,8.22685 2.75086,8.03155 L20.2509,3.53155 C21.0389,3.32889 21.7262,4.10218 21.4325,4.86103 Z M19,6.00006 L8.03159,13.1534 L9.76704,14.8134 L19,6.00006 Z"
+                  ></path>
         </svg>
       </span>
 
