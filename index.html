@@ -5305,6 +5305,10 @@
       }
 
       #restaurer-achats {
+        position : relative; 
+        display : flex;
+        justify-content : center;
+        align-items : center;
         background: none;
         border: none;
         margin-top: 0.4rem;
@@ -5314,6 +5318,17 @@
         text-decoration: underline;
         cursor: pointer;
         padding: 8px;
+         .spinner{
+          display: none;
+        }
+      }
+      #restaurer-achats.loading{
+        filter : brightness(1.4);
+        color : transparent;
+        pointer-events : none;
+        .spinner{
+          display: flex;
+        }
       }
       #restaurer-achats:active {
         filter: brightness(0.92);
@@ -12529,7 +12544,23 @@
             >
           </div>
 
-          <div id="restaurer-achats">Restaurer les achats</div>
+          <div id="restaurer-achats">
+             <div class="spinner center">
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                  <div class="spinner-blade"></div>
+                </div>
+
+            Restaurer les achats</div>
         </div>
 
         <div class="slide">
@@ -19896,6 +19927,7 @@
           <div class="footerLegend">
             <svg
               class="expend"
+              style="transform : rotate(180deg)"
               xmlns="http://www.w3.org/2000/svg"
               id="Outline"
               viewBox="0 0 24 24"
@@ -62792,10 +62824,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           return;
         }
 
-        document.getElementById("restaurer-achats").style.pointerEvents =
-          "none";
+        restaureBtn.classList.add('loading')
+
         await initPurchases();
 
+        
         try {
           const { customerInfo } = await Purchases.restorePurchases();
           noAd = !!customerInfo.entitlements.active[ENTITLEMENT_NO_ADS];
@@ -62808,11 +62841,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               message: "Tes achats précédents ont bien été restaurés !",
               buttonTitle: "OK",
             });
-            document.getElementById("restaurer-achats").style.pointerEvents =
-              "";
+            restaureBtn.classList.remove('loading')
           } else {
-            document.getElementById("restaurer-achats").style.pointerEvents =
-              "";
+            restaureBtn.classList.remove('loading')
             await Dialog.alert({
               title: "Aucun achat trouvé",
               message:
@@ -62821,7 +62852,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             });
           }
         } catch (err) {
-          document.getElementById("restaurer-achats").style.pointerEvents = "";
+          restaureBtn.classList.remove('loading')
           console.error("Erreur restauration achats:", err);
           await Dialog.alert({
             title: "Erreur",
@@ -62833,6 +62864,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       const buyBtnP = getId("buyBtnP");
       const buyBtnAd = getId("buyBtnAd");
+      const restaureBtn = getId('restaurer-achats')
       document.addEventListener("DOMContentLoaded", async () => {
         await chargerEtatAchats();
 
