@@ -31411,8 +31411,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       txtsMail.forEach((txt) => {
         txt.addEventListener("focus", (e) => {
           txt.focus({ preventScroll: true });
+          
+          requestAnimationFrame(()=>txt.parentNode.classList.add("active"))
 
-          txt.parentNode.classList.add("active");
         });
 
         txt.addEventListener("blur", (e) => {
