@@ -28352,6 +28352,45 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
     <!--Script utile-->
     <script>
+
+    // Réussir à annuler le click si on déplace le curseur 
+     (() => {
+  const MAX_MOVE = 10; // px de tolérance
+  let down = null;
+  let cancelNext = false;
+
+  window.addEventListener('pointerdown', e => {
+    down = { x: e.clientX, y: e.clientY, target: e.target, id: e.pointerId };
+    cancelNext = false;
+  }, true);
+
+  window.addEventListener('pointerup', e => {
+    if (!down || e.pointerId !== down.id) return;
+
+    const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
+    const under = document.elementFromPoint(e.clientX, e.clientY);
+    const sameEl = under &&
+      (down.target.contains(under) || under.contains(down.target));
+
+    cancelNext = moved > MAX_MOVE || !sameEl;
+    down = null;
+  }, true);
+
+  window.addEventListener('pointercancel', () => {
+    down = null;
+    cancelNext = false;
+  }, true);
+
+  window.addEventListener('click', e => {
+    // e.detail === 0 : click clavier/programmatique, on ne touche pas
+    if (cancelNext && e.detail !== 0) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    }
+    cancelNext = false;
+  }, true);
+})();
+
       async function partagerApp() {
         const APP_STORE_URL = "https://apps.apple.com/app/idTON_ID_APP_STORE"; // à remplacer une fois ta fiche créée
 
