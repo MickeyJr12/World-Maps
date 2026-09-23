@@ -58,9 +58,9 @@
         touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
       }
 
-     textarea {
-  resize: none;
-}
+      textarea {
+        resize: none;
+      }
       :root {
         --font-main: "Outfit", sans-serif;
         --font-poppins: "Poppins", sans-serif;
@@ -4327,7 +4327,7 @@
         max-height: 3rem;
         transition: filter 0.2s ease;
         svg {
-          overflow : visible;
+          overflow: visible;
         }
       }
 
@@ -4351,7 +4351,6 @@
       .btnPlay:active {
         filter: brightness(0.9);
       }
-      
 
       #cadreHome {
         display: flex;
@@ -4543,22 +4542,21 @@
         pointer-events: none;
         right: 0;
         height: 2rem;
-         path{
+        path {
           fill: rgba(0, 0, 0, 0.25);
-           transition:
-          fill 0.2s ease,
-          opacity 0.1s ease;
+          transition:
+            fill 0.2s ease,
+            opacity 0.1s ease;
         }
-       transition:
+        transition:
           fill 0.2s ease,
           opacity 0.1s ease;
       }
       #sendMail.active {
         pointer-events: all;
-        path{
+        path {
           fill: #7e3c7e;
         }
-        
       }
       #sendMail.hide {
         opacity: 0;
@@ -5069,7 +5067,7 @@
       }
       /* Fin CSS Scroll premium */
 
-        #cacheDons {
+      #cacheDons {
         pointer-events: none;
         position: fixed;
         left: -4rem;
@@ -5089,58 +5087,61 @@
         transform: none;
       }
 
-      #screenThankDon{
-        color : white;
-        z-index : 200;
+      #screenThankDon {
+        color: white;
+        z-index: 200;
       }
-      #cadreDons{
-        display : flex; 
-        position : absolute; 
-        flex-direction : column; 
+      #cadreDons {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
         align-items: center;
-        border-radius : 0.8rem;
-        padding :  0.6rem;
-        gap : 0.8rem;
-        box-sizing : border-box;
-        z-index : 100;
-        color : white;
-        opacity : 0;
-        pointer-events : none;
-        width : calc(100% - 2.2rem);
-        max-width  : 600px;
-        height : auto;
-        background : rgba(0,0,0,0.1);
+        border-radius: 0.8rem;
+        padding: 0.6rem;
+        gap: 0.8rem;
+        box-sizing: border-box;
+        z-index: 100;
+        color: white;
+        opacity: 0;
+        pointer-events: none;
+        width: calc(100% - 2.4rem);
+        max-width: 600px;
+        height: auto;
+        background: rgba(0, 0, 0, 0.1);
         background: linear-gradient(
-                180deg,
-                rgba(41, 141, 213, 0.75),
-                rgba(14, 88, 145, 0.75)
-              );
-        background : #0f4479;
-        top : calc(env(safe-area-inset-top) + 1rem);
-        transform : translateY(-1rem);
-        transition : transform 0.4s ease, opacity 0.4s ease;
+          180deg,
+          rgba(41, 141, 213, 0.75),
+          rgba(14, 88, 145, 0.75)
+        );
+        background: #0f4479;
+        top: calc(env(safe-area-inset-top) + 1rem);
+        transform: translateY(-1rem);
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease;
 
         textarea {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-}
-textarea::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge (Chromium) */
-}
-textArea,input{
-  color : inherit;
-  transition : border-radius 0.2s ease;
-}
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE/Edge */
+        }
+        textarea::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Edge (Chromium) */
+        }
+        textArea,
+        input {
+          color: inherit;
+          transition: border-radius 0.2s ease;
+        }
       }
-      #cadreDons.active{
-        pointer-events : all;
-        opacity : 1;
-        transform : none;
+      #cadreDons.active {
+        pointer-events: all;
+        opacity: 1;
+        transform: none;
       }
 
-       #crossDon {
+      #crossDon {
         position: absolute;
-        cursor : pointer;
+        cursor: pointer;
         right: 0;
         font-size: 0.92rem;
         fill: white;
@@ -5154,40 +5155,40 @@ textArea,input{
         filter: brightness(0.6);
       }
 
-      #gridDonsChoices{
-        display : flex;
-        justify-content : space-around;
-        align-items : center;
-        padding : 0 0.6rem;
-        box-sizing : border-box;
-        border-radius: 1rem;
-        width : 100%;
-        gap : 0.6rem;
-      }
-      .donChoice{
+      #gridDonsChoices {
         display: flex;
-        cursor : pointer;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 0.6rem;
+        box-sizing: border-box;
+        border-radius: 1rem;
+        width: 100%;
+        gap: 0.6rem;
+      }
+      .donChoice {
+        display: flex;
+        cursor: pointer;
         align-items: center;
         justify-content: center;
         gap: 0.4rem;
         border-radius: 100rem;
         padding: 0.4rem 0.6rem;
-        flex : 1;
+        flex: 1;
         /* background : rgba(255,255,255,0.06); */
-        outline: 1px solid rgba(255,255,255, 0.25);
-        transition: background 0.2s ease;      
+        outline: 1px solid rgba(255, 255, 255, 0.25);
+        transition: background 0.2s ease;
       }
-      .donChoice.active{
-        background: rgba(232, 85, 143,0.4);
+      .donChoice.active {
+        background: rgba(232, 85, 143, 0.4);
         outline: none;
-        background : #e8558f;
+        background: #e8558f;
       }
 
-       .messageDon {
+      .messageDon {
         display: flex;
         align-items: center;
         flex: 1;
-        width : 100%;
+        width: 100%;
         box-sizing: border-box;
         padding: 0.6rem;
         font-size: 0.9rem;
@@ -5196,8 +5197,8 @@ textArea,input{
         background: rgba(246, 246, 246, 0.1);
         transition: box-shadow 0.2s ease;
       }
-      #textAreaDon{
-        min-height : 5rem;
+      #textAreaDon {
+        min-height: 5rem;
       }
 
       .messageDon:focus {
@@ -5212,30 +5213,27 @@ textArea,input{
         color: #a3a7ba;
         opacity: 1;
       }
-      #btnBuyDon{
-        display : flex;
-        position : relative;
+      #btnBuyDon {
+        display: flex;
+        position: relative;
         justify-content: center;
-        align-items : center;
-        .spinner{
-          opacity : 0;
-          filter :brightness(2);
-          position : absolute;
-          transition : opacity 0.15s ease;
+        align-items: center;
+        .spinner {
+          opacity: 0;
+          filter: brightness(2);
+          position: absolute;
+          transition: opacity 0.15s ease;
         }
-        transition : color 0.15s ease, transform 0.2s ease;
+        transition:
+          color 0.15s ease,
+          transform 0.2s ease;
       }
-      #btnBuyDon.loading{
-        color : transparent;
-        .spinner{
-          opacity :1;
+      #btnBuyDon.loading {
+        color: transparent;
+        .spinner {
+          opacity: 1;
         }
       }
-
-
-
-
-
 
       .mCadreP {
         display: flex;
@@ -5300,7 +5298,7 @@ textArea,input{
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
         transition: transform 0.2s ease;
         .spinner {
-          filter : brightness(1.2);
+          filter: brightness(1.2);
         }
       }
 
@@ -5315,10 +5313,10 @@ textArea,input{
         color: #043b3f;
       }
 
-      #btnBuyAd.loading{
-        #loaderBuyAd{
-        opacity: 1;
-        pointer-events: all;
+      #btnBuyAd.loading {
+        #loaderBuyAd {
+          opacity: 1;
+          pointer-events: all;
         }
       }
       #btnBuyP {
@@ -5326,10 +5324,10 @@ textArea,input{
         color: #0a585e;
         color: #043b3f;
       }
-      #btnBuyP.loading{
-        #loaderBuyP{
-        opacity: 1;
-        pointer-events: all;
+      #btnBuyP.loading {
+        #loaderBuyP {
+          opacity: 1;
+          pointer-events: all;
         }
       }
 
@@ -5490,10 +5488,10 @@ textArea,input{
       }
 
       #restaurer-achats {
-        position : relative; 
-        display : flex;
-        justify-content : center;
-        align-items : center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background: none;
         border: none;
         margin-top: 0.4rem;
@@ -5503,18 +5501,18 @@ textArea,input{
         text-decoration: underline;
         cursor: pointer;
         padding: 8px;
-         .spinner{
-          opacity : 0;
-          filter : brightness(0.8);
-          transition : opacity 0.15s ease
+        .spinner {
+          opacity: 0;
+          filter: brightness(0.8);
+          transition: opacity 0.15s ease;
         }
-        transition : color 0.15s ease
+        transition: color 0.15s ease;
       }
-      #restaurer-achats.loading{
-        filter : brightness(1.4);
-        color : transparent;
-        .spinner{
-          opacity : 1;
+      #restaurer-achats.loading {
+        filter: brightness(1.4);
+        color: transparent;
+        .spinner {
+          opacity: 1;
         }
       }
       #restaurer-achats:active {
@@ -9364,9 +9362,9 @@ textArea,input{
           xmlns:xlink="http://www.w3.org/1999/xlink"
           fill="#000000"
         >
-                  <path
-                    d="M21.4325,4.86103 L15.4325,20.361 C15.175,21.0261 14.324,21.2156 13.8087,20.7227 L10.4266,17.4876 L8.35348,19.5607 C8.0385,19.8757 7.49993,19.6526 7.49993,19.2072 L7.49993,14.6882 L2.30868,9.72268 C1.74196,9.1806 1.99133,8.22685 2.75086,8.03155 L20.2509,3.53155 C21.0389,3.32889 21.7262,4.10218 21.4325,4.86103 Z M19,6.00006 L8.03159,13.1534 L9.76704,14.8134 L19,6.00006 Z"
-                  ></path>
+          <path
+            d="M21.4325,4.86103 L15.4325,20.361 C15.175,21.0261 14.324,21.2156 13.8087,20.7227 L10.4266,17.4876 L8.35348,19.5607 C8.0385,19.8757 7.49993,19.6526 7.49993,19.2072 L7.49993,14.6882 L2.30868,9.72268 C1.74196,9.1806 1.99133,8.22685 2.75086,8.03155 L20.2509,3.53155 C21.0389,3.32889 21.7262,4.10218 21.4325,4.86103 Z M19,6.00006 L8.03159,13.1534 L9.76704,14.8134 L19,6.00006 Z"
+          ></path>
         </svg>
       </span>
 
@@ -10080,48 +10078,125 @@ textArea,input{
     </div>
 
     <div id="cadrePremium">
-       <div id="screenThankDon" class="screenThanksClass">
+      <div id="screenThankDon" class="screenThanksClass">
         <div class="iconThank" style="background: #e8558f">
-          <svg fill="white" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 425.762 425.762" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M424.938,360.253c-1.585-3.657-5.19-6.023-9.176-6.023h-90.591c9.831-10.514,18.209-22.385,24.735-35.159 c11.113-21.758,16.749-45.262,16.749-69.86c0-5.523-4.478-10-10-10H69.103c-5.522,0-10,4.477-10,10 c0,4.156,0.175,8.277,0.496,12.367h-24.96c-6.708,0-13.002,2.611-17.711,7.338c-4.731,4.732-7.338,11.022-7.338,17.711 c0,26.286,21.38,47.67,47.66,47.67h27.536c4.705,7.056,10.002,13.729,15.802,19.933H10c-3.985,0-7.591,2.367-9.176,6.023 c-1.584,3.657-0.847,7.906,1.879,10.814c19.007,20.284,45.851,31.917,73.648,31.917H349.41c27.797,0,54.641-11.633,73.648-31.917 C425.784,368.16,426.522,363.91,424.938,360.253z M29.589,286.627c0-1.347,0.525-2.615,1.494-3.583 c0.941-0.946,2.204-1.466,3.555-1.466h27.859c2.405,11.249,6.087,22.179,11.028,32.72H57.249 C41.997,314.297,29.589,301.884,29.589,286.627z M79.466,259.211h266.825c-2.732,37.482-20.782,71.547-50.553,95.019h-165.72 C100.248,330.758,82.197,296.693,79.466,259.211z M349.41,382.985H76.352c-12.784,0-25.318-3.069-36.558-8.755h346.173 C374.728,379.916,362.195,382.985,349.41,382.985z"></path> <path d="M145.989,131.572l51.064,24.204c15.341,7.271,25.243,22.328,25.843,39.293c0.191,5.399,4.628,9.647,9.987,9.646 c0.12,0,0.24-0.002,0.36-0.006c5.52-0.195,9.835-4.828,9.641-10.347c-0.865-24.464-15.145-46.174-37.265-56.659l-51.064-24.204 c-17.468-8.28-24.942-29.227-16.663-46.694c4.011-8.462,11.077-14.855,19.896-18.002c8.82-3.147,18.336-2.672,26.798,1.339 c4.993,2.367,10.954,0.238,13.319-4.753c2.365-4.991,0.237-10.954-4.753-13.319c-13.288-6.299-28.236-7.045-42.087-2.103 c-13.851,4.943-24.947,14.983-31.246,28.272C106.818,85.672,118.557,118.569,145.989,131.572z"></path> <path d="M231.852,52.583c13.909-13.424,36.146-13.027,49.57,0.881c13.408,13.893,13.03,36.094-0.832,49.523l-36.009,33.749 c-4.029,3.777-4.234,10.105-0.457,14.135c1.968,2.101,4.63,3.162,7.298,3.162c2.451,0,4.907-0.896,6.837-2.704l36.065-33.802 c0.035-0.034,0.07-0.067,0.105-0.101c21.845-21.082,22.465-56.005,1.383-77.85s-56.006-22.465-77.85-1.383 c-3.974,3.835-4.087,10.166-0.251,14.14C221.546,56.306,227.879,56.418,231.852,52.583z"></path> <path d="M201.273,195.224c4.628-3.014,5.937-9.209,2.923-13.837s-9.209-5.938-13.837-2.923 c-11.672,7.601-17.405,21.826-14.268,35.396l1.063,4.599c1.069,4.623,5.184,7.75,9.734,7.75c0.746,0,1.504-0.084,2.262-0.259 c5.381-1.245,8.734-6.615,7.49-11.996l-1.063-4.599C194.324,203.937,196.613,198.259,201.273,195.224z"></path> </g> </g></svg>
+          <svg
+            fill="white"
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 425.762 425.762"
+            xml:space="preserve"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M424.938,360.253c-1.585-3.657-5.19-6.023-9.176-6.023h-90.591c9.831-10.514,18.209-22.385,24.735-35.159 c11.113-21.758,16.749-45.262,16.749-69.86c0-5.523-4.478-10-10-10H69.103c-5.522,0-10,4.477-10,10 c0,4.156,0.175,8.277,0.496,12.367h-24.96c-6.708,0-13.002,2.611-17.711,7.338c-4.731,4.732-7.338,11.022-7.338,17.711 c0,26.286,21.38,47.67,47.66,47.67h27.536c4.705,7.056,10.002,13.729,15.802,19.933H10c-3.985,0-7.591,2.367-9.176,6.023 c-1.584,3.657-0.847,7.906,1.879,10.814c19.007,20.284,45.851,31.917,73.648,31.917H349.41c27.797,0,54.641-11.633,73.648-31.917 C425.784,368.16,426.522,363.91,424.938,360.253z M29.589,286.627c0-1.347,0.525-2.615,1.494-3.583 c0.941-0.946,2.204-1.466,3.555-1.466h27.859c2.405,11.249,6.087,22.179,11.028,32.72H57.249 C41.997,314.297,29.589,301.884,29.589,286.627z M79.466,259.211h266.825c-2.732,37.482-20.782,71.547-50.553,95.019h-165.72 C100.248,330.758,82.197,296.693,79.466,259.211z M349.41,382.985H76.352c-12.784,0-25.318-3.069-36.558-8.755h346.173 C374.728,379.916,362.195,382.985,349.41,382.985z"
+                ></path>
+                <path
+                  d="M145.989,131.572l51.064,24.204c15.341,7.271,25.243,22.328,25.843,39.293c0.191,5.399,4.628,9.647,9.987,9.646 c0.12,0,0.24-0.002,0.36-0.006c5.52-0.195,9.835-4.828,9.641-10.347c-0.865-24.464-15.145-46.174-37.265-56.659l-51.064-24.204 c-17.468-8.28-24.942-29.227-16.663-46.694c4.011-8.462,11.077-14.855,19.896-18.002c8.82-3.147,18.336-2.672,26.798,1.339 c4.993,2.367,10.954,0.238,13.319-4.753c2.365-4.991,0.237-10.954-4.753-13.319c-13.288-6.299-28.236-7.045-42.087-2.103 c-13.851,4.943-24.947,14.983-31.246,28.272C106.818,85.672,118.557,118.569,145.989,131.572z"
+                ></path>
+                <path
+                  d="M231.852,52.583c13.909-13.424,36.146-13.027,49.57,0.881c13.408,13.893,13.03,36.094-0.832,49.523l-36.009,33.749 c-4.029,3.777-4.234,10.105-0.457,14.135c1.968,2.101,4.63,3.162,7.298,3.162c2.451,0,4.907-0.896,6.837-2.704l36.065-33.802 c0.035-0.034,0.07-0.067,0.105-0.101c21.845-21.082,22.465-56.005,1.383-77.85s-56.006-22.465-77.85-1.383 c-3.974,3.835-4.087,10.166-0.251,14.14C221.546,56.306,227.879,56.418,231.852,52.583z"
+                ></path>
+                <path
+                  d="M201.273,195.224c4.628-3.014,5.937-9.209,2.923-13.837s-9.209-5.938-13.837-2.923 c-11.672,7.601-17.405,21.826-14.268,35.396l1.063,4.599c1.069,4.623,5.184,7.75,9.734,7.75c0.746,0,1.504-0.084,2.262-0.259 c5.381-1.245,8.734-6.615,7.49-11.996l-1.063-4.599C194.324,203.937,196.613,198.259,201.273,195.224z"
+                ></path>
+              </g>
+            </g>
+          </svg>
         </div>
 
-        <span style="font-size: 1.15rem; margin-top: 0.6rem"
-          >Don reçu !</span
-        >
-        <span style="opacity : 0.4; margin-top: -0.2rem"
+        <span style="font-size: 1.15rem; margin-top: 0.6rem">Don reçu !</span>
+        <span style="opacity: 0.4; margin-top: -0.2rem"
           >Merci du fond du cœur</span
         >
       </div>
 
       <div id="cacheDons"></div>
       <div id="cadreDons">
-          <span style="display : flex;  position : relative; align-items  : center; justify-content : flex-start; font-weight: 550; gap  : 0.6rem; flex-wrap: nowrap; width : 100%;">
-
-
-        Faire un don
-<svg fill="white" height="1.6rem" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 425.762 425.762" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M424.938,360.253c-1.585-3.657-5.19-6.023-9.176-6.023h-90.591c9.831-10.514,18.209-22.385,24.735-35.159 c11.113-21.758,16.749-45.262,16.749-69.86c0-5.523-4.478-10-10-10H69.103c-5.522,0-10,4.477-10,10 c0,4.156,0.175,8.277,0.496,12.367h-24.96c-6.708,0-13.002,2.611-17.711,7.338c-4.731,4.732-7.338,11.022-7.338,17.711 c0,26.286,21.38,47.67,47.66,47.67h27.536c4.705,7.056,10.002,13.729,15.802,19.933H10c-3.985,0-7.591,2.367-9.176,6.023 c-1.584,3.657-0.847,7.906,1.879,10.814c19.007,20.284,45.851,31.917,73.648,31.917H349.41c27.797,0,54.641-11.633,73.648-31.917 C425.784,368.16,426.522,363.91,424.938,360.253z M29.589,286.627c0-1.347,0.525-2.615,1.494-3.583 c0.941-0.946,2.204-1.466,3.555-1.466h27.859c2.405,11.249,6.087,22.179,11.028,32.72H57.249 C41.997,314.297,29.589,301.884,29.589,286.627z M79.466,259.211h266.825c-2.732,37.482-20.782,71.547-50.553,95.019h-165.72 C100.248,330.758,82.197,296.693,79.466,259.211z M349.41,382.985H76.352c-12.784,0-25.318-3.069-36.558-8.755h346.173 C374.728,379.916,362.195,382.985,349.41,382.985z"></path> <path d="M145.989,131.572l51.064,24.204c15.341,7.271,25.243,22.328,25.843,39.293c0.191,5.399,4.628,9.647,9.987,9.646 c0.12,0,0.24-0.002,0.36-0.006c5.52-0.195,9.835-4.828,9.641-10.347c-0.865-24.464-15.145-46.174-37.265-56.659l-51.064-24.204 c-17.468-8.28-24.942-29.227-16.663-46.694c4.011-8.462,11.077-14.855,19.896-18.002c8.82-3.147,18.336-2.672,26.798,1.339 c4.993,2.367,10.954,0.238,13.319-4.753c2.365-4.991,0.237-10.954-4.753-13.319c-13.288-6.299-28.236-7.045-42.087-2.103 c-13.851,4.943-24.947,14.983-31.246,28.272C106.818,85.672,118.557,118.569,145.989,131.572z"></path> <path d="M231.852,52.583c13.909-13.424,36.146-13.027,49.57,0.881c13.408,13.893,13.03,36.094-0.832,49.523l-36.009,33.749 c-4.029,3.777-4.234,10.105-0.457,14.135c1.968,2.101,4.63,3.162,7.298,3.162c2.451,0,4.907-0.896,6.837-2.704l36.065-33.802 c0.035-0.034,0.07-0.067,0.105-0.101c21.845-21.082,22.465-56.005,1.383-77.85s-56.006-22.465-77.85-1.383 c-3.974,3.835-4.087,10.166-0.251,14.14C221.546,56.306,227.879,56.418,231.852,52.583z"></path> <path d="M201.273,195.224c4.628-3.014,5.937-9.209,2.923-13.837s-9.209-5.938-13.837-2.923 c-11.672,7.601-17.405,21.826-14.268,35.396l1.063,4.599c1.069,4.623,5.184,7.75,9.734,7.75c0.746,0,1.504-0.084,2.262-0.259 c5.381-1.245,8.734-6.615,7.49-11.996l-1.063-4.599C194.324,203.937,196.613,198.259,201.273,195.224z"></path> </g> </g></svg>
-
-             <div id="crossDon">
+        <span
+          style="
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: flex-start;
+            font-weight: 550;
+            gap: 0.6rem;
+            flex-wrap: nowrap;
+            width: 100%;
+          "
+        >
+          Faire un don
           <svg
+            fill="white"
+            height="1.6rem"
+            version="1.1"
+            id="Capa_1"
             xmlns="http://www.w3.org/2000/svg"
-            id="Outline"
-            viewBox="0 0 24 24"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 425.762 425.762"
+            xml:space="preserve"
           >
-            <path
-              d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
-            />
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M424.938,360.253c-1.585-3.657-5.19-6.023-9.176-6.023h-90.591c9.831-10.514,18.209-22.385,24.735-35.159 c11.113-21.758,16.749-45.262,16.749-69.86c0-5.523-4.478-10-10-10H69.103c-5.522,0-10,4.477-10,10 c0,4.156,0.175,8.277,0.496,12.367h-24.96c-6.708,0-13.002,2.611-17.711,7.338c-4.731,4.732-7.338,11.022-7.338,17.711 c0,26.286,21.38,47.67,47.66,47.67h27.536c4.705,7.056,10.002,13.729,15.802,19.933H10c-3.985,0-7.591,2.367-9.176,6.023 c-1.584,3.657-0.847,7.906,1.879,10.814c19.007,20.284,45.851,31.917,73.648,31.917H349.41c27.797,0,54.641-11.633,73.648-31.917 C425.784,368.16,426.522,363.91,424.938,360.253z M29.589,286.627c0-1.347,0.525-2.615,1.494-3.583 c0.941-0.946,2.204-1.466,3.555-1.466h27.859c2.405,11.249,6.087,22.179,11.028,32.72H57.249 C41.997,314.297,29.589,301.884,29.589,286.627z M79.466,259.211h266.825c-2.732,37.482-20.782,71.547-50.553,95.019h-165.72 C100.248,330.758,82.197,296.693,79.466,259.211z M349.41,382.985H76.352c-12.784,0-25.318-3.069-36.558-8.755h346.173 C374.728,379.916,362.195,382.985,349.41,382.985z"
+                ></path>
+                <path
+                  d="M145.989,131.572l51.064,24.204c15.341,7.271,25.243,22.328,25.843,39.293c0.191,5.399,4.628,9.647,9.987,9.646 c0.12,0,0.24-0.002,0.36-0.006c5.52-0.195,9.835-4.828,9.641-10.347c-0.865-24.464-15.145-46.174-37.265-56.659l-51.064-24.204 c-17.468-8.28-24.942-29.227-16.663-46.694c4.011-8.462,11.077-14.855,19.896-18.002c8.82-3.147,18.336-2.672,26.798,1.339 c4.993,2.367,10.954,0.238,13.319-4.753c2.365-4.991,0.237-10.954-4.753-13.319c-13.288-6.299-28.236-7.045-42.087-2.103 c-13.851,4.943-24.947,14.983-31.246,28.272C106.818,85.672,118.557,118.569,145.989,131.572z"
+                ></path>
+                <path
+                  d="M231.852,52.583c13.909-13.424,36.146-13.027,49.57,0.881c13.408,13.893,13.03,36.094-0.832,49.523l-36.009,33.749 c-4.029,3.777-4.234,10.105-0.457,14.135c1.968,2.101,4.63,3.162,7.298,3.162c2.451,0,4.907-0.896,6.837-2.704l36.065-33.802 c0.035-0.034,0.07-0.067,0.105-0.101c21.845-21.082,22.465-56.005,1.383-77.85s-56.006-22.465-77.85-1.383 c-3.974,3.835-4.087,10.166-0.251,14.14C221.546,56.306,227.879,56.418,231.852,52.583z"
+                ></path>
+                <path
+                  d="M201.273,195.224c4.628-3.014,5.937-9.209,2.923-13.837s-9.209-5.938-13.837-2.923 c-11.672,7.601-17.405,21.826-14.268,35.396l1.063,4.599c1.069,4.623,5.184,7.75,9.734,7.75c0.746,0,1.504-0.084,2.262-0.259 c5.381-1.245,8.734-6.615,7.49-11.996l-1.063-4.599C194.324,203.937,196.613,198.259,201.273,195.224z"
+                ></path>
+              </g>
+            </g>
           </svg>
-        </div>
 
+          <div id="crossDon">
+           <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+              />
+            </svg>
+          </div>
         </span>
-        <span style="align-self : flex-start;margin-top : -0.6rem;margin-bottom : 0.5rem; opacity :  0.6; font-size : 0.85rem;">Chaque don aide à faire vivre Globus Quiz</span>
+        <span
+          style="
+            align-self: flex-start;
+            margin-top: -0.6rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.6;
+            font-size: 0.85rem;
+          "
+          >Chaque don aide à faire vivre Globus Quiz</span
+        >
 
-      <div id="gridDonsChoices">
-        <div class="donChoice active" data-don = "2" >2&nbsp;€</div>
-        <div class="donChoice" data-don = "10">10&nbsp;€</div>
-        <div class="donChoice" data-don = "40">40&nbsp;€</div>
-      </div>
-
+        <div id="gridDonsChoices">
+          <div class="donChoice active" data-don="2">2&nbsp;€</div>
+          <div class="donChoice" data-don="10">10&nbsp;€</div>
+          <div class="donChoice" data-don="40">40&nbsp;€</div>
+        </div>
 
         <textarea
           id="textAreaDon"
@@ -10134,16 +10209,16 @@ textArea,input{
         ></textarea>
 
         <input
-              id="inputDon"
-              class="messageDon"
-              required=""
-              autocorrect="off"
-              autocapitalize="off"
-              spellcheck="false"
-              type="email"
-              placeholder="nom@exemple.com"
-            />
-             <span
+          id="inputDon"
+          class="messageDon"
+          required=""
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          type="email"
+          placeholder="nom@exemple.com"
+        />
+        <span
           style="
             display: flex;
             align-self: flex-start;
@@ -10155,7 +10230,7 @@ textArea,input{
         >
           <svg
             height="0.92rem"
-            style="opacity : 0.4;"
+            style="opacity: 0.4"
             viewBox="0 -0.5 25 25"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -10185,38 +10260,25 @@ textArea,input{
           Utilisé uniquement pour pouvoir vous répondre
         </span>
 
-
         <div class="btnCadreDon" id="btnBuyDon" data-don="2">
-            <span>Don de 2€</span>
+          <span>Don de 2€</span>
 
-             <div class="spinner center">
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                </div>
-
-                
+          <div class="spinner center">
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+          </div>
         </div>
-
-
-
-
-
-
       </div>
-
-
-
-
 
       <div id="backgroundCadreP"></div>
       <svg
@@ -12870,22 +12932,23 @@ textArea,input{
           </div>
 
           <div id="restaurer-achats">
-             <div class="spinner center">
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                  <div class="spinner-blade"></div>
-                </div>
+            <div class="spinner center">
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+            </div>
 
-            Restaurer les achats</div>
+            Restaurer les achats
+          </div>
         </div>
 
         <div class="slide">
@@ -13013,9 +13076,38 @@ textArea,input{
               </svg>
 
               <div class="txtMCadreP">
-                <span style="display : flex; align-items  : center; font-size: 1.6rem; font-weight: 550; gap  : 0.6rem; flex-wrap: nowrap;"
-                  >Me soutenir 
-                  <svg height="1.6rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                <span
+                  style="
+                    display: flex;
+                    align-items: center;
+                    font-size: 1.6rem;
+                    font-weight: 550;
+                    gap: 0.6rem;
+                    flex-wrap: nowrap;
+                  "
+                  >Me soutenir
+                  <svg
+                    height="1.6rem"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z"
+                        stroke="#ffffff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </g>
+                  </svg>
                 </span>
               </div>
             </div>
@@ -13035,52 +13127,52 @@ textArea,input{
 
             <div id="btnDon" class="btnCadreDon">
               <svg
-           style="opacity: 0"
+                style="opacity: 0"
                 height="1.2rem"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M7 17L17 7M17 7H8M17 7V16"
-              stroke="#7e3c7e"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </g>
-        </svg>
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M7 17L17 7M17 7H8M17 7V16"
+                    stroke="#7e3c7e"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
               Faire un don libre
 
               <svg
                 height="1.2rem"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <path
-              d="M7 17L17 7M17 7H8M17 7V16"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></path>
-          </g>
-        </svg>
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M7 17L17 7M17 7H8M17 7V16"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
             </div>
           </div>
         </div>
@@ -20276,7 +20368,7 @@ textArea,input{
           <div class="footerLegend">
             <svg
               class="expend"
-              style="transform : rotate(180deg)"
+              style="transform: rotate(180deg)"
               xmlns="http://www.w3.org/2000/svg"
               id="Outline"
               viewBox="0 0 24 24"
@@ -28736,44 +28828,65 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
     <!--Script utile-->
     <script>
+      // Réussir à annuler le click si on déplace le curseur
+      (() => {
+        const MAX_MOVE = 10; // px de tolérance
+        let down = null;
+        let cancelNext = false;
 
-    // Réussir à annuler le click si on déplace le curseur 
-     (() => {
-  const MAX_MOVE = 10; // px de tolérance
-  let down = null;
-  let cancelNext = false;
+        window.addEventListener(
+          "pointerdown",
+          (e) => {
+            down = {
+              x: e.clientX,
+              y: e.clientY,
+              target: e.target,
+              id: e.pointerId,
+            };
+            cancelNext = false;
+          },
+          true,
+        );
 
-  window.addEventListener('pointerdown', e => {
-    down = { x: e.clientX, y: e.clientY, target: e.target, id: e.pointerId };
-    cancelNext = false;
-  }, true);
+        window.addEventListener(
+          "pointerup",
+          (e) => {
+            if (!down || e.pointerId !== down.id) return;
 
-  window.addEventListener('pointerup', e => {
-    if (!down || e.pointerId !== down.id) return;
+            const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
+            const under = document.elementFromPoint(e.clientX, e.clientY);
+            const sameEl =
+              under &&
+              (down.target.contains(under) || under.contains(down.target));
 
-    const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
-    const under = document.elementFromPoint(e.clientX, e.clientY);
-    const sameEl = under &&
-      (down.target.contains(under) || under.contains(down.target));
+            cancelNext = moved > MAX_MOVE || !sameEl;
+            down = null;
+          },
+          true,
+        );
 
-    cancelNext = moved > MAX_MOVE || !sameEl;
-    down = null;
-  }, true);
+        window.addEventListener(
+          "pointercancel",
+          () => {
+            down = null;
+            cancelNext = false;
+          },
+          true,
+        );
 
-  window.addEventListener('pointercancel', () => {
-    down = null;
-    cancelNext = false;
-  }, true);
-
-  window.addEventListener('click', e => {
-    // e.detail === 0 : click clavier/programmatique, on ne touche pas
-    if (cancelNext && e.detail !== 0) {
-      e.stopImmediatePropagation();
-      e.preventDefault();
-    }
-    cancelNext = false;
-  }, true);
-})();
+        window.addEventListener(
+          "click",
+          (e) => {
+            // e.detail === 0 : click clavier/programmatique, on ne touche pas
+            if (cancelNext && e.detail !== 0) {
+              e.stopImmediatePropagation();
+              e.preventDefault();
+            }
+            cancelNext = false;
+          },
+          true,
+        );
+      })();
 
       async function partagerApp() {
         const APP_STORE_URL = "https://apps.apple.com/app/idTON_ID_APP_STORE"; // à remplacer une fois ta fiche créée
@@ -28838,7 +28951,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         return document.getElementById(`${id}`);
       }
       function qAll(c) {
-        return document.querySelectorAll(`${c}`)
+        return document.querySelectorAll(`${c}`);
       }
       function addClick(el, action) {
         el.addEventListener("click", () => action);
@@ -30990,61 +31103,65 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const backTopCadreP2 = document.getElementById("backTopCadreP2");
       const backTopCadreP3 = document.getElementById("backTopCadreP3");
       const btnDon = document.getElementById("btnDon");
-      const cadreDons = getId('cadreDons')
-      const screenThankDon = getId('screenThankDon')
-      const cacheDons = getId('cacheDons')
-      const crossDon = getId('crossDon')
-      const btnBuyDon = getId('btnBuyDon')
-      const messagesDon = qAll('.messageDon')
-      const textAreaDon = getId('textAreaDon')
-      const inputDon = getId('inputDon')
+      const cadreDons = getId("cadreDons");
+      const screenThankDon = getId("screenThankDon");
+      const cacheDons = getId("cacheDons");
+      const crossDon = getId("crossDon");
+      const btnBuyDon = getId("btnBuyDon");
+      const messagesDon = qAll(".messageDon");
+      const textAreaDon = getId("textAreaDon");
+      const inputDon = getId("inputDon");
 
       let toggleTxtMail = false;
-      let toggleInputMail = false; // ne pas défocus la zone de texte quand on appuie quelque part       
-      const donsChoice  = document.querySelectorAll('.donChoice')
+      let toggleInputMail = false; // ne pas défocus la zone de texte quand on appuie quelque part
+      const donsChoice = document.querySelectorAll(".donChoice");
 
       const D_toggleDon = {
-        textAreaDon : false,
-        inputDon : false,
-      }
+        textAreaDon: false,
+        inputDon: false,
+      };
 
-      messagesDon.forEach(don=>{
-        don.addEventListener('focus',()=>{
-          requestAnimationFrame(()=>D_toggleDon[don.id] = true)
-        })
-        don.addEventListener('blur',()=>{
-          requestAnimationFrame(()=>D_toggleDon[don.id] = false)
-          
-        })
-      })
-
+      messagesDon.forEach((don) => {
+        don.addEventListener("focus", () => {
+          requestAnimationFrame(() => (D_toggleDon[don.id] = true));
+        });
+        don.addEventListener("blur", () => {
+          requestAnimationFrame(() => (D_toggleDon[don.id] = false));
+        });
+      });
 
       btnDon.addEventListener("click", () => {
         // window.open("https://ko-fi.com/geoquiz", "_blank");
-        cadreDons.classList.add('active')
-        cacheDons.classList.add('active')
-        cadreDons.querySelector('.donChoice').click()
+        cadreDons.classList.add("active");
+        cacheDons.classList.add("active");
+        cadreDons.querySelector(".donChoice").click();
       });
-      crossDon.addEventListener('click',()=>{
-         cadreDons.classList.remove('active')
-        cacheDons.classList.remove('active')
-      })
-      cacheDons.addEventListener('click',()=>{
-        crossDon.click()
-      })
+      crossDon.addEventListener("click", () => {
+        cadreDons.classList.remove("active");
+        cacheDons.classList.remove("active");
+      });
+      cacheDons.addEventListener("click", () => {
+        crossDon.click();
+      });
 
+      donsChoice.forEach((don) => {
+        don.addEventListener("click", () => {
+          donsChoice.forEach((d) => {
+            d.classList.remove("active");
+          });
+          don.classList.add("active");
+          btnBuyDon.querySelector("span").textContent =
+            "Don de " + don.dataset.don + "€";
+          btnBuyDon.dataset.don = don.dataset.don;
 
-      donsChoice.forEach(don=>{
-        don.addEventListener('click',()=>{
-      donsChoice.forEach(d=>{d.classList.remove('active')})
-      don.classList.add('active')
-      btnBuyDon.querySelector("span").textContent =  "Don de " + don.dataset.don + "€";
-      btnBuyDon.dataset.don = don.dataset.don
-
-       D_toggleDon.textAreaDon ? getId('textAreaDon').focus({preventScroll: true}) : "";
-        D_toggleDon.inputDon ? getId('inputDon').focus({preventScroll: true}) : "";
-        })    
-      })
+          D_toggleDon.textAreaDon
+            ? getId("textAreaDon").focus({ preventScroll: true })
+            : "";
+          D_toggleDon.inputDon
+            ? getId("inputDon").focus({ preventScroll: true })
+            : "";
+        });
+      });
 
       backTopCadreP.style.animation = "backgroundPX 100s linear infinite";
       backTopCadreP2.style.animation = "backgroundPX2 100s linear infinite";
@@ -31502,7 +31619,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
 
         txt.addEventListener("blur", (e) => {
-          txt.parentNode.classList.remove("active")
+          txt.parentNode.classList.remove("active");
         });
 
         txt.addEventListener("input", (e) => {
@@ -62873,9 +62990,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log( D_toggleDon.inputDon);
+        console.log(D_toggleDon.inputDon);
       }
-// loop()
+      // loop()
       //       let L_ephe = []
       // paths.forEach(p=> {
 
@@ -63011,7 +63128,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       // --- Achat : retirer les pubs ---
 
       async function acheterRetraitPubs() {
-        if (!window.Capacitor?.isNativePlatform() || btnBuyAd.classList.contains('loading')) return; // rien sur la PWA
+        if (
+          !window.Capacitor?.isNativePlatform() ||
+          btnBuyAd.classList.contains("loading")
+        )
+          return; // rien sur la PWA
         btnBuyAd.classList.add("loading");
 
         if (noAd === true) {
@@ -63021,27 +63142,26 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             message: "Cet achat a déjà été effectué",
             buttonTitle: "OK",
           });
-        btnBuyAd.classList.remove("loading");
+          btnBuyAd.classList.remove("loading");
 
           return;
         }
         try {
+          const { Network, Dialog } = window.Capacitor?.Plugins ?? {};
+          const status = await Network.getStatus();
 
-        const { Network, Dialog } = window.Capacitor?.Plugins ?? {};
-        const status = await Network.getStatus();
+          if (!status.connected) {
+            await Dialog.alert({
+              title: "Pas de connexion",
+              message: "Vérifie ta connexion internet et réessaie.",
+              buttonTitle: "OK",
+            });
+            btnBuyAd.classList.remove("loading");
+            return;
+          }
 
-        if (!status.connected) {
-          await Dialog.alert({
-            title: "Pas de connexion",
-            message: "Vérifie ta connexion internet et réessaie.",
-            buttonTitle: "OK",
-          });
-        btnBuyAd.classList.remove("loading");
-          return;
-        }
-
-        await initPurchases();
-        const { Purchases } = window.Capacitor?.Plugins ?? {};
+          await initPurchases();
+          const { Purchases } = window.Capacitor?.Plugins ?? {};
 
           const offerings = await Purchases.getOfferings();
           const product = offerings.current?.availablePackages.find(
@@ -63082,8 +63202,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       // --- Achat : débloquer premium ---
 
       async function acheterPremium() {
-        if (!window.Capacitor?.isNativePlatform() || btnBuyP.classList.contains('loading')) return; // rien sur la PWA
-          btnBuyP.classList.add("loading");
+        if (
+          !window.Capacitor?.isNativePlatform() ||
+          btnBuyP.classList.contains("loading")
+        )
+          return; // rien sur la PWA
+        btnBuyP.classList.add("loading");
 
         if (isPremium === true) {
           const { Dialog } = window.Capacitor?.Plugins ?? {};
@@ -63097,23 +63221,21 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
 
         try {
+          const { Network, Dialog } = window.Capacitor?.Plugins ?? {};
+          const status = await Network.getStatus();
 
-        const { Network, Dialog } = window.Capacitor?.Plugins ?? {};
-        const status = await Network.getStatus();
+          if (!status.connected) {
+            await Dialog.alert({
+              title: "Pas de connexion",
+              message: "Vérifie ta connexion internet et réessaie.",
+              buttonTitle: "OK",
+            });
+            btnBuyP.classList.remove("loading");
+            return;
+          }
 
-        if (!status.connected) {
-          await Dialog.alert({
-            title: "Pas de connexion",
-            message: "Vérifie ta connexion internet et réessaie.",
-            buttonTitle: "OK",
-          });
-          btnBuyP.classList.remove("loading");
-          return;
-        }
-
-        await initPurchases();
-        const { Purchases } = window.Capacitor?.Plugins ?? {};      
-
+          await initPurchases();
+          const { Purchases } = window.Capacitor?.Plugins ?? {};
 
           const offerings = await Purchases.getOfferings();
           const product = offerings.current?.availablePackages.find(
@@ -63215,59 +63337,65 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       // --- Initialisation ---
       async function restaurerAchats() {
-  if (!window.Capacitor?.isNativePlatform() || restaureBtn.classList.contains('loading')) return;
-  restaureBtn.classList.add('loading');
+        if (
+          !window.Capacitor?.isNativePlatform() ||
+          restaureBtn.classList.contains("loading")
+        )
+          return;
+        restaureBtn.classList.add("loading");
 
-  const { Network, Purchases, Dialog } = window.Capacitor?.Plugins ?? {}; // ✅ accessible partout dans la fonction
+        const { Network, Purchases, Dialog } = window.Capacitor?.Plugins ?? {}; // ✅ accessible partout dans la fonction
 
-  try {
-    const status = await Network.getStatus();
-    if (!status.connected) {
-      await Dialog.alert({
-        title: "Pas de connexion",
-        message: "Vérifie ta connexion internet et réessaie.",
-        buttonTitle: "OK",
-      });
-      restaureBtn.classList.remove('loading');
-      return;
-    }
+        try {
+          const status = await Network.getStatus();
+          if (!status.connected) {
+            await Dialog.alert({
+              title: "Pas de connexion",
+              message: "Vérifie ta connexion internet et réessaie.",
+              buttonTitle: "OK",
+            });
+            restaureBtn.classList.remove("loading");
+            return;
+          }
 
-    await initPurchases();
+          await initPurchases();
 
-    const { customerInfo } = await Purchases.restorePurchases();
-    noAd = !!customerInfo.entitlements.active[ENTITLEMENT_NO_ADS];
-    isPremium = !!customerInfo.entitlements.active[ENTITLEMENT_PREMIUM];
+          const { customerInfo } = await Purchases.restorePurchases();
+          noAd = !!customerInfo.entitlements.active[ENTITLEMENT_NO_ADS];
+          isPremium = !!customerInfo.entitlements.active[ENTITLEMENT_PREMIUM];
 
-    if (noAd || isPremium) {
-      achatEffectue();
-      await Dialog.alert({
-        title: "Achats restaurés",
-        message: "Tes achats précédents ont bien été restaurés !",
-        buttonTitle: "OK",
-      });
-      restaureBtn.classList.remove('loading');
-    } else {
-      restaureBtn.classList.remove('loading');
-      await Dialog.alert({
-        title: "Aucun achat trouvé",
-        message: "Nous n'avons trouvé aucun achat associé à ce compte Apple.",
-        buttonTitle: "OK",
-      });
-    }
-  } catch (err) {
-    restaureBtn.classList.remove('loading');
-    console.error("Erreur restauration achats:", err);
-    await Dialog.alert({ // ✅ Dialog est maintenant bien défini ici
-      title: "Erreur",
-      message: "La restauration des achats a échoué. Réessaie plus tard.",
-      buttonTitle: "OK",
-    });
-  }
-}
+          if (noAd || isPremium) {
+            achatEffectue();
+            await Dialog.alert({
+              title: "Achats restaurés",
+              message: "Tes achats précédents ont bien été restaurés !",
+              buttonTitle: "OK",
+            });
+            restaureBtn.classList.remove("loading");
+          } else {
+            restaureBtn.classList.remove("loading");
+            await Dialog.alert({
+              title: "Aucun achat trouvé",
+              message:
+                "Nous n'avons trouvé aucun achat associé à ce compte Apple.",
+              buttonTitle: "OK",
+            });
+          }
+        } catch (err) {
+          restaureBtn.classList.remove("loading");
+          console.error("Erreur restauration achats:", err);
+          await Dialog.alert({
+            // ✅ Dialog est maintenant bien défini ici
+            title: "Erreur",
+            message: "La restauration des achats a échoué. Réessaie plus tard.",
+            buttonTitle: "OK",
+          });
+        }
+      }
 
       const btnBuyP = getId("btnBuyP");
       const btnBuyAd = getId("btnBuyAd");
-      const restaureBtn = getId('restaurer-achats')
+      const restaureBtn = getId("restaurer-achats");
       document.addEventListener("DOMContentLoaded", async () => {
         await chargerEtatAchats();
 
@@ -63292,69 +63420,55 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       // Fait le lien entre le prix affiché et l'identifiant produit
       // tel que créé dans App Store Connect / Google Play / RevenueCat
       const DON_PRODUCTS = {
-        "2": "com.mickeyjr12.globusquiz.don2", // ← à remplacer si nommé différemment
-        "10": "com.mickeyjr12.globusquiz.don10", // ← à remplacer si nommé différemment
-        "40": "com.mickeyjr12.globusquiz.don40", // ← à remplacer si nommé différemment
+        2: "com.mickeyjr12.globusquiz.don2", // ← à remplacer si nommé différemment
+        10: "com.mickeyjr12.globusquiz.don10", // ← à remplacer si nommé différemment
+        40: "com.mickeyjr12.globusquiz.don40", // ← à remplacer si nommé différemment
       };
 
       async function acheterDon() {
-        achatEffectue();
-            screenThankDon.classList.add("active");
-
-          setTimeout(() => {
-            screenThankDon.classList.remove("active");
-          }, 2500);
-
-          if(textAreaDon.value.length > 0){
-           const okDon = await sendMessage(
-          "Envoi de don",
-          textAreaDon.value.trim(),
-          inputDon.value.trim(),
-        );
-        if (!okDon){
-          await proposerMail(textAreaDon.value);
-        }
-        else {
-        textAreaDon.value  = ""
-        crossDon.click()
-        }       
-          }
-        if (!window.Capacitor?.isNativePlatform() || btnBuyDon.classList.contains('loading')) return
-        btnBuyDon.classList.add('loading')
+        if (
+          !window.Capacitor?.isNativePlatform() ||
+          btnBuyDon.classList.contains("loading")
+        )
+          return;
+        btnBuyDon.classList.add("loading");
 
         const prix = btnBuyDon.dataset.don; // "2", "10" ou "40"
         const productId = DON_PRODUCTS[prix];
 
         if (!productId) {
           console.error("Prix de don inconnu:", prix);
-        btnBuyDon.classList.remove('loading')
+          btnBuyDon.classList.remove("loading");
           return;
         }
 
         const { Network, Dialog } = window.Capacitor?.Plugins ?? {};
         try {
-        const status = await Network.getStatus();
+          const status = await Network.getStatus();
 
-        if (!status.connected) {
-          await Dialog.alert({
-            title: "Pas de connexion",
-            message: "Vérifie ta connexion internet et réessaie.",
-            buttonTitle: "OK",
-          });
-        btnBuyDon.classList.remove('loading')
+          if (!status.connected) {
+            await Dialog.alert({
+              title: "Pas de connexion",
+              message: "Vérifie ta connexion internet et réessaie.",
+              buttonTitle: "OK",
+            });
+            btnBuyDon.classList.remove("loading");
 
-          return;
-        }
+            return;
+          }
 
-        await initPurchases();
-        const { Purchases } = window.Capacitor?.Plugins ?? {};
+          await initPurchases();
+          const { Purchases } = window.Capacitor?.Plugins ?? {};
 
           const offerings = await Purchases.getOfferings();
           const product = offerings.current?.availablePackages.find(
             (p) => p.product.identifier === productId,
           );
           if (!product) {
-            console.error("Produit don introuvable dans les offerings:", productId);
+            console.error(
+              "Produit don introuvable dans les offerings:",
+              productId,
+            );
             return;
           }
 
@@ -63363,11 +63477,27 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           await Purchases.purchasePackage({ aPackage: product });
 
           achatEffectue();
-            screenThankDon.classList.add("active");
+          screenThankDon.classList.add("active");
 
           setTimeout(() => {
             screenThankDon.classList.remove("active");
-          }, 2000);
+            if (textAreaDon.value.length === 0)crossDon.click();
+          }, 3000);
+
+          if (textAreaDon.value.length > 0) {
+            const okDon = await sendMessage(
+              "Envoi de don",
+              textAreaDon.value.trim(),
+              inputDon.value.trim(),
+            );
+            if (!okDon) {
+              await proposerMail(textAreaDon.value);
+            } else {
+              textAreaDon.value = "";
+              inputDon.value = "";
+              crossDon.click()
+            }
+          }
         } catch (err) {
           if (err?.userCancelled) {
             console.log("Don annulé par l'utilisateur");
@@ -63376,8 +63506,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             await Dialog.alert({
               title: "Erreur",
-              message:
-                "Ton don n'a pas pu être envoyé. Réessaie plus tard.",
+              message: "Ton don n'a pas pu être envoyé. Réessaie plus tard.",
               buttonTitle: "OK",
             });
           }
@@ -63385,8 +63514,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           btnBuyDon.classList.remove("loading");
         }
       }
-
-     
 
       // script avis
       const { InAppReview } = window.Capacitor?.Plugins ?? {};
