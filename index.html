@@ -30910,15 +30910,26 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const crossDon = getId('crossDon')
       const btnBuyDon = getId('btnBuyDon')
       const messagesDon = qAll('.messageDon')
-
-      
+      let toggleTxtMail = false;
+      let toggleInputMail = false; // ne pas défocus la zone de texte quand on appuie quelque part       
       const donsChoice  = document.querySelectorAll('.donChoice')
 
-       messagesDon.forEach((txt) => {
-        txt.addEventListener("focus", (e) => {
-          txt.focus({ preventScroll: true });
-        });
+      const D_toggleDon = {
+        textAreaDon : false,
+        inputDon : false,
+      }
+
+      messagesDon.forEach(don=>{
+        don.addEventListener('focus',()=>{
+          requestAnimationFrame(()=>D_toggleDon[don.id] = true)
+        })
+        don.addEventListener('blur',()=>{
+          requestAnimationFrame(()=>D_toggleDon[don.id] = false)
+          
+        })
       })
+
+
       btnDon.addEventListener("click", () => {
         // window.open("https://ko-fi.com/geoquiz", "_blank");
         cadreDons.classList.add('active')
@@ -30936,13 +30947,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       donsChoice.forEach(don=>{
         don.addEventListener('click',()=>{
-      donsChoice.forEach(d=>{
-        d.classList.remove('active')
-      })
+      donsChoice.forEach(d=>{d.classList.remove('active')})
       don.classList.add('active')
       btnBuyDon.textContent =  "Don de " + don.dataset.don + "€";
 
-        })
+       D_toggleDon.textAreaDon ? getId('textAreaDon').focus({preventScroll: true}) : "";
+        D_toggleDon.inputDon ? getId('inputDon').focus({preventScroll: true}) : "";
+        console.log(D_toggleDon.inputDon )
+
+        })    
       })
 
       backTopCadreP.style.animation = "backgroundPX 100s linear infinite";
@@ -62773,9 +62786,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(svg.getAttribute("viewBox").split(" ").map(Number));
+        console.log( D_toggleDon.inputDon);
       }
-
+// loop()
       //       let L_ephe = []
       // paths.forEach(p=> {
 
