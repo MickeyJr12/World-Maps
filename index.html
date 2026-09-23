@@ -4323,6 +4323,9 @@
         min-width: 14rem;
         max-height: 3rem;
         transition: filter 0.2s ease;
+        svg {
+          overflow : visible;
+        }
       }
 
       #play {
@@ -4342,8 +4345,7 @@
         left: 6%;
       }
 
-      .btnPlay:active,
-      .btnPlay.hover {
+      .btnPlay:active {
         filter: brightness(0.9);
       }
       
@@ -7582,7 +7584,7 @@
         transition:
           background 0.1s ease,
           transform 0.2s ease,
-          filter 0.05s ease;
+          filter 0.1s ease;
       }
       .btn4Choix.modifClasser {
         display: none;
@@ -12970,7 +12972,7 @@
         />
       </svg>
       <div class="btnHomeBox">
-        <div class="btnPlay hoverable" id="play">
+        <div class="btnPlay" id="play">
           <!-- <svg
             class="iconPlay"
             xmlns="http://www.w3.org/2000/svg"
@@ -12995,7 +12997,7 @@
           </svg>
           <h2>Jouer</h2>
         </div>
-        <div class="btnPlay hoverable" id="map">
+        <div class="btnPlay" id="map">
           <svg
             class="iconPlay"
             xmlns="http://www.w3.org/2000/svg"
@@ -13010,7 +13012,7 @@
           <h2>Carte</h2>
         </div>
 
-        <div class="btnPlay hoverable" id="devises">
+        <div class="btnPlay" id="devises">
           <svg
             class="iconPlay"
             xmlns="http://www.w3.org/2000/svg"
@@ -60099,13 +60101,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       document.head.appendChild(listBoxStyle);
 
       //Partie Home
-      document.querySelectorAll(".hoverable").forEach((el) => {
-        el.addEventListener("touchstart", () => el.classList.add("hover"), {
-          passive: true,
-        });
-        el.addEventListener("touchend", () => el.classList.remove("hover"));
-        el.addEventListener("touchcancel", () => el.classList.remove("hover"));
-      });
 
       //Script cadreSearch
       const opensearch = document.querySelector(".opensearch");
