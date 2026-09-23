@@ -58,6 +58,9 @@
         touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
       }
 
+     textarea {
+  resize: none;
+}
       :root {
         --font-main: "Outfit", sans-serif;
         --font-poppins: "Poppins", sans-serif;
@@ -5066,6 +5069,156 @@
       }
       /* Fin CSS Scroll premium */
 
+        #cacheDons {
+        pointer-events: none;
+        position: fixed;
+        left: -4rem;
+        top: -4rem;
+        transform: translateX(-4rem);
+        opacity: 0;
+        min-width: 200vw;
+        min-height: 200vh;
+        z-index: 90;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        transition: opacity 0.2s ease;
+      }
+      #cacheDons.active {
+        pointer-events: all;
+        opacity: 1;
+        transform: none;
+      }
+
+      #cadreDons{
+        display : flex; 
+        position : absolute; 
+        flex-direction : column; 
+        align-items: center;
+        border-radius : 0.8rem;
+        padding :  0.6rem;
+        gap : 0.8rem;
+        box-sizing : border-box;
+        z-index : 100;
+        color : white;
+        opacity : 0;
+        pointer-events : none;
+        width : calc(100% - 4rem);
+        max-width  : 600px;
+        height : auto;
+        background : rgba(0,0,0,0.1);
+        background: linear-gradient(
+                180deg,
+                rgba(41, 141, 213, 0.75),
+                rgba(14, 88, 145, 0.75)
+              );
+        background : #0f4479;
+        top : calc(env(safe-area-inset-top) + 1rem);
+        transform : translateY(-1rem);
+        transition : transform 0.4s ease, opacity 0.4s ease;
+
+        textarea {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+textarea::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge (Chromium) */
+}
+textArea,input{
+  color : inherit;
+  transition : border-radius 0.2s ease;
+}
+      }
+      #cadreDons.active{
+        pointer-events : all;
+        opacity : 1;
+        transform : none;
+      }
+
+       #crossDon {
+        position: absolute;
+        cursor : pointer;
+        right: 0;
+        font-size: 0.92rem;
+        fill: white;
+        transition: filter 0.1s ease;
+        svg {
+          fill: white;
+          height: 2rem;
+        }
+      }
+      #crossDon:active {
+        filter: brightness(0.6);
+      }
+
+      #gridDonsChoices{
+        display : flex;
+        justify-content : space-around;
+        align-items : center;
+        padding : 0 0.6rem;
+        box-sizing : border-box;
+        border-radius: 1rem;
+        width : 100%;
+        gap : 0.6rem;
+      }
+      .donChoice{
+        display: flex;
+        cursor : pointer;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4rem;
+        border-radius: 100rem;
+        padding: 0.4rem 0.6rem;
+        flex : 1;
+        /* background : rgba(255,255,255,0.06); */
+        outline: 1px solid rgba(255,255,255, 0.25);
+        transition: background 0.2s ease;      
+      }
+      .donChoice.active{
+        background: rgba(232, 85, 143,0.4);
+        outline: none;
+        background : #e8558f;
+      }
+
+       .messageDon {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        width : 100%;
+        box-sizing: border-box;
+        padding: 0.6rem;
+        font-size: 0.9rem;
+        border-radius: inherit;
+        border: 0;
+        background: rgba(246, 246, 246, 0.1);
+        transition: box-shadow 0.2s ease;
+      }
+      #textAreaDon{
+        min-height : 5rem;
+      }
+
+      .messageDon:focus {
+        outline: 0;
+        border-radius: 1.15rem;
+        box-shadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+      }
+
+      .messageDon::placeholder {
+        font-family: inherit;
+        font-size: inherit;
+        color: #a3a7ba;
+        opacity: 1;
+      }
+      #btnBuyDon{
+        display : flex;
+        justify-content: center;
+        align-items : center;
+      }
+
+
+
+
+
+
       .mCadreP {
         display: flex;
         flex-direction: column;
@@ -5136,13 +5289,13 @@
         transform: scale(0.98);
       }
 
-      #buyBtnAd {
+      #btnBuyAd {
         background: #4ecdd4;
         background: #46e7f0;
         color: #043b3f;
         color: #043b3f;
       }
-      #buyBtnP {
+      #btnBuyP {
         background: #1abdf9;
         color: #0a585e;
         color: #043b3f;
@@ -5334,7 +5487,7 @@
         filter: brightness(0.92);
       }
 
-      #btnDon {
+      .btnCadreDon {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -5350,7 +5503,7 @@
         border-radius: inherit;
         transition: transform 0.2s ease;
       }
-      #btnDon:active {
+      .btnCadreDon:active {
         transform: scale(0.96);
       }
 
@@ -9893,6 +10046,116 @@
     </div>
 
     <div id="cadrePremium">
+      <div id="cacheDons"></div>
+      <div id="cadreDons">
+          <span style="display : flex;  position : relative; align-items  : center; justify-content : flex-start; font-weight: 550; gap  : 0.6rem; flex-wrap: nowrap; width : 100%;">
+
+
+        Faire un don
+                  <svg height="1.6rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+
+
+             <div id="crossDon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Outline"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+            />
+          </svg>
+        </div>
+
+        </span>
+        <span style="align-self : flex-start;margin-top : -0.4rem; opacity :  0.6; font-size : 0.85rem;">Chaque don aide à faire vivre Globus Quiz</span>
+
+      <div id="gridDonsChoices">
+        <div class="donChoice active" data-don = "2" >2&nbsp;€</div>
+        <div class="donChoice" data-don = "10">10&nbsp;€</div>
+        <div class="donChoice" data-don = "40">40&nbsp;€</div>
+      </div>
+
+
+        <textarea
+          id="textAreaDon"
+          class="messageDon"
+          required=""
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Un petit mot à rajouter ? Ça fait toujours plaisir."
+        ></textarea>
+
+        <input
+              id="inputDon"
+              class="messageDon"
+              required=""
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              type="email"
+              placeholder="nom@exemple.com"
+            />
+             <span
+          style="
+            display: flex;
+            align-self: flex-start;
+            gap: 0.25rem;
+            margin-top: -0.2rem;
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.4);
+          "
+        >
+          <svg
+            height="0.92rem"
+            style="opacity : 0.4;"
+            viewBox="0 -0.5 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.5 11V13C5.5 16.3137 8.18629 19 11.5 19H13.5C16.8137 19 19.5 16.3137 19.5 13V11C19.5 7.68629 16.8137 5 13.5 5H11.5C8.18629 5 5.5 7.68629 5.5 11Z"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16H11.75ZM12.5 11H13.25C13.25 10.5858 12.9142 10.25 12.5 10.25V11ZM11.5 10.25C11.0858 10.25 10.75 10.5858 10.75 11C10.75 11.4142 11.0858 11.75 11.5 11.75V10.25ZM12.5 16.75C12.9142 16.75 13.25 16.4142 13.25 16C13.25 15.5858 12.9142 15.25 12.5 15.25V16.75ZM11.5 15.25C11.0858 15.25 10.75 15.5858 10.75 16C10.75 16.4142 11.0858 16.75 11.5 16.75V15.25ZM12.5 15.25C12.0858 15.25 11.75 15.5858 11.75 16C11.75 16.4142 12.0858 16.75 12.5 16.75V15.25ZM13.5 16.75C13.9142 16.75 14.25 16.4142 14.25 16C14.25 15.5858 13.9142 15.25 13.5 15.25V16.75ZM13.25 8C13.25 7.58579 12.9142 7.25 12.5 7.25C12.0858 7.25 11.75 7.58579 11.75 8H13.25ZM11.75 9C11.75 9.41421 12.0858 9.75 12.5 9.75C12.9142 9.75 13.25 9.41421 13.25 9H11.75ZM13.25 16V11H11.75V16H13.25ZM12.5 10.25H11.5V11.75H12.5V10.25ZM12.5 15.25H11.5V16.75H12.5V15.25ZM12.5 16.75H13.5V15.25H12.5V16.75ZM11.75 8V9H13.25V8H11.75Z"
+                fill="white"
+              ></path>
+            </g>
+          </svg>
+          Utilisé uniquement pour pouvoir vous répondre
+        </span>
+
+
+        <div class="btnCadreDon" id="btnBuyDon">
+            Don de 2€
+                
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
+
+
       <div id="backgroundCadreP"></div>
       <svg
         class="backTopP"
@@ -12209,7 +12472,7 @@
           margin-bottom: -1.2rem;
           margin-right: 1rem;
           margin-top: calc(env(safe-area-inset-top) + 1.5rem);
-          z-index: 20000;
+          z-index: 80;
         "
       >
         <svg
@@ -12376,7 +12639,7 @@
               >✓ Concentre toi uniquement sur ton apprentissage
             </span>
 
-            <button id="buyBtnAd" class="buyBtn">
+            <button id="btnBuyAd" class="buyBtn">
               <div class="cadreSpinnerBuy" id="loaderBuyAd">
                 <!-- From Uiverse.io by mrhyddenn -->
                 <div class="spinner center">
@@ -12508,7 +12771,7 @@
               >✓ +40 pays à explorer en détail (états, provinces, länder…)
             </span>
 
-            <button id="buyBtnP" class="buyBtn">
+            <button id="btnBuyP" class="buyBtn">
               <div class="cadreSpinnerBuy" id="loaderBuyP">
                 <!-- From Uiverse.io by mrhyddenn -->
                 <div class="spinner center">
@@ -12688,8 +12951,9 @@
               </svg>
 
               <div class="txtMCadreP">
-                <span style="font-size: 1.6rem; font-weight: 550"
-                  >Me soutenir ♥
+                <span style="display : flex; align-items  : center; font-size: 1.6rem; font-weight: 550; gap  : 0.6rem; flex-wrap: nowrap;"
+                  >Me soutenir 
+                  <svg height="1.6rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                 </span>
               </div>
             </div>
@@ -12707,7 +12971,7 @@
               </p>
             </span>
 
-            <div id="btnDon">
+            <div id="btnDon" class="btnCadreDon">
               <svg
                 style="opacity: 0"
                 height="1.2rem"
@@ -30638,10 +30902,38 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const backTopCadreP2 = document.getElementById("backTopCadreP2");
       const backTopCadreP3 = document.getElementById("backTopCadreP3");
       const btnDon = document.getElementById("btnDon");
+      const cadreDons = getId('cadreDons')
+      const cacheDons = getId('cacheDons')
+      const crossDon = getId('crossDon')
+      const btnBuyDon = getId('btnBuyDon')
+
+      const donsChoice  = document.querySelectorAll('.donChoice')
 
       btnDon.addEventListener("click", () => {
-        window.open("https://ko-fi.com/geoquiz", "_blank");
+        // window.open("https://ko-fi.com/geoquiz", "_blank");
+        cadreDons.classList.add('active')
+        cacheDons.classList.add('active')
       });
+      crossDon.addEventListener('click',()=>{
+         cadreDons.classList.remove('active')
+        cacheDons.classList.remove('active')
+      })
+      cacheDons.addEventListener('click',()=>{
+        crossDon.click()
+      })
+
+
+      donsChoice.forEach(don=>{
+        don.addEventListener('click',()=>{
+      donsChoice.forEach(d=>{
+        d.classList.remove('active')
+      })
+      don.classList.add('active')
+      btnBuyDon.textContent =  "Don de " + don.dataset.don + "€";
+
+        })
+      })
+
       backTopCadreP.style.animation = "backgroundPX 100s linear infinite";
       backTopCadreP2.style.animation = "backgroundPX2 100s linear infinite";
       backTopCadreP3.style.animation = "backgroundPX3 100s linear infinite";
@@ -62862,14 +63154,14 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         }
       }
 
-      const buyBtnP = getId("buyBtnP");
-      const buyBtnAd = getId("buyBtnAd");
+      const btnBuyP = getId("btnBuyP");
+      const btnBuyAd = getId("btnBuyAd");
       const restaureBtn = getId('restaurer-achats')
       document.addEventListener("DOMContentLoaded", async () => {
         await chargerEtatAchats();
 
-        buyBtnAd.addEventListener("click", acheterRetraitPubs);
-        buyBtnP.addEventListener("click", acheterPremium);
+        btnBuyAd.addEventListener("click", acheterRetraitPubs);
+        btnBuyP.addEventListener("click", acheterPremium);
 
         document
           .getElementById("restaurer-achats")
