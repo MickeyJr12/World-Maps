@@ -58,6 +58,8 @@
         touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
       }
 
+
+
       textarea {
         resize: none;
       }
@@ -4314,6 +4316,7 @@
 
       .btnPlay {
         display: flex;
+        cursor: pointer;
         position: relative;
         align-self: center;
         justify-content: center;
@@ -5097,7 +5100,7 @@
         flex-direction: column;
         align-items: center;
         border-radius: 0.8rem;
-        padding: 0.6rem;
+        padding: 0.8rem;
         gap: 0.8rem;
         box-sizing: border-box;
         z-index: 100;
@@ -7227,6 +7230,9 @@
       }
       #playConfig.active:active {
         transform: scale(0.97);
+        background-color: #a8213e;
+        border-color: #a8213e;
+      
       }
 
       .btnSelected {
@@ -10128,6 +10134,7 @@
             position: relative;
             align-items: center;
             justify-content: flex-start;
+            font-size : 1.2rem;
             font-weight: 550;
             gap: 0.6rem;
             flex-wrap: nowrap;
@@ -10223,14 +10230,14 @@
             display: flex;
             align-self: flex-start;
             gap: 0.25rem;
-            margin-top: -0.2rem;
+            margin-top: -0.25rem;
             font-size: 0.68rem;
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
           "
         >
           <svg
             height="0.92rem"
-            style="opacity: 0.4"
+            style="opacity: 0.5"
             viewBox="0 -0.5 25 25"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -10257,7 +10264,7 @@
               ></path>
             </g>
           </svg>
-          Utilisé uniquement pour pouvoir vous répondre
+          Renseignez votre e-mail si vous voulez recevoir une réponse
         </span>
 
         <div class="btnCadreDon" id="btnBuyDon" data-don="2">
@@ -28828,6 +28835,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
     <!--Script utile-->
     <script>
+      //Ne pas autoriser le hover sur mobile
+
+      if (matchMedia('(hover: none)').matches){
+        for ( const sheet of document.styleSheets){
+          try{
+            for (let i = sheet.cssRules.length - 1; i>= 0; i--){
+              if(sheet.cssRules[i].selectorText?.includes(':hover')) sheet.deleteRule(i);
+            }
+          }
+          catch(e){}
+        }
+      }
+
+
       // Réussir à annuler le click si on déplace le curseur
       (() => {
         const MAX_MOVE = 10; // px de tolérance
@@ -62980,6 +63001,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         txtTotalDays.textContent = totalDays + " jours";
       }
       trackLoading();
+
 
       // play.addEventListener('click',(e)=>{
       //   e.stopImmediatePropagation()
