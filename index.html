@@ -7903,6 +7903,7 @@
         align-items: center;
         height: 100%;
         width: 4.2rem;
+        width : 60px;
         svg {
           height: 100%;
         }
@@ -7943,7 +7944,8 @@
         align-items: center;
         height: 100%;
         justify-content: flex-end;
-        width: 4.2rem;
+        /* width: 4.2rem; */
+        width : 60px;
       }
       .txtChrono {
         color: rgba(255, 255, 255, 0.95);
@@ -63015,10 +63017,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(D_toggleDon.inputDon);
+        console.log(document.querySelector('.txtChrono').getBoundingClientRect().width);
       }
-      console.log;
-
       // loop()
       //       let L_ephe = []
       // paths.forEach(p=> {
