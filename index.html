@@ -58,6 +58,8 @@
         touch-action: manipulation; /* désactive le double-tap zoom → réduit le délai de 300ms */
       }
 
+
+
       textarea {
         resize: none;
       }
@@ -28829,6 +28831,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
     <!--Script utile-->
     <script>
+      //Ne pas autoriser le hover sur mobile
+
+      if (matchMedia('(hover: none)').matches){
+        for ( const sheet of document.styleSheets){
+          try{
+            for (let i = sheet.cssRules.length - 1; i>= 0; i--){
+              if(sheet.cssRules[i].selectorText?.includes(':hover')) sheet.deleteRule(i);
+            }
+          }
+          catch(e){}
+        }
+      }
+
+
       // Réussir à annuler le click si on déplace le curseur
       (() => {
         const MAX_MOVE = 10; // px de tolérance
