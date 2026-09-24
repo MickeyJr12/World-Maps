@@ -7892,7 +7892,7 @@
       }
       .cadreChrono {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: flex-end;
         z-index: 50;
         width: clamp(88vw, 90%, 92vw);
@@ -7900,12 +7900,20 @@
         padding: 0rem 0.5rem;
       }
 
-      .iconChrono {
-        height: 100%;
-      }
-      .iconChrono path {
+      .iconChrono{
+        display : flex;
+        flex : 1;
+        justify-content : center;
+        align-items : center;
+        height : 100%;
+        svg {
+          height : 100%;
+        }
+        path {
         fill: rgba(255, 255, 255, 0.95);
       }
+      }
+      
       .iconChrono.modeTrouver path {
         fill: rgba(65, 212, 237, 0.9);
       }
@@ -7935,6 +7943,9 @@
         display: flex;
         align-self: center;
         align-items: center;
+        height : 100%;
+        justify-content: flex-end;
+        flex : 1;
       }
       .txtChrono {
         color: rgba(255, 255, 255, 0.95);
@@ -19428,8 +19439,8 @@
         ></span>
       </div>
       <div class="cadreChrono">
+        <div class="iconChrono">
         <svg
-          class="iconChrono"
           xmlns="http://www.w3.org/2000/svg"
           id="Layer_1"
           viewBox="0 0 26 26"
@@ -19440,6 +19451,7 @@
             d="m22.5 5.5a1.5 1.5 0 0 0 0-3c-.841 0-1-.159-1-1a1.5 1.5 0 0 0 -3 0 4.861 4.861 0 0 0 .289 1.715l-.618.685a10.927 10.927 0 0 0 -4.671-1.785v-.615a1.5 1.5 0 0 0 -3 0v.615a10.927 10.927 0 0 0 -4.671 1.785l-.618-.685a4.861 4.861 0 0 0 .289-1.715 1.5 1.5 0 0 0 -3 0c0 .841-.159 1-1 1a1.5 1.5 0 0 0 0 3 4.953 4.953 0 0 0 1.523-.232l.579.643a11 11 0 1 0 16.8 0l.579-.643a4.953 4.953 0 0 0 1.519.232zm-10.5 15.5a8 8 0 1 1 8-8 8.009 8.009 0 0 1 -8 8z"
           />
         </svg>
+        </div>
         <div class="barreChrono">
           <div class="barreChronoIn"></div>
         </div>
@@ -32133,7 +32145,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         L_sub.push(L_cSub[id].svgSub);
       }
 
-      console.log()
       
     //fin script svgSub
 
