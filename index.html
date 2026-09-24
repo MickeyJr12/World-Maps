@@ -31338,6 +31338,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       // fin script localstorage
 
       menuDefiQ.addEventListener("click", () => {
+        hapticFeedback("medium");
         menuRecompenses.classList.remove("active");
         menuDefiQ.classList.add("active");
         cadreMenuRDIn.classList.remove("right");
@@ -31350,6 +31351,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       menuRecompenses.addEventListener("click", () => {
+        hapticFeedback("medium");
         if (menuRecompenses.classList.contains("active")) {
           document.querySelector(".cadreRDL").firstChild.scrollIntoView({
             behavior: "smooth",
@@ -32394,6 +32396,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
 
       menuContinent.addEventListener("click", () => {
+        hapticFeedback("medium");
         menuSub.classList.remove("active");
         menuContinent.classList.add("active");
         cadreMenuZIn.classList.remove("right");
@@ -32407,6 +32410,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       });
 
       menuSub.addEventListener("click", () => {
+        hapticFeedback("medium");
         menuContinent.classList.remove("active");
         cadreMenuZIn.classList.add("right");
         contentCZ.classList.remove("active");
