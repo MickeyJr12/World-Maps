@@ -7895,17 +7895,17 @@
         justify-content: space-between;
         align-items: flex-end;
         z-index: 50;
+        gap : 0.4rem;
         width: clamp(88vw, 90%, 92vw);
         height: 1.8rem;
-        padding: 0rem 0.5rem;
       }
 
       .iconChrono{
         display : flex;
-        flex : 1;
         justify-content : center;
         align-items : center;
         height : 100%;
+        width : 4.2rem;
         svg {
           height : 100%;
         }
@@ -7922,7 +7922,8 @@
         align-self: center;
         border-radius: 100px;
         height: 32%;
-        width: 60%;
+        /* width: 60%; */
+        flex : 1;
         background: rgba(255, 255, 255, 0.15);
         border: 1px solid rgba(255, 255, 255, 0.25);
         border-radius: 50px;
@@ -7945,7 +7946,7 @@
         align-items: center;
         height : 100%;
         justify-content: flex-end;
-        flex : 1;
+        width : 4.2rem;
       }
       .txtChrono {
         color: rgba(255, 255, 255, 0.95);
@@ -33841,7 +33842,15 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             cadreNext.classList.remove("good", "bad", "none", "visible");
             cadreNext.classList.add("none");
-            spanNext.textContent = "⏱ Temps écoulé !";
+            spanNext.textContent = "";
+            const sandTime = document.createElement('div');
+            sandTime.innerHTML = `
+            <svg height="1rem" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20,3a1,1,0,0,0,0-2H4A1,1,0,0,0,4,3H5.049c.146,1.836.743,5.75,3.194,8-2.585,2.511-3.111,7.734-3.216,10H4a1,1,0,0,0,0,2H20a1,1,0,0,0,0-2H18.973c-.105-2.264-.631-7.487-3.216-10,2.451-2.252,3.048-6.166,3.194-8Zm-6.42,7.126a1,1,0,0,0,.035,1.767c2.437,1.228,3.2,6.311,3.355,9.107H7.03c.151-2.8.918-7.879,3.355-9.107a1,1,0,0,0,.035-1.767C7.881,8.717,7.227,4.844,7.058,3h9.884C16.773,4.844,16.119,8.717,13.58,10.126ZM12,13s3,2.4,3,3.6V20H9V16.6C9,15.4,12,13,12,13Z"></path></g></svg>
+            `
+            spanNext.append(sandTime)
+            spanNext.append("Temps écoulé !")
+
+            // spanNext.textContent = "Temps écoulé !";
             cadreNext.classList.add("visible");
             document.querySelector(".btn-suivant").textContent = "Suivant →";
             if (L_config.m === "modeTrouver") {
