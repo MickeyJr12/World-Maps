@@ -8766,8 +8766,8 @@
         box-shadow: 0 0 8px rgba(0,0,0,0.4);
         gap : 0.6rem;
         backdrop-filter : blur(20px);
-        transform : translateY(calc(-2rem - 100%)) translateX(-50%);
-        transition : transform 0.4s ease, opacity 0.4s;
+        transform : translateY(calc(-2rem -env(safe-area-inset-top) - 100%)) translateX(-50%);
+        transition : bottom 0.4s ease, opacity 0.4s;
       }
       #cadreAddTD.active{
         transform : translateX(-50%);
