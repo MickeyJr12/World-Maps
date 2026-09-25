@@ -8751,7 +8751,6 @@
         display: flex;
         position: fixed;
         z-index : 140;
-        opacity : 0;
         justify-content : flex-start;
         align-items : center;
         border-radius : 1rem;
@@ -8760,7 +8759,7 @@
         top : calc(env(safe-area-inset-top) + 0.8rem);
         left : 50%;
         color : rgba(255,255,255,0.75);
-        outline : 1px solid rgba(255,255,255,0.25);
+        outline : 1px solid rgba(255,255,255,0.2);
         width : calc(100% - 2rem);
         height : auto;
         background : rgba(23, 4, 129, 0.96);
@@ -8771,7 +8770,6 @@
         transition : transform 0.4s ease, opacity 0.4s;
       }
       #cadreAddTD.active{
-        opacity : 1;
         transform : translateX(-50%);
       }
 
@@ -8825,7 +8823,7 @@
         transform : translate(-100%);
         opacity : 0;
         filter : blur(10px);
-        transition : opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+        transition : opacity 0.3s ease, transform 0.4s ease, filter 0.4s ease;
       }
       .newTD.view{
         transform : none;
@@ -8927,21 +8925,21 @@
       }
 
       .celGridPm.actuelle {
-        opacity: 0.75;
+        opacity: 0.85;
         background-color: rgba(36, 169, 251, 0.551);
       }
 
       .celGridPm.outTime {
-        opacity: 0.75;
+        opacity: 0.85;
         background-color: #f09443;
       }
       .celGridPm.good {
-        opacity: 0.75;
+        opacity: 0.85;
         background-color: rgba(37, 168, 98, 0.8);
       }
 
       .celGridPm.bad {
-        opacity: 0.75;
+        opacity: 0.85;
         background: rgba(184, 47, 47, 0.8);
       }
 
@@ -31457,7 +31455,7 @@ const todayIndex = getTodayIndex();
         newTD.classList.add('view')
         txtInvisibleTD.textContent = streak
         nbrAddTD.querySelector('span').classList.add('hide')
-      }, 700);
+      }, 500);
 
     setTimeout(() => {
       cadreAddTD.classList.remove('active');
