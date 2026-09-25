@@ -4234,7 +4234,7 @@
         transition: all 0.25s ease;
       }
       #btnPlayTrack:active {
-        transform: scale(0.97);
+        filter: brightness(0.9);
       }
 
       #btnTrackDays {
@@ -7042,10 +7042,10 @@
       #dTitle {
         display: flex;
         position: relative;
-        justify-content: space-between ;
+        justify-content: space-between;
         align-items: center;
         align-self: flex-start;
-        width : 100%;
+        width: 100%;
         gap: 1rem;
         letter-spacing: 1px;
         height: 3rem;
@@ -7060,9 +7060,9 @@
         align-items: center;
         gap: 0.5rem;
       }
-      #chronoDropdown{
-        position : absolute;
-        top : calc(100% + 1rem);
+      #chronoDropdown {
+        position: absolute;
+        top: calc(100% + 1rem);
       }
 
       /* Dropdown menu */
@@ -7199,7 +7199,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor : pointer;
+        cursor: pointer;
         gap: 10px;
 
         width: 60vw;
@@ -7631,7 +7631,7 @@
         fill: white;
       }
       #pause4Choix:active {
-        filter : brightness(0.9);
+        filter: brightness(0.9);
       }
 
       #cadreQ4Choix {
@@ -7909,7 +7909,7 @@
         align-items: center;
         height: 100%;
         width: 4.2rem;
-        width : 60px;
+        width: 60px;
         svg {
           height: 100%;
         }
@@ -7951,7 +7951,7 @@
         height: 100%;
         justify-content: flex-end;
         /* width: 4.2rem; */
-        width : 60px;
+        width: 60px;
       }
       .txtChrono {
         color: rgba(255, 255, 255, 0.95);
@@ -8305,7 +8305,7 @@
         opacity: 0;
       }
       .lineMove svg {
-        overflow : visible;
+        overflow: visible;
         width: 3.6rem;
         fill: rgba(0, 0, 0, 0.2);
       }
@@ -18662,179 +18662,181 @@
           <div class="ligneInter"></div>
 
           <div id="cadreD">
-
-           
-
             <div id="dTitle">
-              <div style="display : flex; justify-content : flex-start; align-items : center; gap : inherit">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                id="iconD"
-                data-name="Layer 1"
-                viewBox="0 0 24 24"
+              <div
+                style="
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  gap: inherit;
+                "
               >
-                <path
-                  d="M22.789,8.85c-.465-1.258-1.554-1.999-2.866-1.945-1.002,.032-2.005,.059-3.006,.079-.445,.038-.866-.284-1.004-.728-.297-.96-.595-1.919-.898-2.877-.408-1.301-1.591-2.142-3.013-2.142s-2.605,.841-3.013,2.141c-.304,.958-.602,1.917-.898,2.877-.138,.445-.54,.769-1.004,.729-1.002-.02-2.005-.046-2.996-.078-1.311-.052-2.414,.688-2.878,1.945-.507,1.372-.081,2.893,1.066,3.789,.812,.623,1.617,1.231,2.421,1.831,.382,.285,.529,.795,.367,1.27-.334,.979-.683,1.962-1.044,2.946-.492,1.301-.142,2.657,.892,3.453,1.09,.841,2.635,.828,3.847-.036l2.558-1.837c.414-.296,.95-.297,1.365,0l2.562,1.84c.613,.436,1.312,.655,1.994,.655,.664,0,1.312-.207,1.849-.621,1.033-.796,1.383-2.152,.895-3.445-.365-.992-.712-1.976-1.047-2.954-.163-.474-.015-.984,.366-1.269,.805-.601,1.611-1.209,2.429-1.837,1.14-.891,1.566-2.412,1.059-3.784Z"
-                />
-              </svg>
-              <h4>Difficulté</h4>
-            </div>
-
-             <div class="chrono-wrapper">
-              <!-- Pill -->
-              <div class="chrono-pill" id="chronoPill">
-                <!-- Icone chronomètre -->
                 <svg
-                  class="chrono-icon"
                   xmlns="http://www.w3.org/2000/svg"
+                  id="iconD"
+                  data-name="Layer 1"
                   viewBox="0 0 24 24"
-                  fill="#1a1a2e"
                 >
                   <path
-                    d="M12.963,12.136v-2.133c0-.552-.447-1-1-1s-1,.448-1,1v2.133c-.562,.34-.938,.957-.938,1.661,0,1.069,.869,1.938,1.938,1.938s1.938-.87,1.938-1.938c0-.704-.376-1.321-.938-1.661Z"
-                  />
-                  <path
-                    d="M20.002,7.422c.6,.556,1.22,.196,1.415,0,.391-.39,.391-1.023,0-1.414l-1.786-1.789c-.391-.392-1.024-.391-1.415,0-.391,.39-.391,1.023,0,1.414l.187,.187-.488,.489c-.933-.692-2.058-1.18-3.366-1.455,.134-.327,.208-.684,.208-1.058,0-1.542-1.254-2.796-2.795-2.796s-2.795,1.254-2.795,2.796c0,.37,.073,.723,.204,1.046-1.305,.263-2.423,.734-3.349,1.405l-.426-.427,.187-.187c.39-.391,.39-1.024,0-1.414-.391-.39-1.024-.391-1.415,0l-1.786,1.789c-.39,.391-.39,1.024,0,1.414,.195,.195,.789,.555,1.415,0l.185-.186,.405,.406c-1.16,1.508-1.823,3.562-1.823,6.137,0,5.774,3.288,9.187,9.203,9.221,5.904-.035,9.082-3.211,9.191-9.221-.044-2.517-.666-4.554-1.821-6.065l.477-.478,.185,.186ZM11.963,3c.438,0,.795,.357,.795,.796s-.356,.796-.795,.796-.795-.357-.795-.796,.356-.796,.795-.796Zm.006,18c-4.818-.028-7.108-2.317-7.203-7.204,.092-4.818,2.448-7.174,7.19-7.204,4.698,.031,7.122,2.46,7.204,7.186-.089,4.898-2.378,7.193-7.191,7.222Z"
+                    d="M22.789,8.85c-.465-1.258-1.554-1.999-2.866-1.945-1.002,.032-2.005,.059-3.006,.079-.445,.038-.866-.284-1.004-.728-.297-.96-.595-1.919-.898-2.877-.408-1.301-1.591-2.142-3.013-2.142s-2.605,.841-3.013,2.141c-.304,.958-.602,1.917-.898,2.877-.138,.445-.54,.769-1.004,.729-1.002-.02-2.005-.046-2.996-.078-1.311-.052-2.414,.688-2.878,1.945-.507,1.372-.081,2.893,1.066,3.789,.812,.623,1.617,1.231,2.421,1.831,.382,.285,.529,.795,.367,1.27-.334,.979-.683,1.962-1.044,2.946-.492,1.301-.142,2.657,.892,3.453,1.09,.841,2.635,.828,3.847-.036l2.558-1.837c.414-.296,.95-.297,1.365,0l2.562,1.84c.613,.436,1.312,.655,1.994,.655,.664,0,1.312-.207,1.849-.621,1.033-.796,1.383-2.152,.895-3.445-.365-.992-.712-1.976-1.047-2.954-.163-.474-.015-.984,.366-1.269,.805-.601,1.611-1.209,2.429-1.837,1.14-.891,1.566-2.412,1.059-3.784Z"
                   />
                 </svg>
-
-                <span class="chrono-label" id="chronoCurrentLabel">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#1a1a2e"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    style="height: 1rem; width: 1.2rem; display: block"
-                  >
-                    <path
-                      d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4z"
-                    />
-                    <path
-                      d="M12 12c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"
-                    />
-                  </svg>
-                </span>
+                <h4>Difficulté</h4>
               </div>
-              <!-- Dropdown -->
 
-              <div class="dropdown" id="chronoDropdown">
-                <div
-                  class="chrono-option"
-                  id="chrono15"
-                  data-value="16"
-                  data-label="15s"
-                >
-                  15s
-                </div>
-                <div
-                  class="chrono-option"
-                  id="chrono30"
-                  data-value="31"
-                  data-label="30s"
-                >
-                  30s
-                </div>
-
-                <div
-                  class="chrono-option lockP"
-                  id="chrono1"
-                  data-value="61"
-                  data-label="1min"
-                >
-                  1min
-
+              <div class="chrono-wrapper">
+                <!-- Pill -->
+                <div class="chrono-pill" id="chronoPill">
+                  <!-- Icone chronomètre -->
                   <svg
-                    class="mDiamant"
-                    viewBox="0 0 332 290"
-                    fill="none"
+                    class="chrono-icon"
                     xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
-                      fill="#d9a441"
-                    />
-                  </svg>
-                </div>
-
-                <div
-                  class="chrono-option selected lockP"
-                  id="chronoInf"
-                  data-value="inf"
-                  data-label="inf"
-                >
-                  <svg
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    style="height: 1.1rem; width: 1.7rem"
+                    fill="#1a1a2e"
                   >
                     <path
-                      d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4z"
+                      d="M12.963,12.136v-2.133c0-.552-.447-1-1-1s-1,.448-1,1v2.133c-.562,.34-.938,.957-.938,1.661,0,1.069,.869,1.938,1.938,1.938s1.938-.87,1.938-1.938c0-.704-.376-1.321-.938-1.661Z"
                     />
                     <path
-                      d="M12 12c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"
+                      d="M20.002,7.422c.6,.556,1.22,.196,1.415,0,.391-.39,.391-1.023,0-1.414l-1.786-1.789c-.391-.392-1.024-.391-1.415,0-.391,.39-.391,1.023,0,1.414l.187,.187-.488,.489c-.933-.692-2.058-1.18-3.366-1.455,.134-.327,.208-.684,.208-1.058,0-1.542-1.254-2.796-2.795-2.796s-2.795,1.254-2.795,2.796c0,.37,.073,.723,.204,1.046-1.305,.263-2.423,.734-3.349,1.405l-.426-.427,.187-.187c.39-.391,.39-1.024,0-1.414-.391-.39-1.024-.391-1.415,0l-1.786,1.789c-.39,.391-.39,1.024,0,1.414,.195,.195,.789,.555,1.415,0l.185-.186,.405,.406c-1.16,1.508-1.823,3.562-1.823,6.137,0,5.774,3.288,9.187,9.203,9.221,5.904-.035,9.082-3.211,9.191-9.221-.044-2.517-.666-4.554-1.821-6.065l.477-.478,.185,.186ZM11.963,3c.438,0,.795,.357,.795,.796s-.356,.796-.795,.796-.795-.357-.795-.796,.356-.796,.795-.796Zm.006,18c-4.818-.028-7.108-2.317-7.203-7.204,.092-4.818,2.448-7.174,7.19-7.204,4.698,.031,7.122,2.46,7.204,7.186-.089,4.898-2.378,7.193-7.191,7.222Z"
                     />
                   </svg>
 
-                  <svg
-                    class="mDiamant"
-                    viewBox="0 0 332 290"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                  <span class="chrono-label" id="chronoCurrentLabel">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#1a1a2e"
+                      stroke-width="2.2"
+                      stroke-linecap="round"
+                      style="height: 1rem; width: 1.2rem; display: block"
+                    >
+                      <path
+                        d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4z"
+                      />
+                      <path
+                        d="M12 12c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <!-- Dropdown -->
+
+                <div class="dropdown" id="chronoDropdown">
+                  <div
+                    class="chrono-option"
+                    id="chrono15"
+                    data-value="16"
+                    data-label="15s"
                   >
-                    <path
-                      d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
-                      fill="#d9a441"
-                    />
-                    <path
-                      d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
-                      fill="#d9a441"
-                    />
-                  </svg>
+                    15s
+                  </div>
+                  <div
+                    class="chrono-option"
+                    id="chrono30"
+                    data-value="31"
+                    data-label="30s"
+                  >
+                    30s
+                  </div>
+
+                  <div
+                    class="chrono-option lockP"
+                    id="chrono1"
+                    data-value="61"
+                    data-label="1min"
+                  >
+                    1min
+
+                    <svg
+                      class="mDiamant"
+                      viewBox="0 0 332 290"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
+                        fill="#d9a441"
+                      />
+                    </svg>
+                  </div>
+
+                  <div
+                    class="chrono-option selected lockP"
+                    id="chronoInf"
+                    data-value="inf"
+                    data-label="inf"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.2"
+                      stroke-linecap="round"
+                      style="height: 1.1rem; width: 1.7rem"
+                    >
+                      <path
+                        d="M12 12c-2-2.5-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.5 6-4z"
+                      />
+                      <path
+                        d="M12 12c2 2.5 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.5-6 4z"
+                      />
+                    </svg>
+
+                    <svg
+                      class="mDiamant"
+                      viewBox="0 0 332 290"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
+                        fill="#d9a441"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
-
-
             </div>
 
             <div id="cadreBtnD">
@@ -19244,47 +19246,7 @@
 
         <div id="wrapperBtnPm">
           <div class="btnPm" id="btnRecommencer">
-            <svg
-              viewBox="0 -2 32 32"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-              fill="#000000"
-            >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <title>replay</title>
-                <desc>Created with Sketch Beta.</desc>
-                <defs></defs>
-                <g
-                  id="Page-1"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  sketch:type="MSPage"
-                >
-                  <g
-                    id="Icon-Set-Filled"
-                    sketch:type="MSLayerGroup"
-                    transform="translate(-414.000000, -623.000000)"
-                    fill="#000000"
-                  >
-                    <path
-                      d="M445.67,635 L443.841,635 C442.868,628.218 437.051,623 430,623 C424.551,623 419.841,626.12 417.527,630.664 L421.282,632.108 C422.996,629.062 426.255,627 430,627 C434.838,627 438.873,630.436 439.799,635 L437.389,635 C437.079,635.301 436.783,635.486 437.227,636.007 L440.957,639.801 C441.267,640.101 441.768,640.101 442.076,639.801 L445.832,636.007 C446.141,635.706 445.979,635.301 445.67,635 L445.67,635 Z M430,647 C425.522,647 421.733,644.057 420.459,640 L422.647,640 C422.957,639.7 423.118,639.294 422.81,638.994 L419.054,635.199 C418.745,634.899 418.244,634.899 417.935,635.199 L414.204,638.994 C413.761,639.515 414.057,639.7 414.366,640 L416.199,640 C417.284,645.933 423.041,651 430,651 C435.093,651 439.537,648.271 441.987,644.205 L438.202,642.711 C436.396,645.302 433.397,647 430,647 L430,647 Z"
-                      id="replay"
-                      sketch:type="MSShapeGroup"
-                    ></path>
-                  </g>
-                </g>
-              </g>
-            </svg>
+            <svg style="transform: rotate(90deg) scaleX(-1) " version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29.963 29.963" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path style="fill:#ffffff;" d="M29.133,9.215c-0.775-0.428-1.751-0.146-2.178,0.63l-0.518,0.937 c-1.772-5.424-6.874-9.356-12.882-9.356C6.081,1.426,0,7.507,0,14.981s6.081,13.555,13.555,13.555 c0.886,0,1.604-0.718,1.604-1.603c0-0.885-0.718-1.603-1.604-1.603c-5.706,0-10.349-4.643-10.349-10.35S7.849,4.632,13.555,4.632 c4.525,0,8.372,2.924,9.775,6.978l-0.876-0.483c-0.775-0.428-1.751-0.147-2.178,0.629c-0.428,0.776-0.147,1.751,0.629,2.178 l3.169,1.748c0.261,0.531,0.801,0.901,1.434,0.901c0.16,0,0.311-0.031,0.456-0.074c0.009,0,0.016,0.003,0.025,0.003 c0.565,0,1.112-0.298,1.406-0.829l2.368-4.292C30.191,10.618,29.909,9.643,29.133,9.215z"></path> </g> </g> </g></svg>
             Recommencer
             <svg
               style="opacity: 0"
@@ -19460,10 +19422,9 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-                   
-                    <path
-                      d="M12,2 C12.9367,2 13.8495,2.10751 14.7263,2.31129 C15.2643,2.43631 15.599,2.97376 15.474,3.5117 C15.349,4.04965 14.8116,4.3844 14.2736,4.25938 C13.7873333,4.14636 13.2870222,4.06875333 12.7754519,4.02957333 L12.7005496,4.02686228 C14.3015174,4.15011916 15.7851975,4.69226392 17.0421,5.54388 L17.6484,4.93758 C18.0389,4.54705 18.6721,4.54705 19.0626,4.93758 C19.4531,5.3281 19.4531,5.96126 19.0626,6.35179 L18.5678,6.84657 C20.0763,8.45598 21,10.6201 21,13 C21,17.9706 16.9706,22 12,22 C7.02944,22 3,17.9706 3,13 C3,8.22816668 6.71366247,4.32370434 11.4085282,4.01912533 L11.2720221,4.0263633 C10.7438538,4.06399896 10.2276515,4.14287352 9.72635,4.25938 C9.1884,4.3844 8.65096,4.04965 8.52594,3.5117 C8.40092,2.97376 8.73566,2.43631 9.27361,2.31129 C10.1505,2.10751 11.0633,2 12,2 Z M12,6 C8.13401,6 5,9.13401 5,13 C5,16.866 8.13401,20 12,20 C15.866,20 19,16.866 19,13 C19,9.13401 15.866,6 12,6 Z M12,8 C12.51285,8 12.9355092,8.38604429 12.9932725,8.88337975 L13,9 L13,13 C13,13.5523 12.5523,14 12,14 C11.48715,14 11.0644908,13.613973 11.0067275,13.1166239 L11,13 L11,9 C11,8.44772 11.4477,8 12,8 Z"
-                    ></path>
+            <path
+              d="M12,2 C12.9367,2 13.8495,2.10751 14.7263,2.31129 C15.2643,2.43631 15.599,2.97376 15.474,3.5117 C15.349,4.04965 14.8116,4.3844 14.2736,4.25938 C13.7873333,4.14636 13.2870222,4.06875333 12.7754519,4.02957333 L12.7005496,4.02686228 C14.3015174,4.15011916 15.7851975,4.69226392 17.0421,5.54388 L17.6484,4.93758 C18.0389,4.54705 18.6721,4.54705 19.0626,4.93758 C19.4531,5.3281 19.4531,5.96126 19.0626,6.35179 L18.5678,6.84657 C20.0763,8.45598 21,10.6201 21,13 C21,17.9706 16.9706,22 12,22 C7.02944,22 3,17.9706 3,13 C3,8.22816668 6.71366247,4.32370434 11.4085282,4.01912533 L11.2720221,4.0263633 C10.7438538,4.06399896 10.2276515,4.14287352 9.72635,4.25938 C9.1884,4.3844 8.65096,4.04965 8.52594,3.5117 C8.40092,2.97376 8.73566,2.43631 9.27361,2.31129 C10.1505,2.10751 11.0633,2 12,2 Z M12,6 C8.13401,6 5,9.13401 5,13 C5,16.866 8.13401,20 12,20 C15.866,20 19,16.866 19,13 C19,9.13401 15.866,6 12,6 Z M12,8 C12.51285,8 12.9355092,8.38604429 12.9932725,8.88337975 L13,9 L13,13 C13,13.5523 12.5523,14 12,14 C11.48715,14 11.0644908,13.613973 11.0067275,13.1166239 L11,13 L11,9 C11,8.44772 11.4477,8 12,8 Z"
+            ></path>
           </svg>
         </div>
         <div class="barreChrono">
@@ -29000,8 +28961,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function query(c) {
         return document.querySelector(`${c}`);
       }
-      
-      function qAll(c) {
+
+      function queryAll(c) {
         return document.querySelectorAll(`${c}`);
       }
       function addClick(el, action) {
@@ -31159,7 +31120,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const cacheDons = getId("cacheDons");
       const crossDon = getId("crossDon");
       const btnBuyDon = getId("btnBuyDon");
-      const messagesDon = qAll(".messageDon");
+      const messagesDon = queryAll(".messageDon");
       const textAreaDon = getId("textAreaDon");
       const inputDon = getId("inputDon");
 
@@ -32842,7 +32803,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         reponseFound = false;
         L_reponse = [];
         desactiverCarte();
-        oneTimeMap
+        oneTimeMap && !isPremium
           ? (btnCarte.classList.add("lockP"), btnCartePm.classList.add("lockP"))
           : "";
         //Fonction
@@ -33209,7 +33170,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               pColor_m.set(currentCountry, { hover: "", current: "red" });
             }
 
-            document.querySelector(".btn-suivant").textContent = "Suivant →";
+            btnNext.textContent = "Suivant →";
             colorCountry();
 
             if (isMobile) {
@@ -33222,7 +33183,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             }
 
             if (getQNumber() >= maxQ) {
-              document.querySelector(".btn-suivant").textContent = "Fin";
+              btnNext.textContent = "Fin";
               document.getElementById("wrapperScorePm").style.display = "flex";
               document.getElementById("pmTitle").textContent =
                 "Fin de partie !";
@@ -33301,7 +33262,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 </svg>
 `,
           );
-          document.querySelector(".btn-suivant").textContent = "Valider ✓";
+          btnNext.textContent = "Valider ✓";
 
           if (cChooseTrouver || cChooseTrouver === null) {
             L_propClasser = [];
@@ -33609,7 +33570,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             score += 1;
           }
 
-          document.querySelector(".btn-suivant").textContent = "Suivant →";
+          btnNext.textContent = "Suivant →";
           cChooseTrouver = true;
           const L_goodOrder = [...L_propClasser].sort((a, b) =>
             parseInt(
@@ -33634,7 +33595,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           if (getQNumber() >= maxQ) {
             pause4Choix.style.opacity = "0";
             pause4Choix.style.pointerEvents = "none";
-            document.querySelector(".btn-suivant").textContent = "Fin";
+            btnNext.textContent = "Fin";
             document.getElementById("wrapperScorePm").style.display = "flex";
             document.getElementById("pmTitle").textContent = "Fin de partie !";
           }
@@ -33867,7 +33828,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             // spanNext.textContent = "Temps écoulé !";
             cadreNext.classList.add("visible");
-            document.querySelector(".btn-suivant").textContent = "Suivant →";
+            btnNext.textContent = "Suivant →";
             if (L_config.m === "modeTrouver") {
               zoomCountry(idBonneReponse);
               cChooseTrouver = true;
@@ -33894,7 +33855,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               document.querySelectorAll(".infoTxtClasser").forEach((el) => {
                 el.style.maxHeight = "1.2rem";
               });
-              document.querySelector(".btn-suivant").textContent = "Suivant →";
+              btnNext.textContent = "Suivant →";
               cChooseTrouver = true;
               for (const clef in D_elClasser) {
                 if (
@@ -33915,7 +33876,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               }
             }
             if (getQNumber() >= maxQ) {
-              document.querySelector(".btn-suivant").textContent = "Fin";
+              btnNext.textContent = "Fin";
               pause4Choix.style.opacity = "0";
               pause4Choix.style.pointerEvents = "none";
             }
@@ -34022,7 +33983,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         document.getElementById("wrapperScorePm").style.display = "none";
         qNumber.textContent = "0";
 
-        document.querySelector(".btn-suivant").textContent = "Suivant →";
+        btnNext.textContent = "Suivant →";
         document.getElementById("pmTitle").textContent = "Menu Pause";
 
         //
@@ -34063,7 +34024,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (L_config.m === "modeTrouver") {
           cChooseTrouver = null;
           spanNext.textContent = "Mystère";
-          document.querySelector(".btn-suivant").textContent = "Valider ✓";
+          btnNext.textContent = "Valider ✓";
         }
       });
     </script>
@@ -34124,7 +34085,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       const qTrouver = document.getElementById("qTrouver");
       const qqTrouver = document.getElementById("qqTrouver");
       const grid4Choix = document.getElementById("grid4Choix");
-      const btnNext = document.querySelector("btn-suivant");
+      const btnNext = query(".btn-suivant");
       let cChooseTrouver = null;
 
       btns4Choix.forEach((btn) => {
@@ -34194,7 +34155,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           });
 
           if (getQNumber() >= maxQ) {
-            document.querySelector(".btn-suivant").textContent = "Fin";
+            btnNext.textContent = "Fin";
             document.getElementById("pmTitle").textContent = "Fin de partie !";
             pause4Choix.style.opacity = "0";
             pause4Choix.style.pointerEvents = "none";
@@ -34447,7 +34408,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       //z-index des éléments de maps dans 4 choix
 
-      let classBtnNext = "cadrenext"; // Class du cadre de btnNext
+      let classBtnNext = "cadreNext"; // Class du cadre de btnNext
       let viewMaps = false;
 
       function zoomCountry(p_id) {
@@ -35463,7 +35424,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         pause4Choix.style.pointerEvents = "all";
         cChooseTrouver = null;
         qNumber.textContent = "0";
-        document.querySelector(".btn-suivant").textContent = "Suivant →";
+        btnNext.textContent = "Suivant →";
 
         cadrePm.classList.remove("active");
         overlayPmInfo.classList.add("active");
@@ -35941,7 +35902,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               //lalo
               cadreNext.classList.remove("good", "bad", "none", "visible");
               spanNext.textContent = "Mystère";
-              document.querySelector(".btn-suivant").textContent = "Valider ✓";
+              btnNext.textContent = "Valider ✓";
             }
             return;
           }
@@ -35962,7 +35923,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             !cadreNext.classList.contains("none")
           ) {
             spanNext.textContent = "Mystère";
-            document.querySelector(".btn-suivant").textContent = "Valider ✓";
+            btnNext.textContent = "Valider ✓";
             cadreNext.classList.add("none", "visible");
           }
 
@@ -57342,7 +57303,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           if (L_config.m === "modeTrouver" && !cChooseTrouver) {
             cadreNext.classList.remove("good", "bad", "none", "visible");
             spanNext.textContent = "Mystère";
-            document.querySelector(".btn-suivant").textContent = "Valider ✓";
+            btnNext.textContent = "Valider ✓";
           }
 
           return;
@@ -57364,7 +57325,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           !cadreNext.classList.contains("none")
         ) {
           spanNext.textContent = "Mystère";
-          document.querySelector(".btn-suivant").textContent = "Valider ✓";
+          btnNext.textContent = "Valider ✓";
           cadreNext.classList.add("none", "visible");
         }
         L_config.sub || viewSub
@@ -63035,7 +62996,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(document.querySelector('.txtChrono').getBoundingClientRect().width);
+        console.log(
+          document.querySelector(".txtChrono").getBoundingClientRect().width,
+        );
       }
       // loop()
       //       let L_ephe = []
@@ -63141,6 +63104,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           const { customerInfo } = await Purchases.getCustomerInfo();
           noAd = !!customerInfo.entitlements.active[ENTITLEMENT_NO_ADS];
           isPremium = !!customerInfo.entitlements.active[ENTITLEMENT_PREMIUM];
+          if (isPremium) {
+            queryAll(".lockP").forEach((lock) =>
+              lock.classList.remove("lockP"),
+            );
+            queryAll(".mDiamant").forEach((mD) => (mD.style.display = "none"));
+          }
         } catch (err) {
           console.error("Erreur charger achats", err);
 
@@ -63290,6 +63259,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
           if (customerInfo.entitlements.active[ENTITLEMENT_PREMIUM]) {
             isPremium = true;
+            queryAll(".lockP").forEach((lock) =>
+              lock.classList.remove("lockP"),
+            );
+            queryAll(".mDiamant").forEach((mD) => (mD.style.display = "none"));
             achatEffectue();
           }
         } catch (err) {
