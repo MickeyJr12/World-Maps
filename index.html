@@ -4251,10 +4251,11 @@
         border-radius: 0.8rem;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         outline: 1px dashed rgba(255, 255, 255, 0.2);
-        padding: 0.5rem 0.6rem;
+        padding: 0.4rem 0.5rem;
         font-weight: 500;
         font-size: 1.15rem;
-        gap: 0.5rem;
+        font-size: 1rem;
+        gap: 0.25rem;
         background: rgba(21, 54, 244, 0.5);
         filter: grayscale(100%);
         transition: transform 0.25s ease;
@@ -4270,7 +4271,7 @@
 
       #btnTrackDays svg {
         overflow: visible;
-        height: 1.6rem;
+        height: 1.8rem;
       }
       @keyframes fire3 {
         0%,
@@ -8754,6 +8755,7 @@
         z-index : 140;
         justify-content : flex-start;
         align-items : center;
+        /* opacity : 0; */
         border-radius : 1rem;
         padding : 0.6rem 0.8rem;
         box-sizing : border-box;
@@ -8768,9 +8770,10 @@
         gap : 0.6rem;
         backdrop-filter : blur(20px);
         transform : translateY(calc(-0.8rem - env(safe-area-inset-top) - 100%)) translateX(-50%);
-        transition : transform 0.4s ease, opacity 0.4s;
+        transition : transform 0.4s cubic-bezier(0.58, 0.00, 0.38, 1.56);
       }
       #cadreAddTD.active{
+        /* opacity : 1; */
         transform : translateX(-50%);
       }
 
@@ -13321,67 +13324,8 @@
 
     <div id="phoneHome">
       <div id="btnTrackDays">
-        <svg
-          id="svgTrackR"
-          viewBox="-33 0 255 255"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          preserveAspectRatio="xMidYMid"
-          fill="#000000"
-        >
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            <defs>
-              <style>
-                .cls-3 {
-                  fill: url(#linear-gradient-1);
-                }
-                .cls-4 {
-                  fill: #fc9502;
-                }
-                .cls-5 {
-                  fill: #fce202;
-                }
-              </style>
-              <linearGradient
-                id="linear-gradient-1"
-                gradientUnits="userSpaceOnUse"
-                x1="94.141"
-                y1="255"
-                x2="94.141"
-                y2="0.188"
-              >
-                <stop offset="0" stop-color="#ff4c0d"></stop>
-                <stop offset="1" stop-color="#fc9502"></stop>
-              </linearGradient>
-            </defs>
-            <g id="fire">
-              <path
-                d="M187.899,164.809 C185.803,214.868 144.574,254.812 94.000,254.812 C42.085,254.812 -0.000,211.312 -0.000,160.812 C-0.000,154.062 -0.121,140.572 10.000,117.812 C16.057,104.191 19.856,95.634 22.000,87.812 C23.178,83.513 25.469,76.683 32.000,87.812 C35.851,94.374 36.000,103.812 36.000,103.812 C36.000,103.812 50.328,92.817 60.000,71.812 C74.179,41.019 62.866,22.612 59.000,9.812 C57.662,5.384 56.822,-2.574 66.000,0.812 C75.352,4.263 100.076,21.570 113.000,39.812 C131.445,65.847 138.000,90.812 138.000,90.812 C138.000,90.812 143.906,83.482 146.000,75.812 C148.365,67.151 148.400,58.573 155.999,67.813 C163.226,76.600 173.959,93.113 180.000,108.812 C190.969,137.321 187.899,164.809 187.899,164.809 Z"
-                id="f1RTrack"
-                class="cls-3"
-                fill-rule="evenodd"
-              ></path>
-              <path
-                d="M94.000,254.812 C58.101,254.812 29.000,225.711 29.000,189.812 C29.000,168.151 37.729,155.000 55.896,137.166 C67.528,125.747 78.415,111.722 83.042,102.172 C83.953,100.292 86.026,90.495 94.019,101.966 C98.212,107.982 104.785,118.681 109.000,127.812 C116.266,143.555 118.000,158.812 118.000,158.812 C118.000,158.812 125.121,154.616 130.000,143.812 C131.573,140.330 134.753,127.148 143.643,140.328 C150.166,150.000 159.127,167.390 159.000,189.812 C159.000,225.711 129.898,254.812 94.000,254.812 Z"
-                id="f2RTrack"
-                class="cls-4"
-                fill-rule="evenodd"
-              ></path>
-              <path
-                d="M95.000,183.812 C104.250,183.812 104.250,200.941 116.000,223.812 C123.824,239.041 112.121,254.812 95.000,254.812 C77.879,254.812 69.000,240.933 69.000,223.812 C69.000,206.692 85.750,183.812 95.000,183.812 Z"
-                id="f3RTrack"
-                class="cls-5"
-                fill-rule="evenodd"
-              ></path>
-            </g>
-          </g>
-        </svg>
+  <svg id="svgTrackR" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M10.3671 4.06132C9.6671 4.56707 5 8.15805 5 13.9996C5 14.9188 5.18106 15.8291 5.53284 16.6784C5.88463 17.5277 6.40024 18.2993 7.05025 18.9493C7.70026 19.5993 8.47194 20.115 9.32122 20.4667C10.146 20.8084 11.0282 20.989 11.9203 20.9991C9.74796 20.9567 8 19.1824 8 16.9999C8 16.8024 8.01432 16.6082 8.04197 16.4184C8.04315 16.4071 8.04459 16.3957 8.04628 16.3843C8.3817 14.1305 10.4553 12.2171 11.4581 11.4101C11.7785 11.1523 12.2216 11.1523 12.5421 11.4101C13.5448 12.2171 15.6183 14.1305 15.9537 16.3843C15.9554 16.3957 15.9569 16.4071 15.958 16.4184C15.9857 16.6082 16 16.8024 16 16.9999C16 19.1824 14.252 20.9567 12.0797 20.9991C12.9718 20.989 13.854 20.8084 14.6788 20.4667C15.5281 20.115 16.2997 19.5993 16.9497 18.9493C17.5998 18.2993 18.1154 17.5277 18.4672 16.6784C18.807 15.8579 18.9875 14.9804 18.9994 14.093C18.9998 14.0815 19 14.07 19 14.0584L18.9999 14.0268L19 13.9997L18.9999 13.9996L18.9998 13.9995C18.9734 9.75884 16.1044 7.4446 15.5813 7.05781C15.5323 7.02155 15.4671 7.02196 15.4181 7.05823C15.2083 7.21337 14.6241 7.67639 13.9967 8.44729C13.9251 8.53521 13.7845 8.5184 13.7361 8.41591C12.5573 5.92135 10.9243 4.40726 10.5386 4.07102C10.4888 4.02764 10.4206 4.02266 10.3671 4.06132Z" fill="#ff4c0d"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M8.04628 16.3844C8.3817 14.1306 10.4553 12.2172 11.4581 11.4102C11.7785 11.1523 12.2216 11.1523 12.5421 11.4102C13.5448 12.2172 15.6183 14.1306 15.9537 16.3844C15.9554 16.3958 15.9569 16.4071 15.958 16.4184C15.9857 16.6083 16 16.8025 16 17C16 19.2091 14.2091 21 12 21C9.79086 21 8 19.2091 8 17C8 16.8024 8.01432 16.6083 8.04197 16.4184C8.04315 16.4071 8.04459 16.3958 8.04628 16.3844Z" fill="#fc9502" ></path> </g></svg>
+
 
         <svg
           style="display: none"
@@ -29228,10 +29172,9 @@ const todayIndex = getTodayIndex();
       const phoneHome = document.getElementById("phoneHome");
       const txtTrackDays = document.getElementById("txtTrackDays");
 
-      const f1RTrack = document.getElementById("f1RTrack");
-
-      const f2RTrack = document.getElementById("f2RTrack");
-      const f3RTrack = document.getElementById("f3RTrack");
+      //const f1RTrack = document.getElementById("f1RTrack");
+      //const f2RTrack = document.getElementById("f2RTrack");
+      //const f3RTrack = document.getElementById("f3RTrack");
 
       const svgTrackB = document.getElementById("svgTrackB");
       const svgTrackR = document.getElementById("svgTrackR");
@@ -63145,9 +63088,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
           lastStreakDate = null;
           btnTrackDays.classList.remove("active");
-          f2RTrack.style.animation = "";
-          f1RTrack.style.animation = "";
-          f3RTrack.style.animation = "";
+          // f2RTrack.style.animation = "";
+          // f1RTrack.style.animation = "";
+          // f3RTrack.style.animation = "";
           saveProgress();
           return;
         }
@@ -63164,10 +63107,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           boxIconeTrack.style.filter = "";
         } else {
           streak === 0
-            ? (btnTrackDays.classList.remove("active"),
-              (f2RTrack.style.animation = ""),
-              (f1RTrack.style.animation = ""),
-              (f3RTrack.style.animation = ""))
+            ? (btnTrackDays.classList.remove("active"))
+              // (f2RTrack.style.animation = ""),
+              // (f1RTrack.style.animation = ""),
+              // (f3RTrack.style.animation = ""))
             : (btnTrackDays.classList.add("active")
               //(f2RTrack.style.animation = "fire2 0.5s linear infinite"),
               //(f1RTrack.style.animation = "fire3 0.5s linear infinite"),
