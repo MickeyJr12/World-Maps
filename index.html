@@ -31399,7 +31399,7 @@ const todayIndex = getTodayIndex();
         txtMotivation.textContent =
         L_motivation[Math.floor(Math.random() * L_motivation.length)];
         txtTotalDays.textContent = totalDays + " jours";
-        if (streak > maxTrack) {
+        if (streak >= maxTrack) {
           maxTrack = streak;
           txtMaxTrack.textContent = maxTrack + " jours";
         }
@@ -62953,9 +62953,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           if (data.L_claimedQ) Object.assign(L_claimedQ, data.L_claimedQ);
           numPalierLvl = 500 + 100 * lvlPlayer * (lvlPlayer - 1);
           lastQuestGenDate = data.lastQuestGenDate ?? null;
-          streak = data.streak ?? 0;
           lastStreakDate = data.lastStreakDate ?? null;
+          streak = data.streak ?? 0;
+
           maxTrack = data.maxTrack ?? 0;
+          txtMaxTrack.textContent = maxTrack + " jours";
           totalDays = data.totalDays ?? 0;
           sound = data.sound ?? false;
           onlySouv = data.onlySouv ?? false;
