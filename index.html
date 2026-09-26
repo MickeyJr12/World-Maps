@@ -31584,7 +31584,6 @@ const todayIndex = getTodayIndex();
         });
       });
 
-      inputMail.focus({ preventScroll: true });
 
       cancelMail.addEventListener("click", () => {
         inputMail.blur();
@@ -31592,18 +31591,14 @@ const todayIndex = getTodayIndex();
         cadreMail.classList.remove("active");
       });
 
-      cadreEditMail.addEventListener("click", () => {
-        inputMail.focus();
-      });
       btnEditMail.addEventListener("click", () => {
         cadreEditMail.classList.add("active");
         cacheEditMail.classList.add("active");
         textAreaMail.blur();
+        inputMail.focus();
         if (btnEditMail.classList.contains("active")) {
-          console.log(infoEditMail.textContent);
           inputMail.value = infoEditMail.textContent;
         }
-        inputMail.focus();
       });
 
       crossEditMail.addEventListener("click", (e) => {
@@ -31614,10 +31609,7 @@ const todayIndex = getTodayIndex();
         cacheEditMail.classList.remove("active");
       });
 
-      cacheEditMail.addEventListener("click", () => {
-        inputMail.focus();
-      });
-
+     
       eraseMail.addEventListener("click", (e) => {
         errorMail.classList.remove("active");
         inputMail.value = "";
@@ -31774,9 +31766,9 @@ const todayIndex = getTodayIndex();
           await proposerMail(textAreaMail.value); // le texte saisi est conservé
         }
       });
-
       txtsMail.forEach((txt) => {
         txt.addEventListener("focus", (e) => {
+          e.preventDefault()
           txt.focus({ preventScroll: true });
           txt.parentNode.classList.add("active");
         });
