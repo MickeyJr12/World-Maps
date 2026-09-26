@@ -8803,6 +8803,17 @@
         font-weight : 600;
         font-size : 1.2rem;
         opacity : 0.75;
+        transition : width 0.4s ease;
+
+
+        will-change: width;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        contain: layout;      /* confine les recalculs de layout à cet élément */
+        isolation: isolate;   /* empêche les effets de repaint de "fuiter" sur les voisins */
+
         span{
         z-index : -1;
         position : absolute;
@@ -8815,7 +8826,6 @@
           opacity : 0;
           filter : blur(10px);
         }
-        transition : width 0.4s ease;
       }
       .newTD{
         position : absolute;
