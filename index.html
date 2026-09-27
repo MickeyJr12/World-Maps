@@ -5828,13 +5828,20 @@
       .itemSetting:active {
         background: rgba(240, 240, 240, 1);
       }
+      .itemSetting.active {
+        .selectIlg{
+        background : rgba(4, 98, 198, 0.693);
+        outline-color : rgba(4, 98, 198, 0.693);
+      }
+      }
       #notifSetting {
         display: none;
       }
 
       .selectIlg{
+        pointer-events : none;
         flex-shrink : 0;
-        outline-offset  : 0.1rem;
+        outline-offset  : 0.2rem;
         outline : 1px solid rgba(0,0,0,0.4);
         height : 0.75rem;
         border-radius : 50%;
@@ -5843,10 +5850,7 @@
         background : rgba(4, 98, 198, 0);
         transition : background 0.2s ease, outline-color 0.2s ease;
       }
-      .selectIlg.active {
-        background : rgba(4, 98, 198, 0.693);
-        outline-color : rgba(4, 98, 198, 0.693);
-      }
+      
       .boxSvgItemSetting {
         display: flex;
         align-items: center;
@@ -14278,8 +14282,8 @@
               <span data-ilg="retour">Retour</span>
             </div>
 
-             <div class="cadreItemSetting">
-              <div class="itemSetting" data-choiceIlg = "fr">
+             <div class="cadreItemSetting" style="margin-top: 1rem">
+              <div class="itemSetting active" data-choiceilg = "fr">
                 <div class="boxSvgItemSetting ilg">
                   <img
                 alt=""
@@ -14303,6 +14307,34 @@
                 <!-- From Uiverse.io by ErzenXz -->
                <div class="selectIlg"></div>
               </div>
+
+              <div class="ligneInSD" style="margin: 0.1rem 0"></div>
+
+              <div class="itemSetting" data-choiceilg = "en">
+                <div class="boxSvgItemSetting ilg">
+                  <img
+                alt=""
+                src="flag_c/gb.svg"
+                
+              />
+                </div>
+
+                <span
+                  style="
+                    font-size: 0.96rem;
+                    font-weight: 450;
+                    flex: 1;
+                    display: flex;
+                    justify-content: flex-start;
+                    padding-left: 1rem;
+                  "
+                  >English</span
+                >
+
+                <!-- From Uiverse.io by ErzenXz -->
+               <div class="selectIlg"></div>
+              </div>
+
             </div>
 
           </div>
@@ -30758,6 +30790,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const sonSetting = document.getElementById("sonSetting");
       const toggleSon = document.getElementById("toggleSon");
 
+      const btnsChoiceIlg = queryAll('[data-choiceilg]')
+
       const notifSetting = getId("notifSetting");
       const toggleNotif = getId("toggleNotif");
       const supportBtn = getId("supportBtn");
@@ -30775,6 +30809,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const txtPalierLvl = document.getElementById("txtPalierLvl");
       const barreProgLvl = document.getElementById("barreProgLvl");
       let maxLvl = 50;
+
+
+      btnsChoiceIlg.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          
+        btnsChoiceIlg.forEach(b=>b.classList.remove('active'))
+        btn.classList.add('active')
+        changeIlg(btn.dataset.choiceilg)
+      
+        })
+      })
 
       supportBtn.addEventListener("click", () => {
         // [btnPremium,getId('dotThank')].forEach(el=>el.click())
