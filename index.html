@@ -29289,8 +29289,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         joursde: { fr: " jours de suite ", en: " Days in a row " },
         jourde: { fr: " jour de suite ", en: " Day in a row " },
         seriemaximale: { fr: "Série maximale", en: "Best streak" },
-        jours: { fr: "jours", en: "days" },
-        jour: { fr: "jour", en: "day" },
+        jours: { fr: " jours ", en: "days" },
+        jour: { fr: " jour ", en: "day" },
         totalde: { fr: "Total de jours joués", en: "Total days played" },
         continuera: { fr: "Continuer à jouer", en: "Keep playing" },
         //config langue
@@ -32968,24 +32968,24 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         boxIconeTrack.style.filter = "";
         txtMotivation.textContent =
           L_motivation[
-            Math.floor(Math.random() * Object.keys(L_motivation).length)
+            Object.keys(L_motivation)[Math.floor(Math.random() * Object.keys(L_motivation).length)]
           ][currentIlg];
         txtTotalDays.textContent =
-          totalDays + streak === 1
+          totalDays + (streak === 1
             ? D_ilg.jour[currentIlg]
-            : D_ilg.jours[currentIlg];
+            : D_ilg.jours[currentIlg]);
         if (streak >= maxTrack) {
           maxTrack = streak;
           txtMaxTrack.textContent =
-            maxTrack + streak === 1
-              ? D_ilg.jour[currentIlg]
-              : D_ilg.jours[currentIlg];
+            maxTrack + (streak === 1
+              ? D_ilg.jourde[currentIlg]
+              : D_ilg.joursde[currentIlg]);
         }
 
         txtTrackDays.textContent = streak;
         txtCadreTrack.textContent =
           streak +
-          D_ilg[streak === 1 ? "jourde" : "joursde"][currentIlg] +
+          (D_ilg[streak === 1 ? "jourde" : "joursde"][currentIlg]) +
           (streak === 0 ? "" : "!");
         boxIconeTrack.style.filter = "grayscale(0)";
 
@@ -64670,7 +64670,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           txtTrackDays.textContent = streak;
           txtCadreTrack.textContent =
             streak +
-            D_ilg[streak === 1 ? "jourde" : "joursde"][currentIlg] +
+            (D_ilg[streak === 1 ? "jourde" : "joursde"][currentIlg]) +
             (streak === 0 ? "" : "!");
           boxIconeTrack.style.filter = "grayscale(100%)";
 
@@ -64719,18 +64719,18 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           maxTrack = streak;
         }
         txtMaxTrack.textContent =
-          maxTrack + streak === 1
-            ? D_ilg.jour[currentIlg]
-            : D_ilg.jours[currentIlg];
+          maxTrack +( streak === 1
+            ? D_ilg.jourde[currentIlg]
+            : D_ilg.joursde[currentIlg]);
         txtTrackDays.textContent = streak;
         txtCadreTrack.textContent =
           streak +
-          D_ilg[streak === 1 ? "jourde" : "joursde"][currentIlg] +
+          (D_ilg[streak === 1 ? "jourde" : "joursde"][currentIlg]) +
           (streak === 0 ? "" : "!");
         txtTotalDays.textContent =
-          totalDays + streak === 1
+          totalDays + (streak === 1
             ? D_ilg.jour[currentIlg]
-            : D_ilg.jours[currentIlg];
+            : D_ilg.jours[currentIlg]);
       }
       trackLoading();
 
