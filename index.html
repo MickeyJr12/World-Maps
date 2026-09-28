@@ -2087,7 +2087,7 @@
         pointer-events: none;
         bottom: calc(100% + 0.8rem);
         flex-direction: column;
-        width: 10rem;
+        min-width: 10rem;
         height: auto;
         border-radius: 5px;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -2107,6 +2107,7 @@
       }
       .itemClasser {
         display: grid;
+        white-space : nowrap;
         flex-wrap: nowrap;
         grid-template-columns: auto 1fr auto;
         align-items: center;
@@ -9912,7 +9913,7 @@
               ></path>
             </g>
           </svg>
-          Utilisé uniquement pour pouvoir vous répondre
+          <span data-ilg="utiliseuniquement">Utilisé uniquement pour pouvoir vous répondre</span>
         </span>
         <span id="errorMail" class="errorCadreMail"></span>
 
@@ -19579,7 +19580,7 @@
                   gap: 0.5rem;
                 "
               >
-                <span>Ta réponse</span>
+                <span data-ild="votrereponse">Votre réponse</span>
 
                 <div class="cadreImgPm" id="cadreImgPmProp">
                   <div class="imgPmBox">
@@ -19606,7 +19607,7 @@
                   gap: 0.5rem;
                 "
               >
-                <span data-ilg="bonnereponsecadrenext" >Bonne réponse</span>
+                <span data-ilg="bonnereponsecadrenext">Bonne réponse</span>
 
                 <div class="cadreImgPm">
                   <div class="imgPmBox">
@@ -19909,11 +19910,11 @@
         <div id="titleListSub"></div>
 
         <div id="wrapperSortSub">
-          <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem">
+          <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem" data-ilg="classerpar">
             Classer par
           </div>
           <div id="btnSortSub">
-            <span>Noms</span>
+            <span data-ilg="noms">Noms</span>
             <svg
               viewBox="0 0 32 32"
               xmlns="http://www.w3.org/2000/svg"
@@ -19944,19 +19945,19 @@
           </div>
           <div id="cadreSortSub">
             <div class="itemSortSub active" data-sort="alpha" id="alphaSortSub">
-              <span>Noms</span>
+              <span data-ilg="noms">Noms</span>
               <span class="checkSortSub">✓</span>
             </div>
             <div class="lineInSortSub"></div>
             <div class="itemSortSub" data-sort="superficie">
-              <span>Superficie</span>
+              <span data-ilg="superficie">Superficie</span>
               <span class="checkSortSub">✓</span>
             </div>
 
             <div class="lineInSortSub"></div>
 
             <div class="itemSortSub" data-sort="population">
-              <span>Population</span>
+              <span data-ilg="population">Population</span>
               <span class="checkSortSub">✓</span>
             </div>
           </div>
@@ -20012,7 +20013,7 @@
                 <circle cx="2" cy="19" r="2" />
               </svg>
 
-              <span>Pays</span>
+              <span data-ilg="pays">Pays</span>
               <svg
                 id="arrowTitle"
                 width="1rem"
@@ -20048,7 +20049,7 @@
                   <circle cx="2" cy="12" r="2" />
                   <circle cx="2" cy="19" r="2" />
                 </svg>
-                Pays
+                <span data-ilg="pays">Pays</span>
               </div>
 
               <div class="optionModeS" data-searching="drapeaux" id="flagS">
@@ -20065,7 +20066,7 @@
                     d="m10.926 13.742-2.995 7.624c-.201.519-.796.766-1.296.565-.515-.202-.768-.782-.565-1.296l2.224-5.662c.853-.491 1.669-1.225 2.451-1.693l.182.462zm12.762-7.815c-.333-.528-.88-.864-1.501-.922-1.356-.089-1.922-.355-2.94-1.304-.647-.556-1.316-1.131-2.082-1.411-.599-.219-1.318-.312-2.153-.284-.757.029-1.436.388-1.88.946.003.008 4.166 10.6 4.166 10.6.535.26 1.093.373 1.732.442 1.173.105 2.311-.547 2.798-1.648l2.05-4.647c.218-.592.148-1.238-.188-1.771zm-6.322 16.004c.515-.202.768-.782.565-1.296l-6.67-16.98c-.349-.963-1.24-1.61-2.272-1.65-.824-.028-1.553.065-2.152.284-.766.28-1.435.855-2.082 1.411-1.019.949-1.584 1.215-2.941 1.304-.62.058-1.167.394-1.5.922-.337.534-.406 1.179-.165 1.831l2.026 4.588c.487 1.101 1.609 1.763 2.798 1.648.525-.051 1.015-.158 1.455-.318.742-.271 1.434-.79 2.104-1.291.554-.415 1.126-.843 1.59-1.013.611-.224 1.479-.167 1.986-.094l3.963 10.088c.201.519.796.766 1.296.565z"
                   />
                 </svg>
-                Drapeaux
+                <span data-ilg="drapeaux">Drapeaux</span>
               </div>
             </div>
           </div>
@@ -20104,7 +20105,7 @@
             <div id="cadreFilterS">
               <div class="itemFilter" data-region="world">
                 <span style="opacity: 1">✓</span>
-                Monde
+                <span data-ilg="monde">Monde</span>
                 <svg
                   class="svgFilter"
                   fill="#000000"
@@ -20129,7 +20130,7 @@
 
               <div class="itemFilter" data-region="Afrique">
                 <span style="opacity: 0">✓</span>
-                Afrique
+                <span data-ilg="afrique">Afrique</span>
                 <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -20144,7 +20145,7 @@
 
               <div class="itemFilter" data-region="Amérique">
                 <span style="opacity: 0">✓</span>
-                Amérique
+                <span data-ilg="amerique">Amérique</span>
                 <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -20159,7 +20160,7 @@
 
               <div class="itemFilter" data-region="Asie">
                 <span style="opacity: 0">✓</span>
-                Asie
+                <span data-ilg="asie">Asie</span>
                 <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -20174,7 +20175,7 @@
 
               <div class="itemFilter" data-region="Europe">
                 <span style="opacity: 0">✓</span>
-                Europe
+                <span data-ilg="europe">Europe</span>
                 <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -20189,7 +20190,7 @@
 
               <div class="itemFilter" data-region="Océanie">
                 <span style="opacity: 0">✓</span>
-                Océanie
+                <span data-ilg="oceanie">Océanie</span>
                 <svg
                   class="svgFilter"
                   xmlns="http://www.w3.org/2000/svg"
@@ -20262,6 +20263,7 @@
                 font-size: 0.9rem;
                 color: rgba(255, 255, 255, 0.6);
               "
+              data-ilg="classerpar"
               >Classer par</span
             >
 
@@ -20269,7 +20271,7 @@
 
             <div class="wrapperClasser">
               <div class="classer">
-                Noms
+                <span data-ilg="noms">Noms</span>
                 <svg
                   class="svgClasser"
                   fill="white"
@@ -20287,10 +20289,9 @@
               </div>
 
               <div id="cadreClasser">
-                <div class="ligneInGrid"></div>
 
                 <div class="itemClasser" data-classer="population">
-                  <span style="opacity: 0">✓</span> Population
+                  <span style="opacity: 0">✓</span> <span data-ilg="population">Population</span>
                   <svg
                     class="svgClasser"
                     xmlns="http://www.w3.org/2000/svg"
@@ -20310,7 +20311,7 @@
                 <div class="ligneInGrid"></div>
 
                 <div class="itemClasser" data-classer="superficie">
-                  <span style="opacity: 0">✓</span> Superficie
+                  <span style="opacity: 0">✓</span> <span data-ilg="superficie">Superficie</span>
 
                   <svg
                     class="svgClasser"
@@ -20336,7 +20337,7 @@
                 <div class="ligneInGrid"></div>
 
                 <div class="itemClasser" data-classer="name">
-                  <span>✓</span> Noms
+                  <span>✓</span> <span data-ilg="noms">Noms</span>
                   <svg
                     class="svgClasser"
                     fill="white"
@@ -20430,6 +20431,7 @@
               </g>
             </svg>
             <span id="titleFilterColor" style="margin-right: 0.4rem"
+            data-ilg="filtrerpar"
               >Filtrer par couleur</span
             >
             <div id="wrapperCircleColor"></div>
@@ -20451,12 +20453,13 @@
                     font-size: 0.85rem;
                     color: rgba(255, 255, 255, 0.8);
                   "
+                  data-ilg="couleursexactes"
                   >Couleurs exactes</span
                 >
                 <span
                   style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
-                  ><span id="infoFilterColor">Contient</span>
-                  <span style="display: flex; white-space: nowrap"
+                  ><span id="infoFilterColor" data-ilg="contient">Contient</span>
+                  <span style="display: flex; white-space: nowrap" data-ilg="cescouleurs"
                     >ces couleurs</span
                   ></span
                 >
@@ -20473,7 +20476,7 @@
 
             <div class="itemFilterColor">
               <div class="circleColor" id="colorItemR" data-color="r"></div>
-              <span style="flex: 1">Rouge</span>
+              <span style="flex: 1" data-ilg="rouge">Rouge</span>
 
               <label class="toggleSetting" id="togglehaptique">
                 <input type="checkbox" />
@@ -20486,7 +20489,7 @@
 
             <div class="itemFilterColor">
               <div class="circleColor" id="colorItemG" data-color="g"></div>
-              <span style="flex: 1">Vert</span>
+              <span style="flex: 1" data-ilg="vert">Vert</span>
 
               <label class="toggleSetting" id="togglehaptique">
                 <input type="checkbox" />
@@ -20499,7 +20502,7 @@
 
             <div class="itemFilterColor">
               <div class="circleColor" id="colorItemB" data-color="b"></div>
-              <span style="flex: 1">Bleu</span>
+              <span style="flex: 1" data-ilg="bleu">Bleu</span>
 
               <label class="toggleSetting" id="togglehaptique">
                 <input type="checkbox" />
@@ -20512,7 +20515,7 @@
 
             <div class="itemFilterColor">
               <div class="circleColor" id="colorItemY" data-color="y"></div>
-              <span style="flex: 1">Jaune</span>
+              <span style="flex: 1" data-ilg="jaune">Jaune</span>
 
               <label class="toggleSetting" id="togglehaptique">
                 <input type="checkbox" />
@@ -20525,7 +20528,7 @@
 
             <div class="itemFilterColor">
               <div class="circleColor" id="colorItemO" data-color="o"></div>
-              <span style="flex: 1">Orange</span>
+              <span style="flex: 1" data-ilg="orange">Orange</span>
 
               <label class="toggleSetting" id="togglehaptique">
                 <input type="checkbox" />
@@ -20538,7 +20541,7 @@
 
             <div class="itemFilterColor">
               <div class="circleColor" id="colorItemW" data-color="w"></div>
-              <span style="flex: 1">Blanc</span>
+              <span style="flex: 1" data-ilg="blanc">Blanc</span>
 
               <label class="toggleSetting" id="togglehaptique">
                 <input type="checkbox" />
@@ -20551,7 +20554,7 @@
 
             <div class="itemFilterColor">
               <div class="circleColor" id="colorItemK" data-color="k"></div>
-              <span style="flex: 1">Noir</span>
+              <span style="flex: 1" data-ilg="noir">Noir</span>
 
               <label class="toggleSetting" id="togglehaptique">
                 <input type="checkbox" />
@@ -20982,7 +20985,7 @@
               align-items: flex-end;
             "
           >
-            <div class="voirPlus" id="viewMore">Voir plus ></div>
+            <div class="voirPlus" id="viewMore" data-ilg="voirplus">Voir plus ></div>
           </div>
         </div>
 
@@ -29243,14 +29246,27 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <script>
       let currentIlg = "fr";
       // script langues / script translation
+          function ordinalSuffix(n, lang) { // mettre le suffixe qu'il faut (1er, 1st,...)
+          if (lang === 'fr') {
+            return n === 1 ? 'er' : 'e';
+          }
+          // anglais
+          const j = n % 10, k = n % 100;
+          if (j === 1 && k !== 11) return 'st';
+          if (j === 2 && k !== 12) return 'nd';
+          if (j === 3 && k !== 13) return 'rd';
+          return 'th';
+        }
 
       // Pour l_q et p_info, on créer une secon eliste avec que capitale et nom,s et on modifie les premières listes avec les valeurs des secondes
       function changeIlg(ilg) {
         queryAll("[data-ilg]").forEach((el) => {
+          if(!D_ilg[el.dataset.ilg]){console.log(el,el.dataset,"el")}
           el.textContent = D_ilg[el.dataset.ilg][ilg];
         });
          // Placeholders
         queryAll('[data-ilgplaceholder]').forEach(el => {
+          if(!D_ilgHolder[el.dataset.ilgplaceholder]){console.log(el,el.dataset)}
           el.placeholder = D_ilgHolder[el.dataset.ilgplaceholder][ilg];
         });
 
@@ -29360,6 +29376,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         reponses: { fr: "Réponses", en: "Answers" },
         drapeau: { fr: "Drapeau", en: "Flag" },
         nom: { fr: "Nom", en: "Name" },
+        noms: { fr: "Noms", en: "Names" },
         capitale: { fr: "Capitale", en: "Capital" },
         silhouette: { fr: "Silhouette", en: "Shape" },
         superficie: { fr: "Superficie", en: "Surface Area" },
@@ -29381,6 +29398,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         continent: { fr: "Continent", en: "Continent" },
         subdivisions: { fr: "Subdivisions", en: "Subdivisions" },
         mondeentier: { fr: "Monde entier", en: "Worldwide" },
+        monde: { fr: "Monde", en: "World" },
         afrique: { fr: "Afrique", en: "Africa" },
         amerique: { fr: "Amerique", en: "America" },
         asie: { fr: "Asie", en: "Asia" },
@@ -29390,6 +29408,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // Quiz langue
         bonnereponsecadrenext : {fr: "Bonne réponse",en:"Correct"},
         bonnereponse: {fr:"Bonne réponse", en : "Well done"},
+        votrereponse :  {fr:"Votre réponse", en : "Your answer"},
         mauvaisereponse: {fr:"Mauvaise réponse", en : "Correct answer"},
         // menu pause langue
         recapitulatif: {fr:"Récapitulatif", en : "Summary"},
@@ -29449,6 +29468,23 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         renseignezvotre: { fr: "Renseignez votre e-mail si vous voulez recevoir une réponse", en: "Enter your email if you'd like a reply" },
         donde: { fr: "Don de ", en: "Donation of " },
         donde2: { fr: "Don de 2€", en: "Donation of €2" },
+        pays: { fr: "Pays", en: "Countries" },
+        classerpar: { fr: "Classer par", en: "Sort by" },
+        voirplus : {fr:"Voir plus >", en : "View more >"},
+        filtrerpar: { fr: "Filtrer par couleurs", en: "Filter by colors" },
+        uniquement : {fr: " (uniquement)", en: " (only)"},
+        couleursexactes: { fr: "Couleurs Exactes", en: "Exact Colors" },
+        contient: { fr: "Contient", en: "Contains" },
+        cescouleurs: { fr: "ces couleurs", en: "these colors" },
+        utiliseuniquement: { fr: "Utilisé uniquement pour pouvoir vous répondre", en: "Used only so we can reply to you" },
+        rouge: { fr: "Rouge", en: "Red" },
+        vert: { fr: "Vert", en: "Green" },
+        bleu: { fr: "Bleu", en: "Blue" },
+        orange: { fr: "Orange", en: "Orange" },
+        blanc: { fr: "Blanc", en: "White" },
+        noir: { fr: "Noir", en: "Black" },
+        jaune: { fr: "Jaune", en: "Yellow" },
+        aucunresultat: { fr: "Aucun résultat", en: "No results" },
         // llangues
         //  
       };
@@ -38640,9 +38676,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           if (sort !== "alpha") {
             const rankSortSub = document.createElement("div");
             rankSortSub.className = "rankSortSub";
-            rankSortSub.innerHTML = `${rankSub}<sup>e</sup>`;
-            if (rankSub === 1) rankSortSub.innerHTML = `1<sup>er</sup>`;
-
+            rankSortSub.innerHTML = `${rankSub}<sup>${ordinalSuffix(rankSub,currentIlg)}</sup>`;
+           
             badgeInfoSub.replaceWith(rankSortSub);
           }
           contentInfoSub.append(itemC);
@@ -60668,7 +60703,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (!cFound) {
           contentFlagS.innerHTML = `
         <p style="position : absolute; top : 1rem; text-align : center; left : 50%; transform : translateX(-50%); color: white; opacity: 0.6; font-size = 1.2rem">
-              Aucun résultat
+              ${D_ilg.aucunresultat[currentIlg]}
             </p>`;
         }
       }
@@ -60678,7 +60713,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (Ls.length === 0) {
           contentC.innerHTML = `
         <p style="position : absolute; text-align : center; left : 50%; top : 4rem; transform : translateX(-50%); color: white; opacity: 0.6; font-size = 1.2rem">
-              Aucun résultat
+              ${D_ilg.aucunresultat[currentIlg]}
             </p>`;
           return;
         }
@@ -60793,10 +60828,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             const rank = document.createElement("div");
             rank.className = "rank";
             // rank.textContent = `n°${rankPop[r.id.toUpperCase()]}`;
-            rank.innerHTML = `${rankPop[r.id.toUpperCase()]}<sup>e</sup>`;
-            if (rankPop[r.id.toUpperCase()] === 1) {
-              rank.innerHTML = `1<sup>er</sup>`;
-            }
+            rank.innerHTML = `${rankPop[r.id.toUpperCase()]}<sup>${ordinalSuffix(rankPop[r.id.toUpperCase()],currentIlg)}</sup>`;
+            
 
             itemC.append(rank);
 
@@ -60819,10 +60852,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             const rank = document.createElement("div");
             rank.className = "rank";
             // rank.textContent = `n°${rankS[r.id.toUpperCase()]}`;
-            rank.innerHTML = `${rankS[r.id.toUpperCase()]}<sup>e</sup>`;
-            if (rankS[r.id.toUpperCase()] === 1) {
-              rank.innerHTML = `1<sup>er</sup>`;
-            }
+            rank.innerHTML = `${rankS[r.id.toUpperCase()]}<sup>${ordinalSuffix(rankS[r.id.toUpperCase()],currentIlg)}</sup>`;
 
             itemC.append(rank);
 
@@ -62594,7 +62624,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           nbrColorFilter +
           " couleurs" +
           (getId("titleItmColor").querySelector("input").checked
-            ? " (uniquement)"
+            ? D_ilg.uniquement[currentIlg]
             : "");
         circle.className = "circleMColor remove";
         circle.style.background = D_backgroundColor[color];
@@ -62608,11 +62638,11 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         nbrColorFilter -= 1;
         titleFilterColor.textContent =
           nbrColorFilter === 0
-            ? "Filtrer par couleurs"
+            ? D_ilg.filtrerpar[currentIlg]
             : nbrColorFilter +
               " couleurs" +
               (getId("titleItmColor").querySelector("input").checked
-                ? " (uniquement)"
+                ? D_ilg.uniquement[currentIlg]
                 : "");
 
         L_circleColor.get(color).classList.add("remove");
@@ -62624,7 +62654,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       titleItmColor.addEventListener("click", () => {
         const toggle = titleItmColor.querySelector(".toggleSetting");
         document.getElementById("infoFilterColor").textContent =
-          toggle.querySelector("input").checked ? "Contient" : "Uniquement";
+          toggle.querySelector("input").checked ? D_ilg.contient[currentIlg] : D_ilg.uniquement[currentIlg];
 
         requestAnimationFrame(() => {
           if (nbrColorFilter > 0)
@@ -62632,7 +62662,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               nbrColorFilter +
               " couleurs" +
               (getId("titleItmColor").querySelector("input").checked
-                ? " (uniquement)"
+                ? D_ilg.uniquement[currentIlg]
                 : "");
         });
       });
@@ -64247,6 +64277,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       }
       //
 
+  
+
       function changeD(el) {
         // el : choiceD1/D2 ou elD, on prend juste son dataset.devise pour savoir quoi mettre
         crossCadreSD.click(); //CurrentChoiceD : celui qu'on va modifier
@@ -64405,7 +64437,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         if (Object.keys(Ld).length === 0 && inputSD.value.length !== 0) {
           contentCadreSD.innerHTML = `
         <p style="text-align : center;  margin-top : 4rem; color: rgba(0,0,0,0.6); font-size = 1.2rem">
-              Aucun résultat
+              ${D_ilg.aucunresultat[currentIlg]}
             </p>`;
           return;
         }
