@@ -20995,14 +20995,14 @@
         </button>
       </div>
 
-      <div class="messageViewMap">
+      <div class="messageViewMap" data-ild="cliquersur">
         Cliquer sur une des propositions pour zoomer sur le pays correspondant
         <div class="footerMessage">
           <label class="checkbox-container">
             <input class="custom-checkbox" type="checkbox" />
             <span class="checkmark"></span>
           </label>
-          <span style="align-self: center">Ne plus afficher</span>
+          <span style="align-self: center" data-ild="neplusafficher">Ne plus afficher</span>
         </div>
       </div>
 
@@ -29208,7 +29208,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
     <!--Script utile-->
     <script>
-      currentIlg = "fr";
+      let currentIlg = "fr";
       // script langues / script translation
 
       // Pour l_q et p_info, on créer une secon eliste avec que capitale et nom,s et on modifie les premières listes avec les valeurs des secondes
@@ -29226,7 +29226,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           L_q[clef].c = D_nameIlg[clef].c[ilg];
         }
         currentIlg = ilg;
+        saveProgress()
       }
+
       const D_ilg = {
         //  liste de international language, avec français et anglais
         // langue Home
@@ -29288,8 +29290,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         tauxde: { fr: "Taux de change", en: "Exchange rate" },
         // langue cadretrackdays
         serie: { fr: "Série", en: "Sreak" },
-        joursde: { fr: " jours de suite ", en: " Days in a row " },
-        jourde: { fr: " jour de suite ", en: " Day in a row " },
+        joursde: { fr: " jours de suite ", en: " days in a row " },
+        jourde: { fr: " jour de suite ", en: " day in a row " },
         seriemaximale: { fr: "Série maximale", en: "Best streak" },
         jours: { fr: " jours ", en: " days" },
         jour: { fr: " jour ", en: " day" },
@@ -29349,12 +29351,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         findepartie: { fr: "Fin de partie !", en: "Quiz complete!" },
         menu: { fr: "Menu", en: "Home" },
         score: { fr: "Score :", en: "Score:" },
-        recommencer: { fr: "Recommencer :", en: "Replay:" },
-        reprendre: { fr: "Reprendre :", en: "Resume:" },
-        voirsur: { fr: "Voir sur la carte :", en: "View on map:" },
+        recommencer: { fr: "Recommencer", en: "Replay" },
+        reprendre: { fr: "Reprendre", en: "Resume" },
+        voirsur: { fr: "Voir sur la carte", en: "View on map" },
         questionen: { fr: "Question en cours...", en: "Current question..." },
         aucunereponse: { fr: "Aucune réponse à cette question pour l'instant", en: "No answers to this question yet" },
         selectionnezune: { fr: "Sélectionnez une case pour afficher les détails", en: "Select a cell to view details" },
+        cliquersur: { fr: "Cliquez sur une des propositions pour zoomer sur le pays correspondant", en: "Click one of the options to zoom in on the matching country" },
+        neplusafficher: { fr: "Ne plus afficher", en: "Don't show again" },
+        suivant : { fr: "Suivant →", en: "Next →" },
+        fin: { fr: "Fin", en: "See results" },
+
         // llangues
         //  
       };
@@ -34940,7 +34947,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               pColor_m.set(currentCountry, { hover: "", current: "red" });
             }
 
-            btnNext.textContent = "Suivant →";
+            btnNext.textContent = D_ilg.suivant[currentIlg];
             colorCountry();
 
             if (isMobile) {
@@ -34953,7 +34960,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             }
 
             if (getQNumber() >= maxQ) {
-              btnNext.textContent = "Fin";
+              btnNext.textContent = D_ilg.fin[currentIlg];
               document.getElementById("wrapperScorePm").style.display = "flex";
               document.getElementById("pmTitle").textContent =
                 D_ilg.findepartie[currentIlg];
@@ -35340,7 +35347,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             score += 1;
           }
 
-          btnNext.textContent = "Suivant →";
+          btnNext.textContent = D_ilg.suivant[currentIlg];
           cChooseTrouver = true;
           const L_goodOrder = [...L_propClasser].sort((a, b) =>
             parseInt(
@@ -35365,7 +35372,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           if (getQNumber() >= maxQ) {
             pause4Choix.style.opacity = "0";
             pause4Choix.style.pointerEvents = "none";
-            btnNext.textContent = "Fin";
+            btnNext.textContent = D_ilg.fin[currentIlg];
             document.getElementById("wrapperScorePm").style.display = "flex";
             document.getElementById("pmTitle").textContent = D_ilg.findepartie[currentIlg];
           }
@@ -35598,7 +35605,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
             // spanNext.textContent = "Temps écoulé !";
             cadreNext.classList.add("visible");
-            btnNext.textContent = "Suivant →";
+            btnNext.textContent = D_ilg.suivant[currentIlg];
             if (L_config.m === "modeTrouver") {
               zoomCountry(idBonneReponse);
               cChooseTrouver = true;
@@ -35625,7 +35632,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               document.querySelectorAll(".infoTxtClasser").forEach((el) => {
                 el.style.maxHeight = "1.2rem";
               });
-              btnNext.textContent = "Suivant →";
+              btnNext.textContent = D_ilg.suivant[currentIlg];
               cChooseTrouver = true;
               for (const clef in D_elClasser) {
                 if (
@@ -35646,7 +35653,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               }
             }
             if (getQNumber() >= maxQ) {
-              btnNext.textContent = "Fin";
+              btnNext.textContent = D_ilg.fin[currentIlg];
               pause4Choix.style.opacity = "0";
               pause4Choix.style.pointerEvents = "none";
             }
@@ -35753,7 +35760,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         document.getElementById("wrapperScorePm").style.display = "none";
         qNumber.textContent = "0";
 
-        btnNext.textContent = "Suivant →";
+        btnNext.textContent = D_ilg.suivant[currentIlg];
         document.getElementById("pmTitle").textContent = D_ilg.menupause[currentIlg];
 
         //
@@ -35885,7 +35892,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             hapticFeedback("success");
 
             cadreNext.classList.add("good");
-            spanNext.textContent = "✓ " + (Object.values(D_phrasesBonnesRIlg)[Math.floor(Math.random() * Object.keys(D_phrasesBonnesRIlg).length)][currentIlg]) +  " !";
+            spanNext.textContent = "✓ " + (Object.values(D_phrasesBonnesRIlg)[Math.floor(Math.random() * Object.keys(D_phrasesBonnesRIlg).length)][currentIlg]);
             score += 1;
           } else {
             playSound(badSound);
@@ -35925,7 +35932,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           });
 
           if (getQNumber() >= maxQ) {
-            btnNext.textContent = "Fin";
+            btnNext.textContent = D_ilg.fin[currentIlg];
             document.getElementById("pmTitle").textContent = D_ilg.findepartie[currentIlg];
             pause4Choix.style.opacity = "0";
             pause4Choix.style.pointerEvents = "none";
@@ -36588,7 +36595,6 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           modeTrouver: getId("modeTrouver"),
           modeClasser: getId("modeClasser"),
         };
-        console.log(D_ilg.mode[currentIlg],L_mode[L_config.m],L_mode[L_config.m].querySelector("h4"))
         recapMode.textContent = " - " +
           L_mode[L_config.m].querySelector("h4").textContent;
         if (L_config.m === "modeClasser") {
@@ -37195,7 +37201,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         pause4Choix.style.pointerEvents = "all";
         cChooseTrouver = null;
         qNumber.textContent = "0";
-        btnNext.textContent = "Suivant →";
+        btnNext.textContent = D_ilg.suivant[currentIlg];
 
         cadrePm.classList.remove("active");
         overlayPmInfo.classList.add("active");
@@ -64603,6 +64609,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           dataD,
           nbrReward,
           oneTimeMessage,
+          currentIlg,
         };
         localStorage.setItem(SAVE_KEY, JSON.stringify(data));
       }
@@ -64637,6 +64644,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           notif = data.notif ?? false;
           data.dataD ? (dataD = data.dataD) : "";
           oneTimeMessage = data.oneTimeMessage ?? false;
+          currentIlg = data.currentIlg ?? 'fr';
+          currentIlg === 'fr' ? "" : query(`[data-choiceilg = ${currentIlg}]`).click();
           // nbrReward =0 ;
           // for( const cle in L_claimedQ){
           //   if (L_claimedQ[cle] === false && cle !== "XXX"){nbrReward+=1}
