@@ -30786,6 +30786,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const backSetting = document.getElementById("backSetting");
       const backThank = getId("backThank");
+      const backIlg = getId("backIlg");
+
 
       const sonSetting = document.getElementById("sonSetting");
       const toggleSon = document.getElementById("toggleSon");
@@ -33129,6 +33131,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         contentSettingInit.style.transition = "none";
         backThank.click();
         backSetting.click();
+        backIlg.click()
         requestAnimationFrame(() => {
           document
             .querySelectorAll(".contentSetting")
