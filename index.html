@@ -29473,6 +29473,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         voirplus : {fr:"Voir plus >", en : "View more >"},
         filtrerpar: { fr: "Filtrer par couleurs", en: "Filter by colors" },
         uniquement : {fr: " (uniquement)", en: " (only)"},
+        uniquementsansparenthese : {fr: "Uniquement", en: "Only"},
         couleursexactes: { fr: "Couleurs Exactes", en: "Exact Colors" },
         contient: { fr: "Contient", en: "Contains" },
         cescouleurs: { fr: "ces couleurs", en: "these colors" },
@@ -29485,6 +29486,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         noir: { fr: "Noir", en: "Black" },
         jaune: { fr: "Jaune", en: "Yellow" },
         aucunresultat: { fr: "Aucun résultat", en: "No results" },
+        couleurs: { fr: " couleurs", en: " colors" },
         // llangues
         //  
       };
@@ -62622,7 +62624,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         nbrColorFilter += 1;
         titleFilterColor.textContent =
           nbrColorFilter +
-          " couleurs" +
+          D_ilg.couleurs[currentIlg] +
           (getId("titleItmColor").querySelector("input").checked
             ? D_ilg.uniquement[currentIlg]
             : "");
@@ -62640,7 +62642,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           nbrColorFilter === 0
             ? D_ilg.filtrerpar[currentIlg]
             : nbrColorFilter +
-              " couleurs" +
+              D_ilg.couleurs[currentIlg] +
               (getId("titleItmColor").querySelector("input").checked
                 ? D_ilg.uniquement[currentIlg]
                 : "");
@@ -62654,13 +62656,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       titleItmColor.addEventListener("click", () => {
         const toggle = titleItmColor.querySelector(".toggleSetting");
         document.getElementById("infoFilterColor").textContent =
-          toggle.querySelector("input").checked ? D_ilg.contient[currentIlg] : D_ilg.uniquement[currentIlg];
+          toggle.querySelector("input").checked ? D_ilg.contient[currentIlg] : D_ilg.uniquementsansparenthese[currentIlg];
 
         requestAnimationFrame(() => {
           if (nbrColorFilter > 0)
             titleFilterColor.textContent =
               nbrColorFilter +
-              " couleurs" +
+              D_ilg.couleurs[currentIlg] +
               (getId("titleItmColor").querySelector("input").checked
                 ? D_ilg.uniquement[currentIlg]
                 : "");
@@ -62772,10 +62774,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           document.getElementById("arrowTitle").classList.remove("active");
           if (option.id === "flagS") {
             // Logique pour afficher les drapeaux
-            titleCadreS.querySelector("span").textContent = "Drapeaux";
+            titleCadreS.querySelector("span").textContent = D_ilg.drapeaux[currentIlg];
           } else if (option.id === "countryS") {
             // Logique pour afficher les pays
-            titleCadreS.querySelector("span").textContent = "Pays";
+            titleCadreS.querySelector("span").textContent = D_ilg.pays[currentIlg];
           }
 
           requestAnimationFrame(() => {
