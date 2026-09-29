@@ -5590,38 +5590,58 @@
         position: absolute;
         align-items: center;
         justify-content: center;
+        justify-self: center;
         overflow: hidden;
         color: black;
         z-index: 110;
         left: 50%;
         top: 50%;
-        width: calc(100% - 2.2rem);
-        justify-self: center;
+        /* width: calc(100% - 2.2rem); */
+        /* height: auto; */
+        inset : 0;
+        /* max-height : calc(100vh - env(safe-area-inset-top) -  env(safe-area-inset-bottom) - 1.6rem); */
         max-width: 30rem;
         padding: 1rem 0.6rem;
         padding-bottom: 0;
         box-sizing: border-box;
         gap: 0rem;
-        height: auto;
-        border-radius: 1rem;
+        /* border-radius: 1rem; */
         background: rgba(252, 252, 252, 1);
         background: #f5f6fa;
         backdrop-filter: blur(4px);
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         transform-origin: right bottom;
         transform: scale(0.92) translateX(-50%) translateY(-50%);
+        transform: scale(0.92);
         transition:
           transform 0.2s ease,
           opacity 0.2s ease;
       }
       #cadreSetting.active {
-        transform: translateX(-50%) translateY(-50%);
+        transform: none;
         opacity: 1;
         pointer-events: all;
+      }
+       #crossSetting {
+        position: absolute;
+        cursor: pointer;
+        right: 0.6rem;
+        top : calc(env(safe-area-inset-top) + 0.5rem);
+        font-size: 0.92rem;
+        fill: black;
+        transition: filter 0.1s ease;
+        svg {
+          fill: black;
+          height: 2rem;
+        }
+      }
+      #crossSetting:active {
+        filter: brightness(0.6);
       }
       #wrapperTitleSetting {
         display: flex;
         align-items: center;
+        scrollbar-width: none;
         justify-content: center;
         position: relative;
         width: 100%;
@@ -5629,6 +5649,7 @@
         height: 1rem;
         font-size: 1.2rem;
         font-weight: 600;
+        margin-bottom : 0.6rem;
         z-index: 99999;
       }
       .titleSetting {
@@ -5654,7 +5675,8 @@
         position: relative;
         width: 100%;
         height: auto;
-        padding: 0.8rem 0.6rem;
+        box-sizing : border-box;
+        padding: 0.4rem 0.6rem;
         background: inherit;
         gap: inherit;
       }
@@ -5814,8 +5836,52 @@
         filter: brightness(0.92);
       }
 
+      .wrapperUnity{
+        --padUnity  : 0.2rem;
+        --widthUnity : 5rem;
+        --gapUnity : 0.1rem;
+        display : flex;
+        position : relative;
+        align-items :center;
+        justify-content : center;
+        box-sizing : border-box;
+        gap :var(--gapUnity);
+        padding : var(--padUnity);
+        width : var(--widthUnity);
+        height : 1.8rem;
+        border-radius : 0.4rem;
+        outline : 1px solid rgba(0,0,0,0.25);        
+      }
+      .itmUnity{
+        display : flex;
+        font-size : 0.85rem;
+        justify-content : center; 
+        align-items : center;
+        height : 100%; 
+        text-align : center; 
+        width : 100%;
+        transition : color 0.2s ease;
+      }
+      .unityIn{
+        z-index : 5;
+        position : absolute;
+        border-radius : inherit;
+        left : 0.2rem;
+        height : calc(100% -  var(--padUnity) * 2);
+        width : calc(50% - var(--padUnity) - var(--gapUnity));
+        background : rgba(4, 98, 198, 0.25);
+        transition : transform 0.2s ease;
+      }
+      .unityIn.mi {
+        transform : translateX(calc(100% + 0.1rem));
+      }
+
+
+
       .itemSetting {
         display: flex;
+        position : relative;
+        z-index : 10;
         box-sizing: border-box;
         height: auto;
         padding: 0.2rem;
@@ -13808,6 +13874,18 @@
 
       <div id="overallHome"></div>
       <div id="cadreSetting">
+          <div id="crossSetting">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+              />
+            </svg>
+          </div>
+
         <div id="wrapperTitleSetting">
           <div
             class="titleSetting visible"
@@ -13915,6 +13993,37 @@
                   <div class="toggleSetting-background"></div>
                   <div class="toggleSetting-handle"></div>
                 </label>
+              </div>
+
+              <div class="ligneInSD" style="margin: 0.1rem 0"></div>
+
+              <div class="itemSetting" id="sonSetting">
+                <div class="boxSvgItemSetting blue">
+                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--gis" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M33.447 10.603c-6.953 0-12.656 5.703-12.656 12.657c0 3.28 1.302 6.258 3.374 8.517L13.782 52.738c-.376-.034-.74-.114-1.125-.114C5.703 52.624 0 58.327 0 65.281s5.703 12.657 12.657 12.657c4.356 0 8.201-2.258 10.48-5.64l52.022 7.637c1.436 5.41 6.342 9.462 12.184 9.462c6.954 0 12.657-5.703 12.657-12.657c0-6.737-5.365-12.266-12.021-12.608l-6.814-21.255c2.916-2.325 4.833-5.862 4.833-9.853c0-6.954-5.703-12.665-12.657-12.665c-4.405 0-8.298 2.297-10.57 5.745L45.933 21.5c-.872-6.124-6.133-10.897-12.486-10.897zm0 6.414c3.49 0 6.251 2.754 6.251 6.243a6.205 6.205 0 0 1-6.25 6.251c-3.49 0-6.243-2.762-6.243-6.251c0-3.489 2.754-6.243 6.242-6.243zm39.894 9.756c3.49 0 6.243 2.762 6.243 6.25c0 3.49-2.754 6.243-6.243 6.243c-3.488 0-6.25-2.754-6.25-6.242a6.205 6.205 0 0 1 6.25-6.251zM44.28 29.698l16.52 4.524c.617 6.377 5.976 11.429 12.502 11.45l6.666 20.84c-1.717 1.247-3.074 2.925-4.001 4.849v.098l-.025.236l-1.842-.269l1.549-10.562l-4.092-.595l-1.548 10.554l-6.243-.913l1.549-10.562l-4.092-.603l-1.548 10.562l-6.251-.92l2.151-14.67l-4.083-.604l-2.16 14.67l-6.25-.913l1.548-10.562l-4.091-.595l-1.549 10.554l-6.242-.92l1.548-10.555l-4.091-.603l-1.549 10.562l-3.439-.505l.04-.187l-.073-.009c-.308-3.067-1.671-5.837-3.79-7.872l10.123-20.449c.634.1 1.271.196 1.931.196c4.6 0 8.613-2.522 10.832-6.227zM12.657 59.03a6.205 6.205 0 0 1 6.25 6.251a6.205 6.205 0 0 1-6.25 6.251a6.205 6.205 0 0 1-6.251-6.25a6.205 6.205 0 0 1 6.25-6.252zm74.686 11.46a6.205 6.205 0 0 1 6.251 6.251c0 3.489-2.762 6.235-6.25 6.235c-3.49 0-6.252-2.746-6.252-6.235a6.205 6.205 0 0 1 6.251-6.251z" fill="#ffffff"></path></g></svg>
+                </div>
+                <span
+                  style="
+                  display : flex;
+                  flex-direction : column;
+                  align-items : flex-start;
+                  justify-content: space-between;
+
+                    font-size: 0.96rem;
+                    font-weight: 450;
+                    flex: 1;
+                    padding-left: 1rem;
+                  "
+                  >
+                  <span data-ilg="unitede">Unité de superficie</span>
+                  <span style="font-size : 0.68rem; opacity : 0.5"> 1 km² ≈ 0.3861 mi²</span>
+                  </span
+                >
+                <div class="wrapperUnity">
+                  <div class="unityIn"></div>
+                  <span data-unity="km" data-unitylabel="km²" class="itmUnity"  >km²</span>
+                  <span data-unity="mi" data-unitylabel="mi²" class="itmUnity" >mi²</span>
+                </div>
+              
               </div>
 
               <div class="ligneInSD" style="margin: 0.1rem 0"></div>
@@ -29261,6 +29370,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       // Pour l_q et p_info, on créer une secon eliste avec que capitale et nom,s et on modifie les premières listes avec les valeurs des secondes
       function changeIlg(ilg) {
+        currentIlg = ilg;
+        // Changer les textContent des data-ilg
         queryAll("[data-ilg]").forEach((el) => {
           if(!D_ilg[el.dataset.ilg]){console.log(el,el.dataset,"el")}
           if (!D_ilg[el.dataset.ilg][ilg])console.log(D_ilg[el.dataset.ilg])
@@ -29272,6 +29383,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           el.placeholder = D_ilgHolder[el.dataset.ilgplaceholder][ilg];
         });
 
+        // Changer les listes
         [L_q,P_info].forEach( D=>{
           for (const clef in D) {
           if (!D_nameIlg[clef]) {
@@ -29290,15 +29402,24 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             if (!subReg)continue
             D[clef].subregion =  D_ilg[subReg[0]][ilg]
             // Amérique → amerique
-          }
-          
+          } 
+        }})
+
+        for(const clef in D_us){
+          D_us[clef].n = D_nameSubIlg[clef].n[ilg]
+          D_us[clef].c = D_nameSubIlg[clef].c[ilg]
         }
-        })
+
+        // Remplir ContentC avec les bons mots
+        LsInit.forEach(ind=>ind.t = D_nameIlg[ind.id].n[ilg])
         
     
-        currentIlg = ilg;
+        setTimeout(()=>{
+          fillContentC(LfInit)
+        fillContentFlag(LfInit)
+        },500)
         getId('ilgSelected').textContent = query(`[data-choiceilg = ${ilg}]`).querySelector("span").textContent
-        // Change rles listes ponctuelles 
+        // Changer les listes ponctuelles 
         continentsData = [{
   region: D_ilg["Afrique".toLowerCase()][currentIlg],
   id: "viewAfrique",
@@ -29393,6 +29514,7 @@ buildMembers();
         general: { fr: "Général", en: "General" },
         retourhaptique: { fr: "Retour haptique", en: "Haptic feedback" },
         son: { fr: "Son", en: "Sound" },
+        unitede: { fr: "Unité de superficie", en: "Area unit" },
         quiz: { fr: "Quiz", en: "Quiz" },
         ninclure: {
           fr: "N'inclure dans les quiz que les pays souverains",
@@ -29623,6 +29745,7 @@ buildMembers();
         melanesie: { fr: "Mélanésie", en: "Melanesia" },
         micronesie: { fr: "Micronésie", en: "Micronesia" },
         polynesie: { fr: "Polynésie", en: "Polynesia" },
+
 // llangues
         //  
       };
@@ -29677,6 +29800,3723 @@ buildMembers();
         bonneReponse9: { fr: "Tout juste !", en: "Spot on!" },
         bonneReponse10: { fr: "Impeccable !", en: "Nailed it!" },
       }
+
+      const D_nameSubIlg = {
+  PY19: {
+    n: { fr: "Boquerón", en: "Boquerón" },
+    c: { fr: "Filadelfia", en: "Filadelfia" },
+  },
+  PY15: {
+    n: { fr: "Presidente Hayes", en: "Presidente Hayes" },
+    c: { fr: "Villa Hayes", en: "Villa Hayes" },
+  },
+  PY11: {
+    n: { fr: "Central", en: "Central" },
+    c: { fr: "Areguá", en: "Areguá" },
+  },
+  PYASU: {
+    n: { fr: "Asunción", en: "Asunción" },
+    c: { fr: "Asunción", en: "Asunción" },
+  },
+  PY10: {
+    n: { fr: "Alto Paraná", en: "Alto Paraná" },
+    c: { fr: "Ciudad del Este", en: "Ciudad del Este" },
+  },
+  PY7: {
+    n: { fr: "Itapúa", en: "Itapúa" },
+    c: { fr: "Encarnación", en: "Encarnación" },
+  },
+  PY12: {
+    n: { fr: "Ñeembucú", en: "Ñeembucú" },
+    c: { fr: "Pilar", en: "Pilar" },
+  },
+  PY8: {
+    n: { fr: "Misiones", en: "Misiones" },
+    c: { fr: "San Juan Bautista", en: "San Juan Bautista" },
+  },
+  PY16: {
+    n: { fr: "Alto Paraguay", en: "Alto Paraguay" },
+    c: { fr: "Fuerte Olimpo", en: "Fuerte Olimpo" },
+  },
+  PY1: {
+    n: { fr: "Concepción", en: "Concepción" },
+    c: { fr: "Concepción", en: "Concepción" },
+  },
+  PY13: {
+    n: { fr: "Amambay", en: "Amambay" },
+    c: { fr: "Pedro Juan Caballero", en: "Pedro Juan Caballero" },
+  },
+  PY14: {
+    n: { fr: "Canindeyú", en: "Canindeyú" },
+    c: { fr: "Saltos del Guairá", en: "Saltos del Guairá" },
+  },
+  PY2: {
+    n: { fr: "San Pedro", en: "San Pedro" },
+    c: { fr: "San Pedro", en: "San Pedro" },
+  },
+  PY5: {
+    n: { fr: "Caaguazú", en: "Caaguazú" },
+    c: { fr: "Coronel Oviedo", en: "Coronel Oviedo" },
+  },
+  PY3: {
+    n: { fr: "Cordillera", en: "Cordillera" },
+    c: { fr: "Caacupé", en: "Caacupé" },
+  },
+  PY6: {
+    n: { fr: "Caazapá", en: "Caazapá" },
+    c: { fr: "Caazapá", en: "Caazapá" },
+  },
+  PY9: {
+    n: { fr: "Paraguarí", en: "Paraguarí" },
+    c: { fr: "Paraguarí", en: "Paraguarí" },
+  },
+  PY4: {
+    n: { fr: "Guairá", en: "Guairá" },
+    c: { fr: "Villarrica", en: "Villarrica" },
+  },
+  UYPA: {
+    n: { fr: "Paysandú", en: "Paysandú" },
+    c: { fr: "Paysandú", en: "Paysandú" },
+  },
+  UYAR: {
+    n: { fr: "Artigas", en: "Artigas" },
+    c: { fr: "Artigas", en: "Artigas" },
+  },
+  UYSA: {
+    n: { fr: "Salto", en: "Salto" },
+    c: { fr: "Salto", en: "Salto" },
+  },
+  UYRV: {
+    n: { fr: "Rivera", en: "Rivera" },
+    c: { fr: "Rivera", en: "Rivera" },
+  },
+  UYRO: {
+    n: { fr: "Rocha", en: "Rocha" },
+    c: { fr: "Rocha", en: "Rocha" },
+  },
+  UYTT: {
+    n: { fr: "Treinta y Tres", en: "Treinta y Tres" },
+    c: { fr: "Treinta y Tres", en: "Treinta y Tres" },
+  },
+  UYCL: {
+    n: { fr: "Cerro Largo", en: "Cerro Largo" },
+    c: { fr: "Melo", en: "Melo" },
+  },
+  UYMA: {
+    n: { fr: "Maldonado", en: "Maldonado" },
+    c: { fr: "Maldonado", en: "Maldonado" },
+  },
+  UYCA: {
+    n: { fr: "Canelones", en: "Canelones" },
+    c: { fr: "Canelones", en: "Canelones" },
+  },
+  UYMO: {
+    n: { fr: "Montevideo", en: "Montevideo" },
+    c: { fr: "Montevideo", en: "Montevideo" },
+  },
+  UYSJ: {
+    n: { fr: "San José", en: "San José" },
+    c: { fr: "San José de Mayo", en: "San José de Mayo" },
+  },
+  UYCO: {
+    n: { fr: "Colonia", en: "Colonia" },
+    c: { fr: "Colonia del Sacramento", en: "Colonia del Sacramento" },
+  },
+  UYSO: {
+    n: { fr: "Soriano", en: "Soriano" },
+    c: { fr: "Mercedes", en: "Mercedes" },
+  },
+  UYRN: {
+    n: { fr: "Río Negro", en: "Río Negro" },
+    c: { fr: "Fray Bentos", en: "Fray Bentos" },
+  },
+  UYTA: {
+    n: { fr: "Tacuarembó", en: "Tacuarembó" },
+    c: { fr: "Tacuarembó", en: "Tacuarembó" },
+  },
+  UYDU: {
+    n: { fr: "Durazno", en: "Durazno" },
+    c: { fr: "Durazno", en: "Durazno" },
+  },
+  UYFS: {
+    n: { fr: "Flores", en: "Flores" },
+    c: { fr: "Trinidad", en: "Trinidad" },
+  },
+  UYFD: {
+    n: { fr: "Florida", en: "Florida" },
+    c: { fr: "Florida", en: "Florida" },
+  },
+  UYLA: {
+    n: { fr: "Lavalleja", en: "Lavalleja" },
+    c: { fr: "Minas", en: "Minas" },
+  },
+  CLAP: {
+    n: { fr: "Arica y Parinacota", en: "Arica and Parinacota" },
+    c: { fr: "Arica", en: "Arica" },
+  },
+  CLTA: {
+    n: { fr: "Tarapacá", en: "Tarapacá" },
+    c: { fr: "Iquique", en: "Iquique" },
+  },
+  CLAN: {
+    n: { fr: "Antofagasta", en: "Antofagasta" },
+    c: { fr: "Antofagasta", en: "Antofagasta" },
+  },
+  CLAT: {
+    n: { fr: "Atacama", en: "Atacama" },
+    c: { fr: "Copiapó", en: "Copiapó" },
+  },
+  CLCO: {
+    n: { fr: "Coquimbo", en: "Coquimbo" },
+    c: { fr: "La Serena", en: "La Serena" },
+  },
+  CLRM: {
+    n: { fr: "Región Metropolitana de Santiago", en: "Santiago Metropolitan Region" },
+    c: { fr: "Santiago", en: "Santiago" },
+  },
+  CLVS: {
+    n: { fr: "Valparaíso", en: "Valparaíso" },
+    c: { fr: "Valparaíso", en: "Valparaíso" },
+  },
+  CLML: {
+    n: { fr: "Maule", en: "Maule" },
+    c: { fr: "Talca", en: "Talca" },
+  },
+  CLLI: {
+    n: { fr: "Libertador General Bernardo O'Higgins", en: "Libertador General Bernardo O'Higgins" },
+    c: { fr: "Rancagua", en: "Rancagua" },
+  },
+  CLNB: {
+    n: { fr: "Ñuble", en: "Ñuble" },
+    c: { fr: "Chillán", en: "Chillán" },
+  },
+  CLAR: {
+    n: { fr: "La Araucanía", en: "La Araucanía" },
+    c: { fr: "Temuco", en: "Temuco" },
+  },
+  CLBI: {
+    n: { fr: "Biobío", en: "Biobío" },
+    c: { fr: "Concepción", en: "Concepción" },
+  },
+  CLLR: {
+    n: { fr: "Los Ríos", en: "Los Ríos" },
+    c: { fr: "Valdivia", en: "Valdivia" },
+  },
+  CLLL: {
+    n: { fr: "Los Lagos", en: "Los Lagos" },
+    c: { fr: "Puerto Montt", en: "Puerto Montt" },
+  },
+  CLAI: {
+    n: { fr: "Aysén", en: "Aysén" },
+    c: { fr: "Coyhaique", en: "Coyhaique" },
+  },
+  CLMA: {
+    n: { fr: "Magallanes y de la Antártica Chilena", en: "Magallanes and Chilean Antarctica" },
+    c: { fr: "Punta Arenas", en: "Punta Arenas" },
+  },
+  SRSI: {
+    n: { fr: "Sipaliwini", en: "Sipaliwini" },
+    c: { fr: "Non disponible", en: "Not available" },
+  },
+  SRNI: {
+    n: { fr: "Nickerie", en: "Nickerie" },
+    c: { fr: "Nieuw-Nickerie", en: "Nieuw-Nickerie" },
+  },
+  SRMA: {
+    n: { fr: "Marowijne", en: "Marowijne" },
+    c: { fr: "Albina", en: "Albina" },
+  },
+  SRCR: {
+    n: { fr: "Coronie", en: "Coronie" },
+    c: { fr: "Totness", en: "Totness" },
+  },
+  SRSA: {
+    n: { fr: "Saramacca", en: "Saramacca" },
+    c: { fr: "Groningen", en: "Groningen" },
+  },
+  SRWA: {
+    n: { fr: "Wanica", en: "Wanica" },
+    c: { fr: "Lelydorp", en: "Lelydorp" },
+  },
+  SRPM: {
+    n: { fr: "Paramaribo", en: "Paramaribo" },
+    c: { fr: "Paramaribo", en: "Paramaribo" },
+  },
+  SRCM: {
+    n: { fr: "Commewijne", en: "Commewijne" },
+    c: { fr: "Nieuw-Amsterdam", en: "Nieuw-Amsterdam" },
+  },
+  SRPR: {
+    n: { fr: "Para", en: "Para" },
+    c: { fr: "Onverwacht", en: "Onverwacht" },
+  },
+  SRBR: {
+    n: { fr: "Brokopondo", en: "Brokopondo" },
+    c: { fr: "Brokopondo", en: "Brokopondo" },
+  },
+  GYBA: {
+    n: { fr: "Barima-Waini", en: "Barima-Waini" },
+    c: { fr: "Mabaruma", en: "Mabaruma" },
+  },
+  GYPM: {
+    n: { fr: "Pomeroon-Supenaam", en: "Pomeroon-Supenaam" },
+    c: { fr: "Anna Regina", en: "Anna Regina" },
+  },
+  GYES: {
+    n: { fr: "Essequibo Islands-West Demerara", en: "Essequibo Islands-West Demerara" },
+    c: { fr: "Vreed-en-Hoop", en: "Vreed-en-Hoop" },
+  },
+  GYDE: {
+    n: { fr: "Demerara-Mahaica", en: "Demerara-Mahaica" },
+    c: { fr: "Georgetown", en: "Georgetown" },
+  },
+  GYMA: {
+    n: { fr: "Mahaica-Berbice", en: "Mahaica-Berbice" },
+    c: { fr: "Fort Wellington", en: "Fort Wellington" },
+  },
+  GYEB: {
+    n: { fr: "East Berbice-Corentyne", en: "East Berbice-Corentyne" },
+    c: { fr: "New Amsterdam", en: "New Amsterdam" },
+  },
+  GYCU: {
+    n: { fr: "Cuyuni-Mazaruni", en: "Cuyuni-Mazaruni" },
+    c: { fr: "Bartica", en: "Bartica" },
+  },
+  GYPT: {
+    n: { fr: "Potaro-Siparuni", en: "Potaro-Siparuni" },
+    c: { fr: "Mahdia", en: "Mahdia" },
+  },
+  GYUT: {
+    n: { fr: "Upper Takutu-Upper Essequibo", en: "Upper Takutu-Upper Essequibo" },
+    c: { fr: "Lethem", en: "Lethem" },
+  },
+  GYUD: {
+    n: { fr: "Upper Demerara-Berbice", en: "Upper Demerara-Berbice" },
+    c: { fr: "Linden", en: "Linden" },
+  },
+  VEZ: {
+    n: { fr: "Amazonas", en: "Amazonas" },
+    c: { fr: "Puerto Ayacucho", en: "Puerto Ayacucho" },
+  },
+  VEB: {
+    n: { fr: "Anzoátegui", en: "Anzoátegui" },
+    c: { fr: "Barcelona", en: "Barcelona" },
+  },
+  VEC: {
+    n: { fr: "Apure", en: "Apure" },
+    c: { fr: "San Fernando de Apure", en: "San Fernando de Apure" },
+  },
+  VED: {
+    n: { fr: "Aragua", en: "Aragua" },
+    c: { fr: "Maracay", en: "Maracay" },
+  },
+  VEE: {
+    n: { fr: "Barinas", en: "Barinas" },
+    c: { fr: "Barinas", en: "Barinas" },
+  },
+  VEF: {
+    n: { fr: "Bolívar", en: "Bolívar" },
+    c: { fr: "Ciudad Bolívar", en: "Ciudad Bolívar" },
+  },
+  VEG: {
+    n: { fr: "Carabobo", en: "Carabobo" },
+    c: { fr: "Valencia", en: "Valencia" },
+  },
+  VEH: {
+    n: { fr: "Cojedes", en: "Cojedes" },
+    c: { fr: "San Carlos", en: "San Carlos" },
+  },
+  VEY: {
+    n: { fr: "Delta Amacuro", en: "Delta Amacuro" },
+    c: { fr: "Tucupita", en: "Tucupita" },
+  },
+  VEA: {
+    n: { fr: "Distrito Capital", en: "Capital District" },
+    c: { fr: "Caracas", en: "Caracas" },
+  },
+  VEI: {
+    n: { fr: "Falcón", en: "Falcón" },
+    c: { fr: "Coro", en: "Coro" },
+  },
+  VEJ: {
+    n: { fr: "Guárico", en: "Guárico" },
+    c: { fr: "San Juan de los Morros", en: "San Juan de los Morros" },
+  },
+  VEX: {
+    n: { fr: "La Guaira (Vargas)", en: "La Guaira (Vargas)" },
+    c: { fr: "La Guaira", en: "La Guaira" },
+  },
+  VEK: {
+    n: { fr: "Lara", en: "Lara" },
+    c: { fr: "Barquisimeto", en: "Barquisimeto" },
+  },
+  VEL: {
+    n: { fr: "Mérida", en: "Mérida" },
+    c: { fr: "Mérida", en: "Mérida" },
+  },
+  VEM: {
+    n: { fr: "Miranda", en: "Miranda" },
+    c: { fr: "Los Teques", en: "Los Teques" },
+  },
+  VEN: {
+    n: { fr: "Monagas", en: "Monagas" },
+    c: { fr: "Maturín", en: "Maturín" },
+  },
+  VEO: {
+    n: { fr: "Nueva Esparta", en: "Nueva Esparta" },
+    c: { fr: "La Asunción", en: "La Asunción" },
+  },
+  VEP: {
+    n: { fr: "Portuguesa", en: "Portuguesa" },
+    c: { fr: "Guanare", en: "Guanare" },
+  },
+  VER: {
+    n: { fr: "Sucre", en: "Sucre" },
+    c: { fr: "Cumaná", en: "Cumaná" },
+  },
+  VES: {
+    n: { fr: "Táchira", en: "Táchira" },
+    c: { fr: "San Cristóbal", en: "San Cristóbal" },
+  },
+  VET: {
+    n: { fr: "Trujillo", en: "Trujillo" },
+    c: { fr: "Trujillo", en: "Trujillo" },
+  },
+  VEU: {
+    n: { fr: "Yaracuy", en: "Yaracuy" },
+    c: { fr: "San Felipe", en: "San Felipe" },
+  },
+  VEV: {
+    n: { fr: "Zulia", en: "Zulia" },
+    c: { fr: "Maracaibo", en: "Maracaibo" },
+  },
+  VEW: {
+    n: { fr: "Dépendances fédérales", en: "Federal Dependencies" },
+    c: { fr: "Gran Roque", en: "Gran Roque" },
+  },
+  PA1: {
+    n: { fr: "Bocas del Toro", en: "Bocas del Toro" },
+    c: { fr: "Bocas del Toro", en: "Bocas del Toro" },
+  },
+  PANT: {
+    n: { fr: "Naso Tjër Di", en: "Naso Tjër Di" },
+    c: { fr: "Sieyic", en: "Sieyic" },
+  },
+  PA4: {
+    n: { fr: "Chiriquí", en: "Chiriquí" },
+    c: { fr: "David", en: "David" },
+  },
+  PA2: {
+    n: { fr: "Coclé", en: "Coclé" },
+    c: { fr: "Penonomé", en: "Penonomé" },
+  },
+  PA3: {
+    n: { fr: "Colón", en: "Colón" },
+    c: { fr: "Colón", en: "Colón" },
+  },
+  PA5: {
+    n: { fr: "Darién", en: "Darién" },
+    c: { fr: "La Palma", en: "La Palma" },
+  },
+  PAEM: {
+    n: { fr: "Emberá-Wounaan", en: "Emberá-Wounaan" },
+    c: { fr: "Unión Chocó", en: "Unión Chocó" },
+  },
+  PA6: {
+    n: { fr: "Herrera", en: "Herrera" },
+    c: { fr: "Chitré", en: "Chitré" },
+  },
+  PAKY: {
+    n: { fr: "Guna Yala", en: "Guna Yala" },
+    c: { fr: "Gaigirgordub", en: "Gaigirgordub" },
+  },
+  PA7: {
+    n: { fr: "Los Santos", en: "Los Santos" },
+    c: { fr: "Las Tablas", en: "Las Tablas" },
+  },
+  PANB: {
+    n: { fr: "Ngäbe-Buglé", en: "Ngäbe-Buglé" },
+    c: { fr: "Llano Tugrí", en: "Llano Tugrí" },
+  },
+  PA10: {
+    n: { fr: "Panamá Oeste", en: "Panamá Oeste" },
+    c: { fr: "La Chorrera", en: "La Chorrera" },
+  },
+  PA8: {
+    n: { fr: "Panamá", en: "Panamá" },
+    c: { fr: "Panama (ville)", en: "Panama City" },
+  },
+  PA9: {
+    n: { fr: "Veraguas", en: "Veraguas" },
+    c: { fr: "Santiago de Veraguas", en: "Santiago de Veraguas" },
+  },
+  CRA: {
+    n: { fr: "Alajuela", en: "Alajuela" },
+    c: { fr: "Alajuela", en: "Alajuela" },
+  },
+  CRG: {
+    n: { fr: "Guanacaste", en: "Guanacaste" },
+    c: { fr: "Liberia", en: "Liberia" },
+  },
+  CRL: {
+    n: { fr: "Limón", en: "Limón" },
+    c: { fr: "Puerto Limón", en: "Puerto Limón" },
+  },
+  CRP: {
+    n: { fr: "Puntarenas", en: "Puntarenas" },
+    c: { fr: "Puntarenas", en: "Puntarenas" },
+  },
+  CRH: {
+    n: { fr: "Heredia", en: "Heredia" },
+    c: { fr: "Heredia", en: "Heredia" },
+  },
+  CRSJ: {
+    n: { fr: "San José", en: "San José" },
+    c: { fr: "San José", en: "San José" },
+  },
+  CRC: {
+    n: { fr: "Cartago", en: "Cartago" },
+    c: { fr: "Cartago", en: "Cartago" },
+  },
+  NISJ: {
+    n: { fr: "Río San Juan", en: "Río San Juan" },
+    c: { fr: "San Carlos", en: "San Carlos" },
+  },
+  NIAN: {
+    n: { fr: "Costa Caribe Nord (RAAN)", en: "North Caribbean Coast (RAAN)" },
+    c: { fr: "Puerto Cabezas", en: "Puerto Cabezas" },
+  },
+  NIJI: {
+    n: { fr: "Jinotega", en: "Jinotega" },
+    c: { fr: "Jinotega", en: "Jinotega" },
+  },
+  NINS: {
+    n: { fr: "Nueva Segovia", en: "Nueva Segovia" },
+    c: { fr: "Ocotal", en: "Ocotal" },
+  },
+  NICI: {
+    n: { fr: "Chinandega", en: "Chinandega" },
+    c: { fr: "Chinandega", en: "Chinandega" },
+  },
+  NIMD: {
+    n: { fr: "Madriz", en: "Madriz" },
+    c: { fr: "Somoto", en: "Somoto" },
+  },
+  NIRI: {
+    n: { fr: "Rivas", en: "Rivas" },
+    c: { fr: "Rivas", en: "Rivas" },
+  },
+  NIAS: {
+    n: { fr: "Costa Caribe Sud (RAAS)", en: "South Caribbean Coast (RAAS)" },
+    c: { fr: "Bluefields", en: "Bluefields" },
+  },
+  NILE: {
+    n: { fr: "León", en: "León" },
+    c: { fr: "León", en: "León" },
+  },
+  NIMN: {
+    n: { fr: "Managua", en: "Managua" },
+    c: { fr: "Managua", en: "Managua" },
+  },
+  NICA: {
+    n: { fr: "Carazo", en: "Carazo" },
+    c: { fr: "Jinotepe", en: "Jinotepe" },
+  },
+  NIMT: {
+    n: { fr: "Matagalpa", en: "Matagalpa" },
+    c: { fr: "Matagalpa", en: "Matagalpa" },
+  },
+  NIBO: {
+    n: { fr: "Boaco", en: "Boaco" },
+    c: { fr: "Boaco", en: "Boaco" },
+  },
+  NICO: {
+    n: { fr: "Chontales", en: "Chontales" },
+    c: { fr: "Juigalpa", en: "Juigalpa" },
+  },
+  NIES: {
+    n: { fr: "Estelí", en: "Estelí" },
+    c: { fr: "Estelí", en: "Estelí" },
+  },
+  NIGR: {
+    n: { fr: "Granada", en: "Granada" },
+    c: { fr: "Granada", en: "Granada" },
+  },
+  NIMS: {
+    n: { fr: "Masaya", en: "Masaya" },
+    c: { fr: "Masaya", en: "Masaya" },
+  },
+  HNOC: {
+    n: { fr: "Ocotepeque", en: "Ocotepeque" },
+    c: { fr: "Nueva Ocotepeque", en: "Nueva Ocotepeque" },
+  },
+  HNLE: {
+    n: { fr: "Lempira", en: "Lempira" },
+    c: { fr: "Gracias", en: "Gracias" },
+  },
+  HNIN: {
+    n: { fr: "Intibucá", en: "Intibucá" },
+    c: { fr: "La Esperanza", en: "La Esperanza" },
+  },
+  HNLP: {
+    n: { fr: "La Paz", en: "La Paz" },
+    c: { fr: "La Paz", en: "La Paz" },
+  },
+  HNVA: {
+    n: { fr: "Valle", en: "Valle" },
+    c: { fr: "Nacaome", en: "Nacaome" },
+  },
+  HNOL: {
+    n: { fr: "Olancho", en: "Olancho" },
+    c: { fr: "Juticalpa", en: "Juticalpa" },
+  },
+  HNGD: {
+    n: { fr: "Gracias a Dios", en: "Gracias a Dios" },
+    c: { fr: "Puerto Lempira", en: "Puerto Lempira" },
+  },
+  HNEP: {
+    n: { fr: "El Paraíso", en: "El Paraíso" },
+    c: { fr: "Yuscarán", en: "Yuscarán" },
+  },
+  HNCH: {
+    n: { fr: "Choluteca", en: "Choluteca" },
+    c: { fr: "Choluteca", en: "Choluteca" },
+  },
+  HNCR: {
+    n: { fr: "Cortés", en: "Cortés" },
+    c: { fr: "San Pedro Sula", en: "San Pedro Sula" },
+  },
+  HNSB: {
+    n: { fr: "Santa Bárbara", en: "Santa Bárbara" },
+    c: { fr: "Santa Bárbara", en: "Santa Bárbara" },
+  },
+  HNCP: {
+    n: { fr: "Copán", en: "Copán" },
+    c: { fr: "Santa Rosa de Copán", en: "Santa Rosa de Copán" },
+  },
+  HNCL: {
+    n: { fr: "Colón", en: "Colón" },
+    c: { fr: "Trujillo", en: "Trujillo" },
+  },
+  HNAT: {
+    n: { fr: "Atlántida", en: "Atlántida" },
+    c: { fr: "La Ceiba", en: "La Ceiba" },
+  },
+  HNIB: {
+    n: { fr: "Islas de la Bahía", en: "Bay Islands" },
+    c: { fr: "Coxen Hole", en: "Coxen Hole" },
+  },
+  HNCM: {
+    n: { fr: "Comayagua", en: "Comayagua" },
+    c: { fr: "Comayagua", en: "Comayagua" },
+  },
+  HNYO: {
+    n: { fr: "Yoro", en: "Yoro" },
+    c: { fr: "Yoro", en: "Yoro" },
+  },
+  HNFM: {
+    n: { fr: "Francisco Morazán", en: "Francisco Morazán" },
+    c: { fr: "Tegucigalpa", en: "Tegucigalpa" },
+  },
+  BZCY: {
+    n: { fr: "Cayo", en: "Cayo" },
+    c: { fr: "San Ignacio", en: "San Ignacio" },
+  },
+  BZOW: {
+    n: { fr: "Orange Walk", en: "Orange Walk" },
+    c: { fr: "Orange Walk Town", en: "Orange Walk Town" },
+  },
+  BZCZL: {
+    n: { fr: "Corozal", en: "Corozal" },
+    c: { fr: "Corozal Town", en: "Corozal Town" },
+  },
+  BZTOL: {
+    n: { fr: "Toledo", en: "Toledo" },
+    c: { fr: "Punta Gorda", en: "Punta Gorda" },
+  },
+  BZSC: {
+    n: { fr: "Stann Creek", en: "Stann Creek" },
+    c: { fr: "Dangriga", en: "Dangriga" },
+  },
+  BZBZ: {
+    n: { fr: "Belize", en: "Belize" },
+    c: { fr: "Belize City", en: "Belize City" },
+  },
+  GT22: {
+    n: { fr: "Jutiapa", en: "Jutiapa" },
+    c: { fr: "Jutiapa", en: "Jutiapa" },
+  },
+  GT20: {
+    n: { fr: "Chiquimula", en: "Chiquimula" },
+    c: { fr: "Chiquimula", en: "Chiquimula" },
+  },
+  GT17: {
+    n: { fr: "Petén", en: "Petén" },
+    c: { fr: "Flores", en: "Flores" },
+  },
+  GT12: {
+    n: { fr: "San Marcos", en: "San Marcos" },
+    c: { fr: "San Marcos", en: "San Marcos" },
+  },
+  GT13: {
+    n: { fr: "Huehuetenango", en: "Huehuetenango" },
+    c: { fr: "Huehuetenango", en: "Huehuetenango" },
+  },
+  GT14: {
+    n: { fr: "Quiché", en: "Quiché" },
+    c: { fr: "Santa Cruz del Quiché", en: "Santa Cruz del Quiché" },
+  },
+  GT16: {
+    n: { fr: "Alta Verapaz", en: "Alta Verapaz" },
+    c: { fr: "Cobán", en: "Cobán" },
+  },
+  GT18: {
+    n: { fr: "Izabal", en: "Izabal" },
+    c: { fr: "Puerto Barrios", en: "Puerto Barrios" },
+  },
+  GT19: {
+    n: { fr: "Zacapa", en: "Zacapa" },
+    c: { fr: "Zacapa", en: "Zacapa" },
+  },
+  GT11: {
+    n: { fr: "Retalhuleu", en: "Retalhuleu" },
+    c: { fr: "Retalhuleu", en: "Retalhuleu" },
+  },
+  GT10: {
+    n: { fr: "Suchitepéquez", en: "Suchitepéquez" },
+    c: { fr: "Mazatenango", en: "Mazatenango" },
+  },
+  GT05: {
+    n: { fr: "Escuintla", en: "Escuintla" },
+    c: { fr: "Escuintla", en: "Escuintla" },
+  },
+  GT06: {
+    n: { fr: "Santa Rosa", en: "Santa Rosa" },
+    c: { fr: "Cuilapa", en: "Cuilapa" },
+  },
+  GT04: {
+    n: { fr: "Chimaltenango", en: "Chimaltenango" },
+    c: { fr: "Chimaltenango", en: "Chimaltenango" },
+  },
+  GT03: {
+    n: { fr: "Sacatepéquez", en: "Sacatepéquez" },
+    c: { fr: "Antigua Guatemala", en: "Antigua Guatemala" },
+  },
+  GT01: {
+    n: { fr: "Guatemala", en: "Guatemala" },
+    c: { fr: "Guatemala (ville)", en: "Guatemala City" },
+  },
+  GT21: {
+    n: { fr: "Jalapa", en: "Jalapa" },
+    c: { fr: "Jalapa", en: "Jalapa" },
+  },
+  GT02: {
+    n: { fr: "El Progreso", en: "El Progreso" },
+    c: { fr: "Guastatoya", en: "Guastatoya" },
+  },
+  GT07: {
+    n: { fr: "Sololá", en: "Sololá" },
+    c: { fr: "Sololá", en: "Sololá" },
+  },
+  GT09: {
+    n: { fr: "Quetzaltenango", en: "Quetzaltenango" },
+    c: { fr: "Quetzaltenango", en: "Quetzaltenango" },
+  },
+  GT15: {
+    n: { fr: "Baja Verapaz", en: "Baja Verapaz" },
+    c: { fr: "Salamá", en: "Salamá" },
+  },
+  GT08: {
+    n: { fr: "Totonicapán", en: "Totonicapán" },
+    c: { fr: "Totonicapán", en: "Totonicapán" },
+  },
+  EGSIN: {
+    n: { fr: "Sinaï du Nord", en: "North Sinai" },
+    c: { fr: "El-Arich", en: "El Arish" },
+  },
+  EGASN: {
+    n: { fr: "Assouan", en: "Aswan" },
+    c: { fr: "Assouan", en: "Aswan" },
+  },
+  EGBA: {
+    n: { fr: "Mer Rouge", en: "Red Sea" },
+    c: { fr: "Hurghada", en: "Hurghada" },
+  },
+  EGMT: {
+    n: { fr: "Matrouh", en: "Matrouh" },
+    c: { fr: "Marsa Matrouh", en: "Marsa Matrouh" },
+  },
+  EGWAD: {
+    n: { fr: "Nouvelle-Vallée", en: "New Valley" },
+    c: { fr: "Kharga", en: "Kharga" },
+  },
+  EGSUZ: {
+    n: { fr: "Suez", en: "Suez" },
+    c: { fr: "Suez", en: "Suez" },
+  },
+  EGJS: {
+    n: { fr: "Sinaï du Sud", en: "South Sinai" },
+    c: { fr: "El-Tor", en: "El Tor" },
+  },
+  EGPTS: {
+    n: { fr: "Port-Saïd", en: "Port Said" },
+    c: { fr: "Port-Saïd", en: "Port Said" },
+  },
+  EGDK: {
+    n: { fr: "Dakahlieh", en: "Dakahlia" },
+    c: { fr: "Mansourah", en: "Mansoura" },
+  },
+  EGSHR: {
+    n: { fr: "Charquieh", en: "Sharqia" },
+    c: { fr: "Zagazig", en: "Zagazig" },
+  },
+  EGIS: {
+    n: { fr: "Ismaïlia", en: "Ismailia" },
+    c: { fr: "Ismaïlia", en: "Ismailia" },
+  },
+  EGDT: {
+    n: { fr: "Damiette", en: "Damietta" },
+    c: { fr: "Damiette", en: "Damietta" },
+  },
+  EGKFS: {
+    n: { fr: "Kafr el-Cheikh", en: "Kafr El Sheikh" },
+    c: { fr: "Kafr el-Cheikh", en: "Kafr El Sheikh" },
+  },
+  EGBH: {
+    n: { fr: "Beheira", en: "Beheira" },
+    c: { fr: "Damanhour", en: "Damanhour" },
+  },
+  EGALX: {
+    n: { fr: "Alexandrie", en: "Alexandria" },
+    c: { fr: "Alexandrie", en: "Alexandria" },
+  },
+  EGC: {
+    n: { fr: "Le Caire", en: "Cairo" },
+    c: { fr: "Le Caire", en: "Cairo" },
+  },
+  EGGZ: {
+    n: { fr: "Guizeh", en: "Giza" },
+    c: { fr: "Guizeh", en: "Giza" },
+  },
+  EGMN: {
+    n: { fr: "Minieh", en: "Minya" },
+    c: { fr: "Minieh", en: "Minya" },
+  },
+  EGFYM: {
+    n: { fr: "Fayoum", en: "Faiyum" },
+    c: { fr: "Fayoum", en: "Faiyum" },
+  },
+  EGBNS: {
+    n: { fr: "Beni Souef", en: "Beni Suef" },
+    c: { fr: "Beni Souef", en: "Beni Suef" },
+  },
+  EGMNF: {
+    n: { fr: "Menoufia", en: "Monufia" },
+    c: { fr: "Chibin el-Kôm", en: "Shibin El Kom" },
+  },
+  EGKB: {
+    n: { fr: "Qalyoubieh", en: "Qalyubia" },
+    c: { fr: "Benha", en: "Benha" },
+  },
+  EGGH: {
+    n: { fr: "Gharbieh", en: "Gharbia" },
+    c: { fr: "Tantah", en: "Tanta" },
+  },
+  EGSHG: {
+    n: { fr: "Sohag", en: "Sohag" },
+    c: { fr: "Sohag", en: "Sohag" },
+  },
+  EGKN: {
+    n: { fr: "Qena", en: "Qena" },
+    c: { fr: "Qena", en: "Qena" },
+  },
+  EGAST: {
+    n: { fr: "Assiout", en: "Asyut" },
+    c: { fr: "Assiout", en: "Asyut" },
+  },
+  EGLX: {
+    n: { fr: "Louxor", en: "Luxor" },
+    c: { fr: "Louxor", en: "Luxor" },
+  },
+  LYNL: {
+    n: { fr: "Nalout", en: "Nalut" },
+    c: { fr: "Nalout", en: "Nalut" },
+  },  // à vérifier
+  LYNQ: {
+    n: { fr: "Nuqat al Khams", en: "Nuqat al Khams" },
+    c: { fr: "Zouara", en: "Zuwara" },
+  },  // à vérifier
+  LYKF: {
+    n: { fr: "Koufra", en: "Kufra" },
+    c: { fr: "Al Koufra", en: "Kufra" },
+  },  // à vérifier
+  LYMQ: {
+    n: { fr: "Mourzouk", en: "Murzuq" },
+    c: { fr: "Mourzouk", en: "Murzuq" },
+  },  // à vérifier
+  LYBU: {
+    n: { fr: "Boutnane", en: "Butnan" },
+    c: { fr: "Tobrouk", en: "Tobruk" },
+  },  // à vérifier
+  LYWA: {
+    n: { fr: "Al Wahat", en: "Al Wahat" },
+    c: { fr: "Ajdabiya", en: "Ajdabiya" },
+  },
+  LYWS: {
+    n: { fr: "Wadi ach-Chati", en: "Wadi al Shatii" },
+    c: { fr: "Brak", en: "Brak" },
+  },  // à vérifier
+  LYGT: {
+    n: { fr: "Ghât", en: "Ghat" },
+    c: { fr: "Ghât", en: "Ghat" },
+  },
+  LYSR: {
+    n: { fr: "Syrte", en: "Sirte" },
+    c: { fr: "Syrte", en: "Sirte" },
+  },
+  LYMI: {
+    n: { fr: "Misrata", en: "Misrata" },
+    c: { fr: "Misrata", en: "Misrata" },
+  },
+  LYMB: {
+    n: { fr: "Al Marqab", en: "Al Marqab" },
+    c: { fr: "Khoms", en: "Khoms" },
+  },
+  LYTB: {
+    n: { fr: "Tripoli", en: "Tripoli" },
+    c: { fr: "Tripoli", en: "Tripoli" },
+  },
+  LYZA: {
+    n: { fr: "Zaouïa", en: "Zawiya" },
+    c: { fr: "Zaouïa", en: "Zawiya" },
+  },
+  LYDR: {
+    n: { fr: "Derna", en: "Derna" },
+    c: { fr: "Derna", en: "Derna" },
+  },
+  LYJA: {
+    n: { fr: "Jabal al Akhdar", en: "Jabal al Akhdar" },
+    c: { fr: "Al Bayda", en: "Al Bayda" },
+  },
+  LYMJ: {
+    n: { fr: "Al Marj", en: "Al Marj" },
+    c: { fr: "Al Marj", en: "Al Marj" },
+  },
+  LYBA: {
+    n: { fr: "Benghazi", en: "Benghazi" },
+    c: { fr: "Benghazi", en: "Benghazi" },
+  },
+  LYJI: {
+    n: { fr: "Jafara", en: "Jafara" },
+    c: { fr: "Al Aziziya", en: "Al Aziziya" },
+  },
+  LYJG: {
+    n: { fr: "Jabal al Gharbi", en: "Jabal al Gharbi" },
+    c: { fr: "Gharyan", en: "Gharyan" },
+  },
+  LYJU: {
+    n: { fr: "Al Jufra", en: "Al Jufra" },
+    c: { fr: "Hun", en: "Hun" },
+  },
+  LYSB: {
+    n: { fr: "Sabha", en: "Sabha" },
+    c: { fr: "Sabha", en: "Sabha" },
+  },
+  LYWD: {
+    n: { fr: "Wadi al Hayaa", en: "Wadi al Hayaa" },
+    c: { fr: "Oubari", en: "Ubari" },
+  },
+  NE1: {
+    n: { fr: "Agadez", en: "Agadez" },
+    c: { fr: "Agadez", en: "Agadez" },
+  },
+  NE2: {
+    n: { fr: "Diffa", en: "Diffa" },
+    c: { fr: "Diffa", en: "Diffa" },
+  },
+  NE3: {
+    n: { fr: "Dosso", en: "Dosso" },
+    c: { fr: "Dosso", en: "Dosso" },
+  },
+  NE4: {
+    n: { fr: "Maradi", en: "Maradi" },
+    c: { fr: "Maradi", en: "Maradi" },
+  },
+  NE5: {
+    n: { fr: "Tahoua", en: "Tahoua" },
+    c: { fr: "Tahoua", en: "Tahoua" },
+  },
+  NE6: {
+    n: { fr: "Tillabéri", en: "Tillabéri" },
+    c: { fr: "Tillabéri", en: "Tillabéri" },
+  },
+  NE7: {
+    n: { fr: "Zinder", en: "Zinder" },
+    c: { fr: "Zinder", en: "Zinder" },
+  },
+  NE8: {
+    n: { fr: "Niamey", en: "Niamey" },
+    c: { fr: "Niamey", en: "Niamey" },
+  },
+  CDBU: {
+    n: { fr: "Bas-Uele", en: "Bas-Uele" },
+    c: { fr: "Buta", en: "Buta" },
+  },
+  CDEQ: {
+    n: { fr: "Équateur", en: "Équateur" },
+    c: { fr: "Mbandaka", en: "Mbandaka" },
+  },
+  CDHK: {
+    n: { fr: "Haut-Katanga", en: "Haut-Katanga" },
+    c: { fr: "Lubumbashi", en: "Lubumbashi" },
+  },
+  CDHL: {
+    n: { fr: "Haut-Lomami", en: "Haut-Lomami" },
+    c: { fr: "Kamina", en: "Kamina" },
+  },
+  CDHU: {
+    n: { fr: "Haut-Uele", en: "Haut-Uele" },
+    c: { fr: "Isiro", en: "Isiro" },
+  },
+  CDIT: {
+    n: { fr: "Ituri", en: "Ituri" },
+    c: { fr: "Bunia", en: "Bunia" },
+  },
+  CDKS: {
+    n: { fr: "Kasaï", en: "Kasaï" },
+    c: { fr: "Tshikapa", en: "Tshikapa" },
+  },
+  CDKC: {
+    n: { fr: "Kasaï-Central", en: "Kasaï-Central" },
+    c: { fr: "Kananga", en: "Kananga" },
+  },
+  CDKE: {
+    n: { fr: "Kasaï-Oriental", en: "Kasaï-Oriental" },
+    c: { fr: "Mbuji-Mayi", en: "Mbuji-Mayi" },
+  },
+  CDKN: {
+    n: { fr: "Kinshasa", en: "Kinshasa" },
+    c: { fr: "Kinshasa", en: "Kinshasa" },
+  },
+  CDBC: {
+    n: { fr: "Kongo Central", en: "Kongo Central" },
+    c: { fr: "Matadi", en: "Matadi" },
+  },
+  CDKG: {
+    n: { fr: "Kwango", en: "Kwango" },
+    c: { fr: "Kenge", en: "Kenge" },
+  },
+  CDKL: {
+    n: { fr: "Kwilu", en: "Kwilu" },
+    c: { fr: "Bandundu", en: "Bandundu" },
+  },
+  CDLO: {
+    n: { fr: "Lomami", en: "Lomami" },
+    c: { fr: "Kabinda", en: "Kabinda" },
+  },
+  CDLU: {
+    n: { fr: "Lualaba", en: "Lualaba" },
+    c: { fr: "Kolwezi", en: "Kolwezi" },
+  },
+  CDMN: {
+    n: { fr: "Mai-Ndombe", en: "Mai-Ndombe" },
+    c: { fr: "Inongo", en: "Inongo" },
+  },
+  CDMA: {
+    n: { fr: "Maniema", en: "Maniema" },
+    c: { fr: "Kindu", en: "Kindu" },
+  },
+  CDMO: {
+    n: { fr: "Mongala", en: "Mongala" },
+    c: { fr: "Lisala", en: "Lisala" },
+  },
+  CDNK: {
+    n: { fr: "Nord-Kivu", en: "North Kivu" },
+    c: { fr: "Goma", en: "Goma" },
+  },
+  CDNU: {
+    n: { fr: "Nord-Ubangi", en: "North Ubangi" },
+    c: { fr: "Gbadolite", en: "Gbadolite" },
+  },
+  CDSA: {
+    n: { fr: "Sankuru", en: "Sankuru" },
+    c: { fr: "Lusambo", en: "Lusambo" },
+  },
+  CDSK: {
+    n: { fr: "Sud-Kivu", en: "South Kivu" },
+    c: { fr: "Bukavu", en: "Bukavu" },
+  },
+  CDSU: {
+    n: { fr: "Sud-Ubangi", en: "South Ubangi" },
+    c: { fr: "Gemena", en: "Gemena" },
+  },
+  CDTA: {
+    n: { fr: "Tanganyika", en: "Tanganyika" },
+    c: { fr: "Kalemie", en: "Kalemie" },
+  },
+  CDTO: {
+    n: { fr: "Tshopo", en: "Tshopo" },
+    c: { fr: "Kisangani", en: "Kisangani" },
+  },
+  CDTU: {
+    n: { fr: "Tshuapa", en: "Tshuapa" },
+    c: { fr: "Boende", en: "Boende" },
+  },
+  UA05: {
+    n: { fr: "Vinnytsia", en: "Vinnytsia" },
+    c: { fr: "Vinnytsia", en: "Vinnytsia" },
+  },
+  UA07: {
+    n: { fr: "Volyn", en: "Volyn" },
+    c: { fr: "Loutsk", en: "Lutsk" },
+  },
+  UA09: {
+    n: { fr: "Louhansk", en: "Luhansk" },
+    c: { fr: "Louhansk", en: "Luhansk" },
+  },
+  UA12: {
+    n: { fr: "Dnipropetrovsk", en: "Dnipropetrovsk" },
+    c: { fr: "Dnipro", en: "Dnipro" },
+  },
+  UA14: {
+    n: { fr: "Donetsk", en: "Donetsk" },
+    c: { fr: "Donetsk", en: "Donetsk" },
+  },
+  UA18: {
+    n: { fr: "Jytomyr", en: "Zhytomyr" },
+    c: { fr: "Jytomyr", en: "Zhytomyr" },
+  },
+  UA21: {
+    n: { fr: "Transcarpatie", en: "Zakarpattia" },
+    c: { fr: "Oujhorod", en: "Uzhhorod" },
+  },
+  UA23: {
+    n: { fr: "Zaporijjia", en: "Zaporizhzhia" },
+    c: { fr: "Zaporijjia", en: "Zaporizhzhia" },
+  },
+  UA26: {
+    n: { fr: "Ivano-Frankivsk", en: "Ivano-Frankivsk" },
+    c: { fr: "Ivano-Frankivsk", en: "Ivano-Frankivsk" },
+  },
+  UA30: {
+    n: { fr: "Kyiv (ville)", en: "Kyiv (city)" },
+    c: { fr: "Kyiv", en: "Kyiv" },
+  },
+  UA32: {
+    n: { fr: "Kyiv (oblast)", en: "Kyiv (oblast)" },
+    c: { fr: "Kyiv", en: "Kyiv" },
+  },
+  UA35: {
+    n: { fr: "Kirovohrad", en: "Kirovohrad" },
+    c: { fr: "Kropyvnytskyi", en: "Kropyvnytskyi" },
+  },
+  UA40: {
+    n: { fr: "Sébastopol", en: "Sevastopol" },
+    c: { fr: "Sébastopol", en: "Sevastopol" },
+  },
+  UA43: {
+    n: { fr: "Crimée", en: "Crimea" },
+    c: { fr: "Simferopol", en: "Simferopol" },
+  },
+  UA46: {
+    n: { fr: "Lviv", en: "Lviv" },
+    c: { fr: "Lviv", en: "Lviv" },
+  },
+  UA48: {
+    n: { fr: "Mykolaïv", en: "Mykolaiv" },
+    c: { fr: "Mykolaïv", en: "Mykolaiv" },
+  },
+  UA51: {
+    n: { fr: "Odessa", en: "Odessa" },
+    c: { fr: "Odessa", en: "Odessa" },
+  },
+  UA53: {
+    n: { fr: "Poltava", en: "Poltava" },
+    c: { fr: "Poltava", en: "Poltava" },
+  },
+  UA56: {
+    n: { fr: "Rivne", en: "Rivne" },
+    c: { fr: "Rivne", en: "Rivne" },
+  },
+  UA59: {
+    n: { fr: "Soumy", en: "Sumy" },
+    c: { fr: "Soumy", en: "Sumy" },
+  },
+  UA61: {
+    n: { fr: "Ternopil", en: "Ternopil" },
+    c: { fr: "Ternopil", en: "Ternopil" },
+  },
+  UA63: {
+    n: { fr: "Kharkiv", en: "Kharkiv" },
+    c: { fr: "Kharkiv", en: "Kharkiv" },
+  },
+  UA65: {
+    n: { fr: "Kherson", en: "Kherson" },
+    c: { fr: "Kherson", en: "Kherson" },
+  },
+  UA68: {
+    n: { fr: "Khmelnytskyi", en: "Khmelnytskyi" },
+    c: { fr: "Khmelnytskyi", en: "Khmelnytskyi" },
+  },
+  UA71: {
+    n: { fr: "Tcherkassy", en: "Cherkasy" },
+    c: { fr: "Tcherkassy", en: "Cherkasy" },
+  },
+  UA74: {
+    n: { fr: "Tchernihiv", en: "Chernihiv" },
+    c: { fr: "Tchernihiv", en: "Chernihiv" },
+  },
+  UA77: {
+    n: { fr: "Tchernivtsi", en: "Chernivtsi" },
+    c: { fr: "Tchernivtsi", en: "Chernivtsi" },
+  },
+  NO03: {
+    n: { fr: "Oslo", en: "Oslo" },
+    c: { fr: "Oslo", en: "Oslo" },
+  },
+  NO11: {
+    n: { fr: "Rogaland", en: "Rogaland" },
+    c: { fr: "Stavanger", en: "Stavanger" },
+  },
+  NO15: {
+    n: { fr: "Møre og Romsdal", en: "Møre og Romsdal" },
+    c: { fr: "Molde", en: "Molde" },
+  },
+  NO18: {
+    n: { fr: "Nordland", en: "Nordland" },
+    c: { fr: "Bodø", en: "Bodø" },
+  },
+  NO30: {
+    n: { fr: "Viken", en: "Viken" },
+    c: { fr: "Oslo", en: "Oslo" },
+  },
+  NO34: {
+    n: { fr: "Innlandet", en: "Innlandet" },
+    c: { fr: "Hamar", en: "Hamar" },
+  },
+  NO38: {
+    n: { fr: "Vestfold og Telemark", en: "Vestfold og Telemark" },
+    c: { fr: "Skien", en: "Skien" },
+  },
+  NO42: {
+    n: { fr: "Agder", en: "Agder" },
+    c: { fr: "Kristiansand", en: "Kristiansand" },
+  },
+  NO46: {
+    n: { fr: "Vestland", en: "Vestland" },
+    c: { fr: "Bergen", en: "Bergen" },
+  },
+  NO50: {
+    n: { fr: "Trøndelag", en: "Trøndelag" },
+    c: { fr: "Steinkjer", en: "Steinkjer" },
+  },
+  NO54: {
+    n: { fr: "Troms og Finnmark", en: "Troms og Finnmark" },
+    c: { fr: "Tromsø", en: "Tromsø" },
+  },
+  SEBD: {
+    n: { fr: "Norrbotten", en: "Norrbotten" },
+    c: { fr: "Luleå", en: "Luleå" },
+  },
+  SEAC: {
+    n: { fr: "Västerbotten", en: "Västerbotten" },
+    c: { fr: "Umeå", en: "Umeå" },
+  },
+  SEZ: {
+    n: { fr: "Jämtland", en: "Jämtland" },
+    c: { fr: "Östersund", en: "Östersund" },
+  },
+  SEW: {
+    n: { fr: "Dalarna", en: "Dalarna" },
+    c: { fr: "Falun", en: "Falun" },
+  },
+  SES: {
+    n: { fr: "Värmland", en: "Värmland" },
+    c: { fr: "Karlstad", en: "Karlstad" },
+  },
+  SEO: {
+    n: { fr: "Västra Götaland", en: "Västra Götaland" },
+    c: { fr: "Göteborg", en: "Gothenburg" },
+  },
+  SEY: {
+    n: { fr: "Västernorrland", en: "Västernorrland" },
+    c: { fr: "Härnösand", en: "Härnösand" },
+  },
+  SEX: {
+    n: { fr: "Gävleborg", en: "Gävleborg" },
+    c: { fr: "Gävle", en: "Gävle" },
+  },
+  SEC: {
+    n: { fr: "Uppsala", en: "Uppsala" },
+    c: { fr: "Uppsala", en: "Uppsala" },
+  },
+  SEAB: {
+    n: { fr: "Stockholm", en: "Stockholm" },
+    c: { fr: "Stockholm", en: "Stockholm" },
+  },
+  SED: {
+    n: { fr: "Södermanland", en: "Södermanland" },
+    c: { fr: "Nyköping", en: "Nyköping" },
+  },
+  SEE: {
+    n: { fr: "Östergötland", en: "Östergötland" },
+    c: { fr: "Linköping", en: "Linköping" },
+  },
+  SEH: {
+    n: { fr: "Kalmar", en: "Kalmar" },
+    c: { fr: "Kalmar", en: "Kalmar" },
+  },
+  SEK: {
+    n: { fr: "Blekinge", en: "Blekinge" },
+    c: { fr: "Karlskrona", en: "Karlskrona" },
+  },
+  SEM: {
+    n: { fr: "Scanie", en: "Scania" },
+    c: { fr: "Malmö", en: "Malmö" },
+  },
+  SEN: {
+    n: { fr: "Halland", en: "Halland" },
+    c: { fr: "Halmstad", en: "Halmstad" },
+  },
+  SEI: {
+    n: { fr: "Gotland", en: "Gotland" },
+    c: { fr: "Visby", en: "Visby" },
+  },
+  SEU: {
+    n: { fr: "Västmanland", en: "Västmanland" },
+    c: { fr: "Västerås", en: "Västerås" },
+  },
+  SEF: {
+    n: { fr: "Jönköping", en: "Jönköping" },
+    c: { fr: "Jönköping", en: "Jönköping" },
+  },
+  SET: {
+    n: { fr: "Örebro", en: "Örebro" },
+    c: { fr: "Örebro", en: "Örebro" },
+  },
+  SEG: {
+    n: { fr: "Kronoberg", en: "Kronoberg" },
+    c: { fr: "Växjö", en: "Växjö" },
+  },
+  FI01: {
+    n: { fr: "Åland", en: "Åland" },
+    c: { fr: "Mariehamn", en: "Mariehamn" },
+  },
+  FI10: {
+    n: { fr: "Laponie", en: "Lapland" },
+    c: { fr: "Rovaniemi", en: "Rovaniemi" },
+  },
+  FI14: {
+    n: { fr: "Ostrobotnie du Nord", en: "North Ostrobothnia" },
+    c: { fr: "Oulu", en: "Oulu" },
+  },
+  FI05: {
+    n: { fr: "Cajanie", en: "Kainuu" },
+    c: { fr: "Kajaani", en: "Kajaani" },
+  },
+  FI13: {
+    n: { fr: "Carélie du Nord", en: "North Karelia" },
+    c: { fr: "Joensuu", en: "Joensuu" },
+  },
+  FI02: {
+    n: { fr: "Carélie du Sud", en: "South Karelia" },
+    c: { fr: "Lappeenranta", en: "Lappeenranta" },
+  },
+  FI09: {
+    n: { fr: "Vallée de la Kymi", en: "Kymenlaakso" },
+    c: { fr: "Kotka / Kouvola", en: "Kotka / Kouvola" },
+  },  // à vérifier
+  FI18: {
+    n: { fr: "Uusimaa", en: "Uusimaa" },
+    c: { fr: "Helsinki", en: "Helsinki" },
+  },
+  FI19: {
+    n: { fr: "Finlande-Propre", en: "Finland Proper" },
+    c: { fr: "Turku", en: "Turku" },
+  },
+  FI17: {
+    n: { fr: "Satakunta", en: "Satakunta" },
+    c: { fr: "Pori", en: "Pori" },
+  },
+  FI12: {
+    n: { fr: "Ostrobotnie", en: "Ostrobothnia" },
+    c: { fr: "Vaasa", en: "Vaasa" },
+  },
+  FI07: {
+    n: { fr: "Ostrobotnie centrale", en: "Central Ostrobothnia" },
+    c: { fr: "Kokkola", en: "Kokkola" },
+  },
+  FI15: {
+    n: { fr: "Savonie du Nord", en: "North Savo" },
+    c: { fr: "Kuopio", en: "Kuopio" },
+  },
+  FI04: {
+    n: { fr: "Savonie du Sud", en: "South Savo" },
+    c: { fr: "Mikkeli", en: "Mikkeli" },
+  },
+  FI08: {
+    n: { fr: "Finlande centrale", en: "Central Finland" },
+    c: { fr: "Jyväskylä", en: "Jyväskylä" },
+  },
+  FI03: {
+    n: { fr: "Ostrobotnie du Sud", en: "South Ostrobothnia" },
+    c: { fr: "Seinäjoki", en: "Seinäjoki" },
+  },
+  FI11: {
+    n: { fr: "Pirkanmaa", en: "Pirkanmaa" },
+    c: { fr: "Tampere", en: "Tampere" },
+  },
+  FI06: {
+    n: { fr: "Kanta-Häme", en: "Kanta-Häme" },
+    c: { fr: "Hämeenlinna", en: "Hämeenlinna" },
+  },
+  FI16: {
+    n: { fr: "Päijät-Häme", en: "Päijät-Häme" },
+    c: { fr: "Lahti", en: "Lahti" },
+  },
+  KR42: {
+    n: { fr: "Gangwon", en: "Gangwon" },
+    c: { fr: "Chuncheon", en: "Chuncheon" },
+  },
+  KR41: {
+    n: { fr: "Gyeonggi", en: "Gyeonggi" },
+    c: { fr: "Suwon", en: "Suwon" },
+  },
+  KR44: {
+    n: { fr: "Chungcheong du Sud", en: "South Chungcheong" },
+    c: { fr: "Hongseong", en: "Hongseong" },
+  },
+  KR28: {
+    n: { fr: "Incheon", en: "Incheon" },
+    c: { fr: "Incheon", en: "Incheon" },
+  },
+  KR45: {
+    n: { fr: "Jeonbuk", en: "North Jeolla" },
+    c: { fr: "Jeonju", en: "Jeonju" },
+  },  // à vérifier
+  KR46: {
+    n: { fr: "Jeollanam", en: "South Jeolla" },
+    c: { fr: "Muan", en: "Muan" },
+  },  // à vérifier
+  KR48: {
+    n: { fr: "Gyeongsang du Sud", en: "South Gyeongsang" },
+    c: { fr: "Changwon", en: "Changwon" },
+  },
+  KR26: {
+    n: { fr: "Busan", en: "Busan" },
+    c: { fr: "Busan", en: "Busan" },
+  },
+  KR27: {
+    n: { fr: "Daegu", en: "Daegu" },
+    c: { fr: "Daegu", en: "Daegu" },
+  },
+  KR43: {
+    n: { fr: "Chungcheong du Nord", en: "North Chungcheong" },
+    c: { fr: "Cheongju", en: "Cheongju" },
+  },
+  KR31: {
+    n: { fr: "Ulsan", en: "Ulsan" },
+    c: { fr: "Ulsan", en: "Ulsan" },
+  },
+  KR47: {
+    n: { fr: "Gyeongsang du Nord", en: "North Gyeongsang" },
+    c: { fr: "Andong", en: "Andong" },
+  },
+  KR49: {
+    n: { fr: "Jeju", en: "Jeju" },
+    c: { fr: "Jeju", en: "Jeju" },
+  },
+  KR30: {
+    n: { fr: "Daejeon", en: "Daejeon" },
+    c: { fr: "Daejeon", en: "Daejeon" },
+  },
+  KR29: {
+    n: { fr: "Gwangju", en: "Gwangju" },
+    c: { fr: "Gwangju", en: "Gwangju" },
+  },
+  KR50: {
+    n: { fr: "Sejong", en: "Sejong" },
+    c: { fr: "Sejong", en: "Sejong" },
+  },
+  KR11: {
+    n: { fr: "Séoul", en: "Seoul" },
+    c: { fr: "Séoul", en: "Seoul" },
+  },
+  BOL: {
+    n: { fr: "La Paz", en: "La Paz" },
+    c: { fr: "La Paz", en: "La Paz" },
+  },
+  BOO: {
+    n: { fr: "Oruro", en: "Oruro" },
+    c: { fr: "Oruro", en: "Oruro" },
+  },
+  BOP: {
+    n: { fr: "Potosí", en: "Potosí" },
+    c: { fr: "Potosí", en: "Potosí" },
+  },
+  BOT: {
+    n: { fr: "Tarija", en: "Tarija" },
+    c: { fr: "Tarija", en: "Tarija" },
+  },
+  BOS: {
+    n: { fr: "Santa Cruz", en: "Santa Cruz" },
+    c: { fr: "Santa Cruz de la Sierra", en: "Santa Cruz de la Sierra" },
+  },
+  BOH: {
+    n: { fr: "Chuquisaca", en: "Chuquisaca" },
+    c: { fr: "Sucre", en: "Sucre" },
+  },
+  BON: {
+    n: { fr: "Pando", en: "Pando" },
+    c: { fr: "Cobija", en: "Cobija" },
+  },
+  BOB: {
+    n: { fr: "Beni", en: "Beni" },
+    c: { fr: "Trinidad", en: "Trinidad" },
+  },
+  BOC: {
+    n: { fr: "Cochabamba", en: "Cochabamba" },
+    c: { fr: "Cochabamba", en: "Cochabamba" },
+  },
+  "US-AL": {
+    n: { fr: "Alabama", en: "Alabama" },
+    c: { fr: "Montgomery", en: "Montgomery" },
+  },
+  "US-AR": {
+    n: { fr: "Arkansas", en: "Arkansas" },
+    c: { fr: "Little Rock", en: "Little Rock" },
+  },
+  "US-AZ": {
+    n: { fr: "Arizona", en: "Arizona" },
+    c: { fr: "Phoenix", en: "Phoenix" },
+  },
+  "US-CA": {
+    n: { fr: "Californie", en: "California" },
+    c: { fr: "Sacramento", en: "Sacramento" },
+  },
+  "US-CO": {
+    n: { fr: "Colorado", en: "Colorado" },
+    c: { fr: "Denver", en: "Denver" },
+  },
+  "US-CT": {
+    n: { fr: "Connecticut", en: "Connecticut" },
+    c: { fr: "Hartford", en: "Hartford" },
+  },
+  "US-DC": {
+    n: { fr: "District de Columbia", en: "District of Columbia" },
+    c: { fr: "Washington", en: "Washington, D.C." },
+  },
+  "US-DE": {
+    n: { fr: "Delaware", en: "Delaware" },
+    c: { fr: "Dover", en: "Dover" },
+  },
+  "US-FL": {
+    n: { fr: "Floride", en: "Florida" },
+    c: { fr: "Tallahassee", en: "Tallahassee" },
+  },
+  "US-GA": {
+    n: { fr: "Géorgie", en: "Georgia" },
+    c: { fr: "Atlanta", en: "Atlanta" },
+  },
+  "US-HI": {
+    n: { fr: "Hawaï", en: "Hawaii" },
+    c: { fr: "Honolulu", en: "Honolulu" },
+  },
+  "US-IA": {
+    n: { fr: "Iowa", en: "Iowa" },
+    c: { fr: "Des Moines", en: "Des Moines" },
+  },
+  "US-ID": {
+    n: { fr: "Idaho", en: "Idaho" },
+    c: { fr: "Boise", en: "Boise" },
+  },
+  "US-IL": {
+    n: { fr: "Illinois", en: "Illinois" },
+    c: { fr: "Springfield", en: "Springfield" },
+  },
+  "US-IN": {
+    n: { fr: "Indiana", en: "Indiana" },
+    c: { fr: "Indianapolis", en: "Indianapolis" },
+  },
+  "US-KS": {
+    n: { fr: "Kansas", en: "Kansas" },
+    c: { fr: "Topeka", en: "Topeka" },
+  },
+  "US-KY": {
+    n: { fr: "Kentucky", en: "Kentucky" },
+    c: { fr: "Frankfort", en: "Frankfort" },
+  },
+  "US-LA": {
+    n: { fr: "Louisiane", en: "Louisiana" },
+    c: { fr: "Baton Rouge", en: "Baton Rouge" },
+  },
+  "US-MA": {
+    n: { fr: "Massachusetts", en: "Massachusetts" },
+    c: { fr: "Boston", en: "Boston" },
+  },
+  "US-AK": {
+    n: { fr: "Alaska", en: "Alaska" },
+    c: { fr: "Juneau", en: "Juneau" },
+  },
+  "US-MD": {
+    n: { fr: "Maryland", en: "Maryland" },
+    c: { fr: "Annapolis", en: "Annapolis" },
+  },
+  "US-ME": {
+    n: { fr: "Maine", en: "Maine" },
+    c: { fr: "Augusta", en: "Augusta" },
+  },
+  "US-MI": {
+    n: { fr: "Michigan", en: "Michigan" },
+    c: { fr: "Lansing", en: "Lansing" },
+  },
+  "US-MN": {
+    n: { fr: "Minnesota", en: "Minnesota" },
+    c: { fr: "Saint Paul", en: "Saint Paul" },
+  },
+  "US-MO": {
+    n: { fr: "Missouri", en: "Missouri" },
+    c: { fr: "Jefferson City", en: "Jefferson City" },
+  },
+  "US-MS": {
+    n: { fr: "Mississippi", en: "Mississippi" },
+    c: { fr: "Jackson", en: "Jackson" },
+  },
+  "US-MT": {
+    n: { fr: "Montana", en: "Montana" },
+    c: { fr: "Helena", en: "Helena" },
+  },
+  "US-NC": {
+    n: { fr: "Caroline du Nord", en: "North Carolina" },
+    c: { fr: "Raleigh", en: "Raleigh" },
+  },
+  "US-ND": {
+    n: { fr: "Dakota du Nord", en: "North Dakota" },
+    c: { fr: "Bismarck", en: "Bismarck" },
+  },
+  "US-NE": {
+    n: { fr: "Nebraska", en: "Nebraska" },
+    c: { fr: "Lincoln", en: "Lincoln" },
+  },
+  "US-NH": {
+    n: { fr: "New Hampshire", en: "New Hampshire" },
+    c: { fr: "Concord", en: "Concord" },
+  },
+  "US-NJ": {
+    n: { fr: "New Jersey", en: "New Jersey" },
+    c: { fr: "Trenton", en: "Trenton" },
+  },
+  "US-NM": {
+    n: { fr: "Nouveau-Mexique", en: "New Mexico" },
+    c: { fr: "Santa Fe", en: "Santa Fe" },
+  },
+  "US-NV": {
+    n: { fr: "Nevada", en: "Nevada" },
+    c: { fr: "Carson City", en: "Carson City" },
+  },
+  "US-NY": {
+    n: { fr: "New York", en: "New York" },
+    c: { fr: "Albany", en: "Albany" },
+  },
+  "US-OH": {
+    n: { fr: "Ohio", en: "Ohio" },
+    c: { fr: "Columbus", en: "Columbus" },
+  },
+  "US-OK": {
+    n: { fr: "Oklahoma", en: "Oklahoma" },
+    c: { fr: "Oklahoma City", en: "Oklahoma City" },
+  },
+  "US-OR": {
+    n: { fr: "Oregon", en: "Oregon" },
+    c: { fr: "Salem", en: "Salem" },
+  },
+  "US-PA": {
+    n: { fr: "Pennsylvanie", en: "Pennsylvania" },
+    c: { fr: "Harrisburg", en: "Harrisburg" },
+  },
+  "US-RI": {
+    n: { fr: "Rhode Island", en: "Rhode Island" },
+    c: { fr: "Providence", en: "Providence" },
+  },
+  "US-SC": {
+    n: { fr: "Caroline du Sud", en: "South Carolina" },
+    c: { fr: "Columbia", en: "Columbia" },
+  },
+  "US-SD": {
+    n: { fr: "Dakota du Sud", en: "South Dakota" },
+    c: { fr: "Pierre", en: "Pierre" },
+  },
+  "US-TN": {
+    n: { fr: "Tennessee", en: "Tennessee" },
+    c: { fr: "Nashville", en: "Nashville" },
+  },
+  "US-TX": {
+    n: { fr: "Texas", en: "Texas" },
+    c: { fr: "Austin", en: "Austin" },
+  },
+  "US-UT": {
+    n: { fr: "Utah", en: "Utah" },
+    c: { fr: "Salt Lake City", en: "Salt Lake City" },
+  },
+  "US-VA": {
+    n: { fr: "Virginie", en: "Virginia" },
+    c: { fr: "Richmond", en: "Richmond" },
+  },
+  "US-VT": {
+    n: { fr: "Vermont", en: "Vermont" },
+    c: { fr: "Montpelier", en: "Montpelier" },
+  },
+  "US-WA": {
+    n: { fr: "Washington", en: "Washington" },
+    c: { fr: "Olympia", en: "Olympia" },
+  },
+  "US-WI": {
+    n: { fr: "Wisconsin", en: "Wisconsin" },
+    c: { fr: "Madison", en: "Madison" },
+  },
+  "US-WV": {
+    n: { fr: "Virginie-Occidentale", en: "West Virginia" },
+    c: { fr: "Charleston", en: "Charleston" },
+  },
+  "US-WY": {
+    n: { fr: "Wyoming", en: "Wyoming" },
+    c: { fr: "Cheyenne", en: "Cheyenne" },
+  },
+  "CN-11": {
+    n: { fr: "Pékin", en: "Beijing" },
+    c: { fr: "Pékin", en: "Beijing" },
+  },
+  "CN-12": {
+    n: { fr: "Tianjin", en: "Tianjin" },
+    c: { fr: "Tianjin", en: "Tianjin" },
+  },
+  "CN-13": {
+    n: { fr: "Hebei", en: "Hebei" },
+    c: { fr: "Shijiazhuang", en: "Shijiazhuang" },
+  },
+  "CN-14": {
+    n: { fr: "Shanxi", en: "Shanxi" },
+    c: { fr: "Taiyuan", en: "Taiyuan" },
+  },
+  "CN-15": {
+    n: { fr: "Mongolie-Intérieure", en: "Inner Mongolia" },
+    c: { fr: "Hohhot", en: "Hohhot" },
+  },
+  "CN-21": {
+    n: { fr: "Liaoning", en: "Liaoning" },
+    c: { fr: "Shenyang", en: "Shenyang" },
+  },
+  "CN-22": {
+    n: { fr: "Jilin", en: "Jilin" },
+    c: { fr: "Changchun", en: "Changchun" },
+  },
+  "CN-23": {
+    n: { fr: "Heilongjiang", en: "Heilongjiang" },
+    c: { fr: "Harbin", en: "Harbin" },
+  },
+  "CN-31": {
+    n: { fr: "Shanghai", en: "Shanghai" },
+    c: { fr: "Shanghai", en: "Shanghai" },
+  },
+  "CN-32": {
+    n: { fr: "Jiangsu", en: "Jiangsu" },
+    c: { fr: "Nankin", en: "Nanjing" },
+  },
+  "CN-33": {
+    n: { fr: "Zhejiang", en: "Zhejiang" },
+    c: { fr: "Hangzhou", en: "Hangzhou" },
+  },
+  "CN-34": {
+    n: { fr: "Anhui", en: "Anhui" },
+    c: { fr: "Hefei", en: "Hefei" },
+  },
+  "CN-35": {
+    n: { fr: "Fujian", en: "Fujian" },
+    c: { fr: "Fuzhou", en: "Fuzhou" },
+  },
+  "CN-36": {
+    n: { fr: "Jiangxi", en: "Jiangxi" },
+    c: { fr: "Nanchang", en: "Nanchang" },
+  },
+  "CN-37": {
+    n: { fr: "Shandong", en: "Shandong" },
+    c: { fr: "Jinan", en: "Jinan" },
+  },
+  "CN-41": {
+    n: { fr: "Henan", en: "Henan" },
+    c: { fr: "Zhengzhou", en: "Zhengzhou" },
+  },
+  "CN-42": {
+    n: { fr: "Hubei", en: "Hubei" },
+    c: { fr: "Wuhan", en: "Wuhan" },
+  },
+  "CN-43": {
+    n: { fr: "Hunan", en: "Hunan" },
+    c: { fr: "Changsha", en: "Changsha" },
+  },
+  "CN-44": {
+    n: { fr: "Guangdong", en: "Guangdong" },
+    c: { fr: "Guangzhou (Canton)", en: "Guangzhou (Canton)" },
+  },
+  "CN-45": {
+    n: { fr: "Guangxi", en: "Guangxi" },
+    c: { fr: "Nanning", en: "Nanning" },
+  },
+  "CN-46": {
+    n: { fr: "Hainan", en: "Hainan" },
+    c: { fr: "Haikou", en: "Haikou" },
+  },
+  "CN-50": {
+    n: { fr: "Chongqing", en: "Chongqing" },
+    c: { fr: "Chongqing", en: "Chongqing" },
+  },
+  "CN-51": {
+    n: { fr: "Sichuan", en: "Sichuan" },
+    c: { fr: "Chengdu", en: "Chengdu" },
+  },
+  "CN-52": {
+    n: { fr: "Guizhou", en: "Guizhou" },
+    c: { fr: "Guiyang", en: "Guiyang" },
+  },
+  "CN-53": {
+    n: { fr: "Yunnan", en: "Yunnan" },
+    c: { fr: "Kunming", en: "Kunming" },
+  },
+  "CN-54": {
+    n: { fr: "Tibet", en: "Tibet" },
+    c: { fr: "Lhassa", en: "Lhasa" },
+  },
+  "CN-61": {
+    n: { fr: "Shaanxi", en: "Shaanxi" },
+    c: { fr: "Xi'an", en: "Xi'an" },
+  },
+  "CN-62": {
+    n: { fr: "Gansu", en: "Gansu" },
+    c: { fr: "Lanzhou", en: "Lanzhou" },
+  },
+  "CN-63": {
+    n: { fr: "Qinghai", en: "Qinghai" },
+    c: { fr: "Xining", en: "Xining" },
+  },
+  "CN-64": {
+    n: { fr: "Ningxia", en: "Ningxia" },
+    c: { fr: "Yinchuan", en: "Yinchuan" },
+  },
+  "CN-65": {
+    n: { fr: "Xinjiang", en: "Xinjiang" },
+    c: { fr: "Ürümqi", en: "Ürümqi" },
+  },
+  "CN-71": {
+    n: { fr: "Taïwan", en: "Taiwan" },
+    c: { fr: "Taipei", en: "Taipei" },
+  },
+  INAN: {
+    n: { fr: "Andaman-et-Nicobar", en: "Andaman and Nicobar Islands" },
+    c: { fr: "Port Blair", en: "Port Blair" },
+  },
+  INTG: {
+    n: { fr: "Télangana", en: "Telangana" },
+    c: { fr: "Hyderabad", en: "Hyderabad" },
+  },
+  INAP: {
+    n: { fr: "Andhra Pradesh", en: "Andhra Pradesh" },
+    c: { fr: "Amaravati", en: "Amaravati" },
+  },
+  INAR: {
+    n: { fr: "Arunachal Pradesh", en: "Arunachal Pradesh" },
+    c: { fr: "Itanagar", en: "Itanagar" },
+  },
+  INAS: {
+    n: { fr: "Assam", en: "Assam" },
+    c: { fr: "Dispur", en: "Dispur" },
+  },
+  INBR: {
+    n: { fr: "Bihar", en: "Bihar" },
+    c: { fr: "Patna", en: "Patna" },
+  },
+  INCH: {
+    n: { fr: "Chandigarh", en: "Chandigarh" },
+    c: { fr: "Chandigarh", en: "Chandigarh" },
+  },
+  INCT: {
+    n: { fr: "Chhattisgarh", en: "Chhattisgarh" },
+    c: { fr: "Raipur", en: "Raipur" },
+  },
+  INDH: {
+    n: { fr: "Dadra-et-Nagar-Haveli et Daman-et-Diu", en: "Dadra and Nagar Haveli and Daman and Diu" },
+    c: { fr: "Daman", en: "Daman" },
+  },
+  INDL: {
+    n: { fr: "Delhi", en: "Delhi" },
+    c: { fr: "New Delhi", en: "New Delhi" },
+  },
+  INGA: {
+    n: { fr: "Goa", en: "Goa" },
+    c: { fr: "Panaji", en: "Panaji" },
+  },
+  INGJ: {
+    n: { fr: "Gujarat", en: "Gujarat" },
+    c: { fr: "Gandhinagar", en: "Gandhinagar" },
+  },
+  INHR: {
+    n: { fr: "Haryana", en: "Haryana" },
+    c: { fr: "Chandigarh", en: "Chandigarh" },
+  },
+  INHP: {
+    n: { fr: "Himachal Pradesh", en: "Himachal Pradesh" },
+    c: { fr: "Shimla", en: "Shimla" },
+  },
+  INJH: {
+    n: { fr: "Jharkhand", en: "Jharkhand" },
+    c: { fr: "Ranchi", en: "Ranchi" },
+  },
+  INKA: {
+    n: { fr: "Karnataka", en: "Karnataka" },
+    c: { fr: "Bangalore", en: "Bangalore" },
+  },
+  INKL: {
+    n: { fr: "Kerala", en: "Kerala" },
+    c: { fr: "Thiruvananthapuram", en: "Thiruvananthapuram" },
+  },
+  INMP: {
+    n: { fr: "Madhya Pradesh", en: "Madhya Pradesh" },
+    c: { fr: "Bhopal", en: "Bhopal" },
+  },
+  INMH: {
+    n: { fr: "Maharashtra", en: "Maharashtra" },
+    c: { fr: "Mumbai", en: "Mumbai" },
+  },
+  INMN: {
+    n: { fr: "Manipur", en: "Manipur" },
+    c: { fr: "Imphal", en: "Imphal" },
+  },
+  INML: {
+    n: { fr: "Meghalaya", en: "Meghalaya" },
+    c: { fr: "Shillong", en: "Shillong" },
+  },
+  INMZ: {
+    n: { fr: "Mizoram", en: "Mizoram" },
+    c: { fr: "Aizawl", en: "Aizawl" },
+  },
+  INNL: {
+    n: { fr: "Nagaland", en: "Nagaland" },
+    c: { fr: "Kohima", en: "Kohima" },
+  },
+  INOR: {
+    n: { fr: "Odisha", en: "Odisha" },
+    c: { fr: "Bhubaneswar", en: "Bhubaneswar" },
+  },
+  INPY: {
+    n: { fr: "Pondichéry", en: "Puducherry" },
+    c: { fr: "Pondichéry", en: "Puducherry" },
+  },
+  INPB: {
+    n: { fr: "Pendjab", en: "Punjab" },
+    c: { fr: "Chandigarh", en: "Chandigarh" },
+  },
+  INRJ: {
+    n: { fr: "Rajasthan", en: "Rajasthan" },
+    c: { fr: "Jaipur", en: "Jaipur" },
+  },
+  INSK: {
+    n: { fr: "Sikkim", en: "Sikkim" },
+    c: { fr: "Gangtok", en: "Gangtok" },
+  },
+  INTN: {
+    n: { fr: "Tamil Nadu", en: "Tamil Nadu" },
+    c: { fr: "Chennai", en: "Chennai" },
+  },
+  INTR: {
+    n: { fr: "Tripura", en: "Tripura" },
+    c: { fr: "Agartala", en: "Agartala" },
+  },
+  INUP: {
+    n: { fr: "Uttar Pradesh", en: "Uttar Pradesh" },
+    c: { fr: "Lucknow", en: "Lucknow" },
+  },
+  INUT: {
+    n: { fr: "Uttarakhand", en: "Uttarakhand" },
+    c: { fr: "Dehradun", en: "Dehradun" },
+  },
+  INWB: {
+    n: { fr: "Bengale-Occidental", en: "West Bengal" },
+    c: { fr: "Kolkata", en: "Kolkata" },
+  },
+  INLD: {
+    n: { fr: "Lakshadweep", en: "Lakshadweep" },
+    c: { fr: "Kavaratti", en: "Kavaratti" },
+  },
+  INJK: {
+    n: { fr: "Jammu-et-Cachemire", en: "Jammu and Kashmir" },
+    c: { fr: "Srinagar (été) / Jammu (hiver)", en: "Srinagar (summer) / Jammu (winter)" },
+  },
+  INLA: {
+    n: { fr: "Ladakh", en: "Ladakh" },
+    c: { fr: "Leh", en: "Leh" },
+  },
+  "AU-ACT": {
+    n: { fr: "Territoire de la capitale australienne", en: "Australian Capital Territory" },
+    c: { fr: "Canberra", en: "Canberra" },
+  },
+  "AU-NSW": {
+    n: { fr: "Nouvelle-Galles du Sud", en: "New South Wales" },
+    c: { fr: "Sydney", en: "Sydney" },
+  },
+  "AU-NT": {
+    n: { fr: "Territoire du Nord", en: "Northern Territory" },
+    c: { fr: "Darwin", en: "Darwin" },
+  },
+  "AU-QLD": {
+    n: { fr: "Queensland", en: "Queensland" },
+    c: { fr: "Brisbane", en: "Brisbane" },
+  },
+  "AU-SA": {
+    n: { fr: "Australie-Méridionale", en: "South Australia" },
+    c: { fr: "Adelaide", en: "Adelaide" },
+  },
+  "AU-TAS": {
+    n: { fr: "Tasmanie", en: "Tasmania" },
+    c: { fr: "Hobart", en: "Hobart" },
+  },
+  "AU-VIC": {
+    n: { fr: "Victoria", en: "Victoria" },
+    c: { fr: "Melbourne", en: "Melbourne" },
+  },
+  "AU-WA": {
+    n: { fr: "Australie-Occidentale", en: "Western Australia" },
+    c: { fr: "Perth", en: "Perth" },
+  },
+  MA11: {
+    n: { fr: "Laâyoune-Sakia El Hamra", en: "Laâyoune-Sakia El Hamra" },
+    c: { fr: "Laâyoune", en: "Laayoune" },
+  },
+  MA01: {
+    n: { fr: "Tanger-Tétouan-Al Hoceïma", en: "Tangier-Tetouan-Al Hoceima" },
+    c: { fr: "Tanger", en: "Tangier" },
+  },
+  MA02: {
+    n: { fr: "Oriental", en: "Oriental" },
+    c: { fr: "Oujda", en: "Oujda" },
+  },
+  MA08: {
+    n: { fr: "Drâa-Tafilalet", en: "Drâa-Tafilalet" },
+    c: { fr: "Errachidia", en: "Errachidia" },
+  },
+  MA09: {
+    n: { fr: "Souss-Massa", en: "Souss-Massa" },
+    c: { fr: "Agadir", en: "Agadir" },
+  },
+  MA10: {
+    n: { fr: "Guelmim-Oued Noun", en: "Guelmim-Oued Noun" },
+    c: { fr: "Guelmim", en: "Guelmim" },
+  },
+  MA06: {
+    n: { fr: "Casablanca-Settat", en: "Casablanca-Settat" },
+    c: { fr: "Casablanca", en: "Casablanca" },
+  },
+  MA07: {
+    n: { fr: "Marrakech-Safi", en: "Marrakech-Safi" },
+    c: { fr: "Marrakech", en: "Marrakesh" },
+  },
+  MA12: {
+    n: { fr: "Dakhla-Oued Ed-Dahab", en: "Dakhla-Oued Ed-Dahab" },
+    c: { fr: "Dakhla", en: "Dakhla" },
+  },
+  MA04: {
+    n: { fr: "Rabat-Salé-Kénitra", en: "Rabat-Salé-Kénitra" },
+    c: { fr: "Rabat", en: "Rabat" },
+  },
+  MA03: {
+    n: { fr: "Fès-Meknès", en: "Fez-Meknes" },
+    c: { fr: "Fès", en: "Fez" },
+  },
+  MA05: {
+    n: { fr: "Béni Mellal-Khénifra", en: "Beni Mellal-Khenifra" },
+    c: { fr: "Béni Mellal", en: "Beni Mellal" },
+  },
+  IDKU: {
+    n: { fr: "Kalimantan Utara", en: "North Kalimantan" },
+    c: { fr: "Tanjung Selor", en: "Tanjung Selor" },
+  },
+  IDNT: {
+    n: { fr: "Nusa Tenggara Timur", en: "East Nusa Tenggara" },
+    c: { fr: "Kupang", en: "Kupang" },
+  },
+  IDKB: {
+    n: { fr: "Kalimantan Barat", en: "West Kalimantan" },
+    c: { fr: "Pontianak", en: "Pontianak" },
+  },
+  IDPA: {
+    n: { fr: "Papouasie", en: "Papua" },
+    c: { fr: "Jayapura", en: "Jayapura" },
+  },
+  IDJI: {
+    n: { fr: "Java oriental", en: "East Java" },
+    c: { fr: "Surabaya", en: "Surabaya" },
+  },
+  IDMA: {
+    n: { fr: "Moluques", en: "Maluku" },
+    c: { fr: "Ambon", en: "Ambon" },
+  },
+  IDNB: {
+    n: { fr: "Nusa Tenggara Barat", en: "West Nusa Tenggara" },
+    c: { fr: "Mataram", en: "Mataram" },
+  },
+  IDSN: {
+    n: { fr: "Sulawesi méridional", en: "South Sulawesi" },
+    c: { fr: "Makassar", en: "Makassar" },
+  },
+  IDJT: {
+    n: { fr: "Java central", en: "Central Java" },
+    c: { fr: "Semarang", en: "Semarang" },
+  },
+  IDJB: {
+    n: { fr: "Java occidental", en: "West Java" },
+    c: { fr: "Bandung", en: "Bandung" },
+  },
+  IDJK: {
+    n: { fr: "Jakarta", en: "Jakarta" },
+    c: { fr: "Jakarta", en: "Jakarta" },
+  },
+  IDBT: {
+    n: { fr: "Banten", en: "Banten" },
+    c: { fr: "Serang", en: "Serang" },
+  },
+  IDYO: {
+    n: { fr: "Yogyakarta", en: "Yogyakarta" },
+    c: { fr: "Yogyakarta", en: "Yogyakarta" },
+  },
+  IDSG: {
+    n: { fr: "Sulawesi du Sud-Est", en: "Southeast Sulawesi" },
+    c: { fr: "Kendari", en: "Kendari" },
+  },
+  IDPB: {
+    n: { fr: "Papouasie occidentale", en: "West Papua" },
+    c: { fr: "Manokwari", en: "Manokwari" },
+  },
+  IDST: {
+    n: { fr: "Sulawesi central", en: "Central Sulawesi" },
+    c: { fr: "Palu", en: "Palu" },
+  },
+  IDMU: {
+    n: { fr: "Moluques du Nord", en: "North Maluku" },
+    c: { fr: "Sofifi", en: "Sofifi" },
+  },
+  IDKR: {
+    n: { fr: "Îles Riau", en: "Riau Islands" },
+    c: { fr: "Tanjung Pinang", en: "Tanjung Pinang" },
+  },
+  IDRI: {
+    n: { fr: "Riau", en: "Riau" },
+    c: { fr: "Pekanbaru", en: "Pekanbaru" },
+  },
+  IDGO: {
+    n: { fr: "Gorontalo", en: "Gorontalo" },
+    c: { fr: "Gorontalo", en: "Gorontalo" },
+  },
+  IDSA: {
+    n: { fr: "Sulawesi du Nord", en: "North Sulawesi" },
+    c: { fr: "Manado", en: "Manado" },
+  },
+  IDSR: {
+    n: { fr: "Sulawesi occidental", en: "West Sulawesi" },
+    c: { fr: "Mamuju", en: "Mamuju" },
+  },
+  IDJA: {
+    n: { fr: "Jambi", en: "Jambi" },
+    c: { fr: "Jambi", en: "Jambi" },
+  },
+  IDSS: {
+    n: { fr: "Sumatra du Sud", en: "South Sumatra" },
+    c: { fr: "Palembang", en: "Palembang" },
+  },
+  IDLA: {
+    n: { fr: "Lampung", en: "Lampung" },
+    c: { fr: "Bandar Lampung", en: "Bandar Lampung" },
+  },
+  IDBE: {
+    n: { fr: "Bengkulu", en: "Bengkulu" },
+    c: { fr: "Bengkulu", en: "Bengkulu" },
+  },
+  IDSB: {
+    n: { fr: "Sumatra de l'Ouest", en: "West Sumatra" },
+    c: { fr: "Padang", en: "Padang" },
+  },
+  IDSU: {
+    n: { fr: "Sumatra du Nord", en: "North Sumatra" },
+    c: { fr: "Medan", en: "Medan" },
+  },
+  IDAC: {
+    n: { fr: "Aceh", en: "Aceh" },
+    c: { fr: "Banda Aceh", en: "Banda Aceh" },
+  },
+  IDKT: {
+    n: { fr: "Kalimantan central", en: "Central Kalimantan" },
+    c: { fr: "Palangka Raya", en: "Palangka Raya" },
+  },
+  IDKS: {
+    n: { fr: "Kalimantan méridional", en: "South Kalimantan" },
+    c: { fr: "Banjarmasin", en: "Banjarmasin" },
+  },
+  IDBA: {
+    n: { fr: "Bali", en: "Bali" },
+    c: { fr: "Denpasar", en: "Denpasar" },
+  },
+  IDBB: {
+    n: { fr: "Bangka Belitung", en: "Bangka Belitung Islands" },
+    c: { fr: "Pangkal Pinang", en: "Pangkal Pinang" },
+  },
+  IDKI: {
+    n: { fr: "Kalimantan oriental", en: "East Kalimantan" },
+    c: { fr: "Samarinda", en: "Samarinda" },
+  },
+  "JP-01": {
+    n: { fr: "Hokkaidō", en: "Hokkaido" },
+    c: { fr: "Sapporo", en: "Sapporo" },
+  },
+  "JP-02": {
+    n: { fr: "Aomori", en: "Aomori" },
+    c: { fr: "Aomori", en: "Aomori" },
+  },
+  "JP-03": {
+    n: { fr: "Iwate", en: "Iwate" },
+    c: { fr: "Morioka", en: "Morioka" },
+  },
+  "JP-04": {
+    n: { fr: "Miyagi", en: "Miyagi" },
+    c: { fr: "Sendai", en: "Sendai" },
+  },
+  "JP-05": {
+    n: { fr: "Akita", en: "Akita" },
+    c: { fr: "Akita", en: "Akita" },
+  },
+  "JP-06": {
+    n: { fr: "Yamagata", en: "Yamagata" },
+    c: { fr: "Yamagata", en: "Yamagata" },
+  },
+  "JP-07": {
+    n: { fr: "Fukushima", en: "Fukushima" },
+    c: { fr: "Fukushima", en: "Fukushima" },
+  },
+  "JP-08": {
+    n: { fr: "Ibaraki", en: "Ibaraki" },
+    c: { fr: "Mito", en: "Mito" },
+  },
+  "JP-09": {
+    n: { fr: "Tochigi", en: "Tochigi" },
+    c: { fr: "Utsunomiya", en: "Utsunomiya" },
+  },
+  "JP-10": {
+    n: { fr: "Gunma", en: "Gunma" },
+    c: { fr: "Maebashi", en: "Maebashi" },
+  },
+  "JP-11": {
+    n: { fr: "Saitama", en: "Saitama" },
+    c: { fr: "Saitama", en: "Saitama" },
+  },
+  "JP-12": {
+    n: { fr: "Chiba", en: "Chiba" },
+    c: { fr: "Chiba", en: "Chiba" },
+  },
+  "JP-13": {
+    n: { fr: "Tokyo", en: "Tokyo" },
+    c: { fr: "Tokyo", en: "Tokyo" },
+  },
+  "JP-14": {
+    n: { fr: "Kanagawa", en: "Kanagawa" },
+    c: { fr: "Yokohama", en: "Yokohama" },
+  },
+  "JP-15": {
+    n: { fr: "Niigata", en: "Niigata" },
+    c: { fr: "Niigata", en: "Niigata" },
+  },
+  "JP-16": {
+    n: { fr: "Toyama", en: "Toyama" },
+    c: { fr: "Toyama", en: "Toyama" },
+  },
+  "JP-17": {
+    n: { fr: "Ishikawa", en: "Ishikawa" },
+    c: { fr: "Kanazawa", en: "Kanazawa" },
+  },
+  "JP-18": {
+    n: { fr: "Fukui", en: "Fukui" },
+    c: { fr: "Fukui", en: "Fukui" },
+  },
+  "JP-19": {
+    n: { fr: "Yamanashi", en: "Yamanashi" },
+    c: { fr: "Kōfu", en: "Kofu" },
+  },
+  "JP-20": {
+    n: { fr: "Nagano", en: "Nagano" },
+    c: { fr: "Nagano", en: "Nagano" },
+  },
+  "JP-21": {
+    n: { fr: "Gifu", en: "Gifu" },
+    c: { fr: "Gifu", en: "Gifu" },
+  },
+  "JP-22": {
+    n: { fr: "Shizuoka", en: "Shizuoka" },
+    c: { fr: "Shizuoka", en: "Shizuoka" },
+  },
+  "JP-23": {
+    n: { fr: "Aichi", en: "Aichi" },
+    c: { fr: "Nagoya", en: "Nagoya" },
+  },
+  "JP-24": {
+    n: { fr: "Mie", en: "Mie" },
+    c: { fr: "Tsu", en: "Tsu" },
+  },
+  "JP-25": {
+    n: { fr: "Shiga", en: "Shiga" },
+    c: { fr: "Ōtsu", en: "Otsu" },
+  },
+  "JP-26": {
+    n: { fr: "Kyoto", en: "Kyoto" },
+    c: { fr: "Kyoto", en: "Kyoto" },
+  },
+  "JP-27": {
+    n: { fr: "Osaka", en: "Osaka" },
+    c: { fr: "Osaka", en: "Osaka" },
+  },
+  "JP-28": {
+    n: { fr: "Hyōgo", en: "Hyogo" },
+    c: { fr: "Kobe", en: "Kobe" },
+  },
+  "JP-29": {
+    n: { fr: "Nara", en: "Nara" },
+    c: { fr: "Nara", en: "Nara" },
+  },
+  "JP-30": {
+    n: { fr: "Wakayama", en: "Wakayama" },
+    c: { fr: "Wakayama", en: "Wakayama" },
+  },
+  "JP-31": {
+    n: { fr: "Tottori", en: "Tottori" },
+    c: { fr: "Tottori", en: "Tottori" },
+  },
+  "JP-32": {
+    n: { fr: "Shimane", en: "Shimane" },
+    c: { fr: "Matsue", en: "Matsue" },
+  },
+  "JP-33": {
+    n: { fr: "Okayama", en: "Okayama" },
+    c: { fr: "Okayama", en: "Okayama" },
+  },
+  "JP-34": {
+    n: { fr: "Hiroshima", en: "Hiroshima" },
+    c: { fr: "Hiroshima", en: "Hiroshima" },
+  },
+  "JP-35": {
+    n: { fr: "Yamaguchi", en: "Yamaguchi" },
+    c: { fr: "Yamaguchi", en: "Yamaguchi" },
+  },
+  "JP-36": {
+    n: { fr: "Tokushima", en: "Tokushima" },
+    c: { fr: "Tokushima", en: "Tokushima" },
+  },
+  "JP-37": {
+    n: { fr: "Kagawa", en: "Kagawa" },
+    c: { fr: "Takamatsu", en: "Takamatsu" },
+  },
+  "JP-38": {
+    n: { fr: "Ehime", en: "Ehime" },
+    c: { fr: "Matsuyama", en: "Matsuyama" },
+  },
+  "JP-39": {
+    n: { fr: "Kōchi", en: "Kochi" },
+    c: { fr: "Kōchi", en: "Kochi" },
+  },
+  "JP-40": {
+    n: { fr: "Fukuoka", en: "Fukuoka" },
+    c: { fr: "Fukuoka", en: "Fukuoka" },
+  },
+  "JP-41": {
+    n: { fr: "Saga", en: "Saga" },
+    c: { fr: "Saga", en: "Saga" },
+  },
+  "JP-42": {
+    n: { fr: "Nagasaki", en: "Nagasaki" },
+    c: { fr: "Nagasaki", en: "Nagasaki" },
+  },
+  "JP-43": {
+    n: { fr: "Kumamoto", en: "Kumamoto" },
+    c: { fr: "Kumamoto", en: "Kumamoto" },
+  },
+  "JP-44": {
+    n: { fr: "Ōita", en: "Oita" },
+    c: { fr: "Ōita", en: "Oita" },
+  },
+  "JP-45": {
+    n: { fr: "Miyazaki", en: "Miyazaki" },
+    c: { fr: "Miyazaki", en: "Miyazaki" },
+  },
+  "JP-46": {
+    n: { fr: "Kagoshima", en: "Kagoshima" },
+    c: { fr: "Kagoshima", en: "Kagoshima" },
+  },
+  "JP-47": {
+    n: { fr: "Okinawa", en: "Okinawa" },
+    c: { fr: "Naha", en: "Naha" },
+  },
+  "PE-AMA": {
+    n: { fr: "Amazonas", en: "Amazonas" },
+    c: { fr: "Chachapoyas", en: "Chachapoyas" },
+  },
+  "PE-ANC": {
+    n: { fr: "Áncash", en: "Ancash" },
+    c: { fr: "Huaraz", en: "Huaraz" },
+  },
+  "PE-APU": {
+    n: { fr: "Apurímac", en: "Apurímac" },
+    c: { fr: "Abancay", en: "Abancay" },
+  },
+  "PE-ARE": {
+    n: { fr: "Arequipa", en: "Arequipa" },
+    c: { fr: "Arequipa", en: "Arequipa" },
+  },
+  "PE-AYA": {
+    n: { fr: "Ayacucho", en: "Ayacucho" },
+    c: { fr: "Ayacucho", en: "Ayacucho" },
+  },
+  "PE-CAJ": {
+    n: { fr: "Cajamarca", en: "Cajamarca" },
+    c: { fr: "Cajamarca", en: "Cajamarca" },
+  },
+  "PE-CAL": {
+    n: { fr: "Callao", en: "Callao" },
+    c: { fr: "Callao", en: "Callao" },
+  },
+  "PE-CUS": {
+    n: { fr: "Cusco", en: "Cusco" },
+    c: { fr: "Cusco", en: "Cusco" },
+  },
+  "PE-HUC": {
+    n: { fr: "Huánuco", en: "Huánuco" },
+    c: { fr: "Huánuco", en: "Huánuco" },
+  },
+  "PE-HUV": {
+    n: { fr: "Huancavelica", en: "Huancavelica" },
+    c: { fr: "Huancavelica", en: "Huancavelica" },
+  },
+  "PE-ICA": {
+    n: { fr: "Ica", en: "Ica" },
+    c: { fr: "Ica", en: "Ica" },
+  },
+  "PE-JUN": {
+    n: { fr: "Junín", en: "Junín" },
+    c: { fr: "Huancayo", en: "Huancayo" },
+  },
+  "PE-LAL": {
+    n: { fr: "La Libertad", en: "La Libertad" },
+    c: { fr: "Trujillo", en: "Trujillo" },
+  },
+  "PE-LAM": {
+    n: { fr: "Lambayeque", en: "Lambayeque" },
+    c: { fr: "Chiclayo", en: "Chiclayo" },
+  },
+  "PE-LIM": {
+    n: { fr: "Province de Lima", en: "Lima Province" },
+    c: { fr: "Huacho", en: "Huacho" },
+  },
+  "PE-LMA": {
+    n: { fr: "Lima Metropolitana", en: "Metropolitan Lima" },
+    c: { fr: "Lima", en: "Lima" },
+  },
+  "PE-LOR": {
+    n: { fr: "Loreto", en: "Loreto" },
+    c: { fr: "Iquitos", en: "Iquitos" },
+  },
+  "PE-MDD": {
+    n: { fr: "Madre de Dios", en: "Madre de Dios" },
+    c: { fr: "Puerto Maldonado", en: "Puerto Maldonado" },
+  },
+  "PE-MOQ": {
+    n: { fr: "Moquegua", en: "Moquegua" },
+    c: { fr: "Moquegua", en: "Moquegua" },
+  },
+  "PE-PAS": {
+    n: { fr: "Pasco", en: "Pasco" },
+    c: { fr: "Cerro de Pasco", en: "Cerro de Pasco" },
+  },
+  "PE-PIU": {
+    n: { fr: "Piura", en: "Piura" },
+    c: { fr: "Piura", en: "Piura" },
+  },
+  "PE-PUN": {
+    n: { fr: "Puno", en: "Puno" },
+    c: { fr: "Puno", en: "Puno" },
+  },
+  "PE-SAM": {
+    n: { fr: "San Martín", en: "San Martín" },
+    c: { fr: "Moyobamba", en: "Moyobamba" },
+  },
+  "PE-TAC": {
+    n: { fr: "Tacna", en: "Tacna" },
+    c: { fr: "Tacna", en: "Tacna" },
+  },
+  "PE-TUM": {
+    n: { fr: "Tumbes", en: "Tumbes" },
+    c: { fr: "Tumbes", en: "Tumbes" },
+  },
+  "PE-UCA": {
+    n: { fr: "Ucayali", en: "Ucayali" },
+    c: { fr: "Pucallpa", en: "Pucallpa" },
+  },
+  "CO-AMA": {
+    n: { fr: "Amazonas", en: "Amazonas" },
+    c: { fr: "Leticia", en: "Leticia" },
+  },
+  "CO-ANT": {
+    n: { fr: "Antioquia", en: "Antioquia" },
+    c: { fr: "Medellín", en: "Medellín" },
+  },
+  "CO-ARA": {
+    n: { fr: "Arauca", en: "Arauca" },
+    c: { fr: "Arauca", en: "Arauca" },
+  },
+  "CO-ATL": {
+    n: { fr: "Atlántico", en: "Atlántico" },
+    c: { fr: "Barranquilla", en: "Barranquilla" },
+  },
+  "CO-BOL": {
+    n: { fr: "Bolívar", en: "Bolívar" },
+    c: { fr: "Cartagena de Indias", en: "Cartagena" },
+  },
+  "CO-BOY": {
+    n: { fr: "Boyacá", en: "Boyacá" },
+    c: { fr: "Tunja", en: "Tunja" },
+  },
+  "CO-CAU": {
+    n: { fr: "Cauca", en: "Cauca" },
+    c: { fr: "Popayán", en: "Popayán" },
+  },
+  "CO-CES": {
+    n: { fr: "Cesar", en: "Cesar" },
+    c: { fr: "Valledupar", en: "Valledupar" },
+  },
+  "CO-CHO": {
+    n: { fr: "Chocó", en: "Chocó" },
+    c: { fr: "Quibdó", en: "Quibdó" },
+  },
+  "CO-CAL": {
+    n: { fr: "Caldas", en: "Caldas" },
+    c: { fr: "Manizales", en: "Manizales" },
+  },
+  "CO-COR": {
+    n: { fr: "Córdoba", en: "Córdoba" },
+    c: { fr: "Montería", en: "Montería" },
+  },
+  "CO-CAQ": {
+    n: { fr: "Caquetá", en: "Caquetá" },
+    c: { fr: "Florencia", en: "Florencia" },
+  },
+  "CO-CAS": {
+    n: { fr: "Casanare", en: "Casanare" },
+    c: { fr: "Yopal", en: "Yopal" },
+  },
+  "CO-CUN": {
+    n: { fr: "Cundinamarca", en: "Cundinamarca" },
+    c: { fr: "Bogotá", en: "Bogotá" },
+  },
+  "CO-DC": {
+    n: { fr: "Bogotá, Distrito Capital", en: "Bogotá, Capital District" },
+    c: { fr: "Bogotá", en: "Bogotá" },
+  },
+  "CO-GUA": {
+    n: { fr: "Guainía", en: "Guainía" },
+    c: { fr: "Inírida", en: "Inírida" },
+  },
+  "CO-GUV": {
+    n: { fr: "Guaviare", en: "Guaviare" },
+    c: { fr: "San José del Guaviare", en: "San José del Guaviare" },
+  },
+  "CO-HUI": {
+    n: { fr: "Huila", en: "Huila" },
+    c: { fr: "Neiva", en: "Neiva" },
+  },
+  "CO-LAG": {
+    n: { fr: "La Guajira", en: "La Guajira" },
+    c: { fr: "Riohacha", en: "Riohacha" },
+  },
+  "CO-MAG": {
+    n: { fr: "Magdalena", en: "Magdalena" },
+    c: { fr: "Santa Marta", en: "Santa Marta" },
+  },
+  "AR-B": {
+    n: { fr: "Buenos Aires", en: "Buenos Aires" },
+    c: { fr: "La Plata", en: "La Plata" },
+  },
+  "AR-K": {
+    n: { fr: "Catamarca", en: "Catamarca" },
+    c: { fr: "San Fernando del Valle de Catamarca", en: "San Fernando del Valle de Catamarca" },
+  },
+  "AR-H": {
+    n: { fr: "Chaco", en: "Chaco" },
+    c: { fr: "Resistencia", en: "Resistencia" },
+  },
+  "AR-U": {
+    n: { fr: "Chubut", en: "Chubut" },
+    c: { fr: "Rawson", en: "Rawson" },
+  },
+  "AR-C": {
+    n: { fr: "Ciudad Autónoma de Buenos Aires", en: "Autonomous City of Buenos Aires" },
+    c: { fr: "Buenos Aires", en: "Buenos Aires" },
+  },
+  "AR-X": {
+    n: { fr: "Córdoba", en: "Córdoba" },
+    c: { fr: "Córdoba", en: "Córdoba" },
+  },
+  "AR-W": {
+    n: { fr: "Corrientes", en: "Corrientes" },
+    c: { fr: "Corrientes", en: "Corrientes" },
+  },
+  "AR-E": {
+    n: { fr: "Entre Ríos", en: "Entre Ríos" },
+    c: { fr: "Paraná", en: "Paraná" },
+  },
+  "AR-P": {
+    n: { fr: "Formosa", en: "Formosa" },
+    c: { fr: "Formosa", en: "Formosa" },
+  },
+  "AR-Y": {
+    n: { fr: "Jujuy", en: "Jujuy" },
+    c: { fr: "San Salvador de Jujuy", en: "San Salvador de Jujuy" },
+  },
+  "AR-L": {
+    n: { fr: "La Pampa", en: "La Pampa" },
+    c: { fr: "Santa Rosa", en: "Santa Rosa" },
+  },
+  "AR-F": {
+    n: { fr: "La Rioja", en: "La Rioja" },
+    c: { fr: "La Rioja", en: "La Rioja" },
+  },
+  "AR-M": {
+    n: { fr: "Mendoza", en: "Mendoza" },
+    c: { fr: "Mendoza", en: "Mendoza" },
+  },
+  "AR-N": {
+    n: { fr: "Misiones", en: "Misiones" },
+    c: { fr: "Posadas", en: "Posadas" },
+  },
+  "AR-Q": {
+    n: { fr: "Neuquén", en: "Neuquén" },
+    c: { fr: "Neuquén", en: "Neuquén" },
+  },
+  "AR-R": {
+    n: { fr: "Río Negro", en: "Río Negro" },
+    c: { fr: "Viedma", en: "Viedma" },
+  },
+  "AR-A": {
+    n: { fr: "Salta", en: "Salta" },
+    c: { fr: "Salta", en: "Salta" },
+  },
+  "AR-Z": {
+    n: { fr: "Santa Cruz", en: "Santa Cruz" },
+    c: { fr: "Santa Cruz", en: "Santa Cruz" },
+  },
+  "AR-G": {
+    n: { fr: "Santiago del Estero", en: "Santiago del Estero" },
+    c: { fr: "Santiago del Estero", en: "Santiago del Estero" },
+  },
+  "AR-S": {
+    n: { fr: "Santa Fe", en: "Santa Fe" },
+    c: { fr: "Santa Fe", en: "Santa Fe" },
+  },
+  "AR-J": {
+    n: { fr: "San Juan", en: "San Juan" },
+    c: { fr: "San Juan", en: "San Juan" },
+  },
+  "AR-D": {
+    n: { fr: "San Luis", en: "San Luis" },
+    c: { fr: "San Luis", en: "San Luis" },
+  },
+  "AR-V": {
+    n: { fr: "Tierra del Fuego, Antártida e Islas del Atlántico Sur", en: "Tierra del Fuego, Antarctica and South Atlantic Islands" },
+    c: { fr: "Ushuaia", en: "Ushuaia" },
+  },
+  "AR-T": {
+    n: { fr: "Tucumán", en: "Tucumán" },
+    c: { fr: "San Miguel de Tucumán", en: "San Miguel de Tucumán" },
+  },
+  "BR-AC": {
+    n: { fr: "Acre", en: "Acre" },
+    c: { fr: "Rio Branco", en: "Rio Branco" },
+  },
+  "BR-AL": {
+    n: { fr: "Alagoas", en: "Alagoas" },
+    c: { fr: "Maceió", en: "Maceió" },
+  },
+  "BR-AM": {
+    n: { fr: "Amazonas", en: "Amazonas" },
+    c: { fr: "Manaus", en: "Manaus" },
+  },
+  "BR-AP": {
+    n: { fr: "Amapá", en: "Amapá" },
+    c: { fr: "Macapá", en: "Macapá" },
+  },
+  "BR-BA": {
+    n: { fr: "Bahia", en: "Bahia" },
+    c: { fr: "Salvador", en: "Salvador" },
+  },
+  "BR-CE": {
+    n: { fr: "Ceará", en: "Ceará" },
+    c: { fr: "Fortaleza", en: "Fortaleza" },
+  },
+  "BR-DF": {
+    n: { fr: "District fédéral", en: "Federal District" },
+    c: { fr: "Brasília", en: "Brasília" },
+  },
+  "BR-ES": {
+    n: { fr: "Espírito Santo", en: "Espírito Santo" },
+    c: { fr: "Vitória", en: "Vitória" },
+  },
+  "BR-GO": {
+    n: { fr: "Goiás", en: "Goiás" },
+    c: { fr: "Goiânia", en: "Goiânia" },
+  },
+  "BR-MA": {
+    n: { fr: "Maranhão", en: "Maranhão" },
+    c: { fr: "São Luís", en: "São Luís" },
+  },
+  "BR-MG": {
+    n: { fr: "Minas Gerais", en: "Minas Gerais" },
+    c: { fr: "Belo Horizonte", en: "Belo Horizonte" },
+  },
+  "BR-MS": {
+    n: { fr: "Mato Grosso do Sul", en: "Mato Grosso do Sul" },
+    c: { fr: "Campo Grande", en: "Campo Grande" },
+  },
+  "BR-MT": {
+    n: { fr: "Mato Grosso", en: "Mato Grosso" },
+    c: { fr: "Cuiabá", en: "Cuiabá" },
+  },
+  "BR-PA": {
+    n: { fr: "Pará", en: "Pará" },
+    c: { fr: "Belém", en: "Belém" },
+  },
+  "BR-PB": {
+    n: { fr: "Paraíba", en: "Paraíba" },
+    c: { fr: "João Pessoa", en: "João Pessoa" },
+  },
+  "BR-PE": {
+    n: { fr: "Pernambuco", en: "Pernambuco" },
+    c: { fr: "Recife", en: "Recife" },
+  },
+  "BR-PI": {
+    n: { fr: "Piauí", en: "Piauí" },
+    c: { fr: "Teresina", en: "Teresina" },
+  },
+  "BR-PR": {
+    n: { fr: "Paraná", en: "Paraná" },
+    c: { fr: "Curitiba", en: "Curitiba" },
+  },
+  "BR-RJ": {
+    n: { fr: "Rio de Janeiro", en: "Rio de Janeiro" },
+    c: { fr: "Rio de Janeiro", en: "Rio de Janeiro" },
+  },
+  "BR-RN": {
+    n: { fr: "Rio Grande do Norte", en: "Rio Grande do Norte" },
+    c: { fr: "Natal", en: "Natal" },
+  },
+  "BR-RO": {
+    n: { fr: "Rondônia", en: "Rondônia" },
+    c: { fr: "Porto Velho", en: "Porto Velho" },
+  },
+  "BR-RR": {
+    n: { fr: "Roraima", en: "Roraima" },
+    c: { fr: "Boa Vista", en: "Boa Vista" },
+  },
+  "BR-RS": {
+    n: { fr: "Rio Grande do Sul", en: "Rio Grande do Sul" },
+    c: { fr: "Porto Alegre", en: "Porto Alegre" },
+  },
+  "BR-SC": {
+    n: { fr: "Santa Catarina", en: "Santa Catarina" },
+    c: { fr: "Florianópolis", en: "Florianópolis" },
+  },
+  "BR-SE": {
+    n: { fr: "Sergipe", en: "Sergipe" },
+    c: { fr: "Aracaju", en: "Aracaju" },
+  },
+  "BR-SP": {
+    n: { fr: "São Paulo", en: "São Paulo" },
+    c: { fr: "São Paulo", en: "São Paulo" },
+  },
+  "BR-TO": {
+    n: { fr: "Tocantins", en: "Tocantins" },
+    c: { fr: "Palmas", en: "Palmas" },
+  },
+  "CH-AG": {
+    n: { fr: "Argovie", en: "Aargau" },
+    c: { fr: "Aarau", en: "Aarau" },
+  },
+  "CH-AI": {
+    n: { fr: "Appenzell Rhodes-Intérieures", en: "Appenzell Innerrhoden" },
+    c: { fr: "Appenzell", en: "Appenzell" },
+  },
+  "CH-AR": {
+    n: { fr: "Appenzell Rhodes-Extérieures", en: "Appenzell Ausserrhoden" },
+    c: { fr: "Herisau", en: "Herisau" },
+  },
+  "CH-BL": {
+    n: { fr: "Bâle-Campagne", en: "Basel-Landschaft" },
+    c: { fr: "Liestal", en: "Liestal" },
+  },
+  "CH-BE": {
+    n: { fr: "Berne", en: "Bern" },
+    c: { fr: "Berne", en: "Bern" },
+  },
+  "CH-BS": {
+    n: { fr: "Bâle-Ville", en: "Basel-Stadt" },
+    c: { fr: "Bâle", en: "Basel" },
+  },
+  "CH-FR": {
+    n: { fr: "Fribourg", en: "Fribourg" },
+    c: { fr: "Fribourg", en: "Fribourg" },
+  },
+  "CH-GE": {
+    n: { fr: "Genève", en: "Geneva" },
+    c: { fr: "Genève", en: "Geneva" },
+  },
+  "CH-GL": {
+    n: { fr: "Glaris", en: "Glarus" },
+    c: { fr: "Glaris", en: "Glarus" },
+  },
+  "CH-GR": {
+    n: { fr: "Grisons", en: "Graubünden" },
+    c: { fr: "Coire", en: "Chur" },
+  },
+  "CH-JU": {
+    n: { fr: "Jura", en: "Jura" },
+    c: { fr: "Delémont", en: "Delémont" },
+  },
+  "CH-LU": {
+    n: { fr: "Lucerne", en: "Lucerne" },
+    c: { fr: "Lucerne", en: "Lucerne" },
+  },
+  "CH-NE": {
+    n: { fr: "Neuchâtel", en: "Neuchâtel" },
+    c: { fr: "Neuchâtel", en: "Neuchâtel" },
+  },
+  "CH-NW": {
+    n: { fr: "Nidwald", en: "Nidwalden" },
+    c: { fr: "Stans", en: "Stans" },
+  },
+  "CH-OW": {
+    n: { fr: "Obwald", en: "Obwalden" },
+    c: { fr: "Sarnen", en: "Sarnen" },
+  },
+  "CH-SG": {
+    n: { fr: "Saint-Gall", en: "St. Gallen" },
+    c: { fr: "Saint-Gall", en: "St. Gallen" },
+  },
+  "CH-SH": {
+    n: { fr: "Schaffhouse", en: "Schaffhausen" },
+    c: { fr: "Schaffhouse", en: "Schaffhausen" },
+  },
+  "CH-SO": {
+    n: { fr: "Soleure", en: "Solothurn" },
+    c: { fr: "Soleure", en: "Solothurn" },
+  },
+  "CH-SZ": {
+    n: { fr: "Schwytz", en: "Schwyz" },
+    c: { fr: "Schwytz", en: "Schwyz" },
+  },
+  "CH-TG": {
+    n: { fr: "Thurgovie", en: "Thurgau" },
+    c: { fr: "Frauenfeld", en: "Frauenfeld" },
+  },
+  "CH-TI": {
+    n: { fr: "Tessin", en: "Ticino" },
+    c: { fr: "Bellinzone", en: "Bellinzona" },
+  },
+  "CH-UR": {
+    n: { fr: "Uri", en: "Uri" },
+    c: { fr: "Altdorf", en: "Altdorf" },
+  },
+  "CH-VD": {
+    n: { fr: "Vaud", en: "Vaud" },
+    c: { fr: "Lausanne", en: "Lausanne" },
+  },
+  "CH-VS": {
+    n: { fr: "Valais", en: "Valais" },
+    c: { fr: "Sion", en: "Sion" },
+  },
+  "CH-ZG": {
+    n: { fr: "Zoug", en: "Zug" },
+    c: { fr: "Zoug", en: "Zug" },
+  },
+  "CH-ZH": {
+    n: { fr: "Zurich", en: "Zurich" },
+    c: { fr: "Zurich", en: "Zurich" },
+  },
+  "PL-DS": {
+    n: { fr: "Basse-Silésie", en: "Lower Silesia" },
+    c: { fr: "Wrocław", en: "Wrocław" },
+  },
+  "PL-KP": {
+    n: { fr: "Cujavie-Poméranie", en: "Kuyavian-Pomeranian" },
+    c: { fr: "Bydgoszcz et Toruń", en: "Bydgoszcz and Toruń" },
+  },
+  "PL-LD": {
+    n: { fr: "Łódź", en: "Łódź" },
+    c: { fr: "Łódź", en: "Łódź" },
+  },
+  "PL-LU": {
+    n: { fr: "Lublin", en: "Lublin" },
+    c: { fr: "Lublin", en: "Lublin" },
+  },
+  "PL-LB": {
+    n: { fr: "Lubusz", en: "Lubusz" },
+    c: { fr: "Gorzów Wielkopolski", en: "Gorzów Wielkopolski" },
+  },
+  "PL-MA": {
+    n: { fr: "Petite-Pologne", en: "Lesser Poland" },
+    c: { fr: "Cracovie", en: "Kraków" },
+  },
+  "PL-MZ": {
+    n: { fr: "Mazovie", en: "Masovian" },
+    c: { fr: "Varsovie", en: "Warsaw" },
+  },
+  "PL-OP": {
+    n: { fr: "Opole", en: "Opole" },
+    c: { fr: "Opole", en: "Opole" },
+  },
+  "PL-PK": {
+    n: { fr: "Basses-Carpates", en: "Subcarpathian" },
+    c: { fr: "Rzeszów", en: "Rzeszów" },
+  },
+  "PL-PD": {
+    n: { fr: "Podlachie", en: "Podlaskie" },
+    c: { fr: "Białystok", en: "Białystok" },
+  },
+  "PL-PM": {
+    n: { fr: "Poméranie", en: "Pomeranian" },
+    c: { fr: "Gdańsk", en: "Gdańsk" },
+  },
+  "PL-SL": {
+    n: { fr: "Silésie", en: "Silesian" },
+    c: { fr: "Katowice", en: "Katowice" },
+  },
+  "PL-SK": {
+    n: { fr: "Sainte-Croix", en: "Świętokrzyskie" },
+    c: { fr: "Kielce", en: "Kielce" },
+  },  // à vérifier
+  "PL-WN": {
+    n: { fr: "Varmie-Mazurie", en: "Warmian-Masurian" },
+    c: { fr: "Olsztyn", en: "Olsztyn" },
+  },
+  "PL-WP": {
+    n: { fr: "Grande-Pologne", en: "Greater Poland" },
+    c: { fr: "Poznań", en: "Poznań" },
+  },
+  "PL-ZP": {
+    n: { fr: "Poméranie-Occidentale", en: "West Pomeranian" },
+    c: { fr: "Szczecin", en: "Szczecin" },
+  },
+  "GB-BD": {
+    n: { fr: "Bedfordshire", en: "Bedfordshire" },
+    c: { fr: "Bedford", en: "Bedford" },
+  },
+  "GB-BK": {
+    n: { fr: "Berkshire", en: "Berkshire" },
+    c: { fr: "Reading", en: "Reading" },
+  },
+  "GB-BU": {
+    n: { fr: "Buckinghamshire", en: "Buckinghamshire" },
+    c: { fr: "Aylesbury", en: "Aylesbury" },
+  },
+  "GB-CH": {
+    n: { fr: "Cheshire", en: "Cheshire" },
+    c: { fr: "Chester", en: "Chester" },
+  },
+  "GB-CM": {
+    n: { fr: "Cambridgeshire", en: "Cambridgeshire" },
+    c: { fr: "Cambridge", en: "Cambridge" },
+  },
+  "GB-CO": {
+    n: { fr: "Cornouailles", en: "Cornwall" },
+    c: { fr: "Truro", en: "Truro" },
+  },
+  "GB-CU": {
+    n: { fr: "Cumbria", en: "Cumbria" },
+    c: { fr: "Carlisle", en: "Carlisle" },
+  },
+  "GB-DB": {
+    n: { fr: "Derbyshire", en: "Derbyshire" },
+    c: { fr: "Matlock", en: "Matlock" },
+  },
+  "GB-DH": {
+    n: { fr: "Durham", en: "Durham" },
+    c: { fr: "Durham", en: "Durham" },
+  },
+  "GB-DS": {
+    n: { fr: "Dorset", en: "Dorset" },
+    c: { fr: "Dorchester", en: "Dorchester" },
+  },
+  "GB-DV": {
+    n: { fr: "Devon", en: "Devon" },
+    c: { fr: "Exeter", en: "Exeter" },
+  },
+  "GB-EX": {
+    n: { fr: "Essex", en: "Essex" },
+    c: { fr: "Chelmsford", en: "Chelmsford" },
+  },
+  "GB-BST": {
+    n: { fr: "Bristol", en: "Bristol" },
+    c: { fr: "Bristol", en: "Bristol" },
+  },
+  "GB-GC": {
+    n: { fr: "Gloucestershire", en: "Gloucestershire" },
+    c: { fr: "Gloucester", en: "Gloucester" },
+  },
+  "GB-GL": {
+    n: { fr: "Grand Londres", en: "Greater London" },
+    c: { fr: "Londres", en: "London" },
+  },
+  "GB-HA": {
+    n: { fr: "Hampshire", en: "Hampshire" },
+    c: { fr: "Winchester", en: "Winchester" },
+  },
+  "GB-HD": {
+    n: { fr: "Herefordshire", en: "Herefordshire" },
+    c: { fr: "Hereford", en: "Hereford" },
+  },
+  "GB-HT": {
+    n: { fr: "Hertfordshire", en: "Hertfordshire" },
+    c: { fr: "Hertford", en: "Hertford" },
+  },
+  "GB-KE": {
+    n: { fr: "Kent", en: "Kent" },
+    c: { fr: "Maidstone", en: "Maidstone" },
+  },
+  "GB-LA": {
+    n: { fr: "Lancashire", en: "Lancashire" },
+    c: { fr: "Preston", en: "Preston" },
+  },
+  "GB-LE": {
+    n: { fr: "Leicestershire", en: "Leicestershire" },
+    c: { fr: "Leicester", en: "Leicester" },
+  },
+  "GB-LI": {
+    n: { fr: "Lincolnshire", en: "Lincolnshire" },
+    c: { fr: "Lincoln", en: "Lincoln" },
+  },
+  "GB-NA": {
+    n: { fr: "Norfolk", en: "Norfolk" },
+    c: { fr: "Norwich", en: "Norwich" },
+  },
+  "GB-NB": {
+    n: { fr: "Northumberland", en: "Northumberland" },
+    c: { fr: "Morpeth", en: "Morpeth" },
+  },
+  "GB-NF": {
+    n: { fr: "Northamptonshire", en: "Northamptonshire" },
+    c: { fr: "Northampton", en: "Northampton" },
+  },
+  "GB-NI": {
+    n: { fr: "Irlande du Nord", en: "Northern Ireland" },
+    c: { fr: "Belfast", en: "Belfast" },
+  },
+  "GB-NT": {
+    n: { fr: "Nottinghamshire", en: "Nottinghamshire" },
+    c: { fr: "Nottingham", en: "Nottingham" },
+  },
+  "GB-OX": {
+    n: { fr: "Oxfordshire", en: "Oxfordshire" },
+    c: { fr: "Oxford", en: "Oxford" },
+  },
+  "GB-RT": {
+    n: { fr: "Rutland", en: "Rutland" },
+    c: { fr: "Oakham", en: "Oakham" },
+  },
+  "GB-SC": {
+    n: { fr: "Écosse", en: "Scotland" },
+    c: { fr: "Édimbourg", en: "Edinburgh" },
+  },
+  "GB-SF": {
+    n: { fr: "Suffolk", en: "Suffolk" },
+    c: { fr: "Ipswich", en: "Ipswich" },
+  },
+  "GB-SM": {
+    n: { fr: "Somerset", en: "Somerset" },
+    c: { fr: "Taunton", en: "Taunton" },
+  },
+  "GB-SP": {
+    n: { fr: "Shropshire", en: "Shropshire" },
+    c: { fr: "Shrewsbury", en: "Shrewsbury" },
+  },
+  "GB-SR": {
+    n: { fr: "Surrey", en: "Surrey" },
+    c: { fr: "Kingston upon Thames", en: "Kingston upon Thames" },
+  },
+  "GB-ST": {
+    n: { fr: "Staffordshire", en: "Staffordshire" },
+    c: { fr: "Stafford", en: "Stafford" },
+  },
+  "GB-SX": {
+    n: { fr: "Sussex", en: "Sussex" },
+    c: { fr: "Lewes", en: "Lewes" },
+  },
+  "GB-WA": {
+    n: { fr: "Warwickshire", en: "Warwickshire" },
+    c: { fr: "Warwick", en: "Warwick" },
+  },
+  "GB-WL": {
+    n: { fr: "Pays de Galles", en: "Wales" },
+    c: { fr: "Cardiff", en: "Cardiff" },
+  },
+  "GB-WO": {
+    n: { fr: "Worcestershire", en: "Worcestershire" },
+    c: { fr: "Worcester", en: "Worcester" },
+  },
+  "GB-WR": {
+    n: { fr: "Wiltshire", en: "Wiltshire" },
+    c: { fr: "Trowbridge", en: "Trowbridge" },
+  },
+  "GB-YK": {
+    n: { fr: "Yorkshire", en: "Yorkshire" },
+    c: { fr: "York", en: "York" },
+  },
+  MXSON: {
+    n: { fr: "Sonora", en: "Sonora" },
+    c: { fr: "Hermosillo", en: "Hermosillo" },
+  },
+  MXBCN: {
+    n: { fr: "Basse-Californie", en: "Baja California" },
+    c: { fr: "Mexicali", en: "Mexicali" },
+  },
+  MXCHH: {
+    n: { fr: "Chihuahua", en: "Chihuahua" },
+    c: { fr: "Chihuahua", en: "Chihuahua" },
+  },
+  MXCOA: {
+    n: { fr: "Coahuila", en: "Coahuila" },
+    c: { fr: "Saltillo", en: "Saltillo" },
+  },
+  MXTAM: {
+    n: { fr: "Tamaulipas", en: "Tamaulipas" },
+    c: { fr: "Ciudad Victoria", en: "Ciudad Victoria" },
+  },
+  MXNLE: {
+    n: { fr: "Nuevo León", en: "Nuevo León" },
+    c: { fr: "Monterrey", en: "Monterrey" },
+  },
+  MXROO: {
+    n: { fr: "Quintana Roo", en: "Quintana Roo" },
+    c: { fr: "Chetumal", en: "Chetumal" },
+  },
+  MXCAM: {
+    n: { fr: "Campeche", en: "Campeche" },
+    c: { fr: "Campeche", en: "Campeche" },
+  },
+  MXTAB: {
+    n: { fr: "Tabasco", en: "Tabasco" },
+    c: { fr: "Villahermosa", en: "Villahermosa" },
+  },
+  MXCHP: {
+    n: { fr: "Chiapas", en: "Chiapas" },
+    c: { fr: "Tuxtla Gutiérrez", en: "Tuxtla Gutiérrez" },
+  },
+  MXCOL: {
+    n: { fr: "Colima", en: "Colima" },
+    c: { fr: "Colima", en: "Colima" },
+  },
+  MXNAY: {
+    n: { fr: "Nayarit", en: "Nayarit" },
+    c: { fr: "Tepic", en: "Tepic" },
+  },
+  MXBCS: {
+    n: { fr: "Basse-Californie du Sud", en: "Baja California Sur" },
+    c: { fr: "La Paz", en: "La Paz" },
+  },
+  MXSIN: {
+    n: { fr: "Sinaloa", en: "Sinaloa" },
+    c: { fr: "Culiacán", en: "Culiacán" },
+  },
+  MXYUC: {
+    n: { fr: "Yucatán", en: "Yucatán" },
+    c: { fr: "Mérida", en: "Mérida" },
+  },
+  MXVER: {
+    n: { fr: "Veracruz", en: "Veracruz" },
+    c: { fr: "Xalapa", en: "Xalapa" },
+  },
+  MXJAL: {
+    n: { fr: "Jalisco", en: "Jalisco" },
+    c: { fr: "Guadalajara", en: "Guadalajara" },
+  },
+  MXMIC: {
+    n: { fr: "Michoacán", en: "Michoacán" },
+    c: { fr: "Morelia", en: "Morelia" },
+  },
+  MXGRO: {
+    n: { fr: "Guerrero", en: "Guerrero" },
+    c: { fr: "Chilpancingo", en: "Chilpancingo" },
+  },
+  MXOAX: {
+    n: { fr: "Oaxaca", en: "Oaxaca" },
+    c: { fr: "Oaxaca de Juárez", en: "Oaxaca de Juárez" },
+  },
+  MXMEX: {
+    n: { fr: "État de Mexico", en: "State of Mexico" },
+    c: { fr: "Toluca", en: "Toluca" },
+  },
+  MXPUE: {
+    n: { fr: "Puebla", en: "Puebla" },
+    c: { fr: "Puebla", en: "Puebla" },
+  },
+  MXMOR: {
+    n: { fr: "Morelos", en: "Morelos" },
+    c: { fr: "Cuernavaca", en: "Cuernavaca" },
+  },
+  MXQUE: {
+    n: { fr: "Querétaro", en: "Querétaro" },
+    c: { fr: "Santiago de Querétaro", en: "Santiago de Querétaro" },
+  },
+  MXHID: {
+    n: { fr: "Hidalgo", en: "Hidalgo" },
+    c: { fr: "Pachuca", en: "Pachuca" },
+  },
+  MXGUA: {
+    n: { fr: "Guanajuato", en: "Guanajuato" },
+    c: { fr: "Guanajuato", en: "Guanajuato" },
+  },
+  MXSLP: {
+    n: { fr: "San Luis Potosí", en: "San Luis Potosí" },
+    c: { fr: "San Luis Potosí", en: "San Luis Potosí" },
+  },
+  MXZAC: {
+    n: { fr: "Zacatecas", en: "Zacatecas" },
+    c: { fr: "Zacatecas", en: "Zacatecas" },
+  },
+  MXAGU: {
+    n: { fr: "Aguascalientes", en: "Aguascalientes" },
+    c: { fr: "Aguascalientes", en: "Aguascalientes" },
+  },
+  MXDUR: {
+    n: { fr: "Durango", en: "Durango" },
+    c: { fr: "Durango", en: "Durango" },
+  },
+  MXTLA: {
+    n: { fr: "Tlaxcala", en: "Tlaxcala" },
+    c: { fr: "Tlaxcala", en: "Tlaxcala" },
+  },
+  MXCMX: {
+    n: { fr: "Mexico (Ville de)", en: "Mexico City" },
+    c: { fr: "Mexico", en: "Mexico City" },
+  },
+  ESNC: {
+    n: { fr: "Navarre", en: "Navarre" },
+    c: { fr: "Pampelune", en: "Pamplona" },
+  },
+  ESPV: {
+    n: { fr: "Pays basque", en: "Basque Country" },
+    c: { fr: "Vitoria-Gasteiz", en: "Vitoria-Gasteiz" },
+  },
+  ESRI: {
+    n: { fr: "La Rioja", en: "La Rioja" },
+    c: { fr: "Logroño", en: "Logroño" },
+  },
+  ESCT: {
+    n: { fr: "Catalogne", en: "Catalonia" },
+    c: { fr: "Barcelone", en: "Barcelona" },
+  },
+  ESAR: {
+    n: { fr: "Aragon", en: "Aragon" },
+    c: { fr: "Saragosse", en: "Zaragoza" },
+  },
+  ESEX: {
+    n: { fr: "Estrémadure", en: "Extremadura" },
+    c: { fr: "Mérida", en: "Mérida" },
+  },
+  ESGA: {
+    n: { fr: "Galice", en: "Galicia" },
+    c: { fr: "Saint-Jacques-de-Compostelle", en: "Santiago de Compostela" },
+  },
+  ESCL: {
+    n: { fr: "Castille-et-León", en: "Castile and León" },
+    c: { fr: "Valladolid", en: "Valladolid" },
+  },
+  ESVC: {
+    n: { fr: "Communauté valencienne", en: "Valencian Community" },
+    c: { fr: "Valence", en: "Valencia" },
+  },
+  ESMC: {
+    n: { fr: "Région de Murcie", en: "Region of Murcia" },
+    c: { fr: "Murcie", en: "Murcia" },
+  },
+  ESAN: {
+    n: { fr: "Andalousie", en: "Andalusia" },
+    c: { fr: "Séville", en: "Seville" },
+  },
+  ESAS: {
+    n: { fr: "Asturies", en: "Asturias" },
+    c: { fr: "Oviedo", en: "Oviedo" },
+  },
+  ESCB: {
+    n: { fr: "Cantabrie", en: "Cantabria" },
+    c: { fr: "Santander", en: "Santander" },
+  },
+  ESCN: {
+    n: { fr: "Îles Canaries", en: "Canary Islands" },
+    c: { fr: "Las Palmas de Gran Canaria / Santa Cruz de Tenerife", en: "Las Palmas de Gran Canaria / Santa Cruz de Tenerife" },
+  },
+  ESIB: {
+    n: { fr: "Îles Baléares", en: "Balearic Islands" },
+    c: { fr: "Palma", en: "Palma" },
+  },
+  ESCM: {
+    n: { fr: "Castille-La Manche", en: "Castilla-La Mancha" },
+    c: { fr: "Tolède", en: "Toledo" },
+  },
+  ESMD: {
+    n: { fr: "Communauté de Madrid", en: "Community of Madrid" },
+    c: { fr: "Madrid", en: "Madrid" },
+  },
+  ESCE: {
+    n: { fr: "Ceuta", en: "Ceuta" },
+    c: { fr: "Ceuta", en: "Ceuta" },
+  },
+  ESML: {
+    n: { fr: "Melilla", en: "Melilla" },
+    c: { fr: "Melilla", en: "Melilla" },
+  },
+  "DE-BW": {
+    n: { fr: "Bade-Wurtemberg", en: "Baden-Württemberg" },
+    c: { fr: "Stuttgart", en: "Stuttgart" },
+  },
+  "DE-BY": {
+    n: { fr: "Bavière", en: "Bavaria" },
+    c: { fr: "Munich", en: "Munich" },
+  },
+  "DE-BE": {
+    n: { fr: "Berlin", en: "Berlin" },
+    c: { fr: "Berlin", en: "Berlin" },
+  },
+  "DE-BB": {
+    n: { fr: "Brandebourg", en: "Brandenburg" },
+    c: { fr: "Potsdam", en: "Potsdam" },
+  },
+  "DE-HB": {
+    n: { fr: "Brême", en: "Bremen" },
+    c: { fr: "Brême", en: "Bremen" },
+  },
+  "DE-HH": {
+    n: { fr: "Hambourg", en: "Hamburg" },
+    c: { fr: "Hambourg", en: "Hamburg" },
+  },
+  "DE-HE": {
+    n: { fr: "Hesse", en: "Hesse" },
+    c: { fr: "Wiesbaden", en: "Wiesbaden" },
+  },
+  "DE-MV": {
+    n: { fr: "Mecklembourg-Poméranie-Occidentale", en: "Mecklenburg-Western Pomerania" },
+    c: { fr: "Schwerin", en: "Schwerin" },
+  },
+  "DE-NI": {
+    n: { fr: "Basse-Saxe", en: "Lower Saxony" },
+    c: { fr: "Hanovre", en: "Hanover" },
+  },
+  "DE-NW": {
+    n: { fr: "Rhénanie-du-Nord-Westphalie", en: "North Rhine-Westphalia" },
+    c: { fr: "Düsseldorf", en: "Düsseldorf" },
+  },
+  "DE-RP": {
+    n: { fr: "Rhénanie-Palatinat", en: "Rhineland-Palatinate" },
+    c: { fr: "Mayence", en: "Mainz" },
+  },
+  "DE-SL": {
+    n: { fr: "Sarre", en: "Saarland" },
+    c: { fr: "Sarrebruck", en: "Saarbrücken" },
+  },
+  "DE-SN": {
+    n: { fr: "Saxe", en: "Saxony" },
+    c: { fr: "Dresde", en: "Dresden" },
+  },
+  "DE-ST": {
+    n: { fr: "Saxe-Anhalt", en: "Saxony-Anhalt" },
+    c: { fr: "Magdebourg", en: "Magdeburg" },
+  },
+  "DE-SH": {
+    n: { fr: "Schleswig-Holstein", en: "Schleswig-Holstein" },
+    c: { fr: "Kiel", en: "Kiel" },
+  },
+  "DE-TH": {
+    n: { fr: "Thuringe", en: "Thuringia" },
+    c: { fr: "Erfurt", en: "Erfurt" },
+  },
+  IT23: {
+    n: { fr: "Vallée d'Aoste", en: "Aosta Valley" },
+    c: { fr: "Aoste", en: "Aosta" },
+  },
+  IT21: {
+    n: { fr: "Piémont", en: "Piedmont" },
+    c: { fr: "Turin", en: "Turin" },
+  },
+  IT42: {
+    n: { fr: "Ligurie", en: "Liguria" },
+    c: { fr: "Gênes", en: "Genoa" },
+  },
+  IT25: {
+    n: { fr: "Lombardie", en: "Lombardy" },
+    c: { fr: "Milan", en: "Milan" },
+  },
+  IT32: {
+    n: { fr: "Trentin-Haut-Adige", en: "Trentino-South Tyrol" },
+    c: { fr: "Trente", en: "Trento" },
+  },  // à vérifier
+  IT34: {
+    n: { fr: "Vénétie", en: "Veneto" },
+    c: { fr: "Venise", en: "Venice" },
+  },
+  IT36: {
+    n: { fr: "Frioul-Vénétie Julienne", en: "Friuli-Venezia Giulia" },
+    c: { fr: "Trieste", en: "Trieste" },
+  },
+  IT52: {
+    n: { fr: "Toscane", en: "Tuscany" },
+    c: { fr: "Florence", en: "Florence" },
+  },
+  IT55: {
+    n: { fr: "Ombrie", en: "Umbria" },
+    c: { fr: "Pérouse", en: "Perugia" },
+  },
+  IT62: {
+    n: { fr: "Latium", en: "Lazio" },
+    c: { fr: "Rome", en: "Rome" },
+  },
+  IT65: {
+    n: { fr: "Abruzzes", en: "Abruzzo" },
+    c: { fr: "L'Aquila", en: "L'Aquila" },
+  },
+  IT75: {
+    n: { fr: "Pouilles", en: "Apulia" },
+    c: { fr: "Bari", en: "Bari" },
+  },
+  IT72: {
+    n: { fr: "Campanie", en: "Campania" },
+    c: { fr: "Naples", en: "Naples" },
+  },
+  IT67: {
+    n: { fr: "Molise", en: "Molise" },
+    c: { fr: "Campobasso", en: "Campobasso" },
+  },
+  IT77: {
+    n: { fr: "Basilicate", en: "Basilicata" },
+    c: { fr: "Potenza", en: "Potenza" },
+  },
+  IT78: {
+    n: { fr: "Calabre", en: "Calabria" },
+    c: { fr: "Catanzaro", en: "Catanzaro" },
+  },
+  IT82: {
+    n: { fr: "Sicile", en: "Sicily" },
+    c: { fr: "Palerme", en: "Palermo" },
+  },
+  IT88: {
+    n: { fr: "Sardaigne", en: "Sardinia" },
+    c: { fr: "Cagliari", en: "Cagliari" },
+  },
+  IT45: {
+    n: { fr: "Émilie-Romagne", en: "Emilia-Romagna" },
+    c: { fr: "Bologne", en: "Bologna" },
+  },
+  IT57: {
+    n: { fr: "Marches", en: "Marche" },
+    c: { fr: "Ancône", en: "Ancona" },
+  },
+  "CA-AB": {
+    n: { fr: "Alberta", en: "Alberta" },
+    c: { fr: "Edmonton", en: "Edmonton" },
+  },
+  "CA-BC": {
+    n: { fr: "Colombie-Britannique", en: "British Columbia" },
+    c: { fr: "Victoria", en: "Victoria" },
+  },
+  "CA-MB": {
+    n: { fr: "Manitoba", en: "Manitoba" },
+    c: { fr: "Winnipeg", en: "Winnipeg" },
+  },
+  "CA-NB": {
+    n: { fr: "Nouveau-Brunswick", en: "New Brunswick" },
+    c: { fr: "Fredericton", en: "Fredericton" },
+  },
+  "CA-NL": {
+    n: { fr: "Terre-Neuve-et-Labrador", en: "Newfoundland and Labrador" },
+    c: { fr: "Saint-Jean de Terre-Neuve", en: "St. John's" },
+  },
+  "CA-NS": {
+    n: { fr: "Nouvelle-Écosse", en: "Nova Scotia" },
+    c: { fr: "Halifax", en: "Halifax" },
+  },
+  "CA-NT": {
+    n: { fr: "Territoires du Nord-Ouest", en: "Northwest Territories" },
+    c: { fr: "Yellowknife", en: "Yellowknife" },
+  },
+  "CA-NU": {
+    n: { fr: "Nunavut", en: "Nunavut" },
+    c: { fr: "Iqaluit", en: "Iqaluit" },
+  },
+  "CA-ON": {
+    n: { fr: "Ontario", en: "Ontario" },
+    c: { fr: "Toronto", en: "Toronto" },
+  },
+  "CA-PE": {
+    n: { fr: "Île-du-Prince-Édouard", en: "Prince Edward Island" },
+    c: { fr: "Charlottetown", en: "Charlottetown" },
+  },
+  "CA-QC": {
+    n: { fr: "Québec", en: "Quebec" },
+    c: { fr: "Québec", en: "Quebec City" },
+  },
+  "CA-SK": {
+    n: { fr: "Saskatchewan", en: "Saskatchewan" },
+    c: { fr: "Regina", en: "Regina" },
+  },
+  "CA-YT": {
+    n: { fr: "Yukon", en: "Yukon" },
+    c: { fr: "Whitehorse", en: "Whitehorse" },
+  },
+  FRHDF: {
+    n: { fr: "Hauts-de-France", en: "Hauts-de-France" },
+    c: { fr: "Lille", en: "Lille" },
+  },
+  FRGES: {
+    n: { fr: "Grand Est", en: "Grand Est" },
+    c: { fr: "Strasbourg", en: "Strasbourg" },
+  },
+  FRPAC: {
+    n: { fr: "Provence-Alpes-Côte d'Azur", en: "Provence-Alpes-Côte d'Azur" },
+    c: { fr: "Marseille", en: "Marseille" },
+  },
+  FRARA: {
+    n: { fr: "Auvergne-Rhône-Alpes", en: "Auvergne-Rhône-Alpes" },
+    c: { fr: "Lyon", en: "Lyon" },
+  },
+  FRBFC: {
+    n: { fr: "Bourgogne-Franche-Comté", en: "Bourgogne-Franche-Comté" },
+    c: { fr: "Dijon", en: "Dijon" },
+  },
+  FROCC: {
+    n: { fr: "Occitanie", en: "Occitania" },
+    c: { fr: "Toulouse", en: "Toulouse" },
+  },
+  FRPDL: {
+    n: { fr: "Pays de la Loire", en: "Pays de la Loire" },
+    c: { fr: "Nantes", en: "Nantes" },
+  },
+  FRBRE: {
+    n: { fr: "Bretagne", en: "Brittany" },
+    c: { fr: "Rennes", en: "Rennes" },
+  },
+  FRNOR: {
+    n: { fr: "Normandie", en: "Normandy" },
+    c: { fr: "Rouen", en: "Rouen" },
+  },
+  FR20R: {
+    n: { fr: "Corse", en: "Corsica" },
+    c: { fr: "Ajaccio", en: "Ajaccio" },
+  },
+  FRNAQ: {
+    n: { fr: "Nouvelle-Aquitaine", en: "Nouvelle-Aquitaine" },
+    c: { fr: "Bordeaux", en: "Bordeaux" },
+  },
+  FRCVL: {
+    n: { fr: "Centre-Val de Loire", en: "Centre-Val de Loire" },
+    c: { fr: "Orléans", en: "Orléans" },
+  },
+  FRIDF: {
+    n: { fr: "Île-de-France", en: "Île-de-France" },
+    c: { fr: "Paris", en: "Paris" },
+  },
+  "AT-1": {
+    n: { fr: "Burgenland", en: "Burgenland" },
+    c: { fr: "Eisenstadt", en: "Eisenstadt" },
+  },
+  "AT-2": {
+    n: { fr: "Carinthie (Kärnten)", en: "Carinthia (Kärnten)" },
+    c: { fr: "Klagenfurt", en: "Klagenfurt" },
+  },
+  "AT-3": {
+    n: { fr: "Basse-Autriche (Niederösterreich)", en: "Lower Austria (Niederösterreich)" },
+    c: { fr: "Sankt Pölten", en: "Sankt Pölten" },
+  },
+  "AT-4": {
+    n: { fr: "Haute-Autriche (Oberösterreich)", en: "Upper Austria (Oberösterreich)" },
+    c: { fr: "Linz", en: "Linz" },
+  },
+  "AT-5": {
+    n: { fr: "Salzbourg (Salzburg)", en: "Salzburg" },
+    c: { fr: "Salzbourg", en: "Salzburg" },
+  },
+  "AT-6": {
+    n: { fr: "Styrie (Steiermark)", en: "Styria (Steiermark)" },
+    c: { fr: "Graz", en: "Graz" },
+  },
+  "AT-7": {
+    n: { fr: "Tyrol (Tirol)", en: "Tyrol (Tirol)" },
+    c: { fr: "Innsbruck", en: "Innsbruck" },
+  },
+  "AT-8": {
+    n: { fr: "Vorarlberg", en: "Vorarlberg" },
+    c: { fr: "Bregenz", en: "Bregenz" },
+  },
+  "AT-9": {
+    n: { fr: "Vienne (Wien)", en: "Vienna (Wien)" },
+    c: { fr: "Vienne", en: "Vienna" },
+  },
+  "GR-A": {
+    n: { fr: "Macédoine-Orientale-et-Thrace", en: "East Macedonia and Thrace" },
+    c: { fr: "Komotiní", en: "Komotini" },
+  },
+  "GR-B": {
+    n: { fr: "Macédoine-Centrale", en: "Central Macedonia" },
+    c: { fr: "Thessalonique", en: "Thessaloniki" },
+  },
+  "GR-C": {
+    n: { fr: "Macédoine-Occidentale", en: "West Macedonia" },
+    c: { fr: "Kozáni", en: "Kozani" },
+  },
+  "GR-D": {
+    n: { fr: "Épire", en: "Epirus" },
+    c: { fr: "Ioannina", en: "Ioannina" },
+  },
+  "GR-E": {
+    n: { fr: "Thessalie", en: "Thessaly" },
+    c: { fr: "Larissa", en: "Larissa" },
+  },
+  "GR-F": {
+    n: { fr: "Îles Ioniennes", en: "Ionian Islands" },
+    c: { fr: "Corfou", en: "Corfu" },
+  },
+  "GR-G": {
+    n: { fr: "Grèce-Occidentale", en: "West Greece" },
+    c: { fr: "Patras", en: "Patras" },
+  },
+  "GR-H": {
+    n: { fr: "Grèce-Centrale", en: "Central Greece" },
+    c: { fr: "Lamía", en: "Lamia" },
+  },
+  "GR-I": {
+    n: { fr: "Attique", en: "Attica" },
+    c: { fr: "Athènes", en: "Athens" },
+  },
+  "GR-J": {
+    n: { fr: "Péloponnèse", en: "Peloponnese" },
+    c: { fr: "Tripoli", en: "Tripoli" },
+  },
+  "GR-K": {
+    n: { fr: "Égée-Septentrionale", en: "North Aegean" },
+    c: { fr: "Mytilène", en: "Mytilene" },
+  },
+  "GR-L": {
+    n: { fr: "Égée-Méridionale", en: "South Aegean" },
+    c: { fr: "Ermoúpoli", en: "Ermoupoli" },
+  },
+  "GR-M": {
+    n: { fr: "Crète", en: "Crete" },
+    c: { fr: "Héraklion", en: "Heraklion" },
+  },
+  "GR-69": {
+    n: { fr: "Mont Athos (Sainte Montagne)", en: "Mount Athos (Holy Mountain)" },
+    c: { fr: "Karyès", en: "Karyes" },
+  },
+  "BE-VAN": {
+    n: { fr: "Anvers (Antwerpen)", en: "Antwerp (Antwerpen)" },
+    c: { fr: "Anvers", en: "Antwerp" },
+  },
+  "BE-WBR": {
+    n: { fr: "Brabant wallon", en: "Walloon Brabant" },
+    c: { fr: "Wavre", en: "Wavre" },
+  },
+  "BE-BRU": {
+    n: { fr: "Bruxelles-Capitale", en: "Brussels-Capital" },
+    c: { fr: "Bruxelles", en: "Brussels" },
+  },
+  "BE-WHT": {
+    n: { fr: "Hainaut", en: "Hainaut" },
+    c: { fr: "Mons", en: "Mons" },
+  },
+  "BE-WLG": {
+    n: { fr: "Liège", en: "Liège" },
+    c: { fr: "Liège", en: "Liège" },
+  },
+  "BE-VLI": {
+    n: { fr: "Limbourg", en: "Limburg" },
+    c: { fr: "Hasselt", en: "Hasselt" },
+  },
+  "BE-WLX": {
+    n: { fr: "Luxembourg", en: "Luxembourg" },
+    c: { fr: "Arlon", en: "Arlon" },
+  },
+  "BE-WNA": {
+    n: { fr: "Namur", en: "Namur" },
+    c: { fr: "Namur", en: "Namur" },
+  },
+  "BE-VOV": {
+    n: { fr: "Flandre orientale (Oost-Vlaanderen)", en: "East Flanders (Oost-Vlaanderen)" },
+    c: { fr: "Gand", en: "Ghent" },
+  },
+  "BE-VBR": {
+    n: { fr: "Brabant flamand (Vlaams-Brabant)", en: "Flemish Brabant (Vlaams-Brabant)" },
+    c: { fr: "Louvain", en: "Leuven" },
+  },
+  "BE-VWV": {
+    n: { fr: "Flandre occidentale (West-Vlaanderen)", en: "West Flanders (West-Vlaanderen)" },
+    c: { fr: "Bruges", en: "Bruges" },
+  },
+  NLDR: {
+    n: { fr: "Drenthe", en: "Drenthe" },
+    c: { fr: "Assen", en: "Assen" },
+  },
+  NLFL: {
+    n: { fr: "Flevoland", en: "Flevoland" },
+    c: { fr: "Lelystad", en: "Lelystad" },
+  },
+  NLFR: {
+    n: { fr: "Friesland", en: "Friesland" },
+    c: { fr: "Leeuwarden", en: "Leeuwarden" },
+  },
+  NLGE: {
+    n: { fr: "Gelderland", en: "Gelderland" },
+    c: { fr: "Arnhem", en: "Arnhem" },
+  },
+  NLGR: {
+    n: { fr: "Groningen", en: "Groningen" },
+    c: { fr: "Groningen", en: "Groningen" },
+  },
+  NLLI: {
+    n: { fr: "Limburg", en: "Limburg" },
+    c: { fr: "Maastricht", en: "Maastricht" },
+  },
+  NLNB: {
+    n: { fr: "Noord-Brabant", en: "North Brabant" },
+    c: { fr: "'s-Hertogenbosch", en: "'s-Hertogenbosch" },
+  },
+  NLNH: {
+    n: { fr: "Noord-Holland", en: "North Holland" },
+    c: { fr: "Haarlem", en: "Haarlem" },
+  },
+  NLOV: {
+    n: { fr: "Overijssel", en: "Overijssel" },
+    c: { fr: "Zwolle", en: "Zwolle" },
+  },
+  NLUT: {
+    n: { fr: "Utrecht", en: "Utrecht" },
+    c: { fr: "Utrecht", en: "Utrecht" },
+  },
+  NLZE: {
+    n: { fr: "Zeeland", en: "Zeeland" },
+    c: { fr: "Middelburg", en: "Middelburg" },
+  },
+  NLZH: {
+    n: { fr: "Zuid-Holland", en: "South Holland" },
+    c: { fr: "Den Haag", en: "The Hague" },
+  },
+};
+
+
       const D_nameIlg = {
         AD: {
           n: { fr: "Andorre", en: "Andorra" },
@@ -31060,6 +34900,7 @@ buildMembers();
       const homeTitle = document.getElementById("homeTitle");
 
       const btnSetting = document.getElementById("btnSetting");
+      const crossSetting = getId('crossSetting')
       const btnPremium = document.getElementById("btnPremium");
       const btnReward = document.getElementById("btnReward");
       const cadreRD = document.getElementById("cadreRD");
@@ -31134,6 +34975,12 @@ buildMembers();
 
       const sonSetting = document.getElementById("sonSetting");
       const toggleSon = document.getElementById("toggleSon");
+      const itmsUnity = queryAll('.itmUnity')
+      let currentUnity = "km²"
+      const wrapperUnity  = query('.wrapperUnity')
+      
+
+      const unityIn = query('.unityIn')
 
       const btnsChoiceIlg = queryAll('[data-choiceilg]')
 
@@ -32941,6 +36788,32 @@ buildMembers();
         saveProgress();
       });
 
+        let kmToMi = 0.38610215854245 // 1km² = 0.386mi²
+
+
+      function areaUnityConvert(nbr, unite) {
+        const v = unite === "mi" ? nbr * kmToMi : nbr / kmToMi;
+        return Math.round(v * 10) / 10;     
+      }
+
+      wrapperUnity.addEventListener('pointerdown',(e)=>e.stopPropagation())
+      itmsUnity.forEach(itm=>{
+        
+        itm.addEventListener('click',()=>{
+          if(unityIn.classList.contains(itm.dataset.unity))return
+          hapticFeedback("medium")
+          
+          unityIn.className = "unityIn " + itm.dataset.unity;
+          currentUnity = itm.dataset.unitylabel;
+          [L_q,P_info].forEach(D=>{
+            for (const clef in D){              
+              D[clef].s = areaUnityConvert(D[clef].s,itm.dataset.unity)
+            }
+          })
+        })
+      })
+
+
       //////
       let onlySouv = false;
 
@@ -33459,6 +37332,9 @@ buildMembers();
         overallHome.classList.remove("active");
       });
 
+      crossSetting.addEventListener('click',()=>{
+        overallHome.click()
+      })
       btnSetting.addEventListener("click", () => {
         cadreSetting.classList.add("active");
         overallHome.classList.add("active");
@@ -35414,7 +39290,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
               infoTxtClasser.className = "infoTxtClasser";
               infoTxtClasser.textContent =
                 L_config.q === "superficieQ"
-                  ? `${D_ilg.superficie[currentIlg]} : ${(L_config.sub ? D_us : L_q)[p_id].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0km²`
+                  ? `${D_ilg.superficie[currentIlg]} : ${(L_config.sub ? D_us : L_q)[p_id].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0${currentUnity}`
                   : `${D_ilg.population[currentIlg]} : ${(L_config.sub ? D_us : L_q)[p_id].p.toLocaleString(D_ilg.tolocalestring[currentIlg])}`;
 
               classerDrapeauBox.append(img);
@@ -37249,7 +41125,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
                 ? (L_config.sub ? D_us : L_q)[L_of[i]].p.toLocaleString(D_ilg.tolocalestring[currentIlg])
                 : (L_config.sub ? D_us : L_q)[L_of[i]].s.toLocaleString(
                     "fr-FR",
-                  ) + "\u00A0km²";
+                  ) + "\u00A0" + currentUnity;
 
             const new_DelClasser = infosClasser.get(
               parseInt(currentEl.textContent),
@@ -38500,7 +42376,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         infoPIles.querySelector("span").textContent =
           D_ileP[p.id.slice(0, 5)].toLocaleString(D_ilg.tolocalestring[currentIlg]);
         infoSIles.querySelector("span").textContent =
-          D_ileS[p.id.slice(0, 5)].toLocaleString(D_ilg.tolocalestring[currentIlg]) + "\u00A0km²";
+          D_ileS[p.id.slice(0, 5)].toLocaleString(D_ilg.tolocalestring[currentIlg]) + "\u00A0" + currentUnity;
       }
 
       polygons.forEach((p) => {
@@ -38825,8 +42701,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           } else if (sort === "superficie") {
             capItemC.innerHTML = `
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.75 9.233C4.75 9.64721 5.08579 9.983 5.5 9.983C5.91421 9.983 6.25 9.64721 6.25 9.233H4.75ZM6.25 5.5C6.25 5.08579 5.91421 4.75 5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5H6.25ZM5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5C4.75 5.91421 5.08579 6.25 5.5 6.25V4.75ZM9.233 6.25C9.64721 6.25 9.983 5.91421 9.983 5.5C9.983 5.08579 9.64721 4.75 9.233 4.75V6.25ZM6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L6.03033 4.96967ZM9.96967 11.0303C10.2626 11.3232 10.7374 11.3232 11.0303 11.0303C11.3232 10.7374 11.3232 10.2626 11.0303 9.96967L9.96967 11.0303ZM15.767 18.75C15.3528 18.75 15.017 19.0858 15.017 19.5C15.017 19.9142 15.3528 20.25 15.767 20.25V18.75ZM19.5 20.25C19.9142 20.25 20.25 19.9142 20.25 19.5C20.25 19.0858 19.9142 18.75 19.5 18.75V20.25ZM18.75 19.5C18.75 19.9142 19.0858 20.25 19.5 20.25C19.9142 20.25 20.25 19.9142 20.25 19.5H18.75ZM20.25 15.767C20.25 15.3528 19.9142 15.017 19.5 15.017C19.0858 15.017 18.75 15.3528 18.75 15.767H20.25ZM18.9697 20.0303C19.2626 20.3232 19.7374 20.3232 20.0303 20.0303C20.3232 19.7374 20.3232 19.2626 20.0303 18.9697L18.9697 20.0303ZM15.0303 13.9697C14.7374 13.6768 14.2626 13.6768 13.9697 13.9697C13.6768 14.2626 13.6768 14.7374 13.9697 15.0303L15.0303 13.9697ZM6.25 15.767C6.25 15.3528 5.91421 15.017 5.5 15.017C5.08579 15.017 4.75 15.3528 4.75 15.767H6.25ZM4.75 19.5C4.75 19.9142 5.08579 20.25 5.5 20.25C5.91421 20.25 6.25 19.9142 6.25 19.5H4.75ZM5.5 18.75C5.08579 18.75 4.75 19.0858 4.75 19.5C4.75 19.9142 5.08579 20.25 5.5 20.25V18.75ZM9.233 20.25C9.64721 20.25 9.983 19.9142 9.983 19.5C9.983 19.0858 9.64721 18.75 9.233 18.75V20.25ZM4.96967 18.9697C4.67678 19.2626 4.67678 19.7374 4.96967 20.0303C5.26256 20.3232 5.73744 20.3232 6.03033 20.0303L4.96967 18.9697ZM11.0303 15.0303C11.3232 14.7374 11.3232 14.2626 11.0303 13.9697C10.7374 13.6768 10.2626 13.6768 9.96967 13.9697L11.0303 15.0303ZM15.767 4.75C15.3528 4.75 15.017 5.08579 15.017 5.5C15.017 5.91421 15.3528 6.25 15.767 6.25V4.75ZM19.5 6.25C19.9142 6.25 20.25 5.91421 20.25 5.5C20.25 5.08579 19.9142 4.75 19.5 4.75V6.25ZM20.25 5.5C20.25 5.08579 19.9142 4.75 19.5 4.75C19.0858 4.75 18.75 5.08579 18.75 5.5H20.25ZM18.75 9.233C18.75 9.64721 19.0858 9.983 19.5 9.983C19.9142 9.983 20.25 9.64721 20.25 9.233H18.75ZM20.0303 6.03033C20.3232 5.73744 20.3232 5.26256 20.0303 4.96967C19.7374 4.67678 19.2626 4.67678 18.9697 4.96967L20.0303 6.03033ZM13.9697 9.96967C13.6768 10.2626 13.6768 10.7374 13.9697 11.0303C14.2626 11.3232 14.7374 11.3232 15.0303 11.0303L13.9697 9.96967ZM6.25 9.233V5.5H4.75V9.233H6.25ZM5.5 6.25H9.233V4.75H5.5V6.25ZM4.96967 6.03033L9.96967 11.0303L11.0303 9.96967L6.03033 4.96967L4.96967 6.03033ZM15.767 20.25H19.5V18.75H15.767V20.25ZM20.25 19.5V15.767H18.75V19.5H20.25ZM20.0303 18.9697L15.0303 13.9697L13.9697 15.0303L18.9697 20.0303L20.0303 18.9697ZM4.75 15.767V19.5H6.25V15.767H4.75ZM5.5 20.25H9.233V18.75H5.5V20.25ZM6.03033 20.0303L11.0303 15.0303L9.96967 13.9697L4.96967 18.9697L6.03033 20.0303ZM15.767 6.25H19.5V4.75H15.767V6.25ZM18.75 5.5V9.233H20.25V5.5H18.75ZM18.9697 4.96967L13.9697 9.96967L15.0303 11.0303L20.0303 6.03033L18.9697 4.96967Z" fill="#ffffff"></path> </g></svg>
-              ${D_us[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0km²
-          `;
+              ${D_us[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0${currentUnity}`;
           } else {
             capItemC.innerHTML = `
           <svg
@@ -47439,13 +51314,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Salta",
         },
         "AR-Z": {
-          n: "San Juan",
-          p: 818234,
+          n: "Santa Cruz",
+          p: 337226,
           info: "Province d'Argentine",
-          s: 89651,
-          nH: "Sanjuaninos",
+          s: 243943,
+          nH: "Santacruceño/a",
           indT: "+54",
-          c: "San Juan",
+          c: "Río Gallegos",
         },
         "AR-G": {
           n: "Santiago del Estero",
@@ -47466,13 +51341,13 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           c: "Santa Fe",
         },
         "AR-J": {
-          n: "San Luis",
-          p: 540905,
+          n: "San Juan",
+          p: 681055,
           info: "Province d'Argentine",
-          s: 76748,
-          nH: "Puntanos",
+          s: 89651,
+          nH: "Sanjuanino/a",
           indT: "+54",
-          c: "San Luis",
+          c: "San Juan",
         },
         "AR-D": {
           n: "San Luis",
@@ -60163,7 +64038,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
         if (!viewSub && !L_config.sub) {
           population.textContent = L_q[id].p.toLocaleString(D_ilg.tolocalestring[currentIlg]);
-          superficie.textContent = L_q[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg]) + "\u00A0km²";
+          superficie.textContent = L_q[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg]) + "\u00A0" + currentUnity;
           independance.textContent =
             P_info[id].independent === true ? "Oui" : "Non";
           gouvernement.textContent = P_info[id].gouvernement;
@@ -60218,7 +64093,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           }
           population.textContent = D_us[id].p.toLocaleString();
           nomH.textContent = D_us[id].nH;
-          superficie.textContent = D_us[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg]) + "\u00A0km²";
+          superficie.textContent = D_us[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg]) + "\u00A0" + currentUnity;
           indT.textContent = D_us[id].indT;
         }
         if (!oneTimeColor) {
@@ -61037,8 +64912,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             capItemC.innerHTML = `
          <svg transition="transform 0.4 ease" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.75 9.233C4.75 9.64721 5.08579 9.983 5.5 9.983C5.91421 9.983 6.25 9.64721 6.25 9.233H4.75ZM6.25 5.5C6.25 5.08579 5.91421 4.75 5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5H6.25ZM5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5C4.75 5.91421 5.08579 6.25 5.5 6.25V4.75ZM9.233 6.25C9.64721 6.25 9.983 5.91421 9.983 5.5C9.983 5.08579 9.64721 4.75 9.233 4.75V6.25ZM6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L6.03033 4.96967ZM9.96967 11.0303C10.2626 11.3232 10.7374 11.3232 11.0303 11.0303C11.3232 10.7374 11.3232 10.2626 11.0303 9.96967L9.96967 11.0303ZM15.767 18.75C15.3528 18.75 15.017 19.0858 15.017 19.5C15.017 19.9142 15.3528 20.25 15.767 20.25V18.75ZM19.5 20.25C19.9142 20.25 20.25 19.9142 20.25 19.5C20.25 19.0858 19.9142 18.75 19.5 18.75V20.25ZM18.75 19.5C18.75 19.9142 19.0858 20.25 19.5 20.25C19.9142 20.25 20.25 19.9142 20.25 19.5H18.75ZM20.25 15.767C20.25 15.3528 19.9142 15.017 19.5 15.017C19.0858 15.017 18.75 15.3528 18.75 15.767H20.25ZM18.9697 20.0303C19.2626 20.3232 19.7374 20.3232 20.0303 20.0303C20.3232 19.7374 20.3232 19.2626 20.0303 18.9697L18.9697 20.0303ZM15.0303 13.9697C14.7374 13.6768 14.2626 13.6768 13.9697 13.9697C13.6768 14.2626 13.6768 14.7374 13.9697 15.0303L15.0303 13.9697ZM6.25 15.767C6.25 15.3528 5.91421 15.017 5.5 15.017C5.08579 15.017 4.75 15.3528 4.75 15.767H6.25ZM4.75 19.5C4.75 19.9142 5.08579 20.25 5.5 20.25C5.91421 20.25 6.25 19.9142 6.25 19.5H4.75ZM5.5 18.75C5.08579 18.75 4.75 19.0858 4.75 19.5C4.75 19.9142 5.08579 20.25 5.5 20.25V18.75ZM9.233 20.25C9.64721 20.25 9.983 19.9142 9.983 19.5C9.983 19.0858 9.64721 18.75 9.233 18.75V20.25ZM4.96967 18.9697C4.67678 19.2626 4.67678 19.7374 4.96967 20.0303C5.26256 20.3232 5.73744 20.3232 6.03033 20.0303L4.96967 18.9697ZM11.0303 15.0303C11.3232 14.7374 11.3232 14.2626 11.0303 13.9697C10.7374 13.6768 10.2626 13.6768 9.96967 13.9697L11.0303 15.0303ZM15.767 4.75C15.3528 4.75 15.017 5.08579 15.017 5.5C15.017 5.91421 15.3528 6.25 15.767 6.25V4.75ZM19.5 6.25C19.9142 6.25 20.25 5.91421 20.25 5.5C20.25 5.08579 19.9142 4.75 19.5 4.75V6.25ZM20.25 5.5C20.25 5.08579 19.9142 4.75 19.5 4.75C19.0858 4.75 18.75 5.08579 18.75 5.5H20.25ZM18.75 9.233C18.75 9.64721 19.0858 9.983 19.5 9.983C19.9142 9.983 20.25 9.64721 20.25 9.233H18.75ZM20.0303 6.03033C20.3232 5.73744 20.3232 5.26256 20.0303 4.96967C19.7374 4.67678 19.2626 4.67678 18.9697 4.96967L20.0303 6.03033ZM13.9697 9.96967C13.6768 10.2626 13.6768 10.7374 13.9697 11.0303C14.2626 11.3232 14.7374 11.3232 15.0303 11.0303L13.9697 9.96967ZM6.25 9.233V5.5H4.75V9.233H6.25ZM5.5 6.25H9.233V4.75H5.5V6.25ZM4.96967 6.03033L9.96967 11.0303L11.0303 9.96967L6.03033 4.96967L4.96967 6.03033ZM15.767 20.25H19.5V18.75H15.767V20.25ZM20.25 19.5V15.767H18.75V19.5H20.25ZM20.0303 18.9697L15.0303 13.9697L13.9697 15.0303L18.9697 20.0303L20.0303 18.9697ZM4.75 15.767V19.5H6.25V15.767H4.75ZM5.5 20.25H9.233V18.75H5.5V20.25ZM6.03033 20.0303L11.0303 15.0303L9.96967 13.9697L4.96967 18.9697L6.03033 20.0303ZM15.767 6.25H19.5V4.75H15.767V6.25ZM18.75 5.5V9.233H20.25V5.5H18.75ZM18.9697 4.96967L13.9697 9.96967L15.0303 11.0303L20.0303 6.03033L18.9697 4.96967Z" fill="#ffffff"></path> </g></svg>
 
-              Superficie : ${L_q[r.id.toUpperCase()].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0km²
-          `;
+              Superficie : ${L_q[r.id.toUpperCase()].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0${currentUnity}`;
           }
           boxItemC.appendChild(titleItemC);
           boxItemC.appendChild(capItemC);
@@ -62027,6 +65901,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         container.appendChild(mainBlock);
 
         mainRow.addEventListener("click", () => {
+          subsWrapper.querySelectorAll('.arrow-region').forEach(a=>a.classList.contains('open') ? a.click() : "")
           const isOpen = arrowWrap.classList.contains("open");
           if (openMainBlock && openMainBlock !== mainBlock) {
             closeMainBlock(openMainBlock);
