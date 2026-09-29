@@ -29272,14 +29272,30 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           el.placeholder = D_ilgHolder[el.dataset.ilgplaceholder][ilg];
         });
 
-        for (const clef in L_q) {
+        [L_q,P_info].forEach( D=>{
+          for (const clef in D) {
           if (!D_nameIlg[clef]) {
             console.log(clef, D_nameIlg[clef]);
             continue;
           }
-          L_q[clef].n = D_nameIlg[clef].n[ilg];
-          L_q[clef].c = D_nameIlg[clef].c[ilg];
+          D[clef].n = D_nameIlg[clef].n[ilg];
+          D[clef].c = D_nameIlg[clef].c[ilg];
+
+          if(D=== P_info){
+            const reg = D_regIlg.find(ind=> Object.values(ind[1]).includes(D[clef].region))
+            const subReg = D_subRegIlg.find(ind=> Object.values(ind[1]).includes(D[clef].subregion))
+            
+            if (!reg)continue
+            D[clef].region = D_ilg[reg[0]][ilg] 
+            if (!subReg)continue
+            D[clef].subregion =  D_ilg[subReg[0]][ilg]
+            // Amérique → amerique
+          }
+          
         }
+        })
+        
+    
         currentIlg = ilg;
         getId('ilgSelected').textContent = query(`[data-choiceilg = ${ilg}]`).querySelector("span").textContent
         // Change rles listes ponctuelles 
@@ -29611,7 +29627,14 @@ buildMembers();
         //  
       };
 
-      const D_regionsIlg = [
+      const D_regIlg = [
+        ["afrique", { fr: "Afrique", en: "Africa" }],
+        ["amerique", { fr: "Amerique", en: "America" }],
+        ["asie", { fr: "Asie", en: "Asia" }],
+        ["europe", { fr: "Europe", en: "Europe" }],
+        ["oceanie", { fr: "Oceanie", en: "Oceania" }],
+      ]
+      const D_subRegIlg = [
         ["afriquedelest", { fr: "Afrique de l'Est", en: "East Africa" }],
         ["afriquecentrale", { fr: "Afrique centrale", en: "Central Africa" }],
         ["afriquedunord", { fr: "Afrique du Nord", en: "North Africa" }],
@@ -37623,6 +37646,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         textAreaMail.value = "";
         wrapperTool.insertBefore(zBox, wrapperTool.firstChild);
         zBox.classList.remove("modeTrouver");
+        backListBox?.click()
         L_addMaps.forEach((p) => {
           Maps.appendChild(p);
           p.style.zIndex = "";
@@ -65902,6 +65926,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           btnBuyDon.classList.remove("loading");
         }
       }
+
 
       // script avis
       const { InAppReview } = window.Capacitor?.Plugins ?? {};
