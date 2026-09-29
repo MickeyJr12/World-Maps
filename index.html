@@ -5624,6 +5624,7 @@
       }
        #crossSetting {
         position: absolute;
+        z-index : 99999;
         cursor: pointer;
         right: 0.6rem;
         top : calc(env(safe-area-inset-top) + 0.5rem);
@@ -5671,7 +5672,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scrollbar-width: none;
         position: relative;
         width: 100%;
         height: auto;
