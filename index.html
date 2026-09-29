@@ -20717,6 +20717,7 @@
             align-self: center;
             color: white;
           "
+          data-ilg="affichage"
         >
           Affichage
         </h2>
@@ -29262,6 +29263,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function changeIlg(ilg) {
         queryAll("[data-ilg]").forEach((el) => {
           if(!D_ilg[el.dataset.ilg]){console.log(el,el.dataset,"el")}
+          if (!D_ilg[el.dataset.ilg][ilg])console.log(D_ilg[el.dataset.ilg])
           el.textContent = D_ilg[el.dataset.ilg][ilg];
         });
          // Placeholders
@@ -29280,6 +29282,72 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
         currentIlg = ilg;
         getId('ilgSelected').textContent = query(`[data-choiceilg = ${ilg}]`).querySelector("span").textContent
+        // Change rles listes ponctuelles 
+        continentsData = [{
+  region: D_ilg["Afrique".toLowerCase()][currentIlg],
+  id: "viewAfrique",
+  subs: [
+    { label: D_ilg.afriquedelest[currentIlg], id: "viewEasternAfrique" },
+    { label: D_ilg.afriquecentrale[currentIlg], id: "viewMiddleAfrique" },
+    { label: D_ilg.afriquedunord[currentIlg], id: "viewNorthernAfrique" },
+    { label: D_ilg.afriqueaustrale[currentIlg], id: "viewSouthernAfrique" },
+    { label: D_ilg.afriquedelouest[currentIlg], id: "viewWesternAfrique" },
+  ],
+},
+{
+  region: D_ilg["Amerique".toLowerCase()][currentIlg],
+  id: "viewAmérique",
+  subs: [
+    { label: D_ilg.caraibes[currentIlg], id: "viewCaraïbes" },
+    { label: D_ilg.ameriquecentrale[currentIlg], id: "viewCentralAmerica" },
+    { label: D_ilg.ameriquedunord[currentIlg], id: "viewNorthernAmerica" },
+    { label: D_ilg.ameriquedusud[currentIlg], id: "viewSouthAmerica" },
+  ],
+},
+{
+  region: D_ilg["Asie".toLowerCase()][currentIlg],
+  id: "viewAsie",
+  subs: [
+    { label: D_ilg.asiecentrale[currentIlg], id: "viewCentralAsie" },
+    { label: D_ilg.asiedelest[currentIlg], id: "viewEasternAsie" },
+    { label: D_ilg.asiedususdest[currentIlg], id: "viewSouthEasternAsie" },
+    { label: D_ilg.asiedusud[currentIlg], id: "viewSouthernAsie" },
+    { label: D_ilg.asiedelouest[currentIlg], id: "viewWesternAsie" },
+  ],
+},
+{
+  region: D_ilg["Europe".toLowerCase()][currentIlg],
+  id: "viewEurope",
+  subs: [
+    { label: D_ilg.europecentrale[currentIlg], id: "viewCentralEurope" },
+    { label: D_ilg.europedelest[currentIlg], id: "viewEasternEurope" },
+    { label: D_ilg.europedunord[currentIlg], id: "viewNorthernEurope" },
+    { label: D_ilg.europedusud[currentIlg], id: "viewSouthernEurope" },
+    { label: D_ilg.europedususdest[currentIlg], id: "viewSoutheastEurope" },
+    { label: D_ilg.europedelouest[currentIlg], id: "viewWesternEurope" },
+  ],
+},
+{
+  region: D_ilg["Oceanie".toLowerCase()][currentIlg],
+  id: "viewOcéanie",
+  subs: [
+    {
+      label: D_ilg.australieetnouvellezelande[currentIlg],
+      id: "viewAustraliaAndNewZealand",
+    },
+    { label: D_ilg.melanesie[currentIlg], id: "viewMélanésie" },
+    { label: D_ilg.micronesie[currentIlg], id: "viewMicronésie" },
+    { label: D_ilg.polynesie[currentIlg], id: "viewPolynésie" },
+  ],
+},
+]
+
+
+getId('view-list').innerHTML = ``;
+buildContinents();
+fillSub(itemViewSub);
+buildMembers();
+
         saveProgress()
       }
 
@@ -29487,9 +29555,92 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         jaune: { fr: "Jaune", en: "Yellow" },
         aucunresultat: { fr: "Aucun résultat", en: "No results" },
         couleurs: { fr: " couleurs", en: " colors" },
-        // llangues
+        membresde: { fr: "Membres de l'ONU", en: "UN members" },
+        territoiresnon: { fr: "Territoires non indépendants", en: "Non-independent territories" },
+        organisationsinternationales: { fr: "Organisations internationales", en: "International organizations" },
+        territoiresnonmembres: { fr: "Territoires non membres de l'ONU", en: "Non-UN member territories" },
+
+        //Langue cadre vue
+        affichage: { fr: "Affichage", en: "Display" },
+        // Langue organisations
+        otan: { fr: "OTAN", en: "NATO" },
+        ue: { fr: "UE", en: "EU" },
+        moyenOrient: { fr: "Moyen-Orient", en: "Middle East" },
+        ligueArabe: { fr: "Ligue arabe", en: "Arab League" },
+        exURSS: { fr: "Ex-URSS", en: "Ex-USSR" },
+        g20: { fr: "G20", en: "G20" },
+        g7: { fr: "G7", en: "G7" },
+        opepplus: { fr: "OPEP+", en: "OPEC+" },
+        cop: { fr: "COP21", en: "COP21" },
+        opep: { fr: "OPEP", en: "OPEC" },
+        unesco: { fr: "UNESCO", en: "UNESCO" },
+        banqueMondiale: { fr: "Banque mondiale", en: "World Bank" },
+        unionAfricaine: { fr: "Union Africaine", en: "African Union" },
+        fmi: { fr: "FMI", en: "IMF" },
+
+        // langue continents 
+        afriquedelest: { fr: "Afrique de l'Est", en: "East Africa" },
+        afriquecentrale: { fr: "Afrique centrale", en: "Central Africa" },
+        afriquedunord: { fr: "Afrique du Nord", en: "North Africa" },
+        afriqueaustrale: { fr: "Afrique australe", en: "Southern Africa" },
+        afriquedelouest: { fr: "Afrique de l'Ouest", en: "West Africa" },
+
+        caraibes: { fr: "Caraïbes", en: "Caribbean" },
+        ameriquecentrale: { fr: "Amérique centrale", en: "Central America" },
+        ameriquedunord: { fr: "Amérique du Nord", en: "North America" },
+        ameriquedusud: { fr: "Amérique du Sud", en: "South America" },
+
+        asiecentrale: { fr: "Asie centrale", en: "Central Asia" },
+        asiedelest: { fr: "Asie de l'Est", en: "East Asia" },
+        asiedususdest: { fr: "Asie du Sud-Est", en: "Southeast Asia" },
+        asiedusud: { fr: "Asie du Sud", en: "South Asia" },
+        asiedelouest: { fr: "Asie de l'Ouest", en: "West Asia" },
+
+        europecentrale: { fr: "Europe centrale", en: "Central Europe" },
+        europedelest: { fr: "Europe de l'Est", en: "Eastern Europe" },
+        europedunord: { fr: "Europe du Nord", en: "Northern Europe" },
+        europedusud: { fr: "Europe du Sud", en: "Southern Europe" },
+        europedususdest: { fr: "Europe du Sud-Est", en: "Southeast Europe" },
+        europedelouest: { fr: "Europe de l'Ouest", en: "Western Europe" },
+
+        australieetnouvellezelande: { fr: "Australie et Nouvelle-Zélande", en: "Australia and New Zealand" },
+        melanesie: { fr: "Mélanésie", en: "Melanesia" },
+        micronesie: { fr: "Micronésie", en: "Micronesia" },
+        polynesie: { fr: "Polynésie", en: "Polynesia" },
+// llangues
         //  
       };
+
+      const D_regionsIlg = [
+        ["afriquedelest", { fr: "Afrique de l'Est", en: "East Africa" }],
+        ["afriquecentrale", { fr: "Afrique centrale", en: "Central Africa" }],
+        ["afriquedunord", { fr: "Afrique du Nord", en: "North Africa" }],
+        ["afriqueaustrale", { fr: "Afrique australe", en: "Southern Africa" }],
+        ["afriquedelouest", { fr: "Afrique de l'Ouest", en: "West Africa" }],
+
+        ["caraibes", { fr: "Caraïbes", en: "Caribbean" }],
+        ["ameriquecentrale", { fr: "Amérique centrale", en: "Central America" }],
+        ["ameriquedunord", { fr: "Amérique du Nord", en: "North America" }],
+        ["ameriquedusud", { fr: "Amérique du Sud", en: "South America" }],
+
+        ["asiecentrale", { fr: "Asie centrale", en: "Central Asia" }],
+        ["asiedelest", { fr: "Asie de l'Est", en: "East Asia" }],
+        ["asiedususdest", { fr: "Asie du Sud-Est", en: "Southeast Asia" }],
+        ["asiedusud", { fr: "Asie du Sud", en: "South Asia" }],
+        ["asiedelouest", { fr: "Asie de l'Ouest", en: "West Asia" }],
+
+        ["europecentrale", { fr: "Europe centrale", en: "Central Europe" }],
+        ["europedelest", { fr: "Europe de l'Est", en: "Eastern Europe" }],
+        ["europedunord", { fr: "Europe du Nord", en: "Northern Europe" }],
+        ["europedusud", { fr: "Europe du Sud", en: "Southern Europe" }],
+        ["europedususdest", { fr: "Europe du Sud-Est", en: "Southeast Europe" }],
+        ["europedelouest", { fr: "Europe de l'Ouest", en: "Western Europe" }],
+
+        ["australieetnouvellezelande", { fr: "Australie et Nouvelle-Zélande", en: "Australia and New Zealand" }],
+        ["melanesie", { fr: "Mélanésie", en: "Melanesia" }],
+        ["micronesie", { fr: "Micronésie", en: "Micronesia" }],
+        ["polynesie", { fr: "Polynésie", en: "Polynesia" }],
+      ]
 
       const D_phrasesBonnesRIlg = {
         bonneReponse1: { fr: "Bonne réponse !", en: "Correct!" },
@@ -38568,8 +38719,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           cadreSortSub.classList.remove("active");
           btnSortSub.classList.remove("active");
           itm.classList.add("active");
-          btnSortSub.querySelector("span").textContent =
-            itm.querySelector("span").textContent;
+          btnSortSub.querySelector("[data-ilg]").textContent =
+            itm.querySelector("[data-ilg]").textContent;
+          btnSortSub.querySelector("[data-ilg]").dataset.ilg = itm.querySelector("[data-ilg]").dataset.ilg
           sortContentSub(itm.dataset.sort);
         });
       });
@@ -39008,28 +39160,28 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
 
       //
       const orgaData = [
-        { label: "OTAN", id: "orgaOTAN", key: "otan" },
-        { label: "UE", id: "orgaUE", key: "ue" },
-        { label: "Moyen-Orient", id: "orgaMoyenOrient", key: "moyenOrient" },
-        { label: "Ligue arabe", id: "orgaLigueArabe", key: "ligueArabe" },
-        { label: "Ex-URSS", id: "orgaExUrss", key: "exURSS" },
-        { label: "G20", id: "orgaG20", key: "g20" },
-        { label: "G7", id: "orgaG7", key: "g7" },
-        { label: "OPEP+", id: "orgaOPEPP", key: "opepplus" }, // Pas de logo
-        { label: "COP21", id: "orgaCOP", key: "cop" },
-        { label: "OPEP", id: "orgaOPEP", key: "opep" },
-        { label: "UNESCO", id: "orgaUnesco", key: "unesco" },
-        {
-          label: "Banque mondiale",
-          id: "orgaBanqueMondiale",
-          key: "banqueMondiale",
-        },
-        {
-          label: "Union Africaine",
-          id: "orgaUnionAfricaine",
-          key: "unionAfricaine",
-        },
-        { label: "FMI", id: "orgaFMI", key: "fmi" },
+        { label: D_ilg.otan[currentIlg], id: "orgaOTAN", key: "otan" },
+{ label: D_ilg.ue[currentIlg], id: "orgaUE", key: "ue" },
+{ label: D_ilg.moyenOrient[currentIlg], id: "orgaMoyenOrient", key: "moyenOrient" },
+{ label: D_ilg.ligueArabe[currentIlg], id: "orgaLigueArabe", key: "ligueArabe" },
+{ label: D_ilg.exURSS[currentIlg], id: "orgaExUrss", key: "exURSS" },
+{ label: D_ilg.g20[currentIlg], id: "orgaG20", key: "g20" },
+{ label: D_ilg.g7[currentIlg], id: "orgaG7", key: "g7" },
+{ label: D_ilg.opepplus[currentIlg], id: "orgaOPEPP", key: "opepplus" }, // Pas de logo
+{ label: D_ilg.cop[currentIlg], id: "orgaCOP", key: "cop" },
+{ label: D_ilg.opep[currentIlg], id: "orgaOPEP", key: "opep" },
+{ label: D_ilg.unesco[currentIlg], id: "orgaUnesco", key: "unesco" },
+{
+  label: D_ilg.banqueMondiale[currentIlg],
+  id: "orgaBanqueMondiale",
+  key: "banqueMondiale",
+},
+{
+  label: D_ilg.unionAfricaine[currentIlg],
+  id: "orgaUnionAfricaine",
+  key: "unionAfricaine",
+},
+{ label: D_ilg.fmi[currentIlg], id: "orgaFMI", key: "fmi" },
       ];
 
       //Script const Legend
@@ -59032,65 +59184,64 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       let timeouts = [];
 
       //Données cadreVue
-      const continentsData = [
-        {
-          region: "Afrique",
-          id: "viewAfrique",
-          subs: [
-            { label: "Afrique de l'Est", id: "viewEasternAfrique" },
-            { label: "Afrique centrale", id: "viewMiddleAfrique" },
-            { label: "Afrique du Nord", id: "viewNorthernAfrique" },
-            { label: "Afrique australe", id: "viewSouthernAfrique" },
-            { label: "Afrique de l'Ouest", id: "viewWesternAfrique" },
-          ],
-        },
-        {
-          region: "Amérique",
-          id: "viewAmérique",
-          subs: [
-            { label: "Caraïbes", id: "viewCaraïbes" },
-            { label: "Amérique centrale", id: "viewCentralAmerica" },
-            { label: "Amérique du Nord", id: "viewNorthernAmerica" },
-            { label: "Amérique du Sud", id: "viewSouthAmerica" },
-          ],
-        },
-        {
-          region: "Asie",
-          id: "viewAsie",
-          subs: [
-            { label: "Asie centrale", id: "viewCentralAsie" },
-            { label: "Asie de l'Est", id: "viewEasternAsie" },
-            { label: "Asie du Sud-Est", id: "viewSouthEasternAsie" },
-            { label: "Asie du Sud", id: "viewSouthernAsie" },
-            { label: "Asie de l'Ouest", id: "viewWesternAsie" },
-          ],
-        },
-        {
-          region: "Europe",
-          id: "viewEurope",
-          subs: [
-            { label: "Europe centrale", id: "viewCentralEurope" },
-            { label: "Europe de l'Est", id: "viewEasternEurope" },
-            { label: "Europe du Nord", id: "viewNorthernEurope" },
-            { label: "Europe du Sud", id: "viewSouthernEurope" },
-            { label: "Europe du Sud-Est", id: "viewSoutheastEurope" },
-            { label: "Europe de l'Ouest", id: "viewWesternEurope" },
-          ],
-        },
-        {
-          region: "Océanie",
-          id: "viewOcéanie",
-          subs: [
-            {
-              label: "Australie et Nouvelle-Zélande",
-              id: "viewAustraliaAndNewZealand",
-            },
-            { label: "Mélanésie", id: "viewMélanésie" },
-            { label: "Micronésie", id: "viewMicronésie" },
-            { label: "Polynésie", id: "viewPolynésie" },
-          ],
-        },
-      ];
+      let continentsData = [{
+  region: D_ilg["Afrique".toLowerCase()][currentIlg],
+  id: "viewAfrique",
+  subs: [
+    { label: D_ilg.afriquedelest[currentIlg], id: "viewEasternAfrique" },
+    { label: D_ilg.afriquecentrale[currentIlg], id: "viewMiddleAfrique" },
+    { label: D_ilg.afriquedunord[currentIlg], id: "viewNorthernAfrique" },
+    { label: D_ilg.afriqueaustrale[currentIlg], id: "viewSouthernAfrique" },
+    { label: D_ilg.afriquedelouest[currentIlg], id: "viewWesternAfrique" },
+  ],
+},
+{
+  region: D_ilg["Amerique".toLowerCase()][currentIlg],
+  id: "viewAmérique",
+  subs: [
+    { label: D_ilg.caraibes[currentIlg], id: "viewCaraïbes" },
+    { label: D_ilg.ameriquecentrale[currentIlg], id: "viewCentralAmerica" },
+    { label: D_ilg.ameriquedunord[currentIlg], id: "viewNorthernAmerica" },
+    { label: D_ilg.ameriquedusud[currentIlg], id: "viewSouthAmerica" },
+  ],
+},
+{
+  region: D_ilg["Asie".toLowerCase()][currentIlg],
+  id: "viewAsie",
+  subs: [
+    { label: D_ilg.asiecentrale[currentIlg], id: "viewCentralAsie" },
+    { label: D_ilg.asiedelest[currentIlg], id: "viewEasternAsie" },
+    { label: D_ilg.asiedususdest[currentIlg], id: "viewSouthEasternAsie" },
+    { label: D_ilg.asiedusud[currentIlg], id: "viewSouthernAsie" },
+    { label: D_ilg.asiedelouest[currentIlg], id: "viewWesternAsie" },
+  ],
+},
+{
+  region: D_ilg["Europe".toLowerCase()][currentIlg],
+  id: "viewEurope",
+  subs: [
+    { label: D_ilg.europecentrale[currentIlg], id: "viewCentralEurope" },
+    { label: D_ilg.europedelest[currentIlg], id: "viewEasternEurope" },
+    { label: D_ilg.europedunord[currentIlg], id: "viewNorthernEurope" },
+    { label: D_ilg.europedusud[currentIlg], id: "viewSouthernEurope" },
+    { label: D_ilg.europedususdest[currentIlg], id: "viewSoutheastEurope" },
+    { label: D_ilg.europedelouest[currentIlg], id: "viewWesternEurope" },
+  ],
+},
+{
+  region: D_ilg["Oceanie".toLowerCase()][currentIlg],
+  id: "viewOcéanie",
+  subs: [
+    {
+      label: D_ilg.australieetnouvellezelande[currentIlg],
+      id: "viewAustraliaAndNewZealand",
+    },
+    { label: D_ilg.melanesie[currentIlg], id: "viewMélanésie" },
+    { label: D_ilg.micronesie[currentIlg], id: "viewMicronésie" },
+    { label: D_ilg.polynesie[currentIlg], id: "viewPolynésie" },
+  ],
+},
+];
 
       //Grap plan SVG
       let isDragging = false;
@@ -61496,9 +61647,9 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           onuTitle.style.color = "white";
 
           if (r.key === "unMember") {
-            onuTitle.textContent = "Territoires non membres de l'ONU";
+            onuTitle.textContent = D_ilg.territoiresnonmembres[currentIlg];
           } else {
-            onuTitle.textContent = "Territoires non indépendants";
+            onuTitle.textContent = D_ilg.territoiresnon[currentIlg];
           }
           onuTitle.style.textDecoration = "underline";
           onu.appendChild(onuTitle);
@@ -61528,7 +61679,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           const orgaTitle = document.createElement("h3");
           orgaTitle.style.color = "white";
           orgaTitle.style.marginTop = "1.4rem";
-          orgaTitle.textContent = "Subdivisions";
+          orgaTitle.textContent = D_ilg.subdivisions[currentIlg];
           orgaTitle.style.textDecoration = "underline";
           orgaI.appendChild(orgaTitle);
 
@@ -61651,7 +61802,8 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       }
 
       /* ── 1. Toggle "Continents" (sans oeil) ── */
-      (function buildContinents() {
+      
+      function buildContinents() {
         const mainBlock = document.createElement("div");
         mainBlock.className = "main-block";
         mainBlock.id = "toggleContinents";
@@ -61865,10 +62017,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             openMainBlock = mainBlock;
           }
         });
-      })();
+      }
+      
 
       /* ── 3. Toggle "Organisations internationales" (avec oeil-filtre) ── */
-      (function buildOrganisations() {
+     
+      function buildOrganisations() {
         /* ── helper : crée un œil-filtre (s'allume, ne se barre pas) ── */
         function makeFilterEye(id) {
           const btn = document.createElement("div");
@@ -62062,18 +62216,21 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             openMainBlock = mainBlock;
           }
         });
-      })();
+      };
+      // À lancer buildContinents()
 
       /* ── 2. Lignes simples avec oeil ── */
+      function buildMembers(){
       [
         {
-          label: "Membre de l'ONU",
+          label: D_ilg.membresde[currentIlg],
+          ilg : "membresde",
           id: "viewMembreONU",
           idbtn: "eyeONU",
           key: "unMember",
         },
         {
-          label: "Territoires non indépendants",
+          label: D_ilg.territoiresnon[currentIlg],
           id: "viewPaysIndependants",
           idbtn: "eyeIndependants",
           key: "independent",
@@ -62183,9 +62340,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
         last2.classList.toggle("active");
       });
+      }
+      
 
       const itemViewSub = {
-        label: "Subdivisions",
+        label: D_ilg.subdivisions[currentIlg],
+        ilg : "subdivisions",
         id: "viewSubdivision",
         idbtn: "subIcon",
         key: "mystere",
@@ -62241,7 +62401,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
         });
         btnTerritory.classList.toggle("active");
       }
-      fillSub(itemViewSub);
+      // fillSub(itemViewSub);
 
       //------------------------------------------------------------------------------------------------------------------------------------------------------------------
       //PARTIE MOBILE
@@ -62767,6 +62927,7 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
       optionModeS.forEach((option) => {
         option.addEventListener("click", () => {
           currentSearching = option.dataset.searching;
+          titleCadreS.querySelector('[data-ilg]').dataset.ilg = option.querySelector('[data-ilg]').dataset.ilg
 
           optionModeS.forEach((opt) => opt.classList.remove("active"));
           option.classList.add("active");
@@ -63052,10 +63213,12 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
             (i) => (i.querySelector("span").style.opacity = "0"),
           );
           // Affiche le ✓ du sélectionné
+          
           item.querySelector("span").style.opacity = "1";
           // Met à jour le texte de "classer"
-          const texte = item.textContent.trim().replace("✓", "").trim();
-          classer.firstChild.textContent = texte + " ";
+          const texte = item.querySelector('[data-ilg]').textContent;
+          classer.querySelector('[data-ilg]').textContent = texte + " ";
+          classer.querySelector('[data-ilg]').dataset.ilg = item.querySelector('[data-ilg]').dataset.ilg
 
           const svgSrc = item.querySelector("svg").cloneNode(true);
           classer.querySelector("svg").replaceWith(svgSrc);
@@ -64766,7 +64929,10 @@ Created by potrace 1.15, written by Peter Selinger 2001-2017
           data.dataD ? (dataD = data.dataD) : "";
           oneTimeMessage = data.oneTimeMessage ?? false;
           currentIlg = data.currentIlg ?? 'fr';
-          currentIlg === 'fr' ? "" : query(`[data-choiceilg = ${currentIlg}]`).click();
+          currentIlg === 'fr' ? (buildContinents(),fillSub(itemViewSub),buildMembers()) : query(`[data-choiceilg = ${currentIlg}]`).click();
+          // Si on chnage de langue, chageIlg se chargera des fill
+        
+        
           // nbrReward =0 ;
           // for( const cle in L_claimedQ){
           //   if (L_claimedQ[cle] === false && cle !== "XXX"){nbrReward+=1}
