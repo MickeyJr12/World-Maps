@@ -45054,7 +45054,6 @@ const D_txtLRD_RDQIlg = {
       const backMaps = document.getElementById("backMaps");
       backMaps.addEventListener("click", () => {
         toggleC(false);
-
         // paths.forEach(p=>{
         //   idVisible_m.set(p.id,true)
         //   pColor_m.set(p,{hover:"",curent:colorPath})
@@ -45064,6 +45063,8 @@ const D_txtLRD_RDQIlg = {
 
         cadreVueTF = true;
         afficheVue();
+        queryAll('.calqueChoice').forEach(el=>el.classList.contains('active') ? (el.click(), el.click()): "")
+
         wrapperTool.style.pointerEvents = "";
 
         currentCountry = null;
