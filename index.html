@@ -13843,6 +13843,7 @@
             font-weight: 600;
             z-index: -1;
           "
+          data-ilg="progression"
         >
           Progression
         </span>
@@ -13858,7 +13859,7 @@
         <div></div>
 
         <div id="cadreLvl">
-          <span>Niveau</span>
+          <span data-ilg="niveau">Niveau</span>
           <div id="badgeLvl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -13902,7 +13903,7 @@
               />
             </svg>
 
-            Défis quotidiens
+            <span data-ilg="defisquotidiens">Défis quotidiens</span>
           </div>
           <div class="itemMenuSw" id="menuRecompenses">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -13917,7 +13918,7 @@
                 fill="#1C274C"
               />
             </svg>
-            Récompenses
+            <span data-ilg="recompenses">Récompenses</span>
           </div>
         </div>
 
@@ -29452,6 +29453,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
 
         // Changer les listes
+        [L_LRD, L_RDQ].forEach(L=>{
+          
+          L.forEach(el=>{
+            el.t = D_txtLRD_RDQIlg[el.id][ilg]
+          })
+        })
+        fillCadreRDQ_LRD()
+
       for (const clef in L_cSub){
           L_cSub[clef].t = D_txtSubIlg[clef][ilg]
       }
@@ -29523,6 +29532,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           fr: "Teste tes connaissances en géographie",
           en: "Test your geography knowledge",
         },
+        // Langue quetes
+        defisquotidiens: { fr: "Défis quotidiens", en: "Daily challenges" },
+        recompenses: { fr: "Récompenses", en: "Rewards" },
+        progression: { fr: "Progression", en: "Progress" },
+        niveau: { fr: "Niveau", en: "Level" },
         //langue setting
         reglages: { fr: "Réglages", en: "Setting" },
         apropos: { fr: "À propos", en: "About" },
@@ -30635,6 +30649,159 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
   AT: { fr: "Länder d'Autriche", en: "States of Austria (Länder)" },
   PE: { fr: "Départements du Pérou", en: "Departments of Peru" },
 };
+
+// Dictionnaire langue Quetes 
+const D_txtLRD_RDQIlg = {
+  A: { fr: "10 bonnes réponses en mode Trouver", en: "10 correct answers in Find mode" },
+  B: { fr: "Terminer un quiz", en: "Complete a quiz" },
+  C: { fr: "Réaliser 5 bonnes réponses d'affilée", en: "Get 5 correct answers in a row" },
+  D: { fr: "Classer correctement au moins 3 pays par superficie 2 fois", en: "Correctly rank at least 3 countries by area 2 times" },
+  E: { fr: "Obtenir 2 étoiles en mode difficile 2 fois", en: "Get 2 stars in hard mode 2 times" },
+  F: { fr: "Obtenir un total de 15 bonnes réponses en mode 4 choix", en: "Get a total of 15 correct answers in 4-choice mode" },
+  G: { fr: "15 bonnes réponses en mode Classer", en: "15 correct answers in Rank mode" },
+  H: { fr: "15 bonnes réponses sur des pays d'Afrique", en: "15 correct answers on African countries" },
+  I: { fr: "5 bonnes réponses qui incluent une Capitale", en: "5 correct answers involving a capital" },
+  J: { fr: "5 bonnes réponses qui incluent un drapeau", en: "5 correct answers involving a flag" },
+  K: { fr: "15 bonnes réponses sur des pays", en: "15 correct answers on countries" },
+  L: { fr: "Obtenir un score parfait dans n'importe quel mode", en: "Get a perfect score in any mode" },
+  M: { fr: "Terminer un quiz en moins de 40 secondes avec au moins une étoile", en: "Complete a quiz in under 40 seconds with at least 1 star" },
+  N: { fr: "15 bonnes réponses sur des pays d'Europe", en: "15 correct answers on European countries" },
+  O: { fr: "Terminer 5 quiz", en: "Complete 5 quizzes" },
+  P: { fr: "Obtenir un total de 20 bonnes réponses", en: "Get a total of 20 correct answers" },
+  Q: { fr: "Réaliser 10 bonnes réponses d'affilée", en: "Get 10 correct answers in a row" },
+  R: { fr: "Obtenir un score parfait en mode Trouver", en: "Get a perfect score in Find mode" },
+  S: { fr: "Classer correctement au moins 3 pays par population 2 fois", en: "Correctly rank at least 3 countries by population 2 times" },
+  T: { fr: "10 bonnes réponses sur des pays d'Amérique", en: "10 correct answers on countries in the Americas" },
+  U: { fr: "Obtenir un score parfait à un quiz sur des pays d'Amérique", en: "Get a perfect score on a quiz about countries in the Americas" },
+  V: { fr: "15 bonnes réponses sur des pays d'Amérique", en: "15 correct answers on countries in the Americas" },
+  W: { fr: "15 bonnes réponses sur des pays d'Asie", en: "15 correct answers on Asian countries" },
+  X: { fr: "15 bonnes réponses sur des pays d'Océanie", en: "15 correct answers on Oceanian countries" },
+  Y: { fr: "10 bonnes réponses sur des pays d'Afrique", en: "10 correct answers on African countries" },
+  Z: { fr: "10 bonnes réponses sur des pays d'Asie", en: "10 correct answers on Asian countries" },
+  AA: { fr: "10 bonnes réponses sur des pays d'Europe", en: "10 correct answers on European countries" },
+  AB: { fr: "10 bonnes réponses sur des pays d'Océanie", en: "10 correct answers on Oceanian countries" },
+  AC: { fr: "10 bonnes réponses sur des pays", en: "10 correct answers on countries" },
+  AD: { fr: "Obtenir un score parfait en mode 4 choix", en: "Get a perfect score in 4-choice mode" },
+  AE: { fr: "Obtenir un score parfait à un quiz sur des pays d'Afrique", en: "Get a perfect score on a quiz about African countries" },
+  AF: { fr: "Obtenir un score parfait à un quiz sur des pays d'Europe", en: "Get a perfect score on a quiz about European countries" },
+  AG: { fr: "Obtenir un score parfait à un quiz sur des pays d'Asie", en: "Get a perfect score on a quiz about Asian countries" },
+  AH: { fr: "Obtenir un score parfait à un quiz sur des pays d'Océanie", en: "Get a perfect score on a quiz about Oceanian countries" },
+  AI: { fr: "Obtenir un score parfait à 2 quiz", en: "Get a perfect score on 2 quizzes" },
+
+  ////// Partie Longue quêtes ********************************
+  
+  // === Total de bonnes réponses (toutes catégories confondues) ===
+  AJ: { fr: "Obtenir un total de 100 bonnes réponses", en: "Get a total of 100 correct answers" },
+  AK: { fr: "Obtenir un total de 250 bonnes réponses", en: "Get a total of 250 correct answers" },
+  AL: { fr: "Obtenir un total de 500 bonnes réponses", en: "Get a total of 500 correct answers" },
+  AM: { fr: "Obtenir un total de 1000 bonnes réponses", en: "Get a total of 1000 correct answers" },
+  AN: { fr: "Obtenir un total de 2500 bonnes réponses", en: "Get a total of 2500 correct answers" },
+  AO: { fr: "Obtenir un total de 5000 bonnes réponses", en: "Get a total of 5000 correct answers" },
+
+  // === Quiz terminés (cumulé) ===
+  AR: { fr: "Terminer 10 quiz", en: "Complete 10 quizzes" },
+  AQ: { fr: "Terminer 50 quiz", en: "Complete 50 quizzes" },
+  AP: { fr: "Terminer 100 quiz", en: "Complete 100 quizzes" },
+  AS: { fr: "Terminer 1000 quiz", en: "Complete 1000 quizzes" },
+  AT: { fr: "Terminer 10000 quiz", en: "Complete 10000 quizzes" },
+
+  // === Séries de bonnes réponses d'affilée ===
+  AU: { fr: "Réaliser 15 bonnes réponses d'affilée", en: "Get 15 correct answers in a row" },
+  AV: { fr: "Réaliser 20 bonnes réponses d'affilée", en: "Get 20 correct answers in a row" },
+  AW: { fr: "Réaliser 25 bonnes réponses d'affilée", en: "Get 25 correct answers in a row" },
+  AX: { fr: "Réaliser 50 bonnes réponses d'affilée", en: "Get 50 correct answers in a row" },
+
+  // === Mode Trouver (cumulé) ===
+  AY: { fr: "50 bonnes réponses en mode Trouver", en: "50 correct answers in Find mode" },
+  AZ: { fr: "100 bonnes réponses en mode Trouver", en: "100 correct answers in Find mode" },
+  BA: { fr: "250 bonnes réponses en mode Trouver", en: "250 correct answers in Find mode" },
+  BB: { fr: "500 bonnes réponses en mode Trouver", en: "500 correct answers in Find mode" },
+
+  // === Mode Classer (cumulé) ===
+  BC: { fr: "50 bonnes réponses en mode Classer", en: "50 correct answers in Rank mode" },
+  BD: { fr: "100 bonnes réponses en mode Classer", en: "100 correct answers in Rank mode" },
+  BE: { fr: "250 bonnes réponses en mode Classer", en: "250 correct answers in Rank mode" },
+  BF: { fr: "500 bonnes réponses en mode Classer", en: "500 correct answers in Rank mode" },
+
+  // === Mode 4 choix (cumulé) ===
+  BG: { fr: "50 bonnes réponses en mode 4 choix", en: "50 correct answers in 4-choice mode" },
+  BH: { fr: "100 bonnes réponses en mode 4 choix", en: "100 correct answers in 4-choice mode" },
+  BI: { fr: "250 bonnes réponses en mode 4 choix", en: "250 correct answers in 4-choice mode" },
+  BJ: { fr: "500 bonnes réponses en mode 4 choix", en: "500 correct answers in 4-choice mode" },
+
+  // === Afrique (cumulé) ===
+  BK: { fr: "50 bonnes réponses sur des pays d'Afrique", en: "50 correct answers on African countries" },
+  BL: { fr: "100 bonnes réponses sur des pays d'Afrique", en: "100 correct answers on African countries" },
+  BM: { fr: "250 bonnes réponses sur des pays d'Afrique", en: "250 correct answers on African countries" },
+  BN: { fr: "500 bonnes réponses sur des pays d'Afrique", en: "500 correct answers on African countries" },
+
+  // === Amérique (cumulé) ===
+  BO: { fr: "50 bonnes réponses sur des pays d'Amérique", en: "50 correct answers on countries in the Americas" },
+  BP: { fr: "100 bonnes réponses sur des pays d'Amérique", en: "100 correct answers on countries in the Americas" },
+  BQ: { fr: "250 bonnes réponses sur des pays d'Amérique", en: "250 correct answers on countries in the Americas" },
+  BR: { fr: "500 bonnes réponses sur des pays d'Amérique", en: "500 correct answers on countries in the Americas" },
+
+  // === Asie (cumulé) ===
+  BS: { fr: "50 bonnes réponses sur des pays d'Asie", en: "50 correct answers on Asian countries" },
+  BT: { fr: "100 bonnes réponses sur des pays d'Asie", en: "100 correct answers on Asian countries" },
+  BU: { fr: "250 bonnes réponses sur des pays d'Asie", en: "250 correct answers on Asian countries" },
+  BV: { fr: "500 bonnes réponses sur des pays d'Asie", en: "500 correct answers on Asian countries" },
+
+  // === Europe (cumulé) ===
+  BW: { fr: "50 bonnes réponses sur des pays d'Europe", en: "50 correct answers on European countries" },
+  BX: { fr: "100 bonnes réponses sur des pays d'Europe", en: "100 correct answers on European countries" },
+  BY: { fr: "250 bonnes réponses sur des pays d'Europe", en: "250 correct answers on European countries" },
+  BZ: { fr: "500 bonnes réponses sur des pays d'Europe", en: "500 correct answers on European countries" },
+
+  // === Océanie (cumulé) ===
+  CA: { fr: "50 bonnes réponses sur des pays d'Océanie", en: "50 correct answers on Oceanian countries" },
+  CB: { fr: "100 bonnes réponses sur des pays d'Océanie", en: "100 correct answers on Oceanian countries" },
+  CC: { fr: "250 bonnes réponses sur des pays d'Océanie", en: "250 correct answers on Oceanian countries" },
+  CD: { fr: "500 bonnes réponses sur des pays d'Océanie", en: "500 correct answers on Oceanian countries" },
+
+  // === Capitales (cumulé) ===
+  CE: { fr: "100 bonnes réponses qui incluent une Capitale", en: "100 correct answers involving a capital" },
+  CF: { fr: "500 bonnes réponses qui incluent une Capitale", en: "500 correct answers involving a capital" },
+  CG: { fr: "5000 bonnes réponses qui incluent une Capitale", en: "5000 correct answers involving a capital" },
+  CH: { fr: "10000 bonnes réponses qui incluent une Capitale", en: "10000 correct answers involving a capital" },
+
+  // === Drapeaux (cumulé) ===
+  CI: { fr: "100 bonnes réponses qui incluent un drapeau", en: "100 correct answers involving a flag" },
+  CJ: { fr: "500 bonnes réponses qui incluent un drapeau", en: "500 correct answers involving a flag" },
+  CK: { fr: "5000 bonnes réponses qui incluent un drapeau", en: "5000 correct answers involving a flag" },
+  CL: { fr: "10000 bonnes réponses qui incluent un drapeau", en: "10000 correct answers involving a flag" },
+
+  // === Classements par superficie (cumulé) ===
+  CM: { fr: "Classer correctement 5 pays par superficie 10 fois", en: "Correctly rank 5 countries by area 10 times" },
+  CN: { fr: "Classer correctement 5 pays par superficie 100 fois", en: "Correctly rank 5 countries by area 100 times" },
+  CO: { fr: "Classer correctement 5 pays par superficie 500 fois", en: "Correctly rank 5 countries by area 500 times" },
+
+  // === Classements par population (cumulé) ===
+  CP: { fr: "Classer correctement 5 pays par population 10 fois", en: "Correctly rank 5 countries by population 10 times" },
+  CQ: { fr: "Classer correctement 5 pays par population 100 fois", en: "Correctly rank 5 countries by population 100 times" },
+  CR: { fr: "Classer correctement 5 pays par population 500 fois", en: "Correctly rank 5 countries by population 500 times" },
+
+  // === Quiz rapides (cumulé) ===
+  CS: { fr: "Terminer 5 quiz en moins de 20 secondes avec au moins 2 étoiles", en: "Complete 5 quizzes in under 20 seconds with at least 2 stars" },
+  CT: { fr: "Terminer 10 quiz en moins de 30 secondes avec au moins 2 étoiles", en: "Complete 10 quizzes in under 30 seconds with at least 2 stars" },
+  CU: { fr: "Terminer 25 quiz en moins de 30 secondes avec au moins 2 étoiles", en: "Complete 25 quizzes in under 30 seconds with at least 2 stars" },
+  XCU: { fr: "Terminer 50 quiz en moins de 30 secondes avec au moins 2 étoiles", en: "Complete 50 quizzes in under 30 seconds with at least 2 stars" },
+
+  // === Scores parfaits cumulés (n'importe quel mode) ===
+  CV: { fr: "Obtenir 10 scores parfaits", en: "Get 10 perfect scores" },
+  CW: { fr: "Obtenir 50 scores parfaits", en: "Get 50 perfect scores" },
+  CX: { fr: "Obtenir 100 scores parfaits", en: "Get 100 perfect scores" },
+  XCX: { fr: "Obtenir 500 scores parfaits", en: "Get 500 perfect scores" },
+  CY: { fr: "Obtenir 1000 scores parfaits", en: "Get 1000 perfect scores" },
+
+  // === 2 étoiles en mode difficile (cumulé) ===
+  CZ: { fr: "Obtenir 5 fois 2 étoiles en mode difficile", en: "Get 2 stars in hard mode 5 times" },
+  DA: { fr: "Obtenir 10 fois 2 étoiles en mode difficile", en: "Get 2 stars in hard mode 10 times" },
+  DB: { fr: "Obtenir 25 fois 2 étoiles en mode difficile", en: "Get 2 stars in hard mode 25 times" },
+
+};
+
+
       const D_nameSubIlg = {
   PY19: {
     n: { fr: "Boquerón", en: "Boquerón" },
@@ -39727,7 +39894,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let numPalierLvl = PALIERS_LVL_ORIGINAL[0]; // copie, pas la même référence
       txtProgLvl.textContent = 0;
-      txtPalierLvl.textContent = numPalierLvl;
+      txtPalierLvl.textContent = numPalierLvl.toLocaleString(D_ilg.tolocalestring[currentIlg]);
 
       let lvlPlayer = 1;
 
@@ -39774,7 +39941,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
                   if (pourcentageLvl >= 1) {
                     animateCounter(txtProgLvl, 0, numPalierLvl, duration2);
-                    txtPalierLvl.textContent = numPalierLvl;
+                    txtPalierLvl.textContent = numPalierLvl.toLocaleString(D_ilg.tolocalestring[currentIlg]);
                     lvlPlayer += 1;
                     txtLvlPlayer.textContent = lvlPlayer;
 
@@ -39794,7 +39961,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   });
 
                   animateCounter(txtProgLvl, 0, nbrProgLvl, duration2);
-                  txtPalierLvl.textContent = numPalierLvl;
+                  txtPalierLvl.textContent = numPalierLvl.toLocaleString(D_ilg.tolocalestring[currentIlg]);
                   lvlPlayer += 1;
                   txtLvlPlayer.textContent = lvlPlayer;
 
@@ -40048,7 +40215,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   ((L_config.c !== "allC" && quest.continent !== L_config.c) ||
                     (L_config.c === "allC" &&
                       quest.continent !== P_info[idBonneReponse]?.region))) ||
-                (quest.t.includes("difficile") &&
+                (D_txtLRD_RDQIlg[quest.id].fr.includes("difficile") &&
                   L_config.d !== "difficile" &&
                   L_config.c === "allC")
               ) {
@@ -40079,12 +40246,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 return;
               }
               if (
-                quest.t.includes("correctement") &&
+                D_txtLRD_RDQIlg[quest.id].fr.includes("correctement") &&
                 (parseInt(document.getElementById(L_config.r).dataset.nbr) <
                   quest.minClass ||
-                  (quest.t.includes("population") &&
+                  (D_txtLRD_RDQIlg[quest.id].fr.includes("population") &&
                     L_config.q !== "populationQ") ||
-                  (quest.t.includes("superficie") &&
+                  (D_txtLRD_RDQIlg[quest.id].fr.includes("superficie") &&
                     L_config.q !== "superficieQ"))
               ) {
                 return;
@@ -78450,8 +78617,8 @@ g7: {
       checkBoxNotif.checked = notif;
 
       txtLvlPlayer.textContent = lvlPlayer;
-      txtProgLvl.textContent = nbrProgLvl;
-      txtPalierLvl.textContent = numPalierLvl;
+      txtProgLvl.textContent = nbrProgLvl.toLocaleString(D_ilg.tolocalestring[currentIlg]);
+      txtPalierLvl.textContent = numPalierLvl.toLocaleString(D_ilg.tolocalestring[currentIlg]);
       barreProgLvl.style.width = `${(nbrProgLvl / numPalierLvl) * 100}%`;
 
       const today = getTodayKey();
@@ -78482,8 +78649,8 @@ g7: {
 
       // Ré-afficher l'état chargé dans l'UI
       txtLvlPlayer.textContent = lvlPlayer;
-      txtProgLvl.textContent = nbrProgLvl;
-      txtPalierLvl.textContent = numPalierLvl;
+      txtProgLvl.textContent = nbrProgLvl.toLocaleString(D_ilg.tolocalestring[currentIlg]);
+      txtPalierLvl.textContent = numPalierLvl.toLocaleString(D_ilg.tolocalestring[currentIlg]);
       barreProgLvl.style.width = `${(nbrProgLvl / numPalierLvl) * 100}%`;
 
       window.addEventListener("beforeunload", saveProgress);
