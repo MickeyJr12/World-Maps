@@ -74081,7 +74081,7 @@ g7: {
         }
 
         infoDonneeLegend.textContent = D_ilg[v.dataset.donnee][currentIlg];
-        footerLegend.classList.contains("reduce") ? cadreFooterLegend.style.height =  Math.max(infoDonneeLegend.scrollHeight,32) + "px" : "";
+        footerLegend.classList.contains("reduce") ? cadreFooterLegend.style.height =  Math.max(infoDonneeLegend.getBoundingClientRect().height,32) + "px" : "";
         txtMaxLegend.textContent = "> " + parseInt(v.dataset.max).toLocaleString(D_ilg.tolocalestring[currentIlg]);
         txtMidLegend.textContent =  parseInt(v.dataset.mid).toLocaleString(D_ilg.tolocalestring[currentIlg]);
         txtMinLegend.textContent = (v.dataset.min === "10000000" ? "< " : "") + parseInt(v.dataset.min).toLocaleString(D_ilg.tolocalestring[currentIlg]);
@@ -74107,8 +74107,11 @@ g7: {
         arrowUpLegend.classList.toggle("reduce");
         cadreFooterLegend.style.gap =
         cadreFooterLegend.style.gap === "" ? "0.6em" : "";
-        cadreFooterLegend.style.height = 
-          cadreFooterLegend.style.height === "" ? Math.max(infoDonneeLegend.scrollHeight,32) + "px" : "";
+        setTimeout(() => {
+          cadreFooterLegend.style.height = 
+          cadreFooterLegend.style.height === "" ? Math.max(infoDonneeLegend.getBoundingClientRect().height,32) + "px" : "";
+          
+        }, 200);
       });
 
       let min = Infinity;
