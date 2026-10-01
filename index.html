@@ -3027,12 +3027,6 @@
           opacity: 0;
         }
       }
-      #orgaMenu.active .txtMenuCadre {
-        max-width: 120px;
-      }
-      #contoursMenu.active .txtMenuCadre {
-        max-width: 75px;
-      }
 
       .boxMenuCadre.active .iconMenuCadre {
         opacity: 1;
@@ -3063,6 +3057,7 @@
       }
       .txtMenuCadre {
         overflow: hidden;
+        white-space :  nowrap;
         font-size: 1.05rem;
         font-weight: 400;
         width: auto;
@@ -20484,8 +20479,9 @@
 
                 <div class="itemClasser" data-classer="superficie">
                   <span style="opacity: 0">✓</span> <span data-ilg="superficie">Superficie</span>
+                  <svg fill="#000000"  class="svgClasser" viewBox="0 0 32 32" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><path d="M27,22.142V9.858A3.9916,3.9916,0,1,0,22.142,5H9.858A3.9916,3.9916,0,1,0,5,9.858V22.142A3.9916,3.9916,0,1,0,9.858,27H22.142A3.9916,3.9916,0,1,0,27,22.142ZM26,4a2,2,0,1,1-2,2A2.0023,2.0023,0,0,1,26,4ZM4,6A2,2,0,1,1,6,8,2.002,2.002,0,0,1,4,6ZM6,28a2,2,0,1,1,2-2A2.0023,2.0023,0,0,1,6,28Zm16.142-3H9.858A3.9937,3.9937,0,0,0,7,22.142V9.858A3.9947,3.9947,0,0,0,9.858,7H22.142A3.9937,3.9937,0,0,0,25,9.858V22.142A3.9931,3.9931,0,0,0,22.142,25ZM26,28a2,2,0,1,1,2-2A2.0027,2.0027,0,0,1,26,28Z" transform="translate(0 0)"></path></svg>
 
-                  <svg
+                  <!-- <svg
                     class="svgClasser"
                     viewBox="0 0 24 24"
                     fill="none"
@@ -20503,7 +20499,7 @@
                         fill="#ffffff"
                       ></path>
                     </g>
-                  </svg>
+                  </svg> -->
                 </div>
 
                 <div class="ligneInGrid"></div>
@@ -22308,7 +22304,9 @@
 
             <div class="celCadre">
               <div class="iconCelCadre">
-                <svg
+                  <svg fill="#000000" width="1.3rem"  viewBox="0 0 32 32" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><path d="M27,22.142V9.858A3.9916,3.9916,0,1,0,22.142,5H9.858A3.9916,3.9916,0,1,0,5,9.858V22.142A3.9916,3.9916,0,1,0,9.858,27H22.142A3.9916,3.9916,0,1,0,27,22.142ZM26,4a2,2,0,1,1-2,2A2.0023,2.0023,0,0,1,26,4ZM4,6A2,2,0,1,1,6,8,2.002,2.002,0,0,1,4,6ZM6,28a2,2,0,1,1,2-2A2.0023,2.0023,0,0,1,6,28Zm16.142-3H9.858A3.9937,3.9937,0,0,0,7,22.142V9.858A3.9947,3.9947,0,0,0,9.858,7H22.142A3.9937,3.9937,0,0,0,25,9.858V22.142A3.9931,3.9931,0,0,0,22.142,25ZM26,28a2,2,0,1,1,2-2A2.0027,2.0027,0,0,1,26,28Z" transform="translate(0 0)"></path></svg>
+
+                <!-- <svg
                   width="1.3rem"
                   ;
                   viewBox="0 0 24 24"
@@ -22327,7 +22325,7 @@
                       fill="#ffffff"
                     ></path>
                   </g>
-                </svg>
+                </svg> -->
               </div>
               <div class="contentCelCadre">
                 <div class="titleCelCadre" data-ilg="superficie">Superficie</div>
@@ -53428,7 +53426,7 @@ const D_txtLRD_RDQIlg = {
           document.querySelector(".menuCadre").style.display = "";
           wrapperMenuCadre.style.maxHeight = "";
           // cadreBlason.style.display = "";
-          menusCadre.forEach((menu) => {
+          boxMenusCadre.forEach((menu) => {
             if (menu.classList.contains("active")) menu.click();
           });
 
@@ -53959,7 +53957,7 @@ const D_txtLRD_RDQIlg = {
           wrapperMenuCadre.style.maxHeight = "";
 
           // cadreBlason.style.display = "";
-          menusCadre.forEach((menu) => {
+          boxMenusCadre.forEach((menu) => {
             if (menu.classList.contains("active")) menu.click();
           });
 
@@ -54325,7 +54323,7 @@ const D_txtLRD_RDQIlg = {
         }, 180); // attend la fin de l'animation de phoneHome
 
         wrapperMenuCadre.style.maxHeight = "";
-        menusCadre.forEach((menu) => {
+        boxMenusCadre.forEach((menu) => {
           if (menu.classList.contains("active")) menu.click();
         });
 
@@ -55051,7 +55049,7 @@ const D_txtLRD_RDQIlg = {
       const orgaMenu = document.getElementById("orgaMenu");
       const contoursMenu = document.getElementById("contoursMenu");
       // const blasonMenu = document.getElementById("blasonMenu");
-      const menusCadre = document.querySelectorAll(".boxMenuCadre");
+      const boxMenusCadre = document.querySelectorAll(".boxMenuCadre");
       const txtsMenuCadre = document.querySelectorAll(".txtMenuCadre");
       // document.getElementById("txtOrgaMenu").style.maxWidth =
       //   document.getElementById("txtOrgaMenu").scrollWidth + "px";
@@ -55228,22 +55226,27 @@ const D_txtLRD_RDQIlg = {
         wrapperMenuCadre.style.transition = "";
         wrapperMenuCadre.style.height = "";
         wrapperMenuCadre.style.paddingBottom = "";
+        const txt = getId(m_id).querySelector('.txtMenuCadre')
 
-        if (getId(m_id).classList.contains("active")) {
-          // on clique pour fermer les menus
+        if (getId(m_id).classList.contains("active")) { // on clique pour fermer le menu
+          
           // getId(D_cadreMenu[m_id]).style.display = "none"
           getId(m_id).classList.remove("active");
+          txt.style.maxWidth = "" 
           wrapperMenuCadre.style.maxHeight = "";
           return;
-        } else if (wrapperMenuCadre.style.maxHeight === "") {
-          // On clique pour ouvrir le menu
-          menusCadre.forEach((m) => {
+        } else if (wrapperMenuCadre.style.maxHeight === "") { // On clique pour ouvrir le menu
+          
+          boxMenusCadre.forEach((m) => {
             if (m.id === m_id) {
               m.classList.add("active");
+              txt.style.maxWidth = txt.scrollWidth + 2 + "px"
               document.getElementById(D_cadreMenu[m.id]).style.display = "flex";
             } else {
               document.getElementById(D_cadreMenu[m.id]).style.display = "none";
               m.classList.remove("active");
+              m.querySelector('.txtMenuCadre').style.maxWidth = "" 
+
             }
 
             wrapperMenuCadre.style.maxHeight =
@@ -55258,12 +55261,15 @@ const D_txtLRD_RDQIlg = {
         // wrapperMenuCadre.style.transition = "none";
 
         document.getElementById(D_cadreMenu[m_id]).style.display = "flex";
-        menusCadre.forEach((m) => {
+        boxMenusCadre.forEach((m) => {
           if (m.id === m_id) {
             m.classList.add("active");
+            txt.style.maxWidth = txt.scrollWidth + 2 + "px"
+
           } else {
             document.getElementById(D_cadreMenu[m.id]).style.display = "none";
             m.classList.remove("active");
+            m.querySelector('.txtMenuCadre').style.maxWidth = ""
           }
         });
 
@@ -55273,13 +55279,7 @@ const D_txtLRD_RDQIlg = {
           getId(D_cadreMenu[m_id]).scrollHeight + "px";
         wrapperMenuCadre.style.paddingBottom = "0.8rem";
 
-        // txtsMenuCadre.forEach((t) => {
-        //   if (t.parentNode.id === m_id) {
-        //     t.style.maxWidth = t.scrollWidth + "px";
-        //   } else {
-        //     t.style.maxWidth = "0px";
-        //   }
-        // });
+       
       }
 
       function scalemCadre(scale) {
@@ -55327,7 +55327,7 @@ const D_txtLRD_RDQIlg = {
         }, 90);
 
         if (!viewSub && !L_config.sub) {
-          menusCadre.forEach((menu) => {
+          boxMenusCadre.forEach((menu) => {
             if (menu.classList.contains("active")) {
               menu.click();
               menu.click();
@@ -55451,7 +55451,7 @@ const D_txtLRD_RDQIlg = {
           `;
           } else if (sort === "superficie") {
             capItemC.innerHTML = `
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.75 9.233C4.75 9.64721 5.08579 9.983 5.5 9.983C5.91421 9.983 6.25 9.64721 6.25 9.233H4.75ZM6.25 5.5C6.25 5.08579 5.91421 4.75 5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5H6.25ZM5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5C4.75 5.91421 5.08579 6.25 5.5 6.25V4.75ZM9.233 6.25C9.64721 6.25 9.983 5.91421 9.983 5.5C9.983 5.08579 9.64721 4.75 9.233 4.75V6.25ZM6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L6.03033 4.96967ZM9.96967 11.0303C10.2626 11.3232 10.7374 11.3232 11.0303 11.0303C11.3232 10.7374 11.3232 10.2626 11.0303 9.96967L9.96967 11.0303ZM15.767 18.75C15.3528 18.75 15.017 19.0858 15.017 19.5C15.017 19.9142 15.3528 20.25 15.767 20.25V18.75ZM19.5 20.25C19.9142 20.25 20.25 19.9142 20.25 19.5C20.25 19.0858 19.9142 18.75 19.5 18.75V20.25ZM18.75 19.5C18.75 19.9142 19.0858 20.25 19.5 20.25C19.9142 20.25 20.25 19.9142 20.25 19.5H18.75ZM20.25 15.767C20.25 15.3528 19.9142 15.017 19.5 15.017C19.0858 15.017 18.75 15.3528 18.75 15.767H20.25ZM18.9697 20.0303C19.2626 20.3232 19.7374 20.3232 20.0303 20.0303C20.3232 19.7374 20.3232 19.2626 20.0303 18.9697L18.9697 20.0303ZM15.0303 13.9697C14.7374 13.6768 14.2626 13.6768 13.9697 13.9697C13.6768 14.2626 13.6768 14.7374 13.9697 15.0303L15.0303 13.9697ZM6.25 15.767C6.25 15.3528 5.91421 15.017 5.5 15.017C5.08579 15.017 4.75 15.3528 4.75 15.767H6.25ZM4.75 19.5C4.75 19.9142 5.08579 20.25 5.5 20.25C5.91421 20.25 6.25 19.9142 6.25 19.5H4.75ZM5.5 18.75C5.08579 18.75 4.75 19.0858 4.75 19.5C4.75 19.9142 5.08579 20.25 5.5 20.25V18.75ZM9.233 20.25C9.64721 20.25 9.983 19.9142 9.983 19.5C9.983 19.0858 9.64721 18.75 9.233 18.75V20.25ZM4.96967 18.9697C4.67678 19.2626 4.67678 19.7374 4.96967 20.0303C5.26256 20.3232 5.73744 20.3232 6.03033 20.0303L4.96967 18.9697ZM11.0303 15.0303C11.3232 14.7374 11.3232 14.2626 11.0303 13.9697C10.7374 13.6768 10.2626 13.6768 9.96967 13.9697L11.0303 15.0303ZM15.767 4.75C15.3528 4.75 15.017 5.08579 15.017 5.5C15.017 5.91421 15.3528 6.25 15.767 6.25V4.75ZM19.5 6.25C19.9142 6.25 20.25 5.91421 20.25 5.5C20.25 5.08579 19.9142 4.75 19.5 4.75V6.25ZM20.25 5.5C20.25 5.08579 19.9142 4.75 19.5 4.75C19.0858 4.75 18.75 5.08579 18.75 5.5H20.25ZM18.75 9.233C18.75 9.64721 19.0858 9.983 19.5 9.983C19.9142 9.983 20.25 9.64721 20.25 9.233H18.75ZM20.0303 6.03033C20.3232 5.73744 20.3232 5.26256 20.0303 4.96967C19.7374 4.67678 19.2626 4.67678 18.9697 4.96967L20.0303 6.03033ZM13.9697 9.96967C13.6768 10.2626 13.6768 10.7374 13.9697 11.0303C14.2626 11.3232 14.7374 11.3232 15.0303 11.0303L13.9697 9.96967ZM6.25 9.233V5.5H4.75V9.233H6.25ZM5.5 6.25H9.233V4.75H5.5V6.25ZM4.96967 6.03033L9.96967 11.0303L11.0303 9.96967L6.03033 4.96967L4.96967 6.03033ZM15.767 20.25H19.5V18.75H15.767V20.25ZM20.25 19.5V15.767H18.75V19.5H20.25ZM20.0303 18.9697L15.0303 13.9697L13.9697 15.0303L18.9697 20.0303L20.0303 18.9697ZM4.75 15.767V19.5H6.25V15.767H4.75ZM5.5 20.25H9.233V18.75H5.5V20.25ZM6.03033 20.0303L11.0303 15.0303L9.96967 13.9697L4.96967 18.9697L6.03033 20.0303ZM15.767 6.25H19.5V4.75H15.767V6.25ZM18.75 5.5V9.233H20.25V5.5H18.75ZM18.9697 4.96967L13.9697 9.96967L15.0303 11.0303L20.0303 6.03033L18.9697 4.96967Z" fill="#ffffff"></path> </g></svg>
+          <svg fill="#000000"  viewBox="0 0 32 32" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><path d="M27,22.142V9.858A3.9916,3.9916,0,1,0,22.142,5H9.858A3.9916,3.9916,0,1,0,5,9.858V22.142A3.9916,3.9916,0,1,0,9.858,27H22.142A3.9916,3.9916,0,1,0,27,22.142ZM26,4a2,2,0,1,1-2,2A2.0023,2.0023,0,0,1,26,4ZM4,6A2,2,0,1,1,6,8,2.002,2.002,0,0,1,4,6ZM6,28a2,2,0,1,1,2-2A2.0023,2.0023,0,0,1,6,28Zm16.142-3H9.858A3.9937,3.9937,0,0,0,7,22.142V9.858A3.9947,3.9947,0,0,0,9.858,7H22.142A3.9937,3.9937,0,0,0,25,9.858V22.142A3.9931,3.9931,0,0,0,22.142,25ZM26,28a2,2,0,1,1,2-2A2.0027,2.0027,0,0,1,26,28Z" transform="translate(0 0)"></path></svg>
               ${D_us[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0${currentUnity}`;
           } else {
             capItemC.innerHTML = `
@@ -55725,7 +55725,7 @@ const D_txtLRD_RDQIlg = {
             document.querySelector(".menuCadre").style.display = "";
             wrapperMenuCadre.style.maxHeight = "";
             // cadreBlason.style.display = "";
-            menusCadre.forEach((menu) => {
+            boxMenusCadre.forEach((menu) => {
               if (menu.classList.contains("active")) menu.click();
             });
 
@@ -83948,7 +83948,7 @@ g7: {
                       d="m20.5,6h-2c-1.93,0-3.5,1.57-3.5,3.5v4c0,1.391.822,2.585,2,3.149v6.351c0,.552.448,1,1,1s1-.448,1-1v-6h1v6c0,.552.448,1,1,1s1-.448,1-1v-6.351c1.178-.564,2-1.758,2-3.149v-4c0-1.93-1.57-3.5-3.5-3.5Zm1.5,7.5c0,.827-.673,1.5-1.5,1.5h-2c-.827,0-1.5-.673-1.5-1.5v-4c0-.827.673-1.5,1.5-1.5h2c.827,0,1.5.673,1.5,1.5v4Zm-8.02-6.649c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v4c0,.477.219.914.601,1.2.251.189.399.485.399.8v6.5c0,.552-.448,1-1,1s-1-.448-1-1v-6.051c-.633-.649-1-1.532-1-2.449v-4c0-1.658,1.178-3.1,2.801-3.43.541-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v3c0,.477.219.914.601,1.2.251.189.399.485.399.8v5.5c0,.552-.448,1-1,1s-1-.448-1-1v-5.051c-.633-.649-1-1.532-1-2.449v-3c0-1.658,1.178-3.1,2.801-3.43.542-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v2c0,.477.219.914.601,1.2.251.189.399.485.399.8v4.5c0,.552-.448,1-1,1s-1-.448-1-1v-4.051c-.633-.649-1-1.532-1-2.449v-2c0-1.658,1.178-3.1,2.801-3.43.544-.113,1.069.239,1.179.781Zm13.02-4.351c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.385,2.227c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5S3.119,0,4.5,0c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Z"
                     />
                   </svg>
-              Population : ${L_q[r.id.toUpperCase()].p.toLocaleString(D_ilg.tolocalestring[currentIlg])}
+              ${D_ilg.population[currentIlg]} : ${L_q[r.id.toUpperCase()].p.toLocaleString(D_ilg.tolocalestring[currentIlg])}
           `;
           } else if (currentClass === "superficie") {
             const rank = document.createElement("div");
@@ -83960,9 +83960,9 @@ g7: {
 
             contentC.style.scrollbarWidth = "thin";
             capItemC.innerHTML = `
-         <svg transition="transform 0.4 ease" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.75 9.233C4.75 9.64721 5.08579 9.983 5.5 9.983C5.91421 9.983 6.25 9.64721 6.25 9.233H4.75ZM6.25 5.5C6.25 5.08579 5.91421 4.75 5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5H6.25ZM5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5C4.75 5.91421 5.08579 6.25 5.5 6.25V4.75ZM9.233 6.25C9.64721 6.25 9.983 5.91421 9.983 5.5C9.983 5.08579 9.64721 4.75 9.233 4.75V6.25ZM6.03033 4.96967C5.73744 4.67678 5.26256 4.67678 4.96967 4.96967C4.67678 5.26256 4.67678 5.73744 4.96967 6.03033L6.03033 4.96967ZM9.96967 11.0303C10.2626 11.3232 10.7374 11.3232 11.0303 11.0303C11.3232 10.7374 11.3232 10.2626 11.0303 9.96967L9.96967 11.0303ZM15.767 18.75C15.3528 18.75 15.017 19.0858 15.017 19.5C15.017 19.9142 15.3528 20.25 15.767 20.25V18.75ZM19.5 20.25C19.9142 20.25 20.25 19.9142 20.25 19.5C20.25 19.0858 19.9142 18.75 19.5 18.75V20.25ZM18.75 19.5C18.75 19.9142 19.0858 20.25 19.5 20.25C19.9142 20.25 20.25 19.9142 20.25 19.5H18.75ZM20.25 15.767C20.25 15.3528 19.9142 15.017 19.5 15.017C19.0858 15.017 18.75 15.3528 18.75 15.767H20.25ZM18.9697 20.0303C19.2626 20.3232 19.7374 20.3232 20.0303 20.0303C20.3232 19.7374 20.3232 19.2626 20.0303 18.9697L18.9697 20.0303ZM15.0303 13.9697C14.7374 13.6768 14.2626 13.6768 13.9697 13.9697C13.6768 14.2626 13.6768 14.7374 13.9697 15.0303L15.0303 13.9697ZM6.25 15.767C6.25 15.3528 5.91421 15.017 5.5 15.017C5.08579 15.017 4.75 15.3528 4.75 15.767H6.25ZM4.75 19.5C4.75 19.9142 5.08579 20.25 5.5 20.25C5.91421 20.25 6.25 19.9142 6.25 19.5H4.75ZM5.5 18.75C5.08579 18.75 4.75 19.0858 4.75 19.5C4.75 19.9142 5.08579 20.25 5.5 20.25V18.75ZM9.233 20.25C9.64721 20.25 9.983 19.9142 9.983 19.5C9.983 19.0858 9.64721 18.75 9.233 18.75V20.25ZM4.96967 18.9697C4.67678 19.2626 4.67678 19.7374 4.96967 20.0303C5.26256 20.3232 5.73744 20.3232 6.03033 20.0303L4.96967 18.9697ZM11.0303 15.0303C11.3232 14.7374 11.3232 14.2626 11.0303 13.9697C10.7374 13.6768 10.2626 13.6768 9.96967 13.9697L11.0303 15.0303ZM15.767 4.75C15.3528 4.75 15.017 5.08579 15.017 5.5C15.017 5.91421 15.3528 6.25 15.767 6.25V4.75ZM19.5 6.25C19.9142 6.25 20.25 5.91421 20.25 5.5C20.25 5.08579 19.9142 4.75 19.5 4.75V6.25ZM20.25 5.5C20.25 5.08579 19.9142 4.75 19.5 4.75C19.0858 4.75 18.75 5.08579 18.75 5.5H20.25ZM18.75 9.233C18.75 9.64721 19.0858 9.983 19.5 9.983C19.9142 9.983 20.25 9.64721 20.25 9.233H18.75ZM20.0303 6.03033C20.3232 5.73744 20.3232 5.26256 20.0303 4.96967C19.7374 4.67678 19.2626 4.67678 18.9697 4.96967L20.0303 6.03033ZM13.9697 9.96967C13.6768 10.2626 13.6768 10.7374 13.9697 11.0303C14.2626 11.3232 14.7374 11.3232 15.0303 11.0303L13.9697 9.96967ZM6.25 9.233V5.5H4.75V9.233H6.25ZM5.5 6.25H9.233V4.75H5.5V6.25ZM4.96967 6.03033L9.96967 11.0303L11.0303 9.96967L6.03033 4.96967L4.96967 6.03033ZM15.767 20.25H19.5V18.75H15.767V20.25ZM20.25 19.5V15.767H18.75V19.5H20.25ZM20.0303 18.9697L15.0303 13.9697L13.9697 15.0303L18.9697 20.0303L20.0303 18.9697ZM4.75 15.767V19.5H6.25V15.767H4.75ZM5.5 20.25H9.233V18.75H5.5V20.25ZM6.03033 20.0303L11.0303 15.0303L9.96967 13.9697L4.96967 18.9697L6.03033 20.0303ZM15.767 6.25H19.5V4.75H15.767V6.25ZM18.75 5.5V9.233H20.25V5.5H18.75ZM18.9697 4.96967L13.9697 9.96967L15.0303 11.0303L20.0303 6.03033L18.9697 4.96967Z" fill="#ffffff"></path> </g></svg>
+        <svg fill="#000000"   viewBox="0 0 32 32" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><path d="M27,22.142V9.858A3.9916,3.9916,0,1,0,22.142,5H9.858A3.9916,3.9916,0,1,0,5,9.858V22.142A3.9916,3.9916,0,1,0,9.858,27H22.142A3.9916,3.9916,0,1,0,27,22.142ZM26,4a2,2,0,1,1-2,2A2.0023,2.0023,0,0,1,26,4ZM4,6A2,2,0,1,1,6,8,2.002,2.002,0,0,1,4,6ZM6,28a2,2,0,1,1,2-2A2.0023,2.0023,0,0,1,6,28Zm16.142-3H9.858A3.9937,3.9937,0,0,0,7,22.142V9.858A3.9947,3.9947,0,0,0,9.858,7H22.142A3.9937,3.9937,0,0,0,25,9.858V22.142A3.9931,3.9931,0,0,0,22.142,25ZM26,28a2,2,0,1,1,2-2A2.0027,2.0027,0,0,1,26,28Z" transform="translate(0 0)"></path></svg>
 
-              Superficie : ${L_q[r.id.toUpperCase()].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0${currentUnity}`;
+              ${D_ilg.superficie[currentIlg]} : ${L_q[r.id.toUpperCase()].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0${currentUnity}`;
           }
           boxItemC.appendChild(titleItemC);
           boxItemC.appendChild(capItemC);
