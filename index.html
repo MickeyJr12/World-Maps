@@ -1364,24 +1364,30 @@
         max-height: 0;
         opacity: 0;
         width: 100%;
-        height: fit-content;
+        height: auto;
         transition:
           max-height 0.25s ease,
           opacity 0.4s ease;
+
+          div {
+        flex-shrink : 0;
+          }
       }
       .contentLegend.expend {
-        max-height: 10rem;
+        /* max-height: 10rem; */
         opacity: 1;
       }
 
       .titleLegend {
         display: flex;
+        flex-shrink : 0;
         justify-content: center;
         align-items: center;
         width: 100%;
         padding: 0.4rem;
         box-sizing: border-box;
-        font-size: 1.2rem;
+        font-size: 0.9rem;
+        opacity : 0.75;
       }
 
       .boxBarreLegend {
@@ -20922,9 +20928,10 @@
       <!--HTML Legend-->
       <div id="cadreLegend">
         <div class="contentLegend">
-          <div class="titleLegend" data-ilg="legende">Légende</div>
+          <div class="titleLegend"  ></div>
           <hr
             style="
+              flex-shrink : 0;
               width: 90%;
               border: none;
               border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -20989,7 +20996,7 @@
               />
             </svg>
           </div>
-          <div class="infoDonneeLegend"></div>
+          <div class="infoDonneeLegend" data-ilg="legende">Légende</div>
         </div>
       </div>
       <!--Fin HTML Legend-->
@@ -60182,6 +60189,7 @@ const D_txtLRD_RDQIlg = {
       const svgLegend = getId('svgLegend');
       const spnFooter = footerLegend.querySelector("span");
       const infoDonneeLegend = document.querySelector(".infoDonneeLegend");
+      const titleLegend = document.querySelector(".titleLegend");
       const cadreFooterLegend = document.querySelector(".cadreFooterLegend");
       const arrowUpLegend = document.querySelector(".arrowUpLegend");
 
@@ -87701,8 +87709,8 @@ g7: {
           carreMaxLegend.style.background = colorMax;
         }
 
-        infoDonneeLegend.textContent = D_ilg[v.dataset.donnee][currentIlg];
-        footerLegend.classList.contains("reduce") ? cadreFooterLegend.style.height =  Math.max(infoDonneeLegend.getBoundingClientRect().height,32) + "px" : "";
+        // infoDonneeLegend.textContent = D_ilg[v.dataset.donnee][currentIlg];
+        titleLegend.textContent = D_ilg[v.dataset.donnee][currentIlg];
         txtMaxLegend.textContent = "> " + parseInt(v.dataset.max).toLocaleString(D_ilg.tolocalestring[currentIlg]);
         txtMidLegend.textContent =  parseInt(v.dataset.mid).toLocaleString(D_ilg.tolocalestring[currentIlg]);
         txtMinLegend.textContent = (v.dataset.min === "10000000" ? "< " : "") + parseInt(v.dataset.min).toLocaleString(D_ilg.tolocalestring[currentIlg]);
@@ -87710,29 +87718,39 @@ g7: {
 
       function footerLegendClick() {
         contentLegend.classList.remove("expend");
+        contentLegend.style.maxHeight = "";
         footerLegend.classList.remove("reduce");
         spnFooter.classList.remove("reduce");
         svgLegend.classList.add("expend");
         infoDonneeLegend.classList.remove("reduce");
         arrowUpLegend.classList.remove("reduce");
         cadreFooterLegend.style.gap = "";
-        cadreFooterLegend.style.height = ""
       }
 
       footerLegend.addEventListener("click", () => {
+        
+
         contentLegend.classList.toggle("expend");
         footerLegend.classList.toggle("reduce");
         spnFooter.classList.toggle("reduce");
         svgLegend.classList.toggle("expend");
         infoDonneeLegend.classList.toggle("reduce");
         arrowUpLegend.classList.toggle("reduce");
+        
+
         cadreFooterLegend.style.gap =
         cadreFooterLegend.style.gap === "" ? "0.6em" : "";
-        setTimeout(() => {
-          cadreFooterLegend.style.height = 
-          cadreFooterLegend.style.height === "" ? Math.max(infoDonneeLegend.getBoundingClientRect().height,32) + "px" : "";
-          
-        }, 200);
+        
+        if (contentLegend.style.maxHeight === ""){
+        contentLegend.style.maxHeight = "100rem"
+        contentLegend.style.maxHeight = titleLegend.getBoundingClientRect().height + contentLegend.querySelector('hr').getBoundingClientRect().height + contentLegend.querySelector('.boxBarreLegend').getBoundingClientRect().height + 10 + "px";
+        return
+        }
+        else {
+          contentLegend.style.maxHeight = ""
+        }
+        
+        
       });
 
       let min = Infinity;
@@ -92359,9 +92377,7 @@ g7: {
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(
-          document.querySelector(".txtChrono").getBoundingClientRect().width,
-        );
+        console.log(contentLegend.scrollHeight);
       }
       // loop()
 
