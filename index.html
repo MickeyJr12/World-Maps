@@ -1510,7 +1510,7 @@
       .infoDonneeLegend {
         display: flex;
         overflow: hidden;
-        /* white-space: nowrap; */
+        white-space: nowrap;
         max-width: 0;
         flex: 1;
         opacity: 0;
@@ -29485,7 +29485,21 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           D_us[clef].c = D_nameSubIlg[clef].c[ilg]
           D_us[clef].nH = D_nameSubIlg[clef].nomH[ilg]
           D_us[clef].info = D_nameSubIlg[clef].info[ilg]
-        }
+        };
+
+        // itemsChoiceZ, pour les quiz 
+
+        [...queryAll('.itemChoiceZ')].filter(el=>el.id!=="allC").forEach(el=>{
+          el.id = D_ilg[el.id.toLowerCase()][ilg]
+        });
+
+        // data-region, pour la recherche 
+
+        [...queryAll('[data-region]')].filter(el=>el.dataset.region !=="world").forEach(el=>{
+
+          el.dataset.region = D_ilg[el.dataset.region.toLowerCase()][ilg]
+        });
+
 
       // Informations pays
         [L_q,P_info].forEach( D=>{
@@ -29661,10 +29675,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         mondeentier: { fr: "Monde entier", en: "Worldwide" },
         monde: { fr: "Monde", en: "World" },
         afrique: { fr: "Afrique", en: "Africa" },
-        amerique: { fr: "Amerique", en: "America" },
+        amerique: { fr: "Amérique", en: "America" },
+        amérique: { fr: "Amérique", en: "America" },
         asie: { fr: "Asie", en: "Asia" },
         europe: { fr: "Europe", en: "Europe" },
-        oceanie: { fr: "Oceanie", en: "Oceania" },
+        oceanie: { fr: "Océanie", en: "Oceania" },
+        océanie: { fr: "Océanie", en: "Oceania" },
 
         // Quiz langue
         bonnereponsecadrenext : {fr: "Bonne réponse",en:"Correct"},
@@ -30577,10 +30593,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const D_regIlg = [
         ["afrique", { fr: "Afrique", en: "Africa" }],
-        ["amerique", { fr: "Amerique", en: "America" }],
+        ["amerique", { fr: "Amérique", en: "America" }],
+        ["amérique", { fr: "Amérique", en: "America" }],
         ["asie", { fr: "Asie", en: "Asia" }],
         ["europe", { fr: "Europe", en: "Europe" }],
         ["oceanie", { fr: "Oceanie", en: "Oceania" }],
+        ["océanie", { fr: "Océanie", en: "Oceania" }],
       ]
       const D_subRegIlg = [
         ["afriquedelest", { fr: "Afrique de l'Est", en: "East Africa" }],
@@ -88219,8 +88237,9 @@ g7: {
 
         const paysDispo = Ls.filter(
           (el) =>
-            P_info[el.id.toUpperCase()].region === currentWorldFilter ||
-            currentWorldFilter === "world",
+           currentWorldFilter === "world" ||
+            P_info[el.id.toUpperCase()].region === currentWorldFilter
+           
         );
         Ls = paysDispo;
 
