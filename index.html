@@ -53871,9 +53871,7 @@ const D_txtLRD_RDQIlg = {
             superficie.textContent =
               L_config.q === "populationQ"
                 ? (L_config.sub ? D_us : L_q)[L_of[i]].p.toLocaleString(D_ilg.tolocalestring[currentIlg])
-                : (L_config.sub ? D_us : L_q)[L_of[i]].s.toLocaleString(
-                    "fr-FR",
-                  ) + "\u00A0" + currentUnity;
+                : (L_config.sub ? D_us : L_q)[L_of[i]].s.toLocaleString(D_ilg.tolocalestring[currentIlg]) + "\u00A0" + currentUnity;
 
             const new_DelClasser = infosClasser.get(
               parseInt(currentEl.textContent),
@@ -83099,9 +83097,7 @@ g7: {
             co2e.textContent = "Non disponible";
           } else {
             co2e.style.whiteSpace = "pre-wrap";
-            co2e.textContent = Math.floor(P_info[id].co2e).toLocaleString(
-              "fr-FR",
-            );
+            co2e.textContent = Math.floor(P_info[id].co2e).toLocaleString(D_ilg.tolocalestring[currentIlg]);
           }
 
           if (P_info[id].pib === null || P_info[id].pib === undefined) {
@@ -83134,7 +83130,7 @@ g7: {
           if (!D_us[id]) {
             return;
           }
-          population.textContent = D_us[id].p.toLocaleString();
+          population.textContent = D_us[id].p.toLocaleString(D_ilg.tolocalestring[currentIlg]);
           nomH.textContent = D_us[id].nH;
           superficie.textContent = D_us[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg]) + "\u00A0" + currentUnity;
           indT.textContent = D_us[id].indT;
