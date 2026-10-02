@@ -5778,7 +5778,7 @@
         gap: inherit;
         width: 100%;
         height: auto;
-        padding-bottom: none;
+        padding-bottom: env(safe-area-inset-bottom);
         border-radius: inherit;
       }
       #contentSettingThank{
@@ -29438,6 +29438,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <!--Script utile-->
     <script>
       let currentIlg = "fr";
+
+      // Empêcher le scroll natif de la webview
+      const Keyboard = window.Capacitor?.Plugins?.Keyboard;
+      if (Keyboard) Keyboard.setScroll({ isDisabled: true });
       // script langues / script translation
           function ordinalSuffix(n, lang) { // mettre le suffixe qu'il faut (1er, 1st,...)
           if (lang === 'fr') {
@@ -54395,6 +54399,7 @@ const D_txtLRD_RDQIlg = {
         if (ecart === 0) {
           return;
         }
+        btnTrackDays.classList.remove("freeze");
         btnTrackDays.classList.add("active");
         //f2RTrack.style.animation = "fire2 0.5s linear infinite";
         //f2RTrack.style.animationDelay = "0.025s";
@@ -92411,9 +92416,23 @@ g7: {
         requestAnimationFrame(loop);
         console.log(contentLegend.scrollHeight);
       }
-      // loop()
+      // loop()     
 
-      // script éphémère 
+
+//      for (const clef in P_info) {
+//   if (clef.length > 2 || clef in D_ephe) continue;
+//   try {
+//     const r = await fetch(`https://api.restcountries.com/countries/v5/codes.alpha_2/${clef}`, {
+//       headers: { 'Authorization': 'rc_live_d81e2f8c0c20479db20e91e2377b4198' }
+//     });
+//     if (!r.ok) { console.log("Clef non trouvée", clef, r.status); continue; }
+//     D_ephe[clef] = await r.json();
+//     console.log(clef, "Trouvé");
+//   } catch (err) {
+//     console.log("Erreur", clef, err);
+//   }
+//   await new Promise(ok => setTimeout(ok, 200)); // petite pause entre chaque appel
+// }
       // fin script éphémère
 
       // nd()  : fr "Non disponible" -> en "Not available"
@@ -93691,6 +93710,9 @@ for (const clef in D_nameSubIlg){
         if (!window.Capacitor?.isNativePlatform()) return;
         await InAppReview.requestReview();
       }
+
+
+      
     </script>
 
     <script src="ads.js"></script>
