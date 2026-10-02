@@ -29466,11 +29466,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           el.placeholder = D_ilgHolder[el.dataset.ilgplaceholder][ilg];
         });
 
-        // Changer les listes //**************
+        // Changer les listes //***********************************************
         // Quêtes
         [L_LRD, L_RDQ].forEach(L=>{          
           L.forEach(el=>{
-            el.t = D_txtLRD_RDQIlg[el.id][ilg]
+            el.t = D_txtLRD_RDQIlg[el.id][ilg];
+            const reg = D_regIlg.find(ind=> Object.values(ind[1]).includes(el.continent))
+            
+            if(el.continent !== "all"){
+              if(!el.continent || !D_ilg[reg[0]]){console.log(el)}
+              el.continent = D_ilg[reg[0]][ilg]
+            }
           })
         })
         fillCadreRDQ_LRD()
@@ -29489,15 +29495,24 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         // itemsChoiceZ, pour les quiz 
 
-        [...queryAll('.itemChoiceZ')].filter(el=>el.id!=="allC").forEach(el=>{
-          el.id = D_ilg[el.id.toLowerCase()][ilg]
+        [...queryAll('.itemChoiceZ')].filter(el=> !["allC",""].includes (el.id)).forEach(el=>{ // Exclure allC, et les pays créés après aveec itemChoiceZ en class
+            const reg = D_regIlg.find(ind=> Object.values(ind[1]).includes(el.id))
+          el.id = D_ilg[reg[0]][ilg]
         });
+
+        // L_region, pour les quiz
+
+        L_regions.forEach((r,i)=>{
+          const reg = D_regIlg.find(ind=> Object.values(ind[1]).includes(L_regions[i]))
+          L_regions[i] = D_ilg[reg[0]][ilg]
+        })
 
         // data-region, pour la recherche 
 
-        [...queryAll('[data-region]')].filter(el=>el.dataset.region !=="world").forEach(el=>{
-
-          el.dataset.region = D_ilg[el.dataset.region.toLowerCase()][ilg]
+        ;[...queryAll('[data-region]')].filter(el=>el.dataset.region !=="world").forEach(el=>{
+            const reg = D_regIlg.find(ind=> Object.values(ind[1]).includes(el.dataset.region))[0]
+            
+          el.dataset.region = D_ilg[reg][ilg]
         });
 
 
@@ -29505,7 +29520,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         [L_q,P_info].forEach( D=>{
           for (const clef in D) {
           if (!D_nameIlg[clef]) {
-            console.log(clef, D_nameIlg[clef]);
             continue;
           }
 
@@ -29516,7 +29530,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             D[clef].nomH = D_nameIlg[clef].nomH[ilg]
             const reg = D_regIlg.find(ind=> Object.values(ind[1]).includes(D[clef].region))
             const subReg = D_subRegIlg.find(ind=> Object.values(ind[1]).includes(D[clef].subregion))
-            
             if (!reg)continue
             D[clef].region = D_ilg[reg[0]][ilg] 
             if (!subReg)continue
@@ -29548,7 +29561,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         buildOrganisations()
         fillSub(itemViewSub);
         buildMembers();
-
+        fillItemsChoiceZ(L_regions)
         saveProgress()
       }
 
@@ -55217,6 +55230,7 @@ const D_txtLRD_RDQIlg = {
       const L_subNP = ["US", "EG", "PL"]; // Pays qui ne seront pas en p
 
       let oneTimeEdit = false;
+      const L_regions = ["Afrique", "Amérique", "Asie", "Europe", "Océanie"];
 
       editSubZ.addEventListener("click", () => {
         cadreChoiceZ.classList.add("active");
@@ -55229,13 +55243,15 @@ const D_txtLRD_RDQIlg = {
         }
 
         if (oneTimeEdit) return;
-        contentSubZ.innerHTML = ``;
+        fillItemsChoiceZ(L_regions)
+      });
 
-        const L_regions = ["Afrique", "Amérique", "Asie", "Europe", "Océanie"];
-        const cSort = Object.keys(L_cSub).sort((a, b) =>
-          L_q[a].n.localeCompare(L_q[b].n, "fr", { sensitivity: "base" }),
+      function fillItemsChoiceZ(L_reg){
+          contentSubZ.innerHTML = ``;
+          const cSort = Object.keys(L_cSub).sort((a, b) =>
+          L_q[a].n.localeCompare(L_q[b].n, currentIlg, { sensitivity: "base" }), // à modifier si on change de lange (marche pour es aussi)
         );
-        L_regions.forEach((region) => {
+        L_reg.forEach((region) => {
           const reg = document.createElement("div");
           reg.style.fontSize = "0.92rem";
           reg.style.marginTop = "4rem;";
@@ -55244,7 +55260,7 @@ const D_txtLRD_RDQIlg = {
           reg.style.alignSelf = "flex-start";
           reg.style.fontWeight = "600";
           reg.textContent = region;
-          if (region === "Afrique") {
+          if (region === L_regions[0]) {
             reg.id = "firstReg";
           }
           contentSubZ.append(reg);
@@ -55318,6 +55334,8 @@ const D_txtLRD_RDQIlg = {
             }
           });
         });
+        
+
         contentSubZ.querySelectorAll(".itemChoiceZ").forEach((itm) => {
           if (oneTimeEdit) {
             return;
@@ -55419,13 +55437,14 @@ const D_txtLRD_RDQIlg = {
               const clone = el.querySelector(".svgFilter").cloneNode(true);
               choiceZ.append(clone);
               choiceZ.append(
-                el.id === "allC" ? D_ilg.mondeentier[currencIlg] : el.id,
+                el.id === "allC" ? D_ilg.mondeentier[currentIlg] : el.id,
               );
             }
           });
         });
         oneTimeEdit = true;
-      });
+      }
+
 
       crossChoiceZ.addEventListener("click", () => {
         cadreChoiceZ.classList.remove("active");
@@ -59769,7 +59788,7 @@ const D_txtLRD_RDQIlg = {
               a,
               b, // ordre alphabétique
             ) =>
-              D_us[a].n.localeCompare(D_us[b].n, "fr", { sensitivity: "base" }),
+              D_us[a].n.localeCompare(D_us[b].n, currentIlg, { sensitivity: "base" }),
           );
         } else if (sort === "superficie") {
           subSort = Object.keys(D_us).sort(
@@ -89024,13 +89043,7 @@ g7: {
           orgaTitle.style.textDecoration = "underline";
           orgaI.appendChild(orgaTitle);
 
-          const L_regions = [
-            "Afrique",
-            "Amérique",
-            "Asie",
-            "Europe",
-            "Océanie",
-          ];
+         
           L_regions.forEach((region) => {
             const reg = document.createElement("div");
             reg.style.fontSize = "0.92rem";
@@ -89069,7 +89082,7 @@ g7: {
             }
             L_sort = Object.keys(L_sort)
               .sort((a, b) =>
-                L_q[a].n.localeCompare(L_q[b].n, "fr", { sensitivity: "base" }),
+                L_q[a].n.localeCompare(L_q[b].n, currentIlg, { sensitivity: "base" }),
               )
               .reduce((acc, key) => {
                 acc[key] = L_sort[key];
@@ -92272,7 +92285,7 @@ g7: {
           data.dataD ? (dataD = data.dataD) : "";
           oneTimeMessage = data.oneTimeMessage ?? false;
           currentIlg = data.currentIlg ?? 'fr';
-          currentIlg === 'fr' ? (buildContinents(),buildOrganisations(),fillSub(itemViewSub),buildMembers()) : query(`[data-choiceilg = ${currentIlg}]`).click();
+          currentIlg === 'fr' ? (buildContinents(),buildOrganisations(),fillSub(itemViewSub),buildMembers(),fillItemsChoiceZ(L_regions)) : query(`[data-choiceilg = ${currentIlg}]`).click();
           // Si on chnage de langue, chageIlg se chargera des fill
         
         
@@ -92400,6 +92413,8 @@ g7: {
       }
       // loop()
 
+      // script éphémère 
+      // fin script éphémère
 
       // nd()  : fr "Non disponible" -> en "Not available"
 // na(x) : fr existe, mais aucun équivalent anglais trouvé -> en "Not available"
