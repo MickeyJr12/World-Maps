@@ -5624,7 +5624,7 @@
         pointer-events: none;
         opacity: 0;
         position: absolute;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         justify-self: center;
         overflow: hidden;
@@ -5709,11 +5709,13 @@
       }
       #wrapperSetting {
         display: flex;
+        overflow-y : auto;
+        overflow-x : hidden;
         flex : 1;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
-        overflow-x: hidden;
-        overflow-y: scroll;
+        /* overflow-x: hidden; */
+        /* overflow-y: scroll; */
         scrollbar-width: none;
         position: relative;
         width: 100%;
@@ -5724,6 +5726,9 @@
         background: inherit;
         gap: inherit;
       }
+      #wrapperSetting:has(#contentSettingInit.side) {
+         overflow-y : hidden;
+}
       #contentSettingInit {
         display: flex;
         background: inherit;
