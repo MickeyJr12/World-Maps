@@ -3769,19 +3769,34 @@
         cursor: pointer;
         user-select: none;
         transition: background 0.2s;
+         .mDiamant {
+          display : none;
+          height : 0.85rem;
+          opacity : 0.9;
+          fill : white;
+        }
+      }
+      .view-region-row.lockP{
+        .mDiamant {
+          display : flex;
+        }
       }
       .view-region-row:active {
         background: rgba(255, 255, 255, 0.06);
       }
 
       .region-label {
+        display : flex;
+        gap : 0.4rem;
         flex: 1;
         font-size: 13px;
         font-weight: 500;
         color: rgba(255, 255, 255, 0.9);
         letter-spacing: 0.02rem;
         transition: transform 0.25s ease;
+       
       }
+      
       .view-region-row:hover .region-label {
         transform: translateX(3px);
       }
@@ -60299,26 +60314,18 @@ const bcp47Ilg = {
       const orgaData = [
         { label: "otan" , id: "orgaOTAN", key: "otan" },
 { label: "ue" , id: "orgaUE", key: "ue" },
+{ label: "g20" , id: "orgaG20", key: "g20" },
+{ label: "g7" , id: "orgaG7", key: "g7" },
 { label: "moyenOrient" , id: "orgaMoyenOrient", key: "moyenOrient" },
 { label: "ligueArabe" , id: "orgaLigueArabe", key: "ligueArabe" },
 { label: "exURSS" , id: "orgaExUrss", key: "exURSS" },
-{ label: "g20" , id: "orgaG20", key: "g20" },
-{ label: "g7" , id: "orgaG7", key: "g7" },
 { label: "opepplus" , id: "orgaOPEPP", key: "opepplus" }, // Pas de logo
 { label: "cop" , id: "orgaCOP", key: "cop" },
 { label: "opep" , id: "orgaOPEP", key: "opep" },
-{ label: "unesco" , id: "orgaUnesco", key: "unesco" },
-{
-  label: "banqueMondiale",
-  id: "orgaBanqueMondiale",
-  key: "banqueMondiale",
-},
-{
-  label: "unionAfricaine",
-  id: "orgaUnionAfricaine",
-  key: "unionAfricaine",
-},
-{ label: "fmi", id: "orgaFMI", key: "fmi" },
+{label: "unionAfricaine",id: "orgaUnionAfricaine",key: "unionAfricaine",},
+{ label: "unesco" , id: "orgaUnesco", key: "unesco" }, // Retirer/******************
+{label: "banqueMondiale",id: "orgaBanqueMondiale",key: "banqueMondiale",}, // retirer***********
+{ label: "fmi", id: "orgaFMI", key: "fmi" }, // retirer************************
       ];
 
       //Script const Legend
@@ -90120,11 +90127,14 @@ g7: {
         subsWrapper.className = "subs-wrapper";
         subsWrapper.style.overflow = "scroll";
         subsWrapper.style.height = "200px"; // limiter la hauteur pour éviter un bloc trop grand
-
+        const L_orgaUnlockP = [
+        "otan","ue","g20","g7"
+        ]
         orgaData.forEach((item) => {
           const row = document.createElement("div");
-          row.className = "view-region-row lockP";
+          row.className = "view-region-row " + (L_orgaUnlockP.includes(item.label) ? "" : "lockP") ;
           row.id = item.id;
+         
 
           const arrowPlaceholder = document.createElement("div");
           arrowPlaceholder.className = "arrow-region";
@@ -90132,8 +90142,17 @@ g7: {
           arrowPlaceholder.appendChild(makeArrowSVG());
 
           const label = document.createElement("span");
-          label.className = "region-label";
+          label.className = "region-label" ;
           label.textContent = D_ilg[item.label][currentIlg];
+
+           if(!L_orgaUnlockP.includes(item.label)){
+            const mDiamant = getId('nbrQAll').querySelector('.mDiamant').cloneNode(true)
+            mDiamant.style.fill = "white"
+            mDiamant.querySelectorAll('path').forEach(p=> p.style.fill = "white")           
+            label.append(mDiamant)
+          }
+
+
 
           const eyeBtn = makeFilterEye(item.id);
 
