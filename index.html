@@ -90779,7 +90779,7 @@ asean: {
             const titleText = document.createElement("div");
             titleText.textContent = D_ilg[r.label][currentIlg];
             const spn = document.createElement("span");
-            spn.textContent = "(" + Object.keys(P_info).filter(id => P_info[id][r.key]).length + " " + D_ilg.membres[currentIlg] + ")";
+            spn.textContent = "(" + Object.keys(P_info).filter(id => P_info[id][r.key]).length  + /* " "  D_ilg.membres[currentIlg] + */ ")";
 
             listBoxTitle.append(titleText);
             titleText.append(spn);
@@ -90856,10 +90856,10 @@ asean: {
 
           if (r.key === "unMember") {
             titleText.textContent = D_ilg.territoiresnonmembres[currentIlg];
-            spn.textContent = " (" + L.length + " " + D_ilg.entites[currentIlg] + ")"
+            spn.textContent = " (" + L.length /* +  " "  + D_ilg.entites[currentIlg] */ + ")"
           } else {
             titleText.textContent = D_ilg.territoiresnon[currentIlg] 
-            spn.textContent = " (" + L.length + " " + D_ilg.entites[currentIlg] + ")"
+            spn.textContent = " (" + L.length /* +  " " + D_ilg.entites[currentIlg] */ + ")"
           }
           titleText.append(spn)
 
