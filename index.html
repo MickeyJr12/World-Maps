@@ -888,11 +888,11 @@
       }
       .itemSortSub.active {
         color: #fbbf24;
+        .checkSortSub{
+          opacity : 1;
+        }
       }
 
-      .itemSortSub.active .checkSortSub {
-        opacity: 1;
-      }
       .itemSortSub:active {
         filter: brightness(0.92);
       }
@@ -1997,21 +1997,43 @@
         grid-template-columns: auto 1fr auto;
         align-items: center;
         cursor: pointer;
+        color : rgba(255,255,255,0.6);
         gap: 1rem;
         padding: 0.6rem;
         transition:
           background 0.2s ease,
           transform 0.2s ease,
+          color 0.2s ease,
           opacity 0.2s ease;
+
+        .checkItemClasser{
+          opacity : 0
+        }
+
+        svg {
+        opacity : 0.6;
       }
+
+      }
+      .itemClasser.active {
+        color : white;
+
+        .checkItemClasser{opacity : 1}
+        .svgClasser {opacity : 1}
+      }
+
+       .svgClasser {
+        height: 1.2rem;
+        fill: white;
+        transition : opacity 0.2s ease;
+      }
+
+
+
       .itemClasser:active {
         background: rgba(7, 7, 55, 0.5);
       }
 
-      .svgClasser {
-        height: 1.2rem;
-        fill: white;
-      }
       .ligneInGrid {
         grid-column: 1 / -1; /* prend toutes les colonnes */
         width: 90%;
@@ -20363,15 +20385,13 @@
               <div id="cadreClasser">
 
                 <div class="itemClasser" data-classer="population">
-                  <span style="opacity: 0">✓</span> <span data-ilg="population">Population</span>
+                  <span class="checkItemClasser" >✓</span> <span data-ilg="population">Population</span>
                   <svg
                     class="svgClasser"
                     xmlns="http://www.w3.org/2000/svg"
                     id="Layer_1"
                     data-name="Layer 1"
                     viewBox="0 0 24 24"
-                    width="32"
-                    height="32"
                   >
                     <path
                       fill="white"
@@ -20383,7 +20403,7 @@
                 <div class="ligneInGrid"></div>
 
                 <div class="itemClasser" data-classer="superficie">
-                  <span style="opacity: 0">✓</span> <span data-ilg="superficie">Superficie</span>
+                  <span class="checkItemClasser" >✓</span> <span data-ilg="superficie">Superficie</span>
                   <svg fill="#000000"  class="svgClasser" viewBox="0 0 32 32" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><path d="M27,22.142V9.858A3.9916,3.9916,0,1,0,22.142,5H9.858A3.9916,3.9916,0,1,0,5,9.858V22.142A3.9916,3.9916,0,1,0,9.858,27H22.142A3.9916,3.9916,0,1,0,27,22.142ZM26,4a2,2,0,1,1-2,2A2.0023,2.0023,0,0,1,26,4ZM4,6A2,2,0,1,1,6,8,2.002,2.002,0,0,1,4,6ZM6,28a2,2,0,1,1,2-2A2.0023,2.0023,0,0,1,6,28Zm16.142-3H9.858A3.9937,3.9937,0,0,0,7,22.142V9.858A3.9947,3.9947,0,0,0,9.858,7H22.142A3.9937,3.9937,0,0,0,25,9.858V22.142A3.9931,3.9931,0,0,0,22.142,25ZM26,28a2,2,0,1,1,2-2A2.0027,2.0027,0,0,1,26,28Z" transform="translate(0 0)"></path></svg>
 
                   <!-- <svg
@@ -20409,8 +20429,8 @@
 
                 <div class="ligneInGrid"></div>
 
-                <div class="itemClasser" data-classer="name">
-                  <span>✓</span> <span data-ilg="noms">Noms</span>
+                <div class="itemClasser active" data-classer="name">
+                  <span class="checkItemClasser" >✓</span> <span data-ilg="noms">Noms</span>
                   <svg
                     class="svgClasser"
                     fill="white"
@@ -92371,11 +92391,11 @@ asean: {
           fillContentC(inputC.value.length === 0 ? LsInit : Ls);
           // Retire le ✓ de tous
           itemsClasser.forEach(
-            (i) => (i.querySelector("span").style.opacity = "0"),
+            (i) => (i.classList.remove('active')),
           );
           // Affiche le ✓ du sélectionné
           
-          item.querySelector("span").style.opacity = "1";
+          item.classList.add('active')
           // Met à jour le texte de "classer"
           const texte = item.querySelector('[data-ilg]').textContent;
           classer.querySelector('[data-ilg]').textContent = texte + " ";
@@ -94725,268 +94745,6 @@ asean: {
         await InAppReview.requestReview();
       }
 
-
-for (const id in P){
-
-  L_q[id].d = "Normal"
-}
-const l = [
-    {
-        "AE": "Émirats arabes unis"
-    },
-    {
-        "AF": "Afghanistan"
-    },
-    {
-        "AL": "Albanie"
-    },
-    {
-        "AM": "Arménie"
-    },
-    {
-        "AZ": "Azerbaïdjan"
-    },
-    {
-        "BA": "Bosnie-Herzégovine"
-    },
-    {
-        "BD": "Bangladesh"
-    },
-    {
-        "BG": "Bulgarie"
-    },
-    {
-        "BO": "Bolivie"
-    },
-    {
-        "BT": "Bhoutan"
-    },
-    {
-        "BW": "Botswana"
-    },
-    {
-        "BY": "Biélorussie"
-    },
-    {
-        "CD": "Rep. dém. du Congo"
-    },
-    {
-        "CI": "Côte d'Ivoire"
-    },
-    {
-        "CL": "Chili"
-    },
-    {
-        "CM": "Cameroun"
-    },
-    {
-        "CR": "Costa Rica"
-    },
-    {
-        "CU": "Cuba"
-    },
-    {
-        "CY": "Chypre"
-    },
-    {
-        "CZ": "Tchéquie"
-    },
-    {
-        "DO": "République dominicaine"
-    },
-    {
-        "EC": "Équateur"
-    },
-    {
-        "ET": "Éthiopie"
-    },
-    {
-        "FI": "Finlande"
-    },
-    {
-        "GE": "Géorgie"
-    },
-    {
-        "GH": "Ghana"
-    },
-    {
-        "GT": "Guatemala"
-    },
-    {
-        "HK": "Hong Kong"
-    },
-    {
-        "HN": "Honduras"
-    },
-    {
-        "HR": "Croatie"
-    },
-    {
-        "HT": "Haïti"
-    },
-    {
-        "HU": "Hongrie"
-    },
-    {
-        "ID": "Indonésie"
-    },
-    {
-        "IQ": "Irak"
-    },
-    {
-        "IR": "Iran"
-    },
-    {
-        "IS": "Islande"
-    },
-    {
-        "JO": "Jordanie"
-    },
-    {
-        "KH": "Cambodge"
-    },
-    {
-        "KP": "Corée du Nord"
-    },
-    {
-        "KW": "Koweït"
-    },
-    {
-        "KZ": "Kazakhstan"
-    },
-    {
-        "LB": "Liban"
-    },
-    {
-        "LK": "Sri Lanka"
-    },
-    {
-        "LU": "Luxembourg"
-    },
-    {
-        "LY": "Libye"
-    },
-    {
-        "MA": "Maroc"
-    },
-    {
-        "MC": "Monaco"
-    },
-    {
-        "MQ": "Martinique"
-    },
-    {
-        "MY": "Malaisie"
-    },
-    {
-        "MZ": "Mozambique"
-    },
-    {
-        "NE": "Niger"
-    },
-    {
-        "NG": "Nigeria"
-    },
-    {
-        "NI": "Nicaragua"
-    },
-    {
-        "PA": "Panama"
-    },
-    {
-        "PE": "Pérou"
-    },
-    {
-        "PH": "Philippines"
-    },
-    {
-        "PK": "Pakistan"
-    },
-    {
-        "PL": "Pologne"
-    },
-    {
-        "PR": "Porto Rico"
-    },
-    {
-        "PS": "Palestine"
-    },
-    {
-        "QA": "Qatar"
-    },
-    {
-        "RO": "Roumanie"
-    },
-    {
-        "RS": "Serbie"
-    },
-    {
-        "SA": "Arabie saoudite"
-    },
-    {
-        "SD": "Soudan"
-    },
-    {
-        "SG": "Singapour"
-    },
-    {
-        "SK": "Slovaquie"
-    },
-    {
-        "SN": "Sénégal"
-    },
-    {
-        "SO": "Somalie"
-    },
-    {
-        "SR": "Suriname"
-    },
-    {
-        "SV": "Salvador"
-    },
-    {
-        "SY": "Syrie"
-    },
-    {
-        "TD": "Tchad"
-    },
-    {
-        "TH": "Thaïlande"
-    },
-    {
-        "TN": "Tunisie"
-    },
-    {
-        "TR": "Turquie"
-    },
-    {
-        "TW": "Taïwan"
-    },
-    {
-        "TZ": "Tanzanie"
-    },
-    {
-        "UA": "Ukraine"
-    },
-    {
-        "UG": "Ouganda"
-    },
-    {
-        "UY": "Uruguay"
-    },
-    {
-        "VE": "Venezuela"
-    },
-    {
-        "VN": "Viêt Nam"
-    },
-    {
-        "YE": "Yémen"
-    },
-    {
-        "ZW": "Zimbabwe"
-    }
-]
 
     </script>
 
