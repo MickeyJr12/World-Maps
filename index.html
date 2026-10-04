@@ -3555,10 +3555,19 @@
         border-radius: 0.5rem;
         border-radius: 0.6rem;
         transition: transform 0.2s ease;
+        .mDiamant{
+          display : none;
+          path {
+            fill : white;
+          }
+        }
       }
       .btnViewSub.lockP {
         opacity: 0.5;
         outline: 1px solid #d9a441;
+        .mDiamant{
+          display : flex;
+        }
       }
       .btnViewSub:active {
         transform: scale(0.96);
@@ -90329,13 +90338,49 @@ asean: {
                 const iconSvg = document.createElement("div");
                 iconSvg.innerHTML = L_cSub[id].icon;
                 const btnViewSub = document.createElement("div");
-                btnViewSub.append(iconSvg);
                 btnViewSub.className = "btnViewSub";
+                btnViewSub.append(iconSvg,L_q[id].n);
+
                 if (!L_subNP.includes(id)) {
                   btnViewSub.classList.add("lockP");
+
+                  const diamantSub = document.createElement("div");
+                  diamantSub.className = "mDiamant";
+                  btnViewSub.append(diamantSub)
+                  diamantSub.innerHTML = `
+                    <svg
+                      class="mDiamant"
+                      viewBox="0 0 332 290"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
+                        fill="#d9a441"
+                      />
+                    </svg>`;
                 }
 
-                btnViewSub.append(L_q[id].n);
                 // gridSub.append(btnViewSub);
                 L_sort[id] = btnViewSub;
                 btnViewSub.addEventListener("click", () => {
