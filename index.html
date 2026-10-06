@@ -59237,6 +59237,52 @@ const bcp47Ilg = {
       const cadreIle = document.getElementById("cadreIle");
       const cacheIle = document.getElementById("cacheIle");
 
+
+      drapeauCadre.addEventListener('click',()=>{
+        cadre.style.filter="brightness(0.6)";
+        
+        const newFlag = drapeauCadre.cloneNode(true)
+        drapeauCadre.style.opacity = "0"
+
+        newFlag.id = "newFlag"
+        const box = drapeauCadre.getBoundingClientRect();
+        newFlag.style.position = "fixed"
+        newFlag.style.zIndex = "130";
+        newFlag.style.top = box.top + "px";
+        newFlag.style.left = box.left + "px"
+        newFlag.style.width = box.width + "px";
+        newFlag.style.aspectRatio = `${box.width/box.height}`;
+        newFlag.style.transition = "all 0.25s ease";
+        Maps.append(newFlag)
+
+        requestAnimationFrame(()=>{
+          newFlag.style.borderRadius = "0.8rem"
+          newFlag.style.top = "40%"
+          newFlag.style.left = "1rem"
+          newFlag.style.width = "calc(100% - 2rem)"
+
+        })
+
+        cadre.addEventListener('click',(e)=>{
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          cadre.style.filter=""
+          newFlag.style.transform = "none"
+          newFlag.style.top = box.top + "px";
+          newFlag.style.left = box.left + "px"
+          newFlag.style.width = box.width + "px";
+          newFlag.style.borderRadius = ""
+          setTimeout(()=>{
+            newFlag.remove()
+            drapeauCadre.style.opacity = ""
+          },450)
+
+        },{ capture: true, once: true })
+      })
+    
+
+
+
       const D_ileLink = {
         // "mq" // svg des communes
         MQXX: "https://upload.wikimedia.org/wikipedia/commons/6/61/Blank_Map_of_Martinique_Department%2C_France%2C_with_Communes.svg",
@@ -94748,48 +94794,7 @@ asean: {
 
       
 
-      drapeauCadre.addEventListener('click',()=>{
-        cadre.style.filter="brightness(0.6)";
-        const newFlag = drapeauCadre.cloneNode(true)
-        drapeauCadre.style.opacity = "0"
-
-        newFlag.id = "newFlag"
-        const box = drapeauCadre.getBoundingClientRect();
-        newFlag.style.position = "fixed"
-        newFlag.style.zIndex = "130";
-        newFlag.style.top = box.top + "px";
-        newFlag.style.left = box.left + "px"
-        newFlag.style.width = box.width + "px";
-        newFlag.style.aspectRatio = `${box.width/box.height}`;
-        newFlag.style.transition = "all 0.25s ease";
-        Maps.append(newFlag)
-
-        requestAnimationFrame(()=>{
-          newFlag.style.borderRadius = "0.8rem"
-          newFlag.style.top = "50%"
-          newFlag.style.left = "1rem"
-          newFlag.style.transform = "translateY(-50%)"
-          newFlag.style.width = "calc(100% - 2rem)"
-
-        })
-
-        cadre.addEventListener('click',(e)=>{
-          e.stopImmediatePropagation();
-          e.preventDefault();
-          cadre.style.filter=""
-          newFlag.style.transform = "none"
-          newFlag.style.top = box.top + "px";
-          newFlag.style.left = box.left + "px"
-          newFlag.style.width = box.width + "px";
-          newFlag.style.borderRadius = ""
-          setTimeout(()=>{
-            newFlag.remove()
-            drapeauCadre.style.opacity = ""
-          },300)
-
-        },{ capture: true, once: true })
-      })
-
+      
     </script>
 
     <script src="ads.js"></script>
