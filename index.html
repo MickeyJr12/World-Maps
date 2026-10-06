@@ -2771,7 +2771,7 @@
         transform-origin: center top;
         transition:
           transform 0.4s ease,
-          opacity 0.3s ease;
+          opacity 0.3s ease,filter 0.25s ease;
       }
       #loadingCadre {
         position: absolute;
@@ -2823,6 +2823,7 @@
       }
 
       #drapeauCadre {
+        border-radius : 0.4rem;
         height: 100%;
         object-fit: contain;
         border-radius: 0.2rem;
@@ -94745,6 +94746,49 @@ asean: {
         await InAppReview.requestReview();
       }
 
+      
+
+      drapeauCadre.addEventListener('click',()=>{
+        cadre.style.filter="brightness(0.6)";
+        const newFlag = drapeauCadre.cloneNode(true)
+        drapeauCadre.style.opacity = "0"
+
+        newFlag.id = "newFlag"
+        const box = drapeauCadre.getBoundingClientRect();
+        newFlag.style.position = "fixed"
+        newFlag.style.zIndex = "130";
+        newFlag.style.top = box.top + "px";
+        newFlag.style.left = box.left + "px"
+        newFlag.style.width = box.width + "px";
+        newFlag.style.aspectRatio = `${box.width/box.height}`;
+        newFlag.style.transition = "all 0.25s ease";
+        Maps.append(newFlag)
+
+        requestAnimationFrame(()=>{
+          newFlag.style.borderRadius = "0.8rem"
+          newFlag.style.top = "50%"
+          newFlag.style.left = "1rem"
+          newFlag.style.transform = "translateY(-50%)"
+          newFlag.style.width = "calc(100% - 2rem)"
+
+        })
+
+        cadre.addEventListener('click',(e)=>{
+          e.stopImmediatePropagation();
+          e.preventDefault();
+          cadre.style.filter=""
+          newFlag.style.transform = "none"
+          newFlag.style.top = box.top + "px";
+          newFlag.style.left = box.left + "px"
+          newFlag.style.width = box.width + "px";
+          newFlag.style.borderRadius = ""
+          setTimeout(()=>{
+            newFlag.remove()
+            drapeauCadre.style.opacity = ""
+          },300)
+
+        },{ capture: true, once: true })
+      })
 
     </script>
 
