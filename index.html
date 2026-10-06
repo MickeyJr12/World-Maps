@@ -29498,6 +29498,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         getId('ilgSelected').textContent = query(`[data-choiceilg = ${ilg}]`).querySelector("span").textContent
 
+        // Cadre track days
+        trackLoading()
         // Remplir cadreVue      
         getId('view-list').innerHTML = ``;
         buildContinents();
@@ -59239,7 +59241,7 @@ const bcp47Ilg = {
 
 
       drapeauCadre.addEventListener('click',()=>{
-        cadre.style.filter="brightness(0.6)";
+        cadre.style.filter="brightness(0.4) blur(5px)";
         
         const newFlag = drapeauCadre.cloneNode(true)
         drapeauCadre.style.opacity = "0"
@@ -59257,7 +59259,7 @@ const bcp47Ilg = {
 
         requestAnimationFrame(()=>{
           newFlag.style.borderRadius = "0.8rem"
-          newFlag.style.top = "40%"
+          newFlag.style.top = "30%"
           newFlag.style.left = "1rem"
           newFlag.style.width = "calc(100% - 2rem)"
 
