@@ -2951,7 +2951,8 @@
 
         .txtMenuCadre {
         font-size : 0.92rem;
-          max-width: 0px;
+          /* max-width: 0px; */
+        max-width : 100rem /* à retirer */
         }
         .arrowMenuCadre {
           opacity: 0.5;
@@ -22191,6 +22192,7 @@
 
             <div
               class="boxMenuCadre"
+              style="display : none"
               id="contoursMenu" 
               onclick="selectMenuCadre('contoursMenu')"
             >
@@ -59962,7 +59964,7 @@ const bcp47Ilg = {
           boxMenusCadre.forEach((m) => {
             if (m.id === m_id) {
               m.classList.add("active");
-              txt.style.maxWidth = txt.scrollWidth + 2 + "px"
+              txt.style.maxWidth = txt.scrollWidth + 2 + "px" // à retirer
               document.getElementById(D_cadreMenu[m.id]).style.display = "flex";
             } else {
               document.getElementById(D_cadreMenu[m.id]).style.display = "none";
