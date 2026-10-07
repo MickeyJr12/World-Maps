@@ -59303,6 +59303,7 @@ const bcp47Ilg = {
       [drapeauCadre,mSilhouette].forEach(el=>{
         el.addEventListener('click',()=>{
           if(tfNewEl)return
+          hapticFeedback("medium")
           tfNewEl = true
         cadre.style.filter="brightness(0.25)";
         
@@ -59320,6 +59321,7 @@ const bcp47Ilg = {
         newFlag.style.transition = "all 0.25s ease";
         Maps.append(newFlag)
         const svgEl = newFlag.querySelector('svg');
+        el.style.transition = "none"
         if (svgEl) {
           newFlag.style.background = "rgba(255,255,255,0.1)"
           newFlag.style.boxSizing = "border-box"
@@ -59333,6 +59335,9 @@ const bcp47Ilg = {
           newFlag.style.left = "1rem"
           newFlag.style.width = "calc(100% - 2rem)"
 
+          if (svgEl) {
+          newFlag.style.padding = "0.6rem"
+        };
         })
 
         document.addEventListener('click',(e)=>{
@@ -59344,11 +59349,15 @@ const bcp47Ilg = {
           newFlag.style.left = box.left + "px"
           newFlag.style.width = box.width + "px";
           newFlag.style.borderRadius = ""
-          if(svgEl) newFlag.style.background = "rgba(255,255,255,0.06)"
+          if(svgEl) {
+          newFlag.style.borderRadius = "0.25rem"
+          newFlag.style.padding = "0.25rem"
+          newFlag.style.background = "rgba(255,255,255,0.06)"
+          }
           setTimeout(()=>{
-            newFlag.remove()
-            tfNewEl = false
-            el.style.opacity = ""
+            el.style.opacity = ""  
+            newFlag.remove(); tfNewEl = false          
+            setTimeout(()=>{el.style.transition = "";},50)
           },450)
 
         },{ capture: true, once: true })
