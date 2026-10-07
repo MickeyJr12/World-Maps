@@ -1140,6 +1140,7 @@
       }
       .calqueChoice.active {
         background: rgba(91, 175, 253, 0.8);
+        box-shadow : 0px 0px 1rem white;
         outline: 0.1rem solid rgba(255, 255, 255, 0.5);
       }
       .calqueChoice svg {
@@ -2529,14 +2530,48 @@
         left: 85%;
         top: 3%;
       }
+      #wrapperTRCadre{ /* Top Right */
+        display : flex;
+        position : absolute;
+        flex-direction : column;
+        gap : 0.4rem; 
+        align-items : center;
+        top: calc(env(safe-area-inset-top) + 0.4rem);
+        right: 1rem;
+
+      }
+      #mSilhouette{
+        display : flex;
+        padding : 0.25rem; 
+        box-sizing : border-box;
+        justify-content : center;
+        align-items : center;
+        width : 2.5rem;
+        
+        border-radius : 0.25rem;        
+        /* outline : 1px solid rgba(255,255,255,0.2); */
+        background : rgba(255,255,255,0.06);
+        transition : transform 0.2s ease;
+        .boxSvgSil {
+          display : flex;
+          justify-content : center;
+          align-items : center;
+          max-width : 100%;
+        }
+         svg {
+          height : auto;
+            width : 100%;
+        }
+      }
+
+      #mSilhouette:active{
+        transform : scale(0.92);
+      }
       .info {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0.25rem;
-        position: absolute;
-        top: calc(env(safe-area-inset-top) + 0.4rem);
-        right: 1rem;
         width: 2rem;
         height: 2rem;
         border-radius: 50%;
@@ -22001,6 +22036,7 @@
             />
           </svg>
         </button>
+        <div id="wrapperTRCadre">
         <div class="info" id="infoWiki">
           <svg
             viewBox="0 0 24 24"
@@ -22027,6 +22063,9 @@
             </g>
           </svg>
         </div>
+        <div id="mSilhouette"></div>
+        </div>
+
         <div id="contentCadre">
           <div id="cadreDrapeau" style="margin-bottom: -3rem">
             <div id="drapeauBox">
@@ -29393,6 +29432,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           if (j === 3 && k !== 13) return 'rd';
           return 'th';
         }
+
+      //   function abrevNbr(nbr){
+      //     let j = 1
+      //     while(nbr/10**(j+1) > 1) j+=1 
+      //     return Math.floor(nbr/10**(nbr > 10** 9 ? 9 : 6))*10**(-j)+ (j > 9 ? "Millard" : "million")
+      // }
 
       // Pour l_q et  p_info, on créer une secon eliste avec que capitale et nom,s et on modifie les premières listes avec les valeurs des secondes
       function changeIlg(ilg) {
@@ -59233,6 +59278,7 @@ const bcp47Ilg = {
       const boxTxtTerritoire = document.getElementById("boxTxtTerritoire");
       const itemBlason = document.querySelector(".itemBlason");
       const cadreContours = document.getElementById("cadreContours");
+      const mSilhouette = document.getElementById("mSilhouette");
       const cadreBlason = document.getElementById("cadreBlason");
       const cadreOrga = getId("cadreOrga");
       const expandIle = document.getElementById("expandIle");
@@ -59242,14 +59288,15 @@ const bcp47Ilg = {
       const cacheIle = document.getElementById("cacheIle");
 
 
-      drapeauCadre.addEventListener('click',()=>{
+      [drapeauCadre,mSilhouette].forEach(el=>{
+        el.addEventListener('click',()=>{
         cadre.style.filter="brightness(0.25)";
         
-        const newFlag = drapeauCadre.cloneNode(true)
-        drapeauCadre.style.opacity = "0"
+        const newFlag = el.cloneNode(true)
+        el.style.opacity = "0"
 
         newFlag.id = "newFlag"
-        const box = drapeauCadre.getBoundingClientRect();
+        const box = el.getBoundingClientRect();
         newFlag.style.position = "fixed"
         newFlag.style.zIndex = "130";
         newFlag.style.top = box.top + "px";
@@ -59258,6 +59305,12 @@ const bcp47Ilg = {
         newFlag.style.aspectRatio = `${box.width/box.height}`;
         newFlag.style.transition = "all 0.25s ease";
         Maps.append(newFlag)
+        const svgEl = newFlag.querySelector('svg');
+        if (svgEl) {
+          newFlag.style.boxSizing = "border-box"
+          newFlag.style.padding = "0.25rem"
+          svgEl.style.width = "100%"; svgEl.style.height = "100%"
+        };
 
         requestAnimationFrame(()=>{
           newFlag.style.borderRadius = "0.8rem"
@@ -59276,13 +59329,15 @@ const bcp47Ilg = {
           newFlag.style.left = box.left + "px"
           newFlag.style.width = box.width + "px";
           newFlag.style.borderRadius = ""
+          if(svgEl) newFlag.style.background = "rgba(255,255,255,0.06)"
           setTimeout(()=>{
             newFlag.remove()
-            drapeauCadre.style.opacity = ""
+            el.style.opacity = ""
           },450)
 
         },{ capture: true, once: true })
       })
+      }) 
     
 
 
@@ -60249,7 +60304,7 @@ const bcp47Ilg = {
 
           //****************
           openTool.classList.contains("active") ? openTool.click() : "";
-          calques.forEach((c) => {
+          calquesChoice.forEach((c) => {
             c.classList.contains("active") ? c.click() : "";
           });
           openTool.style.pointerEvents = "none";
@@ -60493,7 +60548,6 @@ const bcp47Ilg = {
       const vueCo2e = document.getElementById("vueCo2e");
       const vuePib = document.getElementById("vuePib");
       const vueP = document.getElementById("vueP");
-      const calques = document.querySelectorAll(".calqueChoice");
       const tools = [centerBtn, zBox, only];
 
       let L_tool = [zBox, centerBtn, only, calque];
@@ -89226,8 +89280,17 @@ asean: {
             })
 
             .then((svg) => {
+              mSilhouette.innerHTML = ``
+              const div2 = document.createElement('div')
+              div2.className = "boxSvgSil"
+              div2.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
+              mSilhouette.append(div2)
+
+
+
               const div = document.createElement("div");
               div.className = "itemContours";
+
               div.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
               cadreContours.innerHTML = ``;
               cadreContours.appendChild(div);
@@ -89501,10 +89564,8 @@ asean: {
 
             calque.classList.contains("active") ? calque.click() : "";
 
-            footerLegendClick();
-
             clLegend = cadreLegend.className;
-            cadreLegend.className = "";
+            footerLegendClick();            
 
             if (isMobile) {
               opensearch.style.filter = "blur(4px) brightness(0.65)";
@@ -89619,6 +89680,7 @@ asean: {
 
       function footerLegendClick() {
         contentLegend.classList.remove("expend");
+        cadreLegend.classList.remove("expend");
         contentLegend.style.maxHeight = "";
         footerLegend.classList.remove("reduce");
         spnFooter.classList.remove("reduce");
@@ -89698,16 +89760,14 @@ asean: {
       let vP = false;
       vueP.addEventListener("click", () => {
         fillLegend(vueP);
-        calques.forEach((c) => c.classList.remove("active"));
-        calquesChoice.forEach((v) => {
-          v.style.boxShadow = "";
+        calquesChoice.forEach((c) => {
+          c.classList.remove("active")
         });
         vCo2e = false;
         vPib = false;
         if (!vP) {
           cadreLegend.classList.add("expend");
           vueP.classList.add("active");
-          vueP.style.boxShadow = "0px 0px 1rem white";
           vP = true;
           paths.forEach((p) => {
             const statusP = idVisible_m.get(p.id);
@@ -89762,10 +89822,6 @@ asean: {
           }
         } else {
           footerLegendClick();
-
-          cadreLegend.classList.remove("expend");
-
-          vueP.style.boxShadow = "";
           vP = false;
           paths.forEach((p) => {
             pColor_m.set(p, {
@@ -89795,10 +89851,8 @@ asean: {
 
       vuePib.addEventListener("click", () => {
         fillLegend(vuePib);
-
-        calques.forEach((c) => c.classList.remove("active"));
         calquesChoice.forEach((v) => {
-          v.style.boxShadow = "";
+          v.classList.remove("active")
         });
 
         vP = false;
@@ -89806,7 +89860,6 @@ asean: {
         if (!vPib) {
           cadreLegend.classList.add("expend");
 
-          vuePib.style.boxShadow = "0px 0px 1rem white";
 
           vuePib.classList.add("active");
           vPib = true;
@@ -89843,9 +89896,6 @@ asean: {
           });
         } else {
           footerLegendClick();
-
-          cadreLegend.classList.remove("expend");
-          vuePib.style.boxShadow = "";
           vPib = false;
           paths.forEach((p) => {
             pColor_m.set(p, {
@@ -89877,10 +89927,7 @@ asean: {
 
       vueCo2e.addEventListener("click", () => {
         fillLegend(vueCo2e);
-        calques.forEach((c) => c.classList.remove("active"));
-        calquesChoice.forEach((v) => {
-          v.style.boxShadow = "";
-        });
+        calquesChoice.forEach((v) => {v.classList.remove("active")});
 
         vPib = false;
         vP = false;
@@ -89889,7 +89936,6 @@ asean: {
           cadreLegend.classList.add("expend");
 
           vueCo2e.classList.add("active");
-          vueCo2e.style.boxShadow = "0px 0px 1rem white";
 
           vCo2e = true;
 
@@ -89952,9 +89998,6 @@ asean: {
           });
         } else {
           footerLegendClick();
-
-          cadreLegend.classList.remove("expend");
-          vueCo2e.style.boxShadow = "";
           vCo2e = false;
 
           paths.forEach((p) => {
@@ -94247,7 +94290,7 @@ asean: {
 
           lastStreakDate = null;
           saveProgress();
-          return;
+          // return;
         }
         if (ecart === 0) {
           btnTrackDays.classList.add("active");
