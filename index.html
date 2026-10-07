@@ -2965,14 +2965,15 @@
         right: 0.8rem;
         top: 50%;
         transform: translateY(-50%);
-        transition: opacity 0.2s ease;
+        transition: opacity 0.2s ease, transform 0.2s ease;
       }
       .boxMenuCadre.active {
         color: white;
         background: rgba(11, 15, 40, 0.4);
 
         .arrowMenuCadre {
-          opacity: 0;
+          /* opacity: 0; //à retirer */
+          transform : rotate(180deg)
         }
       }
 
