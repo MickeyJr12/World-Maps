@@ -59505,7 +59505,7 @@ const bcp47Ilg = {
         const svgEl = newFlag.querySelector('svg');
         el.style.transition = "none"
         if (svgEl) {
-          newFlag.style.background = "rgba(255,255,255,0.1)"
+          newFlag.style.background = "rgba(255,255,255,0.04)"
           newFlag.style.borderRadius = "";
           newFlag.style.boxSizing = "border-box"
           newFlag.style.padding = "0.25rem"
@@ -89510,10 +89510,10 @@ asean: {
 
             .then((svg) => {
               mSilhouette.classList.add('active')
-              mSilhouette.innerHTML = ``
               const div2 = document.createElement('div')
               div2.className = "boxSvgSil"
               div2.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
+              mSilhouette.innerHTML = ``
               mSilhouette.append(div2)
 
 
