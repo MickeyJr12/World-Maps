@@ -59337,6 +59337,7 @@ const bcp47Ilg = {
         newFlag.style.aspectRatio = `${box.width/box.height}`;
         newFlag.style.transition = "all 0.25s ease";
         Maps.append(newFlag)
+
         const svgEl = newFlag.querySelector('svg');
         el.style.transition = "none"
         if (svgEl) {
@@ -89228,7 +89229,7 @@ asean: {
 
         //Élément déjà là : region, subregion, independant, population,pib,co2e,gouvernement,religion,fuseaux,dateInde
         // On construit l'URL de l'API avec le nom du pays
-        document.querySelector(".info").style.display = viewSub
+        wrapperTRCadre.style.display = viewSub
           ? "none"
           : "flex";
 
@@ -90336,6 +90337,7 @@ asean: {
           boxItemC.appendChild(capItemC);
           if (r.id in L_nSouv) {
             const cap2 = capItemC.cloneNode(true);
+            cap2.style.fontSize = "0.85rem";
             cap2.textContent = "• " + L_nSouv[r.id];
             boxItemC.appendChild(cap2);
           }
@@ -92046,7 +92048,8 @@ asean: {
       const opensearch = document.querySelector(".opensearch");
       const cadreS = document.getElementById("cadreS");
       const backSearch = document.getElementById("backSearch");
-      const info = getId('infoWiki');
+      const infoWiki = getId('infoWiki');
+      const wrapperTRCadre = getId('wrapperTRCadre')
 
       const titleCadreS = document.querySelector(".titleCadreS");
       const optionModeS = document.querySelectorAll(".optionModeS");
