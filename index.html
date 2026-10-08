@@ -2554,7 +2554,7 @@
         background: rgba(121, 100, 45, 0.15);
         background: rgba(26, 74, 138, 1);
         border: 1px solid rgba(251, 191, 36, 0.3);
-        transition : transform 0.2s ease;
+        transition : transform 0.2s ease, filter 0.2s ease;
         svg{
           fill : #c08714;
           fill : white; 
@@ -2564,6 +2564,7 @@
       }
       #openStat:active{
         transform : scale(0.92);
+        filter : brightness(0.8);
       }
 
          #crossStat {
@@ -2650,7 +2651,7 @@
         border-radius : 0.25rem;        
         /* outline : 1px solid rgba(255,255,255,0.2); */
         background : rgba(255,255,255,0.06);
-        transition : transform 0.2s ease, opacity 0.2s ease;
+        transition : transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
         .boxSvgSil {
           display : flex;
           justify-content : center;
@@ -2669,6 +2670,7 @@
 
       #mSilhouette:active{
         transform : scale(0.92);
+        filter : brightness(0.8);
       }
       .info {
         display: flex;
