@@ -59484,7 +59484,7 @@ const bcp47Ilg = {
           if(tfNewEl)return
           hapticFeedback("medium")
           tfNewEl = true
-        cadre.style.filter="brightness(0.25)";
+        cadre.style.filter="brightness(0.1)";
         
         const newFlag = el.cloneNode(true)
         el.style.opacity = "0"
@@ -59505,7 +59505,7 @@ const bcp47Ilg = {
         const svgEl = newFlag.querySelector('svg');
         el.style.transition = "none"
         if (svgEl) {
-          newFlag.style.background = "rgba(255,255,255,0.04)"
+          // newFlag.style.background = "rgba(255,255,255,0.04)"
           newFlag.style.borderRadius = "";
           newFlag.style.boxSizing = "border-box"
           newFlag.style.padding = "0.25rem"
