@@ -89510,6 +89510,7 @@ asean: {
 
             .then((svg) => {
               mSilhouette.classList.add('active')
+              mSilhouette.innerHTML = ``
               const div2 = document.createElement('div')
               div2.className = "boxSvgSil"
               div2.innerHTML = svg.replace(/fill="[^"]*"/g, 'fill="white"');
