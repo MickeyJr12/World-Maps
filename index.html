@@ -2541,11 +2541,91 @@
         top: calc(env(safe-area-inset-top) + 0.4rem);
         left : 1rem;
       }
+
+      /* CSS Stats */
       #openStat{
         display : flex;
         justify-content : center;
         align-items : center;
+        padding: 0.2rem;
+        height : 1.8rem;
+        aspect-ratio : 1/1;
+        border-radius : 0.4rem;
+        background: rgba(121, 100, 45, 0.15);
+        background: rgba(26, 74, 138, 1);
+        border: 1px solid rgba(251, 191, 36, 0.3);
+        transition : transform 0.2s ease;
+        svg{
+          fill : #c08714;
+          fill : white; 
+          opacity : 0.8;
+          height : 100%;
+        }
       }
+      #openStat:active{
+        transform : scale(0.92);
+      }
+
+         #crossStat {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-end;
+        cursor: pointer;
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        transition: background 0.2s ease;
+      }
+      #crossStat svg {
+        fill: rgba(255,255,255,0.6);
+        border-radius: 50%;
+        height: 100%;
+      }
+      #crossStat:active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+
+
+       #cadreStat {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        touch-action: none;
+        z-index: 20;
+        gap: 0.8rem;
+        bottom: 0;
+        top: 105%;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        padding-top: 1rem;
+        background: rgba(17, 23, 79, 1);
+        box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
+        width: 100%;
+        transition:
+          top 0.3s ease,
+          border-radius 0.3s ease,
+          padding-top 0.3s ease;
+
+          .lineMove path{
+            fill : white;
+          }
+      }
+      #cadreStat.active {
+        top: calc(18vh + 1rem);
+        top: calc(env(safe-area-inset-top) + 1rem);
+      }
+      #cadreStat.fullScreen {
+        top: 0;
+        border-radius: 0;
+        padding-top: calc(env(safe-area-inset-top) + 1rem);
+      }
+
+      /*Fin CSS Stats */
 
       #wrapperTRCadre{ /* Top Right */
         display : flex;
@@ -2884,10 +2964,9 @@
       }
 
       #drapeauCadre {
-        border-radius : 0.4rem;
         height: 100%;
         object-fit: contain;
-        border-radius: 0.2rem;
+        border-radius : 0.4rem;
       }
       .titleCadre {
         text-align: center;
@@ -2920,6 +2999,7 @@
       }
 
       .ligneInCadre {
+        opacity : 0;
         border: 0;
         width: 100%;
         height: 1px;
@@ -2934,6 +3014,7 @@
 
       .menuCadre {
         display: flex;
+        overflow : hidden;
         position: relative;
         justify-content: space-around;
         align-items: center;
@@ -2942,10 +3023,13 @@
         margin: 0rem -10rem;
         flex-shrink: 0;
         /* gap: 0.2rem; */
-        width: 100%;
+        /* width: 100%; */
         height: 2.5rem;
+        width : calc(100% - 2rem);
+        border-radius : 0.5rem;
         background: rgba(18, 117, 174, 0.3);
         background: rgba(18, 117, 174, 0.2);
+
 
         fill: white;
         /* fill : rgb(216, 120, 3); */
@@ -3010,7 +3094,13 @@
         left: 50%;
         width: 0%;
         height: 0.1rem;
-        background: white;
+        /* background: white; */
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
         border-radius: 2px;
         transform: translateX(-50%);
         transform-origin: center top;
@@ -21221,6 +21311,42 @@
       <!--------------------------Grand Cadre------------------------------->
 
       <div id="cadre">
+
+        <!-- HTML Stat -->
+        <div id="cadreStat">
+          <div class="lineMove" id="lineStat">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Layer_1"
+            data-name="Layer 1"
+            viewBox="0 11 24 3"
+          >
+            <path
+              d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
+            />
+          </svg>
+        </div>
+        <div id="crossStat">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            id="Outline"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+            />
+          </svg>
+        </div>
+          
+        </div>
+
+        <!-- Fin HTML Stat -->
+
+
+
+
+
+
         <div id="cacheOrgaD"></div>
         <div id="cadreOrgaD">
           <div id="wrapperTopOrgaD">
@@ -22077,6 +22203,12 @@
             />
           </svg>
         </button>
+
+        <div id="openStat">
+          <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve" fill="" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path fill="" d="M40,64V4c0-2.211-1.789-4-4-4h-8c-2.211,0-4,1.789-4,4v60H40z"></path> <path fill="" d="M20,64V20c0-2.211-1.789-4-4-4H8c-2.211,0-4,1.789-4,4v44H20z"></path> <path fill="" d="M60,36c0-2.211-1.789-4-4-4h-8c-2.211,0-4,1.789-4,4v28h16V36z"></path> </g> </g></svg>
+          
+        </div>
+
 </div>
         <div id="wrapperTRCadre">
         <div class="info" id="infoWiki">
@@ -22205,12 +22337,12 @@
                 />
               </svg>
             </div>
-            <div
+            <!-- <div
               style="
                 height: 100%;
                 outline: 0.8px solid rgba(255, 255, 255, 0.2);
               "
-            ></div>
+            ></div> -->
 
             <div
               class="boxMenuCadre"
@@ -59328,6 +59460,9 @@ const bcp47Ilg = {
       const itemBlason = document.querySelector(".itemBlason");
       const cadreContours = document.getElementById("cadreContours");
       const mSilhouette = document.getElementById("mSilhouette");
+      const openStat = document.getElementById("openStat");
+      const crossStat = getId('crossStat')
+      const cadreStat = getId('cadreStat')
       const cadreBlason = document.getElementById("cadreBlason");
       const cadreOrga = getId("cadreOrga");
       const expandIle = document.getElementById("expandIle");
@@ -59355,6 +59490,8 @@ const bcp47Ilg = {
         newFlag.style.top = box.top + "px";
         newFlag.style.left = box.left + "px"
         newFlag.style.width = box.width + "px";
+        newFlag.style.borderRadius = "0.4rem";
+
         newFlag.style.aspectRatio = `${box.width/box.height}`;
         newFlag.style.transition = "all 0.25s ease";
         Maps.append(newFlag)
@@ -59363,6 +59500,7 @@ const bcp47Ilg = {
         el.style.transition = "none"
         if (svgEl) {
           newFlag.style.background = "rgba(255,255,255,0.1)"
+          newFlag.style.borderRadius = "";
           newFlag.style.boxSizing = "border-box"
           newFlag.style.padding = "0.25rem"
           svgEl.style.width = "100%"; svgEl.style.height = "100%"
@@ -59373,7 +59511,6 @@ const bcp47Ilg = {
           newFlag.style.top = "30%"
           newFlag.style.left = "1rem"
           newFlag.style.width = "calc(100% - 2rem)"
-
           if (svgEl) {
           newFlag.style.padding = "0.6rem"
         };
@@ -59387,9 +59524,9 @@ const bcp47Ilg = {
           newFlag.style.top = box.top + "px";
           newFlag.style.left = box.left + "px"
           newFlag.style.width = box.width + "px";
-          newFlag.style.borderRadius = ""
+          newFlag.style.borderRadius = "0.4rem"
           if(svgEl) {
-          newFlag.style.borderRadius = "0.25rem"
+          newFlag.style.borderRadius = "0.4rem"
           newFlag.style.padding = "0.25rem"
           newFlag.style.background = "rgba(255,255,255,0.06)"
           }
@@ -59402,6 +59539,21 @@ const bcp47Ilg = {
         },{ capture: true, once: true })
       })
       }) 
+
+
+
+
+      // Script stat
+
+      openStat.addEventListener('click',()=>{
+        cadreStat.classList.add('active')
+        cadre.style.filter = "brightness(0.4)"
+      })
+
+      crossStat.addEventListener('click',()=>{
+        cadreStat.classList.remove('active')
+        cadre.style.filter = ""
+      })
     
 
 
@@ -92268,7 +92420,7 @@ asean: {
         document.getElementById("arrowTitle").classList.toggle("active");
       });
 
-      info.addEventListener("click", () => {
+      infoWiki.addEventListener("click", () => {
         const str = currentCountry.getAttribute("title").replace(" ", "_");
 
         window.open(`https://en.wikipedia.org/wiki/${str}`, "_blank");
