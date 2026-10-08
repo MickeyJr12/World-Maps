@@ -2530,6 +2530,23 @@
         left: 85%;
         top: 3%;
       }
+
+      #wrapperTLCadre{ /* Top Right */
+        display : flex;
+        position : absolute;
+        flex-direction : column;
+        gap : 0.4rem; 
+        width : 2.5rem;
+        align-items : center;
+        top: calc(env(safe-area-inset-top) + 0.4rem);
+        left : 1rem;
+      }
+      #openStat{
+        display : flex;
+        justify-content : center;
+        align-items : center;
+      }
+
       #wrapperTRCadre{ /* Top Right */
         display : flex;
         position : absolute;
@@ -2539,8 +2556,8 @@
         align-items : center;
         top: calc(env(safe-area-inset-top) + 0.4rem);
         right: 1rem;
-
       }
+
       #mSilhouette{
         display : flex;
         padding : 0.25rem; 
@@ -2821,8 +2838,11 @@
         width: 100%;
       }
       #backCadre {
-        top: calc(env(safe-area-inset-top) + 0.4rem);
-        left: 1rem;
+        position : relative;
+        /* top: calc(env(safe-area-inset-top) + 0.4rem); */
+        /* left: 1rem; */
+        top : 0;
+        left : 0;
       }
       #contentCadre {
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
@@ -22036,7 +22056,7 @@
             </svg>
           </div>
         </div>
-
+        <div id="wrapperTLCadre">
         <button
           class="back"
           id="backCadre"
@@ -22057,6 +22077,7 @@
             />
           </svg>
         </button>
+</div>
         <div id="wrapperTRCadre">
         <div class="info" id="infoWiki">
           <svg
