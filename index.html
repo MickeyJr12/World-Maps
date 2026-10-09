@@ -94538,17 +94538,11 @@ asean: {
         boxIconeTrack.classList.remove("active");
         if (ecart >= 2) {
           streak = 0;
-          txtTrackDays.textContent = streak;
-          txtCadreTrack.textContent =
-            streak +
-            (D_ilg[streak === 1 ? "jourde" : "joursde"][currentIlg]) +
-            (streak === 0 ? "" : "!");
-
           lastStreakDate = null;
           saveProgress();
           // return;
         }
-        if (ecart === 0) {
+        else if (ecart === 0) {
           btnTrackDays.classList.add("active");
           boxIconeTrack.classList.add("active");       
           txtMotivation.textContent =
@@ -94567,17 +94561,21 @@ asean: {
         if (streak > maxTrack) {
           maxTrack = streak;
         }
-        txtMaxTrack.textContent =
-          maxTrack +( streak === 1
-            ? D_ilg.jourde[currentIlg]
-            : D_ilg.joursde[currentIlg]);
         txtTrackDays.textContent = streak;
+        //***
         txtCadreTrack.textContent =
           streak +
-          (D_ilg[streak === 1 ? "jourde" : "joursde"][currentIlg]) +
-          (streak === 0 ? "" : "!");
+          (D_ilg[streak <= 1 ? "jourde" : "joursde"][currentIlg]) +
+          (streak <= 1 ? "" : "!");
+        //***
+        txtMaxTrack.textContent =
+          maxTrack + ( streak <= 1
+            ? D_ilg.jourde[currentIlg]
+            : D_ilg.joursde[currentIlg]);
+        
+        //***
         txtTotalDays.textContent =
-          totalDays + (streak === 1
+          totalDays + (streak <= 1
             ? D_ilg.jour[currentIlg]
             : D_ilg.jours[currentIlg]);
       }
