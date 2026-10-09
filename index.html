@@ -94570,13 +94570,13 @@ asean: {
           (streak <= 1 ? "" : "!");
         //***
         txtMaxTrack.textContent =
-          maxTrack + ( streak <= 1
+          maxTrack + ( maxTrack <= 1
             ? D_ilg.jourde[currentIlg]
             : D_ilg.joursde[currentIlg]);
         
         //***
         txtTotalDays.textContent =
-          totalDays + (streak <= 1
+          totalDays + (totalDays <= 1
             ? D_ilg.jour[currentIlg]
             : D_ilg.jours[currentIlg]);
       }
