@@ -56957,7 +56957,7 @@ const bcp47Ilg = {
               classerCadreDrapeau.className = "classerCadreDrapeau";
               classerCadreDrapeau.style.display =
                 L_config.sub === "US" || !L_config.sub ? "flex" : "none";
-
+                
               const classerDrapeauBox = document.createElement("div");
               classerDrapeauBox.className = "classerDrapeauBox";
 
@@ -89452,6 +89452,9 @@ asean: {
         //Élément déjà là : region, subregion, independant, population,pib,co2e,gouvernement,religion,fuseaux,dateInde
         // On construit l'URL de l'API avec le nom du pays
         wrapperTRCadre.style.display = viewSub
+          ? "none"
+          : "flex";
+        openStat.style.display = viewSub
           ? "none"
           : "flex";
 
