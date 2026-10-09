@@ -59564,8 +59564,10 @@ const bcp47Ilg = {
         };
         })
 
-        document.addEventListener('click',(e)=>{
+        ;[document,el].forEach(item=>item.addEventListener('click',(e)=>{
           if(!tfNewEl)return
+          e.stopPropagation(); 
+          e.preventDefault();
           cadre.style.filter=""
           newFlag.style.transform = "none"
           newFlag.style.top = box.top + "px";
@@ -59583,7 +59585,7 @@ const bcp47Ilg = {
             setTimeout(()=>{el.style.transition = "";},50)
           },450)
 
-        },{ capture: true, once: true })
+        },{ capture: true, once: true }) )
       })
       }) 
 
