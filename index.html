@@ -2723,6 +2723,7 @@
           display : flex;
           justify-content : center;
           align-items : center;
+          border-radius : 0.4rem;
           box-sizing : border-box;
           padding : 0.4rem 0.6rem;
           transition : background 0.2s ease;
@@ -2752,24 +2753,31 @@
       
       #wrapperCursorY{
         display :  flex;
+        overflow : hidden;
         justify-content : space-between;
         align-items : center;
         gap : 0.8rem;
         font-size : 0.75rem;
         color : rgba(255,255,255,0.6);
         width : 100%;
+        max-height : 0;
         box-sizing : border-box;
         padding : 0 1rem;
+        transition : max-height 0.2s ease;
+      }
+      #wrapperCursorY.active{
+        max-height : 1.5rem;
       }
       #cursorYBox{
         display : flex;
         position : relative;
         justify-content : center;
         align-items : center;
+        height : 1.1rem;
         flex : 1;
       }
       #cursorIn{
-        width : 100%;
+        width : calc(100% - 0.4rem);
         border-radius : 50rem;
         height : 0;
         outline : 2px solid rgba(255,255,255,0.25);
@@ -59806,9 +59814,9 @@ const bcp47Ilg = {
       const yInf = getId('yInf')
       const ySup = getId('ySup')
       const txtYChoice = getId('txtYChoice')
+      const wrapperCursorY = getId('wrapperCursorY')
       const statChoiceIn = getId('statChoiceIn')
       const cursorY = getId('cursorY')
-
 
       openStat.addEventListener('click',()=>{
         cadreStat.classList.add('active')
@@ -59820,6 +59828,14 @@ const bcp47Ilg = {
         cacheStat.classList.remove('active')
       })
 
+      txtYChoice.addEventListener('click',()=>{
+        // wrapperCursorY.classList.toggle('active')
+        txtYChoice.classList.toggle('active')
+
+        wrapperCursorY.style.maxHeight = txtYChoice.classList.contains('active') ? 
+        Math.max(...[...wrapperCursorY.children].map(id=>id.getBoundingClientRect().height)) + "px" 
+        : ""
+      })
 
       cacheStat.addEventListener('click',()=>{crossStat.click()})
 
