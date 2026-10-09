@@ -2963,7 +2963,7 @@
         max-height: 8rem;
       }
 
-      #drapeauBox {
+      /* #drapeauBox {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -2971,7 +2971,7 @@
         max-width : 100%;
         height: 100%;
         max-height : 100%;
-      }
+      } */
 
       #drapeauCadre {
         width : auto;
@@ -3081,15 +3081,7 @@
         }
       }
 
-      .arrowMenuCadre {
-        position: absolute;
-        height: 0.4rem;
-        right: 0.8rem;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: opacity 0.2s ease, transform 0.2s ease;
-      }
-      .boxMenuCadre.active {
+         .boxMenuCadre.active {
         color: white;
         background: rgba(11, 15, 40, 0.4);
 
@@ -3102,6 +3094,16 @@
       .boxMenuCadre.active .iconMenuCadre {
         opacity: 1;
       }
+
+      .arrowMenuCadre {
+        position: absolute;
+        height: 0.4rem;
+        right: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+   
       #blasonMenu {
         display: none;
       }
@@ -22265,6 +22267,7 @@
                 src=""
                 alt=""
                 id="drapeauCadre"
+                draggable="false"
                 onerror="
                   this.onerror = null;
                   this.src = 'flag_c/default.svg';
@@ -22570,6 +22573,29 @@
               </div>
             </div>
 
+             <div class="celCadre">
+              <div class="iconCelCadre">
+                <svg
+                  width="1.3rem"
+                  height="1.3rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Layer_1"
+                  data-name="Layer 1"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m20.5,16h-.5V4c0-2.206-1.794-4-4-4H4C1.794,0,0,1.794,0,4v.5c0,1.93,1.57,3.5,3.5,3.5h1.5v12c0,2.206,1.794,4,4,4h11c2.206,0,4-1.794,4-4v-.5c0-1.93-1.57-3.5-3.5-3.5ZM5,5h-1.5c-.276,0-.5-.224-.5-.5v-.5c0-.551.449-1,1-1s1,.449,1,1v1Zm5,14.5v.5c0,.551-.449,1-1,1s-1-.449-1-1V4c0-.345-.044-.68-.127-1h8.127c.551,0,1,.449,1,1v12h-3.5c-1.93,0-3.5,1.57-3.5,3.5Zm11,.5c0,.551-.449,1-1,1h-7.126c.083-.32.126-.655.126-1v-.5c0-.276.224-.5.5-.5h7c.276,0,.5.224.5.5v.5Z"
+                  />
+                </svg>
+              </div>
+              <div class="contentCelCadre">
+                <div class="titleCelCadre" data-ilg="independant">Indépendant</div>
+                <div class="txtCelCadre" id="independance">
+                  <div class="loadingCadre"></div>
+                </div>
+              </div>
+            </div>
+
 
             <div class="celCadre">
               <div class="iconCelCadre">
@@ -22598,51 +22624,7 @@
             </div>
 
 
-            <div class="celCadre">
-              <div class="iconCelCadre">
-                <svg
-                  width="1.3rem"
-                  height="1.3rem"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Layer_1"
-                  viewBox="0 0 24 24"
-                  data-name="Layer 1"
-                >
-                  <path
-                    d="m24.052 12.755c0-7.152-5.927-12.755-13.492-12.755-3.69 0-6.126 1.359-7.091 2.728-.291.342-.463.813-.469 1.272 0 1.103.897 2 2 2 .616 0 1.161-.286 1.528-.725.136.972.963 1.725 1.972 1.725.97 0 1.779-.694 1.961-1.611 1.995 1.001 3.539 2.918 3.539 6.111 0 .134-.031.265-.042.398-1.889-1.799-4.514-2.898-7.458-2.898-3.006 0-6.5 1.747-6.5 4 0 1.103.897 2 2 2 .415 0 .8-.127 1.12-.344.273.78 1.008 1.344 1.88 1.344.798 0 1.483-.473 1.804-1.15.782.779 1.196 1.829 1.196 3.15 0 2.198-1.794 3.987-4 3.987-.875 0-1.68-.276-2.392-.821-.438-.334-1.065-.254-1.402.187-.336.438-.252 1.066.186 1.401 1.055.807 2.302 1.233 3.608 1.233 3.309 0 6-2.686 6-5.987 0-2.007-.715-3.688-2.068-4.861-1.029-.892-2.42-1.455-3.956-1.649.734-.285 1.61-.49 2.525-.49 4.767 0 8.5 3.514 8.5 8 0 2.132-.827 3.438-.832 3.445-.307.46-.183 1.08.277 1.387.454.303 1.079.186 1.387-.277.048-.071 1.168-1.784 1.168-4.555 0-1.883-.53-3.622-1.443-5.111.288-.769.443-1.569.443-2.389 0-5.895-4.29-8.698-8.766-8.973.851-.303 1.951-.527 3.325-.527 6.444 0 11.492 4.724 11.493 10.798.152 3.57-.458 6.686-1.038 10.031-.094.545.271 1.062.814 1.156.532.095 1.065-.267 1.156-.814.581-3.362 1.224-6.637 1.066-10.416z"
-                  />
-                </svg>
-              </div>
-              <div class="contentCelCadre">
-                <div class="titleCelCadre" data-ilg="accesalamer">Accès à la mer</div>
-                <div class="txtCelCadre" id="seaAccess">
-                  <div class="loadingCadre"></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="celCadre">
-              <div class="iconCelCadre">
-                <svg
-                  width="1.3rem"
-                  height="1.3rem"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Layer_1"
-                  data-name="Layer 1"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m20.5,16h-.5V4c0-2.206-1.794-4-4-4H4C1.794,0,0,1.794,0,4v.5c0,1.93,1.57,3.5,3.5,3.5h1.5v12c0,2.206,1.794,4,4,4h11c2.206,0,4-1.794,4-4v-.5c0-1.93-1.57-3.5-3.5-3.5ZM5,5h-1.5c-.276,0-.5-.224-.5-.5v-.5c0-.551.449-1,1-1s1,.449,1,1v1Zm5,14.5v.5c0,.551-.449,1-1,1s-1-.449-1-1V4c0-.345-.044-.68-.127-1h8.127c.551,0,1,.449,1,1v12h-3.5c-1.93,0-3.5,1.57-3.5,3.5Zm11,.5c0,.551-.449,1-1,1h-7.126c.083-.32.126-.655.126-1v-.5c0-.276.224-.5.5-.5h7c.276,0,.5.224.5.5v.5Z"
-                  />
-                </svg>
-              </div>
-              <div class="contentCelCadre">
-                <div class="titleCelCadre" data-ilg="independant">Indépendant</div>
-                <div class="txtCelCadre" id="independance">
-                  <div class="loadingCadre"></div>
-                </div>
-              </div>
-            </div>
+     
 
             <div class="celCadre">
               <div class="iconCelCadre">
@@ -22682,7 +22664,100 @@
               </div>
             </div>
 
-           
+                  <div class="celCadre">
+              <div class="iconCelCadre">
+                <svg
+                  width="1.3rem"
+                  height="1.3rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Layer_1"
+                  viewBox="0 0 24 24"
+                  data-name="Layer 1"
+                >
+                  <path
+                    d="m24.052 12.755c0-7.152-5.927-12.755-13.492-12.755-3.69 0-6.126 1.359-7.091 2.728-.291.342-.463.813-.469 1.272 0 1.103.897 2 2 2 .616 0 1.161-.286 1.528-.725.136.972.963 1.725 1.972 1.725.97 0 1.779-.694 1.961-1.611 1.995 1.001 3.539 2.918 3.539 6.111 0 .134-.031.265-.042.398-1.889-1.799-4.514-2.898-7.458-2.898-3.006 0-6.5 1.747-6.5 4 0 1.103.897 2 2 2 .415 0 .8-.127 1.12-.344.273.78 1.008 1.344 1.88 1.344.798 0 1.483-.473 1.804-1.15.782.779 1.196 1.829 1.196 3.15 0 2.198-1.794 3.987-4 3.987-.875 0-1.68-.276-2.392-.821-.438-.334-1.065-.254-1.402.187-.336.438-.252 1.066.186 1.401 1.055.807 2.302 1.233 3.608 1.233 3.309 0 6-2.686 6-5.987 0-2.007-.715-3.688-2.068-4.861-1.029-.892-2.42-1.455-3.956-1.649.734-.285 1.61-.49 2.525-.49 4.767 0 8.5 3.514 8.5 8 0 2.132-.827 3.438-.832 3.445-.307.46-.183 1.08.277 1.387.454.303 1.079.186 1.387-.277.048-.071 1.168-1.784 1.168-4.555 0-1.883-.53-3.622-1.443-5.111.288-.769.443-1.569.443-2.389 0-5.895-4.29-8.698-8.766-8.973.851-.303 1.951-.527 3.325-.527 6.444 0 11.492 4.724 11.493 10.798.152 3.57-.458 6.686-1.038 10.031-.094.545.271 1.062.814 1.156.532.095 1.065-.267 1.156-.814.581-3.362 1.224-6.637 1.066-10.416z"
+                  />
+                </svg>
+              </div>
+              <div class="contentCelCadre">
+                <div class="titleCelCadre" data-ilg="accesalamer">Accès à la mer</div>
+                <div class="txtCelCadre" id="seaAccess">
+                  <div class="loadingCadre"></div>
+                </div>
+              </div>
+            </div>
+
+                <div class="celCadre">
+              <div class="iconCelCadre">
+                <svg
+                  width="1.3rem"
+                  height="1.3rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Layer_1"
+                  data-name="Layer 1"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="m22,22h-1v-8.001c1.104-.004,2-.902,2-2.007,0-.736-.402-1.412-1.047-1.762l-8.604-4.693c-.112-.061-.233-.093-.35-.137v-1.02l2.635-1.635c.495-.33.484-1.06-.02-1.375L13.152.215c-.225-.141-.485-.215-.751-.215-.782,0-1.417.634-1.417,1.417v3.583h.015v.4c-.117.045-.238.076-.35.137L2.047,10.23c-.646.351-1.047,1.025-1.047,1.762,0,1.105.897,2.003,2,2.007v8.001h-1c-.552,0-1,.447-1,1s.448,1,1,1h20c.553,0,1-.447,1-1s-.447-1-1-1Zm-11-8v8h-2v-8h2Zm2,0h2v8h-2v-8Zm4,0h2v8h-2v-8Zm-12,0h2v8h-2v-8Z"
+                  />
+                </svg>
+              </div>
+              <div class="contentCelCadre">
+                <div class="titleCelCadre" data-ilg="gouvernement">Gouvernement</div>
+                <div class="txtCelCadre" id="gouvernement">
+                  <div class="loadingCadre"></div>
+                </div>
+              </div>
+            </div>
+
+
+             <div class="celCadre">
+              <div class="iconCelCadre">
+                <svg
+                  width="1.3rem"
+                  height="1.3rem"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Layer_1"
+                  data-name="Layer 1"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm0-22C6.486,2,2,6.486,2,12s4.486,10,10,10,10-4.486,10-10S17.514,2,12,2Zm5,10c0-.553-.447-1-1-1h-3V6c0-.553-.448-1-1-1s-1,.447-1,1v6c0,.553,.448,1,1,1h4c.553,0,1-.447,1-1Z"
+                  />
+                </svg>
+              </div>
+              <div class="contentCelCadre">
+                <div class="titleCelCadre" data-ilg="fuseauxhoraire">Fuseaux horaire</div>
+                <div class="txtCelCadre" id="fuseaux">
+                  <div class="loadingCadre"></div>
+                </div>
+              </div>
+            </div>
+
+            
+             <div class="celCadre">
+              <div class="iconCelCadre">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Layer_1"
+                  data-name="Layer 1"
+                  viewBox="0 0 24 24"
+                  width="1.3rem"
+                  height="1.3rem"
+                >
+                  <path
+                    d="M22.17,1.82l-1.05-.91c-1.21-1.21-3.17-1.21-4.38,0-.03,.03-1.88,2.44-1.88,2.44-1.14,1.2-1.14,3.09,0,4.28l1.16,1.46c-1.46,3.31-3.73,5.59-6.93,6.95l-1.46-1.17c-1.19-1.15-3.09-1.15-4.28,0,0,0-2.41,1.85-2.44,1.88-1.21,1.21-1.21,3.17-.05,4.33l1,1.15c1.15,1.15,2.7,1.78,4.38,1.78,7.64,0,17.76-10.13,17.76-17.76,0-1.67-.63-3.23-1.83-4.42ZM6.24,22c-1.14,0-2.19-.42-2.91-1.15l-1-1.15c-.41-.41-.43-1.08-.04-1.51,0,0,2.39-1.84,2.42-1.87,.41-.41,1.13-.41,1.55,0,.03,.03,2.04,1.64,2.04,1.64,.28,.22,.65,.28,.98,.15,4.14-1.58,7.11-4.54,8.82-8.81,.13-.33,.08-.71-.15-1,0,0-1.61-2.02-1.63-2.04-.43-.43-.43-1.12,0-1.55,.03-.03,1.87-2.42,1.87-2.42,.43-.39,1.1-.38,1.56,.08l1.05,.91c.77,.77,1.2,1.82,1.2,2.96,0,6.96-9.77,15.76-15.76,15.76Z"
+                  />
+                </svg>
+              </div>
+              <div class="contentCelCadre">
+                <div class="titleCelCadre" data-ilg="indicatif">Indicatif</div>
+                <div class="txtCelCadre" id="indT">
+                  <div class="loadingCadre"></div>
+                </div>
+              </div>
+            </div>
+
 
             <div class="celCadre">
               <div class="iconCelCadre">
@@ -22707,28 +22782,6 @@
               </div>
             </div>
 
-             <div class="celCadre">
-              <div class="iconCelCadre">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Layer_1"
-                  data-name="Layer 1"
-                  viewBox="0 0 24 24"
-                  width="1.3rem"
-                  height="1.3rem"
-                >
-                  <path
-                    d="M22.17,1.82l-1.05-.91c-1.21-1.21-3.17-1.21-4.38,0-.03,.03-1.88,2.44-1.88,2.44-1.14,1.2-1.14,3.09,0,4.28l1.16,1.46c-1.46,3.31-3.73,5.59-6.93,6.95l-1.46-1.17c-1.19-1.15-3.09-1.15-4.28,0,0,0-2.41,1.85-2.44,1.88-1.21,1.21-1.21,3.17-.05,4.33l1,1.15c1.15,1.15,2.7,1.78,4.38,1.78,7.64,0,17.76-10.13,17.76-17.76,0-1.67-.63-3.23-1.83-4.42ZM6.24,22c-1.14,0-2.19-.42-2.91-1.15l-1-1.15c-.41-.41-.43-1.08-.04-1.51,0,0,2.39-1.84,2.42-1.87,.41-.41,1.13-.41,1.55,0,.03,.03,2.04,1.64,2.04,1.64,.28,.22,.65,.28,.98,.15,4.14-1.58,7.11-4.54,8.82-8.81,.13-.33,.08-.71-.15-1,0,0-1.61-2.02-1.63-2.04-.43-.43-.43-1.12,0-1.55,.03-.03,1.87-2.42,1.87-2.42,.43-.39,1.1-.38,1.56,.08l1.05,.91c.77,.77,1.2,1.82,1.2,2.96,0,6.96-9.77,15.76-15.76,15.76Z"
-                  />
-                </svg>
-              </div>
-              <div class="contentCelCadre">
-                <div class="titleCelCadre" data-ilg="indicatif">Indicatif</div>
-                <div class="txtCelCadre" id="indT">
-                  <div class="loadingCadre"></div>
-                </div>
-              </div>
-            </div>
 
             <div class="celCadre">
               <div class="iconCelCadre">
@@ -22753,53 +22806,10 @@
               </div>
             </div>
 
-            <div class="celCadre">
-              <div class="iconCelCadre">
-                <svg
-                  width="1.3rem"
-                  height="1.3rem"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Layer_1"
-                  data-name="Layer 1"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="m22,22h-1v-8.001c1.104-.004,2-.902,2-2.007,0-.736-.402-1.412-1.047-1.762l-8.604-4.693c-.112-.061-.233-.093-.35-.137v-1.02l2.635-1.635c.495-.33.484-1.06-.02-1.375L13.152.215c-.225-.141-.485-.215-.751-.215-.782,0-1.417.634-1.417,1.417v3.583h.015v.4c-.117.045-.238.076-.35.137L2.047,10.23c-.646.351-1.047,1.025-1.047,1.762,0,1.105.897,2.003,2,2.007v8.001h-1c-.552,0-1,.447-1,1s.448,1,1,1h20c.553,0,1-.447,1-1s-.447-1-1-1Zm-11-8v8h-2v-8h2Zm2,0h2v8h-2v-8Zm4,0h2v8h-2v-8Zm-12,0h2v8h-2v-8Z"
-                  />
-                </svg>
-              </div>
-              <div class="contentCelCadre">
-                <div class="titleCelCadre" data-ilg="gouvernement">Gouvernement</div>
-                <div class="txtCelCadre" id="gouvernement">
-                  <div class="loadingCadre"></div>
-                </div>
-              </div>
-            </div>
-
+        
            
 
-            <div class="celCadre">
-              <div class="iconCelCadre">
-                <svg
-                  width="1.3rem"
-                  height="1.3rem"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Layer_1"
-                  data-name="Layer 1"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm0-22C6.486,2,2,6.486,2,12s4.486,10,10,10,10-4.486,10-10S17.514,2,12,2Zm5,10c0-.553-.447-1-1-1h-3V6c0-.553-.448-1-1-1s-1,.447-1,1v6c0,.553,.448,1,1,1h4c.553,0,1-.447,1-1Z"
-                  />
-                </svg>
-              </div>
-              <div class="contentCelCadre">
-                <div class="titleCelCadre" data-ilg="fuseauxhoraire">Fuseaux horaire</div>
-                <div class="txtCelCadre" id="fuseaux">
-                  <div class="loadingCadre"></div>
-                </div>
-              </div>
-            </div>
+           
 
             <!-- Cellules rajoutées -->
 
@@ -29607,7 +29617,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
     </div>
 
-    <!-- <script src="listes.js"></script> -->
+    <script src="listes.js"></script>
     <!--Script utile-->
     <script>
       
@@ -59490,7 +59500,10 @@ const bcp47Ilg = {
 
 
       let tfNewEl = false;
+     
+
       [drapeauCadre,mSilhouette].forEach(el=>{
+
         el.addEventListener('click',()=>{
           if(tfNewEl)return
           hapticFeedback("medium")
