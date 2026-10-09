@@ -1415,7 +1415,7 @@
         flex-direction: column;
         pointer-events: none;
         box-sizing: border-box;
-        z-index: 130;
+        z-index: 135;
         opacity: 0;
         color: white;
         user-select: none;
@@ -1631,7 +1631,23 @@
         backdrop-filter: blur(10px);
         gap: 1rem;
         padding: 0.6rem;
+        color : rgba(255,255,255,0.6);
         transition: background 0.2s ease;
+        .checkFilter{
+          opacity : 0
+        }
+        svg {
+          opacity : 0.6
+        }
+      }
+       .itemFilter.active {
+        color : white;
+        .checkFilter {
+          opacity : 1;
+        }
+         svg {
+          opacity : 1
+        }
       }
       .itemFilter:active {
         background: rgba(7, 7, 55, 0.5);
@@ -2647,7 +2663,6 @@
         align-items : center;
         width : 100%;
         opacity : 0;
-        pointer-events : none;
         border-radius : 0.4rem;        
         /* outline : 1px solid rgba(255,255,255,0.2); */
         background : rgba(255,255,255,0.06);
@@ -2665,7 +2680,6 @@
       }
       #mSilhouette.active{
         opacity : 1; 
-        pointer-events : all;
       }
 
       #mSilhouette:active{
@@ -20386,8 +20400,8 @@
             </div>
 
             <div id="cadreFilterS">
-              <div class="itemFilter" data-region="world">
-                <span style="opacity: 1">✓</span>
+              <div class="itemFilter active" data-region="world">
+                <span class="checkFilter">✓</span>
                 <span data-ilg="monde">Monde</span>
                 <svg
                   class="svgFilter"
@@ -20412,7 +20426,7 @@
               <div class="ligneInGrid"></div>
 
               <div class="itemFilter" data-region="Afrique">
-                <span style="opacity: 0">✓</span>
+                <span class="checkFilter" >✓</span>
                 <span data-ilg="afrique">Afrique</span>
                 <svg
                   class="svgFilter"
@@ -20427,7 +20441,7 @@
               <div class="ligneInGrid"></div>
 
               <div class="itemFilter" data-region="Amérique">
-                <span style="opacity: 0">✓</span>
+                <span class="checkFilter" >✓</span>
                 <span data-ilg="amerique">Amérique</span>
                 <svg
                   class="svgFilter"
@@ -20442,7 +20456,7 @@
               <div class="ligneInGrid"></div>
 
               <div class="itemFilter" data-region="Asie">
-                <span style="opacity: 0">✓</span>
+                <span class="checkFilter" >✓</span>
                 <span data-ilg="asie">Asie</span>
                 <svg
                   class="svgFilter"
@@ -20457,7 +20471,7 @@
               <div class="ligneInGrid"></div>
 
               <div class="itemFilter" data-region="Europe">
-                <span style="opacity: 0">✓</span>
+                <span class="checkFilter" >✓</span>
                 <span data-ilg="europe">Europe</span>
                 <svg
                   class="svgFilter"
@@ -20472,7 +20486,7 @@
               <div class="ligneInGrid"></div>
 
               <div class="itemFilter" data-region="Océanie">
-                <span style="opacity: 0">✓</span>
+                <span class="checkFilter" >✓</span>
                 <span data-ilg="oceanie">Océanie</span>
                 <svg
                   class="svgFilter"
@@ -59505,7 +59519,7 @@ const bcp47Ilg = {
       [drapeauCadre,mSilhouette].forEach(el=>{
 
         el.addEventListener('click',()=>{
-          if(tfNewEl)return
+          if(tfNewEl || !el.querySelector('svg') && el === mSilhouette)return
           hapticFeedback("medium")
           tfNewEl = true
         cadre.style.filter="brightness(0.22)";
@@ -59547,8 +59561,7 @@ const bcp47Ilg = {
         })
 
         document.addEventListener('click',(e)=>{
-          e.stopImmediatePropagation();
-          e.preventDefault();
+          if(!tfNewEl)return
           cadre.style.filter=""
           newFlag.style.transform = "none"
           newFlag.style.top = box.top + "px";
@@ -92526,9 +92539,9 @@ asean: {
             : fillContentFlag(LfInit);
 
           itemsFilter.forEach(
-            (i) => (i.querySelector("span").style.opacity = "0"),
+            (i) => (i.classList.remove('active')),
           );
-          item.querySelector("span").style.opacity = "1";
+          item.classList.add('active')
 
           // Met à jour le texte de worldFilter
           const texte = item.textContent.trim().replace("✓", "").trim();
