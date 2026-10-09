@@ -2655,6 +2655,18 @@
         border-radius: 0;
         padding-top: calc(env(safe-area-inset-top) + 1rem);
       }
+      #txtPeriode{
+        display : none;
+      }
+      #cadreStat:has(#statChoiceIn.bilan){
+
+        #txtPeriode{
+          display : flex;
+        }
+        #cadreYChoice{
+          display : none
+        }
+      }
 
       #titleStat{
         align-self : flex-start;
@@ -2756,6 +2768,7 @@
       
       #wrapperCursorY{
         display :  flex;
+        position : absolute;
         overflow : hidden;
         justify-content : space-between;
         align-items : center;
@@ -2799,6 +2812,40 @@
       }
 
       
+      #wrapperItmStat{
+        display : flex;
+        justify-content : center;
+        align-items  : center;
+        box-sizing : border-box;
+        padding : 0 1rem;
+        margin-top : 4rem;
+        width : 100%;
+        gap : 0.5rem;
+        border-radius : 0.6rem;
+      }
+      .itemStat{
+        display : flex;
+        width : 100%;
+        box-sizing : border-box;
+        border-radius : inherit;
+        padding : 0.6rem;
+        gap : 0.4rem;
+        background : rgba(255,255,255,0.06);
+        outline : 1px solid rgba(255,255,255,0.2);
+      }
+      .iconSvgStat{
+        display : flex;
+        justify-content : center;
+        align-items : center;
+        padding : 0.4rem;
+        aspect-ratio : 1/1;
+        border-radius : 0.5rem;
+        svg {
+          height : 1.2rem;
+          fill : rgb(1, 28, 55);
+        }
+      }
+
       /*Fin CSS Stats */
 
       #wrapperTRCadre{ /* Top Right */
@@ -21550,6 +21597,7 @@
                   </span>
            </div>
 
+           <span style="font-size : 0.75rem; color : rgba(255,255,255,0.6)" id="txtPeriode">Toute la période</span>
            <div id="cadreYChoice">
             <div>
              <svg
@@ -21585,7 +21633,7 @@
         </div>
 
 
-
+        <div style="display : flex;justify-content : center; align-items : center; width : 100%; position: relative;" >
         <div id="wrapperCursorY">
           <span id="yInf">1970</span>
           <div id="cursorYBox">
@@ -21595,6 +21643,17 @@
           </div>
           <span id="ySup">2025</span>
         </div>
+      </div>
+
+      <div id="wrapperItmStat">
+        <div class="itemStat">
+          <div class="iconSvgStat" style="background : orange">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.66493 2.74199C5.99503 1.70455 6.95855 1 8.04724 1H13.1756C14.9704 1 16.1805 2.83513 15.4735 4.4848L13.967 8H18.2405C20.4882 8 21.5942 10.7352 19.978 12.2975L9.43055 22.4934C8.25327 23.6314 6.36431 22.329 7.0093 20.824L9.93388 14H5.50179C3.80978 14 2.60645 12.3544 3.11948 10.742L5.66493 2.74199ZM8.04724 3C7.82951 3 7.6368 3.14091 7.57078 3.3484L5.02533 11.3484C4.92272 11.6709 5.16339 12 5.50179 12H11.1471C12.0086 12 12.5894 12.8809 12.2501 13.6727L9.82561 19.3298L18.588 10.8595C18.9112 10.547 18.69 10 18.2405 10H12.7537C11.8922 10 11.3114 9.11914 11.6508 8.3273L13.6352 3.69696C13.7766 3.36703 13.5346 3 13.1756 3H8.04724Z" fill=""></path> </g></svg>
+          </div>
+        </div>
+      </div>
+
+
       </div>
 
         <!-- Fin HTML Stat -->
