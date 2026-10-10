@@ -2812,7 +2812,7 @@
         transform : scale(1.1);
       }
 
-      
+      /* Les toggle de stat */
       #wrapperItmStat{
         display : flex;
         flex-direction : column;
@@ -2827,6 +2827,7 @@
       }
       .itemStat {
         display : flex;
+        align-items : center;
         width : 100%;
         box-sizing : border-box;
         border-radius : inherit;
@@ -2840,14 +2841,17 @@
       }
       .iconItmStat {
         display : flex;
+        flex-shrink  : 0;
         justify-content : center;
         align-items : center;
-        padding : 0.4rem;
-        aspect-ratio : 1/1;
         border-radius : 0.5rem;
+        padding : 0.4rem;
+        height : 1.2rem;
+        width : 1.2rem;
+        aspect-ratio : 1/1;
         --colorStat : rgb(1, 28, 55);
         svg {
-          height : 1.2rem;
+          height : 100%;
           fill :var(--colorStat);
         }
       }
