@@ -2613,7 +2613,7 @@
         height: 100%;
         z-index: 15;
         background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(10px);
+        /* backdrop-filter: blur(10px); */
         transition: opacity 0.2s ease;
       }
       #cacheStat.active {
@@ -2777,12 +2777,13 @@
         color : rgba(255,255,255,0.6);
         width : 100%;
         max-height : 0;
+        opacity : 0;
         box-sizing : border-box;
         padding : 0 1rem;
-        transition : max-height 0.2s ease;
+        transition : max-height 0.2s ease, opacity 0.2s ease;
       }
       #wrapperCursorY.active{
-        max-height : 1.5rem;
+        opacity : 1
       }
       #cursorYBox{
         display : flex;
@@ -2814,37 +2815,73 @@
       
       #wrapperItmStat{
         display : flex;
+        flex-direction : column;
         justify-content : center;
-        align-items  : center;
+        align-items  : flex-start;
         box-sizing : border-box;
         padding : 0 1rem;
-        margin-top : 4rem;
+        margin-top : 2.2rem;
         width : 100%;
         gap : 0.5rem;
         border-radius : 0.6rem;
       }
-      .itemStat{
+      .itemStat {
         display : flex;
         width : 100%;
         box-sizing : border-box;
         border-radius : inherit;
         padding : 0.6rem;
-        gap : 0.4rem;
-        background : rgba(255,255,255,0.06);
+        gap : 0.8rem;
+        background : rgba(255,255,255,0.08);
         outline : 1px solid rgba(255,255,255,0.2);
+        svg{
+          overflow : visible;
+        }
       }
-      .iconSvgStat{
+      .iconItmStat {
         display : flex;
         justify-content : center;
         align-items : center;
         padding : 0.4rem;
         aspect-ratio : 1/1;
         border-radius : 0.5rem;
+        --colorStat : rgb(1, 28, 55);
         svg {
           height : 1.2rem;
-          fill : rgb(1, 28, 55);
+          fill :var(--colorStat);
         }
       }
+      .wrapperTxtItmStat{
+        display : flex;
+        flex-direction : column;
+        justify-content : center;
+        align-items : flex-start;
+        flex : 1;
+        height : 100%;
+        gap : 0.16rem;
+        div{
+          font-size : 1rem;
+        }
+        .mTxtItmStat {
+          white-space : nowrap;
+          font-size : 0.75rem;
+          opacity : 0.6;
+        }
+      }
+
+        .boxArrowStat{
+          padding : 0.6rem;
+          height : 1rem;
+          width :1rem;
+          svg {
+            opacity : 0.8;
+            transform : rotate(-90deg);
+            height : 0.92rem;
+            transition : transform 0.2s ease
+          }
+        }
+
+
 
       /*Fin CSS Stats */
 
@@ -21587,11 +21624,11 @@
         <div style="display : flex; justify-content : space-between; align-items : center; width : calc(100% - 2rem);">
           <div class="wrapperStatChoice">
                   <div id="statChoiceIn"></div>
-                  <span data-unity="km" data-unitylabel="km²" class="itmStatChoice" data-statchoice ="stat"  >
+                  <span class="itmStatChoice" data-statchoice ="stat"  >
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke=""><path fill-rule="evenodd" clip-rule="evenodd" d="M11 2a1 1 0 0 1 2 0v2.062A8.004 8.004 0 0 1 19.938 11H22a1 1 0 0 1 0 2h-2.062A8.004 8.004 0 0 1 13 19.938V22a1 1 0 0 1-2 0v-2.062A8.004 8.004 0 0 1 4.062 13H2a1 1 0 0 1 0-2h2.062A8.004 8.004 0 0 1 11 4.062V2zm7 10a6 6 0 1 0-12 0 6 6 0 0 0 12 0zm-3 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="white"></path></svg>
                     <span>Stats</span>
                   </span>
-                  <span data-unity="mi" data-unitylabel="mi²" class="itmStatChoice" data-statchoice ="bilan" >
+                  <span class="itmStatChoice" data-statchoice ="bilan" >
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke=""> <path stroke="white" d="M21 21H7.8C6.11984 21 5.27976 21 4.63803 20.673C4.07354 20.3854 3.6146 19.9265 3.32698 19.362C3 18.7202 3 17.8802 3 16.2V3M6 15L10 11L14 15L20 9M20 9V13M20 9H16" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="white"></path></svg>
                     <span>Bilan</span>
                   </span>
@@ -21633,7 +21670,7 @@
         </div>
 
 
-        <div style="display : flex;justify-content : center; align-items : center; width : 100%; position: relative;" >
+        <div style="display : flex;position: relative;justify-content : center; align-items : center;margin-top : 0.8rem; width : 100%; " >
         <div id="wrapperCursorY">
           <span id="yInf">1970</span>
           <div id="cursorYBox">
@@ -21647,10 +21684,55 @@
 
       <div id="wrapperItmStat">
         <div class="itemStat">
-          <div class="iconSvgStat" style="background : orange">
+          <div class="iconItmStat" style="background : orange">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.66493 2.74199C5.99503 1.70455 6.95855 1 8.04724 1H13.1756C14.9704 1 16.1805 2.83513 15.4735 4.4848L13.967 8H18.2405C20.4882 8 21.5942 10.7352 19.978 12.2975L9.43055 22.4934C8.25327 23.6314 6.36431 22.329 7.0093 20.824L9.93388 14H5.50179C3.80978 14 2.60645 12.3544 3.11948 10.742L5.66493 2.74199ZM8.04724 3C7.82951 3 7.6368 3.14091 7.57078 3.3484L5.02533 11.3484C4.92272 11.6709 5.16339 12 5.50179 12H11.1471C12.0086 12 12.5894 12.8809 12.2501 13.6727L9.82561 19.3298L18.588 10.8595C18.9112 10.547 18.69 10 18.2405 10H12.7537C11.8922 10 11.3114 9.11914 11.6508 8.3273L13.6352 3.69696C13.7766 3.36703 13.5346 3 13.1756 3H8.04724Z" fill=""></path> </g></svg>
           </div>
+
+          <div class="wrapperTxtItmStat">
+            <div>Énergie</div>
+            <span class="mTxtItmStat" >5 <span>indicateurs</span></span>
+          </div>
+
+           <div class="boxArrowStat">
+              <svg
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+            </div>
+
         </div>
+
+        <div class="itemStat">
+          <div class="iconItmStat" style="background : green">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="white"><path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503 19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5 8.5C4.8 8.9375 3 11.2001 3 13.6493Z" stroke="var(--colorStat)" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+
+          
+          <div class="wrapperTxtItmStat">
+            <div>Environnement</div>
+            <span class="mTxtItmStat" >4 <span>indicateurs</span></span>
+          </div>
+
+           <div class="boxArrowStat">
+              <svg
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+            </div>
+
+
+        </div>
+
       </div>
 
 
@@ -59886,13 +59968,18 @@ const bcp47Ilg = {
       })
 
       crossStat.addEventListener('click',()=>{
+        cadreStat.style.top = "";
         cadreStat.classList.remove('active')
         cacheStat.classList.remove('active')
+      })
+      crossStat.addEventListener('pointerdown',(e)=>{
+        e.stopPropagation()
       })
 
       txtYChoice.addEventListener('click',()=>{
         // wrapperCursorY.classList.toggle('active')
         txtYChoice.classList.toggle('active')
+        wrapperCursorY.classList.toggle('active')
 
         wrapperCursorY.style.maxHeight = txtYChoice.classList.contains('active') ? 
         Math.max(...[...wrapperCursorY.children].map(id=>id.getBoundingClientRect().height)) + "px" 
@@ -59903,7 +59990,54 @@ const bcp47Ilg = {
 
       itmStatChoice.forEach(el=>el.addEventListener('click',()=>{
         statChoiceIn.className = el.dataset.statchoice
+        if(el.dataset.statchoice === "bilan"){txtYChoice.classList.remove('active'); wrapperCursorY.classList.remove('active');wrapperCursorY.style.maxHeight ="" }
       }))
+
+      // Move stat
+      
+      let moveStat;
+      let difYStat;
+      let startMoveStat;
+
+      cadreStat.addEventListener("pointerdown", (e) => {
+        cadreStat.setPointerCapture(e.pointerId);
+        startMoveStat = cadreStat.getBoundingClientRect().top;
+        cadreStat.style.top = startMoveStat + "px";
+        cadreStat.classList.remove("active");
+
+        moveStat = true;
+        const CY = e.clientY;
+        difYStat = CY - parseInt(cadreStat.style.top);
+        if (CY > query('.wrapperStatChoice').getBoundingClientRect().top)moveStat = false
+      });
+      document.addEventListener("pointermove", (e) => {
+        if (moveStat) {
+          cadreStat.style.transition = "none";
+          cadreStat.style.top = e.clientY - difYStat + "px";
+          cacheStat.style.opacity=  1 - Math.max(0, Math.min((cadreStat.getBoundingClientRect().top) /(window.innerHeight*0.5) ,1));
+         
+        }
+      });
+
+      document.addEventListener("pointerup", () => {
+        if (!moveStat) return;
+        cadreStat.style.transition = "";
+        cacheStat.style.opacity= ""
+        moveStat = false;
+        if (
+          cadreStat.getBoundingClientRect().top <
+          window.innerHeight * 0.15 && cadreStat.getBoundingClientRect().top - startMoveStat <=20
+        ) {
+          cadreStat.style.top = "";
+
+          cadreStat.classList.add("active");
+        } else {
+          crossStat.click();
+        }
+      });
+      //Fin move Stat
+
+
 
       // Fin Script Stat
 
@@ -94908,7 +95042,7 @@ asean: {
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(contentLegend.scrollHeight);
+        console.log((cadreStat.getBoundingClientRect().top) /(window.innerHeight) - 0.25);
       }
       // loop()     
 
