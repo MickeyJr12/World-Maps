@@ -2845,14 +2845,15 @@
         justify-content : center;
         align-items : center;
         border-radius : 0.5rem;
-        padding : 0.4rem;
-        height : 1.2rem;
-        width : 1.2rem;
+        box-sizing : border-box;
+        padding : 0.2rem;
+        height : 2rem;
+        width : 2rem;
         aspect-ratio : 1/1;
         --colorStat : rgb(1, 28, 55);
         svg {
           height : 100%;
-          fill :var(--colorStat);
+          /* fill :var(--colorStat); */
         }
       }
       .wrapperTxtItmStat{
@@ -21689,7 +21690,7 @@
       <div id="wrapperItmStat">
         <div class="itemStat">
           <div class="iconItmStat" style="background : orange">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.66493 2.74199C5.99503 1.70455 6.95855 1 8.04724 1H13.1756C14.9704 1 16.1805 2.83513 15.4735 4.4848L13.967 8H18.2405C20.4882 8 21.5942 10.7352 19.978 12.2975L9.43055 22.4934C8.25327 23.6314 6.36431 22.329 7.0093 20.824L9.93388 14H5.50179C3.80978 14 2.60645 12.3544 3.11948 10.742L5.66493 2.74199ZM8.04724 3C7.82951 3 7.6368 3.14091 7.57078 3.3484L5.02533 11.3484C4.92272 11.6709 5.16339 12 5.50179 12H11.1471C12.0086 12 12.5894 12.8809 12.2501 13.6727L9.82561 19.3298L18.588 10.8595C18.9112 10.547 18.69 10 18.2405 10H12.7537C11.8922 10 11.3114 9.11914 11.6508 8.3273L13.6352 3.69696C13.7766 3.36703 13.5346 3 13.1756 3H8.04724Z" fill=""></path> </g></svg>
+            <svg viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" stroke=""><path fill-rule="evenodd" clip-rule="evenodd" d="M10.759 5L7.5 11.222H10.759L8.315 19L18.5 11.222H14.019L16.463 5H10.759Z" stroke="var(--colorStat)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </div>
 
           <div class="wrapperTxtItmStat">
@@ -21710,6 +21711,7 @@
             </div>
 
         </div>
+        <!--  -->
 
         <div class="itemStat">
           <div class="iconItmStat" style="background : green">
@@ -21734,8 +21736,60 @@
           </svg>
             </div>
 
+        </div>
+
+        <!--  -->
+
+            <div class="itemStat">
+          <div class="iconItmStat" style="background : rgb(14, 158, 236)">
+            <svg viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="var(--colorStat)"><path d="M10.89,12a1,1,0,0,1-.75-.34,1,1,0,0,1-.24-.78c.41-3.27,2.93-9.44,9.56-9.44a1,1,0,0,1,1,.87,9.42,9.42,0,0,1-2,6.84C16.75,11.05,14.22,12,10.89,12Zm7.6-8.51C14.23,4,12.66,7.94,12.13,10a7,7,0,0,0,4.79-2.12A7,7,0,0,0,18.49,3.5Z"></path> <path d="M10.89,12h-.12c-2.51-.32-7.26-2.26-7.26-7.38a1,1,0,0,1,.88-1A7.26,7.26,0,0,1,9.68,5.2,7.33,7.33,0,0,1,11.89,11a1,1,0,0,1-1,1ZM5.6,5.61c.48,2.57,2.76,3.67,4.21,4.12a4.72,4.72,0,0,0-1.44-3A4.81,4.81,0,0,0,5.6,5.61Z"></path> <path d="M10.89,16.18a1,1,0,0,1-1-1V11a1,1,0,1,1,2,0v4.17A1,1,0,0,1,10.89,16.18Z"></path> <path d="M13.55,22.55H8.63a4,4,0,0,1-4-4V15.18a1,1,0,0,1,1-1H16.55a1,1,0,0,1,1,1v3.37A4,4,0,0,1,13.55,22.55ZM6.63,16.18v2.37a2,2,0,0,0,2,2h4.92a2,2,0,0,0,2-2V16.18Z"></path> </svg>
+          </div>
+
+          
+          <div class="wrapperTxtItmStat">
+            <div>Agriculture</div>
+            <span class="mTxtItmStat" >3 <span>indicateurs</span></span>
+          </div>
+
+           <div class="boxArrowStat">
+              <svg
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+            </div>
 
         </div>
+        <!--  -->
+            <div class="itemStat">
+          <div class="iconItmStat" style="background : rgb(1, 223, 94)">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21 10L12 5L3 10L6 11.6667M21 10L18 11.6667M21 10V10C21.6129 10.3064 22 10.9328 22 11.618V16.9998M6 11.6667L12 15L18 11.6667M6 11.6667V17.6667L12 21L18 17.6667L18 11.6667" stroke="var(--colorStat)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+          </div>
+
+          
+          <div class="wrapperTxtItmStat">
+            <div>Éducation</div>
+            <span class="mTxtItmStat" >5 <span>indicateurs</span></span>
+          </div>
+
+           <div class="boxArrowStat">
+              <svg
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+            </div>
+
+        </div>
+        <!--  -->
 
       </div>
 
