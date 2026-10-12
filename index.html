@@ -2672,11 +2672,38 @@
         }
       }
 
-      #titleStat{
+      #titleCadreStat{
+        display : flex;
+        align-items : center;
         align-self : flex-start;
         margin-left : 1rem;
-        margin-top : -2rem;
-        font-size : 1.05rem;
+        margin-top : -1.6rem;
+        margin-bottom :0.4rem;
+        font-size : 1rem;
+        opacity : 0.8;
+        gap : 0.4rem;
+        #boxImg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 0.2rem;
+        width: 3rem;
+        max-width: 4rem;
+        height: 1.2rem; /* hauteur fixe */
+        max-height: 1.5rem;
+        img{
+        width : auto;
+        height : auto;
+        max-width : 100%;
+        max-height : 100%;
+        overflow : hidden;
+        /* outline : 1px solid rgba(255,255,255,0.1); */
+        object-fit: contain;
+        border-radius : inherit;
+        transition : filter 0.2s ease;
+        }
+      }
       }
 
       .wrapperStatChoice {
@@ -2833,18 +2860,204 @@
 
 
       /* Les toggle de stat */
+      #contentCadreStat{
+        display : flex;
+        position : relative;
+        flex-direction : column;
+        flex : 1;
+        justify-content : flex-start;
+        align-items : center;
+        overflow : hidden;        
+        width : 100%;
+      }
+      #contentGeneStat{
+        display : flex;
+        position : relative;
+        z-index : 10;
+        flex-direction : column;
+        flex : 1;
+        justify-content : flex-start;
+        align-items : center;
+        overflow : hidden;        
+        padding-top : 0.1rem;
+        width : 100%;
+        gap : 0.4rem;
+      }
+      #cadreDetailStat{
+        display : flex;
+        position : absolute;
+        z-index : 20;
+        flex : 1;
+        flex-direction : column;
+        justify-content : flex-start;
+        align-items : flex-start;
+        box-sizing : border-box;
+        pointer-events : none;
+        opacity : 0;
+        height : auto;
+        overflow-x : hidden;
+        overflow-y : auto;
+        transform : translateX(100%);
+        scrollbar-width : none;
+        padding : 0 1rem;
+        width : 100%;
+        height : 100%;
+        --colorSpanDetail : #9aa6e8;
+        transition : all 0.65s ease;
+        #backDetailStat{
+          position : relative;
+          svg{
+            height : 1.4rem;
+          }
+
+        }
+      }
+      #cadreDetailStat.active{
+        opacity : 1;
+        pointer-events : all;
+        transform : none;
+        transition : all 0.6s ease;
+      }
+      #titleDetailStat{
+        display : flex;
+        flex-direction : column;
+        margin-top : 0.8rem;
+        font-size : 1.2rem;
+        span{
+          color : var(--colorSpanDetail);
+          font-size : 0.8rem;
+        }
+      }
+      #cadreNbrDetailStat{
+        display : flex;
+        flex-wrap : nowrap;
+        align-items : center;
+        margin-top : 1rem;
+        width : 100%;
+        gap : 0.4rem;
+        width : 100%;
+        font-size : 2.2rem;
+        font-weight : 400;
+        div{
+        span {
+          font-size : 0.8rem;
+          color : var(--colorSpanDetail);
+        }}
+      }
+
+      #badgeVarStat{
+        display : flex;
+        gap : 0.4rem;
+        justify-content  : center;
+        align-items : center;
+        box-sizing : border-box;
+        border-radius : 50rem;
+        padding: 0.25rem 0.5rem;
+        font-size : 0.8rem;
+        svg {
+          flex-shrink : 0;
+          height : 1rem;
+        }
+        --backGoodVar : rgba(74, 222, 128, 0.14);
+        --colorGoodVar : #86efac;
+        
+        --backBadVar : rgba(248, 113, 113, 0.14);
+        --colorBadVar : #fca5a5;
+      }
+      #badgeVarStat.up{
+        svg{
+          transform : scaleY(-1);
+        }
+      }
+      #badgeVarStat.good{
+        color :  var(--colorGoodVar);
+        background : var(--backGoodVar);
+        svg{
+          stroke : var(--colorGoodVar)
+        }
+      }
+
+       #badgeVarStat.bad{
+        color : var(--colorBadVar);
+        background : var(--backBadVar);
+        svg{
+          stroke : var(--colorBadVar)
+        }
+      }
+      
+
+
+      /* CSS Detail Stat */
+
+      #gridInfoDetailStat{
+        display : grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap : 0.6rem;
+        width : 100%;
+        margin-top : 0.8rem;
+        .cel{
+          display : flex;
+          flex-direction : column;
+          justify-content : center;
+          align-items : flex-start;
+          box-sizing : border-box;
+          color : var(--colorSpanDetail);
+          font-size : 0.8rem;
+          gap : 0.18rem;
+          border-radius : 0.6rem;
+          padding : 0.4rem;
+          background : rgba(255, 255, 255, 0.04);
+          outline : 1px solid rgba(255,255,255,0.1);
+          div{
+            align-self : flex-start;
+          }
+          span {
+          font-size : 1.1rem;
+          color : white;
+          }
+        }
+      }
+
+      #contentCourbe{
+        display : flex;
+        justify-content : center;
+        align-items : center;
+        height : auto;
+        margin-top : -0.25rem;
+        padding : 0.2rem;
+        width : 100%;
+      }
+      #titleCourbe{
+        margin-top : 0.8rem;
+        font-size : 0.8rem;
+        color : var(--colorSpanDetail);
+      }
+      #sourceData{
+        display : flex;
+        flex-wrap : nowrap; 
+        align-items : center;
+        gap : 0.4rem;
+        width : 100%;
+        margin-top : 1rem;
+        font-size : 0.75rem;
+        color : var(--colorSpanDetail);
+      }
+      /* Fin CSS Détail Stat  */
+
       #wrapperItmStat{
         display : flex;
         flex : 1;
-        overflow-x : hidden;
-        overflow-y : auto;
-        scrollbar-width: none;
+        overflow : visible;
         flex-direction : column;
         justify-content : flex-start;
         align-items  : center;
         box-sizing : border-box;
+        overflow-x : hidden;
+        overflow-y : auto;
+        scrollbar-width : none;
         padding : 1rem;
-        margin-top : 0.6rem;
+        padding-top : 0.2rem;
+        margin-top : 0.5rem;
         width : 100%;
         gap : 0.5rem;
         border-radius : 0.6rem;
@@ -2947,7 +3160,7 @@
             opacity : 0.8;
             transform : rotate(-90deg);
             height : 0.92rem;
-            transition : transform 0.2s ease;
+            transition : transform 0.4s ease;
           }
         }
 
@@ -2970,7 +3183,6 @@
       }
 
       .lineInStat{
-        margin : 0.2rem 0;
         outline : 1px solid rgba(255,255,255,0.08);
         width : 90%;
       }
@@ -2985,6 +3197,8 @@
         display :flex;
         align-items : center;
         justify-content : space-between;
+        box-sizing  : border-box;
+        padding : 0.25rem 0;
         gap : 0.4rem;
         width : 100%;
         border-radius : 0.4rem;
@@ -2992,7 +3206,7 @@
         --colorItmStat : rgba(255,255,255,0.6);
         /* --colorItmStat : orange; */
         svg{
-          height : 1.5rem;
+          height : 1.6rem;
         }
       }
       .itemStat:active{
@@ -21780,8 +21994,77 @@
           </svg>
         </div>
           
-        <div id="titleStat">Indicateurs</div>
+         <div id="titleCadreStat">
+          <div id="boxImg">
+            <img
+                src="flag_c/fr.svg"
+                alt=""
+                draggable="false"
+                onerror="
+                  this.onerror = null;
+                  this.src = 'flag_c/default.svg';
+                "
+              />
+          </div>
+          <span>France</span> • En chiffres</div>
+          <div id="contentCadreStat">
 
+
+            <div id="cadreDetailStat">
+               <div id="backDetailStat">
+                 <svg
+                   fill="white"
+                   xmlns="http://www.w3.org/2000/svg"
+                   id="Bold"
+                   viewBox="0 0 24 24"
+                   width="100%"
+                 >
+                   <path
+                     d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                   />
+                 </svg>
+                </div>
+
+        <div id="titleDetailStat">
+          Forêts
+          <span>Part du territoire</span>
+        </div>
+
+        <div id="cadreNbrDetailStat">
+          <span>28.5</span>
+          <div><span>% du territoire</span> <span>•</span> <span id="yDetailStat">2000</span></div>
+        </div>
+
+
+        <div id="badgeVarStat" class="bad">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Vector" d="M20.0005 17L14.1543 11.0625C14.0493 10.9559 13.9962 10.9024 13.9492 10.8604C13.1899 10.1807 12.0416 10.1807 11.2822 10.8604C11.2352 10.9024 11.1817 10.9558 11.0767 11.0625C10.9716 11.1692 10.9191 11.2226 10.8721 11.2646C10.1127 11.9443 8.96397 11.9443 8.20461 11.2646C8.15759 11.2226 8.10506 11.1692 8 11.0625L4 7M20.0005 17L20 11M20.0005 17H14" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span>-12% depuis 1960</span>
+        </div>
+
+        <div id="gridInfoDetailStat">
+          <div class="cel">
+           <div>Classement mondial</div>
+           <span>34e</span>
+           <div>sur 200 pays</div>
+          </div>
+
+         <div class="cel">
+           <div>Moyenne mondial</div>
+           <span>31.5</span>
+           <div>-3.5pt vs monde</div>
+          </div>
+
+        </div>
+
+        <div id="titleCourbe"></div>
+        <div id="contentCourbe"></div>
+        
+        <span id="sourceData"> <div>Source : </div> <span>Banque mondiale</span></span>
+        <!-- Fin du cadre detalPm -->
+            </div>
+
+
+      <div id="contentGeneStat">
         <div style="display : flex; justify-content : space-between; align-items : center; width : calc(100% - 2rem);">
           <div class="wrapperStatChoice">
                   <div id="statChoiceIn"></div>
@@ -22079,7 +22362,6 @@
 
           <div class="titleStat">Espérance de vie</div>
 
-          <div class="lineInStat"></div>
           <!--  -->
           <div class="itemStat">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="10" cy="14" r="8" stroke="var(--colorItmStat)" stroke-width="1.5"></circle> <path d="M22 2H22.75C22.75 1.58579 22.4142 1.25 22 1.25V2ZM21.25 7C21.25 7.41421 21.5858 7.75 22 7.75C22.4142 7.75 22.75 7.41421 22.75 7H21.25ZM17 1.25C16.5858 1.25 16.25 1.58579 16.25 2C16.25 2.41421 16.5858 2.75 17 2.75V1.25ZM16.0303 9.03033L22.5303 2.53033L21.4697 1.46967L14.9697 7.96967L16.0303 9.03033ZM21.25 2V7H22.75V2H21.25ZM17 2.75H22V1.25H17V2.75Z" fill="var(--colorItmStat)"></path> </g></svg>
@@ -22406,8 +22688,8 @@
         
 
       </div>
-
-
+    </div>
+  </div>
       </div>
 
         <!-- Fin HTML Stat -->
@@ -30669,6 +30951,172 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <script src="listes.js"></script>
     <!--Script utile-->
     <script>
+
+      /**
+ * tracerCourbe(conteneur, annees, valeurs, options)
+ *
+ * conteneur : élément DOM (ou sélecteur)
+ * annees    : [1980, 1981, ..., 2025]
+ * valeurs   : [0.4, 1.2, ..., 8.7]   (même longueur, sans null) : toutes les échelles marchent
+ * options   : {
+ *   anneeInitiale: 2010,            // année où démarre le curseur (défaut : dernière)
+ *   couleur: '#2f7df6',
+ *   unite: '',                      // suffixe des graduations, ex. ' %' ou ' t'
+ *   formatAxe: null,                // optionnel : v => texte (remplace le format automatique)
+ *   survol: true,                   // true : le curseur suit la souris sans cliquer
+ *   onChange: (annee, valeur) => {} // appelé à chaque déplacement du curseur
+ * }
+ * Retourne { setAnnee(annee) } pour déplacer le curseur depuis l'extérieur.
+ *
+ * >>> onChange reçoit l'ANNÉE en 1er argument et la VALEUR (ordonnée) en 2e.
+ */
+function tracerCourbe(conteneur, annees, valeurs, options = {}) {
+  const el = typeof conteneur === 'string' ? document.querySelector(conteneur) : conteneur;
+  const o = Object.assign({
+    anneeInitiale: null,
+    couleur: '#2f7df6',
+    grille: 'rgba(255,255,255,.12)',
+    texte: 'rgba(255,255,255,.65)',
+    unite: '',
+    formatAxe: null,
+    survol: true,
+    onChange: null
+  }, options);
+
+  const NS = 'http://www.w3.org/2000/svg';
+  const W = 340, H = 220, ML = 46, MR = 14, MT = 14, MB = 26;
+  const n = annees.length;
+  const x0 = annees[0], x1 = annees[n - 1];
+
+  // Échelle Y automatique : valeurs "rondes", quelle que soit la taille des données
+  const bas = Math.min(0, ...valeurs);
+  const haut = Math.max(0, ...valeurs);
+  const etendue = (haut - bas) || 1;
+  const brut = etendue / 3;
+  const p = Math.pow(10, Math.floor(Math.log10(brut)));
+  const pas = [1, 2, 5, 10].map(k => k * p).find(s => s >= brut);
+  const ymin = Math.floor(bas / pas) * pas;
+  const ymax = Math.ceil(haut / pas) * pas;
+  const nbGrad = Math.round((ymax - ymin) / pas);
+
+  // Format automatique des graduations : k / M / Md et bon nombre de décimales
+  const echelle = Math.max(Math.abs(ymin), Math.abs(ymax));
+  const [diviseur, suffixe] =
+    echelle >= 1e9 ? [1e9, ' Md'] :
+    echelle >= 1e6 ? [1e6, ' M'] :
+    echelle >= 1e4 ? [1e3, ' k'] : [1, ''];
+  const decimales = Math.max(0, Math.ceil(-Math.log10(pas / diviseur) - 1e-9));
+  const formatAuto = v => (v / diviseur).toLocaleString('fr-FR', {
+    minimumFractionDigits: decimales,
+    maximumFractionDigits: decimales
+  }) + suffixe + o.unite;
+  const formatAxe = o.formatAxe || formatAuto;
+
+  const X = a => ML + (a - x0) / (x1 - x0) * (W - ML - MR);
+  const Y = v => MT + (1 - (v - ymin) / (ymax - ymin)) * (H - MT - MB);
+
+  const mk = (tag, attrs, parent) => {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    parent.appendChild(e);
+    return e;
+  };
+
+  el.innerHTML = '';
+  const svg = mk('svg', { viewBox: `0 0 ${W} ${H}` }, el);
+  svg.style.cssText = 'width:100%;height:auto;display:block;touch-action:none;cursor:ew-resize;user-select:none;-webkit-user-select:none';
+
+  // Grille + ordonnées
+  for (let k = 0; k <= nbGrad; k++) {
+    const v = ymin + k * pas;
+    mk('line', { x1: ML, x2: W - MR, y1: Y(v), y2: Y(v), stroke: o.grille }, svg);
+    const t = mk('text', { x: ML - 8, y: Y(v) + 4, 'text-anchor': 'end', 'font-size': 11, fill: o.texte }, svg);
+    t.textContent = formatAxe(v);
+  }
+
+  // Abscisses (5 repères)
+  for (let i = 0; i < 5; i++) {
+    const a = Math.round(x0 + (x1 - x0) * i / 4);
+    const t = mk('text', { x: X(a), y: H - 6, 'text-anchor': i === 0 ? 'start' : i === 4 ? 'end' : 'middle', 'font-size': 11, fill: o.texte }, svg);
+    t.textContent = a;
+  }
+
+  // Courbe
+  mk('polyline', {
+    points: annees.map((a, i) => `${X(a).toFixed(1)},${Y(valeurs[i]).toFixed(1)}`).join(' '),
+    fill: 'none', stroke: o.couleur, 'stroke-width': 3,
+    'stroke-linejoin': 'round', 'stroke-linecap': 'round'
+  }, svg);
+
+  // Curseur : trait vertical + point
+  const barre = mk('line', { stroke: o.couleur, 'stroke-width': 1.5, 'stroke-dasharray': '2 3' }, svg);
+  const point = mk('circle', { r: 6, fill: o.couleur }, svg);
+
+  let courant = -1;
+  function setIndex(i) {
+    i = Math.max(0, Math.min(n - 1, i));
+    if (i === courant) return;
+    courant = i;
+    const cx = X(annees[i]), cy = Y(valeurs[i]);
+    barre.setAttribute('x1', cx); barre.setAttribute('x2', cx);
+    barre.setAttribute('y1', cy); barre.setAttribute('y2', Y(0));
+    point.setAttribute('cx', cx); point.setAttribute('cy', cy);
+    if (o.onChange) o.onChange(annees[i], valeurs[i]);   // <-- année, puis valeur de l'ordonnée
+  }
+
+  const indexDe = a => {
+    let best = 0;
+    for (let i = 1; i < n; i++) if (Math.abs(annees[i] - a) < Math.abs(annees[best] - a)) best = i;
+    return best;
+  };
+
+  function depuisEvent(e) {
+    const r = svg.getBoundingClientRect();
+    const xs = (e.clientX - r.left) * W / r.width;
+    setIndex(indexDe(x0 + (xs - ML) / (W - ML - MR) * (x1 - x0)));
+  }
+
+  // Clic / toucher : déplace le curseur, puis suit le doigt ou la souris même hors du graphique
+  let glisse = false;
+  const suivre = e => { if (glisse) depuisEvent(e); };
+  const finir = () => {
+    glisse = false;
+    window.removeEventListener('pointermove', suivre);
+    window.removeEventListener('pointerup', finir);
+    window.removeEventListener('pointercancel', finir);
+  };
+  svg.addEventListener('pointerdown', e => {
+    e.stopPropagation();            // empêche un parent (bottom sheet, slider...) de voler le geste
+    glisse = true;
+    depuisEvent(e);
+    window.addEventListener('pointermove', suivre);
+    window.addEventListener('pointerup', finir);
+    window.addEventListener('pointercancel', finir);
+  });
+  // Survol à la souris, sans cliquer
+  svg.addEventListener('pointermove', e => {
+    if (!glisse && e.pointerType === 'mouse' && o.survol) depuisEvent(e);
+  });
+  svg.addEventListener('touchstart', e => e.stopPropagation(), { passive: true });
+  svg.addEventListener('touchmove', e => e.stopPropagation(), { passive: true });
+
+  setIndex(o.anneeInitiale == null ? n - 1 : indexDe(o.anneeInitiale));
+  return { setAnnee: a => setIndex(indexDe(a)) };
+}
+
+/* Exemple D'utilisation*/
+
+const courbe = tracerCourbe(getId('contentCourbe'), [1960,1980,2000,2005,2025], [1,2,3,4,5], {
+  anneeInitiale: 2000,
+  unite: ' an',                      // optionnel
+  onChange: (annee, valeur) => {
+    document.getElementById('cadreNbrDetailStat').querySelector('span').textContent = valeur;
+    document.getElementById('yDetailStat').textContent = annee;
+  }
+});
+
+
+
       
       /* Gérer le max Height avec transition */
       function maxHeight(el){
@@ -60556,6 +61004,10 @@ const bcp47Ilg = {
       const cadreStat = getId('cadreStat')
       const cacheStat = getId('cacheStat')
       const wrapperItmStat = getId('wrapperItmStat')
+      const contentCadreStat = getId('contentCadreStat')
+      const contentGeneStat = getId('contentGeneStat')
+      const cadreDetailStat = getId('cadreDetailStat')
+      const backDetailStat = getId('backDetailStat')
 
       const cadreBlason = document.getElementById("cadreBlason");
       const cadreOrga = getId("cadreOrga");
@@ -60826,6 +61278,7 @@ const bcp47Ilg = {
           // Script Fill Stat
 
           const headersItemStat = queryAll('.headerItemStat')
+          const itemsStat = queryAll('.itemStat')
 
           headersItemStat.forEach(header=>{
             header.addEventListener('click',()=>{
@@ -60834,6 +61287,69 @@ const bcp47Ilg = {
                 content.classList.toggle('active')
                 content.classList.contains('active') ?  maxHeight(content) : content.style.maxHeight = ""
               }
+            })
+          })
+
+
+          backDetailStat.addEventListener('click',()=>{
+              cadreDetailStat.classList.remove('active')
+              let delay = 50
+                 ;[...wrapperItmStat.children].reverse().forEach(itm=>{
+                itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+                setTimeout(()=>{
+                itm.style.transform = "";
+                itm.style.opacity = "";
+                },delay)
+                delay+= 20
+              })
+
+                ;[...contentGeneStat.children].reverse().forEach(itm=>{
+                if(itm===wrapperItmStat)return
+                itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+                setTimeout(()=>{
+                itm.style.transform = "";
+                itm.style.opacity = "";
+                },delay)
+                delay+= 50
+              })
+           
+            })
+
+          itemsStat.forEach(itm=>{
+            itm.addEventListener('click',()=>{
+              
+                setTimeout(()=>cadreDetailStat.classList.add('active'),100)
+                // let delay1 = 50;
+                // ;[...cadreDetailStat.children].forEach(itm=>{
+                //   itm.style.transition = "none"
+                //   itm.style.transform = "translateX(10rem)"
+                  
+                //   setTimeout(()=>{
+                //     itm.style.transition = "transform 0.8s ease, opacity 0.4s ease";
+                //     itm.style.transform = ""
+                //   },delay1)
+                //     delay1+= 50
+                  
+                // })
+              
+              let delay = 50
+              ;[...contentGeneStat.children].forEach(itm=>{
+                if(itm===wrapperItmStat)return
+                itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+                setTimeout(()=>{
+                itm.style.transform = "translateX(-80%)";
+                itm.style.opacity = "0";
+                },delay)
+                delay+= 50
+              })
+              ;[...wrapperItmStat.children].forEach(itm=>{
+                itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+                setTimeout(()=>{
+                itm.style.transform = "translateX(-80%)";
+                itm.style.opacity = "0";
+                },delay)
+                delay+= 50
+              })
             })
           })
 
