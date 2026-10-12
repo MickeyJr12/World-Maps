@@ -3040,18 +3040,23 @@
         padding : 0.2rem;
         width : 100%;
       }
-      #titleCourbe{
-        margin-top : 0.8rem;
-        font-size : 0.8rem;
+      #topCourbe{
+        display : flex;
+        justify-content : space-between;
+        align-items : center;
+        width : 100%;
         color : var(--colorSpanDetail);
+        margin-top : 1.2rem;
+        font-size : 0.8rem;
       }
+
       #sourceData{
         display : flex;
         flex-wrap : nowrap; 
         align-items : center;
         gap : 0.4rem;
         width : 100%;
-        margin-top : 1rem;
+        margin-top : 0.4rem;
         font-size : 0.75rem;
         color : var(--colorSpanDetail);
       }
@@ -22070,7 +22075,10 @@
 
         </div>
 
+        <div id="topCourbe">
         <div id="titleCourbe">Évolution</div>
+        <span id="yTopCourbe" ></span>
+        </div>
         <div id="contentCourbe"></div>
         
         <span id="sourceData"> <div>Source : </div> <span>Banque mondiale</span></span>
@@ -31121,11 +31129,11 @@ function tracerCourbe(conteneur, annees, valeurs, options = {}) {
 /* Exemple D'utilisation*/
 
 const courbe = tracerCourbe(getId('contentCourbe'), [1960,1980,2000,2005,2025], [1,2,3,4,5], {
-  anneeInitiale: 2000,
+  anneeInitiale: 2500,
   unite: ' an',                      // optionnel
   onChange: (annee, valeur) => {
     document.getElementById('cadreNbrDetailStat').querySelector('span').textContent = valeur;
-    document.getElementById('yDetailStat').textContent = annee;
+    [document.getElementById('yDetailStat'),document.getElementById('yTopCourbe')].forEach(itm=>itm.textContent = annee)
   }
 });
 
@@ -61307,7 +61315,7 @@ const bcp47Ilg = {
 
           backDetailStat.addEventListener('click',()=>{
               cadreDetailStat.classList.remove('active')
-              let delay = 50
+              let delay = 0
                  ;[...wrapperItmStat.children].reverse().forEach(itm=>{
                 itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
                 setTimeout(()=>{
@@ -61318,7 +61326,7 @@ const bcp47Ilg = {
               })
 
                 ;[...contentGeneStat.children].reverse().forEach(itm=>{
-                if(itm===wrapperItmStat)return
+                // if(itm===wrapperItmStat)return
                 itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
                 setTimeout(()=>{
                 itm.style.transform = "";
@@ -61346,7 +61354,7 @@ const bcp47Ilg = {
                   
                 // })
               
-              let delay = 50
+              let delay = 0
               ;[...contentGeneStat.children].forEach(itm=>{
                 if(itm===wrapperItmStat)return
                 itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
