@@ -25745,7 +25745,7 @@
               </div>
             </div>
 
-            <div class="celCadre">
+            <!-- <div class="celCadre">
               <div class="iconCelCadre">
                 <svg
                   width="1.3rem"
@@ -25768,9 +25768,9 @@
                   <div class="loadingCadre"></div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
-            <div class="celCadre">
+            <!-- <div class="celCadre">
               <div class="iconCelCadre">
                 <svg
                   width="1.3rem"
@@ -25791,7 +25791,7 @@
                   <div class="loadingCadre"></div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- Cellules rajoutées -->
           </div>
@@ -32599,6 +32599,36 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <script src="listes.js"></script>
     <!--Script utile-->
     <script>
+
+    function formaterGrandNombre(n, sep = ',') {
+  if (!Number.isFinite(n) || Math.abs(n) < 1e6) return n;   // en dessous d'un million : inchangé
+
+  const signe = n < 0 ? '-' : '';
+  const abs = Math.abs(n);
+  const unites = [
+    { seuil: 1e12, nom: 'billion' },
+    { seuil: 1e9,  nom: 'milliard' },
+    { seuil: 1e6,  nom: 'million' },
+  ];
+
+  for (let i = 0; i < unites.length; i++) {
+    if (abs >= unites[i].seuil) {
+      let u = unites[i];
+      let v = Math.round((abs / u.seuil) * 10) / 10;   // 1 chiffre max après la virgule
+
+      // ex. 999 960 000 -> "1000 millions" : on passe à l'unité du dessus
+      if (v >= 1000 && i > 0) {
+        u = unites[i - 1];
+        v = Math.round((abs / u.seuil) * 10) / 10;
+      }
+
+      const texte = String(v).replace('.', sep);
+      return `${signe}${texte} ${u.nom}${v >= 2 ? 's' : ''}`;
+    }
+  }
+}
+
+
       /**
        * tracerMCourbe(conteneur, annees, valeurs, options)
        *
@@ -91555,7 +91585,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // });
 
         if (!viewSub && !L_config.sub) {
-          population.textContent = L_q[id].p.toLocaleString(
+          population.textContent = formaterGrandNombre(L_q[id].p).toLocaleString(
             D_ilg.tolocalestring[currentIlg],
           );
           superficie.textContent =
@@ -91602,25 +91632,24 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             D_symbolesD[P_info[id].devise.s] +
             ")";
 
-          if (P_info[id].co2e === undefined || P_info[id].co2e === null) {
-            co2e.textContent = "Non disponible";
-          } else {
-            co2e.style.whiteSpace = "pre-wrap";
-            co2e.textContent = Math.floor(P_info[id].co2e).toLocaleString(
-              D_ilg.tolocalestring[currentIlg],
-            );
-          }
-
-          if (P_info[id].pib === null || P_info[id].pib === undefined) {
-            pibPh.textContent = "Non disponible";
-          } else {
-            pibPh.textContent =
-              Math.floor(P_info[id].pib).toLocaleString(
-                D_ilg.tolocalestring[currentIlg],
-              ) +
-              " " +
-              D_ilg.usdparan[currentIlg];
-          }
+          // if (P_info[id].co2e === undefined || P_info[id].co2e === null) {
+          //   co2e.textContent = "Non disponible";
+          // } else {
+          //   co2e.style.whiteSpace = "pre-wrap";
+          //   co2e.textContent = Math.floor(P_info[id].co2e).toLocaleString(
+          //     D_ilg.tolocalestring[currentIlg],
+          //   );
+          // }
+          // if (P_info[id].pib === null || P_info[id].pib === undefined) {
+          //   pibPh.textContent = "Non disponible";
+          // } else {
+          //   pibPh.textContent =
+          //     Math.floor(P_info[id].pib).toLocaleString(
+          //       D_ilg.tolocalestring[currentIlg],
+          //     ) +
+          //     " " +
+          //     D_ilg.usdparan[currentIlg];
+          // }
         }
 
         // fetch(url)
