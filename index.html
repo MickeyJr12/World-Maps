@@ -3244,6 +3244,16 @@
       }
 
       .boxItemStat.bilan {
+        .boxTxtItemStat {
+          span{
+          color : transparent;
+          transition : color 0.2s ease;
+        }
+          .yearsBilan{
+            font-weight : 500;
+            color : white;
+          }
+          }
         .boxBilanItemStat {
           opacity: 1;
           max-height: 2rem;
@@ -3332,8 +3342,17 @@
         }
         span {
           /* La définition ( % du total) */
+          display : flex;
+          justify-content : flex-start;
+          align-items : center;
+          position : relative;
           font-size: 0.75rem;
           opacity: 0.5;
+        }
+        .yearsBilan{
+          position : absolute;
+          color : transparent;
+          transition : color 0.2s ease;
         }
       }
       .txtStat {
@@ -22561,7 +22580,10 @@
 
                         <div class="boxTxtItemStat">
                           <div>Nucléaire</div>
-                          <span>% de l'énergie totale produite</span>
+                          <span>% de l'énergie totale produite
+                            <span class="yearsBilan">1960 - 2025</span>
+                          </span>
+                          
                         </div>
 
                         <div class="txtStat">
