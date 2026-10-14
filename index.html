@@ -3168,7 +3168,7 @@
         }
         .itm{
           display : flex;
-          align-items : center;
+          align-items : flex-end;
           justify-content : space-between;
           gap : 0.6rem;
           width : 100%;
@@ -3185,9 +3185,20 @@
             justify-content : flex-start;
             align-items : center;
             flex : 1;
+            color : rgba(255,255,255,0.6);
+          }
+        }
+         .itm.active{
+          background: rgba(47, 123, 255, 0.22);
+          border-left-color : rgba(47, 123, 255, 0.75);
+          span {
+            color : rgba(255,255,255,0.75);
+          }
+          div {
             color : white;
           }
         }
+
         .itm.first{
           border-top-left-radius : inherit;
           border-top-right-radius : inherit;
@@ -3199,13 +3210,7 @@
         .itm:active{
         filter : brightness(0.9);  
         }
-        .itm.active{
-          background: rgba(47, 123, 255, 0.22);
-          border-left-color : rgba(47, 123, 255, 0.75);
-          span {
-            color : rgba(255,255,255,0.75);
-          }
-        }
+       
 
       }
       /* Fin CSS Détail Stat  */
@@ -64227,6 +64232,19 @@ const nomComplet_ilg = {
         const cel1DStat = getId('cel1DStat')
         const cel2DStat = getId('cel2DStat')
         
+        function stats(valeurs) {
+          const n = valeurs.length;
+          if (n === 0) return { moy: NaN, med: NaN };
+
+          const moy = valeurs.reduce((s, v) => s + v, 0) / n;
+
+          const tri = [...valeurs].sort((a, b) => a - b);
+          const mid = Math.floor(n / 2);
+          const med = n % 2 ? tri[mid] : (tri[mid - 1] + tri[mid]) / 2;
+
+          return { moy, med };
+        }
+
         
 
         const courbe = tracerCourbe(
@@ -64254,12 +64272,9 @@ const nomComplet_ilg = {
 
             // Second cadrecel2
             const L_Worldvalues = L_dataY.map(id=>L_total[id].find(tuple=>tuple.annee === annee).valeur)
-            const worldMoy = L_Worldvalues.reduce((somme, x) => somme + x, 0) / L_dataY.length
-            const worldMediane = ((liste) => {
-            const tri = [...liste].sort((a, b) => a - b);   // copie, pour ne pas modifier la liste d'origine
-            const milieu = Math.floor(tri.length / 2);
-              return tri.length % 2 ? tri[milieu] : (tri[milieu - 1] + tri[milieu]) / 2;
-              })(L_Worldvalues)
+            const worldMoy = stats(L_Worldvalues).moy
+            const worldMediane = stats(L_Worldvalues).med
+            queryAll('.year') ? queryAll('.year').forEach(y=>y.remove()) : "";
 
               cel2DStat.querySelector('div').textContent = D_ilg.mediane[currentIlg] + " : " + formaterGrandNombre(Math.floor(worldMediane*100)/100)
               cel2DStat.querySelector('span').innerHTML = `${formaterGrandNombre(Math.floor(worldMoy*100)/100)}</sup><div class="year" >• ${annee}</div>`
