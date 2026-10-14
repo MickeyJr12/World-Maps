@@ -3016,6 +3016,11 @@
         }
       }
 
+      #badgeVarDStat.down {
+        svg {
+          transform : none;
+        }
+      }
       /* CSS Detail Stat */
 
       #gridInfoDetailStat {
@@ -3028,7 +3033,7 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          align-items: flex-start;
+          align-items: center;
           box-sizing: border-box;
           color: var(--colorSpan);
           font-size: 0.8rem;
@@ -3041,6 +3046,7 @@
             align-self: flex-start;
           }
           span {
+            align-self: flex-start;
             font-size: 1.1rem;
             color: white;
           }
@@ -3325,7 +3331,7 @@
         --gapItemStat: 0.4rem;
         gap: 0.4rem;
         width: 100%;
-        border-radius: 0.4rem;
+        border-radius: 0.5rem;
         transition: background 0.2s ease;
         --colorItmStat: rgba(255, 255, 255, 0.6);
         /* --colorItmStat : orange; */
@@ -22334,7 +22340,7 @@
                   </svg>
                 </div>
                 <div id="titleDetailStat">
-                  Forêts
+                  <div>Forêts</div>
                   <span>Part du territoire</span>
                 </div>
               </div>
@@ -22342,7 +22348,7 @@
               <div id="cadreNbrDetailStat">
                 <span>28.5</span>
                 <div>
-                  <span>% du territoire</span> <span>•</span>
+                  <span>%</span> <span>•</span>
                   <span id="yDetailStat">2000</span>
                 </div>
               </div>
@@ -22366,14 +22372,14 @@
               </div>
 
               <div id="gridInfoDetailStat">
-                <div class="cel">
-                  <div style="align-self: center">Classement mondial</div>
+                <div class="cel" id="cel1DStat">
+                  Classement mondial
                   <span>34<sup>e</sup> </span>
                   <div>sur 200 pays</div>
                 </div>
 
-                <div class="cel">
-                  <div style="align-self: center">Moyenne mondial</div>
+                <div class="cel" id="cel2DStat">
+                  Moyenne mondial
                   <span>31.5</span>
                   <div>-3.5pt vs monde</div>
                 </div>
@@ -22385,9 +22391,7 @@
               </div>
               <div id="contentCourbe"></div>
 
-              <span id="sourceData">
-                <div>Source :</div>
-                <span>Banque mondiale</span></span
+              <span id="sourceData"></span
               >
               <!-- Fin du cadre detalPm -->
             </div>
@@ -22546,7 +22550,7 @@
                   <div class="contentStat">
                     <!-- <div class="titleStat">Part renouvelable</div>
 
-                     <div class="boxItemStat" data-goodVar="up" data-unity="%" data-liste="renewTot">
+                     <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste="renewTot">
                     <div class="itemStat">
                       <svg fill="var(--colorItmStat)" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M305.19,153.77a10.46,10.46,0,0,0-9.78-14.19h-68a10.48,10.48,0,0,0-10.24,8.29L187.8,286.15A10.46,10.46,0,0,0,198,298.79H242.4a10.47,10.47,0,0,1,10.28,12.45l-11,57c-2,10.41,12.09,15.64,17.36,6.45L329,252.79a10.47,10.47,0,0,0-9.08-15.68H288.7a10.47,10.47,0,0,1-9.79-14.19Z"></path> <path d="M404.15,404.18A210.8,210.8,0,0,0,450,180.41C407.9,72.21,285.61,18.43,177.4,60.54l6.53,16.78c99-38.51,210.79,10.66,249.3,109.62a192.77,192.77,0,0,1-42,204.68l-12.8-12.47a9.51,9.51,0,0,0-16.15,6.94l.48,33.89a9.51,9.51,0,0,0,9.62,9.37l33.89-.4a9.51,9.51,0,0,0,6.52-16.32Z"></path> <path d="M181.85,431a192.44,192.44,0,0,1-60-311l11.34,11a9.51,9.51,0,0,0,16.15-6.94l-.48-33.89a9.49,9.49,0,0,0-9.62-9.37l-33.89.4A9.51,9.51,0,0,0,98.8,97.58l10.13,9.87A210.53,210.53,0,0,0,335.69,451.07l-6.52-16.77A191.29,191.29,0,0,1,181.85,431Z"></path></svg>
                       <div class="boxTxtItemStat">
@@ -22589,7 +22593,7 @@
 
                     <div class="titleStat">Mix énergétique</div>
 
-                     <div class="boxItemStat" data-goodVar="up" data-unity="%" data-liste="eolien_zs">
+                     <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="%" data-liste="eolien_zs">
                     <div class="itemStat">
                       <svg fill="var(--colorItmStat)" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M20.021484 0.99609375C16.586484 0.99609375 14.407922 9.8729219 14.044922 18.419922C7.3119219 22.479922 1.9025156 27.654703 1.1035156 30.845703C0.91051562 31.615703 0.97864062 32.279359 1.3066406 32.818359C1.8066406 33.640359 2.8289688 33.976562 4.1679688 33.976562C5.5799687 33.976562 7.34375 33.599391 9.21875 33.025391C8.99275 32.348391 8.8870625 31.460422 9.1640625 30.357422C10.190062 26.258422 16.252562 20.948578 22.101562 17.267578C22.253563 14.805578 22.701844 9.991875 23.964844 5.921875C23.960844 5.907875 23.956172 5.8909531 23.951172 5.8769531C22.951172 2.9449531 21.625484 0.99809375 20.021484 0.99609375 z M 30.021484 0.99804688C26.585484 0.99804688 24.405922 9.873875 24.044922 18.421875C17.310922 22.482875 11.902516 27.655703 11.103516 30.845703C10.910516 31.616703 10.980594 32.280359 11.308594 32.818359C11.807594 33.640359 12.829969 33.976562 14.167969 33.976562C18.461969 33.976562 25.997766 30.521578 30.009766 28.517578C34.020766 30.524578 41.557563 33.984375 45.851562 33.984375C47.190562 33.984375 48.213844 33.648172 48.714844 32.826172C49.043844 32.285172 49.110969 31.620609 48.917969 30.849609C48.118969 27.654609 42.718094 22.478875 35.996094 18.421875C35.634094 9.875875 33.457484 1.0000469 30.021484 0.99804688 z M 30.019531 20C31.124531 20 32.019531 20.895 32.019531 22C32.019531 23.105 31.124531 24 30.019531 24C28.914531 24 28.019531 23.105 28.019531 22C28.019531 20.895 28.914531 20 30.019531 20 z M 30.009766 30.748047C29.217766 31.135047 28.385156 31.529969 27.535156 31.917969L26.099609 46.996094L23.927734 46.996094L22.628906 33.976562C20.761906 34.676563 18.924953 35.251516 17.251953 35.603516L16.111328 46.996094L11 46.996094 A 1.003906 1.003906 0 0 0 11 49.003906L39 49.003906 A 1.003906 1.003906 0 0 0 39 46.996094L33.923828 46.996094L32.486328 31.919922C31.634328 31.530922 30.802766 31.137047 30.009766 30.748047 z"></path></svg>
                       <div class="boxTxtItemStat">
@@ -22632,7 +22636,7 @@
                     <!--  -->
 
                     
-                     <div class="boxItemStat" data-goodVar="up" data-unity="%" data-liste="solar_zs">
+                     <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="%" data-liste="solar_zs">
                     <div class="itemStat">
                       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.28451 10.3333C7.10026 10.8546 7 11.4156 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C11.4156 7 10.8546 7.10026 10.3333 7.28451" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path> <path d="M12 2V4" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path> <path d="M12 20V22" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 12L2 12" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 12L20 12" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path> <path d="M19.7778 4.22266L17.5558 6.25424" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4.22217 4.22266L6.44418 6.25424" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path> <path d="M6.44434 17.5557L4.22211 19.7779" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path> <path d="M19.7778 19.7773L17.5558 17.5551" stroke="var(--colorItmStat)" stroke-width="1.5" stroke-linecap="round"></path></svg>
                       <div class="boxTxtItemStat">
@@ -22676,7 +22680,7 @@
                     <!--  -->
 
 
-                    <div class="boxItemStat" data-goodVar="up" data-unity="%" data-liste="hydro_zs">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste="hydro_zs">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -22735,7 +22739,7 @@
 
                       <!--  -->
 
-                        <div class="boxItemStat" data-goodVar="down" data-unity="%" data-liste="gaz_zs">
+                        <div class="boxItemStat" data-source="banquemondiale" data-goodVar="down" data-unity="%" data-liste="gaz_zs">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -22804,7 +22808,7 @@
 
                     
 
-                      <div class="boxItemStat" data-goodVar="down" data-unity="%" data-liste="nucl_zs">
+                      <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="%" data-liste="nucl_zs">
                       <div class="itemStat">
                         <svg
                           version="1.1"
@@ -22894,7 +22898,7 @@
 
                     <!--  -->
 
-                    <div class="boxItemStat" data-goodVar="down" data-unity="%" data-liste="coal_zs">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="%" data-liste="coal_zs">
                     <div class="itemStat">
                       <svg
                         viewBox="0 0 512 512"
@@ -22953,7 +22957,7 @@
                     <div class="lineInStat"></div>
                     <!--  -->
                   
-                    <div class="boxItemStat" data-goodVar="down" data-unity="%" data-liste="petrole_zs">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="%" data-liste="petrole_zs">
                     <div class="itemStat">
                       <svg
                         viewBox="0 0 512 512"
@@ -23094,7 +23098,7 @@
                   <div class="contentStat">
                     <div class="titleStat">Démographie</div>
                     <!--  -->
-                    <div class="boxItemStat" data-goodVar="up" data-unity="" data-liste="popTot">
+                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="" data-liste="popTot">
                     <div class="itemStat">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -23147,7 +23151,7 @@
 
                     <!--  -->
 
-                    <div class="boxItemStat" data-goodVar="down" data-unity="" data-liste="fertility">
+                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="" data-liste="fertility">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -23207,10 +23211,9 @@
                       </div>
                     </div>
 
-                    <div class="titleStat">Espérance de vie à la naissance</div>
+                    <div class="titleStat">Qualité de vie</div>  
 
-                    <!--  -->
-                    <div class="boxItemStat" data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_M">
+                        <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_M">
                     <div class="itemStat">
                       <svg
                         viewBox="0 0 24 24"
@@ -23239,8 +23242,8 @@
                       </svg>
 
                       <div class="boxTxtItemStat">
-                        <div>Homme</div>
-                        <span></span>
+                        <div>Espérance de vie (hommes)</div>
+                        <span>À la naissance</span>
                       </div>
 
                       <div class="txtStat">
@@ -23277,7 +23280,7 @@
 
                     <div class="lineInStat"></div>
                     <!--  -->
-                    <div class="boxItemStat" data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_F">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_F">
                     <div class="itemStat">
                       <svg
                         viewBox="0 0 24 24"
@@ -23315,8 +23318,8 @@
                         </g>
                       </svg>
                       <div class="boxTxtItemStat">
-                        <div>Femme</div>
-                        <span></span>
+                        <div>Espérance de vie (femmes)</div>
+                        <span>À la naissance</span>
                       </div>
 
                       <div class="txtStat">
@@ -23351,9 +23354,10 @@
                       </div>
                     </div>
 
+                    
+                    
 
-                    <div class="titleStat">Qualité de vie</div>                              
-                          <div class="boxItemStat" data-goodVar="down" data-unity="" data-liste="genderEq">
+                          <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="" data-liste="genderEq">
                     <div class="itemStat">
                       <svg viewBox="0 -0.5 24 24" id="meteor-icon-kit__regular-venus-mars" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.9988 1.04866C24.012 0.776773 23.9147 0.500535 23.7071 0.292893C23.4995 0.0852526 23.2232 -0.0119861 22.9513 0.00117708C22.9343 0.000395232 22.9172 1.49878e-08 22.9 1.49878e-08H19C18.4477 1.49878e-08 18 0.447715 18 1C18 1.55228 18.4477 2 19 2H20.5858L17.4765 5.10927C16.4957 4.4108 15.2958 4 14 4C13.2038 4 12.4439 4.15506 11.7488 4.43662C12.2364 4.94036 12.6584 5.508 13.0009 6.12576C13.3203 6.04366 13.655 6 14 6C16.2091 6 18 7.79086 18 10C18 12.2091 16.2091 14 14 14C13.655 14 13.3203 13.9563 13.0009 13.8742C12.6584 14.492 12.2364 15.0596 11.7488 15.5634C12.4439 15.8449 13.2038 16 14 16C17.3137 16 20 13.3137 20 10C20 8.70418 19.5892 7.5043 18.8907 6.52349L22 3.41421V5C22 5.55228 22.4477 6 23 6C23.5523 6 24 5.55228 24 5V1.1C24 1.08279 23.9996 1.06568 23.9988 1.04866Z" fill="var(--colorItmStat)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 10C12 12.9742 9.83601 15.4429 6.99665 15.9176C6.99887 15.9448 7 15.9723 7 16V18H8C8.55228 18 9 18.4477 9 19C9 19.5523 8.55228 20 8 20H7V22C7 22.5523 6.55228 23 6 23C5.44772 23 5 22.5523 5 22V20H4C3.44772 20 3 19.5523 3 19C3 18.4477 3.44772 18 4 18H5V16C5 15.9723 5.00113 15.9448 5.00335 15.9176C2.16399 15.4429 0 12.9742 0 10C0 6.68631 2.68629 4.00002 6 4.00002C9.31371 4.00002 12 6.68631 12 10ZM10 10C10 12.2092 8.20914 14 6 14C3.79086 14 2 12.2092 2 10C2 7.79088 3.79086 6.00002 6 6.00002C8.20914 6.00002 10 7.79088 10 10Z" fill="var(--colorItmStat)"></path></svg>
 
@@ -23396,7 +23400,7 @@
 
                   <div class="lineInStat"></div>
                     
-                  <div class="boxItemStat" data-goodVar="up" data-unity="" data-liste="indHapiness">
+                  <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="" data-liste="indHapiness">
                     <div class="itemStat">
                       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L6.87359 5.81293C7.16648 6.10582 7.16648 6.5807 6.87359 6.87359C6.5807 7.16648 6.10582 7.16648 5.81293 6.87359L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967ZM18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L18.1871 6.87359C17.8942 7.16648 17.4193 7.16648 17.1264 6.87359C16.8335 6.5807 16.8335 6.10582 17.1264 5.81293L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM6.87338 17.1266C7.16627 17.4195 7.16627 17.8944 6.87338 18.1873L6.53033 18.5303C6.23744 18.8232 5.76256 18.8232 5.46967 18.5303C5.17678 18.2374 5.17678 17.7626 5.46967 17.4697L5.81272 17.1266C6.10561 16.8337 6.58048 16.8337 6.87338 17.1266ZM17.1266 17.1266C17.4195 16.8337 17.8944 16.8337 18.1873 17.1266L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L17.1266 18.1873C16.8337 17.8944 16.8337 17.4195 17.1266 17.1266ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z" fill="var(--colorItmStat)"></path> <path d="M7 11.0595C7 13.6018 9.00971 14.9566 10.4809 16.1692C11 16.5971 11.5 17 12 17C12.5 17 13 16.5971 13.5191 16.1692C14.9903 14.9566 17 13.6018 17 11.0595C17 8.51718 14.2499 6.71421 12 9.15837C9.75008 6.71421 7 8.51718 7 11.0595Z" fill="var(--colorItmStat)"></path> </g></svg>
                       <div class="boxTxtItemStat">
@@ -23489,7 +23493,7 @@
 
                     <!--  -->
 
-                    <div class="boxItemStat" data-goodVar="down" data-unity="tCO₂e" data-liste="co2Hab">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="tCO₂e" data-liste="co2Hab">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -23562,7 +23566,7 @@
 
                     <div class="lineInStat"></div>
 
-                    <div class="boxItemStat" data-goodVar="down" data-unity="Mt CO₂e" data-liste="emissionTot">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="Mt CO₂e" data-liste="emissionTot">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -23632,7 +23636,7 @@
                     <!--  -->
                     <div class="lineInStat"></div>
 
-                    <div class="boxItemStat" data-goodVar="down" data-unity="µg/m³" data-liste="airQuality">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="µg/m³" data-liste="airQuality">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -23740,7 +23744,7 @@
 
                     <div class="titleStat">Occupation des sols</div>
                     <!--  -->
-                    <div class="boxItemStat" data-goodVar="up" data-unity="%" data-liste="agricole_zs">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste="agricole_zs">
                     <div class="itemStat">
                       <svg
                         viewBox="0 0 45 45"
@@ -23800,7 +23804,7 @@
 
                     <!--  -->
 
-                    <div class="boxItemStat" data-goodVar="up" data-unity="%" data-liste="arable_zs">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste="arable_zs">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -23858,7 +23862,7 @@
                     </div>
                     <div class="lineInStat"></div>
                     <!--  -->
-                    <div class="boxItemStat" data-goodVar="up" data-unity="%" data-liste="forets_zs">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste="forets_zs">
                     <div class="itemStat">
                       <svg
                         version="1.1"
@@ -23991,7 +23995,7 @@
                   <div class="contentStat">
                     <div class="titleStat">Niveau de vie</div>
                     <!--  -->
-                    <div class="boxItemStat" data-goodVar="up" data-unity="US$" data-liste="pib_hab">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="US$" data-liste="pib_hab">
                     <div class="itemStat">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -24044,7 +24048,7 @@
 
                     <!--  -->
 
-                    <div class="boxItemStat" data-goodVar="down" data-unity="%" data-liste="chomage">
+                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="%" data-liste="chomage">
                     <div class="itemStat">
                       <svg
                         viewBox="0 0 281 269"
@@ -24103,7 +24107,7 @@
                     </div>
                     <div class="lineInStat"></div>
                     <!--  -->
-                    <div class="boxItemStat" data-goodVar="down" data-unity="%" data-liste="inflation">
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="%" data-liste="inflation">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -32614,7 +32618,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <script>
 
     function formaterGrandNombre(n, sep = ',') {
-  if (!Number.isFinite(n) || Math.abs(n) < 1e6) return n;   // en dessous d'un million : inchangé
+  if (!Number.isFinite(n) || Math.abs(n) < 1e6) return n.toLocaleString(D_ilg.tolocalestring[currentIlg],);   // en dessous d'un million : inchangé
 
   const signe = n < 0 ? '-' : '';
   const abs = Math.abs(n);
@@ -32837,7 +32841,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           Math.ceil(-Math.log10(pas / diviseur) - 1e-9),
         );
         const formatAuto = (v) =>
-          (v / diviseur).toLocaleString("fr-FR", {
+          (v / diviseur).toLocaleString(D_ilg.tolocalestring[currentIlg], 
+          {
             minimumFractionDigits: decimales,
             maximumFractionDigits: decimales,
           }) +
@@ -32984,29 +32989,30 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
 
         setIndex(o.anneeInitiale == null ? n - 1 : indexDe(o.anneeInitiale));
+        
         return { setAnnee: (a) => setIndex(indexDe(a)) };
       }
 
       /* Exemple D'utilisation*/
 
-      const courbe = tracerCourbe(
-        getId("contentCourbe"),
-        [1960, 1980, 2000, 2005, 2025],
-        [1, 2, 3, 4, 5],
-        {
-          anneeInitiale: 2500,
-          unite: " an", // optionnel
-          onChange: (annee, valeur) => {
-            document
-              .getElementById("cadreNbrDetailStat")
-              .querySelector("span").textContent = valeur;
-            [
-              document.getElementById("yDetailStat"), //
-              document.getElementById("yTopCourbe"), // l'année en haut de la courbe
-            ].forEach((itm) => (itm.textContent = annee));
-          },
-        },
-      );
+      // const courbe = tracerCourbe(
+      //   getId("contentCourbe"),
+      //   [1960, 1980, 2000, 2005, 2025],
+      //   [1, 2, 3, 4, 5],
+      //   {
+      //     anneeInitiale: 2500,
+      //     unite: " an", // optionnel
+      //     onChange: (annee, valeur) => {
+      //       document
+      //         .getElementById("cadreNbrDetailStat")
+      //         .querySelector("span").textContent = valeur;
+      //       [
+      //         document.getElementById("yDetailStat"), //
+      //         document.getElementById("yTopCourbe"), // l'année en haut de la courbe
+      //       ].forEach((itm) => (itm.textContent = annee));
+      //     },
+      //   },
+      // );
 
       /* Gérer le max Height avec transition */
       function maxHeight(el) {
@@ -33578,6 +33584,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         lundi: { fr: "Lundi", en: "Monday" },
         dimanche: { fr: "Dimanche", en: "Sunday" },
         samedi: { fr: "Samedi", en: "Saturday" },
+
+        // langue stats
+        banquemondiale : {fr : "Source : Banque mondiale (API)", en : "Source : World Bank (API)"},
+        ourworldindata : {fr : "Source : Our World in Data", en : "Source : Our World in Data"},
+        depuis : {fr : "depuis", en : "since"},
+        sur : {fr : "sur", en : "out of"},
+        payslowercase : {fr : "pays", en : "countries"},
+        paysclasses : {fr : "pays classés", en : "ranked countries"},
+        
         // Langue Légende
         pibhabusdan: {
           fr: "PIB/hab (USD/an)",
@@ -63473,6 +63488,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const contentCadreStat = getId("contentCadreStat");
       const contentGeneStat = getId("contentGeneStat");
       const cadreDetailStat = getId("cadreDetailStat");
+      const titleDetailStat = getId('titleDetailStat')
+      const badgeVarDStat = getId('badgeVarDStat')
+      const cadreNbrDetailStat = getId('cadreNbrDetailStat')
+      const yDetailStat = getId('yDetailStat')
+      const yTopCourbe = getId('yTopCourbe')
       const backDetailStat = getId("backDetailStat");
 
       const cadreBlason = document.getElementById("cadreBlason");
@@ -63665,8 +63685,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           yearsBilan.className = "yearsBilan"
           yearsBilan.textContent = yInfItem + " → " + ySupItem
           const spn = box.querySelector('.boxTxtItemStat').querySelector('span')
-          if(spn)box.querySelector('.boxTxtItemStat').querySelector('span').append(yearsBilan)
-          else {box.querySelector('.boxTxtItemStat').append(yearsBilan)}
+          box.querySelector('.boxTxtItemStat').querySelector('span').append(yearsBilan)
 
           // Badge : +22 pts
           const varUp = valSup > valInf
@@ -63881,6 +63900,102 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const headersItemStat = queryAll(".headerItemStat");
       const itemsStat = queryAll(".itemStat");
 
+      function fillCadreDStat(box){
+        const p_id = currentCountry.id
+        const L_yearsInfos = D_yListes[box.dataset.liste][p_id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][currentCountry.id]; // [{annee : 1900, valeur : ...},{...}]
+        const L_total = D_yListes[box.dataset.liste]
+        const crtYear = txtYChoice.textContent
+        const yearInit = L_total[p_id].find(tuple=> tuple.annee === parseInt(crtYear)) && !statChoiceIn.classList.contains('bilan') ? parseInt(crtYear) : parseInt(L_total[p_id][0].annee)
+
+
+        const unity = box.dataset.unity;
+        const goodvar = box.dataset.goodvar;
+        
+        const yInfItem = Math.min(...L_yearsInfos.map(id=>id.annee))
+        const ySupItem = Math.max(...L_yearsInfos.map(id=>id.annee))
+
+        const valYMin = L_yearsInfos.find(el=>el.annee === yInfItem).valeur
+        const valYMax = L_yearsInfos.find(el=>el.annee === ySupItem).valeur
+
+        const variation = valYMax - valYMin
+        const varUp = variation > 0;
+        
+        // Titre
+        titleDetailStat.querySelector('div').textContent = box.querySelector('.boxTxtItemStat').querySelector('div') .textContent
+        titleDetailStat.querySelector('span').textContent = box.querySelector('.boxTxtItemStat').querySelector('span').textContent
+        // Si on met le bilan, il faut retirer les dates : 1900 - 2025 
+        if(statChoiceIn.classList.contains('bilan'))titleDetailStat.querySelector('span').textContent = titleDetailStat.querySelector('span').textContent.slice(0,-11)
+
+
+        // Grand nombre 
+        const spnNbr = cadreNbrDetailStat.querySelector('span')
+        const divNbr = cadreNbrDetailStat.querySelector('div')
+
+        spnNbr.textContent = formaterGrandNombre(Math.floor(L_yearsInfos.find(tuple=>tuple.annee === yearInit).valeur*100)/100)
+        divNbr.querySelector('span').textContent = unity
+        yDetailStat.textContent = yearInit
+
+        // Badge : -12% depuis 1960
+        const spn = badgeVarDStat.querySelector('span')
+        spn.textContent =
+         (variation > 0 ? "+ " : "") +
+         formaterGrandNombre(Math.floor(variation*100)/100) +
+         " " + unity + " " +
+         D_ilg.depuis[currentIlg] + " " +
+         yInfItem
+         
+         badgeVarDStat.className = "badgeVarStat" + (variation > 0 ? "" : " down") 
+
+        if(varUp) badgeVarDStat.classList.add(goodvar === "up" ? "good" : "bad");
+        else badgeVarDStat.classList.add(goodvar === "down" ? "good" : "bad");
+
+        const cel1DStat = getId('cel1DStat')
+        const cel2DStat = getId('cel2DStat')
+        const index = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === yearInit)?.valeur >= L_total[p_id].find(tuple=> tuple.annee === yearInit).valeur).length
+        cel1DStat.querySelector('span').innerHTML = `${index}<sup>${ordinalSuffix(index, currentIlg)}</sup>`
+        cel1DStat.querySelector('div').textContent = 
+        D_ilg.sur[currentIlg] + " " +
+        Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === yearInit)).length
+        + " " + D_ilg.paysclasses[currentIlg];
+
+        // Indiquer la source de données 
+        getId('sourceData').textContent = D_ilg[box.dataset.source][currentIlg]
+
+        // Tracer la courbe
+        const L_years = L_yearsInfos.map(tuple=>tuple.annee).reverse()
+        const L_valeur = L_yearsInfos.map(tuple=>Math.floor(tuple.valeur*1000)/1000).reverse()
+
+        const courbe = tracerCourbe(
+        getId("contentCourbe"),
+        L_years,
+        L_valeur,
+        {
+          anneeInitiale: yearInit,
+          unite: " " + unity,
+          onChange: (annee, valeur) => {
+            cadreNbrDetailStat.querySelector("span").textContent = formaterGrandNombre(Math.floor(valeur*100)/100);
+            const newIndex = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)?.valeur >= L_total[p_id].find(tuple=> tuple.annee === annee).valeur).length
+            cel1DStat.querySelector('span').innerHTML = `${newIndex}<sup>${ordinalSuffix(newIndex, currentIlg)}</sup>`
+            
+            cel1DStat.querySelector('div').textContent = 
+              D_ilg.sur[currentIlg] + " " +
+              Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)).length
+              + " " + D_ilg.paysclasses[currentIlg];
+
+
+
+
+            [
+              yDetailStat, //
+              yTopCourbe, // l'année en haut de la courbe
+            ].forEach((itm) => (itm.textContent = annee));
+          },
+        },
+      );
+
+
+      }
+
       headersItemStat.forEach((header) => {
         header.addEventListener("click", () => {
           const content = header.parentNode.querySelector(".contentStat");
@@ -63893,30 +64008,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       });
 
-      backDetailStat.addEventListener("click", () => {
-        cadreDetailStat.classList.remove("active");
-        let delay = 0;
-        [...wrapperItmStat.children].reverse().forEach((itm) => {
-          itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
-          setTimeout(() => {
-            itm.style.transform = "";
-            itm.style.opacity = "";
-          }, delay);
-          delay += 20;
-        });
-        [...contentGeneStat.children].reverse().forEach((itm) => {
-          // if(itm===wrapperItmStat)return
-          itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
-          setTimeout(() => {
-            itm.style.transform = "";
-            itm.style.opacity = "";
-          }, delay);
-          delay += 20;
-        });
-      });
-
       itemsStat.forEach((itm) => {
         itm.addEventListener("click", () => {
+          fillCadreDStat(itm.parentNode)
           setTimeout(() => cadreDetailStat.classList.add("active"), 100);
           // let delay1 = 50;
           // ;[...cadreDetailStat.children].forEach(itm=>{
@@ -63949,6 +64043,28 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             }, delay);
             delay += 20;
           });
+        });
+      });
+
+          backDetailStat.addEventListener("click", () => {
+        cadreDetailStat.classList.remove("active");
+        let delay = 0;
+        [...wrapperItmStat.children].reverse().forEach((itm) => {
+          itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+          setTimeout(() => {
+            itm.style.transform = "";
+            itm.style.opacity = "";
+          }, delay);
+          delay += 20;
+        });
+        [...contentGeneStat.children].reverse().forEach((itm) => {
+          // if(itm===wrapperItmStat)return
+          itm.style.transition = "transform 0.5s ease, opacity 0.4s ease";
+          setTimeout(() => {
+            itm.style.transform = "";
+            itm.style.opacity = "";
+          }, delay);
+          delay += 20;
         });
       });
 
