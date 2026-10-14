@@ -22671,8 +22671,7 @@
                     <div class="wrapperTxtItmStat">
                       <div>Énergie</div>
                       <span class="mTxtItmStat"
-                        >8 <span>indicateurs</span></span
-                      >
+                        ><span></span> <span>indicateurs</span></span>
                     </div>
 
                     <div class="boxArrowStat">
@@ -23220,8 +23219,7 @@
                     <div class="wrapperTxtItmStat">
                       <div>Population et sociale</div>
                       <span class="mTxtItmStat"
-                        >6 <span>indicateurs</span></span
-                      >
+                        ><span></span> <span>indicateurs</span></span>
                     </div>
 
                     <div class="boxArrowStat">
@@ -23616,8 +23614,7 @@
                     <div class="wrapperTxtItmStat">
                       <div>Environnement</div>
                       <span class="mTxtItmStat"
-                        >6 <span>indicateurs</span></span
-                      >
+                        ><span></span> <span>indicateurs</span></span>
                     </div>
 
                     <div class="boxArrowStat">
@@ -24125,8 +24122,7 @@
                     <div class="wrapperTxtItmStat">
                       <div>Économie</div>
                       <span class="mTxtItmStat"
-                        >3 <span>indicateurs</span></span
-                      >
+                        ><span></span> <span>indicateurs</span></span>
                     </div>
 
                     <div class="boxArrowStat">
@@ -63827,7 +63823,7 @@ const nomComplet_ilg = {
         el.addEventListener("click", () => {
           hapticFeedback("medium");
           const mode = el.dataset.statchoice
-          queryAll('.boxItemStat').forEach(box=>box.className =  "boxItemStat " + mode)
+          queryAll('.boxItemStat').forEach(box=>{box.classList.remove("stat","bilan"); box.classList.add(mode)})
           statChoiceIn.className = mode;
 
           const yearsBilan = queryAll('.yearsBilan')
@@ -64163,7 +64159,7 @@ const nomComplet_ilg = {
             itm.classList.add('active')
             crtCStat = getId(itm.dataset.idclasse)
             const clef = Object.keys(D_yListes).find(id=>D_yListes[id] === L_total)
-            fillCadreDStat(query(`[data-liste = ${clef}]`))
+            fillCadreDStat(query(`[data-liste = ${clef}]`),false)
           })
         })
 
@@ -64171,8 +64167,8 @@ const nomComplet_ilg = {
       }
 
 
-      function fillCadreDStat(box){
-        if(crtCStat === currentCountry)fillClassementStat(box)
+      function fillCadreDStat(box, callClassement = true){
+        if(crtCStat === currentCountry && callClassement)fillClassementStat(box)
 
         const p_id = crtCStat.id
         const L_yearsInfos = D_yListes[box.dataset.liste][p_id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][crtCStat.id]; // [{annee : 1900, valeur : ...},{...}]
@@ -64452,6 +64448,7 @@ const nomComplet_ilg = {
 
         if(!cursoring)
         {
+          query('[data-statchoice="stat"]').click()
           createCursorY(L_yDispos.sort(
             (a, b) => b - a, // ordre de population décroissante
           ).reverse());
@@ -64471,10 +64468,15 @@ const nomComplet_ilg = {
 
           if( 
               [...wrapperItmStat.querySelectorAll(':scope > .noInfo')].length  ===
-              headersItemStat.length) openStat.style.display = "none"
+              headersItemStat.length) openStat.style.display = "none" 
 
-        
+
+              queryAll('.mTxtItmStat').forEach(txt=>{
+
+                txt.querySelector('span').textContent = [...txt.parentElement.parentElement.parentElement.querySelector('.contentStat').querySelectorAll('.boxItemStat')].filter(el=>!el.classList.contains('noInfo')).length
+              })
         }
+
 
 
         
