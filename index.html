@@ -2641,6 +2641,7 @@
         border-top-right-radius: 2rem;
         padding-top: 1rem;
         background: rgba(17, 23, 79, 1);
+        --varBackground : rgba(17, 23, 79, 1);
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
         width: 100%;
         transition:
@@ -2917,8 +2918,6 @@
         pointer-events: none;
         opacity: 0;
         height: auto;
-        overflow-x: hidden;
-        overflow-y: auto;
         transform: translateX(100%);
         scrollbar-width: none;
         padding: 0 1rem;
@@ -2926,14 +2925,46 @@
         height: 100%;
         transition: all 0.65s ease;
       }
+      #contentDStat{
+        display: flex;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scrollbar-width: none;
+        flex: 1;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-sizing: border-box;
+        height: auto;
+        padding-bottom : calc(env(safe-area-inset-bottom) + 0.4rem);
+        width: 100%;
+        height: 100%;
+        transition: all 0.65s ease;
+      }
+      .smoothScroll{
+        width : 100%;
+        position : relative;
+        backdrop-filter : blur(8px);
+        max-height : 0;
+        div{
+          position : absolute;
+          height : 0.8rem;
+          width : 100%;
+          background: linear-gradient(180deg, var(--varBackground) 0%, transparent 100%);
+        }
+
+      }
       #headerDetail {
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
         justify-content: flex-start;
         align-self: flex-start;
+        box-sizing : border-box;
         gap: 1rem;
         width: 100%;
+        padding-bottom : 0.6rem;
+        
       }
       #backDetailStat {
         padding: 0.25rem;
@@ -3093,6 +3124,69 @@
         margin-top: 0.4rem;
         font-size: 0.65rem;
         color: var(--colorSpan);
+      }
+
+      #titleClassement{
+        display : flex;
+        align-items : flex-end;
+        gap : 0.4rem;
+        margin-top : 0.8rem; 
+        color: var(--colorSpan);
+        margin-top: 1.2rem; 
+        font-size: 0.8rem;
+      }
+      #cadreWClassStat{
+        display : flex;
+        flex-direction : column;
+        justify-content : center;
+        align-items : center;
+        box-sizing : border-box;
+        margin-top : 0.5rem;
+        gap : 0.2rem;
+        width : 100%;
+        border-radius  : 0.6rem;
+        background: rgba(255, 255, 255, 0.04);
+        outline: 1px solid rgba(255, 255, 255, 0.1);
+        .points{
+          display : flex;
+          font-size : 1rem;
+          color : gray;
+          opacity : 0.75;
+          letter-spacing : 5px;
+        }
+        .itm{
+          display : flex;
+          align-items : center;
+          justify-content : space-between;
+          gap : 0.6rem;
+          width : 100%;
+          box-sizing : border-box;
+          border-radius : inherit;
+          font-size : 0.95rem;
+          padding : 0.4rem;
+          outline : 1px solid rgba(255,255,255,0.1);
+          transition : filter 0.2s ease, color 0.2s ease, background 0.2s ease;
+          span {
+            color : var(--colorSpan);
+          }
+          div{
+            display : flex;
+            justify-content : flex-start;
+            align-items : center;
+            flex : 1;
+            color : white;
+          }
+        }
+        .itm:active{
+        filter : brightness(0.9);  
+        }
+        .itm.active{
+          background: rgba(47, 123, 255, 0.22);
+          span {
+            color : rgba(255,255,255,0.75);
+          }
+        }
+
       }
       /* Fin CSS Détail Stat  */
 
@@ -22356,7 +22450,8 @@
                   <span>Part du territoire</span>
                 </div>
               </div>
-
+              <div class="smoothScroll"><div></div> </div>
+              <div id="contentDStat">
               <div id="cadreNbrDetailStat">
                 <span>28.5</span>
                 <div>
@@ -22403,8 +22498,13 @@
               </div>
               <div id="contentCourbe"></div>
 
-              <span id="sourceData"></span
-              >
+              <span id="sourceData"></span>
+
+                <span id="titleClassement">Classement mondial • <span>2025</span></span>
+
+                <div id="cadreWClassStat"></div>
+
+            </div>
               <!-- Fin du cadre detalPm -->
             </div>
 
@@ -32629,15 +32729,31 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <!--Script utile-->
     <script>
 
-    function formaterGrandNombre(n, sep = ',') {
+    function formaterGrandNombre(n, abrev = false) {
   if (!Number.isFinite(n) || Math.abs(n) < 1e6) return n.toLocaleString(D_ilg.tolocalestring[currentIlg],);   // en dessous d'un million : inchangé
+    
+  const abrev_ilg = {
+  K:  { fr: "K",  en: "K"  },   // mille / thousand (10³)
+  M:  { fr: "M",  en: "M"  },   // million (10⁶)
+  Md: { fr: "Md", en: "B"  },   // milliard / billion (10⁹)
+  Bn: { fr: "Bn", en: "T"  },   // billion / trillion (10¹²)
+  Bd: { fr: "Bd", en: "Qa" },   // billiard / quadrillion (10¹⁵)
+};
+
+const nomComplet_ilg = {
+  K:  { fr: "mille",    en: "thousand"    },
+  M:  { fr: "million",  en: "million"     },
+  Md: { fr: "milliard", en: "billion"     },
+  Bn: { fr: "billion",  en: "trillion"    },
+  Bd: { fr: "billiard", en: "quadrillion" },
+};
 
   const signe = n < 0 ? '-' : '';
   const abs = Math.abs(n);
   const unites = [
-    { seuil: 1e12, nom: 'billion' },
-    { seuil: 1e9,  nom: 'milliard' },
-    { seuil: 1e6,  nom: 'million' },
+    { seuil: 1e12, nom: abrev ? abrev_ilg.Bn[currentIlg] : nomComplet_ilg.Bn[currentIlg] },
+    { seuil: 1e9,  nom: abrev ? abrev_ilg.Md[currentIlg] : nomComplet_ilg.Md[currentIlg] },
+    { seuil: 1e6,  nom: abrev ? abrev_ilg.M[currentIlg] : nomComplet_ilg.M[currentIlg] },
   ];
 
   for (let i = 0; i < unites.length; i++) {
@@ -32651,7 +32767,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         v = Math.round((abs / u.seuil) * 10) / 10;
       }
 
-      const texte = String(v).replace('.', sep);
+      const texte = String(v).replace('.',D_ilg["formatComa"][currentIlg]);
       return `${signe}${texte} ${u.nom}${v >= 2 ? 's' : ''}`;
     }
   }
@@ -32944,7 +33060,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         function setIndex(i) {
           i = Math.max(0, Math.min(n - 1, i));
           if (i === courant) return;
-          // hapticFeedBack('light') à rajouter
+          // hapticFeedback("light")
           courant = i;
           const cx = X(annees[i]),
             cy = Y(valeurs[i]);
@@ -56448,6 +56564,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         requestAnimationFrame(update);
       }
 
+      function createEl(s){
+        return document.createElement(s)
+      }
       function getId(id) {
         return document.getElementById(`${id}`);
       }
@@ -63506,6 +63625,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const cadreNbrDetailStat = getId('cadreNbrDetailStat')
       const yDetailStat = getId('yDetailStat')
       const yTopCourbe = getId('yTopCourbe')
+      const cadreWClassStat = getId('cadreWClassStat')
+      const titleClassement = getId('titleClassement')
+
       const backDetailStat = getId("backDetailStat");
 
       const cadreBlason = document.getElementById("cadreBlason");
@@ -63607,9 +63729,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const wrapperCursorY = getId("wrapperCursorY");
       const statChoiceIn = getId("statChoiceIn");
       const cursorYBox = getId("cursorYBox");
+      let crtCStat; // Le pays pour lequel on fait les statistiques
       const RCursor = 0.5; // le rayon du curseur
 
       openStat.addEventListener("click", () => {
+        crtCStat = currentCountry
         cadreStat.classList.add("active");
         cacheStat.classList.add("active");
         cacheStat.style.opacity = "1"
@@ -63679,7 +63803,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           
           boxsItemStat.forEach(box=>{
-          const L_yearsInfos = D_yListes[box.dataset.liste][currentCountry.id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][currentCountry.id]; // [{annee : 1900, valeur : ...},{...}]
+          const L_yearsInfos = D_yListes[box.dataset.liste][crtCStat.id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][crtCStat.id]; // [{annee : 1900, valeur : ...},{...}]
           const crtYear = txtYChoice.textContent
           if(typeof L_yearsInfos !== "object") {return}
           const unity = box.dataset.unity;
@@ -63909,13 +64033,105 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       // Script Fill Stat
-
       const headersItemStat = queryAll(".headerItemStat");
       const itemsStat = queryAll(".itemStat");
+      function fillClassementStat(box){
+        const L_total = D_yListes[box.dataset.liste]
+        const p_id = crtCStat.id
+        const crtY = L_total[p_id][0].annee
+        titleClassement.querySelector('span').textContent = crtY
+
+        const unity = box.dataset.unity;
+        const L_dataY = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === crtY));
+        const indexCountry = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === crtY)?.valeur >= L_total[p_id].find(tuple=> tuple.annee === crtY).valeur).length;
+
+
+        const maxValue = Math.max(...L_dataY.map(id=> L_total[id].find(tuple=>tuple.annee === crtY).valeur))
+        const countrySup = L_dataY.find(id=>L_total[id].find(tuple=>tuple.annee === crtY).valeur === maxValue)
+
+        const minValue = Math.min(...L_dataY.map(id=> L_total[id].find(tuple=>tuple.annee === crtY).valeur))
+        const countryInfId = L_dataY.find(id=>L_total[id].find(tuple=>tuple.annee === crtY).valeur === minValue)
+        //***
+        const valPays = L_total[p_id].find(tuple=>tuple.annee === crtY).valeur
+
+        cadreWClassStat.innerHTML = ``
+        // Le premier mondial        
+        const itm1 = createEl('div')
+        itm1.dataset.idclasse = countrySup
+        itm1.className = "itm"  + (valPays ===maxValue ? " active" : "")
+        const rank1 = document.createElement('span')
+        const nom1 = createEl('div')
+        const val1 = createEl('span')
+        rank1.innerHTML = `1<sup>${ordinalSuffix(1, currentIlg)}</sup>`
+        nom1.textContent = L_q[countrySup].n
+        val1.textContent = formaterGrandNombre(maxValue,true) + " " + unity
+
+        itm1.append(rank1,nom1,val1)
+        cadreWClassStat.append(itm1)
+
+        const points = createEl('div')
+        points.className = "points"
+        points.textContent = "•••"
+        cadreWClassStat.append(points)
+
+
+        if(valPays !==maxValue){
+        // Notre pays        
+
+          const itm2 = createEl('div')
+        itm2.className = "itm active"  
+        itm2.dataset.idclasse = p_id
+
+        const rank2 = document.createElement('span')
+        const nom2 = createEl('div')
+        const val2 = createEl('span')
+        rank2.innerHTML = `${indexCountry}<sup>${ordinalSuffix(indexCountry, currentIlg)}`;
+        nom2.textContent = L_q[p_id].n
+        val2.textContent = formaterGrandNombre(valPays,true) + " " + unity
+
+        itm2.append(rank2,nom2,val2)
+        cadreWClassStat.append(itm2)
+        }
+
+        // Si notre pays n'est pas le dernier, on rajoute le dernier
+        if(valPays !==minValue){
+
+         valPays !== maxValue ? cadreWClassStat.append(points.cloneNode(true)) : ""
+
+          const itm3 = createEl('div')
+        itm3.className = "itm"  + (valPays === minValue ? " active" : "")
+        itm3.dataset.idclasse = countryInfId
+        const rank3 = document.createElement('span')
+        const nom3 = createEl('div')
+        const val3 = createEl('span')
+        rank3.innerHTML = `${L_dataY.length}<sup>${ordinalSuffix(L_dataY.length, currentIlg)}</sup>`
+        nom3.textContent = L_q[countryInfId].n
+        val3.textContent = formaterGrandNombre(minValue,true) + " " + unity
+
+        itm3.append(rank3,nom3,val3)
+        cadreWClassStat.append(itm3)
+        }
+
+        const itms = cadreWClassStat.querySelectorAll(".itm")
+        itms.forEach(itm=>{
+          itm.addEventListener('click',()=>{
+            itms.forEach(i=>i.classList.remove('active'))
+            itm.classList.add('active')
+            crtCStat = getId(itm.dataset.idclasse)
+            const clef = Object.keys(D_yListes).find(id=>D_yListes[id] === L_total)
+            fillCadreDStat(query(`[data-liste = ${clef}]`))
+          })
+        })
+
+        
+      }
+
 
       function fillCadreDStat(box){
-        const p_id = currentCountry.id
-        const L_yearsInfos = D_yListes[box.dataset.liste][p_id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][currentCountry.id]; // [{annee : 1900, valeur : ...},{...}]
+        if(crtCStat === currentCountry)fillClassementStat(box)
+
+        const p_id = crtCStat.id
+        const L_yearsInfos = D_yListes[box.dataset.liste][p_id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][crtCStat.id]; // [{annee : 1900, valeur : ...},{...}]
         const L_total = D_yListes[box.dataset.liste]
         const crtYear = txtYChoice.textContent
         const yearInit = L_total[p_id].find(tuple=> tuple.annee === parseInt(crtYear)) && !statChoiceIn.classList.contains('bilan') ? parseInt(crtYear) : parseInt(L_total[p_id][0].annee)
@@ -63986,8 +64202,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             if(valeur > 0 && valeur < 0.01){cadreNbrDetailStat.querySelector("span").textContent = "< 0.01"}
             else {cadreNbrDetailStat.querySelector("span").textContent = formaterGrandNombre(Math.floor(valeur*100)/100);}
 
-            // Remplir les deux cels
+            // Liste des ID de pays concernés pour l'année ["AD","FR",....]
             const L_dataY = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)) 
+            
+            // Remplir les deux cels
             // Premier cadre cel1
             const newIndex = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)?.valeur >= L_total[p_id].find(tuple=> tuple.annee === annee).valeur).length            
             cel1DStat.querySelector('div').textContent = 
@@ -63996,7 +64214,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               + " " + D_ilg.paysclasses[currentIlg];
 
             // Second cadrecel2
-            // Liste des ID de pays concernés pour l'année ["AD","FR",....]
             const L_Worldvalues = L_dataY.map(id=>L_total[id].find(tuple=>tuple.annee === annee).valeur)
             const worldMoy = L_Worldvalues.reduce((somme, x) => somme + x, 0) / L_dataY.length
             const worldMediane = ((liste) => {
@@ -64073,6 +64290,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
           backDetailStat.addEventListener("click", () => {
+            crtCStat = currentCountry
         cadreDetailStat.classList.remove("active");
         let delay = 0;
         [...wrapperItmStat.children].reverse().forEach((itm) => {
@@ -64973,7 +65191,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                       d="m20.5,6h-2c-1.93,0-3.5,1.57-3.5,3.5v4c0,1.391.822,2.585,2,3.149v6.351c0,.552.448,1,1,1s1-.448,1-1v-6h1v6c0,.552.448,1,1,1s1-.448,1-1v-6.351c1.178-.564,2-1.758,2-3.149v-4c0-1.93-1.57-3.5-3.5-3.5Zm1.5,7.5c0,.827-.673,1.5-1.5,1.5h-2c-.827,0-1.5-.673-1.5-1.5v-4c0-.827.673-1.5,1.5-1.5h2c.827,0,1.5.673,1.5,1.5v4Zm-8.02-6.649c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v4c0,.477.219.914.601,1.2.251.189.399.485.399.8v6.5c0,.552-.448,1-1,1s-1-.448-1-1v-6.051c-.633-.649-1-1.532-1-2.449v-4c0-1.658,1.178-3.1,2.801-3.43.541-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v3c0,.477.219.914.601,1.2.251.189.399.485.399.8v5.5c0,.552-.448,1-1,1s-1-.448-1-1v-5.051c-.633-.649-1-1.532-1-2.449v-3c0-1.658,1.178-3.1,2.801-3.43.542-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v2c0,.477.219.914.601,1.2.251.189.399.485.399.8v4.5c0,.552-.448,1-1,1s-1-.448-1-1v-4.051c-.633-.649-1-1.532-1-2.449v-2c0-1.658,1.178-3.1,2.801-3.43.544-.113,1.069.239,1.179.781Zm13.02-4.351c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.385,2.227c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5S3.119,0,4.5,0c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Z"
                     />
                   </svg>
-              ${formaterGrandNombre(D_us[id].p, D_ilg["formatComa"][currentIlg])}
+              ${formaterGrandNombre(D_us[id].p)}
           `;
           }
 
@@ -91860,7 +92078,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // });
 
         if (!viewSub && !L_config.sub) {
-          population.textContent = formaterGrandNombre(L_q[id].p, D_ilg["formatComa"][currentIlg])
+          population.textContent = formaterGrandNombre(L_q[id].p)
           superficie.textContent =
             L_q[id].s.toLocaleString(D_ilg.tolocalestring[currentIlg]) +
             "\u00A0" +
@@ -92789,7 +93007,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                       d="m20.5,6h-2c-1.93,0-3.5,1.57-3.5,3.5v4c0,1.391.822,2.585,2,3.149v6.351c0,.552.448,1,1,1s1-.448,1-1v-6h1v6c0,.552.448,1,1,1s1-.448,1-1v-6.351c1.178-.564,2-1.758,2-3.149v-4c0-1.93-1.57-3.5-3.5-3.5Zm1.5,7.5c0,.827-.673,1.5-1.5,1.5h-2c-.827,0-1.5-.673-1.5-1.5v-4c0-.827.673-1.5,1.5-1.5h2c.827,0,1.5.673,1.5,1.5v4Zm-8.02-6.649c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v4c0,.477.219.914.601,1.2.251.189.399.485.399.8v6.5c0,.552-.448,1-1,1s-1-.448-1-1v-6.051c-.633-.649-1-1.532-1-2.449v-4c0-1.658,1.178-3.1,2.801-3.43.541-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v3c0,.477.219.914.601,1.2.251.189.399.485.399.8v5.5c0,.552-.448,1-1,1s-1-.448-1-1v-5.051c-.633-.649-1-1.532-1-2.449v-3c0-1.658,1.178-3.1,2.801-3.43.542-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v2c0,.477.219.914.601,1.2.251.189.399.485.399.8v4.5c0,.552-.448,1-1,1s-1-.448-1-1v-4.051c-.633-.649-1-1.532-1-2.449v-2c0-1.658,1.178-3.1,2.801-3.43.544-.113,1.069.239,1.179.781Zm13.02-4.351c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.385,2.227c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5S3.119,0,4.5,0c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Z"
                     />
                   </svg>
-               ${ formaterGrandNombre(L_q[r.id.toUpperCase()].p, D_ilg["formatComa"][currentIlg] )}
+               ${ formaterGrandNombre(L_q[r.id.toUpperCase()].p)}
           `;
           } else if (currentClass === "superficie") {
             const rank = document.createElement("div");
