@@ -63655,6 +63655,7 @@ const nomComplet_ilg = {
       const cadreStat = getId("cadreStat");
       const cacheStat = getId("cacheStat");
       const boxsItemStat = queryAll('.boxItemStat')
+      const sousCatesStat = queryAll('.sousCateStat')
       const colorMCourbes = "#ff8f7d"
 
       const wrapperItmStat = getId("wrapperItmStat");
@@ -63970,7 +63971,6 @@ const nomComplet_ilg = {
       ];
       // Liste des années disponibles
       function createCursorY(Ly) {
-        console.log(Ly)
         LArrowY.classList.add("active");
         RArrowY.classList.remove("active");
         yInf.textContent = Math.min(...Ly)
@@ -64334,7 +64334,16 @@ const nomComplet_ilg = {
       });
 
 
-      function resetCadreStat(){        
+      function resetCadreStat(){  
+        headersItemStat.forEach(h=>{
+          const content = h.parentNode.querySelector(".contentStat");
+          if (content) {
+            content.style.transition = "none"
+            content.classList.remove("active");
+           content.style.maxHeight = ""
+           requestAnimationFrame(()=>content.style.transition = "")
+          }
+        })
         crtCStat = currentCountry
         cadreDetailStat.style.transition = "none"
         cadreDetailStat.classList.remove("active");
@@ -64442,9 +64451,36 @@ const nomComplet_ilg = {
 
 
         if(!cursoring)
-        {createCursorY(L_yDispos.sort(
+        {
+          createCursorY(L_yDispos.sort(
             (a, b) => b - a, // ordre de population décroissante
-          ).reverse())}
+          ).reverse());
+
+            sousCatesStat.forEach(sousCate=>{
+            if( 
+              [...sousCate.querySelectorAll('.noInfo')].length  ===
+              [...sousCate.querySelectorAll('.boxItemStat')].length)sousCate.classList.add('noInfo')
+          })
+
+          headersItemStat.forEach(h=>{
+            const content = h.parentNode.querySelector(".contentStat")
+            if( 
+              [...content.querySelectorAll(':scope > .noInfo')].length  ===
+              [...content.querySelectorAll('.sousCateStat')].length)h.parentNode.classList.add('noInfo')
+          })
+
+          if( 
+              [...wrapperItmStat.querySelectorAll(':scope > .noInfo')].length  ===
+              headersItemStat.length) openStat.style.display = "none"
+
+        
+        }
+
+
+        
+
+          
+
       }
 
       // Fin Script Stat
@@ -65111,6 +65147,7 @@ const nomComplet_ilg = {
       }
 
       voirPlus.addEventListener("click", () => {
+        openStat.style.display = ""
         fillCadreStat(currentCountry)
         resetCadreStat()
 
