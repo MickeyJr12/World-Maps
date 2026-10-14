@@ -3230,11 +3230,18 @@
         outline: 1px solid rgba(255, 255, 255, 0.08);
         width: 90%;
       }
+       .lineInStat.noInfo{  
+        display : none;
+      }
+
       .titleStat {
         font-size: 0.75rem;
         align-self: flex-start;
         color: rgba(255, 255, 255, 0.75);
         text-decoration: underline;
+      }
+       .titleStat.noInfo{  
+        display : none;
       }
 
       .boxItemStat {
@@ -3242,14 +3249,20 @@
         flex-direction: column;
         width: 100%;
       }
+      .boxItemStat.noInfo{  
+        display : none;
+      }
+      
 
       .boxItemStat.bilan {
         .boxTxtItemStat {
           span{
+          min-height : 0.9rem;
           color : transparent;
-          transition : color 0.2s ease;
+          transition : color 0.2s ease, min-height 0.2s ease;
         }
           .yearsBilan{
+            white-space : nowrap;
             font-weight : 500;
             color : white;
           }
@@ -3293,7 +3306,7 @@
           }
           div {
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             font-weight: 500;
           }
         }
@@ -3348,8 +3361,10 @@
           position : relative;
           font-size: 0.75rem;
           opacity: 0.5;
+          transition : min-height 0.25s ease, color 0.2s ease;
         }
         .yearsBilan{
+          white-space : nowrap;
           position : absolute;
           color : transparent;
           transition : color 0.2s ease;
@@ -22301,7 +22316,7 @@
                 "
               />
             </div>
-            <span>France</span> • En chiffres
+            <span>France</span> • <div>En chiffres</div>
           </div>
           <div id="contentCadreStat">
             <div id="cadreDetailStat">
@@ -22529,7 +22544,7 @@
                   </div>
 
                   <div class="contentStat">
-                    <div class="titleStat">Part renouvelable</div>
+                    <!-- <div class="titleStat">Part renouvelable</div>
 
                      <div class="boxItemStat" data-goodVar="up" data-unity="%" data-liste="renewTot">
                     <div class="itemStat">
@@ -22569,7 +22584,7 @@
                         </div>
                         <div class="boxMCourbe"></div>
                       </div>
-                    </div>
+                    </div> -->
 
 
                     <div class="titleStat">Mix énergétique</div>
@@ -22839,9 +22854,7 @@
 
                         <div class="boxTxtItemStat">
                           <div>Nucléaire</div>
-                          <span>% de l'énergie totale produite
-                            <span class="yearsBilan">1960 - 2025</span>
-                          </span>
+                          <span>% de l'énergie totale produite</span>
                           
                         </div>
 
@@ -23197,7 +23210,7 @@
                     <div class="titleStat">Espérance de vie à la naissance</div>
 
                     <!--  -->
-                    <div class="boxItemStat" data-goodVar="up" data-unity="ans" data-liste="lifeExpe_M">
+                    <div class="boxItemStat" data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_M">
                     <div class="itemStat">
                       <svg
                         viewBox="0 0 24 24"
@@ -23227,7 +23240,7 @@
 
                       <div class="boxTxtItemStat">
                         <div>Homme</div>
-                        <!-- <span></span> -->
+                        <span></span>
                       </div>
 
                       <div class="txtStat">
@@ -23264,7 +23277,7 @@
 
                     <div class="lineInStat"></div>
                     <!--  -->
-                    <div class="boxItemStat" data-goodVar="up" data-unity="ans" data-liste="lifeExpe_F">
+                    <div class="boxItemStat" data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_F">
                     <div class="itemStat">
                       <svg
                         viewBox="0 0 24 24"
@@ -23303,7 +23316,7 @@
                       </svg>
                       <div class="boxTxtItemStat">
                         <div>Femme</div>
-                        <!-- <span></span> -->
+                        <span></span>
                       </div>
 
                       <div class="txtStat">
@@ -23476,7 +23489,7 @@
 
                     <!--  -->
 
-                    <div class="boxItemStat" data-goodVar="down" data-unity="tCO₂e/hab" data-liste="co2Hab">
+                    <div class="boxItemStat" data-goodVar="down" data-unity="tCO₂e" data-liste="co2Hab">
                     <div class="itemStat">
                       <svg
                         fill="var(--colorItmStat)"
@@ -23510,8 +23523,8 @@
                         </g>
                       </svg>
                       <div class="boxTxtItemStat">
-                        <div>Émission de CO₂ par habitant</div>
-                        <span>Hors utilisation des terres (tCO₂e/hab)</span>
+                        <div>CO₂ par habitant</div>
+                        <span>Hors utilisation des terres (tCO₂e)</span>
                       </div>
 
                       <div class="txtStat">
@@ -23581,8 +23594,8 @@
                         </g>
                       </svg>
                       <div class="boxTxtItemStat">
-                        <div>Émissions totales de gaz à effet de serre</div>
-                        <span>(Mt CO₂e)</span>
+                        <div>Gaz à effet de serre</div>
+                        <span>Émission totale (Mt CO₂e)</span>
                       </div>
 
                       <div class="txtStat">
@@ -32743,12 +32756,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
       }
 
-      tracerMCourbe(
-        document.querySelector(".boxMCourbe"),
-        [1970, 1980, 1990, 2000, 2010, 2025],
-        [62, 55, 40, 35, 30, 25],
-        { couleur: "#ff8f7d" },
-      );
+      // tracerMCourbe(
+      //   document.querySelector(".boxMCourbe"),
+      //   [1970, 1980, 1990, 2000, 2010, 2025],
+      //   [62, 55, 40, 35, 30, 25],
+      //   { couleur: "#ff8f7d" },
+      // );
 
       /**
        * tracerCourbe(conteneur, annees, valeurs, options)
@@ -33042,7 +33055,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // Changer les textContent des data-ilg
         queryAll("[data-ilg]").forEach((el) => {
           if (!D_ilg[el.dataset.ilg]) {
-            console.log(el, el.dataset, "el");
           }
           if (!D_ilg[el.dataset.ilg][ilg]) console.log(D_ilg[el.dataset.ilg]);
           el.textContent = D_ilg[el.dataset.ilg][ilg];
@@ -63454,6 +63466,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const crossStat = getId("crossStat");
       const cadreStat = getId("cadreStat");
       const cacheStat = getId("cacheStat");
+      const boxsItemStat = queryAll('.boxItemStat')
+      const colorMCourbes = "#ff8f7d"
+
       const wrapperItmStat = getId("wrapperItmStat");
       const contentCadreStat = getId("contentCadreStat");
       const contentGeneStat = getId("contentGeneStat");
@@ -63613,30 +63628,72 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         el.addEventListener("click", () => {
           hapticFeedback("medium");
           const mode = el.dataset.statchoice
-          statChoiceIn.className = mode;
           queryAll('.boxItemStat').forEach(box=>box.className =  "boxItemStat " + mode)
+          statChoiceIn.className = mode;
+
+          const yearsBilan = queryAll('.yearsBilan')
+          if(yearsBilan)yearsBilan.forEach(el=>el.remove())
+
           if (mode === "bilan") {
             headersItemStat.forEach(h=>{
               const content = h.parentNode.querySelector(".contentStat");
-              if (content.style.maxHeight !== "")content.style.maxHeight  = "50rem"
-              const boxsMCourbe = h.parentNode.querySelectorAll('.boxMCourbe')
-              boxsMCourbe.forEach(b=>{
-                b.innerHTML = ``  
-                 tracerMCourbe(
-                b
-              ,
-        [1970, 1980, 1990, 2000, 2000 + Math.floor(Math.random()* 20), 2025],
-        [10 + Math.floor(Math.random()* 100), 10 + Math.floor(Math.random()* 100),10 + Math.floor(Math.random()* 100),10 + Math.floor(Math.random()* 100),10 + Math.floor(Math.random()* 100),10 + Math.floor(Math.random()* 100)],
-        { couleur: "#ff8f7d" },
-      );
-              })
-              
+              if (content.style.maxHeight !== "")content.style.maxHeight  = "50rem"          
             })
+
             txtYChoice.classList.remove("active");
             wrapperCursorY.classList.remove("active");
             wrapperCursorY.style.maxHeight = "";
 
-          }
+          
+          boxsItemStat.forEach(box=>{
+          const L_yearsInfos = D_yListes[box.dataset.liste][currentCountry.id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][currentCountry.id]; // [{annee : 1900, valeur : ...},{...}]
+          const crtYear = txtYChoice.textContent
+          if(typeof L_yearsInfos !== "object") {return}
+          const unity = box.dataset.unity;
+          const goodvar = box.dataset.goodvar;
+
+          // Années extrêmes
+          const yInfItem = Math.min(...L_yearsInfos.map(id=>id.annee))
+          const ySupItem = Math.max(...L_yearsInfos.map(id=>id.annee))
+
+          //Valeurs aux dates les plus récentes/anciennes
+          const valInf = Math.floor(L_yearsInfos.find(el=>el.annee === yInfItem).valeur*100)/100
+          const valSup = Math.floor(L_yearsInfos.find(el=>el.annee === ySupItem).valeur*100)/100
+          
+          // Les années du bilan : 1990 → 2025
+          const yearsBilan = document.createElement('span')
+          yearsBilan.className = "yearsBilan"
+          yearsBilan.textContent = yInfItem + " → " + ySupItem
+          const spn = box.querySelector('.boxTxtItemStat').querySelector('span')
+          if(spn)box.querySelector('.boxTxtItemStat').querySelector('span').append(yearsBilan)
+          else {box.querySelector('.boxTxtItemStat').append(yearsBilan)}
+
+          // Badge : +22 pts
+          const varUp = valSup > valInf
+          const badgeVarStat = box.querySelector('.badgeVarStat')
+          badgeVarStat.className = "badgeVarStat" + ( varUp ? " up" : "")
+          if(varUp) badgeVarStat.classList.add(goodvar === "up" ? "good" : "bad");
+          else badgeVarStat.classList.add(goodvar === "down" ? "good" : "bad");
+            
+          badgeVarStat.querySelector('span').textContent =  
+          (varUp ? "+ " : "") +
+          formaterGrandNombre((Math.floor((valSup - valInf)*10)/10)).toLocaleString(D_ilg.tolocalestring[currentIlg]) + " " + unity;
+
+          // Content chiffres : 72% → 58%
+            const boxNbrBilan = box.querySelector('.boxNbrBilan')
+            
+            boxNbrBilan.querySelector('span').textContent = formaterGrandNombre(valInf).toLocaleString(D_ilg.tolocalestring[currentIlg]) + " →"
+            boxNbrBilan.querySelector('div').textContent = formaterGrandNombre(valSup).toLocaleString(D_ilg.tolocalestring[currentIlg]) + unity
+          // Content courbe
+            const annees = L_yearsInfos.map(el=>el.annee).reverse()
+            const valeurs = L_yearsInfos.map(el=>el.valeur).reverse()
+            const boxMCourbe = box.querySelector('.boxMCourbe')
+            boxMCourbe.innerHTML = ``  
+            tracerMCourbe(boxMCourbe,annees,valeurs,{couleur: colorMCourbes });
+           
+        })
+
+         }
         }),
       );
 
@@ -63724,6 +63781,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           crs.addEventListener("click", (e) => {
             e.stopPropagation();
             txtYChoice.textContent = crs.dataset.year;
+            fillCadreStat(currentCountry) 
             queryAll(".cursorY").forEach((el) => el.classList.add("active"));
             queryAll(".cursorY").forEach((el) =>
               el.classList.remove("current"),
@@ -63882,6 +63940,64 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           });
         });
       });
+
+      //  Script fill stats
+      const D_yListes = {
+        "renewTot" : renewTot,
+      "eolien_zs" : eolien_zs,
+      "hydro_zs" : hydro_zs,
+      "solar_zs" : solar_zs,
+      "gaz_zs" : gaz_zs,
+      "nucl_zs" : nucl_zs,
+      "coal_zs" : coal_zs,
+      "petrole_zs" : petrole_zs,
+      "popTot" : popTot,
+      "fertility" : fertility,
+      "lifeExpe_M" : lifeExpe_M,
+      "lifeExpe_F" : lifeExpe_F,
+      "genderEq" : genderEq,
+      "indHapiness" : indHapiness,
+      "co2Hab" : co2Hab,
+      "emissionTot" : emissionTot,
+      "airQuality" : airQuality,
+      "agricole_zs" : agricole_zs,
+      "arable_zs" : arable_zs,
+      "forets_zs" : forets_zs,
+      "pib_hab" : pib_hab,
+      "chomage" : chomage,
+      "inflation" : inflation,
+      }
+
+      function fillCadreStat(p){
+        if(!p)return
+        const p_id = p.id;
+        const crtYear = txtYChoice.textContent
+        const titleCadreStat = getId('titleCadreStat')
+        titleCadreStat.querySelector('span').textContent = P_info[p_id].n
+        titleCadreStat.querySelector('img').src = `flag_c/${p_id.toLowerCase()}.svg`
+
+        queryAll('.noInfo').forEach(box=>box.classList.remove('noInfo'))
+
+          boxsItemStat.forEach(box=>{
+          const L_infos = D_yListes[box.dataset.liste][p_id];
+          if(typeof L_infos !== "object") {
+            box.classList.add('noInfo'); 
+            if (box.previousElementSibling.classList.contains('lineInStat') && !box.nextElementSibling)box.previousElementSibling.classList.add('noInfo')  // Le dernier élément
+            if(box.nextElementSibling?.classList.contains('lineInStat')) box.nextElementSibling.classList.add('noInfo') // Entre deux éléments
+            return
+          }
+          const info = L_infos.find(el=>el.annee === parseInt(crtYear))
+          const txtStat = box.querySelector('.txtStat')
+          if(info){
+            txtStat.querySelector('span').textContent = formaterGrandNombre(Math.floor(info.valeur*100)/100)
+            txtStat.querySelector('div').textContent = box.dataset.unity
+          }
+          else {
+            txtStat.querySelector('span').textContent = ""
+            txtStat.querySelector('div').textContent = "—"
+          }
+        })
+      }
 
       // Fin Script Stat
 
@@ -91696,8 +91812,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //Script tools
 
       centerBtn.addEventListener("click", () => {
-        console.log("2");
-
         viewSub
           ? ((centerBtnTF = true), zoomCountry(currentCSub.id))
           : animateViewBox(
@@ -92934,8 +93048,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         );
 
         const target = [center.x - newW / 2, center.y - newH / 2, newW, newH];
-        console.log("12");
-
         animateViewBox(svg, target, duration);
       }
       zP.addEventListener("click", () => zoomCenterScreen(svgMonde, 2, 300));
