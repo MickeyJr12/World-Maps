@@ -2970,7 +2970,7 @@
         width: 100%;
         gap: 0.4rem;
         width: 100%;
-        font-size: 3rem;
+        font-size: 2.4rem;
         font-weight: 400;
         div {
           span {
@@ -3045,7 +3045,19 @@
           div {
             align-self: flex-start;
           }
+          .year{
+            display : flex;
+            align-items : flex-end;
+            height : 100%;
+            margin-left : 0.4rem;
+            color: var(--colorSpan);
+            font-size: 0.8rem;
+          }
           span {
+            display : flex;
+            align-items : center;
+            flex-wrap : nowrap;
+            width : 100%;
             align-self: flex-start;
             font-size: 1.1rem;
             color: white;
@@ -22374,7 +22386,7 @@
               <div id="gridInfoDetailStat">
                 <div class="cel" id="cel1DStat">
                   Classement mondial
-                  <span>34<sup>e</sup> </span>
+                  <span>34<sup>e</sup></span>
                   <div>sur 200 pays</div>
                 </div>
 
@@ -33592,6 +33604,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         sur : {fr : "sur", en : "out of"},
         payslowercase : {fr : "pays", en : "countries"},
         paysclasses : {fr : "pays classés", en : "ranked countries"},
+        mediane : {fr : "Médiane", en : "Median"},
         
         // Langue Légende
         pibhabusdan: {
@@ -63949,21 +63962,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if(varUp) badgeVarDStat.classList.add(goodvar === "up" ? "good" : "bad");
         else badgeVarDStat.classList.add(goodvar === "down" ? "good" : "bad");
 
-        const cel1DStat = getId('cel1DStat')
-        const cel2DStat = getId('cel2DStat')
-        const index = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === yearInit)?.valeur >= L_total[p_id].find(tuple=> tuple.annee === yearInit).valeur).length
-        cel1DStat.querySelector('span').innerHTML = `${index}<sup>${ordinalSuffix(index, currentIlg)}</sup>`
-        cel1DStat.querySelector('div').textContent = 
-        D_ilg.sur[currentIlg] + " " +
-        Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === yearInit)).length
-        + " " + D_ilg.paysclasses[currentIlg];
-
+      
         // Indiquer la source de données 
         getId('sourceData').textContent = D_ilg[box.dataset.source][currentIlg]
 
         // Tracer la courbe
         const L_years = L_yearsInfos.map(tuple=>tuple.annee).reverse()
         const L_valeur = L_yearsInfos.map(tuple=>Math.floor(tuple.valeur*1000)/1000).reverse()
+        const cel1DStat = getId('cel1DStat')
+        const cel2DStat = getId('cel2DStat')
+        
+        
 
         const courbe = tracerCourbe(
         getId("contentCourbe"),
@@ -63973,19 +63982,36 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           anneeInitiale: yearInit,
           unite: " " + unity,
           onChange: (annee, valeur) => {
-            cadreNbrDetailStat.querySelector("span").textContent = formaterGrandNombre(Math.floor(valeur*100)/100);
-            const newIndex = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)?.valeur >= L_total[p_id].find(tuple=> tuple.annee === annee).valeur).length
-            cel1DStat.querySelector('span').innerHTML = `${newIndex}<sup>${ordinalSuffix(newIndex, currentIlg)}</sup>`
-            
+            //Grand nombre
+            if(valeur > 0 && valeur < 0.01){cadreNbrDetailStat.querySelector("span").textContent = "< 0.01"}
+            else {cadreNbrDetailStat.querySelector("span").textContent = formaterGrandNombre(Math.floor(valeur*100)/100);}
+
+            // Remplir les deux cels
+            const L_dataY = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)) 
+            // Premier cadre cel1
+            const newIndex = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)?.valeur >= L_total[p_id].find(tuple=> tuple.annee === annee).valeur).length            
             cel1DStat.querySelector('div').textContent = 
               D_ilg.sur[currentIlg] + " " +
-              Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)).length
+              L_dataY.length
               + " " + D_ilg.paysclasses[currentIlg];
 
+            // Second cadrecel2
+            // Liste des ID de pays concernés pour l'année ["AD","FR",....]
+            const L_Worldvalues = L_dataY.map(id=>L_total[id].find(tuple=>tuple.annee === annee).valeur)
+            const worldMoy = L_Worldvalues.reduce((somme, x) => somme + x, 0) / L_dataY.length
+            const worldMediane = ((liste) => {
+            const tri = [...liste].sort((a, b) => a - b);   // copie, pour ne pas modifier la liste d'origine
+            const milieu = Math.floor(tri.length / 2);
+              return tri.length % 2 ? tri[milieu] : (tri[milieu - 1] + tri[milieu]) / 2;
+              })(L_Worldvalues)
 
+              cel2DStat.querySelector('div').textContent = D_ilg.mediane[currentIlg] + " : " + formaterGrandNombre(Math.floor(worldMediane*100)/100)
+              cel2DStat.querySelector('span').innerHTML = `${formaterGrandNombre(Math.floor(worldMoy*100)/100)}</sup><div class="year" >• ${annee}</div>`
 
+              // Mettre cette ligne après, car sinon, le div sélectionné sera mauvais
+              cel1DStat.querySelector('span').innerHTML = `${newIndex}<sup>${ordinalSuffix(newIndex, currentIlg)}</sup><div class="year" >• ${annee}</div>`;
 
-            [
+            ;[
               yDetailStat, //
               yTopCourbe, // l'année en haut de la courbe
             ].forEach((itm) => (itm.textContent = annee));
@@ -64107,7 +64133,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           boxsItemStat.forEach(box=>{
           const L_infos = D_yListes[box.dataset.liste][p_id];
-          if(typeof L_infos !== "object") {
+
+          if(typeof L_infos !== "object" || L_infos.filter(tuple=>tuple.valeur!== 0).length === 0) {
             box.classList.add('noInfo'); 
             if (box.previousElementSibling.classList.contains('lineInStat') && !box.nextElementSibling)box.previousElementSibling.classList.add('noInfo')  // Le dernier élément
             if(box.nextElementSibling?.classList.contains('lineInStat')) box.nextElementSibling.classList.add('noInfo') // Entre deux éléments
