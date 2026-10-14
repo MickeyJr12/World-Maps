@@ -2992,17 +2992,13 @@
         svg {
           flex-shrink: 0;
           height: 1rem;
+          transform: scaleY(-1);
         }
         --backGoodVar: rgba(74, 222, 128, 0.14);
         --colorGoodVar: #86efac;
 
         --backBadVar: rgba(248, 113, 113, 0.14);
         --colorBadVar: #fca5a5;
-      }
-      .badgeVarStat.up {
-        svg {
-          transform: scaleY(-1);
-        }
       }
       .badgeVarStat.good {
         color: var(--colorGoodVar);
@@ -3277,6 +3273,9 @@
           .badgeVarStat {
             opacity: 1;
           }
+           .badgeVarStat.zeroVar svg {
+            display : none;
+          }
           .badgeVarStat.up {
             svg {
               transform: none;
@@ -3377,6 +3376,7 @@
         justify-content: flex-end;
         align-items: center;
         flex-wrap: nowrap;
+        gap : 0.25rem;
         font-size: 1rem;
         color: white;
         transition: color 0.2s ease;
@@ -63674,11 +63674,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           badgeVarStat.className = "badgeVarStat" + ( varUp ? " up" : "")
           if(varUp) badgeVarStat.classList.add(goodvar === "up" ? "good" : "bad");
           else badgeVarStat.classList.add(goodvar === "down" ? "good" : "bad");
-            
-          badgeVarStat.querySelector('span').textContent =  
+
+          if (valSup - valInf < 0.01){
+            badgeVarStat.querySelector('span').textContent = "< 0.01 " + unity;
+          }
+          else if (valSup === valInf){
+            badgeVarStat.querySelector('span').textContent = "< 0.01 " + unity;
+            badgeVarStat.classList.add('zeroVar')
+          }
+          else {
+             badgeVarStat.querySelector('span').textContent =  
           (varUp ? "+ " : "") +
           formaterGrandNombre((Math.floor((valSup - valInf)*10)/10)).toLocaleString(D_ilg.tolocalestring[currentIlg]) + " " + unity;
+          }
 
+
+         
           // Content chiffres : 72% → 58%
             const boxNbrBilan = box.querySelector('.boxNbrBilan')
             
@@ -63989,7 +64000,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           const info = L_infos.find(el=>el.annee === parseInt(crtYear))
           const txtStat = box.querySelector('.txtStat')
           if(info){
+
             txtStat.querySelector('span').textContent = formaterGrandNombre(Math.floor(info.valeur*100)/100)
+            if(info.valeur < 0.01 && info.valeur > 0 ){
+              txtStat.querySelector('span').textContent = "< 0.01"
+            }
             txtStat.querySelector('div').textContent = box.dataset.unity
           }
           else {
