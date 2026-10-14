@@ -2920,11 +2920,17 @@
         height: auto;
         transform: translateX(100%);
         scrollbar-width: none;
-        padding: 0 1rem;
         width: 100%;
         height: 100%;
         transition: all 0.65s ease;
       }
+       #cadreDetailStat.active {
+        opacity: 1;
+        pointer-events: all;
+        transform: none;
+        transition: all 0.6s ease;
+      }
+
       #contentDStat{
         display: flex;
         overflow-x: hidden;
@@ -2936,6 +2942,8 @@
         align-items: flex-start;
         box-sizing: border-box;
         height: auto;
+        padding : 0 1em;
+        padding-top : 0.2rem;
         padding-bottom : calc(env(safe-area-inset-bottom) + 0.4rem);
         width: 100%;
         height: 100%;
@@ -2959,10 +2967,10 @@
         flex-wrap: nowrap;
         align-items: center;
         justify-content: flex-start;
-        align-self: flex-start;
+        align-self: center;
         box-sizing : border-box;
         gap: 1rem;
-        width: 100%;
+        width: calc(100% - 2em);
         padding-bottom : 0.6rem;
         
       }
@@ -2978,12 +2986,7 @@
         background: rgba(255, 255, 255, 0.1);
       }
 
-      #cadreDetailStat.active {
-        opacity: 1;
-        pointer-events: all;
-        transform: none;
-        transition: all 0.6s ease;
-      }
+     
       #titleDetailStat {
         display: flex;
         flex-direction: column;
@@ -3056,6 +3059,7 @@
 
       #gridInfoDetailStat {
         display: grid;
+        align-self : center;
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
         width: 100%;
@@ -3137,6 +3141,7 @@
       }
       #cadreWClassStat{
         display : flex;
+        align-self: center;
         flex-direction : column;
         justify-content : center;
         align-items : center;
@@ -3149,8 +3154,15 @@
         outline: 1px solid rgba(255, 255, 255, 0.1);
         .points{
           display : flex;
+          box-sizing : border-box;
+          align-items : center;
+          justify-content : flex-start;
+          padding-left : 1rem;
+          max-height : 0.5rem;
+          width : 100%;
           font-size : 1rem;
           color : gray;
+          background : rgba(0,0,0,0.1);
           opacity : 0.75;
           letter-spacing : 5px;
         }
@@ -3161,11 +3173,10 @@
           gap : 0.6rem;
           width : 100%;
           box-sizing : border-box;
-          border-radius : inherit;
+          border-left : 4px solid transparent;
           font-size : 0.95rem;
-          padding : 0.4rem;
-          outline : 1px solid rgba(255,255,255,0.1);
-          transition : filter 0.2s ease, color 0.2s ease, background 0.2s ease;
+          padding : 0.4rem 0.6rem;
+          transition : all 0.2s ease;
           span {
             color : var(--colorSpan);
           }
@@ -3177,11 +3188,20 @@
             color : white;
           }
         }
+        .itm.first{
+          border-top-left-radius : inherit;
+          border-top-right-radius : inherit;
+        }
+        .itm.last {
+          border-bottom-left-radius : inherit;
+          border-bottom-right-radius : inherit;
+        }
         .itm:active{
         filter : brightness(0.9);  
         }
         .itm.active{
           background: rgba(47, 123, 255, 0.22);
+          border-left-color : rgba(47, 123, 255, 0.75);
           span {
             color : rgba(255,255,255,0.75);
           }
@@ -3347,6 +3367,12 @@
         align-self: flex-start;
         color: rgba(255, 255, 255, 0.75);
         text-decoration: underline;
+      }
+      .sousCateStat{
+        all : inherit;
+        transition : none;
+        overflow : visible;
+        margin-top : 0;
       }
        .titleStat.noInfo{  
         display : none;
@@ -3817,6 +3843,9 @@
           transform 0.4s ease,
           opacity 0.3s ease,
           filter 0.25s ease;
+        .noInfo{
+          display : none;
+        }
       }
       #cadre:has(#orgaMenu.active) {
         .ligneInCadre {
@@ -22450,7 +22479,7 @@
                   <span>Part du territoire</span>
                 </div>
               </div>
-              <div class="smoothScroll"><div></div> </div>
+              <!-- <div class="smoothScroll"><div></div> </div> -->
               <div id="contentDStat">
               <div id="cadreNbrDetailStat">
                 <span>28.5</span>
@@ -22703,8 +22732,8 @@
                     </div> -->
 
 
+                    <div class="sousCateStat">
                     <div class="titleStat">Mix énergétique</div>
-
                      <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="%" data-liste="eolien_zs">
                     <div class="itemStat">
                       <svg fill="var(--colorItmStat)" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M20.021484 0.99609375C16.586484 0.99609375 14.407922 9.8729219 14.044922 18.419922C7.3119219 22.479922 1.9025156 27.654703 1.1035156 30.845703C0.91051562 31.615703 0.97864062 32.279359 1.3066406 32.818359C1.8066406 33.640359 2.8289688 33.976562 4.1679688 33.976562C5.5799687 33.976562 7.34375 33.599391 9.21875 33.025391C8.99275 32.348391 8.8870625 31.460422 9.1640625 30.357422C10.190062 26.258422 16.252562 20.948578 22.101562 17.267578C22.253563 14.805578 22.701844 9.991875 23.964844 5.921875C23.960844 5.907875 23.956172 5.8909531 23.951172 5.8769531C22.951172 2.9449531 21.625484 0.99809375 20.021484 0.99609375 z M 30.021484 0.99804688C26.585484 0.99804688 24.405922 9.873875 24.044922 18.421875C17.310922 22.482875 11.902516 27.655703 11.103516 30.845703C10.910516 31.616703 10.980594 32.280359 11.308594 32.818359C11.807594 33.640359 12.829969 33.976562 14.167969 33.976562C18.461969 33.976562 25.997766 30.521578 30.009766 28.517578C34.020766 30.524578 41.557563 33.984375 45.851562 33.984375C47.190562 33.984375 48.213844 33.648172 48.714844 32.826172C49.043844 32.285172 49.110969 31.620609 48.917969 30.849609C48.118969 27.654609 42.718094 22.478875 35.996094 18.421875C35.634094 9.875875 33.457484 1.0000469 30.021484 0.99804688 z M 30.019531 20C31.124531 20 32.019531 20.895 32.019531 22C32.019531 23.105 31.124531 24 30.019531 24C28.914531 24 28.019531 23.105 28.019531 22C28.019531 20.895 28.914531 20 30.019531 20 z M 30.009766 30.748047C29.217766 31.135047 28.385156 31.529969 27.535156 31.917969L26.099609 46.996094L23.927734 46.996094L22.628906 33.976562C20.761906 34.676563 18.924953 35.251516 17.251953 35.603516L16.111328 46.996094L11 46.996094 A 1.003906 1.003906 0 0 0 11 49.003906L39 49.003906 A 1.003906 1.003906 0 0 0 39 46.996094L33.923828 46.996094L32.486328 31.919922C31.634328 31.530922 30.802766 31.137047 30.009766 30.748047 z"></path></svg>
@@ -23118,9 +23147,10 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
-                    <!--  -->
+                    
                   </div>
-                </div>
+                  </div>
+                </div><!-- Fin catégorie énergie -->
 
                 <!-- Catégorie Population et sociale -->
                 <div class="categorieStat">
@@ -23208,6 +23238,7 @@
                   </div>
 
                   <div class="contentStat">
+                    <div class="sousCateStat">
                     <div class="titleStat">Démographie</div>
                     <!--  -->
                     <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="" data-liste="popTot">
@@ -23322,7 +23353,9 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
+                    </div>
 
+                    <div class="sousCateStat">
                     <div class="titleStat">Qualité de vie</div>  
 
                         <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_M">
@@ -23551,6 +23584,7 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
+                    </div>
 
 
                   </div><!-- Fin du cadre  -->
@@ -23600,7 +23634,7 @@
                   </div>
 
                   <div class="contentStat">
-
+                      <div class="sousCateStat">
                      <div class="titleStat">Pollution</div>
 
                     <!--  -->
@@ -23853,7 +23887,10 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
+                    </div>
 
+
+                     <div class="sousCateStat">
                     <div class="titleStat">Occupation des sols</div>
                     <!--  -->
                     <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste="agricole_zs">
@@ -24050,6 +24087,7 @@
                       </div>
                     </div>
                   </div>
+                  </div>
                 </div>
 
                 <!-- Fin catégorie evironnement -->
@@ -24105,6 +24143,8 @@
                   </div>
 
                   <div class="contentStat">
+                      <div class="sousCateStat">
+
                     <div class="titleStat">Niveau de vie</div>
                     <!--  -->
                     <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="US$" data-liste="pib_hab">
@@ -24280,6 +24320,7 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
+                  </div>
                   </div>
                 </div>
                 <!-- Fin catégorie économie -->
@@ -63929,8 +63970,12 @@ const nomComplet_ilg = {
       ];
       // Liste des années disponibles
       function createCursorY(Ly) {
+        console.log(Ly)
         LArrowY.classList.add("active");
         RArrowY.classList.remove("active");
+        yInf.textContent = Math.min(...Ly)
+        ySup.textContent = Math.max(...Ly)
+
         const inf = yInf.textContent;
         const sup = ySup.textContent;
         const dif = sup - inf;
@@ -63948,7 +63993,7 @@ const nomComplet_ilg = {
           crs.addEventListener("click", (e) => {
             e.stopPropagation();
             txtYChoice.textContent = crs.dataset.year;
-            fillCadreStat(currentCountry) 
+            fillCadreStat(currentCountry, true) 
             queryAll(".cursorY").forEach((el) => el.classList.add("active"));
             queryAll(".cursorY").forEach((el) =>
               el.classList.remove("current"),
@@ -63965,7 +64010,6 @@ const nomComplet_ilg = {
           });
         });
       }
-      createCursorY(L_years);
 
       LArrowY.addEventListener("click", () => {
         if (!LArrowY.classList.contains("active")) return;
@@ -64058,7 +64102,7 @@ const nomComplet_ilg = {
         // Le premier mondial        
         const itm1 = createEl('div')
         itm1.dataset.idclasse = countrySup
-        itm1.className = "itm"  + (valPays ===maxValue ? " active" : "")
+        itm1.className = "itm first"  + (valPays ===maxValue ? " active" : "")
         const rank1 = document.createElement('span')
         const nom1 = createEl('div')
         const val1 = createEl('span')
@@ -64079,7 +64123,7 @@ const nomComplet_ilg = {
         // Notre pays        
 
           const itm2 = createEl('div')
-        itm2.className = "itm active"  
+        itm2.className = "itm active" + (valPays === minValue ? " last" : "")  
         itm2.dataset.idclasse = p_id
 
         const rank2 = document.createElement('span')
@@ -64099,7 +64143,7 @@ const nomComplet_ilg = {
          valPays !== maxValue ? cadreWClassStat.append(points.cloneNode(true)) : ""
 
           const itm3 = createEl('div')
-        itm3.className = "itm"  + (valPays === minValue ? " active" : "")
+        itm3.className = "itm last"  + (valPays === minValue ? " active" : "")
         itm3.dataset.idclasse = countryInfId
         const rank3 = document.createElement('span')
         const nom3 = createEl('div')
@@ -64289,6 +64333,26 @@ const nomComplet_ilg = {
         });
       });
 
+
+      function resetCadreStat(){        
+        crtCStat = currentCountry
+        cadreDetailStat.style.transition = "none"
+        cadreDetailStat.classList.remove("active");
+        requestAnimationFrame(() => {
+          cadreDetailStat.style.transition = ""
+        });
+        [...wrapperItmStat.children].reverse().forEach((itm) => {
+            itm.style.transition = "none";
+            itm.style.transform = "";
+            itm.style.opacity = "";
+          });
+        [...contentGeneStat.children].reverse().forEach((itm) => {
+            itm.style.transition = "none";
+            itm.style.transform = "";
+            itm.style.opacity = "";
+          });
+      
+      }
           backDetailStat.addEventListener("click", () => {
             crtCStat = currentCountry
         cadreDetailStat.classList.remove("active");
@@ -64339,23 +64403,25 @@ const nomComplet_ilg = {
       "inflation" : inflation,
       }
 
-      function fillCadreStat(p){
+      function fillCadreStat(p, cursoring = false){
         if(!p)return
         const p_id = p.id;
         const crtYear = txtYChoice.textContent
         const titleCadreStat = getId('titleCadreStat')
         titleCadreStat.querySelector('span').textContent = P_info[p_id].n
         titleCadreStat.querySelector('img').src = `flag_c/${p_id.toLowerCase()}.svg`
+        const L_yDispos = [] //Listes des annes pour créer les curseurs.
 
         queryAll('.noInfo').forEach(box=>box.classList.remove('noInfo'))
 
           boxsItemStat.forEach(box=>{
           const L_infos = D_yListes[box.dataset.liste][p_id];
-
+          if (typeof L_infos !== "object"){box.classList.add('noInfo'); return}
+          L_infos.forEach(tuple=>{if(!L_yDispos.includes(tuple.annee))L_yDispos.push(tuple.annee)} )
           if(typeof L_infos !== "object" || L_infos.filter(tuple=>tuple.valeur!== 0).length === 0) {
             box.classList.add('noInfo'); 
-            if (box.previousElementSibling.classList.contains('lineInStat') && !box.nextElementSibling)box.previousElementSibling.classList.add('noInfo')  // Le dernier élément
-            if(box.nextElementSibling?.classList.contains('lineInStat')) box.nextElementSibling.classList.add('noInfo') // Entre deux éléments
+            if (box.previousElementSibling?.classList.contains('lineInStat') && !box.nextElementSibling)box.previousElementSibling?.classList.add('noInfo')  // Le dernier élément
+            if(box.nextElementSibling?.classList.contains('lineInStat')) box.nextElementSibling?.classList.add('noInfo') // Entre deux éléments
             return
           }
           const info = L_infos.find(el=>el.annee === parseInt(crtYear))
@@ -64373,6 +64439,12 @@ const nomComplet_ilg = {
             txtStat.querySelector('div').textContent = "—"
           }
         })
+
+
+        if(!cursoring)
+        {createCursorY(L_yDispos.sort(
+            (a, b) => b - a, // ordre de population décroissante
+          ).reverse())}
       }
 
       // Fin Script Stat
@@ -65039,6 +65111,10 @@ const nomComplet_ilg = {
       }
 
       voirPlus.addEventListener("click", () => {
+        fillCadreStat(currentCountry)
+        resetCadreStat()
+
+
         scalemCadre(true);
         cadre.style.transition = "none";
         cadre.style.transform = "scale(0.9)";
@@ -97104,7 +97180,7 @@ const nomComplet_ilg = {
 
       function loop() {
         requestAnimationFrame(loop);
-        console.log(cadreStat.getBoundingClientRect().top - window.innerHeight * 0.20);
+        console.log(query('.cursorY.current'));
       }
       // loop()
 
