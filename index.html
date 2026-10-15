@@ -64055,7 +64055,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let tfNewEl = false;
 
-      [drapeauCadre, mSilhouette].forEach((el) => {
+      [drapeauCadre, mSilhouette, getId('boxImg').querySelector('img')].forEach((el) => {
         el.addEventListener("click", () => {
           if (tfNewEl || (!el.querySelector("svg") && el === mSilhouette))
             return;
@@ -64073,7 +64073,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           newFlag.style.top = box.top + "px";
           newFlag.style.left = box.left + "px";
           newFlag.style.width = box.width + "px";
-          newFlag.style.borderRadius = "0.4rem";
+          newFlag.style.borderRadius = el === drapeauCadre ? "0.4rem" : "0.2rem";
 
           newFlag.style.aspectRatio = `${box.width / box.height}`;
           newFlag.style.transition = "all 0.25s ease";
@@ -64151,7 +64151,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 newFlag.style.top = box.top + "px";
                 newFlag.style.left = box.left + "px";
                 newFlag.style.width = box.width + "px";
-                newFlag.style.borderRadius = "0.4rem";
+                newFlag.style.borderRadius = el === drapeauCadre ? "0.4rem" : "0.2rem";
                 if (svgEl) {
                   newFlag.style.borderRadius = "0.4rem";
                   newFlag.style.padding = "0.25rem";
