@@ -2670,7 +2670,51 @@
       #txtPeriode {
         display: none;
       }
-      #cadreStat:has(#statChoiceIn.bilan) {
+      #cadreStat:has(.bilan) {
+        .lineInStat{
+          outline-color : rgba(255,255,255,0.15)
+        }
+
+
+        .boxTxtItemStat {
+          span {
+            min-height: 0.9rem;
+            color: transparent;
+            transition:
+              color 0.2s ease,
+              min-height 0.2s ease;
+          }
+          .yearsBilan {
+            white-space: nowrap;
+            font-weight: 500;
+            color: white;
+          }
+        }
+        .itemStat{
+          padding : 0
+        }
+        .boxBilanItemStat {
+          opacity: 1;
+          max-height: 2rem;
+          padding-bottom: 0.25rem;
+        }
+        .txtStat {
+          color: transparent;
+          .badgeVarStat {
+            opacity: 1;
+          }
+          .badgeVarStat.zeroVar svg {
+            display: none;
+          }
+          .badgeVarStat.up {
+            svg {
+              transform: none;
+            }
+          }
+        }
+      
+
+
         #txtPeriode {
           display: flex;
         }
@@ -3385,6 +3429,7 @@
       .lineInStat {
         outline: 1px solid rgba(255, 255, 255, 0.08);
         width: 90%;
+        transition : outline-color 0.25s ease;
       }
       .lineInStat.noInfo {
         display: none;
@@ -3415,41 +3460,7 @@
         display: none;
       }
 
-      .boxItemStat.bilan {
-        .boxTxtItemStat {
-          span {
-            min-height: 0.9rem;
-            color: transparent;
-            transition:
-              color 0.2s ease,
-              min-height 0.2s ease;
-          }
-          .yearsBilan {
-            white-space: nowrap;
-            font-weight: 500;
-            color: white;
-          }
-        }
-        .boxBilanItemStat {
-          opacity: 1;
-          max-height: 2rem;
-          padding-bottom: 0.25rem;
-        }
-        .txtStat {
-          color: transparent;
-          .badgeVarStat {
-            opacity: 1;
-          }
-          .badgeVarStat.zeroVar svg {
-            display: none;
-          }
-          .badgeVarStat.up {
-            svg {
-              transform: none;
-            }
-          }
-        }
-      }
+      
 
       .boxBilanItemStat {
         display: flex;
@@ -3493,7 +3504,7 @@
         gap: 0.4rem;
         width: 100%;
         border-radius: 0.5rem;
-        transition: background 0.2s ease;
+        transition: background 0.2s ease, padding 0.25s ease;
         /* --colorItmStat : orange; */
         svg {
           height: 1.6rem;
@@ -23139,6 +23150,8 @@
                           <div class="boxMCourbe"></div>
                         </div>
                       </div>
+
+                      <div class="lineInStat"></div>
 
                       <div
                         class="boxItemStat"
@@ -64475,8 +64488,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         newY.click();
       });
 
-      let choisingYStat = false;
-      wrapperCursorY.addEventListener("pointerdown", (e) => {
+      let choisingYStat = false; // Indique si on est en train de gérer le curseur, pour ne pas faire de listener inutiles sur document
+
+      function clickCursorY(e){
+        
         hapticFeedback("medium");
         choisingYStat = true;
         const cursors = queryAll(".cursorY");
@@ -64493,13 +64508,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (crtCursor) {
           crtCursor.click();
         }
-      });
-      document.addEventListener("pointerup", (e) => {
-        if (!choisingYStat) return;
-        queryAll(".cursorY").forEach((el) => el.classList.remove("active"));
-        choisingYStat = false;
-      });
-
+      
+      }
+      wrapperCursorY.addEventListener("pointerdown", (e) => {clickCursorY(e)});
+      wrapperCursorY.addEventListener("click", (e) => {clickCursorY(e)});
+      
       document.addEventListener("pointermove", (e) => {
         if (!choisingYStat) return;
         const cursors = queryAll(".cursorY");
@@ -64521,6 +64534,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           crtCursor.click();
         }
       });
+
+      document.addEventListener("pointerup", (e) => {
+        if (!choisingYStat) return;
+        queryAll(".cursorY").forEach((el) => el.classList.remove("active"));
+        choisingYStat = false;
+      });
+
+      
 
       // Script Fill Stat
       const headersItemStat = queryAll(".headerItemStat");
@@ -65684,9 +65705,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       voirPlus.addEventListener("click", () => {
-        openStat.style.display = "";
-        fillCadreStat(currentCountry);
-        resetCadreStat();
+        if(currentCountry.id in L_q){
+          openStat.style.display = "";
+          fillCadreStat(currentCountry);
+          resetCadreStat();
+        }
 
         scalemCadre(true);
         cadre.style.transition = "none";
