@@ -59322,7 +59322,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.addEventListener("pointermove", (e) => {
         if (moveST) {
           cadreTrackDays.style.transition = "none";
-          cadreTrackDays.style.top = e.clientY - difYT + "px";
+          cadreTrackDays.style.top = Math.max(0,e.clientY - difYT) + "px";
           phoneHome.style.transition = "none";
           phoneHome.style.transform = `scale(${Math.max(0.94, Math.min(0.94 + ((0.04 * cadreTrackDays.getBoundingClientRect().top) / window.innerHeight) * 1.75, 1))})`;
         }
@@ -64373,7 +64373,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.addEventListener("pointermove", (e) => {
         if (moveStat) {
           cadreStat.style.transition = "none";
-          cadreStat.style.top = e.clientY - difYStat + "px";
+          cadreStat.style.top = Math.max(0,e.clientY - difYStat) + "px";
           contentCadre.style.transition = "none";
           cacheStat.style.transition = "none";
 
@@ -96681,7 +96681,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.addEventListener("pointermove", (e) => {
         if (moveSD) {
           cadreSD.style.transition = "none";
-          cadreSD.style.top = e.clientY - difYD + "px";
+          cadreSD.style.top = Math.max(0,e.clientY - difYD) + "px";
         }
       });
 
