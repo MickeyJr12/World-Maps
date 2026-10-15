@@ -2689,7 +2689,10 @@
           }
         }
         .itemStat{
-          padding : 0
+          padding : 0;
+          .svgItemStat{
+            height : 1.92rem
+          }
         }
         .boxBilanItemStat {
           opacity: 1;
@@ -2870,6 +2873,7 @@
       #wrapperCursorY {
         display: flex;
         position: absolute;
+        touch-action: none;
         overflow: hidden;
         justify-content: space-between;
         align-items: center;
@@ -2927,9 +2931,6 @@
         border-radius: 50%;
         background: white;
         transition: transform 0.2s ease;
-      }
-      .cursorY.active {
-        transform: scale(1.2);
       }
       .cursorY.current {
         opacity: 1;
@@ -3362,6 +3363,7 @@
         --colorStat: rgb(1, 28, 55);
         svg {
           height: 100%;
+          transition : height 0.25s ease;
           /* fill :var(--colorStat); */
         }
       }
@@ -3507,6 +3509,10 @@
         svg {
           height: 1.6rem;
         }
+        .svgItemStat{
+          transition : height 0.25s ease
+        }
+
       }
       .itemStat:active {
         background: rgba(0, 0, 0, 0.2);
@@ -22876,6 +22882,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             xmlns="http://www.w3.org/2000/svg"
                             id="Layer_1"
                             data-name="Layer 1"
@@ -22935,6 +22942,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             version="1.1"
                             id="Capa_1"
@@ -23005,6 +23013,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 0 24 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -23078,6 +23087,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 0 24 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -23160,6 +23170,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 -0.5 24 24"
                             id="meteor-icon-kit__regular-venus-mars"
                             fill="none"
@@ -23225,6 +23236,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 0 24 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -23352,6 +23364,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             xmlns="http://www.w3.org/2000/svg"
                             id="Layer_1"
                             data-name="Layer 1"
@@ -23411,6 +23424,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 0 281 269"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -23476,6 +23490,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             version="1.1"
                             id="Capa_1"
@@ -23584,7 +23599,7 @@
                   <div class="contentStat">
                     <!-- <div class="titleStat">Part renouvelable</div>
 
-                     <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste="renewTot">
+                     <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste ="renewTot">
                     <div class="itemStat">
                       <svg fill="var(--colorItmStat)" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M305.19,153.77a10.46,10.46,0,0,0-9.78-14.19h-68a10.48,10.48,0,0,0-10.24,8.29L187.8,286.15A10.46,10.46,0,0,0,198,298.79H242.4a10.47,10.47,0,0,1,10.28,12.45l-11,57c-2,10.41,12.09,15.64,17.36,6.45L329,252.79a10.47,10.47,0,0,0-9.08-15.68H288.7a10.47,10.47,0,0,1-9.79-14.19Z"></path> <path d="M404.15,404.18A210.8,210.8,0,0,0,450,180.41C407.9,72.21,285.61,18.43,177.4,60.54l6.53,16.78c99-38.51,210.79,10.66,249.3,109.62a192.77,192.77,0,0,1-42,204.68l-12.8-12.47a9.51,9.51,0,0,0-16.15,6.94l.48,33.89a9.51,9.51,0,0,0,9.62,9.37l33.89-.4a9.51,9.51,0,0,0,6.52-16.32Z"></path> <path d="M181.85,431a192.44,192.44,0,0,1-60-311l11.34,11a9.51,9.51,0,0,0,16.15-6.94l-.48-33.89a9.49,9.49,0,0,0-9.62-9.37l-33.89.4A9.51,9.51,0,0,0,98.8,97.58l10.13,9.87A210.53,210.53,0,0,0,335.69,451.07l-6.52-16.77A191.29,191.29,0,0,1,181.85,431Z"></path></svg>
                       <div class="boxTxtItemStat">
@@ -23635,6 +23650,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             viewBox="0 0 50 50"
                             xmlns="http://www.w3.org/2000/svg"
@@ -23692,6 +23708,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 0 24 24"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -23800,6 +23817,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             viewBox="0 0 56 56"
                             id="Layer_1"
@@ -23865,6 +23883,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             version="1.1"
                             id="Layer_1"
@@ -23938,6 +23957,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             version="1.1"
                             id="_x32_"
                             xmlns="http://www.w3.org/2000/svg"
@@ -24032,6 +24052,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 0 512 512"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="#000000"
@@ -24097,6 +24118,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 0 512 512"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="var(--colorItmStat)"
@@ -24209,6 +24231,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             viewBox="0 0 512 512"
                             xmlns="http://www.w3.org/2000/svg"
@@ -24288,6 +24311,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             viewBox="0 -8 72 72"
                             id="Layer_1"
@@ -24364,6 +24388,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             version="1.1"
                             id="Layer_1"
@@ -24483,6 +24508,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             viewBox="0 0 45 45"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
@@ -24549,6 +24575,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             fill="var(--colorItmStat)"
                             viewBox="0 0 30 30"
                             xmlns="http://www.w3.org/2000/svg"
@@ -24613,6 +24640,7 @@
                       >
                         <div class="itemStat">
                           <svg
+                            class="svgItemStat"
                             version="1.1"
                             id="_x32_"
                             xmlns="http://www.w3.org/2000/svg"
@@ -64312,7 +64340,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 .append(yearsBilan);
 
               // Badge : +22 pts
-              const varUp = valSup > valInf;
+              const valYMin = L_yearsInfos.find((el) => el.annee === yInfItem).valeur;
+              const valYMax = L_yearsInfos.find((el) => el.annee === ySupItem).valeur;
+              
+              const varUp = valYMax > valYMin;
+              const variationAbs = Math.abs(valYMax - valYMin)
               const badgeVarStat = box.querySelector(".badgeVarStat");
               badgeVarStat.className = "badgeVarStat" + (varUp ? " up" : "");
               if (varUp)
@@ -64320,18 +64352,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               else
                 badgeVarStat.classList.add(goodvar === "down" ? "good" : "bad");
 
-              if (valSup - valInf < 0.01) {
+              if (variationAbs < 0.01) {
                 badgeVarStat.querySelector("span").textContent =
                   "< 0.01 " + unity;
               } else if (valSup === valInf) {
                 badgeVarStat.querySelector("span").textContent =
-                  "< 0.01 " + unity;
+                  "0" + unity;
                 badgeVarStat.classList.add("zeroVar");
               } else {
                 badgeVarStat.querySelector("span").textContent =
-                  (varUp ? "+ " : "") +
+                  (varUp ? "+ " : "-") +
                   formaterGrandNombre(
-                    Math.floor((valSup - valInf) * 10) / 10,
+                    Math.floor(variationAbs * 100) / 100,
                   ).toLocaleString(D_ilg.tolocalestring[currentIlg]) +
                   " " +
                   unity;
@@ -64447,7 +64479,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             hapticFeedback("light");
             txtYChoice.textContent = crs.dataset.year;
             fillCadreStat(currentCountry, true);
-            queryAll(".cursorY").forEach((el) => el.classList.add("active"));
             queryAll(".cursorY").forEach((el) =>
               el.classList.remove("current"),
             );
@@ -64494,11 +64525,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             Math.abs(x - el.getBoundingClientRect().left + RCursor),
           ),
         );
-        const crtCursor = [...cursors].filter(
+        const crtCursor = [...cursors].find(
           (el) =>
             Math.abs(x - el.getBoundingClientRect().left + RCursor) === minDist,
-        )[0];
+        );
+        
         if (crtCursor) {
+          txtYChoice.textContent = crtCursor.dataset.year;
           crtCursor.click();
         }
       
@@ -64513,10 +64546,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             Math.abs(x - el.getBoundingClientRect().left + RCursor),
           ),
         );
-        const crtCursor = [...cursors].filter(
+        const crtCursor = [...cursors].find(
           (el) =>
             Math.abs(x - el.getBoundingClientRect().left + RCursor) === minDist,
-        )[0];
+        );
         if (crtCursor !== query(".cursorY.current")) {
           hapticFeedback("light");
           txtYChoice.textContent = crtCursor.dataset.year;
@@ -64528,7 +64561,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       document.addEventListener("pointerup", (e) => {
         if (!choisingYStat) return;
-        queryAll(".cursorY").forEach((el) => el.classList.remove("active"));
         choisingYStat = false;
       });
 
@@ -64677,8 +64709,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         const valYMin = L_yearsInfos.find((el) => el.annee === yInfItem).valeur;
         const valYMax = L_yearsInfos.find((el) => el.annee === ySupItem).valeur;
 
-        const variation = valYMax - valYMin;
-        const varUp = variation > 0;
+        const variationAbs = Math.abs(valYMax - valYMin);        
+        const varUp = valYMax > valYMin;
 
         // Titre
         // Svg du titre 
@@ -64713,9 +64745,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         // Badge : -12% depuis 1960
         const spn = badgeVarDStat.querySelector("span");
+
         spn.textContent =
-          (variation > 0 ? "+ " : "") +
-          formaterGrandNombre(Math.floor(variation * 100) / 100) +
+          (varUp ? "+ " : "-") +
+          formaterGrandNombre(
+                    Math.floor(variationAbs * 100) / 100,
+                  ).toLocaleString(D_ilg.tolocalestring[currentIlg]) +
           " " +
           unity +
           " " +
@@ -64724,7 +64759,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           yInfItem;
 
         badgeVarDStat.className =
-          "badgeVarStat" + (variation > 0 ? "" : " down");
+          "badgeVarStat" + (varUp ? "" : " down");
 
         if (varUp)
           badgeVarDStat.classList.add(goodvar === "up" ? "good" : "bad");
@@ -64759,7 +64794,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           unite: " " + unity,
           onChange: (annee, valeur) => {
             //Grand nombre
-            if (valeur > 0 && valeur < 0.01) {
+            if (Math.abs(valeur) < 0.01) {
               cadreNbrDetailStat.querySelector("span").textContent = "< 0.01";
             } else {
               cadreNbrDetailStat.querySelector("span").textContent =
@@ -64977,7 +65012,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             txtStat.querySelector("span").textContent = formaterGrandNombre(
               Math.floor(info.valeur * 100) / 100,
             );
-            if (info.valeur < 0.01 && info.valeur > 0) {
+            if (Math.abs(info.valeur) < 0.01 && info.valeur > 0) {
               txtStat.querySelector("span").textContent = "< 0.01";
             }
             txtStat.querySelector("div").textContent = box.dataset.unity;
