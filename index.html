@@ -2732,7 +2732,7 @@
         margin-top: -1.6rem;
         margin-bottom: 0.4rem;
         font-size: 1rem;
-        opacity: 0.8;
+        color : rgba(255,255,255,0.8);
         gap: 0.4rem;
         #boxImg {
           display: flex;
@@ -64109,6 +64109,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           newFlag.id = "newFlag";
           const box = el.getBoundingClientRect();
           newFlag.style.position = "fixed";
+          newFlag.style.pointerEvents = "none";
           newFlag.style.zIndex = "130";
           newFlag.style.top = box.top + "px";
           newFlag.style.left = box.left + "px";
@@ -64177,8 +64178,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               newFlag.style.padding = "0.6rem";
             }
           });
-          [document, el].forEach((item) =>
-            item.addEventListener(
+          document.addEventListener(
               "click",
               (e) => {
                 if (!tfNewEl) return;
@@ -64187,10 +64187,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 if (query(".bordersList"))
                   query(".bordersList").classList.remove("active");
                 cadre.style.filter = "";
+                const newBox = el.getBoundingClientRect();
                 newFlag.style.transform = "none";
-                newFlag.style.top = box.top + "px";
-                newFlag.style.left = box.left + "px";
-                newFlag.style.width = box.width + "px";
+                newFlag.style.top = newBox.top + "px";
+                newFlag.style.left = newBox.left + "px";
+                newFlag.style.width = newBox.width + "px";
                 newFlag.style.borderRadius = el === drapeauCadre ? "0.4rem" : "0.2rem";
                 if (svgEl) {
                   newFlag.style.borderRadius = "0.4rem";
@@ -64208,8 +64209,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 }, 450);
               },
               { capture: true, once: true },
-            ),
-          );
+            );
         });
       });
 
