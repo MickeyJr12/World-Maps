@@ -64309,6 +64309,7 @@ const nomComplet_ilg = {
       itemsStat.forEach((itm) => {
         itm.addEventListener("click", () => {
           fillCadreDStat(itm.parentNode)
+          contentDStat.scrollTop = 0
           setTimeout(() => cadreDetailStat.classList.add("active"), 100);
           // let delay1 = 50;
           // ;[...cadreDetailStat.children].forEach(itm=>{
