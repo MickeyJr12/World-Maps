@@ -2845,7 +2845,9 @@
       }
       #wrapperCursorY.active {
         opacity: 1;
-        pointer-events: all;
+        #cursorYBox, #yInf, #ySup{
+          pointer-events : all;
+        }
         transform: none;
         .cursorY {
           transform: none;
@@ -3080,7 +3082,7 @@
           div {
             align-self: flex-start;
           }
-          .year{
+          .yearEpheCel{
             display : flex;
             align-items : flex-end;
             height : 100%;
@@ -22532,7 +22534,7 @@
               </div>
               <div id="contentCourbe"></div>
 
-                <span id="titleClassement">Classement mondial • <span>2025</span></span>
+                <span id="titleClassement">Classement mondial<div>•</div><span>2025</span></span>
                 <div id="cadreWClassStat"></div>
 
               <span id="sourceData"></span>
@@ -22651,6 +22653,676 @@
               </div>
 
               <div id="wrapperItmStat">
+                <!-- Catégorie population et sociale -->
+                  <div class="categorieStat">
+                  <div class="headerItemStat">
+                    <div
+                      class="iconItmStat"
+                      style="background: rgb(196, 97, 224)"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            d="M18 7.16C17.94 7.15 17.87 7.15 17.81 7.16C16.43 7.11 15.33 5.98 15.33 4.58C15.33 3.15 16.48 2 17.91 2C19.34 2 20.49 3.16 20.49 4.58C20.48 5.98 19.38 7.11 18 7.16Z"
+                            stroke="var(--colorStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M16.9699 14.44C18.3399 14.67 19.8499 14.43 20.9099 13.72C22.3199 12.78 22.3199 11.24 20.9099 10.3C19.8399 9.59004 18.3099 9.35003 16.9399 9.59003"
+                            stroke="var(--colorStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M5.96998 7.16C6.02998 7.15 6.09998 7.15 6.15998 7.16C7.53998 7.11 8.63998 5.98 8.63998 4.58C8.63998 3.15 7.48998 2 6.05998 2C4.62998 2 3.47998 3.16 3.47998 4.58C3.48998 5.98 4.58998 7.11 5.96998 7.16Z"
+                            stroke="var(--colorStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M6.99994 14.44C5.62994 14.67 4.11994 14.43 3.05994 13.72C1.64994 12.78 1.64994 11.24 3.05994 10.3C4.12994 9.59004 5.65994 9.35003 7.02994 9.59003"
+                            stroke="var(--colorStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M12 14.63C11.94 14.62 11.87 14.62 11.81 14.63C10.43 14.58 9.32996 13.45 9.32996 12.05C9.32996 10.62 10.48 9.46997 11.91 9.46997C13.34 9.46997 14.49 10.63 14.49 12.05C14.48 13.45 13.38 14.59 12 14.63Z"
+                            stroke="var(--colorStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M9.08997 17.78C7.67997 18.72 7.67997 20.26 9.08997 21.2C10.69 22.27 13.31 22.27 14.91 21.2C16.32 20.26 16.32 18.72 14.91 17.78C13.32 16.72 10.69 16.72 9.08997 17.78Z"
+                            stroke="var(--colorStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+
+                    <div class="wrapperTxtItmStat">
+                      <div>Population et sociale</div>
+                      <span class="mTxtItmStat"
+                        ><span></span> <span>indicateurs</span></span>
+                    </div>
+
+                    <div class="boxArrowStat">
+                      <svg
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="contentStat">
+                    <div class="sousCateStat">
+                    <div class="titleStat">Démographie</div>
+                    <!--  -->
+                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="" data-liste="popTot">
+                    <div class="itemStat">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="Layer_1"
+                        data-name="Layer 1"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="var(--colorItmStat)"
+                          d="m20.5,6h-2c-1.93,0-3.5,1.57-3.5,3.5v4c0,1.391.822,2.585,2,3.149v6.351c0,.552.448,1,1,1s1-.448,1-1v-6h1v6c0,.552.448,1,1,1s1-.448,1-1v-6.351c1.178-.564,2-1.758,2-3.149v-4c0-1.93-1.57-3.5-3.5-3.5Zm1.5,7.5c0,.827-.673,1.5-1.5,1.5h-2c-.827,0-1.5-.673-1.5-1.5v-4c0-.827.673-1.5,1.5-1.5h2c.827,0,1.5.673,1.5,1.5v4Zm-8.02-6.649c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v4c0,.477.219.914.601,1.2.251.189.399.485.399.8v6.5c0,.552-.448,1-1,1s-1-.448-1-1v-6.051c-.633-.649-1-1.532-1-2.449v-4c0-1.658,1.178-3.1,2.801-3.43.541-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v3c0,.477.219.914.601,1.2.251.189.399.485.399.8v5.5c0,.552-.448,1-1,1s-1-.448-1-1v-5.051c-.633-.649-1-1.532-1-2.449v-3c0-1.658,1.178-3.1,2.801-3.43.542-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v2c0,.477.219.914.601,1.2.251.189.399.485.399.8v4.5c0,.552-.448,1-1,1s-1-.448-1-1v-4.051c-.633-.649-1-1.532-1-2.449v-2c0-1.658,1.178-3.1,2.801-3.43.544-.113,1.069.239,1.179.781Zm13.02-4.351c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.385,2.227c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5S3.119,0,4.5,0c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Z"
+                        />
+                      </svg>
+                      <div class="boxTxtItemStat">
+                        <div>Population totale</div>
+                        <span>Estimation à la mi-année (1er juillet)</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+                    <div class="lineInStat"></div>
+
+                    <!--  -->
+
+                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="" data-liste="fertility">
+                    <div class="itemStat">
+                      <svg
+                        fill="var(--colorItmStat)"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 205.25 205.25"
+                        xml:space="preserve"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            d="M140.841,200.131c0.26,0.893,0.21,1.866-0.183,2.749c-0.644,1.442-2.075,2.37-3.653,2.37H50.912 c-1.174,0-2.289-0.516-3.048-1.41c-0.34-0.4-8.32-10.042-8.32-31.65c0-8.972,6.328-19.153,12.447-28.999 c4.757-7.654,9.676-15.568,9.817-20.519c0.136-4.751-3.612-11.48-7.952-19.273c-5.414-9.721-12.151-21.818-13.816-35.339 c-2.972-24.15,8.364-63.513,8.848-65.176C49.385,1.175,50.95,0,52.729,0h37.416c1.667,0,3.16,1.034,3.745,2.595 c0.075,0.199,7.532,19.973,14.403,29.593c3.211,4.496,12.474,9.417,25.414,13.5c5.752,1.814,9.021,7.809,7.443,13.646 c-0.592,2.186-1.36,4.387-2.285,6.543c-1.888,4.404-5.275,8.499-8.146,11.457c3.875,1.686,9.032,4.381,14.2,8.428 c9.482,7.425,20.786,20.947,20.786,43.199c0,27.873-16.767,45.585-28.513,54.578c-5.285-5.874-11.615-12.391-17.541-17.157 c-13.153-10.577-16.98-13.432-17.137-13.548c-1.772-1.318-4.277-0.95-5.596,0.822c-1.318,1.772-0.951,4.277,0.82,5.597 c0.038,0.028,3.925,2.932,16.898,13.364C124.555,180.591,136.139,194.352,140.841,200.131z"
+                          ></path>
+                        </g>
+                      </svg>
+                      <div class="boxTxtItemStat">
+                        <div>Taux de fécondité</div>
+                        <span>Naissance par femme</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="sousCateStat">
+                    <div class="titleStat">Qualité de vie</div>  
+
+                        <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_M">
+                    <div class="itemStat">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <circle
+                            cx="10"
+                            cy="14"
+                            r="8"
+                            stroke="var(--colorItmStat)"
+                            stroke-width="1.5"
+                          ></circle>
+                          <path
+                            d="M22 2H22.75C22.75 1.58579 22.4142 1.25 22 1.25V2ZM21.25 7C21.25 7.41421 21.5858 7.75 22 7.75C22.4142 7.75 22.75 7.41421 22.75 7H21.25ZM17 1.25C16.5858 1.25 16.25 1.58579 16.25 2C16.25 2.41421 16.5858 2.75 17 2.75V1.25ZM16.0303 9.03033L22.5303 2.53033L21.4697 1.46967L14.9697 7.96967L16.0303 9.03033ZM21.25 2V7H22.75V2H21.25ZM17 2.75H22V1.25H17V2.75Z"
+                            fill="var(--colorItmStat)"
+                          ></path>
+                        </g>
+                      </svg>
+
+                      <div class="boxTxtItemStat">
+                        <div>Espérance de vie (hommes)</div>
+                        <span>À la naissance</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+
+                    <div class="lineInStat"></div>
+                    <!--  -->
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_F">
+                    <div class="itemStat">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            d="M12 16C15.866 16 19 12.866 19 9C19 5.13401 15.866 2 12 2C8.13401 2 5 5.13401 5 9C5 12.866 8.13401 16 12 16Z"
+                            stroke="var(--colorItmStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M12 16V22"
+                            stroke="var(--colorItmStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M15 19H9"
+                            stroke="var(--colorItmStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </g>
+                      </svg>
+                      <div class="boxTxtItemStat">
+                        <div>Espérance de vie (femmes)</div>
+                        <span>À la naissance</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+
+                    
+                    
+
+                          <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="" data-liste="genderEq">
+                    <div class="itemStat">
+                      <svg viewBox="0 -0.5 24 24" id="meteor-icon-kit__regular-venus-mars" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.9988 1.04866C24.012 0.776773 23.9147 0.500535 23.7071 0.292893C23.4995 0.0852526 23.2232 -0.0119861 22.9513 0.00117708C22.9343 0.000395232 22.9172 1.49878e-08 22.9 1.49878e-08H19C18.4477 1.49878e-08 18 0.447715 18 1C18 1.55228 18.4477 2 19 2H20.5858L17.4765 5.10927C16.4957 4.4108 15.2958 4 14 4C13.2038 4 12.4439 4.15506 11.7488 4.43662C12.2364 4.94036 12.6584 5.508 13.0009 6.12576C13.3203 6.04366 13.655 6 14 6C16.2091 6 18 7.79086 18 10C18 12.2091 16.2091 14 14 14C13.655 14 13.3203 13.9563 13.0009 13.8742C12.6584 14.492 12.2364 15.0596 11.7488 15.5634C12.4439 15.8449 13.2038 16 14 16C17.3137 16 20 13.3137 20 10C20 8.70418 19.5892 7.5043 18.8907 6.52349L22 3.41421V5C22 5.55228 22.4477 6 23 6C23.5523 6 24 5.55228 24 5V1.1C24 1.08279 23.9996 1.06568 23.9988 1.04866Z" fill="var(--colorItmStat)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 10C12 12.9742 9.83601 15.4429 6.99665 15.9176C6.99887 15.9448 7 15.9723 7 16V18H8C8.55228 18 9 18.4477 9 19C9 19.5523 8.55228 20 8 20H7V22C7 22.5523 6.55228 23 6 23C5.44772 23 5 22.5523 5 22V20H4C3.44772 20 3 19.5523 3 19C3 18.4477 3.44772 18 4 18H5V16C5 15.9723 5.00113 15.9448 5.00335 15.9176C2.16399 15.4429 0 12.9742 0 10C0 6.68631 2.68629 4.00002 6 4.00002C9.31371 4.00002 12 6.68631 12 10ZM10 10C10 12.2092 8.20914 14 6 14C3.79086 14 2 12.2092 2 10C2 7.79088 3.79086 6.00002 6 6.00002C8.20914 6.00002 10 7.79088 10 10Z" fill="var(--colorItmStat)"></path></svg>
+
+                      <div class="boxTxtItemStat">
+                        <div>Inégalité homme-femme</div>
+                        <span>Score de 0 (égalité totale) à 1</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+
+                  <div class="lineInStat"></div>
+                    
+                  <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="" data-liste="indHapiness">
+                    <div class="itemStat">
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L6.87359 5.81293C7.16648 6.10582 7.16648 6.5807 6.87359 6.87359C6.5807 7.16648 6.10582 7.16648 5.81293 6.87359L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967ZM18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L18.1871 6.87359C17.8942 7.16648 17.4193 7.16648 17.1264 6.87359C16.8335 6.5807 16.8335 6.10582 17.1264 5.81293L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM6.87338 17.1266C7.16627 17.4195 7.16627 17.8944 6.87338 18.1873L6.53033 18.5303C6.23744 18.8232 5.76256 18.8232 5.46967 18.5303C5.17678 18.2374 5.17678 17.7626 5.46967 17.4697L5.81272 17.1266C6.10561 16.8337 6.58048 16.8337 6.87338 17.1266ZM17.1266 17.1266C17.4195 16.8337 17.8944 16.8337 18.1873 17.1266L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L17.1266 18.1873C16.8337 17.8944 16.8337 17.4195 17.1266 17.1266ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z" fill="var(--colorItmStat)"></path> <path d="M7 11.0595C7 13.6018 9.00971 14.9566 10.4809 16.1692C11 16.5971 11.5 17 12 17C12.5 17 13 16.5971 13.5191 16.1692C14.9903 14.9566 17 13.6018 17 11.0595C17 8.51718 14.2499 6.71421 12 9.15837C9.75008 6.71421 7 8.51718 7 11.0595Z" fill="var(--colorItmStat)"></path> </g></svg>
+                      <div class="boxTxtItemStat">
+                        <div>Indice de bonheur</div>
+                        <span>Note de vie moyenne (0 à 10)</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+                    </div>
+
+
+                  </div>
+                </div><!-- Fermeture catégorie Population et sociale  -->
+
+                <!-- Catégorie économie  -->
+                <div class="categorieStat">
+                  <div class="headerItemStat">
+                    <div
+                      class="iconItmStat"
+                      style="background: rgb(14, 158, 236)"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            d="M19 6.34267C17.35 4.30367 14.8273 3 12 3C7.02944 3 3 7.02944 3 12C3 13.8501 3.55827 15.5699 4.51555 17M21 12C21 16.9706 16.9706 21 12 21C10.961 21 9.96308 20.8239 9.03452 20.5M12 16H13C13.6667 16 15 15.6 15 14C15 12.4 13.6667 12 13 12H11C10.3333 12 9 11.6 9 10C9 8.4 10.3333 8 11 8H12M12 16H9M12 16V18M15 8H12M12 8V6"
+                            stroke="var(--colorStat)"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </g>
+                      </svg>
+                    </div>
+
+                    <div class="wrapperTxtItmStat">
+                      <div>Économie</div>
+                      <span class="mTxtItmStat"
+                        ><span></span> <span>indicateurs</span></span>
+                    </div>
+
+                    <div class="boxArrowStat">
+                      <svg
+                        fill="white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="contentStat">
+                      <div class="sousCateStat">
+
+                    <div class="titleStat">Niveau de vie</div>
+                    <!--  -->
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="US$" data-liste="pib_hab">
+                    <div class="itemStat">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        id="Layer_1"
+                        data-name="Layer 1"
+                        viewBox="0 0 24 24"
+                        fill="var(--colorItmStat)"
+                      >
+                        <path
+                          d="m6.5,14h7.5v2h-7.5c-1.379,0-2.5,1.122-2.5,2.5v5.5h-2v-5.5c0-2.481,2.019-4.5,4.5-4.5Zm10.5-8c0,3.309-2.691,6-6,6s-6-2.691-6-6S7.691,0,11,0s6,2.691,6,6Zm-2,0c0-2.206-1.794-4-4-4s-4,1.794-4,4,1.794,4,4,4,4-1.794,4-4Zm6.685,10.267l-3.041-.507c-.373-.062-.644-.382-.644-.76,0-.551.448-1,1-1h2c.552,0,1,.449,1,1h2c0-1.654-1.346-3-3-3v-2h-2v2c-1.654,0-3,1.346-3,3,0,1.36.974,2.51,2.315,2.733l3.041.507c.373.062.644.382.644.76,0,.551-.448,1-1,1h-2c-.552,0-1-.449-1-1h-2c0,1.654,1.346,3,3,3v2h2v-2c1.654,0,3-1.346,3-3,0-1.36-.974-2.51-2.315-2.733Z"
+                        />
+                      </svg>
+                      <div class="boxTxtItemStat">
+                        <div>PIB par habitant</div>
+                        <span>Dollars américains courants (US$)</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+                    <div class="lineInStat"></div>
+
+                    <!--  -->
+
+                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="%" data-liste="chomage">
+                    <div class="itemStat">
+                      <svg
+                        viewBox="0 0 281 269"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M0 131.217C34.671 147.665 71.7992 156.769 109.2 158.558V177.449C109.2 181.069 110.638 184.542 113.198 187.102C115.758 189.661 119.23 191.1 122.85 191.1C126.47 191.1 129.942 189.661 132.502 187.102C135.062 184.542 136.5 181.069 136.5 177.449V158.558C145.959 158.107 155.372 157.189 164.705 155.812C152.487 168.788 145 186.27 145 205.5C145 220.37 149.478 234.194 157.157 245.699H20.4746C15.0444 245.699 9.83679 243.542 5.99707 239.702C2.15736 235.862 6.99093e-05 230.655 0 225.225V131.217ZM245.7 138.688C242.671 137.408 239.536 136.328 236.313 135.465C239.465 134.106 242.595 132.691 245.7 131.217V138.688ZM153.099 0C159.652 0.000431204 166.066 1.88801 171.575 5.43652C177.084 8.98507 181.456 14.0444 184.166 20.0107L199.891 54.5996H225.225C230.655 54.5996 235.863 56.7569 239.703 60.5967C243.543 64.4365 245.7 69.6449 245.7 75.0752V100.765L238.834 104.19C202.822 122.196 163.112 131.57 122.85 131.57C82.5873 131.57 42.878 122.196 6.86621 104.19L0 100.765V75.0752C0 69.6449 2.15726 64.4365 5.99707 60.5967C9.83677 56.7571 15.0445 54.5997 20.4746 54.5996H45.8096L61.5342 20.0107C64.2446 14.0444 68.6158 8.98506 74.125 5.43652C79.6342 1.88797 86.0484 0.00039115 92.6016 0H153.099ZM92.6016 27.2998C91.2917 27.3002 90.0095 27.6775 88.9082 28.3867C87.807 29.0959 86.9329 30.1075 86.3906 31.2998L75.7988 54.5996H169.901L159.31 31.2998C158.767 30.1075 157.893 29.0959 156.792 28.3867C155.691 27.6776 154.408 27.3002 153.099 27.2998H92.6016Z"
+                          fill="var(--colorItmStat)"
+                        />
+                        <path
+                          d="M239 185.001C238.015 184.017 236.68 183.464 235.288 183.464C233.896 183.464 232.561 184.017 231.576 185.001L218 198.577L204.423 185.001C203.433 184.045 202.107 183.515 200.731 183.527C199.354 183.539 198.037 184.092 197.064 185.065C196.091 186.038 195.538 187.355 195.526 188.732C195.514 190.108 196.044 191.434 197 192.424L210.576 206.001L197 219.577C196.044 220.568 195.514 221.894 195.526 223.27C195.538 224.647 196.091 225.964 197.064 226.937C198.037 227.91 199.354 228.463 200.731 228.475C202.107 228.486 203.433 227.957 204.423 227.001L218 213.424L231.576 227.001C232.567 227.957 233.893 228.486 235.269 228.475C236.646 228.463 237.963 227.91 238.936 226.937C239.909 225.964 240.462 224.647 240.474 223.27C240.485 221.894 239.956 220.568 239 219.577L225.423 206.001L239 192.424C239.984 191.44 240.537 190.105 240.537 188.713C240.537 187.321 239.984 185.986 239 185.001Z"
+                          fill="var(--colorItmStat)"
+                        />
+                        <path
+                          d="M218 143C205.54 143 193.359 146.695 182.999 153.617C172.639 160.54 164.564 170.379 159.796 181.891C155.027 193.403 153.78 206.07 156.211 218.291C158.641 230.511 164.642 241.737 173.452 250.548C182.263 259.358 193.489 265.359 205.709 267.789C217.93 270.22 230.597 268.973 242.109 264.204C253.621 259.436 263.46 251.361 270.383 241.001C277.305 230.641 281 218.46 281 206C280.982 189.297 274.339 173.283 262.528 161.472C250.717 149.661 234.703 143.018 218 143ZM218 258.5C207.617 258.5 197.466 255.421 188.833 249.652C180.199 243.883 173.47 235.684 169.496 226.091C165.523 216.498 164.483 205.942 166.509 195.758C168.535 185.574 173.535 176.219 180.877 168.877C188.219 161.535 197.574 156.534 207.758 154.509C217.942 152.483 228.498 153.523 238.091 157.496C247.684 161.47 255.883 168.199 261.652 176.833C267.421 185.466 270.5 195.616 270.5 206C270.485 219.919 264.949 233.264 255.106 243.106C245.264 252.949 231.919 258.485 218 258.5Z"
+                          fill="var(--colorItmStat)"
+                        />
+                      </svg>
+
+                      <div class="boxTxtItemStat">
+                        <div>Chômage</div>
+                        <span>% de la population active</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+                    <div class="lineInStat"></div>
+                    <!--  -->
+                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="%" data-liste="inflation">
+                    <div class="itemStat">
+                      <svg
+                        fill="var(--colorItmStat)"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 30.462 30.461"
+                        xml:space="preserve"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <g>
+                            <path
+                              d="M16.109,13.997l-4.312-4.479L1.426,20.058L0,18.656L11.812,6.651l4.354,4.522l7.49-7.172l-2.146-2.145h5.603v5.601 L25.07,5.415L16.109,13.997z M4.962,28.606h6.75v-9.5h-6.75V28.606z M14.337,28.606h6.75v-12.5h-6.75V28.606z M23.712,9.856v18.75 h6.75V9.856H23.712z"
+                            ></path>
+                          </g>
+                        </g>
+                      </svg>
+                      <div class="boxTxtItemStat">
+                        <div>Inflation</div>
+                        <span>Hausse des prix en 1 an (%)</span>
+                      </div>
+
+                      <div class="txtStat">
+                        <span>58</span>
+                        <div>%</div>
+                        <div class="badgeVarStat good">
+                          <svg viewBox="0 0 10 8" aria-hidden="true">
+                            <path d="M5 0l5 8H0z" fill="currentColor" />
+                          </svg>
+                          <span>+22 pts</span>
+                        </div>
+                      </div>
+
+                      <div class="arrowItmStat">
+                        <svg
+                          fill="white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                     <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div> <!-- Fin catégorie économie -->
+               
+
+                <!-- Catégorie Énergie -->
                 <div class="categorieStat">
                   <div class="headerItemStat">
                     <div class="iconItmStat" style="background: orange">
@@ -23156,441 +23828,7 @@
                 </div><!-- Fin catégorie énergie -->
 
                 <!-- Catégorie Population et sociale -->
-                <div class="categorieStat">
-                  <div class="headerItemStat">
-                    <div
-                      class="iconItmStat"
-                      style="background: rgb(196, 97, 224)"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <path
-                            d="M18 7.16C17.94 7.15 17.87 7.15 17.81 7.16C16.43 7.11 15.33 5.98 15.33 4.58C15.33 3.15 16.48 2 17.91 2C19.34 2 20.49 3.16 20.49 4.58C20.48 5.98 19.38 7.11 18 7.16Z"
-                            stroke="var(--colorStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M16.9699 14.44C18.3399 14.67 19.8499 14.43 20.9099 13.72C22.3199 12.78 22.3199 11.24 20.9099 10.3C19.8399 9.59004 18.3099 9.35003 16.9399 9.59003"
-                            stroke="var(--colorStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M5.96998 7.16C6.02998 7.15 6.09998 7.15 6.15998 7.16C7.53998 7.11 8.63998 5.98 8.63998 4.58C8.63998 3.15 7.48998 2 6.05998 2C4.62998 2 3.47998 3.16 3.47998 4.58C3.48998 5.98 4.58998 7.11 5.96998 7.16Z"
-                            stroke="var(--colorStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M6.99994 14.44C5.62994 14.67 4.11994 14.43 3.05994 13.72C1.64994 12.78 1.64994 11.24 3.05994 10.3C4.12994 9.59004 5.65994 9.35003 7.02994 9.59003"
-                            stroke="var(--colorStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M12 14.63C11.94 14.62 11.87 14.62 11.81 14.63C10.43 14.58 9.32996 13.45 9.32996 12.05C9.32996 10.62 10.48 9.46997 11.91 9.46997C13.34 9.46997 14.49 10.63 14.49 12.05C14.48 13.45 13.38 14.59 12 14.63Z"
-                            stroke="var(--colorStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M9.08997 17.78C7.67997 18.72 7.67997 20.26 9.08997 21.2C10.69 22.27 13.31 22.27 14.91 21.2C16.32 20.26 16.32 18.72 14.91 17.78C13.32 16.72 10.69 16.72 9.08997 17.78Z"
-                            stroke="var(--colorStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                        </g>
-                      </svg>
-                    </div>
-
-                    <div class="wrapperTxtItmStat">
-                      <div>Population et sociale</div>
-                      <span class="mTxtItmStat"
-                        ><span></span> <span>indicateurs</span></span>
-                    </div>
-
-                    <div class="boxArrowStat">
-                      <svg
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  <div class="contentStat">
-                    <div class="sousCateStat">
-                    <div class="titleStat">Démographie</div>
-                    <!--  -->
-                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="" data-liste="popTot">
-                    <div class="itemStat">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        id="Layer_1"
-                        data-name="Layer 1"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          fill="var(--colorItmStat)"
-                          d="m20.5,6h-2c-1.93,0-3.5,1.57-3.5,3.5v4c0,1.391.822,2.585,2,3.149v6.351c0,.552.448,1,1,1s1-.448,1-1v-6h1v6c0,.552.448,1,1,1s1-.448,1-1v-6.351c1.178-.564,2-1.758,2-3.149v-4c0-1.93-1.57-3.5-3.5-3.5Zm1.5,7.5c0,.827-.673,1.5-1.5,1.5h-2c-.827,0-1.5-.673-1.5-1.5v-4c0-.827.673-1.5,1.5-1.5h2c.827,0,1.5.673,1.5,1.5v4Zm-8.02-6.649c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v4c0,.477.219.914.601,1.2.251.189.399.485.399.8v6.5c0,.552-.448,1-1,1s-1-.448-1-1v-6.051c-.633-.649-1-1.532-1-2.449v-4c0-1.658,1.178-3.1,2.801-3.43.541-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v3c0,.477.219.914.601,1.2.251.189.399.485.399.8v5.5c0,.552-.448,1-1,1s-1-.448-1-1v-5.051c-.633-.649-1-1.532-1-2.449v-3c0-1.658,1.178-3.1,2.801-3.43.542-.113,1.069.239,1.179.781Zm-5,0c.11.541-.24,1.069-.781,1.179-.695.141-1.199.76-1.199,1.47v2c0,.477.219.914.601,1.2.251.189.399.485.399.8v4.5c0,.552-.448,1-1,1s-1-.448-1-1v-4.051c-.633-.649-1-1.532-1-2.449v-2c0-1.658,1.178-3.1,2.801-3.43.544-.113,1.069.239,1.179.781Zm13.02-4.351c0-1.381,1.119-2.5,2.5-2.5s2.5,1.119,2.5,2.5-1.119,2.5-2.5,2.5-2.5-1.119-2.5-2.5Zm-1.385,2.227c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5s1.119-2.5,2.5-2.5c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Zm-5,0c-.337.169-.712.273-1.115.273-1.381,0-2.5-1.119-2.5-2.5S3.119,0,4.5,0c.402,0,.777.104,1.114.273-.38.659-.614,1.413-.614,2.227s.234,1.568.615,2.227Z"
-                        />
-                      </svg>
-                      <div class="boxTxtItemStat">
-                        <div>Population totale</div>
-                        <span>Estimation à la mi-année (1er juillet)</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-                    <div class="lineInStat"></div>
-
-                    <!--  -->
-
-                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="" data-liste="fertility">
-                    <div class="itemStat">
-                      <svg
-                        fill="var(--colorItmStat)"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 205.25 205.25"
-                        xml:space="preserve"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <path
-                            d="M140.841,200.131c0.26,0.893,0.21,1.866-0.183,2.749c-0.644,1.442-2.075,2.37-3.653,2.37H50.912 c-1.174,0-2.289-0.516-3.048-1.41c-0.34-0.4-8.32-10.042-8.32-31.65c0-8.972,6.328-19.153,12.447-28.999 c4.757-7.654,9.676-15.568,9.817-20.519c0.136-4.751-3.612-11.48-7.952-19.273c-5.414-9.721-12.151-21.818-13.816-35.339 c-2.972-24.15,8.364-63.513,8.848-65.176C49.385,1.175,50.95,0,52.729,0h37.416c1.667,0,3.16,1.034,3.745,2.595 c0.075,0.199,7.532,19.973,14.403,29.593c3.211,4.496,12.474,9.417,25.414,13.5c5.752,1.814,9.021,7.809,7.443,13.646 c-0.592,2.186-1.36,4.387-2.285,6.543c-1.888,4.404-5.275,8.499-8.146,11.457c3.875,1.686,9.032,4.381,14.2,8.428 c9.482,7.425,20.786,20.947,20.786,43.199c0,27.873-16.767,45.585-28.513,54.578c-5.285-5.874-11.615-12.391-17.541-17.157 c-13.153-10.577-16.98-13.432-17.137-13.548c-1.772-1.318-4.277-0.95-5.596,0.822c-1.318,1.772-0.951,4.277,0.82,5.597 c0.038,0.028,3.925,2.932,16.898,13.364C124.555,180.591,136.139,194.352,140.841,200.131z"
-                          ></path>
-                        </g>
-                      </svg>
-                      <div class="boxTxtItemStat">
-                        <div>Taux de fécondité</div>
-                        <span>Naissance par femme</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-                    </div>
-
-                    <div class="sousCateStat">
-                    <div class="titleStat">Qualité de vie</div>  
-
-                        <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_M">
-                    <div class="itemStat">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <circle
-                            cx="10"
-                            cy="14"
-                            r="8"
-                            stroke="var(--colorItmStat)"
-                            stroke-width="1.5"
-                          ></circle>
-                          <path
-                            d="M22 2H22.75C22.75 1.58579 22.4142 1.25 22 1.25V2ZM21.25 7C21.25 7.41421 21.5858 7.75 22 7.75C22.4142 7.75 22.75 7.41421 22.75 7H21.25ZM17 1.25C16.5858 1.25 16.25 1.58579 16.25 2C16.25 2.41421 16.5858 2.75 17 2.75V1.25ZM16.0303 9.03033L22.5303 2.53033L21.4697 1.46967L14.9697 7.96967L16.0303 9.03033ZM21.25 2V7H22.75V2H21.25ZM17 2.75H22V1.25H17V2.75Z"
-                            fill="var(--colorItmStat)"
-                          ></path>
-                        </g>
-                      </svg>
-
-                      <div class="boxTxtItemStat">
-                        <div>Espérance de vie (hommes)</div>
-                        <span>À la naissance</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-
-                    <div class="lineInStat"></div>
-                    <!--  -->
-                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity=" ans" data-liste="lifeExpe_F">
-                    <div class="itemStat">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <path
-                            d="M12 16C15.866 16 19 12.866 19 9C19 5.13401 15.866 2 12 2C8.13401 2 5 5.13401 5 9C5 12.866 8.13401 16 12 16Z"
-                            stroke="var(--colorItmStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M12 16V22"
-                            stroke="var(--colorItmStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                          <path
-                            d="M15 19H9"
-                            stroke="var(--colorItmStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                        </g>
-                      </svg>
-                      <div class="boxTxtItemStat">
-                        <div>Espérance de vie (femmes)</div>
-                        <span>À la naissance</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-
-                    
-                    
-
-                          <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="" data-liste="genderEq">
-                    <div class="itemStat">
-                      <svg viewBox="0 -0.5 24 24" id="meteor-icon-kit__regular-venus-mars" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.9988 1.04866C24.012 0.776773 23.9147 0.500535 23.7071 0.292893C23.4995 0.0852526 23.2232 -0.0119861 22.9513 0.00117708C22.9343 0.000395232 22.9172 1.49878e-08 22.9 1.49878e-08H19C18.4477 1.49878e-08 18 0.447715 18 1C18 1.55228 18.4477 2 19 2H20.5858L17.4765 5.10927C16.4957 4.4108 15.2958 4 14 4C13.2038 4 12.4439 4.15506 11.7488 4.43662C12.2364 4.94036 12.6584 5.508 13.0009 6.12576C13.3203 6.04366 13.655 6 14 6C16.2091 6 18 7.79086 18 10C18 12.2091 16.2091 14 14 14C13.655 14 13.3203 13.9563 13.0009 13.8742C12.6584 14.492 12.2364 15.0596 11.7488 15.5634C12.4439 15.8449 13.2038 16 14 16C17.3137 16 20 13.3137 20 10C20 8.70418 19.5892 7.5043 18.8907 6.52349L22 3.41421V5C22 5.55228 22.4477 6 23 6C23.5523 6 24 5.55228 24 5V1.1C24 1.08279 23.9996 1.06568 23.9988 1.04866Z" fill="var(--colorItmStat)"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12 10C12 12.9742 9.83601 15.4429 6.99665 15.9176C6.99887 15.9448 7 15.9723 7 16V18H8C8.55228 18 9 18.4477 9 19C9 19.5523 8.55228 20 8 20H7V22C7 22.5523 6.55228 23 6 23C5.44772 23 5 22.5523 5 22V20H4C3.44772 20 3 19.5523 3 19C3 18.4477 3.44772 18 4 18H5V16C5 15.9723 5.00113 15.9448 5.00335 15.9176C2.16399 15.4429 0 12.9742 0 10C0 6.68631 2.68629 4.00002 6 4.00002C9.31371 4.00002 12 6.68631 12 10ZM10 10C10 12.2092 8.20914 14 6 14C3.79086 14 2 12.2092 2 10C2 7.79088 3.79086 6.00002 6 6.00002C8.20914 6.00002 10 7.79088 10 10Z" fill="var(--colorItmStat)"></path></svg>
-
-                      <div class="boxTxtItemStat">
-                        <div>Inégalité homme-femme</div>
-                        <span>Score de 0 (égalité totale) à 1</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-
-                  <div class="lineInStat"></div>
-                    
-                  <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="up" data-unity="" data-liste="indHapiness">
-                    <div class="itemStat">
-                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C12.4142 1.25 12.75 1.58579 12.75 2V4C12.75 4.41421 12.4142 4.75 12 4.75C11.5858 4.75 11.25 4.41421 11.25 4V2C11.25 1.58579 11.5858 1.25 12 1.25ZM5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L6.87359 5.81293C7.16648 6.10582 7.16648 6.5807 6.87359 6.87359C6.5807 7.16648 6.10582 7.16648 5.81293 6.87359L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967ZM18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L18.1871 6.87359C17.8942 7.16648 17.4193 7.16648 17.1264 6.87359C16.8335 6.5807 16.8335 6.10582 17.1264 5.81293L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967ZM1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H4C4.41421 11.25 4.75 11.5858 4.75 12C4.75 12.4142 4.41421 12.75 4 12.75H2C1.58579 12.75 1.25 12.4142 1.25 12ZM19.25 12C19.25 11.5858 19.5858 11.25 20 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H20C19.5858 12.75 19.25 12.4142 19.25 12ZM6.87338 17.1266C7.16627 17.4195 7.16627 17.8944 6.87338 18.1873L6.53033 18.5303C6.23744 18.8232 5.76256 18.8232 5.46967 18.5303C5.17678 18.2374 5.17678 17.7626 5.46967 17.4697L5.81272 17.1266C6.10561 16.8337 6.58048 16.8337 6.87338 17.1266ZM17.1266 17.1266C17.4195 16.8337 17.8944 16.8337 18.1873 17.1266L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L17.1266 18.1873C16.8337 17.8944 16.8337 17.4195 17.1266 17.1266ZM12 19.25C12.4142 19.25 12.75 19.5858 12.75 20V22C12.75 22.4142 12.4142 22.75 12 22.75C11.5858 22.75 11.25 22.4142 11.25 22V20C11.25 19.5858 11.5858 19.25 12 19.25Z" fill="var(--colorItmStat)"></path> <path d="M7 11.0595C7 13.6018 9.00971 14.9566 10.4809 16.1692C11 16.5971 11.5 17 12 17C12.5 17 13 16.5971 13.5191 16.1692C14.9903 14.9566 17 13.6018 17 11.0595C17 8.51718 14.2499 6.71421 12 9.15837C9.75008 6.71421 7 8.51718 7 11.0595Z" fill="var(--colorItmStat)"></path> </g></svg>
-                      <div class="boxTxtItemStat">
-                        <div>Indice de bonheur</div>
-                        <span>Note de vie moyenne (0 à 10)</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-                    </div>
-
-
-                  </div><!-- Fin du cadre  -->
-                </div>
+              
                 <!-- Fin catégorie popultion et sociale -->
                 <!--  -->
                 <!-- Catégorie environnement -->
@@ -24092,238 +24330,6 @@
                 </div>
 
                 <!-- Fin catégorie evironnement -->
-                <!-- Catégorie économie  -->
-
-                <div class="categorieStat">
-                  <div class="headerItemStat">
-                    <div
-                      class="iconItmStat"
-                      style="background: rgb(14, 158, 236)"
-                    >
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <path
-                            d="M19 6.34267C17.35 4.30367 14.8273 3 12 3C7.02944 3 3 7.02944 3 12C3 13.8501 3.55827 15.5699 4.51555 17M21 12C21 16.9706 16.9706 21 12 21C10.961 21 9.96308 20.8239 9.03452 20.5M12 16H13C13.6667 16 15 15.6 15 14C15 12.4 13.6667 12 13 12H11C10.3333 12 9 11.6 9 10C9 8.4 10.3333 8 11 8H12M12 16H9M12 16V18M15 8H12M12 8V6"
-                            stroke="var(--colorStat)"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          ></path>
-                        </g>
-                      </svg>
-                    </div>
-
-                    <div class="wrapperTxtItmStat">
-                      <div>Économie</div>
-                      <span class="mTxtItmStat"
-                        ><span></span> <span>indicateurs</span></span>
-                    </div>
-
-                    <div class="boxArrowStat">
-                      <svg
-                        fill="white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  <div class="contentStat">
-                      <div class="sousCateStat">
-
-                    <div class="titleStat">Niveau de vie</div>
-                    <!--  -->
-                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="US$" data-liste="pib_hab">
-                    <div class="itemStat">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        id="Layer_1"
-                        data-name="Layer 1"
-                        viewBox="0 0 24 24"
-                        fill="var(--colorItmStat)"
-                      >
-                        <path
-                          d="m6.5,14h7.5v2h-7.5c-1.379,0-2.5,1.122-2.5,2.5v5.5h-2v-5.5c0-2.481,2.019-4.5,4.5-4.5Zm10.5-8c0,3.309-2.691,6-6,6s-6-2.691-6-6S7.691,0,11,0s6,2.691,6,6Zm-2,0c0-2.206-1.794-4-4-4s-4,1.794-4,4,1.794,4,4,4,4-1.794,4-4Zm6.685,10.267l-3.041-.507c-.373-.062-.644-.382-.644-.76,0-.551.448-1,1-1h2c.552,0,1,.449,1,1h2c0-1.654-1.346-3-3-3v-2h-2v2c-1.654,0-3,1.346-3,3,0,1.36.974,2.51,2.315,2.733l3.041.507c.373.062.644.382.644.76,0,.551-.448,1-1,1h-2c-.552,0-1-.449-1-1h-2c0,1.654,1.346,3,3,3v2h2v-2c1.654,0,3-1.346,3-3,0-1.36-.974-2.51-2.315-2.733Z"
-                        />
-                      </svg>
-                      <div class="boxTxtItemStat">
-                        <div>PIB par habitant</div>
-                        <span>Dollars américains courants (US$)</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-                    <div class="lineInStat"></div>
-
-                    <!--  -->
-
-                    <div class="boxItemStat" data-source="ourworldindata"   data-goodVar="down" data-unity="%" data-liste="chomage">
-                    <div class="itemStat">
-                      <svg
-                        viewBox="0 0 281 269"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M0 131.217C34.671 147.665 71.7992 156.769 109.2 158.558V177.449C109.2 181.069 110.638 184.542 113.198 187.102C115.758 189.661 119.23 191.1 122.85 191.1C126.47 191.1 129.942 189.661 132.502 187.102C135.062 184.542 136.5 181.069 136.5 177.449V158.558C145.959 158.107 155.372 157.189 164.705 155.812C152.487 168.788 145 186.27 145 205.5C145 220.37 149.478 234.194 157.157 245.699H20.4746C15.0444 245.699 9.83679 243.542 5.99707 239.702C2.15736 235.862 6.99093e-05 230.655 0 225.225V131.217ZM245.7 138.688C242.671 137.408 239.536 136.328 236.313 135.465C239.465 134.106 242.595 132.691 245.7 131.217V138.688ZM153.099 0C159.652 0.000431204 166.066 1.88801 171.575 5.43652C177.084 8.98507 181.456 14.0444 184.166 20.0107L199.891 54.5996H225.225C230.655 54.5996 235.863 56.7569 239.703 60.5967C243.543 64.4365 245.7 69.6449 245.7 75.0752V100.765L238.834 104.19C202.822 122.196 163.112 131.57 122.85 131.57C82.5873 131.57 42.878 122.196 6.86621 104.19L0 100.765V75.0752C0 69.6449 2.15726 64.4365 5.99707 60.5967C9.83677 56.7571 15.0445 54.5997 20.4746 54.5996H45.8096L61.5342 20.0107C64.2446 14.0444 68.6158 8.98506 74.125 5.43652C79.6342 1.88797 86.0484 0.00039115 92.6016 0H153.099ZM92.6016 27.2998C91.2917 27.3002 90.0095 27.6775 88.9082 28.3867C87.807 29.0959 86.9329 30.1075 86.3906 31.2998L75.7988 54.5996H169.901L159.31 31.2998C158.767 30.1075 157.893 29.0959 156.792 28.3867C155.691 27.6776 154.408 27.3002 153.099 27.2998H92.6016Z"
-                          fill="var(--colorItmStat)"
-                        />
-                        <path
-                          d="M239 185.001C238.015 184.017 236.68 183.464 235.288 183.464C233.896 183.464 232.561 184.017 231.576 185.001L218 198.577L204.423 185.001C203.433 184.045 202.107 183.515 200.731 183.527C199.354 183.539 198.037 184.092 197.064 185.065C196.091 186.038 195.538 187.355 195.526 188.732C195.514 190.108 196.044 191.434 197 192.424L210.576 206.001L197 219.577C196.044 220.568 195.514 221.894 195.526 223.27C195.538 224.647 196.091 225.964 197.064 226.937C198.037 227.91 199.354 228.463 200.731 228.475C202.107 228.486 203.433 227.957 204.423 227.001L218 213.424L231.576 227.001C232.567 227.957 233.893 228.486 235.269 228.475C236.646 228.463 237.963 227.91 238.936 226.937C239.909 225.964 240.462 224.647 240.474 223.27C240.485 221.894 239.956 220.568 239 219.577L225.423 206.001L239 192.424C239.984 191.44 240.537 190.105 240.537 188.713C240.537 187.321 239.984 185.986 239 185.001Z"
-                          fill="var(--colorItmStat)"
-                        />
-                        <path
-                          d="M218 143C205.54 143 193.359 146.695 182.999 153.617C172.639 160.54 164.564 170.379 159.796 181.891C155.027 193.403 153.78 206.07 156.211 218.291C158.641 230.511 164.642 241.737 173.452 250.548C182.263 259.358 193.489 265.359 205.709 267.789C217.93 270.22 230.597 268.973 242.109 264.204C253.621 259.436 263.46 251.361 270.383 241.001C277.305 230.641 281 218.46 281 206C280.982 189.297 274.339 173.283 262.528 161.472C250.717 149.661 234.703 143.018 218 143ZM218 258.5C207.617 258.5 197.466 255.421 188.833 249.652C180.199 243.883 173.47 235.684 169.496 226.091C165.523 216.498 164.483 205.942 166.509 195.758C168.535 185.574 173.535 176.219 180.877 168.877C188.219 161.535 197.574 156.534 207.758 154.509C217.942 152.483 228.498 153.523 238.091 157.496C247.684 161.47 255.883 168.199 261.652 176.833C267.421 185.466 270.5 195.616 270.5 206C270.485 219.919 264.949 233.264 255.106 243.106C245.264 252.949 231.919 258.485 218 258.5Z"
-                          fill="var(--colorItmStat)"
-                        />
-                      </svg>
-
-                      <div class="boxTxtItemStat">
-                        <div>Chômage</div>
-                        <span>% de la population active</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-                    <div class="lineInStat"></div>
-                    <!--  -->
-                    <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="down" data-unity="%" data-liste="inflation">
-                    <div class="itemStat">
-                      <svg
-                        fill="var(--colorItmStat)"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        viewBox="0 0 30.462 30.461"
-                        xml:space="preserve"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <g>
-                            <path
-                              d="M16.109,13.997l-4.312-4.479L1.426,20.058L0,18.656L11.812,6.651l4.354,4.522l7.49-7.172l-2.146-2.145h5.603v5.601 L25.07,5.415L16.109,13.997z M4.962,28.606h6.75v-9.5h-6.75V28.606z M14.337,28.606h6.75v-12.5h-6.75V28.606z M23.712,9.856v18.75 h6.75V9.856H23.712z"
-                            ></path>
-                          </g>
-                        </g>
-                      </svg>
-                      <div class="boxTxtItemStat">
-                        <div>Inflation</div>
-                        <span>Hausse des prix en 1 an (%)</span>
-                      </div>
-
-                      <div class="txtStat">
-                        <span>58</span>
-                        <div>%</div>
-                        <div class="badgeVarStat good">
-                          <svg viewBox="0 0 10 8" aria-hidden="true">
-                            <path d="M5 0l5 8H0z" fill="currentColor" />
-                          </svg>
-                          <span>+22 pts</span>
-                        </div>
-                      </div>
-
-                      <div class="arrowItmStat">
-                        <svg
-                          fill="white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                     <div class="boxBilanItemStat active">
-                        <div class="boxNbrBilan">
-                          <span>72% → </span>
-                          <div>50%</div>
-                        </div>
-                        <div class="boxMCourbe"></div>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-                <!-- Fin catégorie économie -->
               </div>
             </div>
           </div>
@@ -25884,7 +25890,7 @@
               </div>
               <div class="contentCelCadre">
                 <div class="titleCelCadre" data-ilg="fuseauxhoraire">
-                  Fuseaux horaire
+                  Fuseaux horaires
                 </div>
                 <div class="txtCelCadre" id="fuseaux">
                   <div class="loadingCadre"></div>
@@ -32986,7 +32992,7 @@ const nomComplet_ilg = {
 
         // Échelle Y automatique : valeurs "rondes", quelle que soit la taille des données
         const bas = Math.min(0, ...valeurs);
-        const haut = Math.max(0, ...valeurs);
+        const haut = Math.max(0.1, ...valeurs);
         const etendue = haut - bas || 1;
         const brut = etendue / 3;
         const p = Math.pow(10, Math.floor(Math.log10(brut)));
@@ -63976,6 +63982,7 @@ const nomComplet_ilg = {
         RArrowY.classList.remove("active");
         yInf.textContent = Math.min(...Ly)
         ySup.textContent = Math.max(...Ly)
+        txtYChoice.textContent = ySup.textContent
 
         const inf = yInf.textContent;
         const sup = ySup.textContent;
@@ -64264,25 +64271,25 @@ const nomComplet_ilg = {
             const L_dataY = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)) 
             
             // Remplir les deux cels
+            queryAll('.yearEpheCel') ? queryAll('.yearEpheCel').forEach(y=>y.remove()) : ""; //Sinon ça sélectionne ce div créé
             // Premier cadre cel1
             const newIndex = Object.keys(L_total).filter(key=> typeof L_total[key] === "object" && L_total[key].find(tuple=> tuple.annee === annee)?.valeur >= L_total[p_id].find(tuple=> tuple.annee === annee).valeur).length            
+
             cel1DStat.querySelector('div').textContent = 
               D_ilg.sur[currentIlg] + " " +
               L_dataY.length
               + " " + D_ilg.paysclasses[currentIlg];
+              cel1DStat.querySelector('span').innerHTML = `${newIndex}<sup>${ordinalSuffix(newIndex, currentIlg)}</sup><div class="yearEpheCel" >• ${annee}</div>`;
 
             // Second cadrecel2
             const L_Worldvalues = L_dataY.map(id=>L_total[id].find(tuple=>tuple.annee === annee).valeur)
             const worldMoy = stats(L_Worldvalues).moy
             const worldMediane = stats(L_Worldvalues).med
-            queryAll('.year') ? queryAll('.year').forEach(y=>y.remove()) : "";
 
               cel2DStat.querySelector('div').textContent = D_ilg.mediane[currentIlg] + " : " + formaterGrandNombre(Math.floor(worldMediane*100)/100)
-              cel2DStat.querySelector('span').innerHTML = `${formaterGrandNombre(Math.floor(worldMoy*100)/100)}</sup><div class="year" >• ${annee}</div>`
+              cel2DStat.querySelector('span').innerHTML = `${formaterGrandNombre(Math.floor(worldMoy*100)/100)}</sup><div class="yearEpheCel" >• ${annee}</div>`
 
-              // Mettre cette ligne après, car sinon, le div sélectionné sera mauvais
-              cel1DStat.querySelector('span').innerHTML = `${newIndex}<sup>${ordinalSuffix(newIndex, currentIlg)}</sup><div class="year" >• ${annee}</div>`;
-
+              
             ;[
               yDetailStat, //
               yTopCourbe, // l'année en haut de la courbe
@@ -64437,14 +64444,14 @@ const nomComplet_ilg = {
 
           boxsItemStat.forEach(box=>{
           const L_infos = D_yListes[box.dataset.liste][p_id];
-          if (typeof L_infos !== "object"){box.classList.add('noInfo'); return}
-          L_infos.forEach(tuple=>{if(!L_yDispos.includes(tuple.annee))L_yDispos.push(tuple.annee)} )
           if(typeof L_infos !== "object" || L_infos.filter(tuple=>tuple.valeur!== 0).length === 0) {
             box.classList.add('noInfo'); 
-            if (box.previousElementSibling?.classList.contains('lineInStat') && !box.nextElementSibling)box.previousElementSibling?.classList.add('noInfo')  // Le dernier élément
-            if(box.nextElementSibling?.classList.contains('lineInStat')) box.nextElementSibling?.classList.add('noInfo') // Entre deux éléments
+            if (box.previousElementSibling?.classList.contains('lineInStat'))box.previousElementSibling.classList.add('noInfo')  // On suprime la ligne précédente à chaque fois
+            if(box.previousElementSibling?.classList.contains('titleStat')) box.nextElementSibling.classList.add('noInfo') // Si le précédent c'est un titre, on suprime la ligne suivante
             return
           }
+          L_infos.forEach(tuple=>{if(!L_yDispos.includes(tuple.annee))L_yDispos.push(tuple.annee)} )
+
           const info = L_infos.find(el=>el.annee === parseInt(crtYear))
           const txtStat = box.querySelector('.txtStat')
           if(info){
@@ -64461,24 +64468,18 @@ const nomComplet_ilg = {
           }
         })
 
+        // Supprimer les blocs qui n'ont pas de données
 
-        if(!cursoring)
-        {
-          query('[data-statchoice="stat"]').click()
-          createCursorY(L_yDispos.sort(
-            (a, b) => b - a, // ordre de population décroissante
-          ).reverse());
-
-            sousCatesStat.forEach(sousCate=>{
+             sousCatesStat.forEach(sousCate=>{ // Supprimer les sous catégories : Mix énergétique...
             if( 
-              [...sousCate.querySelectorAll('.noInfo')].length  ===
+              [...sousCate.querySelectorAll('.noInfo.boxItemStat')].length  ===
               [...sousCate.querySelectorAll('.boxItemStat')].length)sousCate.classList.add('noInfo')
           })
 
-          headersItemStat.forEach(h=>{
+          headersItemStat.forEach(h=>{ // Supprimer les catégories : Population et sociale, Énergie...
             const content = h.parentNode.querySelector(".contentStat")
             if( 
-              [...content.querySelectorAll(':scope > .noInfo')].length  ===
+              [...content.querySelectorAll(':scope > .noInfo')].length  === // ':scope > .noInfo' : ne regarde que les enfants directs
               [...content.querySelectorAll('.sousCateStat')].length)h.parentNode.classList.add('noInfo')
           })
 
@@ -64488,15 +64489,19 @@ const nomComplet_ilg = {
 
 
               queryAll('.mTxtItmStat').forEach(txt=>{
-
-                txt.querySelector('span').textContent = [...txt.parentElement.parentElement.parentElement.querySelector('.contentStat').querySelectorAll('.boxItemStat')].filter(el=>!el.classList.contains('noInfo')).length
+                txt.querySelector('span').textContent = 
+                [...txt.parentElement.parentElement.parentElement.querySelector('.contentStat').querySelectorAll('.boxItemStat')].filter(el=>!el.classList.contains('noInfo')).length
               })
+
+
+        if(!cursoring)
+        {
+          query('[data-statchoice="stat"]').click()
+          createCursorY(L_yDispos.sort(
+            (a, b) => b - a, // ordre de population décroissante
+          ).reverse());
+
         }
-
-
-
-        
-
           
 
       }
