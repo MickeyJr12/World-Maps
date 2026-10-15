@@ -63828,6 +63828,7 @@ const nomComplet_ilg = {
           hapticFeedback("medium");
           const mode = el.dataset.statchoice
           queryAll('.boxItemStat').forEach(box=>{box.classList.remove("stat","bilan"); box.classList.add(mode)})
+          queryAll('.txtStat').forEach(txt=>txt.style.minWidth = "")
           statChoiceIn.className = mode;
 
           const yearsBilan = queryAll('.yearsBilan')
@@ -63885,7 +63886,7 @@ const nomComplet_ilg = {
           (varUp ? "+ " : "") +
           formaterGrandNombre((Math.floor((valSup - valInf)*10)/10)).toLocaleString(D_ilg.tolocalestring[currentIlg]) + " " + unity;
           }
-
+          badgeVarStat.parentNode.style.minWidth = badgeVarStat.getBoundingClientRect().width + "px";
 
          
           // Content chiffres : 72% → 58%
