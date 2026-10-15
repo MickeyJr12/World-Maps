@@ -2680,7 +2680,7 @@
             color: transparent;
             transition:
               color 0.2s ease,
-              min-height 0.2s ease;
+              min-height 0.2s ease, max-height 0.25s ease;
           }
           .yearsBilan {
             white-space: nowrap;
@@ -2691,7 +2691,7 @@
         .itemStat{
           padding : 0;
           .svgItemStat{
-            height : 1.92rem
+            height : 1.75rem
           }
         }
         .boxBilanItemStat {
@@ -64286,6 +64286,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           queryAll(".boxItemStat").forEach((box) => {
             box.classList.remove("stat", "bilan");
+            box.querySelector(".boxTxtItemStat").querySelector("span").style.maxHeight = ""
             box.classList.add(mode);
           });
           queryAll(".txtStat").forEach((txt) => (txt.style.minWidth = ""));
@@ -64329,16 +64330,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 ) / 100;
 
               // Les années du bilan : 1990 → 2025
+              const spnVarY = box.querySelector(".boxTxtItemStat").querySelector("span")
+              spnVarY.style.maxHeight = "0";
               const yearsBilan = document.createElement("span");
               yearsBilan.className = "yearsBilan";
               yearsBilan.textContent = yInfItem + " → " + ySupItem;
-              const spn = box
-                .querySelector(".boxTxtItemStat")
-                .querySelector("span");
-              box
-                .querySelector(".boxTxtItemStat")
-                .querySelector("span")
-                .append(yearsBilan);
+              spnVarY.append(yearsBilan);
 
               // Badge : +22 pts
               const valYMin = L_yearsInfos.find((el) => el.annee === yInfItem).valeur;
