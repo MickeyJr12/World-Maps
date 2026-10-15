@@ -33118,38 +33118,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         <p id="pLast" style="letter-spacing: none"></p>
       </div>
     </div>
-
-    <script>
-(function () {
-  function show(msg) {
-    var box = document.getElementById('__err');
-    if (!box) {
-      box = document.createElement('pre');
-      box.id = '__err';
-      box.style.cssText = 'position:fixed;left:0;right:0;bottom:0;max-height:40%;overflow:auto;' +
-        'margin:0;padding:8px;background:#b00020;color:#fff;font:12px monospace;z-index:2147483647;white-space:pre-wrap;';
-      (document.body || document.documentElement).appendChild(box);
-    }
-    box.textContent += msg + '\n\n';
-  }
-
-  window.addEventListener('error', function (e) {
-    // erreurs JS
-    if (e.message) {
-      show('ERREUR: ' + e.message + '\n' + e.filename + ':' + e.lineno + ':' + e.colno +
-           (e.error && e.error.stack ? '\n' + e.error.stack : ''));
-    } else if (e.target && (e.target.src || e.target.href)) {
-      // ressource qui n'a pas chargé (script, css, image)
-      show('RESSOURCE KO: ' + (e.target.src || e.target.href));
-    }
-  }, true);
-
-  window.addEventListener('unhandledrejection', function (e) {
-    show('PROMISE REJETÉE: ' + (e.reason && e.reason.stack ? e.reason.stack : e.reason));
-  });
-})();
-</script>
-
     <script src="listes.js"></script>
     <!--Script utile-->
     <script>
