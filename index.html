@@ -63791,7 +63791,7 @@ const nomComplet_ilg = {
           const spn = createEl('span')
           spn.textContent = voisins.length === 0
             ? D_ilg.aucunefrontiere[currentIlg]
-            : (voisins.length > 1 ? D_ilg.voisins[currentIlg] : D_ilg.voisin[currentIlg]) + " : ";
+            : (voisins.length > 1 ? D_ilg.voisins[currentIlg] : D_ilg.voisin[currentIlg]) + " (" + voisins.length + ")" + " : ";
           bordersList.append(spn)         
 
 
