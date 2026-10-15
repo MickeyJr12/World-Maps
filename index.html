@@ -57097,14 +57097,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       window.addEventListener("load", async () => {
         // Sortie de phoneConfig
         await hideNativeSplash();
-
-        phoneConfig.style.transition = "opacity 0.01s ease";
-        phoneConfig.style.opacity = "0";
-        phoneConfig.style.transition = "transform 0.5s ease, opacity 0.2s ease";
-
         setTimeout(() => {
           // Prépare phoneHome avant de l'afficher
-
           [...phoneHome.children].forEach((el) => {
             el.style.transition = "none";
             el.style.opacity = "0";
