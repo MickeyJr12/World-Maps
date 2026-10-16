@@ -64599,7 +64599,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const itemsStat = queryAll(".itemStat");
 
       function fillClassementStat(box, year = false) {
-        console.log(year)
         const L_total = D_yListes[box.dataset.liste];
         const cStatId = crtCStat.id; // Le pays pour lequel on trace la courbe
         const currentId = currentCountry.id // Le pays en cours, pour lequel les stats sont ouverts
@@ -64708,16 +64707,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           itm.addEventListener("click", () => {
             itms.forEach((i) => i.classList.remove("active"));
             itm.classList.add("active");
-            crtCStat = getId(itm.dataset.idclasse);
+            const idClasse = itm.dataset.idclasse; // Le pays en question
+            crtCStat = getId(idClasse);
             const clef = Object.keys(D_yListes).find(
               (id) => D_yListes[id] === L_total,
             );
-            fillCadreDStat(query(`[data-liste = ${clef}]`), false);
+            const yFound = L_total[idClasse].find(tuple => tuple.annee === parseInt(yTopCourbe.textContent))
+            const newYInit = yFound ? yFound.annee : L_total[idClasse][0].annee;
+            // Si le premier/dernier mondial a une info à la date à laquelle est le curseur, on la prend.
+            // Sinon, on prend la date la plus récente dispo
+
+            fillCadreDStat(query(`[data-liste = ${clef}]`), false,newYInit);
           });
         });
       }
 
-      function fillCadreDStat(box, callClassement = true) {
+      function fillCadreDStat(box, callClassement = true, initYear = false) { 
+        // CallClassemet : ne pas remplir le classement si ça vient d'un click sur un item 
+        //InitYear : si on change de pays dans le classement, on garde la même date
+        // 
         if (crtCStat === currentCountry && callClassement)
           fillClassementStat(box);
 
@@ -64725,11 +64733,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         const L_yearsInfos = D_yListes[box.dataset.liste][p_id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][crtCStat.id]; // [{annee : 1900, valeur : ...},{...}]
         const L_total = D_yListes[box.dataset.liste];
         const crtYear = txtYChoice.textContent;
-        const yearInit =
-          L_total[p_id].find((tuple) => tuple.annee === parseInt(crtYear)) &&
+        const yearInit = // Si on change d'item, en regardant le premier par exemple, l'année initiale sera la 
+          initYear ?
+          initYear :
+          (L_total[p_id].find((tuple) => tuple.annee === parseInt(crtYear)) &&
           !statChoiceIn.classList.contains("bilan")
             ? parseInt(crtYear)
-            : parseInt(L_total[p_id][0].annee);
+            : parseInt(L_total[p_id][0].annee));
 
         const unity = box.dataset.unity;
         const goodvar = box.dataset.goodvar;
