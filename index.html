@@ -947,7 +947,7 @@
         z-index: 10;
         box-sizing: border-box;
         border-radius: 0.6rem;
-        right: 1rem;
+        right: 0.75rem;
         bottom: 3rem;
         width: 2.6rem;
         height: fit-content;
@@ -2510,19 +2510,22 @@
       .opensearch {
         display: flex;
         position: absolute;
-        right: 1rem;
-        top: 16rem;
+        /* right: 1rem; */
+        /* top: 16rem; */
+        /* padding: 0.4rem; */
+        /* width: 2.2rem; */
+        top: calc(2rem + env(safe-area-inset-top));
+        right : 0.75rem;
+        width : 3rem;
         justify-content: center;
         align-items: center;
         z-index: 10;
         cursor: pointer;
-        width: 2.2rem;
         aspect-ratio: 1/1;
-        padding: 0.4rem;
         max-width: 2.2rem;
         max-height: 2.2rem;
         backdrop-filter: blur(10px);
-        border-radius: 0.6rem;
+        border-radius: 5px;
         background: rgba(56, 140, 223, 0.674);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
@@ -3214,12 +3217,21 @@
 
       #titleClassement {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         gap: 0.4rem;
         margin-top: 0.8rem;
         color: var(--colorSpan);
         margin-top: 1.2rem;
         font-size: 0.8rem;
+        span {
+          display : flex;
+          align-items : center;
+          justify-content : center;
+          box-sizing : border-box;
+          padding : 0.25rem 0.4rem;
+          border-radius : 50rem;
+          background : rgba(255,255,255,0.08);
+         }
       }
       #cadreWClassStat {
         display: flex;
@@ -8005,15 +8017,22 @@
         position: absolute;
         background: transparent;
         border: none;
-        cursor: pointer;
+        cursor : pointer;
         border-radius: 5px;
-        top: calc(0.1rem + env(safe-area-inset-top));
+        top: calc(2rem + env(safe-area-inset-top));
         left: 2rem;
-        width: 3rem;
-        height: 3rem;
+        width: 2.4rem;
+        height: 2.4rem;
+        transition:
+          background 0.08s ease,
+          opacity 0.4s ease;
+      }
+       .back:active {
+        background: rgba(255, 255, 255, 0.2);
       }
       #backMaps {
         background: rgba(56, 140, 223, 0.4);
+        z-index: 120;
         left: 0.75rem;
       }
       #backMaps:active {
@@ -8742,27 +8761,7 @@
         fill: rgb(239, 235, 36);
       }
 
-      /* CSS Pm1 */
-
-      .back {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        background: transparent;
-        border: none;
-        border-radius: 5px;
-        top: calc(2rem + env(safe-area-inset-top));
-        left: 2rem;
-        width: 2.4rem;
-        height: 2.4rem;
-        transition:
-          background 0.08s ease,
-          opacity 0.4s ease;
-      }
-      .back:active {
-        background: rgba(255, 255, 255, 0.2);
-      }
+      /* CSS Pm1 */     
       /*CSS Message*/
       .footerMessage {
         display: flex;
@@ -22114,7 +22113,7 @@
         </div>
       </div>
 
-      <button class="back" id="backMaps" style="z-index: 120">
+      <button class="back" id="backMaps">
         <svg
           fill="white"
           xmlns="http://www.w3.org/2000/svg"
@@ -64579,10 +64578,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       // Script Fill Stat
       const headersItemStat = queryAll(".headerItemStat");
       const itemsStat = queryAll(".itemStat");
-      function fillClassementStat(box) {
+      function fillClassementStat(box, year = false) {
         const L_total = D_yListes[box.dataset.liste];
         const p_id = crtCStat.id;
-        const crtY = L_total[p_id][0].annee;
+        const crtY = year ? year : L_total[p_id][0].annee;
         titleClassement.querySelector("span").textContent = crtY;
 
         const unity = box.dataset.unity;
@@ -64855,6 +64854,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               yDetailStat, //
               yTopCourbe, // l'année en haut de la courbe
             ].forEach((itm) => (itm.textContent = annee));
+
+
+            fillClassementStat(box,annee)
           },
         });
       }
