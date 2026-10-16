@@ -2982,7 +2982,7 @@
       #cadreDetailStat {
         display: flex;
         position: absolute;
-        z-index: 20;
+        z-index: 30;
         flex: 1;
         flex-direction: column;
         justify-content: flex-start;
@@ -3110,6 +3110,7 @@
         border-radius: 50rem;
         padding: 0.25rem 0.5rem;
         font-size: 0.8rem;
+        transition: opacity 0.2s ease;
         svg {
           flex-shrink: 0;
           height: 1rem;
@@ -3141,6 +3142,46 @@
         svg {
           transform: none;
         }
+      }
+
+
+      #cadreStat:has(#statChoiceIn.carte){
+        .txtStat{
+          color : transparent;
+        }
+        #txtPeriode {
+          display: flex;
+        }
+        #cadreYChoice {
+          display: none;
+        }
+
+      }
+      .btnMapStat{
+        display  : flex;
+        position : absolute;
+        z-index : 10;
+        justify-content : center;
+        align-items : center;
+        opacity : 0;
+        height : 2rem;
+        aspect-ratio : 1/1;
+        color :white;
+        border-radius : 0.5rem;
+        background : rgba(17, 191, 92, 0.8);
+        
+        outline : 1px solid rgba(255,255,255,0.1);
+        transition : transform 0.2s ease, opacity 0.2s ease;
+        div{
+          display : flex;
+          align-items : center;
+          justify-content : center;
+          min-height : 100%;
+          min-width : 100%;
+        }
+      }
+      .btnMapStat:active {
+        transform : scale(0.92);
       }
       /* CSS Detail Stat */
 
@@ -3610,7 +3651,6 @@
         .badgeVarStat {
           position: absolute;
           opacity: 0;
-          transition: opacity 0.2s ease;
           span {
             white-space: nowrap;
           }
@@ -33324,6 +33364,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (!Number.isFinite(n) || Math.abs(n) < 1e6)
           return n.toLocaleString(D_ilg.tolocalestring[currentIlg]); // en dessous d'un million : inchangé
 
+
         const abrev_ilg = {
           K: { fr: "K", en: "K" }, // mille / thousand (10³)
           M: { fr: "M", en: "M" }, // million (10⁶)
@@ -34339,7 +34380,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         payslowercase: { fr: "pays", en: "countries" },
         mediane: { fr: "Médiane", en: "Median" },
         societe: { fr: "Société", en: "Society" },
-        
+        toutelaperiode : {fr : "Toute la période", en : "The entire period"},
+        voirsurlacarte : {fr : "Voir sur la carte", en : "View on the map"},
 
         // Langue Légende
         pibhabusdan: {
@@ -64462,7 +64504,35 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           const yearsBilan = queryAll(".yearsBilan");
           if (yearsBilan) yearsBilan.forEach((el) => el.remove());
 
-          if (mode === "bilan") {
+          const btnsMapStat = queryAll('.btnMapStat')
+          if (btnsMapStat) btnsMapStat.forEach((el) => el.remove());
+
+
+          if(mode === "carte"){
+             getId('txtPeriode').textContent = D_ilg.voirsurlacarte[currentIlg]
+            boxsItemStat.forEach((box) => {
+              const txt = box.querySelector('.txtStat')
+              const btnMapStat = createEl('div')
+              btnMapStat.className = "btnMapStat"
+              const div = createEl("div")
+              div.innerHTML = `
+              <svg style="height : 1.5rem; stroke: white;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20L3 17V4L9 7M9 20L15 17M9 20V7M15 17L21 20V7L15 4M15 17V4M9 7L15 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              `
+              btnMapStat.append(div)
+              txt.prepend(btnMapStat)
+              requestAnimationFrame(()=>btnMapStat.style.opacity = 1)
+
+              btnMapStat.addEventListener('pointerdown',(e)=>e.stopPropagation())
+              btnMapStat.addEventListener('click',(e)=>{
+              e.stopPropagation();
+              getId('backCadre').click();
+            }
+            )
+            })
+          }
+
+          else if (mode === "bilan") {
+             getId('txtPeriode').textContent = D_ilg.toutelaperiode[currentIlg]
             headersItemStat.forEach((h) => {
               const content = h.parentNode.querySelector(".contentStat");
               if (content.style.maxHeight !== "")
