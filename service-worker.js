@@ -5,8 +5,8 @@ self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll([
       './',
-      './index.html',
-      './listes.js',
+      '/index.html',
+      '/listes.js',
     ]))
   );
 });

@@ -57231,7 +57231,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               default:
                 await Haptics.impact({ style: "LIGHT" });
             }
-          } else if ("vibrate" in navigator) {
+          }/*  else if ("vibrate" in navigator) {
             const patterns = {
               light: 10,
               medium: 25,
@@ -57241,7 +57241,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               error: [30, 50, 30],
             };
             navigator.vibrate(patterns[type] || 10);
-          }
+          } */
         } catch (e) {
           console.warn("Haptic feedback failed:", e);
         }
@@ -59241,6 +59241,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           unityIn.className = "unityIn " + itm.dataset.unity;
           currentUnity = itm.dataset.unitylabel;
+          saveProgress();
           [L_q, P_info].forEach((D) => {
             for (const clef in D) {
               D[clef].s = areaUnityConvert(D[clef].s, itm.dataset.unity);
@@ -97727,6 +97728,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       // localStorage.removeItem("geoquiz_progress_v1");
       // location.reload();
       // Script localstorage
+
+      const AppStorage = {
+  async get(key) {
+    const P = window.Capacitor?.Plugins?.Preferences;
+    if (P) return (await P.get({ key })).value;
+    return localStorage.getItem(key);
+  },
+  async set(key, value) {
+    const P = window.Capacitor?.Plugins?.Preferences;
+    if (P) return P.set({ key, value });
+    localStorage.setItem(key, value);
+  },
+};
+
       const SAVE_KEY = "geoquiz_progress_v1";
 
       let streak = 0;
@@ -97734,7 +97749,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let maxTrack = 0;
       let totalDays = 0;
 
-      function saveProgress() {
+     async function saveProgress() {
         const data = {
           lvlPlayer,
           nbrProgLvl,
@@ -97755,14 +97770,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           nbrReward,
           oneTimeMessage,
           currentIlg,
+          currentUnity,
         };
-        localStorage.setItem(SAVE_KEY, JSON.stringify(data));
+        // localStorage.setItem(SAVE_KEY, JSON.stringify(data)); // Ancienne version stockage
+        await AppStorage.set(SAVE_KEY, JSON.stringify(data));
       }
 
       let lastQuestGenDate = null;
 
-      function loadProgress() {
-        const raw = localStorage.getItem(SAVE_KEY);
+      async function loadProgress() {
+        // const raw = localStorage.getItem(SAVE_KEY);
+        const raw = await AppStorage.get(SAVE_KEY);
         if (!raw) return null;
 
         try {
@@ -97776,12 +97794,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           lastQuestGenDate = data.lastQuestGenDate ?? null;
           lastStreakDate = data.lastStreakDate ?? null;
           streak = data.streak ?? 0;
-
           maxTrack = data.maxTrack ?? 0;
-          txtMaxTrack.textContent =
-            maxTrack + streak === 1
-              ? D_ilg.jour[currentIlg]
-              : D_ilg.jours[currentIlg];
           totalDays = data.totalDays ?? 0;
           sound = data.sound ?? false;
           onlySouv = data.onlySouv ?? false;
@@ -97790,13 +97803,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           data.dataD ? (dataD = data.dataD) : "";
           oneTimeMessage = data.oneTimeMessage ?? false;
           currentIlg = data.currentIlg ?? "fr";
+          currentUnity = data.currentUnity ?? "km²";
+          
           currentIlg === "fr"
             ? (buildContinents(),
               buildOrganisations(),
               fillSub(itemViewSub),
               buildMembers(),
               fillItemsChoiceZ(L_regions))
-            : query(`[data-choiceilg = ${currentIlg}]`).click();
+            : query(`[data-choiceilg = "${currentIlg}"]`).click();
           // Si on chnage de langue, chageIlg se chargera des fill
 
           // nbrReward =0 ;
@@ -97810,67 +97825,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           return data; // on retourne data pour récupérer defisQSelected ensuite
         } catch (e) {
           console.error("Sauvegarde corrompue, reset :", e);
-          localStorage.removeItem(SAVE_KEY);
+          // localStorage.removeItem(SAVE_KEY); // Cette ligne efface la sauvegarde s'il y a une erreur
           return null;
         }
       }
 
-      const savedData = loadProgress();
-
-      checkbox.checked = sound;
-      checkboxH.checked = haptic;
-      checkBoxSouv.checked = onlySouv;
-      checkBoxNotif.checked = notif;
-
-      txtLvlPlayer.textContent = lvlPlayer;
-      txtProgLvl.textContent = nbrProgLvl.toLocaleString(
-        D_ilg.tolocalestring[currentIlg],
-      );
-      txtPalierLvl.textContent = numPalierLvl.toLocaleString(
-        D_ilg.tolocalestring[currentIlg],
-      );
-      barreProgLvl.style.width = `${(nbrProgLvl / numPalierLvl) * 100}%`;
-
-      const today = getTodayKey();
-
-      if (
-        lastQuestGenDate === today &&
-        savedData?.defisQSelected?.length === 4
-      ) {
-        // Même jour : on restaure les quêtes déjà tirées, pas de nouveau tirage
-        const restoredSelection = savedData.defisQSelected
-          .map((id) => L_RDQ.find((q) => q.id === id))
-          .filter(Boolean);
-
-        if (restoredSelection.length === 4) {
-          fillCadreRDQ_LRD(restoredSelection);
-        } else {
-          // sécurité si des ids ne matchent plus (ex: tu as retiré une quête du code)
-          fillCadreRDQ_LRD();
-          lastQuestGenDate = today;
-          saveProgress();
-        }
-      } else {
-        // Nouveau jour ou première visite : nouveau tirage
-        fillCadreRDQ_LRD();
-        lastQuestGenDate = today;
-        saveProgress();
-      }
-
-      // Ré-afficher l'état chargé dans l'UI
-      txtLvlPlayer.textContent = lvlPlayer;
-      txtProgLvl.textContent = nbrProgLvl.toLocaleString(
-        D_ilg.tolocalestring[currentIlg],
-      );
-      txtPalierLvl.textContent = numPalierLvl.toLocaleString(
-        D_ilg.tolocalestring[currentIlg],
-      );
-      barreProgLvl.style.width = `${(nbrProgLvl / numPalierLvl) * 100}%`;
-
-      window.addEventListener("beforeunload", saveProgress);
-      window.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "hidden") saveProgress();
-      });
 
       function trackLoading() {
         const aujourdHui = getTodayKey();
@@ -97920,7 +97879,67 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           totalDays +
           (totalDays <= 1 ? D_ilg.jour[currentIlg] : D_ilg.jours[currentIlg]);
       }
+
+
+      let savedData = null;
+       loadProgress().then((d) => {
+       savedData = d;  
+     const today = getTodayKey();
+      if (
+        lastQuestGenDate === today &&
+        savedData?.defisQSelected?.length === 4
+      ) {
+        // Même jour : on restaure les quêtes déjà tirées, pas de nouveau tirage
+        const restoredSelection = savedData.defisQSelected
+          .map((id) => L_RDQ.find((q) => q.id === id))
+          .filter(Boolean);
+
+        if (restoredSelection.length === 4) {
+          fillCadreRDQ_LRD(restoredSelection);
+        } else {
+          // sécurité si des ids ne matchent plus (ex: tu as retiré une quête du code)
+          fillCadreRDQ_LRD();
+          lastQuestGenDate = today;
+          saveProgress();
+        }
+      } else {
+        // Nouveau jour ou première visite : nouveau tirage
+        fillCadreRDQ_LRD();
+        lastQuestGenDate = today;
+        saveProgress();
+      }
+   
+ // /****** 
+
+      checkbox.checked = sound;
+      checkboxH.checked = haptic;
+      checkBoxSouv.checked = onlySouv;
+      checkBoxNotif.checked = notif;
+      query(`[data-unitylabel = "${currentUnity}"]`).click()
+
+
+      // Ré-afficher l'état chargé dans l'UI
+      txtLvlPlayer.textContent = lvlPlayer;
+      txtProgLvl.textContent = nbrProgLvl.toLocaleString(
+        D_ilg.tolocalestring[currentIlg],
+      );
+      txtPalierLvl.textContent = numPalierLvl.toLocaleString(
+        D_ilg.tolocalestring[currentIlg],
+      );
+      barreProgLvl.style.width = `${(nbrProgLvl / numPalierLvl) * 100}%`;
+
+      window.addEventListener("beforeunload", saveProgress);
+      window.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") saveProgress();
+      });
+
+      
       trackLoading();
+  });
+
+     
+
+     
 
       function loop() {
         requestAnimationFrame(loop);
