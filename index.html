@@ -2522,8 +2522,8 @@
         z-index: 10;
         cursor: pointer;
         aspect-ratio: 1/1;
-        max-width: 2.2rem;
-        max-height: 2.2rem;
+        max-width: 2.4rem;
+        max-height: 2.4rem;
         backdrop-filter: blur(10px);
         border-radius: 5px;
         background: rgba(56, 140, 223, 0.674);
@@ -22657,7 +22657,7 @@
                   </div>
 
                   <div class="cel" id="cel2DStat">
-                    Moyenne mondial
+                    Moyenne mondiale
                     <span>31.5</span>
                     <div>-3.5pt vs monde</div>
                   </div>
@@ -95768,6 +95768,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       optionModeS.forEach((option) => {
         option.addEventListener("click", () => {
+        if (currentSearching === option.dataset.searching){
+          cadreModeS.classList.remove("active");
+          document.getElementById("arrowTitle").classList.remove("active");
+          return
+        }
           currentSearching = option.dataset.searching;
           titleCadreS.querySelector("[data-ilg]").dataset.ilg =
             option.querySelector("[data-ilg]").dataset.ilg;
