@@ -2515,8 +2515,8 @@
         /* padding: 0.4rem; */
         /* width: 2.2rem; */
         top: calc(2rem + env(safe-area-inset-top));
-        right : 0.75rem;
-        width : 3rem;
+        right: 0.75rem;
+        width: 3rem;
         justify-content: center;
         align-items: center;
         z-index: 10;
@@ -2645,10 +2645,10 @@
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
         width: 100%;
         transition:
-        top 0.3s ease,
-        border-radius 0.3s ease,
-        padding-top 0.3s ease;
-        
+          top 0.3s ease,
+          border-radius 0.3s ease,
+          padding-top 0.3s ease;
+
         --varBackground: rgba(17, 23, 79, 1); /* Le background pour ??  */
         --colorItmStat: rgba(255, 255, 255, 0.6); /* La couleur des svg */
 
@@ -2672,32 +2672,30 @@
         display: none;
       }
       #cadreStat:has(.bilan) {
-        .lineInStat{
-          outline-color : rgba(255,255,255,0.15)
+        .lineInStat {
+          outline-color: rgba(255, 255, 255, 0.15);
         }
-
 
         .boxTxtItemStat {
           span {
-            display : flex;
-            align-items : center;
-            position : relative;
+            display: flex;
+            align-items: center;
+            position: relative;
             min-height: 0.9rem;
             color: transparent;
-            transition:
-              color 0.15s ease;
+            transition: color 0.15s ease;
           }
           .yearsBilan {
-            position : absolute;
+            position: absolute;
             white-space: nowrap;
             font-weight: 500;
             color: white;
           }
         }
-        .itemStat{
-          padding : 0;
-          .svgItemStat{
-            height : 1.75rem
+        .itemStat {
+          padding: 0;
+          .svgItemStat {
+            height: 1.75rem;
           }
         }
         .boxBilanItemStat {
@@ -2719,8 +2717,6 @@
             }
           }
         }
-      
-
 
         #txtPeriode {
           display: flex;
@@ -2738,13 +2734,13 @@
         margin-top: -1.6rem;
         margin-bottom: 0.4rem;
         font-size: 0.8rem;
-        color : rgba(255,255,255,0.8);
+        color: rgba(255, 255, 255, 0.8);
         gap: 0.25rem;
         #boxImg {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-right : 0.4rem;
+          margin-right: 0.4rem;
           flex-shrink: 0;
           border-radius: 0.2rem;
           width: fit-content;
@@ -3049,17 +3045,17 @@
         background: rgba(255, 255, 255, 0.1);
       }
 
-      #wrapperTitleDStat{
-        display : flex;
-        align-items : center;
-        justify-content : flex-start;
-        flex : 1;
-        gap : 0.5rem;
+      #wrapperTitleDStat {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+        gap: 0.5rem;
         svg {
-          height : 1.6rem;
+          height: 1.6rem;
         }
-        div{
-          height : 100%;
+        div {
+          height: 100%;
         }
       }
       #titleDetailStat {
@@ -3192,16 +3188,15 @@
         color: var(--colorSpan);
         margin-top: 1.2rem;
         font-size: 0.8rem;
-        #yTopCourbe{
-          display : flex;
-          align-items : center;
-          justify-content : center;
-          box-sizing : border-box;
-          padding : 0.25rem 0.4rem;
-          border-radius : 50rem;
-          background : rgba(255,255,255,0.08);
-
-         }
+        #yTopCourbe {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 0.25rem 0.4rem;
+          border-radius: 50rem;
+          background: rgba(255, 255, 255, 0.08);
+        }
       }
 
       #sourceData {
@@ -3224,14 +3219,14 @@
         margin-top: 1.2rem;
         font-size: 0.8rem;
         span {
-          display : flex;
-          align-items : center;
-          justify-content : center;
-          box-sizing : border-box;
-          padding : 0.25rem 0.4rem;
-          border-radius : 50rem;
-          background : rgba(255,255,255,0.08);
-         }
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          padding: 0.25rem 0.4rem;
+          border-radius: 50rem;
+          background: rgba(255, 255, 255, 0.08);
+        }
       }
       #cadreWClassStat {
         display: flex;
@@ -3389,7 +3384,7 @@
         --colorStat: rgb(1, 28, 55);
         svg {
           height: 100%;
-          transition : height 0.25s ease;
+          transition: height 0.25s ease;
           /* fill :var(--colorStat); */
         }
       }
@@ -3455,7 +3450,7 @@
       .lineInStat {
         outline: 1px solid rgba(255, 255, 255, 0.08);
         width: 90%;
-        transition : outline-color 0.25s ease;
+        transition: outline-color 0.25s ease;
       }
       .lineInStat.noInfo {
         display: none;
@@ -3485,8 +3480,6 @@
       .boxItemStat.noInfo {
         display: none;
       }
-
-      
 
       .boxBilanItemStat {
         display: flex;
@@ -3530,15 +3523,16 @@
         gap: 0.4rem;
         width: 100%;
         border-radius: 0.5rem;
-        transition: background 0.2s ease, padding 0.4s ease;
+        transition:
+          background 0.2s ease,
+          padding 0.4s ease;
         /* --colorItmStat : orange; */
         svg {
           height: 1.6rem;
         }
-        .svgItemStat{
-          transition : height 0.25s ease
+        .svgItemStat {
+          transition: height 0.25s ease;
         }
-
       }
       .itemStat:active {
         background: rgba(0, 0, 0, 0.2);
@@ -3554,8 +3548,9 @@
         justify-content: center;
         gap: 0.02rem;
         color: white;
-        div {/* Le nom (nucléaire) */
-          
+        div {
+          /* Le nom (nucléaire) */
+
           font-size: 0.88rem;
           opacity: 0.96;
         }
@@ -3567,8 +3562,7 @@
           align-items: center;
           font-size: 0.75rem;
           opacity: 0.5;
-          transition:
-            color 0.2s ease;
+          transition: color 0.2s ease;
         }
         .yearsBilan {
           white-space: nowrap;
@@ -3672,7 +3666,7 @@
         }
         .itmB {
           padding: 0.25rem 0.65rem;
-          margin-bottom : 0.18rem;
+          margin-bottom: 0.18rem;
           border-radius: 100rem;
           font-size: 0.75rem;
           font-weight: 600;
@@ -8017,7 +8011,7 @@
         position: absolute;
         background: transparent;
         border: none;
-        cursor : pointer;
+        cursor: pointer;
         border-radius: 5px;
         top: calc(2rem + env(safe-area-inset-top));
         left: 2rem;
@@ -8027,7 +8021,7 @@
           background 0.08s ease,
           opacity 0.4s ease;
       }
-       .back:active {
+      .back:active {
         background: rgba(255, 255, 255, 0.2);
       }
       #backMaps {
@@ -8761,7 +8755,7 @@
         fill: rgb(239, 235, 36);
       }
 
-      /* CSS Pm1 */     
+      /* CSS Pm1 */
       /*CSS Message*/
       .footerMessage {
         display: flex;
@@ -22582,48 +22576,49 @@
 
                 <div id="wrapperTitleDStat">
                   <div>
-                       <svg
-                            version="1.1"
-                            id="_x32_"
-                            xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 0 512 512"
-                            xml:space="preserve"
-                            fill="var(--colorItmStat)"
-                          >
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g
-                              id="SVGRepo_tracerCarrier"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            ></g>
-                            <g id="SVGRepo_iconCarrier">
-                              <style type="text/css">
-                                .st0 {
-                                  fill: var(--colorItmStat);
-                                }
-                              </style>
-                              <g>
-                                <path
-                                  class="st0"
-                                  d="M346.483,226.653c-58.176-75.765-90.498-181.813-90.498-181.813s-32.318,106.048-90.505,181.813 c0,0,26.66,16.09,41.21,7.569c0,0-14.55,65.341-79.995,151.514c58.176,18.923,101.81-12.328,101.81-12.328v93.75h21.025h12.916 h21.021v-93.75c0,0,43.642,31.25,101.817,12.328c-65.457-86.174-79.995-151.514-79.995-151.514 C319.826,242.743,346.483,226.653,346.483,226.653z"
-                                ></path>
-                                <path
-                                  class="st0"
-                                  d="M160.886,307.087c-19.185-35.761-24.363-59.015-24.363-59.015c8.768,5.141,23.33-1.454,29.058-4.376 c1.522-0.84,2.417-1.379,2.417-1.379c-5.313-6.985-10.353-14.276-15.186-21.718c-34.855-54.482-53.972-117.26-53.972-117.26 s-24.711,81.041-69.23,138.977c0,0,20.361,12.283,31.542,5.756c0,0-11.181,49.956-61.151,115.88 c44.451,14.426,77.788-9.443,77.788-9.443v71.674h42.034v-71.674c0,0,3.035,2.151,8.415,4.759 C141.633,340.391,152.332,322.817,160.886,307.087z"
-                                ></path>
-                                <path
-                                  class="st0"
-                                  d="M450.849,248.071c11.121,6.527,31.474-5.756,31.474-5.756c-44.454-57.936-69.155-138.977-69.155-138.977 s-19.125,62.778-54.05,117.26c-4.766,7.441-9.803,14.733-15.123,21.718c0,0,0.906,0.54,2.428,1.379 c5.725,2.922,20.29,9.517,29.058,4.376c0,0-5.178,23.328-24.442,59.09c8.566,15.655,19.331,33.303,32.723,52.106 c5.381-2.608,8.423-4.759,8.423-4.759v71.674h41.967v-71.674c0,0,33.394,23.869,77.848,9.443 C461.97,298.027,450.849,248.071,450.849,248.071z"
-                                ></path>
-                              </g>
-                            </g>
-                          </svg>
-                  </div> <!-- C'est lui qui aura l'icône -->
-                <div id="titleDetailStat">
-                  <div>Forêts</div>
-                  <span>Part du territoire</span>
-                </div>
+                    <svg
+                      version="1.1"
+                      id="_x32_"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 512 512"
+                      xml:space="preserve"
+                      fill="var(--colorItmStat)"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <style type="text/css">
+                          .st0 {
+                            fill: var(--colorItmStat);
+                          }
+                        </style>
+                        <g>
+                          <path
+                            class="st0"
+                            d="M346.483,226.653c-58.176-75.765-90.498-181.813-90.498-181.813s-32.318,106.048-90.505,181.813 c0,0,26.66,16.09,41.21,7.569c0,0-14.55,65.341-79.995,151.514c58.176,18.923,101.81-12.328,101.81-12.328v93.75h21.025h12.916 h21.021v-93.75c0,0,43.642,31.25,101.817,12.328c-65.457-86.174-79.995-151.514-79.995-151.514 C319.826,242.743,346.483,226.653,346.483,226.653z"
+                          ></path>
+                          <path
+                            class="st0"
+                            d="M160.886,307.087c-19.185-35.761-24.363-59.015-24.363-59.015c8.768,5.141,23.33-1.454,29.058-4.376 c1.522-0.84,2.417-1.379,2.417-1.379c-5.313-6.985-10.353-14.276-15.186-21.718c-34.855-54.482-53.972-117.26-53.972-117.26 s-24.711,81.041-69.23,138.977c0,0,20.361,12.283,31.542,5.756c0,0-11.181,49.956-61.151,115.88 c44.451,14.426,77.788-9.443,77.788-9.443v71.674h42.034v-71.674c0,0,3.035,2.151,8.415,4.759 C141.633,340.391,152.332,322.817,160.886,307.087z"
+                          ></path>
+                          <path
+                            class="st0"
+                            d="M450.849,248.071c11.121,6.527,31.474-5.756,31.474-5.756c-44.454-57.936-69.155-138.977-69.155-138.977 s-19.125,62.778-54.05,117.26c-4.766,7.441-9.803,14.733-15.123,21.718c0,0,0.906,0.54,2.428,1.379 c5.725,2.922,20.29,9.517,29.058,4.376c0,0-5.178,23.328-24.442,59.09c8.566,15.655,19.331,33.303,32.723,52.106 c5.381-2.608,8.423-4.759,8.423-4.759v71.674h41.967v-71.674c0,0,33.394,23.869,77.848,9.443 C461.97,298.027,450.849,248.071,450.849,248.071z"
+                          ></path>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  <!-- C'est lui qui aura l'icône -->
+                  <div id="titleDetailStat">
+                    <div>Forêts</div>
+                    <span>Part du territoire</span>
+                  </div>
                 </div>
               </div>
               <!-- <div class="smoothScroll"><div></div> </div> -->
@@ -25631,7 +25626,26 @@
                   </g>
                 </g>
               </svg> -->
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline> <polyline points="17 6 23 6 23 12"></polyline> </g></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#ffffff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </g>
+              </svg>
             </div>
           </div>
           <div id="wrapperTRCadre">
@@ -59373,7 +59387,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.addEventListener("pointermove", (e) => {
         if (moveST) {
           cadreTrackDays.style.transition = "none";
-          cadreTrackDays.style.top = Math.max(0,e.clientY - difYT) + "px";
+          cadreTrackDays.style.top = Math.max(0, e.clientY - difYT) + "px";
           phoneHome.style.transition = "none";
           phoneHome.style.transform = `scale(${Math.max(0.94, Math.min(0.94 + ((0.04 * cadreTrackDays.getBoundingClientRect().top) / window.innerHeight) * 1.75, 1))})`;
         }
@@ -64087,7 +64101,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const cadreDetailStat = getId("cadreDetailStat");
       const titleDetailStat = getId("titleDetailStat");
       const wrapperTitleDStat = getId("wrapperTitleDStat");
-      
+
       const badgeVarDStat = getId("badgeVarDStat");
       const cadreNbrDetailStat = getId("cadreNbrDetailStat");
       const yDetailStat = getId("yDetailStat");
@@ -64107,90 +64121,92 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let tfNewEl = false;
 
-      [drapeauCadre, mSilhouette, getId('boxImg').querySelector('img')].forEach((el) => {
-        el.addEventListener("click", () => {
-          if (tfNewEl || (!el.querySelector("svg") && el === mSilhouette))
-            return;
-          hapticFeedback("medium");
-          tfNewEl = true;
-          cadre.style.filter = "brightness(0.22)";
+      [drapeauCadre, mSilhouette, getId("boxImg").querySelector("img")].forEach(
+        (el) => {
+          el.addEventListener("click", () => {
+            if (tfNewEl || (!el.querySelector("svg") && el === mSilhouette))
+              return;
+            hapticFeedback("medium");
+            tfNewEl = true;
+            cadre.style.filter = "brightness(0.22)";
 
-          const newFlag = el.cloneNode(true);
-          el.style.opacity = "0";
+            const newFlag = el.cloneNode(true);
+            el.style.opacity = "0";
 
-          newFlag.id = "newFlag";
-          const box = el.getBoundingClientRect();
-          newFlag.style.position = "fixed";
-          newFlag.style.pointerEvents = "none";
-          newFlag.style.zIndex = "130";
-          newFlag.style.top = box.top + "px";
-          newFlag.style.left = box.left + "px";
-          newFlag.style.width = box.width + "px";
-          newFlag.style.borderRadius = el === drapeauCadre ? "0.4rem" : "0.2rem";
+            newFlag.id = "newFlag";
+            const box = el.getBoundingClientRect();
+            newFlag.style.position = "fixed";
+            newFlag.style.pointerEvents = "none";
+            newFlag.style.zIndex = "130";
+            newFlag.style.top = box.top + "px";
+            newFlag.style.left = box.left + "px";
+            newFlag.style.width = box.width + "px";
+            newFlag.style.borderRadius =
+              el === drapeauCadre ? "0.4rem" : "0.2rem";
 
-          newFlag.style.aspectRatio = `${box.width / box.height}`;
-          newFlag.style.transition = "all 0.25s ease";
-          document.body.append(newFlag);
+            newFlag.style.aspectRatio = `${box.width / box.height}`;
+            newFlag.style.transition = "all 0.25s ease";
+            document.body.append(newFlag);
 
-          const svgEl = newFlag.querySelector("svg");
-          el.style.transition = "none";
-          if (svgEl) {
-            // newFlag.style.background = "rgba(255,255,255,0.04)"
-            newFlag.style.borderRadius = "";
-            newFlag.style.boxSizing = "border-box";
-            newFlag.style.padding = "0.25rem";
-            svgEl.style.width = "100%";
-            svgEl.style.height = "100%";
-
-            const bordersList = createEl("div");
-            bordersList.className = "bordersList";
-            const ratio = box.width / box.height;
-            bordersList.style.top = `calc(20% + (100vw - 2rem) / ${ratio})`;
-            document.body.append(bordersList);
-
-            requestAnimationFrame(() => bordersList.classList.add("active"));
-
-            const voisins = P_info[currentCountry.id].borders.map(
-              (p) => L_q[p].n,
-            );
-
-            const spn = createEl("span");
-            spn.textContent =
-              voisins.length === 0
-                ? D_ilg.aucunefrontiere[currentIlg]
-                : (voisins.length > 1
-                    ? D_ilg.voisins[currentIlg]
-                    : D_ilg.voisin[currentIlg]) +
-                  " (" +
-                  voisins.length +
-                  ")" +
-                  " : ";
-            bordersList.append(spn);
-
-            if (voisins.length > 0) {
-              const wrapper = createEl("div");
-              wrapper.classList = "wrapper";
-              bordersList.append(wrapper);
-              voisins.forEach((nom) => {
-                const itmB = createEl("div");
-                itmB.classList = "itmB";
-                itmB.textContent = nom;
-                wrapper.append(itmB);
-              });
-            }
-          }
-
-          requestAnimationFrame(() => {
-            newFlag.style.borderRadius = "0.8rem";
-            newFlag.style.top = "30%";
-            newFlag.style.left = "1rem";
-            newFlag.style.width = "calc(100% - 2rem)";
+            const svgEl = newFlag.querySelector("svg");
+            el.style.transition = "none";
             if (svgEl) {
-              newFlag.style.top = "20%";
-              newFlag.style.padding = "0.6rem";
+              // newFlag.style.background = "rgba(255,255,255,0.04)"
+              newFlag.style.borderRadius = "";
+              newFlag.style.boxSizing = "border-box";
+              newFlag.style.padding = "0.25rem";
+              svgEl.style.width = "100%";
+              svgEl.style.height = "100%";
+
+              const bordersList = createEl("div");
+              bordersList.className = "bordersList";
+              const ratio = box.width / box.height;
+              bordersList.style.top = `calc(20% + (100vw - 2rem) / ${ratio})`;
+              document.body.append(bordersList);
+
+              requestAnimationFrame(() => bordersList.classList.add("active"));
+
+              const voisins = P_info[currentCountry.id].borders.map(
+                (p) => L_q[p].n,
+              );
+
+              const spn = createEl("span");
+              spn.textContent =
+                voisins.length === 0
+                  ? D_ilg.aucunefrontiere[currentIlg]
+                  : (voisins.length > 1
+                      ? D_ilg.voisins[currentIlg]
+                      : D_ilg.voisin[currentIlg]) +
+                    " (" +
+                    voisins.length +
+                    ")" +
+                    " : ";
+              bordersList.append(spn);
+
+              if (voisins.length > 0) {
+                const wrapper = createEl("div");
+                wrapper.classList = "wrapper";
+                bordersList.append(wrapper);
+                voisins.forEach((nom) => {
+                  const itmB = createEl("div");
+                  itmB.classList = "itmB";
+                  itmB.textContent = nom;
+                  wrapper.append(itmB);
+                });
+              }
             }
-          });
-          document.addEventListener(
+
+            requestAnimationFrame(() => {
+              newFlag.style.borderRadius = "0.8rem";
+              newFlag.style.top = "30%";
+              newFlag.style.left = "1rem";
+              newFlag.style.width = "calc(100% - 2rem)";
+              if (svgEl) {
+                newFlag.style.top = "20%";
+                newFlag.style.padding = "0.6rem";
+              }
+            });
+            document.addEventListener(
               "click",
               (e) => {
                 if (!tfNewEl) return;
@@ -64204,7 +64220,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 newFlag.style.top = newBox.top + "px";
                 newFlag.style.left = newBox.left + "px";
                 newFlag.style.width = newBox.width + "px";
-                newFlag.style.borderRadius = el === drapeauCadre ? "0.4rem" : "0.2rem";
+                newFlag.style.borderRadius =
+                  el === drapeauCadre ? "0.4rem" : "0.2rem";
                 if (svgEl) {
                   newFlag.style.borderRadius = "0.4rem";
                   newFlag.style.padding = "0.25rem";
@@ -64222,8 +64239,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               },
               { capture: true, once: true },
             );
-        });
-      });
+          });
+        },
+      );
 
       // Script stat
       const itmStatChoice = queryAll(".itmStatChoice");
@@ -64297,7 +64315,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           queryAll(".boxItemStat").forEach((box) => {
             box.classList.remove("stat", "bilan");
-            box.querySelector(".boxTxtItemStat").querySelector("span").style.maxHeight = ""
+            box
+              .querySelector(".boxTxtItemStat")
+              .querySelector("span").style.maxHeight = "";
             box.classList.add(mode);
           });
           queryAll(".txtStat").forEach((txt) => (txt.style.minWidth = ""));
@@ -64341,7 +64361,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 ) / 100;
 
               // Les années du bilan : 1990 → 2025
-              const spnVarY = box.querySelector(".boxTxtItemStat").querySelector("span")
+              const spnVarY = box
+                .querySelector(".boxTxtItemStat")
+                .querySelector("span");
               spnVarY.style.maxHeight = "0";
               const yearsBilan = document.createElement("span");
               yearsBilan.className = "yearsBilan";
@@ -64349,11 +64371,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               spnVarY.prepend(yearsBilan);
 
               // Badge : +22 pts
-              const valYMin = L_yearsInfos.find((el) => el.annee === yInfItem).valeur;
-              const valYMax = L_yearsInfos.find((el) => el.annee === ySupItem).valeur;
-              
+              const valYMin = L_yearsInfos.find(
+                (el) => el.annee === yInfItem,
+              ).valeur;
+              const valYMax = L_yearsInfos.find(
+                (el) => el.annee === ySupItem,
+              ).valeur;
+
               const varUp = valYMax > valYMin;
-              const variationAbs = Math.abs(valYMax - valYMin)
+              const variationAbs = Math.abs(valYMax - valYMin);
               const badgeVarStat = box.querySelector(".badgeVarStat");
               badgeVarStat.className = "badgeVarStat" + (varUp ? " up" : "");
               if (varUp)
@@ -64365,8 +64391,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 badgeVarStat.querySelector("span").textContent =
                   "< 0.01 " + unity;
               } else if (valSup === valInf) {
-                badgeVarStat.querySelector("span").textContent =
-                  "0" + unity;
+                badgeVarStat.querySelector("span").textContent = "0" + unity;
                 badgeVarStat.classList.add("zeroVar");
               } else {
                 badgeVarStat.querySelector("span").textContent =
@@ -64425,7 +64450,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.addEventListener("pointermove", (e) => {
         if (moveStat) {
           cadreStat.style.transition = "none";
-          cadreStat.style.top = Math.max(0,e.clientY - difYStat) + "px";
+          cadreStat.style.top = Math.max(0, e.clientY - difYStat) + "px";
           contentCadre.style.transition = "none";
           cacheStat.style.transition = "none";
 
@@ -64482,7 +64507,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
 
         queryAll(".cursorY").forEach((crs) => {
-
           crs.addEventListener("click", (e) => {
             e.stopPropagation();
             hapticFeedback("light");
@@ -64524,7 +64548,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let choisingYStat = false; // Indique si on est en train de gérer le curseur, pour ne pas faire de listener inutiles sur document
       wrapperCursorY.addEventListener("pointerdown", (e) => {
-        
         // hapticFeedback("medium");
         choisingYStat = true;
         const cursors = queryAll(".cursorY");
@@ -64538,14 +64561,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           (el) =>
             Math.abs(x - el.getBoundingClientRect().left + RCursor) === minDist,
         );
-        
+
         if (crtCursor) {
           txtYChoice.textContent = crtCursor.dataset.year;
           crtCursor.click();
         }
-      
       });
-      
+
       document.addEventListener("pointermove", (e) => {
         if (!choisingYStat) return;
         const cursors = queryAll(".cursorY");
@@ -64573,15 +64595,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         choisingYStat = false;
       });
 
-      
-
       // Script Fill Stat
       const headersItemStat = queryAll(".headerItemStat");
       const itemsStat = queryAll(".itemStat");
+
       function fillClassementStat(box, year = false) {
+        console.log(year)
         const L_total = D_yListes[box.dataset.liste];
-        const p_id = crtCStat.id;
-        const crtY = year ? year : L_total[p_id][0].annee;
+        const cStatId = crtCStat.id; // Le pays pour lequel on trace la courbe
+        const currentId = currentCountry.id // Le pays en cours, pour lequel les stats sont ouverts
+        const crtY = year ? year : L_total[cStatId][0].annee;
         titleClassement.querySelector("span").textContent = crtY;
 
         const unity = box.dataset.unity;
@@ -64594,7 +64617,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           (key) =>
             typeof L_total[key] === "object" &&
             L_total[key].find((tuple) => tuple.annee === crtY)?.valeur >=
-              L_total[p_id].find((tuple) => tuple.annee === crtY).valeur,
+              L_total[currentId].find((tuple) => tuple.annee === crtY).valeur,
         ).length;
 
         const maxValue = Math.max(
@@ -64602,7 +64625,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             (id) => L_total[id].find((tuple) => tuple.annee === crtY).valeur,
           ),
         );
-        const countrySup = L_dataY.find(
+        const countrySupId = L_dataY.find(
           (id) =>
             L_total[id].find((tuple) => tuple.annee === crtY).valeur ===
             maxValue,
@@ -64619,20 +64642,20 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             minValue,
         );
         //***
-        const valPays = L_total[p_id].find(
+        const valPays = L_total[currentId].find(
           (tuple) => tuple.annee === crtY,
         ).valeur;
 
         cadreWClassStat.innerHTML = ``;
         // Le premier mondial
         const itm1 = createEl("div");
-        itm1.dataset.idclasse = countrySup;
-        itm1.className = "itm first" + (valPays === maxValue ? " active" : "");
+        itm1.dataset.idclasse = countrySupId;
+        itm1.className = "itm first" + (countrySupId === cStatId ? " active" : ""); // Si le pays sup et le pays qu'on pour lequel on trace la courbe
         const rank1 = document.createElement("span");
         const nom1 = createEl("div");
         const val1 = createEl("span");
         rank1.innerHTML = `1<sup>${ordinalSuffix(1, currentIlg)}</sup>`;
-        nom1.textContent = L_q[countrySup].n;
+        nom1.textContent = L_q[countrySupId].n;
         val1.textContent = formaterGrandNombre(maxValue, true) + " " + unity;
 
         itm1.append(rank1, nom1, val1);
@@ -64643,18 +64666,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         points.textContent = "•••";
         cadreWClassStat.append(points);
 
-        if (valPays !== maxValue) {
+        if (currentId !== countrySupId ) { // Si le pays sup n'est pas le currentCountry
           // Notre pays
 
           const itm2 = createEl("div");
-          itm2.className = "itm active" + (valPays === minValue ? " last" : "");
-          itm2.dataset.idclasse = p_id;
+          itm2.className = "itm" +   (currentId === cStatId ? " active" : "") +  (valPays === minValue ? " last" : "");
+          itm2.dataset.idclasse = currentId;
 
           const rank2 = document.createElement("span");
           const nom2 = createEl("div");
           const val2 = createEl("span");
           rank2.innerHTML = `${indexCountry}<sup>${ordinalSuffix(indexCountry, currentIlg)}`;
-          nom2.textContent = L_q[p_id].n;
+          nom2.textContent = L_q[currentId].n;
           val2.textContent = formaterGrandNombre(valPays, true) + " " + unity;
 
           itm2.append(rank2, nom2, val2);
@@ -64662,13 +64685,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         // Si notre pays n'est pas le dernier, on rajoute le dernier
-        if (valPays !== minValue) {
+        if (currentId !== countryInfId ) {
           valPays !== maxValue
             ? cadreWClassStat.append(points.cloneNode(true))
             : "";
 
           const itm3 = createEl("div");
-          itm3.className = "itm last" + (valPays === minValue ? " active" : "");
+          itm3.className = "itm last" + (countryInfId === cStatId ? " active" : "");
           itm3.dataset.idclasse = countryInfId;
           const rank3 = document.createElement("span");
           const nom3 = createEl("div");
@@ -64718,15 +64741,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         const valYMin = L_yearsInfos.find((el) => el.annee === yInfItem).valeur;
         const valYMax = L_yearsInfos.find((el) => el.annee === ySupItem).valeur;
 
-        const variationAbs = Math.abs(valYMax - valYMin);        
+        const variationAbs = Math.abs(valYMax - valYMin);
         const varUp = valYMax > valYMin;
 
         // Titre
-        // Svg du titre 
+        // Svg du titre
 
-        const svgtitleD = box.querySelector('svg').cloneNode(true);
-        wrapperTitleDStat.querySelector('svg').replaceWith(svgtitleD)
-
+        const svgtitleD = box.querySelector("svg").cloneNode(true);
+        wrapperTitleDStat.querySelector("svg").replaceWith(svgtitleD);
 
         titleDetailStat.querySelector("div").textContent = box
           .querySelector(".boxTxtItemStat")
@@ -64758,8 +64780,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         spn.textContent =
           (varUp ? "+ " : "-") +
           formaterGrandNombre(
-                    Math.floor(variationAbs * 100) / 100,
-                  ).toLocaleString(D_ilg.tolocalestring[currentIlg]) +
+            Math.floor(variationAbs * 100) / 100,
+          ).toLocaleString(D_ilg.tolocalestring[currentIlg]) +
           " " +
           unity +
           " " +
@@ -64767,8 +64789,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           " " +
           yInfItem;
 
-        badgeVarDStat.className =
-          "badgeVarStat" + (varUp ? "" : " down");
+        badgeVarDStat.className = "badgeVarStat" + (varUp ? "" : " down");
 
         if (varUp)
           badgeVarDStat.classList.add(goodvar === "up" ? "good" : "bad");
@@ -64830,10 +64851,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             ).length;
 
             cel1DStat.querySelector("div").textContent =
-              D_ilg.sur[currentIlg] +
-              " " +
-              L_dataY.length +
-              " "
+              D_ilg.sur[currentIlg] + " " + L_dataY.length + " ";
             cel1DStat.querySelector("span").innerHTML =
               `${newIndex}<sup>${ordinalSuffix(newIndex, currentIlg)}</sup><div class="yearEpheCel" >• ${annee}</div>`;
 
@@ -64854,9 +64872,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               yDetailStat, //
               yTopCourbe, // l'année en haut de la courbe
             ].forEach((itm) => (itm.textContent = annee));
-
-
-            fillClassementStat(box,annee)
           },
         });
       }
@@ -65743,7 +65758,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       voirPlus.addEventListener("click", () => {
-        if(currentCountry.id in L_q){
+        if (currentCountry.id in L_q) {
           openStat.style.display = "";
           fillCadreStat(currentCountry);
           resetCadreStat();
@@ -96741,7 +96756,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.addEventListener("pointermove", (e) => {
         if (moveSD) {
           cadreSD.style.transition = "none";
-          cadreSD.style.top = Math.max(0,e.clientY - difYD) + "px";
+          cadreSD.style.top = Math.max(0, e.clientY - difYD) + "px";
         }
       });
 
