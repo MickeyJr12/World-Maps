@@ -33185,27 +33185,104 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       </div>
     </div>
 
-     <script>
+<!-- Afficher les erreurs sur l'écran -->
+ <script>
 (function () {
+  var messages = [];
+  var badge, panel, content, isOpen = false;
+
+  function build() {
+    if (badge) return;
+    var root = document.body || document.documentElement;
+
+    // Petit carré (bouton)
+    badge = document.createElement('div');
+    badge.id = '__err_badge';
+    badge.style.cssText =
+      'position:fixed;right:8px;bottom:8px;width:40px;height:40px;' +
+      'background:#b00020;color:#fff;font:bold 14px monospace;' +
+      'display:flex;align-items:center;justify-content:center;' +
+      'border-radius:6px;opacity:.9;z-index:2147483647;cursor:pointer;' +
+      'user-select:none;-webkit-user-select:none;';
+    badge.addEventListener('click', toggle);
+
+    // Fenêtre (cachée par défaut)
+    panel = document.createElement('div');
+    panel.id = '__err_panel';
+    panel.style.cssText =
+      'position:fixed;left:0;right:0;bottom:0;height:40%;display:none;flex-direction:column;' +
+      'background:#b00020;color:#fff;font:12px monospace;z-index:2147483646;';
+
+    // Barre d'actions
+    var bar = document.createElement('div');
+    bar.style.cssText =
+      'display:flex;justify-content:space-between;align-items:center;' +
+      'padding:6px 8px;background:#7a0016;flex:0 0 auto;';
+
+    var title = document.createElement('span');
+    title.textContent = 'Erreurs';
+
+    var actions = document.createElement('span');
+
+    var clearBtn = document.createElement('button');
+    clearBtn.textContent = 'Effacer';
+    clearBtn.style.cssText = 'margin-right:8px;padding:4px 10px;font:12px monospace;';
+    clearBtn.addEventListener('click', function () {
+      messages = [];
+      render();
+    });
+
+    var closeBtn = document.createElement('button');
+    closeBtn.textContent = '✕ Fermer';
+    closeBtn.style.cssText = 'padding:4px 10px;font:12px monospace;';
+    closeBtn.addEventListener('click', toggle);
+
+    actions.appendChild(clearBtn);
+    actions.appendChild(closeBtn);
+    bar.appendChild(title);
+    bar.appendChild(actions);
+
+    // Contenu
+    content = document.createElement('pre');
+    content.style.cssText =
+      'margin:0;padding:8px;overflow:auto;flex:1 1 auto;white-space:pre-wrap;';
+
+    panel.appendChild(bar);
+    panel.appendChild(content);
+    root.appendChild(panel);
+    root.appendChild(badge);
+    render();
+  }
+
+  function render() {
+    if (!badge) return;
+    badge.textContent = messages.length;
+    content.textContent = messages.join('\n\n');
+    content.scrollTop = content.scrollHeight;
+  }
+
+  function toggle() {
+    isOpen = !isOpen;
+    panel.style.display = isOpen ? 'flex' : 'none';
+    // Le carré reste visible quand la fenêtre est ouverte,
+    // on le décale au-dessus de la fenêtre pour ne pas la masquer
+    badge.style.bottom = isOpen ? 'calc(40% + 8px)' : '8px';
+  }
+
   function show(msg) {
-    var box = document.getElementById('__err');
-    if (!box) {
-      box = document.createElement('pre');
-      box.id = '__err';
-      box.style.cssText = 'position:fixed;left:0;right:0;bottom:0;max-height:40%;overflow:auto;' +
-        'margin:0;padding:8px;background:#b00020;color:#fff;font:12px monospace;z-index:2147483647;white-space:pre-wrap;';
-      (document.body || document.documentElement).appendChild(box);
+    messages.push(msg);
+    if (!badge) {
+      if (document.body) build();
+      else document.addEventListener('DOMContentLoaded', build);
     }
-    box.textContent += msg + '\n\n';
+    render();
   }
 
   window.addEventListener('error', function (e) {
-    // erreurs JS
     if (e.message) {
       show('ERREUR: ' + e.message + '\n' + e.filename + ':' + e.lineno + ':' + e.colno +
-           (e.error && e.error.stack ? '\n' + e.error.stack : ''));
+        (e.error && e.error.stack ? '\n' + e.error.stack : ''));
     } else if (e.target && (e.target.src || e.target.href)) {
-      // ressource qui n'a pas chargé (script, css, image)
       show('RESSOURCE KO: ' + (e.target.src || e.target.href));
     }
   }, true);
@@ -33215,6 +33292,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
   });
 })();
 </script>
+
 
 
     <script src="listes.js"></script>
@@ -91847,6 +91925,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         pathActif = e.target;
       });
       //
+
       let oneTimeColor = false; // n'appeler qu'une seule fois colorcountry dans countryclick/svg. ad (click)
       svg.addEventListener("click", (event) => {
         const country = event.target.closest("path");
