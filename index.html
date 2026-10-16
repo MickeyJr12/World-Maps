@@ -2764,10 +2764,10 @@
       .wrapperStatChoice {
         --padH: 0.6rem;
         --padW: 0.6rem;
-        /* --widthUnity: 10rem; */
         --gapStat: 0.75rem;
+        /* --widthUnity: 10rem; */
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         position: relative;
         align-items: center;
         justify-items: center;
@@ -2794,6 +2794,8 @@
         transition:
           color 0.2s ease,
           background 0.2s ease;
+
+        /* Rajouter carte */
         svg {
           height: 1rem;
           /* fill : white; */
@@ -2809,13 +2811,27 @@
         border-radius: inherit;
         left: calc(var(--padW) / 2);
         height: calc(100% - var(--padW));
-        width: calc(50% - var(--padW) / 2);
+        /* width: calc(50% - var(--padW) / 2);  Rajouter carte*/
         background: rgba(4, 98, 198, 0.5);
-        transition: transform 0.2s ease;
+        /* transition: transform 0.2s ease; Rajouter carte*/ 
+        transition : all 0.2s ease;
+
+        /* Constantes pour calculer la translation */
+        --widthItem : calc((1 / 3) * (100% - 2 * var(--gapStat) - 2 * var(--padW)));
+        width: calc(var(--padW) / 2 + var(--widthItem) + var(--gapStat) / 2);
+
       }
       #statChoiceIn.bilan {
-        transform: translateX(calc(100%));
+        /* transform: translateX(calc(100%)); carte */
+        left : calc(var(--padW) + var(--widthItem) + var(--gapStat) / 2);
+        width : calc(var(--gapStat) + var(--widthItem));
       }
+
+       #statChoiceIn.carte {
+        left : calc(2 * var(--widthItem) + var(--gapStat) * 1.5 + var(--padW));
+        width: calc(var(--padW) / 2 + var(--widthItem) + var(--gapStat) / 2);
+      }
+
 
       #cadreYChoice {
         display: flex;
@@ -22727,6 +22743,12 @@
                     </svg>
                     <span>Bilan</span>
                   </span>
+
+                   <span class="itmStatChoice" data-statchoice="carte">
+                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 20L3 17V4L9 7M9 20L15 17M9 20V7M15 17L21 20V7L15 4M15 17V4M9 7L15 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <span>Carte</span>
+                  </span>
+
                 </div>
 
                 <span
@@ -22791,7 +22813,7 @@
               </div>
 
               <div id="wrapperItmStat">
-                <!-- Catégorie population et sociale -->
+                <!-- Catégorie Société -->
                 <div class="categorieStat">
                   <div class="headerItemStat">
                     <div
@@ -22857,7 +22879,7 @@
                     </div>
 
                     <div class="wrapperTxtItmStat">
-                      <div>Population et sociale</div>
+                      <div data-ilg = "societe">Société</div>
                       <span class="mTxtItmStat"
                         ><span></span> <span>indicateurs</span></span
                       >
@@ -23306,7 +23328,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- Fermeture catégorie Population et sociale  -->
+                <!-- Fermeture catégorie Société  -->
 
                 <!-- Catégorie économie  -->
                 <div class="categorieStat">
@@ -24177,7 +24199,7 @@
                 </div>
                 <!-- Fin catégorie énergie -->
 
-                <!-- Catégorie Population et sociale -->
+                <!-- Catégorie Société -->
 
                 <!-- Fin catégorie popultion et sociale -->
                 <!--  -->
@@ -34316,6 +34338,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         sur: { fr: "sur", en: "out of" },
         payslowercase: { fr: "pays", en: "countries" },
         mediane: { fr: "Médiane", en: "Median" },
+        societe: { fr: "Société", en: "Society" },
+        
 
         // Langue Légende
         pibhabusdan: {
@@ -59241,8 +59265,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           unityIn.className = "unityIn " + itm.dataset.unity;
           currentUnity = itm.dataset.unitylabel;
-          saveProgress();
-          [L_q, P_info].forEach((D) => {
+          saveProgress()
+          ;[L_q, P_info].forEach((D) => {
             for (const clef in D) {
               D[clef].s = areaUnityConvert(D[clef].s, itm.dataset.unity);
             }
@@ -65182,7 +65206,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
 
         headersItemStat.forEach((h) => {
-          // Supprimer les catégories : Population et sociale, Énergie...
+          // Supprimer les catégories : Société, Énergie...
           const content = h.parentNode.querySelector(".contentStat");
           if (
             [...content.querySelectorAll(":scope > .noInfo")].length === // ':scope > .noInfo' : ne regarde que les enfants directs
@@ -94929,7 +94953,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         mainBlock.appendChild(mainRow);
         mainBlock.appendChild(subsWrapper);
         container.appendChild(mainBlock);
-
         mainRow.addEventListener("click", () => {
           subsWrapper
             .querySelectorAll(".arrow-region")
@@ -94944,7 +94967,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             openMainBlock = null;
           } else {
             arrowWrap.classList.add("open");
-            subsWrapper.style.maxHeight = subsWrapper.scrollHeight + "px";
+            // subsWrapper.style.maxHeight = subsWrapper.scrollHeight + "px";
+            maxHeight(subsWrapper)
             openMainBlock = mainBlock;
           }
         });
@@ -95155,7 +95179,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             openMainBlock = null;
           } else {
             arrowWrap.classList.add("open");
-            subsWrapper.style.maxHeight = subsWrapper.scrollHeight + "px";
+            // subsWrapper.style.maxHeight = subsWrapper.scrollHeight + "px";
+            maxHeight(subsWrapper)
             openMainBlock = mainBlock;
           }
         });
