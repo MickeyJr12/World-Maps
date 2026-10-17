@@ -2651,6 +2651,8 @@
 
         --varBackground: rgba(17, 23, 79, 1); /* Le background pour ??  */
         --colorItmStat: rgba(255, 255, 255, 0.6); /* La couleur des svg */
+        --transitBilan : 0.4s;
+        --transitDistBilan : 0.4s;
 
         .lineMove path {
           fill: white;
@@ -2672,18 +2674,19 @@
         display: none;
       }
       #cadreStat:has(.bilan) {
+        
         .lineInStat {
           outline-color: rgba(255, 255, 255, 0.15);
+          margin : 0.25rem 0;
         }
 
         .boxTxtItemStat {
-          padding-bottom : 0;
+          
           span {
             display: flex;
             align-items: center;
             position: relative;
             color: transparent;
-            transition: color 0.15s ease;
           }
           .yearsBilan {
             position: absolute;
@@ -2701,7 +2704,6 @@
         .boxBilanItemStat {
           opacity: 1;
           /* max-height: 4rem; */
-          padding-bottom: 0.25rem;
         }
         .txtStat {
           color: transparent;
@@ -3111,6 +3113,8 @@
         padding: 0.25rem 0.5rem;
         font-size: 0.8rem;
         transition: opacity 0.2s ease;
+        transition: opacity var(--transitBilan) ease;
+
         svg {
           flex-shrink: 0;
           height: 1rem;
@@ -3507,7 +3511,7 @@
       .lineInStat {
         outline: 1px solid rgba(255, 255, 255, 0.08);
         width: 90%;
-        transition: outline-color 0.25s ease;
+        transition : margin var(--transitDistBilan) ease, outline-color var(--transitBilan) ease;
       }
       .lineInStat.noInfo {
         display: none;
@@ -3544,10 +3548,9 @@
         justify-content: space-between;
         align-items: center;
         max-height: 0;
-        padding: 0;
         opacity: 0;
         width: 100%;
-        transition: all 0.25s ease;
+        transition: all var(--transitBilan);
         .boxNbrBilan {
           display: flex;
           align-items: center;
@@ -3583,13 +3586,14 @@
         border-radius: 0.5rem;
         transition:
           background 0.2s ease,
-          padding 0.4s ease;
+          padding var(--transitDistBilan) ease;
         /* --colorItmStat : orange; */
         svg {
           height: 1.6rem;
         }
         .svgItemStat {
-          transition: height 0.25s ease;
+          transition : height var(--transitBilan) ease;
+
         }
       }
       .itemStat:active {
@@ -3606,7 +3610,7 @@
         justify-content: center;
         gap: 0.02rem;
         color: white;
-        transition : padding-bottom 0.25s ease;
+        transition : padding-bottom var(--transitBilan) ease;
         div {
           /* Le nom (nucléaire) */
           position : relative;
@@ -3621,14 +3625,15 @@
           align-items: center;
           font-size: 0.75rem;
           opacity: 0.5;
-          transition: color 0.2s ease;
+          transition: color var(--transitBilan) ease;
         }
         .yearsBilan {
           white-space: nowrap;
           position: absolute;
           top : 0;
           color: transparent;
-          transition: color 0.2s ease;
+          transition : color  var(--transitBilan) ease;
+
         }
       }
       .txtStat {
@@ -3641,7 +3646,8 @@
         gap: 0.25rem;
         font-size: 1rem;
         color: white;
-        transition: color 0.2s ease;
+        transition : color var(--transitBilan) ease;
+
         span {
           /* Le chiffre */
           opacity: 0.96;
@@ -64586,115 +64592,78 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           }
 
           else if (mode === "bilan") {
-             getId('txtPeriode').textContent = D_ilg.toutelaperiode[currentIlg]
+            const locale = D_ilg.tolocalestring[currentIlg];
+            const floor2 = (v) => Math.floor(v * 100) / 100;
+            const fmt = (v) => formaterGrandNombre(v).toLocaleString(locale);
+
+            getId("txtPeriode").textContent = D_ilg.toutelaperiode[currentIlg];
             headersItemStat.forEach((h) => {
               const content = h.parentNode.querySelector(".contentStat");
-              if (content.style.maxHeight !== "")
-                content.style.maxHeight = "50rem";
+              if (content.style.maxHeight) content.style.maxHeight = "50rem";
             });
             txtYChoice.classList.remove("active");
             wrapperCursorY.classList.remove("active");
             wrapperCursorY.style.maxHeight = "";
 
-            boxsItemStat.forEach((box) => {
-              const L_yearsInfos = D_yListes[box.dataset.liste][crtCStat.id]; // [{annee : 1900, valeur : ...},{...}]D_yListes[box.dataset.liste][crtCStat.id]; // [{annee : 1900, valeur : ...},{...}]
-              const crtYear = txtYChoice.textContent;
-              if (typeof L_yearsInfos !== "object") {
-                return;
+            // Remplit un indicateur. Renvoie false s'il n'a pas de données.
+            function remplirBilan(box) {
+              const { liste, unity, goodvar } = box.dataset;
+              const serie = D_yListes[liste][crtCStat.id];
+              if (!Array.isArray(serie) || serie.length === 0) return false;
+            
+              const pts = [...serie].sort((a, b) => a.annee - b.annee);
+              const first = pts[0];
+              const last = pts[pts.length - 1];
+              const diff = last.valeur - first.valeur;
+              const up = diff > 0;
+              const abs = Math.abs(diff);
+            
+              // Années : 1990 → 2025 (créé une seule fois)
+              const spnVarY = box.querySelector(".boxTxtItemStat span");
+              let years = spnVarY.querySelector(".yearsBilan");
+              if (!years) {
+                years = createEl("span");
+                years.className = "yearsBilan";
+                spnVarY.prepend(years);
               }
-              const unity = box.dataset.unity;
-              const goodvar = box.dataset.goodvar;
-
-              // Années extrêmes
-              const yInfItem = Math.min(...L_yearsInfos.map((id) => id.annee));
-              const ySupItem = Math.max(...L_yearsInfos.map((id) => id.annee));
-
-              //Valeurs aux dates les plus récentes/anciennes
-              const valInf =
-                Math.floor(
-                  L_yearsInfos.find((el) => el.annee === yInfItem).valeur * 100,
-                ) / 100;
-              const valSup =
-                Math.floor(
-                  L_yearsInfos.find((el) => el.annee === ySupItem).valeur * 100,
-                ) / 100;
-
-              // Les années du bilan : 1990 → 2025
-              const spnVarY = box
-                .querySelector(".boxTxtItemStat")
-                .querySelector("span");
-              const divVarY  = box
-                .querySelector(".boxTxtItemStat")
-                .querySelector("div");
-              const yearsBilan = document.createElement("span");
-              yearsBilan.className = "yearsBilan";
-              yearsBilan.textContent = yInfItem + " → " + ySupItem;
-              spnVarY.prepend(yearsBilan);
-              // divVarY.append(yearsBilan);
-              
-
-              // Badge : +22 pts
-              const valYMin = L_yearsInfos.find(
-                (el) => el.annee === yInfItem,
-              ).valeur;
-              const valYMax = L_yearsInfos.find(
-                (el) => el.annee === ySupItem,
-              ).valeur;
-
-              const varUp = valYMax > valYMin;
-              const variationAbs = Math.abs(valYMax - valYMin);
-              const badgeVarStat = box.querySelector(".badgeVarStat");
-              badgeVarStat.className = "badgeVarStat" + (varUp ? " up" : "");
-              if (varUp)
-                badgeVarStat.classList.add(goodvar === "up" ? "good" : "bad");
-              else
-                badgeVarStat.classList.add(goodvar === "down" ? "good" : "bad");
-
-              if (variationAbs < 0.01) {
-                badgeVarStat.querySelector("span").textContent =
-                  "< 0.01 " + unity;
-              } else if (valSup === valInf) {
-                badgeVarStat.querySelector("span").textContent = "0" + unity;
-                badgeVarStat.classList.add("zeroVar");
-              } else {
-                badgeVarStat.querySelector("span").textContent =
-                  (varUp ? "+ " : "-") +
-                  formaterGrandNombre(
-                    Math.floor(variationAbs * 100) / 100,
-                  ).toLocaleString(D_ilg.tolocalestring[currentIlg]) +
-                  " " +
-                  unity;
-              }
-              badgeVarStat.parentNode.style.minWidth =
-                badgeVarStat.getBoundingClientRect().width + "px";
-
-              // Content chiffres : 72% → 58%
-              const boxNbrBilan = box.querySelector(".boxNbrBilan");
-              const divNbrBilan = boxNbrBilan.querySelector("div")
-
-              boxNbrBilan.querySelector("span").textContent =
-                formaterGrandNombre(valInf).toLocaleString(
-                  D_ilg.tolocalestring[currentIlg],
-                ) + " →";
-
-              divNbrBilan.textContent =
-                formaterGrandNombre(valSup).toLocaleString(
-                  D_ilg.tolocalestring[currentIlg],
-                ) + " ";
-                const unityLastY = createEl('span')
-                unityLastY.textContent = unity;
-                divNbrBilan.append(unityLastY)
-
-              // Content courbe
-              const annees = L_yearsInfos.map((el) => el.annee).reverse();
-              const valeurs = L_yearsInfos.map((el) => el.valeur).reverse();
+              years.textContent = `${first.annee} → ${last.annee}`;
+            
+              // Badge : + 22 pts
+              const badge = box.querySelector(".badgeVarStat");
+              const good = goodvar === (up ? "up" : "down");
+              badge.className =
+                "badgeVarStat" + (up ? " up" : "") + (good ? " good" : " bad") + (abs === 0 ? " zeroVar" : "");
+              badge.querySelector("span").textContent =
+                abs === 0 ? `0 ${unity}`
+                : abs < 0.01 ? `< 0.01 ${unity}`
+                : `${up ? "+" : "-"} ${fmt(floor2(abs))} ${unity}`;
+            
+              // Chiffres : 72 → 58 %
+              const boxNbr = box.querySelector(".boxNbrBilan");
+              boxNbr.querySelector("span").textContent = `${fmt(floor2(first.valeur))} →`;
+              const unitSpan = createEl("span");
+              unitSpan.textContent = unity;
+              boxNbr.querySelector("div").replaceChildren(`${fmt(floor2(last.valeur))} `, unitSpan);
+            
+              // Courbe
               const boxMCourbe = box.querySelector(".boxMCourbe");
-              boxMCourbe.innerHTML = ``;
-              tracerMCourbe(boxMCourbe, annees, valeurs, {
-                couleur: colorMCourbes,
-              });
-              maxHeight(box.querySelector('.boxBilanItemStat'))
+              boxMCourbe.replaceChildren();
+              tracerMCourbe(
+                boxMCourbe,
+                pts.map((p) => p.annee),
+                pts.map((p) => p.valeur),
+                { couleur: colorMCourbes },
+              );
+              return true;
+            }
+
+            // 1) tout écrire, 2) puis tout mesurer
+            const boxes = [...boxsItemStat].filter(remplirBilan);
+            boxes.forEach((box) => {
+              const badge = box.querySelector(".badgeVarStat");
+              badge.parentNode.style.minWidth = badge.getBoundingClientRect().width + "px";
             });
+            boxes.forEach((box) => maxHeight(box.querySelector(".boxBilanItemStat")));
           }
         }),
       );
