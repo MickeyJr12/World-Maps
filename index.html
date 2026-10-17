@@ -2677,11 +2677,11 @@
         }
 
         .boxTxtItemStat {
+          padding-bottom : 0;
           span {
             display: flex;
             align-items: center;
             position: relative;
-            min-height: 0.9rem;
             color: transparent;
             transition: color 0.15s ease;
           }
@@ -2700,7 +2700,7 @@
         }
         .boxBilanItemStat {
           opacity: 1;
-          max-height: 2rem;
+          /* max-height: 4rem; */
           padding-bottom: 0.25rem;
         }
         .txtStat {
@@ -3551,7 +3551,7 @@
         .boxNbrBilan {
           display: flex;
           align-items: center;
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
           gap: 0.4rem;
           span {
             font-size: 0.8rem;
@@ -3605,9 +3605,10 @@
         justify-content: center;
         gap: 0.02rem;
         color: white;
+        transition : padding-bottom 0.25s ease;
         div {
           /* Le nom (nucléaire) */
-
+          position : relative;
           font-size: 0.88rem;
           opacity: 0.96;
         }
@@ -3624,6 +3625,7 @@
         .yearsBilan {
           white-space: nowrap;
           position: absolute;
+          top : 0;
           color: transparent;
           transition: color 0.2s ease;
         }
@@ -15243,7 +15245,7 @@
                   >
                 </span>
                 <div class="wrapperUnity">
-                  <div class="unityIn"></div>
+                  <div class="unityIn km"></div>
                   <span data-unity="km" data-unitylabel="km²" class="itmUnity"
                     >km²</span
                   >
@@ -15255,7 +15257,6 @@
 
               <div class="ligneInSD" style="margin: 0.1rem 0"></div>
 
-              <!-- à retirer / à remplacer / à rajouter la class btnSlideS -->
               <div
                 class="itemSetting btnSlideS"
                 id="btnIlg"
@@ -23429,6 +23430,53 @@
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity="US$"
+                        data-liste="pib_tot"
+                      >
+                        <div class="itemStat">
+                          <svg fill="var(--colorItmStat)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.038 489.038" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M486,215.481l-293.4-169.3c-4-2.3-10.6-2.3-14.6,0L3.2,147.781c-4,2.3-4,6.1,0,8.5l293.3,169.3c4.1,2.4,10.6,2.3,14.6,0 l174.9-101.6C490,221.681,490.1,217.881,486,215.481z M333.1,286.481c-1.6-1.6-3.6-3-5.9-4.3c-14.9-8.6-39-8.6-53.9,0 c-1.1,0.7-2.1,1.3-3.1,2.1l-197.6-114.2c1.9-0.8,3.7-1.6,5.4-2.6c14.8-8.6,14.7-22.6-0.2-31.2c-1.6-0.9-3.4-1.8-5.2-2.5l81.5-47.3 c1.3,1,2.7,2.1,4.3,3c14.9,8.6,39.1,8.6,53.9,0c1.7-1,3.2-2,4.4-3.1l198.2,114.5c-2.6,0.9-5.1,2-7.3,3.3 c-14.8,8.6-14.7,22.6,0.2,31.2c2.3,1.3,4.9,2.4,7.6,3.4L333.1,286.481z M357,243.281l-12.9,7.5c-2,1.1-5.2,1.2-7.2,0l-22.7-13.1 c-2-1.2-2-3,0-4.2l12.9-7.5c2-1.1,5.2-1.2,7.2,0l22.7,13.1C359,240.281,359,242.181,357,243.281z M175,138.181l-12.9,7.5 c-2,1.1-5.2,1.2-7.2,0l-22.7-13.1c-2-1.2-2-3,0-4.2l12.9-7.5c2-1.1,5.2-1.2,7.2,0l22.7,13.1C177,135.181,177,137.081,175,138.181z M466.2,267.581l22.8,13.2l-183.3,106.5l-6-3.4l-16.9-9.7L0,210.581l22.6-13.1l282.9,163.4L466.2,267.581z M283.2,431.381 L0,267.581l22.6-13.1l283.3,163.8l160-93l22.8,13.2L306,444.581l-5.9-3.4L283.2,431.381z M302.8,152.081 c-32.3-18.6-84.6-18.6-116.7,0c-32,18.6-31.9,48.9,0.4,67.6c32.2,18.6,84.5,18.6,116.6,0C335.2,201.081,335,170.781,302.8,152.081z M235.4,195.581h-22.7v-13.1v-12.7l22.8,0.1v12.7l52,0.1v13.2L235.4,195.581z"></path> </g> </g></svg>
+                          <div class="boxTxtItemStat">
+                            <div>PIB total</div>
+                            <span>Dollars américains courants (US$)</span>
+                          </div>
+
+                          <div class="txtStat">
+                            <span>58</span>
+                            <div>%</div>
+                            <div class="badgeVarStat good">
+                              <svg viewBox="0 0 10 8" aria-hidden="true">
+                                <path d="M5 0l5 8H0z" fill="currentColor" />
+                              </svg>
+                              <span>+22 pts</span>
+                            </div>
+                          </div>
+
+                          <div class="arrowItmStat">
+                            <svg
+                              fill="white"
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="boxBilanItemStat active">
+                          <div class="boxNbrBilan">
+                            <span>72% → </span>
+                            <div>50%</div>
+                          </div>
+                          <div class="boxMCourbe"></div>
+                        </div>
+                      </div>
+                      <div class="lineInStat"></div>
+                      <!--  -->
+                      <div
+                        class="boxItemStat"
+                        data-source="banquemondiale"
+                        data-goodVar="up"
+                        data-unity="US$"
                         data-liste="pib_hab"
                       >
                         <div class="itemStat">
@@ -23480,9 +23528,11 @@
                           <div class="boxMCourbe"></div>
                         </div>
                       </div>
-                      <div class="lineInStat"></div>
-
+                      </div>
+                      
                       <!--  -->
+                    <div class="sousCateStat">
+                      <div class="titleStat">Emplois et prix</div>
 
                       <div
                         class="boxItemStat"
@@ -59303,6 +59353,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       itmsUnity.forEach((itm) => {
         itm.addEventListener("click", () => {
           if (unityIn.classList.contains(itm.dataset.unity)) return;
+          console.log(itm.dataset.unity,unityIn.className)
           hapticFeedback("medium");
 
           unityIn.className = "unityIn " + itm.dataset.unity;
@@ -64507,6 +64558,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           const btnsMapStat = queryAll('.btnMapStat')
           if (btnsMapStat) btnsMapStat.forEach((el) => el.remove());
 
+          queryAll('.boxBilanItemStat').forEach(b=>b.style.maxHeight = "")
+
 
           if(mode === "carte"){
              getId('txtPeriode').textContent = D_ilg.voirsurlacarte[currentIlg]
@@ -64538,7 +64591,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               if (content.style.maxHeight !== "")
                 content.style.maxHeight = "50rem";
             });
-
             txtYChoice.classList.remove("active");
             wrapperCursorY.classList.remove("active");
             wrapperCursorY.style.maxHeight = "";
@@ -64570,10 +64622,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               const spnVarY = box
                 .querySelector(".boxTxtItemStat")
                 .querySelector("span");
+              const divVarY  = box
+                .querySelector(".boxTxtItemStat")
+                .querySelector("div");
               const yearsBilan = document.createElement("span");
               yearsBilan.className = "yearsBilan";
               yearsBilan.textContent = yInfItem + " → " + ySupItem;
               spnVarY.prepend(yearsBilan);
+              // divVarY.append(yearsBilan);
+              
 
               // Badge : +22 pts
               const valYMin = L_yearsInfos.find(
@@ -64629,6 +64686,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               tracerMCourbe(boxMCourbe, annees, valeurs, {
                 couleur: colorMCourbes,
               });
+              maxHeight(box.querySelector('.boxBilanItemStat'))
             });
           }
         }),
@@ -65214,6 +65272,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         agricole_zs: agricole_zs,
         arable_zs: arable_zs,
         forets_zs: forets_zs,
+        pib_tot: pib_tot,
         pib_hab: pib_hab,
         chomage: chomage,
         inflation: inflation,
