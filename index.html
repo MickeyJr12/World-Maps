@@ -64547,10 +64547,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           const mode = el.dataset.statchoice;
           if(statChoiceIn.classList.contains(mode))return
           hapticFeedback("medium");
+          statChoiceIn.className = mode;
+
           itmStatChoice.forEach((e) => e.classList.remove("active"));
           el.classList.add("active");
 
-          statChoiceIn.className = mode;
+          requestAnimationFrame(()=>{
+            
           // Retirer les éléments éphémères
           const yearsBilan = queryAll(".yearsBilan");
           if (yearsBilan) yearsBilan.forEach((el) => el.remove());
@@ -64681,6 +64684,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               maxHeight(box.querySelector(".boxBilanItemStat"))
             });
           }
+        })
         }),
       );
 
