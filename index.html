@@ -3553,11 +3553,11 @@
           align-items: center;
           flex-wrap: nowrap;
           gap: 0.4rem;
-          span {
+          span { /* La date du début : 1960 → */
             font-size: 0.8rem;
             color: var(--colorSpan);
           }
-          div {
+          div { /* La date la plus récente */
             color: white;
             font-size: 1.05rem;
             font-weight: 500;
@@ -64670,15 +64670,21 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
               // Content chiffres : 72% → 58%
               const boxNbrBilan = box.querySelector(".boxNbrBilan");
+              const divNbrBilan = boxNbrBilan.querySelector("div")
 
               boxNbrBilan.querySelector("span").textContent =
                 formaterGrandNombre(valInf).toLocaleString(
                   D_ilg.tolocalestring[currentIlg],
                 ) + " →";
-              boxNbrBilan.querySelector("div").textContent =
+
+              divNbrBilan.textContent =
                 formaterGrandNombre(valSup).toLocaleString(
                   D_ilg.tolocalestring[currentIlg],
-                ) + unity;
+                ) + " ";
+                const unityLastY = createEl('span')
+                unityLastY.textContent = unity;
+                divNbrBilan.append(unityLastY)
+
               // Content courbe
               const annees = L_yearsInfos.map((el) => el.annee).reverse();
               const valeurs = L_yearsInfos.map((el) => el.valeur).reverse();
