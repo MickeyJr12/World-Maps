@@ -65014,18 +65014,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         const svgtitleD = box.querySelector("svg").cloneNode(true);
         wrapperTitleDStat.querySelector("svg").replaceWith(svgtitleD);
-
+        const spanTitleDStat = titleDetailStat.querySelector("span")
         titleDetailStat.querySelector("div").textContent = box
+
           .querySelector(".boxTxtItemStat")
           .querySelector("div").textContent;
-        titleDetailStat.querySelector("span").textContent = box
+        spanTitleDStat.textContent = box
           .querySelector(".boxTxtItemStat")
           .querySelector("span").textContent;
         // Si on met le bilan, il faut retirer les dates : 1900 - 2025
         if (statChoiceIn.classList.contains("bilan"))
-          titleDetailStat.querySelector("span").textContent = titleDetailStat
-            .querySelector("span")
-            .textContent.slice(0, -11);
+          spanTitleDStat.textContent = spanTitleDStat.textContent.slice(11);
 
         // Grand nombre
         const spnNbr = cadreNbrDetailStat.querySelector("span");
