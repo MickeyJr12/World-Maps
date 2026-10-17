@@ -22755,7 +22755,7 @@
                 "
               >
                 <div class="wrapperStatChoice">
-                  <div id="statChoiceIn"></div>
+                  <div id="statChoiceIn" class="stat"></div>
                   <span class="itmStatChoice active" data-statchoice="stat">
                     <svg
                       viewBox="0 0 24 24"
@@ -64544,21 +64544,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       itmStatChoice.forEach((el) =>
         el.addEventListener("click", () => {
-          hapticFeedback("medium");
           const mode = el.dataset.statchoice;
+          if(statChoiceIn.classList.contains(mode))return
+          hapticFeedback("medium");
           itmStatChoice.forEach((e) => e.classList.remove("active"));
           el.classList.add("active");
 
-          queryAll(".boxItemStat").forEach((box) => {
-            box.classList.remove("stat", "bilan");
-            box
-              .querySelector(".boxTxtItemStat")
-              .querySelector("span").style.maxHeight = "";
-            box.classList.add(mode);
-          });
-          queryAll(".txtStat").forEach((txt) => (txt.style.minWidth = ""));
           statChoiceIn.className = mode;
-
+          // Retirer les éléments éphémères
           const yearsBilan = queryAll(".yearsBilan");
           if (yearsBilan) yearsBilan.forEach((el) => el.remove());
 
@@ -64567,10 +64560,29 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           queryAll('.boxBilanItemStat').forEach(b=>b.style.maxHeight = "")
 
+          if(mode === "stat"){
+            //Réinitialiser
+            boxsItemStat.forEach((box) => {
+              box.querySelector(".txtStat").style.minWidth = "";
+              box.classList.remove("stat", "bilan");
+              box.classList.add(mode);
+              box
+              .querySelector(".boxTxtItemStat")
+              .querySelector("span").style.maxHeight = ""
+            })
+          }
 
           if(mode === "carte"){
              getId('txtPeriode').textContent = D_ilg.voirsurlacarte[currentIlg]
             boxsItemStat.forEach((box) => {
+              //Réinitialiser
+              box.querySelector(".txtStat").style.minWidth = "";
+              box.classList.remove("stat", "bilan");
+              box.classList.add(mode);
+              box
+              .querySelector(".boxTxtItemStat")
+              .querySelector("span").style.maxHeight = ""
+              //****
               const txt = box.querySelector('.txtStat')
               const btnMapStat = createEl('div')
               btnMapStat.className = "btnMapStat"
@@ -64660,10 +64672,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             // 1) tout écrire, 2) puis tout mesurer
             const boxes = [...boxsItemStat].filter(remplirBilan);
             boxes.forEach((box) => {
+              //Réinitialiser 
+              box.classList.remove("stat", "bilan");
+              box.classList.add(mode);
+              //***
               const badge = box.querySelector(".badgeVarStat");
               badge.parentNode.style.minWidth = badge.getBoundingClientRect().width + "px";
+              maxHeight(box.querySelector(".boxBilanItemStat"))
             });
-            boxes.forEach((box) => maxHeight(box.querySelector(".boxBilanItemStat")));
           }
         }),
       );
