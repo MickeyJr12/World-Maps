@@ -64442,18 +64442,27 @@ function addIslandHalos(path, {
 
       function fillInfosCalque(e = false){
         const p = e.target ? e.target.closest('path') :  false;
+        const crtY = parseInt(infoDateCalque.textContent)
+        const infoYear = D_valY_m.get(crtY)
+        // {AD: 1.273, AE: 2.733,
         if(p && p.id!== infoPCalque.dataset.crtCountry){
         infoPCalque.dataset.crtCountry = p.id
-        const crtY = parseInt(infoDateCalque.textContent)
+
+        const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[p.id]) + 1;
         boxFlagCalque.querySelector('img').src = `flag_c/${p.id.toLowerCase()}.svg`
         valCalque.textContent = formaterGrandNombre (D_valY_m.get(crtY)[p.id],true) + " " + cadreCalque.dataset.unityCalque
-        
+        const spn = infoPCalque.querySelector('span')
+        spn.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
         return
         }
-        if(p === false){
+
+        if(p === false && currentCountry){
           const crtC = currentCountry.id
-        infoPCalque.dataset.crtCountry = crtC
+        infoPCalque.dataset.crtCountry = infoPCalque.dataset.crtCountry
         const crtY = parseInt(infoDateCalque.textContent)
+        const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[crtC]) + 1;
+        const spn = infoPCalque.querySelector('span')
+        spn.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
         boxFlagCalque.querySelector('img').src = `flag_c/${crtC.toLowerCase()}.svg`
         valCalque.textContent = formaterGrandNombre (D_valY_m.get(crtY)[crtC],true) + " " + cadreCalque.dataset.unityCalque
         
