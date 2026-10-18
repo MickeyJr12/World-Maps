@@ -2683,25 +2683,12 @@
           margin : 0.25rem 0;
         }
 
-        .boxTxtItemStat {
-          div {
-             display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 1;
-          overflow: hidden;
-          }
-          
+        .boxTxtItemStat {          
           span {
             display: flex;
             align-items: center;
             position: relative;
-            color: transparent;
-
-            display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          overflow: hidden;
-             
+            color: transparent;            
           }
           .yearsBilan {
             position: absolute;
@@ -3634,6 +3621,13 @@
         transition : padding-bottom var(--transitBilan) ease;
         div {
           /* Le nom (nucléaire) */
+
+           display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+           line-clamp: 1;
+          overflow: hidden;
+
           position : relative;
           font-size: 0.88rem;
           opacity: 0.96;
@@ -3647,6 +3641,12 @@
           font-size: 0.75rem;
           opacity: 0.5;
           transition: color var(--transitBilan) ease;
+
+           display: -webkit-box;
+          -webkit-box-orient: vertical;
+           line-clamp: 2;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
         }
         .yearsBilan {
           white-space: nowrap;
@@ -23383,7 +23383,7 @@
                           </svg>
 
                           <div class="boxTxtItemStat">
-                            <div>Espérance de vie (hommes)</div>
+                            <div>Hommes · Espérance de vie</div>
                             <span>À la naissance</span>
                           </div>
 
@@ -23466,7 +23466,7 @@
                             </g>
                           </svg>
                           <div class="boxTxtItemStat">
-                            <div>Espérance de vie (femmes)</div>
+                            <div>Femmes · Espérance de vie</div>
                             <span>À la naissance</span>
                           </div>
 
