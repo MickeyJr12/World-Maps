@@ -2684,12 +2684,24 @@
         }
 
         .boxTxtItemStat {
+          div {
+             display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
+          }
           
           span {
             display: flex;
             align-items: center;
             position: relative;
             color: transparent;
+
+            display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          overflow: hidden;
+             
           }
           .yearsBilan {
             position: absolute;
@@ -3656,7 +3668,6 @@
         font-size: 1rem;
         color: white;
         transition : color var(--transitBilan) ease;
-
         span {
           /* Le chiffre */
           opacity: 0.96;
