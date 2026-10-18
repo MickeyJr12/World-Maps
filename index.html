@@ -2685,9 +2685,6 @@
 
         .boxTxtItemStat {          
           span {
-            display: flex;
-            align-items: center;
-            position: relative;
             color: transparent;            
           }
           .yearsBilan {
@@ -3563,11 +3560,12 @@
           align-items: center;
           flex-wrap: nowrap;
           gap: 0.4rem;
-          span { /* La date du début : 1960 → */
+          span { /* La valeur date du début : 1960 → */
+            flex-shrink : 1;
             font-size: 0.8rem;
             color: var(--colorSpan);
           }
-          div { /* La date la plus récente */
+          div { /* La valeur de date la plus récente */
             color: white;
             font-size: 1.05rem;
             font-weight: 500;
@@ -3621,7 +3619,6 @@
         transition : padding-bottom var(--transitBilan) ease;
         div {
           /* Le nom (nucléaire) */
-
            display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 1;
@@ -3644,8 +3641,8 @@
 
            display: -webkit-box;
           -webkit-box-orient: vertical;
-           line-clamp: 2;
-          -webkit-line-clamp: 2;
+           line-clamp: 1;
+          -webkit-line-clamp: 1;
           overflow: hidden;
         }
         .yearsBilan {
