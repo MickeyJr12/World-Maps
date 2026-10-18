@@ -67,6 +67,8 @@
         --font-poppins: "Poppins", sans-serif;
         --font-quicksand: "Quicksand", sans-serif;
         --boxShadow: 0 2px 5px rgba(20, 40, 100, 0.06);
+        --backBlueMap : rgba(56, 140, 223, 0.674);
+        
       }
 
       html {
@@ -958,7 +960,7 @@
           filter 0.3s ease;
       }
       .wrapperTool > div:not(.oldWrapperCalque) {
-        background: rgba(56, 140, 223, 0.674);
+        background: var(--backBlueMap);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         backdrop-filter: blur(10px);
@@ -975,7 +977,7 @@
         bottom: 3rem;
         left: 1rem;
         border-radius: 0.6rem;
-        background: rgba(56, 140, 223, 0.674);
+        background: var(--backBlueMap);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         backdrop-filter: blur(10px);
@@ -1043,7 +1045,7 @@
         right: 0.8rem;
         top: 45%;
         transform: translateY(-50%);
-        background: rgba(56, 140, 223, 0.674);
+        background: var(--backBlueMap);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         backdrop-filter: blur(10px);
@@ -1088,7 +1090,7 @@
         transform: scale(0.75) translateY(1rem);
       }
       #calque {
-        background: rgba(56, 140, 223, 0.674);
+        background: var(--backBlueMap);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         backdrop-filter: blur(10px);
@@ -1113,7 +1115,7 @@
         right: calc(100% + 0.6rem); /* s'affiche à gauche du bouton */
       }
       .boxCalques > div {
-        background: rgba(56, 140, 223, 0.674);
+        background: var(--backBlueMap);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         backdrop-filter: blur(10px);
@@ -2527,7 +2529,7 @@
         max-height: 2.4rem;
         backdrop-filter: blur(10px);
         border-radius: 5px;
-        background: rgba(56, 140, 223, 0.674);
+        background: var(--backBlueMap);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         transition:
@@ -3711,7 +3713,9 @@
         padding: 1.5rem;
         padding-top: 1rem;
         padding-bottom: calc(env(safe-area-inset-bottom) + 0.1rem);
-        background: rgba(17, 23, 79, 1);
+        background : var(--backBlueMap);
+        background: rgba(17, 23, 79, 9);
+        backdrop-filter : blur(8px);
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
         width: 100vw;
         transition:
