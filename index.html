@@ -3744,6 +3744,7 @@
         padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
         background : var(--backBlueMap);
         background: rgba(17, 23, 79, 0.85);
+        outline : 1px solid rgba(255,255,255,0.1);
         backdrop-filter : blur(8px);
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
         width: 100vw;
@@ -3851,6 +3852,7 @@
           border-radius : 0.8rem;
           background : inherit;
           box-shadow : var(--boxShadow);
+          outline : 1px solid rgba(255,255,255,0.1);
           transform : translateY(100%);
           padding : 0.4rem 0.8rem;
           transition : opacity 0.2s ease,  transform 0.4s ease, gap 0.4s ease, border-radius 4s ease;
@@ -3965,11 +3967,21 @@
           padding : 0;
           transition : max-height 0.25s ease, padding 0.25s ease;
           .barre {
+            position : relative;
             width : 100%;
             height : 0.5rem;
             border-radius : 50rem;
             background: linear-gradient(270deg, #0f23fa 0%, #0f85fa 50%, #0fe7fa 100%);
             outline : 1px solid rgba(255,255,255,0.2);
+          }
+
+          .indexCursor{
+            position : absolute;
+            border-radius : 50rem;
+            width : 0.25rem;
+            height : calc(100% + 0.1rem);
+            background : white;
+            outline : 2px solid black;
           }
 
           .detailsNbr{
@@ -63373,7 +63385,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           openStat.click() */
           toggleC(false);
           [infoDateCalque,infoPCalque].forEach(el=>el.classList.remove('active'))
-          cadreCalque.classList.remove('active')
+          cadreCalque.classList.remove('active',"hide")
           
           paths.forEach(p=>
           pColor_m.set(p,{
@@ -64120,6 +64132,7 @@ function addIslandHalos(path, {
               crossStat.click()
               getId('backCadre').click();
               toggleC(false);
+              if(query('.indexCursor'))query('.indexCursor').remove()
               infoDateCalque.classList.add('active')
               fillCadreCalque(btnMapStat.closest('.boxItemStat'))
             }
@@ -64304,8 +64317,7 @@ function addIslandHalos(path, {
         const dif = sup - inf;
         txt.textContent = sup
         yearsSorted_m.set(content, [...Ly].sort((a, b) => a - b))
-        cursorByYear_m.set(cursorYBox,{})
-        cursorByYear_m.set(cursorYBoxCalque,{})
+        
 
         content.querySelectorAll(".cursorY").forEach((el) => el.remove());
         Ly.forEach((y) => {
@@ -64321,9 +64333,7 @@ function addIslandHalos(path, {
             e.stopPropagation();
             hapticFeedback("light");
             txt.textContent = cursor.dataset.year;
-            content.querySelectorAll(".cursorY").forEach((el) =>
-              el.classList.remove("current"),
-            );
+            content.querySelector('.cursorY.current').classList.remove('current')
             cursor.classList.add("current");
           });
         
@@ -64399,6 +64409,7 @@ function addIslandHalos(path, {
       function createCursorY(Ly) {
         LArrowY.classList.add("active");
         RArrowY.classList.remove("active");
+        cursorByYear_m.set(cursorYBox,{})
         const R = geneCreateCursorY(Ly,cursorYBox,txtYChoice)
 
         yInf.textContent = R.inf;
@@ -64466,7 +64477,10 @@ function addIslandHalos(path, {
       const yInfCalque = getId('yInfCalque')
       const ySupCalque = getId('ySupCalque')
       const infoPCalque = getId('infoPCalque')
+      const spnInfoCalque = infoPCalque.querySelector('span')
+
       const boxFlagCalque = query('.boxFlagCalque')
+      const imgFlagCalque =  boxFlagCalque.querySelector('img')
       const valCalque = query('.valCalque')
 
       let calquing = false; // Si on est en train d'avoir un calque sur la map
@@ -64533,7 +64547,7 @@ function addIslandHalos(path, {
         ySupCalque.textContent = ySupItem
         yInfCalque.textContent = yInfItem
 
-
+        cursorByYear_m.set(cursorYBoxCalque,{})
         const RCalque = geneCreateCursorY(L_dates,cursorYBoxCalque,infoDateCalque);
         cursorYBoxCalque.querySelectorAll('.cursorY').forEach(c=>{
           c.addEventListener('click',()=>{
@@ -64660,8 +64674,8 @@ function arrNbr(n){
         const min = Math.min(...Object.values(D_valY_m.get(crtY)))  */
         // Comparer les valeurs aux min/max de la dernière année
 
-        const min = valLeg1.dataset.val
-        const max = valLeg4.dataset.val
+        const min = parseInt(valLeg1.dataset.val)
+        const max = parseInt(valLeg4.dataset.val)
         // Prendre les valeurs extrêmes toute année confondue
 
          paths.forEach((p) => {
@@ -64677,6 +64691,16 @@ function arrNbr(n){
           });
       }
       //  Script fillInfosCalque
+      function createIndexCursor(val){
+        const crs  = createEl('div')
+        crs.className = "indexCursor"
+        barreLegCalque.append(crs)
+        const min = parseInt(valLeg1.dataset.val)
+        const max = parseInt(valLeg4.dataset.val)
+        const f = cadreCalque.dataset.log==="true" ? Math.log1p : (v) => v;
+        let prc = 100 * Math.min(1, Math.max(0, (f(val) - f(min)) / (f(max) - f(min))));
+        crs.style.left = `calc(${prc}% - ${crs.getBoundingClientRect().width}px)`
+      }
 
       function fillInfosCalque(e = false){
         const p = e.target ? e.target.closest('path') :  false;
@@ -64684,15 +64708,17 @@ function arrNbr(n){
         const infoYear = D_valY_m.get(crtY);
         infoPCalque.classList.remove('active')
         // {AD: 1.273, AE: 2.733,
+        if(query('.indexCursor'))query('.indexCursor').remove()
         if(p && p.id!== infoPCalque.dataset.crtCountry && p.id in infoYear){
         infoPCalque.classList.add('active')
         infoPCalque.dataset.crtCountry = p.id
 
         const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[p.id]) + 1;
-        boxFlagCalque.querySelector('img').src = `flag_c/${p.id.toLowerCase()}.svg`
-        valCalque.textContent = formaterGrandNombre (D_valY_m.get(crtY)[p.id],true) + " " + cadreCalque.dataset.unityCalque
-        const spn = infoPCalque.querySelector('span')
-        spn.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
+        imgFlagCalque.src = `flag_c/${p.id.toLowerCase()}.svg`
+        const val = D_valY_m.get(crtY)[p.id]
+        valCalque.textContent = formaterGrandNombre (val,true) + " " + cadreCalque.dataset.unityCalque
+        createIndexCursor(val)
+        spnInfoCalque.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
         return
         }
 
@@ -64702,10 +64728,10 @@ function arrNbr(n){
         infoPCalque.dataset.crtCountry = infoPCalque.dataset.crtCountry
         const crtY = parseInt(infoDateCalque.textContent)
         const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[crtC]) + 1;
-        const spn = infoPCalque.querySelector('span')
-        spn.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
-        boxFlagCalque.querySelector('img').src = `flag_c/${crtC.toLowerCase()}.svg`
+        spnInfoCalque.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
+        imgFlagCalque.src = `flag_c/${crtC.toLowerCase()}.svg`
         valCalque.textContent = formaterGrandNombre (D_valY_m.get(crtY)[crtC],true) + " " + cadreCalque.dataset.unityCalque
+        createIndexCursor(D_valY_m.get(crtY)[crtC])
         
         return
         }
