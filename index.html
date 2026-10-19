@@ -3707,6 +3707,13 @@
 
       /* CSS calque */
       .Maps:has(#cadreCalque.active){
+        #btnSub{
+        max-height: 0rem;
+        margin-bottom: -0.6rem;
+        padding: 0;          
+        opacity: 0;
+        pointer-events: none;
+        }
         .wrapperTool{
         display : none;
         }
@@ -3731,7 +3738,7 @@
         border-top-right-radius: 1rem;
         padding: 1.5rem;
         padding-top: 1rem;
-        padding-bottom: calc(env(safe-area-inset-bottom) + 0.1rem);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
         background : var(--backBlueMap);
         background: rgba(17, 23, 79, 0.9);
         backdrop-filter : blur(8px);
@@ -3803,6 +3810,8 @@
           justify-content : center;
           box-sizing : border-box;
           position : absolute;
+          opacity : 0;
+          pointer-events : none;
           gap : 0.4rem;
           top : 0;
           left : 1rem;
@@ -3811,6 +3820,7 @@
           box-shadow : var(--boxShadow);
           transform : none;
           padding : 0.4rem 0.8rem;
+          transition : opacity 0.2s ease,  transform 0.4s ease;
           .boxFlagCalque {
           display: flex;
           justify-content: center;
@@ -3821,6 +3831,11 @@
           max-width: 4rem;
           height: 1rem; /* hauteur fixe */
           max-height: 1.2rem;
+          svg{
+            display : none;
+            height : 100%;
+
+          }
           img {
             width: auto;
             height: auto;
@@ -3832,6 +3847,7 @@
             transition: filter 0.2s ease;
           }
         }
+
           div{
             font-size : 1rem;
             color : white;
@@ -3842,6 +3858,10 @@
           }
           
         }
+        #infoPCalque.active{
+          opacity : 1;
+          pointer-events : all;
+        }
 
         #infoDateCalque{
           display : flex;
@@ -3849,13 +3869,21 @@
           justify-content : center;
           box-sizing : border-box;
           position : absolute;
+          pointer-events: none;
+          opacity : 0;
           top : 0;
           right : 1rem;
           border-radius : 50rem;
           background : inherit;
           box-shadow : var(--boxShadow);
+          outline : 1px solid rgba(255,255,255,0.1);
           transform  : none;
           padding : 0.4rem 0.8rem;
+          transition : opacity 0.2s ease,  transform 0.4s ease;
+        }
+        #infoDateCalque.active{
+          opacity : 1;
+          pointer-events: all;
         }
         #wrapperBarreLegend{
           display : flex;
@@ -3866,7 +3894,9 @@
           max-height : 0;
           gap : 0.18rem;
           width : 100%;
-          transition : max-height 0.25s ease;
+          box-sizing : border-box;
+          padding : 0;
+          transition : max-height 0.25s ease, padding 0.25s ease;
           .barre {
             width : 100%;
             height : 0.5rem;
@@ -22700,10 +22730,10 @@
       <div id="wrapperBarreLegend">
         <div class="barre"></div>
         <div class="detailsNbr">
-          <span>10M</span>
-          <span>100M</span>
-          <span>1Md</span>
-          <span>1M</span>
+          <span id="valLeg1" >10M</span>
+          <!-- <span id="valLeg2">100M</span>
+          <span id="valLeg3">1Md</span> -->
+          <span id="valLeg4">1M</span>
         </div>
       </div>
 
@@ -23002,7 +23032,7 @@
 
               <div id="wrapperItmStat">
                 <!-- Catégorie Société -->
-                <div class="categorieStat" data-color = "rgb(196, 97, 224)">
+                <div class="categorieStat" data-hsl = "287">
                   <div class="headerItemStat">
                     <div
                       class="iconItmStat"
@@ -23096,6 +23126,7 @@
                         data-goodVar="up"
                         data-unity=""
                         data-liste="popTot"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -23156,6 +23187,7 @@
                         data-goodVar="down"
                         data-unity=""
                         data-liste="fertility"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -23227,6 +23259,7 @@
                         data-goodVar="up"
                         data-unity=" ans"
                         data-liste="lifeExpe_M"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -23301,6 +23334,7 @@
                         data-goodVar="up"
                         data-unity=" ans"
                         data-liste="lifeExpe_F"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -23384,6 +23418,7 @@
                         data-goodVar="down"
                         data-unity=""
                         data-liste="genderEq"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -23450,6 +23485,7 @@
                         data-goodVar="up"
                         data-unity=""
                         data-liste="indHapiness"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -23519,7 +23555,7 @@
                 <!-- Fermeture catégorie Société  -->
 
                 <!-- Catégorie économie  -->
-                <div class="categorieStat" data-color = "rgb(14, 158, 236)">
+                <div class="categorieStat" data-hsl = "201">
                   <div class="headerItemStat">
                     <div
                       class="iconItmStat"
@@ -23578,6 +23614,7 @@
                         data-goodVar="up"
                         data-unity="US$"
                         data-liste="pib_tot"
+                        data-log = "true"
                       >
                         <div class="itemStat" id="statPibTot">
                           <svg class="svgItemStat" fill="var(--colorItmStat)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.038 489.038" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M486,215.481l-293.4-169.3c-4-2.3-10.6-2.3-14.6,0L3.2,147.781c-4,2.3-4,6.1,0,8.5l293.3,169.3c4.1,2.4,10.6,2.3,14.6,0 l174.9-101.6C490,221.681,490.1,217.881,486,215.481z M333.1,286.481c-1.6-1.6-3.6-3-5.9-4.3c-14.9-8.6-39-8.6-53.9,0 c-1.1,0.7-2.1,1.3-3.1,2.1l-197.6-114.2c1.9-0.8,3.7-1.6,5.4-2.6c14.8-8.6,14.7-22.6-0.2-31.2c-1.6-0.9-3.4-1.8-5.2-2.5l81.5-47.3 c1.3,1,2.7,2.1,4.3,3c14.9,8.6,39.1,8.6,53.9,0c1.7-1,3.2-2,4.4-3.1l198.2,114.5c-2.6,0.9-5.1,2-7.3,3.3 c-14.8,8.6-14.7,22.6,0.2,31.2c2.3,1.3,4.9,2.4,7.6,3.4L333.1,286.481z M357,243.281l-12.9,7.5c-2,1.1-5.2,1.2-7.2,0l-22.7-13.1 c-2-1.2-2-3,0-4.2l12.9-7.5c2-1.1,5.2-1.2,7.2,0l22.7,13.1C359,240.281,359,242.181,357,243.281z M175,138.181l-12.9,7.5 c-2,1.1-5.2,1.2-7.2,0l-22.7-13.1c-2-1.2-2-3,0-4.2l12.9-7.5c2-1.1,5.2-1.2,7.2,0l22.7,13.1C177,135.181,177,137.081,175,138.181z M466.2,267.581l22.8,13.2l-183.3,106.5l-6-3.4l-16.9-9.7L0,210.581l22.6-13.1l282.9,163.4L466.2,267.581z M283.2,431.381 L0,267.581l22.6-13.1l283.3,163.8l160-93l22.8,13.2L306,444.581l-5.9-3.4L283.2,431.381z M302.8,152.081 c-32.3-18.6-84.6-18.6-116.7,0c-32,18.6-31.9,48.9,0.4,67.6c32.2,18.6,84.5,18.6,116.6,0C335.2,201.081,335,170.781,302.8,152.081z M235.4,195.581h-22.7v-13.1v-12.7l22.8,0.1v12.7l52,0.1v13.2L235.4,195.581z"></path> </g> </g></svg>
@@ -23625,6 +23662,7 @@
                         data-goodVar="up"
                         data-unity="US$"
                         data-liste="pib_hab"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -23687,6 +23725,7 @@
                         data-goodVar="down"
                         data-unity="%"
                         data-liste="chomage"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -23753,6 +23792,7 @@
                         data-goodVar="down"
                         data-unity="%"
                         data-liste="inflation"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -23821,7 +23861,7 @@
                 <!-- Fin catégorie économie -->
 
                 <!-- Catégorie Énergie -->
-                <div class="categorieStat" data-color = "orange">
+                <div class="categorieStat" data-hsl = "39">
                   <div class="headerItemStat">
                     <div class="iconItmStat" style="background: orange">
                       <svg
@@ -23913,6 +23953,7 @@
                         data-goodVar="up"
                         data-unity="%"
                         data-liste="eolien_zs"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -23971,6 +24012,7 @@
                         data-goodVar="up"
                         data-unity="%"
                         data-liste="solar_zs"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24080,6 +24122,7 @@
                         data-goodVar="up"
                         data-unity="%"
                         data-liste="hydro_zs"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24146,6 +24189,7 @@
                         data-goodVar="down"
                         data-unity="%"
                         data-liste="gaz_zs"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24220,6 +24264,7 @@
                         data-goodVar="down"
                         data-unity="%"
                         data-liste="nucl_zs"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24315,6 +24360,7 @@
                         data-goodVar="down"
                         data-unity="%"
                         data-liste="coal_zs"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24381,6 +24427,7 @@
                         data-goodVar="down"
                         data-unity="%"
                         data-liste="petrole_zs"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -24442,7 +24489,7 @@
                 <!--  -->
                 <!-- Catégorie environnement -->
 
-                <div class="categorieStat" data-color="green">
+                <div class="categorieStat" data-hsl = "120">
                   <div class="headerItemStat">
                     <div class="iconItmStat" style="background: green">
                       <svg
@@ -24494,6 +24541,7 @@
                         data-goodVar="down"
                         data-unity="tCO₂e"
                         data-liste="co2Hab"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -24574,6 +24622,7 @@
                         data-goodVar="down"
                         data-unity="Mt CO₂e"
                         data-liste="emissionTot"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -24651,6 +24700,7 @@
                         data-goodVar="down"
                         data-unity="µg/m³"
                         data-liste="airQuality"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -24771,6 +24821,7 @@
                         data-goodVar="up"
                         data-unity="%"
                         data-liste="agricole_zs"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -24838,6 +24889,7 @@
                         data-goodVar="up"
                         data-unity="%"
                         data-liste="arable_zs"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -24903,6 +24955,7 @@
                         data-goodVar="up"
                         data-unity="%"
                         data-liste="forets_zs"
+                        data-log = "false"
                       >
                         <div class="itemStat">
                           <svg
@@ -63231,14 +63284,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       backMaps.addEventListener("click", () => {
         if(calquing){
           getId('svgMonde').removeEventListener('click',fillInfosCalque)
-          currentCountry = lastPCalque
+          calquing = false;
+          /* currentCountry = lastPCalque  
           voirPlus.click()
-          openStat.click()
-          lastBoxCalque.querySelector('.itemStat').click()
-          
-          setTimeout(()=>{cadreCalque.classList.remove('active')},1000)         
+          openStat.click() */
+          toggleC(false);
+          [infoDateCalque,infoPCalque].forEach(el=>el.classList.remove('active'))
+          setTimeout(()=>{cadreCalque.classList.remove('active')},200)         
 
-          paths.forEach(p=>pColor_m.set(p,{
+          paths.forEach(p=>
+          pColor_m.set(p,{
             hovered : "",
             current : `${colorPath}`
           }))
@@ -63948,6 +64003,7 @@ function addIslandHalos(path, {
             //Réinitialiser
             boxsItemStat.forEach((box) => {
               box.querySelector(".txtStat").style.minWidth = "";
+              box.querySelector(".txtStat").style.maxWidth = "";
               box.classList.remove("stat", "bilan");
               box.classList.add(mode);
               box
@@ -63977,17 +64033,19 @@ function addIslandHalos(path, {
               btnMapStat.append(div)
               txt.prepend(btnMapStat)
               requestAnimationFrame(()=>btnMapStat.style.opacity = 1)
+              txt.style.maxWidth = btnMapStat.getBoundingClientRect().width + "px" ;
 
               btnMapStat.addEventListener('pointerdown',(e)=>e.stopPropagation())
               btnMapStat.addEventListener('click',(e)=>{
               e.stopPropagation();
-              crossStat.click()
-              getId('backCadre').click();
               cadreCalque.classList.add('active')
               calquing = true;
               lastPCalque = currentCountry
               lastBoxCalque = box;
-
+              crossStat.click()
+              getId('backCadre').click();
+              toggleC(false);
+              infoDateCalque.classList.add('active')
               fillCadreCalque(btnMapStat.closest('.boxItemStat'))
 
             }
@@ -64011,6 +64069,7 @@ function addIslandHalos(path, {
 
             // Remplit un indicateur. Renvoie false s'il n'a pas de données.
             function remplirBilan(box) {
+              box.querySelector(".txtStat").style.maxWidth = "";
               const { liste, unity, goodvar } = box.dataset;
               const serie = D_yListes[liste][crtCStat.id];
               if (!Array.isArray(serie) || serie.length === 0) return false;
@@ -64323,6 +64382,11 @@ function addIslandHalos(path, {
       const iconTRCalque = getId('iconTRCalque')
       const expendCalque = getId('expendCalque')
       const wrapperBarreLegend = getId('wrapperBarreLegend')
+      const barreLegCalque = wrapperBarreLegend.querySelector('.barre')
+      const valLeg1  = getId('valLeg1')
+     /*  const valLeg2  = getId('valLeg2')
+      const valLeg3  = getId('valLeg3') */
+      const valLeg4  = getId('valLeg4')
       const cadreCalque = getId('cadreCalque')
       const titleCalque = getId('titleCalque')
       const yInfCalque = getId('yInfCalque')
@@ -64337,8 +64401,8 @@ function addIslandHalos(path, {
 
       iconTRCalque.addEventListener('click',()=>{
         wrapperBarreLegend.style.maxHeight === "" ? 
-        (maxHeight(wrapperBarreLegend),cadreCalque.classList.add('expend')) : 
-        (wrapperBarreLegend.style.maxHeight = "",cadreCalque.classList.remove('expend') )
+        (maxHeight(wrapperBarreLegend),cadreCalque.classList.add('expend'),wrapperBarreLegend.style.padding = "4px") : 
+        (wrapperBarreLegend.style.maxHeight = "",cadreCalque.classList.remove('expend'),wrapperBarreLegend.style.padding = "" )
       })
 
       let choisingYCalque = false;
@@ -64359,9 +64423,11 @@ function addIslandHalos(path, {
         const L_total = D_yListes[box.dataset.liste];
         const unity = box.dataset.unity;
         const L_dates = [];
-        cadreCalque.dataset.color = box.closest('.categorieStat').dataset.color
+        cadreCalque.dataset.hsl = box.closest('.categorieStat').dataset.hsl
         cadreCalque.dataset.unityCalque = box.dataset.unity
         cadreCalque.dataset.Lcalque = box.dataset.unity
+        cadreCalque.dataset.log = box.dataset.log
+
         for (const id in L_total){
           const e = L_total[id];
           if(typeof e !== "object")continue
@@ -64385,7 +64451,9 @@ function addIslandHalos(path, {
         })
 
         const div = titleCalque.querySelector('div')
-        div.innerHTML = box.querySelector('svg').innerHTML
+        div.innerHTML = ``
+        div.append(box.querySelector('.svgItemStat').cloneNode(true))
+        
         const spn = titleCalque.querySelector('span')
         spn.textContent = box.querySelector('.boxTxtItemStat').querySelector('div').textContent
 
@@ -64403,6 +64471,9 @@ function addIslandHalos(path, {
         }
         D_valY_m.set(y,D_val)
         })
+         const L_val = Object.values(D_valY_m.get(Math.max(...L_dates)))
+        valLeg1.textContent = Math.min(...L_val)
+        valLeg4.textContent = formaterGrandNombre(arrNbr(Math.max(...L_val)))
 
 
         getId('svgMonde').removeEventListener('click',fillInfosCalque)
@@ -64412,43 +64483,55 @@ function addIslandHalos(path, {
 
       // Colorer les pays 
       // return une couleur en fonction d'un nombre
-      function hslColor(valeur, min, max, teinte = 12) {
-  const t = Math.min(1, Math.max(0, (valeur - min) / (max - min))); // 0 à 1
-  const luminosite = 90 - t * 75;  // 90 % (très clair) → 30 % (foncé)
-  return `hsl(${teinte}, 70%, ${luminosite}%)`;
+      function hslColor(val, min, max, hsl, log) {
+  const f = log==="true" ? Math.log1p : (v) => v;       // log1p(x) = log(1 + x), accepte 0
+  const teinte = Math.min(1, Math.max(0, (f(val) - f(min)) / (f(max) - f(min))));
+  const luminosite = 95 - teinte * 85;  // 90 % (très clair) → 30 % (foncé)
+  return `hsl(${hsl}, 80%, ${luminosite}%)`;
+}
+function arrNbr(n){
+  let sup = 1000000000000000000
+    while(sup>n){
+        sup = sup/10
+    }
+  return Math.floor(10*n/sup)*(sup/10)
 }
 
       const D_valY_m = new Map()
       // Stoque les valeurs selon l'indicateur et l'année, est vidé à chaque fois qu'on remplie CadreCalque
       function calqueAllC(crtY){
         const D_val = D_valY_m.get(crtY)
-        const max = Math.max(...Object.values(D_val))
-        const min = Math.min(...Object.values(D_val))
+        const ySup = parseInt(ySupCalque.textContent)
+       /*  const max = Math.max(...Object.values(D_valY_m.get(crtY)))
+        const min = Math.min(...Object.values(D_valY_m.get(crtY))) */
+
+        const max = Math.max(...Object.values(D_valY_m.get(ySup))) 
+        const min = Math.min(...Object.values(D_valY_m.get(crtY))) 
+        // Comparer les valeurs aux min/max de la dernière année
 
          paths.forEach((p) => {
+
           if(!(p.id in D_val)){
-              pColor_m.set(p, {
-                hovered: "rgb(29, 204, 90)",
-                current: "rgb(0, 0, 0)",
-              });
+              p.style.fill = "black"
               return;
           }
-          const hsl = hslColor(D_val[p.id],min,max)
-            pColor_m.set(p, {
-              hovered: "rgb(29, 204, 90)",
-              current: hsl,
-            });
+          const crtHsl = cadreCalque.dataset.hsl
+          const hsl = hslColor(D_val[p.id],min,max, crtHsl, cadreCalque.dataset.log)
+          barreLegCalque.style.background = `linear-gradient(90deg, hsl(${crtHsl}, 80%, 95%), hsl(${crtHsl}, 80%, 10%))`
+          p.style.fill = hsl
+
           });
-          colorCountry()
       }
       //  Script fillInfosCalque
 
       function fillInfosCalque(e = false){
         const p = e.target ? e.target.closest('path') :  false;
         const crtY = parseInt(infoDateCalque.textContent)
-        const infoYear = D_valY_m.get(crtY)
+        const infoYear = D_valY_m.get(crtY);
+        infoPCalque.classList.remove('active')
         // {AD: 1.273, AE: 2.733,
-        if(p && p.id!== infoPCalque.dataset.crtCountry){
+        if(p && p.id!== infoPCalque.dataset.crtCountry && p.id in infoYear){
+        infoPCalque.classList.add('active')
         infoPCalque.dataset.crtCountry = p.id
 
         const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[p.id]) + 1;
@@ -64459,7 +64542,8 @@ function addIslandHalos(path, {
         return
         }
 
-        if(p === false && currentCountry){
+        if(p === false && currentCountry){ // appel de la fonction avec les curseurs
+        infoPCalque.classList.add('active')
           const crtC = currentCountry.id
         infoPCalque.dataset.crtCountry = infoPCalque.dataset.crtCountry
         const crtY = parseInt(infoDateCalque.textContent)
@@ -64472,6 +64556,7 @@ function addIslandHalos(path, {
         return
         }
        
+        infoPCalque.classList.remove('active')
         infoPCalque.dataset.crtCountry = null
         
         
@@ -65139,7 +65224,7 @@ function addIslandHalos(path, {
       }
 
       voirPlus.addEventListener("click", () => {
-        if (currentCountry.id in L_q) {
+        if (currentCountry?.id in L_q) {
           openStat.style.display = "";
           fillCadreStat(currentCountry);
           resetCadreStat();
@@ -91497,7 +91582,8 @@ function addIslandHalos(path, {
           "path",
         );
         const pathOriginal = document.getElementById(p_id);
-        overlay.setAttribute("id", "country-overlay");
+        overlay.setAttribute("id", `${p_id}Overlay`);
+        overlay.setAttribute("class", `pOverlay`);
         overlay.setAttribute("pointer-events", "none");
         overlay.style.fill = "black";
         overlay.style.transition = "opacity 0.3s ease";
@@ -91589,10 +91675,9 @@ function addIslandHalos(path, {
         ).forEach((p) => {
           const status = idVisible_m.get(p.id);
           const visible = status && Object.values(status).every(Boolean);
-          p.style.fill = visible ? pColor_m.get(p).current : "";
-          // if (!visible) {
-          //   return;
-          // }
+          !calquing ? 
+          (p.style.fill =  visible ? pColor_m.get(p).current : "") : "";
+
           if (p === currentCountry && currentCountry != null) {
             const overlay = overlay_m.get(p.id);
             svg.append(overlay);
