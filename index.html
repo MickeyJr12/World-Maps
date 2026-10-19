@@ -65075,6 +65075,7 @@ function arrNbr(n){
 
         // Supprimer les blocs qui n'ont pas de données
 
+        
         sousCatesStat.forEach((sousCate) => {
           // Supprimer les sous catégories : Mix énergétique...
           if (
@@ -65115,6 +65116,7 @@ function arrNbr(n){
               (a, b) => b - a, // ordre de population décroissante
             ).reverse(),
           );
+          cursorYBox.querySelector('.cursorY.current').click()
         }
       }
 
