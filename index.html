@@ -960,7 +960,7 @@
         gap: 0.6rem;
         transition:
           transform 0.2s ease,
-          filter 0.3s ease;
+          filter 0.3s ease, opacity 0.2s ease;
       }
       .wrapperTool > div:not(.oldWrapperCalque) {
         background: var(--backBlueMap);
@@ -3706,7 +3706,7 @@
       /*Fin CSS Stats */
 
       /* CSS calque */
-      .Maps:has(#cadreCalque.active){
+      .Maps:has(#cadreCalque.active),.Maps:has(#cadreCalque.hide){
         #btnSub{
         max-height: 0rem;
         margin-bottom: -0.6rem;
@@ -3715,7 +3715,10 @@
         pointer-events: none;
         }
         .wrapperTool{
-        display : none;
+        /* display : none; */
+        opacity : 0;
+        pointer-events : none;
+        transform : translateX(calc(100% + 1rem))
         }
         #svgMonde path{
           transition : none;
@@ -3740,7 +3743,7 @@
         padding-top: 1rem;
         padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
         background : var(--backBlueMap);
-        background: rgba(17, 23, 79, 0.9);
+        background: rgba(17, 23, 79, 0.85);
         backdrop-filter : blur(8px);
         box-shadow: 0 0 2.5px rgba(0, 0, 0, 0.35);
         width: 100vw;
@@ -3757,6 +3760,13 @@
           transform : translateY(calc(-100% - 0.5rem));
         }
           transform : translateX(-50%);
+      }
+
+       #cadreCalque.hide {
+        #infoPCalque,#infoDateCalque{
+          transform : translateY(calc(calc(-100% - env(safe-area-inset-bottom) - 0.6rem)));
+        }
+          transform : translateX(-50%) translateY(100%);
       }
          #cadreCalque.expend{
         #minusCalque{
@@ -3792,9 +3802,17 @@
       }
 
       #iconTRCalque{
-        height : 1.5rem;
+        /* height : 1.5rem; */
+        box-sizing : border-box;
+        display : flex;
+        justify-content : center;
+        align-items : center;
+        padding : 0.4rem;
+        border-radius : 50%;  
+        background : rgba(255,255,255,0.08);
         svg {
-          height : 100%;
+          height : 1rem;
+          transform : rotate(-90deg);
         }
       }
         #minusCalque{
@@ -3811,7 +3829,6 @@
           box-sizing : border-box;
           position : absolute;
           opacity : 0;
-          pointer-events : none;
           gap : 0.4rem;
           top : 0;
           left : 1rem;
@@ -3869,7 +3886,6 @@
           justify-content : center;
           box-sizing : border-box;
           position : absolute;
-          pointer-events: none;
           opacity : 0;
           top : 0;
           right : 1rem;
@@ -3891,7 +3907,7 @@
           justify-content : center;
           align-items : flex-start;
           overflow : hidden;
-          max-height : 0;
+          /* max-height : 0; */
           gap : 0.18rem;
           width : 100%;
           box-sizing : border-box;
@@ -22701,9 +22717,20 @@
       </div>
       
         <div id="iconTRCalque" >
-      <svg id="expendCalque" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><path d="M10.125 8.875C10.125 7.83947 10.9645 7 12 7C13.0355 7 13.875 7.83947 13.875 8.875C13.875 9.56245 13.505 10.1635 12.9534 10.4899C12.478 10.7711 12 11.1977 12 11.75V13" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="12" cy="16" r="1" fill="#ffffff"></circle> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path></svg>
-      <svg id="minusCalque" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 12H9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+      <svg id="expendCalque" style="display : none" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><path d="M10.125 8.875C10.125 7.83947 10.9645 7 12 7C13.0355 7 13.875 7.83947 13.875 8.875C13.875 9.56245 13.505 10.1635 12.9534 10.4899C12.478 10.7711 12 11.1977 12 11.75V13" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="12" cy="16" r="1" fill="#ffffff"></circle> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path></svg>
+      <svg id="minusCalque" style="display : none" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 12H9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
 
+           <svg
+            id="reduceCalque"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Bold"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
       </div>
       </div>
 
@@ -33066,7 +33093,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         function setIndex(i) {
           i = Math.max(0, Math.min(n - 1, i));
           if (i === courant) return;
-          // hapticFeedback("light")
+          hapticFeedback("light")
           courant = i;
           const cx = X(annees[i]),
             cy = Y(valeurs[i]);
@@ -64255,7 +64282,7 @@ function addIslandHalos(path, {
       }     
 
       function pDownCursor(e,content){
-        // hapticFeedback("medium");
+        hapticFeedback("medium");
         const cursors = content.querySelectorAll(".cursorY");
         const x = e.clientX;
         const minDist = Math.min(
@@ -64393,9 +64420,22 @@ function addIslandHalos(path, {
       let lastBoxCalque; /* Revenur sur le dernier indicateur */
 
       iconTRCalque.addEventListener('click',()=>{
-        wrapperBarreLegend.style.maxHeight === "" ? 
+
+       /*  wrapperBarreLegend.style.maxHeight === "" ? 
         (maxHeight(wrapperBarreLegend),cadreCalque.classList.add('expend')) : 
         (wrapperBarreLegend.style.maxHeight = "",cadreCalque.classList.remove('expend'),wrapperBarreLegend.style.padding = "" )
+       */
+          hapticFeedback('medium')
+        cadreCalque.classList.remove('active')
+          cadreCalque.classList.add('hide')
+      })
+
+      ;[infoDateCalque,infoPCalque].forEach(el=>{
+        el.addEventListener('click',()=>{
+          hapticFeedback('medium')
+          cadreCalque.classList.remove('hide')
+          cadreCalque.classList.add('active')
+        })
       })
 
       let choisingYCalque = false;
@@ -64490,8 +64530,13 @@ function addIslandHalos(path, {
   function hslColor(val, min, max, hsl, log) {
   const f = log==="true" ? Math.log1p : (v) => v;       // log1p(x) = log(1 + x), accepte 0
   const teinte = Math.min(1, Math.max(0, (f(val) - f(min)) / (f(max) - f(min))));
-  const luminosite = 100 - teinte*90 ;  // 90 % (très clair) → 30 % (foncé)
-  return `hsl(${hsl}, 80%, ${luminosite}%)`;
+  const luminosite = 95 - teinte*88 ;  // 90 % (très clair) → 30 % (foncé)
+  let difHsl;
+  log === "true" ? difHsl = 50 : difHsl = 30;
+  const R_hsl = hsl - difHsl + teinte*difHsl;
+  // return `hsl(${hsl}, 80%, ${luminosite}%)`;
+  return `hsl(${R_hsl}, 85%, ${luminosite}%)`;
+  
 } 
 function hslToRgb(h, s, l) {
   s /= 100; l /= 100;
@@ -65110,7 +65155,7 @@ function arrNbr(n){
           ].filter((el) => !el.classList.contains("noInfo")).length;
         });
 
-        if (!cursoring) {
+        if (!cursoring && openStat.style.display !== "none") {
           query('[data-statchoice="stat"]').click();
           createCursorY(
             L_yDispos.sort(
