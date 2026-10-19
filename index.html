@@ -33158,6 +33158,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           requestAnimationFrame(() => {
             el.style.transition = "";
             el.style.maxHeight = h + 20 + "px";
+            if(el === wrapperBarreLegend)wrapperBarreLegend.style.padding = "4px"
           });
         });
       }
@@ -64393,7 +64394,7 @@ function addIslandHalos(path, {
 
       iconTRCalque.addEventListener('click',()=>{
         wrapperBarreLegend.style.maxHeight === "" ? 
-        (maxHeight(wrapperBarreLegend),cadreCalque.classList.add('expend'),wrapperBarreLegend.style.padding = "4px") : 
+        (maxHeight(wrapperBarreLegend),cadreCalque.classList.add('expend')) : 
         (wrapperBarreLegend.style.maxHeight = "",cadreCalque.classList.remove('expend'),wrapperBarreLegend.style.padding = "" )
       })
 
