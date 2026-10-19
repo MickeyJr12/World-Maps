@@ -3756,8 +3756,11 @@
         --colorItmStat: rgba(255, 255, 255, 0.6); /* La couleur des svg */
       }
       #cadreCalque.active {
-        #infoPCalque,#infoDateCalque{
+        #infoDateCalque{
           transform : translateY(calc(-100% - 0.5rem));
+        }
+        #infoPCalque{
+          transform : translateY(-0.5rem);
         }
           transform : translateX(-50%);
       }
@@ -3765,8 +3768,11 @@
        #cadreCalque.hide {
          transform : translateX(-50%) translateY(100%);
 
-        #infoPCalque,#infoDateCalque{
-          transform : translateY(calc(calc(-100% - env(safe-area-inset-bottom) - 0.6rem)));
+        #infoDateCalque{
+          transform : translateY(calc(-100% - env(safe-area-inset-bottom) - 0.6rem));
+        }
+        #infoPCalque{
+          transform : translateY(calc(-0.6rem - env(safe-area-inset-bottom)));
         }
         
         #infoPCalque{
@@ -3840,12 +3846,12 @@
           box-sizing : border-box;
           position : absolute;
           opacity : 0;
-          top : 0;
+          bottom : 100%;
           left : 1rem;
           border-radius : 0.8rem;
           background : inherit;
           box-shadow : var(--boxShadow);
-          transform : none;
+          transform : translateY(100%);
           padding : 0.4rem 0.8rem;
           transition : opacity 0.2s ease,  transform 0.4s ease, gap 0.4s ease, border-radius 4s ease;
         .headerInfoPCalque{
