@@ -3763,10 +3763,20 @@
       }
 
        #cadreCalque.hide {
+         transform : translateX(-50%) translateY(100%);
+
         #infoPCalque,#infoDateCalque{
           transform : translateY(calc(calc(-100% - env(safe-area-inset-bottom) - 0.6rem)));
         }
-          transform : translateX(-50%) translateY(100%);
+        
+        #infoPCalque{
+          border-radius : 0.8rem;
+          gap : 0.4rem;
+        }
+        .headerInfoPCalque{
+          max-height : 1rem;
+        }
+
       }
          #cadreCalque.expend{
         #minusCalque{
@@ -3824,20 +3834,55 @@
 
         #infoPCalque{
           display : flex;
+          flex-direction : column;
           align-items : center;
           justify-content : center;
           box-sizing : border-box;
           position : absolute;
           opacity : 0;
-          gap : 0.4rem;
           top : 0;
           left : 1rem;
-          border-radius : 50rem;
+          border-radius : 0.8rem;
           background : inherit;
           box-shadow : var(--boxShadow);
           transform : none;
           padding : 0.4rem 0.8rem;
-          transition : opacity 0.2s ease,  transform 0.4s ease;
+          transition : opacity 0.2s ease,  transform 0.4s ease, gap 0.4s ease, border-radius 4s ease;
+        .headerInfoPCalque{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            max-height: 0;
+            padding: 0;
+            width: 100%;
+            transition: all 0.4s ease;
+
+        svg{
+          flex-shrink: 0;
+          margin-right: 0.25rem;
+          height: 0.8rem;
+        }
+      
+        .texteHeader{
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          line-clamp: 1;
+          overflow: hidden;
+          font-size: 0.75rem;
+          color: var(--colorSpan);
+          min-width: 0;
+  }
+}
+          .FooterInfoPCalque{
+            display : flex;
+            align-items : center;
+            justify-content : center;
+            box-sizing : border-box;
+            width : 100%;
+            gap : 0.4rem;
+          }
           .boxFlagCalque {
           display: flex;
           justify-content: center;
@@ -3889,7 +3934,7 @@
           opacity : 0;
           top : 0;
           right : 1rem;
-          border-radius : 50rem;
+          border-radius : 0.8rem;
           background : inherit;
           box-shadow : var(--boxShadow);
           outline : 1px solid rgba(255,255,255,0.1);
@@ -22736,6 +22781,9 @@
 
 
       <div id="infoPCalque">
+          <div class="headerInfoPCalque"><div class="boxSvg"></div> <div class="texteHeader"></div></div>
+          <div class="FooterInfoPCalque">
+
           <div class="boxFlagCalque">
             <img
               src="flag_c/fr.svg"
@@ -22750,6 +22798,7 @@
 
           <div class="valCalque">12%</div>
           <span> 12 / 196</span>
+      </div>
       </div>
 
       <div id="infoDateCalque">1970</div>
@@ -64489,10 +64538,20 @@ function addIslandHalos(path, {
 
         const div = titleCalque.querySelector('div')
         div.innerHTML = ``
-        div.append(box.querySelector('.svgItemStat').cloneNode(true))
+        const iconClone = box.querySelector('.svgItemStat')
+        div.append(iconClone.cloneNode(true))
         
+        const txtSpn  = box.querySelector('.boxTxtItemStat').querySelector('div').textContent
         const spn = titleCalque.querySelector('span')
-        spn.textContent = box.querySelector('.boxTxtItemStat').querySelector('div').textContent
+        spn.textContent = txtSpn
+
+        const head = infoPCalque.querySelector('.headerInfoPCalque')
+        const boxH = head.querySelector('.boxSvg')
+        const txtH = head.querySelector('.texteHeader')
+
+        boxH.innerHTML = ``
+        boxH.append(iconClone.cloneNode(true))
+        txtH.textContent= txtSpn
 
         // Remplir les valeurs pour chaque date 
         D_valY_m.clear()
@@ -64510,13 +64569,12 @@ function addIslandHalos(path, {
         maxOfMax = Math.max(maxOfMax,Math.max(...Object.values(D_val)))
         minOfMin = Math.min(minOfMin,Math.min(...Object.values(D_val)))
         })
-        valLeg1.textContent = minOfMin
+        valLeg1.textContent = formaterGrandNombre(arrNbr(minOfMin)) + unity
         valLeg1.dataset.val = minOfMin
-        valLeg4.textContent = formaterGrandNombre(arrNbr(maxOfMax))
+        valLeg4.textContent = formaterGrandNombre(arrNbr(maxOfMax)) + unity
         valLeg4.dataset.val = maxOfMax
 
-        barreLegCalque.style.background = `linear-gradient(90deg, hsl(${crtHsl}, 80%, 95%), hsl(${crtHsl}, 80%, 10%))`
-
+        barreLegCalque.style.background = `linear-gradient(90deg, hsl(0, 80%, 95%), hsl(120, 80%, 7%))`
 
 
         getId('svgMonde').removeEventListener('click',fillInfosCalque)
