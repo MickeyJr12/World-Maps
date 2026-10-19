@@ -3960,6 +3960,7 @@
           justify-content : center;
           align-items : flex-start;
           overflow : hidden;
+          overflow-x : visible;
           /* max-height : 0; */
           gap : 0.18rem;
           width : 100%;
@@ -3967,6 +3968,8 @@
           padding : 0;
           transition : max-height 0.25s ease, padding 0.25s ease;
           .barre {
+            display : flex;
+            align-items : center;
             position : relative;
             width : 100%;
             height : 0.5rem;
@@ -63750,8 +63753,9 @@ function addIslandHalos(path, {
         const circle = addIslandHalos(c,{margin: /* D_factorMargin[pId] */ 0.4, stroke: "#ffd54a",strokeWidth : 0.8, })
 
         //
+        circle.querySelectorAll('path').forEach(p=>p.dataset.circleid = pId)
         circle.addEventListener("click", (e) => {
-          e.stopPropagation();
+          // e.stopPropagation();
           const country = c;
           if (country != null) {
             const status = idVisible_m.get(country.id);
@@ -64125,6 +64129,10 @@ function addIslandHalos(path, {
               btnMapStat.addEventListener('pointerdown',(e)=>e.stopPropagation())
               btnMapStat.addEventListener('click',(e)=>{
               e.stopPropagation();
+              let eyesBtn = [...queryAll('.eye-btn.hidden')].filter(el=>el.parentNode.classList.contains('view-region-row') ||el.parentNode.classList.contains('view-main-row') )
+              let eyeFilter = getId('orgaMainEye')
+              if(eyesBtn)eyesBtn.forEach(eye=>eye.click())
+              getId('orgaMain-eye');
               cadreCalque.classList.add('active')
               calquing = true;
               lastPCalque = currentCountry
@@ -64702,20 +64710,24 @@ function arrNbr(n){
         crs.style.left = `calc(${prc}% - ${crs.getBoundingClientRect().width}px)`
       }
 
-      function fillInfosCalque(e = false){
+      
+      function fillInfosCalque(e = null){
         const p = e.target ? e.target.closest('path') :  false;
+        let p_id = e ?? p?.id in L_q ? p.id : p?.dataset.circleid;
+
         const crtY = parseInt(infoDateCalque.textContent)
         const infoYear = D_valY_m.get(crtY);
         infoPCalque.classList.remove('active')
         // {AD: 1.273, AE: 2.733,
         if(query('.indexCursor'))query('.indexCursor').remove()
-        if(p && p.id!== infoPCalque.dataset.crtCountry && p.id in infoYear){
-        infoPCalque.classList.add('active')
-        infoPCalque.dataset.crtCountry = p.id
 
-        const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[p.id]) + 1;
-        imgFlagCalque.src = `flag_c/${p.id.toLowerCase()}.svg`
-        const val = D_valY_m.get(crtY)[p.id]
+        if(p && p_id!== infoPCalque.dataset.crtCountry && p_id in infoYear){
+        infoPCalque.classList.add('active')
+        infoPCalque.dataset.crtCountry = p_id
+
+        const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[p_id]) + 1;
+        imgFlagCalque.src = `flag_c/${p_id.toLowerCase()}.svg`
+        const val = D_valY_m.get(crtY)[p_id]
         valCalque.textContent = formaterGrandNombre (val,true) + " " + cadreCalque.dataset.unityCalque
         createIndexCursor(val)
         spnInfoCalque.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
@@ -97445,6 +97457,7 @@ function arrNbr(n){
         requestAnimationFrame(loop);
         console.log(choisingYStat);
       }
+      // document.addEventListener('click',(e)=>console.log(e.target.closest("*")))
       // loop()
 
       // Script éphémère
