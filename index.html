@@ -23515,7 +23515,7 @@
                         data-goodVar="down"
                         data-unity=""
                         data-liste="genderEq"
-                        data-log = "false"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24638,7 +24638,7 @@
                         data-goodVar="down"
                         data-unity="tCO₂e"
                         data-liste="co2Hab"
-                        data-log = "false"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24797,7 +24797,7 @@
                         data-goodVar="down"
                         data-unity="µg/m³"
                         data-liste="airQuality"
-                        data-log = "false"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24986,7 +24986,7 @@
                         data-goodVar="up"
                         data-unity="%"
                         data-liste="arable_zs"
-                        data-log = "false"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -25052,7 +25052,7 @@
                         data-goodVar="up"
                         data-unity="%"
                         data-liste="forets_zs"
-                        data-log = "false"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -64128,6 +64128,7 @@ function addIslandHalos(path, {
 
               btnMapStat.addEventListener('pointerdown',(e)=>e.stopPropagation())
               btnMapStat.addEventListener('click',(e)=>{
+                console.log("1")
               e.stopPropagation();
               let eyesBtn = [...queryAll('.eye-btn.hidden')].filter(el=>el.parentNode.classList.contains('view-region-row') ||el.parentNode.classList.contains('view-main-row') )
               let eyeFilter = getId('orgaMainEye')
@@ -64560,7 +64561,7 @@ function addIslandHalos(path, {
         cursorYBoxCalque.querySelectorAll('.cursorY').forEach(c=>{
           c.addEventListener('click',()=>{
             calqueAllC(parseInt(c.dataset.year))
-            fillInfosCalque(c.dataset.year)
+            fillInfosCalque({curseur : c.dataset.year})
           })
         })
 
@@ -64597,7 +64598,10 @@ function addIslandHalos(path, {
         maxOfMax = Math.max(maxOfMax,Math.max(...Object.values(D_val)))
         minOfMin = Math.min(minOfMin,Math.min(...Object.values(D_val)))
         })
+
+        console.log(minOfMin)
         valLeg1.textContent = formaterGrandNombre(arrNbr(minOfMin)) + unity
+
         valLeg1.dataset.val = minOfMin
         valLeg4.textContent = formaterGrandNombre(arrNbr(maxOfMax)) + unity
         valLeg4.dataset.val = maxOfMax
@@ -64613,15 +64617,15 @@ function addIslandHalos(path, {
       // Colorer les pays 
       // return une couleur en fonction d'un nombre
   function hslColor(val, min, max, hsl, log) {
-  const f = log==="true" ? Math.log1p : (v) => v;       // log1p(x) = log(1 + x), accepte 0
+
+  const f = log==="true" ? (v) => Math.log1p(Math.log1p(v)) : (v) => v;       // log1p(x) = log(1 + x), accepte 0
   const teinte = Math.min(1, Math.max(0, (f(val) - f(min)) / (f(max) - f(min))));
   const luminosite = 95 - teinte*88 ;  // 90 % (très clair) → 30 % (foncé)
   let difHsl;
   log === "true" ? difHsl = 100 : difHsl = 30;
-  const R_hsl = 120*teinte;
+  let R_hsl = 120*teinte;
   return `hsl(${R_hsl}, 80%, ${luminosite}%)`;
   // return `hsl(${R_hsl}, 100%, 50%)`;
-  
 } 
 function hslToRgb(h, s, l) {
   s /= 100; l /= 100;
@@ -64663,8 +64667,9 @@ function rgbColor(val, min, max, hsl, log, gamma = 0.7) {
   return `hsl(${((h % 360) + 360) % 360}, ${s}%, ${l}%)`;
 } */
 function arrNbr(n){
+  if(n === 0)return n 
   let sup = 1000000000000000000
-    while(sup>n){
+    while(sup>Math.abs(n)){
         sup = sup/10
     }
   return Math.floor(10*n/sup)*(sup/10)
@@ -64673,6 +64678,7 @@ function arrNbr(n){
       const D_valY_m = new Map()
       // Stoque les valeurs selon l'indicateur et l'année, est vidé à chaque fois qu'on remplie CadreCalque
       function calqueAllC(crtY){
+                console.log("4")
         const D_val = D_valY_m.get(crtY)
         const ySup = parseInt(ySupCalque.textContent)
        /*  const max = Math.max(...Object.values(D_valY_m.get(crtY)))
@@ -64682,8 +64688,9 @@ function arrNbr(n){
         const min = Math.min(...Object.values(D_valY_m.get(crtY)))  */
         // Comparer les valeurs aux min/max de la dernière année
 
-        const min = parseInt(valLeg1.dataset.val)
-        const max = parseInt(valLeg4.dataset.val)
+        const min = parseFloat(valLeg1.dataset.val)
+        const max = parseFloat(valLeg4.dataset.val)
+        
         // Prendre les valeurs extrêmes toute année confondue
 
          paths.forEach((p) => {
@@ -64692,9 +64699,12 @@ function arrNbr(n){
               p.style.fill = "black"
               return;
           }
+          
           const crtHsl = cadreCalque.dataset.hsl
           const hsl = hslColor(D_val[p.id],min,max, crtHsl, cadreCalque.dataset.log)
           p.style.fill = hsl
+          if(p.id === "DK")
+          console.log(min,max)
 
           });
       }
@@ -64712,38 +64722,60 @@ function arrNbr(n){
 
       
       function fillInfosCalque(e = null){
-        const p = e.target ? e.target.closest('path') :  false;
-        let p_id = e ?? p?.id in L_q ? p.id : p?.dataset.circleid;
+        // 5 cas 
+        // 1: Appel avec SVG, 2 : clique dans le vide , 3 : halo (dataset.circleid), 4 :curseurs de dates (avec et sans currentCountry), 5 : ItemC Dans contentC 
+
+       /*  const p = e?.target ? e.target.closest('path') :  e;
+        let p_id = e ?? (p?.id in L_q ? p?.id : p?.dataset.circleid); */
+
+        let p_id;
+        //Cas 1, 2 et 3
+        if(e.target) {p_id =   !e.target.closest('path') ? !e.target.closest('path') : (e.target.closest('path').id in L_q ? e.target.closest('path').id : e.target.closest('path').dataset.circleid)}
+        // Retourne null ou l'identifiant
+
+        // Cas 4
+        else if(e.curseur) p_id = parseInt(e.curseur)  
+        // Retourne une date
+
+        // Cas 5
+        else if (e.itemC)p_id = e.itemC
+        // Retourne un id
 
         const crtY = parseInt(infoDateCalque.textContent)
         const infoYear = D_valY_m.get(crtY);
         infoPCalque.classList.remove('active')
         // {AD: 1.273, AE: 2.733,
         if(query('.indexCursor'))query('.indexCursor').remove()
-
-        if(p && p_id!== infoPCalque.dataset.crtCountry && p_id in infoYear){
+      
+        if(p_id!== infoPCalque.dataset.crtCountry && p_id in infoYear){
         infoPCalque.classList.add('active')
         infoPCalque.dataset.crtCountry = p_id
 
-        const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[p_id]) + 1;
+        const index = Object.values(infoYear).sort((a, b) => b - a).indexOf(infoYear[p_id]) + 1;
         imgFlagCalque.src = `flag_c/${p_id.toLowerCase()}.svg`
-        const val = D_valY_m.get(crtY)[p_id]
+        const val = infoYear[p_id]
         valCalque.textContent = formaterGrandNombre (val,true) + " " + cadreCalque.dataset.unityCalque
         createIndexCursor(val)
         spnInfoCalque.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
         return
         }
 
-        if(p === false && currentCountry){ // appel de la fonction avec les curseurs
+        else if(e.curseur && currentCountry){ // appel de la fonction avec les curseurs
         infoPCalque.classList.add('active')
           const crtC = currentCountry.id
+          const yCursor = parseInt(e.curseur)
         infoPCalque.dataset.crtCountry = infoPCalque.dataset.crtCountry
-        const crtY = parseInt(infoDateCalque.textContent)
-        const index = Object.values(D_valY_m.get(crtY)).sort((a, b) => b - a).indexOf(infoYear[crtC]) + 1;
+        // const crtY = parseInt(infoDateCalque.textContent)
+        const index = Object.values(D_valY_m.get(yCursor)).sort((a, b) => b - a).indexOf(infoYear[crtC]) + 1;        
+        if(index=== 0){
+           infoPCalque.classList.remove('active')
+          infoPCalque.dataset.crtCountry = null;
+          return
+        }
         spnInfoCalque.textContent = index + ordinalSuffix(index,currentIlg) + " " + D_ilg.sur[currentIlg] + " " + Object.keys(infoYear).length;
         imgFlagCalque.src = `flag_c/${crtC.toLowerCase()}.svg`
-        valCalque.textContent = formaterGrandNombre (D_valY_m.get(crtY)[crtC],true) + " " + cadreCalque.dataset.unityCalque
-        createIndexCursor(D_valY_m.get(crtY)[crtC])
+        valCalque.textContent = formaterGrandNombre (D_valY_m.get(yCursor)[crtC],true) + " " + cadreCalque.dataset.unityCalque
+        createIndexCursor(D_valY_m.get(yCursor)[crtC])
         
         return
         }
@@ -67365,12 +67397,12 @@ function arrNbr(n){
           o: false,
         }, // bleu, rouge, vert, or, blanc
         NC: {
-          r: false,
+          r: true,
           w: false,
           b: true,
-          g: false,
-          y: false,
-          k: false,
+          g: true,
+          y: true,
+          k: true,
           o: false,
         }, // bleu, blanc, rouge (comme France)
         NE: {
@@ -93429,6 +93461,7 @@ function arrNbr(n){
           itemC.addEventListener("click", () => {
             cadreS.classList.remove("active");
             zoomCountry(r.id);
+            if(calquing)fillInfosCalque({itemC : r.id})
           });
         }
 
