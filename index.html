@@ -2712,7 +2712,7 @@
           outline-color: rgba(255, 255, 255, 0.15);
           margin : 0.25rem 0;
         }
-
+        .boxItemStat:not(.lockP){
         .boxTxtItemStat {          
           span {
             color: transparent;            
@@ -2751,6 +2751,7 @@
         #cadreYChoice {
           display: none;
         }
+      }
       }
 
       #titleCadreStat {
@@ -3033,6 +3034,15 @@
         transform: none;
         transition: all 0.6s ease;
       }
+      #cadreDetailStat.lockStat{
+        filter : blur(10px);
+        transition : all 0.6s ease,filter 0 linear; 
+        #contentCourbe{
+          opacity : 0;
+        }
+      }
+
+
 
       #contentDStat {
         display: flex;
@@ -3183,7 +3193,7 @@
         }
       }
 
-      #cadreStat:has(#statChoiceIn.carte){
+      #cadreStat:has(#statChoiceIn.carte), .boxItemStat.lockP{
         .txtStat{
           color : transparent;
         }
@@ -3220,6 +3230,36 @@
       }
       .btnMapStat:active {
         transform : scale(0.92);
+      }
+
+      .mDiamantStat{
+        display  : flex;
+        position : absolute;
+        z-index : 10;
+        justify-content : center;
+        align-items : center;
+        opacity : 0;
+        height : 2rem;
+        aspect-ratio : 1/1;
+        color :rgb(251, 151, 11);
+        border-radius : 0.5rem;
+        border-radius : 50%;
+        background :rgba(251, 151, 11,0.08);
+        outline : 1px solid rgba(255,255,255,0.15);
+        transition : transform 0.2s ease, opacity 0.2s ease;
+        transform : rotate(180deg);
+        div{
+          opacity : 1;
+          display : flex;
+          align-items : center;
+          justify-content : center;
+          min-height : 100%;
+          min-width : 100%;
+          svg{
+            height : 1.4rem;
+            height : 1.2rem;
+          }
+        }
       }
       /* CSS Detail Stat */
 
@@ -3747,7 +3787,6 @@
       }
 
        .wrapperTool.calquing{
-        /* display : none; */
         opacity : 0;
         pointer-events : none;
         transform : translateX(calc(100% + 1rem))
@@ -10365,7 +10404,7 @@
         height: 0.8rem;
       }
 
-      .lockP:active {
+      .lockP:not(.boxItemStat):active {
         background: linear-gradient(
           135deg,
           rgba(217, 164, 65, 0.2),
@@ -23309,7 +23348,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="ourworldindata"
                         data-goodVar="down"
                         data-unity=""
@@ -23381,7 +23420,7 @@
                       <div class="titleStat">Qualité de vie</div>
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity=" ans"
@@ -23456,7 +23495,7 @@
                       <div class="lineInStat"></div>
                       <!--  -->
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity=" ans"
@@ -23540,7 +23579,7 @@
                       <div class="lineInStat"></div>
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="ourworldindata"
                         data-goodVar="down"
                         data-unity=""
@@ -23607,7 +23646,7 @@
                       <div class="lineInStat"></div>
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="ourworldindata"
                         data-goodVar="up"
                         data-unity=""
@@ -23736,7 +23775,7 @@
                       <div class="titleStat">Niveau de vie</div>
                       <!--  -->
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity="US$"
@@ -23784,7 +23823,7 @@
                       <div class="lineInStat"></div>
                       <!--  -->
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity="US$"
@@ -23847,7 +23886,7 @@
                       <div class="titleStat">Emplois et prix</div>
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="ourworldindata"
                         data-goodVar="down"
                         data-unity="%"
@@ -23914,7 +23953,7 @@
                       <div class="lineInStat"></div>
                       <!--  -->
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="down"
                         data-unity="%"
@@ -24032,7 +24071,7 @@
                   <div class="contentStat">
                     <!-- <div class="titleStat">Part renouvelable</div>
 
-                     <div class="boxItemStat" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste ="renewTot">
+                     <div class="boxItemStat lockP" data-source="banquemondiale"   data-goodVar="up" data-unity="%" data-liste ="renewTot">
                     <div class="itemStat">
                       <svg fill="var(--colorItmStat)" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M305.19,153.77a10.46,10.46,0,0,0-9.78-14.19h-68a10.48,10.48,0,0,0-10.24,8.29L187.8,286.15A10.46,10.46,0,0,0,198,298.79H242.4a10.47,10.47,0,0,1,10.28,12.45l-11,57c-2,10.41,12.09,15.64,17.36,6.45L329,252.79a10.47,10.47,0,0,0-9.08-15.68H288.7a10.47,10.47,0,0,1-9.79-14.19Z"></path> <path d="M404.15,404.18A210.8,210.8,0,0,0,450,180.41C407.9,72.21,285.61,18.43,177.4,60.54l6.53,16.78c99-38.51,210.79,10.66,249.3,109.62a192.77,192.77,0,0,1-42,204.68l-12.8-12.47a9.51,9.51,0,0,0-16.15,6.94l.48,33.89a9.51,9.51,0,0,0,9.62,9.37l33.89-.4a9.51,9.51,0,0,0,6.52-16.32Z"></path> <path d="M181.85,431a192.44,192.44,0,0,1-60-311l11.34,11a9.51,9.51,0,0,0,16.15-6.94l-.48-33.89a9.49,9.49,0,0,0-9.62-9.37l-33.89.4A9.51,9.51,0,0,0,98.8,97.58l10.13,9.87A210.53,210.53,0,0,0,335.69,451.07l-6.52-16.77A191.29,191.29,0,0,1,181.85,431Z"></path></svg>
                       <div class="boxTxtItemStat">
@@ -24075,7 +24114,7 @@
                     <div class="sousCateStat">
                       <div class="titleStat">Mix énergétique</div>
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="ourworldindata"
                         data-goodVar="up"
                         data-unity="%"
@@ -24134,7 +24173,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="ourworldindata"
                         data-goodVar="up"
                         data-unity="%"
@@ -24244,7 +24283,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity="%"
@@ -24311,7 +24350,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="down"
                         data-unity="%"
@@ -24386,7 +24425,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="down"
                         data-unity="%"
@@ -24482,7 +24521,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="down"
                         data-unity="%"
@@ -24549,7 +24588,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="down"
                         data-unity="%"
@@ -24663,7 +24702,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="down"
                         data-unity="tCO₂e"
@@ -24744,7 +24783,7 @@
                       <div class="lineInStat"></div>
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="down"
                         data-unity="Mt CO₂e"
@@ -24822,7 +24861,7 @@
                       <div class="lineInStat"></div>
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="down"
                         data-unity="µg/m³"
@@ -24943,7 +24982,7 @@
                       <div class="titleStat">Occupation des sols</div>
                       <!--  -->
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity="%"
@@ -25011,7 +25050,7 @@
                       <!--  -->
 
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity="%"
@@ -25077,7 +25116,7 @@
                       <div class="lineInStat"></div>
                       <!--  -->
                       <div
-                        class="boxItemStat"
+                        class="boxItemStat lockP"
                         data-source="banquemondiale"
                         data-goodVar="up"
                         data-unity="%"
@@ -56740,7 +56779,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       document.addEventListener(
         "click",
         (e) => {
-          const lock = e.target.closest(".lockP");
+          const lock = e.target.closest(".lockP:not(.boxItemStat)");
           if (lock && !(isPremium || !window.Capacitor?.isNativePlatform())) {
             // if(lock){
             e.stopImmediatePropagation();
@@ -63422,7 +63461,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           cadreCalque.classList.remove('active',"hide")
           setTimeout(() => {
             wrapperTool.classList.remove('calquing')
-          }, 400);
+          }, 300);
           
           paths.forEach(p=>
           pColor_m.set(p,{
@@ -63695,7 +63734,7 @@ function splitSubpaths(d) {
   return subs;
 }
 
-function addIslandHalos(path, {
+/* function addIslandHalos(path, {
   margin = 3,          // écart du contour, en unités du SVG
   maxSize = Infinity,  // ignore les sous-chemins plus grands (ex. l'île principale)
   stroke = "#fff",
@@ -63738,12 +63777,74 @@ function addIslandHalos(path, {
   g.querySelector('path').style.strokeWidth = strokeWidth
   parent.append(g);
   return g;
-}
+} */
 
 // Utilisation
 // addIslandHalos(document.querySelector("#MV"), { margin: 1, stroke: "#ffd54a",strokeWidth = 1, });
 // Pour tout retirer
 // document.querySelectorAll(".halo").forEach((el) => el.remove());
+
+function addIslandHalos(path, {
+  margin = 3,                          // écart avec l'île, en unités du SVG
+  maxSize = Infinity,                  // ignore les sous-chemins plus grands (ex. l'île principale)
+  stroke = "rgba(255,255,255,.8)",     // couleur du trait net
+  width = 1.2,                         // épaisseur du trait net (px écran) (ne marche pas)
+  dash = "2 3.5",                      // pointillés ("" pour un trait plein)
+  glow = "rgba(255,255,255,.2)",       // couleur du halo doux ("" pour le désactiver)
+  glowWidth = 6,                       // épaisseur du halo doux (px écran)
+  // fill = "rgba(255,255,255,.06)",      // remplissage léger ("transparent" pour aucun)
+  fill = "rgba(251, 151, 1,0.08)"
+} = {}) {
+  const parent = path.parentNode;
+  const g = document.createElementNS(SVG_NS, "g");
+  g.setAttribute("class", "halo");
+  if (path.hasAttribute("transform"))
+    g.setAttribute("transform", path.getAttribute("transform"));
+
+  // path temporaire pour mesurer chaque sous-chemin
+  const tmp = document.createElementNS(SVG_NS, "path");
+  path.ownerSVGElement.append(tmp);
+
+  // fabrique un path de halo avec les réglages voulus
+  const makeHalo = (d, tr, cls, attrs) => {
+    const h = document.createElementNS(SVG_NS, "path");
+    h.setAttribute("d", d);
+    h.setAttribute("transform", tr);
+    h.setAttribute("class", cls);
+    h.setAttribute("fill", fill);
+    h.setAttribute("stroke-linejoin", "round");
+    h.setAttribute("stroke-linecap", "round");
+    h.setAttribute("vector-effect", "non-scaling-stroke"); // épaisseur constante au zoom
+    h.setAttribute("pointer-events", "all");
+    h.style.cursor = "pointer";
+    for (const k in attrs) h.setAttribute(k, attrs[k]);
+    return h;
+  };
+
+  for (const d of splitSubpaths(path.getAttribute("d"))) {
+    tmp.setAttribute("d", d);
+    const b = tmp.getBBox();
+    const r = Math.max(b.width, b.height) / 2;
+    if (r === 0 || r * 2 > maxSize) continue;
+
+    const cx = b.x + b.width / 2, cy = b.y + b.height / 2;
+    const s = 1 + margin / r; // facteur pour gagner "margin" de chaque côté
+    const tr = `translate(${cx} ${cy}) scale(${s}) translate(${-cx} ${-cy})`;
+
+    if (glow)
+      g.append(makeHalo(d, tr, "halo-glow", { stroke: glow, "stroke-width": glowWidth }));
+
+    const line = { stroke, "stroke-width": width };
+    if (dash) line["stroke-dasharray"] = dash;
+    g.append(makeHalo(d, tr, "halo-line", line));
+  }
+
+  tmp.remove();
+  parent.append(g);
+  return g;
+}
+
+
 
 
 
@@ -64106,6 +64207,54 @@ function addIslandHalos(path, {
         crossStat.click();
       });
 
+      function fillItmLockP(box){
+              if(box.querySelector('.mDiamantStat'))return
+              box.querySelector(".txtStat").style.minWidth = "";
+              box.classList.remove("stat", "bilan");
+              box
+              .querySelector(".boxTxtItemStat")
+              .querySelector("span").style.maxHeight = ""
+              //****
+              const txt = box.querySelector('.txtStat')
+              const mDiamantStat = createEl('div')
+              mDiamantStat.className = "mDiamantStat btn"
+              const div = createEl("div")
+              div.innerHTML = ` <svg
+                      class="mDiamant"
+                      viewBox="0 0 332 290"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
+                        fill="#d9a441"
+                      />
+                      <path
+                        d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
+                        fill="#d9a441"
+                      />
+                    </svg>`
+              mDiamantStat.append(div)
+              txt.prepend(mDiamantStat)
+              requestAnimationFrame(()=>mDiamantStat.style.opacity = 1)
+              txt.style.maxWidth = mDiamantStat.getBoundingClientRect().width + "px" ;
+            }
       itmStatChoice.forEach((el) =>
         el.addEventListener("click", () => {
           const mode = el.dataset.statchoice;
@@ -64130,6 +64279,7 @@ function addIslandHalos(path, {
           if(mode === "stat"){
             //Réinitialiser
             boxsItemStat.forEach((box) => {
+              if(box.classList.contains('lockP')){fillItmLockP(box); return}
               box.querySelector(".txtStat").style.minWidth = "";
               box.querySelector(".txtStat").style.maxWidth = "";
               box.classList.remove("stat", "bilan");
@@ -64141,9 +64291,15 @@ function addIslandHalos(path, {
           }
 
           if(mode === "carte"){
-             getId('txtPeriode').textContent = D_ilg.voirsurlacarte[currentIlg]
-            boxsItemStat.forEach((box) => {
+            
+            getId('txtPeriode').textContent = D_ilg.voirsurlacarte[currentIlg]
+            txtYChoice.classList.remove("active");
+            wrapperCursorY.classList.remove("active");
+            wrapperCursorY.style.maxHeight = "";
+              boxsItemStat.forEach((box) => {
               //Réinitialiser
+              if(box.classList.contains('lockP')){fillItmLockP(box); return}
+              
               box.querySelector(".txtStat").style.minWidth = "";
               box.classList.remove("stat", "bilan");
               box.classList.add(mode);
@@ -64153,7 +64309,7 @@ function addIslandHalos(path, {
               //****
               const txt = box.querySelector('.txtStat')
               const btnMapStat = createEl('div')
-              btnMapStat.className = "btnMapStat"
+              btnMapStat.className = "btnMapStat btn"
               const div = createEl("div")
               div.innerHTML = `
               <svg style="height : 1.5rem; opacity : 1; stroke: #86efac;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20L3 17V4L9 7M9 20L15 17M9 20V7M15 17L21 20V7L15 4M15 17V4M9 7L15 4" stroke="#86efac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -64203,6 +64359,7 @@ function addIslandHalos(path, {
 
             // Remplit un indicateur. Renvoie false s'il n'a pas de données.
             function remplirBilan(box) {
+              if(box.classList.contains('lockP')){fillItmLockP(box); return}
               box.querySelector(".txtStat").style.maxWidth = "";
               const { liste, unity, goodvar } = box.dataset;
               const serie = D_yListes[liste][crtCStat.id];
@@ -65126,8 +65283,10 @@ function arrNbr(n){
 
       itemsStat.forEach((itm) => {
         itm.addEventListener("click", () => {
-          if(cadreStat.classList.contains('onlyMap'))return
-          fillCadreDStat(itm.parentNode);
+          if(cadreStat.classList.contains('onlyMap')){
+            itm.querySelector('.btn').click()
+            return}
+          cadreDetailStat.classList.remove('lockStat')
           contentDStat.scrollTop = 0;
           setTimeout(() => cadreDetailStat.classList.add("active"), 100);
           // let delay1 = 50;
@@ -65161,6 +65320,14 @@ function arrNbr(n){
             }, delay);
             delay += 20;
           });
+
+          if(itm.closest('.boxItemStat').classList.contains('lockP')){
+            cadreDetailStat.classList.add('lockStat')
+            return
+          }
+
+          fillCadreDStat(itm.parentNode);
+
         });
       });
 
@@ -65255,7 +65422,7 @@ function arrNbr(n){
         queryAll(".noInfo").forEach((box) => box.classList.remove("noInfo"));
 
         boxsItemStat.forEach((box) => {
-
+          if(box.classList.contains('lockP')){fillItmLockP(box); return}
           const L_infos = D_yListes[box.dataset.liste][p_id];
 
 
@@ -92676,7 +92843,7 @@ function arrNbr(n){
           cacheStat.classList.add('active')
           cacheStat.style.opacity = "1";
 
-        }, 150);
+        }, 250);
 
         fillCadreStat(getId('FR'))
         getId('carteChoiceStat').click()
