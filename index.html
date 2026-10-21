@@ -4139,6 +4139,7 @@
           img {
             width: auto;
             height: auto;
+            min-width : 2rem;
             max-width: 100%;
             max-height: 100%;
             overflow: hidden;
@@ -6628,7 +6629,7 @@
         align-items: center;
         touch-action: none;
         color: white;
-        z-index: 20;
+        z-index: 2000000000;
         height: 100%;
         top: 105%;
         gap: 0.4rem;
@@ -63651,6 +63652,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           voirPlus.click()
           openStat.click() */
           toggleC(false);
+          infoPCalque.dataset.crtCountry = null;
+
           [infoDateCalque,infoPCalque].forEach(el=>el.classList.remove('active'))
           cadreCalque.classList.remove('active',"hide")
           setTimeout(() => {
@@ -65243,11 +65246,9 @@ function arrNbr(n){
         infoPCalque.classList.remove('active')
         // {AD: 1.273, AE: 2.733,
         if(query('.indexCursor'))query('.indexCursor').remove()
-      
         if(p_id!== infoPCalque.dataset.crtCountry && p_id in infoYear){
         infoPCalque.classList.add('active')
         infoPCalque.dataset.crtCountry = p_id
-
         const index = Object.values(infoYear).sort((a, b) => b - a).indexOf(infoYear[p_id]) + 1;
         imgFlagCalque.src = `flag_c/${p_id.toLowerCase()}.svg`
         const val = infoYear[p_id]
