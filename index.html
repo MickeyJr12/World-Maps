@@ -4233,6 +4233,20 @@
             color : var(--colorSpan);
           }
         }
+        #noDataLeg{
+          display : flex;
+          align-items : center;
+          align-self : flex-start;
+          gap : 0.4rem;
+          color : var(--colorSpan);
+          font-size : 0.75rem;
+          div{
+            height : 0.6rem;
+            width : 0.6rem;
+            outline : 1px solid rgba(255,255,255,0.4);
+            background : black;
+          }
+        }
 
         #wrapperCursorYCalque{
           margin-top : 0.4rem;
@@ -23073,6 +23087,11 @@
         </div>
       </div>
 
+      <div id="noDataLeg">
+        <div></div>
+        <span>Pas de données</span>
+      </div>
+
        <div id="wrapperCursorYCalque" class="wrapperCursorYGene">
                   <span id="yInfCalque">1970</span>
                   <div id="cursorYBoxCalque" class="cursorYBoxGene">
@@ -23512,7 +23531,6 @@
                         data-unity=""
                         data-liste="popTot"
                         data-log = "true"
-                        data-maxVal = ""
                       >
                         <div class="itemStat">
                           <svg
@@ -23574,6 +23592,7 @@
                         data-unity=""
                         data-liste="fertility"
                         data-log = "false"
+                        data-maxval = "8"
                       >
                         <div class="itemStat">
                           <svg
@@ -23872,6 +23891,7 @@
                         data-unity=""
                         data-liste="indHapiness"
                         data-log = "false"
+                        data-maxval = "7"
                       >
                         <div class="itemStat">
                           <svg
@@ -24001,6 +24021,7 @@
                         data-unity="US$"
                         data-liste="pib_tot"
                         data-log = "true"
+                        data-maxval = "20000000000000"
                       >
                         <div class="itemStat" id="statPibTot">
                           <svg class="svgItemStat" fill="var(--colorItmStat)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.038 489.038" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M486,215.481l-293.4-169.3c-4-2.3-10.6-2.3-14.6,0L3.2,147.781c-4,2.3-4,6.1,0,8.5l293.3,169.3c4.1,2.4,10.6,2.3,14.6,0 l174.9-101.6C490,221.681,490.1,217.881,486,215.481z M333.1,286.481c-1.6-1.6-3.6-3-5.9-4.3c-14.9-8.6-39-8.6-53.9,0 c-1.1,0.7-2.1,1.3-3.1,2.1l-197.6-114.2c1.9-0.8,3.7-1.6,5.4-2.6c14.8-8.6,14.7-22.6-0.2-31.2c-1.6-0.9-3.4-1.8-5.2-2.5l81.5-47.3 c1.3,1,2.7,2.1,4.3,3c14.9,8.6,39.1,8.6,53.9,0c1.7-1,3.2-2,4.4-3.1l198.2,114.5c-2.6,0.9-5.1,2-7.3,3.3 c-14.8,8.6-14.7,22.6,0.2,31.2c2.3,1.3,4.9,2.4,7.6,3.4L333.1,286.481z M357,243.281l-12.9,7.5c-2,1.1-5.2,1.2-7.2,0l-22.7-13.1 c-2-1.2-2-3,0-4.2l12.9-7.5c2-1.1,5.2-1.2,7.2,0l22.7,13.1C359,240.281,359,242.181,357,243.281z M175,138.181l-12.9,7.5 c-2,1.1-5.2,1.2-7.2,0l-22.7-13.1c-2-1.2-2-3,0-4.2l12.9-7.5c2-1.1,5.2-1.2,7.2,0l22.7,13.1C177,135.181,177,137.081,175,138.181z M466.2,267.581l22.8,13.2l-183.3,106.5l-6-3.4l-16.9-9.7L0,210.581l22.6-13.1l282.9,163.4L466.2,267.581z M283.2,431.381 L0,267.581l22.6-13.1l283.3,163.8l160-93l22.8,13.2L306,444.581l-5.9-3.4L283.2,431.381z M302.8,152.081 c-32.3-18.6-84.6-18.6-116.7,0c-32,18.6-31.9,48.9,0.4,67.6c32.2,18.6,84.5,18.6,116.6,0C335.2,201.081,335,170.781,302.8,152.081z M235.4,195.581h-22.7v-13.1v-12.7l22.8,0.1v12.7l52,0.1v13.2L235.4,195.581z"></path> </g> </g></svg>
@@ -24049,6 +24070,7 @@
                         data-unity="US$"
                         data-liste="pib_hab"
                         data-log = "true"
+                        data-maxval = "100000"
                       >
                         <div class="itemStat">
                           <svg
@@ -24111,7 +24133,7 @@
                         data-goodVar="down"
                         data-unity="%"
                         data-liste="chomage"
-                        data-log = "false"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -24178,7 +24200,9 @@
                         data-goodVar="down"
                         data-unity="%"
                         data-liste="inflation"
-                        data-log = "false"
+                        data-log = "true"
+                        data-minval = "0"
+                        data-maxval = "100"
                       >
                         <div class="itemStat">
                           <svg
@@ -24928,6 +24952,7 @@
                         data-unity="tCO₂e"
                         data-liste="co2Hab"
                         data-log = "true"
+                        data-maxval = "50"
                       >
                         <div class="itemStat">
                           <svg
@@ -25008,7 +25033,7 @@
                         data-goodVar="down"
                         data-unity="Mt CO₂e"
                         data-liste="emissionTot"
-                        data-log = "false"
+                        data-log = "true"
                       >
                         <div class="itemStat">
                           <svg
@@ -25383,7 +25408,7 @@
                             </g>
                           </svg>
                           <div class="boxTxtItemStat">
-                            <div>Forêts</div>
+                            <div>Part forestière</div>
                             <span>% de la superficie totale</span>
                           </div>
 
@@ -65030,21 +65055,41 @@ function addIslandHalos(path, {
         minOfMin = Math.min(minOfMin,Math.min(...Object.values(D_val)))
         })
 
-        const useLog = cadreCalque.dataset.log === "true";   // l'indicateur est-il en échelle log ?
-        const f    = useLog ? Math.log1p : (v) => v;         // valeur → échelle de calcul
+        /* const useLog = cadreCalque.dataset.log === "true";   // l'indicateur est-il en échelle log ?
+        // const f    = useLog ? Math.log1p : (v) => v;         // valeur → échelle de calcul
+        const f = (x) => Math.sign(x) * Math.expm1(Math.abs(x));
         const finv = useLog ? Math.expm1 : (x) => x;         // échelle de calcul → valeur (inverse de f)
-        
+         */
+
+         const symlog    = (v) => Math.sign(v) * Math.log1p(Math.abs(v));
+        const symlogInv = (x) => Math.sign(x) * Math.expm1(Math.abs(x));
+              
+        const useLog = cadreCalque.dataset.log === "true";
+        const f    = useLog ? symlog    : (v) => v;   // valeur → échelle de calcul
+        const finv = useLog ? symlogInv : (x) => x;   // échelle de calcul → valeur
 
         const valeurA = (p) => {
-          const t = Math.pow(p, 1 / BAR_CURVE);              // annule la déformation de la barre
-          return finv(f(minOfMin) + (f(maxOfMax) - f(minOfMin)) * t);       // remonte jusqu'à la vraie valeur
+          const t = Math.pow(p, 1 / BAR_CURVE);   
+          return finv(f(minValLeg) + (f(maxValLeg) - f(minValLeg)) * t);       // remonte jusqu'à la vraie valeur
         };
 
-        valLeg1.textContent = formaterGrandNombre(arrNbr(minOfMin)) + unity
+        valLeg1.textContent = formaterGrandNombre(arrNbr(minOfMin))
         valLeg1.dataset.val = minOfMin
         valLeg4.textContent = formaterGrandNombre(arrNbr(maxOfMax)) + unity
         valLeg4.dataset.val = maxOfMax
 
+        if(box.dataset.maxval){
+           valLeg4.textContent = formaterGrandNombre(parseInt(box.dataset.maxval)) + "+ " + unity
+            valLeg4.dataset.val = parseFloat(box.dataset.maxval)
+        }
+        if(box.dataset.minval){
+           valLeg1.textContent = formaterGrandNombre(parseInt(box.dataset.minval)) + "- " + unity
+            valLeg1.dataset.val = parseFloat(box.dataset.minval)
+        }
+
+
+        const minValLeg = parseFloat(valLeg1.dataset.val)
+        const maxValLeg = parseFloat(valLeg4.dataset.val)
 
         valLeg2.dataset.val = valeurA(1 / 3);
         valLeg3.dataset.val = valeurA(2 / 3);
@@ -65086,12 +65131,16 @@ const COLOR_STOPS = [
   { t: 1.0,  h: 0,   s: 80, l: 45 }, // rouge
 ];
 
+const symlog = (v) => Math.sign(v) * Math.log1p(Math.abs(v));
+
 function hslColor(val, min, max, hsl, log) {
   const useLog = log === "true" || log === true;
-  const f = useLog ? Math.log1p : (v) => v;
+  const f = useLog ? symlog : (v) => v;
 
   const range = f(max) - f(min);
-  const t = range === 0 ? 0 : Math.min(1, Math.max(0, (f(val) - f(min)) / range));
+  const t = range === 0 || !Number.isFinite(range)
+    ? 0
+    : Math.min(1, Math.max(0, (f(val) - f(min)) / range));
 
   // Trouver les deux paliers qui encadrent t
   let i = 0;
@@ -65139,24 +65188,6 @@ function rgbColor(val, min, max, hsl, log, gamma = 0.7) {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-/* function hslColor(val, min, max, hsl, log, hsl0 = 55, gamma = 0.6) {
-  const f = log === "true" ? (x) => Math.log1p(x) : (x) => x;
-  let t = Math.min(1, Math.max(0, (f(val) - f(min)) / (f(max) - f(min))));
-  t = t ** gamma;
-
-  const d = ((+hsl - hsl0 + 540) % 360) - 180;
-  const stops = [
-    [hsl0,           0,  100],  // peu : blanc (saturation 0 → la teinte n'a aucun effet)
-    [hsl0 + d * 0.5, 95,  58],  // milieu : couleur vive
-    [hsl0 + d,       90,  22],  // beaucoup : ta teinte, foncée
-  ];
-
-  const k = t * 2;
-  const i = Math.min(1, Math.floor(k));
-  const u = k - i;
-  const [h, s, l] = stops[i].map((v, n) => v + (stops[i + 1][n] - v) * u);
-  return `hsl(${((h % 360) + 360) % 360}, ${s}%, ${l}%)`;
-} */
 function arrNbr(n){
   if(n === 0)return n 
   let sup = 1000000000000000000
