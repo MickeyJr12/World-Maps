@@ -2488,6 +2488,9 @@
         svg {
           overflow: visible;
         }
+         .noInfo {
+          display: none;
+        }
       }
       #cadreStat.active {
         top: calc(18vh + 1rem);
@@ -65338,10 +65341,7 @@ function arrNbr(n){
         queryAll(".noInfo").forEach((box) => box.classList.remove("noInfo"));
 
         boxsItemStat.forEach((box) => {
-          if(box.classList.contains('lockP')){fillItmLockP(box); return}
           const L_infos = D_yListes[box.dataset.liste][p_id];
-
-
           if (
             typeof L_infos !== "object" ||
             L_infos.filter((tuple) => tuple.valeur !== 0).length === 0
@@ -65353,6 +65353,9 @@ function arrNbr(n){
               box.nextElementSibling.classList.add("noInfo"); // Si le précédent c'est un titre, on suprime la ligne suivante
             return;
           }
+          
+          if(box.classList.contains('lockP')){fillItmLockP(box); return}
+
           L_infos.forEach((tuple) => {
             if (!L_yDispos.includes(tuple.annee)) L_yDispos.push(tuple.annee);
           });
@@ -97172,7 +97175,7 @@ function arrNbr(n){
       }
       // document.addEventListener('click',(e)=>console.log(e.target.closest("*").parentNode),true)
       // à retirer
-      queryAll('.boxItemStat').forEach(el=>el.classList.remove('lockP'))
+      // queryAll('.boxItemStat').forEach(el=>el.classList.remove('lockP'))
       // loop()
 
       // Script éphémère
