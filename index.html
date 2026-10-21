@@ -23512,6 +23512,7 @@
                         data-unity=""
                         data-liste="popTot"
                         data-log = "true"
+                        data-maxVal = ""
                       >
                         <div class="itemStat">
                           <svg
@@ -64897,8 +64898,8 @@ function addIslandHalos(path, {
       const wrapperBarreLegend = getId('wrapperBarreLegend')
       const barreLegCalque = wrapperBarreLegend.querySelector('.barre')
       const valLeg1  = getId('valLeg1')
-     /*  const valLeg2  = getId('valLeg2')
-      const valLeg3  = getId('valLeg3') */
+      const valLeg2  = getId('valLeg2')
+      const valLeg3  = getId('valLeg3')
       const valLeg4  = getId('valLeg4')
       const cadreCalque = getId('cadreCalque')
       const titleCalque = getId('titleCalque')
@@ -65032,10 +65033,11 @@ function addIslandHalos(path, {
         const useLog = cadreCalque.dataset.log === "true";   // l'indicateur est-il en échelle log ?
         const f    = useLog ? Math.log1p : (v) => v;         // valeur → échelle de calcul
         const finv = useLog ? Math.expm1 : (x) => x;         // échelle de calcul → valeur (inverse de f)
+        
 
         const valeurA = (p) => {
           const t = Math.pow(p, 1 / BAR_CURVE);              // annule la déformation de la barre
-          return finv(f(min) + (f(max) - f(min)) * t);       // remonte jusqu'à la vraie valeur
+          return finv(f(minOfMin) + (f(maxOfMax) - f(minOfMin)) * t);       // remonte jusqu'à la vraie valeur
         };
 
         valLeg1.textContent = formaterGrandNombre(arrNbr(minOfMin)) + unity
@@ -98025,6 +98027,8 @@ function arrNbr(n){
         console.log(choisingYStat);
       }
       // document.addEventListener('click',(e)=>console.log(e.target.closest("*").parentNode))
+      // à retirer
+      queryAll('.boxItemStat').forEach(el=>el.classList.remove('lockP'))
       // loop()
 
       // Script éphémère
