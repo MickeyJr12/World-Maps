@@ -2513,7 +2513,7 @@
         background: orange;
       }
 
-      .opensearch {
+      .openSearch {
         display: flex;
         position: absolute;
         /* right: 1rem; */
@@ -2537,14 +2537,15 @@
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         transition:
           background 0.2s ease,
-          transform 0.2s ease,
+          /* transform 0.2s ease, */
+          transform 0.4s cubic-bezier(0.58, 0.00, 0.00, 1.39),
           filter 0.3s ease;
       }
-      .opensearch:active {
+      .openSearch:active {
         background: rgba(41, 110, 179, 0.674);
         transform: scale(0.96);
       }
-      .opensearch svg {
+      .openSearch svg {
         fill: white;
       }
 
@@ -2642,6 +2643,7 @@
         .arrowItmStat{
           display : none;
         }
+
 
         #statChoiceStat,#bilanChoiceStat,#statChoiceIn,#titleCadreStat{
           display : none;
@@ -2744,6 +2746,7 @@
             display: none;
           }
         }
+      }
 
         #txtPeriode {
           display: flex;
@@ -2751,7 +2754,6 @@
         #cadreYChoice {
           display: none;
         }
-      }
       }
 
       #titleCadreStat {
@@ -3036,6 +3038,7 @@
       }
       #cadreDetailStat.lockStat{
         filter : blur(10px);
+        pointer-events: none;
         transition : all 0.6s ease,filter 0 linear; 
         #contentCourbe{
           opacity : 0;
@@ -3144,6 +3147,7 @@
       .badgeVarStat {
         display: flex;
         gap: 0.4rem;
+        opacity : 0.5;
         justify-content: center;
         align-items: center;
         box-sizing: border-box;
@@ -3193,7 +3197,7 @@
         }
       }
 
-      #cadreStat:has(#statChoiceIn.carte), .boxItemStat.lockP{
+      #cadreStat:has(#statChoiceIn.carte){
         .txtStat{
           color : transparent;
         }
@@ -3203,7 +3207,16 @@
         #cadreYChoice {
           display: none;
         }
+      }
 
+      .boxItemStat.lockP{
+        .txtStat{
+          color : transparent;
+        }
+
+        .mDiamantStat{
+          display : flex;
+        }
       }
       .btnMapStat{
         display  : flex;
@@ -3233,7 +3246,7 @@
       }
 
       .mDiamantStat{
-        display  : flex;
+        display  : none;
         position : absolute;
         z-index : 10;
         justify-content : center;
@@ -3740,7 +3753,7 @@
           opacity: 0.96;
           font-weight: 600;
         }
-        div {
+        .txtStatUnity {
           /* l'unité (%,kw, autre) */
           opacity: 0.5;
         }
@@ -3787,6 +3800,18 @@
       }
 
        .wrapperTool.calquing{
+        opacity : 0;
+        pointer-events : none;
+        transform : translateX(calc(100% + 1rem))
+        }
+
+        #backMaps.calquing{
+        opacity : 0;
+        pointer-events : none;
+        transform : translateX(calc(-100% - 1rem))
+        }
+
+        .openSearch.calquing{
         opacity : 0;
         pointer-events : none;
         transform : translateX(calc(100% + 1rem))
@@ -8343,12 +8368,15 @@
         background: rgba(255, 255, 255, 0.2);
       }
       #backMaps {
-        background: rgba(56, 140, 223, 0.4);
+        /* background: rgba(56, 140, 223, 0.4); */
+        outline: 0.1rem solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        background: var(--backBlueMap);
         z-index: 120;
         left: 0.75rem;
+        transition : transform 0.4s cubic-bezier(0.58, 0.00, 0.00, 1.39), opacity 0.3s ease;
       }
       #backMaps:active {
-        background: rgba(41, 110, 179, 0.674);
         transform: scale(0.96);
       }
       #backDevise {
@@ -21690,7 +21718,7 @@
 
         <div id="contentInfoSub"></div>
       </div>
-      <div class="opensearch">
+      <div class="openSearch">
         <svg
           height="70%"
           xmlns="http://www.w3.org/2000/svg"
@@ -23314,7 +23342,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23385,7 +23413,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23462,7 +23490,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23546,7 +23574,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23613,7 +23641,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23686,7 +23714,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23791,7 +23819,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23850,7 +23878,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23921,7 +23949,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -23992,7 +24020,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24081,7 +24109,7 @@
 
                       <div class="txtStat">
                         <span>58</span>
-                        <div>%</div>
+                        <div class="txtStatUnity">%</div>
                         <div class="badgeVarStat good">
                           <svg viewBox="0 0 10 8" aria-hidden="true">
                             <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24140,7 +24168,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24249,7 +24277,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24316,7 +24344,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24392,7 +24420,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24487,7 +24515,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24555,7 +24583,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24615,7 +24643,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24749,7 +24777,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24828,7 +24856,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -24947,7 +24975,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -25016,7 +25044,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -25084,7 +25112,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -25169,7 +25197,7 @@
 
                           <div class="txtStat">
                             <span>58</span>
-                            <div>%</div>
+                            <div class="txtStatUnity">%</div>
                             <div class="badgeVarStat good">
                               <svg viewBox="0 0 10 8" aria-hidden="true">
                                 <path d="M5 0l5 8H0z" fill="currentColor" />
@@ -60976,7 +61004,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             //Afficher maps
 
             L_addMaps.forEach((m) => {
-              if (m !== backMapsPlay)
                 document.getElementById("phonePlay").appendChild(m);
             });
 
@@ -62214,40 +62241,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         document.querySelector(".iconChrono"),
         document.querySelector(".txtChrono"),
       ];
-
-      let backMapsPlay = document.createElement("button");
-      backMapsPlay.className = "back";
-      backMapsPlay.id = "backUs";
-      backMapsPlay.style.background = "rgba(56, 140, 223, 0.4)";
-      backMapsPlay.style.left = "0.75rem";
-      backMapsPlay.style.transition = "opacity 0.3s ease";
-      backMapsPlay.style.zIndex = "30";
-      backMapsPlay.innerHTML = `
-           <svg
-          fill="white"
-          xmlns="http://www.w3.org/2000/svg"
-          id="Bold"
-          viewBox="0 0 24 24"
-          width="100%"
-        >
-          <path
-            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-          />
-        </svg>
-          `;
-      backMapsPlay.addEventListener("click", () => {
-        // showInterstitialAndThen(Math.random(), isPremium, noAd, () => {});
-
-        // à modifier premium ( false : si on est premium ou pas )
-        cacherMaps();
-        if (!viewMapsPm) {
-          activerCarte();
-        }
-      });
+      
       const L_addMaps = [
         getC(".globe"),
         getId("mCadre"),
-        backMapsPlay,
+        getId('backMaps'),
         getId("cadre"),
         document.querySelector(".messageViewMap"),
       ];
@@ -62385,6 +62383,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         //Cacher les éléments
+        
         btnCarte.style.opacity = "0";
         L_replace.forEach((b) => {
           addTransition(b, "opacity 0.4s ease");
@@ -62396,6 +62395,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         setTimeout(() => {
           document.querySelector(".globe").style.opacity = "1";
         }, 10);
+
+        backMaps.style.opacity = "0";
+        setTimeout(() => {
+          backMaps.style.opacity = "1";
+        }, 10);
         L_addMaps.forEach((m) => {
           document.getElementById("phonePlay").appendChild(m);
         });
@@ -62403,6 +62407,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         L_addMaps[1].style.zIndex = "20";
         L_addMaps[2].style.zIndex = "30";
         L_addMaps[3].style.zIndex = "50";
+        L_addMaps[4].style.zIndex = "55";
 
         globe.style.filter = "";
         mCadre.style.filter = "";
@@ -63450,6 +63455,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const backMaps = document.getElementById("backMaps");
       backMaps.addEventListener("click", () => {
+        if(viewSub && !L_config.m)return /* Si on regarde un pays dans la Map, btnSub s'occupe du listener */
         if(calquing){
           getId('svgMonde').removeEventListener('click',fillInfosCalque)
           calquing = false;
@@ -63460,8 +63466,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           [infoDateCalque,infoPCalque].forEach(el=>el.classList.remove('active'))
           cadreCalque.classList.remove('active',"hide")
           setTimeout(() => {
-            wrapperTool.classList.remove('calquing')
-          }, 300);
+            ;[wrapperTool,openSearch,backMaps].forEach(el=>el.classList.remove('calquing'))
+          }, 150);
           
           paths.forEach(p=>
           pColor_m.set(p,{
@@ -63472,6 +63478,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           return
         }
 
+        if(L_config.m){
+           cacherMaps();
+        if (!viewMapsPm) {
+          activerCarte();
+        }
+        return
+        }
         toggleC(false);
         cadreVueTF = true;
         afficheVue();
@@ -64169,8 +64182,8 @@ function addIslandHalos(path, {
         cacheStat.classList.remove("active");
         if(!cadreCalque.classList.contains('active')){
         setTimeout(() => {
-        wrapperTool.classList.remove('calquing')
-        }, 250)}
+        ;[wrapperTool,openSearch,backMaps].forEach(el=>el.classList.remove('calquing'))
+        }, 150)}
         cacheStat.style.opacity = "";
         cacheStat.style.transition = "";
         contentCadre.style.transform = "";
@@ -64327,7 +64340,7 @@ function addIslandHalos(path, {
               if(eyesBtn)eyesBtn.forEach(eye=>eye.click())
               getId('orgaMain-eye');
               cadreCalque.classList.add('active')
-              wrapperTool.classList.add('calquing')
+              ;[wrapperTool,openSearch,backMaps].forEach(el=>el.classList.add('calquing'))
 
               calquing = true;
               lastPCalque = currentCountry
@@ -65409,6 +65422,15 @@ function arrNbr(n){
         inflation: inflation,
       };
 
+      const M_boxStat = new Map()
+      boxsItemStat.forEach(box=>{
+        M_boxStat.set(box,
+        {txtStat : box.querySelector('.txtStat'), 
+        span : box.querySelector('.txtStat').querySelector('span'),
+        txtStatUnity : box.querySelector('.txtStat').querySelector(".txtStatUnity"),
+      })
+      })
+
       function fillCadreStat(p, cursoring = false) {
         if (!p) return;
         const p_id = p.id;
@@ -65441,19 +65463,21 @@ function arrNbr(n){
             if (!L_yDispos.includes(tuple.annee)) L_yDispos.push(tuple.annee);
           });
 
-          const info = L_infos.find((el) => el.annee === parseInt(crtYear));
-          const txtStat = box.querySelector(".txtStat");
+          const info = L_infos.find((el) => el.annee === parseInt(crtYear));          
+          const txtStat = M_boxStat.get(box).txtStat
+
           if (info) {
-            txtStat.querySelector("span").textContent = formaterGrandNombre(
-              Math.floor(info.valeur * 100) / 100,
-            );
-            if (Math.abs(info.valeur) < 0.01 && info.valeur > 0) {
+           if (Math.abs(info.valeur) < 0.01 && info.valeur > 0) {
               txtStat.querySelector("span").textContent = "< 0.01";
             }
-            txtStat.querySelector("div").textContent = box.dataset.unity;
+            else {
+              M_boxStat.get(box).span.textContent = formaterGrandNombre(
+              Math.floor(info.valeur * 100) / 100,);
+            }
+            M_boxStat.get(box).txtStatUnity.textContent = box.dataset.unity;
           } else {
-            txtStat.querySelector("span").textContent = "";
-            txtStat.querySelector("div").textContent = "—";
+            M_boxStat.get(box).span.textContent = "";
+            M_boxStat.get(box).txtStatUnity.textContent = "—";
           }
         });
 
@@ -65655,7 +65679,8 @@ function arrNbr(n){
       }
 
       voirPlus.addEventListener("click", () => {
-        if (currentCountry?.id in L_q) {
+          openStat.style.display = "none";
+        if (currentCountry?.id in L_q && !L_config.m) {
           openStat.style.display = "";
           fillCadreStat(currentCountry);
           resetCadreStat();
@@ -65896,8 +65921,7 @@ function arrNbr(n){
         zoomFactorSvg = 92;
         currentCSub = currentCountry;
         const L_viewSub = [
-          backMaps,
-          opensearch,
+          openSearch,
           only,
           calque,
           cadreLegend,
@@ -65983,43 +66007,18 @@ function arrNbr(n){
           });
           document.querySelector(".menuCadre").style.display = "none";
           wrapperMenuCadre.style.maxHeight = "";
-          // cadreBlason.style.display = "none";
 
-          let backUs = document.createElement("button");
-          backUs.className = "back";
-          backUs.id = "backUs";
-          backUs.style.background = "rgba(56, 140, 223, 0.4)";
-          backUs.style.left = "0.75rem";
-          backUs.style.transition = "opacity 0.3s ease";
-          backUs.style.zIndex = "30";
-          backUs.innerHTML = `
-           <svg
-          fill="white"
-          xmlns="http://www.w3.org/2000/svg"
-          id="Bold"
-          viewBox="0 0 24 24"
-          width="100%"
-        >
-          <path
-            d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-          />
-        </svg>
-          `;
-          Maps.append(backUs);
-
-          backUs.addEventListener("click", () => {
+          backMaps.addEventListener("click", () => {
             zoomFactorSvg = 60;
             if (getVB().w < zoomFactorSvg) {
               zoomToMax(getId("svgMonde"), 700);
             }
-
-            setTimeout(() => {
-              backUs = null;
-            }, 500);
+            
             viewSub = false;
             cloneVisible_m.forEach((val, key) =>
               idVisible_m.set(key, { ...val }),
             );
+            backMaps
 
             svgSub.remove();
             btnListSub.remove();
@@ -66073,7 +66072,7 @@ function arrNbr(n){
               btn.classList.remove("modeTrouver");
               wrapperTool.insertBefore(btn, wrapperTool.firstChild);
             });
-          });
+          },{ once: true });
         }
       });
 
@@ -92837,7 +92836,7 @@ function arrNbr(n){
 
       calque.addEventListener('click',()=>{
         resetCadreStat()
-        wrapperTool.classList.add('calquing')
+        ;[wrapperTool,openSearch,backMaps].forEach(el=>el.classList.add('calquing'))
         setTimeout(() => {
           cadreStat.classList.add('onlyMap')
           cacheStat.classList.add('active')
@@ -92879,8 +92878,8 @@ function arrNbr(n){
             footerLegendClick();
 
             if (isMobile) {
-              opensearch.style.filter = "blur(4px) brightness(0.65)";
-              opensearch.style.pointerEvents = "none";
+              openSearch.style.filter = "blur(4px) brightness(0.65)";
+              openSearch.style.pointerEvents = "none";
             }
           }, 20);
         } else {
@@ -92900,8 +92899,8 @@ function arrNbr(n){
           cadreLegend.className = clLegend;
 
           if (isMobile) {
-            opensearch.style.filter = "";
-            opensearch.style.pointerEvents = "";
+            openSearch.style.filter = "";
+            openSearch.style.pointerEvents = "";
           }
         }
         cadreVueTF = !cadreVueTF;
@@ -95318,7 +95317,7 @@ function arrNbr(n){
       //Partie Home
 
       //Script cadreSearch
-      const opensearch = document.querySelector(".opensearch");
+      const openSearch = document.querySelector(".openSearch");
       const cadreS = document.getElementById("cadreS");
       const backSearch = document.getElementById("backSearch");
       const infoWiki = getId("infoWiki");
@@ -95486,7 +95485,7 @@ function arrNbr(n){
       const arrowC = document.querySelector(".arrowC");
 
       let onceS = true;
-      opensearch.addEventListener("click", () => {
+      openSearch.addEventListener("click", () => {
         if (onceS) {
           requestAnimationFrame(() => {
             inputC.value = "";
@@ -97706,7 +97705,7 @@ function arrNbr(n){
         requestAnimationFrame(loop);
         console.log(choisingYStat);
       }
-      // document.addEventListener('click',(e)=>console.log(e.target.closest("*")))
+      // document.addEventListener('click',(e)=>console.log(e.target.closest("*").parentNode))
       // loop()
 
       // Script éphémère
