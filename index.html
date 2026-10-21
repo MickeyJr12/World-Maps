@@ -3027,18 +3027,17 @@
         scrollbar-width: none;
         width: 100%;
         height: 100%;
-        transition: all 0.65s ease;
+        transition: all 0.65s ease, filter 0 ease;
       }
       #cadreDetailStat.active {
         opacity: 1;
         pointer-events: all;
         transform: none;
-        transition: all 0.6s ease;
+        transition: all 0.6s ease, filter 0 ease;
       }
       #cadreDetailStat.lockP{
         filter : blur(10px);
         pointer-events: none;
-        transition : all 0.6s ease,filter 0 linear; 
         #contentCourbe{
           opacity : 0;
         }
@@ -3906,6 +3905,30 @@
         }
       }
 
+      .Maps:has(#cadreCalque.hide){
+         #infoPCalque{
+        opacity : 1;
+        pointer-events : all;
+        gap : 0;
+         .footerInfoPCalque{
+          opacity : 0;
+        overflow : hidden;
+        max-height : 0; 
+        padding : 0;
+        }
+       }
+
+        #infoPCalque.active{
+          gap : 0.4rem;
+
+
+         .footerInfoPCalque{
+          opacity : 1;
+          max-height : 1.4rem; 
+        }
+       }
+      }
+
        .wrapperTool.calquing{
         opacity : 0;
         pointer-events : none;
@@ -4088,13 +4111,15 @@
           min-width: 0;
   }
 }
-          .FooterInfoPCalque{
+          .footerInfoPCalque{
             display : flex;
+            overflow : hidden;
             align-items : center;
             justify-content : center;
             box-sizing : border-box;
             width : 100%;
             gap : 0.4rem;
+            transition : max-height 0.4s ease, opacity 0.25s ease;
           }
           .boxFlagCalque {
           display: flex;
@@ -23011,7 +23036,7 @@
 
       <div id="infoPCalque">
           <div class="headerInfoPCalque"><div class="boxSvg"></div> <div class="texteHeader"></div></div>
-          <div class="FooterInfoPCalque">
+          <div class="footerInfoPCalque">
 
           <div class="boxFlagCalque">
             <img
@@ -64898,6 +64923,15 @@ function addIslandHalos(path, {
           hapticFeedback('medium')
           cadreCalque.classList.remove('hide')
           cadreCalque.classList.add('active')
+          if(!infoPCalque.classList.contains('active')){
+            query('.footerInfoPCalque').style.maxHeight = "0"
+            query('.headerInfoPCalque').style.maxHeight = "1rem"
+            setTimeout(() => {
+            query('.footerInfoPCalque').style.maxHeight = ""
+            query('.headerInfoPCalque').style.maxHeight = ""
+            }, 220);
+
+          }
         })
       })
 
