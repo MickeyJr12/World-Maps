@@ -2648,6 +2648,9 @@
         #statChoiceStat,#bilanChoiceStat,#statChoiceIn,#titleCadreStat{
           display : none;
         }    
+        #contentCadreStat{
+          margin-top : -2rem;
+        }
         
          .wrapperStatChoice{
           display : flex;
@@ -3027,13 +3030,15 @@
         scrollbar-width: none;
         width: 100%;
         height: 100%;
-        transition: all 0.65s ease, filter 0 ease;
+        transition: all 0.65s ease, filter 0s ease;
+        #badgeVarDStat{
+          opacity : 1;
+        }
       }
       #cadreDetailStat.active {
         opacity: 1;
         pointer-events: all;
         transform: none;
-        transition: all 0.6s ease, filter 0 ease;
       }
       #cadreDetailStat.lockP{
         filter : blur(10px);
@@ -64542,7 +64547,7 @@ function addIslandHalos(path, {
               btnMapStat.addEventListener('click',(e)=>{
               e.stopPropagation();
               resetVisibleP()
-              
+              centerBtn.click()
               cadreCalque.classList.add('active')
               ;[wrapperTool].forEach(el=>el.classList.add('calquing'))
               backMaps.classList.remove('calquing')
@@ -65600,6 +65605,7 @@ function arrNbr(n){
 
 
       itemsStat.forEach((itm) => {
+        
         itm.addEventListener("click", () => {
           if(cadreStat.classList.contains('onlyMap')){
             itm.querySelector('.btn').click()
