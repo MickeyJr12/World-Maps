@@ -68,6 +68,7 @@
         --font-quicksand: "Quicksand", sans-serif;
         --boxShadow: 0 2px 5px rgba(20, 40, 100, 0.06);
         --backBlueMap : rgba(56, 140, 223, 0.674);
+        --backBlueMap : rgba(118, 177, 236, 0.674);
         
       }
 
@@ -980,7 +981,7 @@
         aspect-ratio: 1/1;
         bottom: 3rem;
         left: 1rem;
-        border-radius: 0.6rem;
+        border-radius: 5px;
         background: var(--backBlueMap);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
@@ -1049,7 +1050,7 @@
         right: 0.8rem;
         top: 45%;
         transform: translateY(-50%);
-        background: var(--backBlueMap);
+        background: var(--colorTrouver);
         outline: 0.1rem solid rgba(255, 255, 255, 0.3);
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
         backdrop-filter: blur(10px);
@@ -1167,11 +1168,13 @@
           opacity 0.35s ease,
           outline 0.2s ease,
           margin-bottom 0.35s ease,
+          filter 0.2s ease,
           box-shadow 0.2s ease;
       }
       .toolCarre:active {
         box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.874);
         background: rgba(92, 146, 200, 0.674);
+        filter : brightness(0.85);
         transform: scale(0.9);
       }
       #openTool {
@@ -8450,9 +8453,9 @@
         border-radius: 10px;
         border: 1.6px solid rgba(192, 57, 43, 0.25);
       }
-      .btnMode:active {
+      /* .btnMode:active {
         background: rgba(218, 37, 37, 0.05);
-      }
+      } */
 
       #gridQR {
         display: grid;
@@ -8500,10 +8503,10 @@
         margin: 0.1rem 0rem;
         border: 1.6px solid transparent;
       }
-      .qr:active {
+  /*     .qr:active {
         background: rgba(218, 37, 37, 0.05);
       }
-
+ */
       #cadreChoixRegion {
         display: flex;
         position: relative;
@@ -8960,6 +8963,7 @@
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2rem);
         gap: 1rem;
+        --colorTrouver : rgba(118, 177, 236, 0.674);
       }
 
       #wrapperScorePm {
@@ -9286,6 +9290,11 @@
       }
       #pause4Choix.modeTrouver {
         background: rgba(56, 140, 223, 0.4);
+        background: var(--backBlueMap);
+        background : var(--colorTrouver);
+        outline: 0.1rem solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0px 0px 5px rgba(12, 50, 88, 0.674);
+        backdrop-filter: blur(10px);
         border-radius: 5px;
       }
       #pause4Choix path {
@@ -9553,6 +9562,8 @@
       }
       .questionBox.modeTrouver {
         color: rgba(65, 212, 237, 1);
+        color : var(--colorTrouver);
+        
       }
       .cadreChrono {
         display: flex;
@@ -9581,6 +9592,7 @@
 
       .iconChrono.modeTrouver path {
         fill: rgba(65, 212, 237, 0.9);
+        fill : var(--colorTrouver);
       }
       .barreChrono {
         display: flex;
@@ -9603,6 +9615,7 @@
       }
       .barreChronoIn.modeTrouver {
         background: rgba(65, 212, 237, 0.9);
+        background : var(--colorTrouver);
         box-shadow: 0 0 5px rgba(31, 88, 168, 0.35);
       }
       .timeChronoBox {
@@ -9621,6 +9634,7 @@
       }
       .txtChrono.modeTrouver {
         color: rgba(65, 212, 237, 1);
+        color : var(--colorTrouver);
       }
       /*CSS ModeClasser*/
 
@@ -60981,7 +60995,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 </svg>
 `,
           );
-          btnNext.textContent = D_ilg.valider;
+          btnNext.textContent = D_ilg.valider[currentIlg];
 
           if (cChooseTrouver || cChooseTrouver === null) {
             L_propClasser = [];
@@ -63704,7 +63718,7 @@ function addIslandHalos(path, {
               //lalo
               cadreNext.classList.remove("good", "bad", "none", "visible");
               spanNext.textContent = D_ilg.mystere[currentIlg];
-              btnNext.textContent = D_ilg.valider;
+              btnNext.textContent = D_ilg.valider[currentIlg];
             }
             return;
           }
@@ -63725,7 +63739,7 @@ function addIslandHalos(path, {
             !cadreNext.classList.contains("none")
           ) {
             spanNext.textContent = D_ilg.mystere[currentIlg];
-            btnNext.textContent = D_ilg.valider;
+            btnNext.textContent = D_ilg.valider[currentIlg];
             cadreNext.classList.add("none", "visible");
           }
 
@@ -63957,7 +63971,8 @@ function addIslandHalos(path, {
         cadreStat.style.top = "";
         cadreStat.classList.remove("active","onlyMap");
         cacheStat.classList.remove("active");
-        if(!cadreCalque.classList.contains('active')){
+        
+        if(!cadreCalque.classList.contains('active') && !cadreCalque.classList.contains('hide')){
         setTimeout(() => {
         ;[wrapperTool,openSearch,backMaps].forEach(el=>el.classList.remove('calquing'))
         }, 150)}
@@ -64122,7 +64137,7 @@ function addIslandHalos(path, {
               e.stopPropagation();
               resetVisibleP()
               centerBtn.click()
-              cadreCalque.classList.add('active')
+              if(!cadreCalque.classList.contains('hide'))cadreCalque.classList.add('active')
               ;[wrapperTool].forEach(el=>el.classList.add('calquing'))
               backMaps.classList.remove('calquing')
               openSearch.classList.remove('calquing')
@@ -91622,7 +91637,7 @@ function arrNbr(n){
           if (L_config.m === "modeTrouver" && !cChooseTrouver) {
             cadreNext.classList.remove("good", "bad", "none", "visible");
             spanNext.textContent = D_ilg.mystere[currentIlg];
-            btnNext.textContent = D_ilg.valider;
+            btnNext.textContent = D_ilg.valider[currentIlg];
           }
           return;
         }
@@ -91644,7 +91659,7 @@ function arrNbr(n){
           !cadreNext.classList.contains("none")
         ) {
           spanNext.textContent = D_ilg.mystere[currentIlg];
-          btnNext.textContent = D_ilg.valider;
+          btnNext.textContent = D_ilg.valider[currentIlg];
           cadreNext.classList.add("none", "visible");
         }
         L_config.sub || viewSub
@@ -96096,6 +96111,8 @@ function arrNbr(n){
           moveSD = false;
         }
       });
+
+      
       document.addEventListener("pointermove", (e) => {
         if (moveSD) {
           cadreSD.style.transition = "none";
@@ -96104,6 +96121,28 @@ function arrNbr(n){
       });
 
       document.addEventListener("pointerup", () => {
+  if (!moveSD) return;
+  moveSD = false;
+
+  const top = cadreSD.getBoundingClientRect().top; // seule lecture, avant de modifier quoi que ce soit
+  cadreSD.style.transition = "";
+
+  if (top < window.innerHeight * 0.25) {
+    if (top < window.innerHeight * 0.15) {
+      cadreSD.classList.add("fullScreen");
+      full = true;
+      lineCadreSD.classList.add("fullScreen");
+    } else {
+      cadreSD.classList.add("active");
+    }
+    cadreSD.style.top = ""; // après l'ajout de la classe, sans lecture entre les deux
+  } else {
+    crossCadreSD.click();
+  }
+});
+
+
+      /* document.addEventListener("pointerup", () => {
         if (!moveSD) return;
         cadreSD.style.transition = "";
         moveSD = false;
@@ -96117,7 +96156,9 @@ function arrNbr(n){
         } else {
           crossCadreSD.click();
         }
-      });
+      }); */
+
+
 
       //
       const D_nDevises = {
@@ -96895,6 +96936,16 @@ function arrNbr(n){
         }
         tfInputSD = false;
       });
+
+/*       inputSD.addEventListener("blur", () => {
+  if (!cadreSD.classList.contains("fullScreen")) {
+    cadreSD.classList.add("active");
+    cadreSD.classList.remove("searching");
+  }
+  tfInputSD = false;
+});
+
+ */
       inputSD.addEventListener("input", (e) => {
         let Ld = {};
         for (const clefD of Object.keys(D_nDevises)) {
