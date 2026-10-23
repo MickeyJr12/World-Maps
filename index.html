@@ -67,8 +67,9 @@
         --font-poppins: "Poppins", sans-serif;
         --font-quicksand: "Quicksand", sans-serif;
         --boxShadow: 0 2px 5px rgba(20, 40, 100, 0.06);
-        --backBlueMap: rgba(56, 140, 223, 0.674);
-      }
+        --backBlueMap: rgba(56, 140, 223, 0.674); /* Background des tool */
+        --colorTrouver: rgba(118, 177, 236, 0.674); /* Couleur des éléments dans le mode trouver, utilisé dans viewSub pour zBox
+ */      }
 
       html {
         font-size: 16px;
@@ -1029,7 +1030,7 @@
         gap: 0.1rem;
         align-items: center;
         border-radius: inherit;
-
+        background: var(--backBlueMap);
         width: 100%;
         height: 5rem;
         transform: scale(0.75) translateY(1rem);
@@ -3430,6 +3431,38 @@
         color: rgba(255, 255, 255, 0.75);
         text-decoration: underline;
       }
+      #titleEnergy{
+        display : flex;
+        justify-content : space-between;
+        align-items : center;
+        text-decoration : none;
+        padding-top : 0.1rem;
+        width :100%;
+        .txtTitle{
+          text-decoration : underline;
+        }
+      }
+      #unityStatIn{
+        z-index : -1;
+        background: rgba(4, 98, 198, 0.5);
+      }
+      #unityStatIn.pct {
+        transform : translateX(calc(100% + 0.1rem));
+      }
+      
+      .itmUnityStat{
+        display: flex;
+        border-radius: inherit;
+        font-size: 0.85rem;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        width: 100%;
+        transition:
+          color 0.2s ease,
+          background 0.2s ease;
+      }
       .sousCateStat {
         all: inherit;
         transition: none;
@@ -3535,7 +3568,6 @@
         }
         span {
           /* La définition ( % du total) */
-          display: flex;
           position: relative;
           justify-content: flex-start;
           align-items: center;
@@ -3548,6 +3580,9 @@
           line-clamp: 1;
           -webkit-line-clamp: 1;
           overflow: hidden;
+        }
+        .defTot.hide, .defZs.hide{
+          display : none;
         }
         .yearsBilan {
           white-space: nowrap;
@@ -7409,7 +7444,7 @@
         filter: brightness(0.92);
       }
 
-      .wrapperUnity {
+      .wrapperSwitch {
         --padUnity: 0.2rem;
         --widthUnity: 5rem;
         --gapUnity: 0.1rem;
@@ -7438,7 +7473,7 @@
           color 0.2s ease,
           background 0.2s ease;
       }
-      .unityIn {
+      .switchIn {
         z-index: 5;
         position: absolute;
         border-radius: inherit;
@@ -7448,7 +7483,7 @@
         background: rgba(4, 98, 198, 0.25);
         transition: transform 0.2s ease;
       }
-      .unityIn.mi {
+      #unityIn.mi {
         transform: translateX(calc(100% + 0.1rem));
       }
 
@@ -8769,7 +8804,7 @@
       }
       #chronoDropdown {
         position: absolute;
-        top: calc(100% + 1rem);
+        top: calc(100% + 0.4rem);
       }
 
       /* Dropdown menu */
@@ -8986,7 +9021,6 @@
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2rem);
         gap: 1rem;
-        --colorTrouver: rgba(118, 177, 236, 0.674);
       }
 
       #wrapperScorePm {
@@ -15523,8 +15557,8 @@
                     1 km² ≈ 0.3861 mi²</span
                   >
                 </span>
-                <div class="wrapperUnity">
-                  <div class="unityIn km"></div>
+                <div class="wrapperSwitch" id="wrapperUnity">
+                  <div class="switchIn km" id="unityIn"></div>
                   <span data-unity="km" data-unitylabel="km²" class="itmUnity"
                     >km²</span
                   >
@@ -22762,27 +22796,27 @@
             >
               <path
                 d="M63.0798 5.625L1.30762 90H89.9805L124.852 5.625C125.35 3.57955 126.346 0 121.863 0H77.5265C69.5559 0 65.5706 2.04545 63.0798 5.625Z"
-                fill="#d9a441"
+                fill="rgb(251, 151, 11)"
               />
               <path
                 d="M269.536 6.5625L331.308 90H242.635L207.764 6.5625C207.266 4.53977 206.269 1 210.753 1H255.089C263.06 1 267.045 3.02273 269.536 6.5625Z"
-                fill="#d9a441"
+                fill="rgb(251, 151, 11)"
               />
               <path
                 d="M142.08 289L1.57969 111C-0.946155 107.8 0.0789239 107 1.07913 107H89.5791C107.746 164.833 145.68 283.3 146.08 286.5C146.48 289.7 143.58 290.5 142.08 289Z"
-                fill="#d9a441"
+                fill="rgb(251, 151, 11)"
               />
               <path
                 d="M189.117 289L329.617 111C332.143 107.8 331.117 107 330.117 107H241.617C223.451 164.833 185.517 283.3 185.117 286.5C184.717 289.7 187.617 290.5 189.117 289Z"
-                fill="#d9a441"
+                fill="rgb(251, 151, 11)"
               />
               <path
                 d="M171.428 284.401C170.33 288.282 164.829 288.282 163.73 284.401L114.893 111.839C114.17 109.286 116.088 106.75 118.742 106.75H216.417C219.07 106.75 220.988 109.286 220.265 111.839L171.428 284.401Z"
-                fill="#d9a441"
+                fill="rgb(251, 151, 11)"
               />
               <path
                 d="M218.288 84.4727C219.376 87.1058 217.441 89.9997 214.592 90H116.566C113.718 89.9997 111.782 87.1058 112.87 84.4727L147.766 0H183.393L218.288 84.4727Z"
-                fill="#d9a441"
+                fill="rgb(251, 151, 11)"
               />
             </svg>
           </div>
@@ -23354,12 +23388,8 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="sousCateStat">
-                    <div class="titleStat">Qualité de vie</div>
-
-                    <div
+                    <div class="lineInStat"></div>
+                     <div
                       class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="up"
@@ -23515,9 +23545,10 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
+                  </div>
 
-                    <div class="lineInStat"></div>
-
+                  <div class="sousCateStat">
+                    <div class="titleStat">Qualité de vie</div>
                     <div
                       class="boxItemStat lockP"
                       data-source="ourworldindata"
@@ -23582,6 +23613,57 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
+
+                    <div class="lineInStat"></div>
+
+                     <div
+                      class="boxItemStat lockP"
+                      data-source="banquemondiale"
+                      data-goodVar="down"
+                      data-unity=""
+                      data-liste="homicides"
+                      data-log="false"
+                      data-maxval="15"
+                    >
+                      <div class="itemStat">
+                        <svg class="svgItemStat" fill="var(--colorItmStat)" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Handcuffs"> <path d="M21.34,31.87a1,1,0,0,0,1-1V29.28a1,1,0,0,0-2,0v1.59A1,1,0,0,0,21.34,31.87Z"></path> <path d="M48.45,29.59,48.91,28a2.79,2.79,0,0,0-2.67-3.57h-.81V15.11A8.12,8.12,0,0,0,37.32,7H26.7a8.12,8.12,0,0,0-8.12,8.11v9.33h-.82A2.79,2.79,0,0,0,15.09,28l.46,1.58A14.3,14.3,0,0,0,11.21,52.8,14.3,14.3,0,0,0,32,52.22,14.31,14.31,0,1,0,48.45,29.59ZM20.58,15.11A6.12,6.12,0,0,1,26.7,9H37.32a6.12,6.12,0,0,1,6.11,6.11v9.33H41.91V15.11a4.6,4.6,0,0,0-4.59-4.59H26.7a4.6,4.6,0,0,0-4.6,4.59v9.33H20.58ZM36.4,28l.46,1.58A14.38,14.38,0,0,0,32,33.14a14.35,14.35,0,0,0-4.85-3.56L27.6,28a2.79,2.79,0,0,0-2.68-3.57H24.1V15.11a2.6,2.6,0,0,1,2.6-2.59H37.32a2.59,2.59,0,0,1,2.59,2.59v9.33h-.83A2.79,2.79,0,0,0,36.4,28ZM9,42.67a12.39,12.39,0,0,1,8.1-11.56,1,1,0,0,0,.61-1.22L17,27.45a.83.83,0,0,1,.12-.7.78.78,0,0,1,.63-.31h7.16a.78.78,0,0,1,.63.31.8.8,0,0,1,.13.7L25,29.89a1,1,0,0,0,.62,1.22,12.41,12.41,0,0,1,5.18,3.62,14.24,14.24,0,0,0-1.68,3.41,9,9,0,0,0-7.74-4.45h0A9,9,0,0,0,18.4,51.14a3.61,3.61,0,0,0-.74,2.18,3.53,3.53,0,0,0,.22,1.18A12.31,12.31,0,0,1,9,42.67Zm12.33,7h0a7,7,0,1,1,0-14h0a7,7,0,1,1,0,14Zm0,5.36a1.68,1.68,0,1,1,0-3.36,9,9,0,0,0,7.73-4.43,14.21,14.21,0,0,0,1.67,3.41A12.23,12.23,0,0,1,21.34,55Zm30-3.61a12.3,12.3,0,0,1-5.26,3.11,3.53,3.53,0,0,0,.22-1.18,3.61,3.61,0,0,0-.74-2.18,9,9,0,0,0-2.94-17.45h0a9,9,0,1,0,0,18,1.68,1.68,0,1,1,0,3.36,12.32,12.32,0,0,1-4.24-23.89A1,1,0,0,0,39,29.89l-.72-2.44a.8.8,0,0,1,.13-.7.78.78,0,0,1,.63-.31h7.16a.78.78,0,0,1,.63.31.83.83,0,0,1,.12.7l-.71,2.44a1,1,0,0,0,.61,1.22,12.31,12.31,0,0,1,4.49,20.28Zm-15.7-8.73a7,7,0,0,1,7-7h0a7,7,0,1,1,0,14h0A7,7,0,0,1,35.68,42.66Z"></path> <path d="M42.66,28.28a1,1,0,0,0-1,1v1.59a1,1,0,1,0,2,0V29.28A1,1,0,0,0,42.66,28.28Z"></path> </g> </g></svg>
+                        <div class="boxTxtItemStat">
+                          <div>Homicides volontaires</div>
+                          <span>pour 100 000 habitants</span>
+                        </div>
+
+                        <div class="txtStat">
+                          <span>58</span>
+                          <div class="txtStatUnity">%</div>
+                          <div class="badgeVarStat good">
+                            <svg viewBox="0 0 10 8" aria-hidden="true">
+                              <path d="M5 0l5 8H0z" fill="currentColor" />
+                            </svg>
+                            <span>+22 pts</span>
+                          </div>
+                        </div>
+
+                        <div class="arrowItmStat">
+                          <svg
+                            fill="white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+
 
                     <div class="lineInStat"></div>
 
@@ -24079,15 +24161,33 @@
                       </div>
                     </div> -->
 
-                  <div class="sousCateStat">
-                    <div class="titleStat">Mix énergétique</div>
+                  <div class="sousCateStat" id="titleMixE">
+                    <div class="titleStat" id="titleEnergy"><div class="txtTitle">Mix énergétique</div>
+                  
+                    <div class="wrapperSwitch" id="wrapperUnityStat" style="outline : 1px solid rgba(255,255,255,0.2)">
+                  <div class="switchIn TWh" id="unityStatIn"></div>
+                  <span data-unity="TWh" data-liststat = "listetot" data-unitylabel="TWh" class="itmUnityStat"
+                    >TWh</span
+                  >
+                  <span data-unity="pct" data-liststat = "listezs" data-unitylabel="%" class="itmUnityStat"
+                    >%</span
+                  >
+                </div>
+
+                    
+                  </div>
                     <div
                       class="boxItemStat lockP"
                       data-source="ourworldindata"
                       data-goodVar="up"
-                      data-unity="%"
-                      data-liste="eolien_zs"
                       data-log="true"
+                      data-unity="TWh"
+                      data-unitytot = "TWh"
+                      data-unityzs = "%"
+                      data-liste="eolien_tot"
+                      data-listetot = "eolien_tot"
+                      data-listezs = "eolien_zs"
+                      
                     >
                       <div class="itemStat">
                         <svg
@@ -24103,7 +24203,8 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div>Éolien</div>
-                          <span>% de l'énergie totale produite</span>
+                          <span class="defTot">Production totale à partir de cette source</span>
+                          <span class="defZs hide">% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24140,13 +24241,17 @@
                     <div class="lineInStat"></div>
                     <!--  -->
 
-                    <div
+                    <div                      
                       class="boxItemStat lockP"
                       data-source="ourworldindata"
                       data-goodVar="up"
-                      data-unity="%"
-                      data-liste="solar_zs"
                       data-log="true"
+                      data-unity="TWh"
+                      data-unitytot = "TWh"
+                      data-unityzs = "%"
+                      data-liste="solar_tot"
+                      data-listetot = "solar_tot"
+                      data-listezs = "solar_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24212,7 +24317,8 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div>Solaire</div>
-                          <span>% de l'énergie totale produite</span>
+                          <span class="defTot">Production totale à partir de cette source</span>
+                          <span class="defZs hide">% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24252,11 +24358,68 @@
 
                     <div
                       class="boxItemStat lockP"
+                      data-source="ourworldindata"
+                      data-goodVar="up"
+                      data-log="true"
+                      data-unity="TWh"
+                      data-unitytot = "TWh"
+                      data-unityzs = "%"
+                      data-liste="bioenergy_tot"
+                      data-listetot = "bioenergy_tot"
+                      data-listezs = "bioenergy_zs"
+                    >
+                      <div class="itemStat">
+                        <svg class="svgItemStat" fill="var(--colorItmStat)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.003 512.003" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M401.29,0C217.711,0,69.161,148.55,69.161,332.129v74.579l58.581-58.579l36.131,36.131l-58.581,58.579h74.579 C363.45,442.839,512,294.289,512,110.71V0H401.29z M290.581,306.581v-59.613h-68.129l68.129-110.71v59.613h68.129L290.581,306.581 z"></path> </g> </g> <g> <g> <rect x="3.744" y="433.807" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -309.3917 171.772)" width="97.815" height="51.096"></rect> </g> </g> </g></svg>
+                        <div class="boxTxtItemStat">
+                          <div>Bioénergie</div>
+                          <span class="defTot">Production totale à partir de cette source</span>
+                          <span class="defZs hide">% de l'énergie totale produite</span>
+
+                        </div>
+
+                        <div class="txtStat">
+                          <span>58</span>
+                          <div class="txtStatUnity">%</div>
+                          <div class="badgeVarStat good">
+                            <svg viewBox="0 0 10 8" aria-hidden="true">
+                              <path d="M5 0l5 8H0z" fill="currentColor" />
+                            </svg>
+                            <span>+22 pts</span>
+                          </div>
+                        </div>
+
+                        <div class="arrowItmStat">
+                          <svg
+                            fill="white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="boxBilanItemStat active">
+                        <div class="boxNbrBilan">
+                          <span>72% → </span>
+                          <div>50%</div>
+                        </div>
+                        <div class="boxMCourbe"></div>
+                      </div>
+                    </div>
+                    <div class="lineInStat"></div>
+                     <div
+                      class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="up"
-                      data-unity="%"
-                      data-liste="hydro_zs"
                       data-log="true"
+                      data-unity="TWh"
+                      data-unitytot = "TWh"
+                      data-unityzs = "%"
+                      data-liste="hydro_tot"
+                      data-listetot = "hydro_tot"
+                      data-listezs = "hydro_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24279,7 +24442,8 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div>Hydroélectricité</div>
-                          <span>% de l'énergie totale produite</span>
+                          <span class="defTot">Production totale à partir de cette source</span>
+                          <span class="defZs hide">% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24321,9 +24485,13 @@
                       class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="down"
-                      data-unity="%"
-                      data-liste="gaz_zs"
                       data-log="true"
+                      data-unity="TWh"
+                      data-unitytot = "TWh"
+                      data-unityzs = "%"
+                      data-liste="gaz_tot"
+                      data-listetot = "gaz_tot"
+                      data-listezs = "gaz_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24355,7 +24523,8 @@
 
                         <div class="boxTxtItemStat">
                           <div>Gaz naturel</div>
-                          <span>% de l'énergie totale produite</span>
+                          <span class="defTot">Production totale à partir de cette source</span>
+                          <span class="defZs hide">% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24396,9 +24565,13 @@
                       class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="down"
-                      data-unity="%"
-                      data-liste="nucl_zs"
                       data-log="true"
+                      data-unity="TWh"
+                      data-unitytot = "TWh"
+                      data-unityzs = "%"
+                      data-liste="nucl_tot"
+                      data-listetot = "nucl_tot"
+                      data-listezs = "nucl_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24450,7 +24623,8 @@
 
                         <div class="boxTxtItemStat">
                           <div>Nucléaire</div>
-                          <span>% de l'énergie totale produite</span>
+                          <span class="defTot">Production totale à partir de cette source</span>
+                          <span class="defZs hide">% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24492,9 +24666,13 @@
                       class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="down"
-                      data-unity="%"
-                      data-liste="coal_zs"
                       data-log="true"
+                      data-unity="TWh"
+                      data-unitytot = "TWh"
+                      data-unityzs = "%"
+                      data-liste="coal_tot"
+                      data-listetot = "coal_tot"
+                      data-listezs = "coal_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24518,7 +24696,8 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div>Charbon</div>
-                          <span>% de l'énergie totale produite</span>
+                          <span class="defTot">Production totale à partir de cette source</span>
+                          <span class="defZs hide">% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24559,9 +24738,14 @@
                       class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="down"
-                      data-unity="%"
-                      data-liste="petrole_zs"
-                      data-log="false"
+                      data-log="true"
+                      data-unity="TWh"
+                      data-unitytot = "TWh"
+                      data-unityzs = "%"
+                      data-liste="petrole_tot"
+                      data-listetot = "petrole_tot"
+                      data-listezs = "petrole_zs"
+
                     >
                       <div class="itemStat">
                         <svg
@@ -24578,7 +24762,8 @@
 
                         <div class="boxTxtItemStat">
                           <div>Pétrole</div>
-                          <span>% de l'énergie totale produite</span>
+                          <span class="defTot">Production totale à partir de cette source</span>
+                          <span class="defZs hide">% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -33284,10 +33469,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       /* Gérer le max Height avec transition */
       function maxHeight(el) {
+        const styleEl = el.style.maxHeight
         el.style.transition = "none";
         el.style.maxHeight = "100rem";
         let h = el.scrollHeight;
-        el.style.maxHeight = "";
+        el.style.maxHeight = styleEl;
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             el.style.transition = "";
@@ -56976,9 +57162,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const toggleSon = document.getElementById("toggleSon");
       const itmsUnity = queryAll(".itmUnity");
       let currentUnity = "km²";
-      const wrapperUnity = query(".wrapperUnity");
+      const wrapperUnity = getId('wrapperUnity');
 
-      const unityIn = query(".unityIn");
+      const unityIn = getId('unityIn');
 
       const btnsChoiceIlg = queryAll("[data-choiceilg]");
 
@@ -58802,7 +58988,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           if (unityIn.classList.contains(itm.dataset.unity)) return;
           hapticFeedback("medium");
 
-          unityIn.className = "unityIn " + itm.dataset.unity;
+          unityIn.className = "switchIn " + itm.dataset.unity;
           currentUnity = itm.dataset.unitylabel;
           saveProgress();
           [L_q, P_info].forEach((D) => {
@@ -63957,6 +64143,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const sousCatesStat = queryAll(".sousCateStat");
       const colorMCourbes = "#ff8f7d";
 
+      const itmsUnityE = queryAll('.itmUnityStat')
+      const unityStatIn  = getId('unityStatIn')
+
       const wrapperItmStat = getId("wrapperItmStat");
       const contentCadreStat = getId("contentCadreStat");
       const contentGeneStat = getId("contentGeneStat");
@@ -64236,7 +64425,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       itmStatChoice.forEach((el) =>
         el.addEventListener("click", () => {
           const mode = el.dataset.statchoice;
-          if (statChoiceIn.classList.contains(mode)) return;
+          if (statChoiceIn.classList.contains(mode) && mode !== "bilan") return;
           hapticFeedback("medium");
           statChoiceIn.className = mode;
 
@@ -64250,9 +64439,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           const btnsMapStat = queryAll(".btnMapStat");
           if (btnsMapStat) btnsMapStat.forEach((el) => el.remove());
 
-          queryAll(".boxBilanItemStat").forEach(
+          if(mode !== "bilan"){ // Pour ne pas avoir l'animation height de 0, puis de max 
+            queryAll(".boxBilanItemStat").forEach(
             (b) => (b.style.maxHeight = ""),
           );
+          }
 
           if (mode === "stat") {
             //Réinitialiser
@@ -65484,6 +65675,24 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             requestAnimationFrame(() => (content.style.transition = ""));
           }
         });
+
+        queryAll('.txtStat').forEach(el=>el.style = "")
+
+        unityStatIn.className = "switchIn TWh"
+        queryAll('[data-listezs]').forEach(el=>{
+          el.dataset.liste = el.dataset.listetot
+          el.dataset.unity = "TWh"
+
+          const defTot = el.querySelector('.defTot')
+          const defZs = el.querySelector('.defZs')
+          defTot.classList.remove('hide')
+          defZs.classList.add('hide')
+          defZs.before(defTot)
+
+        })
+
+        
+
         crtCStat = currentCountry;
         cadreDetailStat.style.transition = "none";
         cadreDetailStat.classList.remove("active");
@@ -65501,6 +65710,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           itm.style.opacity = "";
         });
       }
+      backDetailStat.addEventListener("pointerdown", (e) => e.stopPropagation())
+      
       backDetailStat.addEventListener("click", () => {
         crtCStat = currentCountry;
         cadreDetailStat.classList.remove("active");
@@ -65527,30 +65738,85 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //  Script fill stats
       const D_yListes = {
         // renewTot: renewTot,
+        //Énergie 
+        // Total
+        eolien_tot: eolien_tot,
+        hydro_tot: hydro_tot,
+        solar_tot: solar_tot,
+        bioenergy_tot : bioenergy_tot,
+        gaz_tot: gaz_tot,
+        nucl_tot: nucl_tot,
+        coal_tot: coal_tot,
+        petrole_tot: petrole_tot,
+        // %
         eolien_zs: eolien_zs,
         hydro_zs: hydro_zs,
         solar_zs: solar_zs,
+        bioenergy_zs : bioenergy_zs,
         gaz_zs: gaz_zs,
         nucl_zs: nucl_zs,
         coal_zs: coal_zs,
         petrole_zs: petrole_zs,
+
+        // Société
         popTot: popTot,
         fertility: fertility,
         lifeExpe_M: lifeExpe_M,
         lifeExpe_F: lifeExpe_F,
+        homicides: homicides,
         genderEq: genderEq,
         indHapiness: indHapiness,
+
+        // Environnement
         co2Hab: co2Hab,
         emissionTot: emissionTot,
         airQuality: airQuality,
         agricole_zs: agricole_zs,
         arable_zs: arable_zs,
         forets_zs: forets_zs,
+
+        // Économie
         pib_tot: pib_tot,
         pib_hab: pib_hab,
         chomage: chomage,
         inflation: inflation,
       };
+
+      itmsUnityE.forEach(itm=>itm.addEventListener('click',()=>{
+        const unity =  itm.dataset.unity
+        unityStatIn.className = "switchIn " + unity
+        getId('titleMixE').querySelectorAll('[data-listezs]').forEach(el=>{
+          el.dataset.liste = el.dataset[itm.dataset.liststat]
+          el.dataset.unity = itm.dataset.unitylabel
+
+          if(unity === "pct"){
+            const defTot = el.querySelector('.defTot')
+            const defZs = el.querySelector('.defZs')
+            defTot.classList.add('hide')
+            defZs.classList.remove('hide')
+            defTot.before(defZs)
+        }
+
+        else {
+            const defTot = el.querySelector('.defTot')
+            const defZs = el.querySelector('.defZs')
+            defTot.classList.remove('hide')
+            defZs.classList.add('hide')
+            defZs.before(defTot)
+        }
+
+
+
+        })
+        query('.itmStatChoice.active').click()
+
+        
+
+
+        if(cadreStat.classList.contains('active'))fillCadreStat(currentCountry, false, true)
+        else if(cadreStat.classList.contains('hide'))fillCadreStat(getId('FR'), false, true)
+        
+      }))
 
       const M_boxStat = new Map();
       boxsItemStat.forEach((box) => {
@@ -65564,19 +65830,44 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       });
 
-      function fillCadreStat(p, cursoring = false) {
+      function fillCadreStat(p, cursoring = false,onlyEnergy = false) {
         if (!p) return;
         const p_id = p.id;
-        const crtYear = txtYChoice.textContent;
         const titleCadreStat = getId("titleCadreStat");
         titleCadreStat.querySelector("span").textContent = P_info[p_id].n;
         titleCadreStat.querySelector("img").src =
           `flag_c/${p_id.toLowerCase()}.svg`;
         const L_yDispos = []; //Listes des annes pour créer les curseurs.
-
         queryAll(".noInfo").forEach((box) => box.classList.remove("noInfo"));
 
+        boxsItemStat.forEach(box=>{ // On détermine toutes les années qu'il devra y avoir 
+          const L_infos = D_yListes[box.dataset.liste][p_id];
+          if (
+            typeof L_infos !== "object" ||
+            L_infos.filter((tuple) => tuple.valeur !== 0).length === 0
+          ) {return}
+
+          L_infos.forEach((tuple) => {
+            if (!L_yDispos.includes(tuple.annee)) L_yDispos.push(tuple.annee);
+          });
+        })
+
+        if (!cursoring && openStat.style.display !== "none" && !onlyEnergy) { // On crée les curseurs, remplit ySup et yInf sur la barre 
+          query('[data-statchoice="stat"]').click();
+          createCursorY(
+            L_yDispos.sort(
+              (a, b) => b - a, // ordre de population décroissante
+            ).reverse(),
+          );
+          // cursorYBox.querySelector(".cursorY.current").click();
+        txtYChoice.textContent = ySup.textContent
+        }
+
+        const crtYear = txtYChoice.textContent;
+
+
         boxsItemStat.forEach((box) => {
+          if(onlyEnergy && box.closest('.sousCateStat').id !== "titleMixE")return
           const L_infos = D_yListes[box.dataset.liste][p_id];
           if (
             typeof L_infos !== "object" ||
@@ -65594,10 +65885,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             fillItmLockP(box);
             return;
           }
-
-          L_infos.forEach((tuple) => {
-            if (!L_yDispos.includes(tuple.annee)) L_yDispos.push(tuple.annee);
-          });
 
           const info = L_infos.find((el) => el.annee === parseInt(crtYear));
           const txtStat = M_boxStat.get(box).txtStat;
@@ -65651,16 +65938,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               .querySelectorAll(".boxItemStat"),
           ].filter((el) => !el.classList.contains("noInfo")).length;
         });
-
-        if (!cursoring && openStat.style.display !== "none") {
-          query('[data-statchoice="stat"]').click();
-          createCursorY(
-            L_yDispos.sort(
-              (a, b) => b - a, // ordre de population décroissante
-            ).reverse(),
-          );
-          cursorYBox.querySelector(".cursorY.current").click();
-        }
       }
 
       // Fin Script Stat
@@ -66052,7 +66329,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         zoomFactorSvg = 92;
         currentCSub = currentCountry;
         const L_viewSub = [openSearch, only, calque, openTool];
-
         if (!viewSub) {
           viewSub = true;
           cloneVisible_m.clear();
@@ -66089,6 +66365,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             btn.style.left = btn.getBoundingClientRect().left + "px";
             btn.style.top = btn.getBoundingClientRect().top + "px";
             btn.style.position = "absolute";
+            btn.style.background = "var(--backBlueMap)"
             btn.style.opacity = "1";
             Maps.append(btn);
             btn.classList.add("modeTrouver");
@@ -66194,6 +66471,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               [centerBtn, zBox].forEach((btn) => {
                 btn.style.left = "";
                 btn.style.top = "";
+                btn.style.background = ""
                 btn.style.position = "";
                 btn.style.opacity = "";
                 btn.classList.remove("modeTrouver");
@@ -92916,7 +93194,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           : (L_toolReverse.forEach((el) => {
               if (!((el === zBox || el === centerBtn) && viewSub)) {
                 let timeTool = setTimeout(() => {
-                  el.style.opacity = "0";
+                  el.style.opacity = "";
                   el.style.transform = "";
                 }, delay);
                 L_setTimeTool.push(timeTool);
@@ -97430,13 +97708,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         requestAnimationFrame(loop);
         console.log(choisingYStat);
       }
+
       // document.addEventListener('click',(e)=>console.log(e.target.closest("*").parentNode),true)
       // à retirer
-      // queryAll('.boxItemStat').forEach(el=>el.classList.remove('lockP'))
-      // loop()
+      queryAll('.boxItemStat').forEach(el=>el.classList.remove('lockP'))
+
 
       // Script éphémère
-      // fin script éphémère
 
       // Script achats
 
@@ -97946,6 +98224,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (!window.Capacitor?.isNativePlatform()) return;
         await InAppReview.requestReview();
       }
+
+      
     </script>
 
     <script src="ads.js"></script>
