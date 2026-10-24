@@ -161,6 +161,29 @@
         fill: rgba(0, 0, 0, 0.4);
       }
 
+      @property --m {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+    /* classe à mettre sur les paths de L_circles */
+    .small-island {
+  --m: 1;
+  --base-sw: 0.1px;
+  stroke : #f09443;
+  stroke-width: calc(
+    var(--m) * (4px / var(--k, 1)) +
+    (1 - var(--m)) * var(--base-sw)
+  ) !important;
+  transition: --m 0.2s ease;
+}
+
+    .small-island.no-halo {
+      --m: 0;               /* trait normal */
+    }
+
+
       /* CSS Sub */
 
       #svgUs.viewSub {
@@ -63692,6 +63715,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const L_circles = [
         // liste des éléments qui ont des cercles
+        "WF",
+        "KI",
+        "MH",
+        "FM",
+        "SH",
+        "TF",
+        "TO",
+        "WS",
         "MO",
         "SG",
         "MV",
@@ -64042,6 +64073,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           strokeWidth: 0.8,
         });
 
+        // circle.querySelectorAll('path').forEach(p=>{
+        //   p.style.opacity = "0"
+        // })
+        //   c.style.strokeWidth = "4px"
+        //   c.style.vectorEffect = "non-scaling-stroke"
+
+        circle.classList.add('small-island')
         //
         circle
           .querySelectorAll("path")
@@ -92241,6 +92279,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         );
         isMobile ? ((xp = x), (yp = y)) : "";
         svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
+         updateIslands(w, h);
       }
       // ── Drag plan ───────────────────────────────────────────────
 
@@ -93873,6 +93912,29 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const MIN_SIZE = 30; // zoom max : pas plus petit que ça
       const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial
 
+      const HALO_OFF_BELOW = 80;
+
+// à faire une seule fois (après la création des paths)
+const islandEls = L_circles.map((id) => {
+  const el = getId(id);
+  el.classList.add("small-island");
+  return el;
+});
+
+function updateIslands(w, h) {
+   if (!svg.clientWidth || !svg.clientHeight) return;
+  // pixels écran par unité du viewBox (tient compte de preserveAspectRatio)
+  const k = Math.min(svg.clientWidth / w, svg.clientHeight / h);
+  const haloOn = w >= HALO_OFF_BELOW;
+
+  for (const el of islandEls) {
+    el.style.setProperty("--k", k);
+    el.classList.toggle("no-halo", !haloOn);
+  }
+}
+
+const vb = getVB();
+updateIslands(vb.w, vb.h); // au démarrage
       svg.addEventListener(
         "wheel",
         (e) => {
@@ -93899,12 +93961,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           // Garder le point sous le curseur fixe
           const newX = mouseVBx - (mouseVBx - vb.x) * (newW / vb.w);
           const newY = mouseVBy - (mouseVBy - vb.y) * (newH / vb.h);
-
-          if (newW <= 550) {
-            L_elCircles.forEach((c) => (c.style.display = "flex"));
-          } else {
-            L_elCircles.forEach((c) => (c.style.display = "none"));
-          }
+          // if (/* newW <= 550 */ newW <= zCircleRemove) {
+          //   // L_elCircles.forEach((c) => (c.style.display = "flex"));
+          //   L_circles.forEach(id=>getId(id).style.strokeWidth = "")
+          // } else {
+          //   // L_elCircles.forEach((c) => (c.style.display = "none"));
+          //   L_circles.forEach(id=>getId(id).style.strokeWidth = "4px")
+          // }
 
           setVB({ x: newX, y: newY, w: newW, h: newH });
         },
