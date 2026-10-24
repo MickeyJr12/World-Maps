@@ -161,37 +161,6 @@
         fill: rgba(0, 0, 0, 0.4);
       }
 
-  /*     @property --m {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 1;
-} */
-
-    /* classe à mettre sur les paths de L_halos */
-  .small-island {
-  stroke: #f09443;
-
-  /* --m: 1;
-  --base-sw: 0.045px;  
-  stroke: #f09443;
-  stroke-width: calc(
-    var(--m) * (4px / var(--k, 1)) +
-    (1 - var(--m)) * var(--base-sw)
-  ) !important;
-  transition: --m 0.5s ease; */
-}
-
-    .small-island.no-halo {
-      --m: 0;               /* trait normal */
-  stroke: black;
-    }
-
-    .small-island.haloHide {
-      --m: 0;               /* trait normal */
-  stroke: black;
-    }
-
-
       /* CSS Sub */
 
       #svgUs.viewSub {
@@ -762,6 +731,9 @@
         cursor: default;
         opacity: 0;
         pointer-events: none;
+      }
+      .halo {
+        display : none;
       }
 
       #cadreListSub {
@@ -92362,7 +92334,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         );
         isMobile ? ((xp = x), (yp = y)) : "";
         svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
-         updateIslands(w, h);
           if (w <= 500) {
             // L_elCircles.forEach((c) => (c.style.display = "flex"));
             L_halos.forEach(id=>getId("halo" + id).style.display = "")
@@ -92662,14 +92633,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         ).forEach((p) => {
           const status = idVisible_m.get(p.id);
           const visible = status && Object.values(status).every(Boolean);
-          visible ? 
-          p.style.removeProperty("--m") :
-          p.style.setProperty("--m", "0");
-          visible ? 
-          p.classList.remove('haloHide'):
-          p.classList.add('haloHide')
-
-
           !calquing
             ? (p.style.fill = visible ? pColor_m.get(p).current : "")
             : "";
@@ -94011,29 +93974,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const MIN_SIZE = 30; // zoom max : pas plus petit que ça
       const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial
 
-      const HALO_OFF_BELOW = 80;
-
-// à faire une seule fois (après la création des paths)
-const islandEls = L_halos.map((id) => {
-  const el = getId(id);
-  el.classList.add("small-island");
-  return el;
-});
-
-function updateIslands(w, h) {
-   if (!svg.clientWidth || !svg.clientHeight) return;
-  // pixels écran par unité du viewBox (tient compte de preserveAspectRatio)
-  const k = Math.min(svg.clientWidth / w, svg.clientHeight / h);
-  const haloOn = w >= HALO_OFF_BELOW;
-
-  for (const el of islandEls) {
-    el.style.setProperty("--k", k);
-    el.classList.toggle("no-halo", !haloOn);
-  }
-}
-
-const vb = getVB();
-updateIslands(vb.w, vb.h); // au démarrage
       svg.addEventListener(
         "wheel",
         (e) => {
@@ -95633,6 +95573,8 @@ updateIslands(vb.w, vb.h); // au démarrage
 
       let onceS = true;
       openSearch.addEventListener("click", () => {
+        queryAll('.halo').forEach(el=>el.style.display = "flex")
+
         if (onceS) {
           requestAnimationFrame(() => {
             inputC.value = "";
