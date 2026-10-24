@@ -167,7 +167,7 @@
   initial-value: 1;
 }
 
-    /* classe à mettre sur les paths de L_circles */
+    /* classe à mettre sur les paths de L_halos */
   .small-island {
   --m: 1;
   --base-sw: 0.045px;   /* ← était 0.1px */
@@ -63712,8 +63712,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
-      const L_circles = [
-        // liste des éléments qui ont des cercles
+      const L_pTarget = [ // Les paths décalés pour cliquer plus facilement (createCircle)
         "BV",
         "WF",
         "KI",
@@ -63759,7 +63758,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "YT",
         "AX",
         "BB",
-        "FO",
         "KN",
         "MS",
         "DM",
@@ -63788,6 +63786,82 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "BQSA",
         "BQBO",
         "BQSE",
+      ]
+      const L_halos = [ // on crée des hallos, ils sont visibles (small-island)
+        // liste des éléments qui ont des cercles
+        "BV",
+        "WF",
+        "KI",
+        "MH",
+        "FM",
+        "SH",
+        "TF",
+        "TO",
+        "WS",
+        "MO",
+        "SG",
+        "MV",
+        "HK",
+        "PM",
+        "BH",
+        "BV",
+        "BM",
+        // "GP",
+        "IM",
+        "GG",
+        "JE",
+        "ST",
+        "KM",
+        // "LC",
+        // "GD",
+        // "VC",
+        // "CW",
+        // "AW",
+        "TC",
+        // "MQ",
+        "GI",
+        "AD",
+        "LI",
+        "SC",
+        "GO",
+        "IO",
+        "NF",
+        "MC",
+        "VA",
+        "SM",
+        "RE",
+        "MU",
+        "YT",
+        "AX",
+        // "BB",
+        // "KN",
+        // "MS",
+        // "DM",
+        // "AG",
+        // "BL",
+        "HM",
+        "PW",
+        "NU",
+        "CC",
+        "NR",
+        "PN",
+        "CX",
+        "AS",
+        "CK",
+        "PW",
+        "GU",
+        "MT",
+        "KI",
+        "UM-DQ",
+        "UM-FQ",
+        "UM-HQ",
+        "UM-JQ",
+        "UM-MQ",
+        "UM-WQ",
+        "JU",
+        // "BQSA",
+        // "BQBO",
+        // "BQSE",
       ];
       const D_circles = {};
       const L_antilles = [
@@ -64085,7 +64159,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         //   c.style.strokeWidth = "4px"
         //   c.style.vectorEffect = "non-scaling-stroke"
 
-        c.classList.add('small-island')
         //
         circle
           .querySelectorAll("path")
@@ -64166,7 +64239,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // L_elCircles.push(circle);
         D_circles[c.id] = circle;
       }
-      L_circles.forEach((c) => createCircle(c));
+      L_pTarget.forEach((c) => createCircle(c));
 
       const infoName = document.querySelector(".infoName");
 
@@ -93931,7 +94004,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const HALO_OFF_BELOW = 80;
 
 // à faire une seule fois (après la création des paths)
-const islandEls = L_circles.map((id) => {
+const islandEls = L_halos.map((id) => {
   const el = getId(id);
   el.classList.add("small-island");
   return el;
@@ -93979,10 +94052,10 @@ updateIslands(vb.w, vb.h); // au démarrage
           const newY = mouseVBy - (mouseVBy - vb.y) * (newH / vb.h);
           // if (/* newW <= 550 */ newW <= zCircleRemove) {
           //   // L_elCircles.forEach((c) => (c.style.display = "flex"));
-          //   L_circles.forEach(id=>getId(id).style.strokeWidth = "")
+          //   L_halos.forEach(id=>getId(id).style.strokeWidth = "")
           // } else {
           //   // L_elCircles.forEach((c) => (c.style.display = "none"));
-          //   L_circles.forEach(id=>getId(id).style.strokeWidth = "4px")
+          //   L_halos.forEach(id=>getId(id).style.strokeWidth = "4px")
           // }
 
           setVB({ x: newX, y: newY, w: newW, h: newH });
