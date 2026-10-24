@@ -126,6 +126,8 @@
 
       /*CSS Maps*/
       .Maps {
+        position : fixed;
+        inset : 0;
         opacity: 0;
         visibility: hidden;
         overscroll-behavior: contain;
@@ -3443,11 +3445,12 @@
         }
       }
       #unityStatIn{
+
         z-index : -1;
         background: rgba(4, 98, 198, 0.5);
       }
       #unityStatIn.pct {
-        transform : translateX(calc(100% + 0.1rem));
+        transform : translateX(calc(100% + var(--gapUnity)));
       }
       
       .itmUnityStat{
@@ -7445,47 +7448,52 @@
       }
 
       .wrapperSwitch {
-        --padUnity: 0.2rem;
-        --widthUnity: 5rem;
-        --gapUnity: 0.1rem;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        gap: var(--gapUnity);
-        padding: var(--padUnity);
-        width: var(--widthUnity);
-        height: 1.8rem;
-        border-radius: 0.4rem;
-        outline: 1px solid rgba(0, 0, 0, 0.15);
-      }
-      .itmUnity {
-        display: flex;
-        border-radius: inherit;
-        font-size: 0.85rem;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        text-align: center;
-        width: 100%;
-        transition:
-          color 0.2s ease,
-          background 0.2s ease;
-      }
-      .switchIn {
-        z-index: 5;
-        position: absolute;
-        border-radius: inherit;
-        left: 0.2rem;
-        height: calc(100% - var(--padUnity) * 2);
-        width: calc(50% - var(--padUnity) - var(--gapUnity));
-        background: rgba(4, 98, 198, 0.25);
-        transition: transform 0.2s ease;
-      }
-      #unityIn.mi {
-        transform: translateX(calc(100% + 0.1rem));
-      }
+  --padUnity: 0.2rem;
+  --widthUnity: 5rem;
+  --gapUnity: 0.1rem;
+  /* largeur exacte d'un bouton */
+  --itemW: calc((var(--widthUnity) - 2 * var(--padUnity) - var(--gapUnity)) / 2);
+
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: var(--gapUnity);
+  padding: var(--padUnity);
+  width: var(--widthUnity);
+  height: 1.8rem;
+  border-radius: 0.4rem;
+  outline: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.itmUnity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  font-size: 0.85rem;
+  text-align: center;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.switchIn {
+  position: absolute;
+  z-index: 5;
+  left: var(--padUnity);
+  width: var(--itemW);
+  height: calc(100% - var(--padUnity) * 2);
+  border-radius: calc(0.4rem - var(--padUnity)); /* arrondi concentrique */
+  background: rgba(4, 98, 198, 0.25);
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+#unityIn.mi {
+  transform: translateX(calc(100% + var(--gapUnity)));
+}
 
       .itemSetting {
         display: flex;
@@ -64186,7 +64194,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             hapticFeedback("medium");
             tfNewEl = true;
             cadre.style.filter = "brightness(0.22)";
-
+            cadreStat.style.filter = "brightness(0.22)";
             const newFlag = el.cloneNode(true);
             el.style.opacity = "0";
 
@@ -64272,6 +64280,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 if (query(".bordersList"))
                   query(".bordersList").classList.remove("active");
                 cadre.style.filter = "";
+                cadreStat.style.filter = "";
+
                 const newBox = el.getBoundingClientRect();
                 newFlag.style.transform = "none";
                 newFlag.style.top = newBox.top + "px";
