@@ -161,22 +161,24 @@
         fill: rgba(0, 0, 0, 0.4);
       }
 
-      @property --m {
+  /*     @property --m {
   syntax: "<number>";
   inherits: true;
   initial-value: 1;
-}
+} */
 
     /* classe à mettre sur les paths de L_halos */
   .small-island {
-  --m: 1;
-  --base-sw: 0.045px;   /* ← était 0.1px */
+  stroke: #f09443;
+
+  /* --m: 1;
+  --base-sw: 0.045px;  
   stroke: #f09443;
   stroke-width: calc(
     var(--m) * (4px / var(--k, 1)) +
     (1 - var(--m)) * var(--base-sw)
   ) !important;
-  transition: --m 0.5s ease;
+  transition: --m 0.5s ease; */
 }
 
     .small-island.no-halo {
@@ -92361,6 +92363,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         isMobile ? ((xp = x), (yp = y)) : "";
         svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
          updateIslands(w, h);
+          if (w <= 500) {
+            // L_elCircles.forEach((c) => (c.style.display = "flex"));
+            L_halos.forEach(id=>getId("halo" + id).style.display = "")
+          } else {
+            // L_elCircles.forEach((c) => (c.style.display = "none"));
+            L_halos.forEach(id=>getId("halo" + id).style.display = "none")
+          }
+
       }
       // ── Drag plan ───────────────────────────────────────────────
 
@@ -94050,14 +94060,6 @@ updateIslands(vb.w, vb.h); // au démarrage
           // Garder le point sous le curseur fixe
           const newX = mouseVBx - (mouseVBx - vb.x) * (newW / vb.w);
           const newY = mouseVBy - (mouseVBy - vb.y) * (newH / vb.h);
-          // if (/* newW <= 550 */ newW <= zCircleRemove) {
-          //   // L_elCircles.forEach((c) => (c.style.display = "flex"));
-          //   L_halos.forEach(id=>getId(id).style.strokeWidth = "")
-          // } else {
-          //   // L_elCircles.forEach((c) => (c.style.display = "none"));
-          //   L_halos.forEach(id=>getId(id).style.strokeWidth = "4px")
-          // }
-
           setVB({ x: newX, y: newY, w: newW, h: newH });
         },
         { passive: false },
