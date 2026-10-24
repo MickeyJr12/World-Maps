@@ -65881,7 +65881,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
 
         boxsItemStat.forEach((box) => {
-          if(onlyEnergy && box.closest('.sousCateStat').id !== "titleMixE")return
           const L_infos = D_yListes[box.dataset.liste][p_id];
           if (
             typeof L_infos !== "object" ||
@@ -65894,6 +65893,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               box.nextElementSibling.classList.add("noInfo"); // Si le précédent c'est un titre, on suprime la ligne suivante
             return;
           }
+          if(onlyEnergy && box.closest('.sousCateStat').id !== "titleMixE")return
 
           if (box.classList.contains("lockP")) {
             fillItmLockP(box);
