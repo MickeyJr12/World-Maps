@@ -128,11 +128,14 @@
       .Maps {
         position : fixed;
         inset : 0;
+        background : inherit;
+        height : 100vh;
         opacity: 0;
         visibility: hidden;
         overscroll-behavior: contain;
         position: relative;
         z-index: 20;
+        transition : filter 0.25s ease;
       }
 
       .monde {
@@ -734,12 +737,17 @@
       }
       .addHalo{
         stroke : #f09443;
+        stroke : rgba(240, 148, 67,0.6);
         stroke-width : 4px !important;
         vector-effect: non-scaling-stroke;
       }
-      .addHalo.strokeHide{
+      .addHalo.strokeHide{ /* Pas de halos quand on zoom */
         stroke-width : 0.045px !important;
       }
+      .addHalo.pNoVisible{ /* Pas de halos quand on cache */
+        stroke-width : 0.045px !important;
+      }
+
 
       #cadreListSub {
         display: flex;
@@ -64280,15 +64288,21 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let tfNewEl = false;
 
-      [drapeauCadre, mSilhouette, getId("boxImg").querySelector("img")].forEach(
+      [drapeauCadre,mDrapeauCadre, mSilhouette, getId("boxImg").querySelector("img")].forEach(
         (el) => {
           el.addEventListener("click", () => {
             if (tfNewEl || (!el.querySelector("svg") && el === mSilhouette))
               return;
             hapticFeedback("medium");
             tfNewEl = true;
-            cadre.style.filter = "brightness(0.22)";
-            cadreStat.style.filter = "brightness(0.22)";
+
+            Maps.style.visibility === "" ? 
+            (cadre.style.filter = "brightness(0.22)",
+            cadreStat.style.filter = "brightness(0.22)") :
+
+            Maps.style.filter = "brightness(0.22)"
+
+
             const newFlag = el.cloneNode(true);
             el.style.opacity = "0";
 
@@ -64301,7 +64315,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             newFlag.style.left = box.left + "px";
             newFlag.style.width = box.width + "px";
             newFlag.style.borderRadius =
-              el === drapeauCadre ? "0.4rem" : "0.2rem";
+              [drapeauCadre,mDrapeauCadre].includes(el) ? "0.4rem" : "0.2rem";
 
             newFlag.style.aspectRatio = `${box.width / box.height}`;
             newFlag.style.transition = "all 0.25s ease";
@@ -64375,6 +64389,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   query(".bordersList").classList.remove("active");
                 cadre.style.filter = "";
                 cadreStat.style.filter = "";
+                Maps.style.filter = "";
+                
 
                 const newBox = el.getBoundingClientRect();
                 newFlag.style.transform = "none";
@@ -64382,7 +64398,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 newFlag.style.left = newBox.left + "px";
                 newFlag.style.width = newBox.width + "px";
                 newFlag.style.borderRadius =
-                  el === drapeauCadre ? "0.4rem" : "0.2rem";
+                  [drapeauCadre,mDrapeauCadre].includes(el) ? "0.4rem" : "0.2rem";
                 if (svgEl) {
                   newFlag.style.borderRadius = "0.4rem";
                   newFlag.style.padding = "0.25rem";
@@ -92636,8 +92652,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         ).forEach((p) => {
           const status = idVisible_m.get(p.id);
           const visible = status && Object.values(status).every(Boolean);
+
           !calquing
-            ? (p.style.fill = visible ? pColor_m.get(p).current : "")
+            ? (p.style.fill = visible ? pColor_m.get(p).current : "", visible ? p.classList.remove('pNoVisible') : p.classList.add('pNoVisible'))
             : "";
 
           if (p === currentCountry && currentCountry != null) {
@@ -93284,11 +93301,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       centerBtn.addEventListener("click", () => {
         viewSub
           ? ((centerBtnTF = true), zoomCountry(currentCSub.id))
-          : animateViewBox(
+          : (animateViewBox(
               document.getElementById("svgMonde"),
               initialViewBox,
               700,
-            );
+            ),queryAll('.addHalo').forEach(el=>el.classList.remove('strokeHide')),
+          queryAll('.halo').forEach(el=>el.style.display = "none"));
+             
       });
       let L_setTimeTool = [];
       openTool.addEventListener("click", () => {
