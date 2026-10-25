@@ -9037,14 +9037,15 @@
           #207dd9 50%,
           #0fe7fa 100%
         );
-        transition:
-          transform 0.8s ease,
-          opacity 0.45s ease;
+        
         min-height: 100dvh;
         min-width: 100vw;
         width: 100%;
         padding-top: calc(env(safe-area-inset-top)+2rem);
         gap: 1rem;
+        transition:
+          transform 0.6s ease,
+          opacity 0.5s ease, filter 0.25s ease;
       }
 
       #wrapperScorePm {
@@ -62090,7 +62091,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           setTimeout(() => {
             document.body.style.background = "";
           }, 500);
-          phonePlay.style.transition = "transform 0.6s ease, opacity 0.5s ease";
+          phonePlay.style.transition = "";
           phonePlay.style.opacity = "1";
           phonePlay.style.transform = "";
 
@@ -64297,9 +64298,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             tfNewEl = true;
 
             Maps.style.visibility === "" ? 
-            (cadre.style.filter = "brightness(0.22)",
-            cadreStat.style.filter = "brightness(0.22)") :
-
+            phonePlay.style.filter = "brightness(0.22)" :
             Maps.style.filter = "brightness(0.22)"
 
 
@@ -64387,8 +64386,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 e.preventDefault();
                 if (query(".bordersList"))
                   query(".bordersList").classList.remove("active");
-                cadre.style.filter = "";
-                cadreStat.style.filter = "";
+                
+                phonePlay.style.filter = "";
                 Maps.style.filter = "";
                 
 
