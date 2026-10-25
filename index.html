@@ -64024,11 +64024,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         {
           margin = 3, // écart avec l'île, en unités du SVG
           maxSize = Infinity, // ignore les sous-chemins plus grands (ex. l'île principale)
-          stroke = "rgba(255,255,255,.8)", // couleur du trait net
+          // stroke = "rgba(255,255,255,.8)", // couleur du trait net
+          stroke = "rgba(240, 148, 67,0.8)", // couleur du trait net
+          
           width = 1.2, // épaisseur du trait net (px écran) (ne marche pas)
           dash = "2 3.5", // pointillés ("" pour un trait plein)
           // glow = "rgba(255,255,255,.2)", // couleur du halo doux ("" pour le désactiver)
-          glow = "rgba(255,255,255,0)", // couleur du halo doux ("" pour le désactiver)
+          glow = "rgba(240, 148, 67,1)", // couleur du halo doux ("" pour le désactiver)
           glowWidth = 6, // épaisseur du halo doux (px écran)
           // fill = "rgba(251, 151, 1,0.08)",
           fill = "rgba(251, 151, 1,0)",
@@ -92232,7 +92234,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           // paths.forEach((p) => {
           //   resetOverlay(p.id, overlay_m.get(p.id));
           // });
-          if (currentCountry !== null)
+          if (currentCountry !== null)          
             resetOverlay(currentCountry.id, overlay_m.get(currentCountry.id));
           currentCountry = null;
           //baba
@@ -92642,6 +92644,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const overlay = overlay_m.get(p.id);
             svg.append(overlay);
             darkenCountry(p.id, overlay);
+            L_halos.forEach(id=>svg.append(getId("halo" + id)))
           } else if (p !== currentCountryHover) {
             if (p !== currentCountry) {
               if (overlay_m.has(p.id)) {
