@@ -3,9 +3,19 @@
 const AD_IDS = {
   banner: 'ca-app-pub-3940256099942544/2934735716',       // ID TEST iOS bannière
   interstitial: 'ca-app-pub-3940256099942544/4411468910', // ID TEST iOS interstitielle
+  rewarded: 'ca-app-pub-3940256099942544/1712485313',
   // Remplacer par tes vrais ID une fois prêt :
   // banner: 'ca-app-pub-8425278698620884/3978191846',
   // interstitial: 'ca-app-pub-8425278698620884/8847375147',
+};
+
+const REWARD_EVENTS = {
+  Loaded: 'onRewardedVideoAdLoaded',
+  FailedToLoad: 'onRewardedVideoAdFailedToLoad',
+  Showed: 'onRewardedVideoAdShowed',
+  FailedToShow: 'onRewardedVideoAdFailedToShow',
+  Dismissed: 'onRewardedVideoAdDismissed',
+  Rewarded: 'onRewardedVideoAdReward',
 };
 
 let adsInitialized = false;
@@ -132,6 +142,39 @@ async function showInterstitialAndThen(ratio,isPremium,noAd,onDismissed) { // ra
     listener.remove(); // nettoyer aussi en cas d'échec de chargement
     if (onDismissed) onDismissed(); // fallback : continuer quand même si la pub échoue
   }
+}
+
+// --- Récompensées avec listener ---
+
+// Renvoie true si l'utilisateur a bien gagné la récompense, sinon false
+async function showRewarded() {
+  if (!window.Capacitor?.isNativePlatform()) return false;
+
+  const ok = await initAds();
+  if (!ok) return false;   // pas de consentement
+
+  const { AdMob } = Capacitor.Plugins;
+  let rewarded = false;
+  let done;
+  const finished = new Promise((resolve) => (done = resolve));
+
+  // Listeners AVANT de lancer la pub
+  const handles = await Promise.all([
+    AdMob.addListener(REWARD_EVENTS.Rewarded, () => { rewarded = true; }),
+    AdMob.addListener(REWARD_EVENTS.Dismissed, () => done()),
+    AdMob.addListener(REWARD_EVENTS.FailedToShow, () => done()),
+  ]);
+
+  try {
+    await AdMob.prepareRewardVideoAd({ adId: AD_IDS.rewarded });
+    await AdMob.showRewardVideoAd();
+    await finished;                       // attend la fermeture de la pub
+  } catch (err) {
+    console.error('Erreur pub récompensée:', err);
+  } finally {
+    handles.forEach((h) => h.remove());   // évite les doublons
+  }
+  return rewarded;
 }
 
 // --- Gestion du consentement RGPD (lien de révocation) ---
