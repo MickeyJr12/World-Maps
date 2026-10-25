@@ -3770,6 +3770,7 @@
         }
         
         #adPropAd.noAd{
+          pointer-events: none;
           opacity : 0.25;
           svg{
             display : none;
@@ -92551,14 +92552,24 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           const vb = start.map((s, i) => s + (target[i] - s) * e);
 
           svg.setAttribute("viewBox", vb.join(" "));
-
-          if (vb.slice(2)[0] < (isMobile ? 200 : 550)) {
-            L_elCircles.forEach((c) => (c.style.display = "flex"));
-          } else {
-            L_elCircles.forEach((c) => (c.style.display = "none"));
-          }
+          // if (vb.slice(2)[0] < (isMobile ? 200 : 550)) {
+          //   L_elCircles.forEach((c) => (c.style.display = "flex"));
+          // } else {
+          //   L_elCircles.forEach((c) => (c.style.display = "none"));
+          // }
 
           if (p < 1) requestAnimationFrame(frame);
+          else {
+          if(vb.slice(2)[0] < 80) {
+          queryAll('.addHalo').forEach(el=>el.classList.add('strokeHide'))
+          queryAll('.halo').forEach(el=>el.style.display = "")
+        }
+        else {
+          queryAll('.addHalo').forEach(el=>el.classList.remove('strokeHide'))
+          queryAll('.halo').forEach(el=>el.style.display = "none")
+        }
+          }
+
         }
 
         requestAnimationFrame(frame);
@@ -92736,14 +92747,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         paths.forEach((p) => {
           p.style.transition = "none";
         });
-        let eyesBtn = [...queryAll(".eye-btn.hidden")].filter(
+        let eyesBtn = [...queryAll(".eye-btn")].filter(
           (el) =>
-            el.parentNode.classList.contains("view-region-row") ||
-            el.parentNode.classList.contains("view-main-row"),
+            (el.parentNode.classList.contains("view-region-row") ||
+            el.parentNode.classList.contains("view-main-row")) && !el.classList.contains('filter-eye')
         );
         let eyeFilter = getId("orgaMain-eye");
         eyeFilter.click();
-        if (eyesBtn) eyesBtn.forEach((eye) => eye.click());
+        if (eyesBtn) eyesBtn.forEach((eye) => {
+          eye.click()
+          if(eye.classList.contains('hidden'))eye.click()
+        });
         requestAnimationFrame(() => {
           paths.forEach((p) => {
             p.style.transition = "";
