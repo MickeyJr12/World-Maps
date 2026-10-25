@@ -129,7 +129,8 @@
         position : fixed;
         inset : 0;
         background : inherit;
-        height : 100vh;
+        min-height : 100%;
+        min-width : 100%;
         opacity: 0;
         visibility: hidden;
         overscroll-behavior: contain;
@@ -5584,6 +5585,7 @@
         }
 
         svg.monde {
+          touch-action: none; 
           height: 100%;
         }
       }
@@ -63686,6 +63688,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
 
       const svg = document.querySelector("svg.monde");
+      const svgMonde = document.querySelector("svg.monde");
+      
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       // const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 1100, 700]
@@ -64299,7 +64303,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
             Maps.style.visibility === "" ? 
             phonePlay.style.filter = "brightness(0.22)" :
-            Maps.style.filter = "brightness(0.22)"
+            Maps.style.filter = "brightness(0.18)"
 
 
             const newFlag = el.cloneNode(true);
@@ -92158,7 +92162,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //*//
       //Listener SVG
 
-      svg.addEventListener("mouseover", (event) => {
+      svgMonde.addEventListener("mouseover", (event) => {
         if (isMobile) {
           return;
         }
@@ -92220,7 +92224,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //
 
       let oneTimeColor = false; // n'appeler qu'une seule fois colorcountry dans countryclick/svg. ad (click)
-      svg.addEventListener("click", (event) => {
+      svgMonde.addEventListener("click", (event) => {
+        if (draggingMonde) {e.stopPropagation(); e.preventDefault(); }
+      draggingMonde = false;
         const country = event.target.closest("path");
         if (country != null) {
           const status = idVisible_m.get(country.id);
@@ -92313,7 +92319,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }, 20);
       });
 
-      svg.addEventListener("mouseleave", () => {
+      svgMonde.addEventListener("mouseleave", () => {
         if (isMobile) return;
         currentCountryHover = null;
         paths.forEach((p) => {
@@ -92365,7 +92371,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       let dragMoved = false;
       let dragTimeout = null;
 
-      svg.addEventListener("mousedown", (e) => {
+      svgMonde.addEventListener("mousedown", (e) => {
         isDraggingMouse = true;
         dragMoved = false;
         const vb = getVB();
@@ -93994,7 +94000,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const MIN_SIZE = 30; // zoom max : pas plus petit que ça
       const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial
 
-      svg.addEventListener(
+      svgMonde.addEventListener(
         "wheel",
         (e) => {
           e.preventDefault();
@@ -95257,137 +95263,235 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       // ── Touch start ──────────────────────────────────────────────
-      let touchDragTimeout = null;
-      let touchMoved = false;
+      // let touchDragTimeout = null;
+      // let touchMoved = false;
 
-      svg.addEventListener(
-        "touchstart",
-        (e) => {
-          cancelAnimationFrame(touchInertiaFrame);
+      // svg.addEventListener(
+      //   "touchstart",
+      //   (e) => {
+      //     cancelAnimationFrame(touchInertiaFrame);
 
-          if (e.touches.length === 1) {
-            isDragging = true;
-            touchMoved = false;
-            touchVelX = 0;
-            touchVelY = 0;
-            lastTouchX = e.touches[0].clientX;
-            lastTouchY = e.touches[0].clientY;
+      //     if (e.touches.length === 1) {
+      //       isDragging = true;
+      //       touchMoved = false;
+      //       touchVelX = 0;
+      //       touchVelY = 0;
+      //       lastTouchX = e.touches[0].clientX;
+      //       lastTouchY = e.touches[0].clientY;
 
-            const vb = getVB();
-            startVBx = vb.x;
-            startVBy = vb.y;
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
+      //       const vb = getVB();
+      //       startVBx = vb.x;
+      //       startVBy = vb.y;
+      //       startX = e.touches[0].clientX;
+      //       startY = e.touches[0].clientY;
 
-            // Désactive après 150ms si on tient sans lâcher
-            touchDragTimeout = setTimeout(() => {
-              if (isDragging) {
-                paths.forEach((p) => (p.style.pointerEvents = "none"));
-              }
-            }, 150);
-          } else if (e.touches.length === 2) {
-            isDragging = false;
-            clearTimeout(touchDragTimeout);
-            // Pinch : désactive immédiatement
-            paths.forEach((p) => (p.style.pointerEvents = "none"));
-            lastTouchDist = getTouchDist(e.touches);
-            lastTouchMid = getTouchMid(e.touches);
-          }
-        },
-        { passive: false },
-      );
+      //       // Désactive après 150ms si on tient sans lâcher
+      //       touchDragTimeout = setTimeout(() => {
+      //         if (isDragging) {
+      //           paths.forEach((p) => (p.style.pointerEvents = "none"));
+      //         }
+      //       }, 150);
+      //     } else if (e.touches.length === 2) {
+      //       isDragging = false;
+      //       clearTimeout(touchDragTimeout);
+      //       // Pinch : désactive immédiatement
+      //       paths.forEach((p) => (p.style.pointerEvents = "none"));
+      //       lastTouchDist = getTouchDist(e.touches);
+      //       lastTouchMid = getTouchMid(e.touches);
+      //     }
+      //   },
+      //   { passive: false },
+      // );
 
-      svg.addEventListener(
-        "touchmove",
-        (e) => {
-          e.preventDefault();
-          touchMoved = true;
+      // svg.addEventListener(
+      //   "touchmove",
+      //   (e) => {
+      //     e.preventDefault();
+      //     touchMoved = true;
 
-          if (e.touches.length === 1 && isDragging) {
-            const vb = getVB();
-            const rect = svg.getBoundingClientRect();
-            const scaleX = vb.w / rect.width;
-            const scaleY = vb.h / rect.height;
+      //     if (e.touches.length === 1 && isDragging) {
+      //       const vb = getVB();
+      //       const rect = svg.getBoundingClientRect();
+      //       const scaleX = vb.w / rect.width;
+      //       const scaleY = vb.h / rect.height;
 
-            let dx = (e.touches[0].clientX - startX) * scaleX;
-            let dy = (e.touches[0].clientY - startY) * scaleY;
+      //       let dx = (e.touches[0].clientX - startX) * scaleX;
+      //       let dy = (e.touches[0].clientY - startY) * scaleY;
 
-            touchVelX = (e.touches[0].clientX - lastTouchX) * scaleX;
-            touchVelY = (e.touches[0].clientY - lastTouchY) * scaleY;
-            lastTouchX = e.touches[0].clientX;
-            lastTouchY = e.touches[0].clientY;
+      //       touchVelX = (e.touches[0].clientX - lastTouchX) * scaleX;
+      //       touchVelY = (e.touches[0].clientY - lastTouchY) * scaleY;
+      //       lastTouchX = e.touches[0].clientX;
+      //       lastTouchY = e.touches[0].clientY;
 
-            setVB({ x: startVBx - dx, y: startVBy - dy, w: vb.w, h: vb.h });
-          } else if (e.touches.length === 2) {
-            const newDist = getTouchDist(e.touches);
-            const newMid = getTouchMid(e.touches);
-            const vb = getVB();
-            const rect = svg.getBoundingClientRect();
+      //       setVB({ x: startVBx - dx, y: startVBy - dy, w: vb.w, h: vb.h });
+      //     } else if (e.touches.length === 2) {
+      //       const newDist = getTouchDist(e.touches);
+      //       const newMid = getTouchMid(e.touches);
+      //       const vb = getVB();
+      //       const rect = svg.getBoundingClientRect();
 
-            const midVBx = vb.x + (newMid.x - rect.left) * (vb.w / rect.width);
-            const midVBy = vb.y + (newMid.y - rect.top) * (vb.h / rect.height);
+      //       const midVBx = vb.x + (newMid.x - rect.left) * (vb.w / rect.width);
+      //       const midVBy = vb.y + (newMid.y - rect.top) * (vb.h / rect.height);
 
-            const zoomFactor = lastTouchDist / newDist;
-            const newW = Math.min(
-              Math.max(vb.w * zoomFactor, initialViewBox[2] / zoomFactorSvg), // même min que zoomCenterScreen
-              initialViewBox[2], // même max
-            );
-            const newH = Math.min(
-              Math.max(vb.h * zoomFactor, initialViewBox[3] / zoomFactorSvg), // même min
-              initialViewBox[3], // même max
-            );
+      //       const zoomFactor = lastTouchDist / newDist;
+      //       const newW = Math.min(
+      //         Math.max(vb.w * zoomFactor, initialViewBox[2] / zoomFactorSvg), // même min que zoomCenterScreen
+      //         initialViewBox[2], // même max
+      //       );
+      //       const newH = Math.min(
+      //         Math.max(vb.h * zoomFactor, initialViewBox[3] / zoomFactorSvg), // même min
+      //         initialViewBox[3], // même max
+      //       );
 
-            if (newW <= 200) {
-              L_elCircles.forEach((c) => (c.style.display = "flex"));
-            } else {
-              L_elCircles.forEach((c) => (c.style.display = "none"));
-            }
+      //       if (newW <= 200) {
+      //         L_elCircles.forEach((c) => (c.style.display = "flex"));
+      //       } else {
+      //         L_elCircles.forEach((c) => (c.style.display = "none"));
+      //       }
 
-            const newX = midVBx - (midVBx - vb.x) * (newW / vb.w);
-            const newY = midVBy - (midVBy - vb.y) * (newH / vb.h);
+      //       const newX = midVBx - (midVBx - vb.x) * (newW / vb.w);
+      //       const newY = midVBy - (midVBy - vb.y) * (newH / vb.h);
 
-            setVB({ x: newX, y: newY, w: newW, h: newH });
+      //       setVB({ x: newX, y: newY, w: newW, h: newH });
 
-            lastTouchDist = newDist;
-            lastTouchMid = newMid;
-          }
-        },
-        { passive: false },
-      );
+      //       lastTouchDist = newDist;
+      //       lastTouchMid = newMid;
+      //     }
+      //   },
+      //   { passive: false },
+      // );
 
-      svg.addEventListener("touchend", (e) => {
-        if (e.touches.length < 2) lastTouchDist = null;
+      // svg.addEventListener("touchend", (e) => {
+      //   if (e.touches.length < 2) lastTouchDist = null;
 
-        if (e.touches.length === 0) {
-          isDragging = false;
-          clearTimeout(touchDragTimeout);
+      //   if (e.touches.length === 0) {
+      //     isDragging = false;
+      //     clearTimeout(touchDragTimeout);
 
-          // Réactive toujours au touchend
-          paths.forEach((p) => (p.style.pointerEvents = ""));
+      //     // Réactive toujours au touchend
+      //     paths.forEach((p) => (p.style.pointerEvents = ""));
 
-          // Inertie
-          let currentVelX = touchVelX;
-          let currentVelY = touchVelY;
+      //     // Inertie
+      //     let currentVelX = touchVelX;
+      //     let currentVelY = touchVelY;
 
-          function inertia() {
-            if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1)
-              return;
-            const vb = getVB();
+      //     function inertia() {
+      //       if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1)
+      //         return;
+      //       const vb = getVB();
 
-            setVB({
-              x: vb.x - currentVelX,
-              y: vb.y - currentVelY,
-              w: vb.w,
-              h: vb.h,
-            });
-            currentVelX *= 0.92;
-            currentVelY *= 0.92;
-            touchInertiaFrame = requestAnimationFrame(inertia);
-          }
+      //       setVB({
+      //         x: vb.x - currentVelX,
+      //         y: vb.y - currentVelY,
+      //         w: vb.w,
+      //         h: vb.h,
+      //       });
+      //       currentVelX *= 0.92;
+      //       currentVelY *= 0.92;
+      //       touchInertiaFrame = requestAnimationFrame(inertia);
+      //     }
 
-          touchInertiaFrame = requestAnimationFrame(inertia);
-        }
-      });
+      //     touchInertiaFrame = requestAnimationFrame(inertia);
+      //   }
+      // });
+
+      const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
+const MIN_W = MIN_SIZE;               // à unifier : MIN_SIZE (molette) ou initialViewBox[2] / zoomFactorSvg (pinch)
+const MAX_W = initialViewBox[2];
+const DRAG_THRESHOLD = 6;             // px avant de considérer que c'est un drag
+
+const pointers = new Map();           // pointerId -> { x, y, sx, sy }
+let draggingMonde = false, lastDist = 0, vel = { x: 0, y: 0 }, inertiaFrame;
+
+function zoomAt(clientX, clientY, factor) {
+  const vb = getVB();
+  const rect = svg.getBoundingClientRect();
+  const px = vb.x + (clientX - rect.left) * (vb.w / rect.width);
+  const py = vb.y + (clientY - rect.top) * (vb.h / rect.height);
+  const w = clamp(vb.w * factor, MIN_W, MAX_W);
+  const f = w / vb.w;                 // un seul facteur : le ratio w/h est conservé
+  setVB({ x: px - (px - vb.x) * f, y: py - (py - vb.y) * f, w, h: vb.h * f });
+}
+
+function panBy(dxPx, dyPx) {
+  const vb = getVB();
+  const rect = svg.getBoundingClientRect();
+  setVB({
+    x: vb.x - dxPx * (vb.w / rect.width),
+    y: vb.y - dyPx * (vb.h / rect.height),
+    w: vb.w,
+    h: vb.h,
+  });
+}
+
+function pinchInfo() {
+  const [a, b] = [...pointers.values()];
+  return {
+    dist: Math.hypot(a.x - b.x, a.y - b.y),
+    mx: (a.x + b.x) / 2,
+    my: (a.y + b.y) / 2,
+  };
+}
+
+// Molette : une ligne
+svgMonde.addEventListener(
+  "wheel",
+  (e) => {
+    e.preventDefault();
+    zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1 / 1.1 : 1.1);
+  },
+  { passive: false },
+);
+
+svgMonde.addEventListener("pointerdown", (e) => {
+  if (e.pointerType === "mouse") return;      // garde ton drag souris existant
+  cancelAnimationFrame(inertiaFrame);
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY });
+  if (pointers.size === 1) { draggingMonde = false; vel = { x: 0, y: 0 }; }
+  if (pointers.size === 2) { draggingMonde = true; lastDist = pinchInfo().dist; }
+});
+
+svgMonde.addEventListener("pointermove", (e) => {
+  if (e.pointerType === "mouse") return;
+  const p = pointers.get(e.pointerId);
+  if (!p) return;
+  const dx = e.clientX - p.x, dy = e.clientY - p.y;
+  p.x = e.clientX; p.y = e.clientY;
+
+  if (!draggingMonde && Math.hypot(p.x - p.sx, p.y - p.sy) > DRAG_THRESHOLD) draggingMonde = true;
+  if (!draggingMonde) return;
+  if (!svg.hasPointerCapture(e.pointerId)) svg.setPointerCapture(e.pointerId);
+
+  if (pointers.size === 1) {
+    vel = { x: dx, y: dy };
+    panBy(dx, dy);
+  } else if (pointers.size === 2) {
+    const { dist, mx, my } = pinchInfo();
+    if (lastDist) zoomAt(mx, my, lastDist / dist);
+    lastDist = dist;
+  }
+});
+
+function endPointer(e) {
+  if (!pointers.delete(e.pointerId)) return;
+  if (pointers.size < 2) lastDist = 0;
+  if (pointers.size === 0 && draggingMonde) inertia();
+}
+svgMonde.addEventListener("pointerup", endPointer);
+svgMonde.addEventListener("pointercancel", endPointer);
+
+function inertia() {
+  if (Math.abs(vel.x) < 0.1 && Math.abs(vel.y) < 0.1) return;
+  panBy(vel.x, vel.y);
+  vel.x *= 0.92; vel.y *= 0.92;
+  inertiaFrame = requestAnimationFrame(inertia);
+}
+
+// Ignore le clic qui suit un drag/pinch (remplace le pointerEvents = "none")
+svgMonde.addEventListener("click", (e) => {
+  if (draggingMonde) { e.stopPropagation(); e.preventDefault(); }
+}, true);
+
 
       // ── STYLES listBox ────────────────────────────────────────────
       const listBoxStyle = document.createElement("style");
@@ -95646,6 +95750,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           if (currentSearching === option.dataset.searching) {
             cadreModeS.classList.remove("active");
             document.getElementById("arrowTitle").classList.remove("active");
+            contentC.scrollTop = "0"
             return;
           }
           currentSearching = option.dataset.searching;
