@@ -65907,8 +65907,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       itmsUnityE.forEach(itm=>itm.addEventListener('click',()=>{
         const unity =  itm.dataset.unity
+        if(unityStatIn.classList.contains(unity))return
+        hapticFeedback("medium")
         unityStatIn.className = "switchIn " + unity
-        getId('titleMixE').querySelectorAll('[data-listezs]').forEach(el=>{
+        requestAnimationFrame(()=>{
+           getId('titleMixE').querySelectorAll('[data-listezs]').forEach(el=>{
           el.dataset.liste = el.dataset[itm.dataset.liststat]
           el.dataset.unity = itm.dataset.unitylabel
 
@@ -65927,18 +65930,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             defZs.classList.add('hide')
             defZs.before(defTot)
         }
-
-
-
         })
         query('.itmStatChoice.active').click()
 
-        
-
-
         if(cadreStat.classList.contains('active'))fillCadreStat(currentCountry, false, true)
         else if(cadreStat.classList.contains('hide'))fillCadreStat(getId('FR'), false, true)
-        
+        })
+      
       }))
 
       const M_boxStat = new Map();
