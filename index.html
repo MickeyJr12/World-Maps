@@ -732,13 +732,14 @@
         opacity: 0;
         pointer-events: none;
       }
-    /*   .halo path{
+      .addHalo{
+        stroke : #f09443;
         stroke-width : 4px !important;
-        vector-effect: non-scaling-fill;
+        vector-effect: non-scaling-stroke;
       }
-      .halo.strokeHide path{
+      .addHalo.strokeHide{
         stroke-width : 0.045px !important;
-      } */
+      }
 
       #cadreListSub {
         display: flex;
@@ -64035,9 +64036,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       ) {
         const parent = path.parentNode;
         const g = document.createElementNS(SVG_NS, "g");
-        if(L_halos.includes(path.id))g.setAttribute("class", "halo");
-        
         g.setAttribute("id", "halo" + path.id);
+        g.setAttribute("class", "halo");
         if (path.hasAttribute("transform"))
           g.setAttribute("transform", path.getAttribute("transform"));
 
@@ -64131,6 +64131,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           stroke: "#ffd54a",
           strokeWidth: 0.8,
         });
+        if(L_halos.includes(pId)){getId(pId).classList.add('addHalo')}
+
 
         //
         circle
@@ -92334,10 +92336,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         isMobile ? ((xp = x), (yp = y)) : "";
         svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
         if(w < 80) {
-          queryAll('.halo').forEach(el=>el.classList.add('strokeHide'))
+          queryAll('.addHalo').forEach(el=>el.classList.add('strokeHide'))
+          queryAll('.halo').forEach(el=>el.style.display = "")
         }
         else {
-          queryAll('.halo').forEach(el=>el.classList.remove('strokeHide'))
+          queryAll('.addHalo').forEach(el=>el.classList.remove('strokeHide'))
+          queryAll('.halo').forEach(el=>el.style.display = "none")
         }
       }
       // ── Drag plan ───────────────────────────────────────────────
