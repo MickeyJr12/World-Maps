@@ -5124,6 +5124,17 @@
 
       /*N'afficher que
       /**********************************************************************************/
+      #cacheVue{
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(5px);      
+        z-index : 110;
+      }
+      .Maps:has(.cadreVue.active){
+        #cacheVue{
+          opacity : 1;
+          pointer-events : all;
+        }
+      }
       .cadreVue {
         position: fixed;
         display: flex;
@@ -5149,6 +5160,10 @@
         transition:
           opacity 0.4s ease,
           height 0.3s ease;
+      }
+      .cadreVue.active{
+        opacity : 1;
+        pointer-events: all;
       }
       .vuesBox {
         display: flex;
@@ -22435,6 +22450,7 @@
           />
         </svg>
       </button>
+      <div class="cache" id="cacheVue"></div>
       <div class="cadreVue">
         <button class="cross" id="cadreVueCross" onclick="afficheVue()">
           <svg
@@ -66818,6 +66834,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       //fin const legend
       const cadreVue = document.querySelector(".cadreVue");
+      const cacheVue = getId('cacheVue')
+      const cadreVueCross = getId('cadreVueCross')
+      
 
       function closeCadre() {
         if (getId("newFlag")) getId("newFlag").style.opacity = "0";
@@ -93502,45 +93521,50 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function afficheVue() {
         if (!cadreVueTF) {
-          cadreVue.style.opacity = "1";
-          cadreVue.style.pointerEvents = "auto";
-          setTimeout(() => {
-            globe.style.filter = "blur(4px) brightness(0.65)";
-            globe.style.pointerEvents = "none";
+          // cadreVue.style.opacity = "1";
+          // cadreVue.style.pointerEvents = "auto";
+          // setTimeout(() => {
+          //   globe.style.filter = "blur(4px) brightness(0.65)";
+          //   globe.style.pointerEvents = "none";
 
-            mCadre.style.filter = "blur(4px) brightness(0.65)";
-            mCadre.style.pointerEvents = "none";
+          //   mCadre.style.filter = "blur(4px) brightness(0.65)";
+          //   mCadre.style.pointerEvents = "none";
 
-            wrapperTool.style.filter = "blur(4px) brightness(0.65)";
-            wrapperTool.style.pointerEvents = "none";
+          //   wrapperTool.style.filter = "blur(4px) brightness(0.65)";
+          //   wrapperTool.style.pointerEvents = "none";
 
-            openTool.style.pointerEvents = "none";
+          //   openTool.style.pointerEvents = "none";
 
-            calque.classList.contains("active") ? calque.click() : "";
+          //   calque.classList.contains("active") ? calque.click() : "";
 
-            if (isMobile) {
-              openSearch.style.filter = "blur(4px) brightness(0.65)";
-              openSearch.style.pointerEvents = "none";
-            }
-          }, 20);
+          //   if (isMobile) {
+          //     openSearch.style.filter = "blur(4px) brightness(0.65)";
+          //     openSearch.style.pointerEvents = "none";
+          //   }
+          // }, 20);
+
+          cadreVue.classList.add('active')
+
+
         } else {
+          cadreVue.classList.remove('active')
           only.classList.remove("active");
-          cadreVue.style.opacity = "";
-          cadreVue.style.pointerEvents = "";
-          globe.style.filter = "";
-          globe.style.pointerEvents = "";
+          // cadreVue.style.opacity = "";
+          // cadreVue.style.pointerEvents = "";
+          // globe.style.filter = "";
+          // globe.style.pointerEvents = "";
 
-          wrapperTool.style.filter = "";
-          wrapperTool.style.pointerEvents = "all";
-          openTool.style.pointerEvents = "";
+          // wrapperTool.style.filter = "";
+          // wrapperTool.style.pointerEvents = "all";
+          // openTool.style.pointerEvents = "";
 
-          mCadre.style.filter = "";
-          mCadre.style.pointerEvents = "";
+          // mCadre.style.filter = "";
+          // mCadre.style.pointerEvents = "";
 
-          if (isMobile) {
-            openSearch.style.filter = "";
-            openSearch.style.pointerEvents = "";
-          }
+          // if (isMobile) {
+          //   openSearch.style.filter = "";
+          //   openSearch.style.pointerEvents = "";
+          // }
         }
         cadreVueTF = !cadreVueTF;
       }
@@ -93548,6 +93572,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         only.classList.toggle("active");
         afficheVue();
       });
+      getId('cacheVue').addEventListener('click',()=>{
+        cadreVueCross.click()
+      })
 
       //Déplacer cadreVue
       let moveCV;
@@ -94645,7 +94672,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 // gridSub.append(btnViewSub);
                 L_sort[id] = btnViewSub;
                 btnViewSub.addEventListener("click", () => {
-                  getId("cadreVueCross").click();
+                  cadreVueCross.click();
                   currentcSub = getId(id);
                   currentCountry = getId(id);
                   btnSub.click();
