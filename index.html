@@ -62637,8 +62637,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         L_addMaps[3].style.zIndex = "50";
         L_addMaps[4].style.zIndex = "55";
 
-        globe.style.filter = "";
-        mCadre.style.filter = "";
         let L_rep = [];
         btns4Choix.forEach((btn) => {
           L_rep.push(idsCboxs_m.get(pm ? pm : getQNumber())[btn.id]);
@@ -93521,50 +93519,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function afficheVue() {
         if (!cadreVueTF) {
-          // cadreVue.style.opacity = "1";
-          // cadreVue.style.pointerEvents = "auto";
-          // setTimeout(() => {
-          //   globe.style.filter = "blur(4px) brightness(0.65)";
-          //   globe.style.pointerEvents = "none";
-
-          //   mCadre.style.filter = "blur(4px) brightness(0.65)";
-          //   mCadre.style.pointerEvents = "none";
-
-          //   wrapperTool.style.filter = "blur(4px) brightness(0.65)";
-          //   wrapperTool.style.pointerEvents = "none";
-
-          //   openTool.style.pointerEvents = "none";
-
-          //   calque.classList.contains("active") ? calque.click() : "";
-
-          //   if (isMobile) {
-          //     openSearch.style.filter = "blur(4px) brightness(0.65)";
-          //     openSearch.style.pointerEvents = "none";
-          //   }
-          // }, 20);
-
           cadreVue.classList.add('active')
-
-
         } else {
           cadreVue.classList.remove('active')
           only.classList.remove("active");
-          // cadreVue.style.opacity = "";
-          // cadreVue.style.pointerEvents = "";
-          // globe.style.filter = "";
-          // globe.style.pointerEvents = "";
-
-          // wrapperTool.style.filter = "";
-          // wrapperTool.style.pointerEvents = "all";
-          // openTool.style.pointerEvents = "";
-
-          // mCadre.style.filter = "";
-          // mCadre.style.pointerEvents = "";
-
-          // if (isMobile) {
-          //   openSearch.style.filter = "";
-          //   openSearch.style.pointerEvents = "";
-          // }
         }
         cadreVueTF = !cadreVueTF;
       }
@@ -98104,7 +98062,10 @@ svgMonde.addEventListener("click", (e) => {
 
       // document.addEventListener('click',(e)=>console.log(e.target.closest("*").parentNode),true)
       // à retirer
-      // queryAll('.boxItemStat').forEach(el=>el.classList.remove('lockP'))
+      queryAll('.boxItemStat').forEach(el=>{
+        if(el.dataset.liste !== "forets_zs")el.classList.remove('lockP')
+      })
+
 
 
       // Script éphémère
