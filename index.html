@@ -65401,6 +65401,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         paths.forEach((p) => {
           if (!(p.id in D_val)) {
             p.style.fill = "black";
+            if(L_halos.includes(p.id))p.style.stroke = "black"
             return;
           }
 
