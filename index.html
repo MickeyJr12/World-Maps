@@ -63667,12 +63667,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             );
           }, 150);
 
-          paths.forEach((p) =>
+          paths.forEach((p) =>{
             pColor_m.set(p, {
               hovered: "",
               current: `${colorPath}`,
             }),
-          );
+            p.style.stroke = ""
+          });
           colorCountry();
           return;
         }
@@ -65412,6 +65413,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             cadreCalque.dataset.log,
           );
           p.style.fill = hsl;
+          if(L_halos.includes(p.id))p.style.stroke = hsl
         });
       }
       //  Script fillInfosCalque
@@ -92677,10 +92679,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         overlay_m.set(p_id, overlay);
       }
       function darkenCountry(pathId, overlay) {
+      if(!calquing){
         viewMaps
           ? (pathsId_m.get(pathId).style.stroke = "white")
           : (pathsId_m.get(pathId).style.stroke = "rgba(255,210,50,1)");
-
+      }
         const original = pathsId_m.get(pathId);
         const p = pathsId_m.get(pathId);
         const status = idVisible_m.get(p.id);
@@ -92737,7 +92740,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             overlay.remove();
           }
         }, 300);
-        pathsId_m.get(p_id).style.stroke = "";
+        if(!calquing)pathsId_m.get(p_id).style.stroke = "";
       }
       paths.forEach((p) => {
         createOverlay(p.id);
