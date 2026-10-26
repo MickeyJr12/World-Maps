@@ -2695,8 +2695,9 @@
         border-radius: 50rem;
         height: 1.8rem;
         width: 7.5rem;
+        width : auto;
         div {
-          display: flex;
+          display: none;
           flex: 1;
           justify-content: center;
           align-items: center;
@@ -2714,6 +2715,8 @@
         span {
           /* txtYChoice */
           display: flex;
+          padding : 0.2rem 0.4rem;
+          box-sizing : border-box;
           opacity: 0.6;
           border-radius: 0.4rem;
           align-items: center;
@@ -23092,25 +23095,27 @@
 
               <div id="gridInfoDetailStat">
                 <div class="cel" id="cel1DStat">
-                  Classement mondial
+                 <div data-ilg="classementmondial">Classement mondial</div>
+
                   <span>34<sup>e</sup></span>
-                  <div>sur 200 pays</div>
+                  <div class="divCelDStat">sur 200 pays</div>
                 </div>
 
                 <div class="cel" id="cel2DStat">
-                  Moyenne mondiale
+                  <div data-ilg="moyennemondiale">Moyenne mondiale</div>
                   <span>31.5</span>
-                  <div>-3.5pt vs monde</div>
+                  <div class="divCelDStat">-3.5pt vs monde</div>
                 </div>
               </div>
 
               <div id="topCourbe">
-                <div id="titleCourbe">Évolution</div>
+                <div id="titleCourbe" data-ilg="evolution">Évolution</div>
                 <span id="yTopCourbe"></span>
               </div>
               <div id="contentCourbe"></div>
 
               <span id="titleClassement"
+              data-ilg="classementmondial"
                 >Classement mondial
                 <div>•</div>
                 <span>2025</span></span
@@ -23151,7 +23156,7 @@
                       fill="currentColor"
                     ></path>
                   </svg>
-                  <span>Stats</span>
+                  <div data-ilg="stats">Stats</div>
                 </span>
                 <span
                   class="itmStatChoice"
@@ -23174,7 +23179,7 @@
                       stroke="currentColor"
                     ></path>
                   </svg>
-                  <span>Bilan</span>
+                  <div data-ilg="bilan">Bilan</div>
                 </span>
 
                 <span
@@ -23203,13 +23208,14 @@
                       ></path>
                     </g>
                   </svg>
-                  <span>Carte</span>
+                  <div data-ilg="carte">Carte</div>
                 </span>
               </div>
 
               <span
                 style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
                 id="txtPeriode"
+                data-ilg="toutelaperiode"
                 >Toute la période</span
               >
               <div id="cadreYChoice">
@@ -23335,9 +23341,9 @@
                   </div>
 
                   <div class="wrapperTxtItmStat">
-                    <div data-ilg="societe">Société</div>
+                    <div data-ilg="societe" data-ilg="societe">Société</div>
                     <span class="mTxtItmStat"
-                      ><span></span> <span>indicateurs</span></span
+                      ><span></span> <span data-ilg="indicateurs">indicateurs</span></span
                     >
                   </div>
 
@@ -23356,7 +23362,7 @@
 
                 <div class="contentStat">
                   <div class="sousCateStat">
-                    <div class="titleStat">Démographie</div>
+                    <div class="titleStat" data-ilg="demographie">Démographie</div>
                     <!--  -->
                     <div
                       class="boxItemStat"
@@ -23381,8 +23387,8 @@
                           />
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Population totale</div>
-                          <span>Estimation à la mi-année (1er juillet)</span>
+                          <div data-ilg="populationtotale">Population totale</div>
+                          <span data-ilg="estimationmiannee" >Estimation à la mi-année (1er juillet)</span>
                         </div>
 
                         <div class="txtStat">
@@ -23453,8 +23459,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Taux de fécondité</div>
-                          <span>Naissance par femme</span>
+                          <div data-ilg="tauxdefecondite">Taux de fécondité</div>
+                          <span data-ilg="naissanceparfemme">Naissance par femme</span>
                         </div>
 
                         <div class="txtStat">
@@ -23526,8 +23532,8 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div>Hommes · Espérance de vie</div>
-                          <span>À la naissance</span>
+                          <div data-ilg="hommesesperancedevie">Hommes · Espérance de vie</div>
+                          <span data-ilg="alanaissance">À la naissance</span>
                         </div>
 
                         <div class="txtStat">
@@ -23610,8 +23616,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Femmes · Espérance de vie</div>
-                          <span>À la naissance</span>
+                          <div data-ilg="femmesesperancedevie">Femmes · Espérance de vie</div>
+                          <span data-ilg="qualitedevie">À la naissance</span>
                         </div>
 
                         <div class="txtStat">
@@ -23648,7 +23654,7 @@
                   </div>
 
                   <div class="sousCateStat">
-                    <div class="titleStat">Qualité de vie</div>
+                    <div class="titleStat" data-ilg="qualitedevie">Qualité de vie</div>
                     <div
                       class="boxItemStat lockP"
                       data-source="ourworldindata"
@@ -23678,8 +23684,8 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div>Inégalité homme-femme</div>
-                          <span>Score de 0 (égalité totale) à 1</span>
+                          <div data-ilg="inegalitehommefemme">Inégalité homme-femme</div>
+                          <span data-ilg="scorede0a1">Score de 0 (égalité totale) à 1</span>
                         </div>
 
                         <div class="txtStat">
@@ -23732,8 +23738,8 @@
 
 
                         <div class="boxTxtItemStat">
-                          <div>Homicides volontaires</div>
-                          <span>pour 100 000 habitants</span>
+                          <div data-ilg="homicidesvolontaires">Homicides volontaires</div>
+                          <span data-ilg="homicidesvolontaires">pour 100 000 habitants</span>
                         </div>
 
                         <div class="txtStat">
@@ -23807,8 +23813,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Indice de bonheur</div>
-                          <span>Note de vie moyenne (0 à 10)</span>
+                          <div data-ilg="indicedebonheur">Indice de bonheur</div>
+                          <span data-ilg="notedeviemoyenne">Note de vie moyenne (0 à 10)</span>
                         </div>
 
                         <div class="txtStat">
@@ -23878,9 +23884,9 @@
                   </div>
 
                   <div class="wrapperTxtItmStat">
-                    <div>Économie</div>
+                    <div data-ilg="economie">Économie</div>
                     <span class="mTxtItmStat"
-                      ><span></span> <span>indicateurs</span></span
+                      ><span></span> <span data-ilg="indicateurs">indicateurs</span></span
                     >
                   </div>
 
@@ -23899,7 +23905,7 @@
 
                 <div class="contentStat">
                   <div class="sousCateStat">
-                    <div class="titleStat">Niveau de vie</div>
+                    <div class="titleStat" data-ilg="niveaudevie">Niveau de vie</div>
                     <!--  -->
                     <div
                       class="boxItemStat lockP"
@@ -23936,8 +23942,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>PIB total</div>
-                          <span>Dollars américains courants (US$)</span>
+                          <div data-ilg="pibtotal">PIB total</div>
+                          <span data-ilg="dollarsamericainscourantsus">Dollars américains courants (US$)</span>
                         </div>
 
                         <div class="txtStat">
@@ -23996,8 +24002,8 @@
                           />
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>PIB par habitant</div>
-                          <span>Dollars américains courants (US$)</span>
+                          <div data-ilg="pibparhabitant">PIB par habitant</div>
+                          <span data-ilg="dollarsamericainscourantsus">Dollars américains courants (US$)</span>
                         </div>
 
                         <div class="txtStat">
@@ -24035,7 +24041,7 @@
 
                   <!--  -->
                   <div class="sousCateStat">
-                    <div class="titleStat">Emplois et prix</div>
+                    <div class="titleStat" data-ilg="emploisetprix">Emplois et prix</div>
 
                     <div
                       class="boxItemStat lockP"
@@ -24067,8 +24073,8 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div>Chômage</div>
-                          <span>% de la population active</span>
+                          <div data-ilg="chomage">Chômage</div>
+                          <span data-ilg="delapopulationactive">% de la population active</span>
                         </div>
 
                         <div class="txtStat">
@@ -24140,8 +24146,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Inflation</div>
-                          <span>Hausse des prix en 1 an (%)</span>
+                          <div data-ilg="inflation">Inflation</div>
+                          <span data-ilg="haussedesprixen1an">Hausse des prix en 1 an (%)</span>
                         </div>
 
                         <div class="txtStat">
@@ -24203,9 +24209,9 @@
                   </div>
 
                   <div class="wrapperTxtItmStat">
-                    <div>Énergie</div>
+                    <div data-ilg="energie">Énergie</div>
                     <span class="mTxtItmStat"
-                      ><span></span> <span>indicateurs</span></span
+                      ><span></span> <span data-ilg="indicateurs">indicateurs</span></span
                     >
                   </div>
 
@@ -24230,7 +24236,7 @@
                       <svg fill="var(--colorItmStat)" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M305.19,153.77a10.46,10.46,0,0,0-9.78-14.19h-68a10.48,10.48,0,0,0-10.24,8.29L187.8,286.15A10.46,10.46,0,0,0,198,298.79H242.4a10.47,10.47,0,0,1,10.28,12.45l-11,57c-2,10.41,12.09,15.64,17.36,6.45L329,252.79a10.47,10.47,0,0,0-9.08-15.68H288.7a10.47,10.47,0,0,1-9.79-14.19Z"></path> <path d="M404.15,404.18A210.8,210.8,0,0,0,450,180.41C407.9,72.21,285.61,18.43,177.4,60.54l6.53,16.78c99-38.51,210.79,10.66,249.3,109.62a192.77,192.77,0,0,1-42,204.68l-12.8-12.47a9.51,9.51,0,0,0-16.15,6.94l.48,33.89a9.51,9.51,0,0,0,9.62,9.37l33.89-.4a9.51,9.51,0,0,0,6.52-16.32Z"></path> <path d="M181.85,431a192.44,192.44,0,0,1-60-311l11.34,11a9.51,9.51,0,0,0,16.15-6.94l-.48-33.89a9.49,9.49,0,0,0-9.62-9.37l-33.89.4A9.51,9.51,0,0,0,98.8,97.58l10.13,9.87A210.53,210.53,0,0,0,335.69,451.07l-6.52-16.77A191.29,191.29,0,0,1,181.85,431Z"></path></svg>
                       <div class="boxTxtItemStat">
                         <div>Production d'électricité renouvelable</div>
-                        <span>% de l'énergie totale produite</span>
+                        <spandata-ilg="delenergietotaleproduite" >% de l'énergie totale produite</spandata-ilg=>
                       </div>
 
                       <div class="txtStat">
@@ -24266,11 +24272,11 @@
                     </div> -->
 
                   <div class="sousCateStat" id="titleMixE">
-                    <div class="titleStat" id="titleEnergy"><div class="txtTitle">Mix énergétique</div>
+                    <div class="titleStat" id="titleEnergy"><div class="txtTitle" data-ilg = "mixenergetique">Mix énergétique</div>
                   
                     <div class="wrapperSwitch" id="wrapperUnityStat" style="outline : 1px solid rgba(255,255,255,0.2)">
                   <div class="switchIn TWh" id="unityStatIn"></div>
-                  <span data-unity="TWh" data-liststat = "listetot" data-unitylabel="TWh" class="itmUnityStat"
+                  <span data-unity="TWh" data-liststat = "listetot" data-unitylabel="TWh" class="itmUnityStat" data-ilg="twh"
                     >TWh</span
                   >
                   <span data-unity="pct" data-liststat = "listezs" data-unitylabel="%" class="itmUnityStat"
@@ -24306,9 +24312,9 @@
                           ></path>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Éolien</div>
-                          <span class="defTot">Production totale à partir de cette source</span>
-                          <span class="defZs hide">% de l'énergie totale produite</span>
+                          <div data-ilg="eolien">Éolien</div>
+                          <span class="defTot" data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
+                          <span class="defZs hide" data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24420,9 +24426,9 @@
                           ></path>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Solaire</div>
-                          <span class="defTot">Production totale à partir de cette source</span>
-                          <span class="defZs hide">% de l'énergie totale produite</span>
+                          <div data-ilg="solaire">Solaire</div>
+                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
+                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24475,9 +24481,9 @@
                       <div class="itemStat">
                         <svg class="svgItemStat" fill="var(--colorItmStat)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.003 512.003" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M401.29,0C217.711,0,69.161,148.55,69.161,332.129v74.579l58.581-58.579l36.131,36.131l-58.581,58.579h74.579 C363.45,442.839,512,294.289,512,110.71V0H401.29z M290.581,306.581v-59.613h-68.129l68.129-110.71v59.613h68.129L290.581,306.581 z"></path> </g> </g> <g> <g> <rect x="3.744" y="433.807" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -309.3917 171.772)" width="97.815" height="51.096"></rect> </g> </g> </g></svg>
                         <div class="boxTxtItemStat">
-                          <div>Bioénergie</div>
-                          <span class="defTot">Production totale à partir de cette source</span>
-                          <span class="defZs hide">% de l'énergie totale produite</span>
+                          <div data-ilg="bioenergie">Bioénergie</div>
+                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
+                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
 
                         </div>
 
@@ -24545,9 +24551,9 @@
                           ></path>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Hydroélectricité</div>
-                          <span class="defTot">Production totale à partir de cette source</span>
-                          <span class="defZs hide">% de l'énergie totale produite</span>
+                          <div data-ilg="hydroelectricite">Hydroélectricité</div>
+                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
+                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24626,9 +24632,9 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div>Gaz naturel</div>
-                          <span class="defTot">Production totale à partir de cette source</span>
-                          <span class="defZs hide">% de l'énergie totale produite</span>
+                          <div data-ilg="gaznaturel">Gaz naturel</div>
+                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
+                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24726,9 +24732,9 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div>Nucléaire</div>
-                          <span class="defTot">Production totale à partir de cette source</span>
-                          <span class="defZs hide">% de l'énergie totale produite</span>
+                          <div data-ilg="nucleaire">Nucléaire</div>
+                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
+                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24799,9 +24805,9 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Charbon</div>
-                          <span class="defTot">Production totale à partir de cette source</span>
-                          <span class="defZs hide">% de l'énergie totale produite</span>
+                          <div data-ilg="charbon">Charbon</div>
+                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
+                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24865,9 +24871,9 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div>Pétrole</div>
-                          <span class="defTot">Production totale à partir de cette source</span>
-                          <span class="defZs hide">% de l'énergie totale produite</span>
+                          <div data-ilg="petrole">Pétrole</div>
+                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
+                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
                         </div>
 
                         <div class="txtStat">
@@ -24933,9 +24939,9 @@
                   </div>
 
                   <div class="wrapperTxtItmStat">
-                    <div>Environnement</div>
+                    <div data-ilg="environnement">Environnement</div>
                     <span class="mTxtItmStat"
-                      ><span></span> <span>indicateurs</span></span
+                      ><span></span> <span data-ilg="indicateurs">indicateurs</span></span
                     >
                   </div>
 
@@ -24954,7 +24960,7 @@
 
                 <div class="contentStat">
                   <div class="sousCateStat">
-                    <div class="titleStat">Pollution</div>
+                    <div class="titleStat" data-ilg="pollution">Pollution</div>
 
                     <!--  -->
 
@@ -25001,8 +25007,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>CO₂ par habitant</div>
-                          <span>Hors utilisation des terres (tCO₂e)</span>
+                          <div data-ilg="co2parhabitant">CO₂ par habitant</div>
+                          <span data-ilg="horsutilisationdesterrest">Hors utilisation des terres (tCO₂e)</span>
                         </div>
 
                         <div class="txtStat">
@@ -25080,8 +25086,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Gaz à effet de serre</div>
-                          <span>Émission totale (Mt CO₂e)</span>
+                          <div data-ilg="gazaeffetdeserre">Gaz à effet de serre</div>
+                          <span data-ilg="emissiontotalemtco2e">Émission totale (Mt CO₂e)</span>
                         </div>
 
                         <div class="txtStat">
@@ -25196,8 +25202,9 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Qualité de l'air</div>
+                          <div data-ilg="qualitedelair">Qualité de l'air</div>
                           <span
+                          data-ilg="particulesdediametre"
                             >Particules de diamètre inférieur ou égal à 2,5µm
                             (µg/m³)</span
                           >
@@ -25237,7 +25244,7 @@
                   </div>
 
                   <div class="sousCateStat">
-                    <div class="titleStat">Occupation des sols</div>
+                    <div class="titleStat" data-ilg="occupationdessols">Occupation des sols</div>
                     <!--  -->
                     <div
                       class="boxItemStat lockP"
@@ -25268,8 +25275,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Terres agricole</div>
-                          <span>% de la superficie totale (pas sûr)</span>
+                          <div data-ilg="terresagricoles">Terres agricoles</div>
+                          <span  data-ilg="delasuperficietotale">% de la superficie totale</span>
                         </div>
 
                         <div class="txtStat">
@@ -25336,8 +25343,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Terres arables</div>
-                          <span>% de la superficie totale</span>
+                          <div data-ilg="terresarables">Terres arables</div>
+                          <span data-ilg="delasuperficietotale">% de la superficie totale</span>
                         </div>
 
                         <div class="txtStat">
@@ -25421,8 +25428,8 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div>Part forestière</div>
-                          <span>% de la superficie totale</span>
+                          <div data-ilg="partforestiere">Part forestière</div>
+                          <span data-ilg="delasuperficietotale">% de la superficie totale</span>
                         </div>
 
                         <div class="txtStat">
@@ -34160,8 +34167,67 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         payslowercase: { fr: "pays", en: "countries" },
         mediane: { fr: "Médiane", en: "Median" },
         societe: { fr: "Société", en: "Society" },
-        toutelaperiode: { fr: "Toute la période", en: "The entire period" },
+        classementmondial: { fr: "Classement mondial", en: "Global ranking" },
+        moyennemondiale: { fr: "Moyenne mondiale", en: "Global average" },
+        evolution: { fr: "Évolution", en: "Trend" },
+        stats: { fr: "Stats", en: "Stats" },
+        bilan: { fr: "Bilan", en: "Changes" },
+        carte: { fr: "Carte", en: "Map" },
+        toutelaperiode: { fr: "Toute la période", en: "Entire period" },
         voirsurlacarte: { fr: "Voir sur la carte", en: "View on the map" },
+        societe: { fr: "Société", en: "Society" },
+        indicateurs: { fr: "indicateurs", en: "indicators" },
+        populationtotale: { fr: "Population totale", en: "Total population" },
+        demographie: { fr: "Démographie", en: "Demographics" },
+        estimationmiannee: { fr: "Estimation à la mi-année (1er juillet)", en: "Mid-year estimate (July 1)" },
+        tauxdefecondite: { fr: "Taux de fécondité", en: "Fertility rate" },
+        naissanceparfemme: { fr: "Naissance par femme", en: "Births per woman" },
+        hommesesperancedevie: { fr: "Hommes · Espérance de vie", en: "Men · Life expectancy" },
+        alanaissance: { fr: "À la naissance", en: "At birth" },
+        femmesesperancedevie: { fr: "Femmes · Espérance de vie", en: "Women · Life expectancy" },
+        qualitedevie: { fr: "Qualité de vie", en: "Quality of life" },
+        inegalitehommefemme: { fr: "Inégalité homme-femme", en: "Gender inequality" },
+        scorede0a1: { fr: "Score de 0 (égalité totale) à 1", en: "Score from 0 (total equality) to 1" },
+        homicidesvolontaires: { fr: "Homicides volontaires", en: "Intentional homicides" },
+        pour100000habitants: { fr: "pour 100 000 habitants", en: "per 100,000 people" },
+        indicedebonheur: { fr: "Indice de bonheur", en: "Happiness index" },
+        notedeviemoyenne: { fr: "Note de vie moyenne (0 à 10)", en: "Average life rating (0 to 10)" },
+        economie: { fr: "Économie", en: "Economy" },
+        niveaudevie: { fr: "Niveau de vie", en: "Standard of living" },
+        pibtotal: { fr: "PIB total", en: "Total GDP" },
+        dollarsamericainscourantsus: { fr: "Dollars américains courants (US$)", en: "Current US dollars (US$)" },
+        pibparhabitant: { fr: "PIB par habitant", en: "GDP per capita" },
+        emploisetprix: { fr: "Emplois et prix", en: "Jobs and prices" },
+        chomage: { fr: "Chômage", en: "Unemployment" },
+        delapopulationactive: { fr: "% de la population active", en: "% of labor force" },
+        inflation: { fr: "Inflation", en: "Inflation" },
+        haussedesprixen1an: { fr: "Hausse des prix en 1 an (%)", en: "Price increase over 1 year (%)" },
+        energie: { fr: "Énergie", en: "Energy" },
+        mixenergetique: { fr: "Mix énergétique", en: "Energy mix" },
+        twh: { fr: "TWh", en: "TWh" },
+        eolien: { fr: "Éolien", en: "Wind" },
+        productiontotaleapartir: { fr: "Production totale à partir de cette source", en: "Total production from this source" },
+        delenergietotaleproduite: { fr: "% de l'énergie totale produite", en: "% of total energy produced" },
+        solaire: { fr: "Solaire", en: "Solar" },
+        bioenergie: { fr: "Bioénergie", en: "Bioenergy" },
+        hydroelectricite: { fr: "Hydroélectricité", en: "Hydropower" },
+        gaznaturel: { fr: "Gaz naturel", en: "Natural gas" },
+        nucleaire: { fr: "Nucléaire", en: "Nuclear" },
+        charbon: { fr: "Charbon", en: "Coal" },
+        petrole: { fr: "Pétrole", en: "Oil" },
+        environnement: { fr: "Environnement", en: "Environment" },
+        pollution: { fr: "Pollution", en: "Pollution" },
+        co2parhabitant: { fr: "CO₂ par habitant", en: "CO₂ per capita" },
+        horsutilisationdesterrest: { fr: "Hors utilisation des terres (tCO₂e)", en: "Excluding land use (tCO₂e)" },
+        gazaeffetdeserre: { fr: "Gaz à effet de serre", en: "Greenhouse gases" },
+        emissiontotalemtco2e: { fr: "Émission totale (Mt CO₂e)", en: "Total emissions (Mt CO₂e)" },
+        qualitedelair: { fr: "Qualité de l'air", en: "Air quality" },
+        particulesdediametre: { fr: "Particules de diamètre inférieur ou égal à 2,5µm", en: "Particles with a diameter of 2.5 µm or less" },
+        occupationdessols: { fr: "Occupation des sols", en: "Land use" },
+        terresagricoles: { fr: "Terres agricoles", en: "Agricultural land" },
+        delasuperficietotale: { fr: "% de la superficie totale", en: "% of total area" },
+        terresarables: { fr: "Terres arables", en: "Arable land" },
+        partforestiere: { fr: "Part forestière", en: "Forest cover" },
 
         // Langue Légende
         pibhabusdan: {
@@ -65824,7 +65890,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                   L_total[p_id].find((tuple) => tuple.annee === annee).valeur,
             ).length;
 
-            cel1DStat.querySelector("div").textContent =
+            cel1DStat.querySelector(".divCelDStat").textContent =
               D_ilg.sur[currentIlg] + " " + L_dataY.length + " ";
             cel1DStat.querySelector("span").innerHTML =
               `${newIndex}<sup>${ordinalSuffix(newIndex, currentIlg)}</sup><div class="yearEpheCel" >• ${annee}</div>`;
@@ -65836,7 +65902,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const worldMoy = stats(L_Worldvalues).moy;
             const worldMediane = stats(L_Worldvalues).med;
 
-            cel2DStat.querySelector("div").textContent =
+            cel2DStat.querySelector(".divCelDStat").textContent =
               D_ilg.mediane[currentIlg] +
               " : " +
               formaterGrandNombre(Math.floor(worldMediane * 100) / 100);

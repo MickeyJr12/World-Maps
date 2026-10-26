@@ -7,6 +7,7 @@ const AD_IDS = {
   // Remplacer par tes vrais ID une fois prêt :
   // banner: 'ca-app-pub-8425278698620884/3978191846',
   // interstitial: 'ca-app-pub-8425278698620884/8847375147',
+  // Récompensée : 
 };
 
 const REWARD_EVENTS = {
