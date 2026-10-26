@@ -2632,8 +2632,13 @@
         height: 2.2rem;
         border-radius: 0.4rem;
         outline: 1px solid rgba(255, 255, 255, 0.2);
+        #txtPeriode{
+          position : absolute;
+          top : calc(100% + 0.4rem);
+          left : 0.25rem;
+        }
       }
-      
+
       .itmStatChoice {
         display: flex;
         gap: 0.4rem;
@@ -2716,27 +2721,29 @@
         span {
           /* txtYChoice */
           display: flex;
+          gap : 0.1rem;
           padding : 0.2rem 0.4rem;
-          box-sizing : border-box;
           opacity: 0.6;
+          box-sizing : border-box;
           border-radius: 0.4rem;
           align-items: center;
           height: 10rem;
+          height : 100%;
           box-sizing: border-box;
           padding: 0 0.4rem;
           transition:
             background 0.2s ease,
             opacity 0.2s ease;
+            svg {
+              fill : white;
+              transform : rotate(-90deg);
+              height : 0.75rem;
+              transition : transform 0.2s ease, opacity 0.2s ease;
+            }
         }
         span:active {
           background: rgba(0, 0, 0, 0.4);
         }
-
-        span.active {
-          /* background : rgba(0,0,0,0.5); */
-          opacity: 1;
-        }
-
         .arrowY {
           opacity: 0.5;
           transition: opacity 0.2s ease;
@@ -2745,6 +2752,16 @@
           opacity: 1;
         }
       }
+
+      #cadreYChoice.active{
+           span{
+          /* background : rgba(0,0,0,0.5); */
+          opacity: 1;
+        }
+        svg {
+            transform : rotate(90deg);
+          }
+        }
 
       .wrapperCursorYGene {
         display: flex;
@@ -23138,6 +23155,13 @@
               "
             >
               <div class="wrapperStatChoice">
+                  <span
+                style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
+                id="txtPeriode"
+                data-ilg="toutelaperiode"
+                >Toute la période</span
+              >
+
                 <div id="statChoiceIn" class="stat"></div>
                 <span
                   class="itmStatChoice active"
@@ -23212,18 +23236,12 @@
                   <div data-ilg="carte">Carte</div>
                 </span>
               </div>
-
-              <span
-                style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
-                id="txtPeriode"
-                data-ilg="toutelaperiode"
-                >Toute la période</span
-              >
               <div id="cadreYChoice">
                 <div>
                   <svg
                     class="arrowY active"
                     id="LArrowY"
+                    style="pointer-events: all;"
                     fill="white"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -23235,7 +23253,21 @@
                   </svg>
                 </div>
 
-                <span id="txtYChoice">2025</span>
+                <span >
+                  <span id="txtYChoice"></span>
+
+                    <svg
+                    style="pointer-events : all"
+            fill="white"
+            xmlns="http://www.w3.org/2000/svg"
+            id="Bold"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+            />
+          </svg>
+                </span>
 
                 <div>
                   <svg
@@ -23254,6 +23286,8 @@
                 </div>
               </div>
             </div>
+
+            
 
             <div
               style="
@@ -64648,18 +64682,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       });
 
-      txtYChoice.addEventListener("click", (e) => {
-        txtYChoice.classList.toggle("active");
-        wrapperCursorY.classList.toggle("active");
-        // wrapperCursorY.style.maxHeight = txtYChoice.classList.contains("active")
-        //   ? Math.max(
-        //       ...[...wrapperCursorY.children].map(
-        //         (id) => id.getBoundingClientRect().height,
-        //       ),
-        //     ) *
-        //       1.4 +
-        //     "px"
-        //   : "";
+      cadreYChoice.addEventListener("click", (e) => {
+        cadreYChoice.classList.toggle("active");
+        wrapperCursorY.classList.toggle("active");        
       });
 
       cacheStat.addEventListener("click", () => {
@@ -64780,7 +64805,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           if (mode === "carte") {
             getId("txtPeriode").textContent = D_ilg.voirsurlacarte[currentIlg];
-            txtYChoice.classList.remove("active");
+            cadreYChoice.classList.remove("active");
             wrapperCursorY.classList.remove("active");
             wrapperCursorY.style.maxHeight = "";
             boxsItemStat.forEach((box) => {
@@ -64845,7 +64870,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               const content = h.parentNode.querySelector(".contentStat");
               if (content.style.maxHeight) content.style.maxHeight = "50rem";
             });
-            txtYChoice.classList.remove("active");
+            cadreYChoice.classList.remove("active");
             wrapperCursorY.classList.remove("active");
             wrapperCursorY.style.maxHeight = "";
 
@@ -65998,6 +66023,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         queryAll('.txtStat').forEach(el=>el.style = "")
 
+        if(cadreYChoice.classList.contains('active')){
+        ;[...cadreYChoice.children].forEach(el=>
+          el.style.transition = "none"
+        )
+        cadreYChoice.click()
+         ;[...cadreYChoice.children].forEach(el=>
+          el.style.transition = ""
+        )
+        }
         unityStatIn.className = "switchIn TWh"
         queryAll('[data-listezs]').forEach(el=>{
           el.dataset.liste = el.dataset.listetot
