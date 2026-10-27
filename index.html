@@ -73,9 +73,24 @@
           177,
           236,
           0.674
-        ); /* Couleur des éléments dans le mode trouver, utilisé dans viewSub pour zBox
- */
+        ); /* Couleur des éléments dans le mode trouver, utilisé dans viewSub pour zBox*/
       }
+
+      .smoothScroll{
+       --fade: 0.6rem; /* hauteur du dégradé */
+      -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+          mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+      }
+
+    
 
       html {
         font-size: 16px;
@@ -950,6 +965,19 @@
         scrollbar-width: none;
         padding-bottom: env(safe-area-inset-bottom);
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+
+               --fade: 0.6rem; /* hauteur du dégradé */
+      -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+          mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+
       }
       #infoSubTitle {
         color: white;
@@ -1564,6 +1592,19 @@
         width: 100%;
         max-width: 100%; /* ne dépasse jamais le cadre parent */
         box-sizing: border-box;
+
+               --fade: 0.6rem; /* hauteur du dégradé */
+      -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+          mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+
       }
       #contentFlagS.grid2 {
         grid-template-columns: 1fr 1fr;
@@ -1674,7 +1715,6 @@
         -webkit-overflow-scrolling: touch; /* scroll natif iOS */
         touch-action: pan-y; /* le scroll est vertical, les taps passent */
         overscroll-behavior: contain; /* évite la propagation au parent */
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1688,6 +1728,21 @@
         scrollbar-width: thin;
         scrollbar-width: none;
         scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+
+
+               --fade: 0.6rem; /* hauteur du dégradé */
+      -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+          mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+
+
       }
 
       .bandeLetter {
@@ -2929,22 +2984,6 @@
         width: 100%;
         height: 100%;
         transition: all 0.65s ease;
-      }
-      .smoothScroll {
-        width: 100%;
-        position: relative;
-        backdrop-filter: blur(8px);
-        max-height: 0;
-        div {
-          position: absolute;
-          height: 0.8rem;
-          width: 100%;
-          background: linear-gradient(
-            180deg,
-            var(--varBackground) 0%,
-            transparent 100%
-          );
-        }
       }
       #headerDetail {
         display: flex;
@@ -5283,6 +5322,19 @@
         margin-top: 0.5rem;
         padding: 0 1rem;
         box-sizing: border-box;
+
+      --fade: 0.6rem; /* hauteur du dégradé */
+      -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+          mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+
       }
 
       .perSub {
@@ -8598,6 +8650,19 @@
         width: 100%;
         padding-bottom: 0.2rem;
         padding-top: 0.2rem;
+
+               --fade: 0.6rem; /* hauteur du dégradé */
+      -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+          mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+      
       }
       #modeContainerConfig {
         display: flex;
@@ -22187,7 +22252,7 @@
             </svg>
           </div>
         </div>
-        <div id="contentC">
+        <div id="contentC" class="smoothScroll">
           <div class="alphabet" id="alphabetC">
             <div class="letter"><div class="caseLetter" id="caseA">A</div></div>
             <div class="letter"><div class="caseLetter" id="caseB">B</div></div>
@@ -23147,7 +23212,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="smoothScroll"><div></div> </div> -->
             <div id="contentDStat">
               <div id="cadreNbrDetailStat">
                 <span>28.5</span>
