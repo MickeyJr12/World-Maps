@@ -68,8 +68,14 @@
         --font-quicksand: "Quicksand", sans-serif;
         --boxShadow: 0 2px 5px rgba(20, 40, 100, 0.06);
         --backBlueMap: rgba(56, 140, 223, 0.674); /* Background des tool */
-        --colorTrouver: rgba(118, 177, 236, 0.674); /* Couleur des éléments dans le mode trouver, utilisé dans viewSub pour zBox
- */      }
+        --colorTrouver: rgba(
+          118,
+          177,
+          236,
+          0.674
+        ); /* Couleur des éléments dans le mode trouver, utilisé dans viewSub pour zBox
+ */
+      }
 
       html {
         font-size: 16px;
@@ -126,17 +132,17 @@
 
       /*CSS Maps*/
       .Maps {
-        position : fixed;
-        inset : 0;
-        background : inherit;
-        min-height : 100%;
-        min-width : 100%;
+        position: fixed;
+        inset: 0;
+        background: inherit;
+        min-height: 100%;
+        min-width: 100%;
         opacity: 0;
         visibility: hidden;
         overscroll-behavior: contain;
         position: relative;
         z-index: 20;
-        transition : filter 0.25s ease;
+        transition: filter 0.25s ease;
       }
 
       .monde {
@@ -736,20 +742,21 @@
         opacity: 0;
         pointer-events: none;
       }
-      .addHalo{
-        stroke : #f09443;
-        stroke : rgba(240, 148, 67,0.6);
-        stroke-width : 4px !important;
+      .addHalo {
+        stroke: #f09443;
+        stroke: rgba(240, 148, 67, 0.6);
+        stroke-width: 4px !important;
         vector-effect: non-scaling-stroke;
-        transition : stroke-width 0.25s ease;
+        transition: stroke-width 0.25s ease;
       }
-      .addHalo.strokeHide{ /* Pas de halos quand on zoom */
-        stroke-width : 0.045px !important;
+      .addHalo.strokeHide {
+        /* Pas de halos quand on zoom */
+        stroke-width: 0.045px !important;
       }
-      .addHalo.pNoVisible{ /* Pas de halos quand on cache */
-        stroke-width : 0.045px !important;
+      .addHalo.pNoVisible {
+        /* Pas de halos quand on cache */
+        stroke-width: 0.045px !important;
       }
-
 
       #cadreListSub {
         display: flex;
@@ -1914,11 +1921,11 @@
 
       .rank {
         position: absolute;
-        position : relative;
+        position: relative;
         width: auto;
         height: auto;
         right: 1.2rem;
-        right : 0;
+        right: 0;
         color: rgba(186, 204, 244, 0.6);
         font-size: 1.2rem;
       }
@@ -1952,7 +1959,7 @@
       }
       .boxItemC {
         display: flex;
-        flex : 1;
+        flex: 1;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
@@ -2629,13 +2636,13 @@
         height: 2.2rem;
         border-radius: 0.4rem;
         outline: 1px solid rgba(255, 255, 255, 0.2);
-        #txtPeriode{
-          display : none;
-          white-space : nowrap;
-          width : 100%;
-          position : absolute;
-          top : calc(100% + 0.4rem);
-          left : 0.25rem;
+        #txtPeriode {
+          display: none;
+          white-space: nowrap;
+          width: 100%;
+          position: absolute;
+          top: calc(100% + 0.4rem);
+          left: 0.25rem;
         }
       }
 
@@ -2701,7 +2708,7 @@
         border-radius: 50rem;
         height: 1.8rem;
         width: 7.5rem;
-        width : auto;
+        width: auto;
         div {
           display: none;
           flex: 1;
@@ -2721,25 +2728,27 @@
         span {
           /* txtYChoice */
           display: flex;
-          gap : 0.1rem;
-          padding : 0.2rem 0.4rem;
+          gap: 0.1rem;
+          padding: 0.2rem 0.4rem;
           opacity: 0.6;
-          box-sizing : border-box;
+          box-sizing: border-box;
           border-radius: 0.4rem;
           align-items: center;
           height: 10rem;
-          height : 100%;
+          height: 100%;
           box-sizing: border-box;
           padding: 0 0.4rem;
           transition:
             background 0.2s ease,
             opacity 0.2s ease;
-            svg {
-              fill : white;
-              transform : rotate(-90deg);
-              height : 0.75rem;
-              transition : transform 0.2s ease, opacity 0.2s ease;
-            }
+          svg {
+            fill: white;
+            transform: rotate(-90deg);
+            height: 0.75rem;
+            transition:
+              transform 0.2s ease,
+              opacity 0.2s ease;
+          }
         }
         span:active {
           background: rgba(0, 0, 0, 0.4);
@@ -2753,15 +2762,15 @@
         }
       }
 
-      #cadreYChoice.active{
-           span{
+      #cadreYChoice.active {
+        span {
           /* background : rgba(0,0,0,0.5); */
           opacity: 1;
         }
         svg {
-            transform : rotate(90deg);
-          }
+          transform: rotate(90deg);
         }
+      }
 
       .wrapperCursorYGene {
         display: flex;
@@ -3472,27 +3481,26 @@
         color: rgba(255, 255, 255, 0.75);
         text-decoration: underline;
       }
-      #titleEnergy{
-        display : flex;
-        justify-content : space-between;
-        align-items : center;
-        text-decoration : none;
-        padding-top : 0.1rem;
-        width :100%;
-        .txtTitle{
-          text-decoration : underline;
+      #titleEnergy {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        padding-top: 0.1rem;
+        width: 100%;
+        .txtTitle {
+          text-decoration: underline;
         }
       }
-      #unityStatIn{
-
-        z-index : -1;
+      #unityStatIn {
+        z-index: -1;
         background: rgba(4, 98, 198, 0.5);
       }
       #unityStatIn.pct {
-        transform : translateX(calc(100% + var(--gapUnity)));
+        transform: translateX(calc(100% + var(--gapUnity)));
       }
-      
-      .itmUnityStat{
+
+      .itmUnityStat {
         display: flex;
         border-radius: inherit;
         font-size: 0.85rem;
@@ -3623,8 +3631,9 @@
           -webkit-line-clamp: 1;
           overflow: hidden;
         }
-        .defTot.hide, .defZs.hide{
-          display : none;
+        .defTot.hide,
+        .defZs.hide {
+          display: none;
         }
         .yearsBilan {
           white-space: nowrap;
@@ -3741,7 +3750,7 @@
           font-size: 0.75rem;
           color: var(--colorSpan);
           .important {
-            color : #ffc247;
+            color: #ffc247;
             color: rgb(251, 151, 11);
           }
         }
@@ -3765,9 +3774,9 @@
           background: rgba(251, 151, 11, 0.15);
           color: rgb(251, 151, 11);
 
-          background : rgba(255, 170, 30, 0.2);
-          color : #ffc247;
-          outline : 1px solid rgba(255, 170, 30, 0.4)
+          background: rgba(255, 170, 30, 0.2);
+          color: #ffc247;
+          outline: 1px solid rgba(255, 170, 30, 0.4);
         }
         #adPropAd {
           display: flex;
@@ -3776,54 +3785,49 @@
           align-items: center;
           background: #1abdf9;
           color: #043b3f;
-          background  : #2563eb;
-          color : #ffffff;
-           transition:
-          color 0.15s ease,
-          transform 0.2s ease;
+          background: #2563eb;
+          color: #ffffff;
+          transition:
+            color 0.15s ease,
+            transform 0.2s ease;
           path {
             fill: currentColor;
           }
           .spinner {
-          opacity: 0;
-          filter: brightness(2);
-          position: absolute;
-          transition: opacity 0.15s ease;
-        }
-        #txtNohAd{
-          display : none;
-          font-size : 0.75rem;
-        }
-        #txtWatchAd{
-          display : flex;
-        }
-        }
-        
-        #adPropAd.noAd{
-          pointer-events: none;
-          opacity : 0.5;
-          svg{
-            display : none;
+            opacity: 0;
+            filter: brightness(2);
+            position: absolute;
+            transition: opacity 0.15s ease;
           }
-           #txtNohAd{
-          display : flex;
-        }
-        #txtWatchAd{
-          display : none;
-        }
+          #txtNohAd {
+            display: none;
+            font-size: 0.75rem;
+          }
+          #txtWatchAd {
+            display: flex;
+          }
         }
 
-
-        #adPropAd.loading{
-        color: transparent;
-        .spinner {
-          opacity: 1;
+        #adPropAd.noAd {
+          pointer-events: none;
+          opacity: 0.5;
+          svg {
+            display: none;
+          }
+          #txtNohAd {
+            display: flex;
+          }
+          #txtWatchAd {
+            display: none;
+          }
         }
-      }
-       
-        
-       
-      
+
+        #adPropAd.loading {
+          color: transparent;
+          .spinner {
+            opacity: 1;
+          }
+        }
 
         .btn:active {
           transform: scale(0.92);
@@ -4196,12 +4200,24 @@
             font-size: 0.75rem;
             color: var(--colorSpan);
           }
-          > :nth-child(1) { grid-column: 1; justify-self: start; }
-          > :nth-child(2) { grid-column: 3; justify-self: center; }
-          > :nth-child(3) { grid-column: 5; justify-self: center; }
-          > :nth-child(4) { grid-column: 7; justify-self: end; }
+          > :nth-child(1) {
+            grid-column: 1;
+            justify-self: start;
+          }
+          > :nth-child(2) {
+            grid-column: 3;
+            justify-self: center;
+          }
+          > :nth-child(3) {
+            grid-column: 5;
+            justify-self: center;
+          }
+          > :nth-child(4) {
+            grid-column: 7;
+            justify-self: end;
+          }
         }
-                span {
+        span {
           font-size: 0.75rem;
           color: var(--colorSpan);
         }
@@ -5167,15 +5183,15 @@
 
       /*N'afficher que
       /**********************************************************************************/
-      #cacheVue{
-        background: rgba(0,0,0,0.5);
-        backdrop-filter: blur(5px);      
-        z-index : 110;
+      #cacheVue {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: 110;
       }
-      .Maps:has(.cadreVue.active){
-        #cacheVue{
-          opacity : 1;
-          pointer-events : all;
+      .Maps:has(.cadreVue.active) {
+        #cacheVue {
+          opacity: 1;
+          pointer-events: all;
         }
       }
       .cadreVue {
@@ -5204,8 +5220,8 @@
           opacity 0.4s ease,
           height 0.3s ease;
       }
-      .cadreVue.active{
-        opacity : 1;
+      .cadreVue.active {
+        opacity: 1;
         pointer-events: all;
       }
       .vuesBox {
@@ -5691,7 +5707,7 @@
         }
 
         svg.monde {
-          touch-action: none; 
+          touch-action: none;
           height: 100%;
         }
       }
@@ -7572,52 +7588,58 @@
       }
 
       .wrapperSwitch {
-  --padUnity: 0.2rem;
-  --widthUnity: 5rem;
-  --gapUnity: 0.1rem;
-  /* largeur exacte d'un bouton */
-  --itemW: calc((var(--widthUnity) - 2 * var(--padUnity) - var(--gapUnity)) / 2);
+        --padUnity: 0.2rem;
+        --widthUnity: 5rem;
+        --gapUnity: 0.1rem;
+        /* largeur exacte d'un bouton */
+        --itemW: calc(
+          (var(--widthUnity) - 2 * var(--padUnity) - var(--gapUnity)) / 2
+        );
 
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  gap: var(--gapUnity);
-  padding: var(--padUnity);
-  width: var(--widthUnity);
-  height: 1.8rem;
-  border-radius: 0.4rem;
-  outline: 1px solid rgba(0, 0, 0, 0.15);
-}
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        gap: var(--gapUnity);
+        padding: var(--padUnity);
+        width: var(--widthUnity);
+        height: 1.8rem;
+        border-radius: 0.4rem;
+        outline: 1px solid rgba(0, 0, 0, 0.15);
+      }
 
-.itmUnity {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  border-radius: inherit;
-  font-size: 0.85rem;
-  text-align: center;
-  transition: color 0.2s ease, background 0.2s ease;
-}
+      .itmUnity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        border-radius: inherit;
+        font-size: 0.85rem;
+        text-align: center;
+        transition:
+          color 0.2s ease,
+          background 0.2s ease;
+      }
 
-.switchIn {
-  position: absolute;
-  z-index: 5;
-  left: var(--padUnity);
-  width: var(--itemW);
-  height: calc(100% - var(--padUnity) * 2);
-  border-radius: calc(0.4rem - var(--padUnity)); /* arrondi concentrique */
-  background: rgba(4, 98, 198, 0.25);
-  pointer-events: none;
-  transition: transform 0.2s ease;
-}
+      .switchIn {
+        position: absolute;
+        z-index: 5;
+        left: var(--padUnity);
+        width: var(--itemW);
+        height: calc(100% - var(--padUnity) * 2);
+        border-radius: calc(
+          0.4rem - var(--padUnity)
+        ); /* arrondi concentrique */
+        background: rgba(4, 98, 198, 0.25);
+        pointer-events: none;
+        transition: transform 0.2s ease;
+      }
 
-#unityIn.mi {
-  transform: translateX(calc(100% + var(--gapUnity)));
-}
+      #unityIn.mi {
+        transform: translateX(calc(100% + var(--gapUnity)));
+      }
 
       .itemSetting {
         display: flex;
@@ -9145,7 +9167,7 @@
           #207dd9 50%,
           #0fe7fa 100%
         );
-        
+
         min-height: 100dvh;
         min-width: 100vw;
         width: 100%;
@@ -9153,7 +9175,8 @@
         gap: 1rem;
         transition:
           transform 0.6s ease,
-          opacity 0.5s ease, filter 0.25s ease;
+          opacity 0.5s ease,
+          filter 0.25s ease;
       }
 
       #wrapperScorePm {
@@ -22979,24 +23002,43 @@
             <div id="txtWatchAd">Regarder une pub</div>
             <div id="txtNohAd">Pub indisponible, réessayez plus tard</div>
             <div class="spinner center">
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-            <div class="spinner-blade"></div>
-          </div>
-
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+              <div class="spinner-blade"></div>
+            </div>
           </div>
           <div class="btn" id="premiumPropAd">
-          
-            <svg fill="currentColor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M418.9,232.7h-256v-93.1c0-51.4,41.7-93.1,93.1-93.1s93.1,41.7,93.1,93.1v23.3h46.5v-23.3C395.6,62.5,333.1,0,256,0 c-77.1,0-139.6,62.5-139.6,139.6v93.1H93.1c-12.8,0-23.3,10.4-23.3,23.3v232.7c0,12.9,10.4,23.3,23.3,23.3h325.8 c12.8,0,23.3-10.4,23.3-23.3V256C442.2,243.1,431.8,232.7,418.9,232.7z"></path> </g></svg>
+            <svg
+              fill="currentColor"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              enable-background="new 0 0 512 512"
+              xml:space="preserve"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M418.9,232.7h-256v-93.1c0-51.4,41.7-93.1,93.1-93.1s93.1,41.7,93.1,93.1v23.3h46.5v-23.3C395.6,62.5,333.1,0,256,0 c-77.1,0-139.6,62.5-139.6,139.6v93.1H93.1c-12.8,0-23.3,10.4-23.3,23.3v232.7c0,12.9,10.4,23.3,23.3,23.3h325.8 c12.8,0,23.3-10.4,23.3-23.3V256C442.2,243.1,431.8,232.7,418.9,232.7z"
+                ></path>
+              </g>
+            </svg>
             <div>Passer premium</div>
           </div>
 
@@ -23135,7 +23177,7 @@
 
               <div id="gridInfoDetailStat">
                 <div class="cel" id="cel1DStat">
-                 <div data-ilg="classementmondial">Classement mondial</div>
+                  <div data-ilg="classementmondial">Classement mondial</div>
 
                   <span>34<sup>e</sup></span>
                   <div class="divCelDStat">sur 200 pays</div>
@@ -23154,8 +23196,7 @@
               </div>
               <div id="contentCourbe"></div>
 
-              <span id="titleClassement"
-              data-ilg="classementmondial"
+              <span id="titleClassement" data-ilg="classementmondial"
                 >Classement mondial
                 <div>•</div>
                 <span>2025</span></span
@@ -23177,12 +23218,12 @@
               "
             >
               <div class="wrapperStatChoice">
-                  <span
-                style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
-                id="txtPeriode"
-                data-ilg="toutelaperiode"
-                >Toute la période</span
-              >
+                <span
+                  style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.6)"
+                  id="txtPeriode"
+                  data-ilg="toutelaperiode"
+                  >Toute la période</span
+                >
 
                 <div id="statChoiceIn" class="stat"></div>
                 <span
@@ -23263,7 +23304,7 @@
                   <svg
                     class="arrowY active"
                     id="LArrowY"
-                    style="pointer-events: all;"
+                    style="pointer-events: all"
                     fill="white"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -23275,20 +23316,20 @@
                   </svg>
                 </div>
 
-                <span >
+                <span>
                   <span id="txtYChoice"></span>
 
-                    <svg
-                    style="pointer-events : all"
-            fill="white"
-            xmlns="http://www.w3.org/2000/svg"
-            id="Bold"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-            />
-          </svg>
+                  <svg
+                    style="pointer-events: all"
+                    fill="white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Bold"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                    />
+                  </svg>
                 </span>
 
                 <div>
@@ -23308,8 +23349,6 @@
                 </div>
               </div>
             </div>
-
-            
 
             <div
               style="
@@ -23400,7 +23439,8 @@
                   <div class="wrapperTxtItmStat">
                     <div data-ilg="societe" data-ilg="societe">Société</div>
                     <span class="mTxtItmStat"
-                      ><span></span> <span data-ilg="indicateurs">indicateurs</span></span
+                      ><span></span>
+                      <span data-ilg="indicateurs">indicateurs</span></span
                     >
                   </div>
 
@@ -23419,7 +23459,9 @@
 
                 <div class="contentStat">
                   <div class="sousCateStat">
-                    <div class="titleStat" data-ilg="demographie">Démographie</div>
+                    <div class="titleStat" data-ilg="demographie">
+                      Démographie
+                    </div>
                     <!--  -->
                     <div
                       class="boxItemStat"
@@ -23444,8 +23486,12 @@
                           />
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="populationtotale">Population totale</div>
-                          <span data-ilg="estimationmiannee" >Estimation à la mi-année (1er juillet)</span>
+                          <div data-ilg="populationtotale">
+                            Population totale
+                          </div>
+                          <span data-ilg="estimationmiannee"
+                            >Estimation à la mi-année (1er juillet)</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -23516,8 +23562,12 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="tauxdefecondite">Taux de fécondité</div>
-                          <span data-ilg="naissanceparfemme">Naissance par femme</span>
+                          <div data-ilg="tauxdefecondite">
+                            Taux de fécondité
+                          </div>
+                          <span data-ilg="naissanceparfemme"
+                            >Naissance par femme</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -23552,7 +23602,7 @@
                       </div>
                     </div>
                     <div class="lineInStat"></div>
-                     <div
+                    <div
                       class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="up"
@@ -23589,7 +23639,9 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div data-ilg="hommesesperancedevie">Hommes · Espérance de vie</div>
+                          <div data-ilg="hommesesperancedevie">
+                            Hommes · Espérance de vie
+                          </div>
                           <span data-ilg="alanaissance">À la naissance</span>
                         </div>
 
@@ -23673,7 +23725,9 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="femmesesperancedevie">Femmes · Espérance de vie</div>
+                          <div data-ilg="femmesesperancedevie">
+                            Femmes · Espérance de vie
+                          </div>
                           <span data-ilg="qualitedevie">À la naissance</span>
                         </div>
 
@@ -23711,7 +23765,9 @@
                   </div>
 
                   <div class="sousCateStat">
-                    <div class="titleStat" data-ilg="qualitedevie">Qualité de vie</div>
+                    <div class="titleStat" data-ilg="qualitedevie">
+                      Qualité de vie
+                    </div>
                     <div
                       class="boxItemStat lockP"
                       data-source="ourworldindata"
@@ -23741,8 +23797,12 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div data-ilg="inegalitehommefemme">Inégalité homme-femme</div>
-                          <span data-ilg="scorede0a1">Score de 0 (égalité totale) à 1</span>
+                          <div data-ilg="inegalitehommefemme">
+                            Inégalité homme-femme
+                          </div>
+                          <span data-ilg="scorede0a1"
+                            >Score de 0 (égalité totale) à 1</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -23779,7 +23839,7 @@
 
                     <div class="lineInStat"></div>
 
-                     <div
+                    <div
                       class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="down"
@@ -23789,14 +23849,26 @@
                       data-maxval="15"
                     >
                       <div class="itemStat">
-                        <svg class="svgItemStat"  fill="var(--colorItmStat)" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24">
-  <path d="M10.02,1.298c-.11-.541,.24-1.069,.782-1.178,.786-.159,1.61-.159,2.396,0,.541,.109,.892,.637,.782,1.178-.097,.475-.514,.802-.979,.802-.066,0-.132-.006-.199-.02-.526-.106-1.077-.106-1.604,0-.539,.111-1.069-.24-1.178-.782Zm3.98,15.702c0,3.859-3.14,7-7,7S0,20.859,0,17c0-2.785,1.639-5.188,4-6.315v-.685c0-1.105,.895-2,2-2v-1c0-.552,.448-1,1-1s1,.448,1,1v1c1.105,0,2,.895,2,2v.685c2.361,1.126,4,3.53,4,6.315Zm-2,0c0-2.757-2.243-5-5-5s-5,2.243-5,5,2.243,5,5,5,5-2.243,5-5Zm3.667-12.6c.164,.376,.532,.601,.918,.601,.133,0,.269-.027,.398-.084,.507-.221,.738-.81,.518-1.316-.239-.547-.558-1.055-.948-1.509-.361-.419-.992-.465-1.41-.106-.419,.36-.467,.991-.107,1.41,.261,.303,.474,.641,.632,1.005Zm4.333,6.285v-.685c0-1.105-.895-2-2-2v-1c0-.552-.447-1-1-1s-1,.448-1,1v1c-1.105,0-2,.895-2,2v.964c0,.269,.129,.513,.3,.802,.316,.427,.865,.572,1.375,.424,.884-.256,1.864-.276,2.903,.077,1.721,.584,3.05,2.081,3.35,3.874,.525,3.134-1.89,5.859-4.928,5.859-.517,0-1.011-.086-1.477-.237-.414-.134-.875-.011-1.123,.347-.004,.006-.008,.011-.012,.017-.391,.561-.153,1.337,.499,1.545,.851,.272,1.772,.385,2.729,.302,3.222-.28,5.917-2.853,6.326-6.061,.403-3.164-1.327-5.979-3.942-7.227ZM7.016,4.917c.13,.057,.266,.084,.4,.084,.385,0,.753-.225,.917-.6,.176-.403,.417-.774,.718-1.102,.373-.408,.345-1.04-.062-1.413-.408-.373-1.042-.345-1.413,.062-.449,.491-.811,1.046-1.075,1.652-.221,.506,.01,1.096,.516,1.317Z"/>
-</svg>
-
+                        <svg
+                          class="svgItemStat"
+                          fill="var(--colorItmStat)"
+                          xmlns="http://www.w3.org/2000/svg"
+                          id="Layer_1"
+                          data-name="Layer 1"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M10.02,1.298c-.11-.541,.24-1.069,.782-1.178,.786-.159,1.61-.159,2.396,0,.541,.109,.892,.637,.782,1.178-.097,.475-.514,.802-.979,.802-.066,0-.132-.006-.199-.02-.526-.106-1.077-.106-1.604,0-.539,.111-1.069-.24-1.178-.782Zm3.98,15.702c0,3.859-3.14,7-7,7S0,20.859,0,17c0-2.785,1.639-5.188,4-6.315v-.685c0-1.105,.895-2,2-2v-1c0-.552,.448-1,1-1s1,.448,1,1v1c1.105,0,2,.895,2,2v.685c2.361,1.126,4,3.53,4,6.315Zm-2,0c0-2.757-2.243-5-5-5s-5,2.243-5,5,2.243,5,5,5,5-2.243,5-5Zm3.667-12.6c.164,.376,.532,.601,.918,.601,.133,0,.269-.027,.398-.084,.507-.221,.738-.81,.518-1.316-.239-.547-.558-1.055-.948-1.509-.361-.419-.992-.465-1.41-.106-.419,.36-.467,.991-.107,1.41,.261,.303,.474,.641,.632,1.005Zm4.333,6.285v-.685c0-1.105-.895-2-2-2v-1c0-.552-.447-1-1-1s-1,.448-1,1v1c-1.105,0-2,.895-2,2v.964c0,.269,.129,.513,.3,.802,.316,.427,.865,.572,1.375,.424,.884-.256,1.864-.276,2.903,.077,1.721,.584,3.05,2.081,3.35,3.874,.525,3.134-1.89,5.859-4.928,5.859-.517,0-1.011-.086-1.477-.237-.414-.134-.875-.011-1.123,.347-.004,.006-.008,.011-.012,.017-.391,.561-.153,1.337,.499,1.545,.851,.272,1.772,.385,2.729,.302,3.222-.28,5.917-2.853,6.326-6.061,.403-3.164-1.327-5.979-3.942-7.227ZM7.016,4.917c.13,.057,.266,.084,.4,.084,.385,0,.753-.225,.917-.6,.176-.403,.417-.774,.718-1.102,.373-.408,.345-1.04-.062-1.413-.408-.373-1.042-.345-1.413,.062-.449,.491-.811,1.046-1.075,1.652-.221,.506,.01,1.096,.516,1.317Z"
+                          />
+                        </svg>
 
                         <div class="boxTxtItemStat">
-                          <div data-ilg="homicidesvolontaires">Homicides volontaires</div>
-                          <span data-ilg="homicidesvolontaires">pour 100 000 habitants</span>
+                          <div data-ilg="homicidesvolontaires">
+                            Homicides volontaires
+                          </div>
+                          <span data-ilg="homicidesvolontaires"
+                            >pour 100 000 habitants</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -23830,7 +23902,6 @@
                         <div class="boxMCourbe"></div>
                       </div>
                     </div>
-
 
                     <div class="lineInStat"></div>
 
@@ -23870,8 +23941,12 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="indicedebonheur">Indice de bonheur</div>
-                          <span data-ilg="notedeviemoyenne">Note de vie moyenne (0 à 10)</span>
+                          <div data-ilg="indicedebonheur">
+                            Indice de bonheur
+                          </div>
+                          <span data-ilg="notedeviemoyenne"
+                            >Note de vie moyenne (0 à 10)</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -23943,7 +24018,8 @@
                   <div class="wrapperTxtItmStat">
                     <div data-ilg="economie">Économie</div>
                     <span class="mTxtItmStat"
-                      ><span></span> <span data-ilg="indicateurs">indicateurs</span></span
+                      ><span></span>
+                      <span data-ilg="indicateurs">indicateurs</span></span
                     >
                   </div>
 
@@ -23962,7 +24038,9 @@
 
                 <div class="contentStat">
                   <div class="sousCateStat">
-                    <div class="titleStat" data-ilg="niveaudevie">Niveau de vie</div>
+                    <div class="titleStat" data-ilg="niveaudevie">
+                      Niveau de vie
+                    </div>
                     <!--  -->
                     <div
                       class="boxItemStat lockP"
@@ -24000,7 +24078,9 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="pibtotal">PIB total</div>
-                          <span data-ilg="dollarsamericainscourantsus">Dollars américains courants (US$)</span>
+                          <span data-ilg="dollarsamericainscourantsus"
+                            >Dollars américains courants (US$)</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24060,7 +24140,9 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="pibparhabitant">PIB par habitant</div>
-                          <span data-ilg="dollarsamericainscourantsus">Dollars américains courants (US$)</span>
+                          <span data-ilg="dollarsamericainscourantsus"
+                            >Dollars américains courants (US$)</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24098,7 +24180,9 @@
 
                   <!--  -->
                   <div class="sousCateStat">
-                    <div class="titleStat" data-ilg="emploisetprix">Emplois et prix</div>
+                    <div class="titleStat" data-ilg="emploisetprix">
+                      Emplois et prix
+                    </div>
 
                     <div
                       class="boxItemStat lockP"
@@ -24131,7 +24215,9 @@
 
                         <div class="boxTxtItemStat">
                           <div data-ilg="chomage">Chômage</div>
-                          <span data-ilg="delapopulationactive">% de la population active</span>
+                          <span data-ilg="delapopulationactive"
+                            >% de la population active</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24204,7 +24290,9 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="inflation">Inflation</div>
-                          <span data-ilg="haussedesprixen1an">Hausse des prix en 1 an (%)</span>
+                          <span data-ilg="haussedesprixen1an"
+                            >Hausse des prix en 1 an (%)</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24268,7 +24356,8 @@
                   <div class="wrapperTxtItmStat">
                     <div data-ilg="energie">Énergie</div>
                     <span class="mTxtItmStat"
-                      ><span></span> <span data-ilg="indicateurs">indicateurs</span></span
+                      ><span></span>
+                      <span data-ilg="indicateurs">indicateurs</span></span
                     >
                   </div>
 
@@ -24329,32 +24418,45 @@
                     </div> -->
 
                   <div class="sousCateStat" id="titleMixE">
-                    <div class="titleStat" id="titleEnergy"><div class="txtTitle" data-ilg = "mixenergetique">Mix énergétique</div>
-                  
-                    <div class="wrapperSwitch" id="wrapperUnityStat" style="outline : 1px solid rgba(255,255,255,0.2)">
-                  <div class="switchIn TWh" id="unityStatIn"></div>
-                  <span data-unity="TWh" data-liststat = "listetot" data-unitylabel="TWh" class="itmUnityStat" data-ilg="twh"
-                    >TWh</span
-                  >
-                  <span data-unity="pct" data-liststat = "listezs" data-unitylabel="%" class="itmUnityStat"
-                    >%</span
-                  >
-                </div>
+                    <div class="titleStat" id="titleEnergy">
+                      <div class="txtTitle" data-ilg="mixenergetique">
+                        Mix énergétique
+                      </div>
 
-                    
-                  </div>
+                      <div
+                        class="wrapperSwitch"
+                        id="wrapperUnityStat"
+                        style="outline: 1px solid rgba(255, 255, 255, 0.2)"
+                      >
+                        <div class="switchIn TWh" id="unityStatIn"></div>
+                        <span
+                          data-unity="TWh"
+                          data-liststat="listetot"
+                          data-unitylabel="TWh"
+                          class="itmUnityStat"
+                          data-ilg="twh"
+                          >TWh</span
+                        >
+                        <span
+                          data-unity="pct"
+                          data-liststat="listezs"
+                          data-unitylabel="%"
+                          class="itmUnityStat"
+                          >%</span
+                        >
+                      </div>
+                    </div>
                     <div
                       class="boxItemStat lockP"
                       data-source="ourworldindata"
                       data-goodVar="up"
                       data-log="true"
                       data-unity="TWh"
-                      data-unitytot = "TWh"
-                      data-unityzs = "%"
+                      data-unitytot="TWh"
+                      data-unityzs="%"
                       data-liste="eolien_tot"
-                      data-listetot = "eolien_tot"
-                      data-listezs = "eolien_zs"
-                      
+                      data-listetot="eolien_tot"
+                      data-listezs="eolien_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24370,8 +24472,16 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="eolien">Éolien</div>
-                          <span class="defTot" data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
-                          <span class="defZs hide" data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
+                          <span
+                            class="defTot"
+                            data-ilg="productiontotaleapartir"
+                            >Production totale à partir de cette source</span
+                          >
+                          <span
+                            class="defZs hide"
+                            data-ilg="delenergietotaleproduite"
+                            >% de l'énergie totale produite</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24408,17 +24518,17 @@
                     <div class="lineInStat"></div>
                     <!--  -->
 
-                    <div                      
+                    <div
                       class="boxItemStat lockP"
                       data-source="ourworldindata"
                       data-goodVar="up"
                       data-log="true"
                       data-unity="TWh"
-                      data-unitytot = "TWh"
-                      data-unityzs = "%"
+                      data-unitytot="TWh"
+                      data-unityzs="%"
                       data-liste="solar_tot"
-                      data-listetot = "solar_tot"
-                      data-listezs = "solar_zs"
+                      data-listetot="solar_tot"
+                      data-listezs="solar_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24484,8 +24594,16 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="solaire">Solaire</div>
-                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
-                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
+                          <span
+                            class="defTot"
+                            data-ilg="productiontotaleapartir"
+                            >Production totale à partir de cette source</span
+                          >
+                          <span
+                            class="defZs hide"
+                            data-ilg="delenergietotaleproduite"
+                            >% de l'énergie totale produite</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24529,19 +24647,62 @@
                       data-goodVar="up"
                       data-log="true"
                       data-unity="TWh"
-                      data-unitytot = "TWh"
-                      data-unityzs = "%"
+                      data-unitytot="TWh"
+                      data-unityzs="%"
                       data-liste="bioenergy_tot"
-                      data-listetot = "bioenergy_tot"
-                      data-listezs = "bioenergy_zs"
+                      data-listetot="bioenergy_tot"
+                      data-listezs="bioenergy_zs"
                     >
                       <div class="itemStat">
-                        <svg class="svgItemStat" fill="var(--colorItmStat)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.003 512.003" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M401.29,0C217.711,0,69.161,148.55,69.161,332.129v74.579l58.581-58.579l36.131,36.131l-58.581,58.579h74.579 C363.45,442.839,512,294.289,512,110.71V0H401.29z M290.581,306.581v-59.613h-68.129l68.129-110.71v59.613h68.129L290.581,306.581 z"></path> </g> </g> <g> <g> <rect x="3.744" y="433.807" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -309.3917 171.772)" width="97.815" height="51.096"></rect> </g> </g> </g></svg>
+                        <svg
+                          class="svgItemStat"
+                          fill="var(--colorItmStat)"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          viewBox="0 0 512.003 512.003"
+                          xml:space="preserve"
+                        >
+                          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                          <g
+                            id="SVGRepo_tracerCarrier"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></g>
+                          <g id="SVGRepo_iconCarrier">
+                            <g>
+                              <g>
+                                <path
+                                  d="M401.29,0C217.711,0,69.161,148.55,69.161,332.129v74.579l58.581-58.579l36.131,36.131l-58.581,58.579h74.579 C363.45,442.839,512,294.289,512,110.71V0H401.29z M290.581,306.581v-59.613h-68.129l68.129-110.71v59.613h68.129L290.581,306.581 z"
+                                ></path>
+                              </g>
+                            </g>
+                            <g>
+                              <g>
+                                <rect
+                                  x="3.744"
+                                  y="433.807"
+                                  transform="matrix(0.7071 -0.7071 0.7071 0.7071 -309.3917 171.772)"
+                                  width="97.815"
+                                  height="51.096"
+                                ></rect>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="bioenergie">Bioénergie</div>
-                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
-                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
-
+                          <span
+                            class="defTot"
+                            data-ilg="productiontotaleapartir"
+                            >Production totale à partir de cette source</span
+                          >
+                          <span
+                            class="defZs hide"
+                            data-ilg="delenergietotaleproduite"
+                            >% de l'énergie totale produite</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24576,17 +24737,17 @@
                       </div>
                     </div>
                     <div class="lineInStat"></div>
-                     <div
+                    <div
                       class="boxItemStat lockP"
                       data-source="banquemondiale"
                       data-goodVar="up"
                       data-log="true"
                       data-unity="TWh"
-                      data-unitytot = "TWh"
-                      data-unityzs = "%"
+                      data-unitytot="TWh"
+                      data-unityzs="%"
                       data-liste="hydro_tot"
-                      data-listetot = "hydro_tot"
-                      data-listezs = "hydro_zs"
+                      data-listetot="hydro_tot"
+                      data-listezs="hydro_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24608,9 +24769,19 @@
                           ></path>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="hydroelectricite">Hydroélectricité</div>
-                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
-                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
+                          <div data-ilg="hydroelectricite">
+                            Hydroélectricité
+                          </div>
+                          <span
+                            class="defTot"
+                            data-ilg="productiontotaleapartir"
+                            >Production totale à partir de cette source</span
+                          >
+                          <span
+                            class="defZs hide"
+                            data-ilg="delenergietotaleproduite"
+                            >% de l'énergie totale produite</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24654,11 +24825,11 @@
                       data-goodVar="down"
                       data-log="true"
                       data-unity="TWh"
-                      data-unitytot = "TWh"
-                      data-unityzs = "%"
+                      data-unitytot="TWh"
+                      data-unityzs="%"
                       data-liste="gaz_tot"
-                      data-listetot = "gaz_tot"
-                      data-listezs = "gaz_zs"
+                      data-listetot="gaz_tot"
+                      data-listezs="gaz_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24690,8 +24861,16 @@
 
                         <div class="boxTxtItemStat">
                           <div data-ilg="gaznaturel">Gaz naturel</div>
-                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
-                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
+                          <span
+                            class="defTot"
+                            data-ilg="productiontotaleapartir"
+                            >Production totale à partir de cette source</span
+                          >
+                          <span
+                            class="defZs hide"
+                            data-ilg="delenergietotaleproduite"
+                            >% de l'énergie totale produite</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24734,11 +24913,11 @@
                       data-goodVar="down"
                       data-log="true"
                       data-unity="TWh"
-                      data-unitytot = "TWh"
-                      data-unityzs = "%"
+                      data-unitytot="TWh"
+                      data-unityzs="%"
                       data-liste="nucl_tot"
-                      data-listetot = "nucl_tot"
-                      data-listezs = "nucl_zs"
+                      data-listetot="nucl_tot"
+                      data-listezs="nucl_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24790,8 +24969,16 @@
 
                         <div class="boxTxtItemStat">
                           <div data-ilg="nucleaire">Nucléaire</div>
-                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
-                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
+                          <span
+                            class="defTot"
+                            data-ilg="productiontotaleapartir"
+                            >Production totale à partir de cette source</span
+                          >
+                          <span
+                            class="defZs hide"
+                            data-ilg="delenergietotaleproduite"
+                            >% de l'énergie totale produite</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24835,11 +25022,11 @@
                       data-goodVar="down"
                       data-log="true"
                       data-unity="TWh"
-                      data-unitytot = "TWh"
-                      data-unityzs = "%"
+                      data-unitytot="TWh"
+                      data-unityzs="%"
                       data-liste="coal_tot"
-                      data-listetot = "coal_tot"
-                      data-listezs = "coal_zs"
+                      data-listetot="coal_tot"
+                      data-listezs="coal_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24863,8 +25050,16 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="charbon">Charbon</div>
-                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
-                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
+                          <span
+                            class="defTot"
+                            data-ilg="productiontotaleapartir"
+                            >Production totale à partir de cette source</span
+                          >
+                          <span
+                            class="defZs hide"
+                            data-ilg="delenergietotaleproduite"
+                            >% de l'énergie totale produite</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24907,12 +25102,11 @@
                       data-goodVar="down"
                       data-log="true"
                       data-unity="TWh"
-                      data-unitytot = "TWh"
-                      data-unityzs = "%"
+                      data-unitytot="TWh"
+                      data-unityzs="%"
                       data-liste="petrole_tot"
-                      data-listetot = "petrole_tot"
-                      data-listezs = "petrole_zs"
-
+                      data-listetot="petrole_tot"
+                      data-listezs="petrole_zs"
                     >
                       <div class="itemStat">
                         <svg
@@ -24929,8 +25123,16 @@
 
                         <div class="boxTxtItemStat">
                           <div data-ilg="petrole">Pétrole</div>
-                          <span class="defTot"data-ilg="productiontotaleapartir" >Production totale à partir de cette source</span>
-                          <span class="defZs hide"data-ilg="delenergietotaleproduite" >% de l'énergie totale produite</span>
+                          <span
+                            class="defTot"
+                            data-ilg="productiontotaleapartir"
+                            >Production totale à partir de cette source</span
+                          >
+                          <span
+                            class="defZs hide"
+                            data-ilg="delenergietotaleproduite"
+                            >% de l'énergie totale produite</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -24998,7 +25200,8 @@
                   <div class="wrapperTxtItmStat">
                     <div data-ilg="environnement">Environnement</div>
                     <span class="mTxtItmStat"
-                      ><span></span> <span data-ilg="indicateurs">indicateurs</span></span
+                      ><span></span>
+                      <span data-ilg="indicateurs">indicateurs</span></span
                     >
                   </div>
 
@@ -25065,7 +25268,9 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="co2parhabitant">CO₂ par habitant</div>
-                          <span data-ilg="horsutilisationdesterrest">Hors utilisation des terres (tCO₂e)</span>
+                          <span data-ilg="horsutilisationdesterrest"
+                            >Hors utilisation des terres (tCO₂e)</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -25143,8 +25348,12 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="gazaeffetdeserre">Gaz à effet de serre</div>
-                          <span data-ilg="emissiontotalemtco2e">Émission totale (Mt CO₂e)</span>
+                          <div data-ilg="gazaeffetdeserre">
+                            Gaz à effet de serre
+                          </div>
+                          <span data-ilg="emissiontotalemtco2e"
+                            >Émission totale (Mt CO₂e)</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -25260,8 +25469,7 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="qualitedelair">Qualité de l'air</div>
-                          <span
-                          data-ilg="particulesdediametre"
+                          <span data-ilg="particulesdediametre"
                             >Particules de diamètre inférieur ou égal à 2,5µm
                             (µg/m³)</span
                           >
@@ -25301,7 +25509,9 @@
                   </div>
 
                   <div class="sousCateStat">
-                    <div class="titleStat" data-ilg="occupationdessols">Occupation des sols</div>
+                    <div class="titleStat" data-ilg="occupationdessols">
+                      Occupation des sols
+                    </div>
                     <!--  -->
                     <div
                       class="boxItemStat lockP"
@@ -25333,7 +25543,9 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="terresagricoles">Terres agricoles</div>
-                          <span  data-ilg="delasuperficietotale">% de la superficie totale</span>
+                          <span data-ilg="delasuperficietotale"
+                            >% de la superficie totale</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -25401,7 +25613,9 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="terresarables">Terres arables</div>
-                          <span data-ilg="delasuperficietotale">% de la superficie totale</span>
+                          <span data-ilg="delasuperficietotale"
+                            >% de la superficie totale</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -25486,7 +25700,9 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="partforestiere">Part forestière</div>
-                          <span data-ilg="delasuperficietotale">% de la superficie totale</span>
+                          <span data-ilg="delasuperficietotale"
+                            >% de la superficie totale</span
+                          >
                         </div>
 
                         <div class="txtStat">
@@ -33210,8 +33426,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       function fmtN(n, abrev = false) {
         if (!Number.isFinite(n) || Math.abs(n) < 1e6)
           return n.toLocaleString(D_ilg.tolocalestring[currentIlg]); // en dessous d'un million : inchangé
-        
-        if(abrev)return(mformater(n))
+
+        if (abrev) return mformater(n);
 
         const abrev_ilg = {
           K: { fr: "K", en: "K" }, // mille / thousand (10³)
@@ -33639,7 +33855,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       /* Gérer le max Height avec transition */
       function maxHeight(el) {
-        const styleEl = el.style.maxHeight
+        const styleEl = el.style.maxHeight;
         el.style.transition = "none";
         el.style.maxHeight = "100rem";
         let h = el.scrollHeight;
@@ -34243,35 +34459,77 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         indicateurs: { fr: "indicateurs", en: "indicators" },
         populationtotale: { fr: "Population totale", en: "Total population" },
         demographie: { fr: "Démographie", en: "Demographics" },
-        estimationmiannee: { fr: "Estimation à la mi-année (1er juillet)", en: "Mid-year estimate (July 1)" },
+        estimationmiannee: {
+          fr: "Estimation à la mi-année (1er juillet)",
+          en: "Mid-year estimate (July 1)",
+        },
         tauxdefecondite: { fr: "Taux de fécondité", en: "Fertility rate" },
-        naissanceparfemme: { fr: "Naissance par femme", en: "Births per woman" },
-        hommesesperancedevie: { fr: "Hommes · Espérance de vie", en: "Men · Life expectancy" },
+        naissanceparfemme: {
+          fr: "Naissance par femme",
+          en: "Births per woman",
+        },
+        hommesesperancedevie: {
+          fr: "Hommes · Espérance de vie",
+          en: "Men · Life expectancy",
+        },
         alanaissance: { fr: "À la naissance", en: "At birth" },
-        femmesesperancedevie: { fr: "Femmes · Espérance de vie", en: "Women · Life expectancy" },
+        femmesesperancedevie: {
+          fr: "Femmes · Espérance de vie",
+          en: "Women · Life expectancy",
+        },
         qualitedevie: { fr: "Qualité de vie", en: "Quality of life" },
-        inegalitehommefemme: { fr: "Inégalité homme-femme", en: "Gender inequality" },
-        scorede0a1: { fr: "Score de 0 (égalité totale) à 1", en: "Score from 0 (total equality) to 1" },
-        homicidesvolontaires: { fr: "Homicides volontaires", en: "Intentional homicides" },
-        pour100000habitants: { fr: "pour 100 000 habitants", en: "per 100,000 people" },
+        inegalitehommefemme: {
+          fr: "Inégalité homme-femme",
+          en: "Gender inequality",
+        },
+        scorede0a1: {
+          fr: "Score de 0 (égalité totale) à 1",
+          en: "Score from 0 (total equality) to 1",
+        },
+        homicidesvolontaires: {
+          fr: "Homicides volontaires",
+          en: "Intentional homicides",
+        },
+        pour100000habitants: {
+          fr: "pour 100 000 habitants",
+          en: "per 100,000 people",
+        },
         indicedebonheur: { fr: "Indice de bonheur", en: "Happiness index" },
-        notedeviemoyenne: { fr: "Note de vie moyenne (0 à 10)", en: "Average life rating (0 to 10)" },
+        notedeviemoyenne: {
+          fr: "Note de vie moyenne (0 à 10)",
+          en: "Average life rating (0 to 10)",
+        },
         economie: { fr: "Économie", en: "Economy" },
         niveaudevie: { fr: "Niveau de vie", en: "Standard of living" },
         pibtotal: { fr: "PIB total", en: "Total GDP" },
-        dollarsamericainscourantsus: { fr: "Dollars américains courants (US$)", en: "Current US dollars (US$)" },
+        dollarsamericainscourantsus: {
+          fr: "Dollars américains courants (US$)",
+          en: "Current US dollars (US$)",
+        },
         pibparhabitant: { fr: "PIB par habitant", en: "GDP per capita" },
         emploisetprix: { fr: "Emplois et prix", en: "Jobs and prices" },
         chomage: { fr: "Chômage", en: "Unemployment" },
-        delapopulationactive: { fr: "% de la population active", en: "% of labor force" },
+        delapopulationactive: {
+          fr: "% de la population active",
+          en: "% of labor force",
+        },
         inflation: { fr: "Inflation", en: "Inflation" },
-        haussedesprixen1an: { fr: "Hausse des prix en 1 an (%)", en: "Price increase over 1 year (%)" },
+        haussedesprixen1an: {
+          fr: "Hausse des prix en 1 an (%)",
+          en: "Price increase over 1 year (%)",
+        },
         energie: { fr: "Énergie", en: "Energy" },
         mixenergetique: { fr: "Mix énergétique", en: "Energy mix" },
         twh: { fr: "TWh", en: "TWh" },
         eolien: { fr: "Éolien", en: "Wind" },
-        productiontotaleapartir: { fr: "Production totale à partir de cette source", en: "Total production from this source" },
-        delenergietotaleproduite: { fr: "% de l'énergie totale produite", en: "% of total energy produced" },
+        productiontotaleapartir: {
+          fr: "Production totale à partir de cette source",
+          en: "Total production from this source",
+        },
+        delenergietotaleproduite: {
+          fr: "% de l'énergie totale produite",
+          en: "% of total energy produced",
+        },
         solaire: { fr: "Solaire", en: "Solar" },
         bioenergie: { fr: "Bioénergie", en: "Bioenergy" },
         hydroelectricite: { fr: "Hydroélectricité", en: "Hydropower" },
@@ -34282,14 +34540,29 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         environnement: { fr: "Environnement", en: "Environment" },
         pollution: { fr: "Pollution", en: "Pollution" },
         co2parhabitant: { fr: "CO₂ par habitant", en: "CO₂ per capita" },
-        horsutilisationdesterrest: { fr: "Hors utilisation des terres (tCO₂e)", en: "Excluding land use (tCO₂e)" },
-        gazaeffetdeserre: { fr: "Gaz à effet de serre", en: "Greenhouse gases" },
-        emissiontotalemtco2e: { fr: "Émission totale (Mt CO₂e)", en: "Total emissions (Mt CO₂e)" },
+        horsutilisationdesterrest: {
+          fr: "Hors utilisation des terres (tCO₂e)",
+          en: "Excluding land use (tCO₂e)",
+        },
+        gazaeffetdeserre: {
+          fr: "Gaz à effet de serre",
+          en: "Greenhouse gases",
+        },
+        emissiontotalemtco2e: {
+          fr: "Émission totale (Mt CO₂e)",
+          en: "Total emissions (Mt CO₂e)",
+        },
         qualitedelair: { fr: "Qualité de l'air", en: "Air quality" },
-        particulesdediametre: { fr: "Particules de diamètre inférieur ou égal à 2,5µm", en: "Particles with a diameter of 2.5 µm or less" },
+        particulesdediametre: {
+          fr: "Particules de diamètre inférieur ou égal à 2,5µm",
+          en: "Particles with a diameter of 2.5 µm or less",
+        },
         occupationdessols: { fr: "Occupation des sols", en: "Land use" },
         terresagricoles: { fr: "Terres agricoles", en: "Agricultural land" },
-        delasuperficietotale: { fr: "% de la superficie totale", en: "% of total area" },
+        delasuperficietotale: {
+          fr: "% de la superficie totale",
+          en: "% of total area",
+        },
         terresarables: { fr: "Terres arables", en: "Arable land" },
         partforestiere: { fr: "Part forestière", en: "Forest cover" },
 
@@ -57391,9 +57664,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const toggleSon = document.getElementById("toggleSon");
       const itmsUnity = queryAll(".itmUnity");
       let currentUnity = "km²";
-      const wrapperUnity = getId('wrapperUnity');
+      const wrapperUnity = getId("wrapperUnity");
 
-      const unityIn = getId('unityIn');
+      const unityIn = getId("unityIn");
 
       const btnsChoiceIlg = queryAll("[data-choiceilg]");
 
@@ -63812,12 +64085,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             );
           }, 150);
 
-          paths.forEach((p) =>{
-            pColor_m.set(p, {
+          paths.forEach((p) => {
+            (pColor_m.set(p, {
               hovered: "",
               current: `${colorPath}`,
             }),
-            p.style.stroke = ""
+              (p.style.stroke = ""));
           });
           colorCountry();
           return;
@@ -63891,7 +64164,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const svg = document.querySelector("svg.monde");
       const svgMonde = document.querySelector("svg.monde");
-      
 
       let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
       // const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 1100, 700]
@@ -63908,8 +64180,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       const pathsId_m = new Map(paths.map((p) => [p.id, p]));
 
-
-       const L_pTarget = [ // Les paths décalés pour cliquer plus facilement (createCircle)
+      const L_pTarget = [
+        // Les paths décalés pour cliquer plus facilement (createCircle)
         "CV",
         "PF",
         "BV",
@@ -63985,8 +64257,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         "BQSA",
         "BQBO",
         "BQSE",
-      ]
-      const L_halos = [ // on crée des hallos, ils sont visibles (small-island)
+      ];
+      const L_halos = [
+        // on crée des hallos, ils sont visibles (small-island)
         // liste des éléments qui ont des cercles
         "CV",
         "PF",
@@ -64064,7 +64337,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // "BQBO",
         // "BQSE",
       ];
-      ;
       const D_circles = {};
       // const D_factorC = {
       //   MO: 3,
@@ -64104,82 +64376,83 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //   BQBO: 1.4,
       //   BQSA: 4,
       // };
-      const D_factorMargin = { // Les paths décalés pour cliquer plus facilement (createCircle)
-        "CV" : 0.6,
-        "PF" : 0.4,
-        "BV" : 0.4,
-        "WF" : 1.2,
-        "KI" : 0.4,
-        "MH" : 0.4,
-        "FM" : 1,
-        "SH" : 0.4,
-        "TF" : 0.4,
-        "TO" : 1.2,
-        "WS" : 0.8,
-        "MO" : 0.8,
-        "SG" : 1.25,
-        "MV" : 1.25,
-        "HK" : 0.6,
-        "PM" : 0.4,
-        "BH" : 0.4,
-        "BV" : 0.4,
-        "BM" : 0.4,
-        "GP" : 0.4,
-        "IM" : 0.75,
-        "GG" : 0.8,
-        "JE" : 0.95,
-        "ST" : 0.4,
-        "KM" : 0.4,
-        "LC" : 0.4,
-        "GD" : 0.4,
-        "VC" : 0.4,
-        "CW" : 0.4,
-        "AW" : 0.4,
-        "TC" : 0.4,
-        "MQ" : 0.4,
-        "GI" : 1.8,
-        "AD" : 0.4,
-        "LI" : 1.18,
-        "SC" : 1.2,
-        "GO" : 1.2,
-        "IO" : 1.2,
-        "NF" : 1.2,
-        "MC" : 0.4,
-        "VA" : 1.25,
-        "SM" : 1.25,
-        "RE" : 0.4,
-        "MU" : 1,
-        "YT" : 0.4,
-        "AX" : 0.4,
-        "BB" : 1,
-        "KN" : 0.4,
-        "MS" : 0.8,
-        "DM" : 0.4,
-        "AG" : 0.8,
-        "BL" : 0.4,
-        "HM" : 1.2,
-        "PW" : 1,
-        "NU" : 1.2,
-        "CC" : 1.4,
-        "NR" : 1.2,
-        "PN" : 0.96,
-        "CX" : 1.2,
-        "AS" :  1,
-        "CK" : 0.4,
-        "PW" : 0.4,
-        "GU" : 0.4,
-        "MT" : 0.4,
-        "KI" : 1,
-        "JU" : 1.2,
-        "BQSA" : 0.4,
-        "BQBO" : 0.4,
-        "BQSE" : 0.4,
-        "UM-DQ" : 0.4,
-        "UM-FQ" : 0.4,
-        "UM-HQ" : 0.4,
-        "UM-JQ" : 0.4,
-        "UM-MQ" : 0.4,
-        "UM-WQ" : 0.4,
+      const D_factorMargin = {
+        // Les paths décalés pour cliquer plus facilement (createCircle)
+        CV: 0.6,
+        PF: 0.4,
+        BV: 0.4,
+        WF: 1.2,
+        KI: 0.4,
+        MH: 0.4,
+        FM: 1,
+        SH: 0.4,
+        TF: 0.4,
+        TO: 1.2,
+        WS: 0.8,
+        MO: 0.8,
+        SG: 1.25,
+        MV: 1.25,
+        HK: 0.6,
+        PM: 0.4,
+        BH: 0.4,
+        BV: 0.4,
+        BM: 0.4,
+        GP: 0.4,
+        IM: 0.75,
+        GG: 0.8,
+        JE: 0.95,
+        ST: 0.4,
+        KM: 0.4,
+        LC: 0.4,
+        GD: 0.4,
+        VC: 0.4,
+        CW: 0.4,
+        AW: 0.4,
+        TC: 0.4,
+        MQ: 0.4,
+        GI: 1.8,
+        AD: 0.4,
+        LI: 1.18,
+        SC: 1.2,
+        GO: 1.2,
+        IO: 1.2,
+        NF: 1.2,
+        MC: 0.4,
+        VA: 1.25,
+        SM: 1.25,
+        RE: 0.4,
+        MU: 1,
+        YT: 0.4,
+        AX: 0.4,
+        BB: 1,
+        KN: 0.4,
+        MS: 0.8,
+        DM: 0.4,
+        AG: 0.8,
+        BL: 0.4,
+        HM: 1.2,
+        PW: 1,
+        NU: 1.2,
+        CC: 1.4,
+        NR: 1.2,
+        PN: 0.96,
+        CX: 1.2,
+        AS: 1,
+        CK: 0.4,
+        PW: 0.4,
+        GU: 0.4,
+        MT: 0.4,
+        KI: 1,
+        JU: 1.2,
+        BQSA: 0.4,
+        BQBO: 0.4,
+        BQSE: 0.4,
+        "UM-DQ": 0.4,
+        "UM-FQ": 0.4,
+        "UM-HQ": 0.4,
+        "UM-JQ": 0.4,
+        "UM-MQ": 0.4,
+        "UM-WQ": 0.4,
       };
       const L_elCircles = [];
 
@@ -64271,7 +64544,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           maxSize = Infinity, // ignore les sous-chemins plus grands (ex. l'île principale)
           // stroke = "rgba(255,255,255,.8)", // couleur du trait net
           stroke = "rgba(240, 148, 67,0.8)", // couleur du trait net
-          
+
           width = 1.6, // épaisseur du trait net (px écran) (ne marche pas)
           dash = "2 3.5", // pointillés ("" pour un trait plein)
           // glow = "rgba(255,255,255,.2)", // couleur du halo doux ("" pour le désactiver)
@@ -64378,8 +64651,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           stroke: "#ffd54a",
           strokeWidth: 0.8,
         });
-        if(L_halos.includes(pId)){getId(pId).classList.add('addHalo')}
-
+        if (L_halos.includes(pId)) {
+          getId(pId).classList.add("addHalo");
+        }
 
         //
         circle
@@ -64492,8 +64766,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const sousCatesStat = queryAll(".sousCateStat");
       const colorMCourbes = "#ff8f7d";
 
-      const itmsUnityE = queryAll('.itmUnityStat')
-      const unityStatIn  = getId('unityStatIn')
+      const itmsUnityE = queryAll(".itmUnityStat");
+      const unityStatIn = getId("unityStatIn");
 
       const wrapperItmStat = getId("wrapperItmStat");
       const contentCadreStat = getId("contentCadreStat");
@@ -64523,135 +64797,143 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let tfNewEl = false;
 
-      [drapeauCadre,mDrapeauCadre, mSilhouette, getId("boxImg").querySelector("img")].forEach(
-        (el) => {
-          el.addEventListener("click", () => {
-            if (tfNewEl || (!el.querySelector("svg") && el === mSilhouette))
-              return;
-            hapticFeedback("medium");
-            tfNewEl = true;
+      [
+        drapeauCadre,
+        mDrapeauCadre,
+        mSilhouette,
+        getId("boxImg").querySelector("img"),
+      ].forEach((el) => {
+        el.addEventListener("click", () => {
+          if (tfNewEl || (!el.querySelector("svg") && el === mSilhouette))
+            return;
+          hapticFeedback("medium");
+          tfNewEl = true;
 
-            Maps.style.visibility === "" ? 
-            phonePlay.style.filter = "brightness(0.22)" :
-            Maps.style.filter = "brightness(0.18)"
+          Maps.style.visibility === ""
+            ? (phonePlay.style.filter = "brightness(0.22)")
+            : (Maps.style.filter = "brightness(0.18)");
 
+          const newFlag = el.cloneNode(true);
+          el.style.opacity = "0";
 
-            const newFlag = el.cloneNode(true);
-            el.style.opacity = "0";
+          newFlag.id = "newFlag";
+          const box = el.getBoundingClientRect();
+          newFlag.style.position = "fixed";
+          newFlag.style.pointerEvents = "none";
+          newFlag.style.zIndex = "130";
+          newFlag.style.top = box.top + "px";
+          newFlag.style.left = box.left + "px";
+          newFlag.style.width = box.width + "px";
+          newFlag.style.borderRadius = [drapeauCadre, mDrapeauCadre].includes(
+            el,
+          )
+            ? "0.4rem"
+            : "0.2rem";
 
-            newFlag.id = "newFlag";
-            const box = el.getBoundingClientRect();
-            newFlag.style.position = "fixed";
-            newFlag.style.pointerEvents = "none";
-            newFlag.style.zIndex = "130";
-            newFlag.style.top = box.top + "px";
-            newFlag.style.left = box.left + "px";
-            newFlag.style.width = box.width + "px";
-            newFlag.style.borderRadius =
-              [drapeauCadre,mDrapeauCadre].includes(el) ? "0.4rem" : "0.2rem";
+          newFlag.style.aspectRatio = `${box.width / box.height}`;
+          newFlag.style.transition = "all 0.25s ease";
+          document.body.append(newFlag);
 
-            newFlag.style.aspectRatio = `${box.width / box.height}`;
-            newFlag.style.transition = "all 0.25s ease";
-            document.body.append(newFlag);
+          const svgEl = newFlag.querySelector("svg");
+          el.style.transition = "none";
+          if (svgEl) {
+            // newFlag.style.background = "rgba(255,255,255,0.04)"
+            newFlag.style.borderRadius = "";
+            newFlag.style.boxSizing = "border-box";
+            newFlag.style.padding = "0.25rem";
+            svgEl.style.width = "100%";
+            svgEl.style.height = "100%";
 
-            const svgEl = newFlag.querySelector("svg");
-            el.style.transition = "none";
-            if (svgEl) {
-              // newFlag.style.background = "rgba(255,255,255,0.04)"
-              newFlag.style.borderRadius = "";
-              newFlag.style.boxSizing = "border-box";
-              newFlag.style.padding = "0.25rem";
-              svgEl.style.width = "100%";
-              svgEl.style.height = "100%";
+            const bordersList = createEl("div");
+            bordersList.className = "bordersList";
+            const ratio = box.width / box.height;
+            bordersList.style.top = `calc(20% + (100vw - 2rem) / ${ratio})`;
+            document.body.append(bordersList);
 
-              const bordersList = createEl("div");
-              bordersList.className = "bordersList";
-              const ratio = box.width / box.height;
-              bordersList.style.top = `calc(20% + (100vw - 2rem) / ${ratio})`;
-              document.body.append(bordersList);
+            requestAnimationFrame(() => bordersList.classList.add("active"));
 
-              requestAnimationFrame(() => bordersList.classList.add("active"));
-
-              const voisins = P_info[currentCountry.id].borders.map(
-                (p) => L_q[p].n,
-              );
-
-              const spn = createEl("span");
-              spn.textContent =
-                voisins.length === 0
-                  ? D_ilg.aucunefrontiere[currentIlg]
-                  : (voisins.length > 1
-                      ? D_ilg.voisins[currentIlg]
-                      : D_ilg.voisin[currentIlg]) +
-                    " (" +
-                    voisins.length +
-                    ")" +
-                    " : ";
-              bordersList.append(spn);
-
-              if (voisins.length > 0) {
-                const wrapper = createEl("div");
-                wrapper.classList = "wrapper";
-                bordersList.append(wrapper);
-                voisins.forEach((nom) => {
-                  const itmB = createEl("div");
-                  itmB.classList = "itmB";
-                  itmB.textContent = nom;
-                  wrapper.append(itmB);
-                });
-              }
-            }
-
-            requestAnimationFrame(() => {
-              newFlag.style.borderRadius = "0.8rem";
-              newFlag.style.top = "30%";
-              newFlag.style.left = "1rem";
-              newFlag.style.width = "calc(100% - 2rem)";
-              if (svgEl) {
-                newFlag.style.top = "20%";
-                newFlag.style.padding = "0.6rem";
-              }
-            });
-            document.addEventListener(
-              "click",
-              (e) => {
-                if (!tfNewEl) return;
-                e.stopPropagation();
-                e.preventDefault();
-                if (query(".bordersList"))
-                  query(".bordersList").classList.remove("active");
-                
-                phonePlay.style.filter = "";
-                Maps.style.filter = "";
-                
-
-                const newBox = el.getBoundingClientRect();
-                newFlag.style.transform = "none";
-                newFlag.style.top = newBox.top + "px";
-                newFlag.style.left = newBox.left + "px";
-                newFlag.style.width = newBox.width + "px";
-                newFlag.style.borderRadius =
-                  [drapeauCadre,mDrapeauCadre].includes(el) ? "0.4rem" : "0.2rem";
-                if (svgEl) {
-                  newFlag.style.borderRadius = "0.4rem";
-                  newFlag.style.padding = "0.25rem";
-                  newFlag.style.background = "rgba(255,255,255,0.06)";
-                }
-                setTimeout(() => {
-                  el.style.opacity = "";
-                  newFlag.remove();
-                  if (query(".bordersList")) query(".bordersList").remove();
-                  tfNewEl = false;
-                  setTimeout(() => {
-                    el.style.transition = "";
-                  }, 50);
-                }, 450);
-              },
-              { capture: true, once: true },
+            const voisins = P_info[currentCountry.id].borders.map(
+              (p) => L_q[p].n,
             );
+
+            const spn = createEl("span");
+            spn.textContent =
+              voisins.length === 0
+                ? D_ilg.aucunefrontiere[currentIlg]
+                : (voisins.length > 1
+                    ? D_ilg.voisins[currentIlg]
+                    : D_ilg.voisin[currentIlg]) +
+                  " (" +
+                  voisins.length +
+                  ")" +
+                  " : ";
+            bordersList.append(spn);
+
+            if (voisins.length > 0) {
+              const wrapper = createEl("div");
+              wrapper.classList = "wrapper";
+              bordersList.append(wrapper);
+              voisins.forEach((nom) => {
+                const itmB = createEl("div");
+                itmB.classList = "itmB";
+                itmB.textContent = nom;
+                wrapper.append(itmB);
+              });
+            }
+          }
+
+          requestAnimationFrame(() => {
+            newFlag.style.borderRadius = "0.8rem";
+            newFlag.style.top = "30%";
+            newFlag.style.left = "1rem";
+            newFlag.style.width = "calc(100% - 2rem)";
+            if (svgEl) {
+              newFlag.style.top = "20%";
+              newFlag.style.padding = "0.6rem";
+            }
           });
-        },
-      );
+          document.addEventListener(
+            "click",
+            (e) => {
+              if (!tfNewEl) return;
+              e.stopPropagation();
+              e.preventDefault();
+              if (query(".bordersList"))
+                query(".bordersList").classList.remove("active");
+
+              phonePlay.style.filter = "";
+              Maps.style.filter = "";
+
+              const newBox = el.getBoundingClientRect();
+              newFlag.style.transform = "none";
+              newFlag.style.top = newBox.top + "px";
+              newFlag.style.left = newBox.left + "px";
+              newFlag.style.width = newBox.width + "px";
+              newFlag.style.borderRadius = [
+                drapeauCadre,
+                mDrapeauCadre,
+              ].includes(el)
+                ? "0.4rem"
+                : "0.2rem";
+              if (svgEl) {
+                newFlag.style.borderRadius = "0.4rem";
+                newFlag.style.padding = "0.25rem";
+                newFlag.style.background = "rgba(255,255,255,0.06)";
+              }
+              setTimeout(() => {
+                el.style.opacity = "";
+                newFlag.remove();
+                if (query(".bordersList")) query(".bordersList").remove();
+                tfNewEl = false;
+                setTimeout(() => {
+                  el.style.transition = "";
+                }, 50);
+              }, 450);
+            },
+            { capture: true, once: true },
+          );
+        });
+      });
 
       // Script stat
       const itmStatChoice = queryAll(".itmStatChoice");
@@ -64711,28 +64993,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       cadreYChoice.addEventListener("click", (e) => {
         cadreYChoice.classList.toggle("active");
-        wrapperCursorY.classList.toggle("active");        
+        wrapperCursorY.classList.toggle("active");
       });
 
       cacheStat.addEventListener("click", () => {
         crossStat.click();
       });
 
-
-
-      adPropAd.addEventListener('click', async () => {
-        adPropAd.classList.add('loading')
+      adPropAd.addEventListener("click", async () => {
+        adPropAd.classList.add("loading");
         const gained = await showRewarded();
 
         if (gained) {
-        adPropAd.classList.remove('loading')
-          unlockInfo();                          // ta fonction de déblocage
+          adPropAd.classList.remove("loading");
+          unlockInfo(); // ta fonction de déblocage
         } else {
-          setTimeout(()=>{
-             adPropAd.classList.remove('loading')
-             adPropAd.classList.add('noAd')
-          },400)
-         
+          setTimeout(() => {
+            adPropAd.classList.remove("loading");
+            adPropAd.classList.add("noAd");
+          }, 400);
         }
       });
 
@@ -64786,8 +65065,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         mDiamantStat.addEventListener("click", () => {
           cadrePropAd.classList.add("lockP");
-             adPropAd.classList.remove('noAd')
-
+          adPropAd.classList.remove("noAd");
         });
       }
       itmStatChoice.forEach((el) =>
@@ -64807,10 +65085,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           const btnsMapStat = queryAll(".btnMapStat");
           if (btnsMapStat) btnsMapStat.forEach((el) => el.remove());
 
-          if(mode !== "bilan"){ // Pour ne pas avoir l'animation height de 0, puis de max 
+          if (mode !== "bilan") {
+            // Pour ne pas avoir l'animation height de 0, puis de max
             queryAll(".boxBilanItemStat").forEach(
-            (b) => (b.style.maxHeight = ""),
-          );
+              (b) => (b.style.maxHeight = ""),
+            );
           }
 
           if (mode === "stat") {
@@ -64871,7 +65150,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 centerBtn.click();
                 if (!cadreCalque.classList.contains("hide"))
                   cadreCalque.classList.add("active");
-                ;[wrapperTool].forEach((el) => el.classList.add("calquing"));
+                [wrapperTool].forEach((el) => el.classList.add("calquing"));
                 backMaps.classList.remove("calquing");
                 openSearch.classList.remove("calquing");
 
@@ -64880,8 +65159,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
                 lastBoxCalque = box;
                 getId("backCadre").click();
                 crossStat.click();
-                let crtOverlay = query('.pOverlay')
-                if(crtOverlay)crtOverlay.remove()
+                let crtOverlay = query(".pOverlay");
+                if (crtOverlay) crtOverlay.remove();
                 toggleC(false);
                 if (query(".indexCursor")) query(".indexCursor").remove();
                 infoDateCalque.classList.add("active");
@@ -64891,8 +65170,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           } else if (mode === "bilan") {
             const locale = D_ilg.tolocalestring[currentIlg];
             const floor2 = (v) => Math.floor(v * 100) / 100;
-            const fmt = (v) =>
-              fmtN(v, true).toLocaleString(locale);
+            const fmt = (v) => fmtN(v, true).toLocaleString(locale);
 
             getId("txtPeriode").textContent = D_ilg.toutelaperiode[currentIlg];
             headersItemStat.forEach((h) => {
@@ -65393,17 +65671,19 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           return finv(f(minValLeg) + (f(maxValLeg) - f(minValLeg)) * t); // remonte jusqu'à la vraie valeur
         };
 
-        valLeg1.textContent = fmtN(arrNbr(minOfMin),true);
-        valLeg4.textContent = fmtN(arrNbr(maxOfMax),true) + unity;
+        valLeg1.textContent = fmtN(arrNbr(minOfMin), true);
+        valLeg4.textContent = fmtN(arrNbr(maxOfMax), true) + unity;
         valLeg1.dataset.val = minOfMin;
         valLeg4.dataset.val = maxOfMax;
 
         if (box.dataset.maxval) {
-          valLeg4.textContent = fmtN(parseInt(box.dataset.maxval),true) + "+ " + unity;
+          valLeg4.textContent =
+            fmtN(parseInt(box.dataset.maxval), true) + "+ " + unity;
           valLeg4.dataset.val = parseFloat(box.dataset.maxval);
         }
         if (box.dataset.minval) {
-          valLeg1.textContent = fmtN(parseInt(box.dataset.minval),true) + "- " + unity;
+          valLeg1.textContent =
+            fmtN(parseInt(box.dataset.minval), true) + "- " + unity;
           valLeg1.dataset.val = parseFloat(box.dataset.minval);
         }
 
@@ -65411,30 +65691,33 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         const maxValLeg = parseFloat(valLeg4.dataset.val);
 
         function placeLegendValues() {
-        const bar = barreLegCalque.getBoundingClientRect();
-        if (!bar.width) return false;                 // légende masquée : rien à mesurer
+          const bar = barreLegCalque.getBoundingClientRect();
+          if (!bar.width) return false; // légende masquée : rien à mesurer
 
-        const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-        const cw = 0.25 * rem;                        // largeur du curseur, comme dans createIndexCursor
-        const usable = bar.width - cw;
+          const rem = parseFloat(
+            getComputedStyle(document.documentElement).fontSize,
+          );
+          const cw = 0.25 * rem; // largeur du curseur, comme dans createIndexCursor
+          const usable = bar.width - cw;
 
-        const posOf = (el) => {
-          const r = el.getBoundingClientRect();
-          const p = (r.left + r.width / 2 - bar.left - cw / 2) / usable;
-          return Math.min(1, Math.max(0, p));
-        };
+          const posOf = (el) => {
+            const r = el.getBoundingClientRect();
+            const p = (r.left + r.width / 2 - bar.left - cw / 2) / usable;
+            return Math.min(1, Math.max(0, p));
+          };
 
-        for (const el of [valLeg2, valLeg3]) {
-          for (let k = 0; k < 3; k++) {               // le texte change la largeur, donc le centre : on affine
-            const v = valeurA(posOf(el));
-            el.dataset.val = v;
-            el.textContent = fmtN(arrNbr(v));
+          for (const el of [valLeg2, valLeg3]) {
+            for (let k = 0; k < 3; k++) {
+              // le texte change la largeur, donc le centre : on affine
+              const v = valeurA(posOf(el));
+              el.dataset.val = v;
+              el.textContent = fmtN(arrNbr(v));
+            }
           }
+          return true;
         }
-        return true;
-      }
 
-requestAnimationFrame(placeLegendValues);
+        requestAnimationFrame(placeLegendValues);
 
         // valLeg2.dataset.val = valeurA(1 / 4);
         // valLeg3.dataset.val = valeurA(3 / 4);
@@ -65448,20 +65731,6 @@ requestAnimationFrame(placeLegendValues);
         getId("svgMonde").addEventListener("click", fillInfosCalque);
         calqueAllC(ySupItem);
       }
-
-      // Colorer les pays
-      // return une couleur en fonction d'un nombre
-      /*   function hslColor(val, min, max, hsl, log) {
-
-  const f = log==="true" ? (v) => Math.log1p(Math.log1p(v)) : (v) => v;       // log1p(x) = log(1 + x), accepte 0
-  const teinte = Math.min(1, Math.max(0, (f(val) - f(min)) / (f(max) - f(min))));
-  const luminosite = 95 - teinte*88 ;  // 90 % (très clair) → 30 % (foncé)
-  let difHsl;
-  log === "true" ? difHsl = 100 : difHsl = 30;
-  let R_hsl = 120*teinte;
-  // return `hsl(${R_hsl}, 80%, ${luminosite}%)`;
-  return `hsl(${R_hsl}, 80%, 45%)`;
-}  */
 
       const COLOR_STOPS = [
         { t: 0.0, h: 260, s: 75, l: 42 }, // violet
@@ -65561,7 +65830,7 @@ requestAnimationFrame(placeLegendValues);
         paths.forEach((p) => {
           if (!(p.id in D_val)) {
             p.style.fill = "black";
-            if(L_halos.includes(p.id))p.style.stroke = "rgba(0,0,0,0.6)"
+            if (L_halos.includes(p.id)) p.style.stroke = "rgba(0,0,0,0.6)";
             return;
           }
 
@@ -65574,20 +65843,9 @@ requestAnimationFrame(placeLegendValues);
             cadreCalque.dataset.log,
           );
           p.style.fill = hsl;
-          if(L_halos.includes(p.id))p.style.stroke = hsl
+          if (L_halos.includes(p.id)) p.style.stroke = hsl;
         });
       }
-      //  Script fillInfosCalque
-      /*      function createIndexCursor(val){
-        const crs  = createEl('div')
-        crs.className = "indexCursor"
-        barreLegCalque.append(crs)
-        const min = parseInt(valLeg1.dataset.val)
-        const max = parseInt(valLeg4.dataset.val)
-        const f = cadreCalque.dataset.log==="true" ? Math.log1p : (v) => v;
-        let prc = 100 * Math.min(1, Math.max(0, (f(val) - f(min)) / (f(max) - f(min))));
-        crs.style.left = `calc(${prc}% - ${crs.getBoundingClientRect().width}px)`
-      } */
 
       function createIndexCursor(val) {
         const min = Number(valLeg1.dataset.val);
@@ -65647,9 +65905,7 @@ requestAnimationFrame(placeLegendValues);
           imgFlagCalque.src = `flag_c/${p_id.toLowerCase()}.svg`;
           const val = infoYear[p_id];
           valCalque.textContent =
-            fmtN(val, true) +
-            " " +
-            cadreCalque.dataset.unityCalque;
+            fmtN(val, true) + " " + cadreCalque.dataset.unityCalque;
           createIndexCursor(val);
           spnInfoCalque.textContent =
             index +
@@ -65898,9 +66154,9 @@ requestAnimationFrame(placeLegendValues);
 
         spn.textContent =
           (varUp ? "+ " : "-") +
-          fmtN(
-            Math.floor(variationAbs * 100) / 100,
-          ).toLocaleString(D_ilg.tolocalestring[currentIlg]) +
+          fmtN(Math.floor(variationAbs * 100) / 100).toLocaleString(
+            D_ilg.tolocalestring[currentIlg],
+          ) +
           " " +
           unity +
           " " +
@@ -65946,8 +66202,9 @@ requestAnimationFrame(placeLegendValues);
             if (Math.abs(valeur) < 0.01) {
               cadreNbrDetailStat.querySelector("span").textContent = "< 0.01";
             } else {
-              cadreNbrDetailStat.querySelector("span").textContent =
-                fmtN(Math.floor(valeur * 100) / 100);
+              cadreNbrDetailStat.querySelector("span").textContent = fmtN(
+                Math.floor(valeur * 100) / 100,
+              );
             }
 
             // Liste des ID de pays concernés pour l'année ["AD","FR",....]
@@ -66049,7 +66306,7 @@ requestAnimationFrame(placeLegendValues);
           if (itm.closest(".boxItemStat").classList.contains("lockP")) {
             cadreDetailStat.classList.add("lockP");
             cadrePropAd.classList.add("lockP");
-             adPropAd.classList.remove('noAd')
+            adPropAd.classList.remove("noAd");
 
             titlePropAd.textContent = itm
               .closest(".boxItemStat")
@@ -66074,31 +66331,28 @@ requestAnimationFrame(placeLegendValues);
           }
         });
 
-        queryAll('.txtStat').forEach(el=>el.style = "")
+        queryAll(".txtStat").forEach((el) => (el.style = ""));
 
-        if(cadreYChoice.classList.contains('active')){
-        ;[...cadreYChoice.children].forEach(el=>
-          el.style.transition = "none"
-        )
-        cadreYChoice.click()
-         ;[...cadreYChoice.children].forEach(el=>
-          el.style.transition = ""
-        )
+        if (cadreYChoice.classList.contains("active")) {
+          [...cadreYChoice.children].forEach(
+            (el) => (el.style.transition = "none"),
+          );
+          cadreYChoice.click();
+          [...cadreYChoice.children].forEach(
+            (el) => (el.style.transition = ""),
+          );
         }
-        unityStatIn.className = "switchIn TWh"
-        queryAll('[data-listezs]').forEach(el=>{
-          el.dataset.liste = el.dataset.listetot
-          el.dataset.unity = "TWh"
+        unityStatIn.className = "switchIn TWh";
+        queryAll("[data-listezs]").forEach((el) => {
+          el.dataset.liste = el.dataset.listetot;
+          el.dataset.unity = "TWh";
 
-          const defTot = el.querySelector('.defTot')
-          const defZs = el.querySelector('.defZs')
-          defTot.classList.remove('hide')
-          defZs.classList.add('hide')
-          defZs.before(defTot)
-
-        })
-
-        
+          const defTot = el.querySelector(".defTot");
+          const defZs = el.querySelector(".defZs");
+          defTot.classList.remove("hide");
+          defZs.classList.add("hide");
+          defZs.before(defTot);
+        });
 
         crtCStat = currentCountry;
         cadreDetailStat.style.transition = "none";
@@ -66117,8 +66371,10 @@ requestAnimationFrame(placeLegendValues);
           itm.style.opacity = "";
         });
       }
-      backDetailStat.addEventListener("pointerdown", (e) => e.stopPropagation())
-      
+      backDetailStat.addEventListener("pointerdown", (e) =>
+        e.stopPropagation(),
+      );
+
       backDetailStat.addEventListener("click", () => {
         crtCStat = currentCountry;
         cadreDetailStat.classList.remove("active");
@@ -66145,12 +66401,12 @@ requestAnimationFrame(placeLegendValues);
       //  Script fill stats
       const D_yListes = {
         // renewTot: renewTot,
-        //Énergie 
+        //Énergie
         // Total
         eolien_tot: eolien_tot,
         hydro_tot: hydro_tot,
         solar_tot: solar_tot,
-        bioenergy_tot : bioenergy_tot,
+        bioenergy_tot: bioenergy_tot,
         gaz_tot: gaz_tot,
         nucl_tot: nucl_tot,
         coal_tot: coal_tot,
@@ -66159,7 +66415,7 @@ requestAnimationFrame(placeLegendValues);
         eolien_zs: eolien_zs,
         hydro_zs: hydro_zs,
         solar_zs: solar_zs,
-        bioenergy_zs : bioenergy_zs,
+        bioenergy_zs: bioenergy_zs,
         gaz_zs: gaz_zs,
         nucl_zs: nucl_zs,
         coal_zs: coal_zs,
@@ -66189,39 +66445,42 @@ requestAnimationFrame(placeLegendValues);
         inflation: inflation,
       };
 
-      itmsUnityE.forEach(itm=>itm.addEventListener('click',()=>{
-        const unity =  itm.dataset.unity
-        if(unityStatIn.classList.contains(unity))return
-        hapticFeedback("medium")
-        unityStatIn.className = "switchIn " + unity
-        requestAnimationFrame(()=>{
-           getId('titleMixE').querySelectorAll('[data-listezs]').forEach(el=>{
-          el.dataset.liste = el.dataset[itm.dataset.liststat]
-          el.dataset.unity = itm.dataset.unitylabel
+      itmsUnityE.forEach((itm) =>
+        itm.addEventListener("click", () => {
+          const unity = itm.dataset.unity;
+          if (unityStatIn.classList.contains(unity)) return;
+          hapticFeedback("medium");
+          unityStatIn.className = "switchIn " + unity;
+          requestAnimationFrame(() => {
+            getId("titleMixE")
+              .querySelectorAll("[data-listezs]")
+              .forEach((el) => {
+                el.dataset.liste = el.dataset[itm.dataset.liststat];
+                el.dataset.unity = itm.dataset.unitylabel;
 
-          if(unity === "pct"){
-            const defTot = el.querySelector('.defTot')
-            const defZs = el.querySelector('.defZs')
-            defTot.classList.add('hide')
-            defZs.classList.remove('hide')
-            defTot.before(defZs)
-        }
+                if (unity === "pct") {
+                  const defTot = el.querySelector(".defTot");
+                  const defZs = el.querySelector(".defZs");
+                  defTot.classList.add("hide");
+                  defZs.classList.remove("hide");
+                  defTot.before(defZs);
+                } else {
+                  const defTot = el.querySelector(".defTot");
+                  const defZs = el.querySelector(".defZs");
+                  defTot.classList.remove("hide");
+                  defZs.classList.add("hide");
+                  defZs.before(defTot);
+                }
+              });
+            query(".itmStatChoice.active").click();
 
-        else {
-            const defTot = el.querySelector('.defTot')
-            const defZs = el.querySelector('.defZs')
-            defTot.classList.remove('hide')
-            defZs.classList.add('hide')
-            defZs.before(defTot)
-        }
-        })
-        query('.itmStatChoice.active').click()
-
-        if(cadreStat.classList.contains('active'))fillCadreStat(currentCountry, false, true)
-        else if(cadreStat.classList.contains('hide'))fillCadreStat(getId('FR'), false, true)
-        })
-      
-      }))
+            if (cadreStat.classList.contains("active"))
+              fillCadreStat(currentCountry, false, true);
+            else if (cadreStat.classList.contains("hide"))
+              fillCadreStat(getId("FR"), false, true);
+          });
+        }),
+      );
 
       const M_boxStat = new Map();
       boxsItemStat.forEach((box) => {
@@ -66235,7 +66494,7 @@ requestAnimationFrame(placeLegendValues);
         });
       });
 
-      function fillCadreStat(p, cursoring = false,onlyEnergy = false) {
+      function fillCadreStat(p, cursoring = false, onlyEnergy = false) {
         if (!p) return;
         const p_id = p.id;
         const titleCadreStat = getId("titleCadreStat");
@@ -66245,19 +66504,23 @@ requestAnimationFrame(placeLegendValues);
         const L_yDispos = []; //Listes des annes pour créer les curseurs.
         queryAll(".noInfo").forEach((box) => box.classList.remove("noInfo"));
 
-        boxsItemStat.forEach(box=>{ // On détermine toutes les années qu'il devra y avoir 
+        boxsItemStat.forEach((box) => {
+          // On détermine toutes les années qu'il devra y avoir
           const L_infos = D_yListes[box.dataset.liste][p_id];
           if (
             typeof L_infos !== "object" ||
             L_infos.filter((tuple) => tuple.valeur !== 0).length === 0
-          ) {return}
+          ) {
+            return;
+          }
 
           L_infos.forEach((tuple) => {
             if (!L_yDispos.includes(tuple.annee)) L_yDispos.push(tuple.annee);
           });
-        })
+        });
 
-        if (!cursoring && openStat.style.display !== "none" && !onlyEnergy) { // On crée les curseurs, remplit ySup et yInf sur la barre 
+        if (!cursoring && openStat.style.display !== "none" && !onlyEnergy) {
+          // On crée les curseurs, remplit ySup et yInf sur la barre
           query('[data-statchoice="stat"]').click();
           createCursorY(
             L_yDispos.sort(
@@ -66265,11 +66528,10 @@ requestAnimationFrame(placeLegendValues);
             ).reverse(),
           );
           // cursorYBox.querySelector(".cursorY.current").click();
-        txtYChoice.textContent = ySup.textContent
+          txtYChoice.textContent = ySup.textContent;
         }
 
         const crtYear = txtYChoice.textContent;
-
 
         boxsItemStat.forEach((box) => {
           const L_infos = D_yListes[box.dataset.liste][p_id];
@@ -66284,7 +66546,8 @@ requestAnimationFrame(placeLegendValues);
               box.nextElementSibling.classList.add("noInfo"); // Si le précédent c'est un titre, on suprime la ligne suivante
             return;
           }
-          if(onlyEnergy && box.closest('.sousCateStat').id !== "titleMixE")return
+          if (onlyEnergy && box.closest(".sousCateStat").id !== "titleMixE")
+            return;
 
           if (box.classList.contains("lockP")) {
             fillItmLockP(box);
@@ -66770,7 +67033,7 @@ requestAnimationFrame(placeLegendValues);
             btn.style.left = btn.getBoundingClientRect().left + "px";
             btn.style.top = btn.getBoundingClientRect().top + "px";
             btn.style.position = "absolute";
-            btn.style.background = "var(--backBlueMap)"
+            btn.style.background = "var(--backBlueMap)";
             btn.style.opacity = "1";
             Maps.append(btn);
             btn.classList.add("modeTrouver");
@@ -66876,7 +67139,7 @@ requestAnimationFrame(placeLegendValues);
               [centerBtn, zBox].forEach((btn) => {
                 btn.style.left = "";
                 btn.style.top = "";
-                btn.style.background = ""
+                btn.style.background = "";
                 btn.style.position = "";
                 btn.style.opacity = "";
                 btn.classList.remove("modeTrouver");
@@ -66986,9 +67249,8 @@ requestAnimationFrame(placeLegendValues);
 
       //fin const legend
       const cadreVue = document.querySelector(".cadreVue");
-      const cacheVue = getId('cacheVue')
-      const cadreVueCross = getId('cadreVueCross')
-      
+      const cacheVue = getId("cacheVue");
+      const cadreVueCross = getId("cadreVueCross");
 
       function closeCadre() {
         if (getId("newFlag")) getId("newFlag").style.opacity = "0";
@@ -80599,7 +80861,7 @@ requestAnimationFrame(placeLegendValues);
           population: 156115,
           pib: 22832.8953958667,
           co2e: null,
-          gouvernement : "nondisponible",
+          gouvernement: "nondisponible",
           religion: "christianismeCatholicisme",
           fuseaux: ["UTC-4"],
           otan: false,
@@ -87950,7 +88212,7 @@ requestAnimationFrame(placeLegendValues);
           population: 41349,
           pib: 41472.5874498583,
           co2e: null,
-          gouvernement : "nondisponible",
+          gouvernement: "nondisponible",
           religion: "christianismeCatholicisme",
           fuseaux: ["UTC-4"],
           otan: false,
@@ -92508,8 +92770,11 @@ requestAnimationFrame(placeLegendValues);
 
       let oneTimeColor = false; // n'appeler qu'une seule fois colorcountry dans countryclick/svg. ad (click)
       svgMonde.addEventListener("click", (event) => {
-        if (draggingMonde) {e.stopPropagation(); e.preventDefault(); }
-      draggingMonde = false;
+        if (draggingMonde) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
+        draggingMonde = false;
         const country = event.target.closest("path");
         if (country != null) {
           const status = idVisible_m.get(country.id);
@@ -92518,7 +92783,7 @@ requestAnimationFrame(placeLegendValues);
           }
         } /**/ //Return si au moins l'un des idVisible est false
         if (country === null) {
-          cadreVue.classList.remove('active');
+          cadreVue.classList.remove("active");
           cadreVueTF = false;
           only.classList.remove("active");
         }
@@ -92535,8 +92800,7 @@ requestAnimationFrame(placeLegendValues);
           // paths.forEach((p) => {
           //   resetOverlay(p.id);
           // });
-          if (currentCountry !== null)          
-            resetOverlay(currentCountry.id);
+          if (currentCountry !== null) resetOverlay(currentCountry.id);
           currentCountry = null;
           //baba
 
@@ -92627,6 +92891,17 @@ requestAnimationFrame(placeLegendValues);
         return { x: v.x, y: v.y, w: v.width, h: v.height };
       }
 
+      function halosVanish(w){ // Pour faire apparaître/disparaitre les halos et les cibles
+        if (w < 80) {
+          queryAll(".addHalo").forEach((el) => el.classList.add("strokeHide"));
+          queryAll(".halo").forEach((el) => (el.style.display = ""));
+        } else {
+          queryAll(".addHalo").forEach((el) =>
+            el.classList.remove("strokeHide"),
+          );
+          queryAll(".halo").forEach((el) => (el.style.display = "none"));
+        }
+      }
       function setVB({ x, y, w, h }) {
         let xp = Math.min(
           Math.max(x, -398 + (1100 - w) / 4),
@@ -92638,14 +92913,6 @@ requestAnimationFrame(placeLegendValues);
         );
         isMobile ? ((xp = x), (yp = y)) : "";
         svg.setAttribute("viewBox", `${x} ${y} ${w} ${h}`);
-        if(w < 80) {
-          queryAll('.addHalo').forEach(el=>el.classList.add('strokeHide'))
-          queryAll('.halo').forEach(el=>el.style.display = "")
-        }
-        else {
-          queryAll('.addHalo').forEach(el=>el.classList.remove('strokeHide'))
-          queryAll('.halo').forEach(el=>el.style.display = "none")
-        }
       }
       // ── Drag plan ───────────────────────────────────────────────
 
@@ -92734,16 +93001,18 @@ requestAnimationFrame(placeLegendValues);
 
           if (p < 1) requestAnimationFrame(frame);
           else {
-          if(vb.slice(2)[0] < 80) {
-          queryAll('.addHalo').forEach(el=>el.classList.add('strokeHide'))
-          queryAll('.halo').forEach(el=>el.style.display = "")
-        }
-        else {
-          queryAll('.addHalo').forEach(el=>el.classList.remove('strokeHide'))
-          queryAll('.halo').forEach(el=>el.style.display = "none")
-        }
+            if (vb.slice(2)[0] < 80) {
+              queryAll(".addHalo").forEach((el) =>
+                el.classList.add("strokeHide"),
+              );
+              queryAll(".halo").forEach((el) => (el.style.display = ""));
+            } else {
+              queryAll(".addHalo").forEach((el) =>
+                el.classList.remove("strokeHide"),
+              );
+              queryAll(".halo").forEach((el) => (el.style.display = "none"));
+            }
           }
-
         }
 
         requestAnimationFrame(frame);
@@ -92851,11 +93120,11 @@ requestAnimationFrame(placeLegendValues);
         overlay_m.set(p_id, overlay);
       }
       function darkenCountry(pathId, overlay) {
-      if(!calquing){
-        viewMaps
-          ? (pathsId_m.get(pathId).style.stroke = "white")
-          : (pathsId_m.get(pathId).style.stroke = "rgba(255,210,50,1)");
-      }
+        if (!calquing) {
+          viewMaps
+            ? (pathsId_m.get(pathId).style.stroke = "white")
+            : (pathsId_m.get(pathId).style.stroke = "rgba(255,210,50,1)");
+        }
         const original = pathsId_m.get(pathId);
         const p = pathsId_m.get(pathId);
         const status = idVisible_m.get(p.id);
@@ -92901,7 +93170,7 @@ requestAnimationFrame(placeLegendValues);
       }
 
       function resetOverlay(p_id) {
-        const overlay = overlay_m.get(p_id)
+        const overlay = overlay_m.get(p_id);
 
         //resetoverlay, colorcountry
         if (!viewSub && getId(p_id)?.parentNode.id !== "svgMonde") {
@@ -92914,7 +93183,7 @@ requestAnimationFrame(placeLegendValues);
             overlay.remove();
           }
         }, 300);
-        if(!calquing)pathsId_m.get(p_id).style.stroke = "";
+        if (!calquing) pathsId_m.get(p_id).style.stroke = "";
       }
       paths.forEach((p) => {
         createOverlay(p.id);
@@ -92927,14 +93196,16 @@ requestAnimationFrame(placeLegendValues);
         let eyesBtn = [...queryAll(".eye-btn")].filter(
           (el) =>
             (el.parentNode.classList.contains("view-region-row") ||
-            el.parentNode.classList.contains("view-main-row")) && !el.classList.contains('filter-eye')
+              el.parentNode.classList.contains("view-main-row")) &&
+            !el.classList.contains("filter-eye"),
         );
         let eyeFilter = getId("orgaMain-eye");
         eyeFilter.click();
-        if (eyesBtn) eyesBtn.forEach((eye) => {
-          eye.click()
-          if(eye.classList.contains('hidden'))eye.click()
-        });
+        if (eyesBtn)
+          eyesBtn.forEach((eye) => {
+            eye.click();
+            if (eye.classList.contains("hidden")) eye.click();
+          });
         requestAnimationFrame(() => {
           paths.forEach((p) => {
             p.style.transition = "";
@@ -92955,14 +93226,17 @@ requestAnimationFrame(placeLegendValues);
           const visible = status && Object.values(status).every(Boolean);
 
           !calquing
-            ? (p.style.fill = visible ? pColor_m.get(p).current : "", visible ? p.classList.remove('pNoVisible') : p.classList.add('pNoVisible'))
+            ? ((p.style.fill = visible ? pColor_m.get(p).current : ""),
+              visible
+                ? p.classList.remove("pNoVisible")
+                : p.classList.add("pNoVisible"))
             : "";
 
           if (p === currentCountry && currentCountry != null) {
             const overlay = overlay_m.get(p.id);
             svg.append(overlay);
             darkenCountry(p.id, overlay);
-            L_halos.forEach(id=>svg.append(getId("halo" + id)))
+            L_halos.forEach((id) => svg.append(getId("halo" + id)));
           } else if (p !== currentCountryHover) {
             if (p !== currentCountry) {
               if (overlay_m.has(p.id)) {
@@ -93606,9 +93880,7 @@ requestAnimationFrame(placeLegendValues);
               document.getElementById("svgMonde"),
               initialViewBox,
               700,
-            ),queryAll('.addHalo').forEach(el=>el.classList.remove('strokeHide')),
-          queryAll('.halo').forEach(el=>el.style.display = "none"));
-             
+            ));
       });
       let L_setTimeTool = [];
       openTool.addEventListener("click", () => {
@@ -93674,9 +93946,9 @@ requestAnimationFrame(placeLegendValues);
 
       function afficheVue() {
         if (!cadreVueTF) {
-          cadreVue.classList.add('active')
+          cadreVue.classList.add("active");
         } else {
-          cadreVue.classList.remove('active')
+          cadreVue.classList.remove("active");
           only.classList.remove("active");
         }
         cadreVueTF = !cadreVueTF;
@@ -93685,9 +93957,9 @@ requestAnimationFrame(placeLegendValues);
         only.classList.toggle("active");
         afficheVue();
       });
-      getId('cacheVue').addEventListener('click',()=>{
-        cadreVueCross.click()
-      })
+      getId("cacheVue").addEventListener("click", () => {
+        cadreVueCross.click();
+      });
 
       /*---------------------------*/
 
@@ -93961,7 +94233,7 @@ requestAnimationFrame(placeLegendValues);
           }
 
           // itemC.append(boxSvgItem, boxItemC);
-          itemC.prepend(boxSvgItem,boxItemC)
+          itemC.prepend(boxSvgItem, boxItemC);
           contentC.append(itemC);
           contentC.append(ligneInContent);
           // if (currentClass != "population") {
@@ -94265,6 +94537,7 @@ requestAnimationFrame(placeLegendValues);
           }
 
           setVB({ x: newX, y: newY, w: newW, h: newH });
+          halosVanish(newW)
         },
         { passive: false },
       );
@@ -95493,236 +95766,139 @@ requestAnimationFrame(placeLegendValues);
         };
       }
 
-      // ── Touch start ──────────────────────────────────────────────
-      // let touchDragTimeout = null;
-      // let touchMoved = false;
-
-      // svg.addEventListener(
-      //   "touchstart",
-      //   (e) => {
-      //     cancelAnimationFrame(touchInertiaFrame);
-
-      //     if (e.touches.length === 1) {
-      //       isDragging = true;
-      //       touchMoved = false;
-      //       touchVelX = 0;
-      //       touchVelY = 0;
-      //       lastTouchX = e.touches[0].clientX;
-      //       lastTouchY = e.touches[0].clientY;
-
-      //       const vb = getVB();
-      //       startVBx = vb.x;
-      //       startVBy = vb.y;
-      //       startX = e.touches[0].clientX;
-      //       startY = e.touches[0].clientY;
-
-      //       // Désactive après 150ms si on tient sans lâcher
-      //       touchDragTimeout = setTimeout(() => {
-      //         if (isDragging) {
-      //           paths.forEach((p) => (p.style.pointerEvents = "none"));
-      //         }
-      //       }, 150);
-      //     } else if (e.touches.length === 2) {
-      //       isDragging = false;
-      //       clearTimeout(touchDragTimeout);
-      //       // Pinch : désactive immédiatement
-      //       paths.forEach((p) => (p.style.pointerEvents = "none"));
-      //       lastTouchDist = getTouchDist(e.touches);
-      //       lastTouchMid = getTouchMid(e.touches);
-      //     }
-      //   },
-      //   { passive: false },
-      // );
-
-      // svg.addEventListener(
-      //   "touchmove",
-      //   (e) => {
-      //     e.preventDefault();
-      //     touchMoved = true;
-
-      //     if (e.touches.length === 1 && isDragging) {
-      //       const vb = getVB();
-      //       const rect = svg.getBoundingClientRect();
-      //       const scaleX = vb.w / rect.width;
-      //       const scaleY = vb.h / rect.height;
-
-      //       let dx = (e.touches[0].clientX - startX) * scaleX;
-      //       let dy = (e.touches[0].clientY - startY) * scaleY;
-
-      //       touchVelX = (e.touches[0].clientX - lastTouchX) * scaleX;
-      //       touchVelY = (e.touches[0].clientY - lastTouchY) * scaleY;
-      //       lastTouchX = e.touches[0].clientX;
-      //       lastTouchY = e.touches[0].clientY;
-
-      //       setVB({ x: startVBx - dx, y: startVBy - dy, w: vb.w, h: vb.h });
-      //     } else if (e.touches.length === 2) {
-      //       const newDist = getTouchDist(e.touches);
-      //       const newMid = getTouchMid(e.touches);
-      //       const vb = getVB();
-      //       const rect = svg.getBoundingClientRect();
-
-      //       const midVBx = vb.x + (newMid.x - rect.left) * (vb.w / rect.width);
-      //       const midVBy = vb.y + (newMid.y - rect.top) * (vb.h / rect.height);
-
-      //       const zoomFactor = lastTouchDist / newDist;
-      //       const newW = Math.min(
-      //         Math.max(vb.w * zoomFactor, initialViewBox[2] / zoomFactorSvg), // même min que zoomCenterScreen
-      //         initialViewBox[2], // même max
-      //       );
-      //       const newH = Math.min(
-      //         Math.max(vb.h * zoomFactor, initialViewBox[3] / zoomFactorSvg), // même min
-      //         initialViewBox[3], // même max
-      //       );
-
-      //       if (newW <= 200) {
-      //         L_elCircles.forEach((c) => (c.style.display = "flex"));
-      //       } else {
-      //         L_elCircles.forEach((c) => (c.style.display = "none"));
-      //       }
-
-      //       const newX = midVBx - (midVBx - vb.x) * (newW / vb.w);
-      //       const newY = midVBy - (midVBy - vb.y) * (newH / vb.h);
-
-      //       setVB({ x: newX, y: newY, w: newW, h: newH });
-
-      //       lastTouchDist = newDist;
-      //       lastTouchMid = newMid;
-      //     }
-      //   },
-      //   { passive: false },
-      // );
-
-      // svg.addEventListener("touchend", (e) => {
-      //   if (e.touches.length < 2) lastTouchDist = null;
-
-      //   if (e.touches.length === 0) {
-      //     isDragging = false;
-      //     clearTimeout(touchDragTimeout);
-
-      //     // Réactive toujours au touchend
-      //     paths.forEach((p) => (p.style.pointerEvents = ""));
-
-      //     // Inertie
-      //     let currentVelX = touchVelX;
-      //     let currentVelY = touchVelY;
-
-      //     function inertia() {
-      //       if (Math.abs(currentVelX) < 0.1 && Math.abs(currentVelY) < 0.1)
-      //         return;
-      //       const vb = getVB();
-
-      //       setVB({
-      //         x: vb.x - currentVelX,
-      //         y: vb.y - currentVelY,
-      //         w: vb.w,
-      //         h: vb.h,
-      //       });
-      //       currentVelX *= 0.92;
-      //       currentVelY *= 0.92;
-      //       touchInertiaFrame = requestAnimationFrame(inertia);
-      //     }
-
-      //     touchInertiaFrame = requestAnimationFrame(inertia);
-      //   }
-      // });
+    
 
       const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
-const MIN_W = MIN_SIZE;               // à unifier : MIN_SIZE (molette) ou initialViewBox[2] / zoomFactorSvg (pinch)
-const MAX_W = initialViewBox[2];
-const DRAG_THRESHOLD = 6;             // px avant de considérer que c'est un drag
+      const MIN_W = MIN_SIZE; // à unifier : MIN_SIZE (molette) ou initialViewBox[2] / zoomFactorSvg (pinch)
+      const MAX_W = initialViewBox[2];
+      const DRAG_THRESHOLD = 6; // px avant de considérer que c'est un drag
 
-const pointers = new Map();           // pointerId -> { x, y, sx, sy }
-let draggingMonde = false, lastDist = 0, vel = { x: 0, y: 0 }, inertiaFrame;
+      const pointers = new Map(); // pointerId -> { x, y, sx, sy }
+      let draggingMonde = false,
+        lastDist = 0,
+        vel = { x: 0, y: 0 },
+        inertiaFrame;
 
-function zoomAt(clientX, clientY, factor) {
-  const vb = getVB();
-  const rect = svg.getBoundingClientRect();
-  const px = vb.x + (clientX - rect.left) * (vb.w / rect.width);
-  const py = vb.y + (clientY - rect.top) * (vb.h / rect.height);
-  const w = clamp(vb.w * factor, MIN_W, MAX_W);
-  const f = w / vb.w;                 // un seul facteur : le ratio w/h est conservé
-  setVB({ x: px - (px - vb.x) * f, y: py - (py - vb.y) * f, w, h: vb.h * f });
-}
+      function zoomAt(clientX, clientY, factor) {
+        const vb = getVB();
+        const rect = svg.getBoundingClientRect();
+        const px = vb.x + (clientX - rect.left) * (vb.w / rect.width);
+        const py = vb.y + (clientY - rect.top) * (vb.h / rect.height);
+        const w = clamp(vb.w * factor, MIN_W, MAX_W);
+        const f = w / vb.w; // un seul facteur : le ratio w/h est conservé
+        setVB({
+          x: px - (px - vb.x) * f,
+          y: py - (py - vb.y) * f,
+          w,
+          h: vb.h * f,
+        });
+        halosVanish(w)
+      }
 
-function panBy(dxPx, dyPx) {
-  const vb = getVB();
-  const rect = svg.getBoundingClientRect();
-  setVB({
-    x: vb.x - dxPx * (vb.w / rect.width),
-    y: vb.y - dyPx * (vb.h / rect.height),
-    w: vb.w,
-    h: vb.h,
-  });
-}
+      function panBy(dxPx, dyPx) {
+        const vb = getVB();
+        const rect = svg.getBoundingClientRect();
+        setVB({
+          x: vb.x - dxPx * (vb.w / rect.width),
+          y: vb.y - dyPx * (vb.h / rect.height),
+          w: vb.w,
+          h: vb.h,
+        });
+      }
 
-function pinchInfo() {
-  const [a, b] = [...pointers.values()];
-  return {
-    dist: Math.hypot(a.x - b.x, a.y - b.y),
-    mx: (a.x + b.x) / 2,
-    my: (a.y + b.y) / 2,
-  };
-}
+      function pinchInfo() {
+        const [a, b] = [...pointers.values()];
+        return {
+          dist: Math.hypot(a.x - b.x, a.y - b.y),
+          mx: (a.x + b.x) / 2,
+          my: (a.y + b.y) / 2,
+        };
+      }
 
-// Molette : une ligne
-svgMonde.addEventListener(
-  "wheel",
-  (e) => {
-    e.preventDefault();
-    zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1 / 1.1 : 1.1);
-  },
-  { passive: false },
-);
+      // Molette : une ligne
+      svgMonde.addEventListener(
+        "wheel",
+        (e) => {
+          e.preventDefault();
+          zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1 / 1.1 : 1.1);
+        },
+        { passive: false },
+      );
 
-svgMonde.addEventListener("pointerdown", (e) => {
-  if (e.pointerType === "mouse") return;      // garde ton drag souris existant
-  cancelAnimationFrame(inertiaFrame);
-  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, sx: e.clientX, sy: e.clientY });
-  if (pointers.size === 1) { draggingMonde = false; vel = { x: 0, y: 0 }; }
-  if (pointers.size === 2) { draggingMonde = true; lastDist = pinchInfo().dist; }
-});
+      svgMonde.addEventListener("pointerdown", (e) => {
+        if (e.pointerType === "mouse") return; // garde ton drag souris existant
+        cancelAnimationFrame(inertiaFrame);
+        pointers.set(e.pointerId, {
+          x: e.clientX,
+          y: e.clientY,
+          sx: e.clientX,
+          sy: e.clientY,
+        });
+        if (pointers.size === 1) {
+          draggingMonde = false;
+          vel = { x: 0, y: 0 };
+        }
+        if (pointers.size === 2) {
+          draggingMonde = true;
+          lastDist = pinchInfo().dist;
+        }
+      });
 
-svgMonde.addEventListener("pointermove", (e) => {
-  if (e.pointerType === "mouse") return;
-  const p = pointers.get(e.pointerId);
-  if (!p) return;
-  const dx = e.clientX - p.x, dy = e.clientY - p.y;
-  p.x = e.clientX; p.y = e.clientY;
+      svgMonde.addEventListener("pointermove", (e) => {
+        if (e.pointerType === "mouse") return;
+        const p = pointers.get(e.pointerId);
+        if (!p) return;
+        const dx = e.clientX - p.x,
+          dy = e.clientY - p.y;
+        p.x = e.clientX;
+        p.y = e.clientY;
 
-  if (!draggingMonde && Math.hypot(p.x - p.sx, p.y - p.sy) > DRAG_THRESHOLD) draggingMonde = true;
-  if (!draggingMonde) return;
-  if (!svg.hasPointerCapture(e.pointerId)) svg.setPointerCapture(e.pointerId);
+        if (
+          !draggingMonde &&
+          Math.hypot(p.x - p.sx, p.y - p.sy) > DRAG_THRESHOLD
+        )
+          draggingMonde = true;
+        if (!draggingMonde) return;
+        if (!svg.hasPointerCapture(e.pointerId))
+          svg.setPointerCapture(e.pointerId);
 
-  if (pointers.size === 1) {
-    vel = { x: dx, y: dy };
-    panBy(dx, dy);
-  } else if (pointers.size === 2) {
-    const { dist, mx, my } = pinchInfo();
-    if (lastDist) zoomAt(mx, my, lastDist / dist);
-    lastDist = dist;
-  }
-});
+        if (pointers.size === 1) {
+          vel = { x: dx, y: dy };
+          panBy(dx, dy);
+        } else if (pointers.size === 2) {
+          const { dist, mx, my } = pinchInfo();
+          if (lastDist) zoomAt(mx, my, lastDist / dist);
+          lastDist = dist;
+        }
+      });
 
-function endPointer(e) {
-  if (!pointers.delete(e.pointerId)) return;
-  if (pointers.size < 2) lastDist = 0;
-  if (pointers.size === 0 && draggingMonde) inertia();
-}
-svgMonde.addEventListener("pointerup", endPointer);
-svgMonde.addEventListener("pointercancel", endPointer);
+      function endPointer(e) {
+        if (!pointers.delete(e.pointerId)) return;
+        if (pointers.size < 2) lastDist = 0;
+        if (pointers.size === 0 && draggingMonde) inertia();
+      }
+      svgMonde.addEventListener("pointerup", endPointer);
+      svgMonde.addEventListener("pointercancel", endPointer);
 
-function inertia() {
-  if (Math.abs(vel.x) < 0.1 && Math.abs(vel.y) < 0.1) return;
-  panBy(vel.x, vel.y);
-  vel.x *= 0.92; vel.y *= 0.92;
-  inertiaFrame = requestAnimationFrame(inertia);
-}
+      function inertia() {
+        if (Math.abs(vel.x) < 0.1 && Math.abs(vel.y) < 0.1) return;
+        panBy(vel.x, vel.y);
+        vel.x *= 0.92;
+        vel.y *= 0.92;
+        inertiaFrame = requestAnimationFrame(inertia);
+      }
 
-// Ignore le clic qui suit un drag/pinch (remplace le pointerEvents = "none")
-svgMonde.addEventListener("click", (e) => {
-  if (draggingMonde) { e.stopPropagation(); e.preventDefault(); }
-}, true);
-
+      // Ignore le clic qui suit un drag/pinch (remplace le pointerEvents = "none")
+      svgMonde.addEventListener(
+        "click",
+        (e) => {
+          if (draggingMonde) {
+            e.stopPropagation();
+            e.preventDefault();
+          }
+        },
+        true,
+      );
 
       // ── STYLES listBox ────────────────────────────────────────────
       const listBoxStyle = document.createElement("style");
@@ -95981,7 +96157,7 @@ svgMonde.addEventListener("click", (e) => {
           if (currentSearching === option.dataset.searching) {
             cadreModeS.classList.remove("active");
             document.getElementById("arrowTitle").classList.remove("active");
-            contentC.scrollTop = "0"
+            contentC.scrollTop = "0";
             return;
           }
           currentSearching = option.dataset.searching;
@@ -98182,11 +98358,9 @@ svgMonde.addEventListener("click", (e) => {
 
       // document.addEventListener('click',(e)=>console.log(e.target.closest("*").parentNode),true)
       // à retirer
-      queryAll('.boxItemStat').forEach(el=>{
-        if(el.dataset.liste !== "forets_zs")el.classList.remove('lockP')
-      })
-
-
+      queryAll(".boxItemStat").forEach((el) => {
+        if (el.dataset.liste !== "forets_zs") el.classList.remove("lockP");
+      });
 
       // Script éphémère
 
@@ -98698,8 +98872,6 @@ svgMonde.addEventListener("click", (e) => {
         if (!window.Capacitor?.isNativePlatform()) return;
         await InAppReview.requestReview();
       }
-
-      
     </script>
 
     <script src="ads.js"></script>
