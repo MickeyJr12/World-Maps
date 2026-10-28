@@ -64275,7 +64275,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const svg = document.querySelector("svg.monde");
       const svgMonde = document.querySelector("svg.monde");
 
-      let zoomFactorSvg = 60; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
+      let zoomFactorSvg = 40; // + facteur grand, plus le zoom est fort ( modifier min-height/width)
+      let initZoomFactorSvg = zoomFactorSvg
+      let zoomFactorSvgSub = 95
       // const initialViewBox = svg.getAttribute("viewBox").split(" ").map(Number); // [0,0 1100, 700]
       const initialViewBox = isMobile
         ? [
@@ -67104,7 +67106,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         btnSub.classList.remove("viewSub");
         const svgSub = L_gSub.get(L_cSub[currentCountry.id].svgSub); // svgUs
         const countryId = currentCountry.id; //"US"
-        zoomFactorSvg = 92;
+        zoomFactorSvg = zoomFactorSvgSub;
         currentCSub = currentCountry;
         const L_viewSub = [openSearch, only, calque, openTool];
         if (!viewSub) {
@@ -67191,7 +67193,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           backMaps.addEventListener(
             "click",
             () => {
-              zoomFactorSvg = 60;
+              zoomFactorSvg = initZoomFactorSvg;
               if (getVB().w < zoomFactorSvg) {
                 zoomToMax(getId("svgMonde"), 700);
               }
