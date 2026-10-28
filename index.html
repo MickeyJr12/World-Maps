@@ -162,6 +162,7 @@
 
       .monde {
         content-visibility: auto;
+        touch-action: none;
         position: absolute;
         position: absolute;
         stroke: black;
@@ -33705,6 +33706,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             formatAxe: null,
             survol: true,
             onChange: null,
+            anneesMin: 5, // nombre minimum d'années affichées sur l'axe
           },
           options,
         );
@@ -33717,8 +33719,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           MT = 14,
           MB = 26;
         const n = annees.length;
-        const x0 = annees[0],
-          x1 = annees[n - 1];
+        /* const x0 = annees[0],
+          x1 = annees[n - 1]; */
+
+        let x0 = annees[0],
+        x1 = annees[n - 1];
+        const manque = o.anneesMin - (x1 - x0 + 1);
+        if (manque > 0) {
+          const gauche = Math.floor(manque / 2);
+          x0 -= gauche;
+          x1 += manque - gauche;
+        }
 
         // Échelle Y automatique : valeurs "rondes", quelle que soit la taille des données
         const bas = Math.min(0, ...valeurs);
@@ -94568,7 +94579,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const MIN_SIZE = 30; // zoom max : pas plus petit que ça
       const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial      
 
-      svgMonde.addEventListener(
+      /* svgMonde.addEventListener(
         "wheel",
         (e) => {
           e.preventDefault();
@@ -94593,9 +94604,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             MAX_WIDTH,
           );
 
-          console.log(newW,MAX_WIDTH)
-
-
           const newH = Math.min(
             Math.max(vb.h * zoomFactor, MIN_HEIGHT),
             MAX_HEIGHT,
@@ -94615,7 +94623,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           halosVanish(newW)
         },
         { passive: false },
-      );
+      ); */
+
+      svgMonde.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1 / 1.1 : 1.1);
+}, { passive: false });
+
 
       // ── PAN (drag) ──────────────────────────────────────────────────
 
@@ -95857,7 +95871,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         vel = { x: 0, y: 0 },
         inertiaFrame;
 
-      function zoomAt(clientX, clientY, factor) {
+      /* function zoomAt(clientX, clientY, factor) {
         const vb = getVB();
         const rect = svg.getBoundingClientRect();
         const px = vb.x + (clientX - rect.left) * (vb.w / rect.width);
@@ -95871,7 +95885,29 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           h: vb.h * f,
         });
         halosVanish(w)
-      }
+      } */
+
+      function zoomAt(clientX, clientY, factor) {
+  const vb = getVB();
+  const rect = svgMonde.getBoundingClientRect();
+
+  const px = vb.x + (clientX - rect.left) * (vb.w / rect.width);
+  const py = vb.y + (clientY - rect.top) * (vb.h / rect.height);
+
+  const minW = initialViewBox[2] / zoomFactorSvg;
+  const maxW = initialViewBox[2];
+
+  const newW = Math.min(Math.max(vb.w * factor, minW), maxW);
+  const newH = vb.h * (newW / vb.w);
+
+  const newX = px - (px - vb.x) * (newW / vb.w);
+  const newY = py - (py - vb.y) * (newH / vb.h);
+
+  L_elCircles.forEach((c) => (c.style.display = newW <= 550 ? "flex" : "none"));
+  setVB({ x: newX, y: newY, w: newW, h: newH });
+  halosVanish(newW);
+}
+
 
       function panBy(dxPx, dyPx) {
         const vb = getVB();
