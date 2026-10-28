@@ -8649,20 +8649,7 @@
         bottom: env(safe-area-inset-bottom);
         width: 100%;
         padding-bottom: 0.2rem;
-        padding-top: 0.2rem;
-
-               --fade: 0.6rem; /* hauteur du dégradé */
-      -webkit-mask-image: linear-gradient(to bottom,
-      transparent 0,
-      black var(--fade),
-      black calc(100% - var(--fade)),
-      transparent 100%);
-          mask-image: linear-gradient(to bottom,
-      transparent 0,
-      black var(--fade),
-      black calc(100% - var(--fade)),
-      transparent 100%);
-      
+        padding-top: 0.2rem;      
       }
       #modeContainerConfig {
         display: flex;
@@ -8678,6 +8665,20 @@
         width: 100%;
         scrollbar-color: rgba(0, 0, 0, 0.2);
         gap: 1rem;
+
+            --fade: 0.6rem; /* hauteur du dégradé */
+      -webkit-mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+          mask-image: linear-gradient(to bottom,
+      transparent 0,
+      black var(--fade),
+      black calc(100% - var(--fade)),
+      transparent 100%);
+
+
       }
       .cadreMode {
         display: flex;
@@ -94565,7 +94566,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       // ── ZOOM (molette) ──────────────────────────────────────────────
       const MIN_SIZE = 30; // zoom max : pas plus petit que ça
-      const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial
+      const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial      
 
       svgMonde.addEventListener(
         "wheel",
@@ -94581,13 +94582,23 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           const zoomFactor = e.deltaY < 0 ? 1 / 1.1 : 1.1; // molette haut = zoom in = viewBox plus petit
 
+          const MIN_WIDTH = initialViewBox[2] / zoomFactorSvg;
+          const MIN_HEIGHT = initialViewBox[3] / zoomFactorSvg;
+
+          const MAX_WIDTH = initialViewBox[2];
+          const MAX_HEIGHT = initialViewBox[3];
+          
           const newW = Math.min(
-            Math.max(vb.w * zoomFactor, MIN_SIZE),
-            MAX_SIZE,
+            Math.max(vb.w * zoomFactor, MIN_WIDTH),
+            MAX_WIDTH,
           );
+
+          console.log(newW,MAX_WIDTH)
+
+
           const newH = Math.min(
-            Math.max(vb.h * zoomFactor, MIN_SIZE),
-            MAX_SIZE,
+            Math.max(vb.h * zoomFactor, MIN_HEIGHT),
+            MAX_HEIGHT,
           );
 
           // Garder le point sous le curseur fixe
@@ -94681,10 +94692,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           Math.max(vb.width / zoomFactor, MIN_WIDTH),
           MAX_WIDTH,
         );
+        
         const newH = Math.min(
           Math.max(vb.height / zoomFactor, MIN_HEIGHT),
           MAX_HEIGHT,
         );
+
+
 
         const target = [center.x - newW / 2, center.y - newH / 2, newW, newH];
         animateViewBox(svg, target, duration);
@@ -95880,14 +95894,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       // Molette : une ligne
-      svgMonde.addEventListener(
-        "wheel",
-        (e) => {
-          e.preventDefault();
-          zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1 / 1.1 : 1.1);
-        },
-        { passive: false },
-      );
+      // svgMonde.addEventListener(
+      //   "wheel",
+      //   (e) => {
+      //     e.preventDefault();
+      //     zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? 1 / 1.1 : 1.1);
+      //   },
+      //   { passive: false },
+      // );
 
       svgMonde.addEventListener("pointerdown", (e) => {
         if (e.pointerType === "mouse") return; // garde ton drag souris existant
