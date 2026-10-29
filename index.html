@@ -15653,7 +15653,7 @@
                 fill="#1C274C"
               />
             </svg>
-            <span data-ilg="recompenses">Récompenses</span>
+            <span data-ilg="objectifs">Récompenses</span>
           </div>
         </div>
 
@@ -34066,7 +34066,26 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             }
           });
         });
-        fillCadreRDQ_LRD();
+        
+        async function loadQuestSelection() {
+  try {
+    const raw = await AppStorage.get(SAVE_KEY);
+    if (!raw) return null;
+
+    const ids = JSON.parse(raw).defisQSelected ?? [];
+    const selection = ids
+      .map((id) => L_RDQ.find((q) => q.id === id))
+      .filter(Boolean);
+
+    return selection.length === 4 ? selection : null;
+  } catch (e) {
+    console.error("Sauvegarde corrompue :", e);
+    return null;
+  }
+}
+
+loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined));
+
         txtProgLvl.textContent = nbrProgLvl.toLocaleString(
           D_ilg.tolocalestring[currentIlg],
         );
@@ -34204,6 +34223,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // Langue quetes
         defisquotidiens: { fr: "Défis quotidiens", en: "Daily challenges" },
         recompenses: { fr: "Récompenses", en: "Rewards" },
+        objectifs: {fr : "Objectifs", en : "Goals"},
         progression: { fr: "Progression", en: "Progress" },
         niveau: { fr: "Niveau", en: "Level" },
         //langue setting
