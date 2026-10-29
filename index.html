@@ -2659,6 +2659,28 @@
         font-size: 0.8rem;
         color: rgba(255, 255, 255, 0.8);
         gap: 0.25rem;
+
+       
+
+      #drapeauCadre {
+        border-radius : inherit;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: hidden;
+        /* outline : 1px solid rgba(255,255,255,0.1); */
+        object-fit: contain;
+        border-radius: 0.4rem;
+        transition: filter 0.2s ease;
+      }
+       #cadreDrapeau {
+        width: 75%;
+        max-width: calc(100% - 4.2rem * 2);
+        height: 7rem; /* hauteur fixe */
+        max-height: 8rem;
+        }
+
         #boxImg {
           display: flex;
           justify-content: center;
@@ -2668,6 +2690,7 @@
           border-radius: 0.2rem;
           width: fit-content;
           max-width: 4rem;
+          width : 2rem;
           height: 1rem; /* hauteur fixe */
           max-height: 1.2rem;
           img {
@@ -4692,6 +4715,7 @@
       } */
 
       #drapeauCadre {
+        border-radius : inherit;
         width: auto;
         height: auto;
         max-width: 100%;
@@ -34331,6 +34355,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         valider: { fr: "Valider", en: "Submit" },
         mystere: { fr: "Mystère", en: "Mystery" },
         tempsecoulepoint: { fr: "Temps écoulé !", en: "Time's up!" },
+        glisserpourclasser : {fr : "Glisser pour classer", en : "Swipe to sort"},
         tempsecoule: { fr: "Temps écoulé", en: "Time's up" },
         classerparsuperficie: {
           fr: "Classer les pays par superficie décroissante",
@@ -61927,7 +61952,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           bigWrapperClasser.classList.add("modeClasser");
           btns4Choix.forEach((b) => b.classList.add("modifClasser"));
           cadreNext.className = "cadreNext none visible";
-          spanNext.textContent = "Glisser pour classer";
+          spanNext.textContent = D_ilg.glisserpourclasser[currentIlg];
           spanNext.insertAdjacentHTML(
             "beforeend",
             `<svg viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62011,8 +62036,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               infoTxtClasser.className = "infoTxtClasser";
               infoTxtClasser.textContent =
                 L_config.q === "superficieQ"
-                  ? `${D_ilg.superficie[currentIlg]} : ${(L_config.sub ? D_us : L_q)[p_id].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0${currentUnity}`
-                  : `${D_ilg.population[currentIlg]} : ${(L_config.sub ? D_us : L_q)[p_id].p.toLocaleString(D_ilg.tolocalestring[currentIlg])}`;
+                  ? `${(L_config.sub ? D_us : L_q)[p_id].s.toLocaleString(D_ilg.tolocalestring[currentIlg])}\u00A0${currentUnity}`
+                  : `${(L_config.sub ? D_us : L_q)[p_id].p.toLocaleString(D_ilg.tolocalestring[currentIlg])}`;
 
               classerDrapeauBox.append(img);
               classerCadreDrapeau.append(classerDrapeauBox);
@@ -64489,6 +64514,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //   BQSA: 4,
       // };
       const D_factorMargin = {
+
         // Les paths décalés pour cliquer plus facilement (createCircle)
         CV: 0.6,
         PF: 0.4,
@@ -64518,8 +64544,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         LC: 0.4,
         GD: 0.4,
         VC: 0.4,
-        CW: 0.4,
-        AW: 0.4,
+        CW: 1,
+        AW: 1,
         TC: 0.4,
         MQ: 0.4,
         GI: 1.8,
@@ -64557,7 +64583,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         KI: 1,
         JU: 1.2,
         BQSA: 0.4,
-        BQBO: 0.4,
+        BQBO: 1,
         BQSE: 0.4,
         "UM-DQ": 0.4,
         "UM-FQ": 0.4,
