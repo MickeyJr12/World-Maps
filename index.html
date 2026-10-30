@@ -2662,24 +2662,23 @@
 
        
 
-      #drapeauCadre {
-        border-radius : inherit;
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        max-height: 100%;
-        overflow: hidden;
-        /* outline : 1px solid rgba(255,255,255,0.1); */
-        object-fit: contain;
+      #cadreDrapeau {
+        display: flex;               /* le conteneur se cale sur la taille de l'image */
+        width: fit-content;
+        max-width: min(75%, calc(100% - 4.2rem * 2));
+        height: 7rem;
+        margin-inline: auto;
         border-radius: 0.4rem;
+        overflow: hidden;            /* c'est lui qui coupe les coins */
+      }
+      
+      #drapeauCadre {
+        display: block;
+        height: 100%;                /* force la hauteur : agrandit aussi le petit drapeau du Danemark */
+        width: auto;                 /* largeur déduite du ratio du SVG */
+        max-width: 100%;
         transition: filter 0.2s ease;
       }
-       #cadreDrapeau {
-        width: 75%;
-        max-width: calc(100% - 4.2rem * 2);
-        height: 7rem; /* hauteur fixe */
-        max-height: 8rem;
-        }
 
         #boxImg {
           display: flex;
