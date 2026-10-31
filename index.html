@@ -21505,7 +21505,7 @@
                   gap: 0.5rem;
                 "
               >
-                <span data-ild="votrereponse">Votre réponse</span>
+                <span id="ephe" data-ilg="votrereponse">Votre réponse</span>
 
                 <div class="cadreImgPm" id="cadreImgPmProp">
                   <div class="imgPmBox">
@@ -34342,6 +34342,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
         bonnereponse: { fr: "Bonne réponse", en: "Well done" },
         votrereponse: { fr: "Votre réponse", en: "Your answer" },
         mauvaisereponse: { fr: "Mauvaise réponse", en: "Correct answer" },
+        faux : {fr : "Faux", en: "Wrong"},
         // menu pause langue
         recapitulatif: { fr: "Récapitulatif", en: "Summary" },
         mode: { fr: "Mode ", en: "Mode " },
@@ -57553,8 +57554,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           const currentValue = Math.round(
             start + (end - start) * easedProgress,
           );
-          element.textContent = currentValue;
-
+          element.textContent = currentValue.toLocaleString(D_ilg.tolocalestring[currentIlg]);
           if (progress < 1) {
             requestAnimationFrame(update);
           }
@@ -57844,6 +57844,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
 
       btnsChoiceIlg.forEach((btn) => {
         btn.addEventListener("click", () => {
+          if(btn.classList.contains('active'))return
           btnsChoiceIlg.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
           changeIlg(btn.dataset.choiceilg);
@@ -59171,7 +59172,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
       let numPalierLvl = PALIERS_LVL_ORIGINAL[0]; // copie, pas la même référence
       txtProgLvl.textContent = 0;
       txtPalierLvl.textContent = numPalierLvl.toLocaleString(
-        D_ilg.tolocalestring[currentIlg],
+        D_ilg.tolocalestring[currentIlg]
       );
 
       let lvlPlayer = 1;
@@ -59192,6 +59193,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
             }
 
             nbrProgLvl += quest.xp;
+
 
             if (nbrProgLvl >= numPalierLvl) {
               function funcNextLvl() {
@@ -63543,7 +63545,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
 
             getId("imgPmCadreProp").src = `flag_c/${idProp.toLowerCase()}.svg`;
 
-            if (L_config.r !== "nomR") {
+            if (L_config.r !== "nomR" && (L_config.m !== "modeTrouver" ||  L_config.m === "modeTrouver" &&  (!L_config.sub ||  L_config.sub === "US"))) {
               propPm.textContent =
                 "(" + (L_config.sub ? D_us : L_q)[idProp].n + ")";
             }
@@ -63551,7 +63553,8 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
 
           repPm.textContent = (L_config.sub ? D_us : L_q)[idGood].n;
           getId("imgPmCadreCor").src = `flag_c/${idGood.toLowerCase()}.svg`;
-          if (L_config.r !== "nomR") {
+          //  Soit c'est différent de mode trouver, soit c'est mode trouver mais le sub est US
+          if (L_config.r !== "nomR" && (L_config.m !== "modeTrouver" ||  L_config.m === "modeTrouver" &&  (!L_config.sub ||  L_config.sub === "US"))) {
             repPm.textContent =
               "(" + (L_config.sub ? D_us : L_q)[idGood].n + ")";
           }
@@ -63645,6 +63648,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
             propPm.classList.add("good");
             titleDetailPm.classList.add("good");
             tfPm.textContent = "✓ Correct";
+            
           } else if (idProp === "outTime") {
             getId("cadreImgPmProp").style.display = "none";
 
@@ -63662,7 +63666,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           } else {
             propPm.classList.add("bad");
             titleDetailPm.classList.add("bad");
-            tfPm.textContent = "✗ Faux";
+            tfPm.textContent = "✗ " + D_ilg.faux[currentIlg];
           }
         });
         //Si on est dans mode Classer, on utilise plusieurs fois la fonction avant d'ajouter une ligne
@@ -98536,6 +98540,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
         console.log(choisingYStat);
       }
 
+      // Modifier : tfPm.textContent = "✓ Correct" dans fillPm
       // document.addEventListener('click',(e)=>console.log(e.target.closest("*").parentNode),true)
       // à retirer
       queryAll(".boxItemStat").forEach((el) => {
