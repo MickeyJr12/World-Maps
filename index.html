@@ -5609,6 +5609,15 @@
       }
 
       /* ── oeil ── */
+      .Maps:has(.eye-btn.active), .Maps:has(.eye-btn.hidden){
+        #only{
+        background: rgba(91, 175, 253, 0.8);
+        outline: 0.1rem solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 0.65rem rgba(255,255,255,0.8);
+        filter : brightness(1.15);
+        }
+      }
+
       .eye-btn {
         width: 22px;
         height: 22px;
@@ -59194,7 +59203,6 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
 
             nbrProgLvl += quest.xp;
 
-
             if (nbrProgLvl >= numPalierLvl) {
               function funcNextLvl() {
                 let duration1 =
@@ -64832,7 +64840,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           ``; /**/ //Return si au moins l'un des idVisible est false
           if (country === null) {
             cadreVueTF = false;
-            only.classList.remove("active");
+            // only.classList.remove("active");
           }
           if (!country || country === currentCountry) {
             currentCountry = null;
@@ -92946,7 +92954,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
         if (country === null) {
           cadreVue.classList.remove("active");
           cadreVueTF = false;
-          only.classList.remove("active");
+          // only.classList.remove("active");
         }
         if (
           !country ||
@@ -94111,12 +94119,12 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           cadreVue.classList.add("active");
         } else {
           cadreVue.classList.remove("active");
-          only.classList.remove("active");
+          // only.classList.remove("active");
         }
         cadreVueTF = !cadreVueTF;
       }
       only.addEventListener("click", () => {
-        only.classList.toggle("active");
+        // only.classList.toggle("active");
         afficheVue();
       });
       getId("cacheVue").addEventListener("click", () => {
