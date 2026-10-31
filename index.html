@@ -4374,14 +4374,13 @@
       .bordersList.active {
         opacity: 1;
       }
-      #mSilhouette {
-        display: flex;
+      .iconTRCadre {
+        display: none;
         padding: 0.25rem;
         box-sizing: border-box;
         justify-content: center;
         align-items: center;
         width: 100%;
-        opacity: 0;
         border-radius: 0.4rem;
         /* outline : 1px solid rgba(255,255,255,0.2); */
         background: rgba(255, 255, 255, 0.06);
@@ -4395,16 +4394,16 @@
           align-items: center;
           max-width: 100%;
         }
-        svg {
+        svg,img {
           height: auto;
           width: 100%;
         }
       }
-      #mSilhouette.active {
-        opacity: 1;
+      .iconTRCadre.active {
+        display : flex;
       }
 
-      #mSilhouette:active {
+      .iconTRCadre:active {
         transform: scale(0.92);
         filter: brightness(0.8);
       }
@@ -26042,7 +26041,8 @@
                 </g>
               </svg>
             </div>
-            <div id="mSilhouette"></div>
+            <div id="mBlason" class = "iconTRCadre"></div>
+            <div id="mSilhouette" class = "iconTRCadre"></div>
           </div>
 
           <div id="cadreDrapeau" style="margin-bottom: -3rem">
@@ -33548,6 +33548,15 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     <script src="listes.js"></script>
     <!--Script utile-->
     <script>
+      const D_stat = new Map() // stock les bonnes/mauvaises réponses 
+      D_stat.set("good",{modeChoix:{}, modeTrouver : {}, modeClasser :0})
+      D_stat.set("all",{modeChoix:{}, modeTrouver : {}, modeClasser :0})
+
+      ;[...getId('svgMonde').querySelectorAll("path")].forEach(p=>{
+        Object.keys(D_stat.get('good')).forEach(key=>D_stat.get('good')[key][p.id] = 0)
+        Object.keys(D_stat.get('all')).forEach(key=>D_stat.get('all')[key][p.id] = 0)
+      })
+
       const mformater = (n) =>
         new Intl.NumberFormat(currentIlg, {
           notation: "compact",
@@ -61783,7 +61792,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
             c4: { class: null, html: c4.innerHTML },
           });
           //Partie trouver
-        } else if (L_config.m === "modeTrouver") {
+        } else if (L_config.m === "modeTrouver") { //******************************
           document.getElementById("phonePlay").append(zBox);
           zBox.classList.add("modeTrouver");
 
@@ -61866,13 +61875,12 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
               current: "green",
             });
 
+
             const correct = currentCountry.id === idBonneReponse;
-
-            //correct? currentCountry.classList.add('good') : currentCountry.classList.add('bad');
-
+            D_stat.get("all").modeTrouver[idBonneReponse] +=1
             cadreNext.classList.add("visible");
-
             if (correct) {
+              D_stat.get("good").modeTrouver[currentCountry.id] +=1
               cadreNext.classList.add("good");
 
               spanNext.textContent =
@@ -62274,7 +62282,8 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           }
 
           const nbr = parseInt(document.getElementById(L_config.r).dataset.nbr);
-
+          D_stat.get("all").modeClasser +=1
+            
           if (nbrGood >= nbr / 2 && nbrGood != nbr) {
             cadreNext.className = "cadreNext visible almost";
             almostClasser.set(getQNumber(), true);
@@ -62291,6 +62300,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
             playSound(goodSound);
             hapticFeedback("success");
             fillQuetes();
+            D_stat.get("good").modeClasser +=1
             //abcdef
             spanNext.textContent = "✓ " + D_ilg.ordrecorrect[currentIlg];
             cadreNext.className = "cadreNext visible good";
@@ -62837,6 +62847,8 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
             return;
           }
           const correct = btn === cHasard;
+          D_stat.get("all").modeChoix[idBonneReponse] +=1
+          if(correct)D_stat.get('good').modeChoix[idProps_m.get(btn)]+=1
           fillQuetes(correct);
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
@@ -64927,6 +64939,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
       const itemBlason = document.querySelector(".itemBlason");
       const cadreContours = document.getElementById("cadreContours");
       const mSilhouette = document.getElementById("mSilhouette");
+      const mBlason = getId('mBlason')
       const openStat = document.getElementById("openStat");
       const crossStat = getId("crossStat");
       const cadreStat = getId("cadreStat");
@@ -64970,6 +64983,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
         drapeauCadre,
         mDrapeauCadre,
         mSilhouette,
+        mBlason,
         getId("boxImg").querySelector("img"),
       ].forEach((el) => {
         el.addEventListener("click", () => {
@@ -64988,6 +65002,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           newFlag.id = "newFlag";
           const box = el.getBoundingClientRect();
           newFlag.style.position = "fixed";
+          newFlag.style.background = "transparent";
           newFlag.style.pointerEvents = "none";
           newFlag.style.zIndex = "130";
           newFlag.style.top = box.top + "px";
@@ -93845,6 +93860,21 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           //     itemBlason.style.display = "none";
           //     // cadreBlason.querySelector("p").style.display = "flex";
           //   });
+
+          mBlason.innerHTML = ``;
+          mBlason.classList.remove("active");
+          const blason = createEl('img')
+          blason.addEventListener('load',()=>{
+          mBlason.classList.add("active");
+          })
+          blason.src = `blasons_c/${id.toLowerCase()}.svg`
+
+          blason.onerror = () =>{
+          mBlason.classList.remove("active");
+          }
+          mBlason.append(blason)
+        
+
 
           const loadingCadreContours = document.createElement("div");
           loadingCadreContours.className = "loadingCadre";
