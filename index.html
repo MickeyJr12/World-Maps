@@ -61891,13 +61891,13 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
                   )
                 ][currentIlg];
               fillPm(currentCountry.id, idBonneReponse);
-              playSound(goodSound);
+              playSound("good");
               hapticFeedback("success");
               fillQuetes();
               score += 1;
             } else {
               cadreNext.classList.add("bad");
-              playSound(badSound);
+              playSound("bad");
               hapticFeedback("error");
 
               spanNext.textContent = "✗ " + D_ilg.mauvaisereponse[currentIlg];
@@ -62289,15 +62289,15 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
             almostClasser.set(getQNumber(), true);
 
             spanNext.textContent = "~ Presque !";
-            playSound(badSound);
+            playSound("bad");
             hapticFeedback("error");
           } else if (nbrGood < nbr / 2) {
-            playSound(badSound);
+            playSound("bad");
             hapticFeedback("error");
             spanNext.textContent = "✗ " + D_ilg.mauvaisordre[currentIlg];
             cadreNext.className = "cadreNext visible bad";
           } else {
-            playSound(goodSound);
+            playSound("good");
             hapticFeedback("success");
             fillQuetes();
             D_stat.get("good").modeClasser +=1
@@ -62773,12 +62773,12 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
     <!--Script 4 choix-->
 
     <script>
-      const goodSound = new Audio("goodSound.mp3");
+       const goodSound = new Audio("goodSound.mp3");
       const badSound = new Audio("badSound.mp3");
       const funSound = new Audio("funSound.mp3");
       const sounds = [goodSound, badSound, funSound];
 
-      document.addEventListener(
+      /*document.addEventListener(
         "click",
         () => {
           goodSound.load();
@@ -62797,7 +62797,62 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           s.currentTime = 0;
         });
         song.play();
-      }
+      } */
+
+      const NativeAudio = window.Capacitor?.Plugins?.NativeAudio;
+const useNative = !!NativeAudio && Capacitor.isNativePlatform();
+
+const SONS = {
+  good: "goodSound.mp3",
+  bad: "badSound.mp3",
+  fun: "funSound.mp3",
+};
+
+const htmlSounds = {};
+if (!useNative) {
+  for (const [id, src] of Object.entries(SONS)) htmlSounds[id] = new Audio(src);
+  if (navigator.audioSession) navigator.audioSession.type = "ambient";
+  document.addEventListener(
+    "click",
+    () => {
+      Object.values(htmlSounds).forEach((s) => {
+        s.play().then(() => { s.pause(); s.currentTime = 0; }).catch(() => {});
+      });
+    },
+    { once: true },
+  );
+}
+
+async function initSons() {
+  if (!useNative) return;
+  await NativeAudio.configure({ focus: false }); // ne coupe pas la musique
+  for (const [id, src] of Object.entries(SONS)) {
+    try {
+      await NativeAudio.preload({
+        assetId: id,
+        assetPath: src, // à ajuster selon le README
+        audioChannelNum: 2,
+        isUrl: false,
+      });
+    } catch (e) {
+      console.error("preload", id, e);
+    }
+  }
+}
+initSons();
+
+function playSound(id) {
+  if (!sound) return;
+  if (useNative) {
+    NativeAudio.play({ assetId: id }).catch((e) => console.error("play", id, e));
+  } else {
+    const s = htmlSounds[id];
+    s.currentTime = 0;
+    s.play();
+  }
+}
+
+
       const bigWrapperClasser = document.getElementById("bigWrapperClasser");
       const wrapperClasser = document.getElementById("wrapperClasser");
       const titleModeClasser = document.getElementById("titleModeClasser");
@@ -62852,7 +62907,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           fillQuetes(correct);
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
-            playSound(goodSound);
+            playSound("good");
             hapticFeedback("success");
 
             cadreNext.classList.add("good");
@@ -62865,7 +62920,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
               ][currentIlg];
             score += 1;
           } else {
-            playSound(badSound);
+            playSound("bad");
             hapticFeedback("error");
             cadreNext.classList.add("bad");
             spanNext.textContent = "✗ " + D_ilg.mauvaisereponse[currentIlg];
@@ -63063,13 +63118,13 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
       let viewMaps = false;
 
       function zoomCountry(p_id) {
-        currentCountry = document.getElementById(p_id);
-        const svgMonde = document.getElementById("svgMonde");
+        currentCountry = pathsId_m.get(p_id);
+
         if (!viewSub) {
           svgMonde.appendChild(currentCountry);
         }
 
-        const el = getId(p_id);
+        const el = pathsId_m.get(p_id);
 
         let b;
         try {
@@ -64359,6 +64414,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
       ); // spread → vrai tableau
 
       const pathsId_m = new Map(paths.map((p) => [p.id, p]));
+      const M_halos = new Map() // en clef les id des paths, en valeur les halos correspondants
 
       const L_pTarget = [
         // Les paths décalés pour cliquer plus facilement (createCircle)
@@ -64738,6 +64794,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
         const parent = path.parentNode;
         const g = document.createElementNS(SVG_NS, "g");
         g.setAttribute("id", "halo" + path.id);
+        M_halos.set(path.id,g)
         g.setAttribute("class", "halo");
         if (path.hasAttribute("transform"))
           g.setAttribute("transform", path.getAttribute("transform"));
@@ -64792,48 +64849,15 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
       }
 
       function createCircle(pId) {
-        const c = document.getElementById(pId);
-        /*const bbox = c.getBBox();
-
-        // Convertir le centre local → coordonnées SVG racine
-        const pt = svg.createSVGPoint();
-        pt.x = bbox.x + bbox.width / 2;
-        pt.y = bbox.y + bbox.height / 2;
-
-        const ctm = c.getScreenCTM(); // local → écran
-        const toSVG = svg.getScreenCTM().inverse(); // écran → SVG racine
-
-        const svgPt = pt.matrixTransform(ctm).matrixTransform(toSVG);
-
-        let r =
-          (Math.max(bbox.width, bbox.height) / 2) *
-          (D_factorC[c.id] ? D_factorC[c.id] : 1.9);
-
-        r = Math.max(r, 0.4);
-
-        const circle = document.createElementNS(
-          "http://www.w3.org/2000/svg",
-          "circle",
-        );
-        circle.style.display = "none";
-        if (L_antilles.includes(pId)) {
-          circle.style.opacity = "0";
-        }
-        circle.setAttribute("cx", svgPt.x);
-        circle.setAttribute("cy", svgPt.y);
-        circle.setAttribute("r", r);
-        circle.setAttribute("fill", "transparent");
-        circle.setAttribute("stroke", "rgb(250, 160, 15)");
-        circle.setAttribute("stroke-width", "0.12"); */
-        // svg.appendChild(circle);
-
+        const c = pathsId_m.get(pId)      
         const circle = addIslandHalos(c, {
           margin: D_factorMargin[pId],
           stroke: "#ffd54a",
           strokeWidth: 0.8,
         });
+
         if (L_halos.includes(pId)) {
-          getId(pId).classList.add("addHalo");
+          pathsId_m.get(pId).classList.add("addHalo");
         }
 
         //
@@ -92981,9 +93005,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
                 pColor_m.get(country).current,
               )))
         ) {
-          // paths.forEach((p) => {
-          //   resetOverlay(p.id);
-          // });
+         
           if (currentCountry !== null) resetOverlay(currentCountry.id);
           currentCountry = null;
           //baba
@@ -93078,13 +93100,15 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
       function halosVanish(w) {
         // Pour faire apparaître/disparaitre les halos et les cibles
         if (w < 80) {
-          queryAll(".addHalo").forEach((el) => el.classList.add("strokeHide"));
-          queryAll(".halo").forEach((el) => (el.style.display = ""));
+          M_halos.forEach((val,key)=> {
+            if(L_halos.includes(key))pathsId_m.get(key).classList.add('strokeHide')
+            val.style.display = ""
+          })
         } else {
-          queryAll(".addHalo").forEach((el) =>
-            el.classList.remove("strokeHide"),
-          );
-          queryAll(".halo").forEach((el) => (el.style.display = "none"));
+          M_halos.forEach((val,key)=> {
+            if(L_halos.includes(key))pathsId_m.get(key).classList.remove('strokeHide')
+            val.style.display = "none"
+          })
         }
       }
       function setVB({ x, y, w, h }) {
@@ -93288,7 +93312,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           "http://www.w3.org/2000/svg",
           "path",
         );
-        const pathOriginal = document.getElementById(p_id);
+        const pathOriginal = getId(p_id);
         overlay.setAttribute("id", `${p_id}Overlay`);
         overlay.setAttribute("class", `pOverlay`);
         overlay.setAttribute("pointer-events", "none");
@@ -93358,10 +93382,10 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
         const overlay = overlay_m.get(p_id);
 
         //resetoverlay, colorcountry
-        if (!viewSub && getId(p_id)?.parentNode.id !== "svgMonde") {
+        if (!viewSub && pathsId_m.get(p_id) ?.parentNode.id !== "svgMonde") {
           return;
         }
-        if (!getId(p_id)) return;
+        if (!pathsId_m.get(p_id)) return;
         overlay.style.opacity = "0";
         setTimeout(() => {
           if (overlay.style.opacity === "0") {
@@ -93421,13 +93445,19 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
             const overlay = overlay_m.get(p.id);
             svg.append(overlay);
             darkenCountry(p.id, overlay);
-            L_halos.forEach((id) => svg.append(getId("halo" + id)));
+
+            L_halos.forEach((id) => {
+              svg.append(M_halos.get(id))
+              if(P_info[id].borders.includes(currentCountry.id))svg.append(pathsId_m.get(id))
+            })
+
           } else if (p !== currentCountryHover) {
             if (p !== currentCountry) {
               if (overlay_m.has(p.id)) {
                 resetOverlay(p.id);
               }
             }
+
 
             if (currentCountry === null) {
               resetOverlay(p.id);
@@ -93714,7 +93744,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
         txtOrgaD.textContent = txt;
       }
       function fillCadreOrga(p_id) {
-        const p = document.getElementById(p_id);
+        const p = pathsId_m.get(p_id);
 
         let L_orga = [
           "onu",
@@ -94675,51 +94705,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
       const MIN_SIZE = 30; // zoom max : pas plus petit que ça
       const MAX_SIZE = initialViewBox[2]; // zoom min : pas plus grand que le SVG initial
 
-      /* svgMonde.addEventListener(
-        "wheel",
-        (e) => {
-          e.preventDefault();
-
-          const vb = getVB();
-          const rect = svg.getBoundingClientRect();
-
-          // Position du curseur en unités viewBox
-          const mouseVBx = vb.x + (e.clientX - rect.left) * (vb.w / rect.width);
-          const mouseVBy = vb.y + (e.clientY - rect.top) * (vb.h / rect.height);
-
-          const zoomFactor = e.deltaY < 0 ? 1 / 1.1 : 1.1; // molette haut = zoom in = viewBox plus petit
-
-          const MIN_WIDTH = initialViewBox[2] / zoomFactorSvg;
-          const MIN_HEIGHT = initialViewBox[3] / zoomFactorSvg;
-
-          const MAX_WIDTH = initialViewBox[2];
-          const MAX_HEIGHT = initialViewBox[3];
-          
-          const newW = Math.min(
-            Math.max(vb.w * zoomFactor, MIN_WIDTH),
-            MAX_WIDTH,
-          );
-
-          const newH = Math.min(
-            Math.max(vb.h * zoomFactor, MIN_HEIGHT),
-            MAX_HEIGHT,
-          );
-
-          // Garder le point sous le curseur fixe
-          const newX = mouseVBx - (mouseVBx - vb.x) * (newW / vb.w);
-          const newY = mouseVBy - (mouseVBy - vb.y) * (newH / vb.h);
-
-          if (newW <= 550) {
-            L_elCircles.forEach((c) => (c.style.display = "flex"));
-          } else {
-            L_elCircles.forEach((c) => (c.style.display = "none"));
-          }
-
-          setVB({ x: newX, y: newY, w: newW, h: newH });
-          halosVanish(newW)
-        },
-        { passive: false },
-      ); */
+      
 
       svgMonde.addEventListener(
         "wheel",
