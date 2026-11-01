@@ -8042,6 +8042,7 @@
 
       #cadreMenuZ {
         display: flex;
+        box-shadow : var(--boxShadow);
         flex-shrink: 0;
         margin-top: 0.4rem;
       }
@@ -11292,6 +11293,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap : 0.25rem;
         width: auto;
         padding: 0.5rem;
         top: calc(1rem + env(safe-area-inset-top));
@@ -11300,6 +11302,9 @@
         background: rgba(255, 255, 255, 0.08);
         outline: 1px solid rgba(255, 255, 255, 0.25);
         color: rgba(255, 255, 255, 0.65);
+        svg {
+          height : 1.2rem;
+        }
       }
 
       /* Fin CSS pm */
@@ -21222,7 +21227,7 @@
           >
 
           <div class="btnPm" id="btnMenu">
-            <svg
+           <!--  <svg
               style="fill: #94a3b8"
               xmlns="http://www.w3.org/2000/svg"
               id="Layer_1"
@@ -21234,6 +21239,11 @@
                 fill="#94a3b8"
               />
             </svg>
+ -->
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.77051 4.4777C10.9622 3.15367 13.0378 3.15367 14.2295 4.4777L18.7354 9.48356C20.2381 11.1532 21.5955 13.0258 21.8867 15.2531C21.9562 15.7851 22 16.371 22 17.0002C22 18.297 21.8128 19.4069 21.6006 20.2492C21.323 21.3511 20.2818 22.0002 19.1455 22.0002H15V17.0002C15 15.3433 13.6569 14.0002 12 14.0002C10.3431 14.0002 9 15.3433 9 17.0002V22.0002H4.85449C3.71818 22.0002 2.677 21.3511 2.39941 20.2492C2.18723 19.4069 2.00003 18.297 2 17.0002C2 16.371 2.04376 15.7851 2.11328 15.2531C2.40448 13.0258 3.76194 11.1532 5.26465 9.48356L9.77051 4.4777Z" fill="#94a3b8"/>
+</svg>
+
             <span data-ilg="menu">Menu</span>
             <!-- <svg
             style="opacity: 0"
@@ -26041,7 +26051,6 @@
                 </g>
               </svg>
             </div>
-            <div id="mBlason" class = "iconTRCadre"></div>
             <div id="mSilhouette" class = "iconTRCadre"></div>
           </div>
 
@@ -64963,7 +64972,6 @@ function playSound(id) {
       const itemBlason = document.querySelector(".itemBlason");
       const cadreContours = document.getElementById("cadreContours");
       const mSilhouette = document.getElementById("mSilhouette");
-      const mBlason = getId('mBlason')
       const openStat = document.getElementById("openStat");
       const crossStat = getId("crossStat");
       const cadreStat = getId("cadreStat");
@@ -65007,7 +65015,6 @@ function playSound(id) {
         drapeauCadre,
         mDrapeauCadre,
         mSilhouette,
-        mBlason,
         getId("boxImg").querySelector("img"),
       ].forEach((el) => {
         el.addEventListener("click", () => {
@@ -93861,23 +93868,6 @@ function playSound(id) {
         // }
 
         if (!viewSub) {
-        
-
-          mBlason.innerHTML = ``;
-          mBlason.classList.remove("active");
-          const blason = createEl('img')
-          blason.addEventListener('load',()=>{
-          mBlason.classList.add("active");
-          })
-          blason.src = `blasons_c/${id.toLowerCase()}.svg`
-
-          blason.onerror = () =>{
-          mBlason.classList.remove("active");
-          }
-          mBlason.append(blason)
-        
-
-
           const loadingCadreContours = document.createElement("div");
           loadingCadreContours.className = "loadingCadre";
           loadingCadreContours.style.height = "8rem";
@@ -99053,6 +99043,7 @@ function playSound(id) {
         if (!window.Capacitor?.isNativePlatform()) return;
         await InAppReview.requestReview();
       }
+
     </script>
 
     <script src="ads.js"></script>
