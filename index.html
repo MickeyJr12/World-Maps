@@ -33564,9 +33564,29 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       D_stat.set("all",{modeChoix:{}, modeTrouver : {}, modeClasser :0})
 
       ;[...getId('svgMonde').querySelectorAll("path")].forEach(p=>{
-        Object.keys(D_stat.get('good')).forEach(key=>D_stat.get('good')[key][p.id] = 0)
-        Object.keys(D_stat.get('all')).forEach(key=>D_stat.get('all')[key][p.id] = 0)
+
+        Object.keys(D_stat.get('good')).filter(clef=>clef!=="modeClasser").forEach(key=>D_stat.get('good')[key][p.id] = {"mapsR":0,"drapeauR" : 0, "nomR": 0, "capitaleR" : 0, "contourR" : 0, "superficieQ": 0, "populationQ": 0})
+        Object.keys(D_stat.get('all')).filter(clef=>clef!=="modeClasser").forEach(key=>D_stat.get('all')[key][p.id] = {"mapsR":0,"drapeauR" : 0, "nomR": 0, "capitaleR" : 0, "contourR" : 0, "superficieQ": 0, "populationQ": 0})
       })
+
+      let maxStreakGood = 0; // Maximum de bonnes réponses d'affilés tout mode confondu ( ne se change pas si on passe d'un mode à l'autre)
+      let crtStreakGood = 0; // Série en cours 
+      let D_maxStreak = {modeChoix:0, modeTrouver : 0, modeClasser :0}; // Maximum de bonnes réponses d'affilé, par mode
+      let D_crtStreak = {modeChoix:0, modeTrouver : 0, modeClasser :0};  // Série de bonnes réponses en cours, par mode
+
+      function majStreakGood(TF,mode){
+        if(TF){
+          crtStreakGood += 1
+          D_crtStreak[mode] +=1
+          if (crtStreakGood > maxStreakGood ){maxStreakGood = crtStreakGood }
+          if (D_crtStreak[mode] > D_maxStreak[mode] ){D_maxStreak[mode] = D_crtStreak[mode] }
+        }
+        else {
+          crtStreakGood = 0
+          D_crtStreak[mode] = 0
+        }
+
+      }
 
       const mformater = (n) =>
         new Intl.NumberFormat(currentIlg, {
@@ -61894,10 +61914,11 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
 
 
             const correct = currentCountry.id === idBonneReponse;
-            D_stat.get("all").modeTrouver[idBonneReponse] +=1
+            majStreakGood(correct, L_config.m)
+            D_stat.get("all").modeTrouver[idBonneReponse][L_config.r] +=1
             cadreNext.classList.add("visible");
             if (correct) {
-              D_stat.get("good").modeTrouver[currentCountry.id] +=1
+              D_stat.get("good").modeTrouver[currentCountry.id][L_config.r] +=1
               cadreNext.classList.add("good");
 
               spanNext.textContent =
@@ -62304,16 +62325,18 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           if (nbrGood >= nbr / 2 && nbrGood != nbr) {
             cadreNext.className = "cadreNext visible almost";
             almostClasser.set(getQNumber(), true);
-
             spanNext.textContent = "~ Presque !";
+            majStreakGood(false,L_config.m)
             playSound("bad");
             hapticFeedback("error");
           } else if (nbrGood < nbr / 2) {
+            majStreakGood(false,L_config.m)
             playSound("bad");
             hapticFeedback("error");
             spanNext.textContent = "✗ " + D_ilg.mauvaisordre[currentIlg];
             cadreNext.className = "cadreNext visible bad";
           } else {
+            majStreakGood(true,L_config.m)
             playSound("good");
             hapticFeedback("success");
             fillQuetes();
@@ -62919,8 +62942,9 @@ function playSound(id) {
             return;
           }
           const correct = btn === cHasard;
-          D_stat.get("all").modeChoix[idBonneReponse] +=1
-          if(correct)D_stat.get('good').modeChoix[idProps_m.get(btn)]+=1
+          majStreakGood(correct,L_config.m)
+          D_stat.get("all").modeChoix[idBonneReponse][L_config.r] +=1
+          if(correct)D_stat.get('good').modeChoix[idProps_m.get(btn)][L_config.r]+=1
           fillQuetes(correct);
           cadreNext.classList.remove("good", "bad", "none", "visible");
           if (correct) {
@@ -65019,7 +65043,7 @@ function playSound(id) {
 
       let tfNewEl = false;
 
-      [
+      ;[
         drapeauCadre,
         mDrapeauCadre,
         mSilhouette,
@@ -65114,6 +65138,8 @@ function playSound(id) {
               newFlag.style.padding = "0.6rem";
             }
           });
+
+
           document.addEventListener(
             "click",
             (e) => {
@@ -65492,6 +65518,7 @@ function playSound(id) {
       let startMoveStat;
 
       cadreStat.addEventListener("pointerdown", (e) => {
+        if(tfNewEl)return
         cadreStat.setPointerCapture(e.pointerId);
         startMoveStat = cadreStat.getBoundingClientRect().top;
         cadreStat.style.top = startMoveStat + "px";
@@ -96004,7 +96031,7 @@ function playSound(id) {
       // );
 
       svgMonde.addEventListener("pointerdown", (e) => {
-        if (e.pointerType === "mouse") return; // garde ton drag souris existant
+        if (e.pointerType === "mouse" || tfNewEl) return; // garde ton drag souris existant
         cancelAnimationFrame(inertiaFrame);
         pointers.set(e.pointerId, {
           x: e.clientX,
@@ -98352,7 +98379,7 @@ function playSound(id) {
           track,
           L_progressQ,
           L_claimedQ,
-          defisQSelected: defisQSelected.map((q) => q.id),
+          defisQSelected:  defisQSelected.map((q) => q.id),
           lastQuestGenDate: lastQuestGenDate,
           streak,
           lastStreakDate,
@@ -98367,6 +98394,11 @@ function playSound(id) {
           oneTimeMessage,
           currentIlg,
           currentUnity,
+          D_stat: Object.fromEntries(D_stat),
+          maxStreakGood,
+          crtStreakGood,
+          D_maxStreak,
+          D_crtStreak,
         };
         // localStorage.setItem(SAVE_KEY, JSON.stringify(data)); // Ancienne version stockage
         await AppStorage.set(SAVE_KEY, JSON.stringify(data));
@@ -98400,7 +98432,6 @@ function playSound(id) {
           oneTimeMessage = data.oneTimeMessage ?? false;
           currentIlg = data.currentIlg ?? "fr";
           currentUnity = data.currentUnity ?? "km²";
-
           currentIlg === "fr"
             ? (buildContinents(),
               buildOrganisations(),
@@ -98408,6 +98439,14 @@ function playSound(id) {
               buildMembers(),
               fillItemsChoiceZ(L_regions))
             : query(`[data-choiceilg = "${currentIlg}"]`).click();
+            if (data.D_stat) {
+            D_stat.clear();
+            for (const [k, v] of Object.entries(data.D_stat)) D_stat.set(k, v);
+            maxStreakGood = data.maxStreakGood ?? 0;
+            crtStreakGood = data.crtStreakGood ?? 0;
+            Object.assign(D_maxStreak, data.D_maxStreak);
+            Object.assign(D_crtStreak, data.D_crtStreak);
+          }
           // Si on chnage de langue, chageIlg se chargera des fill
 
           // nbrReward =0 ;
