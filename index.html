@@ -65002,8 +65002,8 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           newFlag.id = "newFlag";
           const box = el.getBoundingClientRect();
           newFlag.style.position = "fixed";
-          newFlag.style.background = "transparent";
           newFlag.style.pointerEvents = "none";
+          newFlag.style.background = "transparent"
           newFlag.style.zIndex = "130";
           newFlag.style.top = box.top + "px";
           newFlag.style.left = box.left + "px";
@@ -65021,7 +65021,6 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
           const svgEl = newFlag.querySelector("svg");
           el.style.transition = "none";
           if (svgEl) {
-            // newFlag.style.background = "rgba(255,255,255,0.04)"
             newFlag.style.borderRadius = "";
             newFlag.style.boxSizing = "border-box";
             newFlag.style.padding = "0.25rem";
@@ -65093,6 +65092,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
               newFlag.style.top = newBox.top + "px";
               newFlag.style.left = newBox.left + "px";
               newFlag.style.width = newBox.width + "px";
+              newFlag.style.background = "";
               newFlag.style.borderRadius = [
                 drapeauCadre,
                 mDrapeauCadre,
@@ -65102,7 +65102,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
               if (svgEl) {
                 newFlag.style.borderRadius = "0.4rem";
                 newFlag.style.padding = "0.25rem";
-                newFlag.style.background = "rgba(255,255,255,0.06)";
+                // newFlag.style.background = "rgba(255,255,255,0.06)";
               }
               setTimeout(() => {
                 el.style.opacity = "";
@@ -93831,35 +93831,7 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
         // }
 
         if (!viewSub) {
-          // const loadingCadreBlason = document.createElement("div");
-          // loadingCadreBlason.className = "loadingCadre";
-          // loadingCadreBlason.style.height = "8.2rem";
-          // loadingCadreBlason.style.maxWidth = "none";
-          // loadingCadreBlason.style.width = "7.2rem";
-          // loadingCadreBlason.style.display = "flex";
-          // // cadreBlason.append(loadingCadreBlason);
-          // itemBlason.style.display = "none";
-
-          // fetch(!viewSub ? (D_blason[id] ?? "") : "")
-          //   .then((r) => {
-          //     if (!r.ok) throw new Error();
-          //     return r.text();
-          //   })
-          //   .then((svg) => {
-          //     D_blason[id]
-          //       ? ((cadreBlason.querySelector("p").style.display = "none"),
-          //         (itemBlason.style.display = ""))
-          //       : ((cadreBlason.querySelector("p").style.display = "flex"),
-          //         (itemBlason.style.display = "none"));
-          //     loadingCadreBlason.remove();
-          //     itemBlason.src = ``;
-          //     itemBlason.src = D_blason[id];
-          //   })
-          //   .catch(() => {
-          //     loadingCadreBlason.remove();
-          //     itemBlason.style.display = "none";
-          //     // cadreBlason.querySelector("p").style.display = "flex";
-          //   });
+        
 
           mBlason.innerHTML = ``;
           mBlason.classList.remove("active");
