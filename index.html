@@ -3266,10 +3266,9 @@
         align-self : center;
         align-items: center;
         height: auto;
+        box-sizing : border-box;
         margin-top: -0.25rem;
-        padding: 0.2rem;
-        width: calc(100% - 1.5rem);
-        max-width: calc(100% - 1.5rem);
+        width: 100%;
 
       }
       #topCourbe {
@@ -33799,12 +33798,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         );
 
         const NS = "http://www.w3.org/2000/svg";
-        const W = 340,
-          H = 220,
-          ML = 46,
-          MR = 14,
-          MT = 14,
-          MB = 26;
+        const W = 340, H = 220, MR = 10, MT = 14, MB = 26;
+        let ML = 46; // sera recalculé juste après
         const n = annees.length;
         /* const x0 = annees[0],
           x1 = annees[n - 1]; */
@@ -33851,6 +33846,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           suffixe +
           o.unite;
         const formatAxe = o.formatAxe || formatAuto;
+
+        // Mesure des labels pour que la marge gauche s'adapte
+        const ctx = document.createElement("canvas").getContext("2d");
+        ctx.font = `11px ${getComputedStyle(el).fontFamily}`;
+        const largeurMax = Math.max(
+          ...Array.from({ length: nbGrad + 1 }, (_, k) =>
+            ctx.measureText(formatAxe(ymin + k * pas)).width,
+          ),
+        );
+        ML = Math.ceil(largeurMax) + 8 + 2; // 8 = écart au trait, 2 = petit jeu
 
         const X = (a) => ML + ((a - x0) / (x1 - x0)) * (W - ML - MR);
         const Y = (v) => MT + (1 - (v - ymin) / (ymax - ymin)) * (H - MT - MB);
