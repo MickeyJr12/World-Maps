@@ -74,6 +74,8 @@
           236,
           0.674
         ); /* Couleur des éléments dans le mode trouver, utilisé dans viewSub pour zBox*/
+
+        --areaB : env(safe-area-inset-bottom)
       }
 
       .smoothScroll {
@@ -1587,8 +1589,8 @@
         touch-action: pan-y; /* le scroll est vertical, les taps passent */
         overscroll-behavior: contain; /* évite la propagation au parent */
         display: none;
-        position: relative;
         z-index: 1; /* sous les overlays */
+        position: relative;
         justify-content: center;
         align-items: center;
         scrollbar-width: thin;
@@ -1598,6 +1600,7 @@
         width: 100%;
         max-width: 100%; /* ne dépasse jamais le cadre parent */
         box-sizing: border-box;
+        padding-bottom : calc(var(--areaB) + 0.4rem);
 
         --fade: 0.6rem; /* hauteur du dégradé */
         -webkit-mask-image: linear-gradient(
@@ -96225,8 +96228,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const footerCadreName = document.getElementById("footerCadreName");
       setTimeout(() => {
         contentC.style.paddingBottom =
-          footerCadreName.getBoundingClientRect().height + "px";
-        contentFlagS.style.paddingBottom =
           footerCadreName.getBoundingClientRect().height + "px";
       }, 20);
 
