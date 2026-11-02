@@ -4730,6 +4730,7 @@
         filter: brightness(0.8);
       }
       .titleCadre {
+        max-width : calc(100% - 2rem);
         text-align: center;
         flex-wrap: nowrap;
         font-weight: 720;
@@ -34137,7 +34138,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
     return null;
   }
 }
-
+// "true" car sinon, ça compte les nbrReward pour fillQuetes dans loadProgress, mais aussi dans filcadreRDQ_LRD
 loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined));
 
         txtProgLvl.textContent = nbrProgLvl.toLocaleString(
@@ -59345,6 +59346,8 @@ loadQuestSelection().then((selection) => fillCadreRDQ_LRD(selection ?? undefined
       }
 
       function fillCadreRDQ_LRD(forcedSelection = null) {
+        nbrReward = 0; // Sinon ça réinitialise pas circleNotif, et ça rajoute 
+
         const container = document.getElementById("cadreRDQ");
         container.innerHTML = ``;
 
@@ -98348,8 +98351,8 @@ function playSound(id) {
       }
 
       // Vider le cache
-      // localStorage.removeItem("geoquiz_progress_v1");
-      // location.reload();
+      //  localStorage.removeItem("geoquiz_progress_v1");
+      //  location.reload();
       // Script localstorage
 
       const AppStorage = {
