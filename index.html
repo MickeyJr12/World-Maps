@@ -1879,12 +1879,13 @@
 
       #cadreClasser {
         display: flex;
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-        bottom: calc(100% + 0.8rem);
         flex-direction: column;
+        position: absolute;
+        pointer-events: none;
+        opacity: 0;
+        bottom: calc(100% + 0.8rem);
         min-width: 10rem;
+        width : max-content;
         height: auto;
         border-radius: 5px;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1926,6 +1927,9 @@
           opacity: 0.6;
         }
       }
+      .itemClasser:active {
+        background: rgba(7, 7, 55, 0.5);
+      }
       .itemClasser.active {
         color: white;
 
@@ -1943,9 +1947,7 @@
         transition: opacity 0.2s ease;
       }
 
-      .itemClasser:active {
-        background: rgba(7, 7, 55, 0.5);
-      }
+      
 
       .ligneInGrid {
         grid-column: 1 / -1; /* prend toutes les colonnes */
