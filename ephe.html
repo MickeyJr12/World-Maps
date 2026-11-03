@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Globus Quiz — Quiz du jour</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap');
+
+  :root {
+    --blue: #1c3fe8; --blue-dark: #1230cc; --navy: #2d3a6e;
+    --red: #c21d1d; --green: #189a3b; --orange: #ef9340;
+    --bg-map: #e8e9f8; --text: #1d2440; --muted: #6b7394;
+    --ok: #27a85a; --ko: #d93838;
+    --grad: linear-gradient(165deg, #3ad2f6 0%, #1b8ae6 42%, #1646cc 100%);
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0; min-height: 100vh; background: #d9dbe6; display: grid; place-items: center;
+    font-family: "Fredoka", ui-rounded, "Segoe UI", system-ui, sans-serif; color: var(--text);
+  }
+  button { font: inherit; cursor: pointer; border: 0; }
+
+  .phone {
+    position: relative; width: min(100vw, 420px); height: min(100vh, 760px);
+    background: #fff; overflow: hidden; box-shadow: 0 20px 60px #0004;
+  }
+  @media (min-width: 440px) and (min-height: 790px) { .phone { border-radius: 28px; } }
+  .screen { position: absolute; inset: 0; display: flex; flex-direction: column; }
+
+  /* ================= ACCUEIL ================= */
+  .header {
+    position: relative; background: linear-gradient(180deg, var(--blue), var(--blue-dark));
+    color: #fff; text-align: center; padding: 70px 16px 60px;
+  }
+  .header .wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 48px; display: block; }
+  .logo { font-size: 2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 2px; }
+  .logo .g { display: inline-grid; place-items: center; width: 48px; height: 48px; border: 3px solid #fff; border-radius: 50%; font-size: 1.6rem; position: relative; }
+  .logo .g::after { content: ""; position: absolute; inset: 8px; border-radius: 50%; border: 2px solid #ffffff88; transform: rotate(-25deg) scaleX(.55); }
+  .tagline { font-size: .95rem; color: #d7defd; margin-top: 10px; font-weight: 600; }
+  .pill {
+    position: absolute; top: 14px; display: inline-flex; align-items: center; gap: 6px;
+    background: var(--navy); color: #fff; border-radius: 12px; padding: 8px 12px;
+    font-weight: 600; font-size: .95rem; box-shadow: 0 4px 12px #0003;
+  }
+  .pill.flame { right: 14px; }
+  .pill.daily { left: 14px; transition: transform .2s; }
+  .pill.daily:active { transform: scale(.95); }
+  .pill.daily .dot { position: absolute; top: -4px; right: -4px; width: 12px; height: 12px; border-radius: 50%; background: #ff4747; border: 2px solid var(--blue); animation: ping 1.6s ease-out infinite; }
+  .pill.daily.done { background: #1f8f4a; }
+  @keyframes ping { 0% { box-shadow: 0 0 0 0 #ff474799; } 100% { box-shadow: 0 0 0 10px #ff474700; } }
+
+  .home-body { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 10px 40px 90px; }
+  .map-bg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .menu-btn {
+    position: relative; width: 100%; max-width: 250px; padding: 14px 20px; border-radius: 999px; color: #fff;
+    font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 14px;
+    box-shadow: 0 6px 0 #0002, 0 8px 18px #0003; transition: transform .12s, box-shadow .12s;
+  }
+  .menu-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #0002; }
+  .menu-btn.red { background: var(--red); } .menu-btn.blue { background: #1a3fd0; } .menu-btn.green { background: var(--green); }
+  .menu-btn svg { width: 30px; height: 30px; fill: #fff; }
+  .bottom-bar {
+    position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); width: 78%; background: var(--orange);
+    border-radius: 14px; padding: 10px 0; display: flex; justify-content: space-around; align-items: center; box-shadow: 0 6px 14px #0003;
+  }
+  .bottom-bar button { background: none; color: #fff; font-size: 1.4rem; display: flex; align-items: center; gap: 6px; }
+  .bottom-bar .sep { width: 1px; height: 26px; background: #ffffff77; }
+  .bottom-bar small { font-size: .85rem; font-weight: 700; }
+
+  /* ================= COMMUN ÉCRANS BLEUS ================= */
+  .blue-screen { background: var(--grad); color: #fff; }
+  .qtop { display: flex; justify-content: space-between; align-items: center; padding: 24px 24px 0; }
+  .icon-btn { width: 46px; height: 46px; border-radius: 50%; background: transparent; color: #fff; display: grid; place-items: center; transition: transform .15s, background .15s; }
+  .icon-btn:active { transform: scale(.9); }
+  .icon-btn.round { background: #ffffff2e; }
+  .icon-btn:disabled { opacity: .35; cursor: default; }
+  .pause-ico { display: flex; gap: 6px; }
+  .pause-ico i { width: 8px; height: 30px; background: #fff; border-radius: 4px; display: block; }
+  .flame-pill { background: #ffffff2e; border-radius: 12px; padding: 8px 12px; font-weight: 600; }
+
+  /* ================= INTRO ================= */
+  .intro-body { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 10px 28px 28px; overflow-y: auto; }
+  .globe { font-size: 5rem; line-height: 1; margin-top: 8px; animation: float 3s ease-in-out infinite; filter: drop-shadow(0 14px 18px #0005); }
+  @keyframes float { 50% { transform: translateY(-10px) rotate(-6deg); } }
+  .kicker { letter-spacing: .22em; font-size: .78rem; font-weight: 700; color: #d8f3ff; margin-top: 14px; }
+  .intro-body h2 { margin: 4px 0 2px; font-size: 2.3rem; font-weight: 700; letter-spacing: -.02em; }
+  .intro-date { color: #d8f3ff; font-weight: 600; text-transform: capitalize; margin: 0 0 16px; }
+  .program { width: 100%; background: #ffffff1c; border: 1.5px solid #ffffff33; border-radius: 18px; padding: 10px 14px; text-align: left; }
+  .program div { display: flex; align-items: center; gap: 12px; padding: 7px 0; font-weight: 600; border-bottom: 1px solid #ffffff22; }
+  .program div:last-child { border: 0; }
+  .program .ic { width: 34px; height: 34px; border-radius: 10px; background: #ffffff2e; display: grid; place-items: center; font-size: 1.1rem; }
+  .program small { margin-left: auto; color: #d8f3ff; font-weight: 500; }
+  .streak-msg { margin: 14px 0 0; background: #ff9a3c; color: #4a2300; border-radius: 12px; padding: 10px 14px; font-weight: 600; font-size: .95rem; width: 100%; }
+  .streak-msg.calm { background: #ffffff2e; color: #fff; }
+  .cta {
+    width: 100%; margin-top: 18px; padding: 16px; border-radius: 999px; font-size: 1.35rem; font-weight: 700;
+    background: #fff; color: #1646cc; box-shadow: 0 6px 0 #0b2a8a66, 0 0 0 0 #ffffff80; animation: pulse 1.8s infinite; transition: transform .1s;
+  }
+  .cta:active { transform: translateY(4px); animation: none; }
+  @keyframes pulse { 0% { box-shadow: 0 6px 0 #0b2a8a66, 0 0 0 0 #ffffff80; } 100% { box-shadow: 0 6px 0 #0b2a8a66, 0 0 0 18px #ffffff00; } }
+  .cta.ghost { background: #ffffff2e; color: #fff; animation: none; box-shadow: none; }
+  .intro-note { color: #d8f3ff; font-size: .8rem; margin: 12px 0 0; font-weight: 500; }
+  .intro-grid { font-size: 2rem; letter-spacing: 4px; margin: 10px 0 0; }
+
+  /* ================= QUIZ ================= */
+  .quiz-upper { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .prompt-card {
+    width: 220px; min-height: 140px; margin: 22px auto 0; background: #fff; border-radius: 12px; padding: 12px;
+    display: grid; place-items: center; text-align: center; color: var(--navy); font-size: 1.5rem; font-weight: 700;
+    box-shadow: 0 12px 30px #0005; overflow: hidden; animation: pop .35s cubic-bezier(.34,1.56,.64,1);
+  }
+  @keyframes pop { from { transform: scale(.6); opacity: 0; } }
+  .prompt-card img { width: 100%; display: block; border-radius: 8px; }
+  .prompt-card .sub { font-size: .85rem; font-weight: 600; color: var(--muted); margin-top: 4px; }
+  .qlabel { margin-top: auto; text-align: center; letter-spacing: .14em; font-weight: 600; font-size: 1.05rem; text-transform: uppercase; }
+  .timer-row { display: flex; align-items: center; gap: 14px; padding: 12px 26px 20px; font-weight: 700; font-size: 1.05rem; }
+  .timer-row svg { width: 24px; height: 24px; }
+  .bar { flex: 1; height: 8px; background: #ffffff44; border-radius: 8px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 100%; background: #fff; border-radius: 8px; transition: width 1s linear; }
+  .bar i.hurry { background: #ffb13c; }
+  .answers-panel { background: #1839bb; padding: 18px 16px 22px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .ans {
+    min-height: 88px; padding: 10px; border-radius: 14px; background: #ffffff14; border: 1.5px solid #ffffff33;
+    color: #fff; font-weight: 700; font-size: 1.05rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    transition: transform .1s, background .2s;
+  }
+  .ans:not(:disabled):active { transform: scale(.96); }
+  .ans.ok { background: var(--ok); border-color: #7ef0a8; } .ans.ko { background: var(--ko); border-color: #ff8f8f; }
+  .ans.off { opacity: .22; }
+  .ans small { font-size: .78rem; font-weight: 500; color: #ffffffcc; }
+  .ans:disabled { cursor: default; }
+
+  .slots { display: grid; gap: 8px; }
+  .slot { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 8px 12px; border-radius: 12px; border: 1.5px dashed #ffffff55; color: #ffffffaa; font-weight: 600; }
+  .slot.filled { border-style: solid; background: #ffffff14; color: #fff; }
+  .slot .n { width: 26px; height: 26px; border-radius: 50%; background: #fff; color: #1646cc; display: grid; place-items: center; font-size: .8rem; flex-shrink: 0; }
+  .slot.ok { background: var(--ok); border-color: #7ef0a8; } .slot.ko { background: var(--ko); border-color: #ff8f8f; }
+  .pool { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .chip { background: #fff; color: #1646cc; border-radius: 999px; padding: 9px 14px; font-weight: 700; }
+  .chip:disabled { opacity: .3; }
+  .rank-actions { display: flex; gap: 8px; margin-top: 12px; }
+  .pbtn { flex: 1; padding: 12px; border-radius: 999px; font-weight: 700; background: #ffffff2e; color: #fff; }
+  .pbtn.main { background: #fff; color: #1646cc; }
+  .pbtn:disabled { opacity: .4; cursor: default; }
+  .fb { margin-top: 14px; padding: 12px 14px; border-radius: 12px; font-weight: 600; font-size: .95rem; line-height: 1.4; }
+  .fb.ok { background: #27a85a; } .fb.ko { background: #d93838; }
+  .next { width: 100%; margin-top: 12px; padding: 14px; border-radius: 999px; background: #fff; color: #1646cc; font-size: 1.1rem; font-weight: 700; }
+
+  /* ================= RÉSULTAT ================= */
+  .result { flex: 1; overflow-y: auto; padding: 24px 20px; text-align: center; }
+  .result h2 { margin: 6px 0; font-size: 1.7rem; }
+  .score-ring { width: 130px; height: 130px; border-radius: 50%; margin: 10px auto; display: grid; place-items: center; position: relative; background: conic-gradient(var(--ok) calc(var(--p) * 1%), #e5e7f3 0); }
+  .score-ring::before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: #fff; }
+  .score-ring b { position: relative; font-size: 2rem; }
+  .grid-emoji { font-size: 1.8rem; letter-spacing: 4px; margin: 8px 0; }
+  .rewards { display: flex; gap: 10px; justify-content: center; margin: 14px 0; }
+  .reward { background: var(--bg-map); border-radius: 14px; padding: 10px 14px; min-width: 90px; }
+  .reward b { display: block; font-size: 1.3rem; } .reward small { color: var(--muted); font-weight: 600; }
+  .btn { display: block; width: 100%; padding: 14px; border-radius: 999px; font-size: 1.1rem; font-weight: 700; color: #fff; background: var(--blue); box-shadow: 0 5px 0 #0e27a8; margin-top: 14px; }
+  .btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #0e27a8; }
+  .btn.ghost { background: var(--bg-map); color: var(--navy); box-shadow: 0 5px 0 #c9ccea; }
+  .btn.green { background: var(--green); box-shadow: 0 5px 0 #106b28; }
+  .countdown { color: var(--muted); font-weight: 600; margin-top: 8px; }
+  .result-head { background: var(--grad); color: #fff; padding: 18px 16px; display: flex; align-items: center; gap: 10px; }
+  .result-head b { font-size: 1.15rem; }
+
+  /* ================= PAUSE / TOAST ================= */
+  .overlay { position: absolute; inset: 0; background: #0a1a5ee0; backdrop-filter: blur(8px); z-index: 10; display: grid; place-items: center; padding: 28px; color: #fff; text-align: center; }
+  .overlay .pause-ico { justify-content: center; margin-bottom: 10px; } .overlay .pause-ico i { height: 44px; width: 12px; }
+  .overlay h2 { margin: 0 0 6px; font-size: 2rem; } .overlay p { color: #d8f3ff; margin: 0 0 20px; }
+  .overlay .cta { animation: none; }
+  .toast { position: absolute; left: 50%; bottom: 90px; transform: translateX(-50%); background: var(--navy); color: #fff; padding: 10px 16px; border-radius: 999px; font-weight: 600; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 20; }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<div class="phone">
+
+  <!-- ================= ACCUEIL ================= -->
+  <div class="screen" id="home">
+    <div class="header">
+      <button class="pill daily" id="dailyBtn">📅 <span id="dailyLabel">Quiz du jour</span><i class="dot" id="dailyDot"></i></button>
+      <div class="pill flame">🔥 <span id="streakHome">0</span></div>
+      <div class="logo"><span class="g">G</span>lobus Quiz</div>
+      <div class="tagline">Teste tes connaissances en géographie</div>
+      <svg class="wave" viewBox="0 0 420 48" preserveAspectRatio="none"><path d="M0 30 C 80 0, 160 45, 240 25 S 380 10, 420 32 L420 48 L0 48 Z" fill="#fff"/></svg>
+    </div>
+    <div class="home-body">
+      <svg class="map-bg" viewBox="0 0 420 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="#e8e9f8">
+        <path d="M20 120 l70 -40 60 10 20 40 -30 50 -40 10 -20 60 -50 -30 -30 -40z"/><path d="M120 300 l40 -20 30 30 -10 70 -30 40 -30 -40z"/>
+        <path d="M190 90 l60 -30 70 20 50 -10 40 40 -20 50 -60 30 -40 -20 -50 20 -40 -30z"/><path d="M200 230 l50 -10 30 40 -10 60 -40 20 -30 -50z"/>
+        <path d="M330 320 l40 -10 30 30 -20 40 -40 0z"/><path d="M60 60 l40 -20 20 20 -40 20z"/></g></svg>
+      <button class="menu-btn red"><svg viewBox="0 0 24 24"><path d="M7 3h10v2h3v3c0 2.2-1.6 4-3.7 4.4A5 5 0 0 1 13 15.9V18h3v2H8v-2h3v-2.1a5 5 0 0 1-3.3-3.5A4.5 4.5 0 0 1 4 8V5h3zm0 4H6v1c0 1.1.7 2 1.6 2.3zm10 0v3.3c.9-.3 1.6-1.2 1.6-2.3V7zm-5 1.5-1 2.3-2.5.2 1.9 1.6-.6 2.4 2.2-1.3 2.2 1.3-.6-2.4 1.9-1.6-2.5-.2z"/></svg>Jouer</button>
+      <button class="menu-btn blue"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5zm-7.5 8.3L2 12.5l10 5 10-5-2.5-1.2L12 15zm0 4L2 16.5l10 5 10-5-2.5-1.2L12 19z"/></svg>Carte</button>
+      <button class="menu-btn green"><svg viewBox="0 0 24 24"><path d="M12 4c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3zm-8 6.5c1.8 1.2 4.9 1.8 8 1.8s6.2-.6 8-1.8V13c0 1.7-3.6 3-8 3s-8-1.3-8-3zm0 5c1.8 1.2 4.9 1.8 8 1.8s6.2-.6 8-1.8V18c0 1.7-3.6 3-8 3s-8-1.3-8-3z"/></svg>Devises</button>
+    </div>
+    <div class="bottom-bar">
+      <button>💎 <small id="gemsHome">0</small></button><i class="sep"></i>
+      <button>⏰</button><i class="sep"></i>
+      <button id="settingsBtn" title="Paramètres">⚙️</button>
+    </div>
+  </div>
+
+  <!-- ================= INTRO QUIZ DU JOUR ================= -->
+  <div class="screen blue-screen" id="intro" hidden>
+    <div class="qtop">
+      <button class="icon-btn" id="introBack" aria-label="Retour" style="font-size:1.6rem">←</button>
+      <div class="flame-pill">🔥 <span id="streakIntro">0</span></div>
+    </div>
+    <div class="intro-body">
+      <div class="globe">🌍</div>
+      <div class="kicker">DÉFI QUOTIDIEN</div>
+      <h2>Quiz du jour</h2>
+      <p class="intro-date" id="introDate"></p>
+      <div class="program">
+        <div><span class="ic">🏛️</span>Capitale<small>4 choix</small></div>
+        <div><span class="ic">🚩</span>Drapeau<small>4 choix</small></div>
+        <div><span class="ic">🗺️</span>Continent<small>4 choix</small></div>
+        <div><span class="ic">👥</span>Population<small>le plus peuplé</small></div>
+        <div><span class="ic">📏</span>Superficie<small>classement</small></div>
+      </div>
+      <div class="streak-msg" id="streakMsg"></div>
+      <div class="intro-grid" id="introGrid" hidden></div>
+      <button class="cta" id="launchBtn">▶ Lancer le quiz</button>
+      <p class="intro-note" id="introNote">20 s par question · 💎 jusqu'à +125 gemmes · même quiz pour tout le monde aujourd'hui</p>
+    </div>
+  </div>
+
+  <!-- ================= QUIZ ================= -->
+  <div class="screen blue-screen" id="quiz" hidden>
+    <div class="quiz-upper">
+      <div class="qtop">
+        <button class="icon-btn" id="pauseBtn" aria-label="Pause"><span class="pause-ico"><i></i><i></i></span></button>
+        <button class="icon-btn round" id="hintBtn" aria-label="Indice 50/50" title="Indice 50/50">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="#fff"><rect x="5" y="7" width="3" height="10" rx="1"/><rect x="10.5" y="7" width="3" height="10" rx="1"/><rect x="16" y="7" width="3" height="10" rx="1"/></svg>
+        </button>
+      </div>
+      <div class="prompt-card" id="promptCard"></div>
+      <div class="qlabel" id="qlabel">Question 1/5</div>
+      <div class="timer-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6M12 2v3"/></svg>
+        <div class="bar"><i id="barFill"></i></div>
+        <span id="timeTxt">00:20</span>
+      </div>
+    </div>
+    <div class="answers-panel" id="answersPanel"></div>
+  </div>
+
+  <!-- ================= RÉSULTAT ================= -->
+  <div class="screen" id="result" hidden>
+    <div class="result-head">
+      <button class="icon-btn" id="homeBtn" aria-label="Accueil" style="font-size:1.3rem">🏠</button>
+      <div><b>Résultat du jour</b><br><small id="resultDate"></small></div>
+    </div>
+    <div class="result">
+      <h2 id="resultTitle"></h2>
+      <div class="score-ring" id="ring"><b id="resultScore"></b></div>
+      <div class="grid-emoji" id="gridEmoji"></div>
+      <div class="rewards">
+        <div class="reward"><b id="rGems">+0</b><small>💎 gemmes</small></div>
+        <div class="reward"><b id="rStreak">0</b><small>🔥 jours</small></div>
+        <div class="reward"><b id="rBest">0</b><small>🏆 record</small></div>
+      </div>
+      <button class="btn green" id="shareBtn">Partager mon résultat</button>
+      <button class="btn ghost" id="homeBtn2">Retour à l'accueil</button>
+      <div class="countdown">Prochain quiz dans <b class="cd">--:--:--</b></div>
+    </div>
+  </div>
+
+  <!-- ================= PAUSE ================= -->
+  <div class="overlay" id="pauseOverlay" hidden>
+    <div>
+      <span class="pause-ico"><i></i><i></i></span>
+      <h2>Pause</h2>
+      <p>Le chrono est arrêté. Prends ton temps.</p>
+      <button class="cta" id="resumeBtn">▶ Reprendre</button>
+      <button class="cta ghost" id="quitBtn" style="margin-top:10px">Quitter le quiz</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+"use strict";
+/* ---------------- DONNÉES ---------------- */
+const COUNTRIES = [
+  {n:"France",c:"Paris",code:"fr",cont:"Europe",pop:68,area:552},{n:"Allemagne",c:"Berlin",code:"de",cont:"Europe",pop:84,area:358},
+  {n:"Espagne",c:"Madrid",code:"es",cont:"Europe",pop:48,area:506},{n:"Italie",c:"Rome",code:"it",cont:"Europe",pop:59,area:302},
+  {n:"Portugal",c:"Lisbonne",code:"pt",cont:"Europe",pop:10.5,area:92},{n:"Pologne",c:"Varsovie",code:"pl",cont:"Europe",pop:37,area:313},
+  {n:"Suède",c:"Stockholm",code:"se",cont:"Europe",pop:10.6,area:450},{n:"Grèce",c:"Athènes",code:"gr",cont:"Europe",pop:10.4,area:132},
+  {n:"Norvège",c:"Oslo",code:"no",cont:"Europe",pop:5.5,area:385},{n:"Pays-Bas",c:"Amsterdam",code:"nl",cont:"Europe",pop:18,area:42},
+  {n:"Japon",c:"Tokyo",code:"jp",cont:"Asie",pop:124,area:378},{n:"Chine",c:"Pékin",code:"cn",cont:"Asie",pop:1410,area:9597},
+  {n:"Inde",c:"New Delhi",code:"in",cont:"Asie",pop:1430,area:3287},{n:"Corée du Sud",c:"Séoul",code:"kr",cont:"Asie",pop:51.7,area:100},
+  {n:"Thaïlande",c:"Bangkok",code:"th",cont:"Asie",pop:71.8,area:513},{n:"Vietnam",c:"Hanoï",code:"vn",cont:"Asie",pop:99,area:331},
+  {n:"Turquie",c:"Ankara",code:"tr",cont:"Asie",pop:85,area:784},{n:"Indonésie",c:"Jakarta",code:"id",cont:"Asie",pop:278,area:1905},
+  {n:"Égypte",c:"Le Caire",code:"eg",cont:"Afrique",pop:106,area:1002},{n:"Nigeria",c:"Abuja",code:"ng",cont:"Afrique",pop:224,area:924},
+  {n:"Maroc",c:"Rabat",code:"ma",cont:"Afrique",pop:37.5,area:447},{n:"Afrique du Sud",c:"Pretoria",code:"za",cont:"Afrique",pop:60,area:1221},
+  {n:"Kenya",c:"Nairobi",code:"ke",cont:"Afrique",pop:55,area:580},{n:"Sénégal",c:"Dakar",code:"sn",cont:"Afrique",pop:18.2,area:197},
+  {n:"Algérie",c:"Alger",code:"dz",cont:"Afrique",pop:45.6,area:2382},{n:"Éthiopie",c:"Addis-Abeba",code:"et",cont:"Afrique",pop:126,area:1104},
+  {n:"États-Unis",c:"Washington",code:"us",cont:"Amérique du Nord",pop:335,area:9834},{n:"Canada",c:"Ottawa",code:"ca",cont:"Amérique du Nord",pop:40,area:9985},
+  {n:"Mexique",c:"Mexico",code:"mx",cont:"Amérique du Nord",pop:128,area:1964},{n:"Cuba",c:"La Havane",code:"cu",cont:"Amérique du Nord",pop:11,area:110},
+  {n:"Brésil",c:"Brasília",code:"br",cont:"Amérique du Sud",pop:216,area:8516},{n:"Argentine",c:"Buenos Aires",code:"ar",cont:"Amérique du Sud",pop:46,area:2780},
+  {n:"Chili",c:"Santiago",code:"cl",cont:"Amérique du Sud",pop:19.6,area:756},{n:"Pérou",c:"Lima",code:"pe",cont:"Amérique du Sud",pop:34,area:1285},
+  {n:"Colombie",c:"Bogotá",code:"co",cont:"Amérique du Sud",pop:52,area:1142},{n:"Suriname",c:"Paramaribo",code:"sr",cont:"Amérique du Sud",pop:0.6,area:164},
+  {n:"Australie",c:"Canberra",code:"au",cont:"Océanie",pop:26.5,area:7692},{n:"Nouvelle-Zélande",c:"Wellington",code:"nz",cont:"Océanie",pop:5.2,area:268},
+];
+const CONTINENTS = ["Europe","Asie","Afrique","Amérique du Nord","Amérique du Sud","Océanie"];
+const QTIME = 20;
+
+/* ---------------- OUTILS ---------------- */
+const $ = id => document.getElementById(id);
+const todayKey = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+const yesterdayKey = () => { const d = new Date(); d.setDate(d.getDate()-1); return todayKey(d); };
+const prettyDate = () => new Date().toLocaleDateString("fr-FR", { weekday:"long", day:"numeric", month:"long" });
+function hashSeed(str) { let h = 1779033703 ^ str.length; for (let i = 0; i < str.length; i++) { h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = (h << 13) | (h >>> 19); } return h >>> 0; }
+function mulberry32(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+const fmtPop = p => p >= 1000 ? (p/1000).toFixed(2).replace(".",",")+" Md" : p < 1 ? Math.round(p*1000)+" k" : String(p).replace(".",",")+" M";
+const fmtArea = a => a.toLocaleString("fr-FR") + " 000 km²";
+const flagImg = code => `<img src="https://flagcdn.com/w320/${code}.png" alt="Drapeau" onerror="this.replaceWith(document.createTextNode('🏳️ drapeau indisponible'))">`;
+
+/* ---------------- GÉNÉRATION DU QUIZ ---------------- */
+function buildDaily(dateKey) {
+  const rng = mulberry32(hashSeed("globus-daily-" + dateKey));
+  const shuffle = arr => { const a = [...arr]; for (let i = a.length-1; i > 0; i--) { const j = Math.floor(rng()*(i+1)); [a[i],a[j]] = [a[j],a[i]]; } return a; };
+  const pick = arr => arr[Math.floor(rng()*arr.length)];
+  const distract = (c, n) => { let s = shuffle(COUNTRIES.filter(x => x !== c && x.cont === c.cont)).slice(0, n);
+    if (s.length < n) s = s.concat(shuffle(COUNTRIES.filter(x => x !== c && !s.includes(x))).slice(0, n - s.length)); return s; };
+  const used = new Set();
+  const fresh = () => { let c; do { c = pick(COUNTRIES); } while (used.has(c)); used.add(c); return c; };
+  const qs = [];
+  let c = fresh(), d = distract(c, 3);
+  qs.push({ type:"choice", title:"Capitale", prompt:`<div>${c.n}<div class="sub">Quelle est sa capitale ?</div></div>`, choices:shuffle([c.c, ...d.map(x=>x.c)]), answer:c.c, fact:`La capitale de ${c.n} est ${c.c}.` });
+  c = fresh(); d = distract(c, 3);
+  qs.push({ type:"choice", title:"Drapeau", prompt:flagImg(c.code), choices:shuffle([c.n, ...d.map(x=>x.n)]), answer:c.n, fact:`C'est le drapeau de ${c.n} (capitale : ${c.c}).` });
+  c = fresh();
+  qs.push({ type:"choice", title:"Continent", prompt:`<div>${c.n}<div class="sub">Sur quel continent ?</div></div>`, choices:shuffle([c.cont, ...shuffle(CONTINENTS.filter(x=>x!==c.cont)).slice(0,3)]), answer:c.cont, fact:`${c.n} se trouve en ${c.cont}.` });
+  const four = shuffle(COUNTRIES.filter(x=>!used.has(x))).slice(0, 4); four.forEach(x => used.add(x));
+  const top = four.reduce((a,b) => a.pop > b.pop ? a : b);
+  qs.push({ type:"choice", title:"Population", prompt:`<div>👥<div class="sub">Lequel est le plus peuplé ?</div></div>`, choices:four.map(x=>x.n), answer:top.n, values:Object.fromEntries(four.map(x=>[x.n, fmtPop(x.pop)+" hab."])), fact:`${top.n} compte environ ${fmtPop(top.pop)} d'habitants.` });
+  const three = shuffle(COUNTRIES.filter(x=>!used.has(x))).slice(0, 3);
+  const order = [...three].sort((a,b)=>b.area-a.area).map(x=>x.n);
+  qs.push({ type:"rank", title:"Superficie", prompt:`<div>📏<div class="sub">Classe du plus grand au plus petit</div></div>`, items:three.map(x=>x.n), answer:order, values:Object.fromEntries(three.map(x=>[x.n, fmtArea(x.area)])), fact:`Ordre correct : ${order.join(" > ")}.` });
+  return qs;
+}
+
+/* ---------------- SAUVEGARDE ---------------- */
+const KEY = "globus_daily_v2";
+let save = { streak:0, best:0, gems:0, last:null, results:{} };
+try { save = { ...save, ...JSON.parse(localStorage.getItem(KEY) || "{}") }; } catch(e) {}
+const persist = () => localStorage.setItem(KEY, JSON.stringify(save));
+const currentStreak = () => (save.last === todayKey() || save.last === yesterdayKey()) ? save.streak : 0;
+const doneToday = () => !!save.results[todayKey()];
+
+/* ---------------- NAVIGATION ---------------- */
+const screens = ["home","intro","quiz","result"];
+function show(id) { screens.forEach(s => $(s).hidden = s !== id); }
+function toast(msg) { const t = $("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"), 2200); }
+function refreshHome() {
+  $("streakHome").textContent = currentStreak(); $("gemsHome").textContent = save.gems;
+  const done = doneToday();
+  $("dailyBtn").classList.toggle("done", done); $("dailyDot").hidden = done;
+  $("dailyLabel").textContent = done ? "✓ Fait" : "Quiz du jour";
+}
+
+/* ---------------- INTRO ---------------- */
+function openIntro() {
+  show("intro");
+  const s = currentStreak(), done = doneToday();
+  $("introDate").textContent = prettyDate();
+  $("streakIntro").textContent = s;
+  const msg = $("streakMsg");
+  if (done) {
+    const r = save.results[todayKey()];
+    msg.className = "streak-msg calm"; msg.textContent = `✓ Déjà joué aujourd'hui : ${r.score}/5 · série de ${r.streak} jour${r.streak>1?"s":""}`;
+    $("introGrid").hidden = false; $("introGrid").textContent = r.grid;
+    $("launchBtn").textContent = "Voir mon résultat"; $("launchBtn").classList.add("ghost");
+    $("introNote").innerHTML = `Prochain quiz dans <b class="cd">--:--:--</b>`;
+  } else {
+    $("introGrid").hidden = true;
+    $("launchBtn").textContent = "▶ Lancer le quiz"; $("launchBtn").classList.remove("ghost");
+    $("introNote").textContent = "20 s par question · 💎 jusqu'à +125 gemmes · même quiz pour tout le monde aujourd'hui";
+    if (s > 0) { msg.className = "streak-msg"; msg.textContent = `🔥 Série de ${s} jour${s>1?"s":""} — joue aujourd'hui pour la garder !`; }
+    else { msg.className = "streak-msg calm"; msg.textContent = "✨ Commence ta série aujourd'hui !"; }
+  }
+}
+
+/* ---------------- QUIZ ---------------- */
+let questions = [], idx = 0, results = [], timeLeft = QTIME, timerId = null, paused = false, answered = false, hintUsed = false;
+
+function startDaily() {
+  questions = buildDaily(todayKey()); idx = 0; results = []; hintUsed = false; paused = false;
+  $("hintBtn").disabled = false;
+  show("quiz"); renderQuestion();
+}
+function startTimer() {
+  clearInterval(timerId); timeLeft = QTIME; answered = false; paintTimer();
+  timerId = setInterval(() => { if (paused || answered) return; timeLeft--; paintTimer(); if (timeLeft <= 0) { clearInterval(timerId); timeUp(); } }, 1000);
+}
+function paintTimer() {
+  $("timeTxt").textContent = `00:${String(Math.max(0,timeLeft)).padStart(2,"0")}`;
+  const f = $("barFill"); f.style.width = (timeLeft/QTIME*100)+"%"; f.classList.toggle("hurry", timeLeft <= 5);
+}
+
+function renderQuestion() {
+  const q = questions[idx], panel = $("answersPanel");
+  $("qlabel").textContent = `Question ${idx+1}/${questions.length}`;
+  const card = $("promptCard"); card.innerHTML = q.prompt; card.style.animation = "none"; void card.offsetWidth; card.style.animation = "";
+  $("hintBtn").disabled = hintUsed || q.type !== "choice";
+  if (q.type === "choice") {
+    panel.innerHTML = `<div class="grid">${q.choices.map(ch => `<button class="ans" data-v="${ch}">${ch}</button>`).join("")}</div><div id="fb"></div>`;
+    panel.querySelectorAll(".ans").forEach(b => b.onclick = () => answerChoice(q, b));
+  } else {
+    panel.innerHTML = `<div class="slots" id="slots">${[1,2,3].map(n=>`<div class="slot"><span class="n">${n}</span><span class="t"></span></div>`).join("")}</div>
+      <div class="pool" id="pool">${q.items.map(n=>`<button class="chip" data-n="${n}">${n}</button>`).join("")}</div>
+      <div class="rank-actions"><button class="pbtn" id="undoBtn">↺ Effacer</button><button class="pbtn main" id="validateBtn" disabled>Valider</button></div><div id="fb"></div>`;
+    setupRank(q);
+  }
+  startTimer();
+}
+function answerChoice(q, btn) {
+  if (answered) return;
+  const ok = btn.dataset.v === q.answer;
+  document.querySelectorAll(".ans").forEach(b => {
+    b.disabled = true;
+    if (b.dataset.v === q.answer) b.classList.add("ok"); else if (b === btn) b.classList.add("ko");
+    if (q.values) b.insertAdjacentHTML("beforeend", `<small>${q.values[b.dataset.v]}</small>`);
+  });
+  finishQuestion(ok, q);
+}
+let rankOrder = [], rankPaint = null;
+function setupRank(q) {
+  rankOrder = [];
+  const slots = [...document.querySelectorAll("#slots .slot")];
+  const labels = ["Le plus grand", "…", "Le plus petit"];
+  rankPaint = () => {
+    slots.forEach((s,i) => { s.classList.toggle("filled", !!rankOrder[i]); s.querySelector(".t").textContent = rankOrder[i] || labels[i]; });
+    document.querySelectorAll("#pool .chip").forEach(c => c.disabled = rankOrder.includes(c.dataset.n));
+    $("validateBtn").disabled = rankOrder.length !== 3;
+  };
+  document.querySelectorAll("#pool .chip").forEach(c => c.onclick = () => { if (!answered && rankOrder.length < 3) { rankOrder.push(c.dataset.n); rankPaint(); } });
+  $("undoBtn").onclick = () => { if (!answered) { rankOrder = []; rankPaint(); } };
+  $("validateBtn").onclick = () => { if (!answered) revealRank(q, rankOrder); };
+  rankPaint();
+}
+function revealRank(q, order) {
+  const slots = [...document.querySelectorAll("#slots .slot")];
+  const ok = order.length === 3 && order.every((n,i) => n === q.answer[i]);
+  slots.forEach((s,i) => {
+    const mine = order[i];
+    s.classList.add("filled", mine === q.answer[i] ? "ok" : "ko");
+    s.querySelector(".t").textContent = mine ? `${mine} — ${q.values[mine]}` : `(${q.answer[i]})`;
+  });
+  document.querySelectorAll("#pool .chip, #undoBtn, #validateBtn").forEach(b => b.disabled = true);
+  finishQuestion(ok, q);
+}
+function timeUp() {
+  const q = questions[idx];
+  if (q.type === "choice") {
+    document.querySelectorAll(".ans").forEach(b => { b.disabled = true; if (b.dataset.v === q.answer) b.classList.add("ok"); if (q.values) b.insertAdjacentHTML("beforeend", `<small>${q.values[b.dataset.v]}</small>`); });
+    finishQuestion(false, q, true);
+  } else revealRank(q, rankOrder);
+}
+function finishQuestion(ok, q, timeout = false) {
+  answered = true; clearInterval(timerId); results.push(ok);
+  $("fb").innerHTML = `<div class="fb ${ok?"ok":"ko"}">${timeout ? "⏱ Temps écoulé ! " : ok ? "✅ Bien joué ! " : "❌ Raté. "}${q.fact}</div>
+    <button class="next" id="nextBtn">${idx === questions.length-1 ? "Voir mon résultat" : "Suivant →"}</button>`;
+  $("nextBtn").onclick = () => { idx++; idx < questions.length ? renderQuestion() : endDaily(); };
+}
+$("hintBtn").onclick = () => {
+  const q = questions[idx]; if (answered || hintUsed || q.type !== "choice") return;
+  hintUsed = true; $("hintBtn").disabled = true;
+  const wrong = [...document.querySelectorAll(".ans")].filter(b => b.dataset.v !== q.answer).sort(() => Math.random()-.5).slice(0, 2);
+  wrong.forEach(b => { b.classList.add("off"); b.disabled = true; });
+  toast("Indice 50/50 utilisé");
+};
+
+/* Pause */
+function setPaused(v) { paused = v; $("pauseOverlay").hidden = !v; }
+$("pauseBtn").onclick = () => setPaused(true);
+$("resumeBtn").onclick = () => setPaused(false);
+$("quitBtn").onclick = () => { clearInterval(timerId); setPaused(false); show("home"); refreshHome(); toast("Quiz abandonné — il t'attend toujours !"); };
+document.addEventListener("visibilitychange", () => { if (document.hidden && !$("quiz").hidden && !answered) setPaused(true); });
+
+/* ---------------- FIN / RÉSULTAT ---------------- */
+function endDaily() {
+  const score = results.filter(Boolean).length, key = todayKey();
+  if (save.last === yesterdayKey()) save.streak += 1; else if (save.last !== key) save.streak = 1;
+  save.last = key; save.best = Math.max(save.best, save.streak);
+  const gems = score*10 + (score === 5 ? 25 : 0) + Math.min(50, save.streak*5);
+  save.gems += gems;
+  save.results[key] = { score, grid: results.map(r => r ? "🟩" : "🟥").join(""), gems, streak: save.streak };
+  persist(); showResult(save.results[key]);
+}
+function showResult(r) {
+  show("result");
+  $("resultDate").textContent = prettyDate();
+  $("resultTitle").textContent = r.score === 5 ? "Sans-faute ! 🌍🏆" : r.score >= 3 ? "Bien joué ! 👏" : "On progresse ! 💪";
+  $("ring").style.setProperty("--p", r.score/5*100);
+  $("resultScore").textContent = `${r.score}/5`; $("gridEmoji").textContent = r.grid;
+  $("rGems").textContent = "+" + r.gems; $("rStreak").textContent = r.streak; $("rBest").textContent = save.best;
+  refreshHome();
+}
+$("shareBtn").onclick = async () => {
+  const r = save.results[todayKey()]; if (!r) return;
+  const text = `Globus Quiz — Quiz du jour (${prettyDate()})\n${r.grid} ${r.score}/5 · 🔥 série de ${r.streak} jour${r.streak>1?"s":""}\nViens me défier !`;
+  try { if (navigator.share) await navigator.share({ text }); else { await navigator.clipboard.writeText(text); toast("Résultat copié 📋"); } } catch(e) { toast("Partage annulé"); }
+};
+setInterval(() => {
+  const now = new Date(), next = new Date(now); next.setHours(24,0,0,0);
+  const s = Math.floor((next - now)/1000);
+  const txt = `${String(Math.floor(s/3600)).padStart(2,"0")}:${String(Math.floor(s%3600/60)).padStart(2,"0")}:${String(s%60).padStart(2,"0")}`;
+  document.querySelectorAll(".cd").forEach(el => el.textContent = txt);
+  if (todayKey() !== save._shownDay) { save._shownDay = todayKey(); refreshHome(); }
+}, 1000);
+
+/* ---------------- ÉVÉNEMENTS ---------------- */
+$("dailyBtn").onclick = openIntro;
+$("introBack").onclick = () => { show("home"); refreshHome(); };
+$("launchBtn").onclick = () => doneToday() ? showResult(save.results[todayKey()]) : startDaily();
+$("homeBtn").onclick = $("homeBtn2").onclick = () => { show("home"); refreshHome(); };
+document.querySelectorAll(".menu-btn").forEach(b => b.onclick = () => toast(`Mode « ${b.textContent.trim()} » : à brancher sur ton app`));
+$("settingsBtn").onclick = () => {
+  if (confirm("MODE TEST — Réinitialiser le quiz du jour pour le rejouer ?")) { delete save.results[todayKey()]; persist(); refreshHome(); toast("Quiz du jour réinitialisé"); }
+};
+refreshHome();
+</script>
+</body>
+</html>
