@@ -22,24 +22,26 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
 
+  // Laisser passer tout ce qui ne vient pas de ton site (Wikidata, Commons, flagcdn…)
+  const isSameOrigin = e.request.url.startsWith(self.location.origin);
+  if (!isSameOrigin) return;
+
   e.respondWith(
     fetch(e.request)
       .then(response => {
         if (!response || !response.ok || response.status === 206) {
           return response;
         }
-
-        const isSameOrigin = e.request.url.startsWith(self.location.origin);
-
-        if (isSameOrigin) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => cache.put(e.request, clone))
-            .catch(() => {});
-        }
-
+        const clone = response.clone();
+        caches.open(CACHE_NAME)
+          .then(cache => cache.put(e.request, clone))
+          .catch(() => {});
         return response;
       })
-      .catch(() => caches.match(e.request))
+      .catch(async () => {
+        const cached = await caches.match(e.request);
+        // Toujours renvoyer une Response, jamais undefined
+        return cached || new Response('Hors ligne', { status: 503, statusText: 'Offline' });
+      })
   );
 });
