@@ -2490,6 +2490,15 @@
         transform: scale(0.92);
         filter: brightness(0.8);
       }
+      #cachePic{
+        z-index : 10;
+      }
+      #cadre:has(#cadrePic.active){
+        #cachePic{
+          opacity : 1;
+          pointer-events : all;
+        }
+      }
 
       #cadrePic{
         display : flex;
@@ -2497,7 +2506,7 @@
         align-items : center;
         justify-content : flex-start;
         position : fixed;
-        z-index : 10;
+        z-index :20;
         border-radius : 0.6rem;
         box-sizing : border-box;
         background : rgba(17, 23, 79, 1);
@@ -2552,16 +2561,18 @@
           position : absolute;
           justify-content : center;
           align-items : center;
+          z-index : 10;
           border-radius : 50%;
           top : 50%;
           transform : translateY(-50%);
           background : rgba(0,0,0,0.6);
           box-sizing : border-box;
           opacity : 0.6;
-          padding : 0.4rem;
+          height : 2rem;
+          aspect-ratio : 1/1;
           transition : opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
           svg{
-            height : 1.1rem;
+            height : 60%;
           }
         }
         .arrowPic:active{
@@ -26198,6 +26209,7 @@
 
 
           <!-- HTML Pictures -->
+           <div id="cachePic" class="cache"></div>
           <div id="cadrePic">
             <div class="wrapperTitle">
               <span>Photos - France</span>
@@ -67124,6 +67136,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const cadrePic = getId('cadrePic')
       const openPic = getId('openPic')
       const crossPic = getId('crossPic')
+      const cachePic = getId('cachePic')
 
 
       openPic.addEventListener('click',()=>{
@@ -67132,6 +67145,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       crossPic.addEventListener('click',()=>{
         cadrePic.classList.remove('active')
+      })
+      
+      cachePic.addEventListener('click',()=>{
+        crossPic.click()
       })
       
 
