@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Photos de lieux par pays</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 20px; }
+  button { margin-right: 8px; padding: 8px 12px; }
+  #log { background: #111; color: #0f0; padding: 10px; height: 60vh; overflow: auto; white-space: pre-wrap; margin-top: 12px; }
+</style>
+</head>
+<body>
+<button id="btnTest">Tester 5 pays</button>
+<button id="btnAll">Tout lancer</button>
+<button id="btnDownload">Télécharger le JSON</button>
+<button id="btnReset">Vider le cache</button>
+<pre id="log"></pre>
+
+<script>
+/* =====================  CONFIG  ===================== */
+const CONFIG = {
+  cacheVersion: "photos-v6",
+  maxPerCountry: 5,
+  pauseMs: 4000,           // pause entre deux pays (+ jitter jusqu'à 2 s)
+  queryPauseMs: 1500,      // pause entre deux requêtes SPARQL
+  maxPerPlace: 2,          // max de photos par lieu administratif (préférence)
+  maxDistanceKm: 200,      // écart max entre GPS de la photo et GPS du lieu
+  minWidth: 640,
+  minHeight: 400,
+  thumbWidth: 1280,        // taille standard Wikimedia
+  requestTimeoutMs: 70000
+};
+
+/* Forcer certains lieux : { FR: ["Q243"], IT: ["Q..."] } */
+const MUST_HAVE = {};
+
+/* Paliers de recherche : on passe au suivant seulement s'il manque des photos */
+const TIERS = [
+  { name: "emblématiques", unesco: true, forced: true,
+    classes: ["Q570116", "Q2319498", "Q839954", "Q1081138", "Q4989906"] },
+  { name: "nature",
+    classes: ["Q8502", "Q8072", "Q23442", "Q23397", "Q34038", "Q40080", "Q35509", "Q46169", "Q35666", "Q8514"] },
+  { name: "bâtiments",
+    classes: ["Q23413", "Q16560", "Q2977", "Q16970", "Q32815", "Q44539", "Q44613", "Q160742",
+              "Q33506", "Q12518", "Q12280", "Q39715", "Q179700", "Q174782", "Q1107656", "Q22698"] },
+  { name: "villes", classes: ["Q515", "Q3957"] },
+  { name: "tout", classes: [], countryOnly: true }
+];
+
+const BAD_IMAGE_PATTERN =
+  /\b(maps?|locator|plans?|diagrams?|logos?|flags?|drapeaux?|blasons?|coat of arms|icons?|portraits?|posters?|drawings?|paintings?|stamps?|banknotes?|coins?|sketch|engraving|lithograph|satellite)\b/;
+
+/* =====================  OUTILS  ===================== */
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function log(...args) {
+  console.log(...args);
+  const el = document.getElementById("log");
+  if (el) { el.textContent += args.join(" ") + "\n"; el.scrollTop = el.scrollHeight; }
+}
+
+function normalizeText(value) {
+  return String(value || "")
+    .normalize("NFD").replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ").trim();
+}
+
+function stripHtml(value) {
+  if (!value) return null;
+  const doc = new DOMParser().parseFromString(value, "text/html");
+  return (doc.body.textContent || "").replace(/\s+/g, " ").trim() || null;
+}
+
+function normalizeIso(iso) {
+  const v = String(iso || "").trim().toUpperCase();
+  return /^[A-Z]{2}$/.test(v) ? v : "";
+}
+
+function getQidFromUri(uri) { return String(uri || "").split("/").pop(); }
+
+function getCommonsFileName(imageUrl) {
+  const marker = "/Special:FilePath/";
+  const url = String(imageUrl || "");
+  const index = url.indexOf(marker);
+  if (index === -1) return null;
+  try {
+    return decodeURIComponent(url.slice(index + marker.length)).replace(/_/g, " ");
+  } catch { return null; }
+}
+
+function parsePoint(value) {
+  const num = "[+-]?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?";
+  const m = String(value || "").match(new RegExp(`Point\$\\s*(${num})\\s+(${num})\\s*\$`, "i"));
+  if (!m) return { latitude: null, longitude: null };
+  return { longitude: Number(m[1]), latitude: Number(m[2]) };
+}
+
+function distanceKm(lat1, lon1, lat2, lon2) {
+  const rad = d => d * Math.PI / 180;
+  const a = Math.sin(rad(lat2 - lat1) / 2) ** 2 +
+            Math.cos(rad(lat1)) * Math.cos(rad(lat2)) * Math.sin(rad(lon2 - lon1) / 2) ** 2;
+  return 12742 * Math.asin(Math.sqrt(a));
+}
+
+/* =====================  RÉSEAU  ===================== */
+async function fetchJson(url, { maxAttempts = 4, retryStatuses = [429, 500, 502, 503, 504] } = {}) {
+  let lastError;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), CONFIG.requestTimeoutMs);
+    let retryable = true;
+    let retryAfterMs = 0;
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      if (response.ok) return await response.json();
+      lastError = new Error(`HTTP ${response.status}`);
+      retryable = retryStatuses.includes(response.status);
+      const ra = Number(response.headers.get("Retry-After"));
+      if (ra > 0) retryAfterMs = Math.min(ra * 1000, 120000);
+    } catch (error) {
+      lastError = error;
+    } finally {
+      clearTimeout(timer);
+    }
+    if (!retryable || attempt === maxAttempts) break;
+    const backoff = 3000 * 2 ** (attempt - 1) + Math.floor(Math.random() * 1000);
+    await sleep(Math.max(backoff, retryAfterMs));
+  }
+  throw lastError;
+}
+
+/* API MediaWiki : une erreur peut arriver avec un HTTP 200 */
+async function fetchMediaWiki(baseUrl, params) {
+  const qs = new URLSearchParams({ format: "json", origin: "*", ...params });
+  const data = await fetchJson(`${baseUrl}?${qs}`);
+  if (data.error) throw new Error(`API: ${data.error.code || "erreur"}`);
+  return data;
+}
+
+function fetchSparql(query) {
+  const url = "https://query.wikidata.org/sparql?format=json&query=" + encodeURIComponent(query);
+  // 500 = souvent timeout de la requête : inutile de la relancer
+  return fetchJson(url, { maxAttempts: 3, retryStatuses: [429, 502, 503, 504] });
+}
+
+/* =====================  WIKIDATA  ===================== */
+/* Étape 1 : QID exact du pays/territoire à partir du code ISO (mis en cache) */
+async function getCountryQid(iso) {
+  const key = `qid-${CONFIG.cacheVersion}-${iso}`;
+  const cached = localStorage.getItem(key);
+  if (cached) return cached === "none" ? null : cached;
+
+    const query = `SELECT ?siteLabel ?img ?sitelinks ?score WHERE {
+
+  # Pays demandé (code ISO alpha-2)
+  VALUES ?code { "FR" }
+  ?c wdt:P297 ?code .
+
+  # Site UNESCO situé dans ce pays, avec une photo
+  ?site wdt:P1435 wd:Q9259 ;
+        wdt:P17 ?c ;
+        wdt:P18 ?img ;
+        wikibase:sitelinks ?sitelinks .
+
+  # Label en anglais
+  ?site rdfs:label ?siteLabel .
+  FILTER(LANG(?siteLabel) = "en")
+
+  # 1. Notoriété minimale (nombre de pages Wikipédia)
+  FILTER(?sitelinks >= 15)
+
+  # 2. Photos uniquement (exclut svg, png, tif : cartes, plans, schémas)
+  FILTER(REGEX(STR(?img), "\\.jpe?g$", "i"))
+
+  # 3. Exclut les sites transfrontaliers
+  FILTER NOT EXISTS {
+    ?site wdt:P17 ?autrePays .
+    FILTER(?autrePays != ?c)
+  }
+
+  # 4. Exclut l'outre-mer et les territoires dépendants :
+  #    si le site est situé (via la chaîne P131) dans une entité qui a
+  #    son propre code ISO 3166-1 différent (RE, PF, GL, AW, PR, HK...), il est écarté
+  FILTER NOT EXISTS {
+    ?site wdt:P131* ?territoire .
+    ?territoire wdt:P297 ?codeTerritoire .
+    FILTER(?codeTerritoire != ?code)
+  }
+
+  # 5. Exclut les "centres historiques" et "vieilles villes" (photos de rues peu parlantes)
+  FILTER(!REGEX(?siteLabel,
+    "historic cent(re|er)|old town|city of|medina|historic district|urban", "i"))
+
+  # 6. Bonus pour les types visuellement forts :
+  #    château, site archéologique, montagne, parc national, cascade, grotte,
+  #    île, volcan, temple, église, pont, monument, lac, plage
+  BIND(EXISTS {
+    ?site wdt:P31/wdt:P279* ?type .
+    VALUES ?type {
+      wd:Q23413   wd:Q839954  wd:Q8502   wd:Q46169  wd:Q34038
+      wd:Q35509   wd:Q23442   wd:Q8072   wd:Q44539  wd:Q16970
+      wd:Q12280   wd:Q4989906 wd:Q23397  wd:Q40080
+    }
+  } AS ?estVisuel)
+  BIND(IF(?estVisuel, 1, 0) AS ?score)
+}
+ORDER BY DESC(?score) DESC(?sitelinks)
+LIMIT 5`
+  const data = await fetchSparql(query);
+  const uri = data.results?.bindings?.[0]?.country?.value;
+  const qid = uri ? getQidFromUri(uri) : null;
+  try { localStorage.setItem(key, qid || "none"); } catch {}
+  return qid;
+}
+
+/* Étape 2 : candidats d'un palier, avec appartenance garantie au pays :
+   - scope "country"   : ?site wdt:P17 pays
+   - scope "territory" : ?site situé (P131+) dans l'entité */
+function buildQuery({ scope, qid, tier, forced, limit }) {
+  const scopeClause = scope === "country"
+    ? `?site wdt:P17 wd:${qid} .
+       FILTER NOT EXISTS { ?site wdt:P17 ?other . FILTER(?other != wd:${qid}) }`
+    : `?site wdt:P131+ wd:${qid} .`;
+
+  const blocks = [];
+  if (tier.classes.length) {
+    blocks.push(`{ VALUES ?class { ${tier.classes.map(c => "wd:" + c).join(" ")} } ?site wdt:P31 ?class . }`);
+  }
+  if (tier.unesco) blocks.push(`{ ?site wdt:P1435 wd:Q9259 . }`);
+  if (forced.length) blocks.push(`{ VALUES ?site { ${forced.map(id => "wd:" + id).join(" ")} } }`);
+  const typeClause = blocks.join(" UNION ");
+
+  return `
+    SELECT ?site ?sitelinks
+           (SAMPLE(?imageValue) AS ?image)
+           (SAMPLE(?placeValue) AS ?city)
+           (SAMPLE(?latValue) AS ?lat)
+           (SAMPLE(?lonValue) AS ?lon)
+    WHERE {
+      ${typeClause}
+      ${scopeClause}
+      ?site wdt:P18 ?imageValue ;
+            wikibase:sitelinks ?sitelinks .
+      OPTIONAL { ?site wdt:P131 ?placeValue . }
+      OPTIONAL {
+        ?site p:P625/psv:P625 ?node .
+        ?node wikibase:geoLatitude ?latValue ;
+              wikibase:geoLongitude ?lonValue .
+      }
+    }
+    GROUP BY ?site ?sitelinks
+    ORDER BY DESC(?sitelinks)
+    LIMIT ${limit}`;
+}
+
+async function getSiteCandidates(scope, qid, tier, iso, max) {
+  const forced = tier.forced ? (MUST_HAVE[iso] || []).filter(id => /^Q\d+$/.test(id)) : [];
+  const limit = Math.min(40, Math.max(max * 4, 15));
+  const data = await fetchSparql(buildQuery({ scope, qid, tier, forced, limit }));
+
+  return (data.results?.bindings || [])
+    .map(b => ({
+      id: getQidFromUri(b.site.value),
+      placeId: b.city ? getQidFromUri(b.city.value) : null,
+      imageUrl: b.image?.value ?? null,
+      file: getCommonsFileName(b.image?.value),
+      coordinates: {
+  latitude:  b.lat ? Number(b.lat.value) : null,
+  longitude: b.lon ? Number(b.lon.value) : null
+},
+
+      fame: Number(b.sitelinks?.value || 0)
+    }))
+    .filter(s =>
+      s.id && s.file &&
+      /\.(jpe?g|png|webp|tiff?)$/i.test(s.file) &&
+      !BAD_IMAGE_PATTERN.test(normalizeText(s.file))
+    );
+}
+
+/* Étape 3 : noms FR / EN */
+async function fetchWikidataLabels(ids) {
+  const unique = [...new Set(ids.filter(Boolean))];
+  const labels = new Map();
+  for (let i = 0; i < unique.length; i += 50) {
+    const batch = unique.slice(i, i + 50);
+    const data = await fetchMediaWiki("https://www.wikidata.org/w/api.php", {
+      action: "wbgetentities",
+      ids: batch.join("|"),
+      props: "labels",
+      languages: "fr|en",
+      languagefallback: "1"
+    });
+    for (const [id, entity] of Object.entries(data.entities || {})) {
+      const fr = entity.labels?.fr?.value ?? entity.labels?.en?.value ?? null;
+      const en = entity.labels?.en?.value ?? entity.labels?.fr?.value ?? null;
+      labels.set(id, { fr, en });
+    }
+  }
+  return labels;
+}
+
+/* =====================  COMMONS  ===================== */
+/* Étape 4 : métadonnées + coordonnées GPS propres à chaque photo */
+async function fetchCommonsData(files) {
+  const result = new Map(); // nom de fichier -> { info, coords }
+  const unique = [...new Set(files.filter(Boolean))];
+
+  for (let i = 0; i < unique.length; i += 25) {
+    const batch = unique.slice(i, i + 25);
+    const alias = new Map();
+    const pages = new Map();
+    let cont = {};
+    let guard = 0;
+
+    do {
+      const data = await fetchMediaWiki("https://commons.wikimedia.org/w/api.php", {
+        action: "query",
+        redirects: "1",
+        titles: batch.map(f => "File:" + f).join("|"),
+        prop: "imageinfo|coordinates",
+        iiprop: "url|size|mime|mediatype|extmetadata",
+        iiurlwidth: String(CONFIG.thumbWidth),
+        iiextmetadatafilter: "Artist|Credit|LicenseShortName|LicenseUrl|ImageDescription|ObjectName|Categories",
+        colimit: "max",
+        ...cont
+      });
+
+      for (const n of data.query?.normalized || []) alias.set(n.from, n.to);
+      for (const r of data.query?.redirects || []) alias.set(r.from, r.to);
+
+      for (const page of Object.values(data.query?.pages || {})) {
+        if (page.missing !== undefined) continue;
+        const entry = pages.get(page.title) || { info: null, coords: [] };
+        if (page.imageinfo?.[0]) entry.info = page.imageinfo[0];
+        if (page.coordinates) entry.coords.push(...page.coordinates);
+        pages.set(page.title, entry);
+      }
+      cont = data.continue || null;
+    } while (cont && ++guard < 10);
+
+    for (const f of batch) {
+      let t = "File:" + f;
+      t = alias.get(t) ?? t;
+      t = alias.get(t) ?? t;
+      const entry = pages.get(t);
+      if (entry?.info) result.set(f, entry);
+    }
+    await sleep(300);
+  }
+  return result;
+}
+
+/* Validation d'une photo : format, taille, type d'image, cohérence GPS */
+function validateImage(site, entry) {
+  const info = entry?.info;
+  if (!info || !info.url) return { ok: false, reason: "pas de métadonnées Commons" };
+
+  if (info.mediatype !== "BITMAP" ||
+      !["image/jpeg", "image/png", "image/webp", "image/tiff"].includes(info.mime))
+    return { ok: false, reason: `format ${info.mime}` };
+
+  if ((info.width || 0) < CONFIG.minWidth || (info.height || 0) < CONFIG.minHeight)
+    return { ok: false, reason: `trop petite (${info.width}x${info.height})` };
+
+  const meta = info.extmetadata || {};
+  const text = normalizeText([site.file, meta.ObjectName?.value, meta.Categories?.value].filter(Boolean).join(" "));
+  if (BAD_IMAGE_PATTERN.test(text)) return { ok: false, reason: "mot interdit dans le nom ou les catégories" };
+
+  let geoCheck = "unknown";
+  let distance = null;
+  const { latitude, longitude } = site.coordinates;
+  if (latitude != null && longitude != null && entry.coords.length) {
+    const p = entry.coords.find(c => c.primary) || entry.coords[0];
+    if (typeof p.lat === "number" && typeof p.lon === "number") {
+      distance = Math.round(distanceKm(latitude, longitude, p.lat, p.lon));
+      if (distance > CONFIG.maxDistanceKm) return { ok: false, reason: `GPS de la photo à ${distance} km du lieu` };
+      geoCheck = "ok";
+    }
+  }
+  return { ok: true, info, meta, geoCheck, distance };
+}
+
+
+/* =====================  PAR PAYS  ===================== */
+async function collectFromCandidates(candidates, state, ctx) {
+  const fresh = candidates.filter(c => !state.seenIds.has(c.id) && !state.seenFiles.has(c.file));
+  candidates.forEach(c => state.seenIds.add(c.id));
+  if (!fresh.length) return;
+
+  const labels = await fetchWikidataLabels([...fresh.map(c => c.id), ...fresh.map(c => c.placeId)]);
+  const commons = await fetchCommonsData(fresh.map(c => c.file));
+
+  for (const site of fresh) {
+    if (state.results.length >= ctx.max) break;
+
+    const name = labels.get(site.id);
+    if (site.placeId === ctx.qid) continue;
+
+    if (!name || (!name.fr && !name.en)) continue;        // pas de nom exploitable
+
+    const check = validateImage(site, commons.get(site.file));
+    if (!check.ok) continue;
+    if (state.seenFiles.has(site.file)) continue;
+
+    const place = labels.get(site.placeId) || { fr: null, en: null };
+    const { info, meta } = check;
+
+    const item = {
+      id: site.id,
+      name,
+      city: { id: site.placeId, fr: place.fr, en: place.en },
+      country: { id: ctx.qid, iso: ctx.iso, fr: ctx.countryName.fr, en: ctx.countryName.en },
+      coordinates: site.coordinates,
+      image: info.thumburl || info.url,
+      imageOriginal: info.url,
+      commonsPage: info.descriptionurl || null,
+      wikidataUrl: `https://www.wikidata.org/wiki/${site.id}`,
+      file: site.file,
+      author: stripHtml(meta.Artist?.value || meta.Credit?.value),
+      license: meta.LicenseShortName?.value ?? null,
+      licenseUrl: meta.LicenseUrl?.value ?? null,
+      geoCheck: check.geoCheck,          // "ok" = GPS de la photo cohérent, "unknown" = pas de GPS
+      distanceKm: check.distance,
+      fame: site.fame
+    };
+
+    state.seenFiles.add(site.file);
+    const key = site.placeId || "none";
+    const count = state.placeCount.get(key) || 0;
+    if (site.placeId && count >= CONFIG.maxPerPlace) {
+      state.deferred.push(item);         // gardé en réserve si on manque de photos
+    } else {
+      state.placeCount.set(key, count + 1);
+      state.results.push(item);
+    }
+  }
+}
+
+async function getCountryPhotos(iso, max = CONFIG.maxPerCountry) {
+  iso = normalizeIso(iso);
+  if (!iso) throw new Error("code ISO invalide");
+
+  const qid = await getCountryQid(iso);
+  if (!qid) return [];
+
+  const countryName = (await fetchWikidataLabels([qid])).get(qid) || { fr: null, en: null };
+  const ctx = { iso, qid, countryName, max };
+  const state = { results: [], deferred: [], seenIds: new Set(), seenFiles: new Set(), placeCount: new Map(), hadErrors: false };
+
+  outer:
+  for (const scope of ["country", "territory"]) {
+    for (const tier of TIERS) {
+      if (state.results.length >= max) break outer;
+      if (scope === "territory" && tier.countryOnly) continue;
+
+      try {
+        const candidates = await getSiteCandidates(scope, qid, tier, iso, max);
+        await collectFromCandidates(candidates, state, ctx);
+      } catch (error) {
+        state.hadErrors = true;
+        log(`   ${iso} [${scope}/${tier.name}] erreur : ${error.message}`);
+      }
+      await sleep(CONFIG.queryPauseMs);
+    }
+  }
+
+  // Complète avec les photos mises en réserve (lieux déjà utilisés)
+  for (const item of state.deferred) {
+    if (state.results.length >= max) break;
+    state.results.push(item);
+  }
+
+  // Rien trouvé ET des erreurs : on laisse le pays retentable plus tard
+  if (state.results.length === 0 && state.hadErrors) {
+    throw new Error("aucun résultat à cause d'erreurs réseau/WDQS");
+  }
+  return state.results.slice(0, max);
+}
+
+/* =====================  TOUS LES PAYS  ===================== */
+const RESULT_KEY = `all-country-sites-${CONFIG.cacheVersion}`;
+let running = false;
+
+function loadResult() {
+  try { return JSON.parse(localStorage.getItem(RESULT_KEY) || "{}"); } catch { return {}; }
+}
+
+async function buildPhotosByIso(isoCodes, maxPerCountry = CONFIG.maxPerCountry, pauseMs = CONFIG.pauseMs) {
+  const result = loadResult();
+  const codes = [...new Set(isoCodes.map(normalizeIso).filter(Boolean))];
+
+  for (let i = 0; i < codes.length; i++) {
+    const iso = codes[i];
+    const tag = `[${i + 1}/${codes.length}]`;
+
+    if (Object.prototype.hasOwnProperty.call(result, iso)) {
+      log(tag, iso, "déjà enregistré :", result[iso].length, "photo(s)");
+      continue;
+    }
+
+    try {
+      const photos = await getCountryPhotos(iso, maxPerCountry);
+      result[iso] = photos;
+      try { localStorage.setItem(RESULT_KEY, JSON.stringify(result)); }
+      catch { log("⚠ localStorage plein : télécharge le JSON puis vide le cache"); }
+      log(tag, iso, photos.length, "photo(s)");
+    } catch (error) {
+      log(tag, iso, "échec :", error.message, "(sera retenté au prochain lancement)");
+    }
+
+    if (i < codes.length - 1) await sleep(pauseMs + Math.floor(Math.random() * 2000));
+  }
+  return result;
+}
+
+const ISO_CODES = [
+  "AD","AE","AF","AG","AI","AL","AM","AO","AQ","AR","AS","AT","AU","AW","AX","AZ",
+  "BA","BB","BD","BE","BF","BG","BH","BI","BJ","BL","BM","BN","BO","BQ","BR","BS","BT","BV","BW","BY","BZ",
+  "CA","CC","CD","CF","CG","CH","CI","CK","CL","CM","CN","CO","CR","CU","CV","CW","CX","CY","CZ",
+  "DE","DJ","DK","DM","DO","DZ","EC","EE","EG","EH","ER","ES","ET",
+  "FI","FJ","FK","FM","FO","FR",
+  "GA","GB","GD","GE","GF","GG","GH","GI","GL","GM","GN","GP","GQ","GR","GS","GT","GU","GW","GY",
+  "HK","HM","HN","HR","HT","HU",
+  "ID","IE","IL","IM","IN","IO","IQ","IR","IS","IT","JE","JM","JO","JP",
+  "KE","KG","KH","KI","KM","KN","KP","KR","KW","KY","KZ",
+  "LA","LB","LC","LI","LK","LR","LS","LT","LU","LV","LY",
+  "MA","MC","MD","ME","MF","MG","MH","MK","ML","MM","MN","MO","MP","MQ","MR","MS","MT","MU","MV","MW","MX","MY","MZ",
+  "NA","NC","NE","NF","NG","NI","NL","NO","NP","NR","NU","NZ","OM",
+  "PA","PE","PF","PG","PH","PK","PL","PM","PN","PR","PS","PT","PW","PY","QA",
+  "RE","RO","RS","RU","RW",
+  "SA","SB","SC","SD","SE","SG","SH","SI","SJ","SK","SL","SM","SN","SO","SR","SS","ST","SV","SX","SY","SZ",
+  "TC","TD","TF","TG","TH","TJ","TK","TL","TM","TN","TO","TR","TT","TV","TW","TZ",
+  "UA","UG","UM","US","UY","UZ","VA","VC","VE","VG","VI","VN","VU","WF","WS","YE","YT","ZA","ZM","ZW"
+];
+
+/* =====================  INTERFACE  ===================== */
+async function run(codes) {
+  if (running) return log("Déjà en cours…");
+  running = true;
+  try {
+    const res = await buildPhotosByIso(codes);
+    log("Terminé. Pays enregistrés :", Object.keys(res).length);
+    console.log(res);
+  } finally { running = false; }
+}
+
+// document.getElementById("btnTest").onclick = () => run(["FR", "JP", "BR", "GF", "SM"]);
+// document.getElementById("btnAll").onclick = () => run(ISO_CODES);
+// document.getElementById("btnDownload").onclick = () => {
+//   const data = JSON.stringify(loadResult(), null, 2);
+//   const a = document.createElement("a");
+//   a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
+//   a.download = "photos-par-pays.json";
+//   a.click();
+//   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+// };
+// document.getElementById("btnReset").onclick = () => {
+//   Object.keys(localStorage).filter(k => k.includes(CONFIG.cacheVersion)).forEach(k => localStorage.removeItem(k));
+//   log("Cache vidé.");
+// };
+
+const iso = [
+    "AD",
+    "AE",
+    "AF",
+    "AG",
+    "AI",
+    "AL",
+    "AM",
+    "AO",
+    "AR",
+    "AS",
+    "AT",
+    "AU",
+    "AW",
+    "AX",
+    "AZ",
+    "BA",
+    "BB",
+    "BD",
+    "BE",
+    "BF",
+    "BG",
+    "BH",
+    "BI",
+    "BJ",
+    "BL",
+    "BM",
+    "BN",
+    "BO",
+    "BR",
+    "BS",
+    "BT",
+    "BV",
+    "BW",
+    "BY",
+    "BZ",
+    "CA",
+    "CC",
+    "CD",
+    "CF",
+    "CG",
+    "CH",
+    "CI",
+    "CK",
+    "CL",
+    "CM",
+    "CN",
+    "CO",
+    "CR",
+    "CU",
+    "CV",
+    "CW",
+    "CX",
+    "CY",
+    "CZ",
+    "DE",
+    "DJ",
+    "DK",
+    "DM",
+    "DO",
+    "DZ",
+    "EC",
+    "EE",
+    "EG",
+    "EH",
+    "ER",
+    "ES",
+    "ET",
+    "FI",
+    "FJ",
+    "FK",
+    "FM",
+    "FO",
+    "FR",
+    "GA",
+    "GB",
+    "GD",
+    "GE",
+    "GF",
+    "GG",
+    "GH",
+    "GI",
+    "GL",
+    "GM",
+    "GN",
+    "GO",
+    "GP",
+    "GQ",
+    "GR",
+    "GS",
+    "GT",
+    "GU",
+    "GW",
+    "GY",
+    "HK",
+    "HM",
+    "HN",
+    "HR",
+    "HT",
+    "HU",
+    "ID",
+    "IE",
+    "IL",
+    "IM",
+    "IN",
+    "IO",
+    "IQ",
+    "IR",
+    "IS",
+    "IT",
+    "JE",
+    "JM",
+    "JO",
+    "JP",
+    "KE",
+    "KG",
+    "KH",
+    "KI",
+    "KM",
+    "KN",
+    "KP",
+    "KR",
+    "KW",
+    "KY",
+    "KZ",
+    "LA",
+    "LB",
+    "LC",
+    "LI",
+    "LK",
+    "LR",
+    "LS",
+    "LT",
+    "LU",
+    "LV",
+    "LY",
+    "MA",
+    "MC",
+    "MD",
+    "ME",
+    "MF",
+    "MG",
+    "MH",
+    "MK",
+    "ML",
+    "MM",
+    "MN",
+    "MO",
+    "MP",
+    "MQ",
+    "MR",
+    "MS",
+    "MT",
+    "MU",
+    "MV",
+    "MW",
+    "MX",
+    "MY",
+    "MZ",
+    "NA",
+    "NC",
+    "NE",
+    "NF",
+    "NG",
+    "NI",
+    "NL",
+    "NO",
+    "NP",
+    "NR",
+    "NU",
+    "NZ",
+    "OM",
+    "PA",
+    "PE",
+    "PF",
+    "PG",
+    "PH",
+    "PK",
+    "PL",
+    "PM",
+    "PN",
+    "PR",
+    "PS",
+    "PT",
+    "PW",
+    "PY",
+    "QA",
+    "RE",
+    "RO",
+    "RS",
+    "RU",
+    "RW",
+    "SA",
+    "SB",
+    "SC",
+    "SD",
+    "SE",
+    "SG",
+    "SH",
+    "SI",
+    "SJ",
+    "SK",
+    "SL",
+    "SM",
+    "SN",
+    "SO",
+    "SR",
+    "SS",
+    "ST",
+    "SV",
+    "SX",
+    "SY",
+    "SZ",
+    "TC",
+    "TD",
+    "TF",
+    "TG",
+    "TH",
+    "TJ",
+    "TK",
+    "TL",
+    "TM",
+    "TN",
+    "TO",
+    "TR",
+    "TT",
+    "TV",
+    "TW",
+    "TZ",
+    "UA",
+    "UG",
+    "UM",
+    "US",
+    "UY",
+    "UZ",
+    "VA",
+    "VC",
+    "VE",
+    "VG",
+    "VI",
+    "VN",
+    "VU",
+    "WF",
+    "WS",
+    "XK",
+    "YE",
+    "YT",
+    "ZA",
+    "ZM",
+    "ZW",
+    "UM-DQ",
+    "UM-FQ",
+    "UM-HQ",
+    "UM-JQ",
+    "UM-MQ",
+    "UM-WQ",
+    "JU",
+    "BQSA",
+    "BQSE",
+    "BQBO"
+]
+
+</script>
+</body>
+</html>
+
+

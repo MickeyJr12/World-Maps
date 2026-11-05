@@ -2607,7 +2607,11 @@
           transition: filter 0.2s ease;
           }
         }
-
+      }
+      #boxTxtPic{
+        display : flex;
+        flex-direction: column;
+        gap : 0.08rem;
       }
       /* Fin CSS Pictures */
 
@@ -64485,7 +64489,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           compteurSleep = 0;
           night();
           intervSleep = setInterval(() => {
-            sleep();
+            sleepZ();
           }, 900);
         } else {
           currentPhone.style.display = "flex";
@@ -64521,7 +64525,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         animeNight = requestAnimationFrame(night);
       }
       let compteurSleep = 0;
-      function sleep() {
+      function sleepZ() {
         let size = 1 + Math.random() * 1.2;
         let rotate = -30 + Math.random() * 60;
         let Tx = 5 + Math.random() * 5;
