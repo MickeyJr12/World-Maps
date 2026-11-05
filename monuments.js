@@ -59874,4 +59874,621 @@ const sites = { // Tous les sites proposés (il en manque peut être 10)
 ],
 }
 
-const tt = {}
+const aremplacer = { // Avant ces id n'avaient pas de photos, mettre ça dans D_mon..
+    "BL": [
+        {
+            "id": "Q34112",
+            "name": {
+                "fr": "Gustavia",
+                "en": "Gustavia"
+            },
+            "city": {
+                "id": "Q25362",
+                "fr": "Saint-Barthélemy",
+                "en": "Saint Barthélemy"
+            },
+            "country": {
+                "id": "Q25362",
+                "iso": "BL",
+                "fr": "Saint-Barthélemy",
+                "en": "Saint Barthélemy"
+            },
+            "coordinates": {
+                "latitude": 17.898611111111,
+                "longitude": -62.849166666667
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Gustavia_Harbor%2C_Saint-Barth%C3%A9lemy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Gustavia Harbor, Saint-Barthélemy.jpg",
+            "author": "Originally uploaded at en.wikipedia by en:User:Evaneggers as en:Image:Stb.jpg",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 69
+        },
+        {
+            "id": "Q113623018",
+            "name": {
+                "fr": "Anse de Grande Saline",
+                "en": "Anse de Grande Saline"
+            },
+            "city": {
+                "id": "Q25362",
+                "fr": "Saint-Barthélemy",
+                "en": "Saint Barthélemy"
+            },
+            "country": {
+                "id": "Q25362",
+                "iso": "BL",
+                "fr": "Saint-Barthélemy",
+                "en": "Saint Barthélemy"
+            },
+            "coordinates": {
+                "latitude": 17.888333,
+                "longitude": -62.821528
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Beach_looking_west_at_the_Anse_de_Grande_Saline_on_St._Barthelemy%2C_French_West_Indies_-_panoramio.jpg/1280px-Beach_looking_west_at_the_Anse_de_Grande_Saline_on_St._Barthelemy%2C_French_West_Indies_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Beach looking west at the Anse de Grande Saline on St. Barthelemy, French West Indies - panoramio.jpg",
+            "author": "David Broad",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 2
+        }
+    ],
+    "CK": [
+        {
+            "id": "Q223379",
+            "name": {
+                "fr": "Aitutaki",
+                "en": "Aitutaki"
+            },
+            "city": null,
+            "country": {
+                "id": "Q26988",
+                "iso": "CK",
+                "fr": "Îles Cook",
+                "en": "Cook Islands"
+            },
+            "coordinates": {
+                "latitude": -18.85,
+                "longitude": -159.79
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Aitutaki-Motu_Tapuaetai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Aitutaki-Motu Tapuaetai.jpg",
+            "author": "No machine-readable author provided. Emeseee assumed (based on copyright claims).",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 39
+        },
+        {
+            "id": "Q3321538",
+            "name": {
+                "fr": "Église chrétienne des îles Cook",
+                "en": "Cook Islands Christian Church"
+            },
+            "city": null,
+            "country": {
+                "id": "Q26988",
+                "iso": "CK",
+                "fr": "Îles Cook",
+                "en": "Cook Islands"
+            },
+            "coordinates": {
+                "latitude": null,
+                "longitude": null
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/CICC_Ekalesia_Avarua_01.jpg/1280px-CICC_Ekalesia_Avarua_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "CICC Ekalesia Avarua 01.jpg",
+            "author": "Tom Ackroyd",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 9
+        }
+    ],
+    "CY": [
+        {
+            "id": "Q1785592",
+            "name": {
+                "fr": "Kourion",
+                "en": "Kourion"
+            },
+            "city": {
+                "id": "Q5383505",
+                "fr": "Episkopí",
+                "en": "Episkopi"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.6642,
+                "longitude": 32.8877
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Episkopi_01-2017_img11_Kourion.jpg/1280px-Episkopi_01-2017_img11_Kourion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Episkopi 01-2017 img11 Kourion.jpg",
+            "author": "A.Savin",
+            "license": "FAL",
+            "licenseUrl": "http://artlibre.org/licence/lal/en",
+            "fame": 32
+        },
+        {
+            "id": "Q2061165",
+            "name": {
+                "fr": "Pétra tou Romioú",
+                "en": "Petra tou Romiou"
+            },
+            "city": {
+                "id": "Q930838",
+                "fr": "Koúklia",
+                "en": "Kouklia"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.663517,
+                "longitude": 32.62697
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Roca_de_Afrodita%2C_Chipre%2C_2021-12-10%2C_DD_65.jpg/1280px-Roca_de_Afrodita%2C_Chipre%2C_2021-12-10%2C_DD_65.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Roca de Afrodita, Chipre, 2021-12-10, DD 65.jpg",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 24
+        },
+        {
+            "id": "Q1584818",
+            "name": {
+                "fr": "château de Colosse",
+                "en": "Kolossi Castle"
+            },
+            "city": {
+                "id": "Q3353547",
+                "fr": "Kolóssi",
+                "en": "Kolossi"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.665,
+                "longitude": 32.93416667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Kolossi_Castle_01.JPG/1280px-Kolossi_Castle_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Kolossi Castle 01.JPG",
+            "author": "Vegard Ottervig",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 21
+        },
+        {
+            "id": "Q1796353",
+            "name": {
+                "fr": "tombeaux des Rois",
+                "en": "Tombs of the Kings"
+            },
+            "city": {
+                "id": "Q56046916",
+                "fr": "municipalité de Paphos",
+                "en": "Paphos Municipality"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.77611111,
+                "longitude": 32.40472222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Tombs_of_the_Kings_%28Paphos%29.jpg/1280px-Tombs_of_the_Kings_%28Paphos%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Tombs of the Kings (Paphos).jpg",
+            "author": "Mgiganteus1 at en.wikipedia",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 20
+        },
+        {
+            "id": "Q12065255",
+            "name": {
+                "fr": "Parc archéologique de Paphos",
+                "en": "Paphos Archaeological Park"
+            },
+            "city": {
+                "id": "Q180918",
+                "fr": "Paphos",
+                "en": "Paphos"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.75566667,
+                "longitude": 32.40416667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Archaeological_Park_Paphos_Cyprus_08.jpg/1280px-Archaeological_Park_Paphos_Cyprus_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Archaeological Park Paphos Cyprus 08.jpg",
+            "author": "Nikodem Nijaki",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 14
+        },
+        {
+            "id": "Q7041122",
+            "name": {
+                "fr": "Nissi beach",
+                "en": "Nissi beach"
+            },
+            "city": {
+                "id": "Q393593",
+                "fr": "Ayía Nápa",
+                "en": "Agia Napa"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.988,
+                "longitude": 33.969
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Nissi-Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Nissi-Beach.jpg",
+            "author": "Urieli100",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 9
+        }
+    ],
+    "GD": [
+        {
+            "id": "Q12875401",
+            "name": {
+                "fr": "Grand Anse",
+                "en": "Grand Anse"
+            },
+            "city": {
+                "id": "Q576651",
+                "fr": "paroisse de Saint George",
+                "en": "Saint George Parish"
+            },
+            "country": {
+                "id": "Q769",
+                "iso": "GD",
+                "fr": "Grenade",
+                "en": "Grenada"
+            },
+            "coordinates": {
+                "latitude": 12.027222222222,
+                "longitude": -61.759722222222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Grand_Anse_Beach_Grenada.jpg/1280px-Grand_Anse_Beach_Grenada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Grand Anse Beach Grenada.jpg",
+            "author": "Varun Kapoor / Vkap",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 6
+        },
+        {
+            "id": "Q6896200",
+            "name": {
+                "fr": "Molinere Underwater Sculpture Park",
+                "en": "Molinere Underwater Sculpture Park"
+            },
+            "city": null,
+            "country": {
+                "id": "Q769",
+                "iso": "GD",
+                "fr": "Grenade",
+                "en": "Grenada"
+            },
+            "coordinates": {
+                "latitude": 12.0831,
+                "longitude": -61.7631
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Underwater_sculptures_at_Molinere_Underwater_Sculpture_Park.jpg/1280px-Underwater_sculptures_at_Molinere_Underwater_Sculpture_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Underwater sculptures at Molinere Underwater Sculpture Park.jpg",
+            "author": "Boris Kasimov",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 4
+        }
+    ],
+    "GF": [
+        {
+            "id": "Q308987",
+            "name": {
+                "fr": "centre spatial guyanais",
+                "en": "Guiana Space Centre"
+            },
+            "city": {
+                "id": "Q273312",
+                "fr": "Kourou",
+                "en": "Kourou"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 5.2372222222222,
+                "longitude": -52.760555555556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ariane_5ECA_on_its_launch_platform_on_its_way_to_lauch_pad_ELA-3.jpg/1280px-Ariane_5ECA_on_its_launch_platform_on_its_way_to_lauch_pad_ELA-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Ariane 5ECA on its launch platform on its way to lauch pad ELA-3.jpg",
+            "author": "elisabetta_monaco from Munich, Germany",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 52
+        },
+        {
+            "id": "Q220385",
+            "name": {
+                "fr": "île du Diable",
+                "en": "Devil's Island"
+            },
+            "city": {
+                "id": "Q44401",
+                "fr": "Cayenne",
+                "en": "Cayenne"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 5.29389,
+                "longitude": -52.5833
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%C3%8Ele_du_Diable_depuis_l%27%C3%AEle_Royale.jpg/1280px-%C3%8Ele_du_Diable_depuis_l%27%C3%AEle_Royale.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Île du Diable depuis l'île Royale.jpg",
+            "author": "Gfievet",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 44
+        },
+        {
+            "id": "Q30739005",
+            "name": {
+                "fr": "fort Cépérou",
+                "en": "Fort Cépérou"
+            },
+            "city": {
+                "id": "Q44401",
+                "fr": "Cayenne",
+                "en": "Cayenne"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 4.93763,
+                "longitude": -52.33663
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cayenne_Fort_C%C3%A9p%C3%A9rou_2013.jpg/1280px-Cayenne_Fort_C%C3%A9p%C3%A9rou_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cayenne Fort Cépérou 2013.jpg",
+            "author": "Cayambe",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 4
+        },
+        {
+            "id": "Q3390536",
+            "name": {
+                "fr": "place des Palmistes",
+                "en": "place des Palmistes"
+            },
+            "city": {
+                "id": "Q44401",
+                "fr": "Cayenne",
+                "en": "Cayenne"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 4.9396376,
+                "longitude": -52.3338032
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Cayenne_Place_des_palmistes.jpg/1280px-Cayenne_Place_des_palmistes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cayenne Place des palmistes.jpg",
+            "author": "Cayambe",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 3
+        },
+        {
+            "id": "Q60342142",
+            "name": {
+                "fr": "chapelle du camp de la Transportation de Saint-Laurent-du-Maroni",
+                "en": "Chapelle du camp de la Transportation de Saint-Laurent-du-Maroni"
+            },
+            "city": {
+                "id": "Q319959",
+                "fr": "Saint-Laurent-du-Maroni",
+                "en": "Saint-Laurent-du-Maroni"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 5.504338,
+                "longitude": -54.03084
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Bagne_de_Saint-Laurent-du-Maroni_11.JPG/1280px-Bagne_de_Saint-Laurent-du-Maroni_11.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Bagne de Saint-Laurent-du-Maroni 11.JPG",
+            "author": "Chatsam",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 1
+        }
+    ],
+    "GI": [
+        {
+            "id": "Q690347",
+            "name": {
+                "fr": "rocher de Gibraltar",
+                "en": "Rock of Gibraltar"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.125833333333,
+                "longitude": -5.3430555555556
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Rock_of_Gibraltar_northwest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Rock of Gibraltar northwest.jpg",
+            "author": "Gibnews.net",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 46
+        },
+        {
+            "id": "Q583655",
+            "name": {
+                "fr": "grotte de Saint Michel",
+                "en": "St. Michael's Cave"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.125889,
+                "longitude": -5.346458
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/St_Michaels_cave2.jpg/1280px-St_Michaels_cave2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "St Michaels cave2.jpg",
+            "author": "Joonas Lyytinen",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "fame": 19
+        },
+        {
+            "id": "Q195913",
+            "name": {
+                "fr": "téléphérique de Gibraltar",
+                "en": "Gibraltar Cable Car"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.13281389,
+                "longitude": -5.35205278
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Rock_of_Gibraltar_cablecar.jpg/1280px-Rock_of_Gibraltar_cablecar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Rock of Gibraltar cablecar.jpg",
+            "author": "David Morris",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 14
+        },
+        {
+            "id": "Q3739779",
+            "name": {
+                "fr": "Europa Point Lighthouse",
+                "en": "Europa Point Lighthouse"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.109634,
+                "longitude": -5.344798
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Europa_Point_Lighthouse_and_cottages.jpg/1280px-Europa_Point_Lighthouse_and_cottages.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Europa Point Lighthouse and cottages.jpg",
+            "author": "Allie Caulfield",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 10
+        },
+        {
+            "id": "Q1042622",
+            "name": {
+                "fr": "Main Street",
+                "en": "Main Street"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.139680555556,
+                "longitude": -5.3537944444444
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Main_Street_Gibraltar.JPG/1280px-Main_Street_Gibraltar.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Main Street Gibraltar.JPG",
+            "author": "RedCoat10 at English Wikipedia",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 9
+        }
+    ]
+}
