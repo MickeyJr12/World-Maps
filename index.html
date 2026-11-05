@@ -4587,6 +4587,7 @@
         display: flex;
         position: fixed;
         flex-direction: column;
+        overflow : hidden;
         align-items: center;
         color: white;
         opacity: 0;
@@ -4684,12 +4685,16 @@
         text-overflow: ellipsis;
       }
       #mCapitale {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        overflow : hidden;
         font-size: clamp(0.9rem, 2.8vw, 1rem);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: flex;
-        align-items: center;
+        /* white-space: nowrap; */
+        /* overflow: hidden; */
+        /* text-overflow: ellipsis; */
+        /* align-items: center; */
         gap: 0.3rem;
       }
       /* .voirPlus {
@@ -63204,6 +63209,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           btn.style.filter = "";
         });
 
+        
         btn.addEventListener("click", () => {
           messageViewMap.classList.remove("active");
           if (viewMaps || cChooseTrouver) {
@@ -63594,7 +63600,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         let newIdGood = pm ? infosCboxs_m.get(pm).idGood : idBonneReponse;
         let newIdBad = pm ? infosCboxs_m.get(pm).idBad : idMauvaiseReponse;
 
-        (L_config.sub
+      
+        ;(L_config.sub
           ? [...L_pathsSub.find((paths) => paths.id === "ps" + L_config.sub)]
           : paths
         ).forEach((p) => {
@@ -63625,7 +63632,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           });
 
           svgSub2.classList.add("viewSub");
-          zoomCountry(L_config.sub);
+          // zoomCountry(L_config.sub);
           viewSub = true;
           setTimeout(() => {
             getId("svgMonde").append(svgSub2);
@@ -63642,8 +63649,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           });
           document.querySelector(".menuCadre").style.display = "none";
           wrapperMenuCadre.style.maxHeight = "";
-
-          // cadreBlason.style.display = "none";
           //******
           //abab
         }
@@ -63664,44 +63669,39 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
 
         //*** Message d'information
-        if (!oneTimeMessage) {
-          setTimeout(() => {
-            requestAnimationFrame(() => {
-              messageViewMap.classList.add("active");
-            });
-
-            // setTimeout(() => {
-            //   message.className = "messageViewMap";
-            // }, 5000);
-
-            // setTimeout(() => {
-            //   message.remove();
-            // }, 5500);
-          }, 300);
-        }
+        // if (!oneTimeMessage) {
+        //   setTimeout(() => {
+        //     requestAnimationFrame(() => {
+        //       messageViewMap.classList.add("active");
+        //     });      
+        //   }, 300);
+        // }
 
         //***
 
         if (L_config.sub) {
           viewMaps = false;
-          zoomCountry(currentCountry.id);
+          // zoomCountry(currentCountry.id);
           viewMaps = true;
           currentCountry = null;
-          return;
+          // return;
         }
 
         svg.setAttribute(
           "viewBox",
           "390.6825714111328, 248.61618041992188, 318.6348571777344, 202.76763916015625",
         );
+        
 
         setTimeout(() => {
-          animateViewBox(
-            document.getElementById("svgMonde"),
-            initialViewBox,
-            700,
-          );
-        }, 10);
+          // animateViewBox(
+          //   document.getElementById("svgMonde"),
+          //   initialViewBox,
+          //   700,
+          // );
+        zoomCountry(newIdGood)
+
+        }, 100);
       }
 
       function cacherMaps() {
@@ -97800,21 +97800,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
       });
 
-      /* document.addEventListener("pointerup", () => {
-        if (!moveSD) return;
-        cadreSD.style.transition = "";
-        moveSD = false;
-        if (cadreSD.getBoundingClientRect().top < window.innerHeight * 0.25) {
-          cadreSD.style.top = "";
-          cadreSD.getBoundingClientRect().top < window.innerHeight * 0.15
-            ? (cadreSD.classList.add("fullScreen"),
-              (full = true),
-              lineCadreSD.classList.add("fullScreen"))
-            : cadreSD.classList.add("active");
-        } else {
-          crossCadreSD.click();
-        }
-      }); */
 
       //
       const D_nDevises = {
