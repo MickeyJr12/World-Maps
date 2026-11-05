@@ -39199,12 +39199,381 @@ const D_monuments = {
             "fame": 14
         }
     ],
-    "AS": [],
+    
+    "AS": [
+        {
+            "id": "Q843075",
+            "name": {
+                "fr": "parc national des Samoa américaines",
+                "en": "National Park of American Samoa"
+            },
+            "city": {
+                "id": "Q16641",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "country": {
+                "id": "Q16641",
+                "iso": "AS",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "coordinates": {
+                "latitude": -14.25833333,
+                "longitude": -170.68333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/AmSamoa_Tutuila_491.jpg/1280px-AmSamoa_Tutuila_491.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "AmSamoa Tutuila 491.jpg",
+            "author": "Eric Guinther",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 35
+        },
+        {
+            "id": "Q21847427",
+            "name": {
+                "fr": "Ta‘ū",
+                "en": "Taʻū"
+            },
+            "city": {
+                "id": "Q1247537",
+                "fr": "district de Manuʻa",
+                "en": "Manuʻa District"
+            },
+            "country": {
+                "id": "Q16641",
+                "iso": "AS",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "coordinates": {
+                "latitude": -14.2380556,
+                "longitude": -169.4761111
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Ta%27u_Island.JPG/1280px-Ta%27u_Island.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Ta'u Island.JPG",
+            "author": "NASA",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 29
+        },
+        {
+            "id": "Q773919",
+            "name": {
+                "fr": "Aunuʻu",
+                "en": "Aunuʻu"
+            },
+            "city": {
+                "id": "Q2625563",
+                "fr": "district oriental",
+                "en": "Eastern District"
+            },
+            "country": {
+                "id": "Q16641",
+                "iso": "AS",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "coordinates": {
+                "latitude": -14.2836503,
+                "longitude": -170.5538983
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Aunu%27u_Island_National_National_Landmark.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Aunu'u Island National National Landmark.jpg",
+            "author": "Unknown authorUnknown author",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 25
+        },
+        {
+            "id": "Q7124387",
+            "name": {
+                "fr": "Pago Pago Harbor",
+                "en": "Pago Pago Harbor"
+            },
+            "city": null,
+            "country": {
+                "id": "Q16641",
+                "iso": "AS",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "coordinates": {
+                "latitude": -14.276,
+                "longitude": -170.676
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Fagatogo_Dock.jpg/1280px-Fagatogo_Dock.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fagatogo Dock.jpg",
+            "author": "Eric Guinther",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 5
+        },
+        {
+            "id": "Q7284933",
+            "name": {
+                "fr": "Rainmaker Mountain",
+                "en": "Rainmaker Mountain"
+            },
+            "city": null,
+            "country": {
+                "id": "Q16641",
+                "iso": "AS",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "coordinates": {
+                "latitude": -14.276388888889,
+                "longitude": -170.65277777778
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/One_of_the_seven_National_Natural_Landmarks_located_on_opposite_side_of_Pago_Pago_Harbor._A_great_mass_of_volcanic_rocks_%28c0df8163-056a-ee75-06bf-67995a91f08a%29.jpg/1280px-thumbnail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "One of the seven National Natural Landmarks located on opposite side of Pago Pago Harbor. A great mass of volcanic rocks (c0df8163-056a-ee75-06bf-67995a91f08a).jpg",
+            "author": "NPS",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 4
+        },
+        {
+            "id": "Q21847729",
+            "name": {
+                "fr": "Mount ʻAlava",
+                "en": "Mount ʻAlava"
+            },
+            "city": {
+                "id": "Q2625563",
+                "fr": "district oriental",
+                "en": "Eastern District"
+            },
+            "country": {
+                "id": "Q16641",
+                "iso": "AS",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "coordinates": {
+                "latitude": -14.2656,
+                "longitude": -170.6881
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Mount_%27Alava.jpg/1280px-Mount_%27Alava.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mount 'Alava.jpg",
+            "author": "National Park Service",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 4
+        },
+        {
+            "id": "Q31857500",
+            "name": {
+                "fr": "National Marine Sanctuary of American Samoa",
+                "en": "National Marine Sanctuary of American Samoa"
+            },
+            "city": {
+                "id": "Q16641",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "country": {
+                "id": "Q16641",
+                "iso": "AS",
+                "fr": "Samoa américaines",
+                "en": "American Samoa"
+            },
+            "coordinates": {
+                "latitude": -14.270281,
+                "longitude": -169.507412
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Reef3796_-_Flickr_-_NOAA_Photo_Library.jpg/1280px-Reef3796_-_Flickr_-_NOAA_Photo_Library.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Reef3796 - Flickr - NOAA Photo Library.jpg",
+            "author": "NOAA/NMFS/PIFSC/CRED, Oceanography Team.",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 4
+        }
+    ],
+
     "AX": [],
     "BL": [],
-    "CK": [],
+    "CK": [
+        {
+            "id": "Q170482",
+            "name": {
+                "fr": "Avarua",
+                "en": "Avarua"
+            },
+            "city": null,
+            "country": {
+                "id": "Q26988",
+                "iso": "CK",
+                "fr": "Îles Cook",
+                "en": "Cook Islands"
+            },
+            "coordinates": {
+                "latitude": -21.207,
+                "longitude": -159.771
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Para_o_Tane_Palace.jpg/1280px-Para_o_Tane_Palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Para o Tane Palace.jpg",
+            "author": "Nurg",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 81
+        },
+        {
+            "id": "Q471793",
+            "name": {
+                "fr": "Rarotonga",
+                "en": "Rarotonga"
+            },
+            "city": null,
+            "country": {
+                "id": "Q26988",
+                "iso": "CK",
+                "fr": "Îles Cook",
+                "en": "Cook Islands"
+            },
+            "coordinates": {
+                "latitude": -21.233333333333,
+                "longitude": -159.78333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Rarotonga_Island.jpg/1280px-Rarotonga_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Rarotonga Island.jpg",
+            "author": null,
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 53
+        },
+        {
+            "id": "Q223379",
+            "name": {
+                "fr": "Aitutaki",
+                "en": "Aitutaki"
+            },
+            "city": null,
+            "country": {
+                "id": "Q26988",
+                "iso": "CK",
+                "fr": "Îles Cook",
+                "en": "Cook Islands"
+            },
+            "coordinates": {
+                "latitude": -18.85,
+                "longitude": -159.79
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Aitutaki-Motu_Tapuaetai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Aitutaki-Motu Tapuaetai.jpg",
+            "author": "No machine-readable author provided. Emeseee assumed (based on copyright claims).",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 39
+        },
+        {
+            "id": "Q755982",
+            "name": {
+                "fr": "Atiu",
+                "en": "Atiu"
+            },
+            "city": null,
+            "country": {
+                "id": "Q26988",
+                "iso": "CK",
+                "fr": "Îles Cook",
+                "en": "Cook Islands"
+            },
+            "coordinates": {
+                "latitude": -19.983333333333,
+                "longitude": -158.11666666667
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Atiu_Aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Atiu Aerial.jpg",
+            "author": null,
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 27
+        }
+    ],
     "CY": [],
-    "GD": [],
+    "GD": [
+        {
+            "id": "Q41547",
+            "name": {
+                "fr": "Saint-Georges",
+                "en": "St. George's"
+            },
+            "city": {
+                "id": "Q576651",
+                "fr": "paroisse de Saint George",
+                "en": "Saint George Parish"
+            },
+            "country": {
+                "id": "Q769",
+                "iso": "GD",
+                "fr": "Grenade",
+                "en": "Grenada"
+            },
+            "coordinates": {
+                "latitude": 12.0525,
+                "longitude": -61.753055555555555
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Grenada_-_St._George.jpg/1280px-Grenada_-_St._George.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Grenada - St. George.jpg",
+            "author": "P. Hughes",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 130
+        },
+        {
+            "id": "Q795647",
+            "name": {
+                "fr": "île de Carriacou",
+                "en": "Carriacou Island"
+            },
+            "city": {
+                "id": "Q3044818",
+                "fr": "Dépendance de Carriacou et Petite Martinique",
+                "en": "Carriacou and Petite Martinique"
+            },
+            "country": {
+                "id": "Q769",
+                "iso": "GD",
+                "fr": "Grenade",
+                "en": "Grenada"
+            },
+            "coordinates": {
+                "latitude": 12.466667,
+                "longitude": -61.45
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Hillsborough_Carriacou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Hillsborough Carriacou.jpg",
+            "author": null,
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 33
+        },
+        {
+            "id": "Q6896200",
+            "name": {
+                "fr": "Molinere Underwater Sculpture Park",
+                "en": "Molinere Underwater Sculpture Park"
+            },
+            "city": null,
+            "country": {
+                "id": "Q769",
+                "iso": "GD",
+                "fr": "Grenade",
+                "en": "Grenada"
+            },
+            "coordinates": {
+                "latitude": 12.0831,
+                "longitude": -61.7631
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Underwater_sculptures_at_Molinere_Underwater_Sculpture_Park.jpg/1280px-Underwater_sculptures_at_Molinere_Underwater_Sculpture_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Underwater sculptures at Molinere Underwater Sculpture Park.jpg",
+            "author": "Boris Kasimov",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 4
+        }
+    ],
     "GF": [],
     "GI": [],
     "GO": [],
@@ -55292,269 +55661,24 @@ const oldD_monuments = {
     "BQBO": []
 }
 
-const iso = [
-    "AD",
-    "AE",
-    "AF",
-    "AG",
-    "AI",
-    "AL",
-    "AM",
-    "AO",
-    "AR",
-    "AS",
-    "AT",
-    "AU",
-    "AW",
-    "AX",
-    "AZ",
-    "BA",
-    "BB",
-    "BD",
-    "BE",
-    "BF",
-    "BG",
-    "BH",
-    "BI",
-    "BJ",
-    "BL",
-    "BM",
-    "BN",
-    "BO",
-    "BR",
-    "BS",
-    "BT",
-    "BV",
-    "BW",
-    "BY",
-    "BZ",
-    "CA",
-    "CC",
-    "CD",
-    "CF",
-    "CG",
-    "CH",
-    "CI",
-    "CK",
-    "CL",
-    "CM",
-    "CN",
-    "CO",
-    "CR",
-    "CU",
-    "CV",
-    "CW",
-    "CX",
-    "CY",
-    "CZ",
-    "DE",
-    "DJ",
-    "DK",
-    "DM",
-    "DO",
-    "DZ",
-    "EC",
-    "EE",
-    "EG",
-    "EH",
-    "ER",
-    "ES",
-    "ET",
-    "FI",
-    "FJ",
-    "FK",
-    "FM",
-    "FO",
-    "FR",
-    "GA",
-    "GB",
-    "GD",
-    "GE",
-    "GF",
-    "GG",
-    "GH",
-    "GI",
-    "GL",
-    "GM",
-    "GN",
-    "GO",
-    "GP",
-    "GQ",
-    "GR",
-    "GS",
-    "GT",
-    "GU",
-    "GW",
-    "GY",
-    "HK",
-    "HM",
-    "HN",
-    "HR",
-    "HT",
-    "HU",
-    "ID",
-    "IE",
-    "IL",
-    "IM",
-    "IN",
-    "IO",
-    "IQ",
-    "IR",
-    "IS",
-    "IT",
-    "JE",
-    "JM",
-    "JO",
-    "JP",
-    "KE",
-    "KG",
-    "KH",
-    "KI",
-    "KM",
-    "KN",
-    "KP",
-    "KR",
-    "KW",
-    "KY",
-    "KZ",
-    "LA",
-    "LB",
-    "LC",
-    "LI",
-    "LK",
-    "LR",
-    "LS",
-    "LT",
-    "LU",
-    "LV",
-    "LY",
-    "MA",
-    "MC",
-    "MD",
-    "ME",
-    "MF",
-    "MG",
-    "MH",
-    "MK",
-    "ML",
-    "MM",
-    "MN",
-    "MO",
-    "MP",
-    "MQ",
-    "MR",
-    "MS",
-    "MT",
-    "MU",
-    "MV",
-    "MW",
-    "MX",
-    "MY",
-    "MZ",
-    "NA",
-    "NC",
-    "NE",
-    "NF",
-    "NG",
-    "NI",
-    "NL",
-    "NO",
-    "NP",
-    "NR",
-    "NU",
-    "NZ",
-    "OM",
-    "PA",
-    "PE",
-    "PF",
-    "PG",
-    "PH",
-    "PK",
-    "PL",
-    "PM",
-    "PN",
-    "PR",
-    "PS",
-    "PT",
-    "PW",
-    "PY",
-    "QA",
-    "RE",
-    "RO",
-    "RS",
-    "RU",
-    "RW",
-    "SA",
-    "SB",
-    "SC",
-    "SD",
-    "SE",
-    "SG",
-    "SH",
-    "SI",
-    "SJ",
-    "SK",
-    "SL",
-    "SM",
-    "SN",
-    "SO",
-    "SR",
-    "SS",
-    "ST",
-    "SV",
-    "SX",
-    "SY",
-    "SZ",
-    "TC",
-    "TD",
-    "TF",
-    "TG",
-    "TH",
-    "TJ",
-    "TK",
-    "TL",
-    "TM",
-    "TN",
-    "TO",
-    "TR",
-    "TT",
-    "TV",
-    "TW",
-    "TZ",
-    "UA",
-    "UG",
-    "US",
-    "UY",
-    "UZ",
-    "VA",
-    "VC",
-    "VE",
-    "VG",
-    "VI",
-    "VN",
-    "VU",
-    "WF",
-    "WS",
-    "XK",
-    "YE",
-    "YT",
-    "ZA",
-    "ZM",
-    "ZW",
-    "UM-DQ",
-    "UM-FQ",
-    "UM-HQ",
-    "UM-JQ",
-    "UM-MQ",
-    "UM-WQ",
-    "JU",
-    "BQSA",
-    "BQSE",
-    "BQBO"
-]
 
-const noPic = { // liste des pays qui n'ont aucune photo
+const noPic = 
+    {
+    "AS": "Samoa américaines",
+    "BL": "Saint-Barthélemy",
+    "CY": "Chypre",
+    "GF": "Guyane française",
+    "GI": "Gibraltar",
+    "GO": "Îles Glorieuses",
+    "GP": "Guadeloupe",
+    "GS": "Géorgie du Sud-et-les Îles Sandwich du Sud",
     "GU": "Guam",
+    "HM": "Îles Heard-et-MacDonald",
+    "GR": "Grèce",
+    "MF": "Saint-Martin (partie française)",
+    "MO": "Macao",
+    "MP": "Îles Mariannes du Nord",
+    "MQ": "Martinique",
     "NC": "Nouvelle-Calédonie",
     "PF": "Polynésie française",
     "PM": "Saint-Pierre-et-Miquelon",
@@ -55564,41 +55688,1037 @@ const noPic = { // liste des pays qui n'ont aucune photo
     "VG": "Îles Vierges britanniques",
     "VI": "Îles Vierges des États-Unis",
     "WF": "Wallis-et-Futuna",
-    "YT": "Mayotte",
-    "AS": "Samoa américaines",
-    "AX": "Îles Åland",
-    "BL": "Saint-Barthélemy",
-    "CK": "Îles Cook",
-    "CY": "Chypre",
-    "GD": "Grenade",
-    "GF": "Guyane française",
-    "GI": "Gibraltar",
-    "GO": "Îles Glorieuses",
-    "GP": "Guadeloupe",
-    "GR": "Grèce",
-    "GS": "Géorgie du Sud-et-les Îles Sandwich du Sud",
-    "HM": "Îles Heard-et-MacDonald",
-    "MF": "Saint-Martin (partie française)",
-    "MO": "Macao",
-    "MP": "Îles Mariannes du Nord",
-    "MQ": "Martinique",
-    "NF": "Île Norfolk",
-    "NG": "Nigeria",
-    "NI": "Nicaragua",
-    "NL": "Pays-Bas",
-    "NO": "Norvège",
-    "NP": "Népal",
-    "NR": "Nauru",
-    "NU": "Niue",
-    "NZ": "Nouvelle-Zélande",
-    "OM": "Oman",
-    "BQSA": "Saba",
-    "BQSE": "Saint-Eustache",
-    "BQBO": "Bonaire"
+    "YT": "Mayotte"
 }
 
 
-const sites = {
+const sitesNoPic = { // Sites proposés qui n'ont pas été trouvés
+    "BL": [
+        {
+            "name": "Gustavia",
+            "id": null
+        },
+        {
+            "name": "Fort Karl",
+            "id": null
+        },
+        {
+            "name": "Fort Gustav Lighthouse",
+            "id": null
+        },
+        {
+            "name": "Saint-Jean Beach",
+            "id": null
+        },
+        {
+            "name": "Gouverneur Beach",
+            "id": null
+        },
+        {
+            "name": "Colombier Beach",
+            "id": null
+        },
+        {
+            "name": "Flamands Beach",
+            "id": null
+        },
+        {
+            "name": "Saline Beach",
+            "id": null
+        },
+        {
+            "name": "Wall House Museum",
+            "id": null
+        },
+        {
+            "name": "Swedish Clock Tower (Gustavia)",
+            "id": null
+        }
+    ],
+    "CK": [
+        {
+            "name": "Aitutaki Lagoon",
+            "id": null
+        },
+        {
+            "name": "Muri Beach (Rarotonga)",
+            "id": null
+        },
+        {
+            "name": "Te Rua Manga (The Needle)",
+            "id": null
+        },
+        {
+            "name": "One Foot Island (Tapuaetai)",
+            "id": null
+        },
+        {
+            "name": "Punanga Nui Market (Avarua)",
+            "id": null
+        },
+        {
+            "name": "Arai-Te-Tonga Marae",
+            "id": null
+        },
+        {
+            "name": "Cook Islands Christian Church (Avarua)",
+            "id": null
+        },
+        {
+            "name": "Black Rock (Rarotonga)",
+            "id": null
+        },
+        {
+            "name": "Atiu Island (Anatakitaki Cave)",
+            "id": null
+        },
+        {
+            "name": "Titikaveka Beach",
+            "id": null
+        }
+    ],
+    "CY": [
+        {
+            "name": "Kourion",
+            "id": null
+        },
+        {
+            "name": "Paphos Archaeological Park",
+            "id": null
+        },
+        {
+            "name": "Tombs of the Kings (Paphos)",
+            "id": null
+        },
+        {
+            "name": "Petra tou Romiou (Aphrodite's Rock)",
+            "id": null
+        },
+        {
+            "name": "Kykkos Monastery",
+            "id": null
+        },
+        {
+            "name": "Nissi Beach",
+            "id": null
+        },
+        {
+            "name": "Kolossi Castle",
+            "id": null
+        },
+        {
+            "name": "Cape Greco",
+            "id": null
+        },
+        {
+            "name": "Larnaca Salt Lake (Hala Sultan Tekke)",
+            "id": null
+        },
+        {
+            "name": "Choirokoitia",
+            "id": null
+        }
+    ],
+    "GD": [
+        {
+            "name": "Grand Anse Beach",
+            "id": null
+        },
+        {
+            "name": "St. George's (Carenage)",
+            "id": null
+        },
+        {
+            "name": "Fort George",
+            "id": null
+        },
+        {
+            "name": "Underwater Sculpture Park (Molinere Bay)",
+            "id": null
+        },
+        {
+            "name": "Grand Etang National Park",
+            "id": null
+        },
+        {
+            "name": "Annandale Falls",
+            "id": null
+        },
+        {
+            "name": "Concord Falls",
+            "id": null
+        },
+        {
+            "name": "Belmont Estate",
+            "id": null
+        },
+        {
+            "name": "Levera National Park",
+            "id": null
+        },
+        {
+            "name": "Fort Frederick",
+            "id": null
+        }
+    ],
+    "GF": [
+        {
+            "name": "Guiana Space Centre (Kourou)",
+            "id": null
+        },
+        {
+            "name": "Îles du Salut (Devil's Island)",
+            "id": null
+        },
+        {
+            "name": "Camp de la Transportation (Saint-Laurent-du-Maroni)",
+            "id": null
+        },
+        {
+            "name": "Fort Cépérou (Cayenne)",
+            "id": null
+        },
+        {
+            "name": "Place des Palmistes (Cayenne)",
+            "id": null
+        },
+        {
+            "name": "Kaw Marshes (Marais de Kaw)",
+            "id": null
+        },
+        {
+            "name": "Guiana Amazonian Park",
+            "id": null
+        },
+        {
+            "name": "Cacao (Hmong village)",
+            "id": null
+        },
+        {
+            "name": "Awala-Yalimapo (Les Hattes beach)",
+            "id": null
+        },
+        {
+            "name": "Maroni River (Saint-Laurent)",
+            "id": null
+        }
+    ],
+    "GI": [
+        {
+            "name": "Rock of Gibraltar",
+            "id": null
+        },
+        {
+            "name": "Europa Point (lighthouse)",
+            "id": null
+        },
+        {
+            "name": "St. Michael's Cave",
+            "id": null
+        },
+        {
+            "name": "Great Siege Tunnels",
+            "id": null
+        },
+        {
+            "name": "Moorish Castle",
+            "id": null
+        },
+        {
+            "name": "Gorham's Cave Complex",
+            "id": null
+        },
+        {
+            "name": "Main Street (Gibraltar)",
+            "id": null
+        },
+        {
+            "name": "Gibraltar Cable Car",
+            "id": null
+        },
+        {
+            "name": "Ibrahim-al-Ibrahim Mosque",
+            "id": null
+        },
+        {
+            "name": "Alameda Botanic Gardens",
+            "id": null
+        }
+    ],
+    "GO": [],
+    "GP": [
+        {
+            "name": "La Grande Soufrière",
+            "id": null
+        },
+        {
+            "name": "Guadeloupe National Park",
+            "id": null
+        },
+        {
+            "name": "Mémorial ACTe",
+            "id": null
+        },
+        {
+            "name": "Chutes du Carbet",
+            "id": null
+        },
+        {
+            "name": "Pointe des Châteaux",
+            "id": null
+        },
+        {
+            "name": "Fort Delgrès",
+            "id": null
+        },
+        {
+            "name": "Fort Napoléon des Saintes",
+            "id": null
+        },
+        {
+            "name": "Réserve Cousteau (Îlets Pigeon)",
+            "id": null
+        },
+        {
+            "name": "Cathédrale Saint-Pierre-et-Saint-Paul de Pointe-à-Pitre",
+            "id": null
+        },
+        {
+            "name": "Plage de Grande-Anse, Deshaies",
+            "id": null
+        }
+    ],
+    "GS": [
+        {
+            "name": "Grytviken",
+            "id": null
+        },
+        {
+            "name": "Grave of Ernest Shackleton",
+            "id": null
+        },
+        {
+            "name": "King Edward Point",
+            "id": null
+        },
+        {
+            "name": "Whalers' Church, Grytviken",
+            "id": null
+        },
+        {
+            "name": "South Georgia Museum",
+            "id": null
+        },
+        {
+            "name": "Mount Paget",
+            "id": null
+        },
+        {
+            "name": "Salisbury Plain",
+            "id": null
+        },
+        {
+            "name": "St. Andrews Bay",
+            "id": null
+        },
+        {
+            "name": "Stromness whaling station",
+            "id": null
+        },
+        {
+            "name": "Zavodovski Island",
+            "id": null
+        }
+    ],
+    "GU": [
+        {
+            "name": "Two Lovers Point",
+            "id": null
+        },
+        {
+            "name": "Plaza de España, Hagåtña",
+            "id": null
+        },
+        {
+            "name": "Dulce Nombre de Maria Cathedral-Basilica",
+            "id": null
+        },
+        {
+            "name": "War in the Pacific National Historical Park",
+            "id": null
+        },
+        {
+            "name": "Fort Nuestra Señora de la Soledad",
+            "id": null
+        },
+        {
+            "name": "Latte Stone Park",
+            "id": null
+        },
+        {
+            "name": "Tumon Bay",
+            "id": null
+        },
+        {
+            "name": "Ritidian Point",
+            "id": null
+        },
+        {
+            "name": "Talofofo Falls",
+            "id": null
+        },
+        {
+            "name": "Mount Lamlam",
+            "id": null
+        }
+    ],
+    "HM": [
+        {
+            "name": "Heard Island",
+            "id": null
+        },
+        {
+            "name": "Mawson Peak (Big Ben)",
+            "id": null
+        },
+        {
+            "name": "McDonald Islands",
+            "id": null
+        },
+        {
+            "name": "Atlas Cove",
+            "id": null
+        },
+        {
+            "name": "Laurens Peninsula",
+            "id": null
+        },
+        {
+            "name": "Spit Bay",
+            "id": null
+        }
+    ],
+    "GR": [
+        {
+            "name": "Acropolis of Athens",
+            "id": null
+        },
+        {
+            "name": "Parthenon",
+            "id": "Q10285"
+        },
+        {
+            "name": "Meteora",
+            "id": null
+        },
+        {
+            "name": "Delphi",
+            "id": null
+        },
+        {
+            "name": "Santorini (Oia)",
+            "id": null
+        },
+        {
+            "name": "Mount Olympus",
+            "id": null
+        },
+        {
+            "name": "Knossos",
+            "id": null
+        },
+        {
+            "name": "Mount Athos",
+            "id": null
+        },
+        {
+            "name": "Ancient Olympia",
+            "id": null
+        },
+        {
+            "name": "Epidaurus theatre",
+            "id": null
+        }
+    ],
+    "MF": [
+        {
+            "name": "Fort Louis, Marigot",
+            "id": null
+        },
+        {
+            "name": "Pic Paradis",
+            "id": null
+        },
+        {
+            "name": "Orient Bay Beach",
+            "id": null
+        },
+        {
+            "name": "Grand Case Beach",
+            "id": null
+        },
+        {
+            "name": "Îlet Pinel",
+            "id": null
+        },
+        {
+            "name": "Tintamarre Island",
+            "id": null
+        },
+        {
+            "name": "Loterie Farm",
+            "id": null
+        },
+        {
+            "name": "Happy Bay Beach",
+            "id": null
+        },
+        {
+            "name": "Baie Rouge",
+            "id": null
+        },
+        {
+            "name": "Réserve naturelle nationale de Saint-Martin",
+            "id": null
+        }
+    ],
+    "MO": [
+        {
+            "name": "Ruins of St. Paul's",
+            "id": null
+        },
+        {
+            "name": "Senado Square",
+            "id": null
+        },
+        {
+            "name": "A-Ma Temple",
+            "id": null
+        },
+        {
+            "name": "Monte Fort",
+            "id": null
+        },
+        {
+            "name": "Guia Fortress",
+            "id": null
+        },
+        {
+            "name": "Mandarin's House",
+            "id": null
+        },
+        {
+            "name": "St. Dominic's Church, Macao",
+            "id": null
+        },
+        {
+            "name": "Macao Tower",
+            "id": null
+        },
+        {
+            "name": "Taipa Houses",
+            "id": null
+        },
+        {
+            "name": "The Venetian Macao",
+            "id": null
+        }
+    ],
+    "MP": [
+        {
+            "name": "Managaha Island",
+            "id": null
+        },
+        {
+            "name": "The Grotto, Saipan",
+            "id": null
+        },
+        {
+            "name": "American Memorial Park",
+            "id": null
+        },
+        {
+            "name": "Banzai Cliff",
+            "id": null
+        },
+        {
+            "name": "Suicide Cliff",
+            "id": null
+        },
+        {
+            "name": "Bird Island, Saipan",
+            "id": null
+        },
+        {
+            "name": "Mount Tapochau",
+            "id": null
+        },
+        {
+            "name": "House of Taga",
+            "id": null
+        },
+        {
+            "name": "Taga Beach, Tinian",
+            "id": null
+        },
+        {
+            "name": "Rota Latte Stone Quarry",
+            "id": null
+        }
+    ],
+    "MQ": [
+        {
+            "name": "Montagne Pelée",
+            "id": null
+        },
+        {
+            "name": "Jardin de Balata",
+            "id": null
+        },
+        {
+            "name": "Habitation Clément",
+            "id": null
+        },
+        {
+            "name": "Bibliothèque Schœlcher",
+            "id": null
+        },
+        {
+            "name": "Rocher du Diamant",
+            "id": null
+        },
+        {
+            "name": "Les Salines Beach",
+            "id": null
+        },
+        {
+            "name": "Château Dubuc",
+            "id": null
+        },
+        {
+            "name": "Presqu'île de la Caravelle",
+            "id": null
+        },
+        {
+            "name": "Ruins of the Saint-Pierre Theatre",
+            "id": null
+        },
+        {
+            "name": "Mémorial Cap 110",
+            "id": null
+        }
+    ],
+    "NC": [
+        {
+            "name": "Lagoons of New Caledonia",
+            "id": null
+        },
+        {
+            "name": "Tjibaou Cultural Centre",
+            "id": null
+        },
+        {
+            "name": "Île des Pins",
+            "id": null
+        },
+        {
+            "name": "Piscine naturelle d'Oro",
+            "id": null
+        },
+        {
+            "name": "Cœur de Voh",
+            "id": null
+        },
+        {
+            "name": "Amédée Lighthouse",
+            "id": null
+        },
+        {
+            "name": "Parc provincial de la Rivière Bleue",
+            "id": null
+        },
+        {
+            "name": "Anse Vata",
+            "id": null
+        },
+        {
+            "name": "Ouvéa",
+            "id": null
+        },
+        {
+            "name": "Saint Joseph Cathedral, Nouméa",
+            "id": null
+        }
+    ],
+    "PF": [
+        {
+            "name": "Mount Otemanu",
+            "id": null
+        },
+        {
+            "name": "Taputapuātea marae",
+            "id": null
+        },
+        {
+            "name": "Papeete Market",
+            "id": null
+        },
+        {
+            "name": "Cathedral of Our Lady of the Immaculate Conception, Papeete",
+            "id": null
+        },
+        {
+            "name": "Teahupoʻo",
+            "id": null
+        },
+        {
+            "name": "Moorea",
+            "id": null
+        },
+        {
+            "name": "Belvedere Lookout, Moorea",
+            "id": null
+        },
+        {
+            "name": "Rangiroa",
+            "id": null
+        },
+        {
+            "name": "Fautaua Waterfall",
+            "id": null
+        },
+        {
+            "name": "Paul Gauguin Museum",
+            "id": null
+        }
+    ],
+    "PM": [
+        {
+            "name": "Île aux Marins",
+            "id": null
+        },
+        {
+            "name": "Pointe aux Canons Lighthouse",
+            "id": null
+        },
+        {
+            "name": "Saint-Pierre Cathedral, Saint-Pierre and Miquelon",
+            "id": null
+        },
+        {
+            "name": "Musée de l'Arche",
+            "id": null
+        },
+        {
+            "name": "Musée Héritage, Saint-Pierre",
+            "id": null
+        },
+        {
+            "name": "Grand Barachois",
+            "id": null
+        },
+        {
+            "name": "Isthmus of Langlade",
+            "id": null
+        },
+        {
+            "name": "Cap de Miquelon",
+            "id": null
+        },
+        {
+            "name": "Grand Colombier",
+            "id": null
+        }
+    ],
+    "RE": [
+        {
+            "name": "Piton de la Fournaise",
+            "id": null
+        },
+        {
+            "name": "Piton des Neiges",
+            "id": null
+        },
+        {
+            "name": "Cirque de Mafate",
+            "id": null
+        },
+        {
+            "name": "Cirque de Cilaos",
+            "id": null
+        },
+        {
+            "name": "Cirque de Salazie",
+            "id": null
+        },
+        {
+            "name": "Cascade du Voile de la Mariée",
+            "id": null
+        },
+        {
+            "name": "Réunion National Park",
+            "id": null
+        },
+        {
+            "name": "Maïdo",
+            "id": null
+        },
+        {
+            "name": "Plage de l'Hermitage",
+            "id": null
+        },
+        {
+            "name": "Anse des Cascades",
+            "id": null
+        }
+    ],
+    "SJ": [
+        {
+            "name": "Svalbard Global Seed Vault",
+            "id": null
+        },
+        {
+            "name": "Longyearbyen",
+            "id": null
+        },
+        {
+            "name": "Svalbard Museum",
+            "id": null
+        },
+        {
+            "name": "Pyramiden",
+            "id": null
+        },
+        {
+            "name": "Barentsburg",
+            "id": null
+        },
+        {
+            "name": "Ny-Ålesund",
+            "id": null
+        },
+        {
+            "name": "Magdalenefjorden",
+            "id": null
+        },
+        {
+            "name": "Svalbard Church",
+            "id": null
+        },
+        {
+            "name": "Nordenskiöld Glacier",
+            "id": null
+        }
+    ],
+    "TF": [
+        {
+            "name": "Kerguelen Islands",
+            "id": null
+        },
+        {
+            "name": "Port-aux-Français",
+            "id": null
+        },
+        {
+            "name": "Mont Ross",
+            "id": null
+        },
+        {
+            "name": "Cook Ice Cap",
+            "id": null
+        },
+        {
+            "name": "Crozet Islands",
+            "id": null
+        },
+        {
+            "name": "Île Amsterdam",
+            "id": null
+        },
+        {
+            "name": "Île Saint-Paul",
+            "id": null
+        },
+        {
+            "name": "Europa Island",
+            "id": null
+        },
+        {
+            "name": "Tromelin Island",
+            "id": null
+        },
+        {
+            "name": "Dumont d'Urville Station",
+            "id": null
+        }
+    ],
+    "VG": [
+        {
+            "name": "The Baths",
+            "id": null
+        },
+        {
+            "name": "Sage Mountain National Park",
+            "id": null
+        },
+        {
+            "name": "RMS Rhone",
+            "id": null
+        },
+        {
+            "name": "Anegada",
+            "id": null
+        },
+        {
+            "name": "Jost Van Dyke",
+            "id": null
+        },
+        {
+            "name": "White Bay, Jost Van Dyke",
+            "id": null
+        },
+        {
+            "name": "Cane Garden Bay",
+            "id": null
+        },
+        {
+            "name": "Old Government House Museum, Tortola",
+            "id": null
+        },
+        {
+            "name": "Virgin Gorda",
+            "id": null
+        },
+        {
+            "name": "Norman Island",
+            "id": null
+        }
+    ],
+    "VI": [
+        {
+            "name": "Virgin Islands National Park",
+            "id": null
+        },
+        {
+            "name": "Trunk Bay",
+            "id": null
+        },
+        {
+            "name": "Magens Bay",
+            "id": null
+        },
+        {
+            "name": "Fort Christian",
+            "id": null
+        },
+        {
+            "name": "Buck Island Reef National Monument",
+            "id": null
+        },
+        {
+            "name": "Christiansted National Historic Site",
+            "id": null
+        },
+        {
+            "name": "Fort Frederik",
+            "id": null
+        },
+        {
+            "name": "Blackbeard's Castle",
+            "id": null
+        },
+        {
+            "name": "99 Steps",
+            "id": null
+        },
+        {
+            "name": "Annaberg Sugar Plantation",
+            "id": null
+        }
+    ],
+    "WF": [
+        {
+            "name": "Talietumu",
+            "id": null
+        },
+        {
+            "name": "Tonga Toto",
+            "id": null
+        },
+        {
+            "name": "Lake Lalolalo",
+            "id": null
+        },
+        {
+            "name": "Matāʻutu Cathedral",
+            "id": null
+        },
+        {
+            "name": "Royal Palace of Uvea",
+            "id": null
+        },
+        {
+            "name": "Pierre Chanel Basilica, Poi",
+            "id": null
+        },
+        {
+            "name": "Alofi (Wallis and Futuna)",
+            "id": null
+        },
+        {
+            "name": "Mont Lulu Fakahega",
+            "id": null
+        },
+        {
+            "name": "Lake Lanutavake",
+            "id": null
+        }
+    ],
+    "YT": [
+        {
+            "name": "Mont Choungui",
+            "id": null
+        },
+        {
+            "name": "Lagon de Mayotte",
+            "id": null
+        },
+        {
+            "name": "Lac Dziani",
+            "id": null
+        },
+        {
+            "name": "Îlot de Sable Blanc",
+            "id": null
+        },
+        {
+            "name": "Plage de N'Gouja",
+            "id": null
+        },
+        {
+            "name": "Mosquée de Tsingoni",
+            "id": null
+        },
+        {
+            "name": "Mont Bénara",
+            "id": null
+        },
+        {
+            "name": "Îlot Mbouzi",
+            "id": null
+        },
+        {
+            "name": "Rocher de Dzaoudzi",
+            "id": null
+        },
+        {
+            "name": "Pointe de Saziley",
+            "id": null
+        }
+    ]
+}
+
+const sites = { // Tous les sites proposés (il en manque peut être 10)
   "AD": [
     { "name": "Madriu-Perafita-Claror Valley", "id": "Q332800" },
     { "name": "Casa de la Vall", "id": null },
@@ -58752,11 +59872,6 @@ const sites = {
   { "name": "Balancing Rocks, Epworth", "id": null },
   { "name": "Nyanga National Park", "id": null }
 ],
-
-
-
-
-
 }
 
 const tt = {}
