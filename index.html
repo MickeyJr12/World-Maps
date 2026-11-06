@@ -74,6 +74,7 @@
           236,
           0.674
         ); /* Couleur des éléments dans le mode trouver, utilisé dans viewSub pour zBox*/
+        --colorSpan: #9aa6e8;
 
         --areaB : env(safe-area-inset-bottom)
       }
@@ -2523,11 +2524,16 @@
         transform-origin : top left;
         transition : transform 0.2s cubic-bezier(0.58, 0, 0, 1.39), opacity 0.2s ease;
         .carousel{
+          display : flex;
+          align-items : center;
           padding : 0 0.4rem;
         }
         .slide {
           display : flex;
+          position : relative;
+          justify-content : center;
           height : 18rem;;
+          /* height : fit-content; */
           max-height : 100%;
           width : 100%;
         }
@@ -2545,6 +2551,64 @@
             height : 2rem;
           }
         }
+        .wrapperNamePic{
+          display : flex;
+          flex-direction : column;
+          width : 100%;
+          #namePic{
+            font-size : 1.08rem;
+            font-weight : 500;
+          }
+          #cityPic{
+            font-size : 0.85rem;
+            color : var(--colorSpan)
+          }
+        }
+
+        .loaderPic{
+          display : flex;
+          overflow: hidden;   
+          align-items : center;
+          background : black;
+          justify-content : center;
+          position : absolute;
+          z-index : 10;
+          width :100%;
+          height : 100%;
+          border-radius: 0.8rem;
+          transition : opacity 0.2s ease;
+          svg {
+            fill : none;
+            height : 1.2rem;
+          }
+        }
+        .loaderPic.hidePic{
+          opacity : 0; 
+          pointer-events: none;
+        }     
+}
+
+.shinePic {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0)   20%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0)   80%
+  );
+  animation: shimmerSlide 1.4s ease-in-out infinite;
+  will-change: transform;   /* animation fluide, calculée par le GPU */
+}
+
+@keyframes shimmerSlide {
+  100% {
+    transform: translateX(100%);
+  }
+
+
+
       }
       #cadrePic.active{
         opacity : 1;
@@ -2576,7 +2640,7 @@
           }
         }
         .arrowPic:active{
-          transform : scale(0.96);
+          transform : translateY(-50%) scale(0.96);
           filter : brightness(0.8);
         }
         .arrowPic.active{
@@ -2590,30 +2654,30 @@
         }
 
         .cadreImg {
-          display: flex; /* le conteneur se cale sur la taille de l'image */
-          justify-content : center;
-          width: fit-content;
-          max-width: 100%;
-          width : auto;
-          height: 100%;
-          margin-inline: auto;
-          border-radius: 0.8rem;
-          overflow: hidden; /* c'est lui qui coupe les coins */
-          img{
-          display: block;
-          height: 100%; /* force la hauteur : agrandit aussi le petit drapeau du Danemark */
-          width: auto; /* largeur déduite du ratio du SVG */
-          max-width: 100%;
-          transition: filter 0.2s ease;
-          }
-        }
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  height: auto;              /* annule toute hauteur imposée */
+  margin-inline: auto;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+
+.cadreImg img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 20rem;         /* plafond de hauteur, à ajuster */
+  object-fit: contain;       /* l'image entière reste visible, sans rognage */
+}
+
       }
-      #boxTxtPic{
-        display : flex;
-        flex-direction: column;
-        gap : 0.08rem;
-      }
+
       /* Fin CSS Pictures */
+
+
+
 
       /* CSS Stats */
       #openStat {
@@ -2712,7 +2776,6 @@
         flex-direction: column;
         align-items: center;
         touch-action: none;
-        --colorSpan: #9aa6e8;
         z-index: 20;
         z-index: 140;
         color: white;
@@ -4153,7 +4216,6 @@
           border-radius 0.3s ease,
           padding-top 0.3s ease;
         --colorItmStat: rgba(255, 255, 255, 0.6);
-        --colorSpan: #9aa6e8;
         --colorItmStat: rgba(255, 255, 255, 0.6); /* La couleur des svg */
       }
       #cadreCalque.active {
@@ -4897,6 +4959,7 @@
         justify-content: center;
         align-items: center;
         color: rgba(255, 255, 255, 0.8);
+        max-width: min(75%, calc(100% - 4.2rem * 2));
         flex-shrink: 0;
         gap: 0.5rem;
         fill: rgba(255, 255, 255, 0.8);
@@ -26221,7 +26284,7 @@
            <div id="cachePic" class="cache"></div>
           <div id="cadrePic">
             <div class="wrapperTitle">
-              <span>Photos - France</span>
+              <span class="title">Photos - France</span>
               <div id="crossPic">
                  <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -26276,6 +26339,12 @@
                 </div>
               </div>
             </div>
+            </div>
+
+            <div class="wrapperNamePic">
+              <div id="namePic">Tour Eiffeil</div>
+              <div id="cityPic">Paris</div>
+
             </div>
 
           </div> <!-- Fin cadre Pic -->
@@ -65461,6 +65530,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       });
 
+
       // Script stat
       const itmStatChoice = queryAll(".itmStatChoice");
       const wrapperStatChoice = query(".wrapperStatChoice");
@@ -67142,7 +67212,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const openPic = getId('openPic')
       const crossPic = getId('crossPic')
       const cachePic = getId('cachePic')
-
+      const carouselPic = cadrePic.querySelector('.carousel')
 
       openPic.addEventListener('click',()=>{
         cadrePic.classList.add('active')
@@ -67156,6 +67226,68 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         crossPic.click()
       })
       
+
+      function fillCadrePic(id){
+        let backgrounds = [
+  "linear-gradient(160deg, rgb(90, 147, 226), rgb(74, 37, 126))",
+  "linear-gradient(160deg, rgb(90, 95, 226), rgb(109, 37, 126))",
+  "linear-gradient(160deg, rgb(138, 90, 226), rgb(126, 37, 110))",
+  "linear-gradient(160deg, rgb(190, 90, 226), rgb(126, 37, 76))",
+  "linear-gradient(160deg, rgb(226, 90, 210), rgb(126, 37, 41))",
+  "linear-gradient(160deg, rgb(226, 90, 158), rgb(126, 67, 37))",
+  "linear-gradient(160deg, rgb(226, 90, 106), rgb(126, 101, 37))",
+  "linear-gradient(160deg, rgb(226, 126, 90), rgb(118, 126, 37))",
+  "linear-gradient(160deg, rgb(226, 178, 90), rgb(83, 126, 37))",
+  "linear-gradient(160deg, rgb(221, 226, 90), rgb(49, 126, 37))",
+  "linear-gradient(160deg, rgb(169, 226, 90), rgb(37, 126, 59))",
+  "linear-gradient(160deg, rgb(117, 226, 90), rgb(37, 126, 94))",
+  "linear-gradient(160deg, rgb(90, 226, 115), rgb(37, 125, 126))",
+  "linear-gradient(160deg, rgb(90, 226, 167), rgb(37, 91, 126))",
+  "linear-gradient(160deg, rgb(90, 226, 219), rgb(37, 56, 126))",
+  "linear-gradient(160deg, rgb(90, 181, 226), rgb(52, 37, 126))",
+  "linear-gradient(160deg, rgb(90, 129, 226), rgb(86, 37, 126))",
+  "linear-gradient(160deg, rgb(104, 90, 226), rgb(120, 37, 126))",
+  "linear-gradient(160deg, rgb(156, 90, 226), rgb(126, 37, 98))",
+  "linear-gradient(160deg, rgb(208, 90, 226), rgb(126, 37, 64))",
+  "linear-gradient(160deg, rgb(226, 90, 192), rgb(126, 44, 37))",
+  "linear-gradient(160deg, rgb(226, 90, 140), rgb(126, 79, 37))",
+  "linear-gradient(160deg, rgb(226, 93, 90), rgb(126, 113, 37))",
+  "linear-gradient(160deg, rgb(226, 145, 90), rgb(106, 126, 37))",
+  "linear-gradient(160deg, rgb(226, 197, 90), rgb(71, 126, 37))"
+];
+        carouselPic.innerHTML = ``
+        carouselPic.scrollLeft = 0
+        D_pic[id].forEach(s=>{
+          const slide = createEl('div')
+          slide.classList.add('slide')
+          const cadreImg = createEl('div')
+          cadreImg.classList.add('cadreImg')
+          const img = createEl('img')
+          img.draggable = false;
+
+          const loaderPic = createEl('div')
+          loaderPic.className = "loaderPic"
+          const shinePic = createEl('div')
+          shinePic.classList.add('shinePic')
+          loaderPic.innerHTML = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" ><path d="m0 0h32v32h-32z"></path> <path d="m24 2c4.418278 0 8 3.581722 8 8v12c0 4.418278-3.581722 8-8 8h-16c-4.418278 0-8-3.581722-8-8v-12c0-4.418278 3.581722-8 8-8zm-15.15704017 11.3933983-6.84295983 6.8426017v1.764c0 3.2383969 2.56557489 5.8775718 5.77506174 5.9958615l.22493826.0041385h15.45zm21.15704017-1.8643983-10.096 10.097 6.048224 6.0492469c2.2878684-.7868384 3.9503124-2.9181728 4.0436375-5.4503086l.0041385-.2249383zm-6-7.529h-16c-3.23839694 0-5.87757176 2.56557489-5.99586153 5.77506174l-.00413847.22493826v7.407l5.42874627-5.4278153c.74554637-.7455464 1.93326028-.7794348 2.71900373-.1016654l.1094234.1016654 8.2318266 8.2318153 11.3946671-11.39268045c-.5346164-2.67667729-2.8501212-4.71066623-5.6587288-4.81418108zm-5.4 2c2.209139 0 4 1.790861 4 4s-1.790861 4-4 4-4-1.790861-4-4 1.790861-4 4-4zm0 2c-1.1045695 0-2 .8954305-2 2s.8954305 2 2 2 2-.8954305 2-2-.8954305-2-2-2z" fill="#ffffff" fill-rule="nonzero"></path></svg>`
+          loaderPic.append(shinePic)
+          loaderPic.style.background = backgrounds[0]
+          backgrounds = backgrounds.slice(1)
+          slide.append(loaderPic)
+
+          img.addEventListener('load',()=>{
+            loaderPic.classList.add('hidePic')
+            setTimeout(() => {
+            loaderPic.remove()
+              
+            }, 400);
+          })
+          img.src = s.image
+          cadreImg.append(img)
+          slide.append(cadreImg)
+          carouselPic.append(slide)
+        })
+      }
 
 
 
@@ -67806,7 +67938,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const cadreVueCross = getId("cadreVueCross");
 
       function closeCadre() {
-        drapeauCadre.src = 'http://commons.wikimedia.org/wiki/Special:FilePath/Cour%20Napol%C3%A9on%20at%20night%20-%20Louvre.jpg?width=400';
         if (getId("newFlag")) getId("newFlag").style.opacity = "0";
         cadre.style.opacity = "0";
         cadre.style.transform = "scale(0.9)";
@@ -94205,6 +94336,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         //   drapeauCadre.src =
         //     "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
         // }
+        fillCadrePic(id)
 
         if (!viewSub) {
           const loadingCadreContours = document.createElement("div");
