@@ -2655,7 +2655,8 @@
 
 
         .dotsWrap {
-            margin: 0.8rem auto 0;
+            margin: 0 auto 0;
+            margin-top  : 0.2rem;
             height: 10px;
             overflow: hidden;            /* cache les dots hors de la fenêtre */
             display: flex;
@@ -67352,7 +67353,23 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const RArrowPic = getId('RArrowPic')
       let mCadresImgPic; // stock les mImages qu'on va ajouter
       let cadresImgPic; // stock les images
+      
+      let minuteurAuto;
+      let mMinuteurAuto;
 
+      function bloquerScroll(ms = 700) {            // remplace scrollend, marche partout
+        scrollAutoPic = true
+        clearTimeout(minuteurAuto)
+        minuteurAuto = setTimeout(() => { scrollAutoPic = false }, ms)
+      }
+      function mBloquerScroll(ms = 700) {            // remplace scrollend, marche partout
+        mScrollAutoPic = true
+        clearTimeout(mMinuteurAuto)
+        mMinuteurAuto = setTimeout(() => { mScrollAutoPic = false }, ms)
+      }
+
+      carouselPic.addEventListener('pointerdown',()=> scrollAutoPic = false)
+      wrappermBoxImg.addEventListener('pointerdown',()=> mScrollAutoPic = false)
       const dotsWrap = cadrePic.querySelector('.dotsWrap')
       const WIN = 7      // nombre de dots visibles en même temps
       const SLOT = 14    // largeur d'un emplacement en px (= .dotSlot en CSS)
@@ -67391,38 +67408,30 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       })
 
       function majDots(index) {
-  const slots = cadrePic.querySelectorAll('.dotSlot')
-  const track = cadrePic.querySelector('.dotsTrack')
-  const n = slots.length
-  if (!n) return
+        const slots = cadrePic.querySelectorAll('.dotSlot')
+        const track = cadrePic.querySelector('.dotsTrack')
+        const n = slots.length
+        if (!n) return
 
-  const start = n > WIN
-    ? Math.min(Math.max(index - Math.floor(WIN / 2), 0), n - WIN)
-    : 0
-  track.style.transform = `translateX(${-start * SLOT}px)`
+        const start = n > WIN
+          ? Math.min(Math.max(index - Math.floor(WIN / 2), 0), n - WIN)
+          : 0
+        track.style.transform = `translateX(${-start * SLOT}px)`
 
-  slots.forEach((s, k) => {
-    const pos = k - start
-    const inside = pos >= 0 && pos < WIN
-    const edge = (pos === 0 && start > 0) || (pos === WIN - 1 && start < n - WIN)
-    s.className = 'dotSlot'
-      + (k === index ? ' on' : '')
-      + (!inside ? ' out' : (edge && k !== index ? ' edge' : ''))
-  })
-}
+        slots.forEach((s, k) => {
+          const pos = k - start
+          const inside = pos >= 0 && pos < WIN
+          const edge = (pos === 0 && start > 0) || (pos === WIN - 1 && start < n - WIN)
+          s.className = 'dotSlot'
+            + (k === index ? ' on' : '')
+            + (!inside ? ' out' : (edge && k !== index ? ' edge' : ''))
+        })
+      }
 
-
-      carouselPic.addEventListener("scrollend", () => {
-        scrollAutoPic = false
-      })
 
       carouselPic.addEventListener("scroll", () => {
         if(scrollAutoPic)return
-        const dotsPic = cadrePic.querySelectorAll('.dotsPic')
-
-        // const index = Math.round(
-        //   carouselPic.scrollLeft / carouselPic.clientWidth,
-        // );
+        const dotsPic = cadrePic.querySelectorAll('.dotsPic')      
 
         const maxView = Math.max(...cadresImgPic.map(el2=>jaugeScroll(el2,el2.parentElement))) // la valeur de celui qui est le plus visibe
         const elMaxView = cadresImgPic.filter(el=>jaugeScroll(el,el.parentElement) === maxView)[0] // quel est élément est l eplus visible 
@@ -67431,22 +67440,19 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
         
         cadrePic.querySelectorAll('.mBoxImg').forEach((el,i)=>{
-          if(i===index && !el.classList.contains('active')){
-            mScrollAutoPic = true
+          if(i===index && !el.querySelector('.mCadreImg').classList.contains('active')){
             if(!visibleScroll(el,wrappermBoxImg))centrerScrollEl (wrappermBoxImg,el)
-            wrappermBoxImg.addEventListener('scrollend',()=>{
-            mScrollAutoPic = false
-            },{once : true})
+            mBloquerScroll()
 
             const i = mCadresImgPic.indexOf(el.querySelector('.mCadreImg'))
             LArrowPic.classList.toggle('active',i !== 0)
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
 
-            const name = D_pic[currentCountry.id][i].name[currentIlg]
-            const city = D_pic[currentCountry.id][i].city[currentIlg]
+            const name = D_pic[currentCountry.id][i].name?.[currentIlg]
+            const city = D_pic[currentCountry.id][i].city?.[currentIlg]
 
-            namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
-            cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : "";
+            namePic.textContent = name ?  name.slice(0,1).toUpperCase() +  name.slice(1) : L_q[currentCountry.id].n; 
+            cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[currentCountry.id].n;
 
             
             majDots(index)
@@ -67459,34 +67465,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             if(!el.querySelector('.mLoadedPic'))el.querySelector('.loaderPic').classList.add('active')
           }
         })
-      });
-      
-      
-
-//       let indexActif = -1
-
-// carouselPic.addEventListener("scroll", () => {
-//   if (scrollAutoPic) return
-
-//   const slides = carouselPic.querySelectorAll(".slide")
-//   if (slides.length < 2) return
-
-//   const pas = slides[1].offsetLeft - slides[0].offsetLeft     // largeur + gap
-//   const index = Math.round(carouselPic.scrollLeft / pas)
-//   if (index === indexActif) return                            // rien n'a changé
-//   indexActif = index
-
-//   const el = cadrePic.querySelectorAll(".mBoxImg")[index]
-//   if (!el) return
-
-//   cadrePic.querySelector(".mCadreImg.active")?.classList.remove("active")
-//   el.querySelector(".mCadreImg").classList.add("active")
-
-//   cadrePic.querySelector(".loaderPic.active")?.classList.remove("active")
-//   if (!el.querySelector(".mLoadedPic")) el.querySelector(".loaderPic")?.classList.add("active")
-
-//   if (!visibleScroll(el, wrappermBoxImg)) centrerScrollEl(wrappermBoxImg, el)
-// }, { passive: true })
+      });         
 
 
 
@@ -67593,7 +67572,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           mImg.src = s.image
 
           mBoxImg.addEventListener('click',()=>{
-            scrollAutoPic = true;
+            bloquerScroll()
+            hapticFeedback("medium")
             const crtImg = query('.mCadreImg.active')
             const crtLoader = wrappermBoxImg.querySelector('.loaderPic.active')
             if(crtImg)crtImg.classList.remove('active')
@@ -67609,11 +67589,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const i = mCadresImgPic.indexOf(mBoxImg.querySelector('.mCadreImg'))
             LArrowPic.classList.toggle('active',i !== 0)
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
-            const name = D_pic[id][i].name[currentIlg]
-            const city = D_pic[id][i].city[currentIlg]
+            const name = D_pic[id][i].name?.[currentIlg]
+            const city = D_pic[id][i].city?.[currentIlg]
 
             namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
-            cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : "";
+            cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
 
 
           })
