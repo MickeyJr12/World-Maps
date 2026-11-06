@@ -2539,6 +2539,9 @@
           /* height : fit-content; */
           max-height : 100%;
           width : 100%;
+          svg{
+            height : 1.75rem;
+          }
         }
         .wrapperTitle{
           display : flex;
@@ -2556,6 +2559,7 @@
         }
         .wrapperNamePic{
           display : flex;
+          margin-top : -0.2.5rem;
           flex-direction : column;
           width : 100%;
           #namePic{
@@ -2568,6 +2572,60 @@
           }
         }
 
+        #wrappermBoxImg{
+          display : flex;
+          align-items  : center;
+          width : 100%;
+          overflow-y : hidden; 
+          overflow-x : auto;
+          scrollbar-width: none;
+          gap : 0.35rem;
+          padding : 0.4rem 0.25rem;
+          height :  3rem;
+          .mBoxImg {
+            display : flex;
+            position : relative;
+            /* overflow : hidden; */
+            justify-content : center;
+            align-items : center;
+            border-radius :0.6rem;
+            padding : 0.2rem;
+            height : 100%;
+            width  : clamp(3.8rem,3.8rem,3.8rem);
+            min-width : 3.8rem;
+            svg {
+              height : 0.96rem;
+            }
+          }
+        }
+
+
+          .mCadreImg {
+          display: block;
+          width: fit-content;
+          max-width: 100%;
+          height: auto;     
+          max-height : 100%;         
+          margin-inline: auto;
+          border-radius: 0.4rem;
+          outline : 1px solid rgba(255,255,255,0.2);
+          overflow: hidden;
+          transition : outline 0.2s ease, outline-offset 0.2s ease;
+          img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height : 100%;         
+            object-fit: contain;
+          }
+        }
+
+        .mCadreImg.active{
+            outline-offset: 1px;;
+            outline : 2px solid rgba(36, 168, 240,1)
+          }
+
         .loaderPic{
           display : flex;
           overflow: hidden;   
@@ -2579,12 +2637,17 @@
           width :100%;
           height : 100%;
           border-radius: 0.8rem;
-          transition : opacity 0.2s ease;
+          transition : opacity 0.2s ease outline 0.2s ease, outline-offset 0.2s ease;
           svg {
             fill : none;
-            height : 1.75rem;
           }
         }
+
+        .loaderPic.active{
+            outline-offset: 1px;;
+            outline : 2px solid rgba(36, 168, 240,1)
+          }
+
         .loaderPic.hidePic{
           opacity : 0; 
           pointer-events: none;
@@ -2665,19 +2728,16 @@
           border-radius: 0.8rem;
           outline : 1px solid rgba(255,255,255,0.2);
           overflow: hidden;
+          img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 20rem;         /* plafond de hauteur, à ajuster */
+            object-fit: contain;       /* l'image entière reste visible, sans rognage */
+          }
+        }
 }
-
-.cadreImg img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 20rem;         /* plafond de hauteur, à ajuster */
-  object-fit: contain;       /* l'image entière reste visible, sans rognage */
-}
-
-      }
-
       /* Fin CSS Pictures */
 
 
@@ -26331,24 +26391,19 @@
               </svg>
               </div>
 
-            <div class="carousel">
-              <div class="slide">
-                <div class="cadreImg">
-                  <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Pet%C3%A4j%C3%A4vesi_Old_Church_2018.jpg/1280px-Pet%C3%A4j%C3%A4vesi_Old_Church_2018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="">
-                </div>
-              </div>
-              <div class="slide">
-                <div class="cadreImg">
-                  <img src="http://commons.wikimedia.org/wiki/Special:FilePath/Tour%20Eiffel%20Wikimedia%20Commons.jpg?width=400" alt="">
-                </div>
-              </div>
+            <div class="carousel">           
             </div>
             </div>
 
             <div class="wrapperNamePic">
               <div id="namePic">Tour Eiffeil</div>
               <div id="cityPic">Paris</div>
+            </div>
 
+            <div id="wrappermBoxImg">
+              <div class="mBoxImg"></div>
+              <div class="mBoxImg"></div>
+              <div class="mBoxImg"></div>
             </div>
 
           </div> <!-- Fin cadre Pic -->
@@ -33917,6 +33972,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           D_crtStreak[mode] = 0;
         }
       }
+
+
+
+      function centrerScrollEl(conteneur, element) { // ramener un élément au centre avec un scroll smooth
+        const gauche = element.offsetLeft - (conteneur.clientWidth - element.offsetWidth) / 2;
+        conteneur.scrollTo({ left: gauche, behavior: "smooth" });
+      }
+
 
       const mformater = (n) =>
         new Intl.NumberFormat(currentIlg, {
@@ -63233,6 +63296,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       initSons();
 
       function playSound(id) {
+        console.log("POURQUOI ÇA JOUE UN SON AU LANCEMENT ???? ")
         if (!sound) return;
         if (useNative) {
           NativeAudio.play({ assetId: id }).catch((e) =>
@@ -67217,6 +67281,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const crossPic = getId('crossPic')
       const cachePic = getId('cachePic')
       const carouselPic = cadrePic.querySelector('.carousel')
+      const wrappermBoxImg = getId('wrappermBoxImg')
 
       openPic.addEventListener('click',()=>{
         cadrePic.classList.add('active')
@@ -67260,6 +67325,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
   "linear-gradient(160deg, rgb(226, 197, 90), rgb(71, 126, 37))"
 ];
         carouselPic.innerHTML = ``
+        wrappermBoxImg.innerHTML = ``
         carouselPic.scrollLeft = 0
         D_pic[id].forEach(s=>{
           const slide = createEl('div')
@@ -67268,6 +67334,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           cadreImg.classList.add('cadreImg')
           const img = createEl('img')
           img.draggable = false;
+          cadreImg.append(img)
+          slide.append(cadreImg)
+          carouselPic.append(slide)
 
           const loaderPic = createEl('div')
           loaderPic.className = "loaderPic"
@@ -67276,24 +67345,77 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           loaderPic.innerHTML = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" ><path d="m0 0h32v32h-32z"></path> <path d="m24 2c4.418278 0 8 3.581722 8 8v12c0 4.418278-3.581722 8-8 8h-16c-4.418278 0-8-3.581722-8-8v-12c0-4.418278 3.581722-8 8-8zm-15.15704017 11.3933983-6.84295983 6.8426017v1.764c0 3.2383969 2.56557489 5.8775718 5.77506174 5.9958615l.22493826.0041385h15.45zm21.15704017-1.8643983-10.096 10.097 6.048224 6.0492469c2.2878684-.7868384 3.9503124-2.9181728 4.0436375-5.4503086l.0041385-.2249383zm-6-7.529h-16c-3.23839694 0-5.87757176 2.56557489-5.99586153 5.77506174l-.00413847.22493826v7.407l5.42874627-5.4278153c.74554637-.7455464 1.93326028-.7794348 2.71900373-.1016654l.1094234.1016654 8.2318266 8.2318153 11.3946671-11.39268045c-.5346164-2.67667729-2.8501212-4.71066623-5.6587288-4.81418108zm-5.4 2c2.209139 0 4 1.790861 4 4s-1.790861 4-4 4-4-1.790861-4-4 1.790861-4 4-4zm0 2c-1.1045695 0-2 .8954305-2 2s.8954305 2 2 2 2-.8954305 2-2-.8954305-2-2-2z" fill="#ffffff" fill-rule="nonzero"></path></svg>`
           loaderPic.append(shinePic)
           loaderPic.style.background = backgrounds[0]
-          backgrounds = backgrounds.slice(1)
           slide.append(loaderPic)
-
+          
           img.onerror = () => {
             loaderPic.innerHTML = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5L19 19" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.19222 6.10634C7.18748 6.10865 7.18274 6.11095 7.178 6.11327C5.61777 6.87424 4.25979 7.99367 3.21509 9.38003C2.88272 9.82111 2.97084 10.4481 3.41191 10.7805C3.85299 11.1129 4.47999 11.0247 4.81236 10.5837C5.66712 9.44937 6.77819 8.53347 8.05474 7.91085C8.2694 7.80616 8.48772 7.71025 8.70914 7.62326L7.19222 6.10634ZM10.2743 9.18837C9.66024 9.32403 9.06223 9.53207 8.49312 9.80965C7.3584 10.3631 6.37078 11.1772 5.611 12.1855C5.27863 12.6266 5.36675 13.2536 5.80782 13.5859C6.24889 13.9183 6.8759 13.8302 7.20827 13.3891C7.77811 12.6329 8.51882 12.0223 9.36986 11.6072C10.2154 11.1948 11.146 10.9871 12.0865 11.0006L10.2743 9.18837ZM17.8876 13.9733L12.9738 9.05948C13.9447 9.17853 14.888 9.47497 15.7559 9.93642C16.8706 10.5291 17.8292 11.3772 18.5533 12.4114C18.8701 12.8638 18.7601 13.4873 18.3077 13.8041C18.178 13.8949 18.0342 13.9507 17.8876 13.9733ZM10.9731 7.05879L9.26083 5.34653C10.2147 5.10125 11.2006 4.98437 12.1921 5.00168C13.9277 5.03197 15.6316 5.47261 17.1643 6.28758C18.697 7.10254 20.0151 8.26868 21.0108 9.69066C21.3275 10.1431 21.2176 10.7666 20.7652 11.0834C20.3128 11.4002 19.6892 11.2902 19.3725 10.8378C18.5578 9.67438 17.4794 8.72026 16.2253 8.05347C14.9713 7.38669 13.5772 7.02616 12.1572 7.00137C11.7605 6.99445 11.365 7.01377 10.9731 7.05879ZM13.0001 18C13.0001 17.4477 12.5524 17 12.0001 17C11.4478 17 11.0001 17.4477 11.0001 18C11.0001 18.5523 11.4478 19 12.0001 19C12.5524 19 13.0001 18.5523 13.0001 18ZM10.2466 13.4048C10.814 13.1281 11.4387 12.9896 12.0699 13.0006C12.701 13.0116 13.3206 13.1719 13.878 13.4682C14.4353 13.7646 14.9146 14.1886 15.2767 14.7057C15.5935 15.1581 15.4835 15.7816 15.0311 16.0984C14.5787 16.4152 13.9552 16.3053 13.6384 15.8528C13.4574 15.5943 13.2177 15.3823 12.939 15.2341C12.6604 15.0859 12.3506 15.0058 12.035 15.0003C11.7194 14.9948 11.407 15.0641 11.1233 15.2024C10.8397 15.3408 10.5928 15.5443 10.4028 15.7964C10.0704 16.2374 9.44344 16.3256 9.00236 15.9932C8.56129 15.6608 8.47317 15.0338 8.80554 14.5927C9.18543 14.0886 9.67924 13.6815 10.2466 13.4048Z" fill="#ffffff"></path></svg>`
           };
-
           img.addEventListener('load',()=>{
             loaderPic.classList.add('hidePic')
             setTimeout(() => {
             loaderPic.remove()
-              
             }, 400);
           })
+
+          //****
+          const mBoxImg = createEl('div')
+          mBoxImg.className = "mBoxImg"
+          const mCadreImg = createEl('div')
+          mCadreImg.className = "mCadreImg " + (query('.mCadreImg.active') ? "" : "active")
+          const mImg = createEl('img')
+
+          const mloaderPic = createEl('div')
+          mloaderPic.className = "loaderPic " + (wrappermBoxImg.querySelector('.loaderPic.active') ? "" : "active")
+          mloaderPic.style.borderRadius = "inherit"
+          const mshinePic = createEl('div')
+          mshinePic.classList.add('shinePic')
+          mloaderPic.innerHTML = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" ><path d="m0 0h32v32h-32z"></path> <path d="m24 2c4.418278 0 8 3.581722 8 8v12c0 4.418278-3.581722 8-8 8h-16c-4.418278 0-8-3.581722-8-8v-12c0-4.418278 3.581722-8 8-8zm-15.15704017 11.3933983-6.84295983 6.8426017v1.764c0 3.2383969 2.56557489 5.8775718 5.77506174 5.9958615l.22493826.0041385h15.45zm21.15704017-1.8643983-10.096 10.097 6.048224 6.0492469c2.2878684-.7868384 3.9503124-2.9181728 4.0436375-5.4503086l.0041385-.2249383zm-6-7.529h-16c-3.23839694 0-5.87757176 2.56557489-5.99586153 5.77506174l-.00413847.22493826v7.407l5.42874627-5.4278153c.74554637-.7455464 1.93326028-.7794348 2.71900373-.1016654l.1094234.1016654 8.2318266 8.2318153 11.3946671-11.39268045c-.5346164-2.67667729-2.8501212-4.71066623-5.6587288-4.81418108zm-5.4 2c2.209139 0 4 1.790861 4 4s-1.790861 4-4 4-4-1.790861-4-4 1.790861-4 4-4zm0 2c-1.1045695 0-2 .8954305-2 2s.8954305 2 2 2 2-.8954305 2-2-.8954305-2-2-2z" fill="#ffffff" fill-rule="nonzero"></path></svg>`
+          mloaderPic.append(mshinePic)
+          mloaderPic.style.background = backgrounds[0]
+          mBoxImg.append(mloaderPic)
+          backgrounds = backgrounds.slice(1)
+
+          mCadreImg.append(mImg)
+          mBoxImg.append(mCadreImg)
+          wrappermBoxImg.append(mBoxImg)  
+          
+          mImg.onerror = () => {
+            mloaderPic.innerHTML = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5L19 19" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <path fill-rule="evenodd" clip-rule="evenodd" d="M7.19222 6.10634C7.18748 6.10865 7.18274 6.11095 7.178 6.11327C5.61777 6.87424 4.25979 7.99367 3.21509 9.38003C2.88272 9.82111 2.97084 10.4481 3.41191 10.7805C3.85299 11.1129 4.47999 11.0247 4.81236 10.5837C5.66712 9.44937 6.77819 8.53347 8.05474 7.91085C8.2694 7.80616 8.48772 7.71025 8.70914 7.62326L7.19222 6.10634ZM10.2743 9.18837C9.66024 9.32403 9.06223 9.53207 8.49312 9.80965C7.3584 10.3631 6.37078 11.1772 5.611 12.1855C5.27863 12.6266 5.36675 13.2536 5.80782 13.5859C6.24889 13.9183 6.8759 13.8302 7.20827 13.3891C7.77811 12.6329 8.51882 12.0223 9.36986 11.6072C10.2154 11.1948 11.146 10.9871 12.0865 11.0006L10.2743 9.18837ZM17.8876 13.9733L12.9738 9.05948C13.9447 9.17853 14.888 9.47497 15.7559 9.93642C16.8706 10.5291 17.8292 11.3772 18.5533 12.4114C18.8701 12.8638 18.7601 13.4873 18.3077 13.8041C18.178 13.8949 18.0342 13.9507 17.8876 13.9733ZM10.9731 7.05879L9.26083 5.34653C10.2147 5.10125 11.2006 4.98437 12.1921 5.00168C13.9277 5.03197 15.6316 5.47261 17.1643 6.28758C18.697 7.10254 20.0151 8.26868 21.0108 9.69066C21.3275 10.1431 21.2176 10.7666 20.7652 11.0834C20.3128 11.4002 19.6892 11.2902 19.3725 10.8378C18.5578 9.67438 17.4794 8.72026 16.2253 8.05347C14.9713 7.38669 13.5772 7.02616 12.1572 7.00137C11.7605 6.99445 11.365 7.01377 10.9731 7.05879ZM13.0001 18C13.0001 17.4477 12.5524 17 12.0001 17C11.4478 17 11.0001 17.4477 11.0001 18C11.0001 18.5523 11.4478 19 12.0001 19C12.5524 19 13.0001 18.5523 13.0001 18ZM10.2466 13.4048C10.814 13.1281 11.4387 12.9896 12.0699 13.0006C12.701 13.0116 13.3206 13.1719 13.878 13.4682C14.4353 13.7646 14.9146 14.1886 15.2767 14.7057C15.5935 15.1581 15.4835 15.7816 15.0311 16.0984C14.5787 16.4152 13.9552 16.3053 13.6384 15.8528C13.4574 15.5943 13.2177 15.3823 12.939 15.2341C12.6604 15.0859 12.3506 15.0058 12.035 15.0003C11.7194 14.9948 11.407 15.0641 11.1233 15.2024C10.8397 15.3408 10.5928 15.5443 10.4028 15.7964C10.0704 16.2374 9.44344 16.3256 9.00236 15.9932C8.56129 15.6608 8.47317 15.0338 8.80554 14.5927C9.18543 14.0886 9.67924 13.6815 10.2466 13.4048Z" fill="#ffffff"></path></svg>`
+          };
+          mImg.addEventListener('load',()=>{
+            mloaderPic.classList.add('hidePic')
+            setTimeout(() => {
+            mloaderPic.remove()
+            }, 400);
+          })
+
+
           img.src = s.image
-          cadreImg.append(img)
-          slide.append(cadreImg)
-          carouselPic.append(slide)
+          mImg.src = s.image
+
+
+
+
+          mBoxImg.addEventListener('click',()=>{
+            const crtImg = query('.mCadreImg.active')
+            const crtLoader = wrappermBoxImg.querySelector('.loaderPic.active')
+            console.log(crtLoader)
+            if(crtImg)crtImg.classList.remove('active')
+            if(crtLoader)crtLoader.classList.remove('active')
+             
+            mCadreImg.classList.add('active')
+            const loader = mBoxImg.querySelector('.loaderPic')
+            if(loader)loader.classList.add('active')
+
+            cadreImg.scrollIntoView({ behavior: "smooth", block: "center" });
+            centrerScrollEl(wrappermBoxImg, mBoxImg)
+
+
+            
+              
+            
+          })
+          
         })
       }
 
