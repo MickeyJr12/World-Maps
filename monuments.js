@@ -30140,30 +30140,6 @@ const D_pic = {
             "fame": 31
         },
         {
-            "id": "Q1226290",
-            "name": {
-                "fr": "parc national du Dinder",
-                "en": "Dinder National Park"
-            },
-            "city": null,
-            "country": {
-                "id": "Q1049",
-                "iso": "SD",
-                "fr": "Soudan",
-                "en": "Sudan"
-            },
-            "coordinates": {
-                "latitude": 12,
-                "longitude": 35.2333
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/DinderNationalPark_Sudan.svg/1280px-DinderNationalPark_Sudan.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "DinderNationalPark Sudan.svg",
-            "author": "Cptmrmcmillan",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 20
-        },
-        {
             "id": "Q643453",
             "name": {
                 "fr": "musée national du Soudan",
@@ -42316,6 +42292,62 @@ const D_pic = {
             "fame": 62
         },
         {
+            "id": "Q856641",
+            "name": {
+                "fr": "bibliothèque Schœlcher",
+                "en": "Schœlcher library"
+            },
+            "city": {
+                "id": "Q81621",
+                "fr": "Fort-de-France",
+                "en": "Fort-de-France"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.603828,
+                "longitude": -61.068334
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Fort-de-France_-_2014_-_Biblioth%C3%A8que_Sch%C5%93lcher_%281%29.jpg/1280px-Fort-de-France_-_2014_-_Biblioth%C3%A8que_Sch%C5%93lcher_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fort-de-France - 2014 - Bibliothèque Schœlcher (1).jpg",
+            "author": "Aristoi",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 6
+        },
+        {
+            "id": "Q22995364",
+            "name": {
+                "fr": "église Saint-Henri des Anses-d'Arlet",
+                "en": "Église Saint-Henri des Anses-d'Arlet"
+            },
+            "city": {
+                "id": "Q1928126",
+                "fr": "Les Anses-d'Arlet",
+                "en": "Les Anses-d'Arlet"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.490867,
+                "longitude": -61.080168
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Les_Anses-d%27Arlet_-_%C3%89glise_Saint-Henri_02.jpg/1280px-Les_Anses-d%27Arlet_-_%C3%89glise_Saint-Henri_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Les Anses-d'Arlet - Église Saint-Henri 02.jpg",
+            "author": "Aristoi",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 3
+        },
+        {
             "id": "Q262662",
             "name": {
                 "fr": "rocher du Diamant",
@@ -42371,34 +42403,7 @@ const D_pic = {
             "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
             "fame": 7
         },
-        {
-            "id": "Q856641",
-            "name": {
-                "fr": "bibliothèque Schœlcher",
-                "en": "Schœlcher library"
-            },
-            "city": {
-                "id": "Q81621",
-                "fr": "Fort-de-France",
-                "en": "Fort-de-France"
-            },
-            "country": {
-                "id": "Q17054",
-                "iso": "MQ",
-                "fr": "Martinique",
-                "en": "Martinique"
-            },
-            "coordinates": {
-                "latitude": 14.603828,
-                "longitude": -61.068334
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Fort-de-France_-_2014_-_Biblioth%C3%A8que_Sch%C5%93lcher_%281%29.jpg/1280px-Fort-de-France_-_2014_-_Biblioth%C3%A8que_Sch%C5%93lcher_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Fort-de-France - 2014 - Bibliothèque Schœlcher (1).jpg",
-            "author": "Aristoi",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 6
-        },
+        
         {
             "id": "Q3402460",
             "name": {
@@ -42423,34 +42428,7 @@ const D_pic = {
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
             "fame": 6
         },
-        {
-            "id": "Q22995364",
-            "name": {
-                "fr": "église Saint-Henri des Anses-d'Arlet",
-                "en": "Église Saint-Henri des Anses-d'Arlet"
-            },
-            "city": {
-                "id": "Q1928126",
-                "fr": "Les Anses-d'Arlet",
-                "en": "Les Anses-d'Arlet"
-            },
-            "country": {
-                "id": "Q17054",
-                "iso": "MQ",
-                "fr": "Martinique",
-                "en": "Martinique"
-            },
-            "coordinates": {
-                "latitude": 14.490867,
-                "longitude": -61.080168
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Les_Anses-d%27Arlet_-_%C3%89glise_Saint-Henri_02.jpg/1280px-Les_Anses-d%27Arlet_-_%C3%89glise_Saint-Henri_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Les Anses-d'Arlet - Église Saint-Henri 02.jpg",
-            "author": "Aristoi",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "fame": 3
-        },
+        
         {
             "id": "Q748956",
             "name": {
