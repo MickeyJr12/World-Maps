@@ -2608,7 +2608,7 @@
           max-height : 100%;         
           margin-inline: auto;
           border-radius: 0.4rem;
-          outline : 2px solid rgba(255,255,255,0.1);
+          outline : 2px solid rgba(255,255,255,0.05);
           outline-offset: 1px;;
           overflow: hidden;
           transition : outline-color 0.2s ease;
@@ -2652,6 +2652,45 @@
           opacity : 0; 
           pointer-events: none;
         }     
+
+
+        .dotsWrap {
+            margin: 0.8rem auto 0;
+            height: 10px;
+            overflow: hidden;            /* cache les dots hors de la fenêtre */
+            display: flex;
+            align-items: center;
+          }
+          
+          .dotsTrack {
+            display: flex;
+            transition: transform 0.3s ease;
+          }
+          
+          .dotSlot {
+            flex: none;
+            width: 14px;                 /* doit être égal à SLOT dans le JS */
+            height: 6px;
+            display: grid;
+            place-items: center;
+          }
+          
+          .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.4);
+            transition: width 0.3s, transform 0.3s, opacity 0.3s, background 0.3s;
+          }
+          
+          .dotSlot.on .dot   { width: 14px; background: var(--accent, #2f7df6); }
+          .dotSlot.edge .dot { transform: scale(0.55); }
+          .dotSlot.out .dot  { transform: scale(0); opacity: 0; }
+          
+          @media (prefers-reduced-motion: reduce) {
+            .dotsTrack, .dot { transition: none; }
+          }
+
 }
 
 .shinePic {
@@ -2690,6 +2729,7 @@
           display : flex;
           position : absolute;
           justify-content : center;
+          pointer-events : none;
           align-items : center;
           z-index : 20;
           border-radius : 50%;
@@ -2697,7 +2737,7 @@
           transform : translateY(-50%);
           background : rgba(0,0,0,0.6);
           box-sizing : border-box;
-          opacity : 0.6;
+          opacity : 0.2;
           height : 2rem;
           aspect-ratio : 1/1;
           transition : opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
@@ -2710,7 +2750,8 @@
           filter : brightness(0.8);
         }
         .arrowPic.active{
-          opacity : 1;
+          pointer-events : all;
+          opacity : 0.75;
         }
         #LArrowPic{
           left : 0.6rem;
@@ -26400,6 +26441,7 @@
               <div id="cityPic">Paris</div>
             </div>
 
+            <div class="dotsWrap"></div>
             <div id="wrappermBoxImg">
               <div class="mBoxImg"></div>
               <div class="mBoxImg"></div>
@@ -33974,6 +34016,16 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
 
+
+      function jaugeScroll(element, conteneur) { // dis à quel point un élément est visible 
+  const e = element.getBoundingClientRect()
+  const c = conteneur.getBoundingClientRect()
+
+  const largeurVisible = Math.min(e.right, c.right) - Math.max(e.left, c.left)
+  if (largeurVisible <= 0) return 0                       // entièrement hors champ
+
+  return Math.min(largeurVisible / e.width, 1)            // 1 = entièrement visible
+}
 
       function visibleScroll(element, conteneur) { // savoir si un élément est partiellement caché ou pas 
         const e = element.getBoundingClientRect()
@@ -67296,7 +67348,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const wrappermBoxImg = getId('wrappermBoxImg')
       const LArrowPic = getId('LArrowPic')
       const RArrowPic = getId('RArrowPic')
-      let scrollAuto = false; // Ne pas déclancher le listener de scroll de carouselPic si on scrollIntoView
+      let mCadresImgPic; // stock les mImages qu'on va ajouter
+      let cadresImgPic; // stock les images
+
+      const dotsWrap = cadrePic.querySelector('.dotsWrap')
+      const WIN = 7      // nombre de dots visibles en même temps
+      const SLOT = 14    // largeur d'un emplacement en px (= .dotSlot en CSS)
+      let scrollAutoPic = false; // Ne pas déclancher le listener de scroll de carouselPic si on scrollIntoView
+      let mScrollAutoPic = false;
 
       openPic.addEventListener('click',()=>{
         cadrePic.classList.add('active')
@@ -67311,60 +67370,121 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       })
       
 
-      // carouselPic.addEventListener("scroll", () => {
-      //   if(scrollAuto)return
-      //   const dotsPic = cadrePic.querySelectorAll('.dotsPic')
-
-      //   const index = Math.round(
-      //     carouselPic.scrollLeft / carouselPic.clientWidth,
-      //   );
-      //   cadrePic.querySelectorAll('.mBoxImg').forEach((el,i)=>{
-      //     if(i===index && !el.classList.contains('active')){
-      //       if(!visibleScroll(el,wrappermBoxImg))centrerScrollEl(wrappermBoxImg,el)
-      //       const crtImg = query('.mCadreImg.active')
-      //       if(crtImg)crtImg.classList.remove('active')
-      //       el.querySelector('.mCadreImg').classList.add('active')
-
-
-      //       const crtLoader = query('.loaderPic.active')
-      //       if(crtLoader)crtLoader.classList.remove('active')
-      //       if(!el.querySelector('.mLoadedPic'))el.querySelector('.loaderPic').classList.add('active')
-      //     }
-      //   })
-      // });
-      
-
-      let indexActif = -1
-
-carouselPic.addEventListener("scroll", () => {
-  if (scrollAuto) return
-
-  const slides = carouselPic.querySelectorAll(".slide")
-  if (slides.length < 2) return
-
-  const pas = slides[1].offsetLeft - slides[0].offsetLeft     // largeur + gap
-  const index = Math.round(carouselPic.scrollLeft / pas)
-  if (index === indexActif) return                            // rien n'a changé
-  indexActif = index
-
-  const el = cadrePic.querySelectorAll(".mBoxImg")[index]
-  if (!el) return
-
-  cadrePic.querySelector(".mCadreImg.active")?.classList.remove("active")
-  el.querySelector(".mCadreImg").classList.add("active")
-
-  cadrePic.querySelector(".loaderPic.active")?.classList.remove("active")
-  if (!el.querySelector(".mLoadedPic")) el.querySelector(".loaderPic")?.classList.add("active")
-
-  if (!visibleScroll(el, wrappermBoxImg)) centrerScrollEl(wrappermBoxImg, el)
-}, { passive: true })
-
-      carouselPic.addEventListener("scrollend", () => {
-        scrollAuto = false
+      RArrowPic.addEventListener('click',()=>{
+        const i = mCadresImgPic.indexOf(query('.mCadreImg.active'))
+        if(mCadresImgPic[i+1])mCadresImgPic[i+1].click()
+        LArrowPic.classList.toggle('active',i !== 1)
+        RArrowPic.classList.toggle('active',i !== mCadresImgPic.length -2 )
 
       })
 
+
+      LArrowPic.addEventListener('click',()=>{
+        const i = mCadresImgPic.indexOf(query('.mCadreImg.active'))
+        if(mCadresImgPic[i-1])mCadresImgPic[i-1].click()
+
+        LArrowPic.classList.toggle('active',i !== 1)
+        RArrowPic.classList.toggle('active',i !== mCadresImgPic.length -2 )
+
+      })
+
+      function majDots(index) {
+  const slots = cadrePic.querySelectorAll('.dotSlot')
+  const track = cadrePic.querySelector('.dotsTrack')
+  const n = slots.length
+  if (!n) return
+
+  const start = n > WIN
+    ? Math.min(Math.max(index - Math.floor(WIN / 2), 0), n - WIN)
+    : 0
+  track.style.transform = `translateX(${-start * SLOT}px)`
+
+  slots.forEach((s, k) => {
+    const pos = k - start
+    const inside = pos >= 0 && pos < WIN
+    const edge = (pos === 0 && start > 0) || (pos === WIN - 1 && start < n - WIN)
+    s.className = 'dotSlot'
+      + (k === index ? ' on' : '')
+      + (!inside ? ' out' : (edge && k !== index ? ' edge' : ''))
+  })
+}
+
+
+      carouselPic.addEventListener("scrollend", () => {
+        scrollAutoPic = false
+      })
+
+      carouselPic.addEventListener("scroll", () => {
+        if(scrollAutoPic)return
+        const dotsPic = cadrePic.querySelectorAll('.dotsPic')
+
+        // const index = Math.round(
+        //   carouselPic.scrollLeft / carouselPic.clientWidth,
+        // );
+
+        const maxView = Math.max(...cadresImgPic.map(el2=>jaugeScroll(el2,el2.parentElement))) // la valeur de celui qui est le plus visibe
+        const elMaxView = cadresImgPic.filter(el=>jaugeScroll(el,el.parentElement) === maxView)[0] // quel est élément est l eplus visible 
+        const index = cadresImgPic.indexOf(elMaxView)
+        
+
+        
+        cadrePic.querySelectorAll('.mBoxImg').forEach((el,i)=>{
+          if(i===index && !el.classList.contains('active')){
+            mScrollAutoPic = true
+            if(!visibleScroll(el,wrappermBoxImg))centrerScrollEl (wrappermBoxImg,el)
+            wrappermBoxImg.addEventListener('scrollend',()=>{
+            mScrollAutoPic = false
+            },{once : true})
+
+            const i = mCadresImgPic.indexOf(el.querySelector('.mCadreImg'))
+            LArrowPic.classList.toggle('active',i !== 0)
+            RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
+            
+            majDots(index)
+            const crtImg = query('.mCadreImg.active')
+            if(crtImg)crtImg.classList.remove('active')
+            el.querySelector('.mCadreImg').classList.add('active')
+
+            const crtLoader = query('.loaderPic.active')
+            if(crtLoader)crtLoader.classList.remove('active')
+            if(!el.querySelector('.mLoadedPic'))el.querySelector('.loaderPic').classList.add('active')
+          }
+        })
+      });
+      
+      
+
+//       let indexActif = -1
+
+// carouselPic.addEventListener("scroll", () => {
+//   if (scrollAutoPic) return
+
+//   const slides = carouselPic.querySelectorAll(".slide")
+//   if (slides.length < 2) return
+
+//   const pas = slides[1].offsetLeft - slides[0].offsetLeft     // largeur + gap
+//   const index = Math.round(carouselPic.scrollLeft / pas)
+//   if (index === indexActif) return                            // rien n'a changé
+//   indexActif = index
+
+//   const el = cadrePic.querySelectorAll(".mBoxImg")[index]
+//   if (!el) return
+
+//   cadrePic.querySelector(".mCadreImg.active")?.classList.remove("active")
+//   el.querySelector(".mCadreImg").classList.add("active")
+
+//   cadrePic.querySelector(".loaderPic.active")?.classList.remove("active")
+//   if (!el.querySelector(".mLoadedPic")) el.querySelector(".loaderPic")?.classList.add("active")
+
+//   if (!visibleScroll(el, wrappermBoxImg)) centrerScrollEl(wrappermBoxImg, el)
+// }, { passive: true })
+
+
+
       function fillCadrePic(id){
+        LArrowPic.classList.remove('active')
+        RArrowPic.classList.add('active')
+
         let backgrounds = [
   "linear-gradient(160deg, rgb(90, 147, 226), rgb(74, 37, 126))",
   "linear-gradient(160deg, rgb(90, 95, 226), rgb(109, 37, 126))",
@@ -67395,6 +67515,7 @@ carouselPic.addEventListener("scroll", () => {
         carouselPic.innerHTML = ``
         wrappermBoxImg.innerHTML = ``
         carouselPic.scrollLeft = 0
+        
         D_pic[id].forEach(s=>{
           const slide = createEl('div')
           slide.classList.add('slide')
@@ -67463,10 +67584,9 @@ carouselPic.addEventListener("scroll", () => {
           mImg.src = s.image
 
           mBoxImg.addEventListener('click',()=>{
-            scrollAuto = true;
+            scrollAutoPic = true;
             const crtImg = query('.mCadreImg.active')
             const crtLoader = wrappermBoxImg.querySelector('.loaderPic.active')
-            console.log(crtLoader)
             if(crtImg)crtImg.classList.remove('active')
             if(crtLoader)crtLoader.classList.remove('active')
              
@@ -67476,9 +67596,42 @@ carouselPic.addEventListener("scroll", () => {
 
             cadreImg.scrollIntoView({ behavior: "smooth", block: "center" });
             centrerScrollEl(wrappermBoxImg, mBoxImg)
+            majDots([...queryAll('.mCadreImg')].indexOf(query('.mCadreImg.active')))
+
+
+            const i = mCadresImgPic.indexOf(mBoxImg)
+            LArrowPic.classList.toggle('active',i !== 0)
+            RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
+            
           })
-          
         })
+        
+        mCadresImgPic = [...queryAll('.mCadreImg')]
+        cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
+
+        //** Créer les dots
+
+        const n = D_pic[id].length
+        dotsWrap.style.width = Math.min(n, WIN) * SLOT + 'px'
+
+        const dotsTrack = createEl('div')
+        dotsTrack.className = 'dotsTrack'
+
+        for (let k = 0; k < n; k++) {
+          const slot = createEl('div')
+          slot.className = 'dotSlot'
+          const dot = createEl('i')
+          dot.className = 'dot'
+          slot.append(dot)
+          dotsTrack.append(slot)
+        }
+
+        dotsWrap.append(dotsTrack)
+
+        indexActif = 0                   // le carrousel est remis à zéro (scrollLeft = 0)
+        majDots(0)
+
+
       }
 
 
