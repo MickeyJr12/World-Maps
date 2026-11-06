@@ -13808,7 +13808,228 @@ const D_monuments = {
             "fame": 0
         }
     ],
-    "GU": [],
+    "GU": [
+        {
+            "id": "Q4380977",
+            "name": {
+                "fr": "mont Lamlam",
+                "en": "Mount Lamlam"
+            },
+            "city": {
+                "id": "Q16635",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "country": {
+                "id": "Q16635",
+                "iso": "GU",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "coordinates": {
+                "latitude": 13.338611111111,
+                "longitude": 144.66277777778
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Mount_Lamlam.jpg/1280px-Mount_Lamlam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mount Lamlam.jpg",
+            "author": "LittleT889",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 14
+        },
+        {
+            "id": "Q2580264",
+            "name": {
+                "fr": "cathédrale du Doux Nom de Marie",
+                "en": "Dulce Nombre de Maria Cathedral Basilica"
+            },
+            "city": {
+                "id": "Q30988",
+                "fr": "Hagåtña",
+                "en": "Hagåtña"
+            },
+            "country": {
+                "id": "Q16635",
+                "iso": "GU",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "coordinates": {
+                "latitude": 13.4743,
+                "longitude": 144.7524
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Dulce_Nombre_de_Maria_Cathedral_Basilica.JPG/1280px-Dulce_Nombre_de_Maria_Cathedral_Basilica.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Dulce Nombre de Maria Cathedral Basilica.JPG",
+            "author": "Abasaa",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 10
+        },
+        {
+            "id": "Q7203678",
+            "name": {
+                "fr": "Plaza de España",
+                "en": "Plaza de España"
+            },
+            "city": {
+                "id": "Q16635",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "country": {
+                "id": "Q16635",
+                "iso": "GU",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "coordinates": {
+                "latitude": 13.473833,
+                "longitude": 144.751533
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Chocolate_House_in_Hagatna.JPG/1280px-Chocolate_House_in_Hagatna.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Chocolate House in Hagatna.JPG",
+            "author": "Abasaa",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 6
+        },
+        {
+            "id": "Q7968628",
+            "name": {
+                "fr": "War in the Pacific National Historical Park",
+                "en": "War in the Pacific National Historical Park"
+            },
+            "city": {
+                "id": "Q16635",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "country": {
+                "id": "Q16635",
+                "iso": "GU",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "coordinates": {
+                "latitude": 13.3,
+                "longitude": 144.667
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/65/Wapa_new_parknet_photos.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Wapa new parknet photos.jpg",
+            "author": "NPS photo",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 6
+        },
+        {
+            "id": "Q25185570",
+            "name": {
+                "fr": "Tumon Bay",
+                "en": "Tumon Bay"
+            },
+            "city": {
+                "id": "Q16635",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "country": {
+                "id": "Q16635",
+                "iso": "GU",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "coordinates": {
+                "latitude": 13.51389,
+                "longitude": 144.79639
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Tumon_Bay.JPG/1280px-Tumon_Bay.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Tumon Bay.JPG",
+            "author": "Abasaa",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 6
+        },
+        {
+            "id": "Q96097880",
+            "name": {
+                "fr": "Two Lovers Point",
+                "en": "Two Lovers Point"
+            },
+            "city": {
+                "id": "Q933714",
+                "fr": "Tamuning",
+                "en": "Tamuning"
+            },
+            "country": {
+                "id": "Q16635",
+                "iso": "GU",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "coordinates": {
+                "latitude": 13.534991666666667,
+                "longitude": 144.80245277777777
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Two_Lovers_Point_2025.jpg/1280px-Two_Lovers_Point_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Two Lovers Point 2025.jpg",
+            "author": "Gage Skidmore",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 5
+        },
+        {
+            "id": "Q7680272",
+            "name": {
+                "fr": "Talofofo Falls",
+                "en": "Talofofo Falls"
+            },
+            "city": {
+                "id": "Q16635",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "country": {
+                "id": "Q16635",
+                "iso": "GU",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "coordinates": {
+                "latitude": 13.3237,
+                "longitude": 144.737
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Talofofo_Falls_2025.jpg/1280px-Talofofo_Falls_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Talofofo Falls 2025.jpg",
+            "author": "Gage Skidmore",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 4
+        },
+        {
+            "id": "Q106330334",
+            "name": {
+                "fr": "Latte Stone Park",
+                "en": "Latte Stone Park"
+            },
+            "city": null,
+            "country": {
+                "id": "Q16635",
+                "iso": "GU",
+                "fr": "Guam",
+                "en": "Guam"
+            },
+            "coordinates": {
+                "latitude": null,
+                "longitude": null
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Latte_stones_in_Hagatna.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Latte stones in Hagatna.jpg",
+            "author": "Hajime NAKANO from Tokyo, Japan",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 2
+        }
+    ],
     "GW": [
         {
             "id": "Q20716917",
@@ -25363,7 +25584,172 @@ const D_monuments = {
             "fame": 3
         }
     ],
-    "NC": [],
+    "NC": [
+        {
+            "id": "Q9733",
+            "name": {
+                "fr": "Nouméa",
+                "en": "Nouméa"
+            },
+            "city": {
+                "id": "Q965632",
+                "fr": "Province Sud",
+                "en": "South Province"
+            },
+            "country": {
+                "id": "Q33788",
+                "iso": "NC",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "coordinates": {
+                "latitude": -22.266666666667,
+                "longitude": 166.45
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Noum%C3%A9aCentre.jpg/1280px-Noum%C3%A9aCentre.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "NouméaCentre.jpg",
+            "author": "Torbenbrinker",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 100
+        },
+        {
+            "id": "Q1330981",
+            "name": {
+                "fr": "Lagons de Nouvelle-Calédonie",
+                "en": "New Caledonia Barrier Reef"
+            },
+            "city": {
+                "id": "Q33788",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "country": {
+                "id": "Q33788",
+                "iso": "NC",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "coordinates": {
+                "latitude": -20.411944444444,
+                "longitude": 164.56638888889
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Lagoons_and_Reefs_of_New_Caledonia_May_10%2C_2001.jpg/1280px-Lagoons_and_Reefs_of_New_Caledonia_May_10%2C_2001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Lagoons and Reefs of New Caledonia May 10, 2001.jpg",
+            "author": "the Enhanced Thematic Mapper Plus on NASA’s Landsat 7 satellite, Jesse Allen, Michon Scott.",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 33
+        },
+        {
+            "id": "Q292500",
+            "name": {
+                "fr": "île des Pins",
+                "en": "Isle of Pines"
+            },
+            "city": {
+                "id": "Q33788",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "country": {
+                "id": "Q33788",
+                "iso": "NC",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "coordinates": {
+                "latitude": -22.616666666667,
+                "longitude": 167.46666666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Noum%C3%A9a_Ile_des_Pins_Upi.JPG/1280px-Noum%C3%A9a_Ile_des_Pins_Upi.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Nouméa Ile des Pins Upi.JPG",
+            "author": "No machine-readable author provided. Bruno.Menetrier assumed (based on copyright claims).",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 29
+        },
+        {
+            "id": "Q9736",
+            "name": {
+                "fr": "Ouvéa",
+                "en": "Ouvéa"
+            },
+            "city": {
+                "id": "Q33788",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "country": {
+                "id": "Q33788",
+                "iso": "NC",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "coordinates": {
+                "latitude": -20.45,
+                "longitude": 166.6
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Ouvea_vu_du_ciel.jpg/1280px-Ouvea_vu_du_ciel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Ouvea vu du ciel.jpg",
+            "author": "Piard Clément",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 20
+        },
+        {
+            "id": "Q3364739",
+            "name": {
+                "fr": "parc provincial de la Rivière Bleue",
+                "en": "Blue River Provincial Park"
+            },
+            "city": null,
+            "country": {
+                "id": "Q33788",
+                "iso": "NC",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "coordinates": {
+                "latitude": -22.109,
+                "longitude": 166.66
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Parc_de_la_Rivi%C3%A8re_bleue.jpg/1280px-Parc_de_la_Rivi%C3%A8re_bleue.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Parc de la Rivière bleue.jpg",
+            "author": "Gwendal Audran",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 6
+        },
+        {
+            "id": "Q3010801",
+            "name": {
+                "fr": "Cœur de Voh",
+                "en": "Cœur de Voh"
+            },
+            "city": {
+                "id": "Q9757",
+                "fr": "Voh",
+                "en": "Voh"
+            },
+            "country": {
+                "id": "Q33788",
+                "iso": "NC",
+                "fr": "Nouvelle-Calédonie",
+                "en": "New Caledonia"
+            },
+            "coordinates": {
+                "latitude": -20.9376,
+                "longitude": 164.658
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/Voh.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Voh.jpg",
+            "author": "Bananaflo",
+            "license": "GPL",
+            "licenseUrl": "http://www.gnu.org/licenses/gpl.html",
+            "fame": 3
+        }
+    ],
     "NE": [
         {
             "id": "Q726863",
@@ -26034,7 +26420,92 @@ const D_monuments = {
             "fame": 1
         }
     ],
-    "PF": [],
+    "PF": [
+        {
+            "id": "Q673400",
+            "name": {
+                "fr": "Moorea",
+                "en": "Moorea"
+            },
+            "city": {
+                "id": "Q613162",
+                "fr": "Moorea-Maiao",
+                "en": "Moorea-Maiao"
+            },
+            "country": {
+                "id": "Q30971",
+                "iso": "PF",
+                "fr": "Polynésie française",
+                "en": "French Polynesia"
+            },
+            "coordinates": {
+                "latitude": -17.535,
+                "longitude": -149.835
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Moorea_vue_par_Sentinel_2_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Moorea vue par Sentinel 2 (cropped).jpg",
+            "author": "European Space Agency / CNES",
+            "license": "Attribution",
+            "licenseUrl": null,
+            "fame": 47
+        },
+        {
+            "id": "Q1945409",
+            "name": {
+                "fr": "mont Otemanu",
+                "en": "Otemanu"
+            },
+            "city": {
+                "id": "Q602937",
+                "fr": "Bora-Bora",
+                "en": "Bora-Bora"
+            },
+            "country": {
+                "id": "Q30971",
+                "iso": "PF",
+                "fr": "Polynésie française",
+                "en": "French Polynesia"
+            },
+            "coordinates": {
+                "latitude": -16.5,
+                "longitude": -151.73333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Borabora-2.jpg/1280px-Borabora-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Borabora-2.jpg",
+            "author": "Borabora.jpg: User:Taka-0905\nderivative work: Alvaro qc (talk)",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 12
+        },
+        {
+            "id": "Q31930057",
+            "name": {
+                "fr": "Motu Ome",
+                "en": "Ome"
+            },
+            "city": {
+                "id": "Q602937",
+                "fr": "Bora-Bora",
+                "en": "Bora-Bora"
+            },
+            "country": {
+                "id": "Q30971",
+                "iso": "PF",
+                "fr": "Polynésie française",
+                "en": "French Polynesia"
+            },
+            "coordinates": {
+                "latitude": -16.457,
+                "longitude": -151.724
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2d/BoraboraISS006-E-39815.PNG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "BoraboraISS006-E-39815.PNG",
+            "author": "NASA",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 3
+        }
+    ],
     "PG": [
         {
             "id": "Q848308",
@@ -26959,7 +27430,92 @@ const D_monuments = {
             "fame": 33
         }
     ],
-    "PM": [],
+    "PM": [
+        {
+            "id": "Q292246",
+            "name": {
+                "fr": "île aux Marins",
+                "en": "L'Ile-aux-Marins"
+            },
+            "city": {
+                "id": "Q185678",
+                "fr": "Saint-Pierre",
+                "en": "Saint-Pierre"
+            },
+            "country": {
+                "id": "Q34617",
+                "iso": "PM",
+                "fr": "Saint-Pierre-et-Miquelon",
+                "en": "Saint Pierre and Miquelon"
+            },
+            "coordinates": {
+                "latitude": 46.786111111111,
+                "longitude": -56.148611111111
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Ile_aux_marines%2C_SPM.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Ile aux marines, SPM.JPG",
+            "author": null,
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 17
+        },
+        {
+            "id": "Q1995858",
+            "name": {
+                "fr": "Grand Colombier",
+                "en": "Grand Colombier"
+            },
+            "city": {
+                "id": "Q34617",
+                "fr": "Saint-Pierre-et-Miquelon",
+                "en": "Saint Pierre and Miquelon"
+            },
+            "country": {
+                "id": "Q34617",
+                "iso": "PM",
+                "fr": "Saint-Pierre-et-Miquelon",
+                "en": "Saint Pierre and Miquelon"
+            },
+            "coordinates": {
+                "latitude": 46.822749,
+                "longitude": -56.165414
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Grand_Colombier_from_St_Pierre_Island.jpg/1280px-Grand_Colombier_from_St_Pierre_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Grand Colombier from St Pierre Island.jpg",
+            "author": "Duda12345",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 13
+        },
+        {
+            "id": "Q2942441",
+            "name": {
+                "fr": "cathédrale Saint-Pierre",
+                "en": "Saint-Pierre Cathedral"
+            },
+            "city": {
+                "id": "Q185678",
+                "fr": "Saint-Pierre",
+                "en": "Saint-Pierre"
+            },
+            "country": {
+                "id": "Q34617",
+                "iso": "PM",
+                "fr": "Saint-Pierre-et-Miquelon",
+                "en": "Saint Pierre and Miquelon"
+            },
+            "coordinates": {
+                "latitude": 46.781111,
+                "longitude": -56.172222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_St_Pierre_and_Miquelon.jpg/1280px-Cathedral_of_St_Pierre_and_Miquelon.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cathedral of St Pierre and Miquelon.jpg",
+            "author": "John R. Bopp",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 8
+        }
+    ],
     "PN": [
         {
             "id": "Q1122663",
@@ -28190,7 +28746,232 @@ const D_monuments = {
             "fame": 9
         }
     ],
-    "RE": [],
+    "RE": [
+        {
+            "id": "Q1049644",
+            "name": {
+                "fr": "Piton de la Fournaise",
+                "en": "Piton de la Fournaise"
+            },
+            "city": {
+                "id": "Q1014731",
+                "fr": "Sainte-Rose",
+                "en": "Sainte-Rose"
+            },
+            "country": {
+                "id": "Q17070",
+                "iso": "RE",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "coordinates": {
+                "latitude": -21.243116,
+                "longitude": 55.707236
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Piton_de_La_Fournaise_-_Paysage_de_l%27%C3%AEle_de_La_R%C3%A9union.jpg/1280px-Piton_de_La_Fournaise_-_Paysage_de_l%27%C3%AEle_de_La_R%C3%A9union.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Piton de La Fournaise - Paysage de l'île de La Réunion.jpg",
+            "author": "Alexandre Péribé",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 38
+        },
+        {
+            "id": "Q550389",
+            "name": {
+                "fr": "parc national de La Réunion",
+                "en": "Réunion National Park"
+            },
+            "city": {
+                "id": "Q17070",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "country": {
+                "id": "Q17070",
+                "iso": "RE",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "coordinates": {
+                "latitude": -21.15,
+                "longitude": 55.5
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Voile_de_la_Mari%C3%A9e_Salazie_1.JPG/1280px-Voile_de_la_Mari%C3%A9e_Salazie_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Voile de la Mariée Salazie 1.JPG",
+            "author": "© Geolina",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 34
+        },
+        {
+            "id": "Q1545452",
+            "name": {
+                "fr": "piton des Neiges",
+                "en": "Piton des Neiges"
+            },
+            "city": {
+                "id": "Q1014746",
+                "fr": "Cilaos",
+                "en": "Cilaos"
+            },
+            "country": {
+                "id": "Q17070",
+                "iso": "RE",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "coordinates": {
+                "latitude": -21.098888888889,
+                "longitude": 55.478888888889
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Piton_des_Neiges1.JPG/1280px-Piton_des_Neiges1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Piton des Neiges1.JPG",
+            "author": "Dunog",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 31
+        },
+        {
+            "id": "Q131830",
+            "name": {
+                "fr": "cirque de Mafate",
+                "en": "Mafate"
+            },
+            "city": {
+                "id": "Q429770",
+                "fr": "La Possession",
+                "en": "La Possession"
+            },
+            "country": {
+                "id": "Q17070",
+                "iso": "RE",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "coordinates": {
+                "latitude": -21.053888888889,
+                "longitude": 55.420555555556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/14-07-2011_Grand_B%C3%A9nare_%2826%29_Mafate_%28version_am%C3%A9lior%C3%A9e%29.jpg/1280px-14-07-2011_Grand_B%C3%A9nare_%2826%29_Mafate_%28version_am%C3%A9lior%C3%A9e%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "14-07-2011 Grand Bénare (26) Mafate (version améliorée).jpg",
+            "author": "User:Mamphi",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 14
+        },
+        {
+            "id": "Q1093094",
+            "name": {
+                "fr": "Cirque de Cilaos",
+                "en": "Cirque de Cilaos"
+            },
+            "city": {
+                "id": "Q1014746",
+                "fr": "Cilaos",
+                "en": "Cilaos"
+            },
+            "country": {
+                "id": "Q17070",
+                "iso": "RE",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "coordinates": {
+                "latitude": -21.14573,
+                "longitude": 55.45983
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Cilaos_Circus.jpg/1280px-Cilaos_Circus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cilaos Circus.jpg",
+            "author": "Patrick Portes",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 6
+        },
+        {
+            "id": "Q1093097",
+            "name": {
+                "fr": "Cirque de Salazie",
+                "en": "Cirque de Salazie"
+            },
+            "city": {
+                "id": "Q1014778",
+                "fr": "Salazie",
+                "en": "Salazie"
+            },
+            "country": {
+                "id": "Q17070",
+                "iso": "RE",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "coordinates": {
+                "latitude": -21.05,
+                "longitude": 55.5
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Cirque_de_Salazie_%28depuis_le_refuge_de_Belouve%29.jpg/1280px-Cirque_de_Salazie_%28depuis_le_refuge_de_Belouve%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cirque de Salazie (depuis le refuge de Belouve).jpg",
+            "author": "Jean-Louis Sicot",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 6
+        },
+        {
+            "id": "Q3390866",
+            "name": {
+                "fr": "plage de l'Hermitage",
+                "en": "Plage de l'Ermitage"
+            },
+            "city": {
+                "id": "Q316887",
+                "fr": "Saint-Paul",
+                "en": "Saint-Paul"
+            },
+            "country": {
+                "id": "Q17070",
+                "iso": "RE",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "coordinates": {
+                "latitude": -21.0819,
+                "longitude": 55.2242
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Hermitge_974.JPG/1280px-Hermitge_974.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Hermitge 974.JPG",
+            "author": "R-P Grondin",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 3
+        },
+        {
+            "id": "Q2852451",
+            "name": {
+                "fr": "anse des Cascades",
+                "en": "Anse des Cascades"
+            },
+            "city": {
+                "id": "Q1014731",
+                "fr": "Sainte-Rose",
+                "en": "Sainte-Rose"
+            },
+            "country": {
+                "id": "Q17070",
+                "iso": "RE",
+                "fr": "La Réunion",
+                "en": "Réunion"
+            },
+            "coordinates": {
+                "latitude": -21.186487,
+                "longitude": 55.827112
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Anse_des_Cascades_%40_Gros_Piton_Sainte-Rose_02.jpg/1280px-Anse_des_Cascades_%40_Gros_Piton_Sainte-Rose_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Anse des Cascades @ Gros Piton Sainte-Rose 02.jpg",
+            "author": "Rémih",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 2
+        }
+    ],
     "RO": [
         {
             "id": "Q184429",
@@ -30887,7 +31668,176 @@ const D_monuments = {
             "fame": 24
         }
     ],
-    "SJ": [],
+    "SJ": [
+        {
+            "id": "Q25923",
+            "name": {
+                "fr": "Longyearbyen",
+                "en": "Longyearbyen"
+            },
+            "city": {
+                "id": "Q25231",
+                "fr": "Svalbard",
+                "en": "Svalbard"
+            },
+            "country": {
+                "id": "Q842829",
+                "iso": "SJ",
+                "fr": "Svalbard et Jan Mayen",
+                "en": "Svalbard and Jan Mayen"
+            },
+            "coordinates": {
+                "latitude": 78.216666666667,
+                "longitude": 15.633333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Longyearbyen_colourful_homes.jpg/1280px-Longyearbyen_colourful_homes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Longyearbyen colourful homes.jpg",
+            "author": "Svalbard Global Seed Vault/Peter Vermeij",
+            "license": "Attribution",
+            "licenseUrl": null,
+            "fame": 101
+        },
+        {
+            "id": "Q690333",
+            "name": {
+                "fr": "Barentsburg",
+                "en": "Barentsburg"
+            },
+            "city": {
+                "id": "Q25231",
+                "fr": "Svalbard",
+                "en": "Svalbard"
+            },
+            "country": {
+                "id": "Q842829",
+                "iso": "SJ",
+                "fr": "Svalbard et Jan Mayen",
+                "en": "Svalbard and Jan Mayen"
+            },
+            "coordinates": {
+                "latitude": 78.065,
+                "longitude": 14.216
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Barentsburg_Mine_Dock.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Barentsburg Mine Dock.JPG",
+            "author": "(WT-en) Jpatokal at English Wikivoyage",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 48
+        },
+        {
+            "id": "Q845396",
+            "name": {
+                "fr": "Pyramiden",
+                "en": "Pyramiden"
+            },
+            "city": {
+                "id": "Q25231",
+                "fr": "Svalbard",
+                "en": "Svalbard"
+            },
+            "country": {
+                "id": "Q842829",
+                "iso": "SJ",
+                "fr": "Svalbard et Jan Mayen",
+                "en": "Svalbard and Jan Mayen"
+            },
+            "coordinates": {
+                "latitude": 78.656111111111,
+                "longitude": 16.325
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Piramida_Svalbard_IMG_6283.JPG/1280px-Piramida_Svalbard_IMG_6283.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Piramida Svalbard IMG 6283.JPG",
+            "author": "Bjoertvedt",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 35
+        },
+        {
+            "id": "Q2597768",
+            "name": {
+                "fr": "Svalbard Church",
+                "en": "Svalbard Church"
+            },
+            "city": {
+                "id": "Q25231",
+                "fr": "Svalbard",
+                "en": "Svalbard"
+            },
+            "country": {
+                "id": "Q842829",
+                "iso": "SJ",
+                "fr": "Svalbard et Jan Mayen",
+                "en": "Svalbard and Jan Mayen"
+            },
+            "coordinates": {
+                "latitude": 78.21977,
+                "longitude": 15.61823
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Longyearbyen-Church-2006.jpg/1280px-Longyearbyen-Church-2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Longyearbyen-Church-2006.jpg",
+            "author": "Bjørn Christian Tørrissen",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 11
+        },
+        {
+            "id": "Q1327658",
+            "name": {
+                "fr": "Svalbard Museum",
+                "en": "Svalbard Museum"
+            },
+            "city": {
+                "id": "Q25923",
+                "fr": "Longyearbyen",
+                "en": "Longyearbyen"
+            },
+            "country": {
+                "id": "Q842829",
+                "iso": "SJ",
+                "fr": "Svalbard et Jan Mayen",
+                "en": "Svalbard and Jan Mayen"
+            },
+            "coordinates": {
+                "latitude": 78.2225,
+                "longitude": 15.65167
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Longyeardalen_IMG_0101_UNIS.jpg/1280px-Longyeardalen_IMG_0101_UNIS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Longyeardalen IMG 0101 UNIS.jpg",
+            "author": "Bjoertvedt",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 10
+        },
+        {
+            "id": "Q7050615",
+            "name": {
+                "fr": "Nordenskiold Glacier",
+                "en": "Nordenskiold Glacier"
+            },
+            "city": {
+                "id": "Q309276",
+                "fr": "parc national du Nord-Est du Groenland",
+                "en": "Northeast Greenland National Park"
+            },
+            "country": {
+                "id": "Q842829",
+                "iso": "SJ",
+                "fr": "Svalbard et Jan Mayen",
+                "en": "Svalbard and Jan Mayen"
+            },
+            "coordinates": {
+                "latitude": 73.05,
+                "longitude": -28.2167
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Nordenskiold.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Nordenskiold.jpg",
+            "author": "US Coastguard",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 4
+        }
+    ],
     "SK": [
         {
             "id": "Q208110",
@@ -33420,7 +34370,148 @@ const D_monuments = {
             "fame": 6
         }
     ],
-    "TF": [],
+    "TF": [
+        {
+            "id": "Q46772",
+            "name": {
+                "fr": "îles Kerguelen",
+                "en": "Kerguelen Islands"
+            },
+            "city": {
+                "id": "Q129003",
+                "fr": "Terres australes et antarctiques françaises",
+                "en": "French Southern and Antarctic Lands"
+            },
+            "country": {
+                "id": "Q129003",
+                "iso": "TF",
+                "fr": "Terres australes et antarctiques françaises",
+                "en": "French Southern and Antarctic Lands"
+            },
+            "coordinates": {
+                "latitude": -49.25,
+                "longitude": 69.15
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Mirounga_leonina_harem.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Mirounga leonina harem.JPG",
+            "author": null,
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 79
+        },
+        {
+            "id": "Q194215",
+            "name": {
+                "fr": "île Amsterdam",
+                "en": "Île Amsterdam"
+            },
+            "city": {
+                "id": "Q1681727",
+                "fr": "îles Saint-Paul et Nouvelle-Amsterdam",
+                "en": "Saint Paul and Amsterdam"
+            },
+            "country": {
+                "id": "Q129003",
+                "iso": "TF",
+                "fr": "Terres australes et antarctiques françaises",
+                "en": "French Southern and Antarctic Lands"
+            },
+            "coordinates": {
+                "latitude": -37.825833333333,
+                "longitude": 77.554722222222
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Amsterdam_ASTER.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Amsterdam ASTER.jpg",
+            "author": "NASA ASTER volcano archive jpl",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 63
+        },
+        {
+            "id": "Q204821",
+            "name": {
+                "fr": "île Saint-Paul",
+                "en": "Île Saint-Paul"
+            },
+            "city": {
+                "id": "Q1681727",
+                "fr": "îles Saint-Paul et Nouvelle-Amsterdam",
+                "en": "Saint Paul and Amsterdam"
+            },
+            "country": {
+                "id": "Q129003",
+                "iso": "TF",
+                "fr": "Terres australes et antarctiques françaises",
+                "en": "French Southern and Antarctic Lands"
+            },
+            "coordinates": {
+                "latitude": -38.73,
+                "longitude": 77.522222222222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/2020-11_Saint-Paul_Island_03.jpg/1280px-2020-11_Saint-Paul_Island_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "2020-11 Saint-Paul Island 03.jpg",
+            "author": "Antoine Lamielle",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 55
+        },
+        {
+            "id": "Q839559",
+            "name": {
+                "fr": "Port-aux-Français",
+                "en": "Port-aux-Français"
+            },
+            "city": {
+                "id": "Q46772",
+                "fr": "îles Kerguelen",
+                "en": "Kerguelen Islands"
+            },
+            "country": {
+                "id": "Q129003",
+                "iso": "TF",
+                "fr": "Terres australes et antarctiques françaises",
+                "en": "French Southern and Antarctic Lands"
+            },
+            "coordinates": {
+                "latitude": -49.35,
+                "longitude": 70.216666666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Port_aux_Fran%C3%A7ais.JPG/1280px-Port_aux_Fran%C3%A7ais.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Port aux Français.JPG",
+            "author": "Daniel Delille",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 34
+        },
+        {
+            "id": "Q1945447",
+            "name": {
+                "fr": "mont Ross",
+                "en": "Mont Ross"
+            },
+            "city": {
+                "id": "Q129003",
+                "fr": "Terres australes et antarctiques françaises",
+                "en": "French Southern and Antarctic Lands"
+            },
+            "country": {
+                "id": "Q129003",
+                "iso": "TF",
+                "fr": "Terres australes et antarctiques françaises",
+                "en": "French Southern and Antarctic Lands"
+            },
+            "coordinates": {
+                "latitude": -49.6,
+                "longitude": 69.5
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Mont_Ross_-_Archipel_des_Kerguelen.jpg/1280px-Mont_Ross_-_Archipel_des_Kerguelen.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mont Ross - Archipel des Kerguelen.jpg",
+            "author": "Cousin jf",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 20
+        }
+    ],
     "TG": [
         {
             "id": "Q508040",
@@ -37747,8 +38838,374 @@ const D_monuments = {
             "fame": 11
         }
     ],
-    "VG": [],
-    "VI": [],
+    "VG": [
+        {
+            "id": "Q827604",
+            "name": {
+                "fr": "Tortola",
+                "en": "Tortola"
+            },
+            "city": {
+                "id": "Q25305",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "country": {
+                "id": "Q25305",
+                "iso": "VG",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.416666666667,
+                "longitude": -64.583333333333
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Roadtown%2C_Tortola.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Roadtown, Tortola.jpg",
+            "author": "Photo: Henry A-W (Henry aw 23:34, 10 July 2006 (UTC))",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 46
+        },
+        {
+            "id": "Q519873",
+            "name": {
+                "fr": "Anegada",
+                "en": "Anegada"
+            },
+            "city": {
+                "id": "Q25305",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "country": {
+                "id": "Q25305",
+                "iso": "VG",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.73129,
+                "longitude": -64.32873
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/AnegadaWestEndAerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "AnegadaWestEndAerial.jpg",
+            "author": "Walker Mangum. Original uploader was Nwmangum at en.wikipedia",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 38
+        },
+        {
+            "id": "Q1139293",
+            "name": {
+                "fr": "Virgin Gorda",
+                "en": "Virgin Gorda"
+            },
+            "city": {
+                "id": "Q25305",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "country": {
+                "id": "Q25305",
+                "iso": "VG",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.47,
+                "longitude": -64.4
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/VirginGordaOverview.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "VirginGordaOverview.jpg",
+            "author": "Jcljules",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "fame": 34
+        },
+        {
+            "id": "Q1330151",
+            "name": {
+                "fr": "Jost Van Dyke",
+                "en": "Jost Van Dyke"
+            },
+            "city": {
+                "id": "Q25305",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "country": {
+                "id": "Q25305",
+                "iso": "VG",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.45,
+                "longitude": -64.733333333333
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a1/White_Bay_Jost_Van_Dyke.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "White Bay Jost Van Dyke.jpg",
+            "author": "Cemerp",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 28
+        },
+        {
+            "id": "Q7715805",
+            "name": {
+                "fr": "The Baths",
+                "en": "The Baths"
+            },
+            "city": {
+                "id": "Q25305",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "country": {
+                "id": "Q25305",
+                "iso": "VG",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.4294,
+                "longitude": -64.4454
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/TheBaths_VirginGorda_BVI.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "TheBaths VirginGorda BVI.jpg",
+            "author": "Jaro Nemčok",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 6
+        },
+        {
+            "id": "Q54976435",
+            "name": {
+                "fr": "Sage Mountain National Park",
+                "en": "Sage Mountain National Park"
+            },
+            "city": {
+                "id": "Q25305",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "country": {
+                "id": "Q25305",
+                "iso": "VG",
+                "fr": "îles Vierges britanniques",
+                "en": "British Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.4,
+                "longitude": -64.65
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Tortola.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Tortola.jpg",
+            "author": "Photo: Henry A-W (Henry aw 23:34, 10 July 2006 (UTC))",
+            "license": "CC BY-SA 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+            "fame": 1
+        }
+    ],
+    "VI": [
+        {
+            "id": "Q491005",
+            "name": {
+                "fr": "parc national des îles Vierges",
+                "en": "Virgin Islands National Park"
+            },
+            "city": {
+                "id": "Q11703",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "country": {
+                "id": "Q11703",
+                "iso": "VI",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.338055555556,
+                "longitude": -64.733333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Virgin_Islands_National_Park.jpg/1280px-Virgin_Islands_National_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Virgin Islands National Park.jpg",
+            "author": "Unknown authorUnknown author",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 34
+        },
+        {
+            "id": "Q4994594",
+            "name": {
+                "fr": "fort Frederik",
+                "en": "Fort Frederik"
+            },
+            "city": {
+                "id": "Q20852568",
+                "fr": "Saint Croix",
+                "en": "Saint Croix District"
+            },
+            "country": {
+                "id": "Q11703",
+                "iso": "VI",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 17.715256,
+                "longitude": -64.883453
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Fort_Frederik_2012_Wade.JPG/1280px-Fort_Frederik_2012_Wade.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fort Frederik 2012 Wade.JPG",
+            "author": "This image or media was taken or created by Matt H. Wade. To see his entire portfolio, click here.@thatmattwade\n\n This image is protected by copyright! If you would like to use it, please read this first.",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 9
+        },
+        {
+            "id": "Q2968446",
+            "name": {
+                "fr": "château de Barbe Noire",
+                "en": "Blackbeard's Castle"
+            },
+            "city": {
+                "id": "Q11703",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "country": {
+                "id": "Q11703",
+                "iso": "VI",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.343842,
+                "longitude": -64.929592
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/USVI_St._Thomas_-_Charlotte_Amalie_-_Blackbeard_Castle.JPG/1280px-USVI_St._Thomas_-_Charlotte_Amalie_-_Blackbeard_Castle.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "USVI St. Thomas - Charlotte Amalie - Blackbeard Castle.JPG",
+            "author": null,
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 9
+        },
+        {
+            "id": "Q4573739",
+            "name": {
+                "fr": "Trunk Bay",
+                "en": "Trunk Bay"
+            },
+            "city": {
+                "id": "Q28106791",
+                "fr": "Saint John",
+                "en": "Saint John"
+            },
+            "country": {
+                "id": "Q11703",
+                "iso": "VI",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.3525,
+                "longitude": -64.769722222222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/StJohnTrunkBay.jpg/1280px-StJohnTrunkBay.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "StJohnTrunkBay.jpg",
+            "author": "Ben Whitney",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 8
+        },
+        {
+            "id": "Q4241290",
+            "name": {
+                "fr": "Christiansted National Historic Site",
+                "en": "Christiansted National Historic Site"
+            },
+            "city": {
+                "id": "Q994719",
+                "fr": "Christiansted",
+                "en": "Christiansted"
+            },
+            "country": {
+                "id": "Q11703",
+                "iso": "VI",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 17.74694444,
+                "longitude": -64.70222222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Stcroixhistoricchristiansted.jpg/1280px-Stcroixhistoricchristiansted.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Stcroixhistoricchristiansted.jpg",
+            "author": "Christine Hawks",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 6
+        },
+        {
+            "id": "Q6730108",
+            "name": {
+                "fr": "Magens Bay",
+                "en": "Magens Bay"
+            },
+            "city": {
+                "id": "Q11703",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "country": {
+                "id": "Q11703",
+                "iso": "VI",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.366,
+                "longitude": -64.93
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Magens_Bay%2C_St._Thomas%2C_USVI.jpg/1280px-Magens_Bay%2C_St._Thomas%2C_USVI.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Magens Bay, St. Thomas, USVI.jpg",
+            "author": "dbking",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 5
+        },
+        {
+            "id": "Q5470921",
+            "name": {
+                "fr": "Fort Christian",
+                "en": "Fort Christian"
+            },
+            "city": {
+                "id": "Q11703",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "country": {
+                "id": "Q11703",
+                "iso": "VI",
+                "fr": "îles Vierges des États-Unis",
+                "en": "United States Virgin Islands"
+            },
+            "coordinates": {
+                "latitude": 18.34083333,
+                "longitude": -64.92972222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Water_Island%2C_St_Thomas_00802%2C_USVI_-_panoramio_%285%29.jpg/1280px-Water_Island%2C_St_Thomas_00802%2C_USVI_-_panoramio_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Water Island, St Thomas 00802, USVI - panoramio (5).jpg",
+            "author": "Андрей Бобровский",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 1
+        }
+    ],
     "VN": [
         {
             "id": "Q23513",
@@ -38109,7 +39566,92 @@ const D_monuments = {
             "fame": 11
         }
     ],
-    "WF": [],
+    "WF": [
+        {
+            "id": "Q3215002",
+            "name": {
+                "fr": "lac Lalolalo",
+                "en": "Lake Lalolalo"
+            },
+            "city": {
+                "id": "Q35555",
+                "fr": "Wallis-et-Futuna",
+                "en": "Wallis and Futuna"
+            },
+            "country": {
+                "id": "Q35555",
+                "iso": "WF",
+                "fr": "Wallis-et-Futuna",
+                "en": "Wallis and Futuna"
+            },
+            "coordinates": {
+                "latitude": -13.3,
+                "longitude": -176.23361111111
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Lano_Lalolalo.jpg/1280px-Lano_Lalolalo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Lano Lalolalo.jpg",
+            "author": "Tauʻolunga",
+            "license": "CC BY-SA 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+            "fame": 10
+        },
+        {
+            "id": "Q2942239",
+            "name": {
+                "fr": "cathédrale Notre-Dame-de-l'Assomption de Mata-Utu",
+                "en": "Mata Utu Cathedral"
+            },
+            "city": {
+                "id": "Q7903676",
+                "fr": "Uvea",
+                "en": "Uvea"
+            },
+            "country": {
+                "id": "Q35555",
+                "iso": "WF",
+                "fr": "Wallis-et-Futuna",
+                "en": "Wallis and Futuna"
+            },
+            "coordinates": {
+                "latitude": -13.282777777778,
+                "longitude": -176.17333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/179_Cath%C3%A9drale_de_Mata-Utu_-_side_view_%2836940866791%29.jpg/1280px-179_Cath%C3%A9drale_de_Mata-Utu_-_side_view_%2836940866791%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "179 Cathédrale de Mata-Utu - side view (36940866791).jpg",
+            "author": "Brigitte &amp; Heinz",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 9
+        },
+        {
+            "id": "Q29584056",
+            "name": {
+                "fr": "basilique Saint-Pierre-Chanel de Poi",
+                "en": "basilique Saint-Pierre-Chanel de Poi"
+            },
+            "city": {
+                "id": "Q2734700",
+                "fr": "Alo",
+                "en": "Alo"
+            },
+            "country": {
+                "id": "Q35555",
+                "iso": "WF",
+                "fr": "Wallis-et-Futuna",
+                "en": "Wallis and Futuna"
+            },
+            "coordinates": {
+                "latitude": -14.295332,
+                "longitude": -178.092783
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Futuna_Basilique_Saint-Pierre_Chanel.jpg/1280px-Futuna_Basilique_Saint-Pierre_Chanel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Futuna Basilique Saint-Pierre Chanel.jpg",
+            "author": "Vogensto",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 3
+        }
+    ],
     "WS": [
         {
             "id": "Q3322165",
@@ -38576,7 +40118,92 @@ const D_monuments = {
             "fame": 0
         }
     ],
-    "YT": [],
+    "YT": [
+        {
+            "id": "Q132676",
+            "name": {
+                "fr": "Mamoudzou",
+                "en": "Mamoudzou"
+            },
+            "city": {
+                "id": "Q22813635",
+                "fr": "communauté d'agglomération de Dembeni-Mamoudzou",
+                "en": "Communauté d'agglomération de Dembeni-Mamoudzou"
+            },
+            "country": {
+                "id": "Q17063",
+                "iso": "YT",
+                "fr": "Mayotte",
+                "en": "Mayotte"
+            },
+            "coordinates": {
+                "latitude": -12.781388888889,
+                "longitude": 45.231666666667
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/Mamoudzou_%2810029936275%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Mamoudzou (10029936275).jpg",
+            "author": "David Stanley from Nanaimo, Canada",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 97
+        },
+        {
+            "id": "Q32006360",
+            "name": {
+                "fr": "N'Gouja",
+                "en": "N'Gouja"
+            },
+            "city": {
+                "id": "Q17063",
+                "fr": "Mayotte",
+                "en": "Mayotte"
+            },
+            "country": {
+                "id": "Q17063",
+                "iso": "YT",
+                "fr": "Mayotte",
+                "en": "Mayotte"
+            },
+            "coordinates": {
+                "latitude": -12.962222222222,
+                "longitude": 45.079722222222
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/N%E2%80%99Gouja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "N’Gouja.jpg",
+            "author": "Morbi Ney",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 2
+        },
+        {
+            "id": "Q31996210",
+            "name": {
+                "fr": "plages de Moya",
+                "en": "Plages de Moya"
+            },
+            "city": {
+                "id": "Q1010634",
+                "fr": "Pamandzi",
+                "en": "Pamandzi"
+            },
+            "country": {
+                "id": "Q17063",
+                "iso": "YT",
+                "fr": "Mayotte",
+                "en": "Mayotte"
+            },
+            "coordinates": {
+                "latitude": -12.78171,
+                "longitude": 45.29567
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Moya_Beach_%2810029931635%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Moya Beach (10029931635).jpg",
+            "author": "David Stanley from Nanaimo, Canada",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 2
+        }
+    ],
     "ZA": [
         {
             "id": "Q4092",
@@ -39199,7 +40826,6 @@ const D_monuments = {
             "fame": 14
         }
     ],
-    
     "AS": [
         {
             "id": "Q843075",
@@ -39390,58 +41016,151 @@ const D_monuments = {
             "fame": 4
         }
     ],
-
-    "AX": [],
-    "BL": [],
-    "CK": [
+    "AX": [
         {
-            "id": "Q170482",
+            "id": "Q1735335",
             "name": {
-                "fr": "Avarua",
-                "en": "Avarua"
+                "fr": "château de Kastelholm",
+                "en": "Kastelholm Castle"
             },
-            "city": null,
+            "city": {
+                "id": "Q176201",
+                "fr": "Sund",
+                "en": "Sund"
+            },
             "country": {
-                "id": "Q26988",
-                "iso": "CK",
-                "fr": "Îles Cook",
-                "en": "Cook Islands"
+                "id": "Q5689",
+                "iso": "AX",
+                "fr": "Åland",
+                "en": "Åland"
             },
             "coordinates": {
-                "latitude": -21.207,
-                "longitude": -159.771
+                "latitude": 60.2329039,
+                "longitude": 20.0806612
             },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Para_o_Tane_Palace.jpg/1280px-Para_o_Tane_Palace.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Para o Tane Palace.jpg",
-            "author": "Nurg",
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Kastelholmi_linnus.jpg/1280px-Kastelholmi_linnus.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Kastelholmi linnus.jpg",
+            "author": "Mona-Mia",
             "license": "CC BY-SA 4.0",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 81
+            "fame": 19
         },
         {
-            "id": "Q471793",
+            "id": "Q4357413",
             "name": {
-                "fr": "Rarotonga",
-                "en": "Rarotonga"
+                "fr": "musée maritime d'Åland",
+                "en": "Åland Maritime Museum"
             },
-            "city": null,
+            "city": {
+                "id": "Q48329",
+                "fr": "Mariehamn",
+                "en": "Mariehamn"
+            },
             "country": {
-                "id": "Q26988",
-                "iso": "CK",
-                "fr": "Îles Cook",
-                "en": "Cook Islands"
+                "id": "Q5689",
+                "iso": "AX",
+                "fr": "Åland",
+                "en": "Åland"
             },
             "coordinates": {
-                "latitude": -21.233333333333,
-                "longitude": -159.78333333333
+                "latitude": 60.096944,
+                "longitude": 19.926389
             },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Rarotonga_Island.jpg/1280px-Rarotonga_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Rarotonga Island.jpg",
-            "author": null,
-            "license": "Public domain",
-            "licenseUrl": null,
-            "fame": 53
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/%C3%85land_Maritime_Museum%2C_2019_%2801%29.jpg/1280px-%C3%85land_Maritime_Museum%2C_2019_%2801%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Åland Maritime Museum, 2019 (01).jpg",
+            "author": "Bahnfrend",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 10
         },
+        {
+            "id": "Q10546852",
+            "name": {
+                "fr": "Kobba Klintar",
+                "en": "Kobba Klintar"
+            },
+            "city": {
+                "id": "Q176178",
+                "fr": "Jomala",
+                "en": "Jomala"
+            },
+            "country": {
+                "id": "Q5689",
+                "iso": "AX",
+                "fr": "Åland",
+                "en": "Åland"
+            },
+            "coordinates": {
+                "latitude": 60.0294143,
+                "longitude": 19.8822242
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Kobba_Klintar4.jpg/1280px-Kobba_Klintar4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Kobba Klintar4.jpg",
+            "author": "Susanne Nilsson",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 5
+        }
+    ],
+    "BL": [
+        {
+            "id": "Q34112",
+            "name": {
+                "fr": "Gustavia",
+                "en": "Gustavia"
+            },
+            "city": {
+                "id": "Q25362",
+                "fr": "Saint-Barthélemy",
+                "en": "Saint Barthélemy"
+            },
+            "country": {
+                "id": "Q25362",
+                "iso": "BL",
+                "fr": "Saint-Barthélemy",
+                "en": "Saint Barthélemy"
+            },
+            "coordinates": {
+                "latitude": 17.898611111111,
+                "longitude": -62.849166666667
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Gustavia_Harbor%2C_Saint-Barth%C3%A9lemy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Gustavia Harbor, Saint-Barthélemy.jpg",
+            "author": "Originally uploaded at en.wikipedia by en:User:Evaneggers as en:Image:Stb.jpg",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 69
+        },
+        {
+            "id": "Q113623018",
+            "name": {
+                "fr": "Anse de Grande Saline",
+                "en": "Anse de Grande Saline"
+            },
+            "city": {
+                "id": "Q25362",
+                "fr": "Saint-Barthélemy",
+                "en": "Saint Barthélemy"
+            },
+            "country": {
+                "id": "Q25362",
+                "iso": "BL",
+                "fr": "Saint-Barthélemy",
+                "en": "Saint Barthélemy"
+            },
+            "coordinates": {
+                "latitude": 17.888333,
+                "longitude": -62.821528
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Beach_looking_west_at_the_Anse_de_Grande_Saline_on_St._Barthelemy%2C_French_West_Indies_-_panoramio.jpg/1280px-Beach_looking_west_at_the_Anse_de_Grande_Saline_on_St._Barthelemy%2C_French_West_Indies_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Beach looking west at the Anse de Grande Saline on St. Barthelemy, French West Indies - panoramio.jpg",
+            "author": "David Broad",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 2
+        }
+    ],
+    "CK": [
         {
             "id": "Q223379",
             "name": {
@@ -39467,10 +41186,10 @@ const D_monuments = {
             "fame": 39
         },
         {
-            "id": "Q755982",
+            "id": "Q3321538",
             "name": {
-                "fr": "Atiu",
-                "en": "Atiu"
+                "fr": "Église chrétienne des îles Cook",
+                "en": "Cook Islands Christian Church"
             },
             "city": null,
             "country": {
@@ -39480,24 +41199,193 @@ const D_monuments = {
                 "en": "Cook Islands"
             },
             "coordinates": {
-                "latitude": -19.983333333333,
-                "longitude": -158.11666666667
+                "latitude": null,
+                "longitude": null
             },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Atiu_Aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "file": "Atiu Aerial.jpg",
-            "author": null,
-            "license": "Public domain",
-            "licenseUrl": null,
-            "fame": 27
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/CICC_Ekalesia_Avarua_01.jpg/1280px-CICC_Ekalesia_Avarua_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "CICC Ekalesia Avarua 01.jpg",
+            "author": "Tom Ackroyd",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 9
         }
     ],
-    "CY": [],
+    "CY": [
+        {
+            "id": "Q1785592",
+            "name": {
+                "fr": "Kourion",
+                "en": "Kourion"
+            },
+            "city": {
+                "id": "Q5383505",
+                "fr": "Episkopí",
+                "en": "Episkopi"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.6642,
+                "longitude": 32.8877
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Episkopi_01-2017_img11_Kourion.jpg/1280px-Episkopi_01-2017_img11_Kourion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Episkopi 01-2017 img11 Kourion.jpg",
+            "author": "A.Savin",
+            "license": "FAL",
+            "licenseUrl": "http://artlibre.org/licence/lal/en",
+            "fame": 32
+        },
+        {
+            "id": "Q2061165",
+            "name": {
+                "fr": "Pétra tou Romioú",
+                "en": "Petra tou Romiou"
+            },
+            "city": {
+                "id": "Q930838",
+                "fr": "Koúklia",
+                "en": "Kouklia"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.663517,
+                "longitude": 32.62697
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Roca_de_Afrodita%2C_Chipre%2C_2021-12-10%2C_DD_65.jpg/1280px-Roca_de_Afrodita%2C_Chipre%2C_2021-12-10%2C_DD_65.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Roca de Afrodita, Chipre, 2021-12-10, DD 65.jpg",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 24
+        },
+        {
+            "id": "Q1584818",
+            "name": {
+                "fr": "château de Colosse",
+                "en": "Kolossi Castle"
+            },
+            "city": {
+                "id": "Q3353547",
+                "fr": "Kolóssi",
+                "en": "Kolossi"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.665,
+                "longitude": 32.93416667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Kolossi_Castle_01.JPG/1280px-Kolossi_Castle_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Kolossi Castle 01.JPG",
+            "author": "Vegard Ottervig",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 21
+        },
+        {
+            "id": "Q1796353",
+            "name": {
+                "fr": "tombeaux des Rois",
+                "en": "Tombs of the Kings"
+            },
+            "city": {
+                "id": "Q56046916",
+                "fr": "municipalité de Paphos",
+                "en": "Paphos Municipality"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.77611111,
+                "longitude": 32.40472222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Tombs_of_the_Kings_%28Paphos%29.jpg/1280px-Tombs_of_the_Kings_%28Paphos%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Tombs of the Kings (Paphos).jpg",
+            "author": "Mgiganteus1 at en.wikipedia",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 20
+        },
+        {
+            "id": "Q12065255",
+            "name": {
+                "fr": "Parc archéologique de Paphos",
+                "en": "Paphos Archaeological Park"
+            },
+            "city": {
+                "id": "Q180918",
+                "fr": "Paphos",
+                "en": "Paphos"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.75566667,
+                "longitude": 32.40416667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Archaeological_Park_Paphos_Cyprus_08.jpg/1280px-Archaeological_Park_Paphos_Cyprus_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Archaeological Park Paphos Cyprus 08.jpg",
+            "author": "Nikodem Nijaki",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 14
+        },
+        {
+            "id": "Q7041122",
+            "name": {
+                "fr": "Nissi beach",
+                "en": "Nissi beach"
+            },
+            "city": {
+                "id": "Q393593",
+                "fr": "Ayía Nápa",
+                "en": "Agia Napa"
+            },
+            "country": {
+                "id": "Q644636",
+                "iso": "CY",
+                "fr": "Chypre",
+                "en": "Cyprus"
+            },
+            "coordinates": {
+                "latitude": 34.988,
+                "longitude": 33.969
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Nissi-Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Nissi-Beach.jpg",
+            "author": "Urieli100",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 9
+        }
+    ],
     "GD": [
         {
-            "id": "Q41547",
+            "id": "Q12875401",
             "name": {
-                "fr": "Saint-Georges",
-                "en": "St. George's"
+                "fr": "Grand Anse",
+                "en": "Grand Anse"
             },
             "city": {
                 "id": "Q576651",
@@ -39511,43 +41399,15 @@ const D_monuments = {
                 "en": "Grenada"
             },
             "coordinates": {
-                "latitude": 12.0525,
-                "longitude": -61.753055555555555
+                "latitude": 12.027222222222,
+                "longitude": -61.759722222222
             },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Grenada_-_St._George.jpg/1280px-Grenada_-_St._George.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Grenada - St. George.jpg",
-            "author": "P. Hughes",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 130
-        },
-        {
-            "id": "Q795647",
-            "name": {
-                "fr": "île de Carriacou",
-                "en": "Carriacou Island"
-            },
-            "city": {
-                "id": "Q3044818",
-                "fr": "Dépendance de Carriacou et Petite Martinique",
-                "en": "Carriacou and Petite Martinique"
-            },
-            "country": {
-                "id": "Q769",
-                "iso": "GD",
-                "fr": "Grenade",
-                "en": "Grenada"
-            },
-            "coordinates": {
-                "latitude": 12.466667,
-                "longitude": -61.45
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Hillsborough_Carriacou.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "file": "Hillsborough Carriacou.jpg",
-            "author": null,
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "fame": 33
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Grand_Anse_Beach_Grenada.jpg/1280px-Grand_Anse_Beach_Grenada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Grand Anse Beach Grenada.jpg",
+            "author": "Varun Kapoor / Vkap",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 6
         },
         {
             "id": "Q6896200",
@@ -39574,39 +41434,3725 @@ const D_monuments = {
             "fame": 4
         }
     ],
-    "GF": [],
-    "GI": [],
-    "GO": [],
-    "GP": [],
-    "GR": [],
-    "GS": [],
-    "HM": [],
-    "MF": [],
-    "MO": [],
-    "MP": [],
-    "MQ": [],
-    "NF": [],
-    "NG": [],
-    "NI": [],
-    "NL": [],
-    "NO": [],
-    "NP": [],
-    "NR": [],
-    "NU": [],
-    "NZ": [],
-    "OM": [],
-    "UM-DQ": [],
-    "UM-FQ": [],
-    "UM-HQ": [],
-    "UM-JQ": [],
-    "UM-MQ": [],
-    "UM-WQ": [],
-    "JU": [],
-    "BQSA": [],
-    "BQSE": [],
-    "BQBO": []
+    "GF": [
+        {
+            "id": "Q308987",
+            "name": {
+                "fr": "centre spatial guyanais",
+                "en": "Guiana Space Centre"
+            },
+            "city": {
+                "id": "Q273312",
+                "fr": "Kourou",
+                "en": "Kourou"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 5.2372222222222,
+                "longitude": -52.760555555556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ariane_5ECA_on_its_launch_platform_on_its_way_to_lauch_pad_ELA-3.jpg/1280px-Ariane_5ECA_on_its_launch_platform_on_its_way_to_lauch_pad_ELA-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Ariane 5ECA on its launch platform on its way to lauch pad ELA-3.jpg",
+            "author": "elisabetta_monaco from Munich, Germany",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 52
+        },
+        {
+            "id": "Q220385",
+            "name": {
+                "fr": "île du Diable",
+                "en": "Devil's Island"
+            },
+            "city": {
+                "id": "Q44401",
+                "fr": "Cayenne",
+                "en": "Cayenne"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 5.29389,
+                "longitude": -52.5833
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%C3%8Ele_du_Diable_depuis_l%27%C3%AEle_Royale.jpg/1280px-%C3%8Ele_du_Diable_depuis_l%27%C3%AEle_Royale.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Île du Diable depuis l'île Royale.jpg",
+            "author": "Gfievet",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 44
+        },
+        {
+            "id": "Q30739005",
+            "name": {
+                "fr": "fort Cépérou",
+                "en": "Fort Cépérou"
+            },
+            "city": {
+                "id": "Q44401",
+                "fr": "Cayenne",
+                "en": "Cayenne"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 4.93763,
+                "longitude": -52.33663
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cayenne_Fort_C%C3%A9p%C3%A9rou_2013.jpg/1280px-Cayenne_Fort_C%C3%A9p%C3%A9rou_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cayenne Fort Cépérou 2013.jpg",
+            "author": "Cayambe",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 4
+        },
+        {
+            "id": "Q3390536",
+            "name": {
+                "fr": "place des Palmistes",
+                "en": "place des Palmistes"
+            },
+            "city": {
+                "id": "Q44401",
+                "fr": "Cayenne",
+                "en": "Cayenne"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 4.9396376,
+                "longitude": -52.3338032
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Cayenne_Place_des_palmistes.jpg/1280px-Cayenne_Place_des_palmistes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cayenne Place des palmistes.jpg",
+            "author": "Cayambe",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 3
+        },
+        {
+            "id": "Q60342142",
+            "name": {
+                "fr": "chapelle du camp de la Transportation de Saint-Laurent-du-Maroni",
+                "en": "Chapelle du camp de la Transportation de Saint-Laurent-du-Maroni"
+            },
+            "city": {
+                "id": "Q319959",
+                "fr": "Saint-Laurent-du-Maroni",
+                "en": "Saint-Laurent-du-Maroni"
+            },
+            "country": {
+                "id": "Q3769",
+                "iso": "GF",
+                "fr": "Guyane",
+                "en": "French Guiana"
+            },
+            "coordinates": {
+                "latitude": 5.504338,
+                "longitude": -54.03084
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Bagne_de_Saint-Laurent-du-Maroni_11.JPG/1280px-Bagne_de_Saint-Laurent-du-Maroni_11.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Bagne de Saint-Laurent-du-Maroni 11.JPG",
+            "author": "Chatsam",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 1
+        }
+    ],
+    "GI": [
+        {
+            "id": "Q690347",
+            "name": {
+                "fr": "rocher de Gibraltar",
+                "en": "Rock of Gibraltar"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.125833333333,
+                "longitude": -5.3430555555556
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Rock_of_Gibraltar_northwest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Rock of Gibraltar northwest.jpg",
+            "author": "Gibnews.net",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 46
+        },
+        {
+            "id": "Q583655",
+            "name": {
+                "fr": "grotte de Saint Michel",
+                "en": "St. Michael's Cave"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.125889,
+                "longitude": -5.346458
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/St_Michaels_cave2.jpg/1280px-St_Michaels_cave2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "St Michaels cave2.jpg",
+            "author": "Joonas Lyytinen",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "fame": 19
+        },
+        {
+            "id": "Q195913",
+            "name": {
+                "fr": "téléphérique de Gibraltar",
+                "en": "Gibraltar Cable Car"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.13281389,
+                "longitude": -5.35205278
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Rock_of_Gibraltar_cablecar.jpg/1280px-Rock_of_Gibraltar_cablecar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Rock of Gibraltar cablecar.jpg",
+            "author": "David Morris",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 14
+        },
+        {
+            "id": "Q3739779",
+            "name": {
+                "fr": "Europa Point Lighthouse",
+                "en": "Europa Point Lighthouse"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.109634,
+                "longitude": -5.344798
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Europa_Point_Lighthouse_and_cottages.jpg/1280px-Europa_Point_Lighthouse_and_cottages.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Europa Point Lighthouse and cottages.jpg",
+            "author": "Allie Caulfield",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 10
+        },
+        {
+            "id": "Q1042622",
+            "name": {
+                "fr": "Main Street",
+                "en": "Main Street"
+            },
+            "city": {
+                "id": "Q1410",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "country": {
+                "id": "Q1410",
+                "iso": "GI",
+                "fr": "Gibraltar",
+                "en": "Gibraltar"
+            },
+            "coordinates": {
+                "latitude": 36.139680555556,
+                "longitude": -5.3537944444444
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Main_Street_Gibraltar.JPG/1280px-Main_Street_Gibraltar.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Main Street Gibraltar.JPG",
+            "author": "RedCoat10 at English Wikipedia",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 9
+        }
+    ],
+    "GO": [
+        {
+            "id": "Q3364608",
+            "name": {
+                "fr": "Parc naturel marin des Glorieuses",
+                "en": "Marine natural park of Glorioso Islands"
+            },
+            "city": {
+                "id": "Q129003",
+                "fr": "Terres australes et antarctiques françaises",
+                "en": "French Southern and Antarctic Lands"
+            },
+            "country": {
+                "id": null,
+                "iso": "GO",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": -11.5792,
+                "longitude": 47.2971
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Glorieuses_ISS037-E-13064.JPG/1280px-Glorieuses_ISS037-E-13064.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Glorieuses ISS037-E-13064.JPG",
+            "author": "NASA",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 3
+        }
+    ],
+    "GP": [
+        {
+            "id": "Q1149310",
+            "name": {
+                "fr": "La Soufrière",
+                "en": "Soufrière"
+            },
+            "city": {
+                "id": "Q996400",
+                "fr": "Saint-Claude",
+                "en": "Saint-Claude"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 16.0438,
+                "longitude": -61.6634
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Guadeloupe_114_-_Sommet_de_la_Soufri%C3%A8re_1467m_-_Guadeloupe.jpg/1280px-Guadeloupe_114_-_Sommet_de_la_Soufri%C3%A8re_1467m_-_Guadeloupe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Guadeloupe 114 - Sommet de la Soufrière 1467m - Guadeloupe.jpg",
+            "author": "No machine-readable author provided. Ofol assumed (based on copyright claims).",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "fame": 31
+        },
+        {
+            "id": "Q1028479",
+            "name": {
+                "fr": "parc national de la Guadeloupe",
+                "en": "Guadeloupe National Park"
+            },
+            "city": {
+                "id": "Q17012",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 16.083333333333332,
+                "longitude": -61.68333333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Guadeloupe_123_-_Massif_de_la_Soufri%C3%A8re_1467m_-_Chemin_des_bains_jaunes.jpg/1280px-Guadeloupe_123_-_Massif_de_la_Soufri%C3%A8re_1467m_-_Chemin_des_bains_jaunes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Guadeloupe 123 - Massif de la Soufrière 1467m - Chemin des bains jaunes.jpg",
+            "author": "No machine-readable author provided. Ofol assumed (based on copyright claims).",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "fame": 23
+        },
+        {
+            "id": "Q2967747",
+            "name": {
+                "fr": "chutes du Carbet",
+                "en": "Carbet Falls"
+            },
+            "city": {
+                "id": "Q17012",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 16.0456,
+                "longitude": -61.6522
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Chutesducarbet.jpg/1280px-Chutesducarbet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Chutesducarbet.jpg",
+            "author": "bobyfume",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 13
+        },
+        {
+            "id": "Q1152228",
+            "name": {
+                "fr": "pointe des Châteaux",
+                "en": "Point of Castles"
+            },
+            "city": {
+                "id": "Q17012",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 16.244857,
+                "longitude": -61.17533
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Pointedeschateaux.jpg/1280px-Pointedeschateaux.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Pointedeschateaux.jpg",
+            "author": "bobyfume",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 10
+        },
+        {
+            "id": "Q3077840",
+            "name": {
+                "fr": "fort Delgrès",
+                "en": "Fort Delgrès"
+            },
+            "city": {
+                "id": "Q167024",
+                "fr": "Basse-Terre",
+                "en": "Basse-Terre"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 15.9886,
+                "longitude": -61.7231
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Entr%C3%A9e_du_Fort_Delgr%C3%A8s.JPG/1280px-Entr%C3%A9e_du_Fort_Delgr%C3%A8s.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Entrée du Fort Delgrès.JPG",
+            "author": "LPLT",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 7
+        },
+        {
+            "id": "Q3583639",
+            "name": {
+                "fr": "église Saint-Pierre-et-Saint-Paul de Pointe-à-Pitre",
+                "en": "Église Saint-Pierre-et-Saint-Paul de Pointe-à-Pitre"
+            },
+            "city": {
+                "id": "Q335322",
+                "fr": "Pointe-à-Pitre",
+                "en": "Pointe-à-Pitre"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 16.2388,
+                "longitude": -61.5345
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Eglise_Saint_Pierre_et_Saint_Paul_-_PA00105864_04.JPG/1280px-Eglise_Saint_Pierre_et_Saint_Paul_-_PA00105864_04.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Eglise Saint Pierre et Saint Paul - PA00105864 04.JPG",
+            "author": "Aristoi",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 5
+        },
+        {
+            "id": "Q3077957",
+            "name": {
+                "fr": "fort Napoléon des Saintes",
+                "en": "Fort Napoléon des Saintes"
+            },
+            "city": {
+                "id": "Q996237",
+                "fr": "Terre-de-Haut",
+                "en": "Terre-de-Haut"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 15.875,
+                "longitude": -61.5825
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Fort_Napol%C3%A9on_dans_l%27archipel_des_Saintes.jpg/1280px-Fort_Napol%C3%A9on_dans_l%27archipel_des_Saintes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fort Napoléon dans l'archipel des Saintes.jpg",
+            "author": "Gauthier Geoffroy",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 5
+        },
+        {
+            "id": "Q3390845",
+            "name": {
+                "fr": "plage de Grande Anse",
+                "en": "Grande Anse"
+            },
+            "city": {
+                "id": "Q996301",
+                "fr": "Deshaies",
+                "en": "Deshaies"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 16.3069,
+                "longitude": -61.7944
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Plage_de_Grande_Anse_vers_le_sud.JPG/1280px-Plage_de_Grande_Anse_vers_le_sud.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Plage de Grande Anse vers le sud.JPG",
+            "author": "LPLT",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 4
+        },
+        {
+            "id": "Q16040857",
+            "name": {
+                "fr": "îlets Pigeon",
+                "en": "îlets Pigeon"
+            },
+            "city": {
+                "id": "Q895024",
+                "fr": "Bouillante",
+                "en": "Bouillante"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 16.17,
+                "longitude": -61.79
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/%C3%8Elets_Pigeon.JPG/1280px-%C3%8Elets_Pigeon.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Îlets Pigeon.JPG",
+            "author": "Patrice78500",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 4
+        },
+        {
+            "id": "Q16509289",
+            "name": {
+                "fr": "mémorial ACTe",
+                "en": "Mémorial ACTe"
+            },
+            "city": {
+                "id": "Q335322",
+                "fr": "Pointe-à-Pitre",
+                "en": "Pointe-à-Pitre"
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 16.231805555555557,
+                "longitude": -61.534305555555555
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Photographie_de_haut_du_m%C3%A9morial_acte.jpg/1280px-Photographie_de_haut_du_m%C3%A9morial_acte.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Photographie de haut du mémorial acte.jpg",
+            "author": "Bjrmoicorla",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 3
+        }
+    ],
+    "GR": [
+        {
+            "id": "Q10288",
+            "name": {
+                "fr": "Parthénon",
+                "en": "Parthenon"
+            },
+            "city": {
+                "id": "Q1224979",
+                "fr": "dème des Athéniens",
+                "en": "Athens Municipality"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 37.971527,
+                "longitude": 23.726601
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/The_Parthenon_in_Athens.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "The Parthenon in Athens.jpg",
+            "author": "Steve Swayne",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 139
+        },
+        {
+            "id": "Q80344",
+            "name": {
+                "fr": "mont Olympe",
+                "en": "Mount Olympus"
+            },
+            "city": {
+                "id": "Q208846",
+                "fr": "nome de Piérie",
+                "en": "Pieria Prefecture"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 40.083333333333336,
+                "longitude": 22.35
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Mt_Olympus_aerial_2.jpg/1280px-Mt_Olympus_aerial_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mt Olympus aerial 2.jpg",
+            "author": "kallerna",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 109
+        },
+        {
+            "id": "Q131013",
+            "name": {
+                "fr": "Acropole d'Athènes",
+                "en": "Acropolis of Athens"
+            },
+            "city": {
+                "id": "Q1224979",
+                "fr": "dème des Athéniens",
+                "en": "Athens Municipality"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 37.971666666666664,
+                "longitude": 23.726111111111113
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg/1280px-Attica_06-13_Athens_50_View_from_Philopappos_-_Acropolis_Hill.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Attica 06-13 Athens 50 View from Philopappos - Acropolis Hill.jpg",
+            "author": "A.Savin",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 97
+        },
+        {
+            "id": "Q38888",
+            "name": {
+                "fr": "Olympie",
+                "en": "Olympia"
+            },
+            "city": {
+                "id": "Q3252409",
+                "fr": "dème d'Archéa Olympía",
+                "en": "Ancient Olympia Municipality"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 37.638333333333335,
+                "longitude": 21.63
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Olympic_Flame%2C_the_Start_of_the_Olympic_Torch_Relay_%2851224124860%29.jpg/1280px-Olympic_Flame%2C_the_Start_of_the_Olympic_Torch_Relay_%2851224124860%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Olympic Flame, the Start of the Olympic Torch Relay (51224124860).jpg",
+            "author": "dronepicr",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 89
+        },
+        {
+            "id": "Q75459",
+            "name": {
+                "fr": "Delphes",
+                "en": "Delphi"
+            },
+            "city": {
+                "id": "Q1021606",
+                "fr": "dème de Delphes",
+                "en": "Delfi Municipality"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 38.482222222222,
+                "longitude": 22.501666666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Delfi_Apollons_tempel.jpg/1280px-Delfi_Apollons_tempel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Delfi Apollons tempel.jpg",
+            "author": "Helen Simonsson",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 88
+        },
+        {
+            "id": "Q130321",
+            "name": {
+                "fr": "mont Athos",
+                "en": "Mount Athos"
+            },
+            "city": {
+                "id": "Q780149",
+                "fr": "Communauté monastique du mont Athos",
+                "en": "monastic community of Mount Athos"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 40.15833333333333,
+                "longitude": 24.327222222222222
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Mt._Athos_%283939757657%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Mt. Athos (3939757657).jpg",
+            "author": "Dave Proffer",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 87
+        },
+        {
+            "id": "Q3125051",
+            "name": {
+                "fr": "monastères des Météores",
+                "en": "Meteora"
+            },
+            "city": {
+                "id": "Q15979847",
+                "fr": "dème des Météores",
+                "en": "Meteora Municipality"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 39.7125,
+                "longitude": 21.626666666666665
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/00_0541_Kloster_Ag%C3%ADa_Tri%C3%A1da_%28Meteora%29_-_Griechenland.jpg/1280px-00_0541_Kloster_Ag%C3%ADa_Tri%C3%A1da_%28Meteora%29_-_Griechenland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "00 0541 Kloster Agía Triáda (Meteora) - Griechenland.jpg",
+            "author": "W. Bulach",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 71
+        },
+        {
+            "id": "Q608198",
+            "name": {
+                "fr": "théâtre d'Épidaure",
+                "en": "Ancient Theatre of Epidaurus"
+            },
+            "city": {
+                "id": "Q950673",
+                "fr": "dème d'Épidaure",
+                "en": "Epidavros Municipality"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 37.596111111111,
+                "longitude": 23.079166666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/07Epidaurus_Theater07.jpg/1280px-07Epidaurus_Theater07.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "07Epidaurus Theater07.jpg",
+            "author": "Fingalo",
+            "license": "CC BY-SA 2.0 de",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+            "fame": 30
+        },
+        {
+            "id": "Q113653921",
+            "name": {
+                "fr": "Citadel of Oia",
+                "en": "Citadel of Oia"
+            },
+            "city": {
+                "id": "Q3949542",
+                "fr": "dème de Théra",
+                "en": "Thira Municipality"
+            },
+            "country": {
+                "id": "Q41",
+                "iso": "GR",
+                "fr": "Grèce",
+                "en": "Greece"
+            },
+            "coordinates": {
+                "latitude": 36.460191,
+                "longitude": 25.373284
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Oia_in_Santorini%2C_Greece_003.jpg/1280px-Oia_in_Santorini%2C_Greece_003.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Oia in Santorini, Greece 003.jpg",
+            "author": "Moonik",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 2
+        }
+    ],
+    "GS": [
+        {
+            "id": "Q185672",
+            "name": {
+                "fr": "Grytviken",
+                "en": "Grytviken"
+            },
+            "city": {
+                "id": "Q35086",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "country": {
+                "id": "Q35086",
+                "iso": "GS",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "coordinates": {
+                "latitude": -54.281472,
+                "longitude": -36.508028
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Grytviken_Harbour%2C_Island_of_South_Georgia%2C_United_Kingdom.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Grytviken Harbour, Island of South Georgia, United Kingdom.jpg",
+            "author": "Lexaxis7",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 59
+        },
+        {
+            "id": "Q393878",
+            "name": {
+                "fr": "King Edward Point",
+                "en": "King Edward Point"
+            },
+            "city": {
+                "id": "Q35086",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "country": {
+                "id": "Q35086",
+                "iso": "GS",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "coordinates": {
+                "latitude": -54.283291411897345,
+                "longitude": -36.4941819497296
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/King_Edward_Point_on_South_Georgia_1.jpg/1280px-King_Edward_Point_on_South_Georgia_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "King Edward Point on South Georgia 1.jpg",
+            "author": "Liam Quinn",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 54
+        },
+        {
+            "id": "Q1573762",
+            "name": {
+                "fr": "mont Paget",
+                "en": "Mount Paget"
+            },
+            "city": {
+                "id": "Q35086",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "country": {
+                "id": "Q35086",
+                "iso": "GS",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "coordinates": {
+                "latitude": -54.44083333333333,
+                "longitude": -36.555277777777775
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Mount_Paget.jpeg/1280px-Mount_Paget.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mount Paget.jpeg",
+            "author": "Butterfly austral",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 20
+        },
+        {
+            "id": "Q2060301",
+            "name": {
+                "fr": "musée de la Géorgie du Sud",
+                "en": "South Georgia Museum"
+            },
+            "city": {
+                "id": "Q185672",
+                "fr": "Grytviken",
+                "en": "Grytviken"
+            },
+            "country": {
+                "id": "Q35086",
+                "iso": "GS",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "coordinates": {
+                "latitude": -54.2816,
+                "longitude": -36.5077
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Grytviken_museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Grytviken museum.jpg",
+            "author": "Original uploader was Wofratz at de.wikipedia",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 14
+        },
+        {
+            "id": "Q3281864",
+            "name": {
+                "fr": "église anglicane norvégienne de Grytviken",
+                "en": "Norwegian Anglican Church"
+            },
+            "city": {
+                "id": "Q35086",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "country": {
+                "id": "Q35086",
+                "iso": "GS",
+                "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud",
+                "en": "South Georgia and the South Sandwich Islands"
+            },
+            "coordinates": {
+                "latitude": -54.28,
+                "longitude": -36.51027778
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/South_Georgia_-_Grytviken_-_Norwegian_Lutheran_Church_in_2009_%2816093953722%29.jpg/1280px-South_Georgia_-_Grytviken_-_Norwegian_Lutheran_Church_in_2009_%2816093953722%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "South Georgia - Grytviken - Norwegian Lutheran Church in 2009 (16093953722).jpg",
+            "author": "nomis-simon",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 10
+        }
+    ],
+    "HM": [
+        {
+            "id": "Q2114101",
+            "name": {
+                "fr": "pic Mawson",
+                "en": "Mawson Peak"
+            },
+            "city": {
+                "id": "Q131198",
+                "fr": "îles Heard-et-MacDonald",
+                "en": "Heard Island and McDonald Islands"
+            },
+            "country": {
+                "id": "Q131198",
+                "iso": "HM",
+                "fr": "îles Heard-et-MacDonald",
+                "en": "Heard Island and McDonald Islands"
+            },
+            "coordinates": {
+                "latitude": -53.10444444444445,
+                "longitude": 73.51777777777778
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Heard.jpg/1280px-Heard.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Heard.jpg",
+            "author": "NOAA",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 34
+        },
+        {
+            "id": "Q1592377",
+            "name": {
+                "fr": "île Heard",
+                "en": "Heard Island"
+            },
+            "city": {
+                "id": "Q131198",
+                "fr": "îles Heard-et-MacDonald",
+                "en": "Heard Island and McDonald Islands"
+            },
+            "country": {
+                "id": "Q131198",
+                "iso": "HM",
+                "fr": "îles Heard-et-MacDonald",
+                "en": "Heard Island and McDonald Islands"
+            },
+            "coordinates": {
+                "latitude": -53.1,
+                "longitude": 73.5
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Heard_Island_%28cropped%29.jpg/1280px-Heard_Island_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Heard Island (cropped).jpg",
+            "author": "Tristannew (original)\nDerivative: SHB2000 (cropped)",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 14
+        },
+        {
+            "id": "Q1915097",
+            "name": {
+                "fr": "îles McDonald",
+                "en": "McDonald Islands"
+            },
+            "city": {
+                "id": "Q131198",
+                "fr": "îles Heard-et-MacDonald",
+                "en": "Heard Island and McDonald Islands"
+            },
+            "country": {
+                "id": "Q131198",
+                "iso": "HM",
+                "fr": "îles Heard-et-MacDonald",
+                "en": "Heard Island and McDonald Islands"
+            },
+            "coordinates": {
+                "latitude": -53.04166667,
+                "longitude": 72.59888889
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/39/McDonald_Islands_%28Australia%29_2025-11-18-00_00_2025-11-18-23_59_Sentinel-2_L1C_True_color.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "McDonald Islands (Australia) 2025-11-18-00 00 2025-11-18-23 59 Sentinel-2 L1C True color.jpg",
+            "author": "European Space Agency",
+            "license": "Attribution",
+            "licenseUrl": null,
+            "fame": 9
+        }
+    ],
+    "MF": [
+        {
+            "id": "Q922921",
+            "name": {
+                "fr": "Maho Beach",
+                "en": "Maho Beach"
+            },
+            "city": {
+                "id": "Q26273",
+                "fr": "Saint-Martin",
+                "en": "Sint Maarten"
+            },
+            "country": {
+                "id": "Q126125",
+                "iso": "MF",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.03917,
+                "longitude": -63.12028
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/American_757_on_final_approach_at_St_Maarten_Airport.jpg/1280px-American_757_on_final_approach_at_St_Maarten_Airport.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "American 757 on final approach at St Maarten Airport.jpg",
+            "author": "Todd Neville from Scottsdale, USA",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 29
+        },
+        {
+            "id": "Q21427420",
+            "name": {
+                "fr": "îlet Pinel à Saint-Martin",
+                "en": "Pinel Island"
+            },
+            "city": {
+                "id": "Q126125",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "country": {
+                "id": "Q126125",
+                "iso": "MF",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.10555548,
+                "longitude": -63.01572204
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/French_Cul_de_Sac_looking_down_into_the_Baie_-_panoramio.jpg/1280px-French_Cul_de_Sac_looking_down_into_the_Baie_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "French Cul de Sac looking down into the Baie - panoramio.jpg",
+            "author": "SV Zanshin",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 7
+        },
+        {
+            "id": "Q5470723",
+            "name": {
+                "fr": "fort Amsterdam",
+                "en": "Fort Amsterdam"
+            },
+            "city": {
+                "id": "Q30958",
+                "fr": "Philipsburg",
+                "en": "Philipsburg"
+            },
+            "country": {
+                "id": "Q126125",
+                "iso": "MF",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.0148,
+                "longitude": -63.0595
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Lord_Sheffield_in_Little_Bay%2C_St_Maarten%2C_Oct_2014_%2815037894784%29.jpg/1280px-Lord_Sheffield_in_Little_Bay%2C_St_Maarten%2C_Oct_2014_%2815037894784%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Lord Sheffield in Little Bay, St Maarten, Oct 2014 (15037894784).jpg",
+            "author": "alljengi from Edinburgh",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 7
+        },
+        {
+            "id": "Q33587945",
+            "name": {
+                "fr": "Great Bay",
+                "en": "Great Bay"
+            },
+            "city": null,
+            "country": {
+                "id": "Q126125",
+                "iso": "MF",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.02,
+                "longitude": -63.051027777777776
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Harbor_%5E_Dock_at_Philipsberg%2C_St._Maarten_%28explore_4-29-14%29_-_Flickr_-_trishhartmann.jpg/1280px-Harbor_%5E_Dock_at_Philipsberg%2C_St._Maarten_%28explore_4-29-14%29_-_Flickr_-_trishhartmann.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Harbor ^ Dock at Philipsberg, St. Maarten (explore 4-29-14) - Flickr - trishhartmann.jpg",
+            "author": "Trish Hartmann from Tampa, Florida, USA",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 4
+        },
+        {
+            "id": "Q3077924",
+            "name": {
+                "fr": "fort Louis",
+                "en": "Fort Louis"
+            },
+            "city": {
+                "id": "Q126125",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "country": {
+                "id": "Q126125",
+                "iso": "MF",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.0708,
+                "longitude": -63.0854
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Fort_Louis_in_Saint-Martin.jpg/1280px-Fort_Louis_in_Saint-Martin.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fort Louis in Saint-Martin.jpg",
+            "author": "Christine Warner Hawks",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 4
+        },
+        {
+            "id": "Q15632519",
+            "name": {
+                "fr": "réserve naturelle nationale de Saint-Martin",
+                "en": "National Natural Reserve of Saint Martin"
+            },
+            "city": {
+                "id": "Q126125",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "country": {
+                "id": "Q126125",
+                "iso": "MF",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.103611111111,
+                "longitude": -63.000277777778
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/76/Pinel_Island%2C_Saint_Martin.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Pinel Island, Saint Martin.JPG",
+            "author": "Clavius66",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 3
+        },
+        {
+            "id": "Q113556164",
+            "name": {
+                "fr": "Mullet Bay Beach",
+                "en": "Mullet Bay Beach"
+            },
+            "city": null,
+            "country": {
+                "id": "Q126125",
+                "iso": "MF",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.045917,
+                "longitude": -63.126028
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Mullet_Bay%2C_St_Maarten%2C_Oct_2014_%2815740985106%29.jpg/1280px-Mullet_Bay%2C_St_Maarten%2C_Oct_2014_%2815740985106%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mullet Bay, St Maarten, Oct 2014 (15740985106).jpg",
+            "author": "alljengi from Edinburgh",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 3
+        },
+        {
+            "id": "Q27572622",
+            "name": {
+                "fr": "Baie Rouge",
+                "en": "Baie Rouge"
+            },
+            "city": {
+                "id": "Q126125",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "country": {
+                "id": "Q126125",
+                "iso": "MF",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.069166666667,
+                "longitude": -63.126388888889
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Gus%27_Beach_Bar_%2816276770486%29.jpg/1280px-Gus%27_Beach_Bar_%2816276770486%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Gus' Beach Bar (16276770486).jpg",
+            "author": "Paul Sableman",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 1
+        }
+    ],
+    "MO": [
+        {
+            "id": "Q1551411",
+            "name": {
+                "fr": "ruines de Saint-Paul",
+                "en": "Ruins of St. Paul's"
+            },
+            "city": {
+                "id": "Q14773",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "country": {
+                "id": "Q14773",
+                "iso": "MO",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "coordinates": {
+                "latitude": 22.197468,
+                "longitude": 113.54086
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Cathedral_of_Saint_Paul_in_Macau%2C_2023_%2804%29.jpg/1280px-Cathedral_of_Saint_Paul_in_Macau%2C_2023_%2804%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cathedral of Saint Paul in Macau, 2023 (04).jpg",
+            "author": "Bahnfrend",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 31
+        },
+        {
+            "id": "Q1568304",
+            "name": {
+                "fr": "tour Macau",
+                "en": "Macau Tower"
+            },
+            "city": {
+                "id": "Q14773",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "country": {
+                "id": "Q14773",
+                "iso": "MO",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "coordinates": {
+                "latitude": 22.179722222222,
+                "longitude": 113.53666666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/20250816_Torre_de_Macau.jpg/1280px-20250816_Torre_de_Macau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "20250816 Torre de Macau.jpg",
+            "author": "Yumeto",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 28
+        },
+        {
+            "id": "Q1156708",
+            "name": {
+                "fr": "The Venetian",
+                "en": "The Venetian Macao"
+            },
+            "city": {
+                "id": "Q14773",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "country": {
+                "id": "Q14773",
+                "iso": "MO",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "coordinates": {
+                "latitude": 22.148611,
+                "longitude": 113.560556
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Venetian_Macau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Venetian Macau.jpg",
+            "author": "Jimmy Yao (vixyao) on Flickr",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 23
+        },
+        {
+            "id": "Q4130614",
+            "name": {
+                "fr": "St. Dominic's Church",
+                "en": "St. Dominic's Church"
+            },
+            "city": {
+                "id": "Q14773",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "country": {
+                "id": "Q14773",
+                "iso": "MO",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "coordinates": {
+                "latitude": 22.194681,
+                "longitude": 113.540412
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/StDominicsMacau.JPG/1280px-StDominicsMacau.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "StDominicsMacau.JPG",
+            "author": "Whhalbert",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 17
+        },
+        {
+            "id": "Q837935",
+            "name": {
+                "fr": "Senado Square",
+                "en": "Senado Square"
+            },
+            "city": {
+                "id": "Q14773",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "country": {
+                "id": "Q14773",
+                "iso": "MO",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "coordinates": {
+                "latitude": 22.19358333,
+                "longitude": 113.53966667
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Centre_of_Makau.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Centre of Makau.jpg",
+            "author": "Андрей Суриков / Andrey Surikov.\n\nOriginal uploader was Сура at ru.wikipedia",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "fame": 13
+        },
+        {
+            "id": "Q3078465",
+            "name": {
+                "fr": "forteresse de la Guia",
+                "en": "Guia Fortress"
+            },
+            "city": {
+                "id": "Q14773",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "country": {
+                "id": "Q14773",
+                "iso": "MO",
+                "fr": "Macao",
+                "en": "Macau"
+            },
+            "coordinates": {
+                "latitude": 22.1965,
+                "longitude": 113.55
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/Macau_-_Fortaleza_de_Guia.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Macau - Fortaleza de Guia.JPG",
+            "author": "J. Patrick Fischer",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 13
+        }
+    ],
+    "MP": [
+        {
+            "id": "Q3274817",
+            "name": {
+                "fr": "Mount Tapochau",
+                "en": "Mount Tapochau"
+            },
+            "city": {
+                "id": "Q16644",
+                "fr": "îles Mariannes du Nord",
+                "en": "Northern Mariana Islands"
+            },
+            "country": {
+                "id": "Q16644",
+                "iso": "MP",
+                "fr": "îles Mariannes du Nord",
+                "en": "Northern Mariana Islands"
+            },
+            "coordinates": {
+                "latitude": 15.18888889,
+                "longitude": 145.74305556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Mount_Tapochau.JPG/1280px-Mount_Tapochau.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mount Tapochau.JPG",
+            "author": "Abasaa",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 13
+        },
+        {
+            "id": "Q4744430",
+            "name": {
+                "fr": "American Memorial Park",
+                "en": "American Memorial Park"
+            },
+            "city": {
+                "id": "Q51679",
+                "fr": "Saïpan",
+                "en": "Saipan"
+            },
+            "country": {
+                "id": "Q16644",
+                "iso": "MP",
+                "fr": "îles Mariannes du Nord",
+                "en": "Northern Mariana Islands"
+            },
+            "coordinates": {
+                "latitude": 15.216388888888888,
+                "longitude": 145.72
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/American_Memorial_Park_Visitor_Center.JPG/1280px-American_Memorial_Park_Visitor_Center.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "American Memorial Park Visitor Center.JPG",
+            "author": "Abasaa",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 11
+        },
+        {
+            "id": "Q6799175",
+            "name": {
+                "fr": "Mañagaha",
+                "en": "Mañagaha"
+            },
+            "city": {
+                "id": "Q9332790",
+                "fr": "municipalité de Saipan",
+                "en": "Saipan Municipality"
+            },
+            "country": {
+                "id": "Q16644",
+                "iso": "MP",
+                "fr": "îles Mariannes du Nord",
+                "en": "Northern Mariana Islands"
+            },
+            "coordinates": {
+                "latitude": 15.24092,
+                "longitude": 145.71258
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Ma%C3%B1agaha_Island.jpg/1280px-Ma%C3%B1agaha_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mañagaha Island.jpg",
+            "author": "Gage Skidmore",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 9
+        },
+        {
+            "id": "Q14192457",
+            "name": {
+                "fr": "falaise des Suicides",
+                "en": "Suicide Cliff"
+            },
+            "city": {
+                "id": "Q9332790",
+                "fr": "municipalité de Saipan",
+                "en": "Saipan Municipality"
+            },
+            "country": {
+                "id": "Q16644",
+                "iso": "MP",
+                "fr": "îles Mariannes du Nord",
+                "en": "Northern Mariana Islands"
+            },
+            "coordinates": {
+                "latitude": 15.277222,
+                "longitude": 145.809722
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/SUICIDE_CLIFF.jpg/1280px-SUICIDE_CLIFF.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "SUICIDE CLIFF.jpg",
+            "author": "JERRYE &amp; ROY KLOTZ MD",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 9
+        },
+        {
+            "id": "Q11328397",
+            "name": {
+                "fr": "Banzai Cliff",
+                "en": "Banzai Cliff"
+            },
+            "city": {
+                "id": "Q9332790",
+                "fr": "municipalité de Saipan",
+                "en": "Saipan Municipality"
+            },
+            "country": {
+                "id": "Q16644",
+                "iso": "MP",
+                "fr": "îles Mariannes du Nord",
+                "en": "Northern Mariana Islands"
+            },
+            "coordinates": {
+                "latitude": 15.288056,
+                "longitude": 145.816111
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Banzai_Cliff_2025.jpg/1280px-Banzai_Cliff_2025.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Banzai Cliff 2025.jpg",
+            "author": "Gage Skidmore",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 8
+        }
+    ],
+    "MQ": [
+        {
+            "id": "Q76309",
+            "name": {
+                "fr": "montagne Pelée",
+                "en": "Mount Pelée"
+            },
+            "city": {
+                "id": "Q17054",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.813055555556,
+                "longitude": -61.165555555556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/La_Pel%C3%A9e_vue_du_Carbet.jpg/1280px-La_Pel%C3%A9e_vue_du_Carbet.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "La Pelée vue du Carbet.jpg",
+            "author": null,
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 62
+        },
+        {
+            "id": "Q262662",
+            "name": {
+                "fr": "rocher du Diamant",
+                "en": "Diamond Rock"
+            },
+            "city": {
+                "id": "Q1928084",
+                "fr": "Le Diamant",
+                "en": "Le Diamant"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.443055555556,
+                "longitude": -61.038888888889
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Diamond_Rock.jpg/1280px-Diamond_Rock.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Diamond Rock.jpg",
+            "author": "Apmarles",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 13
+        },
+        {
+            "id": "Q973233",
+            "name": {
+                "fr": "jardin de Balata",
+                "en": "Balata Garden"
+            },
+            "city": {
+                "id": "Q81621",
+                "fr": "Fort-de-France",
+                "en": "Fort-de-France"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.69027778,
+                "longitude": -61.01583333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Jardin_Balata_1.JPG/1280px-Jardin_Balata_1.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Jardin Balata 1.JPG",
+            "author": "Mica",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 7
+        },
+        {
+            "id": "Q856641",
+            "name": {
+                "fr": "bibliothèque Schœlcher",
+                "en": "Schœlcher library"
+            },
+            "city": {
+                "id": "Q81621",
+                "fr": "Fort-de-France",
+                "en": "Fort-de-France"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.603828,
+                "longitude": -61.068334
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Fort-de-France_-_2014_-_Biblioth%C3%A8que_Sch%C5%93lcher_%281%29.jpg/1280px-Fort-de-France_-_2014_-_Biblioth%C3%A8que_Sch%C5%93lcher_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fort-de-France - 2014 - Bibliothèque Schœlcher (1).jpg",
+            "author": "Aristoi",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 6
+        },
+        {
+            "id": "Q3402460",
+            "name": {
+                "fr": "presque'île de la Caravelle",
+                "en": "Presqu'île de la Caravelle"
+            },
+            "city": null,
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.75,
+                "longitude": -60.9
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Anse_non_nomm%C3%A9e_%C3%A0_la_pointe_de_la_presqu%27%C3%AEle_de_la_Caravelle.jpg/1280px-Anse_non_nomm%C3%A9e_%C3%A0_la_pointe_de_la_presqu%27%C3%AEle_de_la_Caravelle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Anse non nommée à la pointe de la presqu'île de la Caravelle.jpg",
+            "author": "Enrevseluj",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 6
+        },
+        {
+            "id": "Q22995364",
+            "name": {
+                "fr": "église Saint-Henri des Anses-d'Arlet",
+                "en": "Église Saint-Henri des Anses-d'Arlet"
+            },
+            "city": {
+                "id": "Q1928126",
+                "fr": "Les Anses-d'Arlet",
+                "en": "Les Anses-d'Arlet"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.490867,
+                "longitude": -61.080168
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Les_Anses-d%27Arlet_-_%C3%89glise_Saint-Henri_02.jpg/1280px-Les_Anses-d%27Arlet_-_%C3%89glise_Saint-Henri_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Les Anses-d'Arlet - Église Saint-Henri 02.jpg",
+            "author": "Aristoi",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 3
+        },
+        {
+            "id": "Q748956",
+            "name": {
+                "fr": "habitation Clément",
+                "en": "Habitation Clément"
+            },
+            "city": {
+                "id": "Q282944",
+                "fr": "Le François",
+                "en": "Le François"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.601944444444,
+                "longitude": -60.906944444444
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Habitation_Cl%C3%A9ment_001.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Habitation Clément 001.jpg",
+            "author": "Tux-Man",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 3
+        },
+        {
+            "id": "Q2936986",
+            "name": {
+                "fr": "Cap 110",
+                "en": "Cap 110"
+            },
+            "city": {
+                "id": "Q1928084",
+                "fr": "Le Diamant",
+                "en": "Le Diamant"
+            },
+            "country": {
+                "id": "Q17054",
+                "iso": "MQ",
+                "fr": "Martinique",
+                "en": "Martinique"
+            },
+            "coordinates": {
+                "latitude": 14.464275,
+                "longitude": -61.046458
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Cap110.jpg/1280px-Cap110.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cap110.jpg",
+            "author": "Korido",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 2
+        }
+    ],
+    "NF": [
+        {
+            "id": "Q1580915",
+            "name": {
+                "fr": "Kingston and Arthurs Vale Historic Area",
+                "en": "Kingston and Arthurs Vale Historic Area"
+            },
+            "city": {
+                "id": "Q31057",
+                "fr": "île Norfolk",
+                "en": "Norfolk Island"
+            },
+            "country": {
+                "id": "Q31057",
+                "iso": "NF",
+                "fr": "île Norfolk",
+                "en": "Norfolk Island"
+            },
+            "coordinates": {
+                "latitude": -29.053055555556,
+                "longitude": 167.95861111111
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/Norfolk_Island_jail1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Norfolk Island jail1.jpg",
+            "author": "Steve Daggar",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 11
+        },
+        {
+            "id": "Q746460",
+            "name": {
+                "fr": "parc national de l'île Norfolk",
+                "en": "Norfolk Island National Park"
+            },
+            "city": {
+                "id": "Q31057",
+                "fr": "île Norfolk",
+                "en": "Norfolk Island"
+            },
+            "country": {
+                "id": "Q31057",
+                "iso": "NF",
+                "fr": "île Norfolk",
+                "en": "Norfolk Island"
+            },
+            "coordinates": {
+                "latitude": -29.011333333333333,
+                "longitude": 167.9399175
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Norfolk_Island_Philip_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Norfolk Island Philip Island.jpg",
+            "author": "Steve Daggar",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 11
+        }
+    ],
+    "NG": [
+        {
+            "id": "Q1123956",
+            "name": {
+                "fr": "Paysage culturel de Sukur",
+                "en": "Sukur"
+            },
+            "city": {
+                "id": "Q6726121",
+                "fr": "Madagali",
+                "en": "Madagali"
+            },
+            "country": {
+                "id": "Q1033",
+                "iso": "NG",
+                "fr": "Nigeria",
+                "en": "Nigeria"
+            },
+            "coordinates": {
+                "latitude": 10.740555555556,
+                "longitude": 13.571666666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Sukur_Cultural_Landscape_%283%29.jpg/1280px-Sukur_Cultural_Landscape_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Sukur Cultural Landscape (3).jpg",
+            "author": "DipoTayo",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 35
+        },
+        {
+            "id": "Q229624",
+            "name": {
+                "fr": "Zuma Rock",
+                "en": "Zuma Rock"
+            },
+            "city": {
+                "id": "Q503932",
+                "fr": "Niger",
+                "en": "Niger State"
+            },
+            "country": {
+                "id": "Q1033",
+                "iso": "NG",
+                "fr": "Nigeria",
+                "en": "Nigeria"
+            },
+            "coordinates": {
+                "latitude": 9.1304161111111,
+                "longitude": 7.2339461111111
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Zuma_rock.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Zuma rock.jpg",
+            "author": "Andy Waite",
+            "license": "CC BY-SA 1.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/1.0",
+            "fame": 27
+        },
+        {
+            "id": "Q3500817",
+            "name": {
+                "fr": "Aso Rock",
+                "en": "Aso Rock"
+            },
+            "city": null,
+            "country": {
+                "id": "Q1033",
+                "iso": "NG",
+                "fr": "Nigeria",
+                "en": "Nigeria"
+            },
+            "coordinates": {
+                "latitude": 9.0833333333333,
+                "longitude": 7.5361111111111
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Aso_Rock_as_seen_from_the_IBB_golf_course_in_Abuja%2C_Nigeria.jpg/1280px-Aso_Rock_as_seen_from_the_IBB_golf_course_in_Abuja%2C_Nigeria.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Aso Rock as seen from the IBB golf course in Abuja, Nigeria.jpg",
+            "author": "Mark Fischer",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 14
+        },
+        {
+            "id": "Q7075581",
+            "name": {
+                "fr": "Obudu Mountain Resort",
+                "en": "Obudu Mountain Resort"
+            },
+            "city": {
+                "id": "Q739676",
+                "fr": "Cross River",
+                "en": "Cross River State"
+            },
+            "country": {
+                "id": "Q1033",
+                "iso": "NG",
+                "fr": "Nigeria",
+                "en": "Nigeria"
+            },
+            "coordinates": {
+                "latitude": 6.386666666666667,
+                "longitude": 9.373888888888889
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Fair_weather_clouds_on_Obudu_mountains.jpg/1280px-Fair_weather_clouds_on_Obudu_mountains.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fair weather clouds on Obudu mountains.jpg",
+            "author": "Dotun55",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 8
+        },
+        {
+            "id": "Q6970499",
+            "name": {
+                "fr": "National Arts Theatre",
+                "en": "National Arts Theatre"
+            },
+            "city": {
+                "id": "Q8673",
+                "fr": "Lagos",
+                "en": "Lagos"
+            },
+            "country": {
+                "id": "Q1033",
+                "iso": "NG",
+                "fr": "Nigeria",
+                "en": "Nigeria"
+            },
+            "coordinates": {
+                "latitude": 6.47639,
+                "longitude": 3.36944
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/76/The_National_Arts_Theatre_in_Lagos_%287099736099%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "The National Arts Theatre in Lagos (7099736099).jpg",
+            "author": "Maersk Line",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 8
+        }
+    ],
+    "NI": [
+        {
+            "id": "Q205648",
+            "name": {
+                "fr": "Granada",
+                "en": "Granada"
+            },
+            "city": {
+                "id": "Q258405",
+                "fr": "département de Granada",
+                "en": "Granada Department"
+            },
+            "country": {
+                "id": "Q811",
+                "iso": "NI",
+                "fr": "Nicaragua",
+                "en": "Nicaragua"
+            },
+            "coordinates": {
+                "latitude": 11.93035,
+                "longitude": -85.95359166666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Nicaragua_2017-03-15_%2833978834325%29.jpg/1280px-Nicaragua_2017-03-15_%2833978834325%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Nicaragua 2017-03-15 (33978834325).jpg",
+            "author": "Guillaume Baviere from Uppsala, Sweden",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 61
+        },
+        {
+            "id": "Q48605",
+            "name": {
+                "fr": "cathédrale de León",
+                "en": "León Cathedral"
+            },
+            "city": {
+                "id": "Q208151",
+                "fr": "León",
+                "en": "León"
+            },
+            "country": {
+                "id": "Q811",
+                "iso": "NI",
+                "fr": "Nicaragua",
+                "en": "Nicaragua"
+            },
+            "coordinates": {
+                "latitude": 12.434997222222222,
+                "longitude": -86.87809722222222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Nicaragua_2017-03-13_%2832976253324%29.jpg/1280px-Nicaragua_2017-03-13_%2832976253324%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Nicaragua 2017-03-13 (32976253324).jpg",
+            "author": "Guillaume Baviere from Uppsala, Sweden",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 34
+        },
+        {
+            "id": "Q613424",
+            "name": {
+                "fr": "Volcán Masaya",
+                "en": "Volcán Masaya"
+            },
+            "city": {
+                "id": "Q570358",
+                "fr": "département de Masaya",
+                "en": "Masaya Department"
+            },
+            "country": {
+                "id": "Q811",
+                "iso": "NI",
+                "fr": "Nicaragua",
+                "en": "Nicaragua"
+            },
+            "coordinates": {
+                "latitude": 11.9821602,
+                "longitude": -86.1621235
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Volcan_Masaya2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Volcan Masaya2.jpg",
+            "author": "No machine-readable author provided. Tabla assumed (based on copyright claims).",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 27
+        },
+        {
+            "id": "Q607078",
+            "name": {
+                "fr": "Volcan Cerro Negro",
+                "en": "Volcán Cerro Negro"
+            },
+            "city": {
+                "id": "Q586818",
+                "fr": "département de León",
+                "en": "León Department"
+            },
+            "country": {
+                "id": "Q811",
+                "iso": "NI",
+                "fr": "Nicaragua",
+                "en": "Nicaragua"
+            },
+            "coordinates": {
+                "latitude": 12.5078224,
+                "longitude": -86.7032877
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Cerro_Negro_Volcano_Crater_Nicaragua_August_2011.jpg/1280px-Cerro_Negro_Volcano_Crater_Nicaragua_August_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cerro Negro Volcano Crater Nicaragua August 2011.jpg",
+            "author": "NicaPlease",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 23
+        },
+        {
+            "id": "Q3000329",
+            "name": {
+                "fr": "Réserve naturelle Laguna de Apoyo",
+                "en": "Apoyo Lagoon Natural Reserve"
+            },
+            "city": {
+                "id": "Q258405",
+                "fr": "département de Granada",
+                "en": "Granada Department"
+            },
+            "country": {
+                "id": "Q811",
+                "iso": "NI",
+                "fr": "Nicaragua",
+                "en": "Nicaragua"
+            },
+            "coordinates": {
+                "latitude": 11.9131601,
+                "longitude": -86.0372277
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Laguna_de_Apoyo.jpg/1280px-Laguna_de_Apoyo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Laguna de Apoyo.jpg",
+            "author": "Jesus Jimenez from Palma de Mallorca, Spain",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 15
+        },
+        {
+            "id": "Q1052130",
+            "name": {
+                "fr": "Monument national canyon de Somoto",
+                "en": "Somoto Canyon National Monument"
+            },
+            "city": {
+                "id": "Q728056",
+                "fr": "département de Madriz",
+                "en": "Madriz Department"
+            },
+            "country": {
+                "id": "Q811",
+                "iso": "NI",
+                "fr": "Nicaragua",
+                "en": "Nicaragua"
+            },
+            "coordinates": {
+                "latitude": 13.455227777777777,
+                "longitude": -86.70378055555555
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Canyon_de_somoto.jpg/1280px-Canyon_de_somoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Canyon de somoto.jpg",
+            "author": "Hobbitschuster",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 7
+        }
+    ],
+    "NL": [
+        {
+            "id": "Q190804",
+            "name": {
+                "fr": "Rijksmuseum",
+                "en": "Rijksmuseum"
+            },
+            "city": {
+                "id": "Q9899",
+                "fr": "Amsterdam",
+                "en": "Amsterdam"
+            },
+            "country": {
+                "id": "Q29999",
+                "iso": "NL",
+                "fr": "Royaume des Pays-Bas",
+                "en": "Kingdom of the Netherlands"
+            },
+            "coordinates": {
+                "latitude": 52.36,
+                "longitude": 4.885277777777778
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Rijksmuseum_in_Amsterdam.jpg/1280px-Rijksmuseum_in_Amsterdam.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Rijksmuseum in Amsterdam.jpg",
+            "author": "Marco Almbauer",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 70
+        },
+        {
+            "id": "Q1025664",
+            "name": {
+                "fr": "Giethoorn",
+                "en": "Giethoorn"
+            },
+            "city": {
+                "id": "Q10022",
+                "fr": "Steenwijkerland",
+                "en": "Steenwijkerland"
+            },
+            "country": {
+                "id": "Q29999",
+                "iso": "NL",
+                "fr": "Royaume des Pays-Bas",
+                "en": "Kingdom of the Netherlands"
+            },
+            "coordinates": {
+                "latitude": 52.739722222222,
+                "longitude": 6.0775
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Giethoorn_Netherlands_flckr03.jpg/1280px-Giethoorn_Netherlands_flckr03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Giethoorn Netherlands flckr03.jpg",
+            "author": "Bert Knot",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 42
+        },
+        {
+            "id": "Q12012965",
+            "name": {
+                "fr": "moulins à vent de Kinderdijk",
+                "en": "Windmills at Kinderdijk"
+            },
+            "city": {
+                "id": "Q1943433",
+                "fr": "Molenwaard",
+                "en": "Molenwaard"
+            },
+            "country": {
+                "id": "Q29999",
+                "iso": "NL",
+                "fr": "Royaume des Pays-Bas",
+                "en": "Kingdom of the Netherlands"
+            },
+            "coordinates": {
+                "latitude": 51.88861,
+                "longitude": 4.63472
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/KinderdijkMolens02.jpg/1280px-KinderdijkMolens02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "KinderdijkMolens02.jpg",
+            "author": "Lucas Hirschegger",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 24
+        },
+        {
+            "id": "Q1735318",
+            "name": {
+                "fr": "château de Haar",
+                "en": "Castle de Haar"
+            },
+            "city": {
+                "id": "Q803",
+                "fr": "Utrecht",
+                "en": "Utrecht"
+            },
+            "country": {
+                "id": "Q29999",
+                "iso": "NL",
+                "fr": "Royaume des Pays-Bas",
+                "en": "Kingdom of the Netherlands"
+            },
+            "coordinates": {
+                "latitude": 52.121431,
+                "longitude": 4.986347
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/De_Haar_castlle.jpg/1280px-De_Haar_castlle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "De Haar castlle.jpg",
+            "author": "Rafa.rivero",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 19
+        },
+        {
+            "id": "Q478707",
+            "name": {
+                "fr": "Grachtengordel",
+                "en": "Grachtengordel"
+            },
+            "city": {
+                "id": "Q9899",
+                "fr": "Amsterdam",
+                "en": "Amsterdam"
+            },
+            "country": {
+                "id": "Q29999",
+                "iso": "NL",
+                "fr": "Royaume des Pays-Bas",
+                "en": "Kingdom of the Netherlands"
+            },
+            "coordinates": {
+                "latitude": 52.366388888889,
+                "longitude": 4.8858333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Amsterdam_airphoto.jpg/1280px-Amsterdam_airphoto.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Amsterdam airphoto.jpg",
+            "author": "Amsterdam Municipal Department for the Preservation and Restoration of Historic Buildings and Sites (bMA). The author is BMZ (Bureau Monumentenzorg). Original uploader was Siebrand at nl.wikipedia\n\nLater version(s) were uploaded by Eriksw at nl.wikipedia.",
+            "license": "Attribution",
+            "licenseUrl": null,
+            "fame": 17
+        }
+    ],
+    "NO": [
+        {
+            "id": "Q4069",
+            "name": {
+                "fr": "cap Nord",
+                "en": "North Cape"
+            },
+            "city": {
+                "id": "Q62641",
+                "fr": "Nordkapp",
+                "en": "Nordkapp Municipality"
+            },
+            "country": {
+                "id": "Q20",
+                "iso": "NO",
+                "fr": "Norvège",
+                "en": "Norway"
+            },
+            "coordinates": {
+                "latitude": 71.1725,
+                "longitude": 25.784444444444446
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Cabo_Norte%2C_Noruega%2C_2019-09-03%2C_DD_16.jpg/1280px-Cabo_Norte%2C_Noruega%2C_2019-09-03%2C_DD_16.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cabo Norte, Noruega, 2019-09-03, DD 16.jpg",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 62
+        },
+        {
+            "id": "Q193989",
+            "name": {
+                "fr": "Geirangerfjord",
+                "en": "Geirangerfjord"
+            },
+            "city": {
+                "id": "Q48501",
+                "fr": "Stranda",
+                "en": "Stranda Municipality"
+            },
+            "country": {
+                "id": "Q20",
+                "iso": "NO",
+                "fr": "Norvège",
+                "en": "Norway"
+            },
+            "coordinates": {
+                "latitude": 62.094444444444,
+                "longitude": 7.0805555555556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Fiordo_de_Geiranger_desde_Flydalsjuvet%2C_Noruega%2C_2019-09-07%2C_DD_61.jpg/1280px-Fiordo_de_Geiranger_desde_Flydalsjuvet%2C_Noruega%2C_2019-09-07%2C_DD_61.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fiordo de Geiranger desde Flydalsjuvet, Noruega, 2019-09-07, DD 61.jpg",
+            "author": "Diego Delso",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 57
+        },
+        {
+            "id": "Q153430",
+            "name": {
+                "fr": "Bryggen",
+                "en": "Bryggen"
+            },
+            "city": {
+                "id": "Q10428388",
+                "fr": "Bergen",
+                "en": "Bergen Municipality"
+            },
+            "country": {
+                "id": "Q20",
+                "iso": "NO",
+                "fr": "Norvège",
+                "en": "Norway"
+            },
+            "coordinates": {
+                "latitude": 60.3975,
+                "longitude": 5.3233333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Bryggen%2C_Bergen3.JPG/1280px-Bryggen%2C_Bergen3.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Bryggen, Bergen3.JPG",
+            "author": null,
+            "license": "CC BY-SA 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+            "fame": 47
+        },
+        {
+            "id": "Q746223",
+            "name": {
+                "fr": "Preikestolen",
+                "en": "Preikestolen"
+            },
+            "city": {
+                "id": "Q48591",
+                "fr": "Strand",
+                "en": "Strand Municipality"
+            },
+            "country": {
+                "id": "Q20",
+                "iso": "NO",
+                "fr": "Norvège",
+                "en": "Norway"
+            },
+            "coordinates": {
+                "latitude": 58.98666,
+                "longitude": 6.18748
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Preikestolen_Norge.jpg/1280px-Preikestolen_Norge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Preikestolen Norge.jpg",
+            "author": "Stefan Krause, Germany",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 39
+        },
+        {
+            "id": "Q1512593",
+            "name": {
+                "fr": "Trolltunga",
+                "en": "Trolltunga"
+            },
+            "city": {
+                "id": "Q80678654",
+                "fr": "Ullensvang",
+                "en": "Ullensvang Municipality"
+            },
+            "country": {
+                "id": "Q20",
+                "iso": "NO",
+                "fr": "Norvège",
+                "en": "Norway"
+            },
+            "coordinates": {
+                "latitude": 60.13297532059941,
+                "longitude": 6.753989498338588
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/View_of_trolltunga.jpg/1280px-View_of_trolltunga.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "View of trolltunga.jpg",
+            "author": "TerjeN",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 28
+        },
+        {
+            "id": "Q23868716",
+            "name": {
+                "fr": "Bridge in Vigeland Sculpture Park",
+                "en": "Bridge in Vigeland Sculpture Park"
+            },
+            "city": {
+                "id": "Q5245991",
+                "fr": "Oslo",
+                "en": "Oslo Municipality"
+            },
+            "country": {
+                "id": "Q20",
+                "iso": "NO",
+                "fr": "Norvège",
+                "en": "Norway"
+            },
+            "coordinates": {
+                "latitude": 59.926111,
+                "longitude": 10.703611
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Bronze_Sculptures_Stand_on_Right_Side_of_the_Bridge_-_Vigeland_Park%2C_Oslo.jpg/1280px-Bronze_Sculptures_Stand_on_Right_Side_of_the_Bridge_-_Vigeland_Park%2C_Oslo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Bronze Sculptures Stand on Right Side of the Bridge - Vigeland Park, Oslo.jpg",
+            "author": "Ignaz Wiradi",
+            "license": "CC BY-SA 3.0 no",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/no/deed.en",
+            "fame": 2
+        }
+    ],
+    "NP": [
+        {
+            "id": "Q513",
+            "name": {
+                "fr": "Everest",
+                "en": "Mount Everest"
+            },
+            "city": {
+                "id": "Q28363",
+                "fr": "district de Solukhumbu",
+                "en": "Solukhumbu District"
+            },
+            "country": {
+                "id": "Q837",
+                "iso": "NP",
+                "fr": "Népal",
+                "en": "Nepal"
+            },
+            "coordinates": {
+                "latitude": 27.988055555555555,
+                "longitude": 86.925
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg/1280px-Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mount Everest as seen from Drukair2 PLW edit.jpg",
+            "author": "Mount_Everest_as_seen_from_Drukair2.jpg: shrimpo1967\nderivative work: Papa Lima Whiskey 2 (talk)",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 238
+        },
+        {
+            "id": "Q159621",
+            "name": {
+                "fr": "Annapurna",
+                "en": "Annapurna"
+            },
+            "city": {
+                "id": "Q25104016",
+                "fr": "Gandaki",
+                "en": "Gandaki Province"
+            },
+            "country": {
+                "id": "Q837",
+                "iso": "NP",
+                "fr": "Népal",
+                "en": "Nepal"
+            },
+            "coordinates": {
+                "latitude": 28.596111111111,
+                "longitude": 83.820277777778
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Annapurna_I.jpg/1280px-Annapurna_I.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Annapurna I.jpg",
+            "author": "Wolfgang Beyer",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 94
+        },
+        {
+            "id": "Q1075023",
+            "name": {
+                "fr": "parc national de Chitawan",
+                "en": "Chitwan National Park"
+            },
+            "city": {
+                "id": "Q50822475",
+                "fr": "district de Nawalpur",
+                "en": "Nawalpur District"
+            },
+            "country": {
+                "id": "Q837",
+                "iso": "NP",
+                "fr": "Népal",
+                "en": "Nepal"
+            },
+            "coordinates": {
+                "latitude": 27.5,
+                "longitude": 84.333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Chitwan_swamp.jpg/1280px-Chitwan_swamp.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Chitwan swamp.jpg",
+            "author": "Vadim Tolbatov",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 60
+        },
+        {
+            "id": "Q12946982",
+            "name": {
+                "fr": "Swayambunath",
+                "en": "Swayambhunath"
+            },
+            "city": {
+                "id": "Q3037",
+                "fr": "Katmandou",
+                "en": "Kathmandu"
+            },
+            "country": {
+                "id": "Q837",
+                "iso": "NP",
+                "fr": "Népal",
+                "en": "Nepal"
+            },
+            "coordinates": {
+                "latitude": 27.715,
+                "longitude": 85.29
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Swayambhu%2C_Kathmandu%2C_Nepal.jpg/1280px-Swayambhu%2C_Kathmandu%2C_Nepal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Swayambhu, Kathmandu, Nepal.jpg",
+            "author": "Vyacheslav Argenberg",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+            "fame": 34
+        },
+        {
+            "id": "Q1192928",
+            "name": {
+                "fr": "lac Phewa",
+                "en": "Phewa Lake"
+            },
+            "city": {
+                "id": "Q28436",
+                "fr": "district de Kaski",
+                "en": "Kaski District"
+            },
+            "country": {
+                "id": "Q837",
+                "iso": "NP",
+                "fr": "Népal",
+                "en": "Nepal"
+            },
+            "coordinates": {
+                "latitude": 28.214166666667,
+                "longitude": 83.947222222222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Annapurna_Range_and_the_Phewa_Lake.jpg/1280px-Annapurna_Range_and_the_Phewa_Lake.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Annapurna Range and the Phewa Lake.jpg",
+            "author": "Saroj Pandey",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 30
+        },
+        {
+            "id": "Q6122177",
+            "name": {
+                "fr": "place du Darbâr",
+                "en": "Basantapur Durbar Square"
+            },
+            "city": {
+                "id": "Q3037",
+                "fr": "Katmandou",
+                "en": "Kathmandu"
+            },
+            "country": {
+                "id": "Q837",
+                "iso": "NP",
+                "fr": "Népal",
+                "en": "Nepal"
+            },
+            "coordinates": {
+                "latitude": 27.704075,
+                "longitude": 85.30708333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Kathmandu-Durbar_Square-12-Mini-Vishnu-Pratapamalla-Jagannath-2013-gje.jpg/1280px-Kathmandu-Durbar_Square-12-Mini-Vishnu-Pratapamalla-Jagannath-2013-gje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Kathmandu-Durbar Square-12-Mini-Vishnu-Pratapamalla-Jagannath-2013-gje.jpg",
+            "author": "Gerd Eichmann",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 24
+        },
+        {
+            "id": "Q4900869",
+            "name": {
+                "fr": "place du Darbâr",
+                "en": "Bhaktapur Durbar Square"
+            },
+            "city": {
+                "id": "Q843138",
+                "fr": "Bhaktapur",
+                "en": "Bhaktapur"
+            },
+            "country": {
+                "id": "Q837",
+                "iso": "NP",
+                "fr": "Népal",
+                "en": "Nepal"
+            },
+            "coordinates": {
+                "latitude": 27.67218333,
+                "longitude": 85.42845278
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/View_of_Bhaktapur_Durbar_Square.jpg/1280px-View_of_Bhaktapur_Durbar_Square.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "View of Bhaktapur Durbar Square.jpg",
+            "author": "Bikram Pratap Singh",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 18
+        }
+    ],
+    "NR": [
+        {
+            "id": "Q2387745",
+            "name": {
+                "fr": "géographie de Nauru",
+                "en": "geography of Nauru"
+            },
+            "city": null,
+            "country": {
+                "id": "Q697",
+                "iso": "NR",
+                "fr": "Nauru",
+                "en": "Nauru"
+            },
+            "coordinates": {
+                "latitude": -0.53111111111111,
+                "longitude": 166.94
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/Nauru_satellite.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Nauru satellite.jpg",
+            "author": "ARM",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 22
+        },
+        {
+            "id": "Q1413788",
+            "name": {
+                "fr": "port d'Anibare",
+                "en": "Port of Anibare"
+            },
+            "city": null,
+            "country": {
+                "id": "Q697",
+                "iso": "NR",
+                "fr": "Nauru",
+                "en": "Nauru"
+            },
+            "coordinates": {
+                "latitude": -0.536949,
+                "longitude": 166.950388
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Anibare_Port.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Anibare Port.jpg",
+            "author": "Cedri©",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 6
+        }
+    ],
+    "NU": [
+        {
+            "id": "Q30966",
+            "name": {
+                "fr": "Alofi",
+                "en": "Alofi"
+            },
+            "city": {
+                "id": "Q34020",
+                "fr": "Niue",
+                "en": "Niue"
+            },
+            "country": {
+                "id": "Q34020",
+                "iso": "NU",
+                "fr": "Niue",
+                "en": "Niue"
+            },
+            "coordinates": {
+                "latitude": -19.056,
+                "longitude": -169.921
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Main_street_of_Alofi.jpg/1280px-Main_street_of_Alofi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Main street of Alofi.jpg",
+            "author": "Pseudopanax at English Wikipedia",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 96
+        },
+        {
+            "id": "Q59456057",
+            "name": {
+                "fr": "Matapa Chasm",
+                "en": "Matapa Chasm"
+            },
+            "city": null,
+            "country": {
+                "id": "Q34020",
+                "iso": "NU",
+                "fr": "Niue",
+                "en": "Niue"
+            },
+            "coordinates": {
+                "latitude": -18.9625,
+                "longitude": -169.88194444444
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Matapa_Chasm%2C_looking_out_towards_sea.jpg/1280px-Matapa_Chasm%2C_looking_out_towards_sea.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Matapa Chasm, looking out towards sea.jpg",
+            "author": "Pseudopanax at English Wikipedia",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 2
+        },
+        {
+            "id": "Q136704256",
+            "name": {
+                "fr": "Limu Pools",
+                "en": "Limu Pools"
+            },
+            "city": {
+                "id": "Q2592896",
+                "fr": "Namukulu",
+                "en": "Namukulu"
+            },
+            "country": {
+                "id": "Q34020",
+                "iso": "NU",
+                "fr": "Niue",
+                "en": "Niue"
+            },
+            "coordinates": {
+                "latitude": -18.9758154,
+                "longitude": -169.8965316
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Rock_arch_at_Limu_Pools.jpg/1280px-Rock_arch_at_Limu_Pools.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Rock arch at Limu Pools.jpg",
+            "author": "Pseudopanax at English Wikipedia",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 1
+        },
+        {
+            "id": "Q132430336",
+            "name": {
+                "fr": "Togo Chasm",
+                "en": "Togo Chasm"
+            },
+            "city": null,
+            "country": {
+                "id": "Q34020",
+                "iso": "NU",
+                "fr": "Niue",
+                "en": "Niue"
+            },
+            "coordinates": {
+                "latitude": -19.1057,
+                "longitude": -169.8077
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Togo_Chasm_from_above.jpg/1280px-Togo_Chasm_from_above.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Togo Chasm from above.jpg",
+            "author": "Pseudopanax at English Wikipedia",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 1
+        }
+    ],
+    "NZ": [
+        {
+            "id": "Q5059",
+            "name": {
+                "fr": "Aoraki/Mont Cook",
+                "en": "Aoraki / Mount Cook"
+            },
+            "city": {
+                "id": "Q657004",
+                "fr": "Canterbury",
+                "en": "Canterbury Region"
+            },
+            "country": {
+                "id": "Q664",
+                "iso": "NZ",
+                "fr": "Nouvelle-Zélande",
+                "en": "New Zealand"
+            },
+            "coordinates": {
+                "latitude": -43.595,
+                "longitude": 170.14194444444445
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/00_0985_Mount_Cook_-_New_Zealand_Alps.jpg/1280px-00_0985_Mount_Cook_-_New_Zealand_Alps.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "00 0985 Mount Cook - New Zealand Alps.jpg",
+            "author": "W. Bulach",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 69
+        },
+        {
+            "id": "Q202845",
+            "name": {
+                "fr": "parc national de Tongariro",
+                "en": "Tongariro National Park"
+            },
+            "city": {
+                "id": "Q139907",
+                "fr": "Manawatu-Wanganui",
+                "en": "Manawatū-Whanganui Region"
+            },
+            "country": {
+                "id": "Q664",
+                "iso": "NZ",
+                "fr": "Nouvelle-Zélande",
+                "en": "New Zealand"
+            },
+            "coordinates": {
+                "latitude": -39.2,
+                "longitude": 175.583333
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Tongariro_Mahuia_River_n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Tongariro Mahuia River n.jpg",
+            "author": null,
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "fame": 47
+        },
+        {
+            "id": "Q187197",
+            "name": {
+                "fr": "Milford Sound",
+                "en": "Milford Sound / Piopiotahi"
+            },
+            "city": {
+                "id": "Q1972706",
+                "fr": "Southland",
+                "en": "Southland District"
+            },
+            "country": {
+                "id": "Q664",
+                "iso": "NZ",
+                "fr": "Nouvelle-Zélande",
+                "en": "New Zealand"
+            },
+            "coordinates": {
+                "latitude": -44.61666666666667,
+                "longitude": 167.86666666666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/00_1371_New_Zealand_-_Milford_Sound.jpg/1280px-00_1371_New_Zealand_-_Milford_Sound.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "00 1371 New Zealand - Milford Sound.jpg",
+            "author": "W. Bulach",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 43
+        },
+        {
+            "id": "Q673150",
+            "name": {
+                "fr": "glacier François-Joseph",
+                "en": "Franz Josef Glacier"
+            },
+            "city": {
+                "id": "Q541468",
+                "fr": "West Coast",
+                "en": "West Coast Region"
+            },
+            "country": {
+                "id": "Q664",
+                "iso": "NZ",
+                "fr": "Nouvelle-Zélande",
+                "en": "New Zealand"
+            },
+            "coordinates": {
+                "latitude": -43.475,
+                "longitude": 170.2
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Franz_Josef_glacier.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Franz Josef glacier.JPG",
+            "author": "en:user:dramatic",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "fame": 28
+        },
+        {
+            "id": "Q1194022",
+            "name": {
+                "fr": "lac Tekapo",
+                "en": "Lake Tekapo"
+            },
+            "city": {
+                "id": "Q1760822",
+                "fr": "Mackenzie",
+                "en": "Mackenzie District"
+            },
+            "country": {
+                "id": "Q664",
+                "iso": "NZ",
+                "fr": "Nouvelle-Zélande",
+                "en": "New Zealand"
+            },
+            "coordinates": {
+                "latitude": -43.9,
+                "longitude": 170.525
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/LakeTekapoNov242024_01.jpg/1280px-LakeTekapoNov242024_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "LakeTekapoNov242024 01.jpg",
+            "author": "Hagai Agmon-Snir حچاي اچمون-سنير חגי אגמון-שניר",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 27
+        },
+        {
+            "id": "Q812091",
+            "name": {
+                "fr": "Baie des Îles",
+                "en": "Bay of Islands"
+            },
+            "city": {
+                "id": "Q59596",
+                "fr": "Northland",
+                "en": "Northland Region"
+            },
+            "country": {
+                "id": "Q664",
+                "iso": "NZ",
+                "fr": "Nouvelle-Zélande",
+                "en": "New Zealand"
+            },
+            "coordinates": {
+                "latitude": -35.2,
+                "longitude": 174.16666666667
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Bay_of_Islands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Bay of Islands.jpg",
+            "author": "Fuadounet",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 21
+        },
+        {
+            "id": "Q18924400",
+            "name": {
+                "fr": "Plateau de tournage Hobbiton",
+                "en": "Hobbiton Movie Set"
+            },
+            "city": {
+                "id": "Q974296",
+                "fr": "Matamata-Piako",
+                "en": "Matamata-Piako District"
+            },
+            "country": {
+                "id": "Q664",
+                "iso": "NZ",
+                "fr": "Nouvelle-Zélande",
+                "en": "New Zealand"
+            },
+            "coordinates": {
+                "latitude": -37.8575,
+                "longitude": 175.67972222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Hobbit_holes_reflected_in_water.jpg/1280px-Hobbit_holes_reflected_in_water.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Hobbit holes reflected in water.jpg",
+            "author": "Jackie.lck (photos · photo sets)",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 12
+        }
+    ],
+    "OM": [
+        {
+            "id": "Q1408909",
+            "name": {
+                "fr": "fort de Bahla",
+                "en": "Bahla Fort"
+            },
+            "city": {
+                "id": "Q800253",
+                "fr": "Bahla",
+                "en": "Bahla"
+            },
+            "country": {
+                "id": "Q842",
+                "iso": "OM",
+                "fr": "Oman",
+                "en": "Oman"
+            },
+            "coordinates": {
+                "latitude": 22.9644,
+                "longitude": 57.3007
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Bahla_Fort.jpg/1280px-Bahla_Fort.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Bahla Fort.jpg",
+            "author": "Francisco Anzola",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 43
+        },
+        {
+            "id": "Q1261915",
+            "name": {
+                "fr": "djebel Shams",
+                "en": "Jebel Shams"
+            },
+            "city": null,
+            "country": {
+                "id": "Q842",
+                "iso": "OM",
+                "fr": "Oman",
+                "en": "Oman"
+            },
+            "coordinates": {
+                "latitude": 23.2373882,
+                "longitude": 57.2637937
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Jebel_Shams_%282%29.jpg/1280px-Jebel_Shams_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Jebel Shams (2).jpg",
+            "author": "Andries Oudshoorn",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 35
+        },
+        {
+            "id": "Q7042280",
+            "name": {
+                "fr": "Nizwa Fort",
+                "en": "Nizwa Fort"
+            },
+            "city": {
+                "id": "Q1915327",
+                "fr": "Nizwa",
+                "en": "Nizwa"
+            },
+            "country": {
+                "id": "Q842",
+                "iso": "OM",
+                "fr": "Oman",
+                "en": "Oman"
+            },
+            "coordinates": {
+                "latitude": 22.933333,
+                "longitude": 57.530278
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Nizwa_%285%29.jpg/1280px-Nizwa_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Nizwa (5).jpg",
+            "author": "Andries Oudshoorn",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 11
+        },
+        {
+            "id": "Q3409476",
+            "name": {
+                "fr": "Wadi Shab",
+                "en": "Wadi Shab"
+            },
+            "city": null,
+            "country": {
+                "id": "Q842",
+                "iso": "OM",
+                "fr": "Oman",
+                "en": "Oman"
+            },
+            "coordinates": {
+                "latitude": 22.839037,
+                "longitude": 59.245138
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Wadi_Shab_%289%29.jpg/1280px-Wadi_Shab_%289%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Wadi Shab (9).jpg",
+            "author": "Andries Oudshoorn",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 9
+        },
+        {
+            "id": "Q29514082",
+            "name": {
+                "fr": "Sultan Qaboos Grand Mosque",
+                "en": "Sultan Qaboos Grand Mosque"
+            },
+            "city": {
+                "id": "Q943270",
+                "fr": "Sohar",
+                "en": "Sohar"
+            },
+            "country": {
+                "id": "Q842",
+                "iso": "OM",
+                "fr": "Oman",
+                "en": "Oman"
+            },
+            "coordinates": {
+                "latitude": 24.31268,
+                "longitude": 56.75695
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "واجهة الجامع.jpg",
+            "author": "Meshal humaid Ali Almoqbali",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 7
+        }
+    ],
+    "UM-DQ": [
+        {
+            "id": "Q62218",
+            "name": {
+                "fr": "île Jarvis",
+                "en": "Jarvis Island"
+            },
+            "city": {
+                "id": "Q16645",
+                "fr": "îles mineures éloignées des États-Unis",
+                "en": "United States Minor Outlying Islands"
+            },
+            "country": {
+                "id": null,
+                "iso": "UM-DQ",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": -0.37207,
+                "longitude": -159.99699
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Jarvis_Island_Guano_Tramway.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Jarvis Island Guano Tramway.jpg",
+            "author": "USFWS, unknown photographer",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 84
+        }
+    ],
+    "UM-FQ": [
+        {
+            "id": "Q4849167",
+            "name": {
+                "fr": "phare de Baker Island",
+                "en": "Baker Island Light"
+            },
+            "city": {
+                "id": "Q506351",
+                "fr": "comté de Hancock",
+                "en": "Hancock County"
+            },
+            "country": {
+                "id": null,
+                "iso": "UM-FQ",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 44.24120861,
+                "longitude": -68.19901167
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Baker_Island_Light_Station.JPG/1280px-Baker_Island_Light_Station.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Baker Island Light Station.JPG",
+            "author": "Kevin A. Trostle",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 3
+        }
+    ],
+    "UM-HQ": [
+        {
+            "id": "Q20932641",
+            "name": {
+                "fr": "Earhart Light",
+                "en": "Earhart Light"
+            },
+            "city": {
+                "id": "Q131305",
+                "fr": "île Howland",
+                "en": "Howland Island"
+            },
+            "country": {
+                "id": null,
+                "iso": "UM-HQ",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 0.805689,
+                "longitude": -176.619042
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/HowlandIslandLightWW2damage.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "HowlandIslandLightWW2damage.jpg",
+            "author": "USCG",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 2
+        }
+    ],
+    "UM-JQ": [
+        {
+            "id": "Q131008",
+            "name": {
+                "fr": "atoll Johnston",
+                "en": "Johnston Atoll"
+            },
+            "city": {
+                "id": "Q16645",
+                "fr": "îles mineures éloignées des États-Unis",
+                "en": "United States Minor Outlying Islands"
+            },
+            "country": {
+                "id": null,
+                "iso": "UM-JQ",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 16.75,
+                "longitude": -169.51666666667
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Johnston_Atoll.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Johnston Atoll.png",
+            "author": "NASA/USGS",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 77
+        }
+    ],
+    "UM-MQ": [
+        {
+            "id": "Q15728213",
+            "name": {
+                "fr": "refuge faunique national de l'Atoll-Midway",
+                "en": "Midway Atoll National Wildlife Refuge"
+            },
+            "city": {
+                "id": "Q47863",
+                "fr": "îles Midway",
+                "en": "Midway Atoll"
+            },
+            "country": {
+                "id": null,
+                "iso": "UM-MQ",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 28.231328,
+                "longitude": -177.369495
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Starr_080531-4748_Pritchardia_sp..jpg/1280px-Starr_080531-4748_Pritchardia_sp..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Starr 080531-4748 Pritchardia sp..jpg",
+            "author": "Forest &amp; Kim Starr",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "fame": 3
+        },
+        {
+            "id": "Q32015300",
+            "name": {
+                "fr": "Sand Island",
+                "en": "Sand Island"
+            },
+            "city": {
+                "id": "Q47863",
+                "fr": "îles Midway",
+                "en": "Midway Atoll"
+            },
+            "country": {
+                "id": null,
+                "iso": "UM-MQ",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 28.21018,
+                "longitude": -177.37933
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Aerial_view_of_Sand_Island%2C_Midway_c1968.jpg/1280px-Aerial_view_of_Sand_Island%2C_Midway_c1968.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Aerial view of Sand Island, Midway c1968.jpg",
+            "author": "D. Lee, U.S. Navy",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 2
+        }
+    ],
+    "UM-WQ": [
+        {
+            "id": "Q7960943",
+            "name": {
+                "fr": "aérodrome de Wake Island",
+                "en": "Wake Island Airfield"
+            },
+            "city": {
+                "id": "Q43296",
+                "fr": "Wake",
+                "en": "Wake Island"
+            },
+            "country": {
+                "id": null,
+                "iso": "UM-WQ",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 19.2825,
+                "longitude": 166.63666666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Wake_Island_air.JPG/1280px-Wake_Island_air.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Wake Island air.JPG",
+            "author": "KC-135_Stratotanker_boom.JPG: US Air Force\nderivative work: Hohum (talk)",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 12
+        },
+        {
+            "id": "Q31985226",
+            "name": {
+                "fr": "Peale Island",
+                "en": "Peale Island"
+            },
+            "city": {
+                "id": "Q43296",
+                "fr": "Wake",
+                "en": "Wake Island"
+            },
+            "country": {
+                "id": null,
+                "iso": "UM-WQ",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 19.310277777778,
+                "longitude": 166.62666666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Wake_Jun_15_007_%2818905308620%29.jpg/1280px-Wake_Jun_15_007_%2818905308620%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Wake Jun 15 007 (18905308620).jpg",
+            "author": "jafer24 from Ewa Beach, USA",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 3
+        }
+    ],
+    "JU": [
+        {
+            "id": "Q237034",
+            "name": {
+                "fr": "île Juan de Nova",
+                "en": "Juan de Nova Island"
+            },
+            "city": {
+                "id": "Q190571",
+                "fr": "îles Éparses de l'océan Indien",
+                "en": "Scattered Islands in the Indian Ocean"
+            },
+            "country": {
+                "id": null,
+                "iso": "JU",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": -17.054444444444,
+                "longitude": 42.725
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Juan_de_nova_-_vues_a%C3%A9riennes_%282%29.jpg/1280px-Juan_de_nova_-_vues_a%C3%A9riennes_%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Juan de nova - vues aériennes (2).jpg",
+            "author": "TAAF",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 50
+        }
+    ],
+    "BQSA": [
+        {
+            "id": "Q1301834",
+            "name": {
+                "fr": "mont Scenery",
+                "en": "Mount Scenery"
+            },
+            "city": {
+                "id": "Q25528",
+                "fr": "Saba",
+                "en": "Saba"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQSA",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 17.635,
+                "longitude": -63.239166666667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Saba_with_cloud_cover.jpg/1280px-Saba_with_cloud_cover.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Saba with cloud cover.jpg",
+            "author": "Richie Diesterheft",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 32
+        },
+        {
+            "id": "Q2983401",
+            "name": {
+                "fr": "Windwardside",
+                "en": "Windwardside"
+            },
+            "city": {
+                "id": "Q25528",
+                "fr": "Saba",
+                "en": "Saba"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQSA",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 17.62807,
+                "longitude": -63.23181
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/View_from_Mt_Scenery%2C_Saba.jpg/1280px-View_from_Mt_Scenery%2C_Saba.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "View from Mt Scenery, Saba.jpg",
+            "author": "Radioflux",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 21
+        },
+        {
+            "id": "Q23712666",
+            "name": {
+                "fr": "église du Sacré-Cœur de The Bottom",
+                "en": "Sacred Heart Church"
+            },
+            "city": {
+                "id": "Q25528",
+                "fr": "Saba",
+                "en": "Saba"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQSA",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 17.62728,
+                "longitude": -63.250344
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Sacred_Heart_Church%2C_1935_Horizontal_%286549988599%29.jpg/1280px-Sacred_Heart_Church%2C_1935_Horizontal_%286549988599%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Sacred Heart Church, 1935 Horizontal (6549988599).jpg",
+            "author": "Richie Diesterheft from Chicago, IL, USA",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "fame": 6
+        }
+    ],
+    "BQSE": [
+        {
+            "id": "Q217610",
+            "name": {
+                "fr": "Oranjestad",
+                "en": "Oranjestad"
+            },
+            "city": {
+                "id": "Q26180",
+                "fr": "Saint-Eustache",
+                "en": "Sint Eustatius"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQSE",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 17.483333333333,
+                "longitude": -62.983333333333
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/70/Lower_Town_Sint_Eustatius.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Lower Town Sint Eustatius.jpg",
+            "author": "Walter Hellebrand",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 56
+        },
+        {
+            "id": "Q2730234",
+            "name": {
+                "fr": "fort Oranje",
+                "en": "Fort Oranje"
+            },
+            "city": {
+                "id": "Q26180",
+                "fr": "Saint-Eustache",
+                "en": "Sint Eustatius"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQSE",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 17.481916666666667,
+                "longitude": -62.986694444444446
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Fort_Oranje.jpg/1280px-Fort_Oranje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Fort Oranje.jpg",
+            "author": "Walter Hellebrand",
+            "license": "GFDL",
+            "licenseUrl": "http://www.gnu.org/copyleft/fdl.html",
+            "fame": 7
+        },
+        {
+            "id": "Q4692149",
+            "name": {
+                "fr": "Quill/Boven National Park",
+                "en": "Quill/Boven National Park"
+            },
+            "city": {
+                "id": "Q26180",
+                "fr": "Saint-Eustache",
+                "en": "Sint Eustatius"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQSE",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 17.47805556,
+                "longitude": -62.96
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Quill_volcano_on_Sint_Eustatius.jpg/1280px-Quill_volcano_on_Sint_Eustatius.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Quill volcano on Sint Eustatius.jpg",
+            "author": "Walter Hellebrand",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "fame": 5
+        },
+        {
+            "id": "Q54139319",
+            "name": {
+                "fr": "Simon Doncker House",
+                "en": "Simon Doncker House"
+            },
+            "city": {
+                "id": "Q26180",
+                "fr": "Saint-Eustache",
+                "en": "Sint Eustatius"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQSE",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 17.482962,
+                "longitude": -62.98579931
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/St._Eustatius_Historical_Foundation_Museum%2C_2025_-_3.jpg/1280px-St._Eustatius_Historical_Foundation_Museum%2C_2025_-_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "St. Eustatius Historical Foundation Museum, 2025 - 3.jpg",
+            "author": "Ymnes",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "fame": 2
+        }
+    ],
+    "BQBO": [
+        {
+            "id": "Q2474005",
+            "name": {
+                "fr": "parc national Washington Slagbaai",
+                "en": "Washington Slagbaai National Park"
+            },
+            "city": {
+                "id": "Q25396",
+                "fr": "Bonaire",
+                "en": "Bonaire"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQBO",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 12.272,
+                "longitude": -68.383
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Washington-Slagbaai_National_Park_%282446955129%29.jpg/1280px-Washington-Slagbaai_National_Park_%282446955129%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Washington-Slagbaai National Park (2446955129).jpg",
+            "author": "Paul Asman and Jill Lenoble",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 10
+        },
+        {
+            "id": "Q21808764",
+            "name": {
+                "fr": "Goto Meer",
+                "en": "Goto Meer"
+            },
+            "city": {
+                "id": "Q25396",
+                "fr": "Bonaire",
+                "en": "Bonaire"
+            },
+            "country": {
+                "id": null,
+                "iso": "BQBO",
+                "fr": null,
+                "en": null
+            },
+            "coordinates": {
+                "latitude": 12.2375,
+                "longitude": -68.375
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Goto_lake_%28Bonaire_2014%29_%2815692457185%29.jpg/1280px-Goto_lake_%28Bonaire_2014%29_%2815692457185%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Goto lake (Bonaire 2014) (15692457185).jpg",
+            "author": "Paul Arps from The Netherlands",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "fame": 2
+        }
+    ]
 }
-
 const oldD_monuments = {
     "AD": [
         {
@@ -55662,1063 +61208,53 @@ const oldD_monuments = {
 }
 
 
-const noPic = 
-    {
-    "AS": "Samoa américaines",
-    "BL": "Saint-Barthélemy",
-    "CY": "Chypre",
-    "GF": "Guyane française",
-    "GI": "Gibraltar",
-    "GO": "Îles Glorieuses",
-    "GP": "Guadeloupe",
-    "GS": "Géorgie du Sud-et-les Îles Sandwich du Sud",
-    "GU": "Guam",
-    "HM": "Îles Heard-et-MacDonald",
-    "GR": "Grèce",
-    "MF": "Saint-Martin (partie française)",
-    "MO": "Macao",
-    "MP": "Îles Mariannes du Nord",
-    "MQ": "Martinique",
-    "NC": "Nouvelle-Calédonie",
-    "PF": "Polynésie française",
-    "PM": "Saint-Pierre-et-Miquelon",
-    "RE": "La Réunion",
-    "SJ": "Svalbard et Jan Mayen",
-    "TF": "Îles Kerguelen",
-    "VG": "Îles Vierges britanniques",
-    "VI": "Îles Vierges des États-Unis",
-    "WF": "Wallis-et-Futuna",
-    "YT": "Mayotte"
-}
-
-
-const sitesNoPic = { // Sites proposés qui n'ont pas été trouvés
-    "BL": [
-        {
-            "name": "Gustavia",
-            "id": null
-        },
-        {
-            "name": "Fort Karl",
-            "id": null
-        },
-        {
-            "name": "Fort Gustav Lighthouse",
-            "id": null
-        },
-        {
-            "name": "Saint-Jean Beach",
-            "id": null
-        },
-        {
-            "name": "Gouverneur Beach",
-            "id": null
-        },
-        {
-            "name": "Colombier Beach",
-            "id": null
-        },
-        {
-            "name": "Flamands Beach",
-            "id": null
-        },
-        {
-            "name": "Saline Beach",
-            "id": null
-        },
-        {
-            "name": "Wall House Museum",
-            "id": null
-        },
-        {
-            "name": "Swedish Clock Tower (Gustavia)",
-            "id": null
-        }
-    ],
-    "CK": [
-        {
-            "name": "Aitutaki Lagoon",
-            "id": null
-        },
-        {
-            "name": "Muri Beach (Rarotonga)",
-            "id": null
-        },
-        {
-            "name": "Te Rua Manga (The Needle)",
-            "id": null
-        },
-        {
-            "name": "One Foot Island (Tapuaetai)",
-            "id": null
-        },
-        {
-            "name": "Punanga Nui Market (Avarua)",
-            "id": null
-        },
-        {
-            "name": "Arai-Te-Tonga Marae",
-            "id": null
-        },
-        {
-            "name": "Cook Islands Christian Church (Avarua)",
-            "id": null
-        },
-        {
-            "name": "Black Rock (Rarotonga)",
-            "id": null
-        },
-        {
-            "name": "Atiu Island (Anatakitaki Cave)",
-            "id": null
-        },
-        {
-            "name": "Titikaveka Beach",
-            "id": null
-        }
-    ],
-    "CY": [
-        {
-            "name": "Kourion",
-            "id": null
-        },
-        {
-            "name": "Paphos Archaeological Park",
-            "id": null
-        },
-        {
-            "name": "Tombs of the Kings (Paphos)",
-            "id": null
-        },
-        {
-            "name": "Petra tou Romiou (Aphrodite's Rock)",
-            "id": null
-        },
-        {
-            "name": "Kykkos Monastery",
-            "id": null
-        },
-        {
-            "name": "Nissi Beach",
-            "id": null
-        },
-        {
-            "name": "Kolossi Castle",
-            "id": null
-        },
-        {
-            "name": "Cape Greco",
-            "id": null
-        },
-        {
-            "name": "Larnaca Salt Lake (Hala Sultan Tekke)",
-            "id": null
-        },
-        {
-            "name": "Choirokoitia",
-            "id": null
-        }
-    ],
-    "GD": [
-        {
-            "name": "Grand Anse Beach",
-            "id": null
-        },
-        {
-            "name": "St. George's (Carenage)",
-            "id": null
-        },
-        {
-            "name": "Fort George",
-            "id": null
-        },
-        {
-            "name": "Underwater Sculpture Park (Molinere Bay)",
-            "id": null
-        },
-        {
-            "name": "Grand Etang National Park",
-            "id": null
-        },
-        {
-            "name": "Annandale Falls",
-            "id": null
-        },
-        {
-            "name": "Concord Falls",
-            "id": null
-        },
-        {
-            "name": "Belmont Estate",
-            "id": null
-        },
-        {
-            "name": "Levera National Park",
-            "id": null
-        },
-        {
-            "name": "Fort Frederick",
-            "id": null
-        }
-    ],
-    "GF": [
-        {
-            "name": "Guiana Space Centre (Kourou)",
-            "id": null
-        },
-        {
-            "name": "Îles du Salut (Devil's Island)",
-            "id": null
-        },
-        {
-            "name": "Camp de la Transportation (Saint-Laurent-du-Maroni)",
-            "id": null
-        },
-        {
-            "name": "Fort Cépérou (Cayenne)",
-            "id": null
-        },
-        {
-            "name": "Place des Palmistes (Cayenne)",
-            "id": null
-        },
-        {
-            "name": "Kaw Marshes (Marais de Kaw)",
-            "id": null
-        },
-        {
-            "name": "Guiana Amazonian Park",
-            "id": null
-        },
-        {
-            "name": "Cacao (Hmong village)",
-            "id": null
-        },
-        {
-            "name": "Awala-Yalimapo (Les Hattes beach)",
-            "id": null
-        },
-        {
-            "name": "Maroni River (Saint-Laurent)",
-            "id": null
-        }
-    ],
-    "GI": [
-        {
-            "name": "Rock of Gibraltar",
-            "id": null
-        },
-        {
-            "name": "Europa Point (lighthouse)",
-            "id": null
-        },
-        {
-            "name": "St. Michael's Cave",
-            "id": null
-        },
-        {
-            "name": "Great Siege Tunnels",
-            "id": null
-        },
-        {
-            "name": "Moorish Castle",
-            "id": null
-        },
-        {
-            "name": "Gorham's Cave Complex",
-            "id": null
-        },
-        {
-            "name": "Main Street (Gibraltar)",
-            "id": null
-        },
-        {
-            "name": "Gibraltar Cable Car",
-            "id": null
-        },
-        {
-            "name": "Ibrahim-al-Ibrahim Mosque",
-            "id": null
-        },
-        {
-            "name": "Alameda Botanic Gardens",
-            "id": null
-        }
-    ],
-    "GO": [],
-    "GP": [
-        {
-            "name": "La Grande Soufrière",
-            "id": null
-        },
-        {
-            "name": "Guadeloupe National Park",
-            "id": null
-        },
-        {
-            "name": "Mémorial ACTe",
-            "id": null
-        },
-        {
-            "name": "Chutes du Carbet",
-            "id": null
-        },
-        {
-            "name": "Pointe des Châteaux",
-            "id": null
-        },
-        {
-            "name": "Fort Delgrès",
-            "id": null
-        },
-        {
-            "name": "Fort Napoléon des Saintes",
-            "id": null
-        },
-        {
-            "name": "Réserve Cousteau (Îlets Pigeon)",
-            "id": null
-        },
-        {
-            "name": "Cathédrale Saint-Pierre-et-Saint-Paul de Pointe-à-Pitre",
-            "id": null
-        },
-        {
-            "name": "Plage de Grande-Anse, Deshaies",
-            "id": null
-        }
-    ],
-    "GS": [
-        {
-            "name": "Grytviken",
-            "id": null
-        },
-        {
-            "name": "Grave of Ernest Shackleton",
-            "id": null
-        },
-        {
-            "name": "King Edward Point",
-            "id": null
-        },
-        {
-            "name": "Whalers' Church, Grytviken",
-            "id": null
-        },
-        {
-            "name": "South Georgia Museum",
-            "id": null
-        },
-        {
-            "name": "Mount Paget",
-            "id": null
-        },
-        {
-            "name": "Salisbury Plain",
-            "id": null
-        },
-        {
-            "name": "St. Andrews Bay",
-            "id": null
-        },
-        {
-            "name": "Stromness whaling station",
-            "id": null
-        },
-        {
-            "name": "Zavodovski Island",
-            "id": null
-        }
-    ],
-    "GU": [
-        {
-            "name": "Two Lovers Point",
-            "id": null
-        },
-        {
-            "name": "Plaza de España, Hagåtña",
-            "id": null
-        },
-        {
-            "name": "Dulce Nombre de Maria Cathedral-Basilica",
-            "id": null
-        },
-        {
-            "name": "War in the Pacific National Historical Park",
-            "id": null
-        },
-        {
-            "name": "Fort Nuestra Señora de la Soledad",
-            "id": null
-        },
-        {
-            "name": "Latte Stone Park",
-            "id": null
-        },
-        {
-            "name": "Tumon Bay",
-            "id": null
-        },
-        {
-            "name": "Ritidian Point",
-            "id": null
-        },
-        {
-            "name": "Talofofo Falls",
-            "id": null
-        },
-        {
-            "name": "Mount Lamlam",
-            "id": null
-        }
-    ],
-    "HM": [
-        {
-            "name": "Heard Island",
-            "id": null
-        },
-        {
-            "name": "Mawson Peak (Big Ben)",
-            "id": null
-        },
-        {
-            "name": "McDonald Islands",
-            "id": null
-        },
-        {
-            "name": "Atlas Cove",
-            "id": null
-        },
-        {
-            "name": "Laurens Peninsula",
-            "id": null
-        },
-        {
-            "name": "Spit Bay",
-            "id": null
-        }
-    ],
-    "GR": [
-        {
-            "name": "Acropolis of Athens",
-            "id": null
-        },
-        {
-            "name": "Parthenon",
-            "id": "Q10285"
-        },
-        {
-            "name": "Meteora",
-            "id": null
-        },
-        {
-            "name": "Delphi",
-            "id": null
-        },
-        {
-            "name": "Santorini (Oia)",
-            "id": null
-        },
-        {
-            "name": "Mount Olympus",
-            "id": null
-        },
-        {
-            "name": "Knossos",
-            "id": null
-        },
-        {
-            "name": "Mount Athos",
-            "id": null
-        },
-        {
-            "name": "Ancient Olympia",
-            "id": null
-        },
-        {
-            "name": "Epidaurus theatre",
-            "id": null
-        }
-    ],
-    "MF": [
-        {
-            "name": "Fort Louis, Marigot",
-            "id": null
-        },
-        {
-            "name": "Pic Paradis",
-            "id": null
-        },
-        {
-            "name": "Orient Bay Beach",
-            "id": null
-        },
-        {
-            "name": "Grand Case Beach",
-            "id": null
-        },
-        {
-            "name": "Îlet Pinel",
-            "id": null
-        },
-        {
-            "name": "Tintamarre Island",
-            "id": null
-        },
-        {
-            "name": "Loterie Farm",
-            "id": null
-        },
-        {
-            "name": "Happy Bay Beach",
-            "id": null
-        },
-        {
-            "name": "Baie Rouge",
-            "id": null
-        },
-        {
-            "name": "Réserve naturelle nationale de Saint-Martin",
-            "id": null
-        }
-    ],
-    "MO": [
-        {
-            "name": "Ruins of St. Paul's",
-            "id": null
-        },
-        {
-            "name": "Senado Square",
-            "id": null
-        },
-        {
-            "name": "A-Ma Temple",
-            "id": null
-        },
-        {
-            "name": "Monte Fort",
-            "id": null
-        },
-        {
-            "name": "Guia Fortress",
-            "id": null
-        },
-        {
-            "name": "Mandarin's House",
-            "id": null
-        },
-        {
-            "name": "St. Dominic's Church, Macao",
-            "id": null
-        },
-        {
-            "name": "Macao Tower",
-            "id": null
-        },
-        {
-            "name": "Taipa Houses",
-            "id": null
-        },
-        {
-            "name": "The Venetian Macao",
-            "id": null
-        }
-    ],
-    "MP": [
-        {
-            "name": "Managaha Island",
-            "id": null
-        },
-        {
-            "name": "The Grotto, Saipan",
-            "id": null
-        },
-        {
-            "name": "American Memorial Park",
-            "id": null
-        },
-        {
-            "name": "Banzai Cliff",
-            "id": null
-        },
-        {
-            "name": "Suicide Cliff",
-            "id": null
-        },
-        {
-            "name": "Bird Island, Saipan",
-            "id": null
-        },
-        {
-            "name": "Mount Tapochau",
-            "id": null
-        },
-        {
-            "name": "House of Taga",
-            "id": null
-        },
-        {
-            "name": "Taga Beach, Tinian",
-            "id": null
-        },
-        {
-            "name": "Rota Latte Stone Quarry",
-            "id": null
-        }
-    ],
-    "MQ": [
-        {
-            "name": "Montagne Pelée",
-            "id": null
-        },
-        {
-            "name": "Jardin de Balata",
-            "id": null
-        },
-        {
-            "name": "Habitation Clément",
-            "id": null
-        },
-        {
-            "name": "Bibliothèque Schœlcher",
-            "id": null
-        },
-        {
-            "name": "Rocher du Diamant",
-            "id": null
-        },
-        {
-            "name": "Les Salines Beach",
-            "id": null
-        },
-        {
-            "name": "Château Dubuc",
-            "id": null
-        },
-        {
-            "name": "Presqu'île de la Caravelle",
-            "id": null
-        },
-        {
-            "name": "Ruins of the Saint-Pierre Theatre",
-            "id": null
-        },
-        {
-            "name": "Mémorial Cap 110",
-            "id": null
-        }
-    ],
-    "NC": [
-        {
-            "name": "Lagoons of New Caledonia",
-            "id": null
-        },
-        {
-            "name": "Tjibaou Cultural Centre",
-            "id": null
-        },
-        {
-            "name": "Île des Pins",
-            "id": null
-        },
-        {
-            "name": "Piscine naturelle d'Oro",
-            "id": null
-        },
-        {
-            "name": "Cœur de Voh",
-            "id": null
-        },
-        {
-            "name": "Amédée Lighthouse",
-            "id": null
-        },
-        {
-            "name": "Parc provincial de la Rivière Bleue",
-            "id": null
-        },
-        {
-            "name": "Anse Vata",
-            "id": null
-        },
-        {
-            "name": "Ouvéa",
-            "id": null
-        },
-        {
-            "name": "Saint Joseph Cathedral, Nouméa",
-            "id": null
-        }
-    ],
-    "PF": [
-        {
-            "name": "Mount Otemanu",
-            "id": null
-        },
-        {
-            "name": "Taputapuātea marae",
-            "id": null
-        },
-        {
-            "name": "Papeete Market",
-            "id": null
-        },
-        {
-            "name": "Cathedral of Our Lady of the Immaculate Conception, Papeete",
-            "id": null
-        },
-        {
-            "name": "Teahupoʻo",
-            "id": null
-        },
-        {
-            "name": "Moorea",
-            "id": null
-        },
-        {
-            "name": "Belvedere Lookout, Moorea",
-            "id": null
-        },
-        {
-            "name": "Rangiroa",
-            "id": null
-        },
-        {
-            "name": "Fautaua Waterfall",
-            "id": null
-        },
-        {
-            "name": "Paul Gauguin Museum",
-            "id": null
-        }
-    ],
-    "PM": [
-        {
-            "name": "Île aux Marins",
-            "id": null
-        },
-        {
-            "name": "Pointe aux Canons Lighthouse",
-            "id": null
-        },
-        {
-            "name": "Saint-Pierre Cathedral, Saint-Pierre and Miquelon",
-            "id": null
-        },
-        {
-            "name": "Musée de l'Arche",
-            "id": null
-        },
-        {
-            "name": "Musée Héritage, Saint-Pierre",
-            "id": null
-        },
-        {
-            "name": "Grand Barachois",
-            "id": null
-        },
-        {
-            "name": "Isthmus of Langlade",
-            "id": null
-        },
-        {
-            "name": "Cap de Miquelon",
-            "id": null
-        },
-        {
-            "name": "Grand Colombier",
-            "id": null
-        }
-    ],
-    "RE": [
-        {
-            "name": "Piton de la Fournaise",
-            "id": null
-        },
-        {
-            "name": "Piton des Neiges",
-            "id": null
-        },
-        {
-            "name": "Cirque de Mafate",
-            "id": null
-        },
-        {
-            "name": "Cirque de Cilaos",
-            "id": null
-        },
-        {
-            "name": "Cirque de Salazie",
-            "id": null
-        },
-        {
-            "name": "Cascade du Voile de la Mariée",
-            "id": null
-        },
-        {
-            "name": "Réunion National Park",
-            "id": null
-        },
-        {
-            "name": "Maïdo",
-            "id": null
-        },
-        {
-            "name": "Plage de l'Hermitage",
-            "id": null
-        },
-        {
-            "name": "Anse des Cascades",
-            "id": null
-        }
-    ],
-    "SJ": [
-        {
-            "name": "Svalbard Global Seed Vault",
-            "id": null
-        },
-        {
-            "name": "Longyearbyen",
-            "id": null
-        },
-        {
-            "name": "Svalbard Museum",
-            "id": null
-        },
-        {
-            "name": "Pyramiden",
-            "id": null
-        },
-        {
-            "name": "Barentsburg",
-            "id": null
-        },
-        {
-            "name": "Ny-Ålesund",
-            "id": null
-        },
-        {
-            "name": "Magdalenefjorden",
-            "id": null
-        },
-        {
-            "name": "Svalbard Church",
-            "id": null
-        },
-        {
-            "name": "Nordenskiöld Glacier",
-            "id": null
-        }
-    ],
-    "TF": [
-        {
-            "name": "Kerguelen Islands",
-            "id": null
-        },
-        {
-            "name": "Port-aux-Français",
-            "id": null
-        },
-        {
-            "name": "Mont Ross",
-            "id": null
-        },
-        {
-            "name": "Cook Ice Cap",
-            "id": null
-        },
-        {
-            "name": "Crozet Islands",
-            "id": null
-        },
-        {
-            "name": "Île Amsterdam",
-            "id": null
-        },
-        {
-            "name": "Île Saint-Paul",
-            "id": null
-        },
-        {
-            "name": "Europa Island",
-            "id": null
-        },
-        {
-            "name": "Tromelin Island",
-            "id": null
-        },
-        {
-            "name": "Dumont d'Urville Station",
-            "id": null
-        }
-    ],
-    "VG": [
-        {
-            "name": "The Baths",
-            "id": null
-        },
-        {
-            "name": "Sage Mountain National Park",
-            "id": null
-        },
-        {
-            "name": "RMS Rhone",
-            "id": null
-        },
-        {
-            "name": "Anegada",
-            "id": null
-        },
-        {
-            "name": "Jost Van Dyke",
-            "id": null
-        },
-        {
-            "name": "White Bay, Jost Van Dyke",
-            "id": null
-        },
-        {
-            "name": "Cane Garden Bay",
-            "id": null
-        },
-        {
-            "name": "Old Government House Museum, Tortola",
-            "id": null
-        },
-        {
-            "name": "Virgin Gorda",
-            "id": null
-        },
-        {
-            "name": "Norman Island",
-            "id": null
-        }
-    ],
-    "VI": [
-        {
-            "name": "Virgin Islands National Park",
-            "id": null
-        },
-        {
-            "name": "Trunk Bay",
-            "id": null
-        },
-        {
-            "name": "Magens Bay",
-            "id": null
-        },
-        {
-            "name": "Fort Christian",
-            "id": null
-        },
-        {
-            "name": "Buck Island Reef National Monument",
-            "id": null
-        },
-        {
-            "name": "Christiansted National Historic Site",
-            "id": null
-        },
-        {
-            "name": "Fort Frederik",
-            "id": null
-        },
-        {
-            "name": "Blackbeard's Castle",
-            "id": null
-        },
-        {
-            "name": "99 Steps",
-            "id": null
-        },
-        {
-            "name": "Annaberg Sugar Plantation",
-            "id": null
-        }
-    ],
-    "WF": [
-        {
-            "name": "Talietumu",
-            "id": null
-        },
-        {
-            "name": "Tonga Toto",
-            "id": null
-        },
-        {
-            "name": "Lake Lalolalo",
-            "id": null
-        },
-        {
-            "name": "Matāʻutu Cathedral",
-            "id": null
-        },
-        {
-            "name": "Royal Palace of Uvea",
-            "id": null
-        },
-        {
-            "name": "Pierre Chanel Basilica, Poi",
-            "id": null
-        },
-        {
-            "name": "Alofi (Wallis and Futuna)",
-            "id": null
-        },
-        {
-            "name": "Mont Lulu Fakahega",
-            "id": null
-        },
-        {
-            "name": "Lake Lanutavake",
-            "id": null
-        }
-    ],
-    "YT": [
-        {
-            "name": "Mont Choungui",
-            "id": null
-        },
-        {
-            "name": "Lagon de Mayotte",
-            "id": null
-        },
-        {
-            "name": "Lac Dziani",
-            "id": null
-        },
-        {
-            "name": "Îlot de Sable Blanc",
-            "id": null
-        },
-        {
-            "name": "Plage de N'Gouja",
-            "id": null
-        },
-        {
-            "name": "Mosquée de Tsingoni",
-            "id": null
-        },
-        {
-            "name": "Mont Bénara",
-            "id": null
-        },
-        {
-            "name": "Îlot Mbouzi",
-            "id": null
-        },
-        {
-            "name": "Rocher de Dzaoudzi",
-            "id": null
-        },
-        {
-            "name": "Pointe de Saziley",
-            "id": null
-        }
-    ]
-}
-
 const sites = { // Tous les sites proposés (il en manque peut être 10)
+    
+  "AX": [
+    { "name": "Kastelholm Castle", "id": "Q1735335" },
+    { "name": "Åland Maritime Museum", "id": "Q4357413" },
+    { "name": "Kobba Klintar", "id": "Q10546852" },
+  ],
+  "UM-DQ": [
+    { "name": "Jarvis Island National Wildlife Refuge", "id": "Q62218" },
+  ],
+  "UM-FQ": [
+    { "name": "Baker Island Light", "id": "Q4849167" },
+  ],
+  "UM-HQ": [
+    { "name": "Earhart Light", "id": "Q20932641" },
+  ],
+  "UM-JQ": [
+    { "name": "Atoll de Johnston", "id": "Q131008" },
+  ],
+  "UM-MQ": [
+    { "name": "Midway Atoll National Wildlife Refuge", "id": "Q15728213" },
+    { "name": "Battle of Midway Memorial", "id": "Q15728213" },
+    { "name": "Sand Island (Midway Atoll)", "id": "Q32015300" },
+  ],
+  "UM-WQ": [
+    { "name": "Wake Island Airfield", "id": "Q7960943" },
+    { "name": "Peale Island", "id": "Q31985226" },
+  ],
+  "JU": [
+    { "name": "Juan de Nova Island", "id": "Q237034" },
+  ],
+  "BQSA": [
+    { "name": "Mount Scenery", "id": "Q1301834" },
+    { "name": "The Bottom", "id": "Q23712666" },
+    { "name": "Windwardside", "id": "Q2983401" },
+  ],
+  "BQSE": [
+    { "name": "Fort Oranje (Sint Eustatius)", "id": "Q2730234" },
+    { "name": "Oranjestad (Sint Eustatius)", "id": "Q217610" },
+    { "name": "Zeelandia Beach", "id": "Q4692149" },
+    { "name": "Simon Doncker House", "id": "Q54139319" }
+  ],
+  "BQBO": [
+    { "name": "Washington Slagbaai National Park", "id": "Q2474005" },
+    { "name": "Goto Meer", "id": "Q21808764" },
+  ],
+
   "AD": [
     { "name": "Madriu-Perafita-Claror Valley", "id": "Q332800" },
     { "name": "Casa de la Vall", "id": null },
@@ -59872,623 +64408,156 @@ const sites = { // Tous les sites proposés (il en manque peut être 10)
   { "name": "Balancing Rocks, Epworth", "id": null },
   { "name": "Nyanga National Park", "id": null }
 ],
+
+  "NF": [
+    { "name": "Kingston and Arthurs Vale Historic Area", "id": "Q1580915" },
+    { "name": "Norfolk Island National Park", "id": "Q746460" },
+  ],
+  "NG": [
+    { "name": "Zuma Rock", "id": "Q229624" },
+    { "name": "Sukur Cultural Landscape", "id": "Q1123956" },
+    { "name": "Aso Rock", "id": "Q3500817" },
+    { "name": "Obudu Mountain Resort", "id": "Q7075581" },
+    { "name": "National Arts Theatre", "id": "Q6970499" }
+  ],
+  "NI": [
+    { "name": "Masaya Volcano", "id": "Q613424" },
+    { "name": "Granada", "id": "Q205648" },
+    { "name": "León Cathedral", "id": "Q48605" },
+    { "name": "Cerro Negro", "id": "Q607078" },
+    { "name": "Apoyo Lagoon", "id": "Q3000329" },
+    { "name": "Somoto Canyon", "id": "Q1052130" },
+  ],
+  "NL": [
+    { "name": "Grachtengordel", "id": "Q478707" },
+    { "name": "Kinderdijk Windmills", "id": "Q12012965" },
+    { "name": "Rijksmuseum", "id": "Q190804" },
+    { "name": "Giethoorn", "id": "Q1025664" },
+    { "name": "De Haar Castle", "id": "Q1735318" },
+  ],
+  "NO": [
+    { "name": "Geirangerfjord", "id": "Q193989" },
+    { "name": "Preikestolen", "id": "Q746223" },
+    { "name": "Bryggen", "id": "Q153430" },
+    { "name": "Trolltunga", "id": "Q1512593" },
+    { "name": "North Cape", "id": "Q4069" },
+    { "name": "Vigeland Sculpture Park", "id": "Q23868716" },
+  ],
+  "NP": [
+    { "name": "Mount Everest", "id": "Q513" },
+    { "name": "Swayambhunath", "id": "Q12946982" },
+    { "name": "Bhaktapur Durbar Square", "id": "Q4900869" },
+    { "name": "Kathmandu Durbar Square", "id": "Q6122177" },
+    { "name": "Annapurna Massif", "id": "Q159621" },
+    { "name": "Chitwan National Park", "id": "Q1075023" },
+    { "name": "Phewa Lake", "id": "Q1192928" }
+  ],
+  "NR": [
+    { "name": "Anibare Harbour", "id": "Q1413788" },
+    { "name": "geography of Nauru", "id": "Q2387745" }
+  ],
+  "NU": [
+    { "name": "Alofi", "id": "Q30966" },
+    { "name": "Limu Pools", "id": "Q136704256" },
+    { "name": "Togo Chasm", "id": "Q132430336" },
+    { "name": "Matapa Chasm", "id": "Q59456057" },
+  ],
+  "NZ": [
+    { "name": "Milford Sound", "id": "Q187197" },
+    { "name": "Aoraki / Mount Cook", "id": "Q5059" },
+    { "name": "Hobbiton Movie Set", "id": "Q18924400" },
+    { "name": "Tongariro National Park", "id": "Q202845" },
+    { "name": "Bay of Islands", "id": "Q812091" },
+    { "name": "Franz Josef Glacier", "id": "Q673150" },
+    { "name": "Lake Tekapo", "id": "Q1194022" },
+  ],
+  "OM": [
+    { "name": "Sultan Qaboos Grand Mosque", "id": "Q29514082" },
+    { "name": "Wadi Shab", "id": "Q3409476" },
+    { "name": "Nizwa Fort", "id": "Q7042280" },
+    { "name": "Bahla Fort", "id": "Q1408909" },
+    { "name": "Jebel Shams", "id": "Q1261915" },
+  ],
+  
+  "AX": [
+    { "name": "Kastelholm Castle", "id": "Q1735335" },
+    { "name": "Åland Maritime Museum", "id": "Q4357413" },
+    { "name": "Kobba Klintar", "id": "Q10546852" },
+  ],
+  "UM-DQ": [
+    { "name": "Jarvis Island National Wildlife Refuge", "id": "Q62218" },
+  ],
+  "UM-FQ": [
+    { "name": "Baker Island Light", "id": "Q4849167" },
+  ],
+  "UM-HQ": [
+    { "name": "Earhart Light", "id": "Q20932641" },
+  ],
+  "UM-JQ": [
+    { "name": "Atoll de Johnston", "id": "Q131008" },
+  ],
+  "UM-MQ": [
+    { "name": "Midway Atoll National Wildlife Refuge", "id": "Q15728213" },
+    { "name": "Battle of Midway Memorial", "id": "Q15728213" },
+    { "name": "Sand Island (Midway Atoll)", "id": "Q32015300" },
+  ],
+  "UM-WQ": [
+    { "name": "Wake Island Airfield", "id": "Q7960943" },
+    { "name": "Peale Island", "id": "Q31985226" },
+  ],
+  "JU": [
+    { "name": "Juan de Nova Island", "id": "Q237034" },
+  ],
+  "BQSA": [
+    { "name": "Mount Scenery", "id": "Q1301834" },
+    { "name": "The Bottom", "id": "Q23712666" },
+    { "name": "Windwardside", "id": "Q2983401" },
+  ],
+  "BQSE": [
+    { "name": "Fort Oranje (Sint Eustatius)", "id": "Q2730234" },
+    { "name": "Oranjestad (Sint Eustatius)", "id": "Q217610" },
+    { "name": "Zeelandia Beach", "id": "Q4692149" },
+    { "name": "Simon Doncker House", "id": "Q54139319" }
+  ],
+  "BQBO": [
+    { "name": "Washington Slagbaai National Park", "id": "Q2474005" },
+    { "name": "Goto Meer", "id": "Q21808764" },
+  ]
+
+
 }
 
-const aremplacer = { // Avant ces id n'avaient pas de photos, mettre ça dans D_mon..
-    "BL": [
-        {
-            "id": "Q34112",
-            "name": {
-                "fr": "Gustavia",
-                "en": "Gustavia"
-            },
-            "city": {
-                "id": "Q25362",
-                "fr": "Saint-Barthélemy",
-                "en": "Saint Barthélemy"
-            },
-            "country": {
-                "id": "Q25362",
-                "iso": "BL",
-                "fr": "Saint-Barthélemy",
-                "en": "Saint Barthélemy"
-            },
-            "coordinates": {
-                "latitude": 17.898611111111,
-                "longitude": -62.849166666667
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Gustavia_Harbor%2C_Saint-Barth%C3%A9lemy.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "file": "Gustavia Harbor, Saint-Barthélemy.jpg",
-            "author": "Originally uploaded at en.wikipedia by en:User:Evaneggers as en:Image:Stb.jpg",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "fame": 69
-        },
-        {
-            "id": "Q113623018",
-            "name": {
-                "fr": "Anse de Grande Saline",
-                "en": "Anse de Grande Saline"
-            },
-            "city": {
-                "id": "Q25362",
-                "fr": "Saint-Barthélemy",
-                "en": "Saint Barthélemy"
-            },
-            "country": {
-                "id": "Q25362",
-                "iso": "BL",
-                "fr": "Saint-Barthélemy",
-                "en": "Saint Barthélemy"
-            },
-            "coordinates": {
-                "latitude": 17.888333,
-                "longitude": -62.821528
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Beach_looking_west_at_the_Anse_de_Grande_Saline_on_St._Barthelemy%2C_French_West_Indies_-_panoramio.jpg/1280px-Beach_looking_west_at_the_Anse_de_Grande_Saline_on_St._Barthelemy%2C_French_West_Indies_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Beach looking west at the Anse de Grande Saline on St. Barthelemy, French West Indies - panoramio.jpg",
-            "author": "David Broad",
-            "license": "CC BY 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-            "fame": 2
-        }
-    ],
-    "CK": [
-        {
-            "id": "Q223379",
-            "name": {
-                "fr": "Aitutaki",
-                "en": "Aitutaki"
-            },
-            "city": null,
-            "country": {
-                "id": "Q26988",
-                "iso": "CK",
-                "fr": "Îles Cook",
-                "en": "Cook Islands"
-            },
-            "coordinates": {
-                "latitude": -18.85,
-                "longitude": -159.79
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Aitutaki-Motu_Tapuaetai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "file": "Aitutaki-Motu Tapuaetai.jpg",
-            "author": "No machine-readable author provided. Emeseee assumed (based on copyright claims).",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "fame": 39
-        },
-        {
-            "id": "Q3321538",
-            "name": {
-                "fr": "Église chrétienne des îles Cook",
-                "en": "Cook Islands Christian Church"
-            },
-            "city": null,
-            "country": {
-                "id": "Q26988",
-                "iso": "CK",
-                "fr": "Îles Cook",
-                "en": "Cook Islands"
-            },
-            "coordinates": {
-                "latitude": null,
-                "longitude": null
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/CICC_Ekalesia_Avarua_01.jpg/1280px-CICC_Ekalesia_Avarua_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "CICC Ekalesia Avarua 01.jpg",
-            "author": "Tom Ackroyd",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 9
-        }
-    ],
-    "CY": [
-        {
-            "id": "Q1785592",
-            "name": {
-                "fr": "Kourion",
-                "en": "Kourion"
-            },
-            "city": {
-                "id": "Q5383505",
-                "fr": "Episkopí",
-                "en": "Episkopi"
-            },
-            "country": {
-                "id": "Q644636",
-                "iso": "CY",
-                "fr": "Chypre",
-                "en": "Cyprus"
-            },
-            "coordinates": {
-                "latitude": 34.6642,
-                "longitude": 32.8877
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Episkopi_01-2017_img11_Kourion.jpg/1280px-Episkopi_01-2017_img11_Kourion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Episkopi 01-2017 img11 Kourion.jpg",
-            "author": "A.Savin",
-            "license": "FAL",
-            "licenseUrl": "http://artlibre.org/licence/lal/en",
-            "fame": 32
-        },
-        {
-            "id": "Q2061165",
-            "name": {
-                "fr": "Pétra tou Romioú",
-                "en": "Petra tou Romiou"
-            },
-            "city": {
-                "id": "Q930838",
-                "fr": "Koúklia",
-                "en": "Kouklia"
-            },
-            "country": {
-                "id": "Q644636",
-                "iso": "CY",
-                "fr": "Chypre",
-                "en": "Cyprus"
-            },
-            "coordinates": {
-                "latitude": 34.663517,
-                "longitude": 32.62697
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Roca_de_Afrodita%2C_Chipre%2C_2021-12-10%2C_DD_65.jpg/1280px-Roca_de_Afrodita%2C_Chipre%2C_2021-12-10%2C_DD_65.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Roca de Afrodita, Chipre, 2021-12-10, DD 65.jpg",
-            "author": "Diego Delso",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 24
-        },
-        {
-            "id": "Q1584818",
-            "name": {
-                "fr": "château de Colosse",
-                "en": "Kolossi Castle"
-            },
-            "city": {
-                "id": "Q3353547",
-                "fr": "Kolóssi",
-                "en": "Kolossi"
-            },
-            "country": {
-                "id": "Q644636",
-                "iso": "CY",
-                "fr": "Chypre",
-                "en": "Cyprus"
-            },
-            "coordinates": {
-                "latitude": 34.665,
-                "longitude": 32.93416667
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Kolossi_Castle_01.JPG/1280px-Kolossi_Castle_01.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Kolossi Castle 01.JPG",
-            "author": "Vegard Ottervig",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "fame": 21
-        },
-        {
-            "id": "Q1796353",
-            "name": {
-                "fr": "tombeaux des Rois",
-                "en": "Tombs of the Kings"
-            },
-            "city": {
-                "id": "Q56046916",
-                "fr": "municipalité de Paphos",
-                "en": "Paphos Municipality"
-            },
-            "country": {
-                "id": "Q644636",
-                "iso": "CY",
-                "fr": "Chypre",
-                "en": "Cyprus"
-            },
-            "coordinates": {
-                "latitude": 34.77611111,
-                "longitude": 32.40472222
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Tombs_of_the_Kings_%28Paphos%29.jpg/1280px-Tombs_of_the_Kings_%28Paphos%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Tombs of the Kings (Paphos).jpg",
-            "author": "Mgiganteus1 at en.wikipedia",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "fame": 20
-        },
-        {
-            "id": "Q12065255",
-            "name": {
-                "fr": "Parc archéologique de Paphos",
-                "en": "Paphos Archaeological Park"
-            },
-            "city": {
-                "id": "Q180918",
-                "fr": "Paphos",
-                "en": "Paphos"
-            },
-            "country": {
-                "id": "Q644636",
-                "iso": "CY",
-                "fr": "Chypre",
-                "en": "Cyprus"
-            },
-            "coordinates": {
-                "latitude": 34.75566667,
-                "longitude": 32.40416667
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Archaeological_Park_Paphos_Cyprus_08.jpg/1280px-Archaeological_Park_Paphos_Cyprus_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Archaeological Park Paphos Cyprus 08.jpg",
-            "author": "Nikodem Nijaki",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "fame": 14
-        },
-        {
-            "id": "Q7041122",
-            "name": {
-                "fr": "Nissi beach",
-                "en": "Nissi beach"
-            },
-            "city": {
-                "id": "Q393593",
-                "fr": "Ayía Nápa",
-                "en": "Agia Napa"
-            },
-            "country": {
-                "id": "Q644636",
-                "iso": "CY",
-                "fr": "Chypre",
-                "en": "Cyprus"
-            },
-            "coordinates": {
-                "latitude": 34.988,
-                "longitude": 33.969
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Nissi-Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "file": "Nissi-Beach.jpg",
-            "author": "Urieli100",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 9
-        }
-    ],
-    "GD": [
-        {
-            "id": "Q12875401",
-            "name": {
-                "fr": "Grand Anse",
-                "en": "Grand Anse"
-            },
-            "city": {
-                "id": "Q576651",
-                "fr": "paroisse de Saint George",
-                "en": "Saint George Parish"
-            },
-            "country": {
-                "id": "Q769",
-                "iso": "GD",
-                "fr": "Grenade",
-                "en": "Grenada"
-            },
-            "coordinates": {
-                "latitude": 12.027222222222,
-                "longitude": -61.759722222222
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Grand_Anse_Beach_Grenada.jpg/1280px-Grand_Anse_Beach_Grenada.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Grand Anse Beach Grenada.jpg",
-            "author": "Varun Kapoor / Vkap",
-            "license": "CC BY 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-            "fame": 6
-        },
-        {
-            "id": "Q6896200",
-            "name": {
-                "fr": "Molinere Underwater Sculpture Park",
-                "en": "Molinere Underwater Sculpture Park"
-            },
-            "city": null,
-            "country": {
-                "id": "Q769",
-                "iso": "GD",
-                "fr": "Grenade",
-                "en": "Grenada"
-            },
-            "coordinates": {
-                "latitude": 12.0831,
-                "longitude": -61.7631
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Underwater_sculptures_at_Molinere_Underwater_Sculpture_Park.jpg/1280px-Underwater_sculptures_at_Molinere_Underwater_Sculpture_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Underwater sculptures at Molinere Underwater Sculpture Park.jpg",
-            "author": "Boris Kasimov",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "fame": 4
-        }
-    ],
-    "GF": [
-        {
-            "id": "Q308987",
-            "name": {
-                "fr": "centre spatial guyanais",
-                "en": "Guiana Space Centre"
-            },
-            "city": {
-                "id": "Q273312",
-                "fr": "Kourou",
-                "en": "Kourou"
-            },
-            "country": {
-                "id": "Q3769",
-                "iso": "GF",
-                "fr": "Guyane",
-                "en": "French Guiana"
-            },
-            "coordinates": {
-                "latitude": 5.2372222222222,
-                "longitude": -52.760555555556
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Ariane_5ECA_on_its_launch_platform_on_its_way_to_lauch_pad_ELA-3.jpg/1280px-Ariane_5ECA_on_its_launch_platform_on_its_way_to_lauch_pad_ELA-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Ariane 5ECA on its launch platform on its way to lauch pad ELA-3.jpg",
-            "author": "elisabetta_monaco from Munich, Germany",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "fame": 52
-        },
-        {
-            "id": "Q220385",
-            "name": {
-                "fr": "île du Diable",
-                "en": "Devil's Island"
-            },
-            "city": {
-                "id": "Q44401",
-                "fr": "Cayenne",
-                "en": "Cayenne"
-            },
-            "country": {
-                "id": "Q3769",
-                "iso": "GF",
-                "fr": "Guyane",
-                "en": "French Guiana"
-            },
-            "coordinates": {
-                "latitude": 5.29389,
-                "longitude": -52.5833
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%C3%8Ele_du_Diable_depuis_l%27%C3%AEle_Royale.jpg/1280px-%C3%8Ele_du_Diable_depuis_l%27%C3%AEle_Royale.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Île du Diable depuis l'île Royale.jpg",
-            "author": "Gfievet",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 44
-        },
-        {
-            "id": "Q30739005",
-            "name": {
-                "fr": "fort Cépérou",
-                "en": "Fort Cépérou"
-            },
-            "city": {
-                "id": "Q44401",
-                "fr": "Cayenne",
-                "en": "Cayenne"
-            },
-            "country": {
-                "id": "Q3769",
-                "iso": "GF",
-                "fr": "Guyane",
-                "en": "French Guiana"
-            },
-            "coordinates": {
-                "latitude": 4.93763,
-                "longitude": -52.33663
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Cayenne_Fort_C%C3%A9p%C3%A9rou_2013.jpg/1280px-Cayenne_Fort_C%C3%A9p%C3%A9rou_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Cayenne Fort Cépérou 2013.jpg",
-            "author": "Cayambe",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "fame": 4
-        },
-        {
-            "id": "Q3390536",
-            "name": {
-                "fr": "place des Palmistes",
-                "en": "place des Palmistes"
-            },
-            "city": {
-                "id": "Q44401",
-                "fr": "Cayenne",
-                "en": "Cayenne"
-            },
-            "country": {
-                "id": "Q3769",
-                "iso": "GF",
-                "fr": "Guyane",
-                "en": "French Guiana"
-            },
-            "coordinates": {
-                "latitude": 4.9396376,
-                "longitude": -52.3338032
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Cayenne_Place_des_palmistes.jpg/1280px-Cayenne_Place_des_palmistes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Cayenne Place des palmistes.jpg",
-            "author": "Cayambe",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 3
-        },
-        {
-            "id": "Q60342142",
-            "name": {
-                "fr": "chapelle du camp de la Transportation de Saint-Laurent-du-Maroni",
-                "en": "Chapelle du camp de la Transportation de Saint-Laurent-du-Maroni"
-            },
-            "city": {
-                "id": "Q319959",
-                "fr": "Saint-Laurent-du-Maroni",
-                "en": "Saint-Laurent-du-Maroni"
-            },
-            "country": {
-                "id": "Q3769",
-                "iso": "GF",
-                "fr": "Guyane",
-                "en": "French Guiana"
-            },
-            "coordinates": {
-                "latitude": 5.504338,
-                "longitude": -54.03084
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Bagne_de_Saint-Laurent-du-Maroni_11.JPG/1280px-Bagne_de_Saint-Laurent-du-Maroni_11.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Bagne de Saint-Laurent-du-Maroni 11.JPG",
-            "author": "Chatsam",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "fame": 1
-        }
-    ],
-    "GI": [
-        {
-            "id": "Q690347",
-            "name": {
-                "fr": "rocher de Gibraltar",
-                "en": "Rock of Gibraltar"
-            },
-            "city": {
-                "id": "Q1410",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "country": {
-                "id": "Q1410",
-                "iso": "GI",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "coordinates": {
-                "latitude": 36.125833333333,
-                "longitude": -5.3430555555556
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Rock_of_Gibraltar_northwest.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "file": "Rock of Gibraltar northwest.jpg",
-            "author": "Gibnews.net",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "fame": 46
-        },
-        {
-            "id": "Q583655",
-            "name": {
-                "fr": "grotte de Saint Michel",
-                "en": "St. Michael's Cave"
-            },
-            "city": {
-                "id": "Q1410",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "country": {
-                "id": "Q1410",
-                "iso": "GI",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "coordinates": {
-                "latitude": 36.125889,
-                "longitude": -5.346458
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/St_Michaels_cave2.jpg/1280px-St_Michaels_cave2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "St Michaels cave2.jpg",
-            "author": "Joonas Lyytinen",
-            "license": "CC BY 2.5",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
-            "fame": 19
-        },
-        {
-            "id": "Q195913",
-            "name": {
-                "fr": "téléphérique de Gibraltar",
-                "en": "Gibraltar Cable Car"
-            },
-            "city": {
-                "id": "Q1410",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "country": {
-                "id": "Q1410",
-                "iso": "GI",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "coordinates": {
-                "latitude": 36.13281389,
-                "longitude": -5.35205278
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Rock_of_Gibraltar_cablecar.jpg/1280px-Rock_of_Gibraltar_cablecar.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Rock of Gibraltar cablecar.jpg",
-            "author": "David Morris",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "fame": 14
-        },
-        {
-            "id": "Q3739779",
-            "name": {
-                "fr": "Europa Point Lighthouse",
-                "en": "Europa Point Lighthouse"
-            },
-            "city": {
-                "id": "Q1410",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "country": {
-                "id": "Q1410",
-                "iso": "GI",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "coordinates": {
-                "latitude": 36.109634,
-                "longitude": -5.344798
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Europa_Point_Lighthouse_and_cottages.jpg/1280px-Europa_Point_Lighthouse_and_cottages.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Europa Point Lighthouse and cottages.jpg",
-            "author": "Allie Caulfield",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "fame": 10
-        },
-        {
-            "id": "Q1042622",
-            "name": {
-                "fr": "Main Street",
-                "en": "Main Street"
-            },
-            "city": {
-                "id": "Q1410",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "country": {
-                "id": "Q1410",
-                "iso": "GI",
-                "fr": "Gibraltar",
-                "en": "Gibraltar"
-            },
-            "coordinates": {
-                "latitude": 36.139680555556,
-                "longitude": -5.3537944444444
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Main_Street_Gibraltar.JPG/1280px-Main_Street_Gibraltar.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Main Street Gibraltar.JPG",
-            "author": "RedCoat10 at English Wikipedia",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "fame": 9
-        }
-    ]
-}
+const ephe = [ // clefs manquantes à sites
+    "AT",
+    "AU",
+    "AW",
+    "AX",
+    "AZ",
+    "BA",
+    "BB",
+    "BD",
+    "BE",
+    "BF",
+    "CH",
+    "NF",
+    "NG",
+    "NI",
+    "NL",
+    "NO",
+    "NP",
+    "NR",
+    "NU",
+    "NZ",
+    "OM",
+    "UM-DQ",
+    "UM-FQ",
+    "UM-HQ",
+    "UM-JQ",
+    "UM-MQ",
+    "UM-WQ",
+    "JU",
+    "BQSA",
+    "BQSE",
+    "BQBO"
+]
+
