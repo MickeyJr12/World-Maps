@@ -2594,7 +2594,7 @@
             width  : clamp(3.8rem,3.8rem,3.8rem);
             min-width : 3.8rem;
             svg {
-              height : 0.96rem;
+              height : 0.86rem;
             }
           }
         }
@@ -67345,6 +67345,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const crossPic = getId('crossPic')
       const cachePic = getId('cachePic')
       const carouselPic = cadrePic.querySelector('.carousel')
+      const namePic = getId('namePic')
+      const cityPic = getId('cityPic')
       const wrappermBoxImg = getId('wrappermBoxImg')
       const LArrowPic = getId('LArrowPic')
       const RArrowPic = getId('RArrowPic')
@@ -67439,6 +67441,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const i = mCadresImgPic.indexOf(el.querySelector('.mCadreImg'))
             LArrowPic.classList.toggle('active',i !== 0)
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
+
+            const name = D_pic[currentCountry.id][i].name[currentIlg]
+            const city = D_pic[currentCountry.id][i].city[currentIlg]
+
+            namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
+            cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : "";
+
             
             majDots(index)
             const crtImg = query('.mCadreImg.active')
@@ -67597,16 +67606,21 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             cadreImg.scrollIntoView({ behavior: "smooth", block: "center" });
             centrerScrollEl(wrappermBoxImg, mBoxImg)
             majDots([...queryAll('.mCadreImg')].indexOf(query('.mCadreImg.active')))
-
-
-            const i = mCadresImgPic.indexOf(mBoxImg)
+            const i = mCadresImgPic.indexOf(mBoxImg.querySelector('.mCadreImg'))
             LArrowPic.classList.toggle('active',i !== 0)
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
-            
+            const name = D_pic[id][i].name[currentIlg]
+            const city = D_pic[id][i].city[currentIlg]
+
+            namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
+            cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : "";
+
+
           })
         })
         
         mCadresImgPic = [...queryAll('.mCadreImg')]
+        if(mCadresImgPic.length>0)mCadresImgPic[0].parentElement.click()
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
 
         //** Créer les dots
@@ -67627,10 +67641,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         }
 
         dotsWrap.append(dotsTrack)
-
         indexActif = 0                   // le carrousel est remis à zéro (scrollLeft = 0)
         majDots(0)
-
 
       }
 
