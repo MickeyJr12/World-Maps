@@ -67294,6 +67294,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const cachePic = getId('cachePic')
       const carouselPic = cadrePic.querySelector('.carousel')
       const wrappermBoxImg = getId('wrappermBoxImg')
+      const LArrowPic = getId('LArrowPic')
+      const RArrowPic = getId('RArrowPic')
       let scrollAuto = false; // Ne pas déclancher le listener de scroll de carouselPic si on scrollIntoView
 
       openPic.addEventListener('click',()=>{
@@ -67309,29 +67311,53 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       })
       
 
-      carouselPic.addEventListener("scroll", () => {
-        if(scrollAuto)return
-        const dotsPic = cadrePic.querySelectorAll('dotsPic')
+      // carouselPic.addEventListener("scroll", () => {
+      //   if(scrollAuto)return
+      //   const dotsPic = cadrePic.querySelectorAll('.dotsPic')
 
-        const index = Math.round(
-          carouselPic.scrollLeft / carouselPic.clientWidth,
-        );
-        cadrePic.querySelectorAll('.mBoxImg').forEach((el,i)=>{
-          if(i===index && !el.classList.contains('active')){
-            if(!visibleScroll(el,wrappermBoxImg))centrerScrollEl(wrappermBoxImg,el)
-            const crtImg = query('.mCadreImg.active')
-            if(crtImg)crtImg.classList.remove('active')
-            el.querySelector('.mCadreImg').classList.add('active')
-
-
-            const crtLoader = query('.loaderPic.active')
-            if(crtLoader)crtLoader.classList.remove('active')
-            if(!el.querySelector('.mLoadedPic'))el.querySelector('.loaderPic').classList.add('active')
+      //   const index = Math.round(
+      //     carouselPic.scrollLeft / carouselPic.clientWidth,
+      //   );
+      //   cadrePic.querySelectorAll('.mBoxImg').forEach((el,i)=>{
+      //     if(i===index && !el.classList.contains('active')){
+      //       if(!visibleScroll(el,wrappermBoxImg))centrerScrollEl(wrappermBoxImg,el)
+      //       const crtImg = query('.mCadreImg.active')
+      //       if(crtImg)crtImg.classList.remove('active')
+      //       el.querySelector('.mCadreImg').classList.add('active')
 
 
-          }
-        })
-      });
+      //       const crtLoader = query('.loaderPic.active')
+      //       if(crtLoader)crtLoader.classList.remove('active')
+      //       if(!el.querySelector('.mLoadedPic'))el.querySelector('.loaderPic').classList.add('active')
+      //     }
+      //   })
+      // });
+      
+
+      let indexActif = -1
+
+carouselPic.addEventListener("scroll", () => {
+  if (scrollAuto) return
+
+  const slides = carouselPic.querySelectorAll(".slide")
+  if (slides.length < 2) return
+
+  const pas = slides[1].offsetLeft - slides[0].offsetLeft     // largeur + gap
+  const index = Math.round(carouselPic.scrollLeft / pas)
+  if (index === indexActif) return                            // rien n'a changé
+  indexActif = index
+
+  const el = cadrePic.querySelectorAll(".mBoxImg")[index]
+  if (!el) return
+
+  cadrePic.querySelector(".mCadreImg.active")?.classList.remove("active")
+  el.querySelector(".mCadreImg").classList.add("active")
+
+  cadrePic.querySelector(".loaderPic.active")?.classList.remove("active")
+  if (!el.querySelector(".mLoadedPic")) el.querySelector(".loaderPic")?.classList.add("active")
+
+  if (!visibleScroll(el, wrappermBoxImg)) centrerScrollEl(wrappermBoxImg, el)
+}, { passive: true })
 
       carouselPic.addEventListener("scrollend", () => {
         scrollAuto = false
