@@ -34220,7 +34220,7 @@ function mapsUrl(lat, lon) {
 
       function centrerScrollEl(conteneur, element) { // ramener un élément au centre avec un scroll smooth
         const gauche = element.offsetLeft - (conteneur.clientWidth - element.offsetWidth) / 2;
-        conteneur.scrollTo({ left: gauche, behavior: "smooth" });
+        conteneur.scrollTo({ left: gauche, behavior: scrollInstant ? "instant" : "smooth" });
       }
 
 
@@ -67849,11 +67849,7 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
           })
         })
 
-        resetScrollX(carouselPic)
-        wrappermBoxImg.scrollLeft = 0
-
-
-
+        // resetScrollX(carouselPic)
         mCadresImgPic = [...queryAll('.mCadreImg')]
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
         scrollInstant = true
