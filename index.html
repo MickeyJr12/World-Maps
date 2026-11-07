@@ -5010,7 +5010,7 @@
         background: rgba(12, 49, 233, 0.5);
         outline: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 50rem;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         transition: transform 0.2s ease;
       }
       #viewMore:active {
@@ -62241,9 +62241,9 @@ function mapsUrl(lat, lon) {
         reponseFound = false;
         L_reponse = [];
         desactiverCarte();
-        oneTimeMap && !isPremium
+        /* oneTimeMap && !isPremium
           ? (btnCarte.classList.add("lockP"), btnCartePm.classList.add("lockP"))
-          : "";
+          : ""; */
         //Fonction
         let paysDispos = Object.keys(L_q).filter(
           (id) =>
@@ -63409,8 +63409,8 @@ function mapsUrl(lat, lon) {
         score = 0;
         currentChronoQ = 0;
         oneTimeMap = false;
-        btnCarte.classList.remove("lockP");
-        btnCartePm.classList.remove("lockP");
+        // btnCarte.classList.remove("lockP");
+        // btnCartePm.classList.remove("lockP");
 
         startChronoQ(currentChronoQ);
         spnScore.textContent = score;
