@@ -21602,35 +21602,6 @@ const D_pic = {
                 "en": "Butaritari is an atoll in the Pacific Ocean island nation of Kiribati. The atoll is roughly four-sided. The south and southeast portion of the atoll comprises a nearly continuous islet. The atoll reef is continuous but almost without islets along the north side. Bikati and Bikatieta islets occupy a corner of the reef at the extreme northwest tip of the atoll. Small islets are found on reef sections between channels on the west side. The lagoon of Butaritari is deep and can accommodate large ships, though the entrance passages are relatively narrow. It is the most fertile of the Gilbert Islands, with relatively good soils (for an atoll) and high rainfall. Butaritari atoll has a land area of 13.49 km2 (5.21 sq mi) and a population of 3,224 as of 2015. During World War II, Butaritari was known by United States Armed Forces as Makin Atoll, and was the site of the Battle of Makin. Locally, Makin is the name of a separate but closest atoll, 3 kilometres (1.6 nmi; 1.9 mi) to the northeast of Butaritari, but close enough to be seen. These two atolls share a dialect of the Gilbertese language."
             }
         },
-        {
-            "id": "Q863815",
-            "name": {
-                "fr": "Aire protégée des îles Phœnix",
-                "en": "Phoenix Islands Protected Area"
-            },
-            "city": null,
-            "country": {
-                "id": "Q710",
-                "iso": "KI",
-                "fr": "Kiribati",
-                "en": "Kiribati"
-            },
-            "coordinates": {
-                "latitude": -3.64972222,
-                "longitude": -172.8575
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/3dPerspective_wSeamounts_NoRefs.jpg",
-            "file": "3dPerspective wSeamounts NoRefs.jpg",
-            "author": "Kerry Lagueux",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:3dPerspective_wSeamounts_NoRefs.jpg",
-            "fame": 23,
-            "description": {
-                "fr": "L’aire protégée des îles Phœnix (en anglais : Phoenix Islands Protected Area), située aux îles Phœnix et dans les eaux environnantes, aux Kiribati, est « la plus grande zone marine protégée au monde ». Créée en mars 2006 par le gouvernement du président Anote Tong, elle recouvre 408 250 km2, soit 12 % des eaux territoriales et du territoire du pays. Elle inclut huit îles ou atolls, ainsi que des récifs submergés, et les eaux environnantes. Interdite à toute exploitation des ressources, elle contient une diversité d'espèces marines, souvent surexploitées dans d'autres parties du monde ; elle  « conserve l'un des derniers écosystèmes intacts d'archipel corallien océanique de la planète ». Sa création s'inscrit dans la politique du président Tong d'encourager la communauté internationale à faire davantage pour protéger l'environnement ; il la décrit comme « une contribution significative à la communauté mondiale, dans l'espoir que d'autres agissent également ».\nLe site a été inscrit au patrimoine mondial de l'UNESCO en août 2010, devenant le premier site aux Kiribati à y être inscrit.\nEn novembre 2021, toutefois, le président Taneti Maamau annonce que son gouvernement compte proposer un amendement à la législation protégeant cette zone, afin d'ouvrir l'Aire protégée des îles Phœnix à la pêche commerciale pour des navires étrangers. Il explique que cela générera des revenus financiers utiles au pays. La protection de la zone est levée, au bénéfice notamment de navires de pêche chinois.",
-                "en": "The Phoenix Islands Protected Area (PIPA) is located in the Republic of Kiribati, an ocean nation in the central Pacific approximately midway between Australia and Hawaii. PIPA constitutes 11.34% of Kiribati's exclusive economic zone (EEZ), and with a size of 408,250 km2 (157,630 sq mi), it is one of the largest marine protected areas (MPA) and one of the largest protected areas of any type (land or sea) on Earth. The PIPA was also designated as the world's largest and deepest UNESCO World Heritage Site in 2010.\nThe PIPA conserves one of the world's largest intact oceanic coral archipelago ecosystems, includes 14 known underwater seamounts (presumed to be extinct volcanoes) and other deep-sea habitats. The area contains approximately 800 known species of fauna, including about 200 coral species, 500 fish species, 18 marine mammals and 44 bird species. In total it is equivalent to the size of the state of California in the US, though the total land area is only 25 km2 (9.7 sq mi). To the north of the PIPA is the U.S. administered Pacific Islands Heritage Marine National Monument that is currently the world's largest designated MPA.\n\n"
-            }
-        }
     ],
     "KM": [
         {
