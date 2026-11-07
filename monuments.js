@@ -26304,39 +26304,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q2519690",
-            "name": {
-                "fr": "parc national d'Andasibe-Mantadia",
-                "en": "Andasibe-Mantadia National Park"
-            },
-            "city": {
-                "id": "Q639418",
-                "fr": "province de Tamatave",
-                "en": "Toamasina Province"
-            },
-            "country": {
-                "id": "Q1019",
-                "iso": "MG",
-                "fr": "Madagascar",
-                "en": "Madagascar"
-            },
-            "coordinates": {
-                "latitude": -18.826666666667,
-                "longitude": 48.447777777778
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Lohasahan%27ny-Vakoana.JPG",
-            "file": "Lohasahan'ny-Vakoana.JPG",
-            "author": "Iraiidh",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lohasahan%27ny-Vakoana.JPG",
-            "fame": 22,
-            "description": {
-                "fr": "parc national de Madagascar",
-                "en": "National park in Madagascar"
-            }
-        },
-        {
             "id": "Q1290337",
             "name": {
                 "fr": "Rova d'Antananarivo",
@@ -48136,6 +48103,39 @@ const D_pic = {
     ],
     "GP": [
         {
+            "id": "",
+            "name": {
+                "fr": "Vue de la Guadeloupe, de haut",
+                "en": "View of Guadeloupe from above"
+            },
+            "city": {
+                "id": "",
+                "fr": null,
+                "en": null
+            },
+            "country": {
+                "id": "Q17012",
+                "iso": "GP",
+                "fr": "Guadeloupe",
+                "en": "Guadeloupe"
+            },
+            "coordinates": {
+                "latitude": 15.869828,
+                "longitude": -61.588198,
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Les_Saintes_-_Archipel_de_Guadeloupe.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+            "file": "Les Saintes - Archipel de Guadeloupe.jpg",
+            "author": "Jonathan SALAÜN",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Les_Saintes_-_Archipel_de_Guadeloupe.jpg?uselang=fr",
+            "fame": 500,
+            "description": {
+                "fr": "Vue de la Guadeloupe de haut",
+                "en": "View of Guadeloupe from above"
+            }
+        },
+        {
             "id": "Q1149310",
             "name": {
                 "fr": "La Soufrière",
@@ -48166,39 +48166,6 @@ const D_pic = {
             "description": {
                 "fr": "volcan en Guadeloupe",
                 "en": "active stratovolcano located in Basse-Terre Island, Guadeloupe, French West Indies"
-            }
-        },
-        {
-            "id": "Q1028479",
-            "name": {
-                "fr": "parc national de la Guadeloupe",
-                "en": "Guadeloupe National Park"
-            },
-            "city": {
-                "id": "Q17012",
-                "fr": "Guadeloupe",
-                "en": "Guadeloupe"
-            },
-            "country": {
-                "id": "Q17012",
-                "iso": "GP",
-                "fr": "Guadeloupe",
-                "en": "Guadeloupe"
-            },
-            "coordinates": {
-                "latitude": 16.083333333333332,
-                "longitude": -61.68333333333333
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Guadeloupe_123_-_Massif_de_la_Soufri%C3%A8re_1467m_-_Chemin_des_bains_jaunes.jpg/1280px-Guadeloupe_123_-_Massif_de_la_Soufri%C3%A8re_1467m_-_Chemin_des_bains_jaunes.jpg",
-            "file": "Guadeloupe 123 - Massif de la Soufrière 1467m - Chemin des bains jaunes.jpg",
-            "author": "Ofol",
-            "license": "CC BY 2.5",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guadeloupe_123_-_Massif_de_la_Soufri%C3%A8re_1467m_-_Chemin_des_bains_jaunes.jpg",
-            "fame": 23,
-            "description": {
-                "fr": "parc national situé dans les Antilles françaises, en Guadeloupe",
-                "en": "national park located in the French Antillas, in Guadeloupe"
             }
         },
         {
