@@ -2553,7 +2553,7 @@
             gap : 0.2rem;
             color : var(--colorSpan);
             font-weight : 600;
-            font-size : 1.05rem;
+            font-size : 1rem;
           }
           svg{
             fill : white;
@@ -67600,7 +67600,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const i = mCadresImgPic.indexOf(mBoxImg.querySelector('.mCadreImg'))
             LArrowPic.classList.toggle('active',i !== 0)
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
- 
+            
+            indexCrtPic.textContent = i+1
             const name = D_pic[id][i].name?.[currentIlg]
             const city = D_pic[id][i].city?.[currentIlg]
 
