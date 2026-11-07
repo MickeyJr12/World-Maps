@@ -2589,7 +2589,7 @@
           display : flex;
           align-items  : center;
           width : 100%;
-          overflow-y : hidden; 
+          overflow-y : visible; 
           overflow-x : auto;
           scrollbar-width: none;
           gap : 0.35rem;
@@ -2598,7 +2598,6 @@
           .mBoxImg {
             display : flex;
             position : relative;
-            /* overflow : hidden; */
             justify-content : center;
             align-items : center;
             border-radius :0.6rem;
@@ -67733,8 +67732,9 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
         wrappermBoxImg.innerHTML = ``
         dotsWrap.innerHTML = ``
         cadrePic.dataset.crtId = id
+        const sites = D_pic[id].sort((a, b) => b.fame - a.fame);
         
-        D_pic[id].forEach(s=>{
+        sites.forEach(s=>{
           const slide = createEl('div')
           slide.classList.add('slide')
           const cadreImg = createEl('div')
@@ -67826,6 +67826,9 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
 
         carouselPic.firstElementChild.scrollIntoView({ block: "center", behavior: 'instant'})
         wrappermBoxImg.firstElementChild.scrollIntoView({ block: "start", behavior: 'instant'})
+
+        carouselPic.scrollTop = 0
+        wrappermBoxImg.scrollTop = 0
 
         mCadresImgPic = [...queryAll('.mCadreImg')]
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
