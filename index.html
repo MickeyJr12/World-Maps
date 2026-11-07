@@ -2492,6 +2492,8 @@
         filter: brightness(0.8);
       }
       #cachePic{
+        filter : brightness(0.22);
+        background : transparent;
         z-index : 10;
       }
       #cadre:has(#cadrePic.active){
@@ -67499,6 +67501,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       crossPic.addEventListener('click',()=>{
         cadrePic.classList.remove('active')
+        cadreLicence.classList.remove('active')
+
       })
       
       cachePic.addEventListener('click',()=>{
