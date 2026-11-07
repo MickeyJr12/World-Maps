@@ -2710,7 +2710,7 @@
 
 #cadrePic:has(#cadreLicence.active){
           #openLicence{
-          filter : brightness(0.8);
+          filter : brightness(0.75);
         }
         }
           #openLicence{
@@ -4966,6 +4966,7 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 1;
         line-clamp: 1;
+        width : 100%;
         overflow : hidden;
         font-size: clamp(0.9rem, 2.8vw, 1rem);
         /* white-space: nowrap; */
@@ -5169,12 +5170,14 @@
         font-size: 1.2rem;
         letter-spacing: 0.5px;
       }
+      #titleCadre {
+         max-width: min(75%, calc(100% - 4.2rem * 2));
+      }
       .txtCapitaleCadre {
         display: flex;
         justify-content: center;
         align-items: center;
         color: rgba(255, 255, 255, 0.8);
-        max-width: min(75%, calc(100% - 4.2rem * 2));
         flex-shrink: 0;
         gap: 0.5rem;
         fill: rgba(255, 255, 255, 0.8);
@@ -34165,7 +34168,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         el.style.scrollBehavior = 'auto'
         el.scrollLeft = 0
         void el.offsetWidth                 // force un reflow
-            
+
         requestAnimationFrame(() => {
           el.scrollLeft = 0                 // re-force après le layout des nouvelles slides
           requestAnimationFrame(() => {
@@ -65124,6 +65127,8 @@ function mapsUrl(lat, lon) {
 
       const L_pTarget = [
         // Les paths décalés pour cliquer plus facilement (createCircle)
+        "VI",
+        "VG",
         "CV",
         "PF",
         "BV",
@@ -65203,6 +65208,8 @@ function mapsUrl(lat, lon) {
       const L_halos = [
         // on crée des hallos, ils sont visibles (small-island)
         // liste des éléments qui ont des cercles
+        "VI",
+        "VG",
         "CV",
         "PF",
         "BV",
@@ -65320,6 +65327,8 @@ function mapsUrl(lat, lon) {
       // };
       const D_factorMargin = {
         // Les paths décalés pour cliquer plus facilement (createCircle)
+        VI: 0.6,
+        VG: 0.6,
         CV: 0.6,
         PF: 0.4,
         BV: 0.4,
@@ -67688,6 +67697,8 @@ function mapsUrl(lat, lon) {
       openLicence.addEventListener('pointerdown',(e)=>e.stopPropagation())
 
       function fillLicence(item) {
+
+        getId('itmAuteur').style.display = item.author ? "flex" : "none";
         const data = { ...item, sourceName: 'Wikimedia Commons' };
 
 document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
