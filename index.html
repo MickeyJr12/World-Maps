@@ -34160,6 +34160,21 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
 
+      function resetScrollX(el) {
+        el.style.scrollSnapType = 'none'
+        el.style.scrollBehavior = 'auto'
+        el.scrollLeft = 0
+        void el.offsetWidth                 // force un reflow
+            
+        requestAnimationFrame(() => {
+          el.scrollLeft = 0                 // re-force après le layout des nouvelles slides
+          requestAnimationFrame(() => {
+            el.style.scrollSnapType = ''    // réactive le snap (retour au CSS)
+            el.style.scrollBehavior = ''
+          })
+        })
+      }
+
      function isApple() {
   const ua = navigator.userAgent;
   const iOS = /iPhone|iPad|iPod/.test(ua);
@@ -67727,6 +67742,10 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
   "linear-gradient(160deg, rgb(226, 145, 90), rgb(106, 126, 37))",
   "linear-gradient(160deg, rgb(226, 197, 90), rgb(71, 126, 37))"
 ];
+
+        carouselPic.style.scrollSnapType = 'none'
+        carouselPic.scrollLeft = 0
+        carouselPic.style.scrollBehavior = 'auto'
         carouselPic.innerHTML = ``
         wrappermBoxImg.innerHTML = ``
         dotsWrap.innerHTML = ``
@@ -67823,13 +67842,7 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
           })
         })
 
-        carouselPic.firstElementChild.scrollIntoView({ block: "start", behavior: 'instant'})
-        wrappermBoxImg.firstElementChild.scrollIntoView({ block: "start", behavior: 'instant'})
-
-        carouselPic.scrollTop = 0
-        wrappermBoxImg.scrollTop = 0
-
-        carouselPic.scrollLeft = 0
+        resetScrollX(carouselPic)
         wrappermBoxImg.scrollLeft = 0
 
 
