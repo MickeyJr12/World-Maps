@@ -2519,7 +2519,7 @@
         min-height : 20rem;
         top : calc(env(safe-area-inset-top) + 2.8rem);
         transform : scale(0.96);
-        padding : 1rem;
+        padding : 0.5rem;
         color : white;
         outline : 1px solid rgba(255,255,255,0.15);
         pointer-events : none;
@@ -2759,6 +2759,7 @@
           justify-content : center;
           align-items : center;
           position  : relative;
+          z-index : 70;
         }
         #cadreLicence{
           display : flex;
@@ -2767,7 +2768,7 @@
           justify-content : center;
           align-items : center;
           box-sizing : border-box;
-          z-index : 25;
+          z-index : 60;
           gap : 0.18rem;
           border-radius : 0.6rem;
           background : rgba(17, 23, 79, 1);
@@ -2842,7 +2843,7 @@
           justify-content : center;
           pointer-events : none;
           align-items : center;
-          z-index : 20;
+          z-index : 50;
           border-radius : 50%;
           top : 50%;
           transform : translateY(-50%);
@@ -67596,8 +67597,7 @@ function mapsUrl(lat, lon) {
       RArrowPic.addEventListener('click',()=>{
         const i = mCadresImgPic.indexOf(query('.mCadreImg.active'))
         if(mCadresImgPic[i+1])mCadresImgPic[i+1].click()
-        LArrowPic.classList.toggle('active',i !== 1)
-        RArrowPic.classList.toggle('active',i !== mCadresImgPic.length -2 )
+        console.log(i)
 
       })
 
@@ -67605,9 +67605,6 @@ function mapsUrl(lat, lon) {
       LArrowPic.addEventListener('click',()=>{
         const i = mCadresImgPic.indexOf(query('.mCadreImg.active'))
         if(mCadresImgPic[i-1])mCadresImgPic[i-1].click()
-
-        LArrowPic.classList.toggle('active',i !== 1)
-        RArrowPic.classList.toggle('active',i !== mCadresImgPic.length -2 )
 
       })
 
@@ -67641,7 +67638,6 @@ function mapsUrl(lat, lon) {
       })
 
         function fillInfosPic(id,index){
-          
           indexCrtPic.textContent = index+1
           const crtSite = D_pic[id]
           crtSitePic = mapsUrl(crtSite[index].coordinates.latitude, crtSite[index].coordinates.longitude)
@@ -67653,6 +67649,10 @@ function mapsUrl(lat, lon) {
           cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
           if(!name)cityPic.textContent = ""   
           majDots(index)
+
+
+          LArrowPic.classList.toggle('active',index !== 0)
+          RArrowPic.classList.toggle('active',index !== mCadresImgPic.length - 1)
 
         }
       carouselPic.addEventListener("scroll", () => {
@@ -67669,8 +67669,6 @@ function mapsUrl(lat, lon) {
             if(!visibleScroll(el,wrappermBoxImg))centrerScrollEl (wrappermBoxImg,el)
             mBloquerScroll()
 
-            LArrowPic.classList.toggle('active',index !== 0)
-            RArrowPic.classList.toggle('active',index !== mCadresImgPic.length - 1)
 
 
             fillInfosPic(currentCountry.id,index)
@@ -67723,8 +67721,6 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
 
       function fillCadrePic(id){
         if(cadrePic.dataset.crtId === id)return
-        LArrowPic.classList.remove('active')
-        RArrowPic.classList.add('active')
 
         let backgrounds = [
   "linear-gradient(160deg, rgb(90, 147, 226), rgb(74, 37, 126))",
@@ -67846,8 +67842,6 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
             centrerScrollEl(wrappermBoxImg, mBoxImg)
             majDots([...queryAll('.mCadreImg')].indexOf(query('.mCadreImg.active')))
             const i = mCadresImgPic.indexOf(mBoxImg.querySelector('.mCadreImg'))
-            LArrowPic.classList.toggle('active',i !== 0)
-            RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
             
             fillInfosPic(id,i)
           })
