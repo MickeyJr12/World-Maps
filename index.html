@@ -2565,6 +2565,7 @@
         .wrapperTxtPic{
           display : flex;
           justify-content : space-between;
+          gap : 0.5rem;
           align-items : center;
           width : 100%;
         }
@@ -2581,6 +2582,35 @@
           #cityPic{
             font-size : 0.85rem;
             color : var(--colorSpan)
+          }
+        }
+
+          #openLicence{
+          display : flex;
+          justify-content : center;
+          align-items  : center;
+          padding : 0.25rem;
+          border-radius : 50%;
+          background: rgba(255, 170, 30, 0.2);
+          color: #ffc247;
+          svg{
+            overflow : visible;
+            height : 1rem;
+          }
+        }
+
+        
+        #openPlan{
+          display : flex;
+          justify-content : center;
+          align-items  : center;
+          padding : 0.25rem;
+          border-radius : 50%;
+          background: rgba(255, 170, 30, 0.2);
+          color: #ffc247;
+          svg{
+            overflow : visible;
+            height : 1rem;
           }
         }
 
@@ -2633,16 +2663,7 @@
           transform : none;
           pointer-events : all;
         }
-        #openLicence{
-          display : flex;
-          justify-content : center;
-          align-items  : center;
-          color : var(--colorSpan);
-          svg{
-            height : 1rem;
-          }
-        }
-
+      
         #wrappermBoxImg{
           display : flex;
           align-items  : center;
@@ -26543,6 +26564,10 @@
 </div>
           </div> <!-- Fin wrapperLicence -->
 
+           <div id="openPlan">
+              <svg fill="currentColor" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.985 511.985" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path d="M222,3.277C153.477,16.59,99.111,72.751,87.702,141.764c-6.79,41.231,1.13,81.857,21.702,116.271 c2.35,3.928,4.199,7.011,8.39,14l0.967,1.613c41.753,69.614,59.977,101.895,79.073,142.806l38.825,83.218 c7.659,16.416,31.001,16.419,38.664,0.004l34.965-74.901c19.287-41.357,37.562-74.11,79.19-144.553l1.062-1.797 c6.181-10.459,9.139-15.472,12.673-21.482c15.271-25.943,23.445-55.54,23.445-86.29C426.659,63.541,329.368-17.545,222,3.277z M366.44,235.307c-3.518,5.984-6.466,10.977-12.631,21.41l-1.062,1.797c-42.326,71.624-61.063,105.204-81.123,148.219 l-15.625,33.472l-19.5-41.795c-19.925-42.687-38.643-75.842-81.147-146.709l-0.967-1.613c-4.187-6.981-6.027-10.051-8.363-13.954 c-15.428-25.808-21.358-56.232-16.222-87.425c8.504-51.443,49.357-93.645,100.331-103.549 c80.922-15.693,153.862,45.096,153.862,125.49C383.993,193.74,377.88,215.872,366.44,235.307z"></path> <path d="M255.993,106.652c-35.355,0-64,28.645-64,64s28.645,64,64,64s64-28.645,64-64S291.348,106.652,255.993,106.652z M255.993,191.985c-11.791,0-21.333-9.542-21.333-21.333s9.542-21.333,21.333-21.333c11.791,0,21.333,9.542,21.333,21.333 S267.784,191.985,255.993,191.985z"></path> </g> </g> </g> </g></svg>
+            </div>
+
             </div>
             <div class="dotsWrap"></div>
             <div id="wrappermBoxImg">
@@ -34119,6 +34144,22 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
 
+     function isApple() {
+  const ua = navigator.userAgent;
+  const iOS = /iPhone|iPad|iPod/.test(ua);
+  // iPad récent : il se présente comme un Mac mais il a un écran tactile
+  const iPadOS = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+  const mac = /Mac/.test(navigator.platform);
+  return iOS || iPadOS || mac;
+}
+
+function mapsUrl(lat, lon) {
+  if (lat == null || lon == null) return null;
+
+  return isApple()
+    ? `https://maps.apple.com/?ll=${lat},${lon}`
+    : `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
+}
 
       function jaugeScroll(element, conteneur) { // dis à quel point un élément est visible 
   const e = element.getBoundingClientRect()
@@ -67465,9 +67506,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const LArrowPic = getId('LArrowPic')
       const RArrowPic = getId('RArrowPic')
       const cadreLicence = getId('cadreLicence')
+      const openPlan = getId('openPlan')
       const openLicence = getId('openLicence')
       const indexCrtPic = getId('indexCrtPic')
       const nbrPics  = getId('nbrPics')
+      let crtSitePic; // stock le site dans le listener de openPlan
       let mCadresImgPic; // stock les mImages qu'on va ajouter
       let cadresImgPic; // stock les images
       
@@ -67553,7 +67596,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         })
       }
 
+      openPlan.addEventListener('click',()=>{
+        window.location.href = crtSitePic;
+      })
 
+        function fillInfosPic(id,index){
+          
+          indexCrtPic.textContent = index+1
+          const crtSite = D_pic[id]
+          crtSitePic = mapsUrl(crtSite[index].coordinates.latitude, crtSite[index].coordinates.longitude)
+          fillLicence(crtSite[index])
+
+          const name = crtSite[index].name?.[currentIlg]
+          const city = crtSite[index].city?.[currentIlg]
+          namePic.textContent = name ?  name.slice(0,1).toUpperCase() +  name.slice(1) : L_q[id].n; 
+          cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
+          if(!name)cityPic.textContent = ""   
+          majDots(index)
+
+        }
       carouselPic.addEventListener("scroll", () => {
         if(scrollAutoPic)return
 
@@ -67568,24 +67629,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             if(!visibleScroll(el,wrappermBoxImg))centrerScrollEl (wrappermBoxImg,el)
             mBloquerScroll()
 
-            const i = mCadresImgPic.indexOf(el.querySelector('.mCadreImg'))
-            LArrowPic.classList.toggle('active',i !== 0)
-            RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
+            LArrowPic.classList.toggle('active',index !== 0)
+            RArrowPic.classList.toggle('active',index !== mCadresImgPic.length - 1)
 
-            indexCrtPic.textContent = i+1
 
-            const crtSite = D_pic[currentCountry.id]
-            fillLicence(crtSite[i])
+            fillInfosPic(currentCountry.id,index)
 
-            const name = crtSite[i].name?.[currentIlg]
-            const city = crtSite[i].city?.[currentIlg]
 
-            namePic.textContent = name ?  name.slice(0,1).toUpperCase() +  name.slice(1) : L_q[currentCountry.id].n; 
-            cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[currentCountry.id].n;
-            if(!name)cityPic.textContent = ""
-
-            
-            majDots(index)
             const crtImg = query('.mCadreImg.active')
             if(crtImg)crtImg.classList.remove('active')
             el.querySelector('.mCadreImg').classList.add('active')
@@ -67755,33 +67805,14 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
             LArrowPic.classList.toggle('active',i !== 0)
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
             
-            indexCrtPic.textContent = i+1
-            const crtSite = D_pic[id]
-            fillLicence(crtSite[i])
-
-            const name = crtSite[i].name?.[currentIlg]
-            const city = crtSite[i].city?.[currentIlg]
-
-            namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
-            cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
+            fillInfosPic(id,i)
           })
         })
         
         mCadresImgPic = [...queryAll('.mCadreImg')]
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
 
-        const crtSite = D_pic[id]
-        fillLicence(crtSite[0])
-
-
-
-        const name = crtSite[0].name?.[currentIlg]
-        const city = crtSite[0].city?.[currentIlg]
-
-        namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
-        cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
-
-        indexCrtPic.textContent = 1
+        fillInfosPic(id,0)
         nbrPics.textContent = mCadresImgPic.length
 
         //** Créer les dots
