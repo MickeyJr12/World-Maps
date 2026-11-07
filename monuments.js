@@ -5002,6 +5002,35 @@ const D_pic = {
     ],
     "BB": [
         {
+            "id": "Q7138905",
+            "name": {
+                "fr": "Bâtiments du Parlement de la Barbade",
+                "en": "Parliament Buildings"
+            },
+            "city": {
+                "id": "Q36168",
+                "fr": "Bridgetown",
+                "en": "Bridgetown"
+            },
+            "country": {
+                "id": "Q971",
+                "iso": "CG",
+                "fr": "République du Congo",
+                "en": "Republic of the Congo"
+            },
+            "coordinates": {
+                "latitude": 13.09698611,
+                "longitude": -59.61391944
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Bridgetown_barbados_parliament_building.jpg/1280px-Bridgetown_barbados_parliament_building.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Bridgetown barbados parliament building.jpg",
+            "author": "regani",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "fame": 4
+        },
+    
+        {
             "id": "Q167042",
             "name": {
                 "fr": "Kensington Oval",
@@ -5065,35 +5094,6 @@ const D_pic = {
             "description": {
                 "fr": "baie du sud de Bridgetown, Barbade",
                 "en": "bay in Saint Michael, Barbados"
-            }
-        },
-        {
-            "id": "Q2169130",
-            "name": {
-                "fr": "Andromeda Botanic Gardens",
-                "en": "Andromeda Botanic Gardens"
-            },
-            "city": null,
-            "country": {
-                "id": "Q244",
-                "iso": "BB",
-                "fr": "Barbade",
-                "en": "Barbados"
-            },
-            "coordinates": {
-                "latitude": 13.20728,
-                "longitude": -59.51809
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Andromeda_Botanical_Gardens_04.jpg/1280px-Andromeda_Botanical_Gardens_04.jpg",
-            "file": "Andromeda Botanical Gardens 04.jpg",
-            "author": "Postdlf",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andromeda_Botanical_Gardens_04.jpg",
-            "fame": 6,
-            "description": {
-                "fr": null,
-                "en": "Andromeda Botanic Gardens is an organic 8-acre (3.2 ha) botanical garden and a  historic cultural attraction in the village of Bathsheba, Saint Joseph in Barbados. It is an authentic garden created by multiple award-winning horticulturalist Iris Bannochie, a female, Barbadian, self-taught scientist. It is unique, having been created from the 1950s as both a private botanical garden and a pleasure garden by an individual. Named from the Greek mythological figure of Andromeda it started as a  private plant collection around Ms Bannochie's home, who was also the leading expert on horticulture on the island. Ms Bannochie wrote various academic papers from topics including the lifecycle of the whistling frog, and the vitamin C content of the Barbadian cherry. She was a mentor to many and considered the queen of Barbadian horticulture. At one point, she was responsible for introducing over 90% of the ornamental plants found in Barbados. Iris Bannochie created the garden from 1954 on land owned by her family since 1740. During the 1950s Barbados was a plantation economy with no history of garden creation. Iris Bannochie travelled the world and collected plants for Andromeda.  She showed plants from Andromeda both independently and with the Barbados Horticultural Society many times at the RHS Chelsea Flower Show in London, winning numerous medals. In 1982, Ms Bannochie's display was titled Andromeda Gardens at the Show and her exhibition of palms was the largest selection of that plant family ever seen at the Chelsea Flower Show. She was also the recipient of the RHS Veitch Medal and a fellow of the Linnean Society. In 1990, the garden had 40,000 visitors. \nAndromeda Botanic Gardens is a Partner Garden of the UK Royal Horticultural Society, the only garden with such a status in the West Indies. In October 2019, the garden received the Botanical Treasure Award from the Biological Education and Research Programme, in recognition of it biological diversity. It has appeared on UK television and was the subject of the first online lecture in September 2020, facilitated by Kew Mutual Improvement Society at the Royal Botanic Gardens, Kew.\nAndromeda Botanic Gardens was first open to the public during a fund raising event hosted by the Barbados Horticultural Society in the 1970s. Andromeda has remained open to the public by paid admission since then (admission is free for residents of Barbados). Andromeda has over six hundred different species of plants adapted to a range of tropical environments. In 2026, the Palm Garden contained over 40 different species of palm and there were approximately 120 different tree species. Over 90 plant families are represented at Andromeda Botanic Gardens, making this garden one of the most plant diverse gardens in the tropical world. \nAndromeda Botanic Gardens is owned by the Barbados National Trust, having been bequeathed to the Trust when Ms. Bannochie died in 1988. It is currently leased to Passiflora Ltd. The company is responsible for the garden's management and development and is a registered training provider and assessment centre, offering a range of horticultural courses. Interns, particularly from France, spend two months working alongside the gardening team. The new Ethnobotanical Garden is the centrepiece of Andromeda's mandate to conserve local flora. Created in June 2022 on 2 acres of land at Andromeda, it was funded by Sandals Foundation. The new garden is a community space and a celebration of local plants; how people in Barbados use plants (contemporary and historical) and local wildlife. The Ethnobotanical Project is run in co-ordination with Dr Sonia Peter's Biocultural Education Research Programme, which has responsibility for research activities at Andromeda Botanic Gardens.\nAt the centre of the upper garden is a native banyan. When Queen Ingrid of Denmark visited the garden in 1971, she was served refreshments in a recently built gazebo overlooking the sea. There is a classroom, cafeteria and gift shop, showcasing local art and crafts. \nIn addition to being a botanical garden, Andromeda Botanic Gardens,  from 1954 to 1985/87 Dr. Bayley's workshop at Andromeda was used by the US Navy as the location of a secret cold-war Soviet submarine tracking station that used leading edge SOSUS technology.  In 1954 the U.S. Government installed research equipment worth US$500,000 (1950s prices). Andromeda was a suitable setting for this covert operation.  It was in the right location overlooking the Atlantic Ocean, within easy reach of the Atlantic shelf. Andromeda was also off-the beaten-track. There was a credible cover story. And, Dr. Bayley was a friend of the US and could be trusted. It was an open secret with the fishermen of Bathsheba and Tent Bay who helped land the SOSUS cable that Soviet submarines were being tracked from Dr. Bayley’s workshop at Andromeda."
             }
         },
         {
@@ -8915,39 +8915,6 @@ const D_pic = {
         }
     ],
     "CI": [
-        {
-            "id": "Q501344",
-            "name": {
-                "fr": "parc national de la Comoé",
-                "en": "Comoé National Park"
-            },
-            "city": {
-                "id": "Q21002161",
-                "fr": "district des Savanes",
-                "en": "Savanes District"
-            },
-            "country": {
-                "id": "Q1008",
-                "iso": "CI",
-                "fr": "Côte d'Ivoire",
-                "en": "Ivory Coast"
-            },
-            "coordinates": {
-                "latitude": 9.1636111111111,
-                "longitude": -3.7725
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/NationalparkComoe4.jpg/1280px-NationalparkComoe4.jpg",
-            "file": "NationalparkComoe4.jpg",
-            "author": "Albert Backer",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:NationalparkComoe4.jpg",
-            "fame": 59,
-            "description": {
-                "fr": "parc national de Côte d'Ivoire",
-                "en": "protected areas of Côte d'Ivoire"
-            }
-        },
         {
             "id": "Q328577",
             "name": {
@@ -38729,6 +38696,39 @@ const D_pic = {
     ],
     "SX": [
         {
+            "id": "Q5470723",
+            "name": {
+                "fr": "fort Amsterdam",
+                "en": "Fort Amsterdam"
+            },
+            "city": {
+                "id": "Q30958",
+                "fr": "Philipsburg",
+                "en": "Philipsburg"
+            },
+            "country": {
+                "id": "Q26273",
+                "iso": "SX",
+                "fr": "Saint-Martin",
+                "en": "Saint-Martin"
+            },
+            "coordinates": {
+                "latitude": 18.0148,
+                "longitude": -63.0595
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Lord_Sheffield_in_Little_Bay%2C_St_Maarten%2C_Oct_2014_%2815037894784%29.jpg/1280px-Lord_Sheffield_in_Little_Bay%2C_St_Maarten%2C_Oct_2014_%2815037894784%29.jpg",
+            "file": "Lord Sheffield in Little Bay, St Maarten, Oct 2014 (15037894784).jpg",
+            "author": "alljengi",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lord_Sheffield_in_Little_Bay,_St_Maarten,_Oct_2014_(15037894784).jpg",
+            "fame": 7,
+            "description": {
+                "fr": "fort hollandais aux Antilles",
+                "en": "17th century Dutch fort near Philipsburg, Sint Maarten"
+            }
+        },
+        {
             "id": "Q30958",
             "name": {
                 "fr": "Philipsburg",
@@ -38762,39 +38762,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q723325",
-            "name": {
-                "fr": "aéroport international Princesse-Juliana",
-                "en": "Princess Juliana International Airport"
-            },
-            "city": {
-                "id": "Q26273",
-                "fr": "Saint-Martin",
-                "en": "Sint Maarten"
-            },
-            "country": {
-                "id": "Q26273",
-                "iso": "SX",
-                "fr": "Saint-Martin",
-                "en": "Sint Maarten"
-            },
-            "coordinates": {
-                "latitude": 18.040833333333,
-                "longitude": -63.109444444444
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/American_757_on_final_approach_at_St_Maarten_Airport.jpg/1280px-American_757_on_final_approach_at_St_Maarten_Airport.jpg",
-            "file": "American 757 on final approach at St Maarten Airport.jpg",
-            "author": "Todd Neville",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:American_757_on_final_approach_at_St_Maarten_Airport.jpg",
-            "fame": 42,
-            "description": {
-                "fr": "aéroport de Sint Maarten, Pays-Bas caribéens",
-                "en": "airport on the Caribbean island of Saint Martin, Sint Maarten"
-            }
-        },
-        {
             "id": "Q922921",
             "name": {
                 "fr": "Maho Beach",
@@ -38825,35 +38792,6 @@ const D_pic = {
             "description": {
                 "fr": "Maho Beach est une plage située à Saint-Martin, partie néerlandaise de l'île du même nom, dans les Antilles. Elle est mondialement connue du fait de sa proximité avec l'aéroport Princess Juliana.",
                 "en": "Maho Beach is a beach on the Dutch side of the Caribbean island of Saint Martin, in the territory of Sint Maarten. It is famous for being adjacent to the Princess Juliana International Airport and is a popular site for tourists and plane watchers, who visit the beach to watch aircraft on final approach land at the airport right at the edge of the water."
-            }
-        },
-        {
-            "id": "Q2509364",
-            "name": {
-                "fr": "Simpson Bay Lagoon",
-                "en": "Simpson Bay Lagoon"
-            },
-            "city": null,
-            "country": {
-                "id": "Q26273",
-                "iso": "SX",
-                "fr": "Saint-Martin",
-                "en": "Sint Maarten"
-            },
-            "coordinates": {
-                "latitude": 18.052,
-                "longitude": -63.109
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3a/StMaartenApproach.jpg",
-            "file": "StMaartenApproach.jpg",
-            "author": "Martin Talbot",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:StMaartenApproach.jpg",
-            "fame": 6,
-            "description": {
-                "fr": null,
-                "en": "Simpson Bay Lagoon (also spelt Simson Bay Lagoon, or referred to simply as the Great Pond) is one of the largest inland lagoons in the West Indies of the Caribbean. It is located on the island of Saint Martin. The border between the French and Dutch halves of the island runs across the centre of the lagoon. There are two small islands that lie in the lagoon: the larger, Grand Ilet (also known as Explorer's Island) to the north, is within the French region of Saint-Martin; the smaller, Little Key, to the south, is on the Dutch Sint Maarten side. Historically it was not a lagoon, but a lake. A hurricane in 1819 breached the natural isthmus at Pelican, isolating the Simpson Bay fishing community for a century. Halfway through the 20th century, an artificial canal at the current Simpson Bay Lagoon Bridge replaced the initial natural waterway.\nThe lagoon is connected to the Caribbean Sea via a small channel in the north-west which flows into Baie Nettlé in Saint-Martin and another small channel in the south-east which flows into Simpson Bay in Sint Maarten. Sint Maarten's airport, Princess Juliana International Airport lies close to the lagoon's southern shore.\nPreviously, traffic between Marigot and Princess Juliana International Airport (SXM) had to go around the lagoon via the Lowlands area. In 2013, the Simpson Bay Causeway Bridge was opened. This bridge connects the Marigot area with the northern end of the airport runway, considerably reducing distance and time to reach the airport."
             }
         },
         {
@@ -40513,35 +40451,6 @@ const D_pic = {
             "description": {
                 "fr": "Le lac Iskanderkoul (en tadjik : Искандаркӯл ; en russe : Искандеркуль), du tadjik Iskander « Alexandre » et koul « lac », est un lac de l'ouest du Tadjikistan. Il se trouve aux monts Gissar qui appartiennent à la chaîne des monts Fan au sud-ouest du Pamir. Son nom provient d'Alexandre le Grand qui s'y rendit au moment de son expédition jusqu'aux Indes.",
                 "en": "Iskanderkul (Russian: Искандеркуль; Tajik: Искандаркӯл) is a mountain lake of glacial origin in Tajikistan's Sughd Province. It lies at an altitude of 2,195 metres (7,201 ft) on the northern slopes of the Gissar Range in the Fann Mountains. Triangular in shape, it has a surface area of 3.4 square kilometres (1.3 sq mi) and is up to 72 metres (236 ft) deep. Formed by a landslide that blocks the Saratogh river, the outflow of the lake is called the Iskander Darya, which joins the Yaghnob River to form the Fan Darya, a major left tributary of the Zeravshan River.\n134 km from Dushanbe and 23 km from the Dushanbe—Khujand road, Iskanderkul is a popular tourist destination.\nThe lake takes its name from Alexander the Great's passage in Tajikistan: Iskander is the Persian pronunciation of Alexander, and kul means lake in many Turkic languages. There are two legends connecting the lake to Alexander. The first one states it used to be a location the inhabitants of which resisted Alexander's rule, and in fury, the king ordered to divert a river and annihilate them. The second legend states that Bucephalus had drowned in the lake."
-            }
-        },
-        {
-            "id": "Q2048673",
-            "name": {
-                "fr": "route du Pamir",
-                "en": "M41 highway"
-            },
-            "city": null,
-            "country": {
-                "id": "Q863",
-                "iso": "TJ",
-                "fr": "Tadjikistan",
-                "en": "Tajikistan"
-            },
-            "coordinates": {
-                "latitude": null,
-                "longitude": null
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Pamir_Highway_Route.jpg",
-            "file": "Pamir Highway Route.jpg",
-            "author": "Auteur inconnu",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pamir_Highway_Route.jpg",
-            "fame": 24,
-            "description": {
-                "fr": "route du Kirghizistan à l'Afghanistan",
-                "en": "road in Central Asia"
             }
         },
         {
@@ -48940,39 +48849,6 @@ const D_pic = {
     ],
     "MF": [
         {
-            "id": "Q922921",
-            "name": {
-                "fr": "Maho Beach",
-                "en": "Maho Beach"
-            },
-            "city": {
-                "id": "Q26273",
-                "fr": "Saint-Martin",
-                "en": "Sint Maarten"
-            },
-            "country": {
-                "id": "Q126125",
-                "iso": "MF",
-                "fr": "Saint-Martin",
-                "en": "Saint-Martin"
-            },
-            "coordinates": {
-                "latitude": 18.03917,
-                "longitude": -63.12028
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/American_757_on_final_approach_at_St_Maarten_Airport.jpg/1280px-American_757_on_final_approach_at_St_Maarten_Airport.jpg",
-            "file": "American 757 on final approach at St Maarten Airport.jpg",
-            "author": "Todd Neville",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:American_757_on_final_approach_at_St_Maarten_Airport.jpg",
-            "fame": 29,
-            "description": {
-                "fr": "Maho Beach est une plage située à Saint-Martin, partie néerlandaise de l'île du même nom, dans les Antilles. Elle est mondialement connue du fait de sa proximité avec l'aéroport Princess Juliana.",
-                "en": "Maho Beach is a beach on the Dutch side of the Caribbean island of Saint Martin, in the territory of Sint Maarten. It is famous for being adjacent to the Princess Juliana International Airport and is a popular site for tourists and plane watchers, who visit the beach to watch aircraft on final approach land at the airport right at the edge of the water."
-            }
-        },
-        {
             "id": "Q21427420",
             "name": {
                 "fr": "îlet Pinel à Saint-Martin",
@@ -49003,68 +48879,6 @@ const D_pic = {
             "description": {
                 "fr": "L’îlet Pinel est une petite île inhabitée située (au plus près) à 170 m à l'Est de l'île de Saint-Martin, et à 950 m du lieu-dit Cul-de-Sac (de débarcadère à débarcadère). Cette petite île fait partie de la collectivité d'outre-mer française de Saint-Martin.\nAutour de son littoral, l'intégralité des 50 pas géométriques (soit les 83 m en profondeur à partir de la ligne des plus hautes eaux) est propriété du Conservatoire du Littoral et fait partie du domaine terrestre de la \"Réserve naturelle nationale de Saint-Martin. À ce titre, l'espace et la nature y sont protégés par une réglementation spécifique.",
                 "en": "Pinel Island, also known as Îlet Pinel, is a small Caribbean island off the french coast of Saint Martin.\n\n"
-            }
-        },
-        {
-            "id": "Q5470723",
-            "name": {
-                "fr": "fort Amsterdam",
-                "en": "Fort Amsterdam"
-            },
-            "city": {
-                "id": "Q30958",
-                "fr": "Philipsburg",
-                "en": "Philipsburg"
-            },
-            "country": {
-                "id": "Q126125",
-                "iso": "MF",
-                "fr": "Saint-Martin",
-                "en": "Saint-Martin"
-            },
-            "coordinates": {
-                "latitude": 18.0148,
-                "longitude": -63.0595
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Lord_Sheffield_in_Little_Bay%2C_St_Maarten%2C_Oct_2014_%2815037894784%29.jpg/1280px-Lord_Sheffield_in_Little_Bay%2C_St_Maarten%2C_Oct_2014_%2815037894784%29.jpg",
-            "file": "Lord Sheffield in Little Bay, St Maarten, Oct 2014 (15037894784).jpg",
-            "author": "alljengi",
-            "license": "CC BY-SA 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lord_Sheffield_in_Little_Bay,_St_Maarten,_Oct_2014_(15037894784).jpg",
-            "fame": 7,
-            "description": {
-                "fr": "fort hollandais aux Antilles",
-                "en": "17th century Dutch fort near Philipsburg, Sint Maarten"
-            }
-        },
-        {
-            "id": "Q33587945",
-            "name": {
-                "fr": "Great Bay",
-                "en": "Great Bay"
-            },
-            "city": null,
-            "country": {
-                "id": "Q126125",
-                "iso": "MF",
-                "fr": "Saint-Martin",
-                "en": "Saint-Martin"
-            },
-            "coordinates": {
-                "latitude": 18.02,
-                "longitude": -63.051027777777776
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Harbor_%5E_Dock_at_Philipsberg%2C_St._Maarten_%28explore_4-29-14%29_-_Flickr_-_trishhartmann.jpg/1280px-Harbor_%5E_Dock_at_Philipsberg%2C_St._Maarten_%28explore_4-29-14%29_-_Flickr_-_trishhartmann.jpg",
-            "file": "Harbor ^ Dock at Philipsberg, St. Maarten (explore 4-29-14) - Flickr - trishhartmann.jpg",
-            "author": "Trish Hartmann",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbor_%5E_Dock_at_Philipsberg,_St._Maarten_(explore_4-29-14)_-_Flickr_-_trishhartmann.jpg",
-            "fame": 4,
-            "description": {
-                "fr": null,
-                "en": "bay in Sint Maarten"
             }
         },
         {
@@ -49131,35 +48945,6 @@ const D_pic = {
             "description": {
                 "fr": "réserve naturelle nationale marine située dans les Antilles françaises à Saint-Martin (France)",
                 "en": "marine national naturel reserve located in the French Antillas, in Saint Martin (France)"
-            }
-        },
-        {
-            "id": "Q113556164",
-            "name": {
-                "fr": "Mullet Bay Beach",
-                "en": "Mullet Bay Beach"
-            },
-            "city": null,
-            "country": {
-                "id": "Q126125",
-                "iso": "MF",
-                "fr": "Saint-Martin",
-                "en": "Saint-Martin"
-            },
-            "coordinates": {
-                "latitude": 18.045917,
-                "longitude": -63.126028
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Mullet_Bay%2C_St_Maarten%2C_Oct_2014_%2815740985106%29.jpg/1280px-Mullet_Bay%2C_St_Maarten%2C_Oct_2014_%2815740985106%29.jpg",
-            "file": "Mullet Bay, St Maarten, Oct 2014 (15740985106).jpg",
-            "author": "alljengi",
-            "license": "CC BY-SA 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mullet_Bay,_St_Maarten,_Oct_2014_(15740985106).jpg",
-            "fame": 3,
-            "description": {
-                "fr": null,
-                "en": "beach on Sint Maarten"
             }
         },
         {
@@ -51983,4 +51768,5 @@ const D_pic = {
         }
     ]
 };
+
 
