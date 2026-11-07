@@ -2553,7 +2553,7 @@
             gap : 0.2rem;
             color : var(--colorSpan);
             font-weight : 600;
-            font-size : 1rem;
+            font-size : 0.86rem;
           }
           svg{
             fill : white;
@@ -2590,22 +2590,43 @@
         }
         #cadreLicence{
           display : flex;
+          flex-direction:  column;
           position : absolute;
           justify-content : center;
           align-items : center;
           box-sizing : border-box;
+          z-index : 25;
+          gap : 0.18rem;
+          border-radius : 0.6rem;
           background : rgba(17, 23, 79, 1);
+          font-size : 0.75rem;
+          min-width : 14rem;
           outline : 1px solid rgba(255,255,255,0.18);
-          padding : 0.25rem;
-          bottom : calc(100% + 0.4rem);
-          right : calc(100% + 0.4rem);
+          padding : 0.4rem;
+          bottom : calc(100% + 0.2rem);
+          right : calc(100% + 0.2rem);
           transform-origin : right bottom;
           transform : scale(0.92);
           opacity : 0;
           pointer-events : none;
           transition : transform 0.25s ease;
+          .itmL{ /* Ligne */
+            display : flex;
+            gap : 1.25rem;
+            width : 100%;
+            justify-content : space-between;
+            align-items : center;
+            .sectionL{
+              font-weight : 300;
+              color : var(--colorSpan);
+            }
+            .valL {
+              opacity : 0.75;
+              font-weight : 500;
+            }
+          }
         }
-        #cadreLicence.acive{
+        #cadreLicence.active{
           opacity : 1;
           transform : none;
           pointer-events : all;
@@ -26496,8 +26517,29 @@
             <div id="openLicence">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracurrentColorerCarrier" stroke-linecurrentcap="round" stroke-linejoin="round"></g><g id="SVGRepo_icurrentColoronCarrier"> <path fill-rule="evenodd" currentclip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75Z" fill="currentColor"></path> <path fill-rule="evenodd" currentclip-rule="evenodd" d="M12.2857 8.75C10.2834 8.75 8.75 10.253 8.75 12C8.75 13.747 10.2834 15.25 12.2857 15.25C12.7974 15.25 13.281 15.1504 13.7168 14.9727C14.1003 14.8163 14.5381 15.0004 14.6945 15.384C14.8509 15.7675 14.6667 16.2052 14.2832 16.3616C13.669 16.6121 12.9931 16.75 12.2857 16.75C9.55414 16.75 7.25 14.6712 7.25 12C7.25 9.32875 9.55414 7.25 12.2857 7.25C12.9931 7.25 13.669 7.38791 14.2832 7.63836C14.6667 7.79477 14.8509 8.23249 14.6945 8.61604C14.5381 8.99958 14.1003 9.18372 13.7168 9.02731C13.281 8.84961 12.7974 8.75 12.2857 8.75Z" fill="currentColor"></path> </g></svg>
             </div>
-            <div id="cadreLicence"></div>
-            </div>
+          <div id="cadreLicence">
+
+  <div class="itmL" id="itmAuteur">
+    <div class="sectionL" data-ilg="auteur">Auteur</div>
+    <div class="valL" id="valAuteur"><bdi data-pic="author"></bdi></div>
+  </div>
+
+  <div class="itmL" id="itmLicence">
+    <div class="sectionL" data-ilg="licence">Licence</div>
+    <div class="valL" id="valLicence">
+      <a data-pic="license" data-pic-href="licenseUrl" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+
+  <div class="itmL" id="itmSource">
+    <div class="sectionL" data-ilg="source">Source</div>
+    <div class="valL" id="valSource">
+      <a data-pic="sourceName" data-pic-href="sourceUrl" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+
+</div>
+          </div> <!-- Fin wrapperLicence -->
 
             </div>
             <div class="dotsWrap"></div>
@@ -35168,6 +35210,14 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         lundi: { fr: "Lundi", en: "Monday" },
         dimanche: { fr: "Dimanche", en: "Sunday" },
         samedi: { fr: "Samedi", en: "Saturday" },
+
+        // langue licences
+        auteur:  { fr: "Auteur",  en: "Author" },
+        licence: { fr: "Licence", en: "License" },
+        source:  { fr: "Source",  en: "Source" },
+        fichier: { fr: "Fichier", en: "File" },
+        inconnu: { fr: "Inconnu", en: "Unknown" },
+        creditsPhoto: { fr: "Crédits", en: "Credits" },
 
         // langue stats
         banquemondiale: {
@@ -67412,6 +67462,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const wrappermBoxImg = getId('wrappermBoxImg')
       const LArrowPic = getId('LArrowPic')
       const RArrowPic = getId('RArrowPic')
+      const cadreLicence = getId('cadreLicence')
+      const openLicence = getId('openLicence')
       const indexCrtPic = getId('indexCrtPic')
       const nbrPics  = getId('nbrPics')
       let mCadresImgPic; // stock les mImages qu'on va ajouter
@@ -67472,6 +67524,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       })
 
+      openLicence.addEventListener('click',()=>{
+        cadreLicence.classList.add('active')
+      })
+
       function majDots(index) {
         const slots = cadrePic.querySelectorAll('.dotSlot')
         const track = cadrePic.querySelector('.dotsTrack')
@@ -67513,8 +67569,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
 
             indexCrtPic.textContent = i+1
-            const name = D_pic[currentCountry.id][i].name?.[currentIlg]
-            const city = D_pic[currentCountry.id][i].city?.[currentIlg]
+
+            const crtSite = D_pic[currentCountry.id]
+            fillLicence(crtSite[i])
+
+            const name = crtSite[i].name?.[currentIlg]
+            const city = crtSite[i].city?.[currentIlg]
 
             namePic.textContent = name ?  name.slice(0,1).toUpperCase() +  name.slice(1) : L_q[currentCountry.id].n; 
             cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[currentCountry.id].n;
@@ -67533,6 +67593,35 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         })
       });         
 
+
+
+
+      cadrePic.addEventListener('pointerdown',()=>{
+        cadreLicence.classList.remove('active')
+      })
+      cadreLicence.addEventListener('pointerdown',(e)=>e.stopPropagation())
+
+      function fillLicence(item) {
+        const data = { ...item, sourceName: 'Wikimedia Commons' };
+
+document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
+  el.textContent = data[el.dataset.pic] ?? D_ilg.inconnu[currentIlg];
+
+  if (el.dataset.picHref) {
+    const href = data[el.dataset.picHref];
+
+    if (href) {
+      el.href = href;
+      el.style.color = 'var(--colorSpan)';
+      el.style.textDecoration = 'underline';
+    } else {
+      el.removeAttribute('href');
+      el.style.color = '';
+      el.style.textDecoration = '';
+    }
+  }
+});
+      }
 
 
       function fillCadrePic(id){
@@ -67662,8 +67751,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
             
             indexCrtPic.textContent = i+1
-            const name = D_pic[id][i].name?.[currentIlg]
-            const city = D_pic[id][i].city?.[currentIlg]
+            const crtSite = D_pic[id]
+            fillLicence(crtSite[i])
+
+            const name = crtSite[i].name?.[currentIlg]
+            const city = crtSite[i].city?.[currentIlg]
 
             namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
             cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
@@ -67673,8 +67765,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         mCadresImgPic = [...queryAll('.mCadreImg')]
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
 
-        const name = D_pic[id][0].name?.[currentIlg]
-        const city = D_pic[id][0].city?.[currentIlg]
+        const crtSite = D_pic[id]
+        fillLicence(crtSite[0])
+
+
+
+        const name = crtSite[0].name?.[currentIlg]
+        const city = crtSite[0].city?.[currentIlg]
 
         namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
         cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
