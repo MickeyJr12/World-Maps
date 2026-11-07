@@ -2560,11 +2560,18 @@
             height : 2rem;
           }
         }
-        .wrapperNamePic{
+        .wrapperTxtPic{
           display : flex;
-          margin-top : -0.2.5rem;
-          flex-direction : column;
+          justify-content : space-between;
+          align-items : center;
           width : 100%;
+        }
+        .boxTxtPic{
+          display : flex;
+          flex-direction : column;
+          align-items : flex-start;          
+          flex : 1;
+          margin-top : -0.2.5rem;
           #namePic{
             font-size : 1.08rem;
             font-weight : 500;
@@ -2572,6 +2579,44 @@
           #cityPic{
             font-size : 0.85rem;
             color : var(--colorSpan)
+          }
+        }
+
+        #wrapperLicence{
+          display : flex;
+          justify-content : center;
+          align-items : center;
+          position  : relative;
+        }
+        #cadreLicence{
+          display : flex;
+          position : absolute;
+          justify-content : center;
+          align-items : center;
+          box-sizing : border-box;
+          background : rgba(17, 23, 79, 1);
+          outline : 1px solid rgba(255,255,255,0.18);
+          padding : 0.25rem;
+          bottom : calc(100% + 0.4rem);
+          right : calc(100% + 0.4rem);
+          transform-origin : right bottom;
+          transform : scale(0.92);
+          opacity : 0;
+          pointer-events : none;
+          transition : transform 0.25s ease;
+        }
+        #cadreLicence.acive{
+          opacity : 1;
+          transform : none;
+          pointer-events : all;
+        }
+        #openLicence{
+          display : flex;
+          justify-content : center;
+          align-items  : center;
+          color : var(--colorSpan);
+          svg{
+            height : 1rem;
           }
         }
 
@@ -2642,6 +2687,7 @@
           border-radius: 0.8rem;
           transition : opacity 0.2s ease outline 0.2s ease, outline-offset 0.2s ease;
           svg {
+            overflow : visible;
             fill : none;
           }
         }
@@ -26440,11 +26486,20 @@
             </div>
             </div>
 
-            <div class="wrapperNamePic">
+
+            <div class="wrapperTxtPic">
+            <div class="boxTxtPic">
               <div id="namePic">Tour Eiffeil</div>
               <div id="cityPic">Paris</div>
             </div>
+            <div id="wrapperLicence">
+            <div id="openLicence">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracurrentColorerCarrier" stroke-linecurrentcap="round" stroke-linejoin="round"></g><g id="SVGRepo_icurrentColoronCarrier"> <path fill-rule="evenodd" currentclip-rule="evenodd" d="M1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75Z" fill="currentColor"></path> <path fill-rule="evenodd" currentclip-rule="evenodd" d="M12.2857 8.75C10.2834 8.75 8.75 10.253 8.75 12C8.75 13.747 10.2834 15.25 12.2857 15.25C12.7974 15.25 13.281 15.1504 13.7168 14.9727C14.1003 14.8163 14.5381 15.0004 14.6945 15.384C14.8509 15.7675 14.6667 16.2052 14.2832 16.3616C13.669 16.6121 12.9931 16.75 12.2857 16.75C9.55414 16.75 7.25 14.6712 7.25 12C7.25 9.32875 9.55414 7.25 12.2857 7.25C12.9931 7.25 13.669 7.38791 14.2832 7.63836C14.6667 7.79477 14.8509 8.23249 14.6945 8.61604C14.5381 8.99958 14.1003 9.18372 13.7168 9.02731C13.281 8.84961 12.7974 8.75 12.2857 8.75Z" fill="currentColor"></path> </g></svg>
+            </div>
+            <div id="cadreLicence"></div>
+            </div>
 
+            </div>
             <div class="dotsWrap"></div>
             <div id="wrappermBoxImg">
               <div class="mBoxImg"></div>
@@ -59709,6 +59764,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         xpQ.addEventListener(
           "click",
           () => {
+            if(quest.id !== "XXX")hapticFeedback("medium");
+
             xpQ.classList.remove("active");
             xpQ.classList.add("finish");
             xpQ.textContent = "Terminé";
@@ -67479,6 +67536,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
 
       function fillCadrePic(id){
+        if(cadrePic.dataset.crtId === id)return
         LArrowPic.classList.remove('active')
         RArrowPic.classList.add('active')
 
@@ -67514,6 +67572,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         carouselPic.scrollLeft = 0
         wrappermBoxImg.scrollLeft = 0
         dotsWrap.innerHTML = ``
+
+        cadrePic.dataset.crtId = id
         
         D_pic[id].forEach(s=>{
           const slide = createEl('div')
@@ -67607,14 +67667,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
             namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
             cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
-
-
           })
         })
         
         mCadresImgPic = [...queryAll('.mCadreImg')]
-        if(mCadresImgPic.length>0)mCadresImgPic[0].parentElement.click()
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
+
+        const name = D_pic[id][0].name?.[currentIlg]
+        const city = D_pic[id][0].city?.[currentIlg]
+
+        namePic.textContent = name.slice(0,1).toUpperCase() +  name.slice(1)
+        cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[id].n;
 
         indexCrtPic.textContent = 1
         nbrPics.textContent = mCadresImgPic.length
