@@ -44527,39 +44527,6 @@ const D_pic = {
                 "en": "island"
             }
         },
-        {
-            "id": "Q607357",
-            "name": {
-                "fr": "Moustique",
-                "en": "Mustique"
-            },
-            "city": {
-                "id": "Q2545297",
-                "fr": "Grenadines",
-                "en": "Grenadines Parish"
-            },
-            "country": {
-                "id": "Q757",
-                "iso": "VC",
-                "fr": "Saint-Vincent-et-les-Grenadines",
-                "en": "Saint Vincent and the Grenadines"
-            },
-            "coordinates": {
-                "latitude": 12.866666666667,
-                "longitude": -61.183333333333
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/SaintVincentGrenadinenKarte.png",
-            "file": "SaintVincentGrenadinenKarte.png",
-            "author": "United States Central Intelligence Agency",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:SaintVincentGrenadinenKarte.png",
-            "fame": 27,
-            "description": {
-                "fr": "île de l'archipel des Grenadines",
-                "en": "small private island that is part of St Vincent and the Grenadines"
-            }
-        }
     ],
     "VE": [
         {

@@ -67551,6 +67551,7 @@ function mapsUrl(lat, lon) {
       const openLicence = getId('openLicence')
       const indexCrtPic = getId('indexCrtPic')
       const nbrPics  = getId('nbrPics')
+      let scrollInstant = false; // Réussir à scrollLeft carouselPic
       let crtSitePic; // stock le site dans le listener de openPlan
       let mCadresImgPic; // stock les mImages qu'on va ajouter
       let cadresImgPic; // stock les images
@@ -67750,9 +67751,9 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
   "linear-gradient(160deg, rgb(226, 197, 90), rgb(71, 126, 37))"
 ];
 
-        carouselPic.style.scrollSnapType = 'none'
-        carouselPic.scrollLeft = 0
-        carouselPic.style.scrollBehavior = 'auto'
+        // carouselPic.style.scrollSnapType = 'none'
+        // carouselPic.scrollLeft = 0
+        // carouselPic.style.scrollBehavior = 'auto'
         carouselPic.innerHTML = ``
         wrappermBoxImg.innerHTML = ``
         dotsWrap.innerHTML = ``
@@ -67838,7 +67839,8 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
             const loader = mBoxImg.querySelector('.loaderPic')
             if(loader)loader.classList.add('active')
 
-            cadreImg.scrollIntoView({ behavior: "smooth", block: "center" });
+
+            cadreImg.scrollIntoView({ behavior: scrollInstant ? "instant" : "smooth", block: "center" });
             centrerScrollEl(wrappermBoxImg, mBoxImg)
             majDots([...queryAll('.mCadreImg')].indexOf(query('.mCadreImg.active')))
             const i = mCadresImgPic.indexOf(mBoxImg.querySelector('.mCadreImg'))
@@ -67854,8 +67856,11 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
 
         mCadresImgPic = [...queryAll('.mCadreImg')]
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
+        scrollInstant = true
+        mCadresImgPic[0].parentElement.click()
+        scrollInstant = false
+        // fillInfosPic(id,0)
 
-        fillInfosPic(id,0)
         nbrPics.textContent = mCadresImgPic.length
 
         //** Créer les dots
