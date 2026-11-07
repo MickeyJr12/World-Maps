@@ -2549,6 +2549,9 @@
           justify-content : space-between;
           width : 100%;
           .title{
+            display : flex;
+            gap : 0.2rem;
+            color : var(--colorSpan);
             font-weight : 600;
             font-size : 1.05rem;
           }
@@ -26390,7 +26393,7 @@
            <div id="cachePic" class="cache"></div>
           <div id="cadrePic">
             <div class="wrapperTitle">
-              <span class="title">Photos - France</span>
+              <span class="title"><div id="indexCrtPic">1</div>/<div id="nbrPics">5</div> </span>
               <div id="crossPic">
                  <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65681,6 +65684,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       openStat.addEventListener("click", () => {
         crtCStat = currentCountry;
+        hapticFeedback("medium")
         cadreStat.classList.add("active");
         cacheStat.classList.add("active");
         cacheStat.style.opacity = "1";
@@ -67351,6 +67355,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const wrappermBoxImg = getId('wrappermBoxImg')
       const LArrowPic = getId('LArrowPic')
       const RArrowPic = getId('RArrowPic')
+      const indexCrtPic = getId('indexCrtPic')
+      const nbrPics  = getId('nbrPics')
       let mCadresImgPic; // stock les mImages qu'on va ajouter
       let cadresImgPic; // stock les images
       
@@ -67378,6 +67384,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       openPic.addEventListener('click',()=>{
         cadrePic.classList.add('active')
+        fillCadrePic(currentCountry.id)
+        hapticFeedback("medium")
       })
 
       crossPic.addEventListener('click',()=>{
@@ -67431,7 +67439,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       carouselPic.addEventListener("scroll", () => {
         if(scrollAutoPic)return
-        const dotsPic = cadrePic.querySelectorAll('.dotsPic')      
 
         const maxView = Math.max(...cadresImgPic.map(el2=>jaugeScroll(el2,el2.parentElement))) // la valeur de celui qui est le plus visibe
         const elMaxView = cadresImgPic.filter(el=>jaugeScroll(el,el.parentElement) === maxView)[0] // quel est élément est l eplus visible 
@@ -67448,11 +67455,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             LArrowPic.classList.toggle('active',i !== 0)
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
 
+            indexCrtPic.textContent = i+1
             const name = D_pic[currentCountry.id][i].name?.[currentIlg]
             const city = D_pic[currentCountry.id][i].city?.[currentIlg]
 
             namePic.textContent = name ?  name.slice(0,1).toUpperCase() +  name.slice(1) : L_q[currentCountry.id].n; 
             cityPic.textContent = city ? city.slice(0,1).toUpperCase() +  city.slice(1) : L_q[currentCountry.id].n;
+            if(!name)cityPic.textContent = ""
 
             
             majDots(index)
@@ -67503,6 +67512,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         carouselPic.innerHTML = ``
         wrappermBoxImg.innerHTML = ``
         carouselPic.scrollLeft = 0
+        wrappermBoxImg.scrollLeft = 0
+        dotsWrap.innerHTML = ``
         
         D_pic[id].forEach(s=>{
           const slide = createEl('div')
@@ -67589,6 +67600,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const i = mCadresImgPic.indexOf(mBoxImg.querySelector('.mCadreImg'))
             LArrowPic.classList.toggle('active',i !== 0)
             RArrowPic.classList.toggle('active',i !== mCadresImgPic.length - 1)
+ 
             const name = D_pic[id][i].name?.[currentIlg]
             const city = D_pic[id][i].city?.[currentIlg]
 
@@ -67602,6 +67614,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         mCadresImgPic = [...queryAll('.mCadreImg')]
         if(mCadresImgPic.length>0)mCadresImgPic[0].parentElement.click()
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
+
+        indexCrtPic.textContent = 1
+        nbrPics.textContent = mCadresImgPic.length
 
         //** Créer les dots
 
@@ -67778,8 +67793,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       voirPlus.addEventListener("click", () => {
         openStat.style.display = "none";
+        openPic.style.display = "none";
         if (currentCountry?.id in L_q && !L_config.m) {
           openStat.style.display = "";
+          openPic.style.display = "";
+          
           fillCadreStat(currentCountry);
           resetCadreStat();
         }
@@ -94632,6 +94650,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         // On construit l'URL de l'API avec le nom du pays
         wrapperTRCadre.style.display = viewSub ? "none" : "flex";
         openStat.style.display = viewSub ? "none" : "flex";
+        openPic.style.display = viewSub ? "none" : "flex";
 
         const url = `https://restcountries.com/v5/alpha/${id}`;
         mDrapeauCadre.src = ``;
@@ -94673,7 +94692,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         //   drapeauCadre.src =
         //     "https://upload.wikimedia.org/wikipedia/commons/d/d1/Flag_of_Guadeloupe_%28UPLG%29.svg";
         // }
-        fillCadrePic(id)
+        // fillCadrePic(id)
 
         if (!viewSub) {
           const loadingCadreContours = document.createElement("div");

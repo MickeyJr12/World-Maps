@@ -10815,34 +10815,6 @@ const D_pic = {
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
             "fame": 58
         },
-        {
-            "id": "Q501851",
-            "name": {
-                "fr": "Bibliotheca Alexandrina",
-                "en": "Bibliotheca Alexandrina"
-            },
-            "city": {
-                "id": "Q87",
-                "fr": "Alexandrie",
-                "en": "Alexandria"
-            },
-            "country": {
-                "id": "Q79",
-                "iso": "EG",
-                "fr": "Égypte",
-                "en": "Egypt"
-            },
-            "coordinates": {
-                "latitude": 31.208888888889,
-                "longitude": 29.909166666667
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Bibliotheca_Alexandrina_%28Alexandrie_biblioth%C3%A8que%29.jpg/1280px-Bibliotheca_Alexandrina_%28Alexandrie_biblioth%C3%A8que%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Bibliotheca Alexandrina (Alexandrie bibliothèque).jpg",
-            "author": "René Dinkel",
-            "license": "CC0",
-            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-            "fame": 50
-        }
     ],
     "EH": [
         {
@@ -37921,30 +37893,6 @@ const D_pic = {
         }
     ],
     "VE": [
-        {
-            "id": "Q81068910",
-            "name": {
-                "fr": "pandémie de Covid-19",
-                "en": "COVID-19 pandemic"
-            },
-            "city": null,
-            "country": {
-                "id": "Q717",
-                "iso": "VE",
-                "fr": "Venezuela",
-                "en": "Venezuela"
-            },
-            "coordinates": {
-                "latitude": null,
-                "longitude": null
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Covid-19_SP_-_UTI_V._Nova_Cachoeirinha.jpg/1280px-Covid-19_SP_-_UTI_V._Nova_Cachoeirinha.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Covid-19 SP - UTI V. Nova Cachoeirinha.jpg",
-            "author": "Gustavo Basso",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 214
-        },
         {
             "id": "Q80299",
             "name": {
