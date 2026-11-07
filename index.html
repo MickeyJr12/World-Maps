@@ -67733,8 +67733,6 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
         wrappermBoxImg.innerHTML = ``
         dotsWrap.innerHTML = ``
         cadrePic.dataset.crtId = id
-        carouselPic.scrollLeft = 0
-        wrappermBoxImg.scrollLeft = 0
         
         D_pic[id].forEach(s=>{
           const slide = createEl('div')
@@ -67825,6 +67823,9 @@ document.querySelectorAll('#cadreLicence [data-pic]').forEach((el) => {
             fillInfosPic(id,i)
           })
         })
+
+        carouselPic.firstElementChild.scrollIntoView({ block: "center", behavior: 'instant'})
+        wrappermBoxImg.firstElementChild.scrollIntoView({ block: "start", behavior: 'instant'})
 
         mCadresImgPic = [...queryAll('.mCadreImg')]
         cadresImgPic = [...cadrePic.querySelectorAll('.slide')]
