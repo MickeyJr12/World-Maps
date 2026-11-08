@@ -9311,7 +9311,7 @@ const D_pic = {
             },
             "city": {
                 "id": "Q1070000",
-                "fr": "district urbain de Datong",
+                "fr": "district urbain de Datong",  
                 "en": "Pingcheng District"
             },
             "country": {
@@ -9332,7 +9332,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yungang11_2010.JPG",
             "fame": 51,
             "description": {
-                "fr": "Les grottes de Yungang, à 16 km. de Datong dans la province de Shanxi, sont l'un des plus célèbres sites anciens de sculpture en Chine. On compte 53 cavernes pour environ 50 000 statues, aménagées entre les Ve – VIe siècle, sous la dynastie Tabghach des Wei du Nord. Les travaux commencent vers 460 après qu'un moine, Tan Yao, a suggéré à l'empereur Wencheng de cesser les persécutions que ses prédécesseurs lançaient périodiquement contre les communautés bouddhiques et se servir, au contraire, de ces communautés pour affermir son pouvoir.",
+                "fr": "Les grottes de Yungang, à 16 km de Datong dans la province de Shanxi, sont l'un des plus célèbres sites anciens de sculpture en Chine. On compte 53 cavernes pour environ 50 000 statues, aménagées entre les Ve – VIe siècle, sous la dynastie Tabghach des Wei du Nord. Les travaux commencent vers 460 après qu'un moine, Tan Yao, a suggéré à l'empereur Wencheng de cesser les persécutions que ses prédécesseurs lançaient périodiquement contre les communautés bouddhiques et se servir, au contraire, de ces communautés pour affermir son pouvoir.",
                 "en": "The Yungang Grottoes, formerly the Wuzhoushan Grottoes, are ancient Chinese Buddhist temple grottoes built during the Northern Wei dynasty near the city of Datong, then called Pingcheng, in the province of Shanxi. They are excellent examples of rock-cut architecture and one of the three most famous ancient Buddhist sculptural sites of China, along with Longmen and Mogao."
             }
         },
@@ -48174,8 +48174,8 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Les_Saintes_-_Archipel_de_Guadeloupe.jpg?uselang=fr",
             "fame": 500,
             "description": {
-                "fr": "Vue de la Guadeloupe de haut",
-                "en": "View of Guadeloupe from above"
+                "fr": "La Guadeloupe (en créole guadeloupéen : Gwadloup) est un archipel des Caraïbes formant un département et région d'outre-mer français. La partie principale (Karukera en langues amérindiennes) en forme de papillon est composée de deux îles : la Grande-Terre à l'est et la Basse-Terre à l'ouest, séparées par un bras de mer, appelé « la Rivière Salée ». Le chef-lieu est Basse-Terre et la capitale économique est Pointe-à-Pitre. Au 1er janvier 2026, la population s'établit à 382 586 habitants",
+                "en": "Guadeloupe (in Guadeloupean Creole: Gwadloup) is an archipelago in the Caribbean that constitutes a French overseas department and region. The main part (Karukera in Amerindian languages), shaped like a butterfly, consists of two islands: Grande-Terre to the east and Basse-Terre to the west, separated by a strait called “la Rivière Salée.” The administrative seat is Basse-Terre, and the economic capital is Pointe-à-Pitre. As of January 1, 2026, the population stood at 382,586."
             }
         },
         {
@@ -48741,39 +48741,6 @@ const D_pic = {
                 "en": "The Ancient Theatre of Epidaurus is a theatre in the Greek city of Epidaurus, located on the southeast end of the sanctuary dedicated to the ancient Greek God of medicine, Asclepius. It is built on the west side of Cynortion Mountain, near modern Lygourio, and belongs to the Epidaurus Municipality. Constructed in the late 4th century BC, it is considered to be the most perfect ancient Greek theatre with regard to acoustics and aesthetics."
             }
         },
-        {
-            "id": "Q113653921",
-            "name": {
-                "fr": "Citadel of Oia",
-                "en": "Citadel of Oia"
-            },
-            "city": {
-                "id": "Q3949542",
-                "fr": "dème de Théra",
-                "en": "Thira Municipality"
-            },
-            "country": {
-                "id": "Q41",
-                "iso": "GR",
-                "fr": "Grèce",
-                "en": "Greece"
-            },
-            "coordinates": {
-                "latitude": 36.460191,
-                "longitude": 25.373284
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Oia_in_Santorini%2C_Greece_003.jpg/1280px-Oia_in_Santorini%2C_Greece_003.jpg",
-            "file": "Oia in Santorini, Greece 003.jpg",
-            "author": "Moonik",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oia_in_Santorini,_Greece_003.jpg",
-            "fame": 2,
-            "description": {
-                "fr": null,
-                "en": "Cyclades"
-            }
-        }
     ],
     "GS": [
         {
