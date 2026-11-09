@@ -724,7 +724,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Qasr_Al_Hosn_in_Front_of_skyline.jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "Le Qasr Al Hosn est un monument historique et le plus ancien bâtiment en pierre de la ville d'Abou Dhabi, la capitale des Émirats arabes unis. Sa construction a été supervisée par Mohammed Al Bastaki en 1761.",
                 "en": "The Qasr Al Hosn is a historical landmark and the oldest stone building in the city of Abu Dhabi, the capital of the United Arab Emirates. Its construction was supervised by Mohammed Al Bastaki in 1761."
             }
         },
@@ -757,7 +757,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Al_Bastakiya_Dubai.jpg",
             "fame": 12,
             "description": {
-                "fr": null,
+                "fr": "Le quartier historique d'Al Fahidi est un quartier historique de Dubaï, aux Émirats arabes unis.",
                 "en": "Al Fahidi Historical Neighbourhood is a historic district in Dubai, United Arab Emirates."
             }
         },
@@ -790,7 +790,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ripe_Dates_in_the_Al_Ain_Oasis.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "L'oasis d'Al-Ain est la plus grande oasis de la ville d'Al Ain, dans la région orientale de l'émirat d'Abou Dhabi, aux Émirats arabes unis.",
                 "en": "Al-Ain Oasis is the largest oasis in the city of Al Ain, within the Eastern Region of the Emirate of Abu Dhabi, the United Arab Emirates."
             }
         },
@@ -823,7 +823,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:2011-0209-Al_Badiyah_Mosque.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "La mosquée d'Al Bidya est une mosquée historique située dans le village d'Al Bidya, dans l'émirat de Fujaïrah, aux Émirats arabes unis. Âgée d'environ 500 ans, elle est la plus ancienne mosquée du pays, bien que les ruines d'une mosquée vieille de 1 000 ans aient été découvertes à Al Ain, à Abou Dhabi. Elle se trouve dans le petit village d'Al-Badiyah ou Al-Bidiyah, à environ 40 km au nord de la capitale de l'émirat, et est également connue sous le nom de « mosquée ottomane ».",
                 "en": "Al Bidya Mosque is a historical mosque in the village of Al Bidya Emirate of Fujairah, the U.A.E. At some 500 years old, it is the oldest mosque in the country, although ruins of a 1,000 year-old mosque have been found in Al Ain, in Abu Dhabi. It is located in the small village of Al-Badiyah or Al-Bidiyah, about 40 km north of the Emirate's capital city, and is also known as the \"Ottoman Mosque\"."
             }
         },
@@ -856,7 +856,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hatta_Dam_Road.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "Barrage à Dubaï, aux Émirats arabes unis",
                 "en": "dam in Dubai, United Arab Emirates"
             }
         }
@@ -1250,7 +1250,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:AfghanAirForce1.jpg",
             "fame": 17,
             "description": {
-                "fr": null,
+                "fr": "La mosquée Eidgah, également orthographiée mosquée Id Gah, est une mosquée sunnite située à Kaboul, en Afghanistan. Elle se trouve au sud-est du quartier résidentiel aisé de Wazir Akbar Khan, près du stade Ghazi et de Chaman-e-Hozori. Elle a été construite à la fin du XIXe siècle et au début du XXe siècle, lorsque le pays était dirigé par l'émir Abdur Rahman Khan et son fils Habibullah Khan. La mosquée est une attraction touristique de Kaboul. Elle était fréquentée par de grandes foules pour les prières quotidiennes, notamment lors des prières annuelles spéciales de l'Aïd el-Fitr et de l'Aïd el-Adha.",
                 "en": "The Eidgah Mosque; also spelled as the Id Gah Mosque, is a Sunni mosque located in Kabul, Afghanistan. It is located to the southeast of the affluent Wazir Akbar Khan neighborhood, near the Ghazi Stadium and Chaman-e-Hozori. It was built during the late 19th century and early 20th century, when the country was ruled by Emir Abdur Rahman Khan and his son Habibullah Khan. The mosque is a tourist attraction in Kabul. The mosque was used by large crowds of daily prayers, including during the special annual Eid al-Fitr and Eid al-Adha prayers."
             }
         },
@@ -1450,7 +1450,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antigua_Shirley%27s_Heights_English_Harbour.jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "English Harbour est un port naturel et une ville situés sur l'île d'Antigua, dans les Caraïbes, à l'extrême sud de l'île. La localité tire son nom du port voisin, où la Royal Navy établit sa base d'opérations pour la région au XVIIIe siècle. Sa population est de 570 habitants. English Harbour est un centre de plaisance, notamment de yachting. Deux ports en eaux profondes et abrités se trouvent à proximité : English Harbour lui-même et Falmouth Harbour.",
                 "en": "English Harbour is a natural harbour and town on the island of Antigua in the Caribbean, in the extreme south of the island. The settlement takes its name from the nearby harbour in which the Royal Navy established its base of operations for the area during the eighteenth century. Its population is 570. English Harbour is a centre of boating, especially yachting. There are two sheltered deepwater harbours nearby; English Harbour itself and Falmouth Harbour."
             }
         },
@@ -1479,7 +1479,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dickinson_bay_beach_antigua.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Dickenson Bay se trouve sur la côte nord-ouest d'Antigua, près de McKinnon's. Bien que Dickenson Bay ne soit pas la plage la plus isolée d'Antigua, ses plages de sable blanc et ses eaux calmes attirent de nombreux visiteurs. Une série de grands hôtels et complexes touristiques lui confère l'une des plus grandes concentrations de chambres de l'île. Le front de mer est bordé de restaurants, de bars de plage et de prestataires d'activités nautiques. Plusieurs petites îles inhabitées et un récif corallien long d'environ 1,6 km se trouvent au large de la baie. Runaway Beach est située dans la baie.",
                 "en": "Dickenson Bay is located on the northwestern coast in Antigua, near McKinnon's. While Dickenson Bay is not the most secluded beach in Antigua, its white beaches and tranquil seas attract many visitors. A string of large resort hotels give Dickenson Bay one of the island's largest collections of rooms. The beachfront is lined with restaurants, beach bars, and water sports concessions. Several small uninhabited islands and a one-mile long coral reef can be found off the coast of the bay. Runaway Beach is located on the bay."
             }
         },
@@ -1510,35 +1510,6 @@ const D_pic = {
             "description": {
                 "fr": "pont situé à Antigua-et-Barbuda",
                 "en": "Devil's Bridge National Park is a natural rock arch in eastern Antigua. It is located on the Atlantic coast at 17°6′1.7″N 61°40′42.2″W, near Indian Town Point to the east of Willikies. The area around the arch features several natural blowholes which shoot up water and spray powered by waves from the Atlantic Ocean. This particular location is exposed to waves that are pushed by the Trade Winds with no land between here and Europe. Nearby popular local swimming spots such as Long Cove are sheltered by an offshore reef acts as a natural breakwater. In 2008 it was declared National Park."
-            }
-        },
-        {
-            "id": "Q5140362",
-            "name": {
-                "fr": "Codrington Lagoon",
-                "en": "Codrington Lagoon"
-            },
-            "city": null,
-            "country": {
-                "id": "Q781",
-                "iso": "AG",
-                "fr": "Antigua-et-Barbuda",
-                "en": "Antigua and Barbuda"
-            },
-            "coordinates": {
-                "latitude": 17.65,
-                "longitude": -61.833333333333
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Decker_Barbuda_1813_color.png",
-            "file": "Decker Barbuda 1813 color.png",
-            "author": "Capt. Decker R.N.",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Decker_Barbuda_1813_color.png",
-            "fame": 6,
-            "description": {
-                "fr": null,
-                "en": "Codrington Lagoon is a lagoon and national park on the west coast of Barbuda. It is the largest saltwater lagoon in the Eastern Caribbean. The lagoon is home to the largest magnificent frigatebird colony in the world. The village of Codrington, the main settlement on Barbuda, is located on the eastern shore of the lagoon."
             }
         },
         {
@@ -1628,7 +1599,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fort_Barrington_defensless_against_tourist_invasion_(16627845017).jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "Le fort Barrington est un ancien fort militaire situé à Antigua-et-Barbuda. Il se trouve sur Goat Hill, à Yeptons, à l'entrée ouest du port de St. John's, à Antigua. Le fort a été construit en 1779 et nommé en l'honneur de l'amiral Samuel Barrington. Ses vestiges comprennent une batterie circulaire, un petit magasin de munitions et des casernes.",
                 "en": "Fort Barrington is a historic military fort in Antigua and Barbuda. It is located on Goat Hill in Yeptons, Antigua, at the western entrance to St. John's Harbour. The fort was built in 1779, and was named for Admiral Samuel Barrington. Remains of the fort include a circular battery, small magazine, and barracks."
             }
         }
@@ -2907,7 +2878,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lubango-Namibe_landscape.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "La Serra da Leba est une chaîne de montagnes située dans la province de Namibe, en Angola. Située près de la ville de Lubango, la Serra da Leba est célèbre pour son altitude, sa beauté, ainsi que pour le col et la route de la Serra da Leba, qui atteignent une altitude de 1 845 m.",
                 "en": "Serra da Leba is a mountain range in the province of Namibe, in Angola. Located near the city of Lubango, Serra da Leba is famous for its altitude, for its beauty, and also for the Serra da Leba pass and road up to 1,845 m altitude."
             }
         },
@@ -2940,8 +2911,8 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Miradouro_da_Lua.jpg",
             "fame": 6,
             "description": {
-                "fr": null,
-                "en": null
+                "fr": "O Miradouro da Lua est un ensemble de falaises 40 Km au sud de Luanda, dans la commune de Belle, dans Angola.\nAu fil du temps, a érosion provoqué par vent et par pluie il créait le paysage de type lunaire que nous trouvons aujourd'hui. Le Miradouro da Lua est un lieu touristique incontournable pour ceux qui se dirigent de Luanda vers Barra Cuanza ou les plages de Cap Ledo.",
+                "en": "Miradouro da Lua is a series of cliffs located 40 km south of Luanda, in the municipality of Belle, Angola.\nOver time, erosion caused by wind and rain has created the lunar-like landscape we see today. Miradouro da Lua is a must-see tourist destination for those traveling from Luanda to Barra Cuanza or the beaches of Cap Ledo."
             }
         },
         {
@@ -2969,7 +2940,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Black_Stones_Malange.JPG",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Les Rochers noirs de Pungo Andongo sont un ensemble de vastes formations rocheuses monolithiques situées en Angola. Vieilles de plusieurs millions d'années, elles se distinguent par leur taille par rapport au paysage de savane de la région. L'ensemble est subdivisé en quatre sous-systèmes : occidental, méridional, septentrional et sud-est. La formation constitue une extension du plateau de Cacuso. Le sous-système rocheux occidental, le plus connu et le plus visité, se trouve dans la municipalité de Cacuso, dans la province de Malanje, et représente une importante attraction touristique en Angola.",
                 "en": "The Black Rocks at Pungo Andongo are a set of extensive monolithic rock formations in Angola. Millions of years old, they stand out for their size in relation to the savanna landscape of the region. It is subdivided into Western, South, North and Southeast subsystems. The formation is an extension of the Cacuso Plateau. The western rocky subsystem, the best known and most visited of all, is located in the municipality of Cacuso, in Malanje Province, and is an important tourist attraction in Angola."
             }
         },
@@ -3035,7 +3006,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cristo_Rei_Lubango.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "La statue du Christ-Roi est un monument et un sanctuaire catholiques qui surplombent la ville de Lubango, dans le sud de l'Angola. Elle s'inspire de la statue du Christ Rédempteur de Rio de Janeiro et fait partie des quatre statues de ce type dans le monde. Cette statue en marbre blanc, haute de 30 mètres, a été construite en 1957. Le monument a été conçu dans les années 1950 par l'ingénieur portugais originaire de Madère, Frazão Sardinha, et le ministère de la Culture du pays l'a déclaré site du patrimoine mondial angolais le 18 avril 2014.",
                 "en": "The Christ the King statue is a Catholic monument and shrine overlooking the city of Lubango in the South of Angola. It was inspired by the Christ the Redeemer statue in Rio de Janeiro, as one of only four in the world. This 30-metre-high white marble statue was built in 1957. The monument was designed in the 1950s by Portuguese engineer of Madeira, Frazão Sardinha, and the country's Ministry of Culture declared it an Angolan World Heritage Site as of April 18, 2014."
             }
         },
@@ -3064,7 +3035,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tundavala_Gap.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "La gorge de Tundavala est un canyon situé sur l'escarpement de la Serra da Leba, près de Lubango, dans la province de Huíla, en Angola. L'escarpement marque la limite occidentale du plateau de Humpata, qui fait partie du Grand Escarpement d'Afrique australe, et constitue une frontière naturelle entre les provinces de Huíla et de Namibe. La hauteur de la crête dépasse 2 200 mètres, tandis que la plaine située à sa base se trouve environ 1 000 mètres plus bas. Le point de vue situé au bord des falaises, à environ 18 km de Lubango, surplombe une superficie de 10 000 km² en direction de Moçâmedes.",
                 "en": "Tundavala Gap is a canyon on the escarpment of the Serra da Leba near Lubango, Huíla Province, Angola. The escarpment marks the western limit of the Humpata Plateau, part of the Great Escarpment of Southern Africa, and creates a natural boundary between Huíla Province and Namibe Province. The height of the rim exceeds 2,200 metres, while the plain at the base is approximately 1,000 metres below. The viewpoint at the edge of the cliffs, located roughly 18 km from Lubango, overlooks 10,000 km2 towards Moçâmedes."
             }
         }
@@ -3789,7 +3760,7 @@ const D_pic = {
             "fame": 5,
             "description": {
                 "fr": "réserve naturelle située dans les vallées de Calchaquí, province de Salta, Argentine",
-                "en": null
+                "en": "Nature reserve located in the Calchaquí Valleys, Salta Province, Argentina"
             }
         }
     ],
@@ -4054,7 +4025,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Upper_Belvedere,_chapel_01.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "La chapelle du palais du Belvédère est une chapelle située dans la tour sud-est du Belvédère supérieur, à Vienne, en Autriche. Elle a été conçue par l'architecte autrichien Johann Lukas von Hildebrandt.",
                 "en": "Belvedere Palace Chapel is a chapel located in the south eastern corner tower of the Upper Belvedere in Vienna, Austria. It was designed by the Austrian architect Johann Lukas von Hildebrandt."
             }
         }
@@ -4508,7 +4479,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mangrove_tree_(Conocarpus_erectus)_Aruba.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Eagle Beach est une plage et un quartier d'Oranjestad, à Aruba. Le quartier est célèbre pour ses nombreux complexes hôteliers de faible hauteur et sa vaste plage publique. Il s'agit de la plage la plus large d'Aruba, avec un sable blanc et doux. Elle a été classée parmi les meilleures plages du monde.",
                 "en": "Eagle Beach is a beach and neighbourhood of Oranjestad, Aruba. The neighbourhood is famous for its many low-rise resorts and wide public beach. It is the widest beach of Aruba. and has soft white sand. It has been rated one of the best beaches in the world."
             }
         },
@@ -4537,7 +4508,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Baby_Beach.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Baby Beach, officiellement connue sous le nom de Klein Lagoen, est une lagune peu profonde et abritée, aménagée par l'homme, située à Aruba. Elle se trouve dans la localité de Mangle Cora, près du village de Seroe Colorado, au sud-ouest de l'extrémité sud-est de l'île. Fréquentée par les touristes et les habitants, elle est surnommée Baby Beach car ses eaux sont si calmes qu'elles sont sans danger pour les très jeunes enfants. Grâce à la tranquillité de l'eau, la plongée avec tuba y est sûre pour les enfants comme pour les débutants. La plage est principalement appréciée pour l'absence de vagues et ses eaux peu profondes.",
                 "en": "Baby Beach, officially known as Klein Lagoen, is a shallow, sheltered, man-altered lagoon in Aruba. It's in the Mangle Cora locality, near the village of Seroe Colorado, on the southwest side of the southeast end of the island. Frequented by both tourists and locals, it is nicknamed Baby Beach because the water is so calm that it is safe for very small children. Because of the calm water, snorkeling here is safe for both children and those new to snorkeling. The beach is popular mostly due to the lack of waves and the shallow water."
             }
         }
@@ -4766,7 +4737,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Petroglyphs_of_Qobustan_2.jpg",
             "fame": 17,
             "description": {
-                "fr": null,
+                "fr": "Le paysage culturel de l'art rupestre de Gobustan est un site historique d'Azerbaïdjan, comprenant une vaste collection de pétroglyphes qui témoignent de la flore, de la faune, des pratiques de chasse, des structures sociales et des expressions culturelles des sociétés humaines de la préhistoire jusqu'à l'époque médiévale. Ces gravures représentent en détail des figures anthropomorphes, telles que des porteurs de lances et des scènes de danses rituelles, ainsi que diverses espèces animales, des scènes de tauromachie, des caravanes de chameaux et des symboles célestes comme le soleil et d'autres étoiles.",
                 "en": "The Gobustan Rock Art Cultural Landscape is a historic site in Azerbaijan, comprising a large collection of petroglyphs that reflect the flora, fauna, hunting practices, social structures, and cultural expressions of human societies from prehistoric to medieval times. These engravings provide detailed depictions of anthropomorphic figures, such as lance-bearers and ritualistic dance scenes, as well as various animal species, bullfighting events, camel caravans, and celestial symbols such as the sun and other stars."
             }
         }
@@ -4900,7 +4871,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bosnia_and_Herzegovina_Apr-28-2012_006_(7156010742).jpg",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "Vrelo Bune est un ensemble naturel et architectural situé à la source de la rivière Buna, près de Blagaj, un village doté du statut de ville. Il fait partie de l'ensemble paysager plus vaste de la ville de Blagaj — patrimoine historique et naturel de Bosnie-Herzégovine, situé au sud-est de Mostar, en Bosnie-Herzégovine.",
                 "en": "Vrelo Bune is a natural and architectural ensemble located at the spring of the Buna River near Blagaj, a village-town, and is part of the wider \"Townscape ensemble of the town of Blagaj — Historical and Natural Heritage of Bosnia and Herzegovina\", situated southeast of Mostar, Bosnia and Herzegovina."
             }
         },
@@ -4930,7 +4901,7 @@ const D_pic = {
             "fame": 1,
             "description": {
                 "fr": "station du tramway de Sarajevo",
-                "en": null
+                "en": "Sarajevo tram station"
             }
         }
     ],
@@ -5058,7 +5029,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_The_Animal_Flower_Cave,_Barbados_(6807814333).jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "La grotte Animal Flower est située sous les falaises de North Point, à St. Lucy, à la Barbade. Il s'agit de la seule grotte marine accessible de l'île. Elle a été découverte par son ouverture donnant sur la mer en 1780 par deux explorateurs anglais. La grotte se trouve à environ 1,8 m au-dessus du niveau des plus hautes eaux, bien qu'elle se soit formée au niveau de la mer. Cela s'explique par le fait que la Barbade s'élève d'environ 2,5 cm tous les 1 000 ans. Des marches en corail, construites en 1912, permettent de descendre dans la grotte par une ouverture située dans son plafond.",
                 "en": "The Animal Flower Cave is located under the cliffs at North Point, St. Lucy, Barbados. It is the island's lone accessible sea cave. It was discovered by its seaward entrance in 1780 by two English explorers. The cave stands six feet above the high water mark although it was formed at sea level. This has occurred because Barbados is rising at 1 inch per 1000 years. There are coral steps which lead down through an opening in the roof into the cave, these steps were built in 1912."
             }
         },
@@ -5221,7 +5192,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:DJI_0760_(_Ahsan_Manzil).jpg",
             "fame": 21,
             "description": {
-                "fr": null,
+                "fr": "Ahsan Manzil est un palais historique situé à Kumartoli, sur les rives de la rivière Buriganga, à Dacca, au Bangladesh. Il a servi de résidence officielle et de siège administratif au nawab de Dacca à la fin du XIXe siècle et au début du XXe siècle. Construit dans le style architectural indo-sarrasin, le palais a été désigné comme site du patrimoine du Vieux Dacca.",
                 "en": "Ahsan Manzil is a historic palace situated in Kumartoli along the banks of Buriganga River in Dhaka, Bangladesh. It served as the official residence and administrative seat of the Nawab of Dhaka during the late 19th and early 20th centuries. Constructed in the Indo-Saracenic architectural style, the palace has been designated an Old Dhaka Heritage Site."
             }
         },
@@ -5287,7 +5258,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kantanji%27s_Temple_fornt_view_in_Dinajpur.jpg",
             "fame": 14,
             "description": {
-                "fr": null,
+                "fr": "Le temple de Kantanagar, communément appelé temple de Kantaji ou temple de Kantajew à Kantanagar, est un temple hindou situé à Dinajpur, au Bangladesh. Cet édifice religieux date du XVIIIe siècle. Le temple est dédié à Kanta ou Krishna et est particulièrement vénéré par les fidèles de Rukmini et Krishna au Bengale. Il est consacré à Krishna et à son épouse Rukmini. Construit par le maharaja Pran Nath, sa construction a commencé en 1704 et s'est achevée sous le règne de son fils, le Raja Ramnath, en 1752.",
                 "en": "Kantanagar Temple, commonly known as Kantaji Temple or Kantajew Temple at Kantanagar, is a Hindu temple in Dinajpur, Bangladesh. The temple is an 18th century religious edifice. The temple belongs to the Hindu Kanta or Krishna, and is most popular with the Rukmini-Krishna devotees in Bengal. This temple is dedicated to Krishna and his wife Rukmini. Built by Maharaja Pran Nath, its construction started in 1704 CE and ended in the reign of his son Raja Ramnath in 1752 CE."
             }
         }
@@ -5621,7 +5592,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:ASC_Leiden_-_van_Achterberg_Collection_-_5_-_021_-_Un_coin_de_la_Grande_Mosqu%C3%A9e_avec_vingt_niveaux_de_b%C3%A2tons_-_Bobo-Dioulasso,_Burkina_Faso,_19-26_ao%C3%BBt_2001.tif",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "La grande mosquée de Bobo-Dioulasso est une mosquée située à Bobo-Dioulasso, dans la province du Houet, dans la région des Hauts-Bassins, au Burkina Faso.",
                 "en": "The Grand Mosque of Bobo-Dioulasso is a mosque in Bobo-Dioulasso, Houet Province, Hauts-Bassins Region, Burkina Faso."
             }
         },
@@ -5879,7 +5850,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D0%A0%D0%B8%D0%BB%D1%81%D0%BA%D0%B8%D1%82%D0%B5_%D0%B5%D0%B7%D0%B5%D1%80%D0%B0_-_%D0%BF%D0%B0%D0%BD%D0%BE%D1%80%D0%B0%D0%BC%D0%B0.jpg",
             "fame": 26,
             "description": {
-                "fr": null,
+                "fr": "Les Sept Lacs de Rila sont un groupe de tarns — des lacs glaciaires formés dans des cirques — situés dans la partie nord-ouest du massif de Rila, en Bulgarie. Situés entre 2 100 et 2 500 mètres d'altitude, ils constituent le groupe de lacs le plus visité de Bulgarie. Chaque lac porte un nom associé à sa caractéristique la plus marquante. Le plus élevé s'appelle Salzata, en raison de la limpidité de ses eaux, qui permettent de voir en profondeur.",
                 "en": "The Seven Rila Lakes are a group of tarns—glacial lakes formed in cirques—in the northwestern part of Rila Mountain in Bulgaria. Situated between 2,100 and 2,500 metres elevation above sea level, they are the most visited group of lakes in Bulgaria. Each lake carries a name associated with its most characteristic feature. The highest one is called Salzata due to its clear waters that allow visibility in depth."
             }
         },
@@ -6262,6 +6233,105 @@ const D_pic = {
                 "fr": "Le parc national de la Rusizi est un parc national burundais situé à environ 15 km au nord de Bujumbura dans la province de Bubanza.",
                 "en": "Rusizi National Park is a national park in Burundi, next to the Rusizi River. It is 15 km north of the city of Bujumbura and home to hippopotamuses and sitatungas. Gustave, a Nile crocodile, is rumored to have killed 300 people here."
             }
+        },
+        {
+            "id": "Q5118378",
+            "name": {
+                "fr": "chutes de Karera",
+                "en": "Chutes de la Kagera"
+            },
+            "city": {
+                "id": "Q131844612",
+                "fr": "Burunga",
+                "en": "Burunga"
+            },
+            "country": {
+                "id": "Q967",
+                "iso": "BI",
+                "fr": "Burundi",
+                "en": "Burundi"
+            },
+            "coordinates": {
+                "latitude": -3.83,
+                "longitude": 30.08
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/La_chute_de_karera_nyakayi_1_%C3%A0_Rutana.jpg/1280px-La_chute_de_karera_nyakayi_1_%C3%A0_Rutana.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "La chute de karera nyakayi 1 à Rutana.jpg",
+            "author": "Zamennest",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:La_chute_de_karera_nyakayi_1_%C3%A0_Rutana.jpg",
+            "fame": 13,
+            "description": {
+                "fr": "Les chutes de la Karera sont une série de cascades située au Burundi dans la province de Burunga. Elles sont orientées du nord au sud et s'étendent sur 142 ha. Elles sont subdivisées en six branches et réparties sur trois paliers.",
+                "en": "The Chutes de la Karera are a spectacular series of waterfalls in southeastern Burundi. They are located to the south of Rutana. The falls occupy over 142 hectares, being made up of six branches divided on three landings."
+            }
+        },
+        {
+            "id": "Q16964613",
+            "name": {
+                "fr": "cathédrale Regina Mundi de Bujumbura",
+                "en": "Regina Mundi Cathedral, Bujumbura"
+            },
+            "city": {
+                "id": "Q3854",
+                "fr": "Bujumbura-Mairie",
+                "en": "Bujumbura"
+            },
+            "country": {
+                "id": "Q967",
+                "iso": "BI",
+                "fr": "Burundi",
+                "en": "Burundi"
+            },
+            "coordinates": {
+                "latitude": -3.39194,
+                "longitude": 29.3637
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Cath%C3%A9drale_Regina_Mundi_de_Bujumbura%2C_2024-3.jpg/1280px-Cath%C3%A9drale_Regina_Mundi_de_Bujumbura%2C_2024-3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Cathédrale Regina Mundi de Bujumbura, 2024-3.jpg",
+            "author": "Edouard mhg",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cath%C3%A9drale_Regina_Mundi_de_Bujumbura,_2024-3.jpg",
+            "fame": 8,
+            "description": {
+                "fr": "La cathédrale Regina Mundi de Bujumbura est une cathédrale catholique située à Bujumbura, la capitale économique du Burundi.",
+                "en": "The Regina Mundi Cathedral is a Catholic church in the city of Bujumbura, the former capital of the African country of Burundi. It functions as the headquarters of the Metropolitan Archdiocese of Bujumbura that was created on November 25, 2006 by Pope Benedict XVI through the bull Cum ad aptius. Follow the Roman or Latin rite and is included in the ecclesiastical province of Bujumbura."
+            }
+        },
+        {
+            "id": "Q21332817",
+            "name": {
+                "fr": "Lac Rwihinda",
+                "en": "Lake Rwihinda"
+            },
+            "city": {
+                "id": "Q600840",
+                "fr": "Province de Kirundo",
+                "en": "Kirundo Province"
+            },
+            "country": {
+                "id": "Q967",
+                "iso": "BI",
+                "fr": "Burundi",
+                "en": "Burundi"
+            },
+            "coordinates": {
+                "latitude": -2.5486111111111,
+                "longitude": 30.078055555556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Au_bord_du_lac_Rwihinda_appel%C3%A9_aussi_lac_aux_oiseaux_%C3%A0_Kirundo.jpg/1280px-Au_bord_du_lac_Rwihinda_appel%C3%A9_aussi_lac_aux_oiseaux_%C3%A0_Kirundo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Au bord du lac Rwihinda appelé aussi lac aux oiseaux à Kirundo.jpg",
+            "author": "NIHEREWENIMANA Richard",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Au_bord_du_lac_Rwihinda_appel%C3%A9_aussi_lac_aux_oiseaux_%C3%A0_Kirundo.jpg",
+            "fame": 7,
+            "description": {
+                "fr": "Le lac Rwihinda, également appelé lac aux Oiseaux, est un lac du nord du Burundi, situé dans la province de Butanyerera. Il fait partie du complexe des lacs du Bugesera et du Paysage aquatique protégé du Nord, inscrit comme site Ramsar.",
+                "en": "Lake Rwihinda, also known as the Lac aux Oiseaux is a lake in the Kirundo Province of Burundi. It is home to diverse migratory birds, which are the main tourist attraction in the region. However, despite being protected, it is under threat from encroaching agriculture in this very poor region."
+            }
         }
     ],
     "BJ": [
@@ -6423,6 +6493,72 @@ const D_pic = {
                 "fr": "Le HMD Bermuda est un port militaire de la Royal Navy située aux Bermudes qui fut actif entre la guerre d’indépendance des États-Unis et la fin de la guerre froide. Elle est une base navale de la North America and West Indies Station. Les Bermudes occupaient une position stratégique entre l’Amérique du Nord et l’Europe. Elles furent colonisées par les Anglais à partir de 1609. Des Français auraient également utilisés les îles au XVIe siècle pour lancer des opérations contre des galions espagnols.",
                 "en": "HMD Bermuda was the principal base of the Royal Navy in the Western Atlantic between American independence and the Cold War. The Imperial fortress colony of Bermuda had occupied a useful position astride the homeward leg taken by many European vessels from the New World since before its settlement by England in 1609. French privateers may have used the islands as a staging place for operations against Spanish galleons in the 16th century."
             }
+        },
+        {
+            "id": "Q30985",
+            "name": {
+                "fr": "Hamilton",
+                "en": "Hamilton"
+            },
+            "city": {
+                "id": "Q23635",
+                "fr": "Bermudes",
+                "en": "Bermuda"
+            },
+            "country": {
+                "id": "Q23635",
+                "iso": "BM",
+                "fr": "Bermudes",
+                "en": "Bermuda"
+            },
+            "coordinates": {
+                "latitude": 32.295,
+                "longitude": -64.78305555555555
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Front_Street%2C_Hamilton%2C_Bermuda.jpg/1280px-Front_Street%2C_Hamilton%2C_Bermuda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Front Street, Hamilton, Bermuda.jpg",
+            "author": "JoeyBagODonuts",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Front_Street,_Hamilton,_Bermuda.jpg",
+            "fame": 93,
+            "description": {
+                "fr": "Hamilton est la capitale du territoire britannique d'outre-mer des Bermudes. C'est également un port franc. La population de la ville s’élève à 1 012 personnes en 2012. De nombreux yachts de luxe sont immatriculés à Hamilton en raison de la fiscalité avantageuse des Bermudes en tant que paradis fiscal et pavillon de complaisance.",
+                "en": "Hamilton is the capital city of the British Overseas Territory of Bermuda, and the main settlement of Pembroke Parish. A port city, Hamilton is Bermuda's financial and commercial centre, and a popular tourist destination. Its population of 854 and its small land area make it one of the smallest capital cities in the world."
+            }
+        },
+        {
+            "id": "Q7591334",
+            "name": {
+                "fr": "église Saint-Pierre de Saint George's",
+                "en": "St. Peter's Church, St. George's"
+            },
+            "city": {
+                "id": "Q28063",
+                "fr": "Saint George's",
+                "en": "St. George's"
+            },
+            "country": {
+                "id": "Q23635",
+                "iso": "BM",
+                "fr": "Bermudes",
+                "en": "Bermuda"
+            },
+            "coordinates": {
+                "latitude": 32.3816,
+                "longitude": -64.6776
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/St._Peter%27s_Church%2C_Bermuda%2C_Front.jpg/1280px-St._Peter%27s_Church%2C_Bermuda%2C_Front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "St. Peter's Church, Bermuda, Front.jpg",
+            "author": "JoeyBagODonuts",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:St._Peter%27s_Church,_Bermuda,_Front.jpg",
+            "fame": 3,
+            "description": {
+                "fr": "L'église Saint-Pierre est une église anglicane située à Saint George's dans les Bermudes. Elle est la plus ancienne église anglicane encore en service utilisée de façon continue en dehors des îles Britanniques et vraisemblablement la plus ancienne église protestante utilisée de façon continue dans le Nouveau Monde. Saint George's, inscrit au Patrimoine mondial de l'UNESCO, est la plus ancienne colonie anglaise survivante du Nouveau Monde, ayant été établie par la Compagnie de Londres en 1612.",
+                "en": "Their Majesties Chappell, St. Peter's Church, in St. George's, Bermuda, is the oldest surviving Anglican church in continuous use outside the British Isles. It is also reportedly the oldest continuously used Protestant church in the New World. A UNESCO World Heritage Site, St. George's Town is the oldest surviving English settlement in the New World, having been settled by the Virginia Company in 1612."
+            }
         }
     ],
     "BN": [
@@ -6488,7 +6624,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:BRUNEI_NATIONAL_MUSEUM,_BRUNEI.jpg",
             "fame": 20,
             "description": {
-                "fr": null,
+                "fr": "Le musée de Brunei, le plus grand et le plus important musée national du pays, est situé à Kota Batu, à Bandar Seri Begawan. Ce musée national abrite une collection consacrée à l'art islamique, à l'histoire de l'Asie du Sud-Est depuis le XVIe siècle, ainsi qu'à l'archéologie et à l'ethnographie. Bien que le musée ait fermé en 2014 pour d'importants travaux de rénovation et de modernisation, sa réouverture très attendue, initialement prévue pour 2020, a été retardée et il demeure fermé en 2025.",
                 "en": "Brunei Museum, the country's largest and most significant national museum, is located in Kota Batu, Bandar Seri Begawan. This national museum houses a collection spanning Islamic art, Southeast Asian history from the 16th century, and extensive displays in archaeology and ethnography. Although the museum closed in 2014 for major repairs and upgrades, its much-anticipated reopening, initially set for 2020, has been delayed and remains closed as of 2025."
             }
         },
@@ -6517,7 +6653,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Long_way_to_go....jpg",
             "fame": 16,
             "description": {
-                "fr": null,
+                "fr": "Le parc national d'Ulu Temburong est le premier parc national créé au Brunei, protégé depuis 1991. Il se trouve dans le district de Temburong, à l'est du Brunei, et couvre environ 40 % du district dans sa partie sud, sur une superficie de 550 km². Il est situé dans la réserve forestière de Batu Apoi. Le parc abrite une jungle préservée et est surnommé le « joyau vert du Brunei ». Il est décrit comme « le meilleur exemple de la réussite de la politique de protection des forêts du sultanat ». Les principales rivières sont les rivières Temburong et Belalong. Il constitue un important centre d'écotourisme au Brunei et accueille le complexe Ulu Ulu.",
                 "en": "Ulu Temburong National Park is the first national park to be established in Brunei, protected since 1991. The park is in Temburong District in eastern Brunei, and covers about 40% of the district in the south at 550 square kilometres. It is within the Batu Apoi Forest Reserve. The park contains unspoiled jungle and is known as the \"Green Jewel of Brunei\", described as \"the finest example of the sultanate's successful forest protection policy\". The principal rivers are the Temburong and Belalong Rivers. It is an important ecotourism centre in Brunei and hosts the Ulu Ulu Resort."
             }
         },
@@ -6583,7 +6719,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Royal_Regalie_(1).JPG",
             "fame": 10,
             "description": {
-                "fr": null,
+                "fr": "Le musée des Insignes royaux est un musée situé au cœur de Bandar Seri Begawan, la capitale du Brunei. Construit à l'origine comme un monument en 1965, le bâtiment a été rénové et agrandi en 1992, en combinant des éléments architecturaux constructivistes et du style malais islamique royal. Initialement édifié comme un monument, le bâtiment des Insignes royaux a ensuite été transformé en musée.",
                 "en": "The Royal Regalia Museum is a museum located in the heart of Bandar Seri Begawan, the capital of Brunei. Originally built as a monument in 1965, the museum had a makeover and expansion in 1992 that combined constructivist and Melayu Islam Beraja architectural elements. Originally constructed as a monument, Royal Regalia Building later underwent a transition into a museum."
             }
         }
@@ -6684,7 +6820,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kerk_Conception_Exterieur.jpg",
             "fame": 32,
             "description": {
-                "fr": null,
+                "fr": "Les missions jésuites de Chiquitos se trouvent dans le département de Santa Cruz, dans l'est de la Bolivie. Six de ces anciennes missions ont été collectivement inscrites au patrimoine mondial de l'UNESCO en 1990. Caractérisées par une fusion unique d'influences culturelles européennes et amérindiennes, les missions ont été fondées par les jésuites aux XVIIe et XVIIIe siècles sous la forme de réductions ou reducciones de indios, afin de convertir les tribus locales au christianisme. La région intérieure située entre les territoires espagnols et portugais d'Amérique du Sud était encore largement inexplorée à la fin du XVIIe siècle.",
                 "en": "The Jesuit Missions of Chiquitos are located in the Santa Cruz department in eastern Bolivia. Six of these former missions collectively were designated as a UNESCO World Heritage Site in 1990. Distinguished by a unique fusion of European and Amerindian cultural influences, the missions were founded as reductions or reducciones de indios by Jesuits in the 17th and 18th centuries to convert local tribes to Christianity. The interior region bordering Spanish and Portuguese territories in South America was largely unexplored at the end of the 17th century."
             }
         },
@@ -6750,7 +6886,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:20170805_Bolivia_1214_Sucre_sRGB_(26204168039).jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "Site inscrit au patrimoine mondial de l'UNESCO",
                 "en": "UNESCO World Heritage site"
             }
         }
@@ -7305,7 +7441,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buddha_Dordenma_Statue_and_around_%E2%80%93_Thimphu_during_LGFC_-_Bhutan_2019_(61).jpg",
             "fame": 15,
             "description": {
-                "fr": null,
+                "fr": "Le Grand Bouddha Dordenma est une gigantesque statue du Bouddha Shakyamuni située dans les montagnes du Bhoutan, érigée pour célébrer le 60e anniversaire du quatrième roi, Jigme Singye Wangchuck. La statue abrite plus de cent mille statues plus petites de Bouddha, toutes, comme le Grand Bouddha Dordenma lui-même, fabriquées en bronze et dorées à l'or. Le Grand Bouddha Dordenma se trouve au milieu des ruines de Kuensel Phodrang, le palais de Sherab Wangchuk, le treizième Druk Desi, et surplombe l'accès sud à Thimphou, la capitale du Bhoutan.",
                 "en": "Great Buddha Dordenma is a gigantic Shakyamuni Buddha statue in the mountains of Bhutan celebrating the 60th anniversary of fourth king Jigme Singye Wangchuck. The statue houses over one hundred thousand smaller Buddha statues, each of which, like the Great Buddha Dordenma itself, are made of bronze and gilded in gold. The Great Buddha Dordenma is sited amidst the ruins of Kuensel Phodrang, the palace of Sherab Wangchuk, the thirteenth Druk Desi, overlooking the southern approach to Thimphu, the capital of Bhutan."
             }
         },
@@ -7338,7 +7474,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kyichu_Lhakhang_Temple.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Kyichu Lhakhang est un important temple bouddhiste himalayen situé dans le gewog de Lango, dans le dzongkhag de Paro, au Bhoutan.",
                 "en": "Kyichu Lhakhang, is an important Himalayan Buddhist temple situated in Lango Gewog of Paro Dzongkhag in Bhutan."
             }
         },
@@ -7371,7 +7507,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trongsa-Dzong-124-2015-gje.jpg",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "Le dzong de Trongsa est la plus grande forteresse-dzong du Bhoutan. Il est situé à Trongsa, dans le district de Trongsa, au centre du pays. Construit sur un éperon surplombant la gorge de la rivière Mangde, un temple fut d'abord établi à cet emplacement en 1543 par le lama drukpa Nagi Wangchuk, fils de Ngawang Chhojey. En 1647, son arrière-petit-fils, Shabdrung Ngawang Namgyal, construisit le premier dzong pour le remplacer. Il fut appelé Chökhor Rabtentse Dzong, puis plus simplement Choetse Dzong.",
                 "en": "Trongsa Dzong is the largest dzong fortress in Bhutan, located in Trongsa in Trongsa district, in the centre of the country. Built on a spur overlooking the gorge of the Mangde River, a temple was first established at the location in 1543 by the Drukpa lama, Nagi Wangchuk son of Ngawang Chhojey. In 1647, his great-grandson Shabdrung Ngawang Namgyal, constructed the first dzong to replace it, called Chökhor Rabtentse Dzong with a shorter version of Choetse Dzong."
             }
         },
@@ -7541,93 +7677,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q194732",
-            "name": {
-                "fr": "réserve de chasse du Kalahari central",
-                "en": "Central Kalahari Game Reserve"
-            },
-            "city": null,
-            "country": {
-                "id": "Q963",
-                "iso": "BW",
-                "fr": "Botswana",
-                "en": "Botswana"
-            },
-            "coordinates": {
-                "latitude": -21.8895,
-                "longitude": 23.7565
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Oryx_running_%288025786809%29.jpg/1280px-Oryx_running_%288025786809%29.jpg",
-            "file": "Oryx running (8025786809).jpg",
-            "author": "Benjamin Hollis",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oryx_running_(8025786809).jpg",
-            "fame": 34,
-            "description": {
-                "fr": "La réserve de chasse du Kalahari central, appelée aussi CKGR est une aire protégée située dans le désert du Kalahari au Botswana.",
-                "en": "Central Kalahari Game Reserve is an extensive national park in the Kalahari Desert of Botswana. Established in 1961 it covers an area of 52,800 square kilometres, making it the second largest game reserve in the world. The reserve is located entirely within Botswana's Ghanzi District, making up over 40% of the district's territory."
-            }
-        },
-        {
-            "id": "Q533041",
-            "name": {
-                "fr": "Pan de Makgadikgadi",
-                "en": "Makgadikgadi Pans"
-            },
-            "city": null,
-            "country": {
-                "id": "Q963",
-                "iso": "BW",
-                "fr": "Botswana",
-                "en": "Botswana"
-            },
-            "coordinates": {
-                "latitude": -20.716667,
-                "longitude": 24.950833
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/DeltaOkawango.jpg",
-            "file": "DeltaOkawango.jpg",
-            "author": "NASA",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:DeltaOkawango.jpg",
-            "fame": 31,
-            "description": {
-                "fr": "Le pan de Makgadikgadi est un désert de sel situé dans le nord-est du bassin du Kalahari au Botswana. Il constitue le dépôt salin de l'ancien lac Makgadikgadi. Il est constitué de plusieurs dépressions salines distinctes comme le pan de Sua, le pan de Nwetwe ou le pan de Nxai. Il a pour principaux affluents le Boteti et la rivière Nata.",
-                "en": "The Makgadikgadi Pan is a salt pan situated in the middle of the dry savanna of north-eastern Botswana, is one of the largest salt flats in the world. The pan is all that remains of the formerly enormous Lake Makgadikgadi, which once covered an area larger than Switzerland, but dried up tens of thousands of years ago."
-            }
-        },
-        {
-            "id": "Q353112",
-            "name": {
-                "fr": "Reserve de chasse de Moremi",
-                "en": "Moremi Game Reserve"
-            },
-            "city": null,
-            "country": {
-                "id": "Q963",
-                "iso": "BW",
-                "fr": "Botswana",
-                "en": "Botswana"
-            },
-            "coordinates": {
-                "latitude": -19.16666667,
-                "longitude": 23.16666667
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Moremi_elephant.jpg",
-            "file": "Moremi elephant.jpg",
-            "author": "Ian Sewell",
-            "license": "CC BY-SA 2.5",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moremi_elephant.jpg",
-            "fame": 18,
-            "description": {
-                "fr": "La réserve de chasse de Moremi est une zone protégée du Botswana située à l'est du delta de l'Okavango. Nommée en l'honneur du chef d'une tribu locale, c'est une « game reserve » et non un parc national car à ses débuts officiels des membres des tribus BaSarwa et Bochiman y habitaient.",
-                "en": "Moremi Game Reserve is a protected area in Botswana. It lies on the eastern side of the Okavango Delta and was named after Chief Moremi of the BaTawana tribe. Moremi was designated as a game reserve, rather than a national park, when it was created. This designation meant that the Bushmen, known locally the BaSarwa, that had traditionally lived there were allowed to stay in the reserve."
-            }
-        },
-        {
             "id": "Q477491",
             "name": {
                 "fr": "Kubu Island",
@@ -7652,8 +7701,70 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:KubuIsland_02.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "L'île de Kubu est une île rocheuse granitique aride située dans la région du Makgadikgadi Pan, au Botswana. Elle se trouve à quelques kilomètres des villes minières d'Orapa et de Letlhakane et est accessible par Mmatshumo, dans le district de Boteti. L'ensemble de l'île est un monument national et est considéré comme un site sacré par les populations autochtones de la région. Elle est accessible en véhicules tout-terrain et dispose d'installations de camping rudimentaires. Le camping est géré au profit de la population locale.",
                 "en": "Kubu Island is a dry granite rock island located in the Makgadikgadi Pan area of Botswana. The island is located a few kilometers away from Orapa and Letlhakane mining towns and can be accessed through Mmatshumo in the Boteti district. The entire island is a national monument, and is considered a sacred site by the indigenous people of the area. It is accessible by four wheel drive vehicles and has basic camping facilities. The campsite is run for the benefit of the local population."
+            }
+        },
+        {
+            "id": "Q4160014",
+            "name": {
+                "fr": "mine de Jwaneng",
+                "en": "Jwaneng diamond mine"
+            },
+            "city": {
+                "id": "Q57609",
+                "fr": "District du Sud",
+                "en": "Southern District"
+            },
+            "country": {
+                "id": "Q963",
+                "iso": "BW",
+                "fr": "Botswana",
+                "en": "Botswana"
+            },
+            "coordinates": {
+                "latitude": -24.52305556,
+                "longitude": 24.70194444
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Jwaneng_Mine_Buildings.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Jwaneng Mine Buildings.jpg",
+            "author": "Cretep",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jwaneng_Mine_Buildings.jpg",
+            "fame": 14,
+            "description": {
+                "fr": "La mine de diamants de Jwaneng est la mine de diamants la plus riche du monde et est située dans le centre-sud du Botswana à environ 120 km à l'ouest de la ville de Gaborone, dans la vallée de la rivière Naledi du Kalahari. Jwaneng, qui signifie \"un lieu de petites pierres\", appartient à Debswana, un partenariat entre la société De Beers et le gouvernement du Botswana. Il s'agit de la deuxième plus récente des quatre mines exploitées par la société, ayant commencé ses opérations en 1982. Jwaneng est une mine à ciel ouvert.",
+                "en": "The Jwaneng diamond mine is the richest diamond mine in the world, and also the second largest in the world. It is nicknamed \"the Prince of Mines\", and is located in south-central Botswana about 170 kilometers southwest of the city of Gaborone. Jwaneng means \"a place of gems\", and the Jwaneng mine means \"where a small stone is found\" in Setswana. The mine is owned by Debswana, a joint venture between De Beers and the government of Botswana. It commenced operations in 1982. The mine owns and operates the local Jwaneng Mine Hospital, Acacia Primary School, and Jwaneng Airport."
+            }
+        },
+        {
+            "id": "Q916776",
+            "name": {
+                "fr": "Tsodilo Hills",
+                "en": "Tsodilo Hills"
+            },
+            "city": null,
+            "country": {
+                "id": "Q963",
+                "iso": "BW",
+                "fr": "Botswana",
+                "en": "Botswana"
+            },
+            "coordinates": {
+                "latitude": -18.75,
+                "longitude": 22.183333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Tsodilo_Hills%2C_Botswana_%282625371308%29.jpg/1280px-Tsodilo_Hills%2C_Botswana_%282625371308%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Tsodilo Hills, Botswana (2625371308).jpg",
+            "author": "Joachim Huber",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tsodilo_Hills,_Botswana_(2625371308).jpg",
+            "fame": 3,
+            "description": {
+                "fr": "montagne au Botswana",
+                "en": "mountain in Botswana"
             }
         }
     ],
@@ -8185,6 +8296,39 @@ const D_pic = {
                 "fr": "Le lac Moraine est un lac glaciaire situé dans le parc national de Banff dans la province de l'Alberta au Canada. Il se trouve dans la Ten Peaks Valley, à 14 km du village de Lake Louise et à une altitude d'environ 1 885 mètres.",
                 "en": "Moraine Lake is a snow and glacially fed alpine lake in Banff National Park, 14 kilometres outside the village of Lake Louise, Alberta, Canada. It is situated in the Valley of the Ten Peaks, at an elevation of approximately 1,884 metres. The lake has a surface area of 50 hectares. The lake, being fed almost completely by snow-melt and glacial-melt, does not reach its crest until middle to late June. When it is full, it reflects a distinctive shade of azure blue."
             }
+        },
+        {
+            "id": "Q124352",
+            "name": {
+                "fr": "pont Lions Gate",
+                "en": "Lions Gate Bridge"
+            },
+            "city": {
+                "id": "Q991329",
+                "fr": "West Vancouver",
+                "en": "West Vancouver"
+            },
+            "country": {
+                "id": "Q16",
+                "iso": "CA",
+                "fr": "Canada",
+                "en": "Canada"
+            },
+            "coordinates": {
+                "latitude": 49.315277777778,
+                "longitude": -123.13833333333
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Lions_Gate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Lions Gate.jpg",
+            "author": "Bobanny",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lions_Gate.jpg",
+            "fame": 18,
+            "description": {
+                "fr": "Le pont Lions Gate est un pont suspendu à usage routier, inauguré en 1938, qui traverse la baie Burrard au-dessus de First Narrows entre les villes de Vancouver et Vancouver Ouest en Colombie-Britannique, au Canada. Officiellement nommé First Narrows Bridge, il constitue un des symboles de la ville de Vancouver. Alors qu'à l'origine, il s'agissait d'un ouvrage privé, le pont est actuellement la propriété de la province de Colombie-Britannique.",
+                "en": "The Lions Gate Bridge, opened in 1938 and officially known as the First Narrows Bridge, is a suspension bridge that crosses the first narrows of Burrard Inlet and connects the City of Vancouver, British Columbia, to the North Shore municipalities of the District of North Vancouver, the City of North Vancouver, and West Vancouver. The term \"Lions Gate\" refers to the Lions, a pair of mountain peaks north of Vancouver. Northbound traffic on the bridge heads in their general direction."
+            }
         }
     ],
     "CC": [
@@ -8578,7 +8722,7 @@ const D_pic = {
             "fame": 200,
             "description": {
                 "fr": "Les chutes de Boali sont des chutes d'eau situées dans la préfecture de l'Ombella-M'Poko en République centrafricaine, à proximité de la localité de Boali sur la rivière Mbali. Les chutes de Boali est l'un des sites touristiques les plus visités. La Centrafrique qui accueille près d'un millier de touristes chaque semaine.",
-                "en": null
+                "en": "The Boali Falls are waterfalls located in the Ombella-M'Poko prefecture of the Central African Republic, near the town of Boali on the Mbali River. The Boali Falls are one of the most visited tourist sites in the Central African Republic, which welcomes nearly one thousand tourists every week."
             }
         }
     ],
@@ -8877,6 +9021,39 @@ const D_pic = {
                 "fr": "Le Jungfraujoch est un col entre le Mönch et la Jungfrau dans les Alpes bernoises sur la frontière entre les cantons de Berne et du Valais. C'est le point le plus bas sur l'arête entre le Mönch et la Jungfrau, à 3 463 mètres d'altitude. Il est situé dans le site naturel des Alpes suisses Jungfrau-Aletsch inscrit au Patrimoine mondial de l'UNESCO depuis 2001. Il est souvent appelé le « toit de l'Europe » dans les guides touristiques et comprend la station de chemin de fer la plus haute d'Europe.",
                 "en": "The Jungfraujoch is a saddle connecting two major 4000ers of the Bernese Alps: the Jungfrau and the Mönch. It lies at an elevation of 3,463 metres above sea level and is directly overlooked by the rocky prominence of the Sphinx. The Jungfraujoch is a glacier saddle, on the upper snows of the Aletsch Glacier, and part of the Jungfrau-Aletsch area, situated on the boundary between the cantons of Bern and Valais, halfway between Interlaken and Fiesch."
             }
+        },
+        {
+            "id": "Q25225",
+            "name": {
+                "fr": "pont de la Chapelle",
+                "en": "Chapel Bridge"
+            },
+            "city": {
+                "id": "Q4191",
+                "fr": "Lucerne",
+                "en": "Lucerne"
+            },
+            "country": {
+                "id": "Q39",
+                "iso": "CH",
+                "fr": "Suisse",
+                "en": "Switzerland"
+            },
+            "coordinates": {
+                "latitude": 47.051633333333,
+                "longitude": 8.3075333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Luzern_asv2022-10_Kapellbr%C3%BCcke_img3.jpg/1280px-Luzern_asv2022-10_Kapellbr%C3%BCcke_img3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Luzern asv2022-10 Kapellbrücke img3.jpg",
+            "author": "A.Savin",
+            "license": "FAL",
+            "licenseUrl": "http://artlibre.org/licence/lal/en",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luzern_asv2022-10_Kapellbr%C3%BCcke_img3.jpg",
+            "fame": 33,
+            "description": {
+                "fr": "Le pont dit Kapellbrücke est un pont de bois et une attraction touristique majeure de la ville de Lucerne en Suisse. Ce pont couvert médiéval est, avec le Cervin, l'un des sujets les plus photographiés en Suisse. Le nom de Kapellbrücke s'explique par la proximité de la chapelle Saint-Pierre. Construit en 1333, il est reconstruit en 1994 après un incendie.",
+                "en": "The Kapellbrücke is a covered wooden footbridge spanning the river Reuss diagonally in the city of Lucerne in central Switzerland. Named after the nearby St. Peter's Chapel, the bridge is unique in containing a number of interior paintings dating back to the 17th century, although many of them were destroyed along with a larger part of the centuries-old bridge in a 1993 fire. Subsequently restored, the Kapellbrücke is the oldest wooden covered bridge in Europe, as well as the world's oldest surviving truss bridge."
+            }
         }
     ],
     "CI": [
@@ -9138,8 +9315,41 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Laguna_San_Rafael.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Le glacier San Rafael est l'un des principaux glaciers émissaires du champ de glace nord-patagonien, dans le sud du Chili, et le glacier de marée le plus proche de l'équateur. Il se déverse dans la lagune San Rafael et se trouve dans le parc national Laguna San Rafael.",
                 "en": "The San Rafael Glacier is one of the major outlet glaciers of the Northern Patagonian Ice Field in southern Chile and is the tidewater glacier nearest the equator. It calves into the Laguna San Rafael and is contained within Laguna San Rafael National Park."
+            }
+        },
+        {
+            "id": "Q7203697",
+            "name": {
+                "fr": "Plaza de la Constitución",
+                "en": "Plaza de la Constitución"
+            },
+            "city": {
+                "id": "Q2887",
+                "fr": "Santiago",
+                "en": "Santiago"
+            },
+            "country": {
+                "id": "Q298",
+                "iso": "CL",
+                "fr": "Chili",
+                "en": "Chile"
+            },
+            "coordinates": {
+                "latitude": -33.44166667,
+                "longitude": -70.65416667
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/View_of_the_Palacio_de_la_Moneda_in_Santiago%2C_Chile_%2817124202170%29.jpg/1280px-View_of_the_Palacio_de_la_Moneda_in_Santiago%2C_Chile_%2817124202170%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "View of the Palacio de la Moneda in Santiago, Chile (17124202170).jpg",
+            "author": "Maina",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_of_the_Palacio_de_la_Moneda_in_Santiago,_Chile_(17124202170).jpg",
+            "fame": 4,
+            "description": {
+                "fr": "La Plaza de la Constitución est une place qui occupe tout un pâté de maisons au cœur du quartier administratif de Santiago, au Chili. Elle se trouve face à la façade nord du Palacio de la Moneda et est entourée d'autres bâtiments administratifs, tels que ceux abritant le ministère des Finances, le ministère des Affaires étrangères, le ministère de la Justice, la Banque centrale du Chili et l'Intendance de Santiago.",
+                "en": "The Plaza de la Constitución is a plaza occupying a full square block in the heart of the civic district of Santiago, Chile. It is located in front of the northern facade of the Palacio de la Moneda and is surrounded by other government buildings such as those housing the Ministry of Finance, Ministry of Foreign Affairs, Ministry of Justice, Banco Central de Chile and the Intendencia de Santiago."
             }
         }
     ],
@@ -9311,7 +9521,7 @@ const D_pic = {
             },
             "city": {
                 "id": "Q1070000",
-                "fr": "district urbain de Datong",  
+                "fr": "district urbain de Datong",
                 "en": "Pingcheng District"
             },
             "country": {
@@ -10192,7 +10402,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Varadero_Beach_1_(3195641918).jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "Plage dans la province de Matanzas, à Cuba",
                 "en": "beach in Matanzas Province, Cuba"
             }
         }
@@ -10366,39 +10576,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q5194634",
-            "name": {
-                "fr": "synagogue de Willemstad",
-                "en": "Curaçao synagogue"
-            },
-            "city": {
-                "id": "Q132679",
-                "fr": "Willemstad",
-                "en": "Willemstad"
-            },
-            "country": {
-                "id": "Q25279",
-                "iso": "CW",
-                "fr": "Curaçao",
-                "en": "Curaçao"
-            },
-            "coordinates": {
-                "latitude": 12.105,
-                "longitude": -68.9325
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Cura%C3%A7ao_synagogue1.jpg/1280px-Cura%C3%A7ao_synagogue1.jpg",
-            "file": "Curaçao synagogue1.jpg",
-            "author": "Dolly442",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cura%C3%A7ao_synagogue1.jpg",
-            "fame": 13,
-            "description": {
-                "fr": "La synagogue de Willemstad, à Willemstad, capitale de Curaçao, est la plus ancienne synagogue des Amériques.",
-                "en": "The Mikvé Israel-Emanuel Synagogue is a Reconstructionist Jewish congregation and synagogue, located at Hanchi di Snoa 29, Punda, in the city of Willemstad, Curaçao, a constituent country of the Kingdom of the Netherlands in southern Caribbean Sea. The congregation was established in 1651 and the synagogue was completed in 1732, making it the oldest surviving synagogue in the Americas."
-            }
-        },
-        {
             "id": "Q2424320",
             "name": {
                 "fr": "fort Amsterdam",
@@ -10485,7 +10662,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boka_Pistol_in_het_Nationaal_Park_Shete_Boka.jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Parc national à Curaçao",
                 "en": "national park in Curaçao"
             }
         },
@@ -10555,6 +10732,72 @@ const D_pic = {
             "description": {
                 "fr": "L'île Christmas, en anglais Christmas Island et Territory of Christmas Island, littéralement en français « île de Noël », est un territoire extérieur australien situé dans l'est de l'océan Indien, à 345 km au sud-sud-ouest de la province de Java occidental, à 958 km à l'est-nord-est des îles Cocos et à 1 540 km des côtes nord-ouest de l'État d'Australie-Occidentale. L'île est longue de 21 km, large de 18 km et couvre une superficie de 136 km2. La capitale est Flying Fish Cove.",
                 "en": "Christmas Island, officially the Territory of Christmas Island, is an Australian external territory in the Indian Ocean comprising the island of the same name. It is about 350 kilometres south of Java and Sumatra and about 1,550 km north-west of the closest point on the Australian mainland. It has an area of 135 square kilometres. Christmas Island's geographic isolation and history of minimal human disturbance has led to a high level of endemism among its flora and fauna, which is of interest to scientists and naturalists."
+            }
+        },
+        {
+            "id": "Q30980",
+            "name": {
+                "fr": "Flying Fish Cove",
+                "en": "Flying Fish Cove"
+            },
+            "city": {
+                "id": "Q31063",
+                "fr": "île Christmas",
+                "en": "Christmas Island"
+            },
+            "country": {
+                "id": "Q31063",
+                "iso": "CX",
+                "fr": "île Christmas",
+                "en": "Christmas Island"
+            },
+            "coordinates": {
+                "latitude": -10.421666666667,
+                "longitude": 105.67805555556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Flying_Fish_Cove.jpg/1280px-Flying_Fish_Cove.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Flying Fish Cove.jpg",
+            "author": "Paul McFarlane",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flying_Fish_Cove.jpg",
+            "fame": 67,
+            "description": {
+                "fr": "Flying Fish Cove est la capitale de l'île Christmas, un territoire extérieur australien.",
+                "en": "Flying Fish Cove is the capital city and main settlement of Christmas Island. Although it was originally named after the British survey-ship Flying Fish, many maps simply label it \"The Settlement\". It was the first British settlement on the island, established in 1888."
+            }
+        },
+        {
+            "id": "Q1089780",
+            "name": {
+                "fr": "parc national de l'île Christmas",
+                "en": "Christmas Island National Park"
+            },
+            "city": {
+                "id": "Q31063",
+                "fr": "île Christmas",
+                "en": "Christmas Island"
+            },
+            "country": {
+                "id": "Q31063",
+                "iso": "CX",
+                "fr": "île Christmas",
+                "en": "Christmas Island"
+            },
+            "coordinates": {
+                "latitude": -10.49153,
+                "longitude": 105.62316
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Christmas_Island_%285775100858%29.jpg/1280px-Christmas_Island_%285775100858%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Christmas Island (5775100858).jpg",
+            "author": "DIAC images",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christmas_Island_(5775100858).jpg",
+            "fame": 15,
+            "description": {
+                "fr": "parc national de l'Australie",
+                "en": "Christmas Island National Park is an Australian national park that includes most of Christmas Island, an Australian territory in the Indian Ocean southwest of Indonesia. The park is home to many species of animal and plant life, including the eponymous Christmas Island red crab, whose annual migration sees around 100 million crabs move to the sea to spawn."
             }
         }
     ],
@@ -10755,6 +10998,39 @@ const D_pic = {
             "description": {
                 "fr": "Le château de Český Krumlov est un château situé dans la localité homonyme en République tchèque. Sa construction remonte au XIIIe siècle quand un premier château fut construit par la famille Witigonen, la branche principale de la maison de Rosenberg.",
                 "en": "Český Krumlov Castle is a castle in Český Krumlov in the South Bohemian Region of the Czech Republic. It dates back to 1253 when the first castle was built by the Vítkovci family, the main branch of the powerful Bohemian family Rosenberg. Currently the castle is listed as a national heritage site and a UNESCO World Heritage Site since 1992, this serves as a major tourist attraction. It is the second most visited castle and the second largest castle and chateau complex in the Czech Republic after Prague Castle."
+            }
+        },
+        {
+            "id": "Q2142483",
+            "name": {
+                "fr": "château de Hluboká",
+                "en": "Hluboká Castle"
+            },
+            "city": {
+                "id": "Q56415842",
+                "fr": "Hluboká nad Vltavou",
+                "en": "Hluboká nad Vltavou"
+            },
+            "country": {
+                "id": "Q213",
+                "iso": "CZ",
+                "fr": "Tchéquie",
+                "en": "Czech Republic"
+            },
+            "coordinates": {
+                "latitude": 49.050833333333,
+                "longitude": 14.441944444444
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Zamek_Hluboka_001_THWZ.jpg/1280px-Zamek_Hluboka_001_THWZ.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Zamek Hluboka 001 THWZ.jpg",
+            "author": "Thomas Zimmermann",
+            "license": "CC BY-SA 3.0 de",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zamek_Hluboka_001_THWZ.jpg",
+            "fame": 26,
+            "description": {
+                "fr": "Le château de Hluboká est un château néogothique situé dans la ville de Hluboká nad Vltavou, en République tchèque.",
+                "en": "Hluboká Castle is a historic château situated in Hluboká nad Vltavou. It is considered one of the most beautiful castles in the Czech Republic."
             }
         }
     ],
@@ -11608,6 +11884,39 @@ const D_pic = {
                 "fr": "Legoland Billund est un parc d'attractions Legoland situé à Billund au Danemark, ouvert le 7 juin 1968. Il compte plus de 50 millions de visiteurs depuis son ouverture. Le parc propose de nombreuses attractions regroupées en neuf zones thématiques. Il comporte également de nombreux monuments, animaux et objets en Lego, pour un total de 65 millions de briques Lego.",
                 "en": "Legoland Billund Resort, the original Legoland park, opened on 7 June 1968 in Billund, Denmark. The park is located next to the original Lego factory and Billund Airport, Denmark's second-busiest airport. Over 1.9 million guests visited the park in 2011, and 50 million guests have visited the park since it opened. This makes Legoland the largest tourist attraction in Denmark outside Copenhagen."
             }
+        },
+        {
+            "id": "Q189358",
+            "name": {
+                "fr": "château de Kronborg",
+                "en": "Kronborg Castle"
+            },
+            "city": {
+                "id": "Q511546",
+                "fr": "Helsingør",
+                "en": "Helsingør Municipality"
+            },
+            "country": {
+                "id": "Q35",
+                "iso": "DK",
+                "fr": "Danemark",
+                "en": "Denmark"
+            },
+            "coordinates": {
+                "latitude": 56.038611111111,
+                "longitude": 12.621944444444
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/KronborgCastle_HCS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "KronborgCastle HCS.jpg",
+            "author": "H.C. Steensen",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:KronborgCastle_HCS.jpg",
+            "fame": 55,
+            "description": {
+                "fr": "Le château de Kronborg est un château situé près de la ville d'Elseneur au Danemark, sur un point stratégique face à la Suède. Il a été inscrit en 2000 sur la liste du patrimoine mondial. Ce château de la Renaissance, dont la construction a débuté en 1574 à partir d'une forteresse médiévale, a joué un rôle important dans l'histoire de l'Europe du Nord entre les XVIe et XVIIIe siècles. Avec la forteresse d'Helsingborg — dont il ne reste que la tour Kärnan —, située de l’autre côté de l’Øresund, il permettait aux Danois de contrôler l’entrée de la mer Baltique.",
+                "en": "Kronborg is a castle and historical stronghold in the town of Helsingør, Denmark. Immortalised as Elsinore in William Shakespeare's play Hamlet, Kronborg is one of the most important Renaissance castles in Northern Europe. It was inscribed on the UNESCO World Heritage List in 2000. The castle is situated on the extreme northeastern tip of the island of Zealand at the narrowest point of the Øresund, the sound between present Denmark and the provinces of present Sweden. The latter were under Danish control at the time the castle was built."
+            }
         }
     ],
     "DM": [
@@ -11865,7 +12174,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Santo_Domingo_-_Alcazar_de_Colon_02.JPG",
             "fame": 19,
             "description": {
-                "fr": null,
+                "fr": "L'Alcázar de Colón est le premier palais européen fortifié construit dans les Amériques. Situé dans la zone coloniale de Saint-Domingue, en République dominicaine, il fait partie de la Ciudad Colonial, inscrite au patrimoine mondial de l'UNESCO. Principalement gothique avec des influences Renaissance, le palais a été construit entre 1511 et 1514, mais est tombé en ruine au milieu du XVIIIe siècle. Il est resté abandonné jusqu'en 1957, date à laquelle il a été restauré et transformé en musée. Il s'agit de la seule résidence connue d'un membre de la famille de Christophe Colomb dans le Nouveau Monde.",
                 "en": "The Alcázar de Colón is the first fortified European palace built in the Americas. Located in the colonial area of Santo Domingo, Dominican Republic, it forms part of the Ciudad Colonial, a UNESCO World Heritage Site. Predominantly Gothic with Renaissance influences, the palace was constructed between 1511 and 1514, but fell into ruin by the mid-18th century. It remained abandoned until 1957, when it was restored into a museum. It is the only known residence of a member of the Christopher Columbus family in the New World."
             }
         },
@@ -11997,7 +12306,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dominicana-Altos_de_Chavon.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Altos de Chavón est une attraction touristique et la reconstitution d'un village méditerranéen situé au sommet d'une colline surplombant la rivière Chavón, à La Romana, en République dominicaine. Il s'agit de l'attraction la plus populaire de la ville. Le site abrite un centre culturel, un musée archéologique et un amphithéâtre. Le projet a été imaginé par l'architecte italien Roberto Copa et l'industriel Charles Bluhdorn.",
                 "en": "Altos de Chavón is a tourist attraction and recreation of a Mediterranean village located atop the Chavón River in La Romana, Dominican Republic. It is the most popular attraction in the city and hosts a cultural center, an archeological museum, and an amphitheater. The project was conceived by the Italian architect Roberto Copa and the industrialist Charles Bluhdorn."
             }
         },
@@ -12030,7 +12339,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dominican_Republic_Blue_Hole.jpg",
             "fame": 0,
             "description": {
-                "fr": null,
+                "fr": "Cénote à Punta Cana, en République dominicaine",
                 "en": "cenote in Punta Cana, Dominican Republic"
             }
         }
@@ -12498,7 +12807,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Old_Town_of_Tallinn,_Tallinn,_Estonia_-_panoramio_(58).jpg",
             "fame": 34,
             "description": {
-                "fr": null,
+                "fr": "La vieille ville de Tallinn est la partie la plus ancienne de Tallinn, en Estonie. Elle a entièrement conservé sa structure d'origine médiévale et hanséatique. La vieille ville présente un plan urbain du XIIIe siècle exceptionnellement intact. Depuis 1997, elle est inscrite sur la liste du patrimoine mondial de l'UNESCO. Elle est entourée par les remparts de Tallinn. Sa superficie est de 113 hectares et sa zone tampon couvre 2 253 hectares. La majorité des bâtiments de la vieille ville ont été construits entre le XIIIe et le XVIe siècle.",
                 "en": "Tallinn Old Town is the oldest part of Tallinn, Estonia. Old Town of Tallinn has managed to wholly preserve its structure of medieval and Hanseatic origin. Old Town represents an exceptionally intact 13th century city plan. Since 1997, the area has been registered in the UNESCO World Heritage List. The old town is bordered by the Walls of Tallinn. Its area is 113 ha and there is a buffer zone of 2,253 ha. The majority of the Old Town's structures were built during the 13th–16th centuries."
             }
         },
@@ -12995,7 +13304,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kohaito,_zona_dei_palazzi_axumiti_09.JPG",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Qohaito, ou Koloe, était une importante cité antique située dans l'actuelle région de Debub, en Érythrée. Il s'agissait d'un établissement pré-axoumite qui prospéra durant la période axoumite. La ville était située à plus de 2 500 mètres d'altitude, sur un haut plateau au bord de la vallée du Grand Rift, à mi-chemin environ entre Axoum et son port d'Adulis. En 2011, les ruines de pierre de Qohaito n'avaient toujours pas été fouillées. L'ancienne ville portuaire d'Adulis se trouve directement au nord-est, tandis que Matara se situe au sud.",
                 "en": "Qohaito or Koloe was a major ancient city in what is now the Debub region of Eritrea. It was a pre-Aksumite settlement that thrived during the Aksumite period. The city was located over 2,500 meters above sea level, on a high plateau at the edge of the Great Rift Valley, about half way between Aksum and its port of Adulis. As of 2011, Qohaito's stone ruins have yet to be excavated. The ancient port city of Adulis is directly to the north east, while Matara lies to the south."
             }
         }
@@ -13663,7 +13972,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Denarau_island.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "L'île de Denarau est un petit complexe touristique privé situé à l'ouest de Viti Levu, dans la République des Fidji. Ce complexe de 2,55 km² est accessible par une courte chaussée traversant un ruisseau. Il se trouve à 5 km au nord-ouest de la ville de Nadi et à 10 km à l'ouest de l'aéroport international de Nadi. Denarau est connue pour ses hôtels et ses complexes touristiques, avec le parcours de golf de Denarau, doté de 18 trous, comme élément central. Le complexe comprend des chaînes internationales telles que Hilton, Sheraton, Radisson, Westin, Sofitel et Wyndham.",
                 "en": "Denarau Island is a small private resort development on the western side of Viti Levu in the Republic of Fiji. The 2.55 km2 resort is reached via a short causeway over a creek and is located 5 km north west of the town Nadi and 10 km west of Nadi International Airport. Denarau is known for its hotels and resorts, with the 18-hole Denarau Golf course as its centrepiece. The development includes international chains such as Hilton, Sheraton, Radisson, Westin, Sofitel and Wyndham."
             }
         },
@@ -13798,7 +14107,106 @@ const D_pic = {
             "fame": 1,
             "description": {
                 "fr": "La Réserve naturelle nationale de l'île des Lions de mer a été créée en 2017. C'est une aire protégée qui avait été désignée comme site Ramsar en 2001, puis comme zone importante pour la conservation des oiseaux par la Birdlife International. La réserve naturelle est située sur l'île des Lions de mer, l'une des îles les plus au sud de l'archipel des Malouines, à 17 km au large de la pointe sud-est de la Malouine orientale. Celle-ci fait 1 000 ha, comprenant la totalité de l'île et sa zone maritime.",
-                "en": null
+                "en": "The Sea Lion Island National Nature Reserve was established in 2017. It is a protected area that was designated as a Ramsar site in 2001 and later recognized as an Important Bird Area by BirdLife International. The nature reserve is located on Sea Lion Island, one of the southernmost islands of the Falkland Islands archipelago, 17 km off the southeastern tip of East Falkland. It covers 1,000 hectares, including the entire island and its surrounding marine area."
+            }
+        },
+        {
+            "id": "Q1064229",
+            "name": {
+                "fr": "mont Usborne",
+                "en": "Mount Usborne"
+            },
+            "city": {
+                "id": "Q9648",
+                "fr": "îles Malouines",
+                "en": "Falkland Islands"
+            },
+            "country": {
+                "id": "Q9648",
+                "iso": "FK",
+                "fr": "îles Malouines",
+                "en": "Falkland Islands"
+            },
+            "coordinates": {
+                "latitude": -51.697222,
+                "longitude": -58.834444
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Mount_Usborne_-_Flickr_-_chris_lovelock.jpg/1280px-Mount_Usborne_-_Flickr_-_chris_lovelock.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mount Usborne - Flickr - chris lovelock.jpg",
+            "author": "chris lovelock",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Usborne_-_Flickr_-_chris_lovelock.jpg",
+            "fame": 22,
+            "description": {
+                "fr": "Le mont Usborne est une montagne des îles Malouines, le point culminant du territoire. Elle se situe à une altitude de 705 mètres sur l'île de la Malouine orientale. Le mont Usborne est mentionné par Charles Darwin au chapitre 9 de son ouvrage Zoologie du Voyage du H.M.S. Beagle. Il a été nommé en l'honneur d'Alexander Burns Usborne, assistant-maître à bord du HMS Beagle, le navire ayant emmené Darwin lors de son voyage.",
+                "en": "Mount Usborne is a mountain on East Falkland. At 705 m above sea level, it is the highest point in the Falkland Islands. It is 5 metres taller than Mount Adam, the highest peak on West Falkland. The mountain lies some 33 miles west of Stanley, and was used as a radar orientation point during the first successful Black Buck raid on the airfield at Stanley. The mountain is referenced by Charles Darwin in Chapter 9 of Zoology of the Voyage of H.M.S. Beagle."
+            }
+        },
+        {
+            "id": "Q110538",
+            "name": {
+                "fr": "île des Lions de mer",
+                "en": "Sea Lion Island"
+            },
+            "city": {
+                "id": "Q9648",
+                "fr": "îles Malouines",
+                "en": "Falkland Islands"
+            },
+            "country": {
+                "id": "Q9648",
+                "iso": "FK",
+                "fr": "îles Malouines",
+                "en": "Falkland Islands"
+            },
+            "coordinates": {
+                "latitude": -52.433333333333,
+                "longitude": -59.083333333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Gentoo_penguins_on_Elephant_Beach%3B_Sea_Lion_Island_%2849705668377%29.jpg/1280px-Gentoo_penguins_on_Elephant_Beach%3B_Sea_Lion_Island_%2849705668377%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Gentoo penguins on Elephant Beach; Sea Lion Island (49705668377).jpg",
+            "author": "chris lovelock",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gentoo_penguins_on_Elephant_Beach;_Sea_Lion_Island_(49705668377).jpg",
+            "fame": 14,
+            "description": {
+                "fr": "L'île des Lions de mer est l'une des îles de l'archipel des Malouines, située à quatorze kilomètres au sud-est de la Malouine orientale, l'île principale de l'archipel.",
+                "en": "Sea Lion Island is the largest of the Sea Lion Island Group of the Falkland Islands. It is 9 km2 in area and lies 14 km southeast of Lafonia. It was designated a Ramsar site on 24 September 2001, and as an Important Bird Area. In 2017 the island was designated as a National Nature Reserve."
+            }
+        },
+        {
+            "id": "Q3320132",
+            "name": {
+                "fr": "Christ Church Cathedral",
+                "en": "Christ Church Cathedral"
+            },
+            "city": {
+                "id": "Q12245",
+                "fr": "Port Stanley",
+                "en": "Stanley"
+            },
+            "country": {
+                "id": "Q9648",
+                "iso": "FK",
+                "fr": "îles Malouines",
+                "en": "Falkland Islands"
+            },
+            "coordinates": {
+                "latitude": -51.69222222,
+                "longitude": -57.85861111
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/WhaleboneArchCathedral.JPG/1280px-WhaleboneArchCathedral.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "WhaleboneArchCathedral.JPG",
+            "author": "Travellers &amp; Tinkers",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:WhaleboneArchCathedral.JPG",
+            "fame": 12,
+            "description": {
+                "fr": "La cathédrale du Christ-Roi est la cathédrale de Stanley, la capitale des îles Malouines. C'est la cathédrale anglicane la plus méridionale du monde, et aussi l'une des églises chrétiennes situées les plus au sud, toutes confessions confondues. Elle est le siège d'un diocèse autonome, couvrant les îles Malouines, la Géorgie du Sud, les îles Sandwich du Sud et le Territoire antarctique britannique, dont l'évêque était autrefois résident.",
+                "en": "Christ Church Cathedral, in Stanley, Falkland Islands, is the southernmost Anglican cathedral in the world. It is the parish church of the Falkland Islands, South Georgia and the British Antarctic Territories. The Parish of the Falkland Islands is part of the Anglican Communion. The rector of the cathedral is under the ordinary jurisdiction of the Bishop of the Falkland Islands; since 1978, this office has been held ex officio by the Archbishop of Canterbury, who is both ordinary and metropolitan for the small autonomous diocese."
             }
         }
     ],
@@ -13933,7 +14341,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saksun_2019_1.jpg",
             "fame": 24,
             "description": {
-                "fr": null,
+                "fr": "Saksun est un village situé près de la côte nord-ouest de l'île féroïenne de Streymoy, dans la municipalité de Sunda.",
                 "en": "Saksun is a village near the northwest coast of the Faroese island of Streymoy, in Sunda Municipality."
             }
         },
@@ -13962,7 +14370,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Drangarnir_and_Tindholmur,_Faroe_Islands.jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "Drangarnir est un ensemble de deux rochers marins situés dans l'océan Atlantique Nord, entre Tindhólmur et Vágar, dans les îles Féroé. Le plus grand rocher s'appelle Stóri Drangur et le plus petit Lítli Drangur. Drangarnir se trouve près du seul aéroport des îles Féroé et constitue une attraction touristique populaire de l'archipel, notamment grâce à l'arche marine de Stóri Drangur.",
                 "en": "Drangarnir is a pair of sea stacks in the North Atlantic Ocean, situated between Tindhólmur and Vágar of the Faroe Islands. The larger sea stack is named Stóri Drangur and the smaller Lítli Drangur. Drangarnir is located near the Faroe Islands' only airport and is a popular attraction among tourists to the archipelago, particularly due to Stóri Drangur's sea arch."
             }
         }
@@ -14230,6 +14638,72 @@ const D_pic = {
             "description": {
                 "fr": "Le château de Chambord est un château situé dans la commune de Chambord, à 17 km de Blois dans le département de Loir-et-Cher, en région Centre-Val de Loire. Construit au cœur du plus grand parc forestier clos d'Europe, il s'agit du plus vaste des châteaux de la Loire. Il bénéficie d'un jardin d'agrément et d'un parc de chasse classés au titre des monuments historiques. Qualifié de « diamant caché dans les bois », Chambord est le seul domaine royal encore intact depuis sa création.",
                 "en": "The Château de Chambord in Chambord, Centre-Val de Loire, France, is one of the most recognisable châteaux in the world because of its very distinctive French Renaissance architecture, which blends traditional French medieval forms with classical Renaissance structures. The building was commissioned by Francis I of France and built between 1519 and 1547. Chambord is the largest château in the Loire Valley; it was built to serve as a hunting lodge for Francis I, who maintained his royal residences at the Château de Blois and Amboise."
+            }
+        },
+        {
+            "id": "Q20892",
+            "name": {
+                "fr": "Le Mont-Saint-Michel",
+                "en": "Le Mont Saint-Michel"
+            },
+            "city": {
+                "id": "Q700557",
+                "fr": "arrondissement d'Avranches",
+                "en": "arrondissement of Avranches"
+            },
+            "country": {
+                "id": "Q142",
+                "iso": "FR",
+                "fr": "France",
+                "en": "France"
+            },
+            "coordinates": {
+                "latitude": 48.635833333333,
+                "longitude": -1.5102777777778
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Mont_St_Michel_3%2C_Brittany%2C_France_-_July_2011.jpg/1280px-Mont_St_Michel_3%2C_Brittany%2C_France_-_July_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Mont St Michel 3, Brittany, France - July 2011.jpg",
+            "author": "Diliff",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mont_St_Michel_3,_Brittany,_France_-_July_2011.jpg",
+            "fame": 97,
+            "description": {
+                "fr": "Le Mont-Saint-Michel est une commune française située dans la Manche en Normandie. Elle tire son nom de l'îlot rocheux consacré à saint Michel où s’élève aujourd’hui l’abbaye du Mont-Saint-Michel. L’architecture du Mont-Saint-Michel et sa baie en font le site touristique le plus fréquenté de Normandie et l'un des dix plus fréquentés en France — premier site après ceux d'Île-de-France — avec près de deux millions et demi de visiteurs chaque année suscitant comme ailleurs une réflexion sur la régulation des flux touristiques.",
+                "en": "Mont-Saint-Michel is a tidal island and mainland commune in Normandy, France. The island lies approximately one kilometre off France's north-western coast, at the mouth of the Couesnon River near Avranches and is 7 hectares in area. The mainland part of the commune is 393 hectares in area so that the total surface of the commune is 400 hectares. As of 2023, the island has a population of 23."
+            }
+        },
+        {
+            "id": "Q64436",
+            "name": {
+                "fr": "arc de triomphe de l'Étoile",
+                "en": "Arc de Triomphe"
+            },
+            "city": {
+                "id": "Q270230",
+                "fr": "8e arrondissement de Paris",
+                "en": "8th arrondissement of Paris"
+            },
+            "country": {
+                "id": "Q142",
+                "iso": "FR",
+                "fr": "France",
+                "en": "France"
+            },
+            "coordinates": {
+                "latitude": 48.87378,
+                "longitude": 2.29504
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Arc_de_Triomphe_-_Ao%C3%BBt_2026.jpg/1280px-Arc_de_Triomphe_-_Ao%C3%BBt_2026.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Arc de Triomphe - Août 2026.jpg",
+            "author": "ZeusUpsistos",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arc_de_Triomphe_-_Ao%C3%BBt_2026.jpg",
+            "fame": 86,
+            "description": {
+                "fr": "L'arc de triomphe de l'Étoile, le plus souvent appelé simplement l'Arc de Triomphe, est un monument de type tétrapyle situé à Paris, en un point haut à la jonction des territoires des 8e, 16e et 17e arrondissements, notamment au sommet de l'avenue des Champs-Élysées et de l'avenue de la Grande-Armée, lesquelles constituent un grand axe est-ouest parisien partant du palais du Louvre, passant par l'obélisque de la Concorde, l'Arc de Triomphe lui-même et se terminant au loin par l'arche de la Défense.",
+                "en": "The Arc de Triomphe de l'Étoile, often simply called the Arc de Triomphe, is one of the most famous monuments in Paris, France. It is located at the western end of the Champs-Élysées, at the centre of the Place Charles de Gaulle—formerly known as the \"Place de l'Étoile\"—named for the star-shaped configuration formed by the convergence of twelve radiating avenues."
             }
         }
     ],
@@ -14648,6 +15122,39 @@ const D_pic = {
                 "fr": "Le château d'Édimbourg est un château fort du XIIe siècle, d’Édimbourg en Écosse, au Royaume-Uni, devenu, en partie, un musée classé monument historique A.",
                 "en": "Edinburgh Castle is a historic castle in Edinburgh, Scotland. It stands on Castle Rock, which has been occupied by humans since at least the Iron Age. There has been a royal castle on the rock since the reign of Malcolm III in the 11th century, and the castle continued to be a royal residence until 1633. From the 15th century, the castle's residential role declined, and by the 17th century it was principally used as a military garrison."
             }
+        },
+        {
+            "id": "Q42646",
+            "name": {
+                "fr": "château de Windsor",
+                "en": "Windsor Castle"
+            },
+            "city": {
+                "id": "Q1368496",
+                "fr": "Windsor and Maidenhead",
+                "en": "Windsor and Maidenhead"
+            },
+            "country": {
+                "id": "Q145",
+                "iso": "GB",
+                "fr": "Royaume-Uni",
+                "en": "United Kingdom"
+            },
+            "coordinates": {
+                "latitude": 51.48388888888889,
+                "longitude": -0.6044444444444445
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Windsor_Castle_at_Sunset_-_Nov_2006.jpg/1280px-Windsor_Castle_at_Sunset_-_Nov_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Windsor Castle at Sunset - Nov 2006.jpg",
+            "author": "Diliff",
+            "license": "CC BY 2.5",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Windsor_Castle_at_Sunset_-_Nov_2006.jpg",
+            "fame": 85,
+            "description": {
+                "fr": "Le château de Windsor est une forteresse médiévale située à Windsor dans le Berkshire, en Angleterre. Le château est célèbre pour son architecture et parce qu'il est l'une des résidences de la famille royale britannique. Sa construction commence peu après la conquête de l'Angleterre par Guillaume le Conquérant au XIe siècle. Depuis le règne d'Henri Ier d'Angleterre, le château a abrité de nombreux monarques; il est le plus ancien palais habité sans interruption en Europe.",
+                "en": "Windsor Castle is a royal residence at Windsor in the English county of Berkshire, about 25 miles west of central London. It is strongly associated with the English and succeeding British royal family, and embodies almost a millennium of architectural history. The original castle was built in the 11th century, after the Norman invasion of England by William the Conqueror. Since the time of Henry I, it has been used by the monarch and is the longest-occupied palace in Europe."
+            }
         }
     ],
     "GE": [
@@ -14909,7 +15416,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint_Peter_Port_-_Candie_Gardens_20260806.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "Candie Gardens est un parc situé à St Peter Port, à Guernesey. Il a été créé à l'origine comme jardin d'agrément victorien en 1894.",
                 "en": "Candie Gardens is a park in St Peter Port, Guernsey, originally established as a Victorian pleasure gardens in 1894."
             }
         }
@@ -15076,7 +15583,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wli_Lower_Fall-4.jpg",
             "fame": 16,
             "description": {
-                "fr": null,
+                "fr": "Les cascades de Wli sont les plus hautes chutes d'eau du Ghana et les plus hautes d'Afrique de l'Ouest. Elles comprennent une chute inférieure et une chute supérieure.",
                 "en": "Wli Waterfalls is the highest waterfall in Ghana and the tallest in West Africa. It has a lower and an upper fall."
             }
         },
@@ -15336,7 +15843,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Borassus_aethiopum_0052.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Le parc forestier de Bijilo, souvent appelé Monkey Park, est un parc forestier situé en Gambie, dans la zone côtière, à environ 11 km à l'ouest de Banjul, dans le district de Kombo Saint Mary.",
                 "en": "Bijilo Forest Park, often known as Monkey Park, is a forest park in the Gambia, lying in the coastal zone about 11 km west of Banjul the Kombo Saint Mary District."
             }
         },
@@ -15403,7 +15910,7 @@ const D_pic = {
             "fame": 3,
             "description": {
                 "fr": "Les cercles de pierres de Wassu sont un ensemble de cromlechs et de tumulus de Gambie.",
-                "en": null
+                "en": "The Wassu Stone Circles are a group of stone circles and burial mounds in The Gambia."
             }
         },
         {
@@ -15634,39 +16141,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q6904640",
-            "name": {
-                "fr": "parc national de Monte Alén",
-                "en": "Monte Alén National Park"
-            },
-            "city": {
-                "id": "Q3031623",
-                "fr": "District de Niefang",
-                "en": "Niefang District"
-            },
-            "country": {
-                "id": "Q983",
-                "iso": "GQ",
-                "fr": "Guinée équatoriale",
-                "en": "Equatorial Guinea"
-            },
-            "coordinates": {
-                "latitude": 1.53,
-                "longitude": 10.11
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Nationalpark_Monte_Al%C3%A9n_%28Tafel%29.jpg/1280px-Nationalpark_Monte_Al%C3%A9n_%28Tafel%29.jpg",
-            "file": "Nationalpark Monte Alén (Tafel).jpg",
-            "author": "Mehlauge",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nationalpark_Monte_Al%C3%A9n_(Tafel).jpg",
-            "fame": 15,
-            "description": {
-                "fr": "Le parc national de Monte Alén se situe approximativement au centre de la Guinée équatoriale sur la chaîne de montagne de Niefang. C'est le plus grand parc du pays.",
-                "en": "Monte Alén National Park is located near the center of Equatorial Guinea. It was established in 1990. With an area of 2,000 km2, it is the country's largest national park. The goliath frog, one of the prominent amphibians found in the park, is the biggest frog in the world; hunting it is prohibited."
-            }
-        },
-        {
             "id": "Q5721956",
             "name": {
                 "fr": "Basilica of the Immaculate Conception, Mongomo",
@@ -15697,6 +16171,105 @@ const D_pic = {
             "description": {
                 "fr": "bâtiment en Afrique",
                 "en": "The Basilica of the Immaculate Conception is a Roman Catholic basilica, built in the province of Mongomo in the African country of Equatorial Guinea. The temple is sometimes mistakenly referred to as a \"cathedral\" for its large size, however it is not based on any bishopric, so it does not enjoy that status. The Basilica of Mongomo is currently the largest religious building in Central Africa and the second largest Catholic church throughout Africa, after the Basilica of Our Lady of Peace in Ivory Coast."
+            }
+        },
+        {
+            "id": "Q3818",
+            "name": {
+                "fr": "Malabo",
+                "en": "Malabo"
+            },
+            "city": {
+                "id": "Q3031443",
+                "fr": "District de Malabo",
+                "en": "District of Malabo"
+            },
+            "country": {
+                "id": "Q983",
+                "iso": "GQ",
+                "fr": "Guinée équatoriale",
+                "en": "Equatorial Guinea"
+            },
+            "coordinates": {
+                "latitude": 3.752063888888889,
+                "longitude": 8.7737
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Malabo_a_13-oct-01.jpg/1280px-Malabo_a_13-oct-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Malabo a 13-oct-01.jpg",
+            "author": "Ipisking at English Wikipedia",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malabo_a_13-oct-01.jpg",
+            "fame": 158,
+            "description": {
+                "fr": "Malabo est une ville de Guinée équatoriale située sur la côte nord de l'île de Bioko. Elle est capitale du pays de 1969 — un an après l'indépendance du pays — à 2026 — remplacée par Ciudad de la Paz située sur le continent africain.",
+                "en": "Malabo is a city in Equatorial Guinea, located in the province of Bioko Norte. It is located on the north coast of the island of Bioko. In 2018, the city had a population of approximately 297,000 inhabitants. Spanish is the official language of the city and of the country as well, but Pichinglis is also used as a language of wider communication across Bioko island, including Malabo."
+            }
+        },
+        {
+            "id": "Q320792",
+            "name": {
+                "fr": "Bata",
+                "en": "Bata"
+            },
+            "city": {
+                "id": "Q203873",
+                "fr": "Litoral",
+                "en": "Litoral"
+            },
+            "country": {
+                "id": "Q983",
+                "iso": "GQ",
+                "fr": "Guinée équatoriale",
+                "en": "Equatorial Guinea"
+            },
+            "coordinates": {
+                "latitude": 1.865,
+                "longitude": 9.77
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Bata%2C_2015-02_-i---i-_%2816325440088%29.jpg/1280px-Bata%2C_2015-02_-i---i-_%2816325440088%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Bata, 2015-02 -i---i- (16325440088).jpg",
+            "author": "Ben Sutherland from Crystal Palace, London, UK",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bata,_2015-02_-i---i-_(16325440088).jpg",
+            "fame": 63,
+            "description": {
+                "fr": "Bata est une ville portuaire située à proximité du Golfe de Guinée dans la région du Rio Muni, en Guinée équatoriale. Avec une population de 347 368 habitants lors du recensement de 2015 et 800 000 en 2021 en comptant l'agglomération, elle est la première ville de Guinée équatoriale et la capitale économique du pays. D'un point de vue administratif, elle est également le chef-lieu de la province du Littoral.",
+                "en": "Bata is a port city in the Litoral province of Equatorial Guinea and the most populous city in the country, with a population of 309,345 at the 2015 census. The city, formerly the capital of Equatorial Guinea, lies on the Atlantic coast of Río Muni. The city is a transport hub, with ferry connections to Malabo and Douala and the second largest airport of the country, Bata Airport. Bata is also known for its nightlife and market."
+            }
+        },
+        {
+            "id": "Q526539",
+            "name": {
+                "fr": "Mongomo",
+                "en": "Mongomo"
+            },
+            "city": {
+                "id": "Q853400",
+                "fr": "Wele-Nzas",
+                "en": "Wele-Nzas"
+            },
+            "country": {
+                "id": "Q983",
+                "iso": "GQ",
+                "fr": "Guinée équatoriale",
+                "en": "Equatorial Guinea"
+            },
+            "coordinates": {
+                "latitude": 1.6287055555556,
+                "longitude": 11.316833333333
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Basilica_of_the_Immaculate_Conception%2C_Mongomo.jpg/1280px-Basilica_of_the_Immaculate_Conception%2C_Mongomo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Basilica of the Immaculate Conception, Mongomo.jpg",
+            "author": "Kachelus",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basilica_of_the_Immaculate_Conception,_Mongomo.jpg",
+            "fame": 35,
+            "description": {
+                "fr": "Mongomo est une ville de Guinée équatoriale, chef-lieu du district du même nom et de la province de Wele-Nzas, à 630 m d'altitude. Située à proximité de la frontière avec le Gabon, elle compte 7 126 habitants. L'actuel président de la Guinée équatoriale, Teodoro Obiang, est originaire de la région de Mongomo, où il a grandi. Le premier président du pays, Francisco Macías Nguema, un parent de l'actuel président, fut maire de Mongomo avant l'indépendance de la Guinée équatoriale.",
+                "en": "Mongomo is a town in the province of Wele-Nzas on mainland Equatorial Guinea, on the eastern border, roughly 1 km west of Gabon's Woleu-Ntem Province. The president of Equatorial Guinea, Teodoro Obiang Nguema Mbasogo, was born in Mongomo."
             }
         }
     ],
@@ -15961,7 +16534,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Castillo_de_San_Felipe_de_Lara_in_Guatemala_01.jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "Le château de San Felipe de Lara est un fort colonial espagnol situé à l'entrée du lac Izabal, dans l'est du Guatemala. Le lac Izabal est relié à la mer des Caraïbes par la rivière Dulce et le lac El Golfete. Le fort était stratégiquement situé à l'endroit le plus étroit de la rivière. Le Castillo de San Felipe a été utilisé par les Espagnols pendant plusieurs siècles, au cours desquels il a été détruit et pillé à plusieurs reprises par des pirates.",
                 "en": "The Castle of San Felipe de Lara is a Spanish colonial fort at the entrance to Lake Izabal in eastern Guatemala. Lake Izabal is connected with the Caribbean Sea via the Dulce River and El Golfete lake. The fort was strategically situated at the narrowest point on the river. The Castillo de San Felipe was used by the Spanish for several centuries, during which time it was destroyed and looted several times by pirates."
             }
         },
@@ -16027,7 +16600,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chichicastenango_market.jpg",
             "fame": 0,
             "description": {
-                "fr": null,
+                "fr": "Marché au Guatemala",
                 "en": "market in Guatemala"
             }
         }
@@ -16194,7 +16767,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tumon_Bay.JPG",
             "fame": 6,
             "description": {
-                "fr": null,
+                "fr": "Tumon Bay est une baie située sur le territoire américain de Guam, ouverte sur la mer des Philippines. Elle est délimitée au nord par Two Lovers Point et au sud par Ypao Point. L'ensemble de la baie se trouve dans la réserve marine de Tumon Bay, également appelée zone de préservation marine de Tumon Bay ou réserve de Tumon, l'une des cinq réserves marines de Guam. La réserve couvre 4,54 km² et s'étend sur environ 3,2 km. La plateforme du récif frangeant qui sépare l'océan ouvert de la lagune peut atteindre 442 mètres de largeur et s'étendre jusqu'à 1,6 km du rivage.",
                 "en": "Tumon Bay is a bay in the United States territory of Guam, opening to the Philippine Sea. It is bounded to the north by Two Lovers Point and to the south by Ypao Point. The entirety of the bay falls within the Tumon Bay Marine Preserve, also known as the Tumon Bay Marine Preserve Area and Tumon Preserve, one of five marine preserves on Guam. The Preserve measures 4.54 square kilometers and is roughly two miles long. The platform of the fringing reef that separates the open ocean from the lagoon is up to 1,450 feet wide. and up to one mile from the shore."
             }
         },
@@ -16227,7 +16800,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Two_Lovers_Point_2025.jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Two Lovers Point est un cap et une falaise maritime remarquables situés à Tamuning, à Guam, qui surplombent le nord de Tumon Bay et la mer des Philippines. Il s'agit de l'un des quatre sites naturels nationaux de Guam. Étroitement associé à la légende de deux amoureux condamnés, il constitue une attraction touristique majeure. Le cap fait partie du plateau calcaire qui forme la partie nord de Guam. La falaise atteint environ 113 mètres de hauteur à cet endroit.",
                 "en": "Two Lovers Point is a prominent cape and seaside cliff in Tamuning, Guam, that overlooks northern Tumon Bay and the Philippine Sea. One of four National Natural Landmarks on Guam, it is closely associated with the folktale of two doomed lovers and is a major tourist attraction. The Point is part of the limestone plateau that forms the northern part of Guam. The cliff height at the point is approximately 370 feet."
             }
         },
@@ -16260,37 +16833,8 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Talofofo_Falls_2025.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Les cascades de Talofofo sont une succession pittoresque de chutes et de rapides sur la rivière Ugum, sur l'île de Guam. Elles se trouvent au sud-est de l'île, à l'intérieur des terres par rapport à la baie de Talofofo. C'est également à cet endroit que Shōichi Yokoi, l'un des trois derniers soldats japonais restés cachés après la Seconde Guerre mondiale, a été découvert dans la grotte de Yokoi.",
                 "en": "The Talofofo Falls are a scenic series of cascades on the Ugum River on the island of Guam. They are located in the southeast of the island, inland from Talofofo Bay. It is also where Shōichi Yokoi, one of the last 3 Japanese holdouts of World War 2, was discovered in Yokoi's Cave."
-            }
-        },
-        {
-            "id": "Q106330334",
-            "name": {
-                "fr": "Latte Stone Park",
-                "en": "Latte Stone Park"
-            },
-            "city": null,
-            "country": {
-                "id": "Q16635",
-                "iso": "GU",
-                "fr": "Guam",
-                "en": "Guam"
-            },
-            "coordinates": {
-                "latitude": null,
-                "longitude": null
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Latte_stones_in_Hagatna.jpg",
-            "file": "Latte stones in Hagatna.jpg",
-            "author": "Hajime NAKANO",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Latte_stones_in_Hagatna.jpg",
-            "fame": 2,
-            "description": {
-                "fr": null,
-                "en": "Latte Stone Park, officially Senator Angel Leon Guerrero Santos Latte Stone Memorial Park, is an urban park in Hagåtña, Guam. Established in the 1950s and operated by the Guam Department of Parks and Recreation, it is best known for its set of eight historical latte stones, which were transferred from their original site in Fena. The Park is located along the cliffline below the Governor's residence in Agana Heights and south of the Plaza de España. It is often visited by sightseers visiting central Hagåtña."
             }
         }
     ],
@@ -16570,7 +17114,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orinduik_Falls_Sept_2007.JPG",
             "fame": 6,
             "description": {
-                "fr": null,
+                "fr": "Les chutes d'Orinduik se trouvent sur la rivière Ireng, dans les monts Pakaraima. Orinduik est une large série de cascades étagées, haute d'environ 25 m et large de plus de 150 m. Il existe d'autres chutes sur l'Ireng, notamment les chutes de Kurutuik, hautes d'environ 100 m et situées à plus de 40 km au nord, mais elles sont rarement visitées en raison de leur difficulté d'accès. La région est habitée par les peuples Macushi et Patamona, et quelques villages se trouvent à proximité des chutes.",
                 "en": "The Orinduik Falls lie on the Ireng River on the Pakaraima Mountains. Orinduik Falls is a wide, multi-tiered series of cascades. Waterfall is approximately 25 m tall and more than 150 m wide. There are other waterfalls on Ireng River, including the approximately 100 m tall Kurutuik Falls located more than 40 km to the north, but due to hard accessibility these falls are rarely visited. The area is inhabited by Macushi and Patamona people, and there are a few villages in the vicinity of the falls."
             }
         },
@@ -16603,7 +17147,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starboek_Market_(23132264799).jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Le marché de Stabroek est le plus grand marché de Georgetown, au Guyana. Situé au centre de la capitale, il est abrité dans une structure de fer et d'acier surmontée d'une tour de l'horloge bien visible.",
                 "en": "Stabroek Market is the largest market of Georgetown, Guyana. Located in the centre of the capital city, the market is housed in an iron and steel structure with a prominent clock tower."
             }
         }
@@ -16860,7 +17404,7 @@ const D_pic = {
             "fame": 6,
             "description": {
                 "fr": "La basilique Notre-Dame-de-Suyapa est une église située à Tegucigalpa au Honduras, que l’Église catholique rattache à l’archidiocèse de Tegucigalpa. Elle a été nommée basilique mineure par le pape François le 9 septembre 2015, et la Conférence épiscopale du Honduras lui donne le statut de sanctuaire national depuis 1954. Elle est dédiée à la Vierge de Suyapa, et est la plus grande église catholique du pays.",
-                "en": null
+                "en": "The Basilica of Our Lady of Suyapa is a church located in Tegucigalpa, Honduras, which the Catholic Church places under the Archdiocese of Tegucigalpa. It was designated a minor basilica by Pope Francis on September 9, 2015, and the Episcopal Conference of Honduras has granted it the status of a national shrine since 1954. It is dedicated to the Virgin of Suyapa and is the largest Catholic church in the country."
             }
         }
     ],
@@ -17758,7 +18302,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:%EB%AF%BC%EC%A3%BC%ED%8F%89%ED%99%94%EA%B5%90%EB%A5%98%EC%9B%90.PNG",
             "fame": 14,
             "description": {
-                "fr": null,
+                "fr": "Le district de Dong est un district de Jeonnam-Gwangju, en Corée du Sud. Il faisait autrefois partie de la ville de Gwangju, mais celle-ci a été fusionnée avec Jeonnam-Gwangju le 1er juillet 2026. Le Mudeungsan est un site emblématique du district. L'art moderne est exposé à la Rue de l'Art, la première du genre en Corée du Sud. Le district abrite le Centre culturel asiatique et le Centre communautaire international de Gwangju.",
                 "en": "Dong District is a district of Jeonnam-Gwangju, South Korea. It was once a part of the city of Gwangju, but on July 1, 2026, that city was merged into Jeonnam-Gwangju. Mudeungsan is a famous landmark in the district. Modern art is displayed at the Street of Art, which was the first one of its kind in South Korea. It has Asian Cultural Center and Gwangju International Community Center."
             }
         }
@@ -18323,7 +18867,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:ISR-2013-Aerial-Jaffa-Port_of_Jaffa.jpg",
             "fame": 6,
             "description": {
-                "fr": null,
+                "fr": "Le vieux Jaffa, aussi appelé la vieille ville de Jaffa, est le plus ancien quartier de Tel Aviv. On y trouve de nombreuses attractions touristiques, dont des mosquées et des églises, des tours de l'horloge, des galeries d'art, des musées, des restaurants et des boîtes de nuit. Le vieux Jaffa est situé au nord-ouest de Jaffa, sur une colline en bordure de la mer Méditerranée.",
                 "en": "Old Jaffa, also known as the Old City of Jaffa, is the oldest neighborhood in Tel Aviv. It contains a range of tourist attractions, including mosques and churches, clock towers, art galleries, museums, restaurants and nightclubs. Old Jaffa is located in the northwest of Jaffa, on a hill along the Mediterranean Sea."
             }
         }
@@ -18490,7 +19034,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tynwald_Hill.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "colline de l'île de Man",
                 "en": "hill on the Isle of Man"
             }
         },
@@ -18523,7 +19067,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tower_of_Refuge_on_Conister_or_St_Mary%27s_Rock_-_geograph.org.uk_-_476378.jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "La Tour de refuge des naufragés, appelée simplement Tour de refuge, est une structure crénelée en pierre érigée sur St Mary's Isle, dans la baie de Douglas, sur l'île de Man, afin d'offrir un abri aux marins naufragés sur le récif.",
                 "en": "The Tower of Refuge from Shipwreck, referred to as the Tower of Refuge, is a stone-built castellated structure which was erected on St Mary's Isle in Douglas Bay, Isle of Man, in order to afford shelter to mariners wrecked on the rock."
             }
         }
@@ -18824,6 +19368,39 @@ const D_pic = {
             "description": {
                 "fr": "Le palais Ambavilas, plus connu sous le nom de palais de Mysore ou Mysore Palace, est un palais historique et une demeure royale situé à Mysore dans l'État du Karnataka en Inde. C'est la résidence officielle de la dynastie des Wodeyar, qui régnait sur le royaume de Mysore. Le palais se trouve au centre de Mysore et fait face aux collines de Chamundi vers l'est, d'où l'on peut le contempler.",
                 "en": "Mysore Palace, also known as Amba Vilas Palace, is a historic palace and royal residence located in Mysore, Karnataka, India. It served as the official residence of the Wadiyar dynasty and the seat of the Kingdom of Mysore, and was commissioned by Krishnaraja Wodeyar IV in August 1897 following the destruction of the previous structure in a fire. The design of the palace is attributed to Henry Irwin, a British architect who had earlier designed the Madras High Court, and Edwin Wolleston Fritchley, who would later design the Lalitha Mahal."
+            }
+        },
+        {
+            "id": "Q1854285",
+            "name": {
+                "fr": "Pamban Bridge",
+                "en": "Pamban Bridge"
+            },
+            "city": {
+                "id": "Q15191",
+                "fr": "district de Ramanathapuram",
+                "en": "Ramanathapuram district"
+            },
+            "country": {
+                "id": "Q668",
+                "iso": "IN",
+                "fr": "Inde",
+                "en": "India"
+            },
+            "coordinates": {
+                "latitude": 9.282465,
+                "longitude": 79.199935
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Pamban_bridge_near_rameshwaram.JPG/1280px-Pamban_bridge_near_rameshwaram.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Pamban bridge near rameshwaram.JPG",
+            "author": "Shubham Gupta",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pamban_bridge_near_rameshwaram.JPG",
+            "fame": 24,
+            "description": {
+                "fr": "Le pont de Pamban était un pont ferroviaire qui reliait la ville de Rameswaram, sur l'île de Pamban, à Mandapam, sur le continent indien. Inauguré le 24 février 1914, il s'agissait du premier pont maritime de l'Inde et il est resté le plus long pont maritime du pays jusqu'à l'ouverture du Bandra–Worli Sea Link en 2010. Il s'agissait d'un pont classique reposant sur des piles en béton et comportant, à mi-chemin, une section basculante à deux vantaux qui pouvait être relevée pour laisser passer les navires et les péniches.",
+                "en": "Pamban Bridge was a railway bridge that connected the town of Rameswaram on Pamban Island with Mandapam in mainland India. Opened on 24 February 1914, it was India's first sea bridge, and was the longest sea bridge in India until the opening of the Bandra–Worli Sea Link in 2010. It was a conventional bridge resting on concrete piers with a double-leaf bascule section midway, which could be raised to let ships and barges pass through."
             }
         }
     ],
@@ -20375,7 +20952,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rose_Hall_Jamaica_Photo_Don_Ramey_Logan.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Rose Hall est une demeure de plantation géorgienne jamaïcaine, aujourd'hui exploitée comme maison-musée historique. Elle est située à Montego Bay, en Jamaïque, avec une vue panoramique sur la côte. Considérée comme l'une des plus impressionnantes grandes demeures de plantation du pays, elle était tombée en ruine dans les années 1960 avant d'être restaurée. Le musée prétend présenter l'histoire des personnes réduites en esclavage sur le domaine ainsi que la légende de la Sorcière blanche de Rose Hall.",
                 "en": "Rose Hall is a Jamaican Georgian plantation house now run as a historic house museum. It is located in Montego Bay, Jamaica with a panoramic view of the coast. Thought to be one of the country's most impressive plantation great houses, it had fallen into ruins by the 1960s, but was then restored. The museum purports to showcase the history of enslaved people of the estate and the legend of the White Witch of Rose Hall."
             }
         }
@@ -20877,6 +21454,39 @@ const D_pic = {
                 "fr": "Shibuya Crossing est un carrefour situé dans le quartier de Shibuya à Tokyo au Japon, connu pour ses passages zébrés pour piétons dont l'un en diagonale traverse le centre du carrefour.",
                 "en": "Shibuya Scramble Crossing, commonly known as Shibuya Crossing, is a scramble crossing in Shibuya, Tokyo, Japan. It is located near Shibuya Station in Shibuya, a major commercial and entertainment district in Tokyo. It has been described as the world's busiest pedestrian crossing, with 1,000–2,000 people crossing during a single green light cycle. Inaugurated in 1973, the intersection is a popular tourist destination and a widely recognized symbol of the city of Tokyo through its frequent appearances in television, film, and other media."
             }
+        },
+        {
+            "id": "Q184213",
+            "name": {
+                "fr": "pont du détroit d'Akashi",
+                "en": "Akashi Kaikyō Bridge"
+            },
+            "city": {
+                "id": "Q1078806",
+                "fr": "arrondissement de Tarumi",
+                "en": "Tarumi-ku"
+            },
+            "country": {
+                "id": "Q17",
+                "iso": "JP",
+                "fr": "Japon",
+                "en": "Japan"
+            },
+            "coordinates": {
+                "latitude": 34.616388888889,
+                "longitude": 135.02027777778
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Akashi_Bridge.JPG/1280px-Akashi_Bridge.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Akashi Bridge.JPG",
+            "author": "Tysto",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Akashi_Bridge.JPG",
+            "fame": 71,
+            "description": {
+                "fr": "Le pont du détroit d'Akashi est un pont suspendu, situé au Japon. Il franchit la mer intérieure de Seto pour relier Kobe, sur l'île principale de Honshū, à la ville d'Awaji, sur l'île du même nom. Sa portée centrale est de 1 991 m. La longueur totale du pont est de 3 911 m ce qui en fait le deuxième plus long pont suspendu du monde. Ce pont est le dernier élément d'un réseau qui relie les quatre îles principales du Japon: Honshū, Hokkaidō, Kyūshū et Shikoku et fait partie de l'autoroute Kobe-Awaji-Naruto.",
+                "en": "The Akashi Kaikyo Bridge is a suspension bridge that links the city of Kobe on the Japanese island of Honshu and Iwaya, Awaji on Awaji Island. It is part of the Kobe-Awaji-Naruto Expressway, and crosses the busy and turbulent Akashi Strait. It was completed in 1998, and at the time, was the longest central span of any suspension bridge in the world, at 1,991 metres. Currently, it is the second-longest, behind the 1915 Çanakkale Bridge in Turkey that was opened in March 2022."
+            }
         }
     ],
     "KE": [
@@ -21066,7 +21676,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Diani_Beach_02.jpg",
             "fame": 22,
             "description": {
-                "fr": null,
+                "fr": "Diani Beach est une plage de la côte kényane de l'océan Indien. Elle est située à 30 kilomètres au sud de Mombasa, dans le comté de Kwale.",
                 "en": "Diani Beach is a beach on the Indian Ocean coast of Kenya. It is located 30 kilometres south of Mombasa, in Kwale County."
             }
         },
@@ -21161,7 +21771,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lamu_door.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "quartier historique de Lamu, au Kenya ; site du patrimoine mondial",
                 "en": "historic section of Lamu, Kenya; World Heritage Site"
             }
         }
@@ -21561,41 +22171,8 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silver_Pagoda,_Phnom_Penh.jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "La Pagode d'argent est située du côté sud du Palais royal, à Chey Chumneas, Phnom Penh. Son nom officiel est Wat Ubaosoth Ratanaram, également connue sous le nom de Wat Preah Keo Morakot, souvent abrégé en Wat Preah Keo en khmer. Le vihara abrite de nombreux trésors nationaux, dont de nombreuses statues de Bouddha en or et ornées de joyaux. La plus remarquable est un petit Bouddha en cristal vert.",
                 "en": "The Silver Pagoda is located on the south side of the Royal Palace in Chey Chumneas, Phnom Penh. The official name is Wat Ubaosoth Ratanaram, also known as Wat Preah Keo Morakot which is commonly shortened to Wat Preah Keo in Khmer. The vihara houses many national treasures including many golds and jeweled Buddha statues. The most significant is a small green crystal Buddha."
-            }
-        },
-        {
-            "id": "Q1108673",
-            "name": {
-                "fr": "Monument de l'indépendance, Phnom Penh",
-                "en": "Independence Monument, Phnom Penh"
-            },
-            "city": {
-                "id": "Q1850",
-                "fr": "Phnom Penh",
-                "en": "Phnom Penh"
-            },
-            "country": {
-                "id": "Q424",
-                "iso": "KH",
-                "fr": "Cambodge",
-                "en": "Cambodia"
-            },
-            "coordinates": {
-                "latitude": 11.5564,
-                "longitude": 104.9281
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/f/ff/100_riel_2001_obverse.jpg",
-            "file": "100 riel 2001 obverse.jpg",
-            "author": "Szajci",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:100_riel_2001_obverse.jpg",
-            "fame": 13,
-            "description": {
-                "fr": "construit en 1958 pour commémorer l'indépendance du Cambodge",
-                "en": "The Independence Monument in Phnom Penh, capital of Cambodia, was built in 1958 to memorialise Cambodia's independence from France in 1953. It stands on a roundabout in the intersection of Norodom Boulevard and Sihanouk Boulevard in the centre of the city. It is in the form of a lotus-shaped stupa, of the style seen at the temple at Banteay Srei and other Khmer historical sites."
             }
         }
     ],
@@ -21728,7 +22305,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:KiribatiPresidential_Residence.jpg",
             "fame": 29,
             "description": {
-                "fr": null,
+                "fr": "Bairiki est une ville située à Tarawa-Sud, aux Kiribati. Elle est essentielle à la structure politique et administrative du pays, car plusieurs organismes gouvernementaux et missions diplomatiques s'y trouvent.",
                 "en": "Bairiki is a town located in South Tarawa, Kiribati. It is crucial to the country's political and administrative structure as several governmental organizations and diplomatic missions are situated there."
             }
         },
@@ -21963,7 +22540,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nevispeak1.jpg",
             "fame": 22,
             "description": {
-                "fr": null,
+                "fr": "Le pic Nevis est un volcan potentiellement actif situé au centre de l'île de Nevis, dans la Fédération de Saint-Kitts-et-Nevis, aux Antilles. Ce stratovolcan s'élève à 985 mètres et constitue le point culminant de l'île. Il n'y a eu aucune éruption depuis la préhistoire, mais des fumerolles et des sources chaudes actives sur les pentes côtières de l'île témoignent d'une activité volcanique de faible intensité. Les parties les plus abruptes du pic Nevis sont impossibles à cultiver.",
                 "en": "Nevis Peak is a potentially active volcano which is located in the centre of the island of Nevis of the Federation of Saint Kitts and Nevis in the West Indies. The stratovolcano rises to a height of 985 metres and is the highest point on the island. There have been no eruptions since prehistory, but there are active fumaroles and hot springs on the coastal slopes of the island, and these represent low-level volcanic activity. The steeper parts of Nevis Peak are impossible to farm."
             }
         },
@@ -21996,7 +22573,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Frigate_Bay.jpg",
             "fame": 10,
             "description": {
-                "fr": null,
+                "fr": "Frigate Bay est le nom de deux baies proches l'une de l'autre sur l'île de Saint-Kitts. Elles sont situées au sud-est de la capitale Basseterre, à l'extrémité nord de l'isthme qui relie la péninsule sud-est au reste de l'île. Frigate Bay North est très aménagée et donne sur la côte atlantique, plus agitée. On y trouve plusieurs hôtels et complexes hôteliers. Frigate Bay Beach, sur la côte sud plus calme, est une plage très prisée des habitants de Basseterre. Elle compte plusieurs bars et restaurants.",
                 "en": "Frigate Bay is the name of two bays located close together on the island of Saint Kitts. The two bays are located southeast of the capital Basseterre, at the northern end of the isthmus joining the Southeast Peninsula with the rest of the island. Frigate Bay North is extensively developed, and lies against the rougher Atlantic coast of the island. There are several hotels and resorts. Frigate Bay Beach, on the calmer south coast, is a popular beach with Basseterre locals. It has several bars and restaurants."
             }
         },
@@ -22029,7 +22606,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steel_Bridge_(49938448792).jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Le St. Kitts Scenic Railway est une ligne de chemin de fer à voie étroite de 29 kilomètres de long qui longe le littoral de l'île de Saint-Kitts, dans l'est des Caraïbes, avec un écartement de voie de 762 mm.",
                 "en": "St. Kitts Scenic Railway is a 29-kilometre long narrow-gauge railway line along the coastline of the island of St. Kitts in the eastern Caribbean, with a track gauge of 762 mm."
             }
         },
@@ -22062,7 +22639,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nevis_Pinney%27s_Beach.jpg",
             "fame": 6,
             "description": {
-                "fr": null,
+                "fr": "Pinney's Beach, aussi orthographiée Pinneys Beach, est une très longue plage de sable sur la côte caribéenne ouest de l'île de Nevis, à Saint-Kitts-et-Nevis, dans les îles Sous-le-Vent, aux Antilles. L'extrémité sud de Pinneys Beach commence juste à l'extérieur de la capitale, Charlestown. La plage s'étend sur environ cinq kilomètres vers le nord, jusqu'à la pointe nord de Cades Bay, où se trouve actuellement l'embarcadère du ferry Sea Bridge. Celui-ci est proche de l'entrée sud de The Narrows, le détroit qui sépare Nevis de l'île voisine de Saint-Kitts. Pinneys Beach tient son nom du domaine de Pinneys.",
                 "en": "Pinney's Beach, also spelled Pinneys Beach, is a very long sandy beach on the western Caribbean coast of the island of Nevis, in Saint Kitts and Nevis, Leeward Islands in the West Indies. The southern end of Pinneys Beach starts just outside the capital, Charlestown. The beach extends north three miles from there, ending at the northern point of Cades Bay, which is currently where the Sea Bridge ferry dock is located. That is near the southern entrance to The Narrows, the strait separating Nevis from the neighboring island of Saint Kitts. Pinneys Beach takes its name from Pinneys Estate."
             }
         }
@@ -22528,7 +23105,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bukchon_Village_Seoul.jpg",
             "fame": 12,
             "description": {
-                "fr": null,
+                "fr": "Le village de hanoks de Bukchon est un quartier résidentiel du district de Jongno, à Séoul, en Corée du Sud. Il compte de nombreuses maisons coréennes traditionnelles restaurées, appelées hanoks, ce qui en a fait une destination touristique populaire. Le quartier comprend de nombreux hanoks datant de la fin du XIXe et du début du XXe siècle. Lors du réaménagement rapide de Séoul, des efforts ont été faits pour préserver les hanoks. Le quartier a connu un essor de popularité auprès des touristes nationaux et internationaux à la fin des années 2000. En 2024, il a reçu 6,4 millions de visiteurs, pour environ 6 100 habitants dans le village.",
                 "en": "Bukchon Hanok Village is a residential neighborhood in Jongno District, Seoul, South Korea. It has many restored traditional Korean houses, called hanok. This has made it a popular tourist destination. The area contains many hanok that date to the late 19th and early 20th centuries. During the rapid redevelopment of Seoul, efforts were made to preserve the hanok. The area experienced a boom in popularity with domestic and international tourists in the late 2000s. In 2024, the area received 6.4 million visitors, compared to the around 6,100 residents in the village."
             }
         },
@@ -22557,8 +23134,8 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Seokguram_Buddha.JPG",
             "fame": 4,
             "description": {
-                "fr": null,
-                "en": null
+                "fr": "La grotte de Seokguram est un ermitage du complexe constitué autour du temple Bulguksa, à quatre kilomètres à l'est de ce temple. Elle se situe à 750 m d'altitude sur le mont Toham à Gyeongju en Corée du Sud. Elle est également proche de la côte est de la Corée, sur la mer du Japon.\nEn 1962, la grotte est désignée 24e trésor national, et en 1995 est inscrite sur la liste du patrimoine mondial de l'UNESCO conjointement avec le temple Bulguksa.",
+                "en": "Seokguram Grotto is a hermitage within the complex surrounding Bulguksa Temple, located four kilometers east of the temple. It sits at an elevation of 750 meters on Mount Toham in Gyeongju, South Korea. It is also close to the east coast of Korea, on the Sea of Japan.\nIn 1962, the grotto was designated as the 24th National Treasure, and in 1995 it was inscribed on the UNESCO World Heritage List together with Bulguksa Temple."
             }
         }
     ],
@@ -22658,7 +23235,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kwnmuseum.jpg",
             "fame": 10,
             "description": {
-                "fr": null,
+                "fr": "Le Musée national du Koweït est le musée national du Koweït, situé à Koweït City. Il a été inauguré en 1983 et conçu par l'architecte Michel Ecochard.",
                 "en": "The Kuwait National Museum is the national museum of Kuwait, located in Kuwait City. It was established in 1983 and designed by architect Michel Ecochard."
             }
         },
@@ -22691,7 +23268,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jacckuwait.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Le centre culturel Sheikh Jaber Al-Ahmad, connu familièrement sous le nom d'Opéra du Koweït, est un centre culturel situé sur la Gulf Road, dans la capitale Koweït City. C'est le plus grand centre culturel et opéra du Moyen-Orient. Il fait partie du Kuwait National Cultural District. Le centre culturel Sheikh Jaber Al-Ahmad est un espace public pluridisciplinaire appartenant à l'Amiri Diwan. Il propose une gamme d'événements en musique, théâtre, cinéma, ateliers et poésie orale.",
                 "en": "The Sheikh Jaber Al-Ahmad Cultural Centre, informally known as the Kuwait Opera House, is a cultural center in Kuwait, located on the Gulf Road in the capital Kuwait City. It is the largest cultural center and opera house in the Middle East. The cultural centre is part of the Kuwait National Cultural District. The Sheikh Jaber Al-Ahmad Cultural Centre is a multidisciplinary public space owned by the Amiri Diwan. It offers a range of events in music, theatre, film, workshops and spoken word."
             }
         },
@@ -23254,7 +23831,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tham_Kong_Lo_(2).JPG",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "Tham Kong Lo, ou grotte de Kong Lor, est une grotte karstique calcaire du parc national de Phu Hin Bun, dans la province de Khammouane, au Laos. Elle se situe à environ 130 kilomètres au nord de Thakhek, sur la rivière Nam Hin Bun, qui s'y engouffre. La formation karstique est spectaculaire et la grotte a été citée comme « l'une des merveilles géologiques de l'Asie du Sud-Est ». La grotte est profonde et ses galeries atteignent par endroits 90 m de large et 100 m de haut. Ces dernières années, des habitants ont installé des stands sur le site pour servir les touristes.",
                 "en": "Tham Kong Lo or Kong Lor Cave is a karst limestone cave in Phu Hin Bun National Park, in Khammouane Province, Laos. It is located roughly 130 kilometres north of Thakhek, on the Nam Hin Bun River, which flows into the cave. The karst formation is dramatic and the cave has been cited as a \"one of Southeast Asia's geological wonders\". The cave is deep and passages are up to 90m wide and 100m high in parts. The locals in recent years have set up vendors at the location to provide to tourists."
             }
         }
@@ -23555,7 +24132,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Morne_Fortune%27s_Shipley_Battery_on_Fort_Charlotte_with_the_grave_of_Derek_Walcott_and_the_Inniskilling_Monument.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Morne Fortune est une colline et un quartier résidentiel situé au sud de Castries, à Sainte-Lucie, aux Antilles. D'abord appelé Morne Dubuc, il a été rebaptisé Morne Fortuné en 1765, lorsque les Français y ont transféré leur quartier général militaire et les bâtiments de l'administration gouvernementale depuis Vigie Height. Les Français y ont construit un fort, la Citadelle du Morne Fortuné, achevée en 1784. Le fort fut pris pour la première fois par les Britanniques le 1er avril 1794, puis repris par les Français en juin 1795. Il fut de nouveau capturé par les Britanniques le 24 mai 1796.",
                 "en": "Morne Fortune is a hill and residential area located south of Castries, Saint Lucia, in the West Indies. Originally known as Morne Dubuc, it was renamed Morne Fortuné in 1765 when the French moved their military headquarters and government administration buildings here from Vigie Height. A fort was constructed here by the French, Citadelle du Morne Fortuné, completed in 1784. The fort was first captured by the British on 1 April 1794, but recaptured by the French in June 1795. It was captured again by the British on 24 May 1796."
             }
         },
@@ -23588,7 +24165,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pigeon_Island_Causeway_Beaches_(39071455480).jpg",
             "fame": 0,
             "description": {
-                "fr": null,
+                "fr": "attraction touristique à Sainte-Lucie",
                 "en": "tourist attraction in Saint-Lucia"
             }
         }
@@ -24079,7 +24656,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:SL_Galle_Fort_asv2020-01_img23.jpg",
             "fame": 18,
             "description": {
-                "fr": null,
+                "fr": "Le fort de Galle, dans la baie de Galle, sur la côte sud-ouest du Sri Lanka, a d'abord été construit en 1588 par les Portugais, puis largement fortifié par les Hollandais au XVIIe siècle, à partir de 1649. C'est un monument patrimonial historique, archéologique et architectural qui, même après plus de 437 ans, conserve un aspect soigné grâce aux importants travaux de reconstruction menés par le Département d'archéologie du Sri Lanka.",
                 "en": "Galle Fort, in the Bay of Galle on the southwest coast of Sri Lanka, was built first in 1588 by the Portuguese, then extensively fortified by the Dutch during the 17th century from 1649 onwards. It is a historical, archaeological and architectural heritage monument, which even after more than 437 years maintains a polished appearance, due to extensive reconstruction work done by the Archaeological Department of Sri Lanka."
             }
         },
@@ -24180,7 +24757,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lake_Piso.jpg",
             "fame": 10,
             "description": {
-                "fr": null,
+                "fr": "Le lac Piso, aussi appelé lac Pisu ou lac des Pêcheurs, est une lagune tidale oblongue du comté de Grand Cape Mount, dans l'ouest du Libéria, près de la ville de Robertsport. Son nom vient d'un terme local signifiant « trou du pigeon », en référence aux volées de pigeons qui venaient autrefois boire au lac Piso.",
                 "en": "Lake Piso, also known as Lake Pisu and Fisherman's Lake, is an oblong tidal lagoon in Grand Cape Mount County in western Liberia, near the town of Robertsport. Its name originates from a local term meaning \"pigeon's hole\" – a reference to the flocks of pigeons that once came to Lake Piso for water."
             }
         },
@@ -24246,7 +24823,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:President_Tubman%27s_limousine.jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Le Musée national du Libéria est un musée national situé à Monrovia, au Libéria. D'abord installé dans la Première Résidence exécutive, sur Ashmun Street, aujourd'hui transformée en bibliothèque, il a été créé par une loi de l'Assemblée législative nationale en 1958, sous l'administration du 18e président du Libéria, le Dr William V.S. Tubman. Partiellement financé par l'UNESCO, en coordination avec le Département de l'instruction publique, son objectif principal était d'acquérir, de préserver et d'exposer des objets culturels et d'autres éléments historiques illustrant le patrimoine du pays.",
                 "en": "The National Museum of Liberia is a national museum in Monrovia, Liberia. Initially housed in the First Executive Mansion on Ashmun Street of the city which is now used as a library, it was established by an Act of the National Legislature in 1958 under the administration of Liberia's 18th President, Dr William V.S. Tubman. Partly funded by UNESCO, in coordination with the Department of Public instructions, its primary goal was to obtain, preserve and display cultural artefacts and other historical items which depict the country's heritage."
             }
         },
@@ -24279,7 +24856,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Front_View_of_Kpatawee_Falls.jpg",
             "fame": 0,
             "description": {
-                "fr": null,
+                "fr": "chute d'eau au Libéria",
                 "en": "waterfall in Liberia"
             }
         }
@@ -24475,12 +25052,46 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ts%27ehlanyane_National_Park.JPG",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Le parc national de Ts'ehlanyane est un parc national du Lesotho. Il est situé dans les monts Maloti, dans le district de Leribe, et fait partie de la grande aire de conservation transfrontalière Maloti-Drakensberg. Ce parc du nord du Lesotho protège une zone sauvage et accidentée de haute altitude de 2 600 mètres, comprenant l'un des derniers peuplements de forêt indigène du Lesotho, avec plusieurs plantes de sous-bois rares propres à cet habitat boisé. Le nom « Ts'ehlanyane » est le nom local courant du bambou des montagnes, qui a donné son nom à la rivière et au parc.",
                 "en": "Ts'ehlanyane National Park is a National Park in Lesotho. It is located in the Maloti Mountains in Leribe District, and is part of the larger Maloti-Drakensberg Transfrontier Conservation Area. This Lesotho northern park protects a high-altitude, 2,600-metre patch of rugged wilderness, including one of Lesotho’s only remaining stands of indigenous forest with a number of rare undergrowth plants that are unique to this woodland habitat. The name \"Ts'ehlanyane\" is the local common name for the berg bamboo, from which the river and park take their name."
             }
         }
     ],
     "LT": [
+        
+        {
+            "id": "Q215315",
+            "name": {
+                "fr": "Kernavė",
+                "en": "Kernavė"
+            },
+            "city": {
+                "id": "Q58882",
+                "fr": "Municipalite du district de Širvintos",
+                "en": "Širvintos District Municipality"
+            },
+            "country": {
+                "id": "Q37",
+                "iso": "LT",
+                "fr": "Lituanie",
+                "en": "Lithuania"
+            },
+            "coordinates": {
+                "latitude": 54.88333333333333,
+                "longitude": 24.85
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Kernav%C4%97_-_Hill_forts_01.jpg/1280px-Kernav%C4%97_-_Hill_forts_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Kernavė - Hill forts 01.jpg",
+            "author": "Lestat (Jan Mehlich)",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kernav%C4%97_-_Hill_forts_01.jpg",
+            "fame": 49,
+            "description": {
+                "fr": "Kernavė fut la première capitale connue du grand-duché de Lituanie. Le roi Mindaugas y fut couronné en 1253. C'est aussi un site archéologique très important. Aujourd'hui c'est un village touristique dans la municipalité du district de Širvintos au nord-ouest de Vilnius. Le site est inscrit depuis 2004 sur la liste du patrimoine mondial de l'UNESCO.",
+                "en": "Kernavė was a medieval capital of the Grand Duchy of Lithuania and today is a tourist attraction and an archeological site. It is located in the Širvintos district municipality located in southeast Lithuania. A Lithuanian state cultural reserve was established in Kernavė in 1989. In 2004 Kernavė Archaeological Site was included into UNESCO World Heritage list."
+            }
+        },
         {
             "id": "Q5595",
             "name": {
@@ -24609,7 +25220,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gedimino_kalnas_58.jpg",
             "fame": 36,
             "description": {
-                "fr": null,
+                "fr": "La vieille ville de Vilnius, l'une des plus grandes vieilles villes médiévales encore préservées d'Europe du Nord, inscrite au patrimoine mondial de l'UNESCO, couvre une superficie de 3,59 kilomètres carrés. Elle comprend 74 quartiers, avec 70 rues et ruelles totalisant 1 487 bâtiments, pour une surface de plancher totale de 1 497 000 mètres carrés. La division administrative de la vieille ville couvre un territoire plus vaste, de plus de 4,5 kilomètres carrés.",
                 "en": "The Old Town of Vilnius, one of the largest surviving medieval old towns in Northern Europe, as inscribed within UNESCO World Heritage Sites, has an area of 3.59 square kilometres. It encompasses 74 quarters, with 70 streets and lanes numbering 1487 buildings with a total floor area of 1,497,000 square meters. The administrative division of the Old Town is a larger territory and comprises more than 4.5 square kilometres."
             }
         },
@@ -24746,15 +25357,15 @@ const D_pic = {
             }
         },
         {
-            "id": "Q12676460",
+            "id": "Q1482013",
             "name": {
-                "fr": "Réserve culturelle de Kernavė",
-                "en": "Cultural Reserve of Kernavė"
+                "fr": "château de Trakai",
+                "en": "Trakai Island Castle"
             },
             "city": {
-                "id": "Q58882",
-                "fr": "Municipalite du district de Širvintos",
-                "en": "Širvintos District Municipality"
+                "id": "Q191015",
+                "fr": "Trakai",
+                "en": "Trakai"
             },
             "country": {
                 "id": "Q37",
@@ -24763,19 +25374,19 @@ const D_pic = {
                 "en": "Lithuania"
             },
             "coordinates": {
-                "latitude": 54.88055555555555,
-                "longitude": 24.841666666666665
+                "latitude": 54.6525,
+                "longitude": 24.933055555555555
             },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Piliakalniai.jpg/1280px-Piliakalniai.jpg",
-            "file": "Piliakalniai.jpg",
-            "author": null,
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Piliakalniai.jpg",
-            "fame": 3,
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Trakai_Island_Castle%2C_2007.jpg/1280px-Trakai_Island_Castle%2C_2007.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Trakai Island Castle, 2007.jpg",
+            "author": "Ana",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trakai_Island_Castle,_2007.jpg",
+            "fame": 37,
             "description": {
-                "fr": null,
-                "en": null
+                "fr": "Le château de l'île de Trakai ou château de Trakai est un château insulaire situé à Trakai, en Lituanie, sur une île du lac Galvé. Kęstutis a commencé la construction du château en pierre au XIVe siècle. De grands travaux sont achevés en 1409 sous son fils Vytautas le Grand, décédé dans ce château en 1430. Trakai était l'un des principaux centres du grand-duché de Lituanie, et le château avait une grande importance stratégique.",
+                "en": "Trakai Island Castle is an island castle located in Trakai, Lithuania, on an island in Lake Galvė. The construction of the stone castle was begun in the 14th century by Kęstutis, and around 1409 major works were completed by his son Vytautas the Great, who died in this castle in 1430. Trakai was one of the main centers of the Grand Duchy of Lithuania and the castle held great strategic importance. The castle was rebuilt in the 1950s–1960s by Lithuanian initiative, although it had received resistance from Soviet authorities."
             }
         }
     ],
@@ -25003,7 +25614,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gronn,_L%C3%ABtzebuerg,_Luxembourg_-_panoramio_(12).jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "système défensif souterrain historique de la ville de Luxembourg",
                 "en": "historic subterranean defense system in Luxembourg City"
             }
         }
@@ -25203,7 +25814,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turaida_Castle.JPG",
             "fame": 18,
             "description": {
-                "fr": null,
+                "fr": "Le château de Turaida est un château médiéval récemment reconstruit, situé à Turaida, dans la région de Vidzeme, en Lettonie, sur la rive opposée de la rivière Gauja par rapport à Sigulda.",
                 "en": "Turaida Castle is a recently reconstructed medieval castle in Turaida, in the Vidzeme region of Latvia, on the opposite bank of the Gauja River from Sigulda."
             }
         }
@@ -25849,7 +26460,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fort_Antoine_-_panoramio.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le théâtre du fort Antoine est un petit amphithéâtre situé sur l'avenue de la Quarantaine, dans le quartier de Monaco-Ville, à Monaco, à la pointe nord-est du Rocher de Monaco. Le théâtre était à l'origine une forteresse construite au début du XVIIIe siècle pendant la guerre de Succession d'Espagne. Au XXe siècle, après avoir été détruite pendant la Seconde Guerre mondiale, la forteresse a été reconstruite sous la forme d'un théâtre en plein air. Aujourd'hui, le théâtre accueille des pièces de théâtre et des concerts en plein air pendant les mois d'été.",
                 "en": "The Fort Antoine Theatre is a small amphitheatre on the Avenue de la Quarantaine in the Monaco-Ville ward of Monaco, on the north-eastern point of the Rock of Monaco. The theatre was originally a fortress that was built in early 18th-century during the War of the Spanish Succession. In the 20th-century, after being destroyed during World War II, the fortress was rebuilt as an open-air theatre. Today, the theatre hosts open air plays and musical concerts in the summer months."
             }
         },
@@ -25917,7 +26528,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monasterio_de_C%C4%83priana,_C%C4%83priana,_Moldavia,_2023-11-02,_DD_38.jpg",
             "fame": 16,
             "description": {
-                "fr": null,
+                "fr": "Le monastère de Căpriana est l'un des plus anciens monastères de Moldavie. Il est situé à Căpriana, à 40 km au nord-ouest de Chișinău.",
                 "en": "The Căpriana Monastery is one of the oldest monasteries of Moldova, located in Căpriana, 40 km north-west of Chișinău."
             }
         },
@@ -25983,7 +26594,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orhei_Vechi_08.JPG",
             "fame": 15,
             "description": {
-                "fr": null,
+                "fr": "Le site de l'Ancien Orhei est un complexe historique et archéologique moldave situé à Trebujeni, à environ 60 kilomètres au nord-est de Chișinău, sur la rivière Răut, en République de Moldavie.",
                 "en": "Old Orhei is a Moldovan historical and archaeological complex located in Trebujeni, which is approximately 60 kilometres north-east of Chișinău on the Răut River in the Republic of Moldova."
             }
         },
@@ -26082,7 +26693,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monasterio_de_%C8%9Aipova,_%C8%9Aipova,_Moldavia,_2023-11-01,_DD_27.jpg",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "Monument architectural d'importance nationale en Moldavie",
                 "en": "architectural monument of national importance in Moldova"
             }
         }
@@ -26666,7 +27277,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alele_Museum_Aussenansicht.JPG",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le musée et la bibliothèque publique Alele sont le musée national et les archives nationales des Îles Marshall. Ils abritent également la seule bibliothèque publique du pays.",
                 "en": "Alele Museum & Public Library is the national museum and the national archive of the Marshall Islands. It also hosts the only public library in the country."
             }
         }
@@ -27217,7 +27828,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mahamuni_Image.JPG",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "Le temple du Bouddha Mahamuni est un temple bouddhiste et un important lieu de pèlerinage situé au sud-ouest de Mandalay, au Myanmar. L'image de Mahamuni est conservée dans ce temple et provient à l'origine de l'Arakan. Elle est particulièrement vénérée en Birmanie et occupe une place centrale dans la vie de nombreuses personnes, car elle est considérée comme une représentation de l'essence même de la vie du Bouddha.",
                 "en": "The Mahamuni Buddha Temple is a Buddhist temple and major pilgrimage site, located southwest of Mandalay, Myanmar. The Mahamuni Image is enshrined in this temple, and originally came from Arakan. It is highly venerated in Burma and central to many people's lives, as it is seen as a representation of the Buddha's own life essence."
             }
         },
@@ -27450,7 +28061,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dsc_3527-500x332.jpg",
             "fame": 14,
             "description": {
-                "fr": null,
+                "fr": "Le parc national de l'Altaï Tavan Bogd est un parc national situé dans la province de Bayan-Ölgii, dans l'ouest de la Mongolie. Le parc comprend le versant mongol du massif du Tavan Bogd, divisé par la frontière tripartite entre la Russie, la Chine et la Mongolie, dans les montagnes de l'Altaï. Il couvre une superficie de 6 362 kilomètres carrés et se trouve au sud du Tavan Bogd, la plus haute montagne de Mongolie. Il comprend les lacs Khoton, Khurgan et Dayan.",
                 "en": "Altai Tavan Bogd National Park is a national park in Bayan-Ölgii Province of western Mongolia. The park includes the Mongolian side of the Tavan Bogd massif, which is divided by the triple border with Russia and China in the Altai Mountains. It covers 6362 square kilometres and is located south of Tavan Bogd, the highest mountain of Mongolia. It includes the lakes Khoton, Khurgan, and Dayan."
             }
         },
@@ -27512,7 +28123,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiking_in_Khongoryn_Els_(Unsplash).jpg",
             "fame": 10,
             "description": {
-                "fr": null,
+                "fr": "Khongoryn Els, également appelé Duut Mankhan, est populairement connu sous le nom de « Sables chantants ». Il se trouve dans le parc national de Gobi Gurvansaikhan, en Mongolie. Les dunes de sable s'étendent sur une superficie de plus de 965 kilomètres carrés.",
                 "en": "Khongoryn Els also called Duut Mankhan is popularly known as the \"Singing Sands\". It lies within the Gobi Gurvansaikhan National Park in Mongolia. The sand dunes extend to over 965 square kilometres area."
             }
         }
@@ -28009,7 +28620,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Malta_-_Ghajnsielem_-_Comino_%2B_Large_Blue_Lagoon_Rock_%2B_Small_Blue_Lagoon_Rock_%2B_Cominotto_%2B_Blue_Lagoon_02_ies.jpg",
             "fame": 0,
             "description": {
-                "fr": null,
+                "fr": "Plage à Malte",
                 "en": "beach in Malta"
             }
         }
@@ -28302,7 +28913,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maafushi_island.jpg",
             "fame": 14,
             "description": {
-                "fr": null,
+                "fr": "Maafushi est l'une des îles habitées de l'atoll de Kaafu, aux Maldives. La proximité de l'île avec Malé et ses plateformes de transport a permis à Maafushi de devenir une destination populaire pour les touristes visitant les îles locales.",
                 "en": "Maafushi is one of the inhabited islands of Kaafu Atoll in the Maldives. The island's proximity to Malé and its transport hubs has allowed Maafushi to become a popular destination for tourists visiting local islands."
             }
         },
@@ -28335,7 +28946,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Felidhoo_2023-11-07_2.jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "Mosquée à Felidhu, aux Maldives",
                 "en": "mosque in Felidhu, Maldives"
             }
         }
@@ -28560,7 +29171,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Majete_Wildlife_Reserve_Entrance.jpg",
             "fame": 11,
             "description": {
-                "fr": null,
+                "fr": "La réserve de faune de Majete est une réserve naturelle située dans le sud-ouest du Malawi, créée en tant que zone protégée en 1955. Les populations animales de la réserve ont été décimées à la fin des années 1970 et dans les années 1980 en raison du braconnage et d'autres activités humaines. Majete est gérée par African Parks depuis 2003, année où l'organisation de conservation à but non lucratif a conclu un partenariat public-privé avec le Département des parcs nationaux et de la faune du Malawi. Depuis lors, la faune a été réintroduite, le parc a obtenu le statut de réserve abritant les « Big Five » et le tourisme s'est développé.",
                 "en": "Majete Wildlife Reserve is a nature reserve in southwestern Malawi, established as a protected area in 1955. The reserve's animal populations were decimated during the late 1970s and 1980s due to poaching and other human activities. Majete has been managed by African Parks since 2003, when the nonprofit conservation organization entered into a public–private partnership with the Malawi Department of National Parks and Wildlife. Since then, wildlife has been restored, the park has achieved Big Five game status, and tourism has increased."
             }
         },
@@ -29092,7 +29703,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Melaka-Porta-de-Santiago-2Cimg2194.jpg",
             "fame": 20,
             "description": {
-                "fr": null,
+                "fr": "A Famosa était une forteresse portugaise construite à Malacca, en Malaisie, vers 1512. La partie la plus ancienne de la forteresse était un donjon de cinq étages qui a finalement donné son nom à l'ensemble de la forteresse. Quelque temps après la bataille de Malacca et l'occupation de la ville par les Néerlandais, le donjon a été détruit, mais les murs extérieurs de la forteresse ont été agrandis. Cependant, en 1811, les Britanniques ont détruit la forteresse d'origine ainsi que la plupart des murs extérieurs.",
                 "en": "A Famosa was a Portuguese fortress built in Malacca, Malaysia, around 1512. The oldest part of the fortress was a five-storey keep which eventually gave its name to the fortress as a whole. Some time following the Battle of Malacca and the occupation of the city by the Dutch, the keep was destroyed but the outer walls of the fortress were expanded. However, in 1811 the British destroyed all of the original fortress and most of the outer walls."
             }
         },
@@ -29358,7 +29969,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sun_over_the_Lake_Niassa_Reserve_(5888437856).jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "La réserve du Niassa est une réserve naturelle située dans les provinces de Cabo Delgado et de Niassa, au Mozambique. Couvrant plus de 42 000 kilomètres carrés, elle constitue la plus grande zone protégée du pays. La réserve fait partie de l'aire de conservation transfrontalière et est reliée à la réserve de faune de Lukwika-Lumesule, en Tanzanie. Elle sera reliée à la réserve du lac Niassa lorsque celle-ci sera achevée.",
                 "en": "Niassa Reserve is a nature reserve in Cabo Delgado Province and Niassa Province, Mozambique. Covering over 42,000 square kilometres, it is the largest protected area in the country. The reserve is part of the Trans-Frontier Conservation Area and links to the Tanzanian Lukwika-Lumesule Game Reserve. It will connect to the Lake Niassa Reserve when it is completed."
             }
         },
@@ -29777,7 +30388,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cape_Cross,_kolonie_lachtan%C5%AF_-_panoramio.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Parc national en Namibie",
                 "en": "National park in Namibia"
             }
         }
@@ -29974,7 +30585,7 @@ const D_pic = {
             "fame": 3,
             "description": {
                 "fr": "Le Cœur de Voh est une formation végétale naturelle en Nouvelle-Calédonie. Il s'agit d'une clairière naturelle de quatre hectares dans la mangrove bordant le lagon calédonien, ce qui en fait un tanne tout à fait classique à ceci près qu'il a, vu d'en haut, la forme d'un cœur stylisé. Le cœur est constitué de palétuviers Avicennia marina, tandis qu'il est cerné de palétuviers du genre Rhizophora, d'un vert plus soutenu. C'est ce contraste de teinte qui dessine visuellement la forme du cœur depuis les airs.",
-                "en": null
+                "en": "The Heart of Voh is a natural plant formation in New Caledonia. It is a four-hectare natural clearing in the mangrove bordering the New Caledonian lagoon, making it a classic salt marsh, except that when viewed from above, it has the shape of a stylized heart. The heart is formed by Avicennia marina mangroves, while it is surrounded by mangroves of the Rhizophora genus, which are a deeper green. This contrast in color creates the visible heart shape from the air."
             }
         }
     ],
@@ -30464,7 +31075,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centro_de_Visitantes_de_Miraflores.JPG",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "Centre d'accueil des visiteurs au Panama",
                 "en": "visitors center in Panama"
             }
         }
@@ -30763,7 +31374,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Entrada_del_Museo_Qorikancha_02.jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "Musée à Cusco, au Pérou",
                 "en": "museum in Cusco, Peru"
             }
         }
@@ -30864,7 +31475,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:BoraboraISS006-E-39815.PNG",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Ome est une île publique de 1,087 km² située dans le lagon de Bora-Bora, en Polynésie française. Elle se trouve entre Mute et Temahu. L'ancienne île de Tooparopae est désormais rattachée à Ome à son extrémité ouest.",
                 "en": "Ome, is a 1.087 km2 public island in the lagoon of Bora Bora in French Polynesia. It is the located between Mute, and Temahu. Former island of Tooparopae is now adjoined to Ome in its western point."
             }
         }
@@ -30965,7 +31576,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tavurvur_volcano_edit.jpg",
             "fame": 26,
             "description": {
-                "fr": null,
+                "fr": "Tavurvur est un stratovolcan actif situé près de Rabaul, sur l'île de Nouvelle-Bretagne, en Papouasie-Nouvelle-Guinée. Il s'agit d'un cône secondaire de la caldeira de Rabaul, situé sur le rebord oriental de cette formation plus vaste. Une éruption du volcan a en grande partie détruit la ville voisine de Rabaul en 1994. Le mont Tavurvur est le volcan le plus actif de la caldeira de Rabaul et est entré en éruption pour la dernière fois le 29 août 2014. Selon l'Observatoire volcanologique de Rabaul, la prononciation correcte du nom du volcan est « tah-VOOR-voor ».",
                 "en": "Tavurvur is an active stratovolcano near Rabaul, on the island of New Britain, in Papua New Guinea. It is a sub-vent of the Rabaul caldera and lies on the eastern rim of the larger feature. An eruption of the volcano largely destroyed the nearby town of Rabaul in 1994. Mount Tavurvur is the most active volcano in Rabaul caldera, and erupted most recently on 29 August 2014. The correct pronunciation of the volcano's name is tah-VOOR-voor, according to the Rabaul Volcanological Observatory."
             }
         },
@@ -31060,7 +31671,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Xylocarpus_granatum.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Le parc naturel de Port Moresby, situé dans la capitale de la Papouasie-Nouvelle-Guinée, est agréé par l'association australienne des zoos et aquariums. Il s'agit d'un établissement qui promeut les soins aux animaux, la conservation et l'éducation. Il propose des expériences botaniques, zoologiques et liées à la nature sur une superficie de 30 acres. Le parc naturel de Port Moresby joue un rôle important dans la conservation de la faune de la région. Il offre un environnement sûr aux animaux et sensibilise le public à l'importance de la préservation de la biodiversité.",
                 "en": "Port Moresby Nature Park Located in capital city Papua New Guinea, this park is accredited by the Australian zoo and aquarium association. It is a facility that promotes animal care, conservation, and education.It offers botanical, zoological, and nature experiences across its 30-acre expanse. Port Moresby Nature Park is important to wildlife conservation in the region. The park provides a safe environment for animals and raises awareness about the importance of biodiversity conservation."
             }
         },
@@ -31089,7 +31700,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tufi_Town.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "Tufi est une ville située sur la péninsule sud-est du cap Nelson, dans la province d'Oro, en Papouasie-Nouvelle-Guinée. Tufi se trouve sur l'un des nombreux rias, ou vallées fluviales submergées, appelés localement « fjords », du cap Nelson, entouré de nombreux récifs non cartographiés. La région est également célèbre pour sa production d'étoffe d'écorce. Le Tufi Dive Resort propose des expériences de plongée sur les récifs, ainsi que sur des navires et des avions coulés. Tufi est desservie par l'aéroport de Tufi. La ville se trouve dans la zone rurale de gouvernement local de Tufi.",
                 "en": "Tufi is a town located on the south eastern peninsula of Cape Nelson, Oro Province, Papua New Guinea. Tufi is located on one of many rias, or drowned river valleys, locally referred to as 'fjords', on Cape Nelson surrounded by many uncharted reefs. The area is also famous for its production of tapa cloth. The Tufi Dive Resort provides diving experiences of the reefs, sunken ships and aircraft. Tufi is serviced by Tufi Airport. The town is located within Tufi Rural LLG."
             }
         }
@@ -31358,39 +31969,6 @@ const D_pic = {
                 "fr": "Le Fort Santiago, est une citadelle construite à l'origine par le conquérant espagnol, Miguel López de Legazpi pour la nouvelle ville de Manille, aux iles Philippines, rattachées à l'empire colonial espagnol. Cette forteresse forme la pointe péninsulaire de la partie ancienne de la ville de Manille qui est appelée ' Intramuros'. Le fort est l'un des sites historiques importants de Manille.",
                 "en": "Fort Santiago, built in 1571, is a citadel or castle built by Spanish navigator and governor Miguel López de Legazpi for the newly established city of Manila in the Philippines. The defense fortress is located in Intramuros, the walled city of Manila. The fort is one of the most important historical sites in Manila. Several people died in its prisons during the Spanish Empire and World War II. José Rizal, the Philippine national hero, was imprisoned here before his execution in 1896."
             }
-        },
-        {
-            "id": "Q11330483",
-            "name": {
-                "fr": "Ville historique de Vigan",
-                "en": "Historic City of Vigan"
-            },
-            "city": {
-                "id": "Q235004",
-                "fr": null,
-                "en": null
-            },
-            "country": {
-                "id": "Q928",
-                "iso": "PH",
-                "fr": "Philippines",
-                "en": "Philippines"
-            },
-            "coordinates": {
-                "latitude": null,
-                "longitude": null
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Historic_town_of_vigan.JPG/1280px-Historic_town_of_vigan.JPG",
-            "file": "Historic town of vigan.JPG",
-            "author": "gyunyu3",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Historic_town_of_vigan.JPG",
-            "fame": 2,
-            "description": {
-                "fr": null,
-                "en": "UNESCO World Heritage site"
-            }
         }
     ],
     "PK": [
@@ -31401,7 +31979,7 @@ const D_pic = {
                 "en": "K2"
             },
             "city": {
-                "id": "Q911737",
+                "id": " Q911737",
                 "fr": "Xian autonome tadjik de Taxkorgan",
                 "en": "Taxkorgan Tajik Autonomous County"
             },
@@ -32089,7 +32667,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bounty_bay.jpg",
             "fame": 18,
             "description": {
-                "fr": null,
+                "fr": "Bounty Bay est une baie de l'océan Pacifique située sur l'île Pitcairn. Elle doit son nom au Bounty, un navire de la marine britannique dont la mutinerie, survenue au XVIIIe siècle, a été immortalisée dans le roman Les Révoltés du Bounty et dans les nombreux films qui lui ont été consacrés. Les mutins ont amené le Bounty jusqu'à l'île Pitcairn et l'ont incendié dans la baie. Les habitants actuels de Pitcairn sont en grande partie les descendants patrilinéaires des mutins et de leurs épouses tahitiennes, comme le montrent certains de leurs noms de famille. Les voyageurs se rendant à Pitcairn sont généralement débarqués à Bounty Bay par une embarcation à moteur.",
                 "en": "Bounty Bay is an embayment of the Pacific Ocean into Pitcairn Island. It is named after the Bounty, a British naval vessel whose eighteenth-century mutiny was immortalized in the novel Mutiny on the Bounty, and the numerous subsequent motion pictures made of it. The mutineers sailed the Bounty to Pitcairn Island and destroyed it by fire in the bay. Current Pitcairn Islanders are largely patrilineal descendants of the mutineers and their Tahitian wives, as exhibited by some of their surnames. Travellers to Pitcairn are usually brought by longboat into Bounty Bay."
             }
         }
@@ -32721,6 +33299,39 @@ const D_pic = {
                 "fr": "Le sanctuaire de Notre-Dame de Fátima, ou, tout simplement, sanctuaire de Fátima, est un grand centre de pèlerinage marial catholique situé à Cova da Iria, dans la ville de Fátima, au Portugal. Ce sanctuaire regroupe un ensemble de bâtiments et de structures. Néanmoins, il est parfois résumé à la seule basilique de Notre-Dame-du-Rosaire de Fátima.",
                 "en": "The Sanctuary of Fátima, or Shrine of Fátima, also known as Sanctuary of Our Lady of Fátima, is a group of Catholic Church religious buildings and structures located in Cova da Iria, in the civil parish and city of Fátima, in the municipality of Ourém, in Portugal. The sanctuary is dedicated to the 1917 Marian apparitions of Our Lady of Fátima."
             }
+        },
+        {
+            "id": "Q721152",
+            "name": {
+                "fr": "pont du 25-Avril",
+                "en": "25 de Abril Bridge"
+            },
+            "city": {
+                "id": "Q1017927",
+                "fr": "Alcântara",
+                "en": "Alcântara"
+            },
+            "country": {
+                "id": "Q45",
+                "iso": "PT",
+                "fr": "Portugal",
+                "en": "Portugal"
+            },
+            "coordinates": {
+                "latitude": 38.694183,
+                "longitude": -9.178146
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/25_De_Abril_Bridge_%28226290561%29.jpeg/1280px-25_De_Abril_Bridge_%28226290561%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "25 De Abril Bridge (226290561).jpeg",
+            "author": "Mike",
+            "license": "CC BY 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:25_De_Abril_Bridge_(226290561).jpeg",
+            "fame": 33,
+            "description": {
+                "fr": "Le pont du 25-Avril est un pont suspendu au-dessus du Tage, situé à Lisbonne, au Portugal.",
+                "en": "The 25 de Abril Bridge is a suspension bridge connecting the city of Lisbon, capital of Portugal, with the municipality of Almada on the left bank of the Tagus River. It has a main span length of 1,013 metres, making it the 56th longest suspension bridge in the world. At the time of its inauguration in 1966, the bridge was named Salazar Bridge, after the Portuguese dictator António de Oliveira Salazar, who ordered its construction."
+            }
         }
     ],
     "PW": [
@@ -32914,39 +33525,10 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Etpison_Museum.JPG",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Le musée Etpison est un musée situé dans la ville de Koror, à Palau. Le musée a ouvert ses portes en août 1999, dans un bâtiment conçu et construit par Shallum et Mandy Etpison. Il retrace l'histoire et la culture de Palau.",
                 "en": "The Etpison Museum is a museum in Koror City, in Koror, Palau. The museum opened in August 1999, in a building designed and built by Shallum and Mandy Etpison. It documents the history and culture of the country of Palau."
             }
         },
-        {
-            "id": "Q11327934",
-            "name": {
-                "fr": "Badrulchau Stone Monoliths",
-                "en": "Badrulchau Stone Monoliths"
-            },
-            "city": null,
-            "country": {
-                "id": "Q695",
-                "iso": "PW",
-                "fr": "Palaos",
-                "en": "Palau"
-            },
-            "coordinates": {
-                "latitude": 7.709078,
-                "longitude": 134.630842
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Badrulchau_Stone_Monoliths_4.JPG/1280px-Badrulchau_Stone_Monoliths_4.JPG",
-            "file": "Badrulchau Stone Monoliths 4.JPG",
-            "author": "Abasaa",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Badrulchau_Stone_Monoliths_4.JPG",
-            "fame": 3,
-            "description": {
-                "fr": null,
-                "en": null
-            }
-        }
     ],
     "PY": [
         {
@@ -33110,7 +33692,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:ASUNCION_PANTEON_NACIONAL_DE_LOS_H%C3%89ROES.jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "Le Panthéon national des Héros, dont le nom complet est Panthéon national des Héros et Oratoire de la Vierge de l'Assomption, est un bâtiment et un monument emblématique d'Asunción, au Paraguay, ainsi qu'un monument national paraguayen. Situé entre les rues Palma et Chile, dans le centre de la capitale paraguayenne, il est considéré comme un site d'une grande valeur architecturale, artistique et culturelle.",
                 "en": "The National Pantheon of the Heroes, whose full name National Pantheon of Heroes and Oratory of the Virgin of the Assumption is a building and landmark of Asunción, Paraguay, and a national monument of Paraguay. Located between Palma and Chile streets in the downtown area of the Paraguayan capital, it is considered of great architectural, artistic and cultural heritage."
             }
         },
@@ -33176,7 +33758,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Casa_de_la_Independencia_museum,_Asunci%C3%B3n.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Le musée de la Casa de la Independencia est un musée historique et une maison historique situés à Asunción, au Paraguay. Le musée a été inauguré le 14 mai 1965 et présente des objets historiques datant de l'indépendance du pays. Dans la soirée du 14 mai 1811, un groupe de Paraguayens est sorti de cette maison pour proclamer l'indépendance du Paraguay. Il s'agit d'un monument national d'une grande importance historique. C'est entre ses murs que l'émancipation de la domination coloniale espagnole a été préparée de manière silencieuse et courageuse.",
                 "en": "The Casa de la Independencia Museum is a history museum and historic house located in Asunción, Paraguay. The museum was inaugurated on May 14, 1965, and showcases pieces of history that date back to the independence of the country. During the evening of May 14, 1811, a group of Paraguayans emerged from this house to declare the independence of Paraguay. It is a national monument that has great historical significance. Behind its walls the emancipation from the Spanish colonial rule was planned in a silent and brave manner."
             }
         }
@@ -33705,7 +34287,7 @@ const D_pic = {
             "fame": 3,
             "description": {
                 "fr": "La plage de l'Hermitage est une plage de sable blanc de l'ouest de La Réunion, protégée par un récif corallien. Longtemps appelée L'Ermitage, elle doit son nom au lieu-dit qui la borde, L’Hermitage les Bains.",
-                "en": null
+                "en": "Hermitage Beach is a white-sand beach on the western coast of Réunion, protected by a coral reef. Long known as L'Ermitage, it takes its name from the locality bordering it, L'Hermitage les Bains."
             }
         },
         {
@@ -35197,7 +35779,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guadalcanal_American_Memorial.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Le mémorial américain de Guadalcanal est un monument de la Seconde Guerre mondiale situé sur Guadalcanal, aux Îles Salomon. Inauguré le 7 août 1992, il a été édifié en hommage aux Américains et à leurs alliés morts pendant la campagne de Guadalcanal, du 7 août 1942 au 9 février 1943. La capitale, Honiara, se trouve au nord du mémorial. Pour commémorer le 50e anniversaire des débarquements sur Red Beach, le mémorial de guerre américain a été inauguré le 7 août 1992. Un récit de ces événements est également inscrit sur des plaques de marbre rouge à l'intérieur de l'enceinte du monument.",
                 "en": "The Guadalcanal American Memorial is a World War II monument on Guadalcanal in Solomon Islands. Dedicated on August 7, 1992, it was established as a tribute to the Americans and their allies who lost their lives during the Guadalcanal Campaign from 7 August 1942 to 9 February 1943. The capital city of Honiara is to its north. To mark the 50th anniversary of the Red Beach landings, the U.S. War Memorial was dedicated on 7 August 1992. An account of this is also inscribed on red marble tablets inside the monument compound."
             }
         },
@@ -35226,7 +35808,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Honiara_National_Museum.jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "Le musée national des Îles Salomon est le musée national des Îles Salomon et se trouve à Honiara. Il dépend du ministère de la Culture et du Tourisme.",
                 "en": "The Solomon Islands National Museum is the national museum of the Solomon Islands and is located in Honiara. It is a department of the Ministry of Culture and Tourism."
             }
         }
@@ -35480,7 +36062,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victoria_Market_asv2024-09_img4.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Le marché Sir Selwyn Selwyn-Clarke est le principal marché de Victoria, aux Seychelles.",
                 "en": "Sir Selwyn Selwyn-Clarke Market is the main market of Victoria, Seychelles."
             }
         }
@@ -35639,7 +36221,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lamprometra_klunzingeri,_Sud%C3%A1n.jpg",
             "fame": 12,
             "description": {
-                "fr": null,
+                "fr": "Partie du patrimoine mondial de l'UNESCO au Soudan",
                 "en": "part of UNESCO World Heritage in Sudan"
             }
         },
@@ -35668,7 +36250,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sudan_Meroe_Pyramids_2001.JPG",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "Les pyramides de Méroé sont un grand ensemble de pyramides nubiennes comprenant trois cimetières situés près de l'ancienne ville de Méroé. Elles se trouvent au Soudan, à environ 200 kilomètres au nord-est de Khartoum, près du village de Bagrawiya. Les trois cimetières sont répartis sur de petites collines couvrant environ un quart de kilomètre carré. Les pyramides de Méroé datent de la période tardive du royaume de Koush et servaient de sépultures aux monarques koushites, à d'autres membres de la famille royale ainsi qu'à d'importants fonctionnaires et dignitaires.",
                 "en": "The Pyramids of Meroë are a large number of Nubian pyramids, encompassing three cemeteries near the ancient city of Meroë. They are located in Sudan, approximately 200 kilometres northeast of Khartoum, near the village of Bagrawiya. The three cemeteries are spread across low hills covering roughly a quarter of a square kilometre. The Meroë pyramids date to the later stage of the Kingdom of Kush and were burial places for Kushite monarchs, other members of the royal family, and important officials and dignitaries."
             }
         },
@@ -35701,7 +36283,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:NaqaAmunTemple.jpg",
             "fame": 0,
             "description": {
-                "fr": null,
+                "fr": "Temple koushite de l'Égypte ancienne et de la Nubie au Soudan",
                 "en": "ancient egpypt-nubia Kushite temple in Sudan"
             }
         }
@@ -36299,7 +36881,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gopuram_-_Sri_Mariamman_Temple_Singapore_(2023)_-_img_01.jpg",
             "fame": 19,
             "description": {
-                "fr": null,
+                "fr": "Le temple Sri Mariamman est le premier et le plus ancien temple hindou de Singapour. Il s'agit d'un temple agamique construit dans le style dravidien. Situé au 244 South Bridge Road, dans le quartier chinois du centre-ville, le temple est fréquenté principalement par les Singapouriens hindous, notamment les Tamouls. En raison de son importance architecturale et historique, le temple a été classé monument national et constitue une attraction touristique majeure.",
                 "en": "The Sri Mariamman Temple is Singapore's first and oldest Hindu temple. It is an agamic temple, built in the Dravidian style. Located at 244 South Bridge Road, in the downtown Chinatown district, the temple serves the majority Hindu Singaporeans, Tamilians, in the city-state. Due to its architectural and historical significance, the temple has been gazetted a National Monument and is a major tourist attraction."
             }
         },
@@ -36332,7 +36914,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Project_Jewel_Photo_1.jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "Jewel Changi Airport est un complexe de loisirs et de commerces sur le thème de la nature, entouré par les terminaux 1, 2 et 3 de l'aéroport de Changi, à Singapour, et relié à ceux-ci. Son élément central est la plus haute cascade intérieure du monde, le Rain Vortex, entourée d'un environnement forestier en terrasses. Jewel comprend des jardins, des attractions, un hôtel, environ 300 commerces et restaurants, ainsi que des installations d'enregistrement anticipé des bagages.",
                 "en": "Jewel Changi Airport is a nature-themed entertainment and retail complex surrounded by and linked to Terminals 1, 2, and 3 of Changi Airport in Singapore. Its centrepiece is the world's tallest indoor waterfall, the Rain Vortex, which is surrounded by a terraced forest setting. Jewel includes gardens, attractions, a hotel, about 300 retail and dining outlets, as well as early baggage check-in facilities."
             }
         },
@@ -36365,7 +36947,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:BTRTM_as_seen_from_Maxwell_MRT_entrance_(2025)_-_img_03.jpg",
             "fame": 11,
             "description": {
-                "fr": null,
+                "fr": "Le temple et musée de la relique de la dent de Bouddha est un complexe composé d'un temple bouddhiste et d'un musée, situé dans le quartier chinois de Singapour. Les moines et les fidèles du temple pratiquent officiellement le bouddhisme chinois.",
                 "en": "The Buddha Tooth Relic Temple and Museum is a Buddhist temple and museum complex located in the Chinatown district of Singapore. The temple's monastics and devotees officially practice Chinese Buddhism."
             }
         }
@@ -36438,10 +37020,10 @@ const D_pic = {
             }
         },
         {
-            "id": "Q3376351",
+            "id": "Q30970",
             "name": {
-                "fr": "pic de Diana",
-                "en": "Diana's Peak"
+                "fr": "Jamestown",
+                "en": "Jamestown"
             },
             "city": {
                 "id": "Q134978852",
@@ -36455,19 +37037,118 @@ const D_pic = {
                 "en": "Saint Helena, Ascension and Tristan da Cunha"
             },
             "coordinates": {
-                "latitude": -15.959722222222,
-                "longitude": -5.6913888888889
+                "latitude": -15.925138888888888,
+                "longitude": -5.7179166666666665
             },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/5/52/SH-St_Helena.png",
-            "file": "SH-St Helena.png",
-            "author": "Hobe",
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/St-Helena-Jamestown.jpg/1280px-St-Helena-Jamestown.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "St-Helena-Jamestown.jpg",
+            "author": "Andrew Neaum",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:St-Helena-Jamestown.jpg",
+            "fame": 81,
+            "description": {
+                "fr": "Jamestown est l'un des huit districts et la capitale de Sainte-Hélène faisant partie du territoire britannique d'outre-mer de Sainte-Hélène, Ascension et Tristan da Cunha. Située sur la côte septentrionale de l'île, la ville est bâtie autour d'une rue principale au creux d'une étroite vallée. C'est également le principal village historique de l'île, situé sur sa côte nord-ouest. Avant le développement du port de la baie de Rupert, c'était le seul port de l'île et le centre du réseau routier et de communications.",
+                "en": "Jamestown is the capital city of the British Overseas Territory of Saint Helena, Ascension and Tristan da Cunha, located on the island of Saint Helena in the South Atlantic Ocean. It is also the historic main settlement of the island and is on its north-western coast. Before the development of the port at Rupert's Bay, it was the island's only port and the centre of the island's road and communications network."
+            }
+        },
+        {
+            "id": "Q578060",
+            "name": {
+                "fr": "Longwood House",
+                "en": "Longwood House"
+            },
+            "city": {
+                "id": "Q222213",
+                "fr": "Longwood",
+                "en": "Longwood"
+            },
+            "country": {
+                "id": "Q192184",
+                "iso": "SH",
+                "fr": "Sainte-Hélène, Ascension et Tristan da Cunha",
+                "en": "Saint Helena, Ascension and Tristan da Cunha"
+            },
+            "coordinates": {
+                "latitude": -15.950222,
+                "longitude": -5.683022
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Longwood_House_le_12_janvier_2008.jpg/1280px-Longwood_House_le_12_janvier_2008.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Longwood House le 12 janvier 2008.jpg",
+            "author": "Michel Dancoisne-Martineau",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longwood_House_le_12_janvier_2008.jpg",
+            "fame": 23,
+            "description": {
+                "fr": "Longwood House est un bâtiment qui fut la dernière résidence de Napoléon Ier lors de son exil sur l'île de Sainte-Hélène. Napoléon Ier y séjourna du 10 décembre 1815 au 5 mai 1821, jour de sa mort. La propriété, avec la vallée du Tombeau et le pavillon des Briars, constituent aujourd'hui les domaines français de Sainte-Hélène.",
+                "en": "Longwood House is a mansion on the British overseas territory island of St. Helena. It was the final residence of Napoleon Bonaparte, the former Emperor of the French, during his exile on the island of Saint Helena, from 10 December 1815 until his death on 5 May 1821. Originally an East India Company farm, it was later acquired by the Government of France and now operates as a museum."
+            }
+        },
+        {
+            "id": "Q7401347",
+            "name": {
+                "fr": "Jacob's Ladder",
+                "en": "Jacob's Ladder"
+            },
+            "city": {
+                "id": "Q30970",
+                "fr": "Jamestown",
+                "en": "Jamestown"
+            },
+            "country": {
+                "id": "Q192184",
+                "iso": "SH",
+                "fr": "Sainte-Hélène, Ascension et Tristan da Cunha",
+                "en": "Saint Helena, Ascension and Tristan da Cunha"
+            },
+            "coordinates": {
+                "latitude": -15.9256,
+                "longitude": -5.7192
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Jamestown_Jacobs_Ladder.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Jamestown Jacobs Ladder.jpg",
+            "author": "Deusdixital",
             "license": "Public domain",
             "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:SH-St_Helena.png",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jamestown_Jacobs_Ladder.jpg",
             "fame": 12,
             "description": {
-                "fr": "Le pic de Diana est le point culminant, à 818 mètres, de l'île de Sainte-Hélène dans les territoires britanniques d'outre-mer de Sainte-Hélène, Ascension et Tristan da Cunha. Les 81 ha entourant le sommet ont été déclarés parc national du Pic de Diana en 1996.",
-                "en": "Diana's Peak is the highest point, at 818 metres, on the island of Saint Helena, a British overseas territory in the South Atlantic Ocean. It is of volcanic origin. The mountain and its surroundings with a total area of 81 ha were proclaimed a national park in March 1996, the first on the island. It is a preserve of several endangered endemic species, including tree fern, he cabbage and black cabbage trees, and whitewood. The park contains walking paths connecting the peaks - Mt. Actaeon, Diana's Peak and Cuckold's Point."
+                "fr": "L'échelle de Jacob est un escalier classé « Grade I » à Jamestown, Sainte-Hélène, sur un versant de la colline Ladder Hill, pour accéder à Ladder Hill Fort. L'échelle est tout ce qui reste d'un funiculaire qui y a été construit au début des années 1800. Les voies et les voitures ont ensuite été supprimées, tandis que les escaliers sont restés en place et sont devenus une attraction touristique reliant Jamestown et une de ses banlieues, Half Tree Hollow, au sommet de la colline.",
+                "en": "Jacob's Ladder is a Grade I listed staircase leading from Jamestown, Saint Helena, up the side of Ladder Hill to Ladder Hill Fort. The name is a reference to the biblical Jacob's Ladder, a ladder extending to heaven. The ladder is all that remains of a cable railway that was built there in the early 1800s. Its tracks and cars were later removed, although the stairs have remained in place and have become a tourist attraction connecting Jamestown and the suburb of Half Tree Hollow at the top of the hill."
+            }
+        },
+        {
+            "id": "Q3554092",
+            "name": {
+                "fr": "Vallée du Tombeau",
+                "en": "Valley of the Tomb"
+            },
+            "city": {
+                "id": "Q134978852",
+                "fr": "Saint Helena",
+                "en": "Saint Helena"
+            },
+            "country": {
+                "id": "Q192184",
+                "iso": "SH",
+                "fr": "Sainte-Hélène, Ascension et Tristan da Cunha",
+                "en": "Saint Helena, Ascension and Tristan da Cunha"
+            },
+            "coordinates": {
+                "latitude": -15.9592,
+                "longitude": -5.69821
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Napoleon%27s_Tomb_on_Saint_Helena_2020.jpg/1280px-Napoleon%27s_Tomb_on_Saint_Helena_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Napoleon's Tomb on Saint Helena 2020.jpg",
+            "author": "Kevstan",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Napoleon%27s_Tomb_on_Saint_Helena_2020.jpg",
+            "fame": 8,
+            "description": {
+                "fr": "La vallée du Tombeau, anciennement « vallée du Géranium », est un terrain situé dans le district de Longwood sur l'île de Sainte-Hélène, mais appartenant aux Domaines français de Sainte-Hélène, sur lequel fut érigée la première tombe de l'empereur Napoléon Ier, mort sur l'île en 1821.",
+                "en": "The Valley of the Tomb is the site of Napoleon's original tomb, on the British Overseas Territory of Saint Helena in the south Atlantic Ocean, where he was buried following his death in exile on 5 May 1821. The valley had been called the Sane Valley, but Napoleon had taken walks there and referred to it as the Valley of the Geraniums."
             }
         }
     ],
@@ -36961,7 +37642,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Longyeardalen_IMG_0101_UNIS.jpg",
             "fame": 10,
             "description": {
-                "fr": null,
+                "fr": "Le musée du Svalbard est un musée situé à Longyearbyen, la plus grande ville de l'archipel du Svalbard. Le musée présente des objets liés à l'histoire du Svalbard depuis son peuplement, ainsi que des expositions consacrées aux plantes et aux animaux locaux. Ses expositions décrivent les facteurs qui rendent possible l'activité humaine au Svalbard, en montrant les liens étroits entre la nature et l'histoire culturelle des populations des îles. « La vie dans la lumière et la glace » est l'exposition principale du musée. Elle retrace l'histoire de l'archipel, des premiers baleiniers jusqu'à la société actuelle fondée sur l'exploitation minière, la recherche et le tourisme.",
                 "en": "The Svalbard Museum is a museum in Longyearbyen, the largest town in the Svalbard archipelago. The museum displays artifacts from the history of Svalbard since its settlement, and exhibits of local plants and animals. Its exhibitions describe the factors that support human activity in Svalbard, showing the close relationship between nature and human cultural history on the islands. \"Life in Light and Ice\" is the museum's core exhibit. It describes the history of the archipelago, from the first whalers to the present society based on mining, research, and tourism."
             }
         },
@@ -36994,7 +37675,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nordenskiold.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le glacier Nordenskiöld est un grand glacier situé dans la municipalité d'Avannaata, sur la côte nord-ouest du Groenland.",
                 "en": "Nordenskiöld Glacier, is a large glacier in the Avannaata Municipality, on the northwestern coast of Greenland."
             }
         }
@@ -38256,7 +38937,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Officiers_Woning_Paramaribo_Suriname.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Site inscrit au patrimoine mondial de l'UNESCO",
                 "en": "UNESCO World Heritage site"
             }
         },
@@ -38289,7 +38970,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brownsberg_panorama.jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Le parc naturel de Brownsberg est un parc naturel situé au Suriname. Le site couvre 12 000 hectares et se trouve dans le district de Brokopondo, à environ 130 km au sud de la capitale, Paramaribo. Le Brownsberg, qui s'élève à 500 mètres d'altitude, constitue le point central du parc. Le site se trouve près du réservoir de Brokopondo. Le parc est géré par la STINASU. Les habitants du Suriname utilisent souvent le terme Brownsberg comme une forme abrégée de Brownsberg Nature Park. La population locale l'écrit également Bruijnsberg, prononcé « Braynsberg ».",
                 "en": "Brownsberg Nature Park is a nature park located in Suriname. The site measures 12,000 ha and is located in the district of Brokopondo around 130 km south from the capital city Paramaribo. The 500-meter high Brownsberg is the central point of the park. The site is located near the Brokopondo Reservoir. The park is managed by STINASU. Often the people of Suriname use the word Brownsberg as simple variant of Brownsberg Nature Park. Local people also write it as Bruijnsberg, pronounced as Braynsberg."
             }
         }
@@ -38390,7 +39071,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:John_Garang_Mausoleum_Square_in_Juba.JPG",
             "fame": 0,
             "description": {
-                "fr": null,
+                "fr": "Lieu de repos du Dr John Garang de Mabior",
                 "en": "resting place of Dr John Garang de Mabior"
             }
         }
@@ -38496,35 +39177,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q2943640",
-            "name": {
-                "fr": "Parc naturel Obô de São Tomé",
-                "en": "Obo National Park"
-            },
-            "city": null,
-            "country": {
-                "id": "Q1039",
-                "iso": "ST",
-                "fr": "Sao Tomé-et-Principe",
-                "en": "São Tomé and Príncipe"
-            },
-            "coordinates": {
-                "latitude": 0.15,
-                "longitude": 6.56666667
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/d/de/S%C3%A3o_Tom%C3%A9_-_Pico_C%C3%A3o_Grande.jpg",
-            "file": "São Tomé - Pico Cão Grande.jpg",
-            "author": "Rui Almeida",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:S%C3%A3o_Tom%C3%A9_-_Pico_C%C3%A3o_Grande.jpg",
-            "fame": 12,
-            "description": {
-                "fr": "Le parc naturel Obô de São Tomé a été créé en 2006 sur l'île de Sao Tomé, en même temps que le parc naturel Obô de Principe sur l'île de Principe. Ces deux espaces de Sao Tomé-et-Principe visent une reconnaissance internationale à travers un statut de parc national, mais en 2019 l'UICN ne leur avait pas encore assigné de catégorie.",
-                "en": "The Obô Natural Park of São Tomé is a natural park of São Tomé and Príncipe, covering 195 km2 of the island of São Tomé. It was established in 2006, but yet to be assigned an IUCN protected area category. It covers parts of the districts of Caué, Lemba, Lobata and Mé-Zóchi."
-            }
-        },
-        {
             "id": "Q30624084",
             "name": {
                 "fr": "Sundy",
@@ -38619,7 +39271,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:BAN_-_Panoramic_view_of_Praia_Banana,_Principe,_Sao_Tome_and_Principe,_2021.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Plage sur l'île de Principe, à Sao Tomé-et-Principe",
                 "en": "Beach at Principe island,Sao Tome e Principe"
             }
         }
@@ -39015,7 +39667,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Harbor_%5E_Dock_at_Philipsberg,_St._Maarten_(explore_4-29-14)_-_Flickr_-_trishhartmann.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Baie à Sint Maarten",
                 "en": "bay in Sint Maarten"
             }
         },
@@ -39044,41 +39696,8 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mullet_Bay,_St_Maarten,_Oct_2014_(15740985106).jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Plage à Sint Maarten",
                 "en": "beach on Sint Maarten"
-            }
-        },
-        {
-            "id": "Q14207198",
-            "name": {
-                "fr": "Cupecoy Beach",
-                "en": "Cupecoy Beach"
-            },
-            "city": {
-                "id": "Q26273",
-                "fr": "Saint-Martin",
-                "en": "Sint Maarten"
-            },
-            "country": {
-                "id": "Q26273",
-                "iso": "SX",
-                "fr": "Saint-Martin",
-                "en": "Sint Maarten"
-            },
-            "coordinates": {
-                "latitude": 18.050555555556,
-                "longitude": -63.131944444444
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Cupecoy_Bay_%2815695045673%29.jpg/1280px-Cupecoy_Bay_%2815695045673%29.jpg",
-            "file": "Cupecoy Bay (15695045673).jpg",
-            "author": "Paul Sableman",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cupecoy_Bay_(15695045673).jpg",
-            "fame": 3,
-            "description": {
-                "fr": null,
-                "en": null
             }
         },
         {
@@ -39110,7 +39729,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:St_Maarten_Philipsburg_Wathey_Square_Courthouse.jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "Bâtiment historique du palais de justice à Philipsburg, Sint Maarten",
                 "en": "historic courthouse building in Philipsburg, Sint Maarten"
             }
         }
@@ -39379,6 +39998,39 @@ const D_pic = {
                 "fr": "Les Norias de Hama sont une série de norias située à Hama sur l'Oronte en Syrie. Il n'en reste plus que dix-sept et n'ont actuellement plus d'utilité pratique. Elles sont conservées dans un but esthétique et historique. On[Qui?] les considère comme étant les plus splendides norias jamais construites[non neutre]. En juin 1999 les norias de Hama ont été proposées auprès de l'Unesco par le gouvernement syrien pour faire partie du patrimoine mondial.",
                 "en": "The Norias of Hama are a series of 17 norias, historic water-raising machines for irrigation, along the Orontes River in the city of Hama, Syria. They are tall water wheels with box-like water collection compartments embedded around their rims. The Orontes’ lack of gradient at Hama, combined with its high banks, make the noria a highly effective means of drawing irrigation water. As the river flows, it pushes these water collection boxes under water, where they quickly fill up and are driven up to the top of the wheel where they empty into an aqueduct."
             }
+        },
+        {
+            "id": "Q177549",
+            "name": {
+                "fr": "Krak des Chevaliers",
+                "en": "Krak des Chevaliers"
+            },
+            "city": {
+                "id": "Q15178835",
+                "fr": "al-Hosn",
+                "en": "Al-Husn"
+            },
+            "country": {
+                "id": "Q858",
+                "iso": "SY",
+                "fr": "Syrie",
+                "en": "Syria"
+            },
+            "coordinates": {
+                "latitude": 34.75694444444444,
+                "longitude": 36.29472222222222
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Krak_des_Chevaliers_01.jpg/1280px-Krak_des_Chevaliers_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Krak des Chevaliers 01.jpg",
+            "author": "Bernard Gagnon",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Krak_des_Chevaliers_01.jpg",
+            "fame": 77,
+            "description": {
+                "fr": "Le krak des Chevaliers, krak de l'Hospital est un château fort, emblématique de la Renaissance du XIIe siècle. Datant de l'époque des croisades, il est situé dans l'ouest de la Syrie, sur les derniers contreforts du jabal Ansariya. Depuis 2006, il est inscrit sur la liste du patrimoine mondial de l'UNESCO. Les Hospitaliers de l'ordre de Saint-Jean de Jérusalem gèrent le fort de 1142 à 1271, date de sa conquête par Baybars, sultan des Mamelouks.",
+                "en": "Krak des Chevaliers is a medieval castle in Syria and one of the most important preserved medieval castles in the world. The site was first inhabited in the 11th century by Kurdish troops garrisoned there by the Mirdasids. In 1142 it was given by Raymond II, Count of Tripoli, to the order of the Knights Hospitaller."
+            }
         }
     ],
     "SZ": [
@@ -39473,7 +40125,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zabras_in_Mlilwane_Wildlife_Sanctuary.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Le sanctuaire de faune de Mlilwane est la plus ancienne zone protégée de l'Eswatini. Il appartient à une fondation à but non lucratif qui en assure également la gestion.",
                 "en": "Mlilwane Wildlife Sanctuary is Eswatini's oldest protected area, owned and managed by a non-profit trust."
             }
         },
@@ -40351,39 +41003,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q1025100",
-            "name": {
-                "fr": "Parc historique d'Ayutthaya",
-                "en": "Ayutthaya Historical Park"
-            },
-            "city": {
-                "id": "Q203370",
-                "fr": "Ayutthaya",
-                "en": "Phra Nakhon Si Ayutthaya"
-            },
-            "country": {
-                "id": "Q869",
-                "iso": "TH",
-                "fr": "Thaïlande",
-                "en": "Thailand"
-            },
-            "coordinates": {
-                "latitude": 14.351626,
-                "longitude": 100.5575086
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Ayuthistparkmap.png/1280px-Ayuthistparkmap.png",
-            "file": "Ayuthistparkmap.png",
-            "author": "Heinrich Damm",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ayuthistparkmap.png",
-            "fame": 43,
-            "description": {
-                "fr": "Le parc historique d'Ayutthaya est un site du patrimoine mondial depuis 1991, situé en Thaïlande.",
-                "en": "Ayutthaya Historical Park covers the ruins of the old city of Ayutthaya, Phra Nakhon Si Ayutthaya province, Thailand. The city of Ayutthaya was founded by King Ramathibodi I in 1351,[a] though it is likely to be significantly older, based on evidence showing that the area was already populated during the Mon Dvaravati period. Sources further mention that around 850 AD, the Khmers occupied the area and established a stronghold there, naming it Ayodhya, after one of the holiest Hindu cities in India of the same name."
-            }
-        },
-        {
             "id": "Q386420",
             "name": {
                 "fr": "parc national de Khao Yai",
@@ -40674,41 +41293,8 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fan_Mountains300.jpg",
             "fame": 18,
             "description": {
-                "fr": null,
+                "fr": "Les monts Fann font partie du système montagneux occidental du Pamir-Altaï, dans la province de Sughd, au Tadjikistan, entre la chaîne du Zeravchan au nord et la chaîne du Hissar au sud. D'est en ouest, ils s'étendent de la rivière Fan-Daria à la rivière Archimaydan.",
                 "en": "The Fann Mountains are part of the western Pamir-Alay mountain system in Tajikistan's Sughd Province, between the Zarafshan Range to the north and the Gissar Range to the south. In an east-west direction, they extend from the Fan Darya to the Archimaydan River."
-            }
-        },
-        {
-            "id": "Q12124447",
-            "name": {
-                "fr": "Ismoil Somoni monument in Dushanbe",
-                "en": "Ismoil Somoni monument in Dushanbe"
-            },
-            "city": {
-                "id": "Q9365",
-                "fr": "Douchanbé",
-                "en": "Dushanbe"
-            },
-            "country": {
-                "id": "Q863",
-                "iso": "TJ",
-                "fr": "Tadjikistan",
-                "en": "Tajikistan"
-            },
-            "coordinates": {
-                "latitude": 38.574,
-                "longitude": 68.7854
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Dushanbe%2C_Tajikistan_-_panoramio_%28121%29.jpg/1280px-Dushanbe%2C_Tajikistan_-_panoramio_%28121%29.jpg",
-            "file": "Dushanbe, Tajikistan - panoramio (121).jpg",
-            "author": "Hansjoerg Eberle",
-            "license": "CC BY 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dushanbe,_Tajikistan_-_panoramio_(121).jpg",
-            "fame": 5,
-            "description": {
-                "fr": null,
-                "en": null
             }
         },
         {
@@ -40740,7 +41326,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yamchun_fortress_(30977261794).jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Fort dans la région autonome du Haut-Badakhchan, au Tadjikistan",
                 "en": "fort in Gorno-Badakhshan Autonomous Region, Tajikistan"
             }
         }
@@ -40804,7 +41390,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tokelau_Nukuono_Luana_Liki_Hotel_20070716.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Localité de l'atoll de Nukunonu, à Tokelau",
                 "en": "settlement in the Nukunonu atoll, Tokelau"
             }
         }
@@ -40963,7 +41549,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rampa_entrada_AMRT1.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Les Archives et le Musée de la Résistance timoraise sont un musée situé à Dili, au Timor oriental, consacré à la lutte pour l'indépendance vis-à-vis de l'Indonésie.",
                 "en": "The Timorese Resistance Archive and Museum is a museum in Dili, East Timor about the struggle for independence from Indonesia."
             }
         }
@@ -41168,68 +41754,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q3323339",
-            "name": {
-                "fr": "monument de l'indépendance turkmène",
-                "en": "Independence Monument, Ashgabat"
-            },
-            "city": {
-                "id": "Q23438",
-                "fr": "Achgabat",
-                "en": "Ashgabat"
-            },
-            "country": {
-                "id": "Q874",
-                "iso": "TM",
-                "fr": "Turkménistan",
-                "en": "Turkmenistan"
-            },
-            "coordinates": {
-                "latitude": 37.881185,
-                "longitude": 58.382362
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Ashgabat_-_panoramio.jpg/1280px-Ashgabat_-_panoramio.jpg",
-            "file": "Ashgabat - panoramio.jpg",
-            "author": "Michael Karavanov",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ashgabat_-_panoramio.jpg",
-            "fame": 18,
-            "description": {
-                "fr": "Le monument de l'Indépendance est un ensemble architectural commémorant l'émancipation du Turkménistan de l'Union des républiques socialistes soviétiques et la proclamation officielle de son indépendance. Érigé sur l'ordre du président Saparmyrat Nyýazow, il participe au grand plan de rénovation urbaine entamé durant son régime. Haut de 118 mètres, il est le monument le plus élevé d'Achgabat, la capitale du pays.",
-                "en": "The \"Independence Monument\" is a monument located in Ashgabat, Turkmenistan. The design of this building was inspired by traditional Turkmen tents and the traditional headgear worn by Turkmen girls. Elements of the building commemorate the independence date of Turkmenistan, 27 September. These elements include a 91-metre reinforced concrete tower with a 27-metre high golden gilt steel construction on top of the tower, along with an observation terrace with a diameter of 10 metres."
-            }
-        },
-        {
-            "id": "Q4225325",
-            "name": {
-                "fr": "Köw Ata",
-                "en": "Köw Ata"
-            },
-            "city": null,
-            "country": {
-                "id": "Q874",
-                "iso": "TM",
-                "fr": "Turkménistan",
-                "en": "Turkmenistan"
-            },
-            "coordinates": {
-                "latitude": 38.3005,
-                "longitude": 57.5191
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Kow_Ata_Underground_Lake.jpg",
-            "file": "Kow Ata Underground Lake.jpg",
-            "author": "David Stanley",
-            "license": "CC BY 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kow_Ata_Underground_Lake.jpg",
-            "fame": 10,
-            "description": {
-                "fr": null,
-                "en": "Kow Ata is an underground lake in an eponymous cave near Bäherden in Turkmenistan, at the foot of the Kopet Dag. It is the largest in Commonwealth of Independent States."
-            }
-        },
-        {
             "id": "Q56295634",
             "name": {
                 "fr": "Yangykala Canyon",
@@ -41258,7 +41782,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yangykala_Canyon_(42422309071).jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le canyon de Yangykala est une formation géologique éponyme située dans la région de Balkan, dans le nord-ouest du Turkménistan, à environ 160 km à l'est de Türkmenbaşy et à 165 km au nord de Balkanabat. Le fond du canyon était autrefois recouvert par les eaux du Garabogazköl. Les roches du canyon sont principalement rouges, ce qui a conduit les habitants à l'appeler « Gyzyl Dag ». Les falaises du canyon atteignent une hauteur de 60 à 100 mètres.",
                 "en": "Yangykala Canyon is an eponymous landform in the Balkan Region of north-west Turkmenistan, about 160 km east of Turkmenbashi and 165 km north of Balkanabat. The bottom of the canyon was once flooded by the Garabogazköl. The canyon's rocks are predominantly red, leading locals to call it \"Gyzyl Dag\". The canyon's cliffs reach heights of 60 to 100 meters."
             }
         }
@@ -42087,7 +42611,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caroni_Swamp_Trinidad.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "Le marais de Caroni est la plus grande mangrove et la deuxième plus grande zone humide de Trinité-et-Tobago. Il se trouve sur la côte ouest de Trinité, au sud de Port of Spain et au nord-ouest de Chaguanas, à l'endroit où la rivière Caroni se jette dans le golfe de Paria.",
                 "en": "The Caroni Swamp is the largest mangrove forest and the second largest wetland in Trinidad and Tobago. It is located on the west coast of Trinidad, south of Port of Spain and northwest of Chaguanas, where the Caroni River meets the Gulf of Paria."
             }
         },
@@ -42116,7 +42640,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stage_Crossing_at_Trinidad_Carnival.jpg",
             "fame": 6,
             "description": {
-                "fr": null,
+                "fr": "La Queen's Park Savannah est un parc situé à Port of Spain, à Trinité-et-Tobago. Connue localement sous le simple nom de « Savannah », elle constitue le plus grand espace ouvert de Port of Spain. Elle couvre environ 260 acres de terrain plat et son périmètre mesure environ 2,2 miles.",
                 "en": "Queen's Park Savannah is a park in Port of Spain, Trinidad and Tobago. Known locally as simply \"the Savannah\", it is Port of Spain's largest open space. It occupies about 260 acres of level land, and the distance around the perimeter is about 2.2 mi."
             }
         },
@@ -42149,7 +42673,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Waterloo_Temple,_Trinidad.jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Le Temple dans la mer, officiellement appelé Sewdass Sadhu Shiva Mandir, est un temple hindou situé à Waterloo, dans la région de Carapichaima, au sein de la municipalité de Couva–Tabaquite–Talparo, à Trinité-et-Tobago. Sewdass Sadhu, un travailleur sous contrat originaire d'Inde, a construit le temple d'origine dans le golfe de Paria en 1952. Le temple a été reconstruit par Randolph Rampersad et rouvert en 1995.",
                 "en": "The Temple in the Sea, officially known as the Sewdass Sadhu Shiva Mandir, is a Hindu mandir in Waterloo, Carapichaima, Couva–Tabaquite–Talparo, Trinidad and Tobago. Sewdass Sadhu, an indentured laborer from India, constructed the original temple in the Gulf of Paria in 1952. The temple was reconstructed by Randolph Rampersad and reopened in 1995."
             }
         },
@@ -42182,7 +42706,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:089_Northern_Range,_Asa_Wright_Nature_Centre_-_28.11.07.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le centre et lodge naturels Asa Wright est un complexe touristique consacré à la nature et une station de recherche scientifique situés dans la vallée d'Arima, dans la chaîne septentrionale, à Trinité-et-Tobago. Le centre est l'un des meilleurs sites d'observation des oiseaux des Caraïbes ; un total de 256 espèces d'oiseaux y ont été recensées. Il appartient à une fondation à but non lucratif. Le centre naturel couvre 270 acres et comprend une maison principale avec une auberge et un restaurant servant notamment des plats comme la soupe callaloo, préparée avec des ingrédients provenant d'un jardin biologique sur place. Des propriétés non contiguës ont également été ajoutées aux terrains du centre.",
                 "en": "The Asa Wright Nature Centre and Lodge is a nature resort and scientific research station in the Arima Valley of the Northern Range in Trinidad and Tobago. The centre is one of the top birdwatching spots in the Caribbean; a total of 256 species of birds have been recorded there. The centre is owned by a non-profit trust. The nature centre is on 270 acres and includes a main estate house with inn and restaurant serving dishes such as callaloo soup with ingredients from an on-site organic garden. Non-adjacent properties have also been added to the centre's land holdings."
             }
         },
@@ -42211,7 +42735,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pigeon_Point_beach.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Pigeon Point, également connu sous le nom de Pigeon Point Heritage Park, est souvent considéré comme la plus belle plage de Tobago. Il abrite une jetée mondialement connue, couverte d'un toit en chaume, devenue un symbole emblématique de Tobago reconnu à l'échelle internationale. Le complexe comprend une longue plage de sable blanc bordée d'eaux turquoise et chaudes. On y trouve d'excellentes installations, notamment des toilettes, des douches et des locations de chaises de plage, ainsi que des bars et un restaurant. Les équipements destinés aux touristes comprennent des boutiques de souvenirs et de sports nautiques.",
                 "en": "Pigeon Point is also known as Pigeon Point Heritage Park and is often considered Tobago’s most beautiful beach and is home to the world famous thatch-roofed jetty which has become an internationally recognised signature of Tobago. The resort includes a long stretch of white sand beach with warm aquamarine waters. There are excellent beach facilities such as bathrooms, showers and beach-chair rentals as well as bars and a restaurant. Tourist amenities include souvenir and water-sports shops."
             }
         },
@@ -42240,7 +42764,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maracas_-_panoramio.jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "Trinité est l'île la plus grande et la plus peuplée de la République de Trinité-et-Tobago. Elle se trouve à 11 km au large de la côte nord-est du Venezuela, sur le plateau continental de l'Amérique du Sud. Il s'agit de l'île la plus méridionale des Caraïbes. Avec une superficie de 4 768 km², elle est également la cinquième plus grande île des Caraïbes.",
                 "en": "Trinidad is the largest and most populous island of the Republic of Trinidad and Tobago. The island lies 11 km off the northeastern coast of Venezuela and sits on the continental shelf of South America. It is the southernmost island in the Caribbean. With an area of 4,768 km2, it is also the fifth-largest in the Caribbean."
             }
         }
@@ -42574,7 +43098,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alishan_National_Scenic_Area_sign_20160208b.jpg",
             "fame": 17,
             "description": {
-                "fr": null,
+                "fr": "La zone panoramique nationale d'Alishan est une station de montagne et une réserve naturelle situées dans le canton d'Alishan, dans le comté de Chiayi, à Taïwan.",
                 "en": "The Alishan National Scenic Area is a mountain resort and nature reserve located in Alishan township, Chiayi County, Taiwan."
             }
         },
@@ -43700,8 +44224,41 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_University,_3300_W_Camelback_Rd,_Phoenix,_AZ_85017_-_panoramio_(195).jpg",
             "fame": 10,
             "description": {
-                "fr": null,
+                "fr": "Grand Canyon University est une université chrétienne privée située à Phoenix, en Arizona, aux États-Unis. L'université propose des diplômes dans plus de 200 domaines d'études et est administrativement divisée en neuf facultés. En 2024, plus de 113 000 étudiants y étaient inscrits en ligne ou en présentiel, ce qui en faisait l'une des plus grandes universités chrétiennes en nombre d'étudiants. La Convention baptiste du Sud de l'Arizona a fondé l'établissement en 1949 sous le nom de Grand Canyon College.",
                 "en": "Grand Canyon University is a private Christian university in Phoenix, Arizona, United States. The university offers degrees in over 200 areas of study and is administratively divided into nine colleges. As of 2024, more than 113,000 students were enrolled online and in person, making it one of the largest Christian universities by enrollment. The Arizona Southern Baptist Convention established the institution in 1949 as Grand Canyon College."
+            }
+        },
+        {
+            "id": "Q125006",
+            "name": {
+                "fr": "pont de Brooklyn",
+                "en": "Brooklyn Bridge"
+            },
+            "city": {
+                "id": "Q11299",
+                "fr": "Manhattan",
+                "en": "Manhattan"
+            },
+            "country": {
+                "id": "Q30",
+                "iso": "US",
+                "fr": "États-Unis",
+                "en": "United States"
+            },
+            "coordinates": {
+                "latitude": 40.705666666666666,
+                "longitude": -73.99633333333334
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg/1280px-Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach%2C_New_York.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Brooklyn Bridge and the Lower Manhattan skyline from Pebble Beach, New York.jpg",
+            "author": "Christian David",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_and_the_Lower_Manhattan_skyline_from_Pebble_Beach,_New_York.jpg",
+            "fame": 84,
+            "description": {
+                "fr": "Le pont de Brooklyn, à New York, est l'un des plus anciens ponts suspendus des États-Unis. Il traverse l'East River pour relier les arrondissements de Manhattan et de Brooklyn. Long de 1 825 mètres et haut de 84 mètres, ce pont a coûté plus de 15 millions de dollars de l'époque et on estime que 27 personnes ont perdu la vie pendant les travaux, qui ont duré 14 ans.",
+                "en": "The Brooklyn Bridge is a cable-stayed suspension bridge in New York City, spanning the East River between the boroughs of Manhattan and Brooklyn. Opened on May 24, 1883, the Brooklyn Bridge was the first fixed crossing of the East River. It was also the longest suspension bridge in the world when opened, with a main span of 1,595.5 feet and a deck 127 ft above mean high water. The span was originally called the New York and Brooklyn Bridge or the East River Bridge but was officially renamed the Brooklyn Bridge in 1915."
             }
         }
     ],
@@ -43900,7 +44457,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fortaleza_ST.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "La forteresse de Santa Teresa, également appelée Fortaleza Santa Tereza, est une fortification militaire située à 36 km au sud de Chuy et à 305 km au nord-est de Montevideo, sur la route 9, dans le département de Rocha, dans l'est de l'Uruguay. Elle se trouve à environ 800 m de la côte, près de Playa la Moza, presque à mi-chemin entre Angostura et La Coronilla, au nord de Punta del Diablo et à environ 4 km au nord-est de la rive nord-est de la Laguna Negra. Elle se trouve dans le parc national de Santa Teresa.",
                 "en": "The Fortaleza de Santa Teresa, or Fortaleza Santa Tereza is a military fortification located 36 km south of Chuy and 305 km northeast of Montevideo on Route 9, in the Rocha Department of eastern Uruguay. It lies about 800 m from the coast at Playa la Moza, almost halfway between Angostura and La Coronilla, north of Punta del Diablo and roughly 4 km northeast of the northeast bank of the Laguna Negra. It lies within the Santa Teresa National Park."
             }
         },
@@ -44534,39 +45091,6 @@ const D_pic = {
                 "fr": "La nécropole du Vatican, également connue sous le nom de Scavi, s'étend sous la Cité du Vatican, à une profondeur qui varie de 5 à 12 mètres, sous la basilique Saint-Pierre. Elle a été un lieu de sépulture romaine abritant des tombes païennes et chrétiennes qui datent de la fin du Ier siècle av. J.-C. au IVe siècle apr. J.-C.; elle n'est accessible que depuis les fouilles des années 1940. Dans la nécropole du Vatican se trouve ce que l'on pense être la tombe de l'apôtre saint Pierre.",
                 "en": "The Vatican Necropolis is a necropolis that lies underneath Vatican City containing tombs dating from the first to fourth century AD, at depths varying between 5 and 12 metres below Saint Peter's Basilica. The Vatican sponsored archaeological excavations under Saint Peter's in the years 1940–1949, which revealed parts of a necropolis dating to the Roman Empire. It is the home to the Tomb of the Julii, which has been dated to the third or fourth century."
             }
-        },
-        {
-            "id": "Q101929493",
-            "name": {
-                "fr": "1505 Bramante staircase",
-                "en": "1505 Bramante staircase"
-            },
-            "city": {
-                "id": "Q237",
-                "fr": "Vatican",
-                "en": "Vatican City"
-            },
-            "country": {
-                "id": "Q237",
-                "iso": "VA",
-                "fr": "Vatican",
-                "en": "Vatican City"
-            },
-            "coordinates": {
-                "latitude": null,
-                "longitude": null
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Bramante_Staircase_3_%2815614276112%29.jpg/1280px-Bramante_Staircase_3_%2815614276112%29.jpg",
-            "file": "Bramante Staircase 3 (15614276112).jpg",
-            "author": "Daryl_mitchell",
-            "license": "CC BY-SA 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bramante_Staircase_3_(15614276112).jpg",
-            "fame": 1,
-            "description": {
-                "fr": null,
-                "en": "stairs in the Vatican Museums, Vatican City, by Donato Bramante"
-            }
         }
     ],
     "VC": [
@@ -45032,7 +45556,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tortola.jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "Le parc national de Sage Mountain est une zone protégée des îles Vierges britanniques. Il porte le nom du plus haut sommet de l'île de Tortola, le mont Sage. Le sommet volcanique du mont Sage s'élève à 1 716 pieds, ce qui en fait le point culminant de l'ensemble des îles Vierges. Le parc se trouve au sud-ouest de la capitale de l'archipel, Road Town. Il s'étend sur une superficie de 96 acres et comprend la chaîne de montagnes. La végétation est de type semi-forêt tropicale. De nombreux sentiers permettent de pratiquer le trekking et la randonnée.",
                 "en": "Sage Mountain National Park is a protected area of the British Virgin Islands. It is named after the highest peak of the island of Tortola, Mount Sage. The Mount Sage volcanic peak rises to a height of 1,716 feet, and is thus the highest point in all of the Virgin Islands. The park is located to the southwest of the island group's capital, Road Town. The park, which includes the mountain range, extends over an area of 96 acres. The vegetation is of semi-rain forest type. There are many trails for trekking and hiking."
             }
         }
@@ -45133,7 +45657,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:StJohnTrunkBay.jpg",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "Trunk Bay est une étendue d'eau et une plage situées sur l'île de Saint John, dans les îles Vierges américaines. Trunk Bay fait partie du parc national des îles Vierges. La baie doit son nom à la tortue luth, endémique des îles Vierges américaines et appelée localement « trunk ». La plage est divisée en deux parties : la plage principale de Trunk Bay et sa zone de baignade, ainsi que Burgesman Cove, située à l'extrémité ouest de Trunk Bay, près de Jumby Bay. Les équipements comprennent un snack-bar, des douches et des toilettes, un poste de sauveteur ainsi qu'un sentier sous-marin permettant de faire de la plongée avec tuba autour du récif corallien.",
                 "en": "Trunk Bay is a body of water and a beach on St. John in the United States Virgin Islands. Trunk Bay is part of the Virgin Islands National Park. Trunk Bay is named for the Leatherback turtle, which is endemic to the USVI and are locally known as trunks. The beach area is divided into two halves, the main Trunk Bay beach and swim area and Burgesman Cove which is located on the west end of Trunk Bay near Jumby Bay. Its amenities include a snack bar, showers and restrooms, a lifeguard, and an underwater trail for snorkeling its coral reef."
             }
         },
@@ -45199,7 +45723,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Magens_Bay,_St._Thomas,_USVI.jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Magens Bay est une baie et un parc balnéaire situés dans la région de Northside, sur l'île de Saint Thomas, dans les îles Vierges américaines, aux Caraïbes.",
                 "en": "Magens Bay is a bay and beach park in the Northside region on Saint Thomas, United States Virgin Islands, in the Caribbean."
             }
         },
@@ -45527,7 +46051,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Boat_by_the_water_-_Hoi_An_(16922189291).jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "La vieille ville de Hoi An est un site patrimonial et un ancien comptoir commercial situé à Hoi An, qui a servi de comptoir important pour les commerçants étrangers au Vietnam du XVe au XIXe siècle, un statut que la ville actuelle perpétue en partie. La vieille ville comprend un réseau de bâtiments et de structures, composé de 1 360 monuments et sites patrimoniaux anciens et uniques, dont 1 068 maisons préservées et le Pont japonais.",
                 "en": "Hoi An Ancient Town is a heritage site and ancient trading post located in Hoi An, which served as an important trading post for foreign traders to Vietnam from the 15th until the 19th century, the status of which is still partly maintained by the newer city today. The old town contains a network of buildings and structures, consisting of 1360 ancient and unique monuments & heritage sites, including 1068 preserved houses and the Japanese Bridge."
             }
         }
@@ -45822,7 +46346,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:View_from_Pulemelei_Mound_-_Samoa.jpg",
             "fame": 6,
             "description": {
-                "fr": null,
+                "fr": "Le tertre de Pulemelei est la plus grande et la plus ancienne structure construite par l'homme dans les îles Samoa. Il est situé dans la plantation de Letolo, dans le district de Palauli, à l'extrémité est de l'île de Savai'i, aux Samoa. Ce tertre de pierre est une pyramide construite en blocs de basalte, qui mesure à sa base 65 sur 60 mètres et atteint une hauteur d'environ 12 mètres sur le bord sud et 7 mètres sur le bord nord, et semble avoir été orienté selon les points cardinaux.",
                 "en": "The Pulemelei mound and is the largest and most ancient humanmade structure in the Samoan Islands. It is situated in Letolo Plantation in the Palauli district, at the east end of Savai'i island in Samoa. The stone mound is a pyramid constructed of basalt stones and at its base measures 65 by 60 metres and has a height of about 12 metres on the south edge and 7 metres on the north edge, and appears to have been oriented to the cardinal directions."
             }
         },
@@ -45851,7 +46375,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blowholes_Savai%27i_2009.jpg",
             "fame": 6,
             "description": {
-                "fr": null,
+                "fr": "Les geysers marins d'Alofaaga, aussi appelés geysers marins de Taga, sont une curiosité naturelle située dans le district de Palauli, au sud-ouest du quai de Salelologa, sur l'île de Savai'i, aux Samoa. L'entrée des geysers se trouve dans le village de Taga. Dans cette zone, des coulées de lave ont créé une série de tubes reliant le sommet plat d'une falaise de roche volcanique à l'océan en contrebas. Les vagues qui se brisent contre l'extrémité inférieure des tubes de lave propulsent l'eau à haute pression à travers les tubes, créant des fontaines qui jaillissent toutes les quelques secondes.",
                 "en": "The Alofaaga Blowholes, also known as the Taga Blowholes, are a natural feature located in the district of Palauli, south west of Salelologa wharf on the island of Savai'i in Samoa. The entrance to the blowholes is in the village of Taga. In this area, lava flows have created a series of tubes connecting a flat clifftop of lava rock with the ocean below. Waves breaking against the lower end of the lava tubes send water at high pressure up through the tubes, creating fountains that spray every few seconds."
             }
         },
@@ -45880,7 +46404,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_O_Le_Pupu_Pue_National_Park,_Samoa,_IUCN_BIOPAMA_Photos.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le parc national O Le Pupu-Puʿe est le plus ancien parc national des Samoa. Créé en 1978, le parc couvre 5 019 hectares de la partie centre-sud de l'île d'Upolu, à la frontière des districts d'Atua et de Tuamasaga. Le parc s'étend du mont Fito, la plus haute montagne d'Upolu, jusqu'à la côte, et comprend des hautes terres, des vallées, des marais, le champ de lave d'O Le Pupu et des falaises côtières. En 2016, il a été désigné zone humide d'importance internationale au titre de la Convention de Ramsar.",
                 "en": "O Le Pupu-Puʿe National Park is the oldest national park in Samoa. Established in 1978, the park covers 5019 hectares of the southern-central portion of the island of Upolu on the border of the Atua and Tuamasaga districts. The park extends from Mount Fito, the highest mountain on Uplou, to the coast, and includes uplands, valleys, marshes, the O Le Pupu lava field, and coastal cliffs. In 2016 it was designated as a wetland of international importance under the Ramsar Convention."
             }
         },
@@ -45913,7 +46437,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Samoan_Home_of_Robert_Louis_Stevenson_(30595201572).jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "Le musée Robert Louis Stevenson est un musée des Samoa qui commémore la vie de l'auteur écossais Robert Louis Stevenson. Le musée présente une version muséographiée de sa résidence, telle que Stevenson l'a habitée. Sa création a été financée par des dons venus de l'étranger.",
                 "en": "The Robert Louis Stevenson Museum is a museum in Samoa, which commemorates the life of the Scottish author Robert Louis Stevenson. The museum displays a curated version of his residence, as Stevenson lived in it. Its establishment was funded by overseas donations."
             }
         }
@@ -45983,39 +46507,6 @@ const D_pic = {
             "description": {
                 "fr": "La bibliothèque nationale du Kosovo est une bibliothèque fondée en 1944 et située à Pristina.",
                 "en": "The National Library of Kosovo is the highest library institution in Kosovo established by the Assembly and is located in Pristina. The mission of the library is to collect, preserve, promote and make accessible the documentary and intellectual heritage of Kosovo. It holds exhibitions and holds an archive of national newspapers. The library also provides a number of other services."
-            }
-        },
-        {
-            "id": "Q939112",
-            "name": {
-                "fr": "Dečani",
-                "en": "Deçan"
-            },
-            "city": {
-                "id": "Q860148",
-                "fr": "Deçan",
-                "en": "Deçan Municipality"
-            },
-            "country": {
-                "id": "Q1246",
-                "iso": "XK",
-                "fr": "Kosovo",
-                "en": "Kosovo"
-            },
-            "coordinates": {
-                "latitude": 42.533333333333,
-                "longitude": 20.283333333333
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/De%C3%A7an_2006.PNG",
-            "file": "Deçan 2006.PNG",
-            "author": "Hipi Zhdripi",
-            "license": "CC BY 2.5",
-            "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:De%C3%A7an_2006.PNG",
-            "fame": 32,
-            "description": {
-                "fr": "Deçan est une ville et une commune/municipalité du Kosovo. Elles font partie du district de Pejë/Peć. En 2009, la population de la commune/municipalité était estimée par l'OSCE à 40 000 habitants. Selon le recensement kosovar de 2011, la commune comptait 38 984 habitants. La commune de Deçan fut l’un des bastions de l’armée de libération du Kosovo. Elle a compté de nombreux soldats qui ont contribué à la renommée de la région de Dukagjini, notamment Beg Rizaj, Sali Çekaj, Ramush Haradinaj, Luan Haradinaj, Sadik Kadrijaj.",
-                "en": "Deçan or Dečani, is a town and municipality in the district of Peja, Kosovo. The municipality has an area of 293.94 km2 and it includes the town and 37 smaller settlements. According to the last census of 2024, the municipality has a population of 27,775."
             }
         },
         {
@@ -46309,7 +46800,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bab_al-Yaman_-_Yemen_-_Sana%27a.jpg",
             "fame": 0,
             "description": {
-                "fr": null,
+                "fr": "souk de la vieille ville de Sanaa, au Yémen",
                 "en": "souq in Old Sana'a, Yemen"
             }
         }
@@ -46842,39 +47333,6 @@ const D_pic = {
                 "fr": "Le parc national de Kafue est le plus grand parc national de Zambie, avec une surface d'environ 22 400 km2. Il abrite 158 espèces de mammifères et plusieurs centaines d'espèces d'oiseaux. Son nom vient de la rivière Kafue. Il s'étend sur trois provinces, la province Nord-Occidentale, la province Centrale et la province Méridionale. On y accède via la « grande route de l'ouest » qui relie Lusaka à Mongu en traversant le nord du parc. Des pistes saisonnières le relient à Kalomo et Namwala au sud et sud-est, ainsi qu'à Kasempa au nord.",
                 "en": "Kafue National Park is the largest national park in Zambia, covering an area of about 22,400 km2. It is the second largest national park in Africa and home to 152 mammal species. There are also 515 bird species, 70 reptile species, 58 species of fish and 36 amphibious species. The park is named for the Kafue River. It stretches over three provinces: North Western, Central and Southern. The main access is via the Lusaka–Mongu Road from Lusaka to Mongu which crosses the park north of its centre."
             }
-        },
-        {
-            "id": "Q503518",
-            "name": {
-                "fr": "parc national du Bas-Zambèze",
-                "en": "Lower Zambezi National Park"
-            },
-            "city": {
-                "id": "Q819998",
-                "fr": "Lusaka",
-                "en": "Lusaka Province"
-            },
-            "country": {
-                "id": "Q953",
-                "iso": "ZM",
-                "fr": "Zambie",
-                "en": "Zambia"
-            },
-            "coordinates": {
-                "latitude": -15.75,
-                "longitude": 29.33333333
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Lower_Zambezi%2C_Zambia_%282518067857%29.jpg/1280px-Lower_Zambezi%2C_Zambia_%282518067857%29.jpg",
-            "file": "Lower Zambezi, Zambia (2518067857).jpg",
-            "author": "Joachim Huber",
-            "license": "CC BY-SA 2.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lower_Zambezi,_Zambia_(2518067857).jpg",
-            "fame": 17,
-            "description": {
-                "fr": null,
-                "en": "The Lower Zambezi National Park lies on the north bank of the Zambezi River in southeastern Zambia. Until 1983 when the area was declared a national park, the area was the private game reserve of Zambia's president. This meant that the park was protected from mass tourism and now remains one of the few untouched wilderness areas left in Africa. On the opposite bank is Zimbabwe's Mana Pools National Park. The two parks sit on the Zambezi floodplain ringed by mountains."
-            }
         }
     ],
     "ZW": [
@@ -47023,7 +47481,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chinhoyi_caves,_Zimbabwe.JPG",
             "fame": 16,
             "description": {
-                "fr": null,
+                "fr": "Les grottes de Chinhoyi sont un ensemble de grottes calcaires et dolomitiques situées dans le centre-nord du Zimbabwe. Classées parc national en 1955, elles sont gérées par l'Autorité de gestion des parcs et de la faune du Zimbabwe.",
                 "en": "The Chinhoyi Caves are a group of limestone and dolomite caves in north central Zimbabwe. Designated a National Park in 1955, and managed by the Zimbabwe Parks & Wildlife Management Authority."
             }
         },
@@ -47182,7 +47640,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fagatogo_Dock.jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Le port de Pago Pago, sur l'île de Tutuila, aux Samoa américaines, est l'un des plus grands ports naturels du monde. La capitale, Pago Pago, est située au fond du port, près de son point le plus au nord-ouest. C'est le port qui reçoit le plus de précipitations annuelles au monde. Il est aussi considéré comme l'un des meilleurs et des plus profonds ports en eau profonde de l'océan Pacifique Sud, voire de toute l'Océanie. La baie de Pago Pago fait plus de 400 pieds de profondeur et deux miles de long. Faisant partie de la caldeira du volcan Pago, le port est enclavé à 50 %.",
                 "en": "Pago Pago Harbor on Tutuila Island in American Samoa is one of the world's largest natural harbors. The capital, Pago Pago, is located on the inner reaches of the harbor, close to its northwesternmost point. It has the highest annual rainfall of any harbor in the world. It is also considered one of the best and deepest deepwater harbors in the South Pacific Ocean or in Oceania as a whole. Pago Pago Bay is over 400 feet deep and two miles long. As part of the Pago Volcano caldera, the harbor is 50% landlocked."
             }
         },
@@ -47211,7 +47669,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:One_of_the_seven_National_Natural_Landmarks_located_on_opposite_side_of_Pago_Pago_Harbor._A_great_mass_of_volcanic_rocks_(c0df8163-056a-ee75-06bf-67995a91f08a).jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le mont Rainmaker est une montagne située près de Pago Pago, aux Samoa américaines, sur l'île de Tutuila. Le mont Rainmaker retient les nuages de pluie et donne à Pago Pago les précipitations annuelles les plus élevées de tous les ports. Les précipitations annuelles moyennes sur la montagne sont d'environ 200 pouces. Elle possède un sommet à trois pointes. Le mont Rainmaker et sa base ont été classés site naturel national en 1972 en raison de la végétation tropicale de ses pentes.",
                 "en": "Rainmaker Mountain is the name of a mountain located near Pago Pago, American Samoa on Tutuila Island. Rainmaker Mountain traps rain clouds and gives Pago Pago the highest annual rainfall of any harbor. The average annual rainfall on the mountain is around 200 inches. It has a three-pronged summit. Rainmaker Mountain and its base were designated a National Natural Landmark in 1972 due to the slopes’ tropical vegetation."
             }
         },
@@ -47244,7 +47702,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_%27Alava.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le mont ʻAlava est la deuxième plus haute montagne de l'île de Tutuila, aux Samoa américaines. Son sommet culmine à 491 mètres d'altitude. On peut atteindre le sommet par le sentier du mont Alava. Aussi connu sous le nom de Mount Alava Adventure Trail, cet itinéraire escarpé comporte 56 échelles et 783 marches. Une station de radiodiffusion a été installée sur le mont Alava en 1964. Depuis son sommet, les visiteurs bénéficient de vastes panoramas sur la majeure partie de l'île de Tutuila ; par temps clair, on distingue aussi les îles des Samoa occidentales et le district de Manu'a.",
                 "en": "Mount ʻAlava is the second-highest mountain on Tutuila Island in American Samoa. Its summit has an elevation of 491 meters. The summit of the mountain can be reached via the Mount Alava Trail. Also known by the name Mount Alava Adventure Trail, this steep route features 56 ladders and 783 steps. A broadcast station was established on Mount Alava in 1964. From its summit, visitors are afforded expansive vistas over most of Tutuila Island; on clear days, the islands of Western Samoa and the Manu'a District are also visible."
             }
         },
@@ -47277,7 +47735,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reef3796_-_Flickr_-_NOAA_Photo_Library.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le sanctuaire marin national des Samoa américaines est une zone sous-marine désignée au niveau fédéral et protégée par le Bureau des sanctuaires marins nationaux de la National Oceanic and Atmospheric Administration. Ce sanctuaire est le plus vaste et le plus isolé du réseau des sanctuaires marins nationaux. S'étendant sur 13 581 miles carrés, il abriterait la plus grande biodiversité d'espèces aquatiques de tous les sanctuaires marins.",
                 "en": "The National Marine Sanctuary of American Samoa is a federally-designated underwater area protected by the National Oceanic and Atmospheric Administration's Office of National Marine Sanctuaries. This sanctuary is the largest and most remote in the National Marine Sanctuary system. Spanning 13,581 sq mi, it is thought to be home to the greatest biodiversity of aquatic species of all the marine sanctuaries."
             }
         }
@@ -47446,7 +47904,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beach_looking_west_at_the_Anse_de_Grande_Saline_on_St._Barthelemy,_French_West_Indies_-_panoramio.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "plage de Saint-Barthélemy",
                 "en": "beach in Saint-Barthélemy"
             }
         }
@@ -47482,10 +47940,10 @@ const D_pic = {
             }
         },
         {
-            "id": "Q3321538",
+            "id": "Q223379",
             "name": {
-                "fr": "Église chrétienne des îles Cook",
-                "en": "Cook Islands Christian Church"
+                "fr": "Aitutaki",
+                "en": "Aitutaki"
             },
             "city": null,
             "country": {
@@ -47495,19 +47953,19 @@ const D_pic = {
                 "en": "Cook Islands"
             },
             "coordinates": {
-                "latitude": null,
-                "longitude": null
+                "latitude": -18.85,
+                "longitude": -159.79
             },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/CICC_Ekalesia_Avarua_01.jpg/1280px-CICC_Ekalesia_Avarua_01.jpg",
-            "file": "CICC Ekalesia Avarua 01.jpg",
-            "author": "Tom Ackroyd",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:CICC_Ekalesia_Avarua_01.jpg",
-            "fame": 9,
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Aitutaki-Motu_Tapuaetai.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Aitutaki-Motu Tapuaetai.jpg",
+            "author": "No machine-readable author provided. Emeseee assumed (based on copyright claims).",
+            "license": "Public domain",
+            "licenseUrl": null,
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aitutaki-Motu_Tapuaetai.jpg",
+            "fame": 39,
             "description": {
-                "fr": "L'Église chrétienne des îles Cook est la première confession religieuse de cet État archipel d'Océanie. Elle compte environ 18 000 membres. Il s'agit d'une église protestante congrégationaliste. Elle possède aussi des congrégations à l'étranger, notamment en Australie et en Nouvelle-Zélande. Son siège se trouve à Avarua, la capitale cookienne.",
-                "en": "The Cook Islands Christian Church is the largest religious denomination in the Cook Islands. It belongs to the Reformed family of churches. The CICC is a Christian Congregationalist church and has approximately 18,000 members, including around half of the residents of the Cook Islands. The church also has congregations in New Zealand and Australia."
+                "fr": "Aitutaki est une des îles de l'archipel des îles Cook, située à 225 km au nord-ouest de Rarotonga. Sa superficie totale est de 16,8 km2.",
+                "en": "Aitutaki, also traditionally known as Araʻura and Utataki, is the second most-populated island in the Cook Islands, after Rarotonga. It is an \"almost atoll\", with fifteen islets in a lagoon adjacent to the main island. Total land area is 18.05 km2, and the lagoon has an area of between 50 and 74 km2. A major tourist destination, Aitutaki is the second most visited island of the Cook Islands archipelago. The main village is Arutanga on the west side."
             }
         }
     ],
@@ -47706,7 +48164,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nissi-Beach.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Nissi Beach est une plage populaire de la station balnéaire d'Ayia Napa, à Chypre. La plage s'étend sur 500 mètres et son eau est suffisamment propre pour avoir obtenu le label Pavillon bleu. La plage, qui occupe toute la longueur de sa propre crique, tire son nom du petit îlot de Nissi situé près de la côte. L'îlot inhabité est facilement accessible à pied à travers les eaux peu profondes et sa position offre un bon abri au reste de la plage. L'îlot est couvert d'une végétation locale basse.",
                 "en": "Nissi Beach is a popular beach in the resort of Ayia Napa, Cyprus. The beach stretches for 500 metres and the water is clean enough for the beach to have been awarded the blue flag designation. The beach, which runs the length of its own cove, takes its name from the small islet of Nissi located close to the coast. The uninhabited islet can be easily reached on foot through the shallow waters and its location provides a good shelter for the rest of the beach. The islet is covered with low-level local vegetation."
             }
         }
@@ -47770,7 +48228,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Underwater_sculptures_at_Molinere_Underwater_Sculpture_Park.jpg",
             "fame": 4,
             "description": {
-                "fr": null,
+                "fr": "Le parc de sculptures sous-marines de Molinere Bay est un ensemble d'œuvres d'art contemporain écologiques sous-marines situé dans la mer des Caraïbes, au large de la côte ouest de la Grenade, aux Antilles, créé par le sculpteur britannique Jason deCaires Taylor. En mai 2006, le premier parc de sculptures sous-marines au monde a été ouvert au public. L'objectif de Taylor était de rapprocher les habitants de l'environnement sous-marin qui les entoure, à travers des œuvres issues de moulages réalisés sur des membres de la communauté locale.",
                 "en": "The Molinere Bay Underwater Sculpture Park is a collection of ecological underwater contemporary art located in the Caribbean sea off the west coast of Grenada, West Indies and was created by British sculptor Jason deCaires Taylor. In May 2006 the world's first underwater sculpture park was opened for public viewing. Taylor's aim was to engage local people with the underwater environment that surrounds them using his works which are derived from life casts of the local community."
             }
         }
@@ -48071,7 +48529,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Europa_Point_Lighthouse_and_cottages.jpg",
             "fame": 10,
             "description": {
-                "fr": null,
+                "fr": "Le phare d'Europa Point, aussi appelé phare de la Trinité à Europa Point, tour Victoria ou La Farola en llanito, est un phare situé à Europa Point, à la pointe sud-est du territoire britannique d'outre-mer de Gibraltar, à l'extrémité sud de la péninsule Ibérique, à l'entrée de la mer Méditerranée. Le phare d'Europa a été inauguré le 1er août 1841 lors d'une brève cérémonie à laquelle ont assisté environ 10 000 personnes.",
                 "en": "The Europa Point Lighthouse, also referred to as the Trinity Lighthouse at Europa Point and the Victoria Tower or La Farola in Llanito, is a lighthouse at Europa Point, on the southeastern tip of the British Overseas Territory of Gibraltar, on the southern end of the Iberian Peninsula, at the entrance to the Mediterranean Sea. Europa Lighthouse was inaugurated on 1 August 1841 in a brief ceremony witnessed by about 10,000 people."
             }
         },
@@ -48145,39 +48603,6 @@ const D_pic = {
         }
     ],
     "GP": [
-        {
-            "id": "",
-            "name": {
-                "fr": "Vue de la Guadeloupe, de haut",
-                "en": "View of Guadeloupe from above"
-            },
-            "city": {
-                "id": "",
-                "fr": null,
-                "en": null
-            },
-            "country": {
-                "id": "Q17012",
-                "iso": "GP",
-                "fr": "Guadeloupe",
-                "en": "Guadeloupe"
-            },
-            "coordinates": {
-                "latitude": 15.869828,
-                "longitude": -61.588198
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Les_Saintes_-_Archipel_de_Guadeloupe.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
-            "file": "Les Saintes - Archipel de Guadeloupe.jpg",
-            "author": "Jonathan SALAÜN",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Les_Saintes_-_Archipel_de_Guadeloupe.jpg?uselang=fr",
-            "fame": 500,
-            "description": {
-                "fr": "La Guadeloupe (en créole guadeloupéen : Gwadloup) est un archipel des Caraïbes formant un département et région d'outre-mer français. La partie principale (Karukera en langues amérindiennes) en forme de papillon est composée de deux îles : la Grande-Terre à l'est et la Basse-Terre à l'ouest, séparées par un bras de mer, appelé « la Rivière Salée ». Le chef-lieu est Basse-Terre et la capitale économique est Pointe-à-Pitre. Au 1er janvier 2026, la population s'établit à 382 586 habitants",
-                "en": "Guadeloupe (in Guadeloupean Creole: Gwadloup) is an archipelago in the Caribbean that constitutes a French overseas department and region. The main part (Karukera in Amerindian languages), shaped like a butterfly, consists of two islands: Grande-Terre to the east and Basse-Terre to the west, separated by a strait called “la Rivière Salée.” The administrative seat is Basse-Terre, and the economic capital is Pointe-à-Pitre. As of January 1, 2026, the population stood at 382,586."
-            }
-        },
         {
             "id": "Q1149310",
             "name": {
@@ -48740,7 +49165,7 @@ const D_pic = {
                 "fr": "bâtiment de Épidaure, Péloponnèse, en Grèce",
                 "en": "The Ancient Theatre of Epidaurus is a theatre in the Greek city of Epidaurus, located on the southeast end of the sanctuary dedicated to the ancient Greek God of medicine, Asclepius. It is built on the west side of Cynortion Mountain, near modern Lygourio, and belongs to the Epidaurus Municipality. Constructed in the late 4th century BC, it is considered to be the most perfect ancient Greek theatre with regard to acoustics and aesthetics."
             }
-        },
+        }
     ],
     "GS": [
         {
@@ -49139,7 +49564,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gus%27_Beach_Bar_(16276770486).jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "baie de Saint-Martin, en France",
                 "en": "bay in Saint Martin, France"
             }
         }
@@ -49306,7 +49731,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Centre_of_Makau.jpg",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "La place du Sénat, ou Largo do Senado, est une place pavée du quartier de Sé, à Macao, en Chine, et fait partie du Centre historique de Macao, inscrit au patrimoine mondial de l'UNESCO. C'est une place de forme triangulaire allongée qui relie le Largo do São Domingos à une extrémité et l'Avenida de Almeida Ribeiro à l'autre. Elle couvre une superficie de 3 700 mètres carrés",
                 "en": "The Senado Square, or Senate Square, is a paved town square in Sé, Macau, China, and part of the UNESCO Historic Centre of Macau World Heritage Site. It is an elongated triangular shaped square and connects Largo do São Domingos at one end and Avenida de Almeida Ribeiro on the other. It covers an area of 3,700 square meters"
             }
         },
@@ -49374,7 +49799,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mount_Tapochau.JPG",
             "fame": 13,
             "description": {
-                "fr": null,
+                "fr": "Le mont Tapochau est le point culminant de l'île de Saipan, dans les îles Mariannes du Nord. Il est situé au centre de l'île, au nord du village de San Vicente et au nord-ouest de la baie de Magicienne. Il s'élève à 474 m et offre une vue dégagée sur toute l'île. Il a joué un rôle essentiel de poste d'observation lors de la bataille de Saipan pendant la Seconde Guerre mondiale.",
                 "en": "Mount Tapochau is the highest point on the island of Saipan in the Northern Mariana Islands. It is located in the center of the island, north of San Vicente village and northwest of Magicienne Bay. It rises to a height of 474 m, and offers an unhindered view of the entire island. It played a vital role as a key observation post during the Battle of Saipan in the Second World War."
             }
         },
@@ -49440,7 +49865,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ma%C3%B1agaha_Island.jpg",
             "fame": 9,
             "description": {
-                "fr": null,
+                "fr": "Mañagaha est un petit îlot situé au large de la côte ouest de Saipan, dans son lagon, dans les îles Mariannes du Nord. Bien qu'il n'ait aucun résident permanent, Mañagaha est très apprécié des touristes de Saipan comme destination d'une journée, grâce à ses larges plages de sable et à plusieurs activités nautiques, dont la plongée avec tuba, le parachute ascensionnel et le jet-ski. Managaha est l'une des attractions touristiques les plus populaires de Saipan, réputée pour ses vues sur l'eau claire et ses plages, et on y accède par une courte traversée en ferry depuis Saipan.",
                 "en": "Mañagaha is a small islet which lies off the west coast of Saipan within its lagoon in the Northern Mariana Islands. Although it has no permanent residents, Mañagaha is popular among Saipan's tourists as a day-trip destination due to its wide sandy beaches and a number of marine activities including snorkeling, parasailing and jet skiing. Managaha is one of the most popular tourist attractions on Saipan, known for its views of clear water, beaches, and is accessed by a short ferry ride from Saipan."
             }
         },
@@ -49506,7 +49931,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Banzai_Cliff_2025.jpg",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "Banzai Cliff est un site historique situé à la pointe nord de l'île de Saipan, dans les îles Mariannes du Nord, surplombant l'océan Pacifique. Vers la fin de la bataille de Saipan, en 1944, des centaines de civils et de soldats japonais se sont jetés de la falaise et sont morts dans l'océan et sur les rochers en contrebas, pour éviter d'être capturés par les Américains. Non loin de là, une haute falaise appelée Suicide Cliff surplombe la plaine côtière et fut un autre lieu de nombreux suicides. À Banzai Cliff, certains de ceux qui ont sauté ne sont pas morts et ont été capturés par des navires américains.",
                 "en": "Banzai Cliff is a historical site at the northern tip of Saipan island in the Northern Mariana Islands, overlooking the Pacific Ocean. Towards the end of the Battle of Saipan in 1944, hundreds of Japanese civilians and soldiers jumped off the cliff to their deaths in the ocean and rocks below, to avoid being captured by the Americans. Not far away, a high cliff named Suicide Cliff overlooks the coastal plain, and was another site of numerous suicides. At Banzai Cliff, some who jumped did not die and were captured by American ships."
             }
         }
@@ -49933,7 +50358,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aso_Rock_as_seen_from_the_IBB_golf_course_in_Abuja,_Nigeria.jpg",
             "fame": 14,
             "description": {
-                "fr": null,
+                "fr": "Aso Rock est un grand affleurement de roche granitique situé en périphérie d'Abuja, la capitale du Nigéria. Aso Rock est un monolithe dont le sommet culmine à 936 mètres au-dessus du niveau de la mer, soit 400 mètres au-dessus des terres environnantes. C'est l'un des éléments les plus remarquables de la ville. Le complexe présidentiel nigérian, l'Assemblée nationale nigériane et la Cour suprême nigériane se trouvent autour du rocher. Une grande partie de la ville s'étend au sud du rocher. « Aso » signifie victorieux dans la langue locale du groupe ethnique Asokoro.",
                 "en": "Aso Rock is a large outcrop of granitic rock located on the outskirts of Abuja, the capital of Nigeria. The Aso Rock is a monolith with a peak height of 936 metres above sea level, 400 metres above the surrounding land. It is one of the city's most noticeable features. The Nigerian Presidential Complex, Nigerian National Assembly, and Nigerian Supreme Court are located around it. Much of the city extends to the south of the rock. \"Aso\" means victorious in the native language of the Asokoro ethnic group."
             }
         },
@@ -49966,7 +50391,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fair_weather_clouds_on_Obudu_mountains.jpg",
             "fame": 8,
             "description": {
-                "fr": null,
+                "fr": "Obanliku Mountain Resort est un ranch et complexe touristique situé sur le plateau d'Obudu, dans l'État de Cross River, au Nigéria.",
                 "en": "Obanliku Mountain Resort is a ranch and resort on the Obudu Plateau in Cross River State, Nigeria."
             }
         },
@@ -50890,8 +51315,8 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Matapa_Chasm,_looking_out_towards_sea.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
-                "en": null
+                "fr": "Gouffre de Matapa, où se trouvait le bain secret du roi de Niue, est situé sur la côte nord-ouest de Niue. De l'eau douce jaillit du fond de la mer. C'est un endroit idéal pour la plongée avec tuba.",
+                "en": "Mapata Chasm, where was Niue king's secret bath, is situated on north west coast of NIUE. Fresh water spring out from the bottom of the sea. It is a good place for snorkeling."
             }
         },
         {
@@ -50923,7 +51348,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rock_arch_at_Limu_Pools.jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "attraction touristique à Niue",
                 "en": "tourist attraction in Niue"
             }
         },
@@ -50952,7 +51377,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Togo_Chasm_from_above.jpg",
             "fame": 1,
             "description": {
-                "fr": null,
+                "fr": "gouffre littoral à Niue",
                 "en": "littoral chasm on Niue"
             }
         }
@@ -51249,7 +51674,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nizwa_(5).jpg",
             "fame": 11,
             "description": {
-                "fr": null,
+                "fr": "Le fort de Nizwa est une fortification du XVIIe siècle située à Nizwa, à Oman. Construit dans les années 1650 sous l'imam Sultan bin Saif, il est réputé pour sa grande tour circulaire et constitue l'un des principaux monuments historiques et touristiques d'Oman.",
                 "en": "The Nizwa Fort is a 17th-century fortification in Nizwa, Oman. Built in the 1650s under Imam Sultan bin Saif, it is known for its large circular tower and is one of Oman's prominent historic and tourist landmarks."
             }
         },
@@ -51311,7 +51736,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:%D9%88%D8%A7%D8%AC%D9%87%D8%A9_%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9.jpg",
             "fame": 7,
             "description": {
-                "fr": null,
+                "fr": "La Grande Mosquée du Sultan Qaboos est une mosquée du vendredi située à Sohar, dans le gouvernorat d'Al Batinah Nord, au Sultanat d'Oman. La mosquée a été nommée en l'honneur du précédent sultan d'Oman, Qaboos bin Said.",
                 "en": "The Sultan Qaboos Grand Mosque is a Friday mosque located in Sohar, in the governorate of Al Batinah North, in the Sultanate of Oman. The mosque was named in honor of the previous Sultan of Oman, Qaboos bin Said."
             }
         }
@@ -51416,7 +51841,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:HowlandIslandLightWW2damage.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "L'île Howland est une île corallienne inhabitée et une réserve naturelle intégrale située juste au nord de l'équateur, dans l'océan Pacifique central, à environ 1 700 milles nautiques au sud-ouest d'Honolulu. L'île se trouve presque à mi-chemin entre Hawaï et l'Australie et constitue un territoire non incorporé et non organisé des États-Unis. Avec l'île Baker, elle fait partie des îles Phoenix. À des fins statistiques, Howland est classée parmi les îles mineures éloignées des États-Unis.",
                 "en": "Howland Island is an uninhabited coral island and strict nature reserve located just north of the equator in the central Pacific Ocean, about 1,700 nautical miles southwest of Honolulu. The island lies almost halfway between Hawaii and Australia and is an unincorporated, unorganized territory of the United States. Together with Baker Island, it forms part of the Phoenix Islands. For statistical purposes, Howland is grouped as one of the United States Minor Outlying Islands."
             }
         }
@@ -51519,7 +51944,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Sand_Island,_Midway_c1968.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "partie principale de l'atoll de Midway, États-Unis",
                 "en": "main part of Midway Atoll, United States"
             }
         }
@@ -51587,7 +52012,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wake_Jun_15_007_(18905308620).jpg",
             "fame": 3,
             "description": {
-                "fr": null,
+                "fr": "L'île Peale est l'une des trois îles de l'atoll de Wake, situé dans l'océan Pacifique entre Guam et Midway. À partir de 1935, l'atoll a accueilli une base d'hydravions et un hôtel construits par Pan-American, qui a lancé le premier service transpacifique de transport de passagers en utilisant une chaîne d'îles à travers le Pacifique pour relier l'Amérique et l'Asie par étapes. L'île, comme le reste de Wake, est constituée de fragments de corail et de sable, au sommet d'un mont sous-marin, et entourée d'un récif corallien vivant.",
                 "en": "Peale Island is one of three islands in the Wake Island atoll, which lies in the Pacific Ocean between Guam and Midway. The atoll was, from 1935, the site of a seaplane base and a hotel built by Pan-American, who started the first transpacific passenger service using a string of islands across the Pacific to fly between America and Asia in stages. The island, like the rest of Wake, is made of coral fragments and sand, atop a seamount, and ringed by a living coral reef."
             }
         }
@@ -51824,7 +52249,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Quill_volcano_on_Sint_Eustatius.jpg",
             "fame": 5,
             "description": {
-                "fr": null,
+                "fr": "Le parc national de Quill/Boven comprend deux sections distinctes de terres protégées aux extrémités opposées de l'île de Saint-Eustache, dans les Caraïbes néerlandaises, gérées par la St. Eustatius National Parks Foundation. Les deux parties du parc ont été identifiées par BirdLife International comme zones importantes pour la conservation des oiseaux, car elles abritent des populations de plusieurs espèces d'oiseaux menacées ou à aire de répartition restreinte.",
                 "en": "The Quill/Boven National Park comprises two separated sections of protected land at opposite ends of the island of Sint Eustatius in the Dutch Caribbean, maintained by the St. Eustatius National Parks Foundation. Both parts of the park have been identified by BirdLife International as Important Bird Areas because they support populations of several threatened or restricted-range bird species."
             }
         },
@@ -51857,7 +52282,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:St._Eustatius_Historical_Foundation_Museum,_2025_-_3.jpg",
             "fame": 2,
             "description": {
-                "fr": null,
+                "fr": "musée et bâtiment historique de Saint-Eustache",
                 "en": "museum and historical building on Sint Eustatius"
             }
         }
@@ -51932,34 +52357,28 @@ const D_pic = {
     ]
 };
 
-// function removeParentheses(text) {
-//   if (!text) return text;
-
-//   let out = "";
-//   let depth = 0;
-
-//   for (const ch of text) {
-//     if (ch === "(") {
-//       depth++;
-//     } else if (ch === ")") {
-//       if (depth > 0) depth--;
-//       else out += ch; // parenthèse fermante orpheline : on la garde
-//     } else if (depth === 0) {
-//       out += ch;
-//     }
-//   }
-
-//   return out
-//     .replace(/\s+([,.;:!?])/g, "$1") // supprime l'espace avant la ponctuation : "Raja Ampat , or" -> "Raja Ampat, or"
-//     .replace(/\s{2,}/g, " ")         // espaces doubles -> simples
-//     .trim();
-// }
 
 
-// for(const id in D_pic){
-//     for(const i in D_pic[id]){
-//         if(id === "BQBO")console.log(removeParentheses(D_pic[id][i].description.fr))
-//         D_pic[id][i].description.fr = removeParentheses(D_pic[id][i].description.fr)
-//         D_pic[id][i].description.en = removeParentheses(D_pic[id][i].description.en)
-//     }
-// }
+
+
+
+
+
+const ttt = {}
+
+
+for(const id in D_pic){
+    const R = []
+    for(const i in D_pic[id]){
+        if(!D_pic[id][i].description.fr || !D_pic[id][i].description.en ){
+            const R2 = {}
+            R2.index = i
+            R2.description = D_pic[id][i].description.fr
+            R.push(R2)
+        }
+    }
+    if(R.length > 0){
+        ttt[id] = R
+    }
+}
+
