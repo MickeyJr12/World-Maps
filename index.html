@@ -2490,7 +2490,7 @@
         filter: brightness(0.8);
       }
       #cachePic {
-        filter: brightness(0.22);
+        filter: brightness(0.3);
         background: transparent;
         z-index: 10;
       }
@@ -2604,10 +2604,9 @@
           font-size : 0.8rem;
           width : 100%;
           background : rgba(255,255,255,0.05);
-          transition : max-height 0.25s ease, padding 0.25s ease, outline-color 0.25s ease;
+          transition : max-height 0.25s ease, padding 0.25s ease, outline-color 0.25s ease, opacity 0.25s ease;
         }
         #cadreInfosPic.active{
-          padding : 0.4rem;
           opacity : 1;
           outline-color : rgba(255,255,255,0.12)
         }
@@ -2778,6 +2777,10 @@
         }
       }
 
+      #openLicence{
+        aspect-ratio : 1/1;
+
+      }
       .iconPic {
         display: flex;
         justify-content: center;
@@ -2821,9 +2824,9 @@
         min-width: 14rem;
         outline: 1px solid rgba(255, 255, 255, 0.18);
         padding: 0.6rem;
-        bottom: calc(100% + 0.2rem);
-        right: 0;
-        transform-origin: right bottom;
+        top: calc(100% + 0.2rem);
+        left: 0;
+        transform-origin: left top;
         transform: scale(0.85);
         opacity: 0;
         pointer-events: none;
@@ -2893,7 +2896,7 @@
           transform: translateY(-50%);
           background: rgba(0, 0, 0, 0.6);
           box-sizing: border-box;
-          opacity: 0.2;
+          opacity: 0.12;
           height: 2rem;
           aspect-ratio: 1/1;
           transition:
@@ -26512,7 +26515,7 @@
               </svg>
             </div>
 
-            <div id="openPic" class="iconPic">
+            <div id="openPic">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -26573,65 +26576,18 @@
           <div id="cachePic" class="cache"></div>
           <div id="cadrePic">
             <div class="wrapperTitle">
+              <div style="display : flex; align-items : center; gap : 0.4rem;">
               <span class="title"
                 ><div id="indexCrtPic">1</div>
                 /
                 <div id="nbrPics">5</div>
               </span>
-              <div id="crossPic">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Outline"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
-                  />
-                </svg>
-              </div>
-            </div>
 
-            <div id="wrapperCarouselPic">
-              <div id="RArrowPic" class="arrowPic">
-                <svg
-                  fill="white"
-                  style="transform: rotate(180deg)"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Bold"
-                  viewBox="0 0 24 24"
-                  width="100%"
-                >
-                  <path
-                    d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                  />
-                </svg>
-              </div>
-              <div id="LArrowPic" class="arrowPic">
-                <svg
-                  fill="white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  id="Bold"
-                  viewBox="0 0 24 24"
-                  width="100%"
-                >
-                  <path
-                    d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
-                  />
-                </svg>
-              </div>
-
-              <div class="carousel"></div>
-            </div>
-
-            <div class="wrapperTxtPic">
-              <div class="boxTxtPic">
-                <div id="namePic">Tour Eiffeil</div>
-                <div id="cityPic">Paris</div>
-              </div>
               <div id="wrapperLicence">
                 <div id="openLicence" class="iconPic">
                   <svg
                     viewBox="0 0 24 24"
+                    style="height : 100%"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -26691,6 +26647,59 @@
                 </div>
               </div>
               <!-- Fin wrapperLicence -->
+
+              </div>
+              <div id="crossPic">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Outline"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M16,8a1,1,0,0,0-1.414,0L12,10.586,9.414,8A1,1,0,0,0,8,9.414L10.586,12,8,14.586A1,1,0,0,0,9.414,16L12,13.414,14.586,16A1,1,0,0,0,16,14.586L13.414,12,16,9.414A1,1,0,0,0,16,8Z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div id="wrapperCarouselPic">
+              <div id="RArrowPic" class="arrowPic">
+                <svg
+                  fill="white"
+                  style="transform: rotate(180deg)"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Bold"
+                  viewBox="0 0 24 24"
+                  width="100%"
+                >
+                  <path
+                    d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                  />
+                </svg>
+              </div>
+              <div id="LArrowPic" class="arrowPic">
+                <svg
+                  fill="white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Bold"
+                  viewBox="0 0 24 24"
+                  width="100%"
+                >
+                  <path
+                    d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"
+                  />
+                </svg>
+              </div>
+
+              <div class="carousel"></div>
+            </div>
+
+            <div class="wrapperTxtPic">
+              <div class="boxTxtPic">
+                <div id="namePic">Tour Eiffeil</div>
+                <div id="cityPic">Paris</div>
+              </div>
+              
 
               <div id="openPlan" class="iconPic">
                 <svg
@@ -34846,6 +34855,49 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           });
         });
       }
+
+
+  function expand(el, { padding } = {}) {
+  // 1. Hauteur réellement affichée à cet instant
+  //    → 0 si fermé, hauteur courante si ouvert (ou en pleine animation)
+  const from = el.getBoundingClientRect().height;
+
+  // 2. Sans transition, passer à l'état final pour mesurer la cible
+  el.style.transition = "none";
+  el.style.maxHeight = "none";
+  if (padding) el.style.padding = padding;
+  const to = el.getBoundingClientRect().height;
+
+  // 3. Rien n'a changé → on fige simplement la bonne valeur, sans animer
+  if (Math.abs(to - from) < 0.5) {
+    el.style.maxHeight = to + "px";
+    el.style.transition = "";
+    return;
+  }
+
+  // 4. Point de départ = hauteur courante (et non 0)
+  el.style.maxHeight = from + "px";
+  if (padding) el.style.padding = from === 0 ? "" : padding; // padding animé seulement à l'ouverture
+  void el.offsetHeight; // reflow synchrone
+
+  // 5. Animation vers la nouvelle hauteur
+  el.style.transition = "";
+  el.style.maxHeight = to + "px";
+  if (padding) el.style.padding = padding;
+}
+
+
+function reduceHeight(el) {
+  // Partir de la hauteur courante en px (pas de "none"), sinon rien ne s'anime
+  el.style.transition = "opacity 0.25s ease";
+  el.style.maxHeight = el.getBoundingClientRect().height + "px";
+  void el.offsetHeight;
+  el.style.transition = "";
+  el.style.maxHeight = "0px";
+  el.style.padding = "";
+}
+
+
 
       let currentIlg = "fr";
 
@@ -67690,6 +67742,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const wrappermBoxImg = getId("wrappermBoxImg");
       const LArrowPic = getId("LArrowPic");
       const RArrowPic = getId("RArrowPic");
+      [LArrowPic,RArrowPic].forEach(el=>el.style.opacity = "0")
       const cadreInfosPic = getId('cadreInfosPic')
       const cadreLicence = getId("cadreLicence");
       const openPlan = getId("openPlan");
@@ -67705,6 +67758,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       let minuteurAuto;
       let mMinuteurAuto;
+
+      let minuteurArrow; // Faire disparaitre les arrow après un certain temps
 
       function bloquerScroll(ms = 700) {
         // remplace scrollend, marche partout
@@ -67796,8 +67851,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       });
       openInfosPic.addEventListener('click',()=>{
         cadreInfosPic.classList.contains('active') ? 
-        (cadreInfosPic.classList.remove('active'), cadreInfosPic.style.maxHeight = "0") : 
-        (cadreInfosPic.classList.add('active'), maxHeight(cadreInfosPic))
+        (cadreInfosPic.classList.remove('active'), reduceHeight(cadreInfosPic)) : 
+        (cadreInfosPic.classList.add('active'), expand(cadreInfosPic, {padding : "0.4rem"}))
 
       })
 
@@ -67811,7 +67866,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         fillLicence(crtSite[index]);
 
         cadreInfosPic.textContent = crtSite[index].description[currentIlg]
-        if(cadreInfosPic.classList.contains('active'))maxHeight(cadreInfosPic)
+        if(cadreInfosPic.classList.contains('active'))cadreInfosPic.style.maxHeight = "100rem"
         const name = crtSite[index].name?.[currentIlg];
         const city = crtSite[index].city?.[currentIlg];
         namePic.textContent = name
@@ -67829,6 +67884,18 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           index !== mCadresImgPic.length - 1,
         );
       }
+
+      function arrowVanish(){
+        ;[LArrowPic,RArrowPic].forEach(el=>el.style.opacity = "")
+        clearTimeout(minuteurArrow)
+        minuteurArrow = setTimeout(()=>{
+        [LArrowPic,RArrowPic].forEach(el=>el.style.opacity = "0")
+        },4000)
+      }
+      [LArrowPic,RArrowPic].forEach(el=>el.addEventListener('pointerdown',()=>arrowVanish()))
+      carouselPic.addEventListener("pointerdown", () => {
+        arrowVanish()
+      })
       carouselPic.addEventListener("scroll", () => {
         if (scrollAutoPic) return;
 
@@ -67894,6 +67961,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       function fillCadrePic(id) {
         if (cadrePic.dataset.crtId === id) return;
+
+        cadreInfosPic.style.transition = "none"
+        cadreInfosPic.classList.remove('active')
+        cadreInfosPic.style.maxHeight= ""
+        requestAnimationFrame(()=>cadreInfosPic.style.transition = "")
+
       // autre background : hsl(225, 14%, 22%);
         let backgrounds = [
           "linear-gradient(160deg, rgb(90, 147, 226), rgb(74, 37, 126))",
