@@ -150,6 +150,44 @@
 
       /*CSS Flemme*/
 
+
+      #cadreDesFlag{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        justify-content: center;
+        align-items: flex-start;
+        box-sizing: border-box;
+        pointer-events: none;
+        z-index: 60;
+        gap: 0.25rem;
+        color : rgba(255,255,255,0.8);
+        border-radius: 0.6rem;
+        background: rgba(17, 23, 79, 1);
+        box-shadow: 0 0 8px rgba(0,0,0,0.4);
+        font-size: 0.85rem;
+        width : calc(100% - 2rem);
+        left : 50%;
+        transform  : translateX(-50%);
+        outline: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 0.6rem;
+        opacity: 0;
+        transition:
+          opacity 0.25s ease;
+        .titleDes{
+          font-size : 0.9rem;
+          color : var(--colorSpan);
+          font-weight : 600;
+          text-transform: uppercase;
+          }
+        span{
+          font-size : 0.85rem;
+        }
+      }
+      #cadreDesFlag.active{
+        opacity : 1;
+      }
+
       /*CSS Maps*/
       .Maps {
         position: fixed;
@@ -35455,6 +35493,7 @@ function reduceHeight(el) {
         polynesie: { fr: "Polynésie", en: "Polynesia" },
 
         // langue cadre
+        lesaviezvous : {fr : "Le saviez-vous ?", en : "Did you know ?"},
         appartenance: { fr: "Appartenance", en: "Part of" },
         nondisponible: { fr: "Non disponible", en: "Not available" },
         voisins: { fr: "Voisins", en: "Neighbors" },
@@ -66001,6 +66040,28 @@ function reduceHeight(el) {
                 wrapper.append(itmB);
               });
             }
+          }
+
+
+          if([drapeauCadre,mDrapeauCadre].includes(el) && currentCountry.id in desFlag){
+            const cadreDesFlag = createEl('div')
+            cadreDesFlag.id = "cadreDesFlag"
+            document.body.append(cadreDesFlag);
+
+            const title = createEl('div')
+            title.className = "titleDes"
+            cadreDesFlag.append(title)
+            title.textContent = D_ilg.lesaviezvous[currentIlg]
+            const spn = createEl('span')
+            spn.textContent = desFlag[currentCountry.id][currentIlg]
+            cadreDesFlag.append(spn)
+          
+
+            const ratio = box.width / box.height;
+            cadreDesFlag.style.top = `calc(30% + 2rem + (100vw - 2rem) / ${ratio})`;
+
+            requestAnimationFrame(() => cadreDesFlag.classList.add('active'))
+
           }
 
           requestAnimationFrame(() => {
