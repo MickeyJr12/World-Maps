@@ -66083,7 +66083,7 @@ function reduceHeight(el) {
               e.preventDefault();
               if (query(".bordersList"))
                 query(".bordersList").classList.remove("active");
-
+              if(getId('cadreDesFlag'))getId('cadreDesFlag').classList.remove('active')
               phonePlay.style.filter = "";
               Maps.style.filter = "";
 
@@ -66108,6 +66108,8 @@ function reduceHeight(el) {
                 el.style.opacity = "";
                 newFlag.remove();
                 if (query(".bordersList")) query(".bordersList").remove();
+              if(getId('cadreDesFlag'))getId('cadreDesFlag').remove()
+
                 tfNewEl = false;
                 setTimeout(() => {
                   el.style.transition = "";
