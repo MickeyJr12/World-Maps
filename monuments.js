@@ -29844,39 +29844,6 @@ const D_pic = {
                 "en": "Langkawi Sky Bridge is a 125-metre curved pedestrian cable-stayed bridge in Malaysia, completed in 2005. The bridge deck is 660 metres above sea level at the peak of Gunung Mat Cincang on Pulau Langkawi, the main island of the Langkawi archipelago in Kedah. The Langkawi Sky Bridge can be reached by first taking the Langkawi Cable Car to the Top Station, where an inclined lift called SkyGlide takes visitors from the Top Station down to the bridge. The bridge was closed in July 2012 for maintenance and upgrading."
             }
         },
-        {
-            "id": "Q4381531",
-            "name": {
-                "fr": "Batu Caves",
-                "en": "Batu Caves Komuter station"
-            },
-            "city": {
-                "id": "Q687629",
-                "fr": "grottes de Batu",
-                "en": "Batu Caves"
-            },
-            "country": {
-                "id": "Q833",
-                "iso": "MY",
-                "fr": "Malaisie",
-                "en": "Malaysia"
-            },
-            "coordinates": {
-                "latitude": 3.237778,
-                "longitude": 101.681111
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Batu_Caves_KTM_Station_outview_%28220714%29_01.jpg/1280px-Batu_Caves_KTM_Station_outview_%28220714%29_01.jpg",
-            "file": "Batu Caves KTM Station outview (220714) 01.jpg",
-            "author": "*angys*",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Batu_Caves_KTM_Station_outview_(220714)_01.jpg",
-            "fame": 8,
-            "description": {
-                "fr": "gare ferroviaire malaisienne",
-                "en": "The Batu Caves Komuter station is a Malaysian commuter rail train station at Batu Caves, Gombak District, Selangor. After redevelopment, the station was reopened in August 2010. The station was from 2010 the northern terminus for the KTM Komuter's Port Klang Line until December 2015 when the Seremban Line routing was changed to terminate at this station instead of Rawang."
-            }
-        }
     ],
     "MZ": [
         {
@@ -50538,39 +50505,6 @@ const D_pic = {
                 "en": "Laguna de Apoyo Nature Reserve is a nature reserve located between the departments of Masaya and Granada in Nicaragua. Two-hundred twenty species of butterflies have been documented in the reserve, including 25 first records for Nicaragua and dozens of mollusks. Lake Apoyo also contains a variety of fish species, including six endemic species of cichlids in the genus Amphilophus. One of these species is the arrow cichlid, described in 1976."
             }
         },
-        {
-            "id": "Q1052130",
-            "name": {
-                "fr": "Monument national canyon de Somoto",
-                "en": "Somoto Canyon National Monument"
-            },
-            "city": {
-                "id": "Q728056",
-                "fr": "département de Madriz",
-                "en": "Madriz Department"
-            },
-            "country": {
-                "id": "Q811",
-                "iso": "NI",
-                "fr": "Nicaragua",
-                "en": "Nicaragua"
-            },
-            "coordinates": {
-                "latitude": 13.455227777777777,
-                "longitude": -86.70378055555555
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Canyon_de_somoto.jpg/1280px-Canyon_de_somoto.jpg",
-            "file": "Canyon de somoto.jpg",
-            "author": "Hobbitschuster",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Canyon_de_somoto.jpg",
-            "fame": 7,
-            "description": {
-                "fr": "canyon protégé et monument national au Nicaragua",
-                "en": "Somoto Canyon National Monument is a canyon located in the Madriz Department of Nicaragua. The Somoto Canyon National Monument protected area covers an area of approximately 170 hectares, of which 125 hectares are in the actual zone of the canyon. The confluence of the Tapacalí and Comali Rivers at the head of the canyon form the Coco River, which flows through the canyon and onward 750 kilometres to the Caribbean Sea. The Somoto Canyon was declared a national monument on November 29, 2006."
-            }
-        }
     ],
     "NL": [
         {

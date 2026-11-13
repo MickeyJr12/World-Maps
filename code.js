@@ -2,8 +2,8 @@
 // 1) COLLE TA LISTE ICI (remplace le contenu de l'objet)
 // ============================================================
 var monuments = {
-    "AT":[{
-        id:"Q877023"
+    "MY":[{
+        id:"Q7969454"
     }]
 }
 

@@ -3201,23 +3201,38 @@
         color: rgba(255, 255, 255, 0.8);
         gap: 0.25rem;
 
-        #cadreDrapeau {
-          display: flex; /* le conteneur se cale sur la taille de l'image */
+         #cadreDrapeau {
+          /* display: flex; 
           width: fit-content;
           max-width: min(75%, calc(100% - 4.2rem * 2));
           height: 7rem;
           margin-inline: auto;
           border-radius: 0.4rem;
-          overflow: hidden; /* c'est lui qui coupe les coins */
+          overflow: hidden; */
+
+          display: flex;
+          justify-content: center;
+          max-height: 7rem;
+          max-width: min(75%, calc(100% - 4.2rem * 2));
         }
 
         #drapeauCadre {
-          display: block;
-          height: 100%; /* force la hauteur : agrandit aussi le petit drapeau du Danemark */
-          width: auto; /* largeur déduite du ratio du SVG */
+         /*  display: block;
+          height: 100%; 
+          width: auto; 
           max-width: 100%;
+          transition: filter 0.2s ease; */
+
+
+          display: block;
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 7rem;
+          border-radius: 0.4rem;
           transition: filter 0.2s ease;
         }
+
 
         #boxImg {
           display: flex;
