@@ -17220,39 +17220,6 @@ const D_pic = {
     ],
     "HN": [
         {
-            "id": "Q752181",
-            "name": {
-                "fr": "réserve de la biosphère Río Plátano",
-                "en": "Río Plátano Biosphere Reserve"
-            },
-            "city": {
-                "id": "Q1967159",
-                "fr": "Mosquitia",
-                "en": "Mosquitia"
-            },
-            "country": {
-                "id": "Q783",
-                "iso": "HN",
-                "fr": "Honduras",
-                "en": "Honduras"
-            },
-            "coordinates": {
-                "latitude": 15.25,
-                "longitude": -84.73
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Rio_platano.jpg/1280px-Rio_platano.jpg",
-            "file": "Rio platano.jpg",
-            "author": "Hjvannes",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rio_platano.jpg",
-            "fame": 46,
-            "description": {
-                "fr": "La réserve de la biosphère Río Plátano est située autour du fleuve Río Plátano, entre les départements de Colón et Gracias a Dios au Honduras. Elle est inscrite en tant que réserve de biosphère par l'UNESCO depuis 1980 et au patrimoine mondial de l'UNESCO depuis 1982. Elle est également inscrite sur la liste du patrimoine mondial en péril depuis 2011 après l'avoir été une première fois de 1996 à 2007. C'est une région de forêts tropicales de faible altitude. La diversité de la faune et de la flore y est très importante, et 2 000 indigènes y vivent encore.",
-                "en": "The Río Plátano Biosphere Reserve is a protected area in the Gracias a Dios department region on the Caribbean coast of Honduras. With a total area of 5,250 square kilometers, most of the reserve runs along the Río Plátano. The reserve has a number of endangered species and some of the largest remnants of tropical forest in Central America. It has been a World Heritage Site and biosphere reserve since 1982. In 2011, UNESCO placed the reserve on the List of World Heritage in Danger."
-            }
-        },
-        {
             "id": "Q1419813",
             "name": {
                 "fr": "Roatán",
