@@ -3765,6 +3765,41 @@ const D_pic = {
         }
     ],
     "AT": [
+        
+        {
+            "id": "Q877023",
+            "name": {
+                "fr": "château de Hohenwerfen",
+                "en": "Hohenwerfen Castle"
+            },
+            "city": {
+                "id": "Q255361",
+                "fr": "Werfen",
+                "en": "Werfen"
+            },
+            "country": {
+                "id": "Q40",
+                "iso": "AT",
+                "fr": "Autriche",
+                "en": "Austria"
+            },
+            "coordinates": {
+                "latitude": 47.48292,
+                "longitude": 13.18851
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Werfen_-_Burg_Hohenwerfen_%281%29.JPG/1280px-Werfen_-_Burg_Hohenwerfen_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Werfen - Burg Hohenwerfen (1).JPG",
+            "author": "C.Stadler/Bwag",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Werfen_-_Burg_Hohenwerfen_(1).JPG",
+            "fame": 26,
+            "description": {
+                "fr": "Le château de Hohenwerfen est un château médiéval autrichien situé à Werfen dans la vallée de Salzach, à environ 40 km au sud de Salzbourg. L'archiduc Eugène d'Autriche-Teschen devient propriétaire de la forteresse en 1898. En 1931, un incendie endommage le château qui est revendu restauré à l'administration de Salzbourg en 1938. Après la Seconde Guerre mondiale, il fut utilisé comme camp d'entraînement de la gendarmerie autrichienne jusqu'en 1987. Agrandi et rénové à plusieurs reprises au cours des siècles, le château est devenu aujourd'hui un parc d'aventure.",
+                "en": "Hohenwerfen Castle is a medieval rock castle, situated at an altitude of 623 metres, on a 155-metre rock pillar overlooking the Austrian market town of Werfen in the Salzach valley, approximately 40 kilometres south of Salzburg. Nevertheless, King Henry had Gebhard expelled in 1077 and the archbishop could not return to Salzburg until 1086, only to die at Hohenwerfen two years later."
+            }
+        },
+    
         {
             "id": "Q131633",
             "name": {
@@ -29142,39 +29177,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q11340179",
-            "name": {
-                "fr": "Majete Wildlife Reserve",
-                "en": "Majete Wildlife Reserve"
-            },
-            "city": {
-                "id": "Q868784",
-                "fr": "Sud",
-                "en": "Southern Region"
-            },
-            "country": {
-                "id": "Q1020",
-                "iso": "MW",
-                "fr": "Malawi",
-                "en": "Malawi"
-            },
-            "coordinates": {
-                "latitude": -15.909666666667,
-                "longitude": 34.74275
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Majete_Wildlife_Reserve_Entrance.jpg/1280px-Majete_Wildlife_Reserve_Entrance.jpg",
-            "file": "Majete Wildlife Reserve Entrance.jpg",
-            "author": "Stonyyy",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Majete_Wildlife_Reserve_Entrance.jpg",
-            "fame": 11,
-            "description": {
-                "fr": "La réserve naturelle de Majete est une réserve située dans le sud-ouest du Malawi et établie comme zone protégée en 1955. Bien que Majete ait le statut de réserve naturelle depuis 1955, elle n’aurait plus été, en 2002, qu’un « sanctuaire pour la faune de nom seulement ». À la fin des années 1970 et durant les années 1980, la production de charbon de bois, l’exploitation forestière et le braconnage décimèrent la faune de la région, ne laissant que quelques animaux sauvages, principalement des antilopes. En mars 2003, African Parks conclut un partenariat public-privé de 25 ans avec le département des Parcs nationaux et de la Faune sauvage du Malawi.",
-                "en": "Majete Wildlife Reserve is a nature reserve in southwestern Malawi, established as a protected area in 1955. Majete has served as a nature reserve since 1955, but reportedly \"was a wildlife sanctuary in name only\" by 2002. During the late 1970s and 1980s, charcoal burning, logging, and poaching decimated the area's wildlife, leaving few game other than antelope. African Parks entered into a 25-year public–private partnership with the Malawi Department of National Parks and Wildlife in March 2003."
-            }
-        },
-        {
             "id": "Q8073720",
             "name": {
                 "fr": "plateau de Zomba",
@@ -29541,6 +29543,76 @@ const D_pic = {
         }
     ],
     "MY": [
+        
+        {
+            "id": "Q7969454",
+            "name": {
+                "fr": "Merdeka 118",
+                "en": "Merdeka 118"
+            },
+            "city": {
+                "id": "Q1865",
+                "fr": "Kuala Lumpur",
+                "en": "Kuala Lumpur"
+            },
+            "country": {
+                "id": "Q833",
+                "iso": "MY",
+                "fr": "Malaisie",
+                "en": "Malaysia"
+            },
+            "coordinates": {
+                "latitude": 3.1416666666666666,
+                "longitude": 101.70072222222223
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Merdeka_Tower_20241022_-_full_2.jpg/1280px-Merdeka_Tower_20241022_-_full_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Merdeka Tower 20241022 - full 2.jpg",
+            "author": "Ahmad Ali Karim",
+            "license": "CC0",
+            "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Merdeka_Tower_20241022_-_full_2.jpg",
+            "fame": 40,
+            "description": {
+                "fr": "Le Merdeka 118, aussi appelé Menara Warisan Merdeka, est un gratte-ciel de Kuala Lumpur, en Malaisie. D'une hauteur de 678,9 m, c'est la deuxième structure la plus haute du monde, après le Burj Khalifa. Conçu par le bureau d'architectes Fender Katsalidis, il comporte 118 étages et domine les grands gratte-ciel de Kuala Lumpur, les célèbres Tours Petronas, qui furent entre 1998 et 2004 les plus hautes du monde avec 452 m flèches comprises, et The Exchange 106 qui s'élève à 445,47 m.",
+                "en": "Merdeka Maybank Tower, formerly known as Merdeka 118, Menara Warisan Merdeka, KL 118, and PNB 118, is a 118-story megatall skyscraper in the Merdeka Precinct, Kuala Lumpur, Malaysia. Following the success of the first tower-running event, the second edition was held on 22 and 23 August 2026, with 8,000 participants from about 78 countries registered, established a record for the largest participation in a tower-running event in the Malaysia Book of Records."
+            }
+        },
+    
+        
+        {
+            "id": "Q687629",
+            "name": {
+                "fr": "grottes de Batu",
+                "en": "Batu Caves"
+            },
+            "city": {
+                "id": "Q2219712",
+                "fr": "Gombak",
+                "en": "Gombak"
+            },
+            "country": {
+                "id": "Q833",
+                "iso": "MY",
+                "fr": "Malaisie",
+                "en": "Malaysia"
+            },
+            "coordinates": {
+                "latitude": 3.2374,
+                "longitude": 101.68390555556
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Batu_Caves_stairs_2022-05.jpg/1280px-Batu_Caves_stairs_2022-05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Batu Caves stairs 2022-05.jpg",
+            "author": "Chainwit.",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Batu_Caves_stairs_2022-05.jpg",
+            "fame": 42,
+            "description": {
+                "fr": "Les grottes de Batu sont un ensemble de grottes, dont certaines ont été aménagées en temples, dans une colline calcaire située à 10 kilomètres au nord de Kuala Lumpur en Malaisie, dans le district de Gombak. En 1920 des escaliers en bois sont construits et remplacés en 1939 par 242 marches en béton. Dans les années 1970, le pèlerinage de Thaipusam rassemblait environ 700 000 pèlerins. En 2006 une statue de Murugan haute de 43 mètres est installée au pied de l'escalier monumental.",
+                "en": "Batu Caves are a series of limestone caves in Gombak, Selangor, Malaysia. Thamboosamy, an Indian Tamil trader, promoted the cave complex as a site of Hindu worship. A Hindu temple dedicated to lord Murugan was completed in 1891 with the annual Thaipusam celebrations commencing in 1892. Further development of religious sites has happened ever since in the region. Housing development around the region began in the late 20th century with non-governmental organisations expressing concerns about the over-development."
+            }
+        },
+    
         {
             "id": "Q83063",
             "name": {
@@ -31408,7 +31480,7 @@ const D_pic = {
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moorea_vue_par_Sentinel_2_(cropped).jpg",
             "fame": 47,
             "description": {
-                "fr": "Moorea — Moʻoreʻa ou Mooreà, prononcé: /mo.ʔo.re.ʔa/ — est une île de Polynésie française qui fait partie des îles du Vent dans l'archipel de la Société. L'île s'est peuplée à la même époque que Tahiti, il y a plus de 1 000 ans, par des navigateurs venus de l'Asie du Sud-Est sur de grandes pirogues doubles. Débarquant à Tahiti en 1767, Samuel Wallis est le premier Européen à l'apercevoir mais ne jugea pas utile de l'explorer. Il l'appelle seulement l'« île du Duc d'York ».",
+                "fr": "Moorea — Moʻoreʻa ou Mooreà,  est une île de Polynésie française qui fait partie des îles du Vent dans l'archipel de la Société. L'île s'est peuplée à la même époque que Tahiti, il y a plus de 1 000 ans, par des navigateurs venus de l'Asie du Sud-Est sur de grandes pirogues doubles. Débarquant à Tahiti en 1767, Samuel Wallis est le premier Européen à l'apercevoir mais ne jugea pas utile de l'explorer. Il l'appelle seulement l'« île du Duc d'York ».",
                 "en": "Moʼorea, also spelled Moorea, is a volcanic island in French Polynesia lying 17 kilometres northwest of Tahiti. The first European to sight the island was Pedro Fernandes de Queirós, in 1606. The first European settlers arrived during the 18th century. The first Europeans to arrive on the island were the Englishmen Samuel Wallis and James Cook. Captain James Cook first landed on Tahiti, where he planned the 1769 Transit of Venus observed from Tahiti and Moʼorea. Cook arrived in October 1777 and obtained supplies on the island."
             }
         },
@@ -53683,3 +53755,43 @@ histoiresDrapeaux(codes).then((r) => {
   }
   console.log(dico);
 });
+
+
+
+const t = {
+    "AT": [
+        {
+            "id": "Q877023",
+            "name": {
+                "fr": "château de Hohenwerfen",
+                "en": "Hohenwerfen Castle"
+            },
+            "city": {
+                "id": "Q255361",
+                "fr": "Werfen",
+                "en": "Werfen"
+            },
+            "country": {
+                "id": "Q40",
+                "iso": "AT",
+                "fr": "Autriche",
+                "en": "Austria"
+            },
+            "coordinates": {
+                "latitude": 47.48292,
+                "longitude": 13.18851
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Werfen_-_Burg_Hohenwerfen_%281%29.JPG/1280px-Werfen_-_Burg_Hohenwerfen_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Werfen - Burg Hohenwerfen (1).JPG",
+            "author": "C.Stadler/Bwag",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Werfen_-_Burg_Hohenwerfen_(1).JPG",
+            "fame": 26,
+            "description": {
+                "fr": "Le château de Hohenwerfen est un château médiéval autrichien situé à Werfen dans la vallée de Salzach, à environ 40 km au sud de Salzbourg. L'archiduc Eugène d'Autriche-Teschen devient propriétaire de la forteresse en 1898. En 1931, un incendie endommage le château qui est revendu restauré à l'administration de Salzbourg en 1938. Après la Seconde Guerre mondiale, il fut utilisé comme camp d'entraînement de la gendarmerie autrichienne jusqu'en 1987. Agrandi et rénové à plusieurs reprises au cours des siècles, le château est devenu aujourd'hui un parc d'aventure.",
+                "en": "Hohenwerfen Castle is a medieval rock castle, situated at an altitude of 623 metres, on a 155-metre rock pillar overlooking the Austrian market town of Werfen in the Salzach valley, approximately 40 kilometres south of Salzburg. Nevertheless, King Henry had Gebhard expelled in 1077 and the archbishop could not return to Salzburg until 1086, only to die at Hohenwerfen two years later."
+            }
+        }
+    ]
+}
