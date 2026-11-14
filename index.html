@@ -2542,6 +2542,7 @@
       #cadrePic {
         display: flex;
         flex-direction: column;
+        touch-action: none;
         align-items: center;
         justify-content: flex-start;
         position: fixed;
@@ -2554,7 +2555,8 @@
         width :100%;
         min-height: 20rem;
 
-        top: 105%;
+        top : calc(env(safe-area-inset-top) + 1rem);
+        transform : translateY(calc(100% + 1rem));
         bottom : 0;
         padding: 0.5rem;
         padding-bottom : calc(env(safe-area-inset-bottom) + 0.6rem);
@@ -2562,7 +2564,7 @@
         outline: 1px solid rgba(255, 255, 255, 0.15);
         pointer-events: none;
         transition:
-          top 0.4s ease,
+          transform 0.4s ease,
           opacity 0.2s ease;
         .carousel {
           display: flex;
@@ -2577,6 +2579,7 @@
         }
         .slide {
           display: flex;
+          touch-action: pan-x pan-y; /* scroll vertical de la slide + swipe horizontal du carousel */
           justify-content : flex-start;
           padding-top: 0.25rem;
           padding-bottom: 0.1rem;
@@ -2584,8 +2587,7 @@
           box-sizing : border-box;
           scrollbar-width: none;
           height: auto;
-          padding : 0;
-          padding-bottom : 0.4rem;
+          padding : 0.4rem 0;
           max-height: 100%;
           width: 100%;
           flex: 0 0 100%;
@@ -2595,10 +2597,29 @@
           svg {
             height: 1.75rem;
           }
+
+          
+        --fade: 0.4rem; /* hauteur du dégradé */
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          transparent 0,
+          black var(--fade),
+          black calc(100% - var(--fade)),
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          transparent 0,
+          black var(--fade),
+          black calc(100% - var(--fade)),
+          transparent 100%
+        );
+      
         }
         .slide > * { flex-shrink: 0; }
         .wrapperTitle {
           display: flex;
+          touch-action: none;
           flex-shrink :0;
           align-items: center;
           justify-content: space-between;
@@ -2653,7 +2674,7 @@
           box-shadow : 0 0 5px rgba(0,0,0,0.4);
           color : rgba(255,255,255,0.75);
           margin-top : -0.4rem;
-          font-size : 0.8rem;
+          font-size : 0.9rem;
           width : 100%;
           background : rgba(255,255,255,0.05);
           transition : max-height 0.25s ease, padding 0.25s ease, outline-color 0.25s ease, opacity 0.25s ease;
@@ -2665,6 +2686,7 @@
 
         #wrappermBoxImg {
           display: flex;
+          touch-action: pan-x;       /* défilement horizontal des miniatures */
           flex-shrink : 0;
           align-items: center;
           width: 100%;
@@ -2945,7 +2967,8 @@
         }
       }
       #cadrePic.active {
-        top : calc(env(safe-area-inset-top) + 1rem);
+        /* top : calc(env(safe-area-inset-top) + 1rem); */
+        transform : none;
         pointer-events: all;
       }
       #wrapperCarouselPic {
@@ -11891,19 +11914,6 @@
 
     <!--HTML Home-->
     <div id="cadreMail">
-      <!-- <div class="lineMove" id="lineMail" style="margin: 0">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          id="Layer_1"
-          data-name="Layer 1"
-          viewBox="0 11 24 3"
-        >
-          <path
-            d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
-          />
-        </svg>
-      </div> -->
-
       <div id="screenThanks" class="screenThanksClass">
         <div class="iconThank">
           <svg
@@ -23670,6 +23680,20 @@
        <!-- HTML Pictures -->
           <div id="cachePic" class="cache"></div>
           <div id="cadrePic">
+            <div class="lineMove" id="linePic" style="margin: 0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="Layer_1"
+          data-name="Layer 1"
+          viewBox="0 11 24 3"
+          style="overflow : visible; margin-bottom : -0.4rem"
+        >
+          <path
+            d="M22.5,14H1.5c-.83,0-1.5-.67-1.5-1.5s.67-1.5,1.5-1.5H22.5c.83,0,1.5,.67,1.5,1.5s-.67,1.5-1.5,1.5Z"
+            fill = "rgba(255,255,255,0.25)"
+          />
+        </svg>
+      </div>
             <div class="wrapperTitle">
               <div style="display : flex; align-items : center; gap : 0.75rem;">
               <span class="title"
@@ -67810,6 +67834,7 @@ function reduceHeight(el) {
 
       // Script pictures
       const cadrePic = getId("cadrePic");
+      const linePic = getId("linePic");
       const openPic = getId("openPic");
       const crossPic = getId("crossPic");
       const cachePic = getId("cachePic");
@@ -67868,7 +67893,8 @@ function reduceHeight(el) {
 
       openPic.addEventListener("click", () => {
         cadrePic.classList.add("active");
-          fillCadrePic(currentCountry.id);
+        fillCadrePic(currentCountry.id);
+        contentCadre.style.transform = "scale(0.95)";
         hapticFeedback("medium");
       });
 
@@ -67926,6 +67952,65 @@ function reduceHeight(el) {
       //   (cadreInfosPic.classList.add('active'), expand(cadreInfosPic, {padding : "0.4rem"}))
 
       // })
+
+      // Move Pic
+      let movePic = false;
+let startYPic = 0;   // clientY au pointerdown
+let dyPic = 0;       // décalage actuel en px (>= 0)
+
+cadrePic.addEventListener("pointerdown", (e) => {
+  if (tfNewEl) return;
+  // on ne démarre le drag que si le doigt est au-dessus du carousel
+  if (e.clientY > carouselPic.getBoundingClientRect().top) return;
+
+  cadrePic.setPointerCapture(e.pointerId);
+  movePic = true;
+  startYPic = e.clientY;
+  dyPic = 0;
+
+  // on fige la position ouverte en inline, sans transition
+  cadrePic.style.transition = "none";
+  cadrePic.style.transform = "translateY(0px)";
+  cadrePic.classList.remove("active"); // sinon .active { transform: none } est écrasé de toute façon par l'inline, mais on retire pointer-events: all
+  contentCadre.style.transition = "none";
+  cacheStat.style.transition = "none";
+});
+
+document.addEventListener("pointermove", (e) => {
+  if (!movePic) return;
+
+  dyPic = Math.max(0, e.clientY - startYPic); // on ne peut pas monter au-dessus de la position ouverte
+  cadrePic.style.transform = `translateY(${dyPic}px)`;
+
+  const top = cadrePic.getBoundingClientRect().top; // inclut le transform
+  contentCadre.style.transform = `scale(${
+    0.95 + 0.05 * Math.min(1, Math.max(0,
+      (top - window.innerHeight * 0.2) / (window.innerHeight * 0.5)))
+  })`;
+  cacheStat.style.opacity =
+    1 - Math.max(0, Math.min(top / (window.innerHeight * 0.5), 1));
+});
+
+document.addEventListener("pointerup", () => {
+  if (!movePic) return;
+  movePic = false;
+
+  cadrePic.style.transition = "";   // réactive la transition CSS
+  const top = cadrePic.getBoundingClientRect().top;
+
+  if (top < window.innerHeight * 0.15 && dyPic <= 20) {
+    // retour à la position ouverte
+    cadrePic.style.transform = "";  // laisse .active { transform: none } reprendre la main
+    contentCadre.style.transition = "";
+    cacheStat.style.opacity = "1";
+    cadrePic.classList.add("active");
+  } else {
+    cadrePic.style.transform = ""; // la fermeture remet le transform CSS par défaut
+    crossStat.click();
+  }
+});
+
+      // Fin Move Pic
 
       function fillInfosPic(id, index) {
         indexCrtPic.textContent = index + 1;
