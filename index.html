@@ -2547,7 +2547,8 @@
         justify-content: flex-start;
         position: fixed;
         z-index: 150;
-        border-radius: 1rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
         box-sizing: border-box;
         background: rgba(17, 23, 79, 1);
         gap: 0.4rem;
@@ -68313,6 +68314,12 @@ document.addEventListener("pointerup", () => {
       cadreInfosPic.className = "cadreInfosPic active"
       cadreInfosPic.textContent = s.description[currentIlg]
       slide.append(wrapperTxtPic,cadreInfosPic)
+
+      slide.addEventListener('scroll',()=>{
+        if(jaugeScroll(slide, slide.parentElement) !== 1)return
+        ;[LArrowPic,RArrowPic].forEach(el=>el.style.opacity = "0")
+      })
+
 
 
           mBoxImg.addEventListener("click", () => {
