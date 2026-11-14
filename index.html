@@ -67699,6 +67699,7 @@ function reduceHeight(el) {
               .forEach((el) => {
                 el.dataset.liste = el.dataset[itm.dataset.liststat];
                 el.dataset.unity = itm.dataset.unitylabel;
+                
 
                 if (unity === "pct") {
                   const defTot = el.querySelector(".defTot");
@@ -68055,7 +68056,7 @@ document.addEventListener("pointerup", () => {
         clearTimeout(minuteurArrow)
         minuteurArrow = setTimeout(()=>{
         [LArrowPic,RArrowPic].forEach(el=>el.style.opacity = "0")
-        },4000)
+        },3000)
       }
       [LArrowPic,RArrowPic].forEach(el=>el.addEventListener('pointerdown',()=>arrowVanish()))
       carouselPic.addEventListener("scroll", () => {

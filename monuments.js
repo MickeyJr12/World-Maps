@@ -8858,38 +8858,6 @@ const D_pic = {
                 "en": "Lake Tele is a freshwater lake in Epena District, Republic of the Congo. Lake Tele is the best known home of the Mokèlé-mbèmbé, and is also supposedly the spot where pygmies killed and ate one of the creatures, around 1959."
             }
         },
-        {
-            "id": "Q2887058",
-            "name": {
-                "fr": "basilique Sainte-Anne-du-Congo de Brazzaville",
-                "en": "basilique Sainte-Anne-du-Congo de Brazzaville"
-            },
-            "city": {
-                "id": "Q3844",
-                "fr": "Brazzaville",
-                "en": "Brazzaville"
-            },
-            "country": {
-                "id": "Q971",
-                "iso": "CG",
-                "fr": "République du Congo",
-                "en": "Republic of the Congo"
-            },
-            "coordinates": {
-                "latitude": -4.268455,
-                "longitude": 15.284511
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/WPWPCG_08.jpg/1280px-WPWPCG_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "WPWPCG 08.jpg",
-            "author": "NGOULOU BATALA Ryddhel",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "fame": 5,
-            "description": {
-                "fr": "La basilique Sainte-Anne-du-Congo est une basilique mineure située à Brazzaville, capitale du Congo. Il engage la jeune reporter Joëlle Danterne afin qu'elle filme et écrive le reportage de cette aventure architecturale et humaine hors du commun. Montré dans les paroisses parisiennes, le film Notre-Dame du Congo rapporte de nombreux dons permettant la poursuite du chantier. Le 26 mai 1946, jour de l’Ascension, Sainte-Anne d’Auray adopte solennellement Saint-Anne du Congo.",
-                "en": "The Basilica of Sainte-Anne-du-Congo is a monumental Catholic church in Brazzaville, Republic of the Congo. Denis Sassou Nguesso, President of the Republic of the Congo, attended a Requiem Mass at the church on 25 April 2025 rather than attending the funeral of Pope Francis at the Vatican. Other officials in attendance at the mass included First Lady Antoinette Sassou Nguesso, Prime Minister Anatole Collinet Makosso, President of the Senate Pierre Ngolo, the President of the National Assembly Isidore Mvouba."
-            }
-        }
     ],
     "CH": [
         {
@@ -43901,39 +43869,6 @@ const D_pic = {
             "description": {
                 "fr": "La Maison-Blanche est la résidence officielle et le bureau du président des États-Unis. Un point important de cette transformation fut sa forme ovale, rappelant les deux pièces ovales de la résidence exécutive et qui, étant donné sa forme, fut surnommé le « Bureau ovale ». Le plan ovale était également un hommage au bureau du premier président américain George Washington à Philadelphie et du symbole de démocratie de l'époque. Le 24 décembre 1929, la veille de Noël, cette aile fut en partie détruite par un incendie.",
                 "en": "The White House is the official residence and workplace of the president of the United States. Following his inauguration on April 30, 1789, President George Washington occupied two private houses in New York City, which served as the nation's first executive mansion. He lived at the first, Walter Franklin House, which was owned by Treasury Commissioner Samuel Osgood, at 3 Cherry Street, through late February 1790. The executive mansion moved to the larger quarters at Alexander Macomb House at 39–41 Broadway, where Washington stayed with his wife Martha and a small staff until August 1790."
-            }
-        },
-        {
-            "id": "Q34221",
-            "name": {
-                "fr": "chutes du Niagara",
-                "en": "Niagara Falls"
-            },
-            "city": {
-                "id": "Q1384",
-                "fr": "New York",
-                "en": "New York"
-            },
-            "country": {
-                "id": "Q30",
-                "iso": "US",
-                "fr": "États-Unis",
-                "en": "United States"
-            },
-            "coordinates": {
-                "latitude": 43.08,
-                "longitude": -79.071
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Niagara_Falls_USA_Canada_from_Skylon_Tower_on_2002-05-28%2C_full_size.jpg/1280px-Niagara_Falls_USA_Canada_from_Skylon_Tower_on_2002-05-28%2C_full_size.jpg",
-            "file": "Niagara Falls USA Canada from Skylon Tower on 2002-05-28, full size.jpg",
-            "author": "Robert F. Tobler",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Niagara_Falls_USA_Canada_from_Skylon_Tower_on_2002-05-28,_full_size.jpg",
-            "fame": 135,
-            "description": {
-                "fr": "Les chutes du Niagara ou chutes Niagara, sont un ensemble de trois chutes d'eau situées sur la rivière Niagara qui relie le lac Érié au lac Ontario, dans l'est de l'Amérique du Nord, à la frontière entre le Canada et les États-Unis: les « chutes du Fer-à-Cheval » ou « chutes canadiennes »; les « chutes américaines »; les « chutes du Voile de la Mariée ». La première voûte en acier construite à côté des chutes fut achevée en 1897.",
-                "en": "Niagara Falls is a group of three waterfalls at the southern end of Niagara Gorge, spanning the border between the Canadian province of Ontario and the U.S. state of New York. The only recorded freeze-up of the river and falls was caused by an ice jam on March 29, 1848. No water fell for as much as 40 hours. Waterwheels stopped, and mills and factories shut down for having no power. In 1912, American Falls was completely frozen, but the other two falls kept flowing. Although the falls commonly ice up most winters, the river and the falls do not freeze completely."
             }
         },
         {
