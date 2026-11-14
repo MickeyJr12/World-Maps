@@ -68058,7 +68058,7 @@ document.addEventListener("pointerup", () => {
         },4000)
       }
       [LArrowPic,RArrowPic].forEach(el=>el.addEventListener('pointerdown',()=>arrowVanish()))
-      carouselPic.addEventListener("pointerdown", () => {
+      carouselPic.addEventListener("scroll", () => {
         arrowVanish()
       })
       carouselPic.addEventListener("scroll", () => {
