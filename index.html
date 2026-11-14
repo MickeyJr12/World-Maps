@@ -5203,13 +5203,23 @@
           margin-bottom 0.1s ease;
         background: #38c688b8;
         background: rgba(255, 140, 24, 0.85);
-
         gap: 0.5rem;
         padding: 0;
         outline: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 50rem;
         font-size: 0.9rem;
         transition: transform 0.2s ease;
+        svg{
+          flex-shrink : 0;
+        }
+        span{
+          min-width: 0;             /* indispensable : permet au span de rétrécir sous la taille de son texte */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+        }
       }
       #btnSub:active {
         transform: scale(0.96);
@@ -65892,8 +65902,8 @@ function reduceHeight(el) {
           currentCountry = country;
           currentCountry.id in L_cSub && !L_config.m
             ? (btnSub.classList.add("viewSub"),
-              (btnSub.innerHTML = L_cSub[currentCountry.id].icon),
-              btnSub.append(L_cSub[currentCountry.id].t))
+            setBadge(btnSub,L_cSub[currentCountry.id].icon,L_cSub[currentCountry.id].t))
+
             : btnSub.classList.remove("viewSub");
           L_subNP.includes(currentCountry.id)
             ? btnSub.classList.remove("lockP")
@@ -65939,6 +65949,15 @@ function reduceHeight(el) {
       const voirPlus = document.getElementById("viewMore");
       const btnSub = document.getElementById("btnSub");
       let viewSub = false;
+
+      function setBadge(el, svgHTML, text) {
+  el.innerHTML = svgHTML;               // le svg
+  const span = document.createElement("span");
+  span.className = "txtBadge";
+  span.textContent = text;              // textContent : pas d'injection HTML
+  el.append(span);
+}
+      
 
       const cadre = document.getElementById("cadre");
       const contentCadre = document.getElementById("contentCadre");
@@ -94598,11 +94617,11 @@ document.addEventListener("pointerup", () => {
           return;
         }
 
+
         currentCountry = country;
         currentCountry.id in L_cSub && !L_config.m
           ? (btnSub.classList.add("viewSub"),
-            (btnSub.innerHTML = L_cSub[currentCountry.id].icon),
-            btnSub.append(L_cSub[currentCountry.id].t))
+            setBadge(btnSub,L_cSub[currentCountry.id].icon,L_cSub[currentCountry.id].t))
           : btnSub.classList.remove("viewSub");
         L_subNP.includes(currentCountry.id)
           ? btnSub.classList.remove("lockP")
@@ -95370,8 +95389,7 @@ document.addEventListener("pointerup", () => {
       function countryClick(id, name, element) {
         id in L_cSub && !L_config.m
           ? (btnSub.classList.add("viewSub"),
-            (btnSub.innerHTML = L_cSub[id].icon),
-            btnSub.append(L_cSub[id].t))
+            setBadge(btnSub,L_cSub[id].icon,L_cSub[id].t))
           : btnSub.classList.remove("viewSub");
         L_subNP.includes(id)
           ? btnSub.classList.remove("lockP")
