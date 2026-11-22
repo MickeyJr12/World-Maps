@@ -11888,39 +11888,6 @@ const D_pic = {
                 "en": "Legoland Billund Resort, the original Legoland park, opened on 7 June 1968 in Billund, Denmark. The park became an instant success, with 625,000 visitors in its first abbreviated season after opening on 7 June 1968. Over the years, Legoland Billund has added many original models and rides. The park, which has now been expanded to cover 45 acres, is divided into nine themed areas, including Duplo Land, Imagination Zone, LEGOREDO Town, Adventure Land, Lego City, Knight's Kingdom, Mini Land, Pirate Land, and Polar Land."
             }
         },
-        {
-            "id": "Q189358",
-            "name": {
-                "fr": "château de Kronborg",
-                "en": "Kronborg Castle"
-            },
-            "city": {
-                "id": "Q511546",
-                "fr": "Helsingør",
-                "en": "Helsingør Municipality"
-            },
-            "country": {
-                "id": "Q35",
-                "iso": "DK",
-                "fr": "Danemark",
-                "en": "Denmark"
-            },
-            "coordinates": {
-                "latitude": 56.038611111111,
-                "longitude": 12.621944444444
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/KronborgCastle_HCS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-            "file": "KronborgCastle HCS.jpg",
-            "author": "H.C. Steensen",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:KronborgCastle_HCS.jpg",
-            "fame": 55,
-            "description": {
-                "fr": "Le château de Kronborg est un château situé près de la ville d'Elseneur au Danemark, sur un point stratégique face à la Suède. Il a été inscrit en 2000 sur la liste du patrimoine mondial. Ce château de la Renaissance, dont la construction a débuté en 1574 à partir d'une forteresse médiévale, a joué un rôle important dans l'histoire de l'Europe du Nord entre les XVIe et XVIIIe siècles. Avec la forteresse d'Helsingborg — dont il ne reste que la tour Kärnan —, située de l’autre côté de l’Øresund, il permettait aux Danois de contrôler l’entrée de la mer Baltique.",
-                "en": "Kronborg is a castle and historical stronghold in the town of Helsingør, Denmark. Immortalised as Elsinore in William Shakespeare's play Hamlet, Kronborg is one of the most important Renaissance castles in Northern Europe. It was inscribed on the UNESCO World Heritage List in 2000. The castle is situated on the extreme northeastern tip of the island of Zealand at the narrowest point of the Øresund, the sound between present Denmark and the provinces of present Sweden. The latter were under Danish control at the time the castle was built."
-            }
-        }
     ],
     "DM": [
         {
@@ -53631,3 +53598,6 @@ const t = {
         }
     ]
 }
+
+
+
