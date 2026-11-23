@@ -9161,6 +9161,40 @@ const D_pic = {
         }
     ],
     "CL": [
+        
+        {
+            "id": "Q14452",
+            "name": {
+                "fr": "île de Pâques",
+                "en": "Easter Island"
+            },
+            "city": {
+                "id": "Q9009773",
+                "fr": "Isla de Pascua",
+                "en": "Isla de Pascua"
+            },
+            "country": {
+                "id": "Q833",
+                "iso": "MY",
+                "fr": "Malaisie",
+                "en": "Malaysia"
+            },
+            "coordinates": {
+                "latitude": -27.12,
+                "longitude": -109.35
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Easter_Island_5.jpg/1280px-Easter_Island_5.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Easter Island 5.jpg",
+            "author": "kallerna",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Easter_Island_5.jpg",
+            "fame": 164,
+            "description": {
+                "fr": "L'île de Pâques est une île polynésienne appartenant au Chili, de forme triangulaire, d'environ 24 km de longueur et qui couvre 164 km2, célèbre pour ses statues monumentales et son écriture océanienne unique. Quand les premiers Européens débarquent sur l'île au XVIIIe siècle, la forêt a disparu depuis plus d'un siècle et la population n'est plus que d'environ 3 000 personnes.",
+                "en": "Easter Island is an island and special territory of Chile in the southeastern Pacific Ocean, at the southeasternmost point of the Polynesian Triangle in Oceania. Aku-aku, the guardians of the sacred family caves. Moai-kava-kava a ghost man of the Hanau epe."
+            }
+        },
         {
             "id": "Q901646",
             "name": {
@@ -22148,39 +22182,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q271901",
-            "name": {
-                "fr": "Banaba",
-                "en": "Banaba Island"
-            },
-            "city": {
-                "id": "Q271876",
-                "fr": "îles Gilbert",
-                "en": "Gilbert Islands"
-            },
-            "country": {
-                "id": "Q710",
-                "iso": "KI",
-                "fr": "Kiribati",
-                "en": "Kiribati"
-            },
-            "coordinates": {
-                "latitude": -0.85944444444444,
-                "longitude": 169.53694444444
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/19_Map_of_Banaba%2C_Kiribati.jpg",
-            "file": "19 Map of Banaba, Kiribati.jpg",
-            "author": "Government of Kiribati",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:19_Map_of_Banaba,_Kiribati.jpg",
-            "fame": 49,
-            "description": {
-                "fr": "Banaba ou île Océan, en anglais Banaba et Ocean Island, est le seul atoll surélevé des Kiribati, légèrement à l'écart de l'archipel principal des îles Gilbert et plus proche de Nauru. Ces étrangers quittent cependant l'île à la suite d'importantes périodes de sécheresse dans les années 1870. Lorsque Albert Ellis se rend sur l'île en 1900, il n'y croise aucun Européen, bien qu'il constate que certains Banabans sont visiblement métissés.",
-                "en": "Banaba is an island of Kiribati in the Pacific Ocean. The first known sighting of Banaba by Europeans occurred on 3 January 1801. Captain Jared Gardner of the American vessel Diana sighted the island. Then in 1804, Captain John Mertho of the convict transport and merchant ship Ocean sighted the island and named it after his vessel. Whaling vessels often visited the island in the nineteenth century for water and wood. The first recorded visit was by the Arabella in March 1832."
-            }
-        },
-        {
             "id": "Q304887",
             "name": {
                 "fr": "Abaiang",
@@ -31320,6 +31321,73 @@ const D_pic = {
         }
     ],
     "PF": [
+        
+        {
+            "id": "Q130800",
+            "name": {
+                "fr": "Papeete",
+                "en": "Papeete"
+            },
+            "city": {
+                "id": "Q140298",
+                "fr": "îles du Vent",
+                "en": "Windward Islands"
+            },
+            "country": {
+                "id": "Q833",
+                "iso": "MY",
+                "fr": "Malaisie",
+                "en": "Malaysia"
+            },
+            "coordinates": {
+                "latitude": -17.539722222222,
+                "longitude": -149.56888888889
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Papeete_-_Marina_Taina.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "Papeete - Marina Taina.JPG",
+            "author": "Remi Jouan",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Papeete_-_Marina_Taina.JPG",
+            "fame": 105,
+            "description": {
+                "fr": "Papeete est une commune et le chef-lieu de la Polynésie française, situé sur l'île de Tahiti. Papeete est dotée du statut de commune de plein exercice en 1890; jusqu'en 1945, c'est la seule existant dans les Établissements français d'Océanie. Papeete a été bombardée le 22 septembre 1914 par les croiseurs cuirassés allemands Scharnhorst et Gneisenau lors de la bataille de Papeete pendant la Première Guerre mondiale.",
+                "en": "Papeete is the capital city of French Polynesia, an overseas collectivity of the French Republic located in the Pacific Ocean. In 1983, The Church of Jesus Christ of Latter-day Saints built the Papeʻete Tahiti Temple here because of its large number of members in the region. On 5 September 1995 the government of Jacques Chirac conducted the first of a series of nuclear test detonations off the shores of Moruroa."
+            }
+        },
+        {
+            "id": "Q183113",
+            "name": {
+                "fr": "Bora-Bora",
+                "en": "Bora Bora"
+            },
+            "city": {
+                "id": "Q602937",
+                "fr": "Bora-Bora",
+                "en": "Bora-Bora"
+            },
+            "country": {
+                "id": "Q833",
+                "iso": "MY",
+                "fr": "Malaisie",
+                "en": "Malaysia"
+            },
+            "coordinates": {
+                "latitude": -16.498,
+                "longitude": -151.736
+            },
+            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Bora_Bora_%2816542797633%29.jpg/1280px-Bora_Bora_%2816542797633%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "file": "Bora Bora (16542797633).jpg",
+            "author": "The TerraMar Project",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bora_Bora_(16542797633).jpg",
+            "fame": 78,
+            "description": {
+                "fr": "Bora-Bora est une des îles Sous-le-Vent de l'archipel de la Société en Polynésie française. L'île portait autrefois le nom de Vavau. Elle fut découverte par des navigateurs Austronésiens au cours du premier millénaire après J.C. La première mention de l’île en Europe vient du navigateur Jakob Roggeveen en 1722; Cook y débarqua en 1769 et a rapporté qu'elle était nommée Bora-Bora, nom qui signifie peut-être « né en premier », allusion au fait que le dieu Taʻaroa l'aurait créée immédiatement après Raʻiātea.",
+                "en": "Bora Bora is a French island group in the Leeward Islands, comprising the western part of the Society Islands of French Polynesia, an overseas collectivity of the French Republic in the South Pacific. James Cook sighted the island on 29 July 1769, with the help of a Tahitian navigator, Tupaia. The London Missionary Society arrived in 1820 and founded a Protestant church in 1890. Bora Bora was an independent kingdom until 1888, when the French annexed the island as a colony and forced its last queen, Teriimaevarua III, to abdicate."
+            }
+        },
         {
             "id": "Q673400",
             "name": {
@@ -38517,72 +38585,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q186169",
-            "name": {
-                "fr": "Fakr ad-Din Mosque",
-                "en": "Fakr ad-Din Mosque"
-            },
-            "city": {
-                "id": "Q2449",
-                "fr": "Mogadiscio",
-                "en": "Mogadishu"
-            },
-            "country": {
-                "id": "Q1045",
-                "iso": "SO",
-                "fr": "Somalie",
-                "en": "Somalia"
-            },
-            "coordinates": {
-                "latitude": 2.0334652554045873,
-                "longitude": 45.3429480952029
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/9/98/Fakr_Ud_Din_Mosque.jpg",
-            "file": "Fakr Ud Din Mosque.jpg",
-            "author": null,
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fakr_Ud_Din_Mosque.jpg",
-            "fame": 15,
-            "description": {
-                "fr": "bâtiment en Afrique",
-                "en": "The Fakhr al-Din Mosque is a mosque located in the historical Hamar Weyne district of Mogadishu, Banaadir, Somalia."
-            }
-        },
-        {
-            "id": "Q15186773",
-            "name": {
-                "fr": "Arba'a Rukun Mosque",
-                "en": "Arba'a Rukun Mosque"
-            },
-            "city": {
-                "id": "Q2449",
-                "fr": "Mogadiscio",
-                "en": "Mogadishu"
-            },
-            "country": {
-                "id": "Q1045",
-                "iso": "SO",
-                "fr": "Somalie",
-                "en": "Somalia"
-            },
-            "coordinates": {
-                "latitude": 2.0351,
-                "longitude": 45.3425
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Mogadishu1936.jpg",
-            "file": "Mogadishu1936.jpg",
-            "author": "Auteur inconnu",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mogadishu1936.jpg",
-            "fame": 14,
-            "description": {
-                "fr": "bâtiment en Afrique",
-                "en": "The Arba'a Rukun Mosque, also known as Arba Rucun, is a mosque in the Shangani medieval district of Mogadishu, Banaadir, Somalia."
-            }
-        },
-        {
             "id": "Q2033310",
             "name": {
                 "fr": "Musée national de Somalie",
@@ -40129,39 +40131,6 @@ const D_pic = {
             "description": {
                 "fr": "Le lac Tchad est un grand lac endoréique d'eau douce situé à la frontière entre le Niger, le Nigeria, le Cameroun et le Tchad. Dans les années 1960, il couvrait un secteur de plus de 26 000 km2. En 2000, il était tombé à moins de 1 500 km2. Le déficit de pluviosité combiné à une plus grande utilisation des eaux du lac et des rivières pour l'irrigation – la population du bassin a doublé dans l'intervalle, et l'irrigation a quadruplé entre 1983 et 1994 – expliquent ce recul.",
                 "en": "Lake Chad is an endorheic freshwater lake located at the junction of four countries: Nigeria, Niger, Chad, and Cameroon, in western and central Africa, with a catchment area in excess of 1,000,000 km2. One of the oldest domesticated Pearl millet in West Africa was found in the Chad Basin, charred together with wild grasses, and their era can be traced back to 800–1000 cal BC. Permanent villages were established to the south of the lake by 500 BC, and major archaeological discoveries include the Sao civilization."
-            }
-        },
-        {
-            "id": "Q309104",
-            "name": {
-                "fr": "massif du Tibesti",
-                "en": "Tibesti Mountains"
-            },
-            "city": {
-                "id": "Q657",
-                "fr": "Tchad",
-                "en": "Chad"
-            },
-            "country": {
-                "id": "Q657",
-                "iso": "TD",
-                "fr": "Tchad",
-                "en": "Chad"
-            },
-            "coordinates": {
-                "latitude": 20.780841937897584,
-                "longitude": 18.049828259697378
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Emi_Koussi-Tibesti_Mountains-Chad.jpg",
-            "file": "Emi Koussi-Tibesti Mountains-Chad.jpg",
-            "author": null,
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Emi_Koussi-Tibesti_Mountains-Chad.jpg",
-            "fame": 48,
-            "description": {
-                "fr": "Le massif du Tibesti est un massif montagneux du Sahara central, situé principalement à l'extrême Nord du Tchad, avec une petite extension dans le Sud de la Libye. En raison de son isolement et de la situation géopolitique, le massif du Tibesti est longtemps resté inexploré par les scientifiques. L'Allemand Gustav Nachtigal, envoyé par Otto von Bismarck, est le premier européen à étudier – avec beaucoup de difficultés – le massif du Tibesti en 1869. Avant lui, un Américain et deux missionnaires auraient tenté de pénétrer dans le massif mais auraient été exécutés par un guerrier toubou.",
-                "en": "The Tibesti Mountains are a mountain range in the central Sahara, primarily located in the extreme north of Chad, with a small portion located in southern Libya. In 1963, an expedition under the Italian Guido Monzino ascended a peak in the massif of the Aiguilles of Sissé which, despite rising only 800 ft above ground level, proved \"very difficult\". The Englishman Eamon \"Ginge\" Fullen scaled Bikku Bitti, the highest peak in Libya at 2,266 m, in 2005, capping a successful Guinness World Records attempt."
             }
         },
         {
@@ -43275,39 +43244,6 @@ const D_pic = {
                 "en": "Ngorongoro Conservation Area is a protected area and a UNESCO World Heritage Site located in Ngorongoro District, 180 km west of Arusha City in Arusha Region, within the Crater Highlands geological area of northeastern Tanzania. The area is named after Ngorongoro Crater, a large volcanic caldera within the area. The Ngorongoro Conservation Area Authority, which administers the Ngorongoro Conservation Area, is an arm of the Tanzanian government and its boundaries follow the boundary of the Ngorongoro District in the Arusha Region."
             }
         },
-        {
-            "id": "Q15726282",
-            "name": {
-                "fr": "Ruines de Kilwa Kisiwani et de Songo Mnara",
-                "en": "Ruins of Kilwa Kisiwani and Ruins of Songo Mnara"
-            },
-            "city": {
-                "id": "Q2221197",
-                "fr": "district de Kilwa",
-                "en": "Kilwa District"
-            },
-            "country": {
-                "id": "Q924",
-                "iso": "TZ",
-                "fr": "Tanzanie",
-                "en": "Tanzania"
-            },
-            "coordinates": {
-                "latitude": -8.95777778,
-                "longitude": 39.52277778
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/City_of_Kilwa%2C_1572.jpg/1280px-City_of_Kilwa%2C_1572.jpg",
-            "file": "City of Kilwa, 1572.jpg",
-            "author": "Georg Braun and Franz Hogenberg",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:City_of_Kilwa,_1572.jpg",
-            "fame": 5,
-            "description": {
-                "fr": "site du patrimoine mondial en Tanzanie",
-                "en": "World Heritage site in Tanzania"
-            }
-        }
     ],
     "UA": [
         {
@@ -53558,46 +53494,4 @@ histoiresDrapeaux(codes).then((r) => {
   }
   console.log(dico);
 });
-
-
-
-const t = {
-    "AT": [
-        {
-            "id": "Q877023",
-            "name": {
-                "fr": "château de Hohenwerfen",
-                "en": "Hohenwerfen Castle"
-            },
-            "city": {
-                "id": "Q255361",
-                "fr": "Werfen",
-                "en": "Werfen"
-            },
-            "country": {
-                "id": "Q40",
-                "iso": "AT",
-                "fr": "Autriche",
-                "en": "Austria"
-            },
-            "coordinates": {
-                "latitude": 47.48292,
-                "longitude": 13.18851
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Werfen_-_Burg_Hohenwerfen_%281%29.JPG/1280px-Werfen_-_Burg_Hohenwerfen_%281%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Werfen - Burg Hohenwerfen (1).JPG",
-            "author": "C.Stadler/Bwag",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Werfen_-_Burg_Hohenwerfen_(1).JPG",
-            "fame": 26,
-            "description": {
-                "fr": "Le château de Hohenwerfen est un château médiéval autrichien situé à Werfen dans la vallée de Salzach, à environ 40 km au sud de Salzbourg. L'archiduc Eugène d'Autriche-Teschen devient propriétaire de la forteresse en 1898. En 1931, un incendie endommage le château qui est revendu restauré à l'administration de Salzbourg en 1938. Après la Seconde Guerre mondiale, il fut utilisé comme camp d'entraînement de la gendarmerie autrichienne jusqu'en 1987. Agrandi et rénové à plusieurs reprises au cours des siècles, le château est devenu aujourd'hui un parc d'aventure.",
-                "en": "Hohenwerfen Castle is a medieval rock castle, situated at an altitude of 623 metres, on a 155-metre rock pillar overlooking the Austrian market town of Werfen in the Salzach valley, approximately 40 kilometres south of Salzburg. Nevertheless, King Henry had Gebhard expelled in 1077 and the archbishop could not return to Salzburg until 1086, only to die at Hohenwerfen two years later."
-            }
-        }
-    ]
-}
-
-
 
