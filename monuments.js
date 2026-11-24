@@ -6212,35 +6212,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q3084668",
-            "name": {
-                "fr": "parc national de Kibira",
-                "en": "Kibira National Park"
-            },
-            "city": null,
-            "country": {
-                "id": "Q967",
-                "iso": "BI",
-                "fr": "Burundi",
-                "en": "Burundi"
-            },
-            "coordinates": {
-                "latitude": -2.91466389,
-                "longitude": 29.43361111
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Ivyo_dusanga_kugwinjiriro_rw%27ikibira_i_bugarama.jpg/1280px-Ivyo_dusanga_kugwinjiriro_rw%27ikibira_i_bugarama.jpg",
-            "file": "Ivyo dusanga kugwinjiriro rw'ikibira i bugarama.jpg",
-            "author": "NZISABIRA Léopold",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ivyo_dusanga_kugwinjiriro_rw%27ikibira_i_bugarama.jpg",
-            "fame": 23,
-            "description": {
-                "fr": "Le parc national de Kibira est un parc national burundais situé au nord-ouest du pays sur un territoire de 400 km2. Il est contigu au parc national de Nyungwe au Rwanda.",
-                "en": "The Kibira National Park is a national park in northwestern Burundi. Overlapping four provinces and covering 400 km2, Kibira National Park lies atop the mountains of the Congo-Nile Divide. It extends north from the provincial town of Muramvya to the border of Rwanda where it is contiguous with the Nyungwe National Park."
-            }
-        },
-        {
             "id": "Q3084675",
             "name": {
                 "fr": "parc national de Rusizi",
@@ -9422,35 +9393,6 @@ const D_pic = {
             "description": {
                 "fr": "Le mont Cameroun est un volcan du Cameroun, point culminant de la ligne du Cameroun avec, selon les estimations, 4 040, 4 070 ou 4 095 mètres d'altitude. L'érudit, explorateur et écrivain britannique Richard Francis Burton est le premier Européen à avoir réussi l'ascension de la montagne en 1861. L'exploratrice anglaise Mary Kingsley, une des premières à avoir escaladé le mont, relate son expédition dans son récit de 1897 Travels in West Africa.",
                 "en": "Mount Cameroon is an active stratovolcano in the Southwest Region of Cameroon next to the city of Buea near the Gulf of Guinea. Short‑lived explosive outbursts occurred in 1989 and 2012 without lava emission, illustrating the complex behaviour of the magma plumbing system. 2012 eruption – On 3 February 2012 a brief eruption occurred at Mount Cameroon. Tourists on the mountain reported strong explosions followed by visible \"flames\" and ash from a vent. Cameroon state radio and television later reported that the blast lasted only a couple of seconds and lightly injured two porters and guides."
-            }
-        },
-        {
-            "id": "Q843147",
-            "name": {
-                "fr": "réserve de faune du Dja",
-                "en": "Dja Faunal Reserve"
-            },
-            "city": null,
-            "country": {
-                "id": "Q1009",
-                "iso": "CM",
-                "fr": "Cameroun",
-                "en": "Cameroon"
-            },
-            "coordinates": {
-                "latitude": 3.0167,
-                "longitude": 12.9833
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Mantelmangabe_Dja.JPG/1280px-Mantelmangabe_Dja.JPG",
-            "file": "Mantelmangabe Dja.JPG",
-            "author": "Earwig",
-            "license": "Attribution",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mantelmangabe_Dja.JPG",
-            "fame": 40,
-            "description": {
-                "fr": "La réserve de faune du Dja est une réserve faunique située au sud-est du Cameroun et établie comme réserve de biosphère en 1981. Toujours selon Greenpeace, près de 6 000 hectares de forêt servant de territoire de chasse, de pêche et de cueillette aux habitants, auraient été détruits entre 2011 et 2016. Selon une étude conjointe de 2015 réalisé conjointement par l'UNESCO et l'Union internationale pour la conservation de la nature, seuls le braconnage et la centrale hydroélectrique de Mékin constitueraient des périls prouvés.",
-                "en": "Dja Faunal Reserve, located in southeastern Cameroon, is a UNESCO World Heritage Site inscribed in 1987. The Dja Faunal Reserve was created in 1950 and became a World Heritage Site in 1987 and it forms an integral part of the dense rain forests that make up the Congo Basin. It is one of the largest and best-protected reserves within the rainforest zones of Africa with around 90% of its area remaining undisturbed."
             }
         },
         {
@@ -14771,35 +14713,6 @@ const D_pic = {
             }
         },
         {
-            "id": "Q7227798",
-            "name": {
-                "fr": "parc national de Pongara",
-                "en": "Pongara National Park"
-            },
-            "city": null,
-            "country": {
-                "id": "Q1000",
-                "iso": "GA",
-                "fr": "Gabon",
-                "en": "Gabon"
-            },
-            "coordinates": {
-                "latitude": 0.12453,
-                "longitude": 9.53905
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Lance_Cpl._Justin_Forrester_teaches_immediate_action_drills_to_a_park_ranger_with_the_Agence_Nationale_des_Parcs_Nationaux_at_the_Pongara_National_Forest_in_Pongara%2C_Gabon%2C_Sept._17%2C_2015.jpg/1280px-thumbnail.jpg",
-            "file": "Lance Cpl. Justin Forrester teaches immediate action drills to a park ranger with the Agence Nationale des Parcs Nationaux at the Pongara National Forest in Pongara, Gabon, Sept. 17, 2015.jpg",
-            "author": "Ryan Nikzad",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lance_Cpl._Justin_Forrester_teaches_immediate_action_drills_to_a_park_ranger_with_the_Agence_Nationale_des_Parcs_Nationaux_at_the_Pongara_National_Forest_in_Pongara,_Gabon,_Sept._17,_2015.jpg",
-            "fame": 15,
-            "description": {
-                "fr": "Le parc national de Pongara est une aire protégée du Gabon créée en 2002. Il s’étend sur 870 km2 entre la rive gauche de l’estuaire du Komo et le golfe de Guinée. Il est constitué de mangroves, de différents types de forêts, de savanes herbeuses; plusieurs rivières le traverse. La sterne des baleiniers, une espèce menacée, y vit en dehors de la période de reproduction. On y trouve aussi diverses espèces de tortues; le parc est un lieu de reproduction important pour la tortue luth.",
-                "en": "Pongara National Park is a national park in Gabon, located near the capital, Libreville, on the south side of the Gabon Estuary and the Atlantic Ocean. Covering an area of 929km2, the national park is composed chiefly of moist tropical forests and mangrove forests."
-            }
-        },
-        {
             "id": "Q3178567",
             "name": {
                 "fr": "Pointe Denis",
@@ -16243,39 +16156,6 @@ const D_pic = {
                 "en": "Bata is a port city in the Litoral province of Equatorial Guinea and the most populous city in the country, with a population of 309,345 at the 2015 census. After the anti-Spanish riots of 1969, the European population declined in Bata, and severe economic stagnation affected Bata in the 1970s and early 1980s. An oil boom of the country boosted the development of the city in the late 1980s and 1990s. On 7 March 2021, the city was struck by a series of explosions which resulted in the deaths of at least 105 people and the wounding of more than 615 others."
             }
         },
-        {
-            "id": "Q526539",
-            "name": {
-                "fr": "Mongomo",
-                "en": "Mongomo"
-            },
-            "city": {
-                "id": "Q853400",
-                "fr": "Wele-Nzas",
-                "en": "Wele-Nzas"
-            },
-            "country": {
-                "id": "Q983",
-                "iso": "GQ",
-                "fr": "Guinée équatoriale",
-                "en": "Equatorial Guinea"
-            },
-            "coordinates": {
-                "latitude": 1.6287055555556,
-                "longitude": 11.316833333333
-            },
-            "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Basilica_of_the_Immaculate_Conception%2C_Mongomo.jpg/1280px-Basilica_of_the_Immaculate_Conception%2C_Mongomo.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-            "file": "Basilica of the Immaculate Conception, Mongomo.jpg",
-            "author": "Kachelus",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basilica_of_the_Immaculate_Conception,_Mongomo.jpg",
-            "fame": 35,
-            "description": {
-                "fr": "Mongomo est une ville de Guinée équatoriale, chef-lieu du district du même nom et de la province de Wele-Nzas, à 630 m d'altitude. Située à proximité de la frontière avec le Gabon, elle compte 7 126 habitants. L'actuel président de la Guinée équatoriale, Teodoro Obiang, est originaire de la région de Mongomo, où il a grandi. Le premier président du pays, Francisco Macías Nguema, un parent de l'actuel président, fut maire de Mongomo avant l'indépendance de la Guinée équatoriale.",
-                "en": "Mongomo is a town in the province of Wele-Nzas on mainland Equatorial Guinea, on the eastern border, roughly 1 km west of Gabon's Woleu-Ntem Province. The president of Equatorial Guinea, Teodoro Obiang Nguema Mbasogo, was born in Mongomo."
-            }
-        }
     ],
     "GT": [
         {
@@ -24697,39 +24577,6 @@ const D_pic = {
             "description": {
                 "fr": "Le lac Piso, également connu sous les noms de lac Pisu et de lac des Pêcheurs, est une lagune littorale oblongue située dans le comté de Grand Cape Mount, dans l’ouest du Liberia, près de la ville de Robertsport. Le bac en bois, surchargé, transportait environ 200 passagers, dont la plupart revenaient des funérailles d’un footballeur local. Seules 15 personnes furent secourues ; les autres se noyèrent et leurs corps furent retrouvés, ou elles furent présumées mortes. Une réserve naturelle fut créée près du lac Piso en 1999 et, en 2004, les zones humides du lac Piso, couvrant une superficie de 76 091 hectares, constituaient la seule zone humide du Liberia reconnue comme étant d’importance internationale.",
                 "en": "Lake Piso, also known as Lake Pisu and Fisherman's Lake, is an oblong tidal lagoon in Grand Cape Mount County in western Liberia, near the town of Robertsport. The overcrowded wooden ferry was transporting approximately 200 passengers, most returning from the funeral of a local footballer. Only 15 people were rescued; the rest drowned and were recovered or presumed dead. A nature reserve was designated near Lake Piso in 1999 and, as of 2004, the Lake Piso wetlands, covering an area of 76,091 ha, were Liberia's only designated wetland of international importance."
-            }
-        },
-        {
-            "id": "Q27459317",
-            "name": {
-                "fr": "Providence Island (Liberia)",
-                "en": "Providence Island"
-            },
-            "city": {
-                "id": "Q3031278",
-                "fr": "district de Greater Monrovia",
-                "en": "Greater Monrovia District"
-            },
-            "country": {
-                "id": "Q1014",
-                "iso": "LR",
-                "fr": "Liberia",
-                "en": "Liberia"
-            },
-            "coordinates": {
-                "latitude": 6.32,
-                "longitude": -10.802
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/6/68/JOHNSTON%281907%29_Providence_Island_in_Mesurado_Lagoon.jpg",
-            "file": "JOHNSTON(1907) Providence Island in Mesurado Lagoon.jpg",
-            "author": "Harry Hamilton Johnston",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:JOHNSTON(1907)_Providence_Island_in_Mesurado_Lagoon.jpg",
-            "fame": 6,
-            "description": {
-                "fr": "île du Liberia",
-                "en": "Providence Island was the site of the first successful settlement of American freedmen by the American Colonization Society in Liberia. It has been proposed as a UNESCO World Heritage Site by the government of Liberia."
             }
         },
         {

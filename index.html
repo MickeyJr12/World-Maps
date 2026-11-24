@@ -78,6 +78,13 @@
 
         --areaB: env(safe-area-inset-bottom);
       }
+      .textPasFini{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        overflow: hidden;
+      }
 
       .smoothScroll {
         --fade: 0.6rem; /* hauteur du dégradé */
@@ -2529,6 +2536,7 @@
         background: rgba(0, 0, 0, 0.78);
         backdrop-filter: none;
         z-index: 140;
+        transition : opacity 0.3s ease;
       }
       .Maps:has(#cadrePic.active) {
         #cachePic {
@@ -4622,6 +4630,7 @@
         }
         .headerInfoPCalque {
           max-height: 1rem;
+          max-width : 18rem;
         }
       }
       #cadreCalque.expend {
@@ -4710,9 +4719,11 @@
           justify-content: center;
           overflow: hidden;
           max-height: 0;
+          max-width : 0;
           padding: 0;
           width: 100%;
           transition: all 0.4s ease;
+
 
           svg {
             flex-shrink: 0;
@@ -25398,7 +25409,7 @@
                         </svg>
                         <div class="boxTxtItemStat">
                           <div data-ilg="inflation">
-                            Touristes par habitants
+                            Arrivés de touristes pour 1000 habitants
                           </div>
                           <span data-ilg="haussedesprixen1an"
                             >Arrivées pour 1 000 habitants</span
@@ -35203,7 +35214,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       // );
 
       /* Gérer le max Height avec transition */
-      function maxHeight(el) {
+      function maxHeight2(el) {
         const styleEl = el.style.maxHeight;
         el.style.transition = "none";
         el.style.maxHeight = "100rem";
@@ -35219,7 +35230,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       }
 
-      function expand(el, { padding } = {}) {
+      function maxHeight(el, { padding } = {}) {
         // 1. Hauteur réellement affichée à cet instant
         //    → 0 si fermé, hauteur courante si ouvert (ou en pleine animation)
         const from = el.getBoundingClientRect().height;
@@ -65685,6 +65696,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       const M_halos = new Map(); // en clef les id des paths, en valeur les halos correspondants
 
       const L_pTarget = [
+        "BN",
         // Les paths décalés pour cliquer plus facilement (createCircle)
         "VI",
         "VG",
@@ -65886,6 +65898,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       // };
       const D_factorMargin = {
         // Les paths décalés pour cliquer plus facilement (createCircle)
+        BN: 0.8,
         VI: 0.6,
         VG: 0.6,
         CV: 0.6,
@@ -68195,15 +68208,25 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
       openPic.addEventListener("click", () => {
         cadrePic.classList.add("active");
-        fillCadrePic(currentCountry.id);
+        cachePic.classList.add("active");
         contentCadre.style.transform = "scale(0.95)";
+        fillCadrePic(currentCountry.id);
         hapticFeedback("medium");
       });
 
       crossPic.addEventListener("click", () => {
-        cadrePic.classList.remove("active");
-        cadreLicence.classList.remove("active");
+        cadrePic.style.transform = ""; // la fermeture remet le transform CSS par défaut
+        cachePic.style.opacity = "";
+
+        cadrePic.classList.remove('active')
+        cachePic.classList.remove('active')
+        
+        contentCadre.style.transform = "";
+        contentCadre.style.transition = "";
       });
+
+      crossPic.addEventListener('pointerdown',(e)=>e.stopPropagation())
+
 
       RArrowPic.addEventListener("click", () => {
         const i = mCadresImgPic.indexOf(query(".mCadreImg.active"));
@@ -68244,12 +68267,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         });
       }
 
-      // openInfosPic.addEventListener('click',()=>{
-      //   cadreInfosPic.classList.contains('active') ?
-      //   (cadreInfosPic.classList.remove('active'), reduceHeight(cadreInfosPic)) :
-      //   (cadreInfosPic.classList.add('active'), expand(cadreInfosPic, {padding : "0.4rem"}))
-
-      // })
 
       // Move Pic
       let movePic = false;
@@ -68260,18 +68277,23 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         if (tfNewEl) return;
         // on ne démarre le drag que si le doigt est au-dessus du carousel
         if (e.clientY > carouselPic.getBoundingClientRect().top) return;
-
+        
         cadrePic.setPointerCapture(e.pointerId);
         movePic = true;
         startYPic = e.clientY;
         dyPic = 0;
-
+        
         // on fige la position ouverte en inline, sans transition
+        const topPic  = cadrePic.getBoundingClientRect().top;
         cadrePic.style.transition = "none";
         cadrePic.style.transform = "translateY(0px)";
         cadrePic.classList.remove("active"); // sinon .active { transform: none } est écrasé de toute façon par l'inline, mais on retire pointer-events: all
+        cachePic.classList.remove("active"); // sinon .active { transform: none } est écrasé de toute façon par l'inline, mais on retire pointer-events: all
+
+        cachePic.style.opacity =
+          1 - Math.max(0, Math.min(topPic / (window.innerHeight * 0.5), 1));
         contentCadre.style.transition = "none";
-        cacheStat.style.transition = "none";
+        cachePic.style.transition = "none";
       });
 
       document.addEventListener("pointermove", (e) => {
@@ -68292,7 +68314,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
               ),
             )
         })`;
-        cacheStat.style.opacity =
+        cachePic.style.opacity =
           1 - Math.max(0, Math.min(top / (window.innerHeight * 0.5), 1));
       });
 
@@ -68307,11 +68329,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           // retour à la position ouverte
           cadrePic.style.transform = ""; // laisse .active { transform: none } reprendre la main
           contentCadre.style.transition = "";
-          cacheStat.style.opacity = "1";
+          cachePic.style.opacity = "1";
           cadrePic.classList.add("active");
+          cachePic.classList.add("active");
         } else {
-          cadrePic.style.transform = ""; // la fermeture remet le transform CSS par défaut
-          crossStat.click();
+          crossPic.click();
         }
       });
 
