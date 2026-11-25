@@ -4954,9 +4954,9 @@ const D_pic = {
             },
             "country": {
                 "id": "Q971",
-                "iso": "CG",
-                "fr": "République du Congo",
-                "en": "Republic of the Congo"
+                "iso": "BB",
+                "fr": "Barbade",
+                "en": "Barbade"
             },
             "coordinates": {
                 "latitude": 13.09698611,
@@ -9147,8 +9147,8 @@ const D_pic = {
             "country": {
                 "id": "Q833",
                 "iso": "MY",
-                "fr": "Malaisie",
-                "en": "Malaysia"
+                "fr": "Chili",
+                "en": "Chile"
             },
             "coordinates": {
                 "latitude": -27.12,
@@ -31181,10 +31181,10 @@ const D_pic = {
                 "en": "Windward Islands"
             },
             "country": {
-                "id": "Q833",
-                "iso": "MY",
-                "fr": "Malaisie",
-                "en": "Malaysia"
+                "id": "Q30971",
+                "iso": "PF",
+                "fr": "Polynésie française",
+                "en": "French Polynesia"
             },
             "coordinates": {
                 "latitude": -17.539722222222,
@@ -31214,10 +31214,10 @@ const D_pic = {
                 "en": "Bora-Bora"
             },
             "country": {
-                "id": "Q833",
-                "iso": "MY",
-                "fr": "Malaisie",
-                "en": "Malaysia"
+                "id": "Q30971",
+                "iso": "PF",
+                "fr": "Polynésie française",
+                "en": "French Polynesia"
             },
             "coordinates": {
                 "latitude": -16.498,
