@@ -3384,6 +3384,20 @@
         width: calc(var(--padW) / 2 + var(--widthItem) + var(--gapStat) / 2);
       }
 
+      #phonePlay:has(#cadre){
+        #carteChoiceStat{
+          display : none;
+        }
+        .wrapperStatChoice{
+          display : flex;
+        }
+        #statChoiceIn{
+          width : calc(50% - var(--padW) / 2);
+        }
+        #statChoiceIn.bilan{
+          left : 50%
+        }
+      }
       #cadreYChoice {
         display: flex;
         overflow: hidden;
@@ -25260,9 +25274,9 @@
                         </svg>
 
                         <div class="boxTxtItemStat">
-                          <div data-ilg="chomage">Arrivés de touristes</div>
-                          <span data-ilg="delapopulationactive"
-                            >Voyage avec nuité</span
+                          <div data-ilg="arriveestouristes">Arrivées de touristes</div>
+                          <span data-ilg="voyageavecnuitee"
+                            >Voyage avec nuitée</span
                           >
                         </div>
 
@@ -25321,9 +25335,9 @@
                           ></path>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="inflation">Départs de touristes</div>
-                          <span data-ilg="haussedesprixen1an"
-                            >Résidants voyageant à l'étranger</span
+                          <div data-ilg="departstouristes">Départs de touristes</div>
+                          <span data-ilg="residentsvoyageantetranger"
+                            >Résidents voyageant à l'étranger</span
                           >
                         </div>
 
@@ -25408,10 +25422,10 @@
                           </g>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="inflation">
-                            Arrivés de touristes pour 1000 habitants
+                          <div data-ilg="arriveestouristespour1000">
+                            Arrivées de touristes pour 1000 habitants
                           </div>
-                          <span data-ilg="haussedesprixen1an"
+                          <span data-ilg="arriveespour1000"
                             >Arrivées pour 1 000 habitants</span
                           >
                         </div>
@@ -25473,8 +25487,8 @@
                           ></path>
                         </svg>
                         <div class="boxTxtItemStat">
-                          <div data-ilg="inflation">Recettes du tourisme</div>
-                          <span data-ilg="haussedesprixen1an"
+                          <div data-ilg="recettestourisme">Recettes du tourisme</div>
+                          <span data-ilg="dollarsamericainscourantsus"
                             >Dollars américains courants (US$)</span
                           >
                         </div>
@@ -35954,6 +35968,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           fr: "Hausse des prix en 1 an (%)",
           en: "Price increase over 1 year (%)",
         },
+        arriveestouristes: { fr: "Arrivées de touristes", en: "Tourist arrivals" },
+        voyageavecnuitee: { fr: "Voyage avec nuitée", en: "Overnight trip" },
+        departstouristes: { fr: "Départs de touristes", en: "Tourist departures" },
+        residentsvoyageantetranger: { fr: "Résidents voyageant à l'étranger", en: "Residents traveling abroad" },
+        arriveestouristespour1000: { fr: "Arrivées de touristes pour 1000 habitants", en: "Tourist arrivals per 1,000 inhabitants" },
+        arriveespour1000: { fr: "Arrivées pour 1 000 habitants", en: "Arrivals per 1,000 inhabitants" },
+        recettestourisme: { fr: "Recettes du tourisme", en: "Tourism revenue" },
         energie: { fr: "Énergie", en: "Energy" },
         mixenergetique: { fr: "Mix énergétique", en: "Energy mix" },
         twh: { fr: "TWh", en: "TWh" },
@@ -64394,6 +64415,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         getId("backMaps"),
         getId("cadre"),
         document.querySelector(".messageViewMap"),
+        getId('cadrePic'),
+        getId('cadreStat'),
       ];
 
       //z-index des éléments de maps dans 4 choix
@@ -68852,9 +68875,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       }
 
       voirPlus.addEventListener("click", () => {
-        openStat.style.display = "none";
-        openPic.style.display = "none";
-        if (currentCountry?.id in L_q && !L_config.m) {
+        // openStat.style.display = "none";
+        // openPic.style.display = "none";
+        if (currentCountry?.id in L_q /* && !L_config.m */) {
           openStat.style.display = "";
           openPic.style.display = "";
 

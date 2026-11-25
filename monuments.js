@@ -53342,3 +53342,7 @@ histoiresDrapeaux(codes).then((r) => {
   console.log(dico);
 });
 
+const fameFilter = {}
+ for (const id in D_pic){
+    fameFilter[id] = D_pic[id].filter(el=>el.fame > 75)
+ }
