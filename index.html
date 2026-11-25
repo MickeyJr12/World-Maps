@@ -68500,16 +68500,13 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           "linear-gradient(160deg, rgb(226, 197, 90), rgb(71, 126, 37))",
         ];
 
-        // carouselPic.style.scrollSnapType = 'none'
-        // carouselPic.scrollLeft = 0
-        // carouselPic.style.scrollBehavior = 'auto'
         carouselPic.innerHTML = ``;
         wrappermBoxImg.innerHTML = ``;
         dotsWrap.innerHTML = ``;
         cadrePic.dataset.crtId = id;
         const sites = D_pic[id].sort((a, b) => b.fame - a.fame);
 
-        sites.forEach((s) => {
+        sites.forEach((s,index) => {
           const slide = createEl("div");
           slide.classList.add("slide", "slidePic");
           const wrapperPicSlide = createEl("div");
@@ -68579,8 +68576,17 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             }, 400);
           });
 
-          img.src = s.image;
-          mImg.src = s.image;
+          // img.src = s.image;
+          // mImg.src = s.image;
+
+            const mode = index === 0 ? "eager" : "lazy";
+  img.loading = mode;
+  mImg.loading = mode;
+  img.decoding = "async";
+  mImg.decoding = "async";
+
+  img.src = s.image;
+  mImg.src = s.image;
 
           const wrapperTxtPic = createEl("div");
           wrapperTxtPic.className = "wrapperTxtPic";
