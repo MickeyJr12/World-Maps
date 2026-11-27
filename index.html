@@ -2934,6 +2934,13 @@
         transition:
           transform 0.25s cubic-bezier(0.58, 0, 0, 1.39),
           opacity 0.25s ease;
+
+          span {
+            font-weight : 500;
+            align-self : flex-start;
+            color:var(--colorSpan);
+
+          }
           #secTexte{
             gap : inherit;
             margin-top:10px;
@@ -35946,6 +35953,10 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           fr: "Texte adapté. Les éventuelles parenthèses ont été retirées.",
           en: "Text adapted. Any parentheses have been removed."
         },
+        textetraduit: {
+          fr: "Texte traduit et adapté. Les éventuelles parenthèses ont été retirées.",
+          en: "Text translated and adapted. Any parentheses have been removed."
+        },
 
         // langue stats
         banquemondiale: {
@@ -68528,7 +68539,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       //   });
       // }
 
-
       function fillLinks(root, prefix, data) {
   const hrefKey = prefix + "Href";
   root.querySelectorAll(`[data-${prefix.replace(/[A-Z]/g, m => "-" + m.toLowerCase())}]`).forEach((el) => {
@@ -68554,7 +68564,7 @@ function fillLicence(item) {
 
   fillLinks(getId("cadreLicence"), "pic", { ...item, sourceName: "Wikimedia Commons" });
 
-  const t = item.textSource?.[currentIlg] ?? item.textSource?.fr ?? item.textSource?.en;
+  const t = item.textSource;
   getId("secTexte").style.display = t ? "block" : "none";
   if (!t) return;
 
@@ -68566,6 +68576,33 @@ function fillLicence(item) {
     }),
   });
 }
+
+  function fillLicence(item) {
+  getId("itmAuteur").style.display = item.author ? "flex" : "none";
+
+  fillLinks(getId("cadreLicence"), "pic", { ...item, sourceName: "Wikimedia Commons" });
+
+  const init = item.initIlgDes;                 // "fr", "en" ou null
+  const langSource = init ?? currentIlg;        // langue de l'article à créditer
+  const traduit = init !== null && init !== currentIlg;
+
+  const t = item.textSource?.[langSource];
+  getId("secTexte").style.display = t ? "block" : "none";
+  if (!t) return;
+
+  fillLinks(getId("secTexte"), "txt", {
+    ...t,
+    historyLabel: D_ilg.historique[currentIlg],
+    revisionLabel: new Date(t.revisionDate).toLocaleDateString(currentIlg, {
+      day: "numeric", month: "short", year: "numeric"
+    }),
+  });
+
+  const note = getId("noteTexte");
+  note.dataset.ilg = traduit ? "textetraduit" : "texteadapte";
+  note.textContent = D_ilg[note.dataset.ilg][currentIlg];
+}
+
 
       function fillCadrePic(id) {
         if (cadrePic.dataset.crtId === id) return;
