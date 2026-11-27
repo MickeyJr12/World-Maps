@@ -178,7 +178,7 @@
         outline: 1px solid rgba(255, 255, 255, 0.18);
         padding: 0.6rem;
         opacity: 0;
-        transition: opacity 0.25s ease;
+        transition: opacity 0.4s ease;
         .titleDes {
           font-size: 0.9rem;
           color: var(--colorSpan);
@@ -66496,7 +66496,8 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             cadreDesFlag.append(title);
             title.textContent = D_ilg.lesaviezvous[currentIlg];
             const spn = createEl("span");
-            spn.textContent = desFlag[currentCountry.id][currentIlg];
+            const txt = desFlag[currentCountry.id][currentIlg]
+            spn.textContent = txt[0].toUpperCase() + txt.slice(1)
             cadreDesFlag.append(spn);
 
             const ratio = box.width / box.height;
