@@ -2918,7 +2918,6 @@
         align-items: center;
         box-sizing: border-box;
         z-index: 60;
-        gap: 0.18rem;
         border-radius: 0.6rem;
         background: rgba(17, 23, 79, 1);
         box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
@@ -2935,6 +2934,26 @@
         transition:
           transform 0.25s cubic-bezier(0.58, 0, 0, 1.39),
           opacity 0.25s ease;
+          #secTexte{
+            gap : inherit;
+            margin-top:10px;
+            padding-top:10px;
+            border-top:1px solid rgba(255,255,255,.12);
+          }
+          #noteTexte{
+            margin:8px 0 0;
+            font-size:11px;
+            line-height:1.4;
+            font-style:italic;
+            color:var(--colorSpan);
+            opacity:.75;
+          }
+          .line {
+            opacity : 0.2;
+            outline : 0.5px solid var(--colorSpan);
+            border-radius : 50rem;
+            width : 100%;
+          }
         .itmL {
           /* Ligne */
           display: flex;
@@ -23770,6 +23789,7 @@
                 </svg>
               </div>
               <div id="cadreLicence">
+                <span data-ilg="photo">Photo</span>
                 <div class="itmL" id="itmAuteur">
                   <div class="sectionL" data-ilg="auteur">Auteur</div>
                   <div class="valL" id="valAuteur">
@@ -23799,7 +23819,42 @@
                       rel="noopener"
                     ></a>
                   </div>
-                </div>
+                </div>                
+              <div id="secTexte">
+  <span data-ilg="texte">Texte</span>
+
+  <div class="itmL">
+    <div class="sectionL" data-ilg="source">Source</div>
+    <div class="valL">
+      <a data-txt="site" data-txt-href="url" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+
+  <div class="itmL">
+    <div class="sectionL" data-ilg="licence">Licence</div>
+    <div class="valL">
+      <a data-txt="license" data-txt-href="licenseUrl" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+
+  <div class="itmL">
+    <div class="sectionL" data-ilg="auteurs">Auteurs</div>
+    <div class="valL">
+      <a data-txt="historyLabel" data-txt-href="historyUrl" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+
+  <div class="itmL">
+    <div class="sectionL" data-ilg="version">Version</div>
+    <div class="valL">
+      <a data-txt="revisionLabel" data-txt-href="revisionUrl" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+
+  <p id="noteTexte" data-ilg="texteadapte">Texte adapté. Les éventuelles parenthèses ont été retirées.</p>
+</div>
+
+
               </div>
             </div>
             <!-- Fin wrapperLicence -->
@@ -35876,12 +35931,21 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         samedi: { fr: "Samedi", en: "Saturday" },
 
         // langue licences
+        photo: { fr: "Photo", en: "Picture" },
         auteur: { fr: "Auteur", en: "Author" },
         licence: { fr: "Licence", en: "License" },
         source: { fr: "Source", en: "Source" },
         fichier: { fr: "Fichier", en: "File" },
         inconnu: { fr: "Inconnu", en: "Unknown" },
         creditsPhoto: { fr: "Crédits", en: "Credits" },
+        texte:       { fr: "Texte", en: "Text" },
+        auteurs:     { fr: "Auteurs", en: "Authors" },
+        historique:  { fr: "Historique", en: "History" },
+        version:     { fr: "Version", en: "Revision" },
+        texteadapte: {
+          fr: "Texte adapté. Les éventuelles parenthèses ont été retirées.",
+          en: "Text adapted. Any parentheses have been removed."
+        },
 
         // langue stats
         banquemondiale: {
@@ -66330,7 +66394,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         getId("boxImg").querySelector("img"),
       ].forEach((el) => {
         el.addEventListener("click", () => {
-          if (tfNewEl || (!el.querySelector("svg") && el === mSilhouette))
+          if (L_noFlag.includes(currentCountry?.id) || tfNewEl || (!el.querySelector("svg") && el === mSilhouette))
             return;
           hapticFeedback("medium");
           tfNewEl = true;
@@ -68441,28 +68505,67 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
       cadreLicence.addEventListener("pointerdown", (e) => e.stopPropagation());
       openLicence.addEventListener("pointerdown", (e) => e.stopPropagation());
 
-      function fillLicence(item) {
-        getId("itmAuteur").style.display = item.author ? "flex" : "none";
-        const data = { ...item, sourceName: "Wikimedia Commons" };
+      // function fillLicence(item) {
+      //   getId("itmAuteur").style.display = item.author ? "flex" : "none";
+      //   const data = { ...item, sourceName: "Wikimedia Commons" };
 
-        document.querySelectorAll("#cadreLicence [data-pic]").forEach((el) => {
-          el.textContent = data[el.dataset.pic] ?? D_ilg.inconnu[currentIlg];
+      //   document.querySelectorAll("#cadreLicence [data-pic]").forEach((el) => {
+      //     el.textContent = data[el.dataset.pic] ?? D_ilg.inconnu[currentIlg];
 
-          if (el.dataset.picHref) {
-            const href = data[el.dataset.picHref];
+      //     if (el.dataset.picHref) {
+      //       const href = data[el.dataset.picHref];
 
-            if (href) {
-              el.href = href;
-              el.style.color = "var(--colorSpan)";
-              el.style.textDecoration = "underline";
-            } else {
-              el.removeAttribute("href");
-              el.style.color = "";
-              el.style.textDecoration = "";
-            }
-          }
-        });
+      //       if (href) {
+      //         el.href = href;
+      //         el.style.color = "var(--colorSpan)";
+      //         el.style.textDecoration = "underline";
+      //       } else {
+      //         el.removeAttribute("href");
+      //         el.style.color = "";
+      //         el.style.textDecoration = "";
+      //       }
+      //     }
+      //   });
+      // }
+
+
+      function fillLinks(root, prefix, data) {
+  const hrefKey = prefix + "Href";
+  root.querySelectorAll(`[data-${prefix.replace(/[A-Z]/g, m => "-" + m.toLowerCase())}]`).forEach((el) => {
+    el.textContent = data[el.dataset[prefix]] ?? D_ilg.inconnu[currentIlg];
+
+    if (el.dataset[hrefKey]) {
+      const href = data[el.dataset[hrefKey]];
+      if (href) {
+        el.href = href;
+        el.style.color = "var(--colorSpan)";
+        el.style.textDecoration = "underline";
+      } else {
+        el.removeAttribute("href");
+        el.style.color = "";
+        el.style.textDecoration = "";
       }
+    }
+  });
+}
+
+function fillLicence(item) {
+  getId("itmAuteur").style.display = item.author ? "flex" : "none";
+
+  fillLinks(getId("cadreLicence"), "pic", { ...item, sourceName: "Wikimedia Commons" });
+
+  const t = item.textSource?.[currentIlg] ?? item.textSource?.fr ?? item.textSource?.en;
+  getId("secTexte").style.display = t ? "block" : "none";
+  if (!t) return;
+
+  fillLinks(getId("secTexte"), "txt", {
+    ...t,
+    historyLabel: D_ilg.historique[currentIlg],
+    revisionLabel: new Date(t.revisionDate).toLocaleDateString(currentIlg, {
+      day: "numeric", month: "short", year: "numeric"
+    }),
+  });
+}
 
       function fillCadrePic(id) {
         if (cadrePic.dataset.crtId === id) return;

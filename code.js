@@ -2,9 +2,13 @@
 // 1) COLLE TA LISTE ICI (remplace le contenu de l'objet)
 // ============================================================
 var monuments = {
-    "MY":[{
-        id:"Q14452"
-    }]
+    "AD" : [{
+            "id": "Q332800",
+            "name": {
+                "fr": "vallée du Madriu-Perafita-Claror",
+                "en": "Madriu-Perafita-Claror Valley"
+            }}
+        ]
 }
 
 
@@ -317,24 +321,70 @@ function buildDescription(fullText, lang) {
   return `${introSentence} ${best.text}`.trim();
 }
 
-// Article complet : l'API n'accepte qu'UN titre par requête hors mode exintro
+// Article complet : l'API n'accepte qu'UN titre par requête hors mode exintro SANS attributions des descriptions
+// async function getWikiFullExtracts(lang, titles) {
+//   const out = {};
+//   for (const title of [...new Set(titles)]) {
+//     const data = await api(`https://${lang}.wikipedia.org/w/api.php`, {
+//       action: "query",
+//       prop: "extracts",
+//       explaintext: "1",
+//       exsectionformat: "wiki",   // titres rendus en "== Titre =="
+//       redirects: "1",
+//       titles: title,
+//     });
+//     const page = data.query?.pages?.[0];
+//     if (page?.extract) out[title] = buildDescription(page.extract, lang);
+//     await sleep(150);
+//   }
+//   return out;
+// }
+
 async function getWikiFullExtracts(lang, titles) {
   const out = {};
   for (const title of [...new Set(titles)]) {
     const data = await api(`https://${lang}.wikipedia.org/w/api.php`, {
       action: "query",
-      prop: "extracts",
+      prop: "extracts|info|revisions",
       explaintext: "1",
-      exsectionformat: "wiki",   // titres rendus en "== Titre =="
+      exsectionformat: "wiki",
+      inprop: "url",
+      rvprop: "ids|timestamp",
       redirects: "1",
       titles: title,
     });
     const page = data.query?.pages?.[0];
-    if (page?.extract) out[title] = buildDescription(page.extract, lang);
+    if (page?.extract) {
+      const rev = page.revisions?.[0];
+      out[title] = {
+        text: buildDescription(page.extract, lang),
+        pageTitle: page.title,
+        pageUrl: page.fullurl,
+        revid: rev?.revid ?? null,
+        revisionDate: rev?.timestamp ?? null,
+      };
+    }
     await sleep(150);
   }
   return out;
 }
+function wikiSource(lang, info) {
+  const siteName = lang === "fr" ? "Wikipédia (français)" : "Wikipedia (English)";
+  const date = info.revisionDate ? info.revisionDate.slice(0, 10) : null; // AAAA-MM-JJ
+  return {
+    site: siteName,
+    title: info.pageTitle,
+    url: info.pageUrl,
+    revisionUrl: `https://${lang}.wikipedia.org/w/index.php?oldid=${info.revid}`,
+    historyUrl: `${info.pageUrl}?action=history`,
+    revisionDate: date,
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    // Phrase prête à afficher dans l'application
+    attribution: `${siteName}, article « ${info.pageTitle} », version du ${date}, ${`https://${lang}.wikipedia.org/w/index.php?oldid=${info.revid}`}. Auteurs : voir ${info.pageUrl}?action=history. Texte sous licence CC BY-SA 4.0, adapté.`,
+  };
+}
+
 
 
 
@@ -420,6 +470,9 @@ async function getWikiFullExtracts(lang, titles) {
     const coord = bestValue(e, "P625");
     const countryQid = countryIds[p.iso] ?? null;
 
+    const frInfo = frExtracts[e.sitelinks?.frwiki?.title];
+    const enInfo = enExtracts[e.sitelinks?.enwiki?.title];
+
     const entry = {
       id: p.qid,
       name: {
@@ -451,10 +504,20 @@ async function getWikiFullExtracts(lang, titles) {
       sourceUrl: img?.sourceUrl ?? null, 
       fame: Object.keys(e.sitelinks || {}).length,
 
+      
+      // description: {
+      //   fr: removeParentheses(frExtracts[e.sitelinks?.frwiki?.title]) ?? removeParentheses(description(e, "fr")) ?? null,
+      //   en: removeParentheses(enExtracts[e.sitelinks?.enwiki?.title]) ?? removeParentheses(description(e, "en")) ?? null,
+      // },
       description: {
-        fr: removeParentheses(frExtracts[e.sitelinks?.frwiki?.title]) ?? removeParentheses(description(e, "fr")) ?? null,
-        en: removeParentheses(enExtracts[e.sitelinks?.enwiki?.title]) ?? removeParentheses(description(e, "en")) ?? null,
+        fr: removeParentheses(frInfo?.text) ?? removeParentheses(description(e, "fr")) ?? null,
+        en: removeParentheses(enInfo?.text) ?? removeParentheses(description(e, "en")) ?? null,
       },
+      sources: {
+        fr: frInfo ? wikiSource("fr", frInfo) : null,
+        en: enInfo ? wikiSource("en", enInfo) : null,
+      },
+
     };
     
 
@@ -478,4 +541,3 @@ async function getWikiFullExtracts(lang, titles) {
   console.log(result);
 })();
 
- 
