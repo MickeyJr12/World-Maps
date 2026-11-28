@@ -186,7 +186,7 @@
           text-transform: uppercase;
         }
         span {
-          font-size: 0.85rem;
+          font-size: 0.92rem;
         }
       }
       #cadreDesFlag.active {
@@ -66491,7 +66491,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           }
 
           if (
-            [drapeauCadre, mDrapeauCadre].includes(el) &&
+            [drapeauCadre, mDrapeauCadre, cadreStat.querySelector('#boxImg').querySelector('img')].includes(el) &&
             currentCountry.id in desFlag
           ) {
             const cadreDesFlag = createEl("div");
