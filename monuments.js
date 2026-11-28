@@ -49964,68 +49964,6 @@ const D_pic = {
                 }
             }
         },
-        {
-            "id": "Q2843735",
-            "name": {
-                "fr": "Mausolée de Sidi Yahya Mosquée",
-                "en": "Sidi Yahya Mosque"
-            },
-            "city": {
-                "id": "Q9427",
-                "fr": "Tombouctou",
-                "en": "Timbuktu"
-            },
-            "country": {
-                "id": "Q912",
-                "iso": "ML",
-                "fr": "Mali",
-                "en": "Mali"
-            },
-            "coordinates": {
-                "latitude": 16.772333333333332,
-                "longitude": -3.0071666666666665
-            },
-            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Fortier_361_Timbuktu_Sidi-Yabya_Mosque.jpg",
-            "file": "Fortier 361 Timbuktu Sidi-Yabya Mosque.jpg",
-            "author": "Edmond Fortier",
-            "license": "Public domain",
-            "licenseUrl": null,
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fortier_361_Timbuktu_Sidi-Yabya_Mosque.jpg",
-            "fame": 12,
-            "description": {
-                "fr": "La mosquée Sidi Yahya, également connue sous le nom de mosquée de Muhammad-n-Allah, est une mosquée et une Médersa de Tombouctou au Mali. On sait peu de choses sur la mosquée et ses imams dans l'intervalle de 1468 à 1583, seulement qu'elle est restaurée en 1569 par Qadi el-Aqib. En 1990, le gouvernement du Mali demande l'admission de la ville de Tombouctou sur la liste du patrimoine mondial en péril de l'UNESCO en raison d'une menace d'empiètement de sable sur des bâtiments historiques, dont la mosquée Sidi Yahya.",
-                "en": "The Sidi Yahya Mosque, also known as the Mosque of Muhammad-n-Allah, is a mosque and madrasa of Timbuktu in Mali. Little is known about the mosque and its imams in the interval from 1468 to 1583, only that it was restored in 1569 by Qadi el-Aqib. The mosque was significantly rebuilt in 1939, resulting in its modern appearance. In 1990, the government of Mali requested admission for the city of Timbuktu to UNESCO's list of World Heritage in Danger based on a threat of sand encroachment on historic buildings including the Sidi Yahya Mosque."
-            },
-            "initIlgDes": null,
-            "textSource": {
-                "fr": {
-                    "type": "wikipedia",
-                    "site": "Wikipédia (français)",
-                    "title": "Mosquée de Sidi Yahya",
-                    "url": "https://fr.wikipedia.org/wiki/Mosqu%C3%A9e_de_Sidi_Yahya",
-                    "revisionUrl": "https://fr.wikipedia.org/w/index.php?oldid=240048607",
-                    "historyUrl": "https://fr.wikipedia.org/wiki/Mosqu%C3%A9e_de_Sidi_Yahya?action=history",
-                    "revisionDate": "2026-10-04",
-                    "consultedAt": "2026-11-27",
-                    "license": "CC BY-SA 4.0",
-                    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-                    "attribution": "Wikipédia (français), article « Mosquée de Sidi Yahya », version du 2026-10-04 (https://fr.wikipedia.org/w/index.php?oldid=240048607). Auteurs : voir https://fr.wikipedia.org/wiki/Mosqu%C3%A9e_de_Sidi_Yahya?action=history. Texte sous licence CC BY-SA 4.0, adapté. Consulté le 2026-11-27."
-                },
-                "en": {
-                    "type": "wikipedia",
-                    "site": "Wikipedia (English)",
-                    "title": "Sidi Yahya Mosque",
-                    "url": "https://en.wikipedia.org/wiki/Sidi_Yahya_Mosque",
-                    "revisionUrl": "https://en.wikipedia.org/w/index.php?oldid=1382897490",
-                    "historyUrl": "https://en.wikipedia.org/wiki/Sidi_Yahya_Mosque?action=history",
-                    "revisionDate": "2026-10-30",
-                    "consultedAt": "2026-11-27",
-                    "license": "CC BY-SA 4.0",
-                    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-                    "attribution": "Wikipedia (English), article « Sidi Yahya Mosque », version du 2026-10-30 (https://en.wikipedia.org/w/index.php?oldid=1382897490). Auteurs : voir https://en.wikipedia.org/wiki/Sidi_Yahya_Mosque?action=history. Texte sous licence CC BY-SA 4.0, adapté. Consulté le 2026-11-27."
-                }
-            }
-        }
     ],
     "MM": [
         {
@@ -50918,6 +50856,63 @@ const D_pic = {
         }
     ],
     "MR": [
+        {
+            "id": "Q3688",
+            "name": {
+                "fr": "Nouakchott",
+                "en": "Nouakchott"
+            },
+            "city": {
+                "id": "Q20669647",
+                "fr": "Nouakchott-Nord",
+                "en": "Nouakchott-Nord"
+            },
+            "country": {
+                "id": "Q228",
+                "iso": "AD",
+                "fr": "Andorre",
+                "en": "Andorra"
+            },
+            "coordinates": {
+                "latitude": 18.08581,
+                "longitude": -15.9785
+            },
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/15-Nouakchott-eH-R0058185.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+            "file": "15-Nouakchott-eH-R0058185.jpg",
+            "author": "Laminesall96",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:15-Nouakchott-eH-R0058185.jpg",
+            "fame": 157,
+            "description": {
+                "fr": "Nouakchott est la capitale de la Mauritanie depuis 1957. En 1974, le président mauritanien a convenu avec la Chine de construire un port en eau profonde de 37 millions de dollars près de la ville, qui, une fois achevé en 1986, est devenu le plus grand projet de construction chinois en Afrique après la liaison ferroviaire Tanzanie-Zambie. La première pierre du nouveau port est posée en avril 1979; lors de son inauguration le 17 septembre 1986, le Port Autonome de Nouakchott est surnommé Port de l'Amitié.",
+                "en": "Nouakchott is the capital and largest city of Mauritania. Before 1958, Nouakchott was a small fishing town, having been a fortified fishing village in pre-colonial times and under French rule. As Mauritania prepared for independence, it lacked a capital city. The area of present-day Nouakchott was chosen by Moktar Ould Daddah, the first President of Mauritania, and his advisors. Ould Daddah desired the new capital to symbolize modernity and national unity, which ruled out existing cities or towns in the interior."
+            },
+            "textSource": {
+                "fr": {
+                    "site": "Wikipédia (français)",
+                    "title": "Nouakchott",
+                    "url": "https://fr.wikipedia.org/wiki/Nouakchott",
+                    "revisionUrl": "https://fr.wikipedia.org/w/index.php?oldid=241200340",
+                    "historyUrl": "https://fr.wikipedia.org/wiki/Nouakchott?action=history",
+                    "revisionDate": "2026-11-10",
+                    "license": "CC BY-SA 4.0",
+                    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+                    "attribution": "Wikipédia (français), article « Nouakchott », version du 2026-11-10, https://fr.wikipedia.org/w/index.php?oldid=241200340. Auteurs : voir https://fr.wikipedia.org/wiki/Nouakchott?action=history. Texte sous licence CC BY-SA 4.0, adapté."
+                },
+                "en": {
+                    "site": "Wikipedia (English)",
+                    "title": "Nouakchott",
+                    "url": "https://en.wikipedia.org/wiki/Nouakchott",
+                    "revisionUrl": "https://en.wikipedia.org/w/index.php?oldid=1381271266",
+                    "historyUrl": "https://en.wikipedia.org/wiki/Nouakchott?action=history",
+                    "revisionDate": "2026-10-21",
+                    "license": "CC BY-SA 4.0",
+                    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+                    "attribution": "Wikipedia (English), article « Nouakchott », version du 2026-10-21, https://en.wikipedia.org/w/index.php?oldid=1381271266. Auteurs : voir https://en.wikipedia.org/wiki/Nouakchott?action=history. Texte sous licence CC BY-SA 4.0, adapté."
+                }
+            }
+        },
         {
             "id": "Q539518",
             "name": {
@@ -95474,3 +95469,10 @@ const desFlag = {
 
 
 
+
+
+const dd = {
+    "AD": [
+        {}
+    ]
+}
