@@ -66946,7 +66946,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadreStat.style.transition = "";
         moveStat = false;
         if (
-          cadreStat.getBoundingClientRect().top < window.innerHeight * 0.15 &&
+          cadreStat.getBoundingClientRect().top < window.innerHeight * 0.22 &&
           cadreStat.getBoundingClientRect().top - startMoveStat <= 20
         ) {
           cadreStat.style.top = "";
@@ -68434,7 +68434,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
         cadrePic.style.transition = ""; // réactive la transition CSS
         const top = cadrePic.getBoundingClientRect().top;
 
-        if (top < window.innerHeight * 0.15 && dyPic <= 20) {
+        if (top < window.innerHeight * 0.22 && dyPic <= 20) {
           // retour à la position ouverte
           cadrePic.style.transform = ""; // laisse .active { transform: none } reprendre la main
           contentCadre.style.transition = "";
