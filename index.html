@@ -66419,6 +66419,9 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
           newFlag.id = "newFlag";
           const box = el.getBoundingClientRect();
+          const ratio = box.width / box.height;
+          const MAX_FLAG_H = "20rem"
+
           newFlag.style.position = "fixed";
           newFlag.style.maxHeight = "20rem"
           newFlag.style.pointerEvents = "none";
@@ -66433,7 +66436,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             ? "0.4rem"
             : "0.2rem";
 
-          newFlag.style.aspectRatio = `${box.width / box.height}`;
+          newFlag.style.aspectRatio = `${ratio}`;
           newFlag.style.transition = "all 0.25s ease";
           document.body.append(newFlag);
 
@@ -66448,7 +66451,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
 
             const bordersList = createEl("div");
             bordersList.className = "bordersList";
-            const ratio = box.width / box.height;
             const MAX_FLAG_H = "20rem"
             const flagH = `min((100vw - 2rem) / ${ratio}, ${MAX_FLAG_H})`;
 
@@ -66505,9 +66507,6 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             spn.textContent = txt[0].toUpperCase() + txt.slice(1)
             cadreDesFlag.append(spn);
 
-            const ratio = box.width / box.height;
-            const MAX_FLAG_H = "20rem"
-
             const flagH = `min((100vw - 2rem) / ${ratio}, ${MAX_FLAG_H})`;
 
             cadreDesFlag.style.top = `calc(env(safe-area-inset-top) + 2rem + 1.5rem + ${flagH})`;
@@ -66520,7 +66519,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             newFlag.style.borderRadius = "0.8rem";
             newFlag.style.top = "calc(env(safe-area-inset-top) + 2rem)";
             newFlag.style.left = "1rem";
-            newFlag.style.width = "calc(100% - 2rem)";
+            newFlag.style.width = `min(calc(100% - 2rem),calc(20rem * ${ratio}))`;
             if (svgEl) {
               newFlag.style.top = "20%";
               newFlag.style.padding = "0.6rem";
