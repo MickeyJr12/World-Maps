@@ -66420,6 +66420,7 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
           newFlag.id = "newFlag";
           const box = el.getBoundingClientRect();
           newFlag.style.position = "fixed";
+          newFlag.style.maxHeight = "20rem"
           newFlag.style.pointerEvents = "none";
           newFlag.style.background = "transparent";
           newFlag.style.zIndex = "130";
@@ -66448,7 +66449,11 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             const bordersList = createEl("div");
             bordersList.className = "bordersList";
             const ratio = box.width / box.height;
-            bordersList.style.top = `calc(20% + (100vw - 2rem) / ${ratio})`;
+            const MAX_FLAG_H = "20rem"
+            const flagH = `min((100vw - 2rem) / ${ratio}, ${MAX_FLAG_H})`;
+
+            // bordersList.style.top = `calc(20% + (100vw - 2rem) / ${ratio})`;
+            bordersList.style.top = `calc(20% + ${flagH})`;
             document.body.append(bordersList);
 
             requestAnimationFrame(() => bordersList.classList.add("active"));
@@ -66501,7 +66506,12 @@ M0.617653 1.9298C0.616677 1.93292 0.615309 1.9337 0.611403 1.93292C0.605544 1.93
             cadreDesFlag.append(spn);
 
             const ratio = box.width / box.height;
-            cadreDesFlag.style.top = `calc(env(safe-area-inset-top) + 2rem + 1.5rem + (100vw - 2rem) / ${ratio})`;
+            const MAX_FLAG_H = "20rem"
+
+            const flagH = `min((100vw - 2rem) / ${ratio}, ${MAX_FLAG_H})`;
+
+            cadreDesFlag.style.top = `calc(env(safe-area-inset-top) + 2rem + 1.5rem + ${flagH})`;
+            // cadreDesFlag.style.top = `calc(env(safe-area-inset-top) + 2rem + 1.5rem + (100vw - 2rem) / ${ratio})`;
 
             requestAnimationFrame(() => cadreDesFlag.classList.add("active"));
           }
